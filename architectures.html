@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Four Financing Architectures · Transitions Lab</title>
+<meta name="description" content="Transitions Lab — research on infrastructure transitions in emerging markets.">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a href="index.html" class="masthead-brand">
+          <span class="dot"></span>
+          <span>Transitions Lab</span>
+          <span class="meta">Est. MMXXVI</span>
+        </a>
+        <button class="masthead-nav-toggle" onclick="document.querySelector('.masthead-nav').classList.toggle('is-open')">Menu</button>
+        <nav class="masthead-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="finance.html">Finance</a>
+        <a href="electrification.html">Electrification</a>
+        <a href="water.html">Water</a>
+        <a href="brw.html">BRW Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="cases.html">Cases</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-meta">
+      <span>Deep Dive</span>
+      <span>Approx. 18 min read</span>
+      <span class="accent-text">Working paper — v1.1</span>
+    </div>
+    <h1>The Four Financing Architectures</h1>
+    <p class="kicker">A structured analysis of the four distinct financing architectures that have emerged in African e-mobility and related informal-economy asset finance — pay-as-you-go, ride-to-own, battery-as-a-service, and concessional climate finance — and what each reveals about the payment layer beneath.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="article">
+      <div class="article-body">
+
+        <p class="lede">Africa's electric-mobility market has, in the space of a single decade, produced four distinct financing architectures — each designed to cross the affordability threshold in a market where formal consumer credit reaches less than a third of adults, and each running on its own closed-loop integration with the dominant mobile-money rails. Taken together, they provide a natural experiment in what financial inclusion at the asset-finance layer actually looks like, and in how the payment layer beneath constrains and enables it.</p>
+
+        <p>This entry documents the four architectures in turn, drawing on operator disclosures, trade-press reporting, and primary fieldwork conducted by the Lab during 2025–26. The discussion throughout is not neutral: the Lab's view, stated at the outset, is that each architecture has genuinely advanced financial inclusion at the product layer and has, simultaneously, reproduced the closed-loop problem at the infrastructure layer. Both halves of that claim matter.</p>
+
+        <div class="stats-row">
+          <div class="stat-block"><div class="figure">4</div><div class="label">Distinct financing architectures operating in parallel in Kenya</div></div>
+          <div class="stat-block"><div class="figure">39,324</div><div class="label">Registered EVs in Kenya, end of 2025 (up from 1,378 in 2022)</div></div>
+          <div class="stat-block"><div class="figure">$1.6B<span class="unit">+</span></div><div class="label">Cumulative PAYGO consumer credit, M-KOPA alone</div></div>
+          <div class="stat-block"><div class="figure">40<span class="unit">%</span></div><div class="label">Lower TCO for electric motorbikes vs. petrol, Bolt/M-KOPA data</div></div>
+        </div>
+
+        <div class="section-head first">
+          <span class="num">§ 1</span>
+          <h2>Architecture A — Pay-as-you-go asset finance</h2>
+        </div>
+
+        <p>The PAYGO model, pioneered in the African solar-home-systems market in the early 2010s and extended to productive assets (electric motorcycles, refrigerators, smartphones, televisions) through the mid-2020s, aligns asset repayment with the cash-flow rhythm of informal-economy earners: daily or weekly digital micropayments, typically authenticated via mobile-money-to-till transfers or via SIM-linked device-locking mechanisms that disable the asset on non-payment.</p>
+
+        <p>The canonical Kenyan reference case is M-KOPA. At the time of writing, M-KOPA has financed over 5,000 electric motorcycles in Kenya with minimum deposits of roughly KES 10,000, and has extended KES 207 billion — approximately USD 1.6 billion — in cumulative consumer credit across its full product range since inception. The model's commercial success is not in doubt. Neither is its genuine contribution to expanding access to productive assets for users who were previously outside the reach of formal credit.</p>
+
+        <div class="definitions">
+          <div class="definition"><dt><span class="label">Architecture A</span>PAYGO Asset Finance</dt><dd>Small deposit + daily or weekly digital micropayments, secured by SIM-linked device-locking. Dominant reference case: M-KOPA. Repayment flows run on closed-loop Daraja-API integrations with M-Pesa. <strong>BRW reading:</strong> predominantly <em>repurpose</em> — the PAYGO channel, originally built for solar home systems, is redirected to productive-asset electric mobility.</dd></div>
+        </div>
+
+        <p>The payment-layer analysis of PAYGO reveals three distinct frictions, each consequential.</p>
+
+        <p><strong>First</strong>, the <em>reconciliation layer is proprietary</em>. Each PAYGO operator runs its own Daraja-API integration with M-Pesa, maintains its own reconciliation logic, and produces its own internal payment-history ledger. Those ledgers are not exportable to other operators or to consumer-reporting bureaus in any structured form. A user who has paid reliably for eighteen months with one operator and wishes to switch to another begins the second relationship as an unknown.</p>
+
+        <p><strong>Second</strong>, <em>payment flow is unidirectional from the user's perspective</em>. The user pays into the operator; the operator does not pay into the user. This is appropriate for the contract structure but has an important downstream effect: the user's asset-finance wallet does not, in practice, become a locus for other financial relationships. A diaspora remitter cannot pay into the user's specific PAYGO instalment schedule directly; she can only pay into the user's M-Pesa account and trust the user to route it onward.</p>
+
+        <p><strong>Third</strong>, <em>cross-operator substitutability is foreclosed</em>. A user who has outgrown her starter PAYGO device and wants to upgrade — or whose operator has withdrawn from the market, or whose device needs service from a competitor — faces a discrete switching cost that is partly technical (new SIM, new app, new integration) and partly reputational (payment history does not travel).</p>
+
+        <div class="section-head">
+          <span class="num">§ 2</span>
+          <h2>Architecture B — Ride-to-own schemes</h2>
+        </div>
+
+        <p>A close cousin of PAYGO, and in practice often confused with it in trade-press coverage, ride-to-own combines a small upfront deposit with daily instalments aligned to the earner's daily cash flow, and explicit transfer of asset title at the end of the repayment term. The canonical Kenyan reference case is the partnership between ROAM Electric and 4G Capital: a KES 25,000 deposit, KES 460 daily instalments for twenty-four months, after which the motorcycle and its battery become the rider's property outright.</p>
+
+        <p>Structurally similar products are offered by Watu Credit (which targets an approximately 41% electric share of its 2025 Kenyan motorcycle-lending portfolio, per CleanTechnica reporting) and MOGO. The differences across operators are in the margin — deposit size, daily payment level, battery warranty terms — rather than in the fundamental structure.</p>
+
+        <div class="definitions">
+          <div class="definition"><dt><span class="label">Architecture B</span>Ride-to-Own</dt><dd>Deposit + daily instalments over a fixed term (typically 24 months), ending in outright transfer of asset title. Reference cases: ROAM/4G Capital, Watu Credit, MOGO. Repayment flows run on operator-specific M-Pesa integrations. <strong>BRW reading:</strong> hybrid <em>repurpose</em> (existing motorcycle-finance channels redirected to electric) and <em>bypass</em> (new servicing and parts networks built specifically for the electric transition).</dd></div>
+        </div>
+
+        <p>Ride-to-own differs from PAYGO in two important ways. First, its <em>end-state is asset ownership</em>, not continued service-use; this gives the user a strong incentive to complete the contract and produces a different distribution of effort between operator and user. Second, ride-to-own typically does not rely on SIM-linked device-locking to the same degree as PAYGO, and instead uses a combination of direct-debit arrangements, fleet-management software, and — in some cases — physical recovery when default is serious and sustained.</p>
+
+        <p>The payment-layer frictions are broadly the same as PAYGO's: proprietary reconciliation, unidirectional payment flow, foreclosed cross-operator substitutability. The additional wrinkle specific to ride-to-own is that the <em>transfer of title at term-end</em> creates a second payment-layer event that, in today's architecture, is not smoothly interoperable — the title transfers on the operator's books but is not typically accompanied by a portable credential the user could present to other financiers as evidence of a completed contract.</p>
+
+        <div class="pullquote">Every architecture documented here works. Each has genuinely expanded access to productive assets for users previously outside the reach of formal credit. Each, simultaneously, reproduces the closed-loop problem at the payment layer.</div>
+
+        <div class="section-head">
+          <span class="num">§ 3</span>
+          <h2>Architecture C — Battery-as-a-Service</h2>
+        </div>
+
+        <p>The third architecture, battery-as-a-service (BaaS), takes a structurally different approach to the affordability problem by <em>decoupling battery ownership from vehicle ownership</em>. The rider acquires — through purchase, ride-to-own, or other means — a BaaS-compatible motorcycle at a price that excludes the battery. The battery remains the property of the swap-network operator, who maintains a network of swap stations at which discharged batteries can be exchanged for charged batteries for a per-swap fee.</p>
+
+        <p>The canonical Kenyan reference operators are Spiro and Ampersand. Per TechCabal reporting, a typical swap price is approximately KES 290 for a fully charged battery providing roughly 80 kilometres of range — which compares favourably to the KES 360 that 80 kilometres in a petrol motorcycle would cost at equivalent utilisation. The economic case for the rider is, in aggregate, robust.</p>
+
+        <div class="definitions">
+          <div class="definition"><dt><span class="label">Architecture C</span>Battery-as-a-Service</dt><dd>Vehicle and battery are financed separately. Battery ownership stays with the swap-network operator; rider pays per swap. Reference cases: Spiro, Ampersand. Swap payments run on operator-specific till numbers on M-Pesa. <strong>BRW reading:</strong> purest <em>bypass</em> strategy in the sector — swap networks built greenfield, not dependent on petrol-retail footprint.</dd></div>
+        </div>
+
+        <p>BaaS solves a specific slice of the affordability problem beautifully: it removes the battery (historically the single most expensive component of an electric motorcycle, and the component with the most uncertain residual value) from the asset-financing calculation entirely. It substitutes a pay-per-use operating expenditure for a capitalised expenditure, aligning the rider's cash flow with his actual utilisation.</p>
+
+        <p>The payment-layer friction specific to BaaS, however, is severe. Each BaaS operator runs its own closed swap network, with its own payment integration, its own rider-identity credential, and its own network of stations. A rider who buys a Spiro-compatible motorcycle can only swap at Spiro stations. The same rider, if she later decides to switch to an Ampersand-compatible vehicle, has to rebuild her relationship with a completely separate infrastructure.</p>
+
+        <p>The problem is roughly analogous to the state of mobile telecommunications before GSM roaming: the network works beautifully for its own customers within its own coverage, and substantially fails at the edges between networks. The analogy is not loose. The fix, in the BaaS case, would be structurally similar to the GSM roaming solution: a shared identity and settlement layer that permits a rider associated with one operator to swap at another operator's station, with appropriate settlement between operators in the background. See the <a href="interoperability.html">interoperability deep-dive</a> for the Lab's reading.</p>
+
+        <div class="section-head">
+          <span class="num">§ 4</span>
+          <h2>Architecture D — Concessional climate finance</h2>
+        </div>
+
+        <p>The fourth architecture operates one layer up from the retail products. Concessional climate finance — typically routed through development finance institutions, climate funds, and multilateral or bilateral donors — supplies longer-dated wholesale capital to the retail financiers and operators. The canonical reference cases in the African e-mobility context include the Uganda Development Bank's EV financing line, the Ecobank-DriveEV partnership in Ghana, and various concessional facilities routed through the Green Climate Fund, SEFA, and CRDB.</p>
+
+        <p>This architecture does not reach the end-user directly. Its effect on the end-user is mediated through the retail operators whose balance sheets it strengthens and whose lending terms it modestly reshapes. Its inclusion in this typology is nonetheless appropriate because it is a distinct financing architecture — with distinct institutional logic, distinct contracting norms, and distinct reporting requirements — and because the <em>form</em> that concessional finance takes at the wholesale layer materially shapes what the retail layer can offer.</p>
+
+        <div class="definitions">
+          <div class="definition"><dt><span class="label">Architecture D</span>Concessional Climate Finance</dt><dd>Wholesale, longer-dated, below-market-rate capital from development-finance institutions, climate funds, and donors, routed through retail operators. Reference cases: UDB, Ecobank-DriveEV, GCF, SEFA. <strong>BRW reading:</strong> closely aligned with <em>weaken</em> strategies — concessional finance is the instrument most capable of funding shared-infrastructure components that no single commercial operator has the incentive to fund alone.</dd></div>
+        </div>
+
+        <p>The payment-layer implications of concessional finance are indirect but real. Three observations matter.</p>
+
+        <p><strong>First</strong>, concessional wholesale capital typically comes with monitoring, reporting, and verification (MRV) requirements that force the retail operator to maintain high-fidelity transaction and customer data — which, paradoxically, makes the operator's data practices somewhat more legible and potentially more amenable to portability than a purely commercial equivalent.</p>
+
+        <p><strong>Second</strong>, the conditionalities attached to concessional finance increasingly include environmental and social performance indicators that, in the EV case, can be easier to demonstrate against interoperable infrastructure than against proprietary infrastructure. This creates a latent policy lever for interoperability-oriented donors that has, to the Lab's knowledge, not yet been deliberately exercised.</p>
+
+        <p><strong>Third</strong>, and most importantly, concessional finance is a natural actor to fund the shared-infrastructure components — the interoperability layer, the identity primitives, the regulatory sandbox participation — that no single commercial operator has sufficient incentive to fund alone. The observation is not original; variants of it have been made for public-goods infrastructure in many domains. Its application to the specific case of interoperable payment infrastructure for African e-mobility is, however, not yet part of standard concessional-finance thinking.</p>
+
+        <div class="section-head">
+          <span class="num">§ 5</span>
+          <h2>What the four architectures share</h2>
+        </div>
+
+        <p>Read side by side, the four architectures share three structural features that bear directly on the payment-rail argument.</p>
+
+        <p><strong>Closed-loop payment integration.</strong> All four architectures rely, at the point of rider-facing transaction, on closed-loop integrations with dominant mobile-money rails. Each operator implements its own Daraja (or regional-equivalent) integration. Cross-operator interoperability at the payment layer is not structurally present.</p>
+
+        <p><strong>Proprietary identity and payment-history ledgers.</strong> Each operator maintains its own view of its users' payment histories; none of those views are portable to other operators or to consumer-reporting infrastructure in any structured way. The user is, in effect, a different financial citizen at each operator.</p>
+
+        <p><strong>Cross-border opacity.</strong> None of the four architectures, as presently implemented, offer diaspora remittance senders a way to pay into a specific obligation (an asset-finance instalment, a swap-station balance, a wholesale finance contribution). Remittance arrives, in all cases, as general-purpose mobile-money balance.</p>
+
+        <p>Each of these three shared features is addressable at the infrastructure layer, and the Lab's <a href="finance.html">finance programme</a> is specifically organised around testing the feasibility of that addressability in practice.</p>
+
+        <div class="section-head">
+          <span class="num">§ 6</span>
+          <h2>What the four architectures reveal about financial inclusion</h2>
+        </div>
+
+        <p>The practical contribution of this taxonomy, for the wider financial-inclusion research community, is that it makes visible a gap that the conventional inclusion metrics do not. The user across all four architectures is, by Findex and comparable metrics, <strong>included</strong>. She holds an account, transacts on it, and uses it for a productive purpose. What the closed-loop architecture conceals is that her inclusion is <strong>constrained</strong> in ways that directly shape the economic outcomes available to her.</p>
+
+        <p>The claim this entry has tried to develop is that the next generation of financial-inclusion research should measure inclusion not by the presence of the account but by the <em>interoperability</em> of the account — by whether the account is a first-class participant in the wider economy or a credentialled participant in a single closed loop. The four architectures described above are a natural experiment in that distinction. They offer, in Kenya specifically, a rich dataset for any researcher willing to study the payment layer as carefully as the academic community has, for good reason, studied the product layer.</p>
+
+        <div class="footnotes">
+          <h4>Notes &amp; sources</h4>
+          <ol>
+            <li>M-KOPA cumulative lending figure: TechCabal, 24 November 2025.</li>
+            <li>Kenya EV registration figures: Ministry of Roads and Transport, 3 February 2026.</li>
+            <li>ROAM / 4G Capital ride-to-own terms: Ethical Business Africa, 14 November 2025.</li>
+            <li>Watu Credit electric share target: CleanTechnica, 23 May 2025.</li>
+            <li>Spiro / Ampersand swap economics: TechCabal, 26 December 2025.</li>
+            <li>Bolt / M-KOPA TCO analysis: Tuko, 23 April 2024.</li>
+            <li>UDB and Ecobank-DriveEV references: Africa E-Mobility Alliance, 2025.</li>
+            <li>The payment-layer analysis throughout this entry draws also on primary fieldwork conducted in Nairobi during 2025–26 under HREC-approved protocols through TU Delft TPM, supervised by Dr. Gideon Ndubuisi.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <a href="index.html" class="footer-brand">Transitions Lab</a>
+          <p class="footer-motto">An independent research organisation studying how infrastructure transitions actually happen in emerging markets.</p>
+          <p style="font-size: 0.82rem; color: var(--muted-soft);">Delft · Nairobi · Dutch Caribbean</p>
+        </div>
+        <div class="footer-col">
+          <h5>Research Programmes</h5>
+          <ul>
+            <li><a href="finance.html">Finance & Payment Systems</a></li>
+            <li><a href="electrification.html">Electrification & E-Mobility</a></li>
+            <li><a href="water.html">Water Access Systems</a></li>
+            <li><a href="programmes.html">All programmes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Methods &amp; Deep Dives</h5>
+          <ul>
+            <li><a href="brw.html">The BRW Typology</a></li>
+            <li><a href="architectures.html">Financing Architectures</a></li>
+            <li><a href="interoperability.html">Payment-rail Interoperability</a></li>
+            <li><a href="policy.html">Regulatory Frameworks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>The Lab</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team &amp; Advisors</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="cases.html">Field Cases</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="style-guide.html">Colophon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>© Transitions Lab, 2026.  ·  Independent research, independently typeset.</span>
+        <span>Set in Fraunces &amp; Archivo  ·  Built as a static site, no trackers.</span>
+      </div>
+    </footer>
+    
+</body>
+</html>

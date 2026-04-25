@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Cases · Transitions Lab</title>
+<meta name="description" content="Transitions Lab — research on infrastructure transitions in emerging markets.">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a href="index.html" class="masthead-brand">
+          <span class="dot"></span>
+          <span>Transitions Lab</span>
+          <span class="meta">Est. MMXXVI</span>
+        </a>
+        <button class="masthead-nav-toggle" onclick="document.querySelector('.masthead-nav').classList.toggle('is-open')">Menu</button>
+        <nav class="masthead-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="finance.html">Finance</a>
+        <a href="electrification.html">Electrification</a>
+        <a href="water.html">Water</a>
+        <a href="brw.html">BRW Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="cases.html" class="active">Cases</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-meta">
+      <span>Field Cases</span>
+      <span>Approx. 14 min read</span>
+      <span class="accent-text">Living document — updated quarterly</span>
+    </div>
+    <h1>Field Cases</h1>
+    <p class="kicker">Three operational cases that structure the Lab's empirical work and, between them, cover the sharpest edges of the research questions pursued across the finance, electrification, and water programmes. The cases are live; these entries are updated as the fieldwork progresses.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <article class="article">
+      <div class="article-body">
+
+        <p class="lede">Cases do the work that framework diagrams cannot. A good research argument stands or falls on the specific empirical ground it is built on, and the three cases documented here are the ground the Lab stands on. The first — ROAM Electric — is the source of the Lab's <a href="brw.html">BRW methodology</a> and the primary site of the <a href="electrification.html">electrification programme</a>. The second — MiMaji — is the Lab's commercial operational exposure to the payment-layer frictions the <a href="finance.html">finance programme</a> analyses. The third — the boda-boda economy more broadly — is the system-level context in which the other two sit.</p>
+
+        <div class="section-head first">
+          <span class="num">Case 01</span>
+          <h2>ROAM Electric and the Kenyan E-Motorcycle Transition</h2>
+        </div>
+
+        <p>ROAM Electric is Kenya's leading domestic manufacturer of electric motorcycles, operating an assembly facility in Nairobi and distributing through a combination of direct sales, fleet partnerships, and — most significantly for this case — ride-to-own finance partnerships with 4G Capital and Watu Credit.</p>
+
+        <p>The ROAM case is the source of the Lab's <a href="brw.html">BRW methodology</a>, developed through an MSc thesis under the supervision of Dr. Gideon Ndubuisi at TU Delft TPM. The thesis applies the bypass-repurpose-weaken typology to the specific question of how ROAM navigates the legacy ICE-motorcycle regime, and traces how the company's strategic posture — a hybrid of <em>repurpose</em> (existing motorcycle-finance channels redirected to electric) and <em>bypass</em> (parallel after-sales, parts, and servicing networks built specifically for electric) — maps onto observed operational choices.</p>
+
+        <p><strong>Field data collection</strong> spans (a) semi-structured interviews with ROAM engineering, commercial, and fleet-operations staff; (b) rider-level interviews with ROAM-equipped boda-boda operators across Nairobi; (c) secondary analysis of operator disclosures, trade-press reporting, and regulatory filings; and (d) comparative reading against parallel cases in Rwanda (Ampersand), Uganda (Zembo), and regional reference cases. The full methodological account is documented in the <a href="brw.html">BRW methodology page</a>.</p>
+
+        <p><strong>Research status:</strong> HREC-approved fieldwork protocol in place; ethics revisions completed to cover GDPR compliance, fieldwork risk mitigation, and consent for non-interview data types (operational observations, transaction-data analysis, photographic documentation). Thesis submission scheduled mid-2026; a public summary will appear on the <a href="articles.html">articles page</a> following submission.</p>
+
+        <div class="section-head">
+          <span class="num">Case 02</span>
+          <h2>MiMaji — Water Delivery at the Caretaker Layer</h2>
+        </div>
+
+        <p>MiMaji (<code>mimaji.co.ke</code>, "My Water" in Swahili) is a live consumer-facing 20-litre water-jug delivery platform operating in Nairobi. The platform is a commercial operation — not a research project — but provides the Lab with direct, continuous operational exposure to the payment-layer frictions that the <a href="finance.html">finance programme</a> analyses and to the caretaker-mediated distribution patterns that the <a href="water.html">water programme</a> studies.</p>
+
+        <p>Technology stack: Next.js 14 App Router on Vercel, Supabase as data and authentication layer, direct M-Pesa Daraja integration for STK-push payments, Africa's Talking for SMS and USSD traffic, GitHub for code hosting. The stack is deliberately conventional; the research-relevant complexity lives at the payment and caretaker-interaction layers, not at the engineering layer.</p>
+
+        <p><strong>Operational issues that translate into research questions.</strong> MiMaji's day-to-day operational record surfaces the frictions that the finance programme treats at an analytical level. Failed STK-push attempts, reconciliation-lag on successful payments, caretaker-mediated payment relationships that are not visible in the platform's own data, and the gap between an order placed and a payment settled — each of these is both an operational problem for MiMaji and a research datum for the Lab. A research organisation that was not operating a commercial platform in the same payment environment would have to infer these frictions; we observe them directly.</p>
+
+        <p><strong>The firewall.</strong> MiMaji is operated commercially and its operational choices are made on commercial grounds. The Lab's research is conducted independently; research findings about the Kenyan water-access system are not influenced by MiMaji's commercial trajectory, and commercial revenue from MiMaji does not direct or fund the Lab's research output. Where MiMaji's operational data is used in research, it is anonymised, aggregated, and used under the platform's published privacy terms.</p>
+
+        <div class="section-head">
+          <span class="num">Case 03</span>
+          <h2>The Nairobi Boda-Boda Economy as System Context</h2>
+        </div>
+
+        <p>The first two cases sit inside a larger system context: the Nairobi boda-boda economy. Approximately 1.4 million boda-boda operators work across Kenya's urban centres; the share operating in Nairobi specifically is estimated at 300,000–400,000. Their collective daily turnover, their daily consumption of fuel (or electricity), their daily utilisation of mobile-money payments, and their daily engagement with asset-finance and insurance products make them one of the most important single economic cohorts in urban Kenya.</p>
+
+        <p>The Lab's engagement with the boda-boda economy is not episodic. It consists of a programme of structured fieldwork — interviews, operational observations, informal conversations at swap stations and commercial ranks, and longer-form follow-up with a cohort of riders tracked over 18–24 months to observe transition patterns across the full asset-finance lifecycle. The data that emerges supports both the <a href="electrification.html">electrification programme's</a> asset-finance analysis and the <a href="finance.html">finance programme's</a> payment-layer analysis, and it also functions as a form of ground-truthing for the methodological work in the <a href="brw.html">BRW typology</a>.</p>
+
+        <p><strong>Research ethics and data handling.</strong> All primary fieldwork with boda-boda operators is conducted under HREC-approved protocols specifying informed consent, recording and transcription practices, anonymisation and pseudonymisation, cross-border data transfer under GDPR and the Kenya Data Protection Act 2019, and rider compensation for interview time. The Lab commits to not publishing rider-identifiable details without explicit consent; aggregate and composite findings are publishable without individual consent per the approved protocol.</p>
+
+        <div class="section-head">
+          <span class="num">§</span>
+          <h2>Partner Network</h2>
+        </div>
+
+        <p>The Lab's operational cases sit within a larger network of institutional partners whose collaboration makes the fieldwork possible. The network is relatively stable; formal collaboration arrangements are in place with the most active partners.</p>
+
+        <div class="definitions">
+          <div class="definition"><dt><span class="label">Academic</span>TU Delft TPM</dt><dd>Host institution for the thesis work and HREC oversight; academic supervisors Dr. Gideon Ndubuisi (electrification / BRW) and Dr. Leon Hermans (water / MajiMap).</dd></div>
+          <div class="definition"><dt><span class="label">Operational</span>ROAM Electric</dt><dd>Primary industry partner for the electrification programme and BRW case work; engineering, commercial, and fleet-operations staff engaged under research cooperation arrangements.</dd></div>
+          <div class="definition"><dt><span class="label">Operational</span>FundiFix &amp; VIRED International</dt><dd>Field partners for the MajiMap Kitui water-intelligence pilot; community-engagement, installation, and data-gathering support.</dd></div>
+          <div class="definition"><dt><span class="label">Institutional</span>Central Bank of Kenya (Fintech Office)</dt><dd>Regulatory interlocutor for the finance programme; sandbox-pathway discussions and structured policy-engagement under the CBK's published engagement frameworks.</dd></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <a href="index.html" class="footer-brand">Transitions Lab</a>
+          <p class="footer-motto">An independent research organisation studying how infrastructure transitions actually happen in emerging markets.</p>
+          <p style="font-size: 0.82rem; color: var(--muted-soft);">Delft · Nairobi · Dutch Caribbean</p>
+        </div>
+        <div class="footer-col">
+          <h5>Research Programmes</h5>
+          <ul>
+            <li><a href="finance.html">Finance & Payment Systems</a></li>
+            <li><a href="electrification.html">Electrification & E-Mobility</a></li>
+            <li><a href="water.html">Water Access Systems</a></li>
+            <li><a href="programmes.html">All programmes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Methods &amp; Deep Dives</h5>
+          <ul>
+            <li><a href="brw.html">The BRW Typology</a></li>
+            <li><a href="architectures.html">Financing Architectures</a></li>
+            <li><a href="interoperability.html">Payment-rail Interoperability</a></li>
+            <li><a href="policy.html">Regulatory Frameworks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>The Lab</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team &amp; Advisors</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="cases.html">Field Cases</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="style-guide.html">Colophon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>© Transitions Lab, 2026.  ·  Independent research, independently typeset.</span>
+        <span>Set in Fraunces &amp; Archivo  ·  Built as a static site, no trackers.</span>
+      </div>
+    </footer>
+    
+</body>
+</html>

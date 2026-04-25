@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance & Payment Systems — Programme · Transitions Lab</title>
+<meta name="description" content="Transitions Lab — research on infrastructure transitions in emerging markets.">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a href="index.html" class="masthead-brand">
+          <span class="dot"></span>
+          <span>Transitions Lab</span>
+          <span class="meta">Est. MMXXVI</span>
+        </a>
+        <button class="masthead-nav-toggle" onclick="document.querySelector('.masthead-nav').classList.toggle('is-open')">Menu</button>
+        <nav class="masthead-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="finance.html" class="active">Finance</a>
+        <a href="electrification.html">Electrification</a>
+        <a href="water.html">Water</a>
+        <a href="brw.html">BRW Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="cases.html">Cases</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-meta">
+      <span>Programme 01 — Active</span>
+      <span>Approx. 16 min read</span>
+      <span class="accent-text">Working document — v2.0</span>
+    </div>
+    <h1>Finance &amp; Payment Systems</h1>
+    <p class="kicker">The central argument of the Lab's finance programme: why payment-rail lock-in is the most important under-discussed problem in digital financial inclusion, and what it would take to address it at the infrastructure, product, and policy layers together.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <article class="article">
+      <div class="article-body">
+
+        <p class="lede">Financial inclusion has been one of the defining development narratives of the past two decades. By the most widely cited measure — the Global Findex, published triennially by the World Bank — the share of adults worldwide with access to a formal account rose from 51% in 2011 to 76% in 2021, with mobile-money accounts driving the largest gains in sub-Saharan Africa. The headline figure is a genuine achievement. It is also, increasingly, a misleading one.</p>
+
+        <p>The inclusion being measured is <em>access to an account</em>. What it does not measure — and what has become the harder, more consequential question of the next decade — is <strong>the terms on which that account participates in the wider economy</strong>. An account that can receive payments from its home mobile-money network but cannot originate an international transfer. An account that can pay a specific utility provider but only through a closed-loop integration that locks the customer to that provider. An account whose transaction history cannot be ported to a different lender, a different insurer, or a different service provider when the customer wants to switch. An account whose cross-border functionality depends entirely on a handful of private remittance corridors priced at some multiple of the actual settlement cost.</p>
+
+        <p>The <em>next</em> financial-inclusion question — the one that the Lab's finance programme is organised around — is not <strong>whether</strong> a low-income user holds an account. It is <strong>what kind of citizen of the digital economy</strong> that account makes them.</p>
+
+        <div class="section-head first">
+          <span class="num">§ 1</span>
+          <h2>The closed-loop problem</h2>
+        </div>
+
+        <p>Consider the working life of a Nairobi boda-boda driver in 2026. She wakes at five, rides her ride-to-own electric motorcycle to the nearest battery-swap station, pays KES 290 for a freshly charged battery sufficient for 80 kilometres of range, and begins the day's work. Over the course of the day she accepts payment from passengers via M-Pesa, earns approximately KES 1,000, sets aside KES 460 for her asset-finance instalment, pays another KES 290 or so for a second battery swap, and sends the remainder home to her family in Kitui via mobile-money transfer. At the end of the month, her asset-financier will debit the monthly instalment total from her M-Pesa balance via a direct-debit arrangement running over the Safaricom Daraja API.</p>
+
+        <p>Every step of this workflow is digital. Every step is, in the standard framing, "financial inclusion in action". And every step is also <em>locked into a closed loop</em>.</p>
+
+        <p>The battery-swap payment runs on an operator-specific integration with M-Pesa, hard-coded to that operator's till number. If she wanted to swap at a different operator's station tomorrow — because her usual station is out of stock, or because a competitor has opened nearer to her pickup point, or because she has switched to a different make of motorcycle — she would have to pay cash or set up a new relationship with the new operator. Her <em>payment history</em> with the first operator, the fact that she has paid reliably for eight months, the fact that she has never defaulted on a swap, does not travel with her. Neither does her <em>reputational credit</em>. She would be, at the second operator's station, a stranger again.</p>
+
+        <p>Her ride-to-own asset-finance account with her financier sits in a similarly closed arrangement. The financier's records of her daily payment history are proprietary and do not flow to any other credit bureau, ride-hailing platform, or insurance provider. Her diaspora cousin in Rotterdam, who would happily cover next week's payments while she attends to a family matter, cannot pay into her specific instalment schedule directly; the cousin can only send a general-purpose mobile-money transfer to the driver's M-Pesa account and trust that she will route it correctly.</p>
+
+        <p>And her M-Pesa account itself, for all its utility, is a closed loop too. Inside Kenya, it reaches almost every consumer use-case she might imagine; outside Kenya, it becomes a fraction of the financial citizen she is inside it.</p>
+
+        <div class="pullquote">
+          Financial inclusion, in the narrow sense of account ownership, has been substantially achieved in Kenya. Financial <em>interoperability</em>, in the sense that the account is a portable, first-class participant in a wider economy, has not.
+        </div>
+
+        <p>The pattern generalises. Across African mobile-money markets, a generation of products has been built on closed-loop integrations with dominant network operators. Each product works. Each product adds real value for its users. And each product, by virtue of running on its own closed loop, replicates the same problem: the user who wants to switch providers, combine providers, or route funds across providers is forced to exit one loop entirely before entering the next. Lock-in is not an accident of the market. It is the default state of a financial system built one proprietary integration at a time.</p>
+
+        <div class="margin-note">
+          <span class="label">Related reading</span>
+          <a href="architectures.html">The Four Financing Architectures</a> develops this closed-loop argument in detail for the specific case of African e-mobility asset finance — where four different product categories (PAYGO, ride-to-own, BaaS, and concessional) each solve the affordability problem but replicate the closed-loop payment problem in parallel.
+        </div>
+
+        <div class="section-head">
+          <span class="num">§ 2</span>
+          <h2>Why this has been difficult to see clearly</h2>
+        </div>
+
+        <p>A reasonable reader will ask: if the closed-loop problem is as real as this programme claims, why has it taken this long to surface as a central topic in financial-inclusion discourse?</p>
+
+        <p>Three reasons, each partial, combine to produce the blind spot.</p>
+
+        <p><strong>First:</strong> the dominant metrics of inclusion — account ownership, transaction frequency, active-user rates — are precisely the metrics on which mobile-money platforms perform extraordinarily well. M-Pesa has roughly 40% of the Kenyan population transacting on it monthly; similar figures hold for MTN Mobile Money in Ghana and Uganda, for Orange Money in Francophone West Africa, and for Wave in Senegal. Against any reasonable baseline, these platforms have delivered real, measurable inclusion. An inclusion metric that counted <em>interoperability</em> rather than <em>account ownership</em> would tell a very different story — but such a metric has not yet been widely adopted, and in its absence the headline numbers continue to do the work of describing the system.</p>
+
+        <p><strong>Second:</strong> the closed-loop problem is, from the user's point of view, often invisible until she tries to leave. The Nairobi driver above does not experience her M-Pesa account as closed until the specific moment her diaspora cousin wants to pay her ride-to-own instalment directly and cannot. Until that moment, the account works. The limits are structural, not operational; they shape what the user <em>can</em> do without shaping what the user <em>does</em> do on a typical day. This kind of problem is easy to underweight in product design and in policy analysis alike.</p>
+
+        <p><strong>Third:</strong> the technical vocabulary needed to discuss the problem precisely — <span class="term">payment rail</span>, <span class="term">closed loop</span>, <span class="term">interoperability layer</span>, <span class="term">addressable endpoint</span>, <span class="term">streaming micropayment</span>, <span class="term">identity primitive</span> — has until very recently lived in a handful of payment-infrastructure research communities that did not overlap neatly with the financial-inclusion community. The bridge between the two communities is exactly where this programme hopes to contribute.</p>
+
+        <div class="section-head">
+          <span class="num">§ 3</span>
+          <h2>What durable interoperability would require</h2>
+        </div>
+
+        <p>If the diagnosis is the closed-loop problem, the question that follows is what a durable fix would look like. The Lab's view is that no single intervention — a new protocol, a new regulation, a new market entrant — will, on its own, displace the closed-loop architecture. The problem is distributed across several layers of the payment system, and a serious fix has to work across them.</p>
+
+        <p>At the <strong>infrastructure layer</strong>, durable interoperability requires a shared addressing scheme that allows a user on one mobile-money network to be reached, for payment purposes, by a counterparty on any other network without either network's operator having to negotiate a bilateral integration. The technical primitives exist in mature form; several open-standards proposals address them credibly. What is missing is not the technical capacity but the combination of infrastructure adoption, regulatory backing, and market incentive that together produce scale. The Lab's <a href="interoperability.html">interoperability deep-dive</a> reviews what the options are.</p>
+
+        <p>At the <strong>product layer</strong>, durable interoperability requires that the account-level experience preserve user trust in the mobile-money relationships that already work, while adding addressability that makes new counterparties reachable. The right design posture — tested repeatedly in the Lab's fieldwork — is additive rather than substitutive: the user's M-Pesa or MTN account remains her primary interface; the interoperability layer sits above it, extending what the account can be reached by. The user never has to learn an unfamiliar replacement.</p>
+
+        <p>At the <strong>policy layer</strong>, durable interoperability requires regulatory backing for the portability of payment history, for the addressability of specific obligations, and for the cross-border settlement arrangements that make remittance flows a first-class participant in the interoperability architecture. The Lab's <a href="policy.html">regulatory-frameworks</a> entry develops the reading of the Kenyan policy environment that applies here.</p>
+
+        <p>At the <strong>community layer</strong>, durable interoperability requires a developer ecosystem, a regulator-engagement practice, and a user-education programme that together produce the adoption surface. A protocol without a community is a specification; a protocol with a community is infrastructure. The Lab's research plan treats community formation as a first-class output.</p>
+
+        <div class="section-head">
+          <span class="num">§ 4</span>
+          <h2>The programme's research agenda</h2>
+        </div>
+
+        <p>Five specific research questions guide the finance programme's work across the 2026–2027 cycle. Each is independently workable; the programme's distinctive contribution rests on their interaction.</p>
+
+        <ol class="numbered-list">
+          <li><div>
+            <h4>How do closed-loop payment systems actually route payments — and where, precisely, does user lock-in bite hardest?</h4>
+            <p>The empirical starting point. Not a theoretical mapping but a transaction-by-transaction reconstruction of how payment flows move through the four <a href="architectures.html">financing architectures</a> operating in Kenya today. The prior: lock-in is tightest at the operator-to-operator reconciliation layer, not at the user-facing interface. If correct, this concentrates the intervention point and preserves the mobile-money relationship the user already trusts.</p>
+          </div></li>
+          <li><div>
+            <h4>What interoperability-layer design preserves mobile-money relationships rather than displacing them?</h4>
+            <p>The engineering-and-research question at the core of any serious deployment strategy. The answer has to honour the fact that Kenyan users trust M-Pesa, rightly so, and a strategy that asks them to trust something unfamiliar in its place will fail. The programme is therefore oriented toward a complementary architecture in which open-standards addressability runs beneath and between closed loops, not through the consumer interface on top of them.</p>
+          </div></li>
+          <li><div>
+            <h4>What are the minimum-viable integration patterns for feature-phone, USSD, and daily-cash-flow micropayment contexts?</h4>
+            <p>Most users of greatest interest to financial-inclusion research transact from feature phones via USSD sessions. Interoperability infrastructure has to meet them there. Part of the programme's work is to document which payment patterns map cleanly onto open-standards architectures, which require adaptation, and which surface specification-level gaps that the protocol communities themselves need to close.</p>
+          </div></li>
+          <li><div>
+            <h4>Can diaspora remittances be routed directly to specific obligations rather than to general-purpose cash?</h4>
+            <p>Kenyans abroad remitted USD 4.9 billion in 2024. A meaningful share is intended for specific obligations — school fees, utility bills, asset-finance instalments, medical treatment — but is routed as generic mobile-money transfers because that is what the infrastructure supports. What becomes possible when the receiver of a remittance is a specific instalment-schedule endpoint rather than a general-purpose wallet? See the <a href="diaspora.html">diaspora brief</a> for the programme's reading.</p>
+          </div></li>
+          <li><div>
+            <h4>How does an open-standards community best onboard developer ecosystems that have formed around closed-loop incumbents?</h4>
+            <p>A meta-question about how protocol communities grow. Nairobi has one of Africa's deepest fintech developer populations, but almost all of it has formed around M-Pesa and Daraja. The question of how to bring that community into the open-standards conversation — through workshops, shared tooling, student engagement, and open-source infrastructure — is itself part of the research.</p>
+          </div></li>
+        </ol>
+
+        <div class="section-head">
+          <span class="num">§ 5</span>
+          <h2>Why Kenya, and why now</h2>
+        </div>
+
+        <p>A research programme has to choose a site. Kenya is the right one for this programme for five reasons, each independent, each strong.</p>
+
+        <p><strong>Depth of mobile-money infrastructure.</strong> M-Pesa is the reference case for mobile-money success globally. A serious interoperability programme that does not engage directly with the M-Pesa reality is a programme operating at the margin of its own topic.</p>
+
+        <p><strong>Innovation density in informal-economy asset finance.</strong> No other African market has produced the range and sophistication of pay-as-you-go asset-finance products that Kenya has. M-KOPA alone has extended over USD 1.6 billion in cumulative consumer credit against this template. The <a href="architectures.html">four financing architectures</a> that structure the Lab's analysis are all operating in Kenya today, often within a few kilometres of one another.</p>
+
+        <p><strong>Scale of diaspora remittance flow.</strong> At USD 4.9 billion in 2024 per Central Bank of Kenya data, Kenyan diaspora remittances are one of the largest such flows in sub-Saharan Africa and a substantial fraction of national GDP. The question of whether that flow can be usefully reshaped by direct addressability is a question that can be asked with real statistical power only in a handful of countries, and Kenya is one.</p>
+
+        <p><strong>Active regulatory pathway.</strong> The Central Bank of Kenya's Fintech Office has opened regulatory sandbox pathways for novel payment-rail participants. The Ministry of Roads and Transport published the National Electric Mobility Policy in February 2026. Both regulatory actors have explicit mandates that include the fairness of financial access and the interoperability of digital infrastructure. A research programme in Kenya has live regulatory interlocutors, which is not true everywhere.</p>
+
+        <p><strong>The Lab's own operational presence.</strong> The Lab has sustained fieldwork presence in Nairobi, active MSc-level research engagement with the continent's leading electric-motorcycle manufacturer (ROAM Electric; see <a href="electrification.html">electrification programme</a>), and a live commercial M-Pesa-integrated operational stack through the MiMaji water-delivery platform. The finance programme is not an extractive research project flown in from outside.</p>
+
+        <div class="section-head">
+          <span class="num">§ 6</span>
+          <h2>What the programme intends to produce</h2>
+        </div>
+
+        <p>The finance programme is oriented toward four concrete outputs over its 2026–2027 cycle.</p>
+
+        <p><strong>An open-source interoperability toolkit</strong> implementing payment-rail addressability primitives for the specific context of boda-boda asset finance and battery-swap payments. The toolkit is not the answer on its own; it is the artefact that makes the answer testable. It is designed to be forked and adapted to comparable asset-finance contexts elsewhere in Africa, South Asia, and Latin America.</p>
+
+        <p><strong>A body of field research</strong>, grounded in fifty-plus semi-structured interviews with riders, operators, and financiers, documenting the transaction-level reality of closed-loop payment lock-in in the Kenyan e-mobility sector. The research output is designed for dual use: as an academic working paper and as a practitioner-facing briefing for regulators and financiers.</p>
+
+        <p><strong>A live pilot</strong> with 100–200 boda riders across at least two operators, running 10,000+ real transactions through the toolkit, with baseline and endline measurements on transaction cost, time per transaction, and operator reconciliation friction. The pilot is the reality check.</p>
+
+        <p><strong>A community</strong> — a Nairobi-local constellation of developers, operators, regulators, and diaspora participants who have been brought, through the programme's activities, into working contact with open-standards payment infrastructure. This is the most durable output, in the sense that the toolkit and the research paper are static artefacts but the community persists.</p>
+
+        <div class="footnotes">
+          <h4>Notes</h4>
+          <ol>
+            <li>Figures on account ownership from the World Bank Global Findex 2021. See references to Demirgüç-Kunt et al. at worldbank.org/findex.</li>
+            <li>Kenyan rider income estimate of KES 1,000 per day is drawn from TechCabal reporting (2025) and triangulated against operator interviews conducted during the Lab's fieldwork in 2025–26.</li>
+            <li>Battery-swap pricing of KES 290 per 80 km from operator disclosures, reported via TechCabal (2025) and Ethical Business Africa (2025).</li>
+            <li>Diaspora remittance figure of USD 4.9 billion for 2024 from Central Bank of Kenya diaspora remittance statistics (monthly series).</li>
+            <li>M-KOPA cumulative lending figure of USD 1.6 billion from TechCabal reporting, November 2025.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <a href="index.html" class="footer-brand">Transitions Lab</a>
+          <p class="footer-motto">An independent research organisation studying how infrastructure transitions actually happen in emerging markets.</p>
+          <p style="font-size: 0.82rem; color: var(--muted-soft);">Delft · Nairobi · Dutch Caribbean</p>
+        </div>
+        <div class="footer-col">
+          <h5>Research Programmes</h5>
+          <ul>
+            <li><a href="finance.html">Finance & Payment Systems</a></li>
+            <li><a href="electrification.html">Electrification & E-Mobility</a></li>
+            <li><a href="water.html">Water Access Systems</a></li>
+            <li><a href="programmes.html">All programmes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Methods &amp; Deep Dives</h5>
+          <ul>
+            <li><a href="brw.html">The BRW Typology</a></li>
+            <li><a href="architectures.html">Financing Architectures</a></li>
+            <li><a href="interoperability.html">Payment-rail Interoperability</a></li>
+            <li><a href="policy.html">Regulatory Frameworks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>The Lab</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team &amp; Advisors</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="cases.html">Field Cases</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="style-guide.html">Colophon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>© Transitions Lab, 2026.  ·  Independent research, independently typeset.</span>
+        <span>Set in Fraunces &amp; Archivo  ·  Built as a static site, no trackers.</span>
+      </div>
+    </footer>
+    
+</body>
+</html>

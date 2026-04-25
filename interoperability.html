@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment-rail Interoperability · Transitions Lab</title>
+<meta name="description" content="Transitions Lab — research on infrastructure transitions in emerging markets.">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a href="index.html" class="masthead-brand">
+          <span class="dot"></span>
+          <span>Transitions Lab</span>
+          <span class="meta">Est. MMXXVI</span>
+        </a>
+        <button class="masthead-nav-toggle" onclick="document.querySelector('.masthead-nav').classList.toggle('is-open')">Menu</button>
+        <nav class="masthead-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="finance.html">Finance</a>
+        <a href="electrification.html">Electrification</a>
+        <a href="water.html">Water</a>
+        <a href="brw.html">BRW Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="cases.html">Cases</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-meta">
+      <span>Deep Dive</span>
+      <span>Approx. 17 min read</span>
+      <span class="accent-text">Working paper — v1.0</span>
+    </div>
+    <h1>Payment-rail Interoperability</h1>
+    <p class="kicker">What durable interoperability between payment rails would actually require — not as an abstract protocol question but as a design problem with infrastructure, product, policy, and community dimensions that have to be solved together. Written from the specific vantage point of the Kenyan mobile-money environment, where the question matters most operationally.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="article">
+      <div class="article-body">
+
+        <p class="lede">The Lab's <a href="finance.html">finance programme</a> is organised around a specific diagnostic: African mobile-money markets have delivered real inclusion at the account layer while reproducing closed-loop patterns at the infrastructure layer. This entry develops the companion constructive argument — what a durable fix would actually require — in enough technical and institutional detail that a practitioner can evaluate the question on its own terms, without endorsing any specific vendor's product or protocol.</p>
+
+        <div class="section-head first">
+          <span class="num">§ 1</span>
+          <h2>What interoperability actually means in this context</h2>
+        </div>
+
+        <p>"Interoperability" is one of the most-abused words in financial-inclusion discourse. It is used to mean, at different times: bilateral bridges between two specific payment networks; real-time gross settlement between retail banks; standardised QR codes that multiple wallets can read; APIs that multiple developers can build against; cross-border remittance corridors; and dozens of other distinguishable capabilities. The Lab's use of the term is deliberately narrower.</p>
+
+        <p>By <strong>payment-rail interoperability</strong> we mean: the property that a user of any given payment network can receive payments from — and initiate payments to — a user of any other payment network, without either user's primary network operator having to negotiate a bilateral integration with every counterparty network, and without either user having to hold secondary accounts on multiple networks. The user's relationship with their primary network (their mobile-money wallet, their bank account, their neobank) is preserved; what changes is that the relationship becomes reachable from outside without loss of fidelity.</p>
+
+        <p>The definition has two specific entailments worth drawing out.</p>
+
+        <p><strong>Entailment one: interoperability is an addressability question as much as a settlement question.</strong> The settlement mechanics — how value actually moves between networks — are well-studied and adequately solved by several existing approaches. The under-studied part is how the receiver of a payment is <em>addressable</em> to a sender on another network without exposing either the receiver's underlying account credentials or requiring bilateral identifier-exchange arrangements between the networks.</p>
+
+        <p><strong>Entailment two: interoperability in this sense is layered above existing networks, not a replacement for them.</strong> A serious interoperability proposal preserves the user's primary network relationship intact. The interoperability layer provides cross-network addressability; the underlying networks continue to carry the value. This design posture is politically realistic (incumbent networks are not going to be replaced) and technically correct (the incumbents have real operational capability that a greenfield alternative would take years to reproduce).</p>
+
+        <div class="section-head">
+          <span class="num">§ 2</span>
+          <h2>The four design requirements</h2>
+        </div>
+
+        <p>A durable interoperability layer for the Kenyan mobile-money context has to satisfy, in the Lab's reading, four distinct design requirements. Each is necessary; none is sufficient on its own.</p>
+
+        <ol class="numbered-list">
+          <li><div>
+            <h4>Addressable endpoints without account-credential exposure</h4>
+            <p>The user must be reachable by a portable identifier — analogous to an email address — that resolves to the user's primary account without exposing that account's underlying credentials to the sender. The identifier should be cheap to create, easy to share, and revocable by the user. The underlying technical primitives are mature; the design choices that matter are those around governance, naming, and the relationship between the identifier namespace and the existing mobile-money numbering scheme.</p>
+          </div></li>
+          <li><div>
+            <h4>Scoped, revocable, fine-grained authorisation</h4>
+            <p>A user must be able to authorise a specific counterparty to initiate a specific class of payment — "debit up to KES 460 per day, for 24 months, against this asset-finance contract reference, with automatic reminder on non-payment" — without granting that counterparty broader access to her account. The authorisation must be revocable by the user at any time, independent of the counterparty's cooperation, and auditable by the user through her own interface.</p>
+          </div></li>
+          <li><div>
+            <h4>Low-bandwidth, feature-phone-compatible integration</h4>
+            <p>The majority of users for whom interoperability matters most transact from feature phones via USSD sessions, not from smartphones with web clients. The interoperability layer has to meet them there. This is a specification-level requirement, not an afterthought — it determines which authorisation flows, which addressing schemes, and which settlement confirmations can actually be exposed to the users whose inclusion is most at stake.</p>
+          </div></li>
+          <li><div>
+            <h4>Regulatory compatibility with the existing payment-systems framework</h4>
+            <p>An interoperability layer that cannot be operated inside the existing regulatory perimeter is a specification, not infrastructure. The Kenyan National Payment Systems Act, the CBK Payment Systems Regulations, the Digital Credit Regulations, and the Data Protection Act together define the regulatory envelope; an interoperability proposal has to fit inside it. The Lab's <a href="policy.html">regulatory-frameworks</a> reading develops this in detail.</p>
+          </div></li>
+        </ol>
+
+        <p>The four requirements are relatively easy to state in the abstract and surprisingly difficult to meet simultaneously in concrete implementations. Most of the research programme is concerned with exactly that — testing design choices against all four requirements at once and documenting where the gaps are.</p>
+
+        <div class="section-head">
+          <span class="num">§ 3</span>
+          <h2>The closed-loop architectures, read against the requirements</h2>
+        </div>
+
+        <p>A useful exercise is to read the four <a href="architectures.html">financing architectures</a> operating in Kenya against the four design requirements above. The exercise makes concrete what the closed-loop problem actually costs.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Requirement</th><th>PAYGO</th><th>Ride-to-Own</th><th>BaaS</th><th>Concessional</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Addressable endpoints</strong></td><td>No — operator-internal identifier only</td><td>No — contract reference internal</td><td>No — rider credential operator-bound</td><td>N/A — wholesale layer</td></tr>
+              <tr><td><strong>Scoped authorisation</strong></td><td>Partial — direct-debit only</td><td>Partial — direct-debit with limits</td><td>No — per-swap interactive only</td><td>N/A</td></tr>
+              <tr><td><strong>USSD/feature-phone compat.</strong></td><td>Yes — via USSD initiation</td><td>Yes — via USSD initiation</td><td>Partial — interactive at station</td><td>N/A</td></tr>
+              <tr><td><strong>Regulatory compatibility</strong></td><td>Yes — licensed under DCR</td><td>Yes — licensed under DCR</td><td>Yes — till-number regime</td><td>Yes — financial-institution licensed</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The table makes the pattern visible. The existing architectures score well on USSD compatibility and regulatory compatibility — they have to, to operate — and poorly on addressable endpoints and scoped authorisation. The gaps are exactly the gaps that an interoperability layer could close.</p>
+
+        <div class="section-head">
+          <span class="num">§ 4</span>
+          <h2>What a minimum-viable interoperability layer looks like</h2>
+        </div>
+
+        <p>The Lab's view — developed through design work and refined in fieldwork — is that a minimum-viable interoperability layer for the Kenyan context consists of four modules. Each is independently useful; together they produce the interoperability outcome the finance programme is organised around.</p>
+
+        <div class="definitions">
+          <div class="definition">
+            <dt><span class="label">Module 01</span>Battery-Swap Adapter</dt>
+            <dd>A settlement and authorisation adapter for battery-swap transactions, implementing the pattern: rider authenticates at a swap station, station client requests a quote against the rider's interoperability identifier, rider approves via a USSD-mediated flow, swap executes. Supports cross-operator use — a rider associated with Operator A can swap at Operator B's station, with inter-operator settlement in the background.</dd>
+          </div>
+          <div class="definition">
+            <dt><span class="label">Module 02</span>Recurring-Payment Primitive</dt>
+            <dd>Authorisation and execution for daily or weekly asset-finance instalments against a specific contract reference. Encodes the grant scope (maximum per period, total term, contract reference, fallback behaviour) in a form that can be verified and revoked by the rider independently of the operator.</dd>
+          </div>
+          <div class="definition">
+            <dt><span class="label">Module 03</span>Portable Service-History Attestation</dt>
+            <dd>A signed, user-controlled attestation of the user's payment history with a specific operator, presentable by the user to a second operator as structured evidence of reliable payment behaviour. The user controls the disclosure; the second operator can verify without needing direct data exchange with the first.</dd>
+          </div>
+          <div class="definition">
+            <dt><span class="label">Module 04</span>USSD Bridge</dt>
+            <dd>A translation layer between interoperability-layer flows (which typically assume modern web clients) and feature-phone USSD sessions. Implements the USSD-mediated authorisation pattern, with Africa's Talking as the default USSD carrier and compatibility with the other major regional USSD aggregators.</dd>
+          </div>
+        </div>
+
+        <p>Each module is designed to be independently useful and independently testable. The Lab's pilot work tests the modules in isolation before exercising them in combination, to ensure that the empirical evaluation of interoperability is not entangled with the specific integration design.</p>
+
+        <div class="section-head">
+          <span class="num">§ 5</span>
+          <h2>The deployment posture</h2>
+        </div>
+
+        <p>A durable interoperability layer is only useful if it actually gets deployed. The Lab's view on deployment, informed by direct conversations with Kenyan fintech developers and with operators in the four financing architectures, is that <strong>adoption will proceed, if it proceeds at all, not by displacing existing stacks but by layering above them</strong>.</p>
+
+        <p>The concrete shape of that layering, for the Kenyan case, is: mobile-money accounts remain the primary user-facing relationship; interoperability identifiers are added as secondary addressability on top of existing mobile-money accounts; operators (PAYGO financiers, BaaS networks, ride-to-own financiers) add interoperability endpoints to their existing stacks without displacing their Daraja integrations; inter-operator flows and cross-border flows are routed through the interoperability layer; domestic in-network flows continue to route through existing mobile-money channels.</p>
+
+        <p>This is a conservative deployment posture. It is the right one. It preserves the relationships users already trust; it reduces the switching cost for operators; it concentrates the interoperability layer's distinctive value at the inter-operator and cross-border layers where closed-loop architectures create the most friction.</p>
+
+        <div class="callout">
+          <h4>Working hypothesis</h4>
+          <p>An interoperability layer will reach scale in African mobile-money markets not by replacing closed-loop rails but by providing the shared addressability layer <em>above</em> them that closed-loop architectures, on their own, cannot produce. The Lab's finance programme is organised around testing that hypothesis in a specific operational site (Kenya's boda-boda ecosystem), with enough fidelity that the results are usable beyond that site.</p>
+        </div>
+
+        <div class="section-head">
+          <span class="num">§ 6</span>
+          <h2>A note on protocols</h2>
+        </div>
+
+        <p>Several open-standards proposals and reference implementations exist that address parts of the interoperability requirements outlined above. The Lab does not endorse any single protocol; different proposals address different combinations of the four design requirements, and the sensible practitioner position is to evaluate each against the operational context rather than selecting in advance. The Lab's research engages with the major open-standards families as neutral observers and, where our field evidence suggests specification-level adaptation is needed, contributes that evidence back to the relevant protocol communities through their published channels.</p>
+
+        <p>The Lab's commitment is to the <em>interoperability outcome</em> described in this entry, not to any specific protocol or vendor. If a different protocol configuration turns out to serve the four design requirements better than a Lab-favoured alternative, our research programme will say so openly.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <a href="index.html" class="footer-brand">Transitions Lab</a>
+          <p class="footer-motto">An independent research organisation studying how infrastructure transitions actually happen in emerging markets.</p>
+          <p style="font-size: 0.82rem; color: var(--muted-soft);">Delft · Nairobi · Dutch Caribbean</p>
+        </div>
+        <div class="footer-col">
+          <h5>Research Programmes</h5>
+          <ul>
+            <li><a href="finance.html">Finance & Payment Systems</a></li>
+            <li><a href="electrification.html">Electrification & E-Mobility</a></li>
+            <li><a href="water.html">Water Access Systems</a></li>
+            <li><a href="programmes.html">All programmes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Methods &amp; Deep Dives</h5>
+          <ul>
+            <li><a href="brw.html">The BRW Typology</a></li>
+            <li><a href="architectures.html">Financing Architectures</a></li>
+            <li><a href="interoperability.html">Payment-rail Interoperability</a></li>
+            <li><a href="policy.html">Regulatory Frameworks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>The Lab</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team &amp; Advisors</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="cases.html">Field Cases</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="style-guide.html">Colophon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>© Transitions Lab, 2026.  ·  Independent research, independently typeset.</span>
+        <span>Set in Fraunces &amp; Archivo  ·  Built as a static site, no trackers.</span>
+      </div>
+    </footer>
+    
+</body>
+</html>

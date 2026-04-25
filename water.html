@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Access Systems — Programme · Transitions Lab</title>
+<meta name="description" content="Transitions Lab — research on infrastructure transitions in emerging markets.">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a href="index.html" class="masthead-brand">
+          <span class="dot"></span>
+          <span>Transitions Lab</span>
+          <span class="meta">Est. MMXXVI</span>
+        </a>
+        <button class="masthead-nav-toggle" onclick="document.querySelector('.masthead-nav').classList.toggle('is-open')">Menu</button>
+        <nav class="masthead-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="finance.html">Finance</a>
+        <a href="electrification.html">Electrification</a>
+        <a href="water.html" class="active">Water</a>
+        <a href="brw.html">BRW Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="cases.html">Cases</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-meta">
+      <span>Programme 03 — Active</span>
+      <span>Approx. 13 min read</span>
+      <span class="accent-text">Working document — v1.0</span>
+    </div>
+    <h1>Water Access Systems</h1>
+    <p class="kicker">How vendor-mediated, caretaker-brokered water distribution actually works in Nairobi's informal settlements and peri-urban Kenya — and what the financing and payment lessons from mobile money imply for a sector that still runs largely on cash, local intermediation, and under-documented service histories.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <article class="article">
+      <div class="article-body">
+
+        <p class="lede">Water access is, in the overwhelming majority of low-income urban and peri-urban Kenyan contexts, not a piped-household affair. It is a vendor-mediated affair: water arrives at a community kiosk, is drawn at a borehole, is trucked in by a tanker operator, or is delivered in 20-litre jugs by a network of small-scale vendors who buy in bulk and sell on in micro-increments. The payment layer is predominantly cash, with a growing — but still minority — share moving to mobile-money-mediated settlement. The service-history layer is effectively absent; a household that has bought from the same caretaker for three years has no portable record of that relationship that could be presented to a different vendor, a financier, or an insurer.</p>
+
+        <p>The Lab's water programme takes this reality as the starting point, not as a problem to be displaced by piped-connection idealism. The question is not how to replicate the Western piped-network model in Nairobi; it is what durable improvements look like in the vendor-mediated reality that actually exists.</p>
+
+        <div class="section-head first">
+          <span class="num">§ 1</span>
+          <h2>The structure of vendor-mediated water</h2>
+        </div>
+
+        <p>Four distinct actor categories populate the informal-economy water system in Nairobi and its peri-urban fringes, and their interaction produces the specific pattern the programme studies.</p>
+
+        <p><strong>Source operators.</strong> Boreholes, utility-connected kiosks, rainwater-catchment systems, and tankered-in bulk water. These are the upstream suppliers and typically operate at a scale where mobile-money integration is viable; several borehole operators in Nairobi's informal settlements already accept M-Pesa for bulk purchases.</p>
+
+        <p><strong>Caretakers.</strong> The informal intermediaries who sit between source operators and end consumers. The caretaker is often the gatekeeper of a residential compound, the operator of a local stall, or a small-scale vendor running one or two delivery bicycles. Caretakers collect payments, mediate disputes, and sometimes extend informal credit. The caretaker relationship is the thickest piece of the water-access system from a trust standpoint and the least legible piece from an infrastructure standpoint.</p>
+
+        <p><strong>Delivery operators.</strong> Small-scale vendors — typically operating a bicycle, motorcycle, or small truck — who buy in bulk from source operators and sell on in 20-litre jug increments. Their margins are thin; their utilisation is high; their ability to accept mobile-money payments varies. The Lab's operational platform <em>MiMaji</em> (see below) operates specifically at this delivery layer.</p>
+
+        <p><strong>Households.</strong> The end consumers, paying per jug or per bucket in small increments, most commonly in cash. Households' ability to pay varies day-to-day with income; their willingness to pay varies with trust in the caretaker and delivery operator; their aggregate consumption is reasonably stable over monthly horizons but highly variable day-to-day.</p>
+
+        <p>The system works — in a functional sense — because of the thick trust relationships the caretakers sustain. It fails — in a structural sense — because those trust relationships are not portable, not legible to outside finance, and not accessible to external accountability mechanisms. A caretaker who has reliably served a community for five years has, in effect, built human capital that has no externally-recognised form.</p>
+
+        <div class="section-head">
+          <span class="num">§ 2</span>
+          <h2>Two field operations</h2>
+        </div>
+
+        <p>The Lab's water programme is grounded in two active field operations, each targeting a different segment of the vendor-mediated system and each contributing different research input.</p>
+
+        <div class="definitions">
+          <div class="definition">
+            <dt><span class="label">Nairobi — delivery layer</span>MiMaji (<code>mimaji.co.ke</code>)</dt>
+            <dd>A live consumer-facing 20-litre water-jug delivery platform. Technology stack: Next.js 14 on Vercel, Supabase as data layer, direct M-Pesa Daraja integration for STK-push payments, Africa's Talking for SMS and USSD traffic. Four-person Nairobi-based engineering and field team. MiMaji serves as the Lab's operational exposure to the delivery-layer payment frictions — failed STK pushes, reconciliation lag, caretaker-mediated payment relationships, the gap between an order placed and a payment settled.</dd>
+          </div>
+          <div class="definition">
+            <dt><span class="label">Kitui — source layer</span>MajiMap</dt>
+            <dd>A smart water-point intelligence research project in Kitui County, developed with Dr. Leon Hermans at TU Delft TPM and partners FundiFix, VIRED International, and Water Forever / Maji Milele. Combines Droople iLink LoRa IoT sensors at community water points, QField community GIS mapping, and Africa's Talking USSD/SMS community alert infrastructure. Submitted to the TU Delft FaST Fund Executive Grant Committee in 2026 for a budget of €15,400 (€13,200 requested). MajiMap provides the Lab's exposure to the source-layer operational reality.</dd>
+          </div>
+        </div>
+
+        <p>Together, the two field operations give the Lab direct operational presence at both ends of the vendor-mediated water system, and let us trace the payment flows and service-history gaps that sit between them.</p>
+
+        <div class="section-head">
+          <span class="num">§ 3</span>
+          <h2>The payment-layer reading</h2>
+        </div>
+
+        <p>The water programme's closest analytical connection is to the Lab's <a href="finance.html">finance programme</a>. The payment-layer patterns that the finance programme has documented in the boda-boda asset-finance and battery-swap context reassert themselves, with minor variations, in the water-access case.</p>
+
+        <p><strong>The closed-loop pattern.</strong> Where mobile-money payment is in use at water points, it is typically a closed-loop integration: a specific till number for a specific source operator, a specific M-Pesa pay-bill for a specific delivery service. Cross-operator portability is absent. A household that has established a reliable payment history with one delivery operator has no way to present that history to a second.</p>
+
+        <p><strong>The payment-history opacity.</strong> Delivery operators and caretakers hold, in their own informal records, rich information about which households pay reliably, which consume most, which request service most often. This information is not legible to external finance, which means a reliable-paying household cannot be extended credit on the basis of its water-payment history, and a high-volume household cannot easily become a service-provider herself without rebuilding a customer relationship from scratch.</p>
+
+        <p><strong>The cross-layer gap.</strong> The source layer (borehole operator), delivery layer (jug vendor), and consumption layer (household) do not share a settlement layer. A payment from a household to a delivery operator, and a payment from that delivery operator to a source operator, are two separate events that have to be reconciled by each actor independently.</p>
+
+        <p>The Lab's research hypothesis is that the same interoperability primitives the finance programme is developing — addressable payment endpoints, portable service-history attestations, fine-grained settlement between parties — translate cleanly into the water-access context, and that a water-programme pilot is a natural next extension of the finance programme's 2026–2027 toolkit.</p>
+
+        <div class="section-head">
+          <span class="num">§ 4</span>
+          <h2>Infrastructure questions</h2>
+        </div>
+
+        <p>The programme takes the payment layer seriously because that is where the finance-programme lens cuts cleanly. It also takes three specific infrastructure questions seriously, each of which is distinctive to the water case.</p>
+
+        <p><strong>Water-quality monitoring at the community level.</strong> Water access that is not drinkable is not access. MajiMap's sensor layer includes basic water-quality monitoring (turbidity, pH, bacterial indicators) at community water points; the data feed, integrated with USSD-based community alerts, lets users and caretakers know in near-real-time when a source is unsafe. The infrastructure question is how to extend this from a research-grade sensor network to a production-grade community-governance tool.</p>
+
+        <p><strong>Smart-meter economics at scale.</strong> Smart water metering at household-connected scale has well-studied economics. Smart metering at the community-water-point level, serving a shared population of hundreds of households per point, is a substantially less studied problem. The Lab's MajiMap work contributes direct empirical observation to this question.</p>
+
+        <p><strong>Community governance and caretaker accountability.</strong> The caretaker layer is the thickest trust-bearing layer in the system, and any infrastructure intervention that weakens it without providing an adequate substitute will fail. The water programme's approach is to treat caretakers as co-designers of digital infrastructure interventions rather than as targets of displacement. The BRW lens, applied here, favours <em>repurpose</em> strategies (digitally augmenting the caretaker's role) over <em>bypass</em> strategies (replacing the caretaker with a direct digital channel) in most contexts.</p>
+
+        <div class="section-head">
+          <span class="num">§ 5</span>
+          <h2>What the water programme will produce</h2>
+        </div>
+
+        <p>Three concrete outputs are scheduled for the 2026–2027 cycle.</p>
+
+        <p><strong>The MajiMap Kitui pilot</strong>, subject to TU Delft FaST Fund approval, deploying IoT sensors at community water points, community GIS mapping, and USSD alert infrastructure across an initial deployment district. Baseline and endline measurement on water-point uptime, water-quality event response time, and community payment behaviour.</p>
+
+        <p><strong>A payment-layer integration</strong> between the Lab's finance-programme toolkit and the water-vendor payment flows, piloted at MiMaji's delivery scale. The integration tests whether the addressable-endpoint and portable-service-history primitives translate cleanly from the boda-boda context into water, which is a first-order research question for the Lab's cross-programme methodology.</p>
+
+        <p><strong>A policy brief</strong> for Kenyan water-sector regulators on what an interoperability-aware approach to informal-settlement water governance would look like in practice. Complements the Lab's <a href="policy.html">payments-regulation reading</a> from an adjacent-sector angle.</p>
+
+        <div class="callout">
+          <h4>On the operational separation</h4>
+          <p>MiMaji is a commercial venture and MajiMap is a research project; the Lab maintains a firm separation between the two. Research funding does not subsidise MiMaji's operational costs; commercial revenue from MiMaji does not direct or fund the Lab's research output. The distinction is preserved deliberately to ensure that research findings about the water-access system are not influenced by MiMaji's commercial trajectory.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <a href="index.html" class="footer-brand">Transitions Lab</a>
+          <p class="footer-motto">An independent research organisation studying how infrastructure transitions actually happen in emerging markets.</p>
+          <p style="font-size: 0.82rem; color: var(--muted-soft);">Delft · Nairobi · Dutch Caribbean</p>
+        </div>
+        <div class="footer-col">
+          <h5>Research Programmes</h5>
+          <ul>
+            <li><a href="finance.html">Finance & Payment Systems</a></li>
+            <li><a href="electrification.html">Electrification & E-Mobility</a></li>
+            <li><a href="water.html">Water Access Systems</a></li>
+            <li><a href="programmes.html">All programmes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Methods &amp; Deep Dives</h5>
+          <ul>
+            <li><a href="brw.html">The BRW Typology</a></li>
+            <li><a href="architectures.html">Financing Architectures</a></li>
+            <li><a href="interoperability.html">Payment-rail Interoperability</a></li>
+            <li><a href="policy.html">Regulatory Frameworks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>The Lab</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team &amp; Advisors</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="cases.html">Field Cases</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="style-guide.html">Colophon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>© Transitions Lab, 2026.  ·  Independent research, independently typeset.</span>
+        <span>Set in Fraunces &amp; Archivo  ·  Built as a static site, no trackers.</span>
+      </div>
+    </footer>
+    
+</body>
+</html>

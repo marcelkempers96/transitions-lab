@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulatory Frameworks · Transitions Lab</title>
+<meta name="description" content="Transitions Lab — research on infrastructure transitions in emerging markets.">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a href="index.html" class="masthead-brand">
+          <span class="dot"></span>
+          <span>Transitions Lab</span>
+          <span class="meta">Est. MMXXVI</span>
+        </a>
+        <button class="masthead-nav-toggle" onclick="document.querySelector('.masthead-nav').classList.toggle('is-open')">Menu</button>
+        <nav class="masthead-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="finance.html">Finance</a>
+        <a href="electrification.html">Electrification</a>
+        <a href="water.html">Water</a>
+        <a href="brw.html">BRW Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="cases.html">Cases</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-meta">
+      <span>Policy Analysis</span>
+      <span>Approx. 13 min read</span>
+      <span class="accent-text">Working document — v1.1</span>
+    </div>
+    <h1>Regulatory Frameworks for Payment &amp; Electrification Innovation in Kenya</h1>
+    <p class="kicker">An operator's-eye reading of the four regulatory instruments that shape the Lab's research terrain in Kenya — the National Payment Systems Act, the Digital Credit Regulations, the Data Protection Act, and the National Electric Mobility Policy — and how their interaction produces a specific envelope of policy-constrained possibility.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="article">
+      <div class="article-body">
+
+        <p class="lede">Kenya's regulatory environment for digital financial innovation is widely (and correctly) regarded as one of the most enabling in Africa. The environment for electrification-related finance has become similarly substantive in the past two years. The Lab reads four specific instruments as the load-bearing elements of the policy terrain. They are taken in turn here.</p>
+
+        <div class="section-head first">
+          <span class="num">§ 1</span>
+          <h2>The National Payment Systems Act, 2011</h2>
+        </div>
+
+        <p>The foundational instrument. The NPS Act establishes the Central Bank of Kenya's authority over payment systems and payment-service providers, defines licensing categories, and — crucially for the Lab's programme — provides the legal basis under which the mobile-money operators (Safaricom's M-Pesa, Airtel Money) and their aggregator counterparts operate.</p>
+
+        <p>The relevant operational fact for the research programme is that the NPS Act and the CBK Payment Systems Regulations that implement it provide a reasonably well-defined pathway for novel payment-service providers to engage the regulator. The CBK Fintech Office has, since its establishment, operated an active regulatory-sandbox pathway that permits pilot deployments of new payment architectures under time-limited, conditions-bounded authorisation. The Lab's finance programme treats sandbox engagement as a first-class component of any pilot that would operate commercially at scale.</p>
+
+        <p>What the NPS Act does <em>not</em> currently address — and where the Lab's policy reading identifies a specific research gap — is the treatment of non-bank cross-network payment facilitation by actors who are not themselves mobile-money operators. An interoperability-layer operator would, in the current framework, be treated either as a payment-service provider in its own right (a relatively heavy regulatory burden) or as an aggregator (a lighter burden but with specific restrictions on direct user relationships). Neither treatment maps cleanly onto what an interoperability-layer operator actually does. The Lab's engagement with the CBK Fintech Office includes flagging this specific gap.</p>
+
+        <div class="section-head">
+          <span class="num">§ 2</span>
+          <h2>The Digital Credit Regulations, 2022</h2>
+        </div>
+
+        <p>The Digital Credit Regulations (DCR), operational since 2022, brought previously unregulated digital-lending providers under direct CBK supervision. The regulations address a real problem — the predatory-lending practices that proliferated in the unregulated digital-credit space — and impose substantive requirements on licensed digital credit providers (DCPs), including interest-rate disclosure, complaint-handling procedures, and consumer-protection standards.</p>
+
+        <p>For the Lab's <a href="architectures.html">architectures analysis</a>, the DCR matters because it sets the regulatory floor on which PAYGO and ride-to-own asset-finance products operate. PAYGO financiers in Kenya operate as licensed DCPs; ride-to-own financiers typically as microfinance institutions or non-deposit-taking credit providers. Each licensing category imposes different compliance requirements and permits different product structures.</p>
+
+        <p>A live research question, pursued through the Lab's <a href="finance.html">finance programme</a>, is whether interoperability-layer authorisation grants fall within DCR's remit or outside it. Scoped, revocable, fine-grained authorisation for recurring asset-finance instalments is not, in any straightforward reading, "digital credit provision" — but it is also not obviously outside the DCR's perimeter. Clarifying the boundary is one of the policy-engagement outputs the finance programme expects to produce.</p>
+
+        <div class="section-head">
+          <span class="num">§ 3</span>
+          <h2>The Data Protection Act, 2019</h2>
+        </div>
+
+        <p>Kenya's DPA, closely patterned on the EU's GDPR, is the legislative framework governing personal-data processing by operators in the financial-inclusion space. Its key operational constraints for the Lab's research programme and for any deployed pilot include lawful-basis requirements for data processing, data-minimisation obligations, cross-border-transfer restrictions, and the rights of data subjects (access, rectification, erasure, portability) that any operator must honour.</p>
+
+        <p>For research fieldwork, the DPA together with GDPR (which applies to the Lab's EU-based data handling) is operationalised through the HREC-approved research protocol that specifies consent procedures, anonymisation and pseudonymisation of collected data, cross-border transfer safeguards, and data-subject-rights honouring. The protocol was reviewed and revised during 2025–26 to strengthen its treatment of consent for non-interview data types and to align cross-border data handling with both the Kenyan and EU regimes. A consolidated ICF (Informed Consent Form) was produced as part of the revision process.</p>
+
+        <p>For deployment, the DPA and GDPR together produce a specific constraint on interoperability-layer design: the layer must not, through its operation, create a data-processing relationship that either regime would treat as unlawful or inadequately justified. The layer's design posture — in which the user controls disclosure of her own obligation identifiers, and in which payment counterparties see only the specific authorised scope — is a direct response to this constraint. Compliance is not an afterthought; it shapes the design.</p>
+
+        <div class="section-head">
+          <span class="num">§ 4</span>
+          <h2>The National Electric Mobility Policy, 2026</h2>
+        </div>
+
+        <p>The newest instrument in the Lab's policy terrain. Published in February 2026 by the Ministry of Roads and Transport, the National Electric Mobility Policy (NEMP) is Kenya's first comprehensive policy framework for electric-vehicle transition. It names targets for EV uptake, sets out infrastructure-development priorities, specifies tax-incentive regimes, and — most relevantly for the Lab's <a href="electrification.html">electrification programme</a> — addresses the financing architecture of the transition.</p>
+
+        <p>Three NEMP provisions are particularly consequential for the Lab's reading.</p>
+
+        <p><strong>First</strong>, the policy explicitly names interoperability of charging and swap infrastructure as a policy priority. It does not, at the current level of specification, prescribe standards; it names the outcome and leaves the mechanism to subsequent regulation. The Lab's research on battery-swap interoperability (see the <a href="electrification.html">electrification programme</a> and the <a href="interoperability.html">interoperability deep-dive</a>) is directly responsive to this provision.</p>
+
+        <p><strong>Second</strong>, the policy recognises the specific financing-architecture innovations that have grown up in the Kenyan market — PAYGO, ride-to-own, BaaS — and signals regulatory acceptance of their operation in the EV context. This is a light-touch provision but a consequential one; it reduces the regulatory uncertainty that might otherwise have complicated the operators' balance-sheet planning.</p>
+
+        <p><strong>Third</strong>, the policy commits (at the level of intention, with implementation details deferred) to regulatory support for diaspora engagement in the EV transition. The provision is under-specified in the policy as published; the Lab's <a href="diaspora.html">diaspora brief</a> develops what a substantive implementation of this provision would look like.</p>
+
+        <div class="section-head">
+          <span class="num">§ 5</span>
+          <h2>How the four instruments interact</h2>
+        </div>
+
+        <p>Read individually, each instrument is substantively well-developed. Read together, the four instruments produce a specific envelope of policy-constrained possibility that has distinctive features worth naming.</p>
+
+        <p><strong>The sandbox is real but narrow.</strong> The CBK Fintech Office sandbox provides a real pathway for pilot deployment of novel payment architectures, but its scope is explicitly limited and the typical sandbox authorisation runs for six to twelve months with specific conditions on user numbers, transaction volumes, and data handling. Research-grade pilots (the Lab's target scale — 100–200 users, 10,000+ transactions) fit within the sandbox envelope comfortably; commercial scale-up requires graduating out of sandbox into full licensing.</p>
+
+        <p><strong>The data regime is a constraint, not an obstacle.</strong> The DPA/GDPR overlap creates real compliance overhead but does not, in the Lab's reading, foreclose any of the research or deployment activities the finance and water programmes pursue. The specific design-posture choices that honour data-subject rights (scoped authorisation, user-controlled disclosure, minimal data retention) are in any case the same design choices that produce a durable interoperability outcome.</p>
+
+        <p><strong>The NEMP opens a window.</strong> The February 2026 publication of the NEMP creates a short-to-medium-term window in which research inputs to the subsequent implementing regulations are welcomed. The Lab's policy-engagement plan treats this window as a high-priority opportunity and is preparing structured policy briefs for the relevant regulatory actors.</p>
+
+        <p><strong>Cross-instrument gaps exist.</strong> The single most consequential gap, from the Lab's vantage point, is the unclear regulatory treatment of interoperability-layer operators under the NPS Act and DCR. Clarifying that treatment — through either regulator-issued guidance or amendments to the implementing regulations — is on the policy engagement agenda for 2026–27.</p>
+
+        <div class="callout">
+          <h4>The Lab's policy-engagement posture</h4>
+          <p>The Lab engages Kenyan regulatory actors as a research interlocutor rather than as a lobbyist. Our policy inputs are grounded in primary fieldwork and in the public research programme documented on this site; they do not represent the interests of any specific commercial actor, and they are published openly after submission. We welcome reciprocal engagement from regulatory bodies and are available through <a href="contact.html">contact</a>.</p>
+        </div>
+
+        <div class="footnotes">
+          <h4>Notes &amp; sources</h4>
+          <ol>
+            <li>National Payment Systems Act, 2011; CBK Payment Systems Regulations, 2014 and subsequent amendments.</li>
+            <li>Digital Credit Regulations, 2022, published by the Central Bank of Kenya.</li>
+            <li>Data Protection Act, 2019, and subsequent Office of the Data Protection Commissioner guidance.</li>
+            <li>National Electric Mobility Policy, Ministry of Roads and Transport, February 2026.</li>
+            <li>HREC protocol revisions and ICF updates: TU Delft Human Research Ethics Committee, 2025–26.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <a href="index.html" class="footer-brand">Transitions Lab</a>
+          <p class="footer-motto">An independent research organisation studying how infrastructure transitions actually happen in emerging markets.</p>
+          <p style="font-size: 0.82rem; color: var(--muted-soft);">Delft · Nairobi · Dutch Caribbean</p>
+        </div>
+        <div class="footer-col">
+          <h5>Research Programmes</h5>
+          <ul>
+            <li><a href="finance.html">Finance & Payment Systems</a></li>
+            <li><a href="electrification.html">Electrification & E-Mobility</a></li>
+            <li><a href="water.html">Water Access Systems</a></li>
+            <li><a href="programmes.html">All programmes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Methods &amp; Deep Dives</h5>
+          <ul>
+            <li><a href="brw.html">The BRW Typology</a></li>
+            <li><a href="architectures.html">Financing Architectures</a></li>
+            <li><a href="interoperability.html">Payment-rail Interoperability</a></li>
+            <li><a href="policy.html">Regulatory Frameworks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>The Lab</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team &amp; Advisors</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="cases.html">Field Cases</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="style-guide.html">Colophon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="colophon">
+        <span>© Transitions Lab, 2026.  ·  Independent research, independently typeset.</span>
+        <span>Set in Fraunces &amp; Archivo  ·  Built as a static site, no trackers.</span>
+      </div>
+    </footer>
+    
+</body>
+</html>
