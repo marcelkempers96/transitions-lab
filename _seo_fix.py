@@ -27,72 +27,72 @@ PAGES: dict[str, dict[str, str]] = {
     "about.html": {
         "title": "About · Transitions Lab",
         "description": "About Transitions Lab — an independent research organisation on infrastructure transitions in emerging markets, with bases in Delft, Nairobi, and the Dutch Caribbean.",
-        "canonical": f"{SITE}/about.html",
+        "canonical": f"{SITE}/about",
     },
     "programmes.html": {
         "title": "Programmes · Transitions Lab",
         "description": "Three active research programmes at Transitions Lab — finance and payment systems, electrification and e-mobility, and water access systems — and the cross-programme BRW methodology.",
-        "canonical": f"{SITE}/programmes.html",
+        "canonical": f"{SITE}/programmes",
     },
     "finance.html": {
         "title": "Finance & Payment Systems — Programme · Transitions Lab",
         "description": "Why payment-rail lock-in is the most important under-discussed problem in digital financial inclusion, and what durable interoperability at the payment layer would require.",
-        "canonical": f"{SITE}/finance.html",
+        "canonical": f"{SITE}/finance",
     },
     "electrification.html": {
         "title": "Electrification & E-Mobility — Programme · Transitions Lab",
         "description": "How electric two-wheelers are actually crossing the affordability threshold in Kenya — financing architectures, BRW strategies, and what the transition tells us about emerging-market infrastructure change.",
-        "canonical": f"{SITE}/electrification.html",
+        "canonical": f"{SITE}/electrification",
     },
     "water.html": {
         "title": "Water Access Systems — Programme · Transitions Lab",
         "description": "Vendor-mediated, caretaker-brokered water distribution in Nairobi and peri-urban Kenya — and what the payment-layer lessons from mobile money imply for the sector.",
-        "canonical": f"{SITE}/water.html",
+        "canonical": f"{SITE}/water",
     },
     "brw.html": {
         "title": "The BRW Typology — Methodology · Transitions Lab",
         "description": "Bypass · Repurpose · Weaken — a three-strategy framework for reading how new infrastructure systems navigate entrenched legacy regimes. The Lab's signature analytical contribution.",
-        "canonical": f"{SITE}/brw.html",
+        "canonical": f"{SITE}/brw",
     },
     "architectures.html": {
         "title": "The Four Financing Architectures · Transitions Lab",
         "description": "Pay-as-you-go, ride-to-own, battery-as-a-service, and concessional climate finance — the four distinct architectures in African e-mobility and what each reveals about the payment layer beneath.",
-        "canonical": f"{SITE}/architectures.html",
+        "canonical": f"{SITE}/architectures",
     },
     "interoperability.html": {
         "title": "Payment-rail Interoperability · Transitions Lab",
         "description": "What durable interoperability between payment rails would actually require — across infrastructure, product, policy, and community dimensions, written from the Kenyan mobile-money context.",
-        "canonical": f"{SITE}/interoperability.html",
+        "canonical": f"{SITE}/interoperability",
     },
     "policy.html": {
         "title": "Regulatory Frameworks · Transitions Lab",
         "description": "An operator's-eye reading of the four regulatory instruments shaping the Lab's research terrain in Kenya — the NPS Act, Digital Credit Regulations, Data Protection Act, and National Electric Mobility Policy.",
-        "canonical": f"{SITE}/policy.html",
+        "canonical": f"{SITE}/policy",
     },
     "diaspora.html": {
         "title": "Diaspora Remittance as Infrastructure · Transitions Lab",
         "description": "Kenya received USD 4.9 billion in diaspora remittances in 2024. What would it mean to route a meaningful share of that flow directly into specific obligations rather than general-purpose cash?",
-        "canonical": f"{SITE}/diaspora.html",
+        "canonical": f"{SITE}/diaspora",
     },
     "articles.html": {
         "title": "Articles & Working Papers · Transitions Lab",
         "description": "Long-form articles, research briefs, field notes, and working papers from Transitions Lab — published openly, versioned, and indexed.",
-        "canonical": f"{SITE}/articles.html",
+        "canonical": f"{SITE}/articles",
     },
     "cases.html": {
         "title": "Field Cases · Transitions Lab",
         "description": "Field cases — ROAM Electric, MiMaji, and the Nairobi boda-boda economy — that ground the Lab's empirical research across the finance, electrification, and water programmes.",
-        "canonical": f"{SITE}/cases.html",
+        "canonical": f"{SITE}/cases",
     },
     "team.html": {
         "title": "Team & Advisors · Transitions Lab",
         "description": "Team and academic advisors at Transitions Lab — principal researcher Marcel Kempers, supervisors at TU Delft TPM, and the operational and institutional partner network.",
-        "canonical": f"{SITE}/team.html",
+        "canonical": f"{SITE}/team",
     },
     "contact.html": {
         "title": "Contact · Transitions Lab",
         "description": "Contact Transitions Lab — research correspondence, partnerships, funder enquiries, and media. Substantive enquiries are handled personally by the principal researcher.",
-        "canonical": f"{SITE}/contact.html",
+        "canonical": f"{SITE}/contact",
     },
 }
 
