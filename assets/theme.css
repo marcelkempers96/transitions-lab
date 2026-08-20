@@ -21,6 +21,10 @@
   --cobalt:#1F3F7A;
   --plum:#3C2549;
 
+  /* Official EU flag colours (Reflex Blue + PMS Yellow) */
+  --euro-blue:#003399;
+  --euro-gold:#FFCC00;
+
   /* Legacy aliases kept so interior pages keep rendering. */
   --on-light:#0A0A0A;
   --on-light-soft:#0A0A0A;
@@ -115,8 +119,17 @@ header.site{
   padding:8px 0;min-width:250px;display:flex;flex-direction:column;gap:0;
   box-shadow:6px 6px 0 var(--ink);z-index:60;
 }
-.nav .nav-dropdown a{padding:12px 22px;white-space:nowrap;font-size:15px;color:var(--ink);text-decoration:none;font-weight:500;}
+.nav .nav-dropdown a{padding:12px 22px;white-space:nowrap;font-size:15px;color:var(--ink);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:9px;}
 .nav .nav-dropdown a:hover,.nav .nav-dropdown a.current{background:var(--butter);font-weight:700;}
+/* Small country/programme flag adornment inside a nav dropdown link */
+.nav .nav-flag{
+  height:12px;width:18px;display:inline-block;flex:none;
+  border:1px solid var(--ink);object-fit:cover;
+}
+/* When the current page is the European Impact Tracking one, tint the
+   nav-label of that link (and the Services group header) European blue. */
+a[href="/european-impact-tracking"]{color:var(--euro-blue);}
+a[href="/european-impact-tracking"].current{color:var(--euro-blue);font-weight:800;}
 
 /* ── Buttons ──────────────────────────────────────────────── */
 .btn{
@@ -341,6 +354,40 @@ section + section{border-top:2px solid var(--ink);}
 
 /* Placeholder marker inside prose or metrics */
 .ph{color:var(--orange);}
+
+/* European-blue skin for the European Impact Tracking page.
+   Body carries data-page="european-impact-tracking" (set by build.py). */
+body[data-page="european-impact-tracking"] .page-hero{background:var(--paper);}
+body[data-page="european-impact-tracking"] .page-hero .eyebrow{color:var(--euro-blue);}
+body[data-page="european-impact-tracking"] .page-hero h1{color:var(--euro-blue);}
+body[data-page="european-impact-tracking"] .prose h2{color:var(--euro-blue);}
+body[data-page="european-impact-tracking"] .prose .prose-eyebrow{color:var(--euro-blue);}
+body[data-page="european-impact-tracking"] .prose a{color:var(--euro-blue);}
+body[data-page="european-impact-tracking"] .prose a:hover{background:var(--euro-gold);color:var(--euro-blue);}
+body[data-page="european-impact-tracking"] header.site{border-bottom:2px solid var(--euro-blue);}
+body[data-page="european-impact-tracking"] .nav nav > a,
+body[data-page="european-impact-tracking"] .nav details.nav-group summary.nav-label{color:var(--euro-blue);}
+body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
+
+/* EU flag hero card — a bordered block on the european-impact-tracking page */
+.eu-flag-card{
+  border:3px solid var(--euro-blue);background:var(--white);
+  padding:0;display:flex;align-items:stretch;gap:0;
+  margin:2em 0 2.4em;box-shadow:6px 6px 0 var(--euro-blue);
+}
+.eu-flag-card img{
+  width:220px;height:auto;flex:none;display:block;
+  border-right:3px solid var(--euro-blue);object-fit:cover;
+}
+.eu-flag-card .txt{
+  padding:22px 26px;display:flex;flex-direction:column;justify-content:center;gap:6px;
+}
+.eu-flag-card .txt strong{color:var(--euro-blue);font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
+.eu-flag-card .txt span{color:var(--ink);font-size:15px;font-weight:500;line-height:1.45;}
+@media(max-width:640px){
+  .eu-flag-card{flex-direction:column;box-shadow:4px 4px 0 var(--euro-blue);}
+  .eu-flag-card img{width:100%;height:120px;border-right:0;border-bottom:3px solid var(--euro-blue);}
+}
 
 /* Numbered stage blocks (used on /how-it-works). Big orange numeral,
    eyebrow, headline, body, and a hairline "related links" row. */

@@ -110,7 +110,14 @@ def render_nav(current_slug: str) -> str:
             out.append(f'    <div class="nav-dropdown">')
             for slug, label in item["dropdown"]:
                 child_current = ' class="current"' if slug == current_slug else ""
-                out.append(f'      <a href="/{slug}"{child_current}>{label}</a>')
+                # Small country/flag adornment for specific nav entries.
+                label_html = label
+                if slug == "european-impact-tracking":
+                    label_html = (
+                        f'<img src="/assets/img/eu-flag-small.jpg" alt="" '
+                        f'class="nav-flag" aria-hidden="true">{label}'
+                    )
+                out.append(f'      <a href="/{slug}"{child_current}>{label_html}</a>')
             out.append(f'    </div>')
             out.append(f'  </details>')
         elif item.get("cta"):
@@ -739,7 +746,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 <link rel="stylesheet" href="/assets/theme.css?v={ASSET_CSS_V}">
 {extra_head}
 </head>
-<body>
+<body data-page="{slug}">
 
 <header class="site">
   <div class="wrap nav">

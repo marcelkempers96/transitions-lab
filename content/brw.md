@@ -4,11 +4,6 @@
 
 *Bypass, Repurpose, Weaken: a mechanism-based typology of the strategies a niche actor uses to engage an entrenched regime, classified by how each strategy acts on a specific lock-in barrier.*
 
-<figure>
-  <img src="/assets/img/brw-schematic.jpg" alt="BRW schematic: three panels showing Bypass (a rider routing around a petrol station to a battery-swap point), Repurpose (a shuttered petrol station converted into a service node offering air, water, and digital services), and Weaken (arrows circling a petrol station whose pumps are being crossed out)." class="diagram">
-  <figcaption>The three BRW mechanisms — <strong>bypass</strong>, <strong>repurpose</strong>, and <strong>weaken</strong> — sit along a barrier-characteristics spectrum. Bypass matches hard, material, high-coordination barriers; weaken matches soft, discursive ones; repurpose occupies the intermediate ground where existing regime structure can be redirected.</figcaption>
-</figure>
-
 Every niche technology arrives into a world already run by an incumbent regime: an aligned configuration of technologies, infrastructures, institutions, habits, and expectations that resists change. How a niche actor engages that regime, barrier by barrier, largely determines whether it succeeds and for whom.
 
 The BRW framework is the Lab's way of reading that engagement. Unlike typologies that classify a strategy by its ambition relative to the regime as a whole, BRW classifies each strategy by its **functional mechanism**: what it actually does to a particular lock-in barrier. This shift in the unit of analysis, from the niche-regime relationship to the strategy-barrier relationship, is what makes the framework precise, because a single niche actor routinely deploys different mechanisms against different barriers within the same regime.
@@ -45,6 +40,11 @@ A typology of strategies is only useful alongside a typology of the barriers the
 - **Regime coherence** (context modifier), whether the regime is actively defended by an aligned incumbent coalition, or persists through inertia and absence.
 
 The framework's central proposition is a strategy-barrier alignment: **bypass** matches hard, high-materiality, high-coordination barriers; **weaken** matches soft, low-materiality barriers; and **repurpose** occupies the intermediate ground where existing regime structure can be redirected. Misalignment predicts observable failure modes.
+
+<figure>
+  <img src="/assets/img/brw-schematic.jpg" alt="BRW schematic: three panels showing Bypass (a rider routing around a petrol station to a battery-swap point), Repurpose (a shuttered petrol station converted into a service node offering air, water, and digital services), and Weaken (arrows circling a petrol station whose pumps are being crossed out)." class="diagram">
+  <figcaption>The three BRW mechanisms &mdash; <strong>bypass</strong>, <strong>repurpose</strong>, and <strong>weaken</strong> &mdash; sit along a barrier-characteristics spectrum. Bypass matches hard, material, high-coordination barriers; weaken matches soft, discursive ones; repurpose occupies the intermediate ground where existing regime structure can be redirected.</figcaption>
+</figure>
 
 ---
 
