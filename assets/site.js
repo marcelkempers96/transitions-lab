@@ -2,21 +2,22 @@
 document.addEventListener('DOMContentLoaded', function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ── Nav dropdowns: native <details>/<summary> with an accordion.
-  //    Only one <details> may be open at a time. The click handler
-  //    runs BEFORE the browser toggles the current <details>, so it
-  //    can pre-emptively close every other open group in the same
-  //    pass. Works identically on desktop and mobile.
+  // ── Nav dropdowns: native <details>/<summary> as an accordion.
+  //    We take over the toggle entirely (preventDefault) so the
+  //    browser can't race us: close every group, then open the one
+  //    that was clicked if it was previously closed. Guaranteed
+  //    single-open state on desktop and mobile alike.
   var details = document.querySelectorAll('.nav details.nav-group');
   details.forEach(function (d) {
     var summary = d.querySelector('summary');
     if (!summary) return;
-    summary.addEventListener('click', function () {
-      // If this one is currently closed (about to open), close all others.
-      if (!d.open) {
-        details.forEach(function (o) { if (o !== d) o.open = false; });
-      }
-      // If it's currently open (about to close), let the browser do it.
+    summary.addEventListener('click', function (e) {
+      e.preventDefault();
+      var wasOpen = d.open;
+      // Close everything.
+      details.forEach(function (o) { o.open = false; });
+      // Reopen this one if it was closed.
+      if (!wasOpen) d.open = true;
     });
   });
 

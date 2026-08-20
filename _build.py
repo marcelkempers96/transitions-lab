@@ -243,6 +243,10 @@ META: dict[str, dict[str, str]] = {
         "title": "The EU and Africa: Opportunity and the Evidence In Between | Transitions Lab",
         "description": "Europe is committing hundreds of billions to Africa, and Africa is the growth market of the century. Where the two fit, and what stands between.",
     },
+    "insight-transitions-outcomes": {
+        "title": "Four Ways a Transition Lands: State Capacity Against Niche Success | Transitions Lab",
+        "description": "A two-axis diagnostic sorting every real socio-technical transition into one of four patterns: directed, coordinated, stalled, or bounded leapfrogging.",
+    },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
         "description": "Technology Readiness Levels and Societal Readiness Levels explained, with references: what the nine levels mean, and why both axes decide success.",
@@ -320,6 +324,7 @@ STUB_TITLES: dict[str, str] = {
     "case-context-entry": "Market-Entry Study, East Africa",
     "insight-eu-us": "Europe Invents, America Scales",
     "insight-eu-africa": "The EU and Africa",
+    "insight-transitions-outcomes": "Four Ways a Transition Lands",
     "expertise-energy": "Energy Access & Off-Grid Systems",
     "expertise-water": "Water & Sanitation",
     "expertise-agriculture": "Regenerative Agriculture & Agri-Tech",
@@ -853,9 +858,8 @@ def build_home() -> str:
     og_image = f"{SITE_URL}/assets/og-image.png"
 
     body = """
-<!-- HERO with animated filaments -->
+<!-- HERO (static gradient — no canvas animation) -->
 <section class="hero" style="min-height:88vh;display:flex;align-items:center;padding:120px 0 80px;">
-  <canvas id="filaments" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
   <div class="wrap" style="position:relative;z-index:3;">
     <p class="eyebrow reveal">Field research &amp; impact measurement</p>
     <h1 class="reveal d1">Aligning technology with the people it is meant to <em>serve</em>.</h1>
@@ -870,8 +874,7 @@ def build_home() -> str:
 <!-- STANCE -->
 <section class="stance">
   <div class="wrap">
-    <p class="eyebrow reveal">The mission, stated plainly</p>
-    <blockquote class="reveal d1">Technology is not destiny. It can be steered. The direction a transition takes is not fixed in advance; the difference is whether anyone was paying close, honest attention to what was happening to people on the ground, early enough for it to matter. <em>That attention is the Lab's reason to exist.</em></blockquote>
+    <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is paying honest attention to what happens to people on the ground, early enough for it to matter. That attention is the Lab's reason to exist.</blockquote>
   </div>
 </section>
 
@@ -991,38 +994,9 @@ def build_home() -> str:
 </section>
 """
 
-    extra_head = ""
-    filament_script = """
-<script>
-(function(){
-  var cv=document.getElementById('filaments');if(!cv)return;
-  var ctx=cv.getContext('2d');var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W,H,DPR;
-  function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=cv.offsetWidth*DPR;H=cv.height=cv.offsetHeight*DPR;}
-  size();addEventListener('resize',size);
-  var COLORS=[[232,100,44],[62,143,208],[143,192,234],[30,58,95],[110,99,198]];
-  var N=window.innerWidth<700?70:130,strands=[];
-  for(var i=0;i<N;i++){strands.push({y0:(Math.random()*1.15-0.075),amp:20+Math.random()*90,freq:0.6+Math.random()*1.6,phase:Math.random()*Math.PI*2,speed:0.15+Math.random()*0.5,col:COLORS[(Math.random()*COLORS.length)|0],alpha:0.05+Math.random()*0.14,w:0.5+Math.random()*1.0});}
-  var tms=0,last=performance.now(),mx=0.5,my=0.5;
-  var hero=cv.parentElement;
-  hero.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();mx=(e.clientX-r.left)/r.width;my=(e.clientY-r.top)/r.height;});
-  function frame(dt){
-    tms+=dt*0.001;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
-    var fx=W*(0.9+mx*0.12),fy=H*(0.46+my*0.12);
-    for(var j=0;j<strands.length;j++){var s=strands[j];ctx.beginPath();var steps=40;
-      for(var k=0;k<=steps;k++){var p=k/steps;var x=p*fx;var ease=p*p*(3-2*p);var baseY=s.y0*H+(fy-s.y0*H)*ease;var wave=Math.sin(s.phase+tms*s.speed+p*s.freq*Math.PI*2)*s.amp*DPR*(1-ease*0.92);var y=baseY+wave;k===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
-      ctx.strokeStyle='rgba('+s.col[0]+','+s.col[1]+','+s.col[2]+','+s.alpha+')';ctx.lineWidth=s.w*DPR;ctx.stroke();}
-    ctx.globalCompositeOperation='source-over';
-  }
-  if(reduce){frame(0);}else{(function loop(now){var dt=now-last;last=now;frame(dt);requestAnimationFrame(loop);})(performance.now());}
-})();
-
-</script>"""
-
-    # Wrap so filament script also gets included
-    html = page_shell(slug=slug, title=title, description=description,
-                      body=body, extra_head=extra_head)
-    return html.replace("</body>", filament_script + "\n</body>")
+    # No canvas animation on the home page — the ambient gradient in the
+    # .hero rules gives enough visual life without a moving canvas.
+    return page_shell(slug=slug, title=title, description=description, body=body)
 
 
 # ────────────────────────────────────────────────────────────────────────────

@@ -10,6 +10,12 @@ The Lab publishes articles for the same reason it publishes research programmes:
 
 ## Reading order
 
+[**Four Ways a Transition Lands: Reading State Capacity Against Niche Success**](/insight-transitions-outcomes)
+A two-axis diagnostic that sorts every real transition into one of four patterns: directed, coordinated, stalled, or bounded leapfrogging. Where each fails, and how the Lab reads its own cases against the matrix.
+
+[**The BRW Framework: Bypass, Repurpose, Weaken**](/brw)
+The Lab's signature typology of how new infrastructure engages the systems it arrives into. Three mechanisms, matched to the three barriers a niche technology actually meets, and why the choice of mechanism decides what a transition can reach.
+
 [**Europe Invents, America Scales**](/insight-eu-us)
 Europe produces world-class innovation and struggles to commercialise it; the United States does the reverse. What the asymmetry means, and where an independent evidence layer fits in the gap.
 
