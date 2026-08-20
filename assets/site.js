@@ -2,65 +2,26 @@
 document.addEventListener('DOMContentLoaded', function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ── Nav dropdowns: single-open accordion, enforced three ways.
-  //    (1) MutationObserver on the [open] attribute of each <details> is
-  //        the ground truth. It fires whenever [open] changes, no matter
-  //        how — native tap, keyboard, script, dev tools, anything. When
-  //        a group opens, every sibling's [open] attribute is removed.
-  //    (2) A `toggle` event listener is the fast path on browsers that
-  //        fire it reliably (most of them).
-  //    (3) A `click` handler on each <summary> preempts the browser's
-  //        native toggle on iOS Safari, where preventDefault on the
-  //        summary click IS required for the [open] change to route
-  //        through script rather than through the browser's own path.
-  //    Any one of the three is sufficient. Together they are bulletproof.
+  // ── Nav dropdowns: single-open accordion.
+  //    ONE document-level click listener in the CAPTURE phase intercepts
+  //    every tap on a nav summary before the browser can run its native
+  //    <details> toggle. We call preventDefault + stopPropagation, then
+  //    manually manage [open] state: close every group, then open the one
+  //    that was tapped if it was previously closed. No fallbacks to race
+  //    against each other; one path, always the same behaviour.
+  document.addEventListener('click', function (e) {
+    var summary = e.target && e.target.closest && e.target.closest('.nav details.nav-group > summary');
+    if (!summary) return;
+    var tapped = summary.parentNode;
+    e.preventDefault();
+    e.stopPropagation();
+    var wasOpen = tapped.hasAttribute('open');
+    var all = document.querySelectorAll('.nav details.nav-group');
+    for (var i = 0; i < all.length; i++) all[i].removeAttribute('open');
+    if (!wasOpen) tapped.setAttribute('open', '');
+  }, true);
+
   var details = document.querySelectorAll('.nav details.nav-group');
-  var enforcing = false;
-  var enforceSingle = function (winner) {
-    if (enforcing) return;
-    enforcing = true;
-    details.forEach(function (o) {
-      if (o !== winner && o.hasAttribute('open')) o.removeAttribute('open');
-    });
-    enforcing = false;
-  };
-
-  // (1) MutationObserver — ground truth.
-  if ('MutationObserver' in window) {
-    details.forEach(function (d) {
-      var mo = new MutationObserver(function (mutations) {
-        for (var i = 0; i < mutations.length; i++) {
-          if (mutations[i].attributeName === 'open' && d.hasAttribute('open')) {
-            enforceSingle(d);
-            break;
-          }
-        }
-      });
-      mo.observe(d, { attributes: true, attributeFilter: ['open'] });
-    });
-  }
-
-  // (2) toggle event — fast path.
-  details.forEach(function (d) {
-    d.addEventListener('toggle', function () {
-      if (d.open) enforceSingle(d);
-    });
-  });
-
-  // (3) click on <summary> — manual toggle for iOS Safari reliability.
-  details.forEach(function (d) {
-    var s = d.querySelector('summary');
-    if (!s) return;
-    s.addEventListener('click', function (e) {
-      e.preventDefault();
-      var wasOpen = d.hasAttribute('open');
-      // Close everyone first, then open this one if it was closed.
-      enforcing = true;
-      details.forEach(function (o) { o.removeAttribute('open'); });
-      enforcing = false;
-      if (!wasOpen) d.setAttribute('open', '');
-    });
-  });
 
   // ── Mobile menu toggle ──────────────────────────────────────
   var burger = document.querySelector('.nav-toggle');

@@ -104,8 +104,8 @@ header.site{position:sticky;top:0;z-index:40;background:rgba(20,20,22,.82);backd
 .brand-logo--footer{height:46px;margin-bottom:14px;}
 .brand:hover .brand-logo{opacity:.85;}
 .brand .dot{display:none;}
-@media(max-width:860px){.brand-logo{height:34px;}}
-@media(max-width:420px){.brand-logo{height:32px;}}
+@media(max-width:860px){.brand-logo{height:22px;}}
+@media(max-width:420px){.brand-logo{height:20px;}}
 .nav nav{display:flex;gap:30px;align-items:center;}
 .nav nav a{font-size:15px;text-decoration:none;color:var(--on-dark-soft);font-weight:500;transition:color .2s;}
 .nav nav a:hover{color:var(--on-dark);}
