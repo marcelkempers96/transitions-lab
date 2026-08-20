@@ -77,16 +77,33 @@ header.site{position:sticky;top:0;z-index:40;background:rgba(20,20,22,.82);backd
 .nav nav a.current{color:var(--on-dark);}
 .nav-toggle{display:none;background:none;border:0;font-size:24px;color:var(--on-dark);cursor:pointer;}
 
-/* Dropdown groups in the header nav */
-.nav .nav-group{position:relative;display:inline-flex;align-items:center;}
-.nav .nav-group > .nav-label{font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:500;color:var(--on-dark-soft);cursor:pointer;display:inline-flex;align-items:center;gap:.4em;user-select:none;transition:color .2s;}
-.nav .nav-group > .nav-label::after{content:"";display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4.5px solid currentColor;margin-top:2px;}
-.nav .nav-group.open > .nav-label,.nav .nav-group.current > .nav-label{color:var(--on-dark);}
-.nav .nav-group.open > .nav-label::after{transform:rotate(180deg);}
-.nav .nav-group > .nav-label::after{transition:transform .18s ease;}
-.nav .nav-dropdown{position:absolute;top:calc(100% + 16px);left:-14px;background:var(--char);border:1px solid var(--char-line);padding:10px 0;min-width:240px;display:none;flex-direction:column;gap:0;box-shadow:0 20px 40px -12px rgba(0,0,0,.6);z-index:60;}
-.nav .nav-group.open .nav-dropdown{display:flex;}
-.nav .nav-dropdown a{padding:9px 20px;white-space:nowrap;font-size:14.5px;color:var(--on-dark-soft);}
+/* Dropdown groups in the header nav — native <details>/<summary>.
+   Browser handles the show/hide via the [open] attribute. */
+.nav details.nav-group{position:relative;display:inline-flex;align-items:center;}
+.nav details.nav-group summary.nav-label{
+  font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:500;
+  color:var(--on-dark-soft);cursor:pointer;display:inline-flex;align-items:center;
+  gap:.4em;user-select:none;transition:color .2s;list-style:none;
+}
+.nav details.nav-group summary.nav-label::-webkit-details-marker{display:none;}
+.nav details.nav-group summary.nav-label::marker{content:"";}
+.nav details.nav-group summary.nav-label::after{
+  content:"";display:inline-block;width:0;height:0;
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:4.5px solid currentColor;margin-top:2px;
+  transition:transform .18s ease;
+}
+.nav details.nav-group[open] summary.nav-label{color:var(--on-dark);}
+.nav details.nav-group[open] summary.nav-label::after{transform:rotate(180deg);}
+.nav details.nav-group.current summary.nav-label{color:var(--on-dark);}
+.nav details.nav-group:not([open]) > .nav-dropdown{display:none;}
+.nav details.nav-group[open] > .nav-dropdown{
+  position:absolute;top:calc(100% + 16px);left:-14px;
+  background:var(--char);border:1px solid var(--char-line);
+  padding:10px 0;min-width:240px;display:flex;flex-direction:column;gap:0;
+  box-shadow:0 20px 40px -12px rgba(0,0,0,.6);z-index:60;
+}
+.nav .nav-dropdown a{padding:9px 20px;white-space:nowrap;font-size:14.5px;color:var(--on-dark-soft);text-decoration:none;}
 .nav .nav-dropdown a:hover,.nav .nav-dropdown a.current{color:var(--on-dark);background:rgba(255,255,255,.04);}
 
 /* ── Buttons ──────────────────────────────────────────────── */
@@ -384,23 +401,24 @@ footer.site .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);ma
   .nav nav{display:none;}
   .nav nav.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--ink);border-bottom:1px solid var(--char-line);padding:8px 24px 18px;gap:0;align-items:stretch;max-height:calc(100vh - 72px);overflow-y:auto;}
   .nav-toggle{display:block;}
-  /* Mobile: each nav-group becomes a full-width tap-to-expand row */
+  /* Mobile: each nav-group becomes a full-width tap-to-expand row.
+     Native <details>: the browser hides children of a closed <details>
+     automatically, so nothing to override — we just style layout. */
   .nav nav.open > a,
-  .nav nav.open > .nav-group{
+  .nav nav.open > details.nav-group{
     width:100%;
     border-top:1px solid var(--char-line);
   }
   .nav nav.open > a:first-child,
-  .nav nav.open > .nav-group:first-child{border-top:0;}
+  .nav nav.open > details.nav-group:first-child{border-top:0;}
   .nav nav.open > a{padding:16px 4px;font-size:17px;font-weight:600;color:var(--on-dark);}
   .nav nav.open > .btn{margin-top:14px;text-align:center;justify-content:center;border-top:0;}
-  .nav .nav-group{
-    display:flex !important;
-    flex-direction:column;
+  .nav details.nav-group{
+    display:block;
     align-items:stretch;
   }
-  .nav .nav-group > .nav-label{
-    display:flex !important;
+  .nav details.nav-group summary.nav-label{
+    display:flex;
     width:100%;
     padding:16px 4px;
     justify-content:space-between;
@@ -410,23 +428,27 @@ footer.site .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);ma
     color:var(--on-dark);
     line-height:1.2;
   }
-  .nav .nav-group > .nav-label::after{
+  .nav details.nav-group summary.nav-label::after{
     border-left:5px solid transparent;
     border-right:5px solid transparent;
     border-top:6px solid currentColor;
   }
-  /* Dropdown collapsed by default; opens only on .open */
-  .nav .nav-dropdown{
+  /* Dropdown becomes an inline stack — only visible when the parent
+     <details> is [open]. Reset the desktop absolute positioning. */
+  .nav details.nav-group:not([open]) > .nav-dropdown{display:none !important;}
+  .nav details.nav-group[open] > .nav-dropdown{
     position:static;
-    display:none !important;
+    display:flex;
+    flex-direction:column;
     border:none;
     box-shadow:none;
     background:transparent;
     padding:0 0 12px 12px;
     width:100%;
     min-width:0;
+    top:auto;
+    left:auto;
   }
-  .nav .nav-group.open .nav-dropdown{display:flex !important;}
   .nav .nav-dropdown a{
     padding:10px 4px;
     font-size:15.5px;

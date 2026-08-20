@@ -16,43 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ── Click-to-open dropdowns in the nav ──────────────────────
-  var groups = document.querySelectorAll('.nav .nav-group');
-  groups.forEach(function (g) {
-    var label = g.querySelector('.nav-label');
-    if (!label) return;
-    label.setAttribute('role', 'button');
-    label.setAttribute('tabindex', '0');
-    label.setAttribute('aria-expanded', 'false');
-    label.setAttribute('aria-haspopup', 'true');
-
-    function toggle() {
-      var willOpen = !g.classList.contains('open');
-      // Close every other open group first
-      groups.forEach(function (o) {
-        if (o !== g) { o.classList.remove('open'); o.querySelector('.nav-label').setAttribute('aria-expanded', 'false'); }
-      });
-      g.classList.toggle('open', willOpen);
-      label.setAttribute('aria-expanded', willOpen);
-    }
-
-    label.addEventListener('click', function (e) {
-      e.stopPropagation();
-      toggle();
-    });
-    label.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-      if (e.key === 'Escape') { g.classList.remove('open'); label.setAttribute('aria-expanded', 'false'); }
+  // ── Nav dropdowns are native <details>/<summary>. No JS toggle
+  //    needed — browser handles it. We only wire "close others when
+  //    one opens" so the desktop menu doesn't get several dropdowns
+  //    hanging open at once. On mobile the user can open several
+  //    if they want; this handler still works and keeps focus tidy.
+  var details = document.querySelectorAll('.nav details.nav-group');
+  details.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open) return;
+      details.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
-  // Close any open dropdown when clicking outside the nav
+  // Click outside the nav → close any open dropdowns
   document.addEventListener('click', function (e) {
-    if (e.target.closest('.nav .nav-group')) return;
-    groups.forEach(function (g) {
-      g.classList.remove('open');
-      var l = g.querySelector('.nav-label');
-      if (l) l.setAttribute('aria-expanded', 'false');
-    });
+    if (e.target.closest('.nav details.nav-group')) return;
+    details.forEach(function (d) { d.open = false; });
   });
 
   // ── Scroll reveal (big text drifts up + fades in) ───────────
