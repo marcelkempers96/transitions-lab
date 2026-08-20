@@ -29,11 +29,19 @@ SITE_URL = "https://transitionslab.org"
 # Nav
 # ────────────────────────────────────────────────────────────────────────────
 
+ABOUT = [
+    ("about", "About the Lab"),
+    ("geographies", "Where we work"),
+    ("who-we-serve", "Who we serve"),
+    ("team", "Team"),
+]
+
 SERVICES = [
     ("what-we-do", "Overview"),
     ("field-research", "Field Research"),
     ("applied-research", "Impact Measurement"),
     ("european-impact-tracking", "European Impact Tracking"),
+    ("esf-social-innovation", "ESF+ Social Innovation"),
     ("monitoring-evaluation-dissemination", "Monitoring, Evaluation & Dissemination"),
     ("how-it-works", "How It Works"),
 ]
@@ -56,11 +64,10 @@ WORK = [
     ("brw", "The BRW framework"),
     ("readiness-levels", "TRL & SRL"),
     ("resources", "Resources"),
-    ("who-we-serve", "Who we serve"),
 ]
 
 NAV = [
-    {"slug": "about", "href": "/about", "label": "About"},
+    {"slug": "__about", "label": "About", "dropdown": ABOUT},
     {"slug": "__services", "label": "Services", "dropdown": SERVICES},
     {"slug": "__expertise", "label": "Expertise", "dropdown": EXPERTISE},
     {"slug": "__work", "label": "Work", "dropdown": WORK},
@@ -143,6 +150,14 @@ META: dict[str, dict[str, str]] = {
     "how-it-works": {
         "title": "How It Works | Scope, Design, Collect, Deliver | Transitions Lab",
         "description": "From the decision you need to make to evidence you can act on, in weeks. Our four-step research process: Scope, Design, Collect, Deliver.",
+    },
+    "esf-social-innovation": {
+        "title": "ESF+ Social Innovation: Independent Measurement | Transitions Lab",
+        "description": "Independent, field-based measurement for ESF+ social innovation and social experimentation projects. Evidence of what actually changed, built for transnational calls.",
+    },
+    "geographies": {
+        "title": "Where We Work | East Africa, Southeast Asia, Dutch Caribbean | Transitions Lab",
+        "description": "The Lab works where it is rooted: East Africa, coastal Southeast Asia, and the Dutch Caribbean, Suriname and Guyana. Named local partners, not parachuted research.",
     },
     "contact": {
         "title": "Contact | Start a Research Conversation | Transitions Lab",
