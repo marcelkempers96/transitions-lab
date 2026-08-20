@@ -4,7 +4,10 @@
 
 *A technology can be ready and still fail. Understanding both Technology Readiness and Societal Readiness, and why the second decides success as often as the first.*
 
-<!-- IMAGE readiness-hero: diagram | A clean two-axis diagram: TRL on one axis, SRL on the other, with the four quadrants labelled (esp. the "high TRL, low SRL" danger zone). House dark theme, orange + violet accents. | Full-width hero under the intro. -->
+<figure>
+  <img src="/assets/img/trl-srl-matrix.jpg" alt="Two-axis TRL–SRL matrix showing four quadrants: Waiting (low TRL, high SRL — wanted, not yet built); Ready (high TRL, high SRL — works, and society is ready); Early (low TRL, low SRL — neither ready); Dangerous (high TRL, low SRL — works, but rejected or mistrusted)." class="diagram">
+  <figcaption>Read together, Technology Readiness (TRL) and Societal Readiness (SRL) sort every innovation into one of four quadrants. The "dangerous" quadrant — technically finished but socially rejected or mistrusted — is where the most expensive failures cluster.</figcaption>
+</figure>
 
 Most people in innovation know Technology Readiness Levels: the nine-point NASA scale for how mature a technology is. Far fewer know its essential counterpart, Societal Readiness Levels, which measure how ready society is to adopt, trust, and benefit from that technology. Reading the two together is one of the most useful things an innovator, funder, or researcher can do, and getting it wrong is one of the most common and expensive mistakes in the field.
 
@@ -43,6 +46,11 @@ SRL inverts TRL's starting point. Where TRL begins inside the technology and ask
 ## The dangerous quadrant
 
 The reason to read TRL and SRL together is a single failure mode: **high technical readiness, low societal readiness.** A technology proven to work that society is not ready to accept. This is where expensive failures cluster, contested infrastructure, mistrusted digital systems, rejected energy projects, and where TRL alone gives false confidence.
+
+<figure>
+  <img src="/assets/img/adoption-gap.jpg" alt="S-curve chart contrasting Technical readiness (TRL, orange) rising quickly against Adoption / societal readiness (SRL, violet) rising more slowly. The shaded area between the two curves is labelled 'the readiness gap: technically ready, not yet adopted'." class="diagram">
+  <figcaption>The readiness gap: technical readiness typically outruns societal readiness. The shaded area is where a technology already works but has not yet been adopted — the interval a serious readiness assessment tries to shorten.</figcaption>
+</figure>
 
 A serious readiness assessment reads both axes at once. A technology that is TRL 8 but SRL 3 is not, in any meaningful sense, ready. The number that matters is the pair.
 

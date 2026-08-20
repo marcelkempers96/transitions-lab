@@ -352,6 +352,7 @@ ITALIC_RE = re.compile(r"(?<![*A-Za-z0-9])\*([^*\n]+?)\*(?![*A-Za-z0-9])")
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
 IMAGE_COMMENT_RE = re.compile(r"^<!--\s*IMAGE\s+.*?-->\s*$", re.DOTALL)
+HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture)\b", re.IGNORECASE)
 SECTION_EYEBROW_RE = re.compile(r"^\*\*(§[^*]+)\*\*\s*$")
 TOPLINE_SECTION_RE = re.compile(r"^§\s+/\s*(.+)$")
 ABS_LINK_RE = re.compile(r"https?://(?:www\.)?transitionslab\.org(/[^\"' )]*)?")
@@ -566,6 +567,24 @@ def md_body_to_html(md: str) -> str:
             i += 1
             continue
 
+        # HTML block passthrough (<figure>…</figure>, <div>…</div>, etc.)
+        block_open = HTML_BLOCK_OPEN_RE.match(stripped)
+        if block_open:
+            close_list(list_kind); list_kind = None
+            tag = block_open.group(1).lower()
+            close_tag = f"</{tag}>"
+            block: list[str] = [raw]
+            i += 1
+            # Slurp until we hit the matching close tag (case-insensitive).
+            while i < len(lines):
+                block.append(lines[i])
+                if close_tag in lines[i].lower():
+                    i += 1
+                    break
+                i += 1
+            out.append("\n".join(block))
+            continue
+
         # section eyebrow: **§ ... ** — drop entirely; the H2 that follows
         # carries the meaning, so the eyebrow is redundant.
         m = SECTION_EYEBROW_RE.match(stripped)
@@ -636,7 +655,7 @@ def md_body_to_html(md: str) -> str:
             para = [raw]
             i += 1
             while i < len(lines) and lines[i].strip() and not any(
-                lines[i].strip().startswith(x) for x in ("#", "- ", "> ", "---", "***", "**§", "|")
+                lines[i].strip().startswith(x) for x in ("#", "- ", "> ", "---", "***", "**§", "|", "<figure", "<div", "<section", "<video", "<iframe", "<aside", "<picture")
             ) and not IMAGE_COMMENT_RE.match(lines[i].strip()):
                 para.append(lines[i])
                 i += 1
@@ -702,7 +721,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 
 <header class="site">
   <div class="wrap nav">
-    <a href="/" class="brand"><span class="dot"></span>Transitions&nbsp;Lab</a>
+    <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo.png" alt="Transitions Lab" class="brand-logo"></a>
     {nav_html}
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
@@ -713,7 +732,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 <footer class="site">
   <div class="wrap">
     <div>
-      <a href="/" class="brand">Transitions Lab</a>
+      <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo.png" alt="Transitions Lab" class="brand-logo brand-logo--footer"></a>
       <p class="mission">An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.</p>
     </div>
     <div>

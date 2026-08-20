@@ -4,7 +4,10 @@
 
 *Bypass, Repurpose, Weaken: a mechanism-based typology of the strategies a niche actor uses to engage an entrenched regime, classified by how each strategy acts on a specific lock-in barrier.*
 
-<!-- IMAGE brw-schematic: diagram | The three-panel BRW schematic: Bypass (parallel system circumventing the regime), Repurpose (redirecting a regime element), Weaken (eroding the foundations), positioned along a barrier-characteristics spectrum from hard/material/high-coordination to soft/discursive/low-coordination. House theme: burnt orange, green, and a red accent. | Under the standfirst. -->
+<figure>
+  <img src="/assets/img/brw-schematic.jpg" alt="BRW schematic: three panels showing Bypass (a rider routing around a petrol station to a battery-swap point), Repurpose (a shuttered petrol station converted into a service node offering air, water, and digital services), and Weaken (arrows circling a petrol station whose pumps are being crossed out)." class="diagram">
+  <figcaption>The three BRW mechanisms — <strong>bypass</strong>, <strong>repurpose</strong>, and <strong>weaken</strong> — sit along a barrier-characteristics spectrum. Bypass matches hard, material, high-coordination barriers; weaken matches soft, discursive ones; repurpose occupies the intermediate ground where existing regime structure can be redirected.</figcaption>
+</figure>
 
 Every niche technology arrives into a world already run by an incumbent regime: an aligned configuration of technologies, infrastructures, institutions, habits, and expectations that resists change. How a niche actor engages that regime, barrier by barrier, largely determines whether it succeeds and for whom.
 

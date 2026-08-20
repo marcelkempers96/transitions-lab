@@ -55,7 +55,37 @@ body{
 }
 h1,h2,h3,h4{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;line-height:1.12;margin:0;letter-spacing:-.015em;}
 a{color:inherit;}
-img{max-width:100%;display:block;}
+img{max-width:100%;height:auto;display:block;} /* never stretch or warp */
+
+/* Article figures for diagrams, illustrations, and any content-flow images. */
+.prose figure,.figure{
+  margin:2.4em 0;
+  max-width:100%;
+}
+.prose figure img,.figure img{
+  width:100%;
+  height:auto;
+  max-width:100%;
+  display:block;
+  border-radius:6px;
+  background:#f6efe1; /* warm-paper fallback while loading */
+}
+.prose figure figcaption,.figure figcaption{
+  font-size:14.5px;
+  line-height:1.5;
+  color:var(--on-light-soft);
+  margin-top:.7em;
+  font-style:italic;
+}
+/* Diagram variant — for schematics/matrices/charts. Same non-stretch rules. */
+.diagram{
+  width:100%;
+  height:auto;
+  max-width:100%;
+  display:block;
+  border-radius:6px;
+  margin:2em auto;
+}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
 .wrap-prose{max-width:var(--max-prose);margin:0 auto;padding:0 28px;}
 
@@ -69,8 +99,12 @@ img{max-width:100%;display:block;}
 /* ── Header ───────────────────────────────────────────────── */
 header.site{position:sticky;top:0;z-index:40;background:rgba(20,20,22,.82);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--char-line);}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
-.brand{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--on-dark);text-decoration:none;display:flex;align-items:center;gap:.55em;letter-spacing:-.01em;}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);display:inline-block;}
+.brand{display:inline-flex;align-items:center;text-decoration:none;line-height:1;}
+.brand-logo{height:36px;width:auto;max-width:100%;display:block;object-fit:contain;transition:opacity .2s;}
+.brand-logo--footer{height:46px;margin-bottom:14px;}
+.brand:hover .brand-logo{opacity:.85;}
+.brand .dot{display:none;}
+@media(max-width:520px){.brand-logo{height:30px;}}
 .nav nav{display:flex;gap:30px;align-items:center;}
 .nav nav a{font-size:15px;text-decoration:none;color:var(--on-dark-soft);font-weight:500;transition:color .2s;}
 .nav nav a:hover{color:var(--on-dark);}
