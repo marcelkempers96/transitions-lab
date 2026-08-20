@@ -462,15 +462,26 @@ class Page:
     description: str                # meta description
 
 
+CITE_TAG_RE = re.compile(r"</?cite\b[^>]*>", re.IGNORECASE)
+
+
 def strip_author_notes(md: str) -> str:
-    """Remove <!-- NOTE ... --> author-only comments; keep <!-- IMAGE ... -->."""
-    # Handle both single-line and multi-line note comments.
-    def _drop(match: re.Match) -> str:
+    """Remove author-only artefacts before rendering.
+
+      - <!-- NOTE ... --> comments (keeps <!-- IMAGE ... --> placeholders).
+      - <cite index="X-Y">...</cite> tags: research-tool artefacts that
+        would otherwise render as literal HTML on the page. The enclosed
+        text is preserved as ordinary prose; the source list at the
+        bottom of each insight/case remains the readable backlink set.
+    """
+    def _drop_comment(match: re.Match) -> str:
         body = match.group(0)
         if re.search(r"IMAGE", body, re.IGNORECASE):
             return body
         return ""
-    return re.sub(r"<!--.*?-->", _drop, md, flags=re.DOTALL)
+    md = re.sub(r"<!--.*?-->", _drop_comment, md, flags=re.DOTALL)
+    md = CITE_TAG_RE.sub("", md)
+    return md
 
 
 def parse_markdown(md: str) -> tuple[str | None, str, str | None, str]:
