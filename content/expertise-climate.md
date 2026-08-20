@@ -48,7 +48,7 @@ The principle holds across systems, and we deliberately work across several, so 
 
 **§ 4 / Knowledge we draw on**
 
-We draw on our own fieldwork and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on our own fieldwork and the public evidence base.
 
 - IPCC, [assessment reports on climate impacts and adaptation](https://www.ipcc.ch/).
 - UNEP, [marine, biodiversity, and ecosystem work](https://www.unep.org/).

@@ -44,7 +44,7 @@ This connects directly to the Lab's [e-mobility](https://www.transitionslab.org/
 
 **§ 4 / Knowledge we draw on**
 
-We draw on our own fieldwork and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on our own fieldwork and the public evidence base.
 
 - AfDB, [Africa Industrialisation Index 2025](https://www.afdb.org/en/documents/africa-industrialisation-index-2025).
 - UNIDO, [industrial development and productive capacity](https://www.unido.org/).

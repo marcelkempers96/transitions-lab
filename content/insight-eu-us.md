@@ -60,7 +60,7 @@ Europe's problem is not that its technology is worse. It is that the journey fro
 
 **§ 5 / Sources**
 
-This piece draws on public analysis. We do not work for these organisations; we draw on what they publish.
+This piece draws on public analysis.
 
 - Mario Draghi, [The Future of European Competitiveness](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en) (European Commission, 2024).
 - European Commission, [A Competitiveness Compass for the EU](https://commission.europa.eu/topics/eu-competitiveness/competitiveness-compass_en) (2025).

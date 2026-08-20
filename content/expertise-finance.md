@@ -42,7 +42,7 @@ The Lab documents it: whether pay-as-you-go genuinely expands opportunity, who i
 
 **§ 4 / Knowledge we draw on**
 
-We draw on the Lab's own finance research programme, our fieldwork, and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on the Lab's own finance research programme, our fieldwork, and the public evidence base.
 
 - World Bank, [Global Findex Database](https://www.worldbank.org/en/publication/globalfindex).
 - CGAP, [research on financial services for the poor](https://www.cgap.org/).

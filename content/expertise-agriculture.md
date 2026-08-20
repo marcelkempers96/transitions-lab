@@ -47,7 +47,7 @@ This matters because a survey tells you *what* changed and GIS tells you *where*
 
 **§ 4 / Knowledge we draw on**
 
-We draw on our own fieldwork and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on our own fieldwork and the public evidence base.
 
 - FAO, [smallholder and family farming research](https://www.fao.org/family-farming/en/).
 - CGIAR, [agriculture research in low-income contexts](https://www.cgiar.org/).

@@ -60,7 +60,7 @@ Europe and Africa are more compatible than at any point in memory. Whether that 
 
 **§ 5 / Sources**
 
-This piece draws on public analysis. We do not work for these organisations; we draw on what they publish.
+This piece draws on public analysis.
 
 - European Commission, [EU-Africa Global Gateway Investment Package](https://international-partnerships.ec.europa.eu/policies/global-gateway/initiatives-sub-saharan-africa/eu-africa-global-gateway-investment-package_en).
 - European Commission, [Global Gateway](https://commission.europa.eu/strategy-and-policy/priorities-2024-2029/stronger-europe-world/global-gateway_en).

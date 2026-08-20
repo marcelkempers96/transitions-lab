@@ -45,7 +45,7 @@ Our water expertise extends to the Dutch-language contexts of Suriname and Guyan
 
 **§ 4 / Knowledge we draw on**
 
-We draw on the Lab's water roots in Delft, our own fieldwork, and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on the Lab's water roots in Delft, our own fieldwork, and the public evidence base.
 
 - WHO/UNICEF JMP, [Progress on Household Drinking Water and Sanitation](https://washdata.org/) and its [2025 report](https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef).
 - World Bank, [water in Eastern and Southern Africa](https://www.worldbank.org/en/region/afr/brief/afe-water).

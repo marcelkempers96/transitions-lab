@@ -42,7 +42,7 @@ A model trained elsewhere may not fit local realities; a service may assume conn
 
 **§ 4 / Knowledge we draw on**
 
-We draw on our own fieldwork and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on our own fieldwork and the public evidence base.
 
 - World Bank, [Digital Progress and Trends Report 2025](https://www.worldbank.org/en/publication/dptr2025-ai-foundations) and the [Atlas of AI inequalities](https://data360.worldbank.org/en/atlas/artificial-intelligence/).
 - World Bank, [World Development Report 2026 on AI](https://www.worldbank.org/en/publication/wdr2026).

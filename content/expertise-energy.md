@@ -43,7 +43,7 @@ The Lab documents that. We are the party asking whether locally-owned developers
 
 **§ 4 / Knowledge we draw on**
 
-We draw on our own fieldwork and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on our own fieldwork and the public evidence base.
 
 - IEA, [Financing Electricity Access in Africa](https://www.iea.org/reports/financing-electricity-access-in-africa).
 - World Bank & ESMAP, [Tracking SDG7](https://trackingsdg7.esmap.org/) and [Mission 300](https://www.worldbank.org/en/news/press-release/2025/06/25/energy-access-has-improved-yet-international-financial-support-still-needed-to-boost-progress-and-address-disparities).

@@ -42,7 +42,7 @@ The Lab documents what actually carries a rider across, and, just as valuable to
 
 **§ 4 / Knowledge we draw on**
 
-We draw on our own fieldwork and the public evidence base. We do not work for these organisations; we draw on what they publish.
+We draw on our own fieldwork and the public evidence base.
 
 - World Bank, [economics of electric mobility in Africa](https://www.worldbank.org/en/news/feature/2026/06/29/dont-let-a-crisis-go-to-waste-pivoting-africa-s-transport-to-clean-energy).
 - IEA, [Global EV Outlook](https://www.iea.org/reports/global-ev-outlook-2025).
