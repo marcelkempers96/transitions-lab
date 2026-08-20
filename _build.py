@@ -102,28 +102,171 @@ def render_nav(current_slug: str) -> str:
 # Per-page metadata: description, and any category label to show as eyebrow
 # ────────────────────────────────────────────────────────────────────────────
 
-# Keyed by slug. Description falls back to the standfirst if omitted.
+# Per-page SEO metadata, keyed by slug. Follows the Lab's SEO metadata guide:
+# title tag format "Primary Keyword | Transitions Lab" (under 60 chars),
+# meta description 140-155 chars, active voice, primary keyword natural.
+# `title` here overrides the entire <title>. `description` overrides the
+# default fallback (which is the standfirst).
 META: dict[str, dict[str, str]] = {
+    "index": {
+        "title": "Transitions Lab | Technology Adoption & Transition Research",
+        "description": "Independent research on technology adoption, technology transitions, societal readiness and emerging markets, grounded in applied social science and field research.",
+    },
     "about": {
-        "description": "About Transitions Lab, an independent research team that both publishes its own research and works on the ground for others, aligning technology with the people it is meant to serve.",
+        "title": "About | Technology Transition Research | Transitions Lab",
+        "description": "An independent research team based in Delft, studying how technologies meet real people. We publish our own research and measure impact for others, honestly.",
     },
     "who-we-serve": {
-        "description": "Five kinds of organisation come to Transitions Lab most often — companies, funders, European consortia, NGOs, and research teams. Find the one that fits.",
+        "title": "Who We Serve | Transitions Lab",
+        "description": "Independent evidence for companies entering markets, funders needing portfolio proof, European consortia, NGOs, and research teams. Find the fit.",
     },
     "what-we-do": {
-        "description": "Transitions Lab studies technologies as they meet real people. Services: field research, impact measurement, European impact tracking, monitoring and evaluation, market and expansion research.",
+        "title": "What We Do | Field Research & Impact Measurement",
+        "description": "Independent field research, impact measurement, and European impact tracking for technology in the real world. Evidence you can act on, not a slide deck.",
     },
-    "case-studies": {
-        "description": "Where the Lab has worked on the ground — electric transport in Nairobi, biochar in Lombok, marine monitoring in Indonesia, and more.",
+    "field-research": {
+        "title": "Field Research in Emerging Markets | Transitions Lab",
+        "description": "Rigorous primary research in the places it is hardest to do well: interviews, surveys, and fieldwork in emerging and developing-market contexts.",
     },
-    "readiness-levels": {
-        "description": "TRL and SRL, the two axes of readiness. A technology can be technically mature and still fail; societal readiness measures the second axis, and it decides success as often as the first.",
+    "applied-research": {
+        "title": "Impact Measurement | Applied Research | Transitions Lab",
+        "description": "We measure what a technology or programme actually changes, for whom, and how, across reach, depth, and experience. Independent, rigorous, repeatable.",
+    },
+    "european-impact-tracking": {
+        "title": "European Impact Tracking | Baseline to Endline | Transitions Lab",
+        "description": "Independent before-and-after impact measurement for European projects, demonstrations, and socially innovative actions. Baseline, midline, endline, done right.",
+    },
+    "monitoring-evaluation-dissemination": {
+        "title": "Monitoring, Evaluation & Dissemination | Transitions Lab",
+        "description": "Independent monitoring, evaluation, and dissemination for any project, and for European projects with Grant Agreement obligations. Grounded in evaluation science.",
+    },
+    "how-it-works": {
+        "title": "How It Works | Scope, Design, Collect, Deliver | Transitions Lab",
+        "description": "From the decision you need to make to evidence you can act on, in weeks. Our four-step research process: Scope, Design, Collect, Deliver.",
+    },
+    "contact": {
+        "title": "Contact | Start a Research Conversation | Transitions Lab",
+        "description": "Tell us the decision you are facing and we will tell you honestly whether research can help. Confidential from the first message. No cost to ask.",
     },
     "expertise": {
-        "description": "The eight transition areas Transitions Lab knows in depth, from e-mobility and energy access to AI, water, and marine ecosystems.",
+        "title": "Expertise | Eight Transitions We Study | Transitions Lab",
+        "description": "The transitions the Lab knows deeply, from e-mobility and energy access to AI, water, agriculture, manufacturing, finance, and climate.",
     },
     "expertise-e-mobility": {
-        "description": "How electric and shared transport crosses from novelty to default in markets built around petrol, and whether the infrastructure keeps pace with the vehicles.",
+        "title": "E-Mobility & Transport Research | Transitions Lab",
+        "description": "How electric and shared transport crosses from novelty to default in markets built around petrol, and whether the infrastructure keeps pace.",
+    },
+    "expertise-energy": {
+        "title": "Energy Access & Off-Grid Systems Research | Transitions Lab",
+        "description": "How decentralised energy reaches the hundreds of millions still beyond the grid, and whether it reaches them fairly and durably.",
+    },
+    "expertise-water": {
+        "title": "Water & Sanitation Research | Transitions Lab",
+        "description": "How safe water and sanitation are delivered, sustained, and trusted, in the one region where the number of people without access is still rising.",
+    },
+    "expertise-agriculture": {
+        "title": "Regenerative Agriculture & Agri-Tech Research | Transitions Lab",
+        "description": "How smallholders adopt technologies that turn waste into value and degraded land into productive soil, with GIS and spatial fieldwork.",
+    },
+    "expertise-manufacturing": {
+        "title": "Local Manufacturing & Supply Chains Research | Transitions Lab",
+        "description": "How productive capacity is built where things are used, and whether local assembly and value addition actually reach the people they promise to.",
+    },
+    "expertise-ai-digital": {
+        "title": "AI & Digital Systems Research | Transitions Lab",
+        "description": "How AI and digital tools land in contexts they were not designed for, and whether they close divides or widen them. Trust, context, competency.",
+    },
+    "expertise-finance": {
+        "title": "Financial Inclusion & Payment Systems Research | Transitions Lab",
+        "description": "How payment, credit, and financing systems carry, or block, every other transition that depends on people being able to pay over time.",
+    },
+    "expertise-climate": {
+        "title": "Climate Resilience & Ecosystems Research | Transitions Lab",
+        "description": "How communities and ecosystems adapt to a changing climate, across reefs, forests, wetlands, and biodiversity, and how monitoring drives action.",
+    },
+    "case-studies": {
+        "title": "Case Studies | Field Research in Action | Transitions Lab",
+        "description": "Where the Lab has worked on the ground: electric transport in Nairobi, biochar in Lombok, marine rangers in Indonesia. Real transitions, studied.",
+    },
+    "case-roam": {
+        "title": "Electric Transport in Nairobi: Roam | Transitions Lab",
+        "description": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, and what carries riders across it. A field case study.",
+    },
+    "case-pyropower": {
+        "title": "Biochar & Clean Energy in Lombok: Pyropower | Transitions Lab",
+        "description": "What happens when smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln. A field case study.",
+    },
+    "case-reef-support": {
+        "title": "Rangers for Marine Ecosystems: Reef Support | Transitions Lab",
+        "description": "How community rangers, sensors, and satellite data combine into a shared, trustworthy picture of reef health. A socio-technical monitoring case study.",
+    },
+    "case-mimaji": {
+        "title": "Water Transparency in Nairobi: MiMaji | Transitions Lab",
+        "description": "How open data on water price and quality becomes an intervention in its own right, changing who can hold a water market to account. A field case study.",
+    },
+    "case-statia": {
+        "title": "Mobility on a Small Island: St. Eustatius | Transitions Lab",
+        "description": "Planning transport for a Dutch Caribbean community of a few thousand, where mainland tools fail. A public-sector field case study, in Dutch and English.",
+    },
+    "case-context-entry": {
+        "title": "Before the Capital: A Market-Entry Study | Transitions Lab",
+        "description": "What a mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one.",
+    },
+    "insight-eu-us": {
+        "title": "Europe Invents, America Scales: The Innovation Gap | Transitions Lab",
+        "description": "Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. What the asymmetry means, and where evidence fits.",
+    },
+    "insight-eu-africa": {
+        "title": "The EU and Africa: Opportunity and the Evidence In Between | Transitions Lab",
+        "description": "Europe is committing hundreds of billions to Africa, and Africa is the growth market of the century. Where the two fit, and what stands between.",
+    },
+    "readiness-levels": {
+        "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
+        "description": "Technology Readiness Levels and Societal Readiness Levels explained, with references: what the nine levels mean, and why both axes decide success.",
+    },
+    "resources": {
+        "title": "Resources | Frameworks, Methods & Guides | Transitions Lab",
+        "description": "Frameworks, methods, and tools from the Lab's research, published openly: the BRW framework, measurement method, TRL and SRL guides, and more.",
+    },
+    "interview-guide": {
+        "title": "In-Depth Interview Guide | Field Research Method | Transitions Lab",
+        "description": "How the Lab reaches depth in qualitative fieldwork: the five-levels-down principle, the funnel structure, and the probing techniques behind it.",
+    },
+    "impact-tracking-template": {
+        "title": "European Impact-Tracking Template | Transitions Lab",
+        "description": "A fill-in framework for measuring the before-and-after impact of a European project or demonstration: baseline, midline, endline.",
+    },
+    "programmes": {
+        "title": "Research Programmes | Transitions Lab",
+        "description": "The Lab's field-grounded research on electric mobility, regenerative agriculture, environmental monitoring, water access, and finance, read through the BRW framework.",
+    },
+    "finance": {
+        "title": "Finance & Payment Systems Programme | Transitions Lab",
+        "description": "How payment, credit, and financing systems carry, or block, every other transition that depends on people being able to pay over time.",
+    },
+    "electrification": {
+        "title": "Electric Mobility & Transport Programme | Transitions Lab",
+        "description": "How electric and shared transport crosses from novelty to default in markets built around petrol, grounded in the Lab's field work with Roam in Nairobi.",
+    },
+    "agriculture-programme": {
+        "title": "Regenerative Agriculture & Circular Systems Programme | Transitions Lab",
+        "description": "How smallholders adopt technologies that turn waste into energy, soil, and income, grounded in the Lab's field work with Pyropower in Lombok.",
+    },
+    "monitoring": {
+        "title": "Environmental Monitoring & Community Data Programme | Transitions Lab",
+        "description": "How satellites, sensors, and community rangers combine into trusted environmental evidence that drives decisions, grounded in the Lab's work with Reef Support.",
+    },
+    "water": {
+        "title": "Water Access & Transparency Programme | Transitions Lab",
+        "description": "How safe water is delivered, sustained, and trusted, and how open data changes who can hold water systems to account. With the MiMaji Foundation, Nairobi.",
+    },
+    "brw": {
+        "title": "The BRW Framework: Bypass, Repurpose, Weaken | Transitions Lab",
+        "description": "A mechanism-based typology of how niche technologies engage entrenched regimes: bypass, repurpose, or weaken, matched to the barriers they face.",
+    },
+    "team": {
+        "title": "Team | Transitions Lab",
+        "description": "The people behind Transitions Lab, an independent research team studying how technologies meet real people.",
     },
 }
 
@@ -239,12 +382,24 @@ class Page:
     description: str                # meta description
 
 
+def strip_author_notes(md: str) -> str:
+    """Remove <!-- NOTE ... --> author-only comments; keep <!-- IMAGE ... -->."""
+    # Handle both single-line and multi-line note comments.
+    def _drop(match: re.Match) -> str:
+        body = match.group(0)
+        if re.search(r"IMAGE", body, re.IGNORECASE):
+            return body
+        return ""
+    return re.sub(r"<!--.*?-->", _drop, md, flags=re.DOTALL)
+
+
 def parse_markdown(md: str) -> tuple[str | None, str, str | None, str]:
     """Return (top_eyebrow, title, standfirst_html, body_html).
 
     Consumes the top "§ / label" line, the H1, and the first italic-only
     paragraph after it (as standfirst). Everything else becomes body.
     """
+    md = strip_author_notes(md)
     lines = md.split("\n")
     top_eyebrow: str | None = None
     title: str | None = None
@@ -415,7 +570,8 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     og_url = canonical
     og_image = f"{SITE_URL}/assets/og-image.png"
     robots = "noindex, follow" if noindex else "index, follow"
-    full_title = title if slug == "index" else f"{title} · Transitions Lab"
+    meta_title = META.get(slug, {}).get("title")
+    full_title = meta_title or (title if slug == "index" else f"{title} | Transitions Lab")
 
     nav_html = render_nav(slug)
 
