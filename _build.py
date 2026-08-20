@@ -740,7 +740,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 
 <header class="site">
   <div class="wrap nav">
-    <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo.png" alt="Transitions Lab" class="brand-logo"></a>
+    <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo-dark.png" alt="Transitions Lab" class="brand-logo"></a>
     {nav_html}
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>

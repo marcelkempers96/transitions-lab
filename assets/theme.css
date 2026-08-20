@@ -82,8 +82,8 @@ header.site{
 .brand-logo{height:36px;width:auto;max-width:100%;display:block;object-fit:contain;transition:opacity .2s;}
 .brand-logo--footer{height:46px;margin-bottom:14px;}
 .brand:hover .brand-logo{opacity:.85;}
-@media(max-width:860px){.brand-logo{height:22px;}}
-@media(max-width:420px){.brand-logo{height:20px;}}
+@media(max-width:860px){.brand-logo{height:36px;}}
+@media(max-width:420px){.brand-logo{height:32px;}}
 
 .nav nav{display:flex;gap:32px;align-items:center;}
 .nav nav > a{font-size:15px;text-decoration:none;color:var(--ink);font-weight:600;transition:opacity .15s;}
