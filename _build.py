@@ -343,7 +343,7 @@ BOLD_RE = re.compile(r"\*\*([^*][^*]*?)\*\*")
 ITALIC_RE = re.compile(r"(?<![*A-Za-z0-9])\*([^*\n]+?)\*(?![*A-Za-z0-9])")
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
-IMAGE_COMMENT_RE = re.compile(r"^<!--\s*IMAGE\s+[^>]*?-->\s*$")
+IMAGE_COMMENT_RE = re.compile(r"^<!--\s*IMAGE\s+.*?-->\s*$", re.DOTALL)
 SECTION_EYEBROW_RE = re.compile(r"^\*\*(§[^*]+)\*\*\s*$")
 TOPLINE_SECTION_RE = re.compile(r"^§\s+/\s*(.+)$")
 ABS_LINK_RE = re.compile(r"https?://(?:www\.)?transitionslab\.org(/[^\"' )]*)?")
@@ -362,12 +362,28 @@ def rewrite_links(url: str) -> str:
     return path
 
 
+IMAGE_COMMENT_INLINE_RE = re.compile(r"<!--\s*IMAGE\b.*?-->", re.DOTALL)
+
+
 def inline(text: str) -> str:
-    """Apply inline transforms to a run of text. Assumes text is *not* HTML-escaped yet."""
+    """Apply inline transforms to a run of text. Assumes text is *not* HTML-escaped yet.
+
+    HTML IMAGE placeholder comments (`<!-- IMAGE ... -->`) are preserved as
+    real HTML comments in the output so they stay invisible on the page but
+    remain visible in view-source for whoever is later swapping images in.
+    """
+    # Stash any inline IMAGE comments so HTML escaping doesn't turn them
+    # into literal &lt;!-- IMAGE …&gt; text on the page.
+    stashed: list[str] = []
+
+    def _stash(m: re.Match) -> str:
+        stashed.append(m.group(0))
+        return f"\x00IMG{len(stashed) - 1}\x00"
+
+    text = IMAGE_COMMENT_INLINE_RE.sub(_stash, text)
+
     # Escape first so we don't corrupt user text; then re-inject our tags
     text = htmllib.escape(text, quote=False)
-    # Un-escape markdown special chars we care about
-    # (escaping doesn't touch *, [, ], (, ), so nothing to do)
 
     # Links
     def link_sub(m: re.Match) -> str:
@@ -384,6 +400,10 @@ def inline(text: str) -> str:
     text = BOLD_RE.sub(r"<strong>\1</strong>", text)
     text = ITALIC_RE.sub(r"<em>\1</em>", text)
     text = INLINE_CODE_RE.sub(r"<code>\1</code>", text)
+
+    # Restore the stashed HTML comments
+    for idx, comment in enumerate(stashed):
+        text = text.replace(f"\x00IMG{idx}\x00", comment)
     return text
 
 
