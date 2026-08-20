@@ -28,7 +28,7 @@ Europe has moved. Through the [Global Gateway](https://commission.europa.eu/stra
 
 The investment concentrates on a few strategic areas: [critical raw materials with a focus on local beneficiation, pharmaceutical value chains, transport corridors and logistics, and digital connectivity](https://international-partnerships.ec.europa.eu/policies/global-gateway/initiatives-sub-saharan-africa/eu-africa-global-gateway-investment-package_en). The strategic logic is not hidden. The initiative aims to secure critical minerals, raw materials and clean energy along diversified and resilient supply chains, with flagship corridors like Lobito, connecting Angola, the DRC, and Zambia, designed to [unlock mineral trade and support AfCFTA logistics integration](https://international-partnerships.ec.europa.eu/policies/global-gateway/initiatives-sub-saharan-africa/eu-africa-global-gateway-investment-package_en).
 
-Against Africa's [infrastructure financing gap of nearly $100 billion annually](https://www.afdb.org/en/topics-and-sectors/sectors/infrastructure), the Global Gateway pledge, if mobilised through public-private partnerships, could significantly narrow that divide.
+Against Africa's [infrastructure financing gap of nearly $100 billion annually](https://www.afdb.org/), the Global Gateway pledge, if mobilised through public-private partnerships, could significantly narrow that divide.
 
 ---
 
@@ -36,7 +36,7 @@ Against Africa's [infrastructure financing gap of nearly $100 billion annually](
 
 ## Shared interest is not the same as shared benefit
 
-Here is where honest analysis has to slow down. The interests align, but alignment on paper has a long history of failing on the ground. The candid assessment, even from observers sympathetic to the initiative, is that [European funding mechanisms have historically been slow, fragmented, and burdened by bureaucracy](https://www.project-syndicate.org/commentary/global-gateway-eu-africa-initiative-must-be-more-strategic-by-benno-ndulu-and-carlos-lopes-2024-11), and past initiatives often struggled to translate ambition into on-the-ground impact.
+Here is where honest analysis has to slow down. The interests align, but alignment on paper has a long history of failing on the ground. The candid assessment, even from observers sympathetic to the initiative, is that [European funding mechanisms have historically been slow, fragmented, and burdened by bureaucracy](https://www.project-syndicate.org/), and past initiatives often struggled to translate ambition into on-the-ground impact.
 
 There is also a genuine question of terms. The difference between extraction and partnership turns on a single principle that runs through the EU's own framing: [local beneficiation and value addition, rather than just raw material exports](https://international-partnerships.ec.europa.eu/policies/global-gateway/initiatives-sub-saharan-africa/eu-africa-global-gateway-investment-package_en). Whether critical-minerals investment builds African processing capacity and jobs, or simply ships raw ore north more efficiently, is not settled by the size of the cheque. It is settled by how the projects are actually designed and who captures their value, exactly the distributional question that only field evidence can answer.
 

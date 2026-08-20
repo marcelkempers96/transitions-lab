@@ -23,7 +23,7 @@ The technology here is not a vehicle or a kiln. It is a monitoring system: a way
 
 ## Why this case matters
 
-[Reef Support](https://reefsupport.org/) began with a recognisably human origin: two siblings travelling to Lombok out of curiosity about coral reefs and a wish to help conserve them. That starting point matters, because it shaped a model that treats marine monitoring as a collaboration between technology and people rather than a purely technical exercise. Their [stated approach is a balance of artificial intelligence, field evidence, and human collaboration](https://reefsupport.org/), and the order of those three is the whole point.
+[Reef Support](https://reefsupport.org/) began with a recognisably human origin: two siblings travelling to Lombok out of curiosity about coral reefs and a wish to help conserve them. That starting point matters, because it shaped a model that treats marine monitoring as a collaboration between technology and people rather than a purely technical exercise. Their stated approach is a balance of artificial intelligence, field evidence, and human collaboration, and the order of those three is the whole point.
 
 This sits squarely in the Lab's domain. The live Transitions Lab site already names marine monitoring as operational substrate beneath its programmes; Reef Support is the applied edge of that interest. It is also the clearest of the three cases for demonstrating a particular truth: that a monitoring technology is only as good as the social system that feeds and trusts it.
 
@@ -33,7 +33,7 @@ This sits squarely in the Lab's domain. The live Transitions Lab site already na
 
 ### Three layers of evidence, and the work of aligning them
 
-[Reef Support's method](https://reefsupport.org/what-we-do/) blends satellite imagery, temperature, turbidity, chlorophyll proxies that can flag changes early, with field sensors measuring conditions like temperature, salinity, dissolved oxygen and pH where instruments exist, and with diver, drone, and ROV imagery documenting reef structure. The principle they state is that ocean monitoring works best when multiple data layers align, keeping satellite signals grounded in field evidence.
+[Reef Support](https://reefsupport.org/)'s method blends satellite imagery, temperature, turbidity, chlorophyll proxies that can flag changes early, with field sensors measuring conditions like temperature, salinity, dissolved oxygen and pH where instruments exist, and with diver, drone, and ROV imagery documenting reef structure. The principle they state is that ocean monitoring works best when multiple data layers align, keeping satellite signals grounded in field evidence.
 
 <!-- IMAGE reef-layers: diagram | Three-layer diagram: Satellite (wide) / Sensors (mid) / Rangers (ground) converging into one "shared view of reef health". This is the signature visual of the case. House colours. | Beside the "three layers of evidence" section. -->
 
@@ -41,7 +41,7 @@ The Lab's interest is in that word *align*. Satellites are wide but shallow; fie
 
 ### The ranger is the system, not an accessory to it
 
-The most important design decision Reef Support has made is to put community rangers at the centre. Through the [Reef Ranger programme](https://reefsupport.org/reef-ranger/), community members and visiting participants are trained to collect data, monitor reefs, and contribute to the underlying models, explicitly framed as advancing the monitoring effort through data collection, not merely as eco-tourism.
+The most important design decision Reef Support has made is to put community rangers at the centre. Through its Reef Ranger programme, community members and visiting participants are trained to collect data, monitor reefs, and contribute to the underlying models, explicitly framed as advancing the monitoring effort through data collection, not merely as eco-tourism.
 
 <!-- IMAGE reef-ranger: photo | A ranger collecting data - photographing coral, logging an observation on a device. Shows "the ranger is the system". | In the Reef Ranger programme section. -->
 

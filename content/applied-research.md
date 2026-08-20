@@ -1,83 +1,108 @@
-§ / What the Lab is
+§ / Impact Measurement
 
-# Applied Research
+# Impact Measurement
 
-*Transitions Lab is an independent research team working on the ground, building deep understanding of socio-technical interactions and transitions, in order to align human values and experiences with technologies in context.*
+*What a technology, service, or programme actually changes, for whom, and through what pathway — measured directly with the people it is meant to serve, and reported honestly.*
 
-Most of what is written about a new technology is written before anyone has lived with it. The forecast, the pilot deck, the impact projection, all of it arrives ahead of the evidence. The Lab works in the gap that opens afterwards: the period when a technology meets real people, real institutions, and real places, and starts to behave in ways no projection anticipated.
+Most of what is written about a new technology or programme is written before anyone has lived with it. The forecast, the pilot deck, the impact projection — all of it arrives ahead of the evidence. Impact measurement, done well, closes that gap. It puts structured, honest questions to the people the work is meant to serve, and it turns their answers into evidence you can act on.
 
-We are not a journal and not a think tank issuing opinions from a distance. We are a research team that goes to where a transition is actually happening, collects evidence to a publishable standard, and feeds it back to the people who can act on it, innovators, institutions, and the communities a technology is meant to serve.
-
----
-
-**§ 1.1 / The work**
-
-## Understanding technology in context, not in theory
-
-A technology is never just an artefact. It is an artefact plus the people who use it, the institutions that govern it, the incentives that surround it, and the place it lands in. Studied on its own, it tells you almost nothing about what it will do. Studied in context, socio-technically, and from the human side first, it becomes legible.
-
-That is the Lab's unit of analysis: not the device or the model, but the interaction between a technology and the human system it enters. We bring two things to that analysis that rarely sit in the same room. The first is social-science fieldcraft: we know how to find out what is happening to people, and how to make that finding hold up. The second is genuine technical literacy: we understand how the systems we study actually work. The combination is what allows us to align human values with technology in context.
+Transitions Lab measures impact the way it measures anything else: from the human side first, with instruments designed to hold up to scrutiny, and independently of the intervention being measured. Where an internal team has every incentive to find success, an independent measurement partner reports what the evidence actually says.
 
 ---
 
-**§ 1.2 / What we do**
+## What we measure — three dimensions of impact
 
-## A research team, available to others
+Every study the Lab runs sits inside the same measurement frame, so a result in one context can be read against another and a one-off study becomes a trajectory over time. The frame is deliberately simple: three dimensions, each answering a different question.
 
-The Lab runs its own published programmes, and it works under contract for organisations that need evidence they cannot generate themselves. In practice the work takes a handful of recognisable shapes:
+### 1 · Reach
 
-**On-the-ground research and fieldwork.**  
-Mixed-method studies in the settings where a transition is unfolding, interviews, surveys, observation, and direct contact with the people inside the system. We go to the place rather than reason about it from elsewhere.
+**Who is actually being reached, and who is being missed.** The most flattering-looking programme can be reaching the wrong people, or the same people repeatedly, or leaving the hardest-to-reach unmoved. We measure coverage, inclusion, and — critically — the gap between the population an intervention was designed for and the one it is landing with. Distribution is central to this, not a footnote to it.
 
-**Impact and impact pathways.**  
-We measure what a technology or programme actually changes, for whom, and through what chain of cause and effect, not the output reported in a status update, but the outcome in someone's life or operation. We map the pathway from intervention to impact so that a result can be understood, repeated, and improved.
+### 2 · Depth
 
-**Perspectives and lived-experience data.**  
-The evidence that matters most is usually the evidence nobody collected: what the user would change first, who was left out, where the friction actually sits. We gather it systematically and return it in a form a decision can be built on.
+**How much things actually change for those reached.** Beyond headline satisfaction: the magnitude of change in income, time, health, opportunity, or whatever the intervention is aiming at. And how meaningful the change is in the respondent's own terms — not in the language of the funder's logframe.
 
-**Collaboration and contractual work.**  
-We partner with governments, companies, NGOs, and academic teams, as a research lead, an independent evaluator within a consortium, or a field partner who can collect data to a publishable standard in difficult places. We also pursue grant-funded research where the question is one the Lab would want to answer anyway.
+### 3 · Experience
 
----
+**What it is like to be on the receiving end.** Satisfaction, friction, unintended effects, and the qualitative texture that numbers alone cannot carry. What would the user change first? What would they never give up? The answers to those questions are usually where the useful insight lives.
 
-**§ 1.3 / How we are different**
-
-## Independent, social and technical, and willing to report the inconvenient finding
-
-Three things distinguish the Lab from the organisations a buyer might otherwise consider.
-
-We are **independent.** We are not a consultancy selling a flattering number, and not an advocacy group with a finding to confirm. We publish our own research openly, and we hold contracted work to the same standard, even though that work stays confidential to the client. When the evidence is inconvenient, we report it, that is the entire value of asking us rather than asking ourselves.
-
-We are **social and technical at once.** Policy evaluators understand programmes but not the technologies inside them. Technical evaluators understand systems but not the people around them. The Lab refuses the split, and we start from the people. We staff studies with researchers who can read the ethnography and the engineering, because a socio-technical question is a human question first, and cannot be answered from the technical side alone.
-
-We are **applied.** Our research is built to be used, not filed. Instruments are designed for repetition, so a one-off study becomes a time series. Findings are returned in weeks, not seasons, and in language a team can act on without a translator.
+Reach, depth, and experience read together give a project a picture of impact that a self-report or an output count cannot: whether the intervention landed with the right people, whether it made a material difference, and whether the people on the receiving end would recommend or repeat it. See the [in-depth interview guide](/interview-guide) for how the Lab reaches depth in the qualitative work, and the [European impact-tracking template](/impact-tracking-template) for the shape of a full baseline-to-endline design.
 
 ---
 
-**§ 1.4 / Who we work with**
+## The kinds of impact we track
 
-## Innovators, institutions, and the public interest
+Impact is not one thing. On any given study, we typically measure a mix of the following, calibrated to the specific decision the research is meant to inform.
 
-**Innovators and operators** deploying a technology and needing honest evidence of how it lands, what works, what doesn't, and what to fix first.
-
-**Institutions and funders**, governments, agencies, foundations, investors, needing measurement that holds up to scrutiny and travels across a portfolio.
-
-**Research and academic teams** needing a field partner who can reach people where data is hard to collect, and who has the technical depth to study the system around them properly.
-
-**Society at large**, through the Lab's own published programmes, the research we run because the question deserves answering, regardless of who is paying.
-
----
-
-**§ 1.5 / The principle**
-
-## Align technology with the people it is meant to serve
-
-The Lab exists because the direction of a transition is not fixed. A technology can be steered, toward people's actual values and experiences, or away from them, and the steering goes better when someone is paying close, honest attention to what is really happening on the ground.
-
-That attention is the work. We provide the evidence; the people we work with provide the decision. Done well, the two together bend a transition toward the humans inside it.
-
-<!-- IMAGE applied-diagram: diagram | Diagram of an impact pathway: Activity -> Output -> Outcome -> Impact, with a feedback arrow labelled "evidence back to decision-makers". House colours. | Near the closing principle, or beside the "impact pathways" service. -->
+- **Outcomes, not outputs.** What actually changed for the person, not what the project produced. "Ten workshops delivered" is an output; "the participants can now negotiate a fair price" is an outcome. Only the second one earns the word impact.
+- **Quality-of-life change.** Concrete shifts in income, time, health, safety, learning, autonomy — measured in the units respondents actually use.
+- **Distributional effects.** Who was reached, who was excluded, and whether inequalities inside the target population widened or narrowed. Aggregate figures routinely hide this.
+- **Unintended effects.** The consequences a project didn't plan for, in either direction. Some are the most important findings a study produces.
+- **Customer experience.** How the intervention feels to use, the friction points that predict whether it will be sustained, and the specific improvements respondents ask for.
+- **Attribution and additionality.** Whether the change happened *because* of the intervention or *alongside* it — the distinction that separates evaluation from press release.
+- **Sustainability.** Whether the benefit persists once the project ends, or fades. Only measurable by revisiting.
 
 ---
 
-*To discuss a study or a collaboration, see [Contact](https://www.transitionslab.org/contact.html). For the research this work grows out of, see [Programmes](https://www.transitionslab.org/programmes.html). For field studies specifically, see [Field Research](https://www.transitionslab.org/field-research.html).*
+## How we do it
+
+**We start from the decision, not the data.** A short design conversation establishes what decision the research must inform, the population that holds the answer, and the specific evidence that would genuinely change the decision. Most research is wasted here, by gathering data that was never going to settle anything. See [How It Works](/how-it-works) for the four-step process the Lab runs on every engagement.
+
+**We build the instrument around the respondent.** Short, clear, locally grounded, and structured for repetition and comparison. We use validated instruments where they exist and design bespoke ones where they do not. Every instrument is built for repeat use, so a single study becomes a time series with almost no marginal cost.
+
+**We capture a baseline before the intervention.** Impact is a change, and a change needs a *before*. Baselines are captured with the same instrument that will be used again later, so the comparison is valid. Without this, an impact claim can only be asserted, not evidenced.
+
+**We reach respondents directly, in-language.** Trained local researchers who know the place gather data by phone or in person, with informed, recorded, revocable consent. We reach the people the intervention is meant to serve, not proxies for them. See [Field Research](/field-research) for the field methods behind this.
+
+**We report the inconvenient finding.** Independence is the whole point. We publish what the evidence says, including the parts that contradict a client's hopes. That posture is what makes the finding worth the effort of gathering it.
+
+---
+
+## What you receive
+
+Every engagement ends in something you can use, in the following forms:
+
+- **Clean, well-documented data**, ready to be re-analysed or re-run.
+- **A written analysis** in plain language, stating what the evidence shows and what it cannot conclude.
+- **The instruments themselves** — surveys, interview guides, indicator sets — so the study can be repeated next quarter or next year.
+- **Benchmarking** against comparable work where a comparable exists.
+- **A direct reading** of what the finding means for the decision in front of you, no translator required.
+
+Turnaround is typically measured in weeks. Instruments are designed for repetition, so what starts as a one-off becomes an ongoing measurement capability.
+
+---
+
+## Where impact measurement earns its cost
+
+The Lab is most useful at a few specific moments:
+
+- **Before a decision to scale** — where the cost of being wrong about how the intervention lands is high. This is [Context Entry](/case-context-entry) work.
+- **When a funder or board needs evidence that will survive scrutiny** — because independent measurement produces the credibility a self-assessment cannot.
+- **When a project is still live** — a mid-course reading can still change the outcome, and cost less than fixing it later.
+- **When the intervention is technical as well as social** — payment systems, [e-mobility](/expertise-e-mobility), [energy access](/expertise-energy), [water](/expertise-water), [AI and digital services](/expertise-ai-digital) — where a purely social or purely technical evaluation would miss what matters. The Lab pairs both perspectives.
+- **When you specifically need an outside voice** — because an internal one, however honest, will be discounted.
+
+---
+
+## How we differ from what already exists
+
+There are excellent impact-measurement firms — [60 Decibels](https://60decibels.com/), [3ie](https://www.3ieimpact.org/), IDinsight — each with its own strength. The Lab's difference is a specific combination three organisations rarely hold together:
+
+- **Social-science fieldcraft and technical literacy in the same team.** Policy evaluators understand programmes but not the technologies inside them. Technical evaluators understand systems but not the people around them. The Lab refuses the split — see [About](/about).
+- **Rooted in Delft, working through partners on the ground.** Not a survey firm parachuted in; researchers who already speak the language and know the place. See [Where we work](/geographies).
+- **Both a publisher and a measurement partner.** The [research programmes](/programmes) the Lab runs openly on its own account are the proof of the method; the contracted measurement uses the same method, made available.
+
+---
+
+## Related reading
+
+- The [in-depth interview guide](/interview-guide) — the depth the Lab reaches in qualitative work.
+- The [European impact-tracking template](/impact-tracking-template) — a full baseline-to-endline framework, ready to fill in.
+- The [BRW framework](/brw) — the Lab's strategic lens for reading how a niche technology engages an incumbent regime.
+- [TRL and SRL explained](/readiness-levels) — technology and societal readiness, and why both axes matter.
+- [European Impact Tracking](/european-impact-tracking) — the specific service for European projects with Grant Agreement obligations.
+- [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) — the full evidence loop, from theory of change to uptake.
+
+---
+
+*To discuss a study or a collaboration, see [Contact](/contact). For the field research behind the measurement, see [Field Research](/field-research). For the research programmes this work grows out of, see [Programmes](/programmes).*

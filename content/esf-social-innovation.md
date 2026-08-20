@@ -16,9 +16,9 @@ Social innovation only works if the genuinely better ideas can be told apart fro
 
 ## Innovation that has to prove itself
 
-The [ESF Social Innovation+ Initiative](https://european-social-fund-plus.ec.europa.eu/en/social-innovation), with a budget in the region of [€197 million](https://european-social-fund-plus.ec.europa.eu/en/social-innovation), funds EU-wide, transnational projects to develop, replicate, and scale up innovative solutions, through calls for proposals run by the [European Competence Centre for Social Innovation](https://european-social-fund-plus.ec.europa.eu/en/eucc-social-innovation). It is complemented by social experimentation calls under the [EaSI strand of the ESF+](https://european-social-fund-plus.ec.europa.eu/en/EaSI), and by a network of [National Competence Centres for Social Innovation](https://european-social-fund-plus.ec.europa.eu/en/national-competence-centres-social-innovation-ncc-sis) across the Member States.
+The [ESF Social Innovation+ Initiative](https://european-social-fund-plus.ec.europa.eu/en/social-innovation), with a budget in the region of **€197 million**, funds EU-wide, transnational projects to develop, replicate, and scale up innovative solutions, through calls for proposals run by the European Competence Centre for Social Innovation. It is complemented by social experimentation calls under the [EaSI strand of the ESF+](https://european-social-fund-plus.ec.europa.eu/en/easi), and by a network of National Competence Centres for Social Innovation across the Member States.
 
-Two things run through all of it. First, these are experiments: the point is to test whether a new approach works, not to assume it. Second, the Commission expects that testing to be rigorous. Its own guidance — the [practical guide to social experimentation](https://ec.europa.eu/social/main.jsp?catId=1093&langId=en) and the [toolkit on scaling up social innovation](https://ec.europa.eu/social/main.jsp?catId=1093&langId=en) — makes methodology central: a social experiment is only worth scaling if there is credible evidence that it produced the outcome, for whom, and why.
+Two things run through all of it. First, these are experiments: the point is to test whether a new approach works, not to assume it. Second, the [Commission expects that testing to be rigorous](https://european-social-fund-plus.ec.europa.eu/en/social-innovation). Its own guidance on social experimentation and on scaling up social innovation makes methodology central: a social experiment is only worth scaling if there is credible evidence that it produced the outcome, for whom, and why.
 
 That is precisely the gap the Lab fills. An innovative idea and a research design are different skills, and the teams with the best social innovations are rarely the teams best placed to measure them independently.
 
@@ -44,7 +44,7 @@ This connects directly to the Lab's wider [Monitoring, Evaluation & Disseminatio
 
 ## Built for cross-border projects
 
-[ESF+ social innovation](https://european-social-fund-plus.ec.europa.eu/en/social-innovation) is deliberately transnational: solutions are developed, tested, and transferred across Member States, and partners find each other through the [Social Innovation Match database](https://si-match.eu/) and call-specific partner searches. That cross-border character is a natural fit for the Lab.
+[ESF+ social innovation](https://european-social-fund-plus.ec.europa.eu/en/social-innovation) is deliberately transnational: solutions are developed, tested, and transferred across Member States, and partners find each other through the Social Innovation Match database and call-specific partner searches. That cross-border character is a natural fit for the Lab.
 
 A consistent measurement framework applied across several countries is exactly what makes a transnational result credible and comparable, rather than a set of local anecdotes that cannot be pooled. The Lab designs the instrument once, adapts it faithfully to each context, and reads the results across the whole project, so a coordinator can say, with evidence, that an approach worked in three countries and why it did not in a fourth.
 

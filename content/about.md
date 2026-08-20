@@ -26,9 +26,9 @@ That attention is the Lab's reason to exist. We are not here to celebrate innova
 
 The Lab works in two modes that share one method.
 
-We **publish our own research** openly: programmes on finance and payment systems, electrification and e-mobility, and water access, and a signature typology of how new infrastructure systems navigate the legacy regimes they enter. This is the work we run because the question deserves answering, regardless of who is paying.
+We **publish our own research** openly: [research programmes](/programmes) on finance, electrification and e-mobility, and water access, and a [signature typology](/brw) of how new infrastructure systems navigate the legacy regimes they enter. This is the work we run because the question deserves answering, regardless of who is paying.
 
-We **work under contract** for organisations that need evidence they cannot generate themselves: field research, impact measurement, and the design of the instruments that make a transition legible while it is still unfolding. This work is confidential to the client by default. The case studies on this site are the exceptions, shared only with the partner's agreement.
+We **work under contract** for organisations that need evidence they cannot generate themselves: [field research](/field-research), [impact measurement](/applied-research), and the design of the instruments that make a transition legible while it is still unfolding. This work is confidential to the client by default. The [case studies](/case-studies) on this site are the exceptions, shared only with the partner's agreement.
 
 The two modes are not in tension. The published research is the proof of the method; the contracted work is the same method, made available. And because we are independent of the things we measure, we can report what the evidence says, including when it is inconvenient. That independence is not a virtue we advertise. It is the entire product.
 
