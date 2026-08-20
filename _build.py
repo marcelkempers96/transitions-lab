@@ -872,138 +872,161 @@ def build_home() -> str:
     og_image = f"{SITE_URL}/assets/og-image.png"
 
     body = """
-<!-- HERO (static gradient — no canvas animation) -->
-<section class="hero" style="min-height:88vh;display:flex;align-items:center;padding:120px 0 80px;">
-  <div class="wrap" style="position:relative;z-index:3;">
-    <p class="eyebrow reveal">Field research &amp; impact measurement</p>
-    <h1 class="reveal d1">Aligning technology with the people it is meant to <em>serve</em>.</h1>
-    <p class="lede reveal d2">An independent research team working on the ground, building deep understanding of socio-technical transitions, so human values and lived experience shape how technologies arrive in the world.</p>
-    <div class="cta-row reveal d3">
-      <a href="/contact" class="btn btn-solid">Start a study →</a>
-      <a href="/what-we-do" class="btn btn-ghost">See how we work</a>
-    </div>
-  </div>
-</section>
-
-<!-- STANCE -->
-<section class="stance">
+<!-- HERO — typewriter tagline -->
+<section class="hero">
   <div class="wrap">
-    <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is paying honest attention to what happens to people on the ground, early enough for it to matter. That attention is the Lab's reason to exist.</blockquote>
-  </div>
-</section>
-
-<!-- WHAT WE BRING -->
-<section class="dark glow">
-  <div class="wrap">
-    <div class="section-head reveal" style="max-width:56ch;">
-      <p class="eyebrow">What we bring</p>
-      <h2>Social science first, technical depth alongside.</h2>
-      <p>Two things that rarely sit in the same room. Social-science fieldcraft, and genuine technical literacy about the systems we study. The combination is what allows us to align human values with technology in context.</p>
-    </div>
-    <div class="dims">
-      <div class="dim reveal">
-        <p class="tag">Dimension I</p>
-        <h3>Reach</h3>
-        <p>Who is actually being reached, and, just as important, who is being missed. Coverage, inclusion, and the gap between intended and actual participants.</p>
-      </div>
-      <div class="dim reveal d1">
-        <p class="tag">Dimension II</p>
-        <h3>Depth</h3>
-        <p>How much changes for those reached. The magnitude of outcomes and whether the change is meaningful in respondents' own terms.</p>
-      </div>
-      <div class="dim reveal d2">
-        <p class="tag">Dimension III</p>
-        <h3>Experience</h3>
-        <p>What it is like to be on the receiving end. Satisfaction, problems encountered, and the qualitative texture numbers alone cannot carry.</p>
-      </div>
+    <p class="eyebrow">Field research &amp; impact measurement</p>
+    <h1><span id="hero-headline" data-text="Listening to the people."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
+    <p class="lede" id="hero-subhead" data-text="Transitions Lab gets you honest, field-grounded evidence about how technologies meet real people — gathered by researchers who live in the places we study."></p>
+    <div class="cta-row">
+      <a href="/contact" class="btn btn-ink">Start a study →</a>
+      <a href="/how-it-works" class="btn btn-ghost">See how we work</a>
     </div>
   </div>
 </section>
 
-<!-- WHERE WE WORK -->
-<section class="dark glow">
-  <div class="wrap" style="text-align:center;">
-    <div class="reveal" style="max-width:22ch;margin:0 auto;">
-      <p class="eyebrow">Where we work</p>
-      <h2 style="font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:500;font-size:clamp(34px,5.5vw,72px);line-height:1.05;letter-spacing:-.02em;color:#fff;">Local partner. <span style="font-weight:800;display:block;color:var(--orange);">Global reach.</span></h2>
-      <p style="color:var(--on-dark-soft);font-size:18px;margin:22px auto 0;max-width:44ch;">Based in Delft, The Netherlands. We do fieldwork in the places our research takes us, through partners who already speak the language and know the place.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WORK -->
-<section class="light">
+<!-- HOW WE WORK — three numbered steps in block colours -->
+<section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Work</p>
-      <h2>Where the Lab has been on the ground.</h2>
+      <p class="eyebrow">How we work</p>
+      <h2>Three steps. One method.</h2>
+      <p>Every study runs the same disciplined arc, from the decision that triggered it to the evidence delivered. No template applied blindly. No finding without a fieldworker behind it.</p>
+    </div>
+    <div class="steps">
+      <div class="step-card">
+        <div class="num">01</div>
+        <h3>Frame the decision</h3>
+        <p>We start with the choice you are facing, not a template. What has to be settled before you can act, and who does the answer need to come from?</p>
+      </div>
+      <div class="step-card">
+        <div class="num">02</div>
+        <h3>Reach the people</h3>
+        <p>Our field researchers speak the languages and know the places. Recorded, revocable, informed consent, and anonymisation by default. Rigour that holds up.</p>
+      </div>
+      <div class="step-card">
+        <div class="num">03</div>
+        <h3>Report honestly</h3>
+        <p>Findings that support your decision, and findings that don't. Every claim traceable to evidence. Delivered as briefings and interactive dashboards, ready to act on.</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:48px;"><a href="/how-it-works" class="btn btn-ghost">See the full method →</a></p>
+  </div>
+</section>
+
+<!-- STATEMENT — forest block with big text -->
+<section class="statement">
+  <div class="wrap">
+    <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is <span class="highlight">paying honest attention</span> to what happens to people on the ground.</blockquote>
+    <cite>— Transitions Lab</cite>
+  </div>
+</section>
+
+<!-- OUR EXPERTISE — eight fields in a bordered grid -->
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Our expertise</p>
+      <h2>Eight fields. One question: what actually reaches people?</h2>
+      <p>We work across the transitions that shape how technologies land in real lives — from electric mobility to safe water, from mobile money to regenerative agriculture.</p>
+    </div>
+    <div class="expertise-grid">
+      <a class="exp-card" href="/expertise-e-mobility"><div class="exp-num">01</div><h3>E-Mobility &amp; Transport</h3><p>Electric two- and three-wheelers, bus fleets, and the finance that carries them.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-energy"><div class="exp-num">02</div><h3>Energy Access</h3><p>Off-grid solar, mini-grids, and the boundary where public planning takes over.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-water"><div class="exp-num">03</div><h3>Water &amp; Sanitation</h3><p>Safe water access, transparency, and community-based accountability.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-agriculture"><div class="exp-num">04</div><h3>Regenerative Agriculture</h3><p>Smallholder adoption of technologies that turn waste into soil, energy, and income.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-manufacturing"><div class="exp-num">05</div><h3>Local Manufacturing</h3><p>Where imports become assembly, and assembly becomes value that stays.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-ai-digital"><div class="exp-num">06</div><h3>AI &amp; Digital</h3><p>Mobile money, digital public infrastructure, and the interoperability gap.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-finance"><div class="exp-num">07</div><h3>Financial Inclusion</h3><p>Payment rails and credit systems that carry every other transition.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-climate"><div class="exp-num">08</div><h3>Climate &amp; Ecosystems</h3><p>Satellites, sensors, and community rangers in environmental monitoring.</p><span class="arrow">→</span></a>
+    </div>
+    <p style="text-align:center;margin-top:48px;"><a href="/expertise" class="btn btn-ghost">Explore all expertise →</a></p>
+  </div>
+</section>
+
+<!-- LATEST INSIGHTS — three cards with coloured stripes -->
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Latest insights</p>
+      <h2>Independent reading of the transitions we study.</h2>
+      <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
+    </div>
+    <div class="insight-row">
+      <a class="insight-card" href="/insight-transitions-outcomes">
+        <div class="stripe"><span class="kicker">Insight · Transitions</span></div>
+        <div class="body">
+          <h3>Four Ways a Transition Lands</h3>
+          <p>A two-axis diagnostic that sorts every real transition into one of four patterns. Where each fails, and how the Lab reads its own cases against the matrix.</p>
+          <span class="read">Read →</span>
+        </div>
+      </a>
+      <a class="insight-card" href="/brw">
+        <div class="stripe"><span class="kicker">Framework · Method</span></div>
+        <div class="body">
+          <h3>The BRW Framework</h3>
+          <p>Bypass, Repurpose, Weaken. Three mechanisms matched to the three barriers a niche technology actually meets, and why the choice decides what a transition reaches.</p>
+          <span class="read">Read →</span>
+        </div>
+      </a>
+      <a class="insight-card" href="/insight-eu-us">
+        <div class="stripe"><span class="kicker">Insight · Europe</span></div>
+        <div class="body">
+          <h3>Europe Invents, America Scales</h3>
+          <p>Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. Where independent evidence fits in the gap.</p>
+          <span class="read">Read →</span>
+        </div>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:48px;"><a href="/articles" class="btn btn-ghost">See all articles →</a></p>
+  </div>
+</section>
+
+<!-- CASE STUDIES — three field cases -->
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Case studies</p>
+      <h2>Where we've worked on the ground.</h2>
       <p>Most commissioned work is delivered privately. The engagements below are the ones partners have agreed to share.</p>
     </div>
-    <div class="insights">
-      <a class="insight reveal" href="/case-roam">
-        <div class="thumb">
-          <div class="kicker"><span>Case study</span><span>Kenya</span></div>
-        </div>
+    <div class="insight-row">
+      <a class="insight-card" href="/case-roam">
+        <div class="stripe"><span class="kicker">Kenya · E-mobility</span></div>
         <div class="body">
-          <h3>Electric transport in Nairobi, Roam</h3>
-          <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, and what carries riders across it.</p>
-          <span class="more">Read the case →</span>
+          <h3>Electric transport in Nairobi</h3>
+          <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with Roam.</p>
+          <span class="read">Read the case →</span>
         </div>
       </a>
-      <a class="insight reveal d1" href="/case-pyropower">
-        <div class="thumb">
-          <div class="kicker"><span>Case study</span><span>Indonesia</span></div>
-        </div>
+      <a class="insight-card" href="/case-pyropower">
+        <div class="stripe"><span class="kicker">Indonesia · Agriculture</span></div>
         <div class="body">
-          <h3>Biochar &amp; clean energy in Lombok, Pyropower</h3>
-          <p>When smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln.</p>
-          <span class="more">Read the case →</span>
+          <h3>Biochar in Lombok</h3>
+          <p>Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.</p>
+          <span class="read">Read the case →</span>
         </div>
       </a>
-      <a class="insight reveal d2" href="/case-reef-support">
-        <div class="thumb">
-          <div class="kicker"><span>Case study</span><span>Marine</span></div>
-        </div>
+      <a class="insight-card" href="/case-mimaji">
+        <div class="stripe"><span class="kicker">Kenya · Water</span></div>
         <div class="body">
-          <h3>Rangers for marine ecosystems, Reef Support</h3>
-          <p>Community rangers, sensors, and satellite data combine into a shared, trustworthy picture of reef health.</p>
-          <span class="more">Read the case →</span>
+          <h3>Water transparency in Nairobi</h3>
+          <p>Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.</p>
+          <span class="read">Read the case →</span>
         </div>
       </a>
     </div>
-    <p class="reveal" style="text-align:center;margin-top:36px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
+    <p style="text-align:center;margin-top:48px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
   </div>
 </section>
 
-<!-- INSIGHTS -->
-<section class="dark">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Insights</p>
-      <h2>How we read the landscape.</h2>
-      <p>Independent analysis of the transitions and relationships we study; the same evidence-first posture, applied to the big picture.</p>
-    </div>
-    <div class="approach">
-      <a class="cell reveal" href="/insight-eu-us" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--on-dark);">
-        <div class="step">Insight</div>
-        <h3 style="color:#fff;">Europe Invents, America Scales</h3>
-        <p style="color:var(--on-dark-soft);">Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. Where the asymmetry sits and where independent evidence fits in the gap.</p>
-      </a>
-      <a class="cell reveal d1" href="/insight-eu-africa" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--on-dark);">
-        <div class="step">Insight</div>
-        <h3 style="color:#fff;">The EU and Africa</h3>
-        <p style="color:var(--on-dark-soft);">Europe is committing hundreds of billions to Africa; Africa is becoming the growth market of the century. Where the two genuinely fit, and what stands between the investment and the impact.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="dark cta" style="text-align:center;padding-top:80px;padding-bottom:100px;">
-  <div class="wrap reveal" style="max-width:760px;">
-    <h2 style="font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;font-size:clamp(34px,4.4vw,52px);color:#fff;letter-spacing:-.02em;line-height:1.05;">Tell us the decision. We will design the study.</h2>
-    <p style="color:var(--on-dark-soft);font-size:19px;margin:18px auto 34px;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what the evidence can and cannot settle.</p>
-    <a href="/contact" class="btn btn-solid">Start a study →</a>
+<!-- CTA — cobalt block -->
+<section class="section-cobalt" style="text-align:center;">
+  <div class="wrap on-dark" style="max-width:820px;">
+    <p class="eyebrow">Start a study</p>
+    <h2 style="font-size:clamp(34px,5vw,60px);letter-spacing:-.02em;line-height:1.05;">Tell us the decision. We will design the study.</h2>
+    <p style="font-size:20px;margin:22px auto 42px;max-width:56ch;color:var(--paper);font-weight:500;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.</p>
+    <a href="/contact" class="btn">Start a study →</a>
   </div>
 </section>
 """

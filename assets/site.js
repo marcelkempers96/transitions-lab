@@ -65,31 +65,43 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
   }
 
-  // ── Cursor-following glow in the hero ───────────────────────
-  var hero = document.querySelector('.hero');
-  if (hero && !reduce) {
-    hero.addEventListener('pointermove', function (e) {
-      var r = hero.getBoundingClientRect();
-      hero.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      hero.classList.add('lit');
-    });
-    hero.addEventListener('pointerleave', function () {
-      hero.classList.remove('lit');
-    });
-  }
-
-  // ── Cursor-tracking glow on the stance section ──────────────
-  var stance = document.querySelector('.stance');
-  if (stance) {
-    stance.addEventListener('pointermove', function (e) {
-      var r = stance.getBoundingClientRect();
-      stance.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      stance.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      stance.classList.add('lit');
-    });
-    stance.addEventListener('pointerleave', function () {
-      stance.classList.remove('lit');
-    });
+  // ── Typewriter — hero headline then subhead ────────────────
+  //     Reads target text from data-text on each element, types it
+  //     one character at a time, hides the cursor when done. On
+  //     reduced-motion, prints the final text immediately.
+  var headline = document.getElementById('hero-headline');
+  var subhead = document.getElementById('hero-subhead');
+  var cursor = document.getElementById('hero-cursor');
+  if (headline) {
+    var hText = headline.getAttribute('data-text') || '';
+    var sText = subhead ? (subhead.getAttribute('data-text') || '') : '';
+    if (reduce) {
+      headline.textContent = hText;
+      if (subhead) subhead.textContent = sText;
+      if (cursor) cursor.style.display = 'none';
+    } else {
+      var hi = 0, si = 0;
+      var typeSub = function () {
+        if (si <= sText.length) {
+          subhead.textContent = sText.slice(0, si);
+          si++;
+          setTimeout(typeSub, 18);
+        } else if (cursor) {
+          cursor.style.display = 'none';
+        }
+      };
+      var typeHead = function () {
+        if (hi <= hText.length) {
+          headline.textContent = hText.slice(0, hi);
+          hi++;
+          setTimeout(typeHead, 70);
+        } else if (subhead && sText) {
+          setTimeout(typeSub, 350);
+        } else if (cursor) {
+          cursor.style.display = 'none';
+        }
+      };
+      typeHead();
+    }
   }
 });
