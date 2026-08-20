@@ -872,8 +872,12 @@ def build_home() -> str:
     og_image = f"{SITE_URL}/assets/og-image.png"
 
     body = """
-<!-- HERO — typewriter tagline -->
-<section class="hero">
+<!-- HERO — typewriter tagline on video background -->
+<section class="hero has-video">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="/assets/media/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-veil" aria-hidden="true"></div>
   <div class="wrap">
     <p class="eyebrow">Field research &amp; impact measurement</p>
     <h1><span id="hero-headline" data-text="Listening to the people."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
