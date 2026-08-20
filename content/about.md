@@ -50,9 +50,7 @@ Most organisations that might study a technology hold only one half. Policy cons
 
 The Lab works in the contexts that defeat conventional research: low-connectivity, multilingual, informal, dispersed. These are also the settings where decisions carry the most weight and where bad evidence does the most damage.
 
-We are based in Delft, with field presence in Nairobi and across coastal Indonesia, and a growing reach into the Dutch Caribbean.
-
-<!-- IMAGE about-map: diagram/map | Simple, elegant world or region map with 4 marked nodes: Delft (HQ), Nairobi, Lombok/coastal Indonesia, Dutch Caribbean. Use house navy #1A3A52 + ochre accent. Understated, editorial - not a busy infographic. | Directly under this "where we work" paragraph. --> We do not parachute in. We work through researchers who already speak the language and know the place, because the quality of field research depends on it.
+We are based in Delft, The Netherlands. We do not parachute in: we work through researchers and partners who already speak the language and know the place, because the quality of field research depends on it.
 
 ---
 

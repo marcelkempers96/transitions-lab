@@ -28,11 +28,11 @@ The decision you are trying to make. Who the research would need to reach, and w
 
 ## Direct contact
 
-**Email**, hello@transitionslab.org *(confirm or replace with your live address before publishing)*
-**Based in**, Delft · Nairobi · Dutch Caribbean
-**Response**, we reply to serious enquiries within a few working days.
+**Email**, hello@transitionslab.org
 
-> *Contact details to be filled in to match the Lab's existing contact channels.*
+**Based in**, Delft, The Netherlands
+
+**Response**, we reply to serious enquiries within a few working days.
 
 ---
 

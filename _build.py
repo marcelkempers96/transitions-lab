@@ -492,11 +492,11 @@ def md_body_to_html(md: str) -> str:
             i += 1
             continue
 
-        # section eyebrow: **§ ... **
+        # section eyebrow: **§ ... ** — drop entirely; the H2 that follows
+        # carries the meaning, so the eyebrow is redundant.
         m = SECTION_EYEBROW_RE.match(stripped)
         if m:
             close_list(list_kind); list_kind = None
-            out.append(f'<p class="prose-eyebrow">{htmllib.escape(m.group(1).strip())}</p>')
             i += 1
             continue
 
@@ -659,7 +659,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="https://www.linkedin.com/company/transitionslab/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="legal">
-      <span>© Transitions Lab 2026 · Delft · Nairobi · Dutch Caribbean</span>
+      <span>© Transitions Lab 2026 · Delft, The Netherlands</span>
       <span>Independent research, no trackers</span>
     </div>
   </div>
