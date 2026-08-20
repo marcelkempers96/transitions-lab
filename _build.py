@@ -33,6 +33,7 @@ ABOUT = [
     ("about", "About the Lab"),
     ("geographies", "Where we work"),
     ("who-we-serve", "Who we serve"),
+    ("how-it-works", "How It Works"),
     ("team", "Team"),
 ]
 
@@ -41,9 +42,7 @@ SERVICES = [
     ("field-research", "Field Research"),
     ("applied-research", "Impact Measurement"),
     ("european-impact-tracking", "European Impact Tracking"),
-    ("esf-social-innovation", "ESF+ Social Innovation"),
     ("monitoring-evaluation-dissemination", "Monitoring, Evaluation & Dissemination"),
-    ("how-it-works", "How It Works"),
 ]
 
 EXPERTISE = [
@@ -66,11 +65,18 @@ WORK = [
     ("resources", "Resources"),
 ]
 
+ARTICLES = [
+    ("insight-eu-us", "Europe Invents, America Scales"),
+    ("insight-eu-africa", "The EU and Africa"),
+    ("esf-social-innovation", "ESF+ Social Innovation"),
+]
+
 NAV = [
     {"slug": "__about", "label": "About", "dropdown": ABOUT},
     {"slug": "__services", "label": "Services", "dropdown": SERVICES},
     {"slug": "__expertise", "label": "Expertise", "dropdown": EXPERTISE},
     {"slug": "__work", "label": "Work", "dropdown": WORK},
+    {"slug": "__articles", "label": "Articles", "dropdown": ARTICLES},
     {"slug": "contact", "href": "/contact", "label": "Contact", "cta": True},
 ]
 
@@ -367,6 +373,41 @@ def rewrite_links(url: str) -> str:
 
 
 IMAGE_COMMENT_INLINE_RE = re.compile(r"<!--\s*IMAGE\b.*?-->", re.DOTALL)
+TABLE_SEP_RE = re.compile(r"^\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)+\|?\s*$")
+
+
+def _split_row(line: str) -> list[str]:
+    """Split a markdown table row on unescaped pipes."""
+    s = line.strip()
+    if s.startswith("|"): s = s[1:]
+    if s.endswith("|"): s = s[:-1]
+    return [c.strip() for c in s.split("|")]
+
+
+def _parse_table(lines: list[str], i: int) -> tuple[str, int]:
+    """Parse a pipe-table starting at lines[i]. Returns (html, next_i)."""
+    header = _split_row(lines[i])
+    i += 2  # skip header line + separator
+    rows: list[list[str]] = []
+    while i < len(lines) and lines[i].strip().startswith("|"):
+        rows.append(_split_row(lines[i]))
+        i += 1
+
+    parts = ['<div class="table-wrap"><table class="tbl">']
+    parts.append("<thead><tr>")
+    for h in header:
+        parts.append(f"<th>{inline(h)}</th>")
+    parts.append("</tr></thead>")
+    if rows:
+        parts.append("<tbody>")
+        for row in rows:
+            parts.append("<tr>")
+            for cell in row:
+                parts.append(f"<td>{inline(cell)}</td>")
+            parts.append("</tr>")
+        parts.append("</tbody>")
+    parts.append("</table></div>")
+    return "".join(parts), i
 
 
 def inline(text: str) -> str:
@@ -531,6 +572,13 @@ def md_body_to_html(md: str) -> str:
             i += 1
             continue
 
+        # table: line starts with '|' AND next line is a separator ('|---|---|')
+        if stripped.startswith("|") and i + 1 < len(lines) and TABLE_SEP_RE.match(lines[i + 1].strip()):
+            close_list(list_kind); list_kind = None
+            table_html, i = _parse_table(lines, i)
+            out.append(table_html)
+            continue
+
         # headings
         for level in (3, 2):
             prefix = "#" * level + " "
@@ -579,7 +627,7 @@ def md_body_to_html(md: str) -> str:
             para = [raw]
             i += 1
             while i < len(lines) and lines[i].strip() and not any(
-                lines[i].strip().startswith(x) for x in ("#", "- ", "> ", "---", "***", "**§")
+                lines[i].strip().startswith(x) for x in ("#", "- ", "> ", "---", "***", "**§", "|")
             ) and not IMAGE_COMMENT_RE.match(lines[i].strip()):
                 para.append(lines[i])
                 i += 1
