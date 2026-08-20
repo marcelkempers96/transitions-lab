@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://transitionslab.org/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://transitionslab.org/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://transitionslab.org/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://transitionslab.org/programmes</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://transitionslab.org/finance</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://transitionslab.org/electrification</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://transitionslab.org/water</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://transitionslab.org/brw</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://transitionslab.org/architectures</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://transitionslab.org/interoperability</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://transitionslab.org/policy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://transitionslab.org/diaspora</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://transitionslab.org/articles</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://transitionslab.org/cases</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://transitionslab.org/team</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://transitionslab.org/contact</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://transitionslab.org/case-studies</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://transitionslab.org/expertise-e-mobility</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://transitionslab.org/expertise</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://transitionslab.org/readiness-levels</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://transitionslab.org/what-we-do</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://transitionslab.org/who-we-serve</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
