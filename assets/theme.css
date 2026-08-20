@@ -8,7 +8,7 @@
 
 /* ── Fonts ────────────────────────────────────────────────
    Add this <link> to each page's <head>:
-   <link href="https://fonts.googleapis.com/css2?family=Abel&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 */
 
 :root{
@@ -52,7 +52,7 @@ body{
   font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4{font-family:'Abel',sans-serif;font-weight:400;line-height:1.12;margin:0;}
+h1,h2,h3,h4{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;line-height:1.12;margin:0;letter-spacing:-.015em;}
 a{color:inherit;}
 img{max-width:100%;display:block;}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
@@ -68,7 +68,7 @@ img{max-width:100%;display:block;}
 /* ── Header ───────────────────────────────────────────────── */
 header.site{position:sticky;top:0;z-index:40;background:rgba(20,20,22,.82);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--char-line);}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
-.brand{font-family:'Abel',sans-serif;font-weight:500;font-size:22px;color:var(--on-dark);text-decoration:none;display:flex;align-items:center;gap:.55em;letter-spacing:-.01em;}
+.brand{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--on-dark);text-decoration:none;display:flex;align-items:center;gap:.55em;letter-spacing:-.01em;}
 .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);display:inline-block;}
 .nav nav{display:flex;gap:30px;align-items:center;}
 .nav nav a{font-size:15px;text-decoration:none;color:var(--on-dark-soft);font-weight:500;transition:color .2s;}
@@ -144,7 +144,7 @@ section.light{padding:96px 0;background:var(--off);color:var(--on-light);border-
 section.light h1,section.light h2,section.light h3,section.light h4{color:var(--on-light);}
 section.light .eyebrow{color:var(--violet);}
 .section-head{max-width:62ch;margin-bottom:52px;}
-.section-head h2{font-family:'Abel',sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,54px);letter-spacing:.01em;color:inherit;line-height:1.08;}
+.section-head h2{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;font-size:clamp(34px,4.4vw,54px);letter-spacing:-.02em;color:inherit;line-height:1.05;}
 section.dark .section-head h2{color:#fff;}
 .section-head p{font-size:18px;margin:16px 0 0;}
 section.dark .section-head p{color:var(--on-dark-soft);}
@@ -155,7 +155,7 @@ section.light .section-head p{color:var(--on-light-soft);}
 .proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
 .proof .stat{padding:32px 22px;border-right:1px solid var(--char-line);}
 .proof .stat:last-child{border-right:0;}
-.proof .num{font-family:'Abel',sans-serif;font-size:40px;line-height:1;color:#fff;font-weight:400;}
+.proof .num{font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:44px;line-height:1;color:#fff;font-weight:800;letter-spacing:-.02em;}
 .proof .num .ph{color:var(--orange);}   /* [ — ] placeholder markers */
 .proof .lbl{font-size:13.5px;color:var(--on-dark-soft);margin-top:9px;}
 
@@ -249,6 +249,17 @@ section.light .section-head p{color:var(--on-light-soft);}
 .serve .card a{font-family:'Hanken Grotesk';font-weight:600;font-size:14.5px;text-decoration:none;color:var(--violet);border-bottom:2px solid rgba(30,58,95,.28);padding-bottom:2px;align-self:flex-start;transition:border-color .2s;}
 .serve .card a:hover{border-color:var(--violet);}
 
+/* ── Globe section (rotating star-map, "where we work") ───── */
+.globe-sec{position:relative;min-height:min(90vh,760px);background:var(--ink);display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--char-line);}
+#globe{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;}
+.globe-sec .wrap{position:relative;z-index:2;width:100%;padding-top:96px;padding-bottom:96px;}
+.globe-sec .copy{max-width:24ch;}
+.globe-sec .eyebrow{color:var(--sky);}
+.globe-sec h2{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:500;font-size:clamp(38px,6.5vw,80px);line-height:1.02;letter-spacing:-.02em;color:#fff;}
+.globe-sec h2 .b{font-weight:800;display:block;color:var(--orange);}
+.globe-sec p{color:var(--on-dark-soft);font-size:19px;margin-top:22px;max-width:44ch;}
+@media(max-width:860px){.globe-sec .copy{max-width:none;}}
+
 /* ── Pull-quote / stance (cursor-tracking gradient) ───────── */
 .stance{background:var(--char);position:relative;overflow:hidden;}
 .stance::before{
@@ -260,7 +271,7 @@ section.light .section-head p{color:var(--on-light-soft);}
 .stance.lit::before{opacity:1;}
 .stance .wrap{position:relative;z-index:1;max-width:880px;text-align:center;padding:104px 28px;}
 .stance .eyebrow{color:var(--sky);}
-.stance blockquote{font-family:'Abel',sans-serif;font-weight:300;font-size:clamp(27px,4vw,44px);line-height:1.24;margin:0;letter-spacing:-.01em;color:#fff;}
+.stance blockquote{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:400;font-size:clamp(27px,4vw,44px);line-height:1.22;margin:0;letter-spacing:-.02em;color:#fff;}
 .stance blockquote em{font-style:italic;color:var(--orange);}
 
 /* ── Insights / case-study cards (contained, with photo) ──── */
@@ -287,7 +298,7 @@ section.light .section-head p{color:var(--on-light-soft);}
 
 /* ── Let's talk / contact ─────────────────────────────────── */
 .talk .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
-.talk h2{font-family:'Abel',sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:.01em;color:#fff;line-height:1.08;}
+.talk h2{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;color:#fff;line-height:1.05;}
 .talk p{color:var(--on-dark-soft);font-size:18px;margin:18px 0 0;}
 .talk .panel{background:var(--char);border:1px solid var(--char-line);padding:34px;}
 .talk .panel label{display:block;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;color:var(--on-dark-soft);margin:0 0 7px;}
@@ -306,7 +317,7 @@ section.light .section-head p{color:var(--on-light-soft);}
 .prose a{color:var(--violet);text-decoration:underline;text-underline-offset:3px;}
 .prose ul,.prose ol{padding-left:1.3em;}
 .prose li{margin:.4em 0;font-size:18px;line-height:1.65;}
-.prose blockquote{border-left:3px solid var(--orange);padding:.2em 0 .2em 1.2em;margin-left:0;font-family:'Abel',sans-serif;font-size:22px;font-style:italic;color:var(--on-light);}
+.prose blockquote{border-left:3px solid var(--orange);padding:.2em 0 .2em 1.2em;margin-left:0;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:22px;font-weight:500;font-style:italic;color:var(--on-light);}
 .prose figure{margin:2em 0;}
 .prose figcaption{font-size:14px;color:var(--on-light-soft);margin-top:.6em;}
 .prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:#f2f2f4;padding:.1em .35em;border-radius:3px;}

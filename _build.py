@@ -406,7 +406,7 @@ def md_body_to_html(md: str) -> str:
 FONT_LINKS = (
     '<link rel="preconnect" href="https://fonts.googleapis.com">'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    '<link href="https://fonts.googleapis.com/css2?family=Abel&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">'
+    '<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">'
 )
 
 
@@ -705,6 +705,18 @@ def build_home() -> str:
   </div>
 </section>
 
+<!-- GLOBE — where we work -->
+<section class="globe-sec">
+  <canvas id="globe"></canvas>
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Where we work</p>
+      <h2>Local partner. <span class="b">Global reach.</span></h2>
+      <p>Field presence in Nairobi, coastal Indonesia, and the Dutch Caribbean, with a base in Delft. We work where the evidence is, in the language it is spoken.</p>
+    </div>
+  </div>
+</section>
+
 <!-- WORK -->
 <section class="light">
   <div class="wrap">
@@ -775,7 +787,7 @@ def build_home() -> str:
 <!-- CTA -->
 <section class="dark cta" style="text-align:center;padding-top:80px;padding-bottom:100px;">
   <div class="wrap" style="max-width:760px;">
-    <h2 style="font-family:'Abel',sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);color:#fff;letter-spacing:.01em;line-height:1.08;">Tell us the decision. We will design the study.</h2>
+    <h2 style="font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;font-size:clamp(34px,4.4vw,52px);color:#fff;letter-spacing:-.02em;line-height:1.05;">Tell us the decision. We will design the study.</h2>
     <p style="color:var(--on-dark-soft);font-size:19px;margin:18px auto 34px;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what the evidence can and cannot settle.</p>
     <a href="/contact" class="btn btn-solid">Start a study →</a>
   </div>
@@ -806,6 +818,38 @@ def build_home() -> str:
     ctx.globalCompositeOperation='source-over';
   }
   if(reduce){frame(0);}else{(function loop(now){var dt=now-last;last=now;frame(dt);requestAnimationFrame(loop);})(performance.now());}
+})();
+
+/* ===== ROTATING STAR-MAP GLOBE ===== */
+(function(){
+  var cv=document.getElementById('globe');if(!cv)return;var ctx=cv.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W,H,DPR,R,CX,CY;
+  function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=cv.offsetWidth*DPR;H=cv.height=cv.offsetHeight*DPR;R=Math.min(W,H)*0.52;CX=W*(window.innerWidth<860?0.5:0.66);CY=H*0.5;}
+  size();addEventListener('resize',size);
+  var PTS=window.innerWidth<700?800:1400,pts=[];
+  for(var i=0;i<PTS;i++){var lat=(Math.random()*2-1);lat=Math.sign(lat)*Math.pow(Math.abs(lat),1.3);var latR=lat*Math.PI/2*0.9;var lonR=Math.random()*Math.PI*2;var cl=Math.random()<0.55;pts.push({lat:latR,lon:lonR,b:cl?0.9:0.4+Math.random()*0.4,s:cl?1.5:0.9});}
+  var rot=0,last=performance.now(),vis=true,par=0;
+  var io2=new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:0});io2.observe(cv);
+  var gsec=document.querySelector('.globe-sec');
+  if(!reduce){addEventListener('scroll',function(){var r=gsec.getBoundingClientRect();var prog=1-(r.top+r.height/2)/innerHeight;par=Math.max(-1,Math.min(1,prog))*0.10;},{passive:true});}
+  function frame(dt){
+    rot+=dt*0.00006;ctx.clearRect(0,0,W,H);
+    var CYo=CY+par*H;
+    var halo=ctx.createRadialGradient(CX,CYo,R*0.86,CX,CYo,R*1.24);
+    halo.addColorStop(0,'rgba(120,110,220,0)');halo.addColorStop(0.55,'rgba(120,110,225,0.30)');halo.addColorStop(0.74,'rgba(150,175,235,0.22)');halo.addColorStop(1,'rgba(90,120,210,0)');
+    ctx.fillStyle=halo;ctx.beginPath();ctx.arc(CX,CYo,R*1.24,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.beginPath();ctx.arc(CX,CYo,R,0,Math.PI*2);ctx.clip();
+    var body=ctx.createRadialGradient(CX-R*0.3,CYo-R*0.3,R*0.1,CX,CYo,R);body.addColorStop(0,'#10131f');body.addColorStop(0.7,'#0a0d16');body.addColorStop(1,'#05070d');
+    ctx.fillStyle=body;ctx.fillRect(CX-R,CYo-R,R*2,R*2);
+    ctx.globalCompositeOperation='lighter';
+    for(var j=0;j<pts.length;j++){var p=pts[j];var lon=p.lon+rot;var x3=Math.cos(p.lat)*Math.sin(lon);var z3=Math.cos(p.lat)*Math.cos(lon);var y3=Math.sin(p.lat);if(z3<0)continue;var x=CX+x3*R,y=CYo-y3*R;var d=z3;var a=p.b*Math.pow(d,0.6)*0.9;var rad=p.s*DPR*(0.5+d*0.9);ctx.fillStyle='rgba(255,'+(180+(d*40|0))+','+(90+(d*40|0))+','+a+')';ctx.beginPath();ctx.arc(x,y,rad,0,Math.PI*2);ctx.fill();}
+    ctx.globalCompositeOperation='source-over';
+    var term=ctx.createLinearGradient(CX-R,0,CX+R,0);term.addColorStop(0,'rgba(3,4,8,0.62)');term.addColorStop(0.4,'rgba(3,4,8,0.1)');term.addColorStop(1,'rgba(3,4,8,0)');ctx.fillStyle=term;ctx.fillRect(CX-R,CYo-R,R*2,R*2);
+    ctx.restore();
+    ctx.beginPath();ctx.arc(CX,CYo,R,0,Math.PI*2);ctx.strokeStyle='rgba(150,140,235,0.5)';ctx.lineWidth=1.4*DPR;ctx.stroke();
+  }
+  if(reduce){frame(0);}else{(function loop(now){var dt=now-last;last=now;if(vis)frame(dt);requestAnimationFrame(loop);})(performance.now());}
 })();
 </script>"""
 
