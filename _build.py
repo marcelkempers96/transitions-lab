@@ -16,6 +16,7 @@ Non-goals: this is not a general markdown parser. It handles exactly the
 subset used by these content files.
 """
 from __future__ import annotations
+import hashlib
 import html as htmllib
 import re
 from dataclasses import dataclass
@@ -24,6 +25,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CONTENT_DIR = ROOT / "content"
 SITE_URL = "https://transitionslab.org"
+
+# Cache-bust asset URLs: a short hash of the file contents is appended
+# as a query string. New content → new URL → browsers refetch instead of
+# serving a stale copy (iOS Safari in particular caches JS aggressively).
+def _asset_hash(rel_path: str) -> str:
+    p = ROOT / rel_path.lstrip("/")
+    if not p.exists():
+        return "0"
+    h = hashlib.md5(p.read_bytes()).hexdigest()
+    return h[:8]
+
+ASSET_JS_V = _asset_hash("assets/site.js")
+ASSET_CSS_V = _asset_hash("assets/theme.css")
 
 # ────────────────────────────────────────────────────────────────────────────
 # Nav
@@ -719,7 +733,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 <meta name="twitter:description" content="{htmllib.escape(description, quote=True)}">
 <meta name="twitter:image" content="{og_image}">
 {FONT_LINKS}
-<link rel="stylesheet" href="/assets/theme.css">
+<link rel="stylesheet" href="/assets/theme.css?v={ASSET_CSS_V}">
 {extra_head}
 </head>
 <body>
@@ -770,7 +784,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
   </div>
 </footer>
 
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v={ASSET_JS_V}" defer></script>
 </body>
 </html>
 """
