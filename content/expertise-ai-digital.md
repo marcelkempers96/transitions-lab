@@ -14,9 +14,9 @@ The central risk is not technical failure. It is that these tools are deployed i
 
 **§ 1 / The market, in brief**
 
-- High-income countries host **86% of the world's top 500 supercomputers**; Africa holds under **1% of global data-centre capacity** for 18% of the world's people (World Bank).
-- Under **5%** of people in low-income countries have basic digital skills, against **66%** in high-income countries.
-- Middle-income countries are now heavy GenAI users, yet low-income countries are **under 1%** of global usage.
+- [High-income countries host **86% of the world's top 500 supercomputers**; Africa holds under **1% of global data-centre capacity** for 18% of the world's people](https://www.worldbank.org/en/publication/dptr2025-ai-foundations).
+- [Under **5%** of people in low-income countries have basic digital skills, against **66%** in high-income countries](https://data360.worldbank.org/en/atlas/artificial-intelligence/).
+- [Middle-income countries are now heavy GenAI users, yet low-income countries are **under 1%** of global usage](https://www.worldbank.org/en/publication/wdr2026).
 
 ---
 

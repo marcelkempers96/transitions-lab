@@ -14,9 +14,9 @@ Sub-Saharan Africa is the hardest case in the world.
 
 **§ 1 / The market, in brief**
 
-- Globally, **1 in 4 people (2.1 billion)** still lack safely managed drinking water; **3.4 billion** lack safely managed sanitation (WHO/UNICEF JMP, 2025).
-- In sub-Saharan Africa, rural access sits at just **53%**, and the region is the **only one** where the absolute number without access has grown.
-- Women and girls bear the collection burden, many spending **over 30 minutes a day** fetching water.
+- Globally, [**1 in 4 people (2.1 billion)** still lack safely managed drinking water](https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef); **3.4 billion** lack safely managed sanitation (WHO/UNICEF JMP, 2025).
+- In sub-Saharan Africa, [rural access sits at just **53%**](https://washdata.org/), and the region is the **only one** where the absolute number without access has grown.
+- Women and girls bear the collection burden, many spending [**over 30 minutes a day** fetching water](https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health).
 
 ---
 

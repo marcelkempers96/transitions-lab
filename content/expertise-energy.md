@@ -14,9 +14,9 @@ It is the only region-scale story in the world where, in some years, the number 
 
 **§ 1 / The market, in brief**
 
-- Sub-Saharan Africa accounted for **563 million** of the 655 million people without electricity in 2024; nearly **80% rural** (IEA).
-- Reaching universal access needs about **$15 billion a year**; under **$2.5 billion** was committed in 2023.
-- Mini-grids and standalone solar are among the **most cost-effective** ways to close the rural gap.
+- [Sub-Saharan Africa accounted for **563 million** of the 655 million people without electricity in 2024](https://www.iea.org/reports/financing-electricity-access-in-africa); nearly **80% rural**.
+- [Reaching universal access needs about **$15 billion a year**; under **$2.5 billion** was committed in 2023](https://www.iea.org/reports/financing-electricity-access-in-africa).
+- [Mini-grids and standalone solar are among the **most cost-effective** ways to close the rural gap](https://trackingsdg7.esmap.org/).
 
 ---
 

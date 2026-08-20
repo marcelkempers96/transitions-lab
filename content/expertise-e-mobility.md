@@ -8,14 +8,14 @@
 
 The electric transition in emerging markets is not led by cars. It is led by the two- and three-wheelers and shared minibuses that already move most people.
 
-And the economics have tipped. A recent World Bank analysis finds that in the highest-use segments, the lifetime cost of an electric vehicle is already below petrol, without subsidy.
+And the economics have tipped. A recent [World Bank analysis](https://www.worldbank.org/en/news/feature/2026/06/29/dont-let-a-crisis-go-to-waste-pivoting-africa-s-transport-to-clean-energy) finds that in the highest-use segments, the lifetime cost of an electric vehicle is already below petrol, without subsidy.
 
 ---
 
-**§ 1 / The market, in brief**
+## The market, in brief
 
-- Electric two-wheeler sales in Africa reached around **70,000 units in 2025**, up nearly eightfold from 9,000 in 2024 (IEA).
-- Kenya alone has an estimated **three million motorcycle-taxi riders**.
+- Electric two-wheeler sales in Africa reached around [**70,000 units in 2025**](https://www.iea.org/reports/global-ev-outlook-2025), up nearly eightfold from 9,000 in 2024.
+- Kenya alone has an estimated [**three million motorcycle-taxi riders**](https://africaema.org/africas-electric-mobility-status-2025/).
 - Adoption is now **outrunning the infrastructure**: charging, battery-swapping, and after-sales are not scaling at the pace of the vehicles.
 
 ---

@@ -57,26 +57,20 @@ EXPERTISE = [
     ("expertise-climate", "Climate & Ecosystems"),
 ]
 
-WORK = [
+LIBRARY = [
     ("case-studies", "Case studies"),
     ("programmes", "Research programmes"),
     ("brw", "The BRW framework"),
     ("readiness-levels", "TRL & SRL"),
     ("resources", "Resources"),
-]
-
-ARTICLES = [
-    ("insight-eu-us", "Europe Invents, America Scales"),
-    ("insight-eu-africa", "The EU and Africa"),
-    ("esf-social-innovation", "ESF+ Social Innovation"),
+    ("articles", "Articles"),
 ]
 
 NAV = [
     {"slug": "__about", "label": "About", "dropdown": ABOUT},
     {"slug": "__services", "label": "Services", "dropdown": SERVICES},
     {"slug": "__expertise", "label": "Expertise", "dropdown": EXPERTISE},
-    {"slug": "__work", "label": "Work", "dropdown": WORK},
-    {"slug": "__articles", "label": "Articles", "dropdown": ARTICLES},
+    {"slug": "__library", "label": "Library", "dropdown": LIBRARY},
     {"slug": "contact", "href": "/contact", "label": "Contact", "cta": True},
 ]
 
@@ -164,6 +158,10 @@ META: dict[str, dict[str, str]] = {
     "esf-social-innovation": {
         "title": "ESF+ Social Innovation: Independent Measurement | Transitions Lab",
         "description": "Independent, field-based measurement for ESF+ social innovation and social experimentation projects. Evidence of what actually changed, built for transnational calls.",
+    },
+    "articles": {
+        "title": "Articles | Transitions Lab",
+        "description": "Independent analysis and opinion pieces from Transitions Lab. Evidence-first reading of the transitions and relationships we study.",
     },
     "geographies": {
         "title": "Where We Work | East Africa, Southeast Asia, Dutch Caribbean | Transitions Lab",

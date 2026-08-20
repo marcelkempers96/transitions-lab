@@ -15,7 +15,7 @@
 
 ## The transition in one sentence
 
-A market of roughly three million petrol motorcycles, on which hundreds of thousands of households depend for daily income, is being asked to switch to electric, and whether it does will be decided not by the vehicle, but by everything around it.
+A market of roughly [three million petrol motorcycles](https://africaema.org/africas-electric-mobility-status-2025/), on which hundreds of thousands of households depend for daily income, is being asked to switch to electric, and whether it does will be decided not by the vehicle, but by everything around it.
 
 This is the kind of transition the Lab exists to study. Not the launch event or the prototype, but the unglamorous middle ground where a technology either crosses into ordinary use or stalls at the edge of it. Roam, designed and manufactured in Nairobi, is one of the clearest places in the world to watch that crossing happen in real time.
 
@@ -43,7 +43,7 @@ The transition, in other words, is being carried by financing architecture as mu
 
 ### Range anxiety is a lived experience, not a spec sheet
 
-The technical answer to range, a dual-battery setup, charging from any standard outlet, a portable charger, matters. But what the Lab listens for is how range *feels* in a working day. A rider who can charge at home overnight and start every day fully powered describes something a spec sheet cannot: the disappearance of the petrol-station queue from their morning, and with it a small daily anxiety. Roam's long-distance expeditions, a 6,000-kilometre solar-supported ride from Nairobi to Stellenbosch, a 1,600-kilometre run toward Addis Ababa, function as public proof that the range objection can be answered. On the ground, the proof that matters is quieter: the rider who simply stopped thinking about it.
+The technical answer to range, a dual-battery setup, charging from any standard outlet, a portable charger, matters. But what the Lab listens for is how range *feels* in a working day. A rider who can charge at home overnight and start every day fully powered describes something a spec sheet cannot: the disappearance of the petrol-station queue from their morning, and with it a small daily anxiety. [Roam's long-distance expeditions, a 6,000-kilometre solar-supported ride from Nairobi to Stellenbosch, a 1,600-kilometre run toward Addis Ababa](https://roam-electric.com/), function as public proof that the range objection can be answered. On the ground, the proof that matters is quieter: the rider who simply stopped thinking about it.
 
 ### After-sales is where transitions are won or lost
 
