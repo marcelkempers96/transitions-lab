@@ -122,9 +122,9 @@ A handful of structured questions put to the people the project affects, repeate
 | Question | Baseline | Midline 1 | Midline 2 | Endline |
 |---|---|---|---|---|
 | Has [the change] happened for you? (yes / partly / no) | | | | |
-| How much has it changed things? (0–10) | | | | |
+| How much has it changed things? (0-10) | | | | |
 | What is the single thing you would fix first? (open) | | | | |
-| Would you recommend / continue? (0–10) | | | | |
+| Would you recommend / continue? (0-10) | | | | |
 
 ---
 

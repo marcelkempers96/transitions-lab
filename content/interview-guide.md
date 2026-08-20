@@ -40,7 +40,7 @@ Plain-language consent, permission to record, and a genuinely easy first questio
 **Orientation (10 min), map their world.**
 Establish the context the rest of the interview depends on. Who is around them, what the alternatives were, what normal looked like before.
 
-**Core (25–35 min), go deep on two or three threads.**
+**Core (25-35 min), go deep on two or three threads.**
 This is where depth happens. Pick the threads that carry the impact claim and follow each one down the five levels. Better to reach level five on three things than level two on ten.
 
 **Lived experience (10 min), the change, felt.**

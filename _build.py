@@ -2,7 +2,7 @@
 """Build the Transitions Lab static site from content/*.md.
 
 Reads each markdown file in ./content/, converts to HTML wrapped in the
-shared theme, writes to <slug>.html at the repo root. Idempotent — safe
+shared theme, writes to <slug>.html at the repo root. Idempotent - safe
 to re-run whenever content changes.
 
 Special handling:
@@ -337,11 +337,11 @@ STUB_TITLES: dict[str, str] = {
     "water": "Water Access & Transparency",
     "finance": "Finance & Payment Systems",
     "brw": "The BRW Framework",
-    "case-roam": "Roam — Electric Transport in Nairobi",
-    "case-pyropower": "Pyropower — Biochar in Lombok",
-    "case-reef-support": "Reef Support — Community Marine Rangers",
-    "case-mimaji": "MiMaji — Water Transparency in Nairobi",
-    "case-statia": "St. Eustatius — Small-Island Mobility",
+    "case-roam": "Roam - Electric Transport in Nairobi",
+    "case-pyropower": "Pyropower - Biochar in Lombok",
+    "case-reef-support": "Reef Support - Community Marine Rangers",
+    "case-mimaji": "MiMaji - Water Transparency in Nairobi",
+    "case-statia": "St. Eustatius - Small-Island Mobility",
     "case-context-entry": "Market-Entry Study, East Africa",
     "insight-eu-us": "Europe Invents, America Scales",
     "insight-eu-africa": "The EU and Africa",
@@ -553,7 +553,7 @@ def parse_markdown(md: str) -> tuple[str | None, str, str | None, str]:
         if joined.startswith("*") and joined.endswith("*") and not joined.startswith("**"):
             standfirst = joined.strip("*").strip()
         else:
-            # Not a standfirst — put it back in the body
+            # Not a standfirst - put it back in the body
             body_lines.extend(para)
 
     # 4. Rest is body
@@ -614,7 +614,7 @@ def md_body_to_html(md: str) -> str:
             out.append("\n".join(block))
             continue
 
-        # section eyebrow: **§ ... ** — drop entirely; the H2 that follows
+        # section eyebrow: **§ ... ** - drop entirely; the H2 that follows
         # carries the meaning, so the eyebrow is redundant.
         m = SECTION_EYEBROW_RE.match(stripped)
         if m:
@@ -679,7 +679,7 @@ def md_body_to_html(md: str) -> str:
                 out.append(f"<blockquote>{inline(' '.join(parts))}</blockquote>")
                 continue
 
-            # paragraph — collect until blank line
+            # paragraph - collect until blank line
             close_list(list_kind); list_kind = None
             para = [raw]
             i += 1
@@ -842,7 +842,7 @@ def build_stub_page(slug: str, title: str) -> str:
 
     noindex so search engines don't index the placeholder.
     """
-    description = f"{title} — content coming soon."
+    description = f"{title} - content coming soon."
     body = f"""<section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">Coming soon</p>
@@ -871,10 +871,10 @@ def build_home() -> str:
     """The home page is hand-built to use the animated hero and section flow.
 
     Content is drawn from content/home.md thematically, but the structure
-    is bespoke — this is the marketing surface of the site.
+    is bespoke - this is the marketing surface of the site.
     """
     slug = "index"
-    title = "Transitions Lab — Aligning technology with the people it is meant to serve"
+    title = "Transitions Lab - Aligning technology with the people it is meant to serve"
     description = "Transitions Lab is an independent research team. We build deep, honest understanding of socio-technical transitions in emerging markets, so human values and lived experience shape how technologies arrive."
 
     nav_html = render_nav(slug)
@@ -882,7 +882,7 @@ def build_home() -> str:
     og_image = f"{SITE_URL}/assets/og-image.png"
 
     body = """
-<!-- HERO — typewriter tagline on video background -->
+<!-- HERO - typewriter tagline on video background -->
 <section class="hero has-video">
   <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
     <source src="/assets/media/hero.mp4" type="video/mp4">
@@ -891,7 +891,7 @@ def build_home() -> str:
   <div class="wrap">
     <p class="eyebrow">Field research &amp; impact measurement</p>
     <h1><span id="hero-headline" data-text="Listening to the people."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
-    <p class="lede" id="hero-subhead" data-text="Transitions Lab gets you honest, field-grounded evidence about how technologies meet real people — gathered by researchers who live in the places we study."></p>
+    <p class="lede" id="hero-subhead" data-text="Transitions Lab gets you honest, field-grounded evidence about how technologies meet real people - gathered by researchers who live in the places we study."></p>
     <div class="cta-row">
       <a href="/contact" class="btn btn-ink">Start a study →</a>
       <a href="/how-it-works" class="btn btn-ghost">See how we work</a>
@@ -899,7 +899,7 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- HOW WE WORK — three numbered steps in block colours -->
+<!-- HOW WE WORK - three numbered steps in block colours -->
 <section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
@@ -928,21 +928,65 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- STATEMENT — forest block with big text -->
-<section class="statement">
+<!-- WHO WE SERVE - five target types on coloured blocks -->
+<section class="section-white">
   <div class="wrap">
-    <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is <span class="highlight">paying honest attention</span> to what happens to people on the ground.</blockquote>
-    <cite>— Transitions Lab</cite>
+    <div class="section-head reveal">
+      <p class="eyebrow">Who we serve</p>
+      <h2>Five kinds of organisation, one need.</h2>
+      <p>Different questions, one underlying ask: honest, independent evidence of what a technology or programme actually does to real people.</p>
+    </div>
+    <div class="serve-grid">
+      <a href="/who-we-serve">
+        <span class="serve-tag">01 · Companies</span>
+        <h3>Companies &amp; innovators</h3>
+        <p>Field evidence for a market you are about to enter. Who actually adopts, and why.</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="/who-we-serve">
+        <span class="serve-tag">02 · Funders</span>
+        <h3>Funders &amp; public bodies</h3>
+        <p>Portfolio-wide impact evidence that survives review and travels across projects.</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="/who-we-serve">
+        <span class="serve-tag">03 · Consortia</span>
+        <h3>European consortia</h3>
+        <p>The independent measurement partner, from baseline through endline.</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="/who-we-serve">
+        <span class="serve-tag">04 · NGOs</span>
+        <h3>NGOs &amp; programmes</h3>
+        <p>Honest evidence of what is changing on the ground, reported truthfully.</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="/who-we-serve">
+        <span class="serve-tag">05 · Researchers</span>
+        <h3>Research teams</h3>
+        <p>A field partner with reach, and real technical understanding of the systems being studied.</p>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:48px;"><a href="/who-we-serve" class="btn btn-ghost">See who we serve →</a></p>
   </div>
 </section>
 
-<!-- OUR EXPERTISE — eight fields in a bordered grid -->
+<!-- STATEMENT - forest block with big text -->
+<section class="statement">
+  <div class="wrap">
+    <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is <span class="highlight">paying honest attention</span> to what happens to people on the ground.</blockquote>
+    <cite>- Transitions Lab</cite>
+  </div>
+</section>
+
+<!-- OUR EXPERTISE - eight fields in a bordered grid -->
 <section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Our expertise</p>
-      <h2>Eight fields. One question: what actually reaches people?</h2>
-      <p>We work across the transitions that shape how technologies land in real lives — from electric mobility to safe water, from mobile money to regenerative agriculture.</p>
+      <h2>Where the Lab has depth.</h2>
+      <p>Eight sectors we work in, with real fieldwork behind each one. Every study starts where the people are.</p>
     </div>
     <div class="expertise-grid">
       <a class="exp-card" href="/expertise-e-mobility"><div class="exp-num">01</div><h3>E-Mobility &amp; Transport</h3><p>Electric two- and three-wheelers, bus fleets, and the finance that carries them.</p><span class="arrow">→</span></a>
@@ -958,7 +1002,7 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- LATEST INSIGHTS — three cards with coloured stripes -->
+<!-- LATEST INSIGHTS - three cards with coloured stripes -->
 <section class="section-white">
   <div class="wrap">
     <div class="section-head reveal">
@@ -996,7 +1040,7 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- CASE STUDIES — three field cases -->
+<!-- CASE STUDIES - three field cases -->
 <section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1034,7 +1078,7 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- CTA — cobalt block -->
+<!-- CTA - cobalt block -->
 <section class="section-cobalt" style="text-align:center;">
   <div class="wrap on-dark" style="max-width:820px;">
     <p class="eyebrow">Start a study</p>
@@ -1045,7 +1089,7 @@ def build_home() -> str:
 </section>
 """
 
-    # No canvas animation on the home page — the ambient gradient in the
+    # No canvas animation on the home page - the ambient gradient in the
     # .hero rules gives enough visual life without a moving canvas.
     return page_shell(slug=slug, title=title, description=description, body=body)
 
@@ -1112,7 +1156,7 @@ def build_sitemap(paths: list[str]) -> str:
 
 def main() -> None:
     # Delete old .html files at repo root that aren't going to be rebuilt.
-    # We regenerate everything, so wipe any stale HTML first — but keep .git,
+    # We regenerate everything, so wipe any stale HTML first - but keep .git,
     # assets, content, config files.
     for old in ROOT.glob("*.html"):
         old.unlink()
@@ -1141,7 +1185,7 @@ def main() -> None:
         written.append(f"/{slug}")
         print(f"[page]  {slug}.html")
 
-    # 3. Stubs — for pages the site links to but haven't been written yet
+    # 3. Stubs - for pages the site links to but haven't been written yet
     for slug, title in STUB_TITLES.items():
         if slug in real_slugs:
             continue

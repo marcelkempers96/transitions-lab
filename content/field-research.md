@@ -50,6 +50,19 @@ Most research fails in one of two directions: too elaborate to repeat affordably
 
 We work only with participants who have given informed, recorded, revocable consent. We anonymise by default. We manage sampling, translation, and quality control end to end, and we are explicit about the limits of what a given study can conclude. We interview to understand, not to confirm, and we report the threads that contradict a client's hopes as carefully as the ones that support them.
 
+<div class="callout c-cobalt">
+  <span class="kicker">Ethics standards we work to</span>
+  <h3>Consent, anonymity, and independent review</h3>
+  <p>Our field practice aligns with the international ethics framework independent research is held to. Every study passes an internal ethics check against these references:</p>
+  <ul>
+    <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">The Belmont Report</a> on respect for persons, beneficence, and justice in human-subjects research.</li>
+    <li><a href="https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/">WMA Declaration of Helsinki</a> on informed consent and researcher accountability.</li>
+    <li><a href="https://poverty-action.org/researchers/rigor-and-ethics">Innovations for Poverty Action</a> and <a href="https://www.povertyactionlab.org/research-resources/data-and-code-availability">J-PAL</a> on data integrity and IRB oversight in field research.</li>
+    <li><a href="https://gdpr.eu/">EU GDPR</a> on personal-data handling in every European engagement.</li>
+    <li><a href="https://ethics.esrc.ukri.org/">ESRC Framework for Research Ethics</a> on qualitative and long-term fieldwork.</li>
+  </ul>
+</div>
+
 The same rigour that goes into the Lab's published research goes into every study we run for others. That is the point of asking an independent research organisation rather than a marketing instrument.
 
 Commissioned work belongs to the client. We deliver it as a confidential internal report, and it stays private unless the client chooses to publish or to let us feature it. The case studies on this site are those exceptions, shared with partners' agreement. The Lab publishes its *own* research programmes openly; it does not publish clients' findings.

@@ -43,7 +43,7 @@ The framework's central proposition is a strategy-barrier alignment: **bypass** 
 
 <figure>
   <img src="/assets/img/brw-schematic.jpg" alt="BRW schematic: three panels showing Bypass (a rider routing around a petrol station to a battery-swap point), Repurpose (a shuttered petrol station converted into a service node offering air, water, and digital services), and Weaken (arrows circling a petrol station whose pumps are being crossed out)." class="diagram">
-  <figcaption>The three BRW mechanisms &mdash; <strong>bypass</strong>, <strong>repurpose</strong>, and <strong>weaken</strong> &mdash; sit along a barrier-characteristics spectrum. Bypass matches hard, material, high-coordination barriers; weaken matches soft, discursive ones; repurpose occupies the intermediate ground where existing regime structure can be redirected.</figcaption>
+  <figcaption>The three BRW mechanisms - <strong>bypass</strong>, <strong>repurpose</strong>, and <strong>weaken</strong> - sit along a barrier-characteristics spectrum. Bypass matches hard, material, high-coordination barriers; weaken matches soft, discursive ones; repurpose occupies the intermediate ground where existing regime structure can be redirected.</figcaption>
 </figure>
 
 ---
