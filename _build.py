@@ -29,7 +29,8 @@ SITE_URL = "https://transitionslab.org"
 # Nav
 # ────────────────────────────────────────────────────────────────────────────
 
-WHAT_WE_DO = [
+SERVICES = [
+    ("what-we-do", "Overview"),
     ("field-research", "Field Research"),
     ("applied-research", "Impact Measurement"),
     ("european-impact-tracking", "European Impact Tracking"),
@@ -49,23 +50,20 @@ EXPERTISE = [
     ("expertise-climate", "Climate & Ecosystems"),
 ]
 
-PROGRAMMES = [
-    ("programmes", "All programmes"),
-    ("electrification", "Electric Mobility"),
-    ("agriculture-programme", "Regenerative Agriculture"),
-    ("monitoring", "Environmental Monitoring"),
-    ("water", "Water Access"),
-    ("finance", "Finance & Payments"),
-    ("brw", "BRW Framework"),
+WORK = [
+    ("case-studies", "Case studies"),
+    ("programmes", "Research programmes"),
+    ("brw", "The BRW framework"),
+    ("readiness-levels", "TRL & SRL"),
+    ("resources", "Resources"),
+    ("who-we-serve", "Who we serve"),
 ]
 
 NAV = [
-    {"slug": "index", "href": "/", "label": "Home"},
     {"slug": "about", "href": "/about", "label": "About"},
-    {"slug": "what-we-do", "href": "/what-we-do", "label": "What we do", "dropdown": WHAT_WE_DO},
-    {"slug": "expertise", "href": "/expertise", "label": "Expertise", "dropdown": EXPERTISE},
-    {"slug": "programmes", "href": "/programmes", "label": "Programmes", "dropdown": PROGRAMMES},
-    {"slug": "resources", "href": "/resources", "label": "Resources"},
+    {"slug": "__services", "label": "Services", "dropdown": SERVICES},
+    {"slug": "__expertise", "label": "Expertise", "dropdown": EXPERTISE},
+    {"slug": "__work", "label": "Work", "dropdown": WORK},
     {"slug": "contact", "href": "/contact", "label": "Contact", "cta": True},
 ]
 
@@ -588,83 +586,12 @@ def build_home() -> str:
 <section class="hero" style="min-height:88vh;display:flex;align-items:center;padding:120px 0 80px;">
   <canvas id="filaments" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
   <div class="wrap" style="position:relative;z-index:3;">
-    <p class="eyebrow">Field research &amp; impact measurement</p>
-    <h1>Aligning technology with the people it is meant to <em>serve</em>.</h1>
-    <p class="lede">An independent research team working on the ground, building deep understanding of socio-technical transitions, so human values and lived experience shape how technologies arrive in the world.</p>
-    <div class="cta-row">
+    <p class="eyebrow reveal">Field research &amp; impact measurement</p>
+    <h1 class="reveal d1">Aligning technology with the people it is meant to <em>serve</em>.</h1>
+    <p class="lede reveal d2">An independent research team working on the ground, building deep understanding of socio-technical transitions, so human values and lived experience shape how technologies arrive in the world.</p>
+    <div class="cta-row reveal d3">
       <a href="/contact" class="btn btn-solid">Start a study →</a>
       <a href="/what-we-do" class="btn btn-ghost">See how we work</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOUR PILLARS -->
-<section class="dark">
-  <div class="wrap">
-    <div class="approach">
-      <div class="cell" style="background:var(--char);border-color:var(--char-line);color:var(--on-dark);">
-        <div class="step">What the Lab is</div>
-        <h3 style="color:#fff;">Independent, in two modes</h3>
-        <p style="color:var(--on-dark-soft);">Not a consultancy selling a flattering number, not an advocacy group with a finding to confirm. We publish our own research openly and report what the evidence says. Work commissioned by others is confidential by default.</p>
-      </div>
-      <div class="cell" style="background:var(--char);border-color:var(--char-line);color:var(--on-dark);">
-        <div class="step">What we study</div>
-        <h3 style="color:#fff;">Technology meeting people</h3>
-        <p style="color:var(--on-dark-soft);">The interaction between a technology and the human system it enters. Socio-technical transitions, read from the human side first.</p>
-      </div>
-      <div class="cell" style="background:var(--char);border-color:var(--char-line);color:var(--on-dark);">
-        <div class="step">Where we work</div>
-        <h3 style="color:#fff;">On the ground</h3>
-        <p style="color:var(--on-dark-soft);">In the contexts where evidence is hardest to gather well, from Nairobi to Lombok, across emerging markets and European projects alike.</p>
-      </div>
-      <div class="cell" style="background:var(--char);border-color:var(--char-line);color:var(--on-dark);">
-        <div class="step">How we help</div>
-        <h3 style="color:#fff;">Evidence you can act on</h3>
-        <p style="color:var(--on-dark-soft);">Field research, impact measurement, and the design of instruments that make a transition legible while it is still unfolding.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO YOU ARE -->
-<section class="light">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Who you are</p>
-      <h2>Find your way in.</h2>
-      <p>Different organisations arrive at the Lab with different questions; the underlying need is the same. Below, the five audiences we work with most.</p>
-    </div>
-    <div class="serve">
-      <div class="card">
-        <h3>Companies &amp; innovators</h3>
-        <p>You are expanding into a new market, locally or internationally, and need to know how your product actually lands with real users before you scale.</p>
-        <a href="/what-we-do">Market &amp; expansion research →</a>
-      </div>
-      <div class="card">
-        <h3>Funders &amp; public bodies</h3>
-        <p>You need impact evidence that travels across a portfolio and survives review. Independence is the whole point.</p>
-        <a href="/applied-research">Impact measurement →</a>
-      </div>
-      <div class="card">
-        <h3>European consortia</h3>
-        <p>Your Grant Agreement commits the consortium to monitoring, evaluation, and dissemination that reaches its audiences. We are the independent partner for baseline to endline.</p>
-        <a href="/european-impact-tracking">European impact tracking →</a>
-      </div>
-      <div class="card">
-        <h3>NGOs &amp; programmes</h3>
-        <p>You need honest, independent evidence of what is changing on the ground, in the language and context of the people you serve.</p>
-        <a href="/field-research">Field research →</a>
-      </div>
-      <div class="card">
-        <h3>Research &amp; academic teams</h3>
-        <p>You need a field partner with real technical depth and reach in difficult contexts, not a survey firm that treats the technology as a black box.</p>
-        <a href="/field-research">Field research →</a>
-      </div>
-      <div class="card" style="background:var(--char);border-color:var(--char-line);color:#fff;">
-        <h3 style="color:#fff;">See all five, in full</h3>
-        <p style="color:var(--on-dark-soft);">Each audience with its problem, what the Lab does, and the door it opens.</p>
-        <a href="/who-we-serve" style="color:var(--sky);border-bottom-color:rgba(143,192,234,.35);">Who we serve →</a>
-      </div>
     </div>
   </div>
 </section>
@@ -672,31 +599,31 @@ def build_home() -> str:
 <!-- STANCE -->
 <section class="stance">
   <div class="wrap">
-    <p class="eyebrow">The mission, stated plainly</p>
-    <blockquote>Technology is not destiny. It can be steered. The direction a transition takes is not fixed in advance; the difference is whether anyone was paying close, honest attention to what was happening to people on the ground, early enough for it to matter. <em>That attention is the Lab's reason to exist.</em></blockquote>
+    <p class="eyebrow reveal">The mission, stated plainly</p>
+    <blockquote class="reveal d1">Technology is not destiny. It can be steered. The direction a transition takes is not fixed in advance; the difference is whether anyone was paying close, honest attention to what was happening to people on the ground, early enough for it to matter. <em>That attention is the Lab's reason to exist.</em></blockquote>
   </div>
 </section>
 
 <!-- WHAT WE BRING -->
 <section class="dark glow">
   <div class="wrap">
-    <div class="section-head" style="max-width:56ch;">
+    <div class="section-head reveal" style="max-width:56ch;">
       <p class="eyebrow">What we bring</p>
       <h2>Social science first, technical depth alongside.</h2>
       <p>Two things that rarely sit in the same room. Social-science fieldcraft, and genuine technical literacy about the systems we study. The combination is what allows us to align human values with technology in context.</p>
     </div>
     <div class="dims">
-      <div class="dim">
+      <div class="dim reveal">
         <p class="tag">Dimension I</p>
         <h3>Reach</h3>
         <p>Who is actually being reached, and, just as important, who is being missed. Coverage, inclusion, and the gap between intended and actual participants.</p>
       </div>
-      <div class="dim">
+      <div class="dim reveal d1">
         <p class="tag">Dimension II</p>
         <h3>Depth</h3>
         <p>How much changes for those reached. The magnitude of outcomes and whether the change is meaningful in respondents' own terms.</p>
       </div>
-      <div class="dim">
+      <div class="dim reveal d2">
         <p class="tag">Dimension III</p>
         <h3>Experience</h3>
         <p>What it is like to be on the receiving end. Satisfaction, problems encountered, and the qualitative texture numbers alone cannot carry.</p>
@@ -709,7 +636,7 @@ def build_home() -> str:
 <section class="globe-sec">
   <canvas id="globe"></canvas>
   <div class="wrap">
-    <div class="copy">
+    <div class="copy reveal">
       <p class="eyebrow">Where we work</p>
       <h2>Local partner. <span class="b">Global reach.</span></h2>
       <p>Field presence in Nairobi, coastal Indonesia, and the Dutch Caribbean, with a base in Delft. We work where the evidence is, in the language it is spoken.</p>
@@ -720,13 +647,13 @@ def build_home() -> str:
 <!-- WORK -->
 <section class="light">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow">Work</p>
       <h2>Where the Lab has been on the ground.</h2>
       <p>Most commissioned work is delivered privately. The engagements below are the ones partners have agreed to share.</p>
     </div>
     <div class="insights">
-      <a class="insight" href="/case-roam">
+      <a class="insight reveal" href="/case-roam">
         <div class="thumb">
           <div class="kicker"><span>Case study</span><span>Kenya</span></div>
         </div>
@@ -736,7 +663,7 @@ def build_home() -> str:
           <span class="more">Read the case →</span>
         </div>
       </a>
-      <a class="insight" href="/case-pyropower">
+      <a class="insight reveal d1" href="/case-pyropower">
         <div class="thumb">
           <div class="kicker"><span>Case study</span><span>Indonesia</span></div>
         </div>
@@ -746,7 +673,7 @@ def build_home() -> str:
           <span class="more">Read the case →</span>
         </div>
       </a>
-      <a class="insight" href="/case-reef-support">
+      <a class="insight reveal d2" href="/case-reef-support">
         <div class="thumb">
           <div class="kicker"><span>Case study</span><span>Marine</span></div>
         </div>
@@ -757,25 +684,25 @@ def build_home() -> str:
         </div>
       </a>
     </div>
-    <p style="text-align:center;margin-top:36px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
+    <p class="reveal" style="text-align:center;margin-top:36px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
   </div>
 </section>
 
 <!-- INSIGHTS -->
 <section class="dark">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow">Insights</p>
       <h2>How we read the landscape.</h2>
       <p>Independent analysis of the transitions and relationships we study; the same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="approach">
-      <a class="cell" href="/insight-eu-us" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--on-dark);">
+      <a class="cell reveal" href="/insight-eu-us" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--on-dark);">
         <div class="step">Insight</div>
         <h3 style="color:#fff;">Europe Invents, America Scales</h3>
         <p style="color:var(--on-dark-soft);">Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. Where the asymmetry sits and where independent evidence fits in the gap.</p>
       </a>
-      <a class="cell" href="/insight-eu-africa" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--on-dark);">
+      <a class="cell reveal d1" href="/insight-eu-africa" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--on-dark);">
         <div class="step">Insight</div>
         <h3 style="color:#fff;">The EU and Africa</h3>
         <p style="color:var(--on-dark-soft);">Europe is committing hundreds of billions to Africa; Africa is becoming the growth market of the century. Where the two genuinely fit, and what stands between the investment and the impact.</p>
@@ -786,7 +713,7 @@ def build_home() -> str:
 
 <!-- CTA -->
 <section class="dark cta" style="text-align:center;padding-top:80px;padding-bottom:100px;">
-  <div class="wrap" style="max-width:760px;">
+  <div class="wrap reveal" style="max-width:760px;">
     <h2 style="font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700;font-size:clamp(34px,4.4vw,52px);color:#fff;letter-spacing:-.02em;line-height:1.05;">Tell us the decision. We will design the study.</h2>
     <p style="color:var(--on-dark-soft);font-size:19px;margin:18px auto 34px;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what the evidence can and cannot settle.</p>
     <a href="/contact" class="btn btn-solid">Start a study →</a>
