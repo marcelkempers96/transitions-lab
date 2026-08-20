@@ -166,8 +166,8 @@ META: dict[str, dict[str, str]] = {
         "description": "Independent monitoring, evaluation, and dissemination for any project, and for European projects with Grant Agreement obligations. Grounded in evaluation science.",
     },
     "how-it-works": {
-        "title": "How It Works | Scope, Design, Collect, Deliver | Transitions Lab",
-        "description": "From the decision you need to make to evidence you can act on, in weeks. Our four-step research process: Scope, Design, Collect, Deliver.",
+        "title": "How It Works | Scope, Design, Collect, Analyse, Deliver | Transitions Lab",
+        "description": "From the decision you need to settle to evidence you can act on, in weeks. Five stages: scope, design, collect, analyse and benchmark, deliver.",
     },
     "esf-social-innovation": {
         "title": "ESF+ Social Innovation: Independent Measurement | Transitions Lab",
@@ -587,19 +587,22 @@ def md_body_to_html(md: str) -> str:
             continue
 
         # HTML block passthrough (<figure>…</figure>, <div>…</div>, etc.)
+        # Counts nested opens/closes of the same tag so that a block like
+        # <div class="stage">…<div class="stage-num">01</div>…</div> is
+        # captured as ONE block instead of stopping at the inner </div>.
         block_open = HTML_BLOCK_OPEN_RE.match(stripped)
         if block_open:
             close_list(list_kind); list_kind = None
             tag = block_open.group(1).lower()
-            close_tag = f"</{tag}>"
+            open_re = re.compile(rf"<{tag}\b", re.IGNORECASE)
+            close_re = re.compile(rf"</{tag}\s*>", re.IGNORECASE)
             block: list[str] = [raw]
+            depth = len(open_re.findall(raw)) - len(close_re.findall(raw))
             i += 1
-            # Slurp until we hit the matching close tag (case-insensitive).
-            while i < len(lines):
+            # Slurp until every open of this tag has its matching close.
+            while i < len(lines) and depth > 0:
                 block.append(lines[i])
-                if close_tag in lines[i].lower():
-                    i += 1
-                    break
+                depth += len(open_re.findall(lines[i])) - len(close_re.findall(lines[i]))
                 i += 1
             out.append("\n".join(block))
             continue
