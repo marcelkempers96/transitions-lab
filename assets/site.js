@@ -2,6 +2,24 @@
 document.addEventListener('DOMContentLoaded', function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // ── Nav dropdowns: native <details>/<summary> with an accordion.
+  //    Only one <details> may be open at a time. The click handler
+  //    runs BEFORE the browser toggles the current <details>, so it
+  //    can pre-emptively close every other open group in the same
+  //    pass. Works identically on desktop and mobile.
+  var details = document.querySelectorAll('.nav details.nav-group');
+  details.forEach(function (d) {
+    var summary = d.querySelector('summary');
+    if (!summary) return;
+    summary.addEventListener('click', function () {
+      // If this one is currently closed (about to open), close all others.
+      if (!d.open) {
+        details.forEach(function (o) { if (o !== d) o.open = false; });
+      }
+      // If it's currently open (about to close), let the browser do it.
+    });
+  });
+
   // ── Mobile menu toggle ──────────────────────────────────────
   var burger = document.querySelector('.nav-toggle');
   var menu = document.getElementById('menu');
@@ -9,28 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
     burger.addEventListener('click', function () {
       var open = menu.classList.toggle('open');
       burger.setAttribute('aria-expanded', open);
+      // If closing the burger menu, also collapse every nav group.
+      if (!open) details.forEach(function (d) { d.open = false; });
     });
-    // Close mobile menu when a leaf link (not a dropdown label) is clicked.
+    // Close mobile menu (and all groups) when a leaf link is clicked.
     menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { menu.classList.remove('open'); });
+      a.addEventListener('click', function () {
+        menu.classList.remove('open');
+        details.forEach(function (d) { d.open = false; });
+      });
     });
   }
 
-  // ── Nav dropdowns are native <details>/<summary>. No JS toggle
-  //    needed — browser handles it. We only wire "close others when
-  //    one opens" so the desktop menu doesn't get several dropdowns
-  //    hanging open at once. On mobile the user can open several
-  //    if they want; this handler still works and keeps focus tidy.
-  var details = document.querySelectorAll('.nav details.nav-group');
-  details.forEach(function (d) {
-    d.addEventListener('toggle', function () {
-      if (!d.open) return;
-      details.forEach(function (o) { if (o !== d) o.open = false; });
-    });
-  });
   // Click outside the nav → close any open dropdowns
   document.addEventListener('click', function (e) {
     if (e.target.closest('.nav details.nav-group')) return;
+    if (e.target.closest('.nav-toggle')) return;
     details.forEach(function (d) { d.open = false; });
   });
 
