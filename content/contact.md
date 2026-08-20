@@ -2,54 +2,71 @@
 
 # Start a Conversation
 
-*Tell us the decision you are facing, and we will tell you honestly whether research can help, and how.*
+*Tell us the decision you are facing. We will tell you honestly whether research can help, and how.*
 
-The best engagements start from a real question, not a request for a quote. If you are deciding whether to expand into a market, whether a programme is working, what your users actually experience, or how to prove the impact of a project to a funder, that is exactly where the Lab is useful.
+The best engagements start from a real question, not a request for a quote. A clear question is enough to start; shaping the rest is part of what we do.
+
+<form class="contact-form" action="https://formsubmit.co/hello@transitionslab.org" method="POST">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="hidden" name="_subject" value="New enquiry from transitionslab.org">
+  <input type="hidden" name="_next" value="https://transitionslab.org/contact?sent=1">
+  <input type="text" name="_honey" style="display:none">
+  <div>
+    <label for="cf-name">Your name</label>
+    <input id="cf-name" name="name" type="text" required autocomplete="name">
+  </div>
+  <div>
+    <label for="cf-org">Organisation</label>
+    <input id="cf-org" name="organisation" type="text" autocomplete="organization">
+  </div>
+  <div>
+    <label for="cf-email">Email</label>
+    <input id="cf-email" name="email" type="email" required autocomplete="email">
+  </div>
+  <div>
+    <label for="cf-role">You are a</label>
+    <select id="cf-role" name="role">
+      <option value="">Select one</option>
+      <option>Company / innovator</option>
+      <option>Funder / public body</option>
+      <option>European project / consortium</option>
+      <option>NGO / programme</option>
+      <option>Research / academic team</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="full">
+    <label for="cf-decision">The decision you are facing</label>
+    <textarea id="cf-decision" name="decision" required placeholder="What do you need to know, and who does the answer need to come from?"></textarea>
+  </div>
+  <button type="submit" class="contact-submit">Send message →</button>
+  <p class="form-note">Confidential from the first message. We reply to serious enquiries within a few working days. Prefer email? Write to <a href="mailto:hello@transitionslab.org">hello@transitionslab.org</a>.</p>
+</form>
 
 ---
-
-**§ 1.1 / Who gets in touch**
-
-## You might be
-
-A **company** expanding locally or internationally, wanting to understand how your product lands with real users before you scale. A **funder or public body** needing impact evidence that travels and survives review. An **NGO or programme** needing honest, independent measurement. A **European project consortium** needing an independent partner to own impact tracking from baseline to endline. A **researcher or academic team** needing a field partner with technical depth and real reach.
-
----
-
-**§ 1.2 / What to include**
-
-## Helpful to tell us up front
-
-The decision you are trying to make. Who the research would need to reach, and where. Roughly when you need it. Whether this is a one-off question or an ongoing need. You do not need a finished brief, a clear question is enough to start, and shaping the rest is part of what we do.
-
----
-
-**§ 1.3 / How to reach us**
 
 ## Direct contact
 
-**Email**, hello@transitionslab.org
-
-**Based in**, Delft, The Netherlands
-
-**Response**, we reply to serious enquiries within a few working days.
+- **Email** &middot; [hello@transitionslab.org](mailto:hello@transitionslab.org)
+- **Based in** &middot; Delft, The Netherlands
+- **Response** &middot; a few working days for serious enquiries.
 
 ---
 
-**§ 1.4 / What happens next**
+## Who gets in touch
 
-## From first message to a clear answer
+<span class="pill c-coral">Companies</span> <span class="pill c-cobalt">Funders</span> <span class="pill c-butter">Consortia</span> <span class="pill c-forest">NGOs</span> <span class="pill c-plum">Researchers</span>
 
-You do not need a finished brief to start. After you reach out, we read what you have sent and reply with an honest first view: whether research can help, roughly what it would involve, and whether the Lab is the right partner for it. If it is, a short scoping conversation turns your question into a concrete design, with a timeline and a figure. If it is not, we will say so and, where we can, point you toward something that fits better. There is no cost, and no obligation, in finding out.
-
----
-
-**§ 1.5 / A note on confidentiality**
-
-## Your enquiry stays private
-
-What you tell us is confidential from the first message. Commissioned work belongs to the client and is delivered privately; it is never published without your agreement. The case studies on this site exist only because those partners chose to share them. If discretion matters to your situation, it is the default here, not a special request.
+See [Who We Serve](/who-we-serve) for how the fit works in each case.
 
 ---
 
-*For what we do, see [What We Do](https://www.transitionslab.org/what-we-do.html). For how an engagement runs, see [How It Works](https://www.transitionslab.org/how-it-works.html). For the mission behind the Lab, see [About](https://www.transitionslab.org/about.html).*
+## What happens next
+
+We read what you sent and reply with an honest first view: whether research can help, roughly what it would involve, and whether the Lab is the right partner. If it is, a short scoping conversation turns your question into a design with a timeline and a figure. If it is not, we say so.
+
+No cost, no obligation, in finding out.
+
+---
+
+*Your enquiry stays private. Commissioned work belongs to the client and is never published without agreement. For how an engagement runs, see [How It Works](/how-it-works).*

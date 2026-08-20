@@ -39,6 +39,52 @@ def _asset_hash(rel_path: str) -> str:
 ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
 
+# Per-page hero band colour. Adds `hero-<colour>` to <section class="page-hero">.
+# Not every slug is listed — anything absent renders on the default paper hero.
+HERO_COLOR: dict[str, str] = {
+    # Contact (calm, inviting sky-blue)
+    "contact": "sky",
+    # About / audience-facing (warm coral)
+    "about": "coral",
+    "who-we-serve": "coral",
+    "expertise": "coral",
+    # Team / place (deep plum)
+    "team": "plum",
+    "geographies": "plum",
+    # Services (grounded forest)
+    "what-we-do": "forest",
+    "field-research": "forest",
+    "applied-research": "forest",
+    "monitoring-evaluation-dissemination": "forest",
+    "how-it-works": "forest",
+    # Library — case studies and articles (warm butter)
+    "case-studies": "butter",
+    "case-roam": "butter",
+    "case-pyropower": "butter",
+    "case-reef-support": "butter",
+    "case-mimaji": "butter",
+    "case-statia": "butter",
+    "case-context-entry": "butter",
+    "articles": "butter",
+    "insight-eu-us": "butter",
+    "insight-eu-africa": "butter",
+    "insight-transitions-outcomes": "butter",
+    "esf-social-innovation": "butter",
+    # Method / framework pages (deep cobalt)
+    "brw": "cobalt",
+    "readiness-levels": "cobalt",
+    "resources": "cobalt",
+    "interview-guide": "cobalt",
+    "impact-tracking-template": "cobalt",
+    # Research programmes (forest)
+    "programmes": "forest",
+    "electrification": "forest",
+    "agriculture-programme": "forest",
+    "monitoring": "forest",
+    "water": "forest",
+    "finance": "forest",
+}
+
 # ────────────────────────────────────────────────────────────────────────────
 # Nav
 # ────────────────────────────────────────────────────────────────────────────
@@ -378,7 +424,7 @@ ITALIC_RE = re.compile(r"(?<![*A-Za-z0-9])\*([^*\n]+?)\*(?![*A-Za-z0-9])")
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
 IMAGE_COMMENT_RE = re.compile(r"^<!--\s*IMAGE\s+.*?-->\s*$", re.DOTALL)
-HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture)\b", re.IGNORECASE)
+HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture|form)\b", re.IGNORECASE)
 SECTION_EYEBROW_RE = re.compile(r"^\*\*(§[^*]+)\*\*\s*$")
 TOPLINE_SECTION_RE = re.compile(r"^§\s+/\s*(.+)$")
 ABS_LINK_RE = re.compile(r"https?://(?:www\.)?transitionslab\.org(/[^\"' )]*)?")
@@ -816,8 +862,10 @@ def build_content_page(slug: str, md: str) -> str:
 
     # Eyebrow in the page-hero: either the top "§ / label" or a slug-appropriate default
     hero_eyebrow = top_eyebrow or ""
+    hero_color = HERO_COLOR.get(slug, "")
+    hero_class = f"page-hero hero-{hero_color}" if hero_color else "page-hero"
 
-    page_hero = f"""<section class="page-hero">
+    page_hero = f"""<section class="{hero_class}">
   <div class="wrap">
     {'<p class="eyebrow">' + htmllib.escape(hero_eyebrow) + '</p>' if hero_eyebrow else ''}
     <h1>{inline(title)}</h1>
@@ -843,7 +891,9 @@ def build_stub_page(slug: str, title: str) -> str:
     noindex so search engines don't index the placeholder.
     """
     description = f"{title} - content coming soon."
-    body = f"""<section class="page-hero">
+    hero_color = HERO_COLOR.get(slug, "")
+    hero_class = f"page-hero hero-{hero_color}" if hero_color else "page-hero"
+    body = f"""<section class="{hero_class}">
   <div class="wrap">
     <p class="eyebrow">Coming soon</p>
     <h1>{inline(title)}</h1>
