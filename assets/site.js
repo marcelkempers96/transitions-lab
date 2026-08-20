@@ -3,21 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ── Nav dropdowns: native <details>/<summary> as an accordion.
-  //    We take over the toggle entirely (preventDefault) so the
-  //    browser can't race us: close every group, then open the one
-  //    that was clicked if it was previously closed. Guaranteed
-  //    single-open state on desktop and mobile alike.
+  //    Listen to the `toggle` event on each group (fires AFTER
+  //    the browser has changed the [open] state). When one opens,
+  //    close every sibling. `_closing` guards against the recursive
+  //    toggle events those closures fire. Works on every mobile
+  //    browser regardless of how the summary was activated
+  //    (tap, click, keyboard, or the browser's native tap-to-toggle).
   var details = document.querySelectorAll('.nav details.nav-group');
+  var closing = false;
   details.forEach(function (d) {
-    var summary = d.querySelector('summary');
-    if (!summary) return;
-    summary.addEventListener('click', function (e) {
-      e.preventDefault();
-      var wasOpen = d.open;
-      // Close everything.
-      details.forEach(function (o) { o.open = false; });
-      // Reopen this one if it was closed.
-      if (!wasOpen) d.open = true;
+    d.addEventListener('toggle', function () {
+      if (closing) return;
+      if (!d.open) return;
+      closing = true;
+      details.forEach(function (o) {
+        if (o !== d && o.open) o.open = false;
+      });
+      closing = false;
     });
   });
 
