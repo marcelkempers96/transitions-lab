@@ -707,9 +707,8 @@ section + section{border-top:2px solid var(--ink);}
 .what-grid .what-card p{font-size:15.5px;line-height:1.5;margin:0;color:var(--ink);font-weight:500;flex:1;}
 .what-grid .what-card .what-more{margin-top:auto;font-weight:800;color:var(--ink);}
 .what-grid .what-card .what-flag{
-  position:absolute;top:22px;right:22px;
-  height:32px;width:auto;display:block;
-  border:2px solid var(--paper);border-radius:50%;background:var(--paper);
+  height:44px;width:44px;display:block;object-fit:contain;
+  margin:0 0 4px;align-self:flex-start;
 }
 @media(max-width:860px){
   .what-grid{grid-template-columns:1fr;}
