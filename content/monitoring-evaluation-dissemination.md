@@ -14,11 +14,23 @@ The Lab runs that system as an independent partner. We are equally at home on a 
 
 ## Monitoring, evaluation, dissemination
 
-**Monitoring** is the continuous tracking of what a project is doing and reaching while it is still running. It answers "are we on course?" in time to change course. Monitoring without evaluation produces activity counts that no one learns from.
-
-**Evaluation** is the periodic, structured judgement of whether the project is working, and why. It answers "is this the right thing, is it working, and will it last?" Evaluation without monitoring arrives too late, with no baseline to judge against.
-
-**Dissemination** is the deliberate work of getting results to the audiences who can use them, other researchers, users, policymakers, the public, in a form they can act on. Evidence that stays in a final report has failed at the last step. Dissemination is where a finding becomes an effect.
+<div class="med-triple">
+  <div class="med-card">
+    <img src="/assets/icons/icon-monitoring.png" alt="" aria-hidden="true">
+    <h3>Monitoring</h3>
+    <p>Continuous tracking of what a project is doing and reaching while it is still running. It answers "are we on course?" in time to change course. Monitoring without evaluation produces activity counts that no one learns from.</p>
+  </div>
+  <div class="med-card">
+    <img src="/assets/icons/icon-evaluation.png" alt="" aria-hidden="true">
+    <h3>Evaluation</h3>
+    <p>Periodic, structured judgement of whether the project is working, and why. It answers "is this the right thing, is it working, and will it last?" Evaluation without monitoring arrives too late, with no baseline to judge against.</p>
+  </div>
+  <div class="med-card">
+    <img src="/assets/icons/icon-dissemination.png" alt="" aria-hidden="true">
+    <h3>Dissemination</h3>
+    <p>The deliberate work of getting results to the audiences who can use them: other researchers, users, policymakers, the public, in a form they can act on. Evidence that stays in a final report has failed at the last step.</p>
+  </div>
+</div>
 
 The three are one loop. Monitoring feeds evaluation; evaluation sharpens what is worth disseminating; dissemination and its uptake become the next thing to monitor. Designed together from day one, they make a project legible to itself and credible to everyone else.
 

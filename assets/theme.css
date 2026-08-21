@@ -519,6 +519,37 @@ section + section{border-top:2px solid var(--ink);}
 .prose .case-feature p{font-size:16px;line-height:1.5;margin:0 0 12px;color:var(--ink);font-weight:500;}
 .prose .case-feature .read{font-weight:800;color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
 
+/* ── MED triple: three-column icon+heading+body block used on the
+   /monitoring-evaluation-dissemination page for the three definitions. ── */
+.prose .med-triple{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:2px solid var(--ink);margin:2em 0;
+}
+.prose .med-triple .med-card{
+  padding:26px 24px;background:var(--paper);color:var(--ink);
+  border-right:2px solid var(--ink);display:flex;flex-direction:column;gap:12px;
+}
+.prose .med-triple .med-card:last-child{border-right:0;}
+.prose .med-triple .med-card:nth-child(1){background:var(--butter);}
+.prose .med-triple .med-card:nth-child(2){background:var(--paper);}
+.prose .med-triple .med-card:nth-child(3){background:var(--coral);}
+.prose .med-triple .med-card img{
+  height:80px;width:auto;object-fit:contain;display:block;margin:0;align-self:flex-start;
+}
+.prose .med-triple .med-card h3{
+  font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.15;
+  margin:0;color:var(--ink);
+}
+.prose .med-triple .med-card p{
+  font-size:15.5px;line-height:1.5;margin:0;color:var(--ink);font-weight:500;
+}
+@media(max-width:860px){
+  .prose .med-triple{grid-template-columns:1fr;}
+  .prose .med-triple .med-card{border-right:0;}
+  .prose .med-triple .med-card:not(:last-child){border-bottom:2px solid var(--ink);}
+  .prose .med-triple .med-card img{height:64px;}
+}
+
 /* ── Interview ladder (on /interview-guide): five rungs, colour deepens
    as the ladder moves up from surface fact to meaning and tension. ── */
 .prose .ladder{
