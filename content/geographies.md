@@ -4,7 +4,10 @@
 
 *The Lab works where it has genuine roots: real relationships, language, and an understanding of context that cannot be improvised. Three regions, and the thread that connects them.*
 
-<!-- IMAGE geographies-hero: hero photo or map | A restrained map or a composite of the three regions (East Africa, coastal Southeast Asia, the Dutch Caribbean). Documentary or clean cartographic. | Full-bleed hero under the standfirst. -->
+<figure>
+  <img src="/assets/img/photo-coastal-community.jpg" alt="A coastal fishing community at sunset: household kitchen gardens in the foreground, a black water tank, rooftop solar panels on a nearby shack, and small fishing boats moored along the pier." class="diagram">
+  <figcaption>One frame, several transitions at once: household water storage, kitchen gardens, rooftop solar, small-boat fishing. The contexts we work in rarely have one thing changing at a time.</figcaption>
+</figure>
 
 Good field research cannot be done at a distance. It depends on relationships that already exist, on language, and on an understanding of a place that takes years to build and cannot be faked in a proposal. The Lab works in the regions where it holds those things genuinely, and is honest about where it does not.
 

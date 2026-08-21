@@ -4,7 +4,10 @@
 
 *How smallholders adopt, adapt, and benefit from technologies that turn waste into value, degraded land into productive soil, and raw observation into spatial insight.*
 
-<!-- IMAGE agri-hero: hero photo | Smallholder farmer working with soil, crops, or appropriate technology (kiln, tool, sensor). Earthy, real, working farm. | Full-width hero under the standfirst. -->
+<figure>
+  <img src="/assets/img/photo-agriculture-circle.jpg" alt="Six women farmers sitting in a circle at the edge of a harvested field, with hand tools and a water pot between them, in conversation." class="diagram">
+  <figcaption>Farmer meetings on the field, not in a workshop hall. This is where a technology gets accepted, adapted, or quietly refused.</figcaption>
+</figure>
 
 Agriculture is where technology meets the largest number of livelihoods in the developing world, and where adoption is hardest to win.
 

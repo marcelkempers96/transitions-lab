@@ -4,7 +4,10 @@
 
 *Independent MED for any project that has to prove what it changed, and for European projects that have to prove it to a funder. We set up the measurement framework at the start, run it throughout, and turn the evidence into results that reach the people who can use them.*
 
-<!-- IMAGE med-hero: hero photo | A researcher reviewing data or running a baseline survey in the field, or a workshop where findings are being handed back to stakeholders. Documentary, real. | Full-bleed hero under the standfirst. -->
+<figure>
+  <img src="/assets/img/photo-street-interview.jpg" alt="A person being interviewed on a public street; another operates a camera in the foreground. Findings reaching an audience, not sitting in a final report." class="diagram">
+  <figcaption>Dissemination is the last stage of measurement, not an afterthought. Findings that never leave the report have failed at the last step.</figcaption>
+</figure>
 
 Most projects can tell you what they did. Far fewer can show what changed because of it, for whom, and whether the benefit will last. And fewer still turn that evidence into something that actually reaches the people who could act on it. Monitoring, evaluation, and dissemination is the discipline that closes all three gaps, and it is a single connected system, not three afterthoughts bolted on at the end.
 

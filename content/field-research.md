@@ -4,6 +4,11 @@
 
 *Rigorous primary research in the places it is hardest to do well, built around direct contact with the people a transition affects.*
 
+<figure>
+  <img src="/assets/img/photo-field-interview.jpg" alt="A researcher takes notes while a woman speaks, seated in the doorway of her home. A recorded, consented interview in the setting the respondent lives in." class="diagram">
+  <figcaption>An interview conducted where the respondent lives, recorded and consented. Depth is a function of place as much as of question.</figcaption>
+</figure>
+
 The most important evidence about a technology is usually held by the people living inside it: the rider financing an electric motorcycle, the farmer deciding whether the kiln is worth the labour, the ranger who knows the reef better than any satellite. The Lab's field research exists to reach that evidence, systematically, ethically, and to a standard that holds up. It is the capability behind the Lab's own [published programmes](/programmes), made available to others.
 
 ---

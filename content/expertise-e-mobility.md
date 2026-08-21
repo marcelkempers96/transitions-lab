@@ -4,7 +4,10 @@
 
 *How electric and shared transport crosses from novelty to default in markets built around petrol, and whether the infrastructure keeps pace with the vehicles.*
 
-<!-- IMAGE emob-hero: hero photo | Electric motorcycle or e-bus in a busy working street scene, riders and traffic. Documentary. | Full-width hero under the standfirst. -->
+<figure>
+  <img src="/assets/img/photo-emobility-forecourt.jpg" alt="Electric motorcycles queueing at a petrol-station forecourt in a busy working street, alongside an ageing sedan and a street vendor." class="diagram">
+  <figcaption>The transition, mid-sentence: electric two-wheelers at a petrol forecourt in a market street. The vehicles are already there; the infrastructure is being renegotiated.</figcaption>
+</figure>
 
 The electric transition in emerging markets is not led by cars. It is led by the two- and three-wheelers and shared minibuses that already move most people.
 
