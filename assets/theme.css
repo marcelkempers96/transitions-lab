@@ -248,6 +248,13 @@ section + section{border-top:2px solid var(--ink);}
   font-size:clamp(18px,2vw,22px);line-height:1.5;max-width:60ch;
   font-weight:500;color:var(--ink);
 }
+/* Topic icon in the page-hero: small illustrative PNG above the eyebrow. */
+.page-hero .topic-icon{
+  height:88px;width:auto;max-width:100%;display:block;
+  margin:0 0 24px;
+}
+@media(max-width:640px){.page-hero .topic-icon{height:68px;margin-bottom:18px;}}
+
 /* Coloured hero variants — set via hero-<colour> class from build.py */
 .page-hero.hero-sky{background:#CFE1EE;color:var(--ink);}
 .page-hero.hero-sky .eyebrow{color:var(--cobalt);}
@@ -300,6 +307,11 @@ section + section{border-top:2px solid var(--ink);}
 .exp-card:nth-child(4n){border-right:0;}
 .exp-card:nth-last-child(-n+4){border-bottom:0;}
 .exp-card:hover{background:var(--butter);}
+.exp-card .exp-icon{
+  height:44px;width:auto;max-width:70%;object-fit:contain;
+  margin:0 0 6px;display:block;
+  /* Icons are transparent PNGs so they read on any card background. */
+}
 .exp-card .exp-num{font-family:'Hanken Grotesk';font-size:12px;letter-spacing:.18em;font-weight:800;text-transform:uppercase;color:var(--orange);}
 .exp-card h3{font-size:19px;font-weight:800;line-height:1.15;letter-spacing:-.015em;color:var(--ink);}
 .exp-card p{font-size:14.5px;line-height:1.45;margin:0;color:var(--ink);font-weight:500;flex:1;}

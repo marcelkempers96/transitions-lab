@@ -39,6 +39,13 @@ def _asset_hash(rel_path: str) -> str:
 ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
 
+# Per-page topic icon shown at the top of the page-hero. Extend this
+# map when a new icon lands under /assets/icons/. The value is the icon
+# path; alt="" is used because the H1 already names the topic.
+TOPIC_ICONS: dict[str, str] = {
+    "expertise-e-mobility": "/assets/icons/icon-emobility.png",
+}
+
 # Per-page hero band colour. Adds `hero-<colour>` to <section class="page-hero">.
 # Not every slug is listed — anything absent renders on the default paper hero.
 HERO_COLOR: dict[str, str] = {
@@ -864,9 +871,12 @@ def build_content_page(slug: str, md: str) -> str:
     hero_eyebrow = top_eyebrow or ""
     hero_color = HERO_COLOR.get(slug, "")
     hero_class = f"page-hero hero-{hero_color}" if hero_color else "page-hero"
+    topic_icon = TOPIC_ICONS.get(slug, "")
+    icon_html = f'<img src="{topic_icon}" alt="" class="topic-icon" aria-hidden="true">' if topic_icon else ''
 
     page_hero = f"""<section class="{hero_class}">
   <div class="wrap">
+    {icon_html}
     {'<p class="eyebrow">' + htmllib.escape(hero_eyebrow) + '</p>' if hero_eyebrow else ''}
     <h1>{inline(title)}</h1>
     {'<p class="lede">' + standfirst_html + '</p>' if standfirst_html else ''}
@@ -1039,7 +1049,7 @@ def build_home() -> str:
       <p>Eight sectors we work in, with real fieldwork behind each one. Every study starts where the people are.</p>
     </div>
     <div class="expertise-grid">
-      <a class="exp-card" href="/expertise-e-mobility"><div class="exp-num">01</div><h3>E-Mobility &amp; Transport</h3><p>Electric two- and three-wheelers, bus fleets, and the finance that carries them.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-e-mobility"><img class="exp-icon" src="/assets/icons/icon-emobility.png" alt="" aria-hidden="true"><div class="exp-num">01</div><h3>E-Mobility &amp; Transport</h3><p>Electric two- and three-wheelers, bus fleets, and the finance that carries them.</p><span class="arrow">→</span></a>
       <a class="exp-card" href="/expertise-energy"><div class="exp-num">02</div><h3>Energy Access</h3><p>Off-grid solar, mini-grids, and the boundary where public planning takes over.</p><span class="arrow">→</span></a>
       <a class="exp-card" href="/expertise-water"><div class="exp-num">03</div><h3>Water &amp; Sanitation</h3><p>Safe water access, transparency, and community-based accountability.</p><span class="arrow">→</span></a>
       <a class="exp-card" href="/expertise-agriculture"><div class="exp-num">04</div><h3>Regenerative Agriculture</h3><p>Smallholder adoption of technologies that turn waste into soil, energy, and income.</p><span class="arrow">→</span></a>
