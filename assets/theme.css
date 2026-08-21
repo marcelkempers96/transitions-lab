@@ -309,9 +309,10 @@ section + section{border-top:2px solid var(--ink);}
 .exp-card:hover{background:var(--butter);}
 .exp-card .exp-icon{
   height:72px;width:auto;object-fit:contain;
-  margin:0 0 12px;display:block;align-self:flex-start;
+  margin:0;display:block;align-self:flex-start;
   /* Transparent PNGs so they read on any card background. Left-aligned
-     with the text below, not centred. */
+     with the text below, not centred. Uses the card's own gap for
+     spacing so the icon sits close to the number. */
 }
 @media(max-width:640px){.exp-card .exp-icon{height:64px;}}
 .exp-card .exp-num{font-family:'Hanken Grotesk';font-size:12px;letter-spacing:.18em;font-weight:800;text-transform:uppercase;color:var(--orange);}
@@ -521,15 +522,15 @@ section + section{border-top:2px solid var(--ink);}
 .prose ul.expertise-list li{margin:0;padding:0;border-bottom:2px solid var(--ink);}
 .prose ul.expertise-list li:last-child{border-bottom:0;}
 .prose ul.expertise-list a{
-  display:grid;grid-template-columns:88px 1fr auto;
-  gap:20px;align-items:center;padding:22px 24px;
+  display:flex;flex-direction:column;gap:14px;
+  padding:26px 26px 24px;position:relative;
   color:var(--ink);text-decoration:none;
   transition:background .15s ease;
 }
 .prose ul.expertise-list a:hover{background:var(--butter);}
 .prose ul.expertise-list img{
-  height:64px;width:auto;max-width:80px;object-fit:contain;
-  display:block;
+  height:72px;width:auto;max-width:100px;object-fit:contain;
+  display:block;margin:0;
 }
 .prose ul.expertise-list h3{
   font-size:22px;font-weight:800;letter-spacing:-.02em;
@@ -537,15 +538,18 @@ section + section{border-top:2px solid var(--ink);}
 }
 .prose ul.expertise-list p{
   font-size:15.5px;line-height:1.45;margin:0;color:var(--ink);font-weight:500;
+  max-width:60ch;
 }
 .prose ul.expertise-list .arrow{
-  font-size:24px;font-weight:800;color:var(--ink);
+  position:absolute;top:24px;right:26px;
+  font-size:26px;font-weight:800;color:var(--ink);line-height:1;
 }
 @media(max-width:640px){
-  .prose ul.expertise-list a{grid-template-columns:52px 1fr auto;gap:14px;padding:18px 18px;}
-  .prose ul.expertise-list img{height:48px;max-width:56px;}
-  .prose ul.expertise-list h3{font-size:18px;}
+  .prose ul.expertise-list a{padding:22px 22px 20px;gap:12px;}
+  .prose ul.expertise-list img{height:60px;}
+  .prose ul.expertise-list h3{font-size:19px;}
   .prose ul.expertise-list p{font-size:14.5px;}
+  .prose ul.expertise-list .arrow{top:22px;right:22px;font-size:22px;}
 }
 
 /* ── Contact form (on /contact) ── */
