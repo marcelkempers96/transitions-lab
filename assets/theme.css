@@ -308,10 +308,12 @@ section + section{border-top:2px solid var(--ink);}
 .exp-card:nth-last-child(-n+4){border-bottom:0;}
 .exp-card:hover{background:var(--butter);}
 .exp-card .exp-icon{
-  height:44px;width:auto;max-width:70%;object-fit:contain;
-  margin:0 0 6px;display:block;
-  /* Icons are transparent PNGs so they read on any card background. */
+  height:72px;width:auto;object-fit:contain;
+  margin:0 0 12px;display:block;align-self:flex-start;
+  /* Transparent PNGs so they read on any card background. Left-aligned
+     with the text below, not centred. */
 }
+@media(max-width:640px){.exp-card .exp-icon{height:64px;}}
 .exp-card .exp-num{font-family:'Hanken Grotesk';font-size:12px;letter-spacing:.18em;font-weight:800;text-transform:uppercase;color:var(--orange);}
 .exp-card h3{font-size:19px;font-weight:800;line-height:1.15;letter-spacing:-.015em;color:var(--ink);}
 .exp-card p{font-size:14.5px;line-height:1.45;margin:0;color:var(--ink);font-weight:500;flex:1;}
@@ -467,6 +469,41 @@ section + section{border-top:2px solid var(--ink);}
 .pill.c-forest{background:var(--forest);color:var(--paper);}
 .pill.c-plum{background:var(--plum);color:var(--paper);}
 .pill.c-orange{background:var(--orange);color:var(--ink);}
+
+/* ── Expertise list (on /expertise index) ── */
+.prose ul.expertise-list{
+  list-style:none;padding:0;margin:2em 0;
+  border:2px solid var(--ink);
+}
+.prose ul.expertise-list li{margin:0;padding:0;border-bottom:2px solid var(--ink);}
+.prose ul.expertise-list li:last-child{border-bottom:0;}
+.prose ul.expertise-list a{
+  display:grid;grid-template-columns:88px 1fr auto;
+  gap:20px;align-items:center;padding:22px 24px;
+  color:var(--ink);text-decoration:none;
+  transition:background .15s ease;
+}
+.prose ul.expertise-list a:hover{background:var(--butter);}
+.prose ul.expertise-list img{
+  height:64px;width:auto;max-width:80px;object-fit:contain;
+  display:block;
+}
+.prose ul.expertise-list h3{
+  font-size:22px;font-weight:800;letter-spacing:-.02em;
+  margin:0 0 4px;color:var(--ink);line-height:1.15;
+}
+.prose ul.expertise-list p{
+  font-size:15.5px;line-height:1.45;margin:0;color:var(--ink);font-weight:500;
+}
+.prose ul.expertise-list .arrow{
+  font-size:24px;font-weight:800;color:var(--ink);
+}
+@media(max-width:640px){
+  .prose ul.expertise-list a{grid-template-columns:52px 1fr auto;gap:14px;padding:18px 18px;}
+  .prose ul.expertise-list img{height:48px;max-width:56px;}
+  .prose ul.expertise-list h3{font-size:18px;}
+  .prose ul.expertise-list p{font-size:14.5px;}
+}
 
 /* ── Contact form (on /contact) ── */
 .contact-form{

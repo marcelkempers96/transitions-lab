@@ -43,7 +43,14 @@ ASSET_CSS_V = _asset_hash("assets/theme.css")
 # map when a new icon lands under /assets/icons/. The value is the icon
 # path; alt="" is used because the H1 already names the topic.
 TOPIC_ICONS: dict[str, str] = {
-    "expertise-e-mobility": "/assets/icons/icon-emobility.png",
+    "expertise-e-mobility":    "/assets/icons/icon-emobility.png",
+    "expertise-energy":        "/assets/icons/icon-energy.png",
+    "expertise-water":         "/assets/icons/icon-water.png",
+    "expertise-agriculture":   "/assets/icons/icon-agriculture.png",
+    "expertise-manufacturing": "/assets/icons/icon-manufacturing.png",
+    "expertise-ai-digital":    "/assets/icons/icon-ai-digital.png",
+    "expertise-finance":       "/assets/icons/icon-finance.png",
+    "expertise-climate":       "/assets/icons/icon-climate.png",
 }
 
 # Per-page hero band colour. Adds `hero-<colour>` to <section class="page-hero">.
@@ -431,7 +438,7 @@ ITALIC_RE = re.compile(r"(?<![*A-Za-z0-9])\*([^*\n]+?)\*(?![*A-Za-z0-9])")
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
 IMAGE_COMMENT_RE = re.compile(r"^<!--\s*IMAGE\s+.*?-->\s*$", re.DOTALL)
-HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture|form)\b", re.IGNORECASE)
+HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture|form|ul|ol)\b", re.IGNORECASE)
 SECTION_EYEBROW_RE = re.compile(r"^\*\*(§[^*]+)\*\*\s*$")
 TOPLINE_SECTION_RE = re.compile(r"^§\s+/\s*(.+)$")
 ABS_LINK_RE = re.compile(r"https?://(?:www\.)?transitionslab\.org(/[^\"' )]*)?")
@@ -1050,13 +1057,13 @@ def build_home() -> str:
     </div>
     <div class="expertise-grid">
       <a class="exp-card" href="/expertise-e-mobility"><img class="exp-icon" src="/assets/icons/icon-emobility.png" alt="" aria-hidden="true"><div class="exp-num">01</div><h3>E-Mobility &amp; Transport</h3><p>Electric two- and three-wheelers, bus fleets, and the finance that carries them.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-energy"><div class="exp-num">02</div><h3>Energy Access</h3><p>Off-grid solar, mini-grids, and the boundary where public planning takes over.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-water"><div class="exp-num">03</div><h3>Water &amp; Sanitation</h3><p>Safe water access, transparency, and community-based accountability.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-agriculture"><div class="exp-num">04</div><h3>Regenerative Agriculture</h3><p>Smallholder adoption of technologies that turn waste into soil, energy, and income.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-manufacturing"><div class="exp-num">05</div><h3>Local Manufacturing</h3><p>Where imports become assembly, and assembly becomes value that stays.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-ai-digital"><div class="exp-num">06</div><h3>AI &amp; Digital</h3><p>Mobile money, digital public infrastructure, and the interoperability gap.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-finance"><div class="exp-num">07</div><h3>Financial Inclusion</h3><p>Payment rails and credit systems that carry every other transition.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-climate"><div class="exp-num">08</div><h3>Climate &amp; Ecosystems</h3><p>Satellites, sensors, and community rangers in environmental monitoring.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-energy"><img class="exp-icon" src="/assets/icons/icon-energy.png" alt="" aria-hidden="true"><div class="exp-num">02</div><h3>Energy Access</h3><p>Off-grid solar, mini-grids, and the boundary where public planning takes over.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-water"><img class="exp-icon" src="/assets/icons/icon-water.png" alt="" aria-hidden="true"><div class="exp-num">03</div><h3>Water &amp; Sanitation</h3><p>Safe water access, transparency, and community-based accountability.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-agriculture"><img class="exp-icon" src="/assets/icons/icon-agriculture.png" alt="" aria-hidden="true"><div class="exp-num">04</div><h3>Regenerative Agriculture</h3><p>Smallholder adoption of technologies that turn waste into soil, energy, and income.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-manufacturing"><img class="exp-icon" src="/assets/icons/icon-manufacturing.png" alt="" aria-hidden="true"><div class="exp-num">05</div><h3>Local Manufacturing</h3><p>Where imports become assembly, and assembly becomes value that stays.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-ai-digital"><img class="exp-icon" src="/assets/icons/icon-ai-digital.png" alt="" aria-hidden="true"><div class="exp-num">06</div><h3>AI &amp; Digital</h3><p>Mobile money, digital public infrastructure, and the interoperability gap.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-finance"><img class="exp-icon" src="/assets/icons/icon-finance.png" alt="" aria-hidden="true"><div class="exp-num">07</div><h3>Financial Inclusion</h3><p>Payment rails and credit systems that carry every other transition.</p><span class="arrow">→</span></a>
+      <a class="exp-card" href="/expertise-climate"><img class="exp-icon" src="/assets/icons/icon-climate.png" alt="" aria-hidden="true"><div class="exp-num">08</div><h3>Climate &amp; Ecosystems</h3><p>Satellites, sensors, and community rangers in environmental monitoring.</p><span class="arrow">→</span></a>
     </div>
     <p style="text-align:center;margin-top:48px;"><a href="/expertise" class="btn btn-ghost">Explore all expertise →</a></p>
   </div>
