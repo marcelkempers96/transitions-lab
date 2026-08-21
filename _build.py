@@ -1016,6 +1016,48 @@ def build_home() -> str:
   </div>
 </section>
 
+<!-- WHAT WE DO - clear three-column read of the services + radar image -->
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What we do</p>
+      <h2>Independent evidence, three ways in.</h2>
+      <p>We reach the people a technology or programme actually meets, measure what changes, and report it honestly. Same discipline whether commissioned privately or embedded in a European project.</p>
+    </div>
+    <div class="what-grid">
+      <a class="what-card" href="/field-research">
+        <span class="what-tag">Service 01</span>
+        <h3>Field Research</h3>
+        <p>Rigorous primary research in the places it is hardest to do well. Interviews, surveys, baseline-to-endline.</p>
+        <span class="what-more">Read more →</span>
+      </a>
+      <a class="what-card" href="/applied-research">
+        <span class="what-tag">Service 02</span>
+        <h3>Impact Measurement</h3>
+        <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, benchmarked.</p>
+        <span class="what-more">Read more →</span>
+      </a>
+      <a class="what-card" href="/european-impact-tracking">
+        <span class="what-tag">Service 03</span>
+        <h3>European Impact Tracking</h3>
+        <p>The independent measurement partner for Horizon, ESF+, LIFE, EIC and other EU projects. Baseline through endline.</p>
+        <span class="what-more">Read more →</span>
+      </a>
+    </div>
+    <div class="what-visual reveal">
+      <div class="what-visual-text">
+        <p class="eyebrow">What impact measurement looks like</p>
+        <h3>A reading across six lived-experience dimensions, benchmarked.</h3>
+        <p>Access, adoption, affordability, user trust, behavioural change, and quality of life - each read from the people the project serves and placed against comparable data where it exists. A single project becomes a trajectory the moment the same instrument runs again.</p>
+        <p><a href="/applied-research" class="btn btn-ghost">See the method →</a></p>
+      </div>
+      <div class="what-visual-img">
+        <img src="/assets/img/impact-radar.jpg" alt="Radar chart of six impact dimensions - Access (82%), Adoption, Affordability, User Trust, Behavioural Change, Quality of Life - each scored against a benchmark, with Access flagged as above the 54% benchmark.">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW WE WORK - three numbered steps in block colours -->
 <section class="section-paper">
   <div class="wrap">

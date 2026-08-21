@@ -646,6 +646,52 @@ section + section{border-top:2px solid var(--ink);}
   .contact-form{grid-template-columns:1fr;padding:24px 22px;}
 }
 
+/* ── What we do (home): three-service card row + radar visual ── */
+.what-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:2px solid var(--ink);
+}
+.what-grid .what-card{
+  padding:28px 26px;background:var(--paper);color:var(--ink);
+  border-right:2px solid var(--ink);text-decoration:none;
+  display:flex;flex-direction:column;gap:10px;min-height:220px;
+  transition:background .15s ease;
+}
+.what-grid .what-card:last-child{border-right:0;}
+.what-grid .what-card:hover{background:var(--butter);}
+.what-grid .what-card .what-tag{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--orange);
+}
+.what-grid .what-card h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink);}
+.what-grid .what-card p{font-size:15.5px;line-height:1.5;margin:0;color:var(--ink);font-weight:500;flex:1;}
+.what-grid .what-card .what-more{margin-top:auto;font-weight:800;color:var(--ink);}
+@media(max-width:860px){
+  .what-grid{grid-template-columns:1fr;}
+  .what-grid .what-card{border-right:0;}
+  .what-grid .what-card:not(:last-child){border-bottom:2px solid var(--ink);}
+}
+
+.what-visual{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;
+  margin-top:64px;
+  border:2px solid var(--ink);background:var(--paper);
+  padding:36px 40px;
+}
+.what-visual .what-visual-text .eyebrow{color:var(--orange);}
+.what-visual .what-visual-text h3{
+  font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.1;
+  margin:0 0 16px;color:var(--ink);
+}
+.what-visual .what-visual-text p{font-size:16.5px;line-height:1.55;margin:0 0 14px;color:var(--ink);font-weight:500;}
+.what-visual .what-visual-img img{
+  width:100%;height:auto;display:block;
+  border:2px solid var(--ink);background:var(--paper);
+}
+@media(max-width:860px){
+  .what-visual{grid-template-columns:1fr;gap:24px;padding:24px;}
+}
+
 /* ── Serve grid (home page): 5 target-type cards in coloured blocks ── */
 .serve-grid{
   display:grid;grid-template-columns:repeat(5,1fr);gap:0;

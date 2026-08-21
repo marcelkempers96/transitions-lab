@@ -8,6 +8,11 @@ Most of what is written about a new technology or programme is written before an
 
 Transitions Lab measures impact the way it measures anything else: from the human side first, with instruments designed to hold up to scrutiny, and independently of the intervention being measured. Where an internal team has every incentive to find success, an independent measurement partner reports what the evidence actually says.
 
+<figure>
+  <img src="/assets/img/impact-radar.jpg" alt="A radar chart showing six impact dimensions - Access, Adoption, Affordability, User Trust, Behavioural Change, and Quality of Life - each scored against a benchmark, with the current project performance shaded and a callout on Access at 82% (above the 54% benchmark)." class="diagram">
+  <figcaption>Each study reports along multiple lived-experience dimensions, benchmarked where a benchmark exists. A single project reading becomes a trajectory the moment the same instrument is run again.</figcaption>
+</figure>
+
 ---
 
 ## What we measure - three dimensions of impact
