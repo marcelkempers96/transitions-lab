@@ -34,8 +34,11 @@ Different organisations arrive with different questions, but the underlying need
 
 <div class="target-card c-butter">
   <div class="target-head">
-    <span class="target-tag">03 · European projects &amp; consortia</span>
-    <h3>For consortia that need an independent measurement partner</h3>
+    <img class="target-icon" src="/assets/icons/icon-eu.png" alt="" aria-hidden="true">
+    <div class="target-head-text">
+      <span class="target-tag">03 · European projects &amp; consortia</span>
+      <h3>For consortia that need an independent measurement partner</h3>
+    </div>
   </div>
   <div class="target-body">
     <p><strong>The problem.</strong> Your Grant Agreement commits the consortium to monitoring, evaluation, and a proper dissemination and exploitation plan, and the funder expects reach, uptake, and proof that what was promised was delivered. It is easy to set up channels and hard to show they reached anyone. Done late, it becomes a scramble at the final review.</p>

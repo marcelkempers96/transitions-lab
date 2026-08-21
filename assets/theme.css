@@ -395,6 +395,17 @@ section + section{border-top:2px solid var(--ink);}
   padding:22px 26px;border-bottom:2px solid var(--ink);
   display:flex;flex-direction:column;gap:6px;
 }
+/* Optional icon on the left of the head (used on the EU consortia card). */
+.prose .target-card .target-head:has(.target-icon){
+  flex-direction:row;align-items:center;gap:20px;
+}
+.prose .target-card .target-icon{
+  height:64px;width:auto;flex:none;display:block;object-fit:contain;
+}
+.prose .target-card .target-head-text{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0;}
+@media(max-width:640px){
+  .prose .target-card .target-icon{height:48px;}
+}
 .prose .target-card .target-tag{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
