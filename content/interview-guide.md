@@ -4,9 +4,7 @@
 
 *A demonstration of the depth the Lab reaches in qualitative fieldwork, how a single conversation moves from surface fact to the meaning, friction, and lived experience that survey data cannot reach.*
 
-A survey tells you *what* changed. An interview, done well, tells you *why*, *how it felt*, and *what the person would do about it*. This guide shows the structure and the probing technique behind that depth. It is built to be adapted to any subject, a technology, a service, a transition, and uses a worked example for illustration.
-
-> **Note on the worked example.** The illustrative passages below are generic, written to demonstrate technique. To ground this in the Lab's actual fieldwork depth, real anonymised excerpts from the [thesis interviews] can be slotted into the marked boxes, *upload the interview PDFs and these will be replaced with genuine examples.*
+A survey tells you *what* changed. An interview, done well, tells you *why*, *how it felt*, and *what the person would do about it*. This guide shows the structure and the probing technique behind that depth. It is built to be adapted to any subject, a technology, a service, a transition.
 
 ---
 
@@ -85,24 +83,40 @@ Hands them the controls.
 
 ## One question, taken five levels down
 
-This shows a single thread reaching depth. *(Generic illustration, to be replaced with a real anonymised thesis excerpt.)*
+A single thread, moving from surface fact down to the meaning and friction underneath. Colour deepens with each rung.
 
-> **Q (fact):** "Did you start using [the service]?"
-> A: "Yeah, for a few months."
->
-> **Q (behaviour):** "Walk me through how you used it."
-> A: "Mostly at the start of the week, to sort out payments."
->
-> **Q (reasoning):** "What made you do it at the start of the week specifically?"
-> A: "That's when the money comes in. If I wait, it's gone."
->
-> **Q (meaning, ladder up):** "And being able to sort it the moment the money comes in, what does that change for you?"
-> A: "I'm not chasing it all week. I know where I stand."
->
-> **Q (tension, fix-it):** "What's the part you'd never go back on, and the part you'd fix tomorrow?"
-> A: "I'd never go back to carrying it all in cash. But the fees, every time I move money, it takes a little. That I'd fix."
+<div class="ladder">
+  <div class="ladder-rung c-paper">
+    <span class="ladder-tag">Level 1 · Fact</span>
+    <p class="ladder-q"><strong>Q:</strong> "Did you start using [the service]?"</p>
+    <p class="ladder-a"><strong>A:</strong> "Yeah, for a few months."</p>
+  </div>
+  <div class="ladder-rung c-butter">
+    <span class="ladder-tag">Level 2 · Behaviour</span>
+    <p class="ladder-q"><strong>Q:</strong> "Walk me through how you used it."</p>
+    <p class="ladder-a"><strong>A:</strong> "Mostly at the start of the week, to sort out payments."</p>
+  </div>
+  <div class="ladder-rung c-coral">
+    <span class="ladder-tag">Level 3 · Reasoning</span>
+    <p class="ladder-q"><strong>Q:</strong> "What made you do it at the start of the week specifically?"</p>
+    <p class="ladder-a"><strong>A:</strong> "That's when the money comes in. If I wait, it's gone."</p>
+  </div>
+  <div class="ladder-rung c-cobalt">
+    <span class="ladder-tag">Level 4 · Meaning (ladder up)</span>
+    <p class="ladder-q"><strong>Q:</strong> "And being able to sort it the moment the money comes in, what does that change for you?"</p>
+    <p class="ladder-a"><strong>A:</strong> "I'm not chasing it all week. I know where I stand."</p>
+  </div>
+  <div class="ladder-rung c-forest">
+    <span class="ladder-tag">Level 5 · Tension (fix-it)</span>
+    <p class="ladder-q"><strong>Q:</strong> "What's the part you'd never go back on, and the part you'd fix tomorrow?"</p>
+    <p class="ladder-a"><strong>A:</strong> "I'd never go back to carrying it all in cash. But the fees, every time I move money, it takes a little. That I'd fix."</p>
+  </div>
+</div>
 
-> **What the thread yields that a survey could not:** the *timing* logic (income arrives, must act immediately), the *meaning* (control, "knowing where I stand"), and the *precise friction* (per-transaction fees) the person would fix first, three things a satisfaction score of "7/10" would have hidden completely.
+<div class="callout c-butter">
+  <span class="kicker">What the thread yields that a survey could not</span>
+  <p>The <strong>timing</strong> logic (income arrives, must act immediately), the <strong>meaning</strong> (control, "knowing where I stand"), and the <strong>precise friction</strong> (per-transaction fees) the person would fix first. Three things a satisfaction score of "7/10" would have hidden completely.</p>
+</div>
 
 ---
 
@@ -130,4 +144,4 @@ Informed consent, recorded and revocable. Anonymisation by default. We interview
 
 ---
 
-*Companion documents: the **Impact-Tracking Template** (the quantitative spine) and the **Field Research & Impact Measurement** service page (methods). Upload the thesis interview PDFs to replace the demonstration passages with real, anonymised examples of the depth reached in the Lab's own fieldwork.*
+*Companion documents: the [Impact-Tracking Template](/impact-tracking-template) (the quantitative spine), the [Field Research](/field-research) service page (methods), and the [Impact Measurement](/applied-research) approach the depth here feeds into.*

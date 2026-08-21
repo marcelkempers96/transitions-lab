@@ -84,9 +84,11 @@ The baseline is the single most important field in this document. Without it, th
 | I2 | | | | |
 | I3 | | | | |
 
-▢ Baseline captured **before** activities began
-▢ Same instrument will be used at endline (so the comparison is valid)
-▢ Baseline data stored and version-controlled
+<ul class="checklist">
+  <li>Baseline captured <strong>before</strong> activities began</li>
+  <li>Same instrument will be used at endline, so the comparison is valid</li>
+  <li>Baseline data stored and version-controlled</li>
+</ul>
 
 ---
 
@@ -156,10 +158,12 @@ For each claim, a plain-language verdict, including where the evidence is inconv
 
 **§ C.3 / Attribution & honesty check**
 
-▢ Did the change happen *because of* the project, or alongside it? (state the basis)
-▢ What else was going on that could explain the result?
-▢ Who was left out, and does that change the headline?
-▢ What would we measure differently next time?
+<ul class="checklist">
+  <li>Did the change happen <em>because of</em> the project, or alongside it? (state the basis)</li>
+  <li>What else was going on that could explain the result?</li>
+  <li>Who was left out, and does that change the headline?</li>
+  <li>What would we measure differently next time?</li>
+</ul>
 
 > *The willingness to write down these answers is the difference between an evaluation and a press release.*
 
@@ -190,4 +194,4 @@ One row per site, same columns, so results can be read side by side rather than 
 
 ---
 
-*Companion documents: the **Field Research & Impact Measurement** service page (methods) and the **Interview Guide** (the depth this evidence can reach). This template is designed to be operated by the Lab as the independent measurement function, or handed over for a partner to run with the Lab's support.*
+*Companion documents: the [Field Research](/field-research) service page (methods behind this template), the [Impact Measurement](/applied-research) approach it feeds into, and the [Interview Guide](/interview-guide) (the depth this evidence can reach). This template is designed to be operated by the Lab as the independent [European Impact Tracking](/european-impact-tracking) function, or handed over for a partner to run with the Lab's support.*

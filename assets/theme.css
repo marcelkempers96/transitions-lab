@@ -470,6 +470,49 @@ section + section{border-top:2px solid var(--ink);}
 .pill.c-plum{background:var(--plum);color:var(--paper);}
 .pill.c-orange{background:var(--orange);color:var(--ink);}
 
+/* ── Interview ladder (on /interview-guide): five rungs, colour deepens
+   as the ladder moves up from surface fact to meaning and tension. ── */
+.prose .ladder{
+  border:2px solid var(--ink);
+  margin:2em 0;box-shadow:6px 6px 0 var(--ink);
+}
+.prose .ladder .ladder-rung{
+  padding:22px 26px;border-bottom:2px solid var(--ink);color:var(--ink);
+}
+.prose .ladder .ladder-rung:last-child{border-bottom:0;}
+.prose .ladder .ladder-tag{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
+  color:var(--ink);margin:0 0 10px;display:block;
+}
+.prose .ladder .ladder-q,.prose .ladder .ladder-a{
+  margin:4px 0;font-size:16.5px;line-height:1.5;color:inherit;font-weight:500;
+}
+.prose .ladder .ladder-q strong,.prose .ladder .ladder-a strong{font-weight:800;}
+.prose .ladder .ladder-rung.c-paper{background:var(--paper);}
+.prose .ladder .ladder-rung.c-butter{background:var(--butter);}
+.prose .ladder .ladder-rung.c-coral{background:var(--coral);}
+.prose .ladder .ladder-rung.c-cobalt{background:var(--cobalt);color:var(--paper);}
+.prose .ladder .ladder-rung.c-cobalt .ladder-tag{color:var(--butter);}
+.prose .ladder .ladder-rung.c-forest{background:var(--forest);color:var(--paper);}
+.prose .ladder .ladder-rung.c-forest .ladder-tag{color:var(--butter);}
+
+/* ── Checklist (bordered rows, one item per line, black tick square) ── */
+.prose ul.checklist{
+  list-style:none;padding:0;margin:1.4em 0;
+  border:2px solid var(--ink);
+}
+.prose ul.checklist li{
+  margin:0;padding:14px 20px 14px 52px;
+  border-bottom:2px solid var(--ink);
+  position:relative;font-size:16.5px;line-height:1.5;color:var(--ink);font-weight:500;
+}
+.prose ul.checklist li:last-child{border-bottom:0;}
+.prose ul.checklist li::before{
+  content:"";position:absolute;left:18px;top:16px;
+  width:18px;height:18px;border:2px solid var(--ink);background:var(--paper);
+}
+
 /* ── Expertise list (on /expertise index) ── */
 .prose ul.expertise-list{
   list-style:none;padding:0;margin:2em 0;
