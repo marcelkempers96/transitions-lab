@@ -616,10 +616,27 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
 .prose .stage .links a:hover{background:var(--butter);}
 
 /* Simple table */
-.tbl{width:100%;border-collapse:collapse;font-size:15.5px;border:2px solid var(--ink);}
-.tbl th,.tbl td{text-align:left;padding:14px 16px;border-bottom:2px solid var(--ink);}
+/* Tables scroll horizontally inside their wrap on narrow viewports; the
+   page body itself never scrolls sideways. A soft right-edge fade hints
+   at more content when the table overflows. */
+.table-wrap{
+  width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  margin:1.6em 0;position:relative;
+  background:
+    linear-gradient(90deg,var(--paper),var(--paper)) left center/12px 100% no-repeat,
+    linear-gradient(90deg,rgba(10,10,10,.14),transparent) right center/22px 100% no-repeat;
+}
+.tbl{width:100%;border-collapse:collapse;font-size:15.5px;border:2px solid var(--ink);min-width:560px;}
+.tbl th,.tbl td{text-align:left;padding:14px 16px;border-bottom:2px solid var(--ink);vertical-align:top;}
 .tbl tr:last-child td{border-bottom:0;}
-.tbl th{font-family:'Hanken Grotesk';text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--ink);font-weight:800;background:var(--butter);}
+.tbl th{font-family:'Hanken Grotesk';text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--ink);font-weight:800;background:var(--butter);border-right:2px solid var(--ink);}
+.tbl th:last-child{border-right:0;}
+.tbl td{border-right:2px solid var(--ink);}
+.tbl td:last-child{border-right:0;}
+@media(max-width:640px){
+  .tbl{font-size:14px;min-width:520px;}
+  .tbl th,.tbl td{padding:10px 12px;}
+}
 
 /* ── Legacy grids used on interior pages ──────────────────── */
 .approach,.grid-cards{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--ink);}
