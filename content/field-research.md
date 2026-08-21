@@ -4,12 +4,7 @@
 
 *Rigorous primary research in the places it is hardest to do well, built around direct contact with the people a transition affects.*
 
-<figure>
-  <img src="/assets/img/photo-field-interview.jpg" alt="A researcher takes notes while a woman speaks, seated in the doorway of her home. A recorded, consented interview in the setting the respondent lives in." class="diagram">
-  <figcaption>An interview conducted where the respondent lives, recorded and consented. Depth is a function of place as much as of question.</figcaption>
-</figure>
-
-The most important evidence about a technology is usually held by the people living inside it: the rider financing an electric motorcycle, the farmer deciding whether the kiln is worth the labour, the ranger who knows the reef better than any satellite. The Lab's field research exists to reach that evidence, systematically, ethically, and to a standard that holds up. It is the capability behind the Lab's own [published programmes](/programmes), made available to others.
+The most important evidence about a technology is held by the people living inside it: the rider financing an electric motorcycle, the farmer deciding whether the kiln is worth the labour, the ranger who knows the reef better than any satellite. The Lab's field research exists to reach that evidence, systematically, ethically, and to a standard that holds up. It is the capability behind our own [published programmes](/programmes), made available to others.
 
 ---
 
@@ -18,6 +13,11 @@ The most important evidence about a technology is usually held by the people liv
 The Lab works in settings that defeat conventional research: low-connectivity, multilingual, informal, dispersed. These are also the settings where bad evidence does the most damage. Running research well here demands researchers who speak the language, know the place, and understand the working lives of the people they talk to.
 
 Grounded in real engagements: electric transport in Nairobi ([Roam](/case-roam)), decentralised clean energy in Lombok ([Pyropower](/case-pyropower)), water transparency in Nairobi ([MiMaji](/case-mimaji)), and five years of sustained fieldwork in Kenya. We do not parachute in. We work through people already part of the context.
+
+<figure>
+  <img src="/assets/img/photo-field-interview.jpg" alt="A researcher takes notes while a woman speaks, seated in the doorway of her home. A recorded, consented interview in the setting the respondent lives in." class="diagram">
+  <figcaption>An interview in the setting the respondent lives in, recorded and consented. Depth is a function of place as much as of question.</figcaption>
+</figure>
 
 ---
 
@@ -60,7 +60,13 @@ Commissioned work belongs to the client and stays private unless the client choo
 
 ## Who this is for
 
-<span class="pill c-coral">Companies</span> <span class="pill c-cobalt">Funders</span> <span class="pill c-butter">Consortia</span> <span class="pill c-forest">NGOs</span> <span class="pill c-plum">Researchers</span>
+<div class="pill-row">
+  <span class="pill c-coral">Companies</span>
+  <span class="pill c-cobalt">Funders</span>
+  <span class="pill c-butter">Consortia</span>
+  <span class="pill c-forest">NGOs</span>
+  <span class="pill c-plum">Researchers</span>
+</div>
 
 See [Who We Serve](/who-we-serve) for how the fit works in each case.
 

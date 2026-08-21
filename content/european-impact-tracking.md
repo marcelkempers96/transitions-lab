@@ -55,6 +55,11 @@ We run structured, repeatable measurement through the live phase of the project:
 **After, a result that holds up.**
 At close we deliver the endline measurement and the before-and-after comparison: what changed, for whom, by how much, and through what pathway, reported independently, including the parts that are inconvenient. The output is designed to satisfy a funder, survive review, and tell the project team something true.
 
+<figure>
+  <img src="/assets/img/photo-street-interview.jpg" alt="A person being interviewed on a public street; another operates a camera in the foreground. Findings reaching an audience, not sitting in a final report." class="diagram">
+  <figcaption>Dissemination is the last stage of European impact tracking, not an afterthought. Findings that never leave the final report have failed at the last step.</figcaption>
+</figure>
+
 ---
 
 ## The European programmes we work with
