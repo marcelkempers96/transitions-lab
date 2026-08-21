@@ -41,7 +41,17 @@ We start from a decision, never from a dataset we happen to have. We work from t
   <span class="stage-eyebrow">Collect</span>
   <h2>Reach the people, properly</h2>
   <p>Trained researchers who speak the language and know the place reach respondents directly, by phone, face-to-face, or on site. We work only with participants who have given informed, recorded, revocable consent, and we anonymise by default. In difficult contexts, low-connectivity, multilingual, informal, dispersed, this stage is where most studies quietly fail; it is where the Lab's <a href="/field-research">field research</a> craft matters most.</p>
-  <p>Consent and ethics standards follow independent research norms in the tradition of <a href="https://poverty-action.org/">Innovations for Poverty Action</a> and the <a href="https://www.povertyactionlab.org/">Abdul Latif Jameel Poverty Action Lab (J-PAL)</a>, adapted to the settings we actually work in. See the <a href="/case-roam">Roam</a>, <a href="/case-mimaji">MiMaji</a>, and <a href="/case-pyropower">Pyropower</a> cases for three contrasting examples of how this stage plays out on the ground.</p>
+  <p>Consent and ethics standards follow the international framework independent research is held to. See the <a href="/case-roam">Roam</a>, <a href="/case-mimaji">MiMaji</a>, and <a href="/case-pyropower">Pyropower</a> cases for three contrasting examples of how this stage plays out on the ground.</p>
+  <div class="callout c-cobalt">
+    <span class="kicker">Consent &amp; ethics standards we work to</span>
+    <ul>
+      <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">The Belmont Report</a> - respect for persons, beneficence, and justice in human-subjects research.</li>
+      <li><a href="https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/">WMA Declaration of Helsinki</a> - informed consent and researcher accountability.</li>
+      <li><a href="https://poverty-action.org/researchers/rigor-and-ethics">Innovations for Poverty Action</a> and <a href="https://www.povertyactionlab.org/research-resources/data-and-code-availability">J-PAL</a> - data integrity and IRB oversight in field research.</li>
+      <li><a href="https://gdpr.eu/">EU GDPR</a> - personal-data handling in every European engagement.</li>
+      <li><a href="https://ethics.esrc.ukri.org/">ESRC Framework for Research Ethics</a> - qualitative and long-term fieldwork.</li>
+    </ul>
+  </div>
   <div class="links">
     <span class="label">Related</span>
     <a href="/field-research">Field research</a>
