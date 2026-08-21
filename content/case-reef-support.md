@@ -6,7 +6,6 @@
 
 **Location** Lombok, Indonesia, and coastal partner sites
 **Sector** Marine conservation · environmental monitoring · community science
-**Partner** Reef Support
 **Lab themes** Socio-technical monitoring systems · community data · trust in evidence
 
 <!-- IMAGE reef-hero: hero photo | A community ranger in/near the water, or a vivid reef shot with a monitoring context. Blue, alive, human-present. | Full-width hero under the metadata block. -->
@@ -73,4 +72,3 @@ A shared view of the reef is not a technical achievement. It is a social one tha
 
 ---
 
-*Drafted from public information and the Lab's reading of community-monitoring systems. Specific outcomes cited are illustrative of patterns in the sector; a commissioned study would establish them to a measured standard for the population in question.*

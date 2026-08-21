@@ -39,6 +39,21 @@ def _asset_hash(rel_path: str) -> str:
 ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
 
+# Featured case per expertise page. Renders a bordered case-card at the
+# top of the expertise page prose, linking to a specific case study.
+# Kicker uses the same coloured-stripe treatment as home insight cards.
+FEATURED_CASE: dict[str, dict[str, str]] = {
+    "expertise-e-mobility":    {"slug": "case-roam",         "kicker": "Kenya · E-mobility",   "title": "Electric transport in Nairobi",           "blurb": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with Roam.", "colour": "coral"},
+    "expertise-energy":        {"slug": "case-pyropower",    "kicker": "Indonesia · Energy",   "title": "Biochar & clean energy in Lombok",         "blurb": "Smallholder farmers turn crop waste into heat, soil, and income on a decentralised, open-source kiln.", "colour": "butter"},
+    "expertise-water":         {"slug": "case-mimaji",       "kicker": "Kenya · Water",         "title": "Water transparency in Nairobi",           "blurb": "Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.", "colour": "cobalt"},
+    "expertise-agriculture":   {"slug": "case-pyropower",    "kicker": "Indonesia · Agriculture","title": "Biochar in Lombok",                       "blurb": "Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.", "colour": "coral"},
+    "expertise-manufacturing": {"slug": "case-manufacturing","kicker": "East Africa · Manufacturing","title": "Assembly to Value: Local Manufacturing","blurb": "When a product moves from imported to locally assembled, whether the 'local' part actually reaches workers, suppliers, and customers.", "colour": "butter"},
+    "expertise-ai-digital":    {"slug": "case-ai-digital",   "kicker": "AI & Digital",          "title": "Digital Services in Low-Connectivity Contexts","blurb": "When a digital tool designed for always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.", "colour": "cobalt"},
+    "expertise-finance":       {"slug": "case-finance",      "kicker": "Finance · Payment rails","title": "The Payment Rail: What Mobile Money Carries","blurb": "Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.", "colour": "butter"},
+    "expertise-climate":       {"slug": "case-reef-support", "kicker": "Marine · Community rangers","title": "A Shared View of the Reef",                "blurb": "Rangers, sensors, and satellite data braided into a single picture of reef health, with Reef Support.", "colour": "coral"},
+}
+
+
 # Per-page topic icon shown at the top of the page-hero. Extend this
 # map when a new icon lands under /assets/icons/. The value is the icon
 # path; alt="" is used because the H1 already names the topic.
@@ -79,6 +94,9 @@ HERO_COLOR: dict[str, str] = {
     "case-mimaji": "butter",
     "case-statia": "butter",
     "case-context-entry": "butter",
+    "case-manufacturing": "butter",
+    "case-ai-digital": "butter",
+    "case-finance": "butter",
     "articles": "butter",
     "insight-eu-us": "butter",
     "insight-eu-africa": "butter",
@@ -316,6 +334,18 @@ META: dict[str, dict[str, str]] = {
         "title": "Before the Capital: A Market-Entry Study | Transitions Lab",
         "description": "What a mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one.",
     },
+    "case-manufacturing": {
+        "title": "Assembly to Value: Local Manufacturing in East Africa | Transitions Lab",
+        "description": "When a product moves from imported to locally assembled, whether the 'local' part actually reaches the workers, suppliers, and customers it promises to.",
+    },
+    "case-ai-digital": {
+        "title": "Digital Services in Low-Connectivity Contexts | Transitions Lab",
+        "description": "When a digital tool designed for always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.",
+    },
+    "case-finance": {
+        "title": "The Payment Rail: What Mobile Money Carries | Transitions Lab",
+        "description": "Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.",
+    },
     "insight-eu-us": {
         "title": "Europe Invents, America Scales: The Innovation Gap | Transitions Lab",
         "description": "Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. What the asymmetry means, and where evidence fits.",
@@ -403,6 +433,9 @@ STUB_TITLES: dict[str, str] = {
     "case-mimaji": "MiMaji - Water Transparency in Nairobi",
     "case-statia": "St. Eustatius - Small-Island Mobility",
     "case-context-entry": "Market-Entry Study, East Africa",
+    "case-manufacturing": "Local Manufacturing in East Africa",
+    "case-ai-digital": "Digital Services in Low-Connectivity Contexts",
+    "case-finance": "The Payment Rail: What Mobile Money Carries",
     "insight-eu-us": "Europe Invents, America Scales",
     "insight-eu-africa": "The EU and Africa",
     "insight-transitions-outcomes": "Four Ways a Transition Lands",
@@ -890,9 +923,26 @@ def build_content_page(slug: str, md: str) -> str:
   </div>
 </section>"""
 
+    # Featured case study card, injected at the top of expertise-page prose
+    featured = FEATURED_CASE.get(slug)
+    featured_html = ""
+    if featured:
+        featured_html = (
+            f'<a class="case-feature c-{featured["colour"]}" href="/{featured["slug"]}">'
+            f'  <div class="stripe"><span class="kicker">Featured case study</span>'
+            f'<span class="tag">{featured["kicker"]}</span></div>'
+            f'  <div class="body">'
+            f'    <h3>{featured["title"]}</h3>'
+            f'    <p>{featured["blurb"]}</p>'
+            f'    <span class="read">Read the case &rarr;</span>'
+            f'  </div>'
+            f'</a>'
+        )
+
     prose_section = f"""<section class="light">
   <div class="wrap-prose">
     <div class="prose">
+      {featured_html}
       {body_html}
     </div>
   </div>

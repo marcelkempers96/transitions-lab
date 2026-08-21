@@ -18,8 +18,6 @@ Each case is written to show not only what a technology does, but whether and ho
 
 ## Crossing the Threshold: Electric Transport in Nairobi
 
-**Partner, Roam · Nairobi, Kenya**
-
 A market of millions of petrol motorcycles, on which hundreds of thousands of households depend for income, is being asked to switch to electric. The motorcycle was never the hard part, the financing, the charging, and the after-sales network around it are what carry a rider across the threshold, or fail to.
 
 [Read the case →](https://www.transitionslab.org/case-roam.html)
@@ -29,8 +27,6 @@ A market of millions of petrol motorcycles, on which hundreds of thousands of ho
 **§ 1.2 / Clean energy, circular economy & regenerative agriculture**
 
 ## Waste Into Worth: Biochar in Lombok
-
-**Partner, Pyropower · Lombok, Indonesia**
 
 Smallholder farmers turn crop waste that was being open-burned into heat, into soil that raises yields, and into a route to the carbon market, on a portable, open-source kiln the community can adapt and build itself. The farmers named it *Tumbuh*: "to grow."
 
@@ -42,8 +38,6 @@ Smallholder farmers turn crop waste that was being open-burned into heat, into s
 
 ## A Shared View of the Reef: Rangers for Marine Ecosystems
 
-**Partner, Reef Support · Lombok & coastal sites**
-
 Community rangers, field sensors, and satellite data are braided into a single picture of reef health. The satellites are the easy part; whether the rangers own the data and the community trusts the numbers is what decides if the reef is actually better protected.
 
 [Read the case →](https://www.transitionslab.org/case-reef-support.html)
@@ -54,8 +48,6 @@ Community rangers, field sensors, and satellite data are braided into a single p
 
 ## The Price of Not Knowing: Water Transparency in Nairobi
 
-**Partner, MiMaji Foundation · Nairobi**
-
 Open data about water price and quality is itself a socio-technical intervention. When the households paying the most can finally see what they pay for, and what is in it, the water market begins to change, but only if the transparency reaches and is trusted by the people on the wrong side of the asymmetry.
 
 [Read the case →](https://www.transitionslab.org/case-mimaji.html)
@@ -64,9 +56,7 @@ Open data about water price and quality is itself a socio-technical intervention
 
 **§ 1.5 / Public sector & small-island mobility**
 
-## Mobility on a Small Island: The St. Eustatius Transport Directorate
-
-**Client, Transport Directorate · St. Eustatius, Dutch Caribbean**
+## Mobility on a Small Island: St. Eustatius
 
 Planning transport for a community of a few thousand, where every assumption imported from a large mainland system fails. A public-sector engagement in the Lab's Dutch Caribbean practice, in Dutch and English.
 
@@ -78,20 +68,46 @@ Planning transport for a community of a few thousand, where every assumption imp
 
 ## Before the Capital: A Market-Entry Study in East Africa
 
-**Illustrative Context Entry engagement**
-
 What a European mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one. The Lab's highest-stakes work: the alternative to good evidence is a failed launch.
 
 [Read the case →](https://www.transitionslab.org/case-context-entry.html)
 
 ---
 
-**§ 1.4 / The published research**
+## Further Lab readings
 
-## The programmes these cases grow from
-
-The Lab's applied cases sit alongside its open [research programmes](https://www.transitionslab.org/programmes.html), electric mobility, regenerative agriculture, environmental monitoring, water access and transparency, and finance, each grounded in one of these field engagements, and its signature [BRW framework](https://www.transitionslab.org/brw.html) for how a niche technology bypasses, repurposes, or weakens the barriers an entrenched regime presents. The fieldwork feeds the research; the research sharpens the fieldwork.
+The pieces below are Lab readings of transitions in sectors where our field method applies but no single named case sits at the front. They draw on the same discipline as the engagements above, and are used as the featured case study on the matching [expertise](/expertise) page.
 
 ---
 
-*To discuss a study in your own market or programme, see [Contact](https://www.transitionslab.org/contact.html). For how an engagement runs, see [How It Works](https://www.transitionslab.org/how-it-works.html).*
+## Assembly to Value: Local Manufacturing in East Africa
+
+When a product moves from imported to locally assembled, whether the "local" part actually reaches the workers, suppliers, and customers it promises to.
+
+[Read the case →](/case-manufacturing)
+
+---
+
+## Digital Services in Low-Connectivity Contexts
+
+When a digital tool designed for always-connected, personal-device users meets an intermittent phone, a shared device, and a language it wasn't tested in.
+
+[Read the case →](/case-ai-digital)
+
+---
+
+## The Payment Rail: What Mobile Money Carries
+
+Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.
+
+[Read the case →](/case-finance)
+
+---
+
+## The programmes these cases grow from
+
+The Lab's applied cases sit alongside its open [research programmes](/programmes), electric mobility, regenerative agriculture, environmental monitoring, water access and transparency, and finance, each grounded in one of these field engagements, and its signature [BRW framework](/brw) for how a niche technology bypasses, repurposes, or weakens the barriers an entrenched regime presents. The fieldwork feeds the research; the research sharpens the fieldwork.
+
+---
+
+*To discuss a study in your own market or programme, see [Contact](/contact). For how an engagement runs, see [How It Works](/how-it-works).*

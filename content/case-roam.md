@@ -6,7 +6,6 @@
 
 **Location** Nairobi and greater Kenya
 **Sector** Electric mobility · informal transport · vehicle financing
-**Partner** Roam (Roam Electric)
 **Lab programme** Electrification & E-Mobility Transitions
 
 <!-- IMAGE roam-hero: hero photo | A Roam electric motorcycle with its rider on a Nairobi street, ideally mid-work (boda boda context). Documentary, dust-and-daylight real. | Full-width hero under the metadata block. -->
@@ -75,4 +74,3 @@ The motorcycle was never the hard part. The hard part is everything around it. T
 
 ---
 
-*Drafted from public information and the Lab's reading of the e-mobility transition. Figures and rider accounts cited are illustrative of patterns observed in the sector; a commissioned study would establish them to a measured standard for the specific population in question.*

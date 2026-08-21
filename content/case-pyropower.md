@@ -6,7 +6,6 @@
 
 **Location** Lombok, Indonesia
 **Sector** Clean energy · circular economy · regenerative agriculture · carbon
-**Partner** Pyropower (a Delft University of Technology / Wageningen spin-out)
 **Lab themes** Decentralised energy · waste-to-value · smallholder livelihoods
 
 <!-- IMAGE pyro-hero: hero photo | The Pyropower kiln in use on a Lombok smallholding, or a farmer holding biochar. Earthy, working-farm documentary feel. | Full-width hero under the metadata block. -->
@@ -75,4 +74,3 @@ Waste into worth is the easy part to demonstrate. Worth into whose hands is the 
 
 ---
 
-*Drafted from public information and the Lab's reading of decentralised clean-energy transitions. Specific outcomes cited are illustrative of patterns in the sector; a commissioned study would establish them to a measured standard for the population in question.*

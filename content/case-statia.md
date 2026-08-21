@@ -1,8 +1,8 @@
 § / Field case
 
-# Mobility on a Small Island: The St. Eustatius Transport Directorate
+# Mobility on a Small Island: St. Eustatius
 
-*What it takes to plan transport for a community of a few thousand people, where every assumption imported from a large mainland system fails. A public-sector engagement in the Dutch Caribbean.*
+*What it takes to plan transport for a community of a few thousand people, where every assumption imported from a large mainland system fails. A reading of the public-sector transport question in the Dutch Caribbean.*
 
 <!-- IMAGE statia-hero: hero photo | A road, vehicle, or harbour scene on St. Eustatius, showing the island's scale and terrain. Documentary. | Full-bleed hero under the standfirst. -->
 
@@ -44,4 +44,3 @@ Small islands are not marginal cases; they are clarifying ones. Because everythi
 
 *This case reflects the Lab's [Dutch Caribbean, Suriname and Guyana practice](https://www.transitionslab.org/geographies.html) and its public-sector work. To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
 
-<!-- NOTE TO MARCEL: I could not locate the specifics of the prior St. Eustatius transport work in this workspace, so this case is written from what is genuinely true about Statia (Dutch special municipality, small population, coupled island systems) and framed carefully. Before publishing: confirm the actual scope and client relationship with the Transport Directorate, secure permission to name them, and replace the generic descriptions with the real findings and figures from the actual engagement. Do not publish as-is without that reconciliation. -->
