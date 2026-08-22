@@ -23,7 +23,7 @@ East Africa is where several of the Lab's deepest field relationships sit. Nairo
 
 The Lab's field engagements with an electric-mobility manufacturer and with a water-transparency foundation are rooted here, and the region is where the Lab is strongest on the ground: able to field trained researchers who know the context and the language, through standing relationships rather than a flight and a fixer.
 
-*Connected work:* the [Electric Mobility programme](https://www.transitionslab.org/electrification.html), the [Water Access & Transparency programme](https://www.transitionslab.org/water.html), and the [Roam](https://www.transitionslab.org/case-roam.html) and [MiMaji](https://www.transitionslab.org/case-mimaji.html) cases.
+*Connected work:* the [E-Mobility & Transport](/expertise-e-mobility), the [Water & Sanitation](/expertise-water), and the [Roam](https://www.transitionslab.org/case-roam.html) and [MiMaji](https://www.transitionslab.org/case-mimaji.html) cases.
 
 ---
 
@@ -35,7 +35,7 @@ Coastal Indonesia is where the Lab studies technologies at the meeting point of 
 
 These are socio-technical questions in their sharpest form, where a technology's success depends entirely on whether a farmer or a fisher adopts, trusts, and benefits from it. The Lab's engagements with a biochar venture and a marine-monitoring venture are rooted in this region.
 
-*Connected work:* the [Regenerative Agriculture programme](https://www.transitionslab.org/agriculture-programme.html), the [Environmental Monitoring programme](https://www.transitionslab.org/monitoring.html), and the [Pyropower](https://www.transitionslab.org/case-pyropower.html) and [Reef Support](https://www.transitionslab.org/case-reef-support.html) cases.
+*Connected work:* the [Regenerative Agriculture](/expertise-agriculture), the [Climate & Ecosystems](/expertise-climate), and the [Pyropower](https://www.transitionslab.org/case-pyropower.html) and [Reef Support](https://www.transitionslab.org/case-reef-support.html) cases.
 
 ---
 

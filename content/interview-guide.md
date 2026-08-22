@@ -225,7 +225,7 @@ The coding workflow, in order:
 
 **§ 10 / Standards we hold**
 
-Informed consent, recorded and revocable. Anonymisation by default. We interview to understand, not to confirm, and we report the threads that contradict the project's hopes as carefully as the ones that support them. The same rigour that goes into the Lab's [published research](/programmes) goes into every interview we run for others. Full ethics references are set out on the [Field Research](/field-research) page.
+Informed consent, recorded and revocable. Anonymisation by default. We interview to understand, not to confirm, and we report the threads that contradict the project's hopes as carefully as the ones that support them. The same rigour that goes into the Lab's [published research](/articles) goes into every interview we run for others. Full ethics references are set out on the [Field Research](/field-research) page.
 
 ---
 

@@ -74,7 +74,7 @@ The motorcycle was never the hard part. The hard part is everything around it. T
 
 ---
 
-*This case study is part of the Lab's [Electrification & E-Mobility programme](https://www.transitionslab.org/electrification.html). For the Lab's field methods, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study in your own market, see [Contact](https://www.transitionslab.org/contact.html).*
+*This case study is part of the Lab's [E-Mobility & Transport](/expertise-e-mobility). For the Lab's field methods, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study in your own market, see [Contact](https://www.transitionslab.org/contact.html).*
 
 ---
 

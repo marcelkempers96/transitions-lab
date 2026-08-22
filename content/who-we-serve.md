@@ -78,7 +78,7 @@ Different organisations arrive with different questions. What changes is the dec
 
 ## And the public interest
 
-Beyond commissioned work, the Lab publishes its own research openly, because some questions deserve answering whether or not a client is paying for it. That published work, on electric mobility, regenerative agriculture, environmental monitoring, water access, and finance, is how the Lab serves the wider public interest, and how it keeps its methods sharp. See the [research programmes](/programmes).
+Beyond commissioned work, the Lab publishes its own research openly, because some questions deserve answering whether or not a client is paying for it. That published work, on electric mobility, regenerative agriculture, environmental monitoring, water access, and finance, is how the Lab serves the wider public interest, and how it keeps its methods sharp. See the [articles](/articles).
 
 ---
 

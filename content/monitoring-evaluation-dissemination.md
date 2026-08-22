@@ -4,9 +4,7 @@
 
 *Independent MED for any project that has to prove what it changed, and for European projects that have to prove it to a funder. We set up the measurement framework at the start, run it throughout, and turn the evidence into results that reach the people who can use them.*
 
-Most projects can tell you what they did. Far fewer can show what changed because of it, for whom, and whether the benefit will last. And fewer still turn that evidence into something that actually reaches the people who could act on it. Monitoring, evaluation, and dissemination is the discipline that closes all three gaps, and it is a single connected system, not three afterthoughts bolted on at the end.
-
-The Lab runs that system as an independent partner. We are equally at home on a privately commissioned project and on a European consortium with a Grant Agreement to satisfy, because the underlying method is the same: measure honestly from the start, judge against a clear standard, and carry the findings into use.
+Most projects can tell you what they did. Far fewer can show what changed, for whom, and whether it will last, or turn that evidence into something the right people can act on. MED closes all three gaps as one connected system, not three afterthoughts. The Lab runs it as the independent partner, on privately commissioned work and on European consortia alike.
 
 ---
 

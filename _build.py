@@ -116,12 +116,6 @@ HERO_COLOR: dict[str, str] = {
     "interview-guide": "cobalt",
     "impact-tracking-template": "cobalt",
     # Research programmes (forest)
-    "programmes": "forest",
-    "electrification": "forest",
-    "agriculture-programme": "forest",
-    "monitoring": "forest",
-    "water": "forest",
-    "finance": "forest",
 }
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -160,7 +154,6 @@ EXPERTISE = [
 
 LIBRARY = [
     ("case-studies", "Case studies"),
-    ("programmes", "Research programmes"),
     ("brw", "The BRW framework"),
     ("readiness-levels", "TRL & SRL"),
     ("resources", "Resources"),
@@ -411,30 +404,6 @@ META: dict[str, dict[str, str]] = {
         "title": "European Impact-Tracking Template | Transitions Lab",
         "description": "A fill-in framework for measuring the before-and-after impact of a European project or demonstration: baseline, midline, endline.",
     },
-    "programmes": {
-        "title": "Research Programmes | Transitions Lab",
-        "description": "The Lab's field-grounded research on electric mobility, regenerative agriculture, environmental monitoring, water access, and finance, read through the BRW framework.",
-    },
-    "finance": {
-        "title": "Finance & Payment Systems Programme | Transitions Lab",
-        "description": "How payment, credit, and financing systems carry, or block, every other transition that depends on people being able to pay over time.",
-    },
-    "electrification": {
-        "title": "Electric Mobility & Transport Programme | Transitions Lab",
-        "description": "How electric and shared transport crosses from novelty to default in markets built around petrol, grounded in the Lab's field work with Roam in Nairobi.",
-    },
-    "agriculture-programme": {
-        "title": "Regenerative Agriculture & Circular Systems Programme | Transitions Lab",
-        "description": "How smallholders adopt technologies that turn waste into energy, soil, and income, grounded in the Lab's field work with Pyropower in Lombok.",
-    },
-    "monitoring": {
-        "title": "Environmental Monitoring & Community Data Programme | Transitions Lab",
-        "description": "How satellites, sensors, and community rangers combine into trusted environmental evidence that drives decisions, grounded in the Lab's work with Reef Support.",
-    },
-    "water": {
-        "title": "Water Access & Transparency Programme | Transitions Lab",
-        "description": "How safe water is delivered, sustained, and trusted, and how open data changes who can hold water systems to account. With the MiMaji Foundation, Nairobi.",
-    },
     "brw": {
         "title": "The BRW Framework: Bypass, Repurpose, Weaken | Transitions Lab",
         "description": "A mechanism-based typology of how niche technologies engage entrenched regimes: bypass, repurpose, or weaken, matched to the barriers they face.",
@@ -457,12 +426,6 @@ STUB_TITLES: dict[str, str] = {
     "resources": "Resources",
     "interview-guide": "Interview Guide",
     "impact-tracking-template": "Impact Tracking Template",
-    "programmes": "Programmes",
-    "electrification": "Electric Mobility & Transport",
-    "agriculture-programme": "Regenerative Agriculture & Circular Systems",
-    "monitoring": "Environmental Monitoring & Community Data",
-    "water": "Water Access & Transparency",
-    "finance": "Finance & Payment Systems",
     "brw": "The BRW Framework",
     "case-roam": "Roam - Electric Transport in Nairobi",
     "case-pyropower": "Pyropower - Biochar in Lombok",
@@ -498,7 +461,6 @@ SITEMAP_PRIORITY = {
     "/about": 0.8,
     "/what-we-do": 0.9,
     "/expertise": 0.9,
-    "/programmes": 0.9,
     "/who-we-serve": 0.8,
     "/case-studies": 0.85,
     "/contact": 0.6,
@@ -923,9 +885,9 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     </div>
     <div>
       <h4>Research</h4>
-      <a href="/programmes">Programmes</a>
       <a href="/expertise">Expertise</a>
       <a href="/case-studies">Case studies</a>
+      <a href="/articles">Articles</a>
       <a href="/resources">Resources</a>
       <a href="/readiness-levels">TRL &amp; SRL</a>
     </div>

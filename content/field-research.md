@@ -4,7 +4,7 @@
 
 *Rigorous primary research in the places it is hardest to do well, built around direct contact with the people a transition affects.*
 
-The most important evidence about a technology is held by the people living inside it: the rider financing an electric motorcycle, the farmer deciding whether the kiln is worth the labour, the ranger who knows the reef better than any satellite. The Lab's field research exists to reach that evidence, systematically, ethically, and to a standard that holds up. It is the capability behind our own [published programmes](/programmes), made available to others.
+The most important evidence about a technology is held by the people living inside it: the rider financing an electric motorcycle, the farmer deciding whether the kiln is worth the labour, the ranger who knows the reef better than any satellite. The Lab's field research exists to reach that evidence, systematically, ethically, and to a standard that holds up. It is the capability behind our own [published research](/articles), made available to others.
 
 ---
 
@@ -16,7 +16,7 @@ Grounded in real engagements: electric transport in Nairobi ([Roam](/case-roam))
 
 <figure>
   <img src="/assets/img/photo-field-interview.jpg" alt="A researcher takes notes while a woman speaks, seated in the doorway of her home. A recorded, consented interview in the setting the respondent lives in." class="diagram">
-  <figcaption>An interview in the setting the respondent lives in, recorded and consented. Depth is a function of place as much as of question.</figcaption>
+  <figcaption>We go to the places where people live and work, in their language, on their time. Depth is a function of place as much as of question.</figcaption>
 </figure>
 
 ---

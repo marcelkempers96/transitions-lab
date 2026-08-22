@@ -100,7 +100,7 @@ There are excellent impact-measurement firms. The Lab's difference is a specific
 
 - **Social-science fieldcraft and technical literacy in the same team.** Policy evaluators understand programmes but not the technologies inside them. Technical evaluators understand systems but not the people around them. The Lab refuses the split. See [About](/about).
 - **Rooted in Delft, working through partners on the ground.** Not a survey firm parachuted in; researchers who already speak the language and know the place. See [Where we work](/geographies).
-- **Both a publisher and a measurement partner.** The [research programmes](/programmes) the Lab runs openly on its own account are the proof of the method; the contracted measurement uses the same method, made available.
+- **Both a publisher and a measurement partner.** The [articles](/articles) the Lab runs openly on its own account are the proof of the method; the contracted measurement uses the same method, made available.
 
 ---
 
@@ -115,4 +115,4 @@ There are excellent impact-measurement firms. The Lab's difference is a specific
 
 ---
 
-*To discuss a study or a collaboration, see [Contact](/contact). For the field research behind the measurement, see [Field Research](/field-research). For the research programmes this work grows out of, see [Programmes](/programmes).*
+*To discuss a study or a collaboration, see [Contact](/contact). For the field research behind the measurement, see [Field Research](/field-research). For the wider reading behind it, see [Articles](/articles).*

@@ -133,4 +133,4 @@ Companies expanding into new markets, locally or internationally, who need to un
 
 ---
 
-*To start a conversation, see [Contact](https://www.transitionslab.org/contact.html). For the full account of the Lab's mission and posture, see [About](https://www.transitionslab.org/about.html). For the research the applied work grows out of, see [Programmes](https://www.transitionslab.org/programmes.html).*
+*To start a conversation, see [Contact](https://www.transitionslab.org/contact.html). For the full account of the Lab's mission and posture, see [About](https://www.transitionslab.org/about.html). For the research the applied work grows out of, see [Articles](/articles).*

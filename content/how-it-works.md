@@ -66,14 +66,14 @@ We start from a decision, never from a dataset we happen to have. We work from t
   <div class="stage-num">04</div>
   <span class="stage-eyebrow">Analyse & benchmark</span>
   <h2>Read the evidence honestly</h2>
-  <p>We clean, code, and analyse the data with the same rigour that goes into the Lab's <a href="/programmes">published research programmes</a>. Where a comparable benchmark exists, <a href="https://60decibels.com/">60 Decibels</a> on customer experience and inclusion, <a href="https://www.gogla.org/">GOGLA</a> on the off-grid solar market, <a href="https://www.c40.org/">C40 Cities</a> on urban transport, we place your findings against it explicitly so a number carries its comparison. Where no benchmark exists, we say so.</p>
+  <p>We clean, code, and analyse the data with the same rigour that goes into the Lab's <a href="/articles">published articles</a>. Where a comparable benchmark exists, <a href="https://60decibels.com/">60 Decibels</a> on customer experience and inclusion, <a href="https://www.gogla.org/">GOGLA</a> on the off-grid solar market, <a href="https://www.c40.org/">C40 Cities</a> on urban transport, we place your findings against it explicitly so a number carries its comparison. Where no benchmark exists, we say so.</p>
   <p>The <a href="/impact-measurement">Impact Measurement</a> service page has more on how we structure Reach, Depth, and Experience readings across a study. For the Lab's own reading of how transitions play out across state capacity and niche success, see the <a href="/insight-transitions-outcomes">Four Ways a Transition Lands</a> matrix, and for the wider innovation-scaling asymmetry that shapes many engagements, see <a href="/insight-eu-us">Europe Invents, America Scales</a>.</p>
   <div class="links">
     <span class="label">Related</span>
     <a href="/impact-measurement">Impact measurement</a>
     <a href="/insight-transitions-outcomes">Transitions matrix</a>
     <a href="/insight-eu-us">EU-US gap</a>
-    <a href="/programmes">Research programmes</a>
+    <a href="/articles">Articles</a>
   </div>
 </div>
 
@@ -96,7 +96,7 @@ We start from a decision, never from a dataset we happen to have. We work from t
 
 ## What you can expect throughout
 
-Independence from the thing being measured. Rigour equal to the Lab's own [published research](/programmes). And findings written to be used by a decision-maker without a translator, plain, specific, and tied to the choice in front of you.
+Independence from the thing being measured. Rigour equal to the Lab's own [published research](/articles). And findings written to be used by a decision-maker without a translator, plain, specific, and tied to the choice in front of you.
 
 We are based in Delft, The Netherlands. We do fieldwork in the places our research takes us, through researchers and partners who already speak the language and know the place, because [the quality of field research depends on it](/geographies). Our published work on the [BRW framework](/brw), on [TRL and SRL readiness](/readiness-levels), and on the [Transitions Outcomes matrix](/insight-transitions-outcomes) is the proof of the method; the same method is what a commissioning partner receives.
 

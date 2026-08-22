@@ -16,7 +16,7 @@ Established in 2026, on the back of years of sustained fieldwork on infrastructu
 
 ## Two modes, one method
 
-We **publish our own research** openly: [research programmes](/programmes) on finance, electrification, and water access, and a [signature typology](/brw) of how new infrastructure engages the legacy regimes it enters.
+We **publish our own research** openly: [articles](/articles) on finance, electrification, and water access, and a [signature typology](/brw) of how new infrastructure engages the legacy regimes it enters.
 
 We **work under contract** for organisations that need evidence they cannot generate themselves: [field research](/field-research), [impact measurement](/impact-measurement), and the [European projects](/european-impact-tracking) that need an independent measurement partner.
 
@@ -48,4 +48,4 @@ Informed, recorded, revocable consent. Anonymisation by default. We interview to
 
 ---
 
-*For services, see [What We Do](/what-we-do). For places, [Where We Work](/geographies). For research, [Programmes](/programmes). To start, [Contact](/contact).*
+*For services, see [What We Do](/what-we-do). For places, [Where We Work](/geographies). For research, [Articles](/articles). To start, [Contact](/contact).*
