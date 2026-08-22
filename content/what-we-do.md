@@ -10,7 +10,7 @@ Below, three questions clients bring us. Each links to the primary service page,
 
 <div class="whatwedo-card c-butter">
   <div class="whatwedo-head">
-    <a href="/entering-a-new-context"><h3>Entering a new context &rarr;</h3></a>
+    <a href="/entering-a-new-context"><h3>Entering a New Context &rarr;</h3></a>
     <p>Independent field evidence for the decision to enter a new market or launch a new product line. Who adopts, at what price, and which failure modes to name early.</p>
   </div>
   <div class="whatwedo-sub">
@@ -23,7 +23,7 @@ Below, three questions clients bring us. Each links to the primary service page,
 
 <div class="whatwedo-card c-coral">
   <div class="whatwedo-head">
-    <a href="/measuring-change"><h3>Measuring change &rarr;</h3></a>
+    <a href="/measuring-change"><h3>Measuring Change &rarr;</h3></a>
     <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, measured from the human side first.</p>
   </div>
   <div class="whatwedo-sub">
@@ -37,7 +37,7 @@ Below, three questions clients bring us. Each links to the primary service page,
 
 <div class="whatwedo-card c-cobalt">
   <div class="whatwedo-head">
-    <a href="/reporting-to-funders"><h3>Reporting to funders &rarr;</h3></a>
+    <a href="/reporting-to-funders"><h3>Reporting to Funders &rarr;</h3></a>
     <p>Monitoring, evaluation, dissemination as one connected system. Independent, set up at the start, closed with proof, including for European Grant Agreements.</p>
   </div>
   <div class="whatwedo-sub">

@@ -131,9 +131,9 @@ ABOUT = [
 
 SERVICES = [
     ("what-we-do", "Overview"),
-    ("entering-a-new-context", "Entering a new context"),
-    ("measuring-change", "Measuring change"),
-    ("reporting-to-funders", "Reporting to funders"),
+    ("entering-a-new-context", "Entering a New Context"),
+    ("measuring-change", "Measuring Change"),
+    ("reporting-to-funders", "Reporting to Funders"),
 ]
 
 EXPERTISE = [

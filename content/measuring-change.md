@@ -6,7 +6,7 @@
 
 Most writing about a new technology or programme arrives ahead of the evidence. Measurement closes that gap: it puts honest questions to the people the work is meant to serve, from the human side first, independently of the intervention. **The Lab reports what the evidence actually says, including when it is inconvenient.**
 
-Measuring change is two connected disciplines. The first is **field research**, the primary contact with the people a transition affects. The second is **impact measurement**, the frame that turns those conversations and numbers into a defensible reading of what changed. This page carries both.
+Measuring Change is two connected disciplines. The first is **field research**, the primary contact with the people a transition affects. The second is **impact measurement**, the frame that turns those conversations and numbers into a defensible reading of what changed. This page carries both.
 
 *Read either method in full: [Field Research](/field-research) or [Impact Measurement](/impact-measurement).*
 

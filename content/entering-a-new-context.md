@@ -6,7 +6,7 @@
 
 The riskiest research a Lab partner commissions is the research that precedes a scaling decision. A product that works in one market can land differently in another. A promising segment can be a mirage of survivorship bias. A local partner can look aligned in a deck and misaligned in a working week.
 
-**Entering a new context** is the service for that decision. It reaches the people whose behaviour will decide the outcome and reports what they actually do, want, and can afford.
+**Entering a New Context** is the service for that decision. It reaches the people whose behaviour will decide the outcome and reports what they actually do, want, and can afford.
 
 *Read the underlying method in full: [Market & Expansion Research](/market-expansion).*
 

@@ -6,7 +6,7 @@
 
 Most projects can tell a funder what they did. Far fewer can show what changed because of it, for whom, and whether it will last, or turn that evidence into something the audience can act on. This is the discipline the Lab runs as an independent partner, on privately commissioned work and on European projects with a Grant Agreement to satisfy alike.
 
-Reporting to funders is one connected system, not three afterthoughts. The three parts, and the one where the EU rules add specifics, are set out below.
+Reporting to Funders is one connected system, not three afterthoughts. The three parts, and the one where the EU rules add specifics, are set out below.
 
 ---
 
