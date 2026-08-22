@@ -132,7 +132,7 @@ a[href="/european-impact-tracking"]{color:var(--euro-blue);}
 a[href="/european-impact-tracking"].current{color:var(--euro-blue);font-weight:800;}
 
 /* ── Buttons ──────────────────────────────────────────────── */
-.btn{
+.btn,.prose a.btn{
   font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:16px;
   text-decoration:none;display:inline-flex;align-items:center;gap:.6em;
   padding:14px 24px;border-radius:0;border:2px solid var(--ink);
@@ -140,11 +140,13 @@ a[href="/european-impact-tracking"].current{color:var(--euro-blue);font-weight:8
   cursor:pointer;background:var(--paper);color:var(--ink);
   box-shadow:4px 4px 0 var(--ink);
 }
+.prose a.btn:hover{background:var(--butter);color:var(--ink);text-decoration:none;}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
 .btn:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--ink);}
-.btn-solid{background:var(--orange);color:var(--ink);}
-.btn-ghost{background:transparent;color:var(--ink);}
-.btn-ink{background:var(--ink);color:var(--paper);}
+.btn-solid,.prose a.btn-solid{background:var(--orange);color:var(--ink);}
+.btn-ghost,.prose a.btn-ghost{background:transparent;color:var(--ink);}
+.btn-ink,.prose a.btn-ink{background:var(--ink);color:var(--paper);text-decoration:none;}
+.prose a.btn-ink:hover{background:var(--ink);color:var(--butter);}
 /* Buttons on dark blocks */
 .on-dark .btn,.section-forest .btn,.section-cobalt .btn,.section-plum .btn{
   background:var(--butter);color:var(--ink);border-color:var(--ink);
@@ -548,6 +550,42 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .prose .article-meta span{white-space:nowrap;}
 
+/* ── What We Do cards (on /what-we-do): top-level question card with a
+   coloured head, an "Absorbs" sub-strip on paper below, mirroring the
+   Services nav axis + showing the second-level pages inside each. */
+.prose .whatwedo-card{
+  border:2px solid var(--ink);background:var(--paper);
+  margin:2em 0;box-shadow:6px 6px 0 var(--ink);
+  display:flex;flex-direction:column;
+}
+.prose .whatwedo-card .whatwedo-head{
+  padding:24px 26px;border-bottom:2px solid var(--ink);color:var(--ink);
+}
+.prose .whatwedo-card.c-butter .whatwedo-head{background:var(--butter);}
+.prose .whatwedo-card.c-coral .whatwedo-head{background:var(--coral);}
+.prose .whatwedo-card.c-cobalt .whatwedo-head{background:var(--cobalt);color:var(--paper);}
+.prose .whatwedo-card.c-plum .whatwedo-head{background:var(--plum);color:var(--paper);}
+.prose .whatwedo-card .whatwedo-head h3{
+  font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1;
+  margin:0 0 8px;color:inherit;
+}
+.prose .whatwedo-card .whatwedo-head a{color:inherit;text-decoration:none;}
+.prose .whatwedo-card .whatwedo-head a:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;}
+.prose .whatwedo-card .whatwedo-head p{
+  font-size:16px;line-height:1.5;margin:0;color:inherit;font-weight:500;
+}
+.prose .whatwedo-card .whatwedo-sub{
+  padding:20px 26px 22px;background:var(--paper);color:var(--ink);
+}
+.prose .whatwedo-card .whatwedo-sub .sub-label{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
+  color:var(--orange);display:block;margin:0 0 8px;
+}
+.prose .whatwedo-card .whatwedo-sub ul{margin:0;padding-left:1.2em;}
+.prose .whatwedo-card .whatwedo-sub li{font-size:15px;line-height:1.5;margin:.35em 0;color:var(--ink);}
+.prose .whatwedo-card .whatwedo-sub a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600;}
+
 /* ── Service grid (on /what-we-do): 2-column bordered coloured cards. */
 .prose .service-grid{
   display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
@@ -859,6 +897,36 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   .what-grid .what-card:not(:last-child){border-bottom:2px solid var(--ink);}
 }
 
+/* ── Network grid (home page): three cards on the forest block. ── */
+.network-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:2px solid var(--paper);
+}
+.network-grid .network-card{
+  padding:32px 28px;background:transparent;color:var(--paper);
+  border-right:2px solid var(--paper);
+  display:flex;flex-direction:column;gap:12px;
+}
+.network-grid .network-card:last-child{border-right:0;}
+.network-grid .network-card .net-num{
+  font-size:56px;font-weight:800;line-height:1;letter-spacing:-.04em;
+  color:var(--butter);
+}
+.network-grid .network-card h3{
+  font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.15;
+  color:var(--paper);
+}
+.network-grid .network-card p{
+  font-size:15.5px;line-height:1.55;margin:0;color:var(--paper);font-weight:500;
+}
+.network-grid .network-card a{color:var(--butter);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.network-grid .network-card a:hover{background:var(--butter);color:var(--ink);}
+@media(max-width:860px){
+  .network-grid{grid-template-columns:1fr;}
+  .network-grid .network-card{border-right:0;}
+  .network-grid .network-card:not(:last-child){border-bottom:2px solid var(--paper);}
+}
+
 /* ── Serve grid (home page): 5 target-type cards in coloured blocks ── */
 .serve-grid{
   display:grid;grid-template-columns:repeat(5,1fr);gap:0;
@@ -912,24 +980,24 @@ body[data-page="european-impact-tracking"] .nav nav > a,
 body[data-page="european-impact-tracking"] .nav details.nav-group summary.nav-label{color:var(--euro-blue);}
 body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
 
-/* EU flag hero card — a bordered block on the european-impact-tracking page */
+/* EU flag hero card - a full blue block on the European reporting page */
 .eu-flag-card{
-  border:3px solid var(--euro-blue);background:var(--white);
+  border:3px solid var(--ink);background:var(--euro-blue);color:var(--white);
   padding:0;display:flex;align-items:stretch;gap:0;
-  margin:2em 0 2.4em;box-shadow:6px 6px 0 var(--euro-blue);
+  margin:2em 0 2.4em;box-shadow:6px 6px 0 var(--ink);
 }
 .eu-flag-card img{
   width:220px;height:auto;flex:none;display:block;
-  border-right:3px solid var(--euro-blue);object-fit:cover;
+  border-right:3px solid var(--ink);object-fit:cover;background:var(--euro-blue);
 }
 .eu-flag-card .txt{
   padding:22px 26px;display:flex;flex-direction:column;justify-content:center;gap:6px;
 }
-.eu-flag-card .txt strong{color:var(--euro-blue);font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
-.eu-flag-card .txt span{color:var(--ink);font-size:15px;font-weight:500;line-height:1.45;}
+.eu-flag-card .txt strong{color:var(--euro-gold);font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
+.eu-flag-card .txt span{color:var(--white);font-size:15px;font-weight:500;line-height:1.45;}
 @media(max-width:640px){
-  .eu-flag-card{flex-direction:column;box-shadow:4px 4px 0 var(--euro-blue);}
-  .eu-flag-card img{width:100%;height:120px;border-right:0;border-bottom:3px solid var(--euro-blue);}
+  .eu-flag-card{flex-direction:column;box-shadow:4px 4px 0 var(--ink);}
+  .eu-flag-card img{width:100%;height:120px;border-right:0;border-bottom:3px solid var(--ink);}
 }
 
 /* Numbered stage blocks (used on /how-it-works). Big orange numeral,
