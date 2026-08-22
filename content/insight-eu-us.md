@@ -4,6 +4,8 @@
 
 *Europe produces world-class innovation and struggles to commercialise it. The United States does the reverse. What does that asymmetry mean for European technology, and where can an independent research team add value in the gap between the two?*
 
+<p class="article-meta"><span class="article-date">July 2026</span> &middot; <span class="article-reading-time">10 min read</span></p>
+
 <!-- IMAGE eu-us-hero: diagram or photo | Split-image or diagram contrasting a European lab/research setting with a US scale-up/market setting. Or a clean transatlantic map diagram. House navy + ochre. | Full-width hero under the standfirst. -->
 
 The defining feature of the transatlantic technology relationship is not a gap in ideas. It is a gap in what happens to them next.

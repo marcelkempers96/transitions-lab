@@ -4,6 +4,8 @@
 
 *The European Social Fund Plus backs socially innovative projects across Europe, and asks them to prove what actually works. That proof, independent, field-based evidence of what a social experiment does to the people it serves, is what the Lab provides.*
 
+<p class="article-meta"><span class="article-date">June 2026</span> &middot; <span class="article-reading-time">9 min read</span></p>
+
 <!-- IMAGE esf-hero: hero photo | A social-innovation setting: a training programme, a care service, a community initiative in a European context, with people present. Documentary. | Full-bleed hero under the standfirst. -->
 
 The European Social Fund Plus (ESF+) is one of the EU's principal instruments for investing in people. Alongside employment and inclusion, it supports social innovation: new ideas, practices, and policies that address social challenges, from helping young people who are not in employment, education, or training into the labour market, to housing, to reshaping how care is delivered for an ageing population.

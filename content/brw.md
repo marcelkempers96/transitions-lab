@@ -4,6 +4,8 @@
 
 *Bypass, Repurpose, Weaken: a mechanism-based typology of the strategies a niche actor uses to engage an entrenched regime, classified by how each strategy acts on a specific lock-in barrier.*
 
+<p class="article-meta"><span class="article-date">July 2026</span> &middot; <span class="article-reading-time">12 min read</span></p>
+
 Every niche technology arrives into a world already run by an incumbent regime: an aligned configuration of technologies, infrastructures, institutions, habits, and expectations that resists change. How a niche actor engages that regime, barrier by barrier, largely determines whether it succeeds and for whom.
 
 The BRW framework is the Lab's way of reading that engagement. Unlike typologies that classify a strategy by its ambition relative to the regime as a whole, BRW classifies each strategy by its **functional mechanism**: what it actually does to a particular lock-in barrier. This shift in the unit of analysis, from the niche-regime relationship to the strategy-barrier relationship, is what makes the framework precise, because a single niche actor routinely deploys different mechanisms against different barriers within the same regime.

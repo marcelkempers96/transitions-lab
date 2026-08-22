@@ -102,6 +102,10 @@ HERO_COLOR: dict[str, str] = {
     "insight-eu-us": "butter",
     "insight-eu-africa": "butter",
     "insight-transitions-outcomes": "butter",
+    "insight-ai-absorptive-capacity": "butter",
+    "insight-absorbing-the-gap": "butter",
+    "insight-incumbents-second-life": "butter",
+    "qualitative-vs-quantitative": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
     "brw": "cobalt",
@@ -364,6 +368,22 @@ META: dict[str, dict[str, str]] = {
         "title": "Four Ways a Transition Lands: State Capacity Against Niche Success | Transitions Lab",
         "description": "A two-axis diagnostic sorting every real socio-technical transition into one of four patterns: directed, coordinated, stalled, or bounded leapfrogging.",
     },
+    "insight-ai-absorptive-capacity": {
+        "title": "The Asymmetry Nobody Is Metering: AI, Climate & Absorptive Capacity | Transitions Lab",
+        "description": "The AI-and-climate debate is stuck on data-centre electricity. The decisive variable is which sectors are ready to convert AI into productivity, and the fossil economy has a head start.",
+    },
+    "insight-absorbing-the-gap": {
+        "title": "Who Absorbs the Gap: Electric Mobility Where the Grid Cannot Be Assumed | Transitions Lab",
+        "description": "Where the grid is unreliable, adoption is decided by which party absorbs the volatility. A reliability ledger for reading market-entry decisions in e-mobility.",
+    },
+    "insight-incumbents-second-life": {
+        "title": "The Incumbent's Second Life: What Travels With a Capability | Transitions Lab",
+        "description": "When mining incumbents redeploy into critical minerals, capability transfers with them. So does conduct. Why one is verified and the other is not.",
+    },
+    "qualitative-vs-quantitative": {
+        "title": "Qualitative vs Quantitative: What Numbers Can and Cannot Measure | Transitions Lab",
+        "description": "A plain-language guide to the two kinds of research evidence, and how they work together. What qualitative work can tell you that numbers, on their own, never will.",
+    },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
         "description": "Technology Readiness Levels and Societal Readiness Levels explained, with references: what the nine levels mean, and why both axes decide success.",
@@ -445,6 +465,10 @@ STUB_TITLES: dict[str, str] = {
     "insight-eu-us": "Europe Invents, America Scales",
     "insight-eu-africa": "The EU and Africa",
     "insight-transitions-outcomes": "Four Ways a Transition Lands",
+    "insight-ai-absorptive-capacity": "The Asymmetry Nobody Is Metering",
+    "insight-absorbing-the-gap": "Who Absorbs the Gap",
+    "insight-incumbents-second-life": "The Incumbent's Second Life",
+    "qualitative-vs-quantitative": "Qualitative vs Quantitative",
     "expertise-energy": "Energy Access & Off-Grid Systems",
     "expertise-water": "Water & Sanitation",
     "expertise-agriculture": "Regenerative Agriculture & Agri-Tech",
