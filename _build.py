@@ -1121,8 +1121,8 @@ def build_home() -> str:
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Who we serve</p>
-      <h2>Five audiences, one underlying need.</h2>
-      <p>Different questions, the same underlying ask: honest, independent evidence of what a technology or programme actually does to real people.</p>
+      <h2>Who commissions the Lab.</h2>
+      <p>Five kinds of organisation, each with a different decision in front of them. Tap through for how the fit works in each case.</p>
     </div>
     <div class="serve-grid">
       <a href="/who-we-serve#companies">

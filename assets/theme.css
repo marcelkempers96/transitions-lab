@@ -1025,7 +1025,7 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 /* Distinct palette from .what-grid so the two home rows read apart. */
 .serve-grid a:nth-child(1){background:var(--plum);color:var(--paper);}
 .serve-grid a:nth-child(2){background:var(--forest);color:var(--paper);}
-.serve-grid a:nth-child(3){background:var(--butter);}
+.serve-grid a:nth-child(3){background:var(--euro-blue);color:var(--paper);}
 .serve-grid a:nth-child(4){background:var(--coral);}
 .serve-grid a:nth-child(5){background:var(--cobalt);color:var(--paper);}
 .serve-grid a .serve-tag{
