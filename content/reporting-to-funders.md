@@ -32,6 +32,8 @@ Reporting to funders is one connected system, not three afterthoughts. The three
 
 The three are one loop. Monitoring feeds evaluation; evaluation sharpens what is worth disseminating; dissemination and its uptake become the next thing to monitor. Designed together from day one, they make a project legible to itself and credible to everyone else.
 
+*Read the full method: [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination).*
+
 ---
 
 ## Built on established evaluation science
@@ -51,11 +53,14 @@ MED is not improvised. It rests on decades of evaluation methodology, and the La
 ## For European projects
 
 <div class="eu-flag-card">
-  <img src="/assets/img/eu-flag.jpg" alt="Flag of the European Union - twelve gold stars in a circle on a blue field.">
-  <div class="txt">
-    <strong>For projects funded by the European Union</strong>
-    <span>Independent measurement designed to satisfy funder review, survive audit, and tell the project team something true.</span>
-  </div>
+  <a class="eu-flag-link" href="/european-impact-tracking">
+    <img src="/assets/img/eu-flag.jpg" alt="Flag of the European Union - twelve gold stars in a circle on a blue field.">
+    <div class="txt">
+      <strong>For projects funded by the European Union</strong>
+      <span>Independent measurement designed to satisfy funder review, survive audit, and tell the project team something true.</span>
+      <em class="eu-flag-cta">See the European Impact Tracking service &rarr;</em>
+    </div>
+  </a>
 </div>
 
 Europe funds innovation at a scale unmatched anywhere, across [Horizon Europe](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en), the [European Social Fund Plus](https://ec.europa.eu/european-social-fund-plus/en), the [LIFE programme](https://cinea.ec.europa.eu/programmes/life_en), the [Just Transition Fund](https://ec.europa.eu/regional_policy/funding/just-transition-fund_en), the [European Innovation Council](https://eic.ec.europa.eu/), [Interreg](https://interreg.eu/), [Digital Europe](https://digital-strategy.ec.europa.eu/en/activities/digital-programme), the [EIT KICs](https://eit.europa.eu/our-communities/eit-innovation-communities), and the [New European Bauhaus](https://new-european-bauhaus.europa.eu/). The funding is excellent. The evidence of what it actually changed, for whom, too often is not.
@@ -116,4 +121,4 @@ Turnaround is measured in weeks, not seasons.
 
 ---
 
-*For portfolio-scale verification designed specifically for grantmakers and foundations, see [For Funders](/for-funders). For the measurement discipline behind the reporting, see [Measuring Change](/measuring-change). To discuss a project, see [Contact](/contact).*
+*Related methods in full: [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) and [European Impact Tracking](/european-impact-tracking). For portfolio-scale verification designed specifically for grantmakers and foundations, see [For Funders](/for-funders). For the measurement discipline behind the reporting, see [Measuring Change](/measuring-change). To discuss a project, see [Contact](/contact).*

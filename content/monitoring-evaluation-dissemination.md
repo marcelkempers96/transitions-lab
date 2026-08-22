@@ -1,4 +1,4 @@
-§ / What we do
+§ / Method behind [Reporting to Funders](/reporting-to-funders)
 
 # Monitoring, Evaluation & Dissemination
 

@@ -1,4 +1,4 @@
-§ / Impact Measurement
+§ / Method behind [Measuring Change](/measuring-change)
 
 # Impact Measurement
 

@@ -1,4 +1,4 @@
-§ / A European programme line
+§ / Method behind [Reporting to Funders](/reporting-to-funders)
 
 # European Impact Tracking
 

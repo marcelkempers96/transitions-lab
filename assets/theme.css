@@ -241,6 +241,8 @@ section + section{border-top:2px solid var(--ink);}
   border-bottom:2px solid var(--ink);position:relative;
 }
 .page-hero .eyebrow{color:var(--orange);}
+.page-hero .eyebrow a{color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.page-hero .eyebrow a:hover{color:var(--ink);}
 .page-hero h1{
   font-size:clamp(40px,6vw,84px);font-weight:800;letter-spacing:-.03em;
   line-height:1;margin:0 0 22px;max-width:20ch;color:var(--ink);
@@ -983,8 +985,13 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
 /* EU flag hero card - a full blue block on the European reporting page */
 .eu-flag-card{
   border:3px solid var(--ink);background:var(--euro-blue);color:var(--white);
-  padding:0;display:flex;align-items:stretch;gap:0;
-  margin:2em 0 2.4em;box-shadow:6px 6px 0 var(--ink);
+  padding:0;margin:2em 0 2.4em;box-shadow:6px 6px 0 var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.eu-flag-card .eu-flag-link,
+.prose .eu-flag-card a.eu-flag-link{
+  display:flex;align-items:stretch;gap:0;
+  text-decoration:none;color:inherit;
 }
 .eu-flag-card img{
   width:220px;height:auto;flex:none;display:block;
@@ -995,8 +1002,16 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
 }
 .eu-flag-card .txt strong{color:var(--euro-gold);font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
 .eu-flag-card .txt span{color:var(--white);font-size:15px;font-weight:500;line-height:1.45;}
+.eu-flag-card .eu-flag-cta{
+  color:var(--euro-gold);font-style:normal;font-weight:700;font-size:14px;
+  letter-spacing:.04em;text-transform:uppercase;margin-top:8px;
+}
+.eu-flag-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);}
+.eu-flag-card:hover .eu-flag-cta{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
 @media(max-width:640px){
-  .eu-flag-card{flex-direction:column;box-shadow:4px 4px 0 var(--ink);}
+  .eu-flag-card .eu-flag-link,
+  .prose .eu-flag-card a.eu-flag-link{flex-direction:column;}
+  .eu-flag-card{box-shadow:4px 4px 0 var(--ink);}
   .eu-flag-card img{width:100%;height:120px;border-right:0;border-bottom:3px solid var(--ink);}
 }
 

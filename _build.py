@@ -939,7 +939,7 @@ def build_content_page(slug: str, md: str) -> str:
     page_hero = f"""<section class="{hero_class}">
   <div class="wrap">
     {icon_html}
-    {'<p class="eyebrow">' + htmllib.escape(hero_eyebrow) + '</p>' if hero_eyebrow else ''}
+    {'<p class="eyebrow">' + inline(hero_eyebrow) + '</p>' if hero_eyebrow else ''}
     <h1>{inline(title)}</h1>
     {'<p class="lede">' + standfirst_html + '</p>' if standfirst_html else ''}
   </div>
