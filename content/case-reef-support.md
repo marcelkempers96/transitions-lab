@@ -4,6 +4,8 @@
 
 *A field engagement with Reef Support on how community rangers, field sensors, and satellite data are combined into a single trustworthy picture of ocean health, and what it takes for that picture to be believed and used.*
 
+<a href="https://reef.support/" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-reef-support.png" alt="Reef Support"></a>
+
 **Location** Lombok, Indonesia, and coastal partner sites
 **Sector** Marine conservation · environmental monitoring · community science
 **Lab themes** Socio-technical monitoring systems · community data · trust in evidence

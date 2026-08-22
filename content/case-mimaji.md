@@ -4,7 +4,7 @@
 
 *How open data about water quality and price becomes a socio-technical intervention in its own right, changing who can hold a water system to account. A field engagement with the MiMaji Foundation.*
 
-<!-- IMAGE mimaji-hero: hero photo | A community water point in Nairobi, or a water-quality test being taken, with people present. Respectful, documentary. | Full-bleed hero under the standfirst. -->
+<img class="partner-logo" src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation">
 
 ## The transition in one sentence
 

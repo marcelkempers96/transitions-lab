@@ -4,6 +4,8 @@
 
 *A field engagement with Roam, the Kenyan electric-mobility manufacturer, on how electric two-wheelers move from novelty to default in a market built entirely around petrol.*
 
+<a href="https://www.roam-electric.com/" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-roam.png" alt="Roam"></a>
+
 **Location** Nairobi and greater Kenya
 **Sector** Electric mobility · informal transport · vehicle financing
 **Lab programme** Electrification & E-Mobility Transitions
