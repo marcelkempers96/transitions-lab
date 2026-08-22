@@ -84,6 +84,7 @@ HERO_COLOR: dict[str, str] = {
     "monitoring-evaluation-dissemination": "forest",
     "how-it-works": "forest",
     "market-expansion": "forest",
+    "research-development": "forest",
     "entering-a-new-context": "forest",
     "measuring-change": "coral",
     "reporting-to-funders": "cobalt",
@@ -251,6 +252,10 @@ META: dict[str, dict[str, str]] = {
     "market-expansion": {
         "title": "Market & Expansion Research | Transitions Lab",
         "description": "Independent field evidence for the decision to enter a new market. Who adopts, at what price, and which failure modes to name before capital is committed.",
+    },
+    "research-development": {
+        "title": "Research & Development Support | Transitions Lab",
+        "description": "Independent field evidence for R&D-stage decisions: what to build, whom to build it for, and whether the prototype meets its real environment. TRL and SRL, read together. For corporate R&D and European R&D consortia (Horizon Europe RIA/IA, EIC, EIT KICs, LIFE, ESF+).",
     },
     "entering-a-new-context": {
         "title": "Entering a New Context | Transitions Lab",
@@ -460,6 +465,7 @@ SITEMAP_PRIORITY = {
     "/about": 0.8,
     "/what-we-do": 0.9,
     "/entering-a-new-context": 0.85,
+    "/research-development": 0.8,
     "/measuring-change": 0.85,
     "/reporting-to-funders": 0.85,
     "/expertise": 0.9,

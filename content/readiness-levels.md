@@ -72,4 +72,4 @@ The guides above carry full citations. Key sources include Mankins (1995) and th
 
 ---
 
-*For the Lab's other frameworks and methods, see [Resources](https://www.transitionslab.org/resources.html). For how the Lab applies readiness thinking in practice, see [What We Do](https://www.transitionslab.org/what-we-do.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*For the R&D-stage service that turns an asserted SRL into a substantiated one, see [Research & Development Support](/research-development). For the Lab's other frameworks and methods, see [Resources](/resources). For how the Lab applies readiness thinking in practice, see [What We Do](/what-we-do). To discuss a study, see [Contact](/contact).*

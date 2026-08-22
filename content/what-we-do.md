@@ -16,7 +16,8 @@ Below, three questions clients bring us. Each links to the primary service page,
   <div class="whatwedo-sub">
     <span class="sub-label">Absorbs</span>
     <ul>
-      <li><a href="/market-expansion">Market &amp; Expansion Research</a> - the full framing of the entry-research method: demand vs stated, segments the local reality uses, the stack that carries adoption, failure modes named early.</li>
+      <li><a href="/research-development">Research &amp; Development Support</a> - the earlier-stage decisions: what to build, whom for, and whether the prototype meets its real environment. TRL and SRL, read together, for corporate R&amp;D and European R&amp;D consortia.</li>
+      <li><a href="/market-expansion">Market &amp; Expansion Research</a> - the launch decision itself: demand vs stated, segments the local reality uses, the stack that carries adoption, failure modes named early.</li>
     </ul>
   </div>
 </div>

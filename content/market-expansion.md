@@ -91,4 +91,4 @@ See [Who We Serve](/who-we-serve) for how the fit works.
 
 ---
 
-*For the method behind this service, see [Field Research](/field-research). For how a study runs end to end, see [How It Works](/how-it-works). To start a conversation, see [Contact](/contact).*
+*For the earlier stage — the R&D-cycle decisions before the launch decision — see [Research & Development Support](/research-development). For the method behind both, see [Field Research](/field-research). For how a study runs end to end, see [How It Works](/how-it-works). To start a conversation, see [Contact](/contact).*

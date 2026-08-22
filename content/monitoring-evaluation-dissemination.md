@@ -118,4 +118,4 @@ Innovation Fund Denmark (2018). *Societal Readiness Levels (SRL)*. See the Lab's
 
 ---
 
-*To discuss monitoring, evaluation, and dissemination for your project, see [Contact](https://www.transitionslab.org/contact.html). For the European-specific service, see [European Impact Tracking](https://www.transitionslab.org/european-impact-tracking.html) and [ESF+ Social Innovation](https://www.transitionslab.org/esf-social-innovation.html). For the readiness frameworks behind the method, see [Readiness Levels](https://www.transitionslab.org/readiness-levels.html).*
+*To discuss monitoring, evaluation, and dissemination for your project, see [Contact](/contact). For the European-specific service, see [European Impact Tracking](/european-impact-tracking) and [ESF+ Social Innovation](/esf-social-innovation). For R&D-stage evidence that underpins the SRL claim on RIA and IA projects, see [Research & Development Support](/research-development). For the readiness frameworks behind the method, see [Readiness Levels](/readiness-levels).*

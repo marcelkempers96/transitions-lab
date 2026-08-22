@@ -121,4 +121,4 @@ Turnaround is measured in weeks, not seasons.
 
 ---
 
-*Related methods in full: [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) and [European Impact Tracking](/european-impact-tracking). For portfolio-scale verification designed specifically for grantmakers and foundations, see [For Funders](/for-funders). For the measurement discipline behind the reporting, see [Measuring Change](/measuring-change). To discuss a project, see [Contact](/contact).*
+*Related methods in full: [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) and [European Impact Tracking](/european-impact-tracking). For R&D-stage field evidence that underpins the SRL claim on Horizon Europe RIA and IA projects, EIC grants, and EIT KIC innovation activities, see [Research & Development Support](/research-development). For portfolio-scale verification designed specifically for grantmakers and foundations, see [For Funders](/for-funders). For the measurement discipline behind the reporting, see [Measuring Change](/measuring-change). To discuss a project, see [Contact](/contact).*

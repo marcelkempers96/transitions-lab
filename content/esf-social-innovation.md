@@ -64,5 +64,5 @@ If you are preparing a proposal under the ESF Social Innovation+ Initiative, an 
 
 ---
 
-*See the Lab's [European Impact Tracking](https://www.transitionslab.org/european-impact-tracking.html) service and its [Monitoring, Evaluation & Dissemination](https://www.transitionslab.org/monitoring-evaluation-dissemination.html) offer. To discuss a consortium role, see [Contact](https://www.transitionslab.org/contact.html). For the ESF+ social innovation programme itself, see the [European Commission's page](https://european-social-fund-plus.ec.europa.eu/en/social-innovation).*
+*See the Lab's [European Impact Tracking](/european-impact-tracking) service, [Research & Development Support](/research-development) for the R&D-stage evidence that feeds an SRL claim on socially-innovative products, and [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) for the full three-part loop. To discuss a consortium role, see [Contact](/contact). For the ESF+ social innovation programme itself, see the [European Commission's page](https://european-social-fund-plus.ec.europa.eu/en/social-innovation).*
 

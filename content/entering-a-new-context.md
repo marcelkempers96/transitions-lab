@@ -8,7 +8,7 @@ The riskiest research a Lab partner commissions is the research that precedes a 
 
 **Entering a New Context** is the service for that decision. It reaches the people whose behaviour will decide the outcome and reports what they actually do, want, and can afford.
 
-*Read the underlying method in full: [Market & Expansion Research](/market-expansion).*
+*Read the underlying methods in full: [Research & Development Support](/research-development) for the earlier-stage decisions (what to build, whom for, and whether the prototype meets its real environment), and [Market & Expansion Research](/market-expansion) for the launch decision itself.*
 
 ---
 
@@ -89,4 +89,4 @@ The best-documented public example is the [Roam case study](/case-roam) in Nairo
 
 ---
 
-*Underlying method in full: [Market & Expansion Research](/market-expansion). For the field method behind this service, see [Measuring Change](/measuring-change). For how a study runs end to end, see [How It Works](/how-it-works). To start a conversation, see [Contact](/contact).*
+*Underlying methods in full: [Research & Development Support](/research-development) and [Market & Expansion Research](/market-expansion). For the field method behind both, see [Measuring Change](/measuring-change). For how a study runs end to end, see [How It Works](/how-it-works). To start a conversation, see [Contact](/contact).*
