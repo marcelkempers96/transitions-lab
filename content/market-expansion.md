@@ -51,6 +51,11 @@ Every expansion study is scoped to a specific decision, but four questions recur
 
 ---
 
+<figure>
+  <img src="/assets/img/transition-momentum.jpg" alt="Transition dynamics / momentum chart: six line series (Cost Competitiveness, User Adoption, Infrastructure Coverage, Policy Support, Social Acceptance, Incumbent Resistance) tracked across five market stages (Pre-entry, Pilot, Early Market Entry, Expansion, Scale), with milestone markers along the top (Local partner secured, Pilot launched, Financing secured, Service network expands, Regulatory approval)." class="diagram">
+  <figcaption>Direction and speed, not just the current state. A market-entry reading tracks how the six variables move together as a company crosses from pre-entry to scale, so a fall in one line becomes an early signal, not a surprise a year later.</figcaption>
+</figure>
+
 ## How the study runs
 
 The same [five-stage method](/how-it-works) as every Lab engagement, compressed to a decision timeline:
