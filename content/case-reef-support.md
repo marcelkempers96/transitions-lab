@@ -68,7 +68,7 @@ A shared view of the reef is not a technical achievement. It is a social one tha
 
 ---
 
-*For the Lab's field methods, see [Field Research](https://www.transitionslab.org/field-research.html). For impact measurement of monitoring and conservation programmes, see [Impact Measurement](https://www.transitionslab.org/applied-research.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*For the Lab's field methods, see [Field Research](https://www.transitionslab.org/field-research.html). For impact measurement of monitoring and conservation programmes, see [Impact Measurement](https://www.transitionslab.org/impact-measurement.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
 
 ---
 

@@ -34,7 +34,7 @@ Field research, impact measurement, and the design of the instruments that make 
 
 **You are a company** expanding into a new market, locally or internationally, and you need to know how your product actually lands with real users before you scale. → [Market & expansion research](https://www.transitionslab.org/what-we-do.html)
 
-**You are a funder or public body** who needs impact evidence that travels across a portfolio and survives review. → [Impact Measurement](https://www.transitionslab.org/applied-research.html)
+**You are a funder or public body** who needs impact evidence that travels across a portfolio and survives review. → [Impact Measurement](https://www.transitionslab.org/impact-measurement.html)
 
 **You are a European project or consortium** that needs an independent partner to own impact tracking from baseline to endline. → [European Impact Tracking](https://www.transitionslab.org/european-impact-tracking.html)
 
@@ -75,7 +75,7 @@ The Lab runs its own published programmes, and it works under contract for organ
 [**Field Research →**](https://www.transitionslab.org/field-research.html)
 Rigorous primary research in difficult contexts, interviews, surveys, and fieldwork, run by researchers who speak the language and know the place.
 
-[**Impact Measurement →**](https://www.transitionslab.org/applied-research.html)
+[**Impact Measurement →**](https://www.transitionslab.org/impact-measurement.html)
 What a technology or programme actually changes, for whom, and through what pathway, measured to a standard that holds up.
 
 [**European Impact Tracking →**](https://www.transitionslab.org/european-impact-tracking.html)

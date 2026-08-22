@@ -12,9 +12,9 @@
   </div>
 </div>
 
-Europe funds innovation at a scale unmatched anywhere in the world. Tens of thousands of projects, living labs, pilots, and demonstrations run at any moment across [Horizon Europe](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en), the [European Social Fund Plus](https://ec.europa.eu/european-social-fund-plus/en), the [LIFE programme](https://cinea.ec.europa.eu/programmes/life_en), the [Just Transition Fund](https://ec.europa.eu/regional_policy/funding/just-transition-fund_en), the [European Innovation Council](https://eic.ec.europa.eu/), [Interreg](https://interreg.eu/), the [Digital Europe Programme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme), the [EIT Knowledge and Innovation Communities](https://eit.europa.eu/our-communities/eit-innovation-communities), and the [New European Bauhaus](https://new-european-bauhaus.europa.eu/). Each project carries a promise of impact and an obligation to show it. The funding is excellent. The evidence of what it actually changed, for whom, too often is not.
+Europe funds innovation at a scale unmatched anywhere in the world, across [Horizon Europe](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en), the [European Social Fund Plus](https://ec.europa.eu/european-social-fund-plus/en), the [LIFE programme](https://cinea.ec.europa.eu/programmes/life_en), the [Just Transition Fund](https://ec.europa.eu/regional_policy/funding/just-transition-fund_en), the [European Innovation Council](https://eic.ec.europa.eu/), [Interreg](https://interreg.eu/), [Digital Europe](https://digital-strategy.ec.europa.eu/en/activities/digital-programme), the [EIT KICs](https://eit.europa.eu/our-communities/eit-innovation-communities), and the [New European Bauhaus](https://new-european-bauhaus.europa.eu/). The funding is excellent. The evidence of what it actually changed, for whom, too often is not.
 
-The Lab offers a service line built for exactly this gap: independent, lived-experience-centred impact tracking for European projects, set up at the start, run while the work is live, and closed out with a result that holds up to scrutiny.
+The Lab offers a service line built for exactly this gap: independent impact tracking, set up at the start, run while the work is live, closed out with a result that holds up to scrutiny.
 
 ---
 
@@ -102,7 +102,7 @@ Templates can be handed over for a partner to run with the Lab's support, or ope
 
 ## Reach, depth, and experience - for the people a project serves
 
-We measure **reach**: who is actually being affected, and who is being left out. We measure **depth**: how materially lives, work, or systems change, beyond the headcount. And we measure **experience**: what the change feels like to the people inside it, the friction they encounter, and the thing they would fix first. This three-dimensional reading is elaborated on the [Impact Measurement](/applied-research) page and draws on the framing developed by [60 Decibels](https://60decibels.com/) for lived-impact reporting.
+We measure **reach**: who is actually being affected, and who is being left out. We measure **depth**: how materially lives, work, or systems change, beyond the headcount. And we measure **experience**: what the change feels like to the people inside it, the friction they encounter, and the thing they would fix first. This three-dimensional reading is elaborated on the [Impact Measurement](/impact-measurement) page and draws on the framing developed by [60 Decibels](https://60decibels.com/) for lived-impact reporting.
 
 Because the instruments are standardised and repeatable, a project's measurement does not end as a single number. It becomes a trajectory that can be managed, compared, and defended.
 
@@ -129,4 +129,4 @@ That independence is not a marketing line. It is the source of the evidence's va
 
 ---
 
-*To discuss a project or a consortium role, see [Contact](/contact). This service sits within the Lab's wider [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) offer, and applies directly to [ESF+ Social Innovation](/esf-social-innovation) projects. For the field methods behind this work, see [Field Research](/field-research). For the Lab's applied measurement approach in full, see [Impact Measurement](/applied-research).*
+*To discuss a project or a consortium role, see [Contact](/contact). This service sits within the Lab's wider [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) offer, and applies directly to [ESF+ Social Innovation](/esf-social-innovation) projects. For the field methods behind this work, see [Field Research](/field-research). For the Lab's applied measurement approach in full, see [Impact Measurement](/impact-measurement).*

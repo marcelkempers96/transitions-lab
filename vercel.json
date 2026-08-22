@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/applied-research", "destination": "/impact-measurement", "permanent": true },
+    { "source": "/applied-research.html", "destination": "/impact-measurement", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

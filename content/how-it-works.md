@@ -67,10 +67,10 @@ We start from a decision, never from a dataset we happen to have. We work from t
   <span class="stage-eyebrow">Analyse &amp; benchmark</span>
   <h2>Read the evidence honestly</h2>
   <p>We clean, code, and analyse the data with the same rigour that goes into the Lab's <a href="/programmes">published research programmes</a>. Where a comparable benchmark exists, <a href="https://60decibels.com/">60 Decibels</a> on customer experience and inclusion, <a href="https://www.gogla.org/">GOGLA</a> on the off-grid solar market, <a href="https://www.c40.org/">C40 Cities</a> on urban transport, we place your findings against it explicitly so a number carries its comparison. Where no benchmark exists, we say so.</p>
-  <p>The <a href="/applied-research">Impact Measurement</a> service page has more on how we structure Reach, Depth, and Experience readings across a study. For the Lab's own reading of how transitions play out across state capacity and niche success, see the <a href="/insight-transitions-outcomes">Four Ways a Transition Lands</a> matrix, and for the wider innovation-scaling asymmetry that shapes many engagements, see <a href="/insight-eu-us">Europe Invents, America Scales</a>.</p>
+  <p>The <a href="/impact-measurement">Impact Measurement</a> service page has more on how we structure Reach, Depth, and Experience readings across a study. For the Lab's own reading of how transitions play out across state capacity and niche success, see the <a href="/insight-transitions-outcomes">Four Ways a Transition Lands</a> matrix, and for the wider innovation-scaling asymmetry that shapes many engagements, see <a href="/insight-eu-us">Europe Invents, America Scales</a>.</p>
   <div class="links">
     <span class="label">Related</span>
-    <a href="/applied-research">Impact measurement</a>
+    <a href="/impact-measurement">Impact measurement</a>
     <a href="/insight-transitions-outcomes">Transitions matrix</a>
     <a href="/insight-eu-us">EU-US gap</a>
     <a href="/programmes">Research programmes</a>

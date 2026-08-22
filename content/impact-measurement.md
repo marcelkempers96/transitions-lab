@@ -4,14 +4,7 @@
 
 *What a technology, service, or programme actually changes, for whom, and through what pathway - measured directly with the people it is meant to serve, and reported honestly.*
 
-Most of what is written about a new technology or programme is written before anyone has lived with it. The forecast, the pilot deck, the impact projection - all of it arrives ahead of the evidence. Impact measurement, done well, closes that gap. It puts structured, honest questions to the people the work is meant to serve, and it turns their answers into evidence you can act on.
-
-Transitions Lab measures impact the way it measures anything else: from the human side first, with instruments designed to hold up to scrutiny, and independently of the intervention being measured. Where an internal team has every incentive to find success, an independent measurement partner reports what the evidence actually says.
-
-<figure>
-  <img src="/assets/img/impact-radar.jpg" alt="A radar chart showing six impact dimensions - Access, Adoption, Affordability, User Trust, Behavioural Change, and Quality of Life - each scored against a benchmark, with the current project performance shaded and a callout on Access at 82% (above the 54% benchmark)." class="diagram">
-  <figcaption>Each study reports along multiple lived-experience dimensions, benchmarked where a benchmark exists. A single project reading becomes a trajectory the moment the same instrument is run again.</figcaption>
-</figure>
+Most writing about a new technology or programme arrives ahead of the evidence. Impact measurement closes that gap: it puts honest questions to the people the work is meant to serve, from the human side first, independently of the intervention, and reports what the evidence actually says, including when that is inconvenient.
 
 ---
 

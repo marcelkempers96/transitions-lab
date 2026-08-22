@@ -83,7 +83,7 @@ HERO_COLOR: dict[str, str] = {
     # Services (grounded forest)
     "what-we-do": "forest",
     "field-research": "forest",
-    "applied-research": "forest",
+    "impact-measurement": "forest",
     "monitoring-evaluation-dissemination": "forest",
     "how-it-works": "forest",
     "market-expansion": "forest",
@@ -137,7 +137,7 @@ ABOUT = [
 SERVICES = [
     ("what-we-do", "Overview"),
     ("field-research", "Field Research"),
-    ("applied-research", "Impact Measurement"),
+    ("impact-measurement", "Impact Measurement"),
     ("market-expansion", "Market & Expansion Research"),
     ("european-impact-tracking", "European Impact Tracking"),
     ("monitoring-evaluation-dissemination", "Monitoring, Evaluation & Dissemination"),
@@ -244,7 +244,7 @@ META: dict[str, dict[str, str]] = {
         "title": "Field Research in Emerging Markets | Transitions Lab",
         "description": "Rigorous primary research in the places it is hardest to do well: interviews, surveys, and fieldwork in emerging and developing-market contexts.",
     },
-    "applied-research": {
+    "impact-measurement": {
         "title": "Impact Measurement | Applied Research | Transitions Lab",
         "description": "We measure what a technology or programme actually changes, for whom, and how, across reach, depth, and experience. Independent, rigorous, repeatable.",
     },
@@ -438,7 +438,7 @@ META: dict[str, dict[str, str]] = {
 # The build creates a lightweight, noindex stub so links resolve.
 STUB_TITLES: dict[str, str] = {
     "field-research": "Field Research",
-    "applied-research": "Impact Measurement",
+    "impact-measurement": "Impact Measurement",
     "european-impact-tracking": "European Impact Tracking",
     "monitoring-evaluation-dissemination": "Monitoring, Evaluation & Dissemination",
     "how-it-works": "How It Works",
@@ -890,7 +890,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     <div>
       <h4>What we do</h4>
       <a href="/field-research">Field research</a>
-      <a href="/applied-research">Impact measurement</a>
+      <a href="/impact-measurement">Impact measurement</a>
       <a href="/european-impact-tracking">European impact tracking</a>
       <a href="/monitoring-evaluation-dissemination">Monitoring &amp; evaluation</a>
       <a href="/how-it-works">How it works</a>
@@ -1064,7 +1064,7 @@ def build_home() -> str:
         <p>Rigorous primary research in the places it is hardest to do well. Interviews, surveys, baseline-to-endline.</p>
         <span class="what-more">Read more →</span>
       </a>
-      <a class="what-card c-coral" href="/applied-research">
+      <a class="what-card c-coral" href="/impact-measurement">
         <span class="what-tag">Service 02</span>
         <h3>Impact Measurement</h3>
         <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, benchmarked.</p>

@@ -27,8 +27,8 @@ Different organisations arrive with different questions, but the underlying need
   <div class="target-body">
     <p><strong>The problem.</strong> You fund a portfolio, and you need to know which investments are actually working, in a form that travels across very different projects and holds up when someone scrutinises it. Self-reported success from the projects themselves is not enough, and rarely comparable.</p>
     <p><strong>What the Lab does.</strong> We measure what a programme actually changes, for whom, and through what pathway, against internationally standard evaluation criteria, so the evidence is defensible and comparable across a portfolio. Because our instruments are standardised, a one-off assessment becomes a trajectory you can manage over time. Independence is the whole point: we have no incentive to find success where there is none.</p>
-    <p><strong>Proof.</strong> See the Lab's <a href="/applied-research">Impact Measurement</a> approach and its <a href="/resources">measurement methods</a> in full.</p>
-    <a class="target-cta" href="/applied-research">Impact Measurement →</a>
+    <p><strong>Proof.</strong> See the Lab's <a href="/impact-measurement">Impact Measurement</a> approach and its <a href="/resources">measurement methods</a> in full.</p>
+    <a class="target-cta" href="/impact-measurement">Impact Measurement →</a>
   </div>
 </div>
 

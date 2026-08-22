@@ -194,4 +194,4 @@ One row per site, same columns, so results can be read side by side rather than 
 
 ---
 
-*Companion documents: the [Field Research](/field-research) service page (methods behind this template), the [Impact Measurement](/applied-research) approach it feeds into, and the [Interview Guide](/interview-guide) (the depth this evidence can reach). This template is designed to be operated by the Lab as the independent [European Impact Tracking](/european-impact-tracking) function, or handed over for a partner to run with the Lab's support.*
+*Companion documents: the [Field Research](/field-research) service page (methods behind this template), the [Impact Measurement](/impact-measurement) approach it feeds into, and the [Interview Guide](/interview-guide) (the depth this evidence can reach). This template is designed to be operated by the Lab as the independent [European Impact Tracking](/european-impact-tracking) function, or handed over for a partner to run with the Lab's support.*

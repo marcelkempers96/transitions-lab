@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://transitionslab.org/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://transitionslab.org/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://transitionslab.org/applied-research</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/articles</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/brw</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/case-ai-digital</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -30,6 +29,7 @@
   <url><loc>https://transitionslab.org/field-research</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/geographies</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/how-it-works</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://transitionslab.org/impact-measurement</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/impact-tracking-template</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/insight-absorbing-the-gap</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://transitionslab.org/insight-ai-absorptive-capacity</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

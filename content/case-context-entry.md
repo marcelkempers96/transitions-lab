@@ -4,15 +4,13 @@
 
 *What a European mobility venture learned before committing to a new market, and how field evidence turned a hopeful expansion into a reasoned one. An illustrative Context Entry engagement.*
 
-<!-- IMAGE entry-hero: hero photo | A product being used, or not used, in a new market context: a street scene where the technology meets real users. Documentary. | Full-bleed hero under the standfirst. -->
-
 ## The transition in one sentence
 
-A product that works in one place does not automatically work in another, and the cheapest way to learn why is before the capital is committed, not after.
+A product that works in one place does not automatically work in another; the cheapest way to learn why is before the capital is committed, not after.
 
 ## Why this case matters
 
-A European hardware venture, its technology proven at home, was preparing to enter an East African market. The internal case for expansion rested on a plausible story: the need is clearly there, the product is superior, adoption should follow. The board was ready to commit significant capital to a launch.
+A European hardware venture, its technology proven at home, was preparing to enter an East African market on a plausible story: the need is there, the product is superior, adoption should follow. The board was ready to commit significant capital to a launch.
 
 The risk in that story is the risk the Lab exists to surface. "The need is there" and "people will adopt this" are different claims, and the gap between them is where expansion budgets are lost. General market data could describe the size of the opportunity. It could not answer the question that actually decided the launch: how will people in this specific context use, or fail to use, this specific thing?
 

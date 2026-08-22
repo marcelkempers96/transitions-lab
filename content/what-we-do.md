@@ -2,13 +2,9 @@
 
 # What We Do
 
-*Transitions Lab is an independent research team that studies technologies as they meet real people, and turns what it finds into evidence innovators and institutions can act on.*
+*Independent research on how technologies meet real people, turned into evidence innovators and institutions can act on.*
 
-The Lab does one thing, in several forms: it builds deep, honest understanding of how a technology behaves once real people live with it, so that the people steering a transition can steer it toward human values rather than away from them. People first; the technology second; the place always.
-
-Below is what that looks like as a set of services.
-
-<!-- IMAGE whatwedo-diagram: diagram | Simple 4-part diagram showing the service families (Field Research / Impact Measurement / European Impact Tracking / Market & Expansion) feeding into one core: "evidence you can act on". House colours. | Under the intro, before the numbered services. -->
+The Lab does one thing, in several forms: it builds honest understanding of how a technology behaves once real people live with it, so the people steering a transition can steer it toward human values, not away from them. People first, technology second, place always. Below, what that looks like as a set of services.
 
 ---
 
@@ -28,7 +24,7 @@ Interviews, surveys, and on-the-ground fieldwork in emerging-market and developi
 
 We measure what a technology or programme genuinely changes, not the output reported in a status update, but the outcome in someone's life or operation, and we map the pathway from intervention to impact. Built around reach, depth, and experience, and designed for repetition so a one-off study becomes a trend.
 
-[Impact Measurement →](https://www.transitionslab.org/applied-research.html)
+[Impact Measurement →](https://www.transitionslab.org/impact-measurement.html)
 
 ---
 

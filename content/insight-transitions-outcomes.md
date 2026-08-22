@@ -68,7 +68,7 @@ A tempting misuse of the matrix is to treat "coordinated transition" as the goal
 - If the regime is stalled, the honest first question is *why*, and it is usually a mix of political economy and institutional capacity, not a technology gap.
 - If a niche is leapfrogging, the productive question is where the leapfrog lands, where its ceiling is, and what would have to change in the state architecture to unbind it.
 
-Every one of these questions is answerable only with field evidence, from the people the transition is meant to reach. That is the [Impact Measurement](/applied-research) work. The matrix is where the evidence gets located, not where the transition happens.
+Every one of these questions is answerable only with field evidence, from the people the transition is meant to reach. That is the [Impact Measurement](/impact-measurement) work. The matrix is where the evidence gets located, not where the transition happens.
 
 ---
 
