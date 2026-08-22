@@ -10,6 +10,9 @@ The Lab publishes articles for the same reason it publishes research programmes:
 
 ## Reading order
 
+[**The Reporting Loop: Why Funders Learn From Grantees**](/insight-the-reporting-loop) &middot; *22 August 2026*
+Why grant portfolios keep looking rosier than they are, why more dashboards and more indicators don't fix it, and what a genuine alternative would have to look like. The reasoning behind the Lab's dedicated [For Funders](/for-funders) service.
+
 [**The Asymmetry Nobody Is Metering: Why AI Reaches the Fossil Economy First**](/insight-ai-absorptive-capacity) &middot; *22 August 2026*
 The climate debate about AI is stuck on electricity consumption. The decisive variable is which sectors are ready to convert AI into productivity, and the fossil economy has a forty-year head start.
 

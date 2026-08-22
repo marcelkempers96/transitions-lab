@@ -106,6 +106,8 @@ HERO_COLOR: dict[str, str] = {
     "insight-absorbing-the-gap": "butter",
     "insight-incumbents-second-life": "butter",
     "qualitative-vs-quantitative": "cobalt",
+    "insight-the-reporting-loop": "butter",
+    "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
     "brw": "cobalt",
@@ -138,6 +140,7 @@ SERVICES = [
     ("what-we-do", "Overview"),
     ("field-research", "Field Research"),
     ("impact-measurement", "Impact Measurement"),
+    ("for-funders", "For Funders"),
     ("market-expansion", "Market & Expansion Research"),
     ("european-impact-tracking", "European Impact Tracking"),
     ("monitoring-evaluation-dissemination", "Monitoring, Evaluation & Dissemination"),
@@ -384,6 +387,14 @@ META: dict[str, dict[str, str]] = {
         "title": "Qualitative vs Quantitative: What Numbers Can and Cannot Measure | Transitions Lab",
         "description": "A plain-language guide to the two kinds of research evidence, and how they work together. What qualitative work can tell you that numbers, on their own, never will.",
     },
+    "for-funders": {
+        "title": "For Funders | Portfolio Verification, SROI & the Funder Dashboard | Transitions Lab",
+        "description": "Independent, field-verified evidence of what a grant portfolio is actually achieving. SROI to standard, portfolio benchmarking, and a dashboard behind which every figure has been checked.",
+    },
+    "insight-the-reporting-loop": {
+        "title": "The Reporting Loop: Why Funders Learn From Grantees | Transitions Lab",
+        "description": "The structural reason grant portfolios keep looking rosier than they are, why more dashboards and more indicators don't fix it, and what a genuine alternative would have to look like.",
+    },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
         "description": "Technology Readiness Levels and Societal Readiness Levels explained, with references: what the nine levels mean, and why both axes decide success.",
@@ -469,6 +480,8 @@ STUB_TITLES: dict[str, str] = {
     "insight-absorbing-the-gap": "Who Absorbs the Gap",
     "insight-incumbents-second-life": "The Incumbent's Second Life",
     "qualitative-vs-quantitative": "Qualitative vs Quantitative",
+    "for-funders": "For Funders",
+    "insight-the-reporting-loop": "The Reporting Loop",
     "expertise-energy": "Energy Access & Off-Grid Systems",
     "expertise-water": "Water & Sanitation",
     "expertise-agriculture": "Regenerative Agriculture & Agri-Tech",
