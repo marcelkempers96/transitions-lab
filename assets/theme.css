@@ -928,6 +928,58 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   .what-grid .what-card:not(:last-child){border-bottom:2px solid var(--ink);}
 }
 
+/* ── Network expertise strip (home page, forest block): the eight
+   expertise pill-links, followed by an auto-scrolling partner-logo bar. */
+.net-expertise-label,.net-logos-label{
+  font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--butter);margin:36px 0 14px;
+}
+.net-expertise-row{
+  display:flex;flex-wrap:wrap;gap:10px;margin:0 0 8px;
+}
+.net-expertise-row a{
+  display:inline-block;padding:10px 16px;
+  border:2px solid var(--paper);color:var(--paper);
+  font-size:14px;font-weight:600;line-height:1;letter-spacing:.01em;
+  text-decoration:none;background:transparent;
+  transition:background .12s ease,color .12s ease;
+}
+.net-expertise-row a:hover{background:var(--butter);color:var(--ink);border-color:var(--butter);}
+
+.net-logo-bar{
+  margin-top:14px;background:var(--paper);
+  border:2px solid var(--paper);
+  overflow:hidden;position:relative;
+}
+.net-logo-bar::before,.net-logo-bar::after{
+  content:"";position:absolute;top:0;bottom:0;width:64px;z-index:2;pointer-events:none;
+}
+.net-logo-bar::before{left:0;background:linear-gradient(to right,var(--paper),transparent);}
+.net-logo-bar::after{right:0;background:linear-gradient(to left,var(--paper),transparent);}
+.net-logo-track{
+  display:flex;align-items:center;gap:64px;
+  width:max-content;padding:22px 32px;
+  animation:netLogoScroll 28s linear infinite;
+}
+.net-logo-bar:hover .net-logo-track{animation-play-state:paused;}
+.net-logo-track img{
+  height:56px;width:auto;max-width:180px;display:block;object-fit:contain;
+  opacity:.9;filter:none;
+}
+@keyframes netLogoScroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+@media(prefers-reduced-motion:reduce){
+  .net-logo-track{animation:none;justify-content:center;flex-wrap:wrap;gap:32px;}
+  .net-logo-bar::before,.net-logo-bar::after{display:none;}
+}
+@media(max-width:640px){
+  .net-logo-track{gap:44px;padding:18px 24px;}
+  .net-logo-track img{height:44px;max-width:140px;}
+  .net-expertise-label,.net-logos-label{margin-top:28px;}
+}
+
 /* ── Network grid (home page): three cards on the forest block. ── */
 .network-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:0;

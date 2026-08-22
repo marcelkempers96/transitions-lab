@@ -1079,6 +1079,43 @@ def build_home() -> str:
   </div>
 </section>
 
+<!-- NETWORK - short intro, expertise strip, partner-logo marquee -->
+<section class="section-forest" style="color:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" style="color:var(--butter);">Our network</p>
+      <h2 style="color:var(--paper);">A global team of researchers, analysts, and field partners.</h2>
+      <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts, and long-standing partners in the places we work.</p>
+    </div>
+
+    <p class="net-expertise-label">What we bring, across sectors</p>
+    <div class="net-expertise-row">
+      <a href="/expertise-e-mobility">E-Mobility &amp; Transport</a>
+      <a href="/expertise-energy">Energy Access &amp; Off-Grid</a>
+      <a href="/expertise-water">Water &amp; Sanitation</a>
+      <a href="/expertise-agriculture">Regenerative Agriculture</a>
+      <a href="/expertise-manufacturing">Local Manufacturing</a>
+      <a href="/expertise-ai-digital">AI &amp; Digital</a>
+      <a href="/expertise-finance">Financial Inclusion</a>
+      <a href="/expertise-climate">Climate Resilience</a>
+    </div>
+
+    <p class="net-logos-label">Partners we have worked with</p>
+    <div class="net-logo-bar" aria-label="Partner logos">
+      <div class="net-logo-track">
+        <a href="/case-roam" title="Roam"><img src="/assets/logos/logo-roam.png" alt="Roam"></a>
+        <a href="/case-mimaji" title="MiMaji Foundation"><img src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
+        <a href="/case-reef-support" title="Reef Support"><img src="/assets/logos/logo-reef-support.png" alt="Reef Support"></a>
+        <a href="https://www.tudelft.nl/" target="_blank" rel="noopener" title="TU Delft"><img src="/assets/logos/logo-tu-delft.png" alt="TU Delft"></a>
+        <a href="/case-roam" title="Roam" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-roam.png" alt="" aria-hidden="true"></a>
+        <a href="/case-mimaji" title="MiMaji Foundation" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-mimaji.png" alt="" aria-hidden="true"></a>
+        <a href="/case-reef-support" title="Reef Support" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-reef-support.png" alt="" aria-hidden="true"></a>
+        <a href="https://www.tudelft.nl/" target="_blank" rel="noopener" title="TU Delft" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-tu-delft.png" alt="" aria-hidden="true"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHO WE SERVE - five audience cards, deep-linked to /who-we-serve#anchor -->
 <section class="section-paper">
   <div class="wrap">
