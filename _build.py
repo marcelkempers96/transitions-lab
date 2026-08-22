@@ -86,6 +86,9 @@ HERO_COLOR: dict[str, str] = {
     "monitoring-evaluation-dissemination": "forest",
     "how-it-works": "forest",
     "market-expansion": "forest",
+    "entering-a-new-context": "forest",
+    "measuring-change": "coral",
+    "reporting-to-funders": "cobalt",
     # Library — case studies and articles (warm butter)
     "case-studies": "butter",
     "case-roam": "butter",
@@ -124,18 +127,16 @@ HERO_COLOR: dict[str, str] = {
 ABOUT = [
     ("about", "About the Lab"),
     ("who-we-serve", "Who we serve"),
+    ("for-funders", "For Funders"),
     ("how-it-works", "How It Works"),
     ("team", "Team"),
 ]
 
 SERVICES = [
     ("what-we-do", "Overview"),
-    ("field-research", "Field Research"),
-    ("impact-measurement", "Impact Measurement"),
-    ("for-funders", "For Funders"),
-    ("market-expansion", "Market & Expansion Research"),
-    ("european-impact-tracking", "European Impact Tracking"),
-    ("monitoring-evaluation-dissemination", "Monitoring, Evaluation & Dissemination"),
+    ("entering-a-new-context", "Entering a new context"),
+    ("measuring-change", "Measuring change"),
+    ("reporting-to-funders", "Reporting to funders"),
 ]
 
 EXPERTISE = [
@@ -253,6 +254,18 @@ META: dict[str, dict[str, str]] = {
     "market-expansion": {
         "title": "Market & Expansion Research | Transitions Lab",
         "description": "Independent field evidence for the decision to enter a new market. Who adopts, at what price, and which failure modes to name before capital is committed.",
+    },
+    "entering-a-new-context": {
+        "title": "Entering a New Context | Transitions Lab",
+        "description": "Independent field evidence for the decision to enter a new market, launch a new product line, or extend a working model into a new geography.",
+    },
+    "measuring-change": {
+        "title": "Measuring Change | Field Research & Impact Measurement | Transitions Lab",
+        "description": "What a technology or programme actually changes, for whom, and through what pathway. Reach, depth, and experience, measured from the human side first.",
+    },
+    "reporting-to-funders": {
+        "title": "Reporting to Funders | MED & European Impact Tracking | Transitions Lab",
+        "description": "The measurement, evaluation, and dissemination that turns a project's evidence into a defensible account. Independent, set up at the start, closed with proof.",
     },
     "how-it-works": {
         "title": "How It Works | Scope, Design, Collect, Analyse, Deliver | Transitions Lab",
@@ -454,8 +467,12 @@ SITEMAP_PRIORITY = {
     "/": 1.0,
     "/about": 0.8,
     "/what-we-do": 0.9,
+    "/entering-a-new-context": 0.85,
+    "/measuring-change": 0.85,
+    "/reporting-to-funders": 0.85,
     "/expertise": 0.9,
     "/who-we-serve": 0.8,
+    "/for-funders": 0.75,
     "/case-studies": 0.85,
     "/contact": 0.6,
 }
@@ -871,10 +888,10 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     </div>
     <div>
       <h4>What we do</h4>
-      <a href="/field-research">Field research</a>
-      <a href="/impact-measurement">Impact measurement</a>
-      <a href="/european-impact-tracking">European impact tracking</a>
-      <a href="/monitoring-evaluation-dissemination">Monitoring &amp; evaluation</a>
+      <a href="/what-we-do">Overview</a>
+      <a href="/entering-a-new-context">Entering a new context</a>
+      <a href="/measuring-change">Measuring change</a>
+      <a href="/reporting-to-funders">Reporting to funders</a>
       <a href="/how-it-works">How it works</a>
     </div>
     <div>
@@ -889,6 +906,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <h4>The Lab</h4>
       <a href="/about">About</a>
       <a href="/who-we-serve">Who we serve</a>
+      <a href="/for-funders">For Funders</a>
       <a href="/contact">Contact</a>
       <a href="https://www.linkedin.com/company/transitionslab/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
@@ -1040,23 +1058,23 @@ def build_home() -> str:
       <p>We reach the people a technology or programme actually meets, measure what changes, and report it honestly.</p>
     </div>
     <div class="what-grid">
-      <a class="what-card c-butter" href="/field-research">
-        <span class="what-tag">In the field</span>
-        <h3>Field Research</h3>
-        <p>Rigorous primary research in the places it is hardest to do well. Interviews, surveys, baseline-to-endline.</p>
+      <a class="what-card c-butter" href="/entering-a-new-context">
+        <span class="what-tag">Client question 01</span>
+        <h3>Entering a new context</h3>
+        <p>Independent field evidence for the decision to enter a new market or launch a new product line. Who adopts, at what price, and which failure modes to name early.</p>
         <span class="what-more">Read more →</span>
       </a>
-      <a class="what-card c-coral" href="/impact-measurement">
-        <span class="what-tag">Across the outcome</span>
-        <h3>Impact Measurement</h3>
-        <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, benchmarked.</p>
+      <a class="what-card c-coral" href="/measuring-change">
+        <span class="what-tag">Client question 02</span>
+        <h3>Measuring change</h3>
+        <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, measured from the human side first.</p>
         <span class="what-more">Read more →</span>
       </a>
-      <a class="what-card c-cobalt" href="/european-impact-tracking">
+      <a class="what-card c-cobalt" href="/reporting-to-funders">
         <img class="what-flag" src="/assets/icons/icon-eu.png" alt="" aria-hidden="true">
-        <span class="what-tag">Across Europe</span>
-        <h3>European Impact Tracking</h3>
-        <p>The independent measurement partner for Horizon, ESF+, LIFE, EIC and other EU projects. Baseline through endline.</p>
+        <span class="what-tag">Client question 03</span>
+        <h3>Reporting to funders</h3>
+        <p>Monitoring, evaluation, dissemination as one connected system. Independent, set up at the start, closed with proof, including for European Grant Agreements.</p>
         <span class="what-more">Read more →</span>
       </a>
     </div>
