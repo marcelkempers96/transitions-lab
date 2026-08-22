@@ -49,6 +49,9 @@ The Lab's methodology for field research and impact measurement: the five-stage 
 [**Ethics & Consent in the Field →**](/assets/resource-field-ethics.pdf)
 The Lab's working standard for doing primary research with people, honestly and safely: the four principles, informed consent done properly, power and vulnerability in the field, and data protection from collection to deletion. **PDF, 7 pages.**
 
+[**From Transcript to Evidence: The Lab's Data-Analysis Method →**](/assets/resource-data-analysis.pdf)
+How the Lab turns raw interviews, surveys, and observational data into defensible findings: the coding workflow, two-pass reconciliation, cross-respondent synthesis, and the discipline of naming disconfirming cases explicitly. **PDF.**
+
 ---
 
 **§ 4 / Tools**
