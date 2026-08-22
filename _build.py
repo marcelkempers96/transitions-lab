@@ -758,6 +758,19 @@ def md_body_to_html(md: str) -> str:
             i += 1
             continue
 
+        # One-line raw HTML: starts with a tag and either self-closes or
+        # completes on the same line. Passes through unescaped so inline
+        # <a>, <img>, and <p><a></p> markup stops being HTML-escaped.
+        if stripped.startswith("<") and (
+            stripped.endswith("/>") or
+            re.search(r"</\w+\s*>\s*$", stripped) or
+            re.match(r"^<img\s", stripped, re.IGNORECASE)
+        ):
+            close_list(list_kind); list_kind = None
+            out.append(stripped)
+            i += 1
+            continue
+
         # horizontal rule
         if stripped == "---" or stripped == "***":
             close_list(list_kind); list_kind = None
@@ -1062,30 +1075,30 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- WHAT WE DO - clear three-column read of the services + radar image -->
+<!-- WHAT WE DO - service cards -->
 <section class="section-white">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">What we do</p>
       <h2>Independent evidence, three ways in.</h2>
-      <p>We reach the people a technology or programme actually meets, measure what changes, and report it honestly. Same discipline whether commissioned privately or embedded in a European project.</p>
+      <p>We reach the people a technology or programme actually meets, measure what changes, and report it honestly.</p>
     </div>
     <div class="what-grid">
       <a class="what-card c-butter" href="/field-research">
-        <span class="what-tag">Service 01</span>
+        <span class="what-tag">In the field</span>
         <h3>Field Research</h3>
         <p>Rigorous primary research in the places it is hardest to do well. Interviews, surveys, baseline-to-endline.</p>
         <span class="what-more">Read more →</span>
       </a>
       <a class="what-card c-coral" href="/impact-measurement">
-        <span class="what-tag">Service 02</span>
+        <span class="what-tag">Across the outcome</span>
         <h3>Impact Measurement</h3>
         <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, benchmarked.</p>
         <span class="what-more">Read more →</span>
       </a>
       <a class="what-card c-cobalt" href="/european-impact-tracking">
         <img class="what-flag" src="/assets/icons/icon-eu.png" alt="" aria-hidden="true">
-        <span class="what-tag">Service 03</span>
+        <span class="what-tag">Across Europe</span>
         <h3>European Impact Tracking</h3>
         <p>The independent measurement partner for Horizon, ESF+, LIFE, EIC and other EU projects. Baseline through endline.</p>
         <span class="what-more">Read more →</span>
@@ -1094,70 +1107,41 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- HOW WE WORK - three numbered steps in block colours -->
+<!-- WHO WE SERVE - five audience cards, deep-linked to /who-we-serve#anchor -->
 <section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">How we work</p>
-      <h2>Three steps. One method.</h2>
-      <p>Every study runs the same disciplined arc, from the decision that triggered it to the evidence delivered. No template applied blindly. No finding without a fieldworker behind it.</p>
-    </div>
-    <div class="steps">
-      <div class="step-card">
-        <div class="num">01</div>
-        <h3>Frame the decision</h3>
-        <p>We start with the choice you are facing, not a template. What has to be settled before you can act, and who does the answer need to come from?</p>
-      </div>
-      <div class="step-card">
-        <div class="num">02</div>
-        <h3>Reach the people</h3>
-        <p>Our field researchers speak the languages and know the places. Recorded, revocable, informed consent, and anonymisation by default. Rigour that holds up.</p>
-      </div>
-      <div class="step-card">
-        <div class="num">03</div>
-        <h3>Report honestly</h3>
-        <p>Findings that support your decision, and findings that don't. Every claim traceable to evidence. Delivered as briefings and interactive dashboards, ready to act on.</p>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:48px;"><a href="/how-it-works" class="btn btn-ghost">See the full method →</a></p>
-  </div>
-</section>
-
-<!-- WHO WE SERVE - five target types on coloured blocks -->
-<section class="section-white">
-  <div class="wrap">
-    <div class="section-head reveal">
       <p class="eyebrow">Who we serve</p>
-      <h2>Five kinds of organisation, one need.</h2>
-      <p>Different questions, one underlying ask: honest, independent evidence of what a technology or programme actually does to real people.</p>
+      <h2>Five audiences, one underlying need.</h2>
+      <p>Different questions, the same underlying ask: honest, independent evidence of what a technology or programme actually does to real people.</p>
     </div>
     <div class="serve-grid">
-      <a href="/who-we-serve">
-        <span class="serve-tag">01 · Companies</span>
+      <a href="/who-we-serve#companies">
+        <span class="serve-tag">Companies</span>
         <h3>Companies &amp; innovators</h3>
         <p>Field evidence for a market you are about to enter. Who actually adopts, and why.</p>
         <span class="arrow">→</span>
       </a>
-      <a href="/who-we-serve">
-        <span class="serve-tag">02 · Funders</span>
+      <a href="/who-we-serve#funders">
+        <span class="serve-tag">Funders</span>
         <h3>Funders &amp; public bodies</h3>
         <p>Portfolio-wide impact evidence that survives review and travels across projects.</p>
         <span class="arrow">→</span>
       </a>
-      <a href="/who-we-serve">
-        <span class="serve-tag"><img src="/assets/img/eu-flag-small.jpg" alt="" class="serve-flag" aria-hidden="true">03 · Consortia</span>
+      <a href="/who-we-serve#consortia">
+        <span class="serve-tag"><img src="/assets/img/eu-flag-small.jpg" alt="" class="serve-flag" aria-hidden="true">Consortia</span>
         <h3>European consortia</h3>
         <p>The independent measurement partner, from baseline through endline.</p>
         <span class="arrow">→</span>
       </a>
-      <a href="/who-we-serve">
-        <span class="serve-tag">04 · NGOs</span>
+      <a href="/who-we-serve#ngos">
+        <span class="serve-tag">NGOs</span>
         <h3>NGOs &amp; programmes</h3>
         <p>Honest evidence of what is changing on the ground, reported truthfully.</p>
         <span class="arrow">→</span>
       </a>
-      <a href="/who-we-serve">
-        <span class="serve-tag">05 · Researchers</span>
+      <a href="/who-we-serve#researchers">
+        <span class="serve-tag">Researchers</span>
         <h3>Research teams</h3>
         <p>A field partner with reach, and real technical understanding of the systems being studied.</p>
         <span class="arrow">→</span>

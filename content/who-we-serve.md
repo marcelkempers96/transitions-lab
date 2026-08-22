@@ -1,27 +1,27 @@
-§ / Who we serve
+§ / Audiences
 
 # Who We Serve
 
-*The Lab works for anyone who needs honest, independent evidence of what a technology or programme actually does to real people. Five kinds of organisation come to us most often. Find the one that fits.*
+*Five kinds of organisation come to the Lab, each with a different decision to make. What holds them together is the same underlying ask: an independent read of what a technology or programme actually does to real people.*
 
-Different organisations arrive with different questions, but the underlying need is the same: to know what is really happening on the ground, from an independent party with no stake in the answer. What changes is the decision the evidence has to serve.
+Different organisations arrive with different questions. What changes is the decision the evidence has to serve.
 
-<div class="target-card c-coral">
+<div class="target-card c-coral" id="companies">
   <div class="target-head">
-    <span class="target-tag">01 · Companies &amp; innovators</span>
+    <span class="target-tag">01 · Companies & innovators</span>
     <h3>For companies moving into a new market</h3>
   </div>
   <div class="target-body">
     <p><strong>The problem.</strong> You have a product that works, and now you need to know how it lands somewhere new. Another region, another country, another kind of user, before you commit to scaling. General satisfaction scores will not tell you who adopts, who does not, and why. The risk is spending a scaling budget on an assumption.</p>
     <p><strong>What the Lab does.</strong> Field evidence that turns an expansion decision into a reasoned one: who actually adopts and who is left out, what the real barriers are (cost, trust, habit, infrastructure), and what would have to change for adoption to hold. We read your strategy through the <a href="/brw">BRW framework</a> to show which barriers you are bypassing, repurposing, or weakening, and where the fit breaks down.</p>
     <p><strong>Proof.</strong> The Lab's field engagement with an electric-mobility manufacturer in Nairobi is exactly this shape of work. See the <a href="/case-roam">Roam case study</a>.</p>
-    <a class="target-cta" href="/field-research">Market &amp; expansion research →</a>
+    <a class="target-cta" href="/field-research">Market & expansion research →</a>
   </div>
 </div>
 
-<div class="target-card c-cobalt">
+<div class="target-card c-cobalt" id="funders">
   <div class="target-head">
-    <span class="target-tag">02 · Funders &amp; public bodies</span>
+    <span class="target-tag">02 · Funders & public bodies</span>
     <h3>For funders who need evidence that survives review</h3>
   </div>
   <div class="target-body">
@@ -32,25 +32,25 @@ Different organisations arrive with different questions, but the underlying need
   </div>
 </div>
 
-<div class="target-card c-butter">
+<div class="target-card c-butter" id="consortia">
   <div class="target-head">
     <img class="target-icon" src="/assets/icons/icon-eu.png" alt="" aria-hidden="true">
     <div class="target-head-text">
-      <span class="target-tag">03 · European projects &amp; consortia</span>
+      <span class="target-tag">03 · European projects & consortia</span>
       <h3>For consortia that need an independent measurement partner</h3>
     </div>
   </div>
   <div class="target-body">
     <p><strong>The problem.</strong> Your Grant Agreement commits the consortium to monitoring, evaluation, and a proper dissemination and exploitation plan, and the funder expects reach, uptake, and proof that what was promised was delivered. It is easy to set up channels and hard to show they reached anyone. Done late, it becomes a scramble at the final review.</p>
     <p><strong>What the Lab does.</strong> We act as the independent measurement and dissemination partner: a theory of change and indicator framework set up at the start, a baseline captured before the work begins, continuous monitoring and midline reads while it runs, and an endline evaluation with dissemination that genuinely reaches its audiences, all mapped to periodic reporting.</p>
-    <p><strong>Proof.</strong> See the Lab's dedicated <a href="/european-impact-tracking">European Impact Tracking</a> service and its wider <a href="/monitoring-evaluation-dissemination">Monitoring, Evaluation &amp; Dissemination</a> offer.</p>
+    <p><strong>Proof.</strong> See the Lab's dedicated <a href="/european-impact-tracking">European Impact Tracking</a> service and its wider <a href="/monitoring-evaluation-dissemination">Monitoring, Evaluation & Dissemination</a> offer.</p>
     <a class="target-cta" href="/european-impact-tracking">European Impact Tracking →</a>
   </div>
 </div>
 
-<div class="target-card c-forest">
+<div class="target-card c-forest" id="ngos">
   <div class="target-head">
-    <span class="target-tag">04 · NGOs &amp; programmes</span>
+    <span class="target-tag">04 · NGOs & programmes</span>
     <h3>For programmes that need honest evidence of what is changing</h3>
   </div>
   <div class="target-body">
@@ -61,9 +61,9 @@ Different organisations arrive with different questions, but the underlying need
   </div>
 </div>
 
-<div class="target-card c-plum">
+<div class="target-card c-plum" id="researchers">
   <div class="target-head">
-    <span class="target-tag">05 · Researchers &amp; academic teams</span>
+    <span class="target-tag">05 · Researchers & academic teams</span>
     <h3>For research teams that need a field partner with reach</h3>
   </div>
   <div class="target-body">

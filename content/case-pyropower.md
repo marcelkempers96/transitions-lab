@@ -4,9 +4,11 @@
 
 *A field engagement with Pyropower on what happens when smallholder farmers are handed an open-source kiln that turns crop waste into energy and soil, and the technology becomes theirs to adapt.*
 
-**Location** Lombok, Indonesia
-**Sector** Clean energy · circular economy · regenerative agriculture · carbon
-**Lab themes** Decentralised energy · waste-to-value · smallholder livelihoods
+<div class="case-meta">
+  <div><span class="k">Location</span><span class="v">Lombok, Indonesia</span></div>
+  <div><span class="k">Sector</span><span class="v">Clean energy · circular economy · regenerative agriculture · carbon</span></div>
+  <div><span class="k">Lab themes</span><span class="v">Decentralised energy · waste-to-value · smallholder livelihoods</span></div>
+</div>
 
 <!-- IMAGE pyro-hero: hero photo | The Pyropower kiln in use on a Lombok smallholding, or a farmer holding biochar. Earthy, working-farm documentary feel. | Full-width hero under the metadata block. -->
 

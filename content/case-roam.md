@@ -6,9 +6,11 @@
 
 <a href="https://www.roam-electric.com/" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-roam.png" alt="Roam"></a>
 
-**Location** Nairobi and greater Kenya
-**Sector** Electric mobility · informal transport · vehicle financing
-**Lab programme** Electrification & E-Mobility Transitions
+<div class="case-meta">
+  <div><span class="k">Location</span><span class="v">Nairobi and greater Kenya</span></div>
+  <div><span class="k">Sector</span><span class="v">Electric mobility · informal transport · vehicle financing</span></div>
+  <div><span class="k">Lab programme</span><span class="v">Electrification & E-Mobility Transitions</span></div>
+</div>
 
 <!-- IMAGE roam-hero: hero photo | A Roam electric motorcycle with its rider on a Nairobi street, ideally mid-work (boda boda context). Documentary, dust-and-daylight real. | Full-width hero under the metadata block. -->
 

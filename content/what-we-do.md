@@ -4,82 +4,88 @@
 
 *Independent research on how technologies meet real people, turned into evidence innovators and institutions can act on.*
 
-The Lab does one thing, in several forms: it builds honest understanding of how a technology behaves once real people live with it, so the people steering a transition can steer it toward human values, not away from them. People first, technology second, place always. Below, what that looks like as a set of services.
+The Lab does one thing, in several forms: it builds honest understanding of how a technology behaves once real people live with it, so the people steering a transition can steer it toward human values, not away from them. **People first, technology second, place always.**
+
+Six service lines, one method behind all of them.
+
+<div class="service-grid">
+  <a class="service-card c-butter" href="/field-research">
+    <span class="service-tag">In the field</span>
+    <h3>Field Research</h3>
+    <p>Rigorous primary research in the places it is hardest to do well. Interviews, surveys, and on-site work run by researchers who speak the language and know the place.</p>
+    <span class="service-more">Explore →</span>
+  </a>
+  <a class="service-card c-coral" href="/impact-measurement">
+    <span class="service-tag">Across the outcome</span>
+    <h3>Impact Measurement</h3>
+    <p>What actually changed, for whom, and through what pathway. Reach, depth, and experience, benchmarked and designed for repetition.</p>
+    <span class="service-more">Explore →</span>
+  </a>
+  <a class="service-card c-cobalt" href="/for-funders">
+    <span class="service-tag">Across a portfolio</span>
+    <h3>For Funders</h3>
+    <p>Independent, field-verified evidence of what each grant is producing. SROI to standard, portfolio benchmarking, and a dashboard behind which every figure has been checked.</p>
+    <span class="service-more">Explore →</span>
+  </a>
+  <a class="service-card c-forest" href="/market-expansion">
+    <span class="service-tag">Before you scale</span>
+    <h3>Market &amp; Expansion Research</h3>
+    <p>Field evidence for the decision to enter a new market. Who adopts, at what price, and which failure modes to name before capital is committed.</p>
+    <span class="service-more">Explore →</span>
+  </a>
+  <a class="service-card c-plum" href="/european-impact-tracking">
+    <span class="service-tag">Across Europe</span>
+    <h3>European Impact Tracking</h3>
+    <p>The independent measurement partner for Horizon, ESF+, LIFE, EIC and other EU projects. Baseline through midline through endline, designed for the Grant Agreement.</p>
+    <span class="service-more">Explore →</span>
+  </a>
+  <a class="service-card c-butter" href="/monitoring-evaluation-dissemination">
+    <span class="service-tag">The full loop</span>
+    <h3>Monitoring, Evaluation &amp; Dissemination</h3>
+    <p>Monitoring while the work runs, evaluation against a clear standard, and dissemination that carries the findings to the people who can use them. One connected system, not three afterthoughts.</p>
+    <span class="service-more">Explore →</span>
+  </a>
+</div>
 
 ---
 
-**§ 1.1 / Field Research**
+## What ties it together
 
-## Primary research in difficult contexts
-
-Interviews, surveys, and on-the-ground fieldwork in emerging-market and developing-country settings, run by researchers who speak the language and know the place. This is the capability behind the Lab's own published work, available to others.
-
-[Field Research →](https://www.transitionslab.org/field-research.html)
-
----
-
-**§ 1.2 / Impact Measurement**
-
-## What actually changed, for whom, and how
-
-We measure what a technology or programme genuinely changes, not the output reported in a status update, but the outcome in someone's life or operation, and we map the pathway from intervention to impact. Built around reach, depth, and experience, and designed for repetition so a one-off study becomes a trend.
-
-[Impact Measurement →](https://www.transitionslab.org/impact-measurement.html)
+<div class="callout c-cobalt">
+  <span class="kicker">The Lab's stance</span>
+  <h3>Social science first. Technical depth alongside. Independence throughout.</h3>
+  <p>Every service rests on the same foundation: social-science fieldcraft that finds out what is happening to people and makes it hold up, together with genuine technical literacy about the systems we study, independent of the things we measure. That is what allows us to align human values with technology in context.</p>
+</div>
 
 ---
 
-**§ 1.3 / European Impact Tracking**
+## What you receive
 
-## Independent before-and-after for European projects
+Every engagement ends in something you can use.
 
-Baseline-to-endline impact tracking for European projects, demonstrations, and socially innovative actions, set up at the start, run while the work is live, closed out with a result that holds up to scrutiny. Designed for the consortium that needs an independent measurement partner.
-
-[European Impact Tracking →](https://www.transitionslab.org/european-impact-tracking.html)
-
----
-
-**§ 1.4 / Monitoring, Evaluation & Dissemination**
-
-## The full evidence loop, from baseline to uptake
-
-Monitoring while the work runs, evaluation against a clear standard, and dissemination that carries the findings to the people who can use them, designed as one connected system rather than three afterthoughts. Grounded in established evaluation science (theory of change, the OECD-DAC criteria) and built to satisfy European Grant Agreement obligations where they apply.
-
-[Monitoring, Evaluation & Dissemination →](https://www.transitionslab.org/monitoring-evaluation-dissemination.html)
+- **Clean, well-documented data**, in the format that fits your team.
+- **A written analysis** that states plainly what the evidence shows and what it cannot.
+- **The instruments themselves** (surveys, interview guides, indicator sets) so the study can be repeated.
+- **A direct reading** of what it means for the decision in front of you.
+- Where a benchmark exists, we set your results against it. Turnaround is measured in weeks, not seasons, and findings are written to be acted on without a translator.
 
 ---
 
-**§ 1.5 / Market & expansion research**
+## When to come to us
 
-## For companies moving into new places
+<div class="callout c-butter">
+  <span class="kicker">The moments research earns its cost</span>
+  <ul>
+    <li><strong>Before you scale</strong>, when the cost of being wrong about how a product lands is high.</li>
+    <li><strong>When a funder or board needs impact evidence</strong> that will survive scrutiny.</li>
+    <li><strong>When a project is live</strong> and a mid-course reading could still change the outcome.</li>
+    <li><strong>When you are entering an unfamiliar market</strong> and need to understand it from the inside.</li>
+    <li><strong>When you need an independent voice</strong> precisely because an internal one would not be believed.</li>
+  </ul>
+</div>
 
-For an innovator expanding locally or internationally, the question is not whether customers are satisfied in general, but how a product actually lands in a specific market, who adopts, who does not, and why. We provide the field evidence that makes an expansion decision a reasoned one rather than a hopeful one.
-
-[Talk to us →](https://www.transitionslab.org/contact.html)
-
----
-
-**§ 1.5 / What ties it together**
-
-## Social science first, technical depth alongside, independence throughout
-
-Every service rests on the same foundation. We bring social-science fieldcraft, knowing how to find out what is happening to people and make it hold up, together with genuine technical literacy about the systems we study. We are independent of the things we measure, and we report what the evidence says, including when it is inconvenient. That is what allows us to align human values with technology in context.
-
----
-
-**§ 1.6 / What you actually receive**
-
-## Evidence, not a slide deck
-
-Every engagement ends in something you can use. Depending on the work, that means clean, well-documented data; a written analysis that states plainly what the evidence shows and what it cannot; the instruments themselves (surveys, interview guides, indicator sets) so the study can be repeated; and a direct reading of what it means for the decision in front of you. Where a benchmark exists, we set your results against it. Turnaround is measured in weeks, not seasons, and findings are written to be acted on without a translator.
+If you are facing one of these, a short conversation will tell us both whether research can help.
 
 ---
 
-**§ 1.7 / When to come to us**
-
-## The moments research earns its cost
-
-The Lab is most useful at a few specific moments: before you scale, when the cost of being wrong about how a product lands is high; when a funder or board needs impact evidence that will survive scrutiny; when a project is live and a mid-course reading could still change the outcome; when you are entering an unfamiliar market and need to understand it from the inside; and when you need an independent voice precisely because an internal one would not be believed. If you are facing one of these, a short conversation will tell us both whether research can help.
-
----
-
-*For the process behind every engagement, see [How It Works](https://www.transitionslab.org/how-it-works.html). For the mission behind it, see [About](https://www.transitionslab.org/about.html).*
+*For the process behind every engagement, see [How It Works](/how-it-works). For the mission behind it, see [About](/about). To start a conversation, see [Contact](/contact).*

@@ -37,9 +37,9 @@ So when a mining incumbent redeploys into critical minerals, two distinct things
   <text x="330" y="64" font-family="'Hanken Grotesk',sans-serif" font-size="11" fill="#0A0A0A" opacity="0.7">DEPTH OF STANDARD DUE DILIGENCE</text>
   <g font-family="'Hanken Grotesk',sans-serif" font-size="13" font-weight="600" fill="#0A0A0A">
     <text x="20" y="102">Technical capability</text>
-    <text x="20" y="146">Capital &amp; access to finance</text>
-    <text x="20" y="190">Trading &amp; state relationships</text>
-    <text x="20" y="234">Written policy &amp; standards</text>
+    <text x="20" y="146">Capital & access to finance</text>
+    <text x="20" y="190">Trading & state relationships</text>
+    <text x="20" y="234">Written policy & standards</text>
     <text x="20" y="278">Operational routines</text>
     <text x="20" y="322">Conduct towards communities</text>
   </g>

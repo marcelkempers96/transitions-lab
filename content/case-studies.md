@@ -22,7 +22,7 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
     </div>
   </a>
   <a class="case-card c-butter" href="/case-pyropower">
-    <div class="stripe"><span class="tag">Indonesia · Agriculture &amp; energy</span></div>
+    <div class="stripe"><span class="tag">Indonesia · Agriculture & energy</span></div>
     <div class="body">
       <h3>Waste Into Worth: Biochar in Lombok</h3>
       <p>Smallholder farmers turn crop waste that was being open-burned into heat, into soil that raises yields, and into a route to the carbon market, on a portable, open-source kiln. The farmers named it <em>Tumbuh</em>: "to grow."</p>
@@ -38,7 +38,7 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
     </div>
   </a>
   <a class="case-card c-cobalt" href="/case-mimaji">
-    <div class="stripe"><span class="tag">Kenya · Water &amp; transparency</span></div>
+    <div class="stripe"><span class="tag">Kenya · Water & transparency</span></div>
     <div class="body">
       <h3>The Price of Not Knowing: Water Transparency in Nairobi</h3>
       <p>Open data about water price and quality as a socio-technical intervention. When the households paying the most can finally see what they pay for, the water market begins to change, but only if the transparency reaches and is trusted by the people on the wrong side of the asymmetry.</p>
@@ -69,7 +69,7 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
     <div class="stripe"><span class="tag">East Africa · Market entry</span></div>
     <div class="body">
       <h3>Before the Capital: A Market-Entry Study</h3>
-      <p>What a European mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one. See also the dedicated <a href="/market-expansion">Market &amp; Expansion Research</a> service.</p>
+      <p>What a European mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one. See also the dedicated <a href="/market-expansion">Market & Expansion Research</a> service.</p>
       <span class="read">Read the reading &rarr;</span>
     </div>
   </a>
@@ -82,7 +82,7 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
     </div>
   </a>
   <a class="case-card c-cobalt" href="/case-ai-digital">
-    <div class="stripe"><span class="tag">AI &amp; Digital</span></div>
+    <div class="stripe"><span class="tag">AI & Digital</span></div>
     <div class="body">
       <h3>Digital Services in Low-Connectivity Contexts</h3>
       <p>When a digital tool designed for always-connected, personal-device users meets an intermittent phone, a shared device, and a language it wasn't tested in.</p>

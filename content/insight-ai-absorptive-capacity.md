@@ -45,7 +45,7 @@ Now compare the two sides.
 </div>
 
 <div class="callout c-cobalt">
-  <span class="kicker">Renewables &amp; efficiency</span>
+  <span class="kicker">Renewables & efficiency</span>
   <p>A much thinner and much more fragmented estate. Data is younger, because assets are younger. It is distributed across thousands of small operators, developers, utilities and households rather than concentrated in a few dozen firms. Much of the highest-value application sits in domains where the data is institutional rather than technical: interconnection queue management, permitting, grid planning, demand response, tariff design. And the gains are diffuse. A percentage point of improvement in distribution-network utilisation is worth a great deal in aggregate and very little to any single actor with the capacity to fund the work.</p>
 </div>
 
@@ -60,13 +60,13 @@ Set against that, the modelled requirement of a four-to-five-times productivity 
   <rect x="300" y="56" width="18" height="12" fill="#EE5B22"/>
   <text x="326" y="66" font-family="'Hanken Grotesk',sans-serif" font-size="12" fill="#0A0A0A">Fossil extraction</text>
   <rect x="470" y="56" width="18" height="12" fill="#1F3F7A"/>
-  <text x="496" y="66" font-family="'Hanken Grotesk',sans-serif" font-size="12" fill="#0A0A0A">Renewables &amp; grid</text>
+  <text x="496" y="66" font-family="'Hanken Grotesk',sans-serif" font-size="12" fill="#0A0A0A">Renewables & grid</text>
   <g font-family="'Hanken Grotesk',sans-serif" font-size="13" fill="#0A0A0A" font-weight="600">
     <text x="20" y="106">Maturity of the data estate</text>
     <text x="20" y="170">Concentration of the value of a gain</text>
     <text x="20" y="234">Computational engineering workforce</text>
     <text x="20" y="298">Capital available to the adopting firm</text>
-    <text x="20" y="362">Policy attention &amp; steering</text>
+    <text x="20" y="362">Policy attention & steering</text>
   </g>
   <g>
     <rect x="300" y="92" width="380" height="14" fill="#EE5B22"/>

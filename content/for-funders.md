@@ -1,4 +1,4 @@
-§ / For funders
+§ / Portfolio verification
 
 # For Funders
 
@@ -61,11 +61,11 @@ The Lab calculates SROI to the Social Value International standard, which turns 
 
 | Step | What it means | Why funders should insist on it |
 |---|---|---|
-| **Scope &amp; stakeholders** | Define precisely what is being measured, and involve the people affected in saying what changed | A ratio with vague scope inflates easily; naming the boundary is what keeps it honest |
+| **Scope & stakeholders** | Define precisely what is being measured, and involve the people affected in saying what changed | A ratio with vague scope inflates easily; naming the boundary is what keeps it honest |
 | **Map outcomes** | Trace inputs to outputs to outcomes to impact, per grant | Stops a funder crediting activity (outputs) as if it were change (outcomes) |
-| **Evidence &amp; value** | Gather evidence of each outcome and assign a financial proxy to it | The proxy must trace to a real source; an unsourced proxy is a guess with a decimal point |
+| **Evidence & value** | Gather evidence of each outcome and assign a financial proxy to it | The proxy must trace to a real source; an unsourced proxy is a guess with a decimal point |
 | **The four adjustments** | Subtract deadweight, attribution, displacement, and drop-off | This is where honest SROI separates from impact-washing (see below) |
-| **Calculate &amp; verify** | Compute the ratio, and trace every number back to its evidence | A defensible ratio resolves to its source when a board questions it |
+| **Calculate & verify** | Compute the ratio, and trace every number back to its evidence | A defensible ratio resolves to its source when a board questions it |
 
 <div class="callout c-forest">
   <span class="kicker">The four adjustments that separate real return from inflated return</span>
@@ -99,10 +99,10 @@ What distinguishes it from the grant-management software already on the market i
 ## Who this is for
 
 <div class="pill-row">
-  <span class="pill c-coral">Foundations &amp; trusts</span>
-  <span class="pill c-cobalt">Public &amp; government funders</span>
+  <span class="pill c-coral">Foundations & trusts</span>
+  <span class="pill c-cobalt">Public & government funders</span>
   <span class="pill c-butter">Impact investors</span>
-  <span class="pill c-forest">Corporate &amp; CSR funders</span>
+  <span class="pill c-forest">Corporate & CSR funders</span>
   <span class="pill c-plum">Re-granting intermediaries</span>
 </div>
 

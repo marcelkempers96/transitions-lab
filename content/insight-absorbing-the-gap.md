@@ -117,7 +117,7 @@ That last clause is the one financial models tend to drop. An hour of unplanned 
 
 This is why swap networks change adoption curves more than battery chemistry does. They convert an uncertain, rider-held risk into a fixed, visible fee. The rider is paying more per kilometre and buying something they value more than the margin: a day whose shape they can predict.
 
-Any market-entry study that measures total cost of ownership without measuring variance in productive hours has measured the wrong thing. This is the sort of question [field research](/field-research) exists to settle, and it cannot be settled from a spreadsheet in another country. It is also the shape of question our [Market &amp; Expansion Research](/market-expansion) service is built for.
+Any market-entry study that measures total cost of ownership without measuring variance in productive hours has measured the wrong thing. This is the sort of question [field research](/field-research) exists to settle, and it cannot be settled from a spreadsheet in another country. It is also the shape of question our [Market & Expansion Research](/market-expansion) service is built for.
 
 ---
 

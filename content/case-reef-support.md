@@ -6,9 +6,11 @@
 
 <a href="https://reef.support/" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-reef-support.png" alt="Reef Support"></a>
 
-**Location** Lombok, Indonesia, and coastal partner sites
-**Sector** Marine conservation · environmental monitoring · community science
-**Lab themes** Socio-technical monitoring systems · community data · trust in evidence
+<div class="case-meta">
+  <div><span class="k">Location</span><span class="v">Lombok, Indonesia, and coastal partner sites</span></div>
+  <div><span class="k">Sector</span><span class="v">Marine conservation · environmental monitoring · community science</span></div>
+  <div><span class="k">Lab themes</span><span class="v">Socio-technical monitoring systems · community data · trust in evidence</span></div>
+</div>
 
 <!-- IMAGE reef-hero: hero photo | A community ranger in/near the water, or a vivid reef shot with a monitoring context. Blue, alive, human-present. | Full-width hero under the metadata block. -->
 

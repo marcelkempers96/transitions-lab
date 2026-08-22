@@ -22,8 +22,8 @@ Neither is softer or harder than the other. A biased survey produces confident, 
 |---|---|---|
 | **Answers** | How many, how much, how often | How, why, and what it means |
 | **Works in** | Numbers, at scale | Words, in depth |
-| **Strength** | Comparability &amp; generalisation | Reasoning, meaning, the unexpected |
-| **Discipline** | Sampling &amp; measurement | Interviewing &amp; interpretation |
+| **Strength** | Comparability & generalisation | Reasoning, meaning, the unexpected |
+| **Discipline** | Sampling & measurement | Interviewing & interpretation |
 | **Output** | A figure, with a margin of error | A theme, grounded in evidence |
 | **Fails when** | The sample is wrong or the question is blunt | The interviewer leads, or stops too soon |
 
