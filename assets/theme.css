@@ -552,6 +552,35 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .prose .article-meta span{white-space:nowrap;}
 
+/* ── Article list (on /articles): scannable stack of pieces, each with
+   a bold title link, a small meta line (date or tag), and a body blurb. */
+.prose .article-list{margin:24px 0 32px;}
+.prose .article-list .article-item{
+  border-top:1px solid var(--ink);padding:22px 0 4px;
+}
+.prose .article-list .article-item:first-child{border-top:0;padding-top:8px;}
+.prose .article-list .article-title,
+.prose .article-list a.article-title{
+  display:block;font-family:'Hanken Grotesk',sans-serif;
+  font-size:clamp(19px,2.2vw,24px);font-weight:800;letter-spacing:-.01em;
+  line-height:1.22;color:var(--ink);text-decoration:none;
+}
+.prose .article-list a.article-title:hover{
+  text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;
+}
+.prose .article-list .article-meta{
+  margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink);opacity:.62;
+}
+.prose .article-list .article-desc{
+  margin:10px 0 0;color:var(--ink);
+  font-size:16px;line-height:1.55;
+}
+.prose .article-list .article-desc a{
+  color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+
 /* ── What We Do cards (on /what-we-do): top-level question card with a
    coloured head, an "Absorbs" sub-strip on paper below, mirroring the
    Services nav axis + showing the second-level pages inside each. */
