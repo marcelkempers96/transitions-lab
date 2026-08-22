@@ -99,11 +99,11 @@ What distinguishes it from the grant-management software already on the market i
 ## Who this is for
 
 <div class="pill-row">
-  <span class="pill c-coral">Foundations & trusts</span>
-  <span class="pill c-cobalt">Public & government funders</span>
-  <span class="pill c-butter">Impact investors</span>
-  <span class="pill c-forest">Corporate & CSR funders</span>
-  <span class="pill c-plum">Re-granting intermediaries</span>
+  <a class="pill c-coral" href="/who-we-serve#funders">Foundations & trusts</a>
+  <a class="pill c-cobalt" href="/who-we-serve#funders">Public & government funders</a>
+  <a class="pill c-butter" href="/who-we-serve#funders">Impact investors</a>
+  <a class="pill c-forest" href="/who-we-serve#funders">Corporate & CSR funders</a>
+  <a class="pill c-plum" href="/who-we-serve#funders">Re-granting intermediaries</a>
 </div>
 
 - **Foundations and trusts** funding portfolios of projects who need an honest, comparable view of what the portfolio achieves.

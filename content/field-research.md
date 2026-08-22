@@ -61,11 +61,11 @@ Commissioned work belongs to the client and stays private unless the client choo
 ## Who this is for
 
 <div class="pill-row">
-  <span class="pill c-coral">Companies</span>
-  <span class="pill c-cobalt">Funders</span>
-  <span class="pill c-butter">Consortia</span>
-  <span class="pill c-forest">NGOs</span>
-  <span class="pill c-plum">Researchers</span>
+  <a class="pill c-coral" href="/who-we-serve#companies">Companies</a>
+  <a class="pill c-cobalt" href="/who-we-serve#funders">Funders</a>
+  <a class="pill c-butter" href="/who-we-serve#consortia">Consortia</a>
+  <a class="pill c-forest" href="/who-we-serve#ngos">NGOs</a>
+  <a class="pill c-plum" href="/who-we-serve#researchers">Researchers</a>
 </div>
 
 See [Who We Serve](/who-we-serve) for how the fit works in each case.

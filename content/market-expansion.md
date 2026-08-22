@@ -81,10 +81,10 @@ For the wider frame, see the [Four Ways a Transition Lands](/insight-transitions
 ## Who this is for
 
 <div class="pill-row">
-  <span class="pill c-coral">Companies</span>
-  <span class="pill c-cobalt">Investors</span>
-  <span class="pill c-butter">Development finance</span>
-  <span class="pill c-forest">Corporate ventures</span>
+  <a class="pill c-coral" href="/who-we-serve#companies">Companies</a>
+  <a class="pill c-cobalt" href="/who-we-serve#funders">Investors</a>
+  <a class="pill c-butter" href="/who-we-serve#funders">Development finance</a>
+  <a class="pill c-forest" href="/who-we-serve#companies">Corporate ventures</a>
 </div>
 
 See [Who We Serve](/who-we-serve) for how the fit works.
