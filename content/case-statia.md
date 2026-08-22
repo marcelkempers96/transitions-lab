@@ -42,5 +42,5 @@ Small islands are not marginal cases; they are clarifying ones. Because everythi
 
 ---
 
-*This case reflects the Lab's [Dutch Caribbean, Suriname and Guyana practice](https://www.transitionslab.org/geographies.html) and its public-sector work. To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*This case reflects the Lab's Dutch Caribbean practice and its public-sector work. To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
 

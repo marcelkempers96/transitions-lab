@@ -136,7 +136,7 @@ Interconnection timelines, tariff reform, swap density, or a local storage marke
 
 Markets where the grid cannot be assumed are not simply harder versions of markets where it can. They are structurally different, and the models that win in them are the ones that redistribute a burden rather than the ones that ignore it. Our reading of how [state capacity and niche success interact](/insight-transitions-outcomes) points the same way: the technology rarely decides the outcome on its own.
 
-The Lab works on this question in [e-mobility and transport](/expertise-e-mobility) and at the boundary with [energy access](/expertise-energy), in [the places](/geographies) where the answer is not obvious from the outside.
+The Lab works on this question in [e-mobility and transport](/expertise-e-mobility) and at the boundary with [energy access](/expertise-energy), in [the places we work in](/about) where the answer is not obvious from the outside.
 
 If you are weighing an entry decision and the electricity question keeps getting deferred to a later slide, [tell us what you need to know](/contact). We will design the study around the decision, not around the template.
 

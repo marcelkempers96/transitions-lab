@@ -98,7 +98,7 @@ We start from a decision, never from a dataset we happen to have. We work from t
 
 Independence from the thing being measured. Rigour equal to the Lab's own [published research](/articles). And findings written to be used by a decision-maker without a translator, plain, specific, and tied to the choice in front of you.
 
-We are based in Delft, The Netherlands. We do fieldwork in the places our research takes us, through researchers and partners who already speak the language and know the place, because [the quality of field research depends on it](/geographies). Our published work on the [BRW framework](/brw), on [TRL and SRL readiness](/readiness-levels), and on the [Transitions Outcomes matrix](/insight-transitions-outcomes) is the proof of the method; the same method is what a commissioning partner receives.
+We are based in Delft, The Netherlands. We do fieldwork in the places our research takes us, through researchers and partners who already speak the language and know the place, because the quality of field research depends on it. Our published work on the [BRW framework](/brw), on [TRL and SRL readiness](/readiness-levels), and on the [Transitions Outcomes matrix](/insight-transitions-outcomes) is the proof of the method; the same method is what a commissioning partner receives.
 
 ---
 

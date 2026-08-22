@@ -40,6 +40,11 @@ Based in **Delft, The Netherlands**, alongside the research community at <a href
 
 <a href="https://www.tudelft.nl/" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-tu-delft.png" alt="TU Delft" style="max-width:180px;height:auto;"></a>
 
+<figure>
+  <img src="/assets/img/photo-coastal-community.jpg" alt="A coastal fishing community at sunset: household kitchen gardens in the foreground, a black water tank, rooftop solar panels on a nearby shack, and small fishing boats moored along the pier." class="diagram">
+  <figcaption>One frame, several transitions at once: household water storage, kitchen gardens, rooftop solar, small-boat fishing. The contexts we work in rarely have one thing changing at a time.</figcaption>
+</figure>
+
 ---
 
 ## How we hold the work
@@ -48,4 +53,4 @@ Informed, recorded, revocable consent. Anonymisation by default. We interview to
 
 ---
 
-*For services, see [What We Do](/what-we-do). For places, [Where We Work](/geographies). For research, [Articles](/articles). To start, [Contact](/contact).*
+*For services, see [What We Do](/what-we-do). For our published thinking, [Articles](/articles). To start a conversation, [Contact](/contact).*

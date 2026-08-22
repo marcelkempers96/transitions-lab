@@ -79,7 +79,6 @@ HERO_COLOR: dict[str, str] = {
     "expertise": "coral",
     # Team / place (deep plum)
     "team": "plum",
-    "geographies": "plum",
     # Services (grounded forest)
     "what-we-do": "forest",
     "field-research": "forest",
@@ -124,7 +123,6 @@ HERO_COLOR: dict[str, str] = {
 
 ABOUT = [
     ("about", "About the Lab"),
-    ("geographies", "Where we work"),
     ("who-we-serve", "Who we serve"),
     ("how-it-works", "How It Works"),
     ("team", "Team"),
@@ -267,10 +265,6 @@ META: dict[str, dict[str, str]] = {
     "articles": {
         "title": "Articles | Transitions Lab",
         "description": "Independent analysis and opinion pieces from Transitions Lab. Evidence-first reading of the transitions and relationships we study.",
-    },
-    "geographies": {
-        "title": "Where We Work | East Africa, Southeast Asia, Dutch Caribbean | Transitions Lab",
-        "description": "The Lab works where it is rooted: East Africa, coastal Southeast Asia, and the Dutch Caribbean, Suriname and Guyana. Named local partners, not parachuted research.",
     },
     "contact": {
         "title": "Contact | Start a Research Conversation | Transitions Lab",

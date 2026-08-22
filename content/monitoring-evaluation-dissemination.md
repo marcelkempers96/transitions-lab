@@ -4,7 +4,7 @@
 
 *Independent MED for any project that has to prove what it changed, and for European projects that have to prove it to a funder. We set up the measurement framework at the start, run it throughout, and turn the evidence into results that reach the people who can use them.*
 
-Most projects can tell you what they did. Far fewer can show what changed, for whom, and whether it will last, or turn that evidence into something the right people can act on. MED closes all three gaps as one connected system, not three afterthoughts. The Lab runs it as the independent partner, on privately commissioned work and on European consortia alike.
+Most projects can tell you what they did. Far fewer can show what changed, for whom, and whether it will last, or turn that evidence into something the right people can act on. MED closes all three gaps as one connected system. **The Lab runs it as your independent partner.**
 
 ---
 
