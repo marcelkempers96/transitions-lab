@@ -77,8 +77,6 @@ HERO_COLOR: dict[str, str] = {
     "about": "coral",
     "who-we-serve": "coral",
     "expertise": "coral",
-    # Team / place (deep plum)
-    "team": "plum",
     # Services (grounded forest)
     "what-we-do": "forest",
     "field-research": "forest",
@@ -129,7 +127,6 @@ ABOUT = [
     ("who-we-serve", "Who we serve"),
     ("for-funders", "For Funders"),
     ("how-it-works", "How It Works"),
-    ("team", "Team"),
 ]
 
 SERVICES = [
@@ -415,10 +412,6 @@ META: dict[str, dict[str, str]] = {
         "title": "The BRW Framework: Bypass, Repurpose, Weaken | Transitions Lab",
         "description": "A mechanism-based typology of how niche technologies engage entrenched regimes: bypass, repurpose, or weaken, matched to the barriers they face.",
     },
-    "team": {
-        "title": "Team | Transitions Lab",
-        "description": "The people behind Transitions Lab, an independent research team studying how technologies meet real people.",
-    },
 }
 
 # Pages that exist in the site map but content is not yet supplied.
@@ -459,7 +452,6 @@ STUB_TITLES: dict[str, str] = {
     "expertise-ai-digital": "AI & Digital Systems",
     "expertise-finance": "Financial Inclusion & Payment Systems",
     "expertise-climate": "Climate Resilience & Ecosystems",
-    "team": "Team",
 }
 
 # Sitemap priority per section (approximate).
