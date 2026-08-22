@@ -1,4 +1,4 @@
-§ / Field case
+§ / Field reading
 
 # Before the Capital: A Market-Entry Study in East Africa
 
@@ -46,4 +46,3 @@ Context Entry is a specific application of the Lab's whole method: start from th
 
 *This is an illustrative composite of the Lab's [market and expansion research](https://www.transitionslab.org/what-we-do.html), drawn from the pattern of Context Entry work rather than a single named client. To discuss a study for your own expansion, see [Contact](https://www.transitionslab.org/contact.html).*
 
-<!-- NOTE TO MARCEL: This is deliberately written as an anonymised, illustrative composite (no named client), which is honest and safe to publish. If you have a real, permissioned Context Entry client, a named version would be commercially stronger. The strategy note flags Context Entry as the highest-value, least-emphasised product, so this case is worth featuring prominently. -->

@@ -64,19 +64,20 @@ Planning transport for a community of a few thousand, where every assumption imp
 
 ---
 
-**§ 1.6 / Market entry & expansion**
+## Further Lab readings
 
-## Before the Capital: A Market-Entry Study in East Africa
-
-What a European mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one. The Lab's highest-stakes work: the alternative to good evidence is a failed launch.
-
-[Read the case →](https://www.transitionslab.org/case-context-entry.html)
+<div class="callout c-butter">
+  <span class="kicker">A note on the difference</span>
+  <p>The pieces below are <strong>Lab readings</strong>, illustrative composites in sectors where our field method applies but no single named engagement sits at the front. They draw on the same discipline as the field cases above and are used as the featured card on the matching <a href="/expertise">expertise</a> page. Read the eyebrow: <strong>§ / Field case</strong> denotes an engagement with a named partner; <strong>§ / Field reading</strong> denotes a composite.</p>
+</div>
 
 ---
 
-## Further Lab readings
+## Before the Capital: A Market-Entry Study in East Africa
 
-The pieces below are Lab readings of transitions in sectors where our field method applies but no single named case sits at the front. They draw on the same discipline as the engagements above, and are used as the featured case study on the matching [expertise](/expertise) page.
+What a European mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one. See also our dedicated [Market & Expansion Research](/market-expansion) service.
+
+[Read the case →](/case-context-entry)
 
 ---
 

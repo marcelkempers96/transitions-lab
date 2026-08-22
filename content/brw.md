@@ -58,4 +58,4 @@ That cross-sector, mechanism-level reading is precisely the kind of insight a co
 
 ---
 
-*The BRW framework is developed in full, with its academic grounding and a worked case study, in the downloadable [BRW Framework resource](https://www.transitionslab.org/resource-brw-framework.pdf). It runs through the Lab's [research programmes](https://www.transitionslab.org/programmes.html) and [case studies](https://www.transitionslab.org/case-studies.html). To discuss how it applies to your work, see [Contact](https://www.transitionslab.org/contact.html).*
+*The BRW framework is developed in full, with its academic grounding and a worked case study, in the downloadable [BRW Framework resource](/assets/resource-brw-framework.pdf). It runs through the Lab's [research programmes](https://www.transitionslab.org/programmes.html) and [case studies](https://www.transitionslab.org/case-studies.html). To discuss how it applies to your work, see [Contact](https://www.transitionslab.org/contact.html).*

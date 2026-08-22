@@ -57,7 +57,7 @@ Impact is not one thing. On any given study, we typically measure a mix of the f
 
 ## How we do it
 
-**We start from the decision, not the data.** A short design conversation establishes what decision the research must inform, the population that holds the answer, and the specific evidence that would genuinely change the decision. Most research is wasted here, by gathering data that was never going to settle anything. See [How It Works](/how-it-works) for the four-step process the Lab runs on every engagement.
+**We start from the decision, not the data.** A short design conversation establishes what decision the research must inform, the population that holds the answer, and the specific evidence that would genuinely change the decision. Most research is wasted here, by gathering data that was never going to settle anything. See [How It Works](/how-it-works) for the five-stage method the Lab runs on every engagement.
 
 **We build the instrument around the respondent.** Short, clear, locally grounded, and structured for repetition and comparison. We use validated instruments where they exist and design bespoke ones where they do not. Every instrument is built for repeat use, so a single study becomes a time series with almost no marginal cost.
 

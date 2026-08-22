@@ -84,8 +84,8 @@ A study in the measurement-to-action gap: sensors and satellites produce data, b
 [**Electric transport in Nairobi, Roam →**](https://www.transitionslab.org/case-roam.html)
 Monitoring adoption against a baseline, evaluating what actually moves a rider (running cost, financing, charging access), and reading who is reached and who is priced out, the reach, depth, and experience dimensions in practice.
 
-[**The measurement method, in full →**](https://www.transitionslab.org/resource-measurement-method.pdf)
-The Lab's Scope, Design, Collect, Deliver process and the reach, depth, experience lens, set out as a downloadable guide with a worked example.
+[**The measurement method, in full →**](/assets/resource-measurement-method.pdf)
+The Lab's five-stage method (Scope, Design, Collect, Analyse & benchmark, Deliver) and the reach, depth, experience lens, set out as a downloadable guide with a worked example.
 
 [**The European impact-tracking template →**](https://www.transitionslab.org/impact-tracking-template.html)
 A fill-in baseline, midline, and endline framework a project can run from day one.

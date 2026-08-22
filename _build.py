@@ -43,14 +43,14 @@ ASSET_CSS_V = _asset_hash("assets/theme.css")
 # top of the expertise page prose, linking to a specific case study.
 # Kicker uses the same coloured-stripe treatment as home insight cards.
 FEATURED_CASE: dict[str, dict[str, str]] = {
-    "expertise-e-mobility":    {"slug": "case-roam",         "kicker": "Kenya · E-mobility",   "title": "Electric transport in Nairobi",           "blurb": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with Roam.", "colour": "coral"},
-    "expertise-energy":        {"slug": "case-pyropower",    "kicker": "Indonesia · Energy",   "title": "Biochar & clean energy in Lombok",         "blurb": "Smallholder farmers turn crop waste into heat, soil, and income on a decentralised, open-source kiln.", "colour": "butter"},
-    "expertise-water":         {"slug": "case-mimaji",       "kicker": "Kenya · Water",         "title": "Water transparency in Nairobi",           "blurb": "Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.", "colour": "cobalt"},
-    "expertise-agriculture":   {"slug": "case-pyropower",    "kicker": "Indonesia · Agriculture","title": "Biochar in Lombok",                       "blurb": "Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.", "colour": "coral"},
-    "expertise-manufacturing": {"slug": "case-manufacturing","kicker": "East Africa · Manufacturing","title": "Assembly to Value: Local Manufacturing","blurb": "When a product moves from imported to locally assembled, whether the 'local' part actually reaches workers, suppliers, and customers.", "colour": "butter"},
-    "expertise-ai-digital":    {"slug": "case-ai-digital",   "kicker": "AI & Digital",          "title": "Digital Services in Low-Connectivity Contexts","blurb": "When a digital tool designed for always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.", "colour": "cobalt"},
-    "expertise-finance":       {"slug": "case-finance",      "kicker": "Finance · Payment rails","title": "The Payment Rail: What Mobile Money Carries","blurb": "Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.", "colour": "butter"},
-    "expertise-climate":       {"slug": "case-reef-support", "kicker": "Marine · Community rangers","title": "A Shared View of the Reef",                "blurb": "Rangers, sensors, and satellite data braided into a single picture of reef health, with Reef Support.", "colour": "coral"},
+    "expertise-e-mobility":    {"slug": "case-roam",         "kind": "case",    "kicker": "Kenya · E-mobility",   "title": "Electric transport in Nairobi",           "blurb": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with Roam.", "colour": "coral"},
+    "expertise-energy":        {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Energy",   "title": "Biochar & clean energy in Lombok",         "blurb": "Smallholder farmers turn crop waste into heat, soil, and income on a decentralised, open-source kiln.", "colour": "butter"},
+    "expertise-water":         {"slug": "case-mimaji",       "kind": "case",    "kicker": "Kenya · Water",         "title": "Water transparency in Nairobi",           "blurb": "Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.", "colour": "cobalt"},
+    "expertise-agriculture":   {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Agriculture","title": "Biochar in Lombok",                       "blurb": "Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.", "colour": "coral"},
+    "expertise-manufacturing": {"slug": "case-manufacturing","kind": "reading", "kicker": "East Africa · Manufacturing","title": "Assembly to Value: Local Manufacturing","blurb": "When a product moves from imported to locally assembled, whether the 'local' part actually reaches workers, suppliers, and customers.", "colour": "butter"},
+    "expertise-ai-digital":    {"slug": "case-ai-digital",   "kind": "reading", "kicker": "AI & Digital",          "title": "Digital Services in Low-Connectivity Contexts","blurb": "When a digital tool designed for always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.", "colour": "cobalt"},
+    "expertise-finance":       {"slug": "case-finance",      "kind": "reading", "kicker": "Finance · Payment rails","title": "The Payment Rail: What Mobile Money Carries","blurb": "Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.", "colour": "butter"},
+    "expertise-climate":       {"slug": "case-reef-support", "kind": "case",    "kicker": "Marine · Community rangers","title": "A Shared View of the Reef",                "blurb": "Rangers, sensors, and satellite data braided into a single picture of reef health, with Reef Support.", "colour": "coral"},
 }
 
 
@@ -86,6 +86,7 @@ HERO_COLOR: dict[str, str] = {
     "applied-research": "forest",
     "monitoring-evaluation-dissemination": "forest",
     "how-it-works": "forest",
+    "market-expansion": "forest",
     # Library — case studies and articles (warm butter)
     "case-studies": "butter",
     "case-roam": "butter",
@@ -133,6 +134,7 @@ SERVICES = [
     ("what-we-do", "Overview"),
     ("field-research", "Field Research"),
     ("applied-research", "Impact Measurement"),
+    ("market-expansion", "Market & Expansion Research"),
     ("european-impact-tracking", "European Impact Tracking"),
     ("monitoring-evaluation-dissemination", "Monitoring, Evaluation & Dissemination"),
 ]
@@ -249,6 +251,10 @@ META: dict[str, dict[str, str]] = {
     "monitoring-evaluation-dissemination": {
         "title": "Monitoring, Evaluation & Dissemination | Transitions Lab",
         "description": "Independent monitoring, evaluation, and dissemination for any project, and for European projects with Grant Agreement obligations. Grounded in evaluation science.",
+    },
+    "market-expansion": {
+        "title": "Market & Expansion Research | Transitions Lab",
+        "description": "Independent field evidence for the decision to enter a new market. Who adopts, at what price, and which failure modes to name before capital is committed.",
     },
     "how-it-works": {
         "title": "How It Works | Scope, Design, Collect, Analyse, Deliver | Transitions Lab",
@@ -927,14 +933,17 @@ def build_content_page(slug: str, md: str) -> str:
     featured = FEATURED_CASE.get(slug)
     featured_html = ""
     if featured:
+        kind = featured.get("kind", "case")
+        kind_label = "Featured field case" if kind == "case" else "Featured Lab reading (illustrative)"
+        read_label = "Read the case" if kind == "case" else "Read the reading"
         featured_html = (
-            f'<a class="case-feature c-{featured["colour"]}" href="/{featured["slug"]}">'
-            f'  <div class="stripe"><span class="kicker">Featured case study</span>'
+            f'<a class="case-feature c-{featured["colour"]} kind-{kind}" href="/{featured["slug"]}">'
+            f'  <div class="stripe"><span class="kicker">{kind_label}</span>'
             f'<span class="tag">{featured["kicker"]}</span></div>'
             f'  <div class="body">'
             f'    <h3>{featured["title"]}</h3>'
             f'    <p>{featured["blurb"]}</p>'
-            f'    <span class="read">Read the case &rarr;</span>'
+            f'    <span class="read">{read_label} &rarr;</span>'
             f'  </div>'
             f'</a>'
         )

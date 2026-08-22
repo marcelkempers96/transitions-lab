@@ -25,7 +25,7 @@ The nine levels run from a first observed principle (TRL 1) through laboratory a
 
 TRL's strength is precise, shared language for technical risk. Its limitation is equally important: it measures whether a technology works in its intended environment, not whether society is ready to adopt, govern, trust, and benefit from it. A technology can reach TRL 9 and still fail on contact with the real world.
 
-[**Download: Technology Readiness Levels, explained (PDF, 10 pages) →**](https://www.transitionslab.org/resource-trl-explained.pdf)
+[**Download: Technology Readiness Levels, explained (PDF, 10 pages) →**](/assets/resource-trl-explained.pdf)
 
 ---
 
@@ -37,7 +37,7 @@ SRL is the axis TRL cannot see, and the one closest to the heart of the Lab's wo
 
 SRL inverts TRL's starting point. Where TRL begins inside the technology and asks how mature it is, SRL begins with a societal need and asks whether an innovation genuinely meets it, in co-operation with the stakeholders it affects. Its nine levels run from identifying a societal problem (SRL 1) through testing solutions with stakeholders in real context (SRL 4 to 6) to an innovation proven in society (SRL 9).
 
-[**Download: Societal Readiness Levels, explained (PDF, 8 pages) →**](https://www.transitionslab.org/resource-srl-explained.pdf)
+[**Download: Societal Readiness Levels, explained (PDF, 8 pages) →**](/assets/resource-srl-explained.pdf)
 
 ---
 

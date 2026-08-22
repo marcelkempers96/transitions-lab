@@ -16,10 +16,10 @@ They are free to download, use, and cite with attribution. They also show, plain
 
 ## How the Lab reads the world
 
-[**The BRW Framework →**](https://www.transitionslab.org/resource-brw-framework.pdf)
+[**The BRW Framework →**](/assets/resource-brw-framework.pdf)
 *Bypass, Repurpose, Weaken.* The Lab's signature strategic framework: a mechanism-based typology of how a niche technology engages an entrenched regime, classifying each strategy by what it does to a specific lock-in barrier, and matching mechanisms to barriers. A working tool for innovators and funders, grounded in field research. **PDF, 10 pages.**
 
-[**Reading a Transition: A Primer →**](https://www.transitionslab.org/resource-transitions-primer.pdf)
+[**Reading a Transition: A Primer →**](/assets/resource-transitions-primer.pdf)
 The Lab's intellectual foundation, set out plainly: what a socio-technical system is, why the human side comes first, the recurring dynamics to look for in any transition, and how to turn that reading into evidence. **PDF, 8 pages.**
 
 ---
@@ -31,10 +31,10 @@ The Lab's intellectual foundation, set out plainly: what a socio-technical syste
 [**TRL and SRL: The Two Axes of Readiness →**](https://www.transitionslab.org/readiness-levels.html)
 A full explainer of Technology Readiness Levels and Societal Readiness Levels, with academic references: where each came from, what the nine levels mean, and why reading both together is essential. Includes two downloadable guides.
 
-[**Technology Readiness Levels, explained →**](https://www.transitionslab.org/resource-trl-explained.pdf)
+[**Technology Readiness Levels, explained →**](/assets/resource-trl-explained.pdf)
 The origins (NASA, Sadin 1974, Mankins 1995), the nine-level scale, what TRL does well, and the crucial dimension it leaves out. Fully referenced. **PDF, 10 pages.**
 
-[**Societal Readiness Levels, explained →**](https://www.transitionslab.org/resource-srl-explained.pdf)
+[**Societal Readiness Levels, explained →**](/assets/resource-srl-explained.pdf)
 The social counterpart to TRL, and the framework closest to the Lab's work: origins (Innovation Fund Denmark 2018, Bruno et al. 2020, Bernstein et al. 2022), the nine-level scale, and why SRL decides success as often as the technology does. Fully referenced. **PDF, 8 pages.**
 
 ---
@@ -43,10 +43,10 @@ The social counterpart to TRL, and the framework closest to the Lab's work: orig
 
 ## How the Lab measures
 
-[**Measuring What Actually Changed →**](https://www.transitionslab.org/resource-measurement-method.pdf)
-The Lab's methodology for field research and impact measurement: the Scope, Design, Collect, Deliver process, read across the Reach, Depth, and Experience dimensions, and the baseline discipline that separates real impact measurement from after-the-fact assertion. **PDF, 10 pages.**
+[**Measuring What Actually Changed →**](/assets/resource-measurement-method.pdf)
+The Lab's methodology for field research and impact measurement: the five-stage method (Scope, Design, Collect, Analyse & benchmark, Deliver), read across the Reach, Depth, and Experience dimensions, and the baseline discipline that separates real impact measurement from after-the-fact assertion. **PDF, 10 pages.**
 
-[**Ethics & Consent in the Field →**](https://www.transitionslab.org/resource-field-ethics.pdf)
+[**Ethics & Consent in the Field →**](/assets/resource-field-ethics.pdf)
 The Lab's working standard for doing primary research with people, honestly and safely: the four principles, informed consent done properly, power and vulnerability in the field, and data protection from collection to deletion. **PDF, 7 pages.**
 
 ---

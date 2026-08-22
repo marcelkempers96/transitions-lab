@@ -46,4 +46,3 @@ Water transparency in Nairobi is a specific case of a general pattern the Lab st
 
 *This case supports the Lab's [Water Access & Transparency programme](https://www.transitionslab.org/water.html). For the MiMaji Foundation's own work, see [mimaji.org](https://www.mimaji.org). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
 
-<!-- NOTE TO MARCEL: This case describes a field engagement with MiMaji. Confirm the actual status of the relationship and secure permission before publishing, and check the specific claims (price multiples, MajiMap feature set) against MiMaji's current work. Figures are described qualitatively and marked illustrative rather than stated as measured Lab findings. -->
