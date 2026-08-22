@@ -396,6 +396,28 @@ section + section{border-top:2px solid var(--ink);}
   margin:2em 0 2.4em;box-shadow:6px 6px 0 var(--ink);
   /* Offset the anchor scroll so the sticky header doesn't cover the top. */
   scroll-margin-top:96px;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.prose .target-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
+.prose .target-card .lede{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:clamp(17px,1.8vw,20px);line-height:1.4;font-weight:600;
+  letter-spacing:-.005em;color:var(--ink);margin:0 0 1em;
+}
+.prose .target-card .lede em{font-style:normal;color:var(--orange);}
+.prose .target-card .kicker-line{
+  display:block;font-size:11.5px;font-weight:800;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink);opacity:.55;margin:0 0 8px;
+}
+.prose .target-card .fit-list{
+  list-style:none;padding:0;margin:8px 0 4px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.prose .target-card .fit-list li{
+  position:relative;padding-left:22px;font-size:15.5px;line-height:1.45;color:var(--ink);
+}
+.prose .target-card .fit-list li::before{
+  content:"→";position:absolute;left:0;top:0;color:var(--orange);font-weight:800;
 }
 .prose .target-card .target-head{
   padding:22px 26px;border-bottom:2px solid var(--ink);
@@ -426,12 +448,15 @@ section + section{border-top:2px solid var(--ink);}
 .prose .target-card.c-cobalt .target-head{background:var(--cobalt);}
 .prose .target-card.c-forest .target-head{background:var(--forest);}
 .prose .target-card.c-plum .target-head{background:var(--plum);}
+.prose .target-card.c-euro-blue .target-head{background:var(--euro-blue);}
 .prose .target-card.c-cobalt .target-head h3,
 .prose .target-card.c-cobalt .target-tag,
 .prose .target-card.c-forest .target-head h3,
 .prose .target-card.c-forest .target-tag,
 .prose .target-card.c-plum .target-head h3,
-.prose .target-card.c-plum .target-tag{color:var(--paper);}
+.prose .target-card.c-plum .target-tag,
+.prose .target-card.c-euro-blue .target-head h3,
+.prose .target-card.c-euro-blue .target-tag{color:var(--paper);}
 .prose .target-card .target-body{padding:26px 26px 24px;color:var(--ink);}
 .prose .target-card .target-body p{margin:0 0 .9em;}
 .prose .target-card .target-body p:last-of-type{margin-bottom:0;}
