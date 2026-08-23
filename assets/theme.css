@@ -348,10 +348,10 @@ section + section{border-top:2px solid var(--ink);}
    Kicker becomes a small chip overlaid top-left, matching case-card. */
 .insight-card.has-photo .card-photo{
   position:relative;border-bottom:2px solid var(--ink);
-  aspect-ratio:16/9;overflow:hidden;background:var(--paper-2);
+  aspect-ratio:3/2;overflow:hidden;background:var(--paper-2);
 }
 .insight-card.has-photo .card-photo img{
-  width:100%;height:100%;object-fit:cover;display:block;
+  width:100%;height:100%;object-fit:contain;display:block;
 }
 .insight-card.has-photo .card-photo .kicker{
   position:absolute;top:10px;left:10px;z-index:1;
@@ -366,7 +366,7 @@ section + section{border-top:2px solid var(--ink);}
 @media(max-width:640px){
   .insight-card .stripe{padding:7px 16px;}
   .insight-card .kicker{font-size:10px;letter-spacing:.16em;}
-  .insight-card.has-photo .card-photo{aspect-ratio:2/1;}
+  .insight-card.has-photo .card-photo{aspect-ratio:3/2;}
 }
 .insight-card .body{padding:26px 24px 24px;flex:1;display:flex;flex-direction:column;gap:12px;}
 .insight-card h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.12;color:var(--ink);}
@@ -815,22 +815,21 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .prose .case-grid .case-card:hover{transform:translate(-3px,-3px);}
 .prose .case-grid .case-card .stripe{
-  padding:14px 22px;border-bottom:2px solid var(--ink);
+  padding:20px 24px;border-bottom:2px solid var(--ink);
   display:flex;align-items:center;justify-content:center;
-  min-height:110px;text-align:center;
+  aspect-ratio:3/2;text-align:center;
 }
 /* Photo variant: replaces the coloured stripe with a real image.
    The tag becomes a small chip overlaid in the top-left of the photo. */
 .prose .case-grid .case-card.has-photo .case-photo{
   position:relative;border-bottom:2px solid var(--ink);
-  aspect-ratio:16/9;overflow:hidden;background:var(--paper-2);
+  aspect-ratio:3/2;overflow:hidden;background:var(--paper-2);
 }
 @media(max-width:640px){
-  .prose .case-grid .case-card.has-photo .case-photo{aspect-ratio:2/1;}
-  .prose .case-grid .case-card .stripe{min-height:88px;}
+  .prose .case-grid .case-card .stripe{padding:18px 20px;}
 }
 .prose .case-grid .case-card.has-photo .case-photo img{
-  width:100%;height:100%;object-fit:cover;display:block;
+  width:100%;height:100%;object-fit:contain;display:block;
 }
 .prose .case-grid .case-card.has-photo .case-photo .tag{
   position:absolute;top:10px;left:10px;z-index:1;
