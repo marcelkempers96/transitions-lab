@@ -1195,27 +1195,36 @@ def build_home() -> str:
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="insight-row">
-      <a class="insight-card" href="/insight-transitions-outcomes">
-        <div class="stripe"><span class="kicker">Insight · Transitions</span></div>
+      <a class="insight-card has-photo" href="/insight-transitions-outcomes">
+        <div class="card-photo">
+          <img src="/assets/img/insight-transitions-matrix.jpg" alt="Two-by-two matrix of state capacity against niche success. Four quadrants: Directed Transitions, Coordinated Transition, Stalled Regime, Bounded Leapfrogging.">
+          <span class="kicker">Insight &middot; Transitions</span>
+        </div>
         <div class="body">
           <h3>Four Ways a Transition Lands</h3>
           <p>A two-axis diagnostic that sorts every real transition into one of four patterns. Where each fails, and how the Lab reads its own cases against the matrix.</p>
-          <span class="read">Read →</span>
+          <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card" href="/brw">
-        <div class="stripe"><span class="kicker">Framework · Method</span></div>
+      <a class="insight-card has-photo" href="/brw">
+        <div class="card-photo">
+          <img src="/assets/img/brw-framework.jpg" alt="Three-panel BRW illustration: Bypass shows a rider routing around a petrol station to a battery-swap station; Repurpose shows a former storefront converted to a service node offering air, water and digital services; Weaken shows a petrol station with one pump crossed out.">
+          <span class="kicker">Framework &middot; Method</span>
+        </div>
         <div class="body">
           <h3>The BRW Framework</h3>
           <p>Bypass, Repurpose, Weaken. Three mechanisms matched to the three barriers a niche technology actually meets, and why the choice decides what a transition reaches.</p>
-          <span class="read">Read →</span>
+          <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card" href="/insight-what-the-bond-secures">
-        <div class="stripe"><span class="kicker">Insight &middot; Energy &amp; Finance</span></div>
+      <a class="insight-card has-photo" href="/insight-eu-us">
+        <div class="card-photo">
+          <img src="/assets/img/insight-eu-us-diagram.jpg" alt="Two-panel diagram: on the left, a European institutional building and a lightbulb on a butter background; on the right, a US factory and stacks of coins on a coral background, with a faltering dashed arrow between the two.">
+          <span class="kicker">Insight &middot; Europe</span>
+        </div>
         <div class="body">
-          <h3>What the Bond Is Actually Secured On</h3>
-          <p>Off-grid solar became an asset class by turning household repayments into collateral. What secures the paper is the ability to switch the light off, and water has no equivalent.</p>
+          <h3>Europe Invents, America Scales</h3>
+          <p>Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. Where independent evidence fits in the gap.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

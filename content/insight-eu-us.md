@@ -6,7 +6,10 @@
 
 <p class="article-meta"><span class="article-date">July 2026</span> · <span class="article-reading-time">10 min read</span></p>
 
-<!-- IMAGE eu-us-hero: diagram or photo | Split-image or diagram contrasting a European lab/research setting with a US scale-up/market setting. Or a clean transatlantic map diagram. House navy + ochre. | Full-width hero under the standfirst. -->
+<figure>
+  <img src="/assets/img/insight-eu-us-diagram.jpg" alt="Two-panel diagram: on the left, a European institutional building and a lightbulb on a butter background; on the right, a US factory and stacks of coins on a coral background, with a faltering dashed arrow between the two." class="diagram">
+  <figcaption>The transatlantic asymmetry in one image. Europe files the patents; the arrow across the Atlantic is dashed and stuttering, because commercialisation and scale mostly happen on the other side.</figcaption>
+</figure>
 
 The defining feature of the transatlantic technology relationship is not a gap in ideas. It is a gap in what happens to them next.
 

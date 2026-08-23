@@ -344,9 +344,29 @@ section + section{border-top:2px solid var(--ink);}
 .insight-card:nth-child(2) .stripe{background:var(--cobalt);color:var(--paper);}
 .insight-card:nth-child(3) .stripe{background:var(--butter);color:var(--ink);}
 .insight-card .kicker{font-size:10.5px;letter-spacing:.18em;font-weight:800;text-transform:uppercase;line-height:1.2;}
+/* Photo variant: replaces the coloured stripe with a diagram or photo.
+   Kicker becomes a small chip overlaid top-left, matching case-card. */
+.insight-card.has-photo .card-photo{
+  position:relative;border-bottom:2px solid var(--ink);
+  aspect-ratio:16/9;overflow:hidden;background:var(--paper-2);
+}
+.insight-card.has-photo .card-photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.insight-card.has-photo .card-photo .kicker{
+  position:absolute;top:10px;left:10px;z-index:1;
+  padding:5px 12px;border:2px solid var(--ink);
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
+  line-height:1.2;
+}
+.insight-card.has-photo:nth-child(1) .card-photo .kicker{background:var(--coral);color:var(--ink);}
+.insight-card.has-photo:nth-child(2) .card-photo .kicker{background:var(--cobalt);color:var(--paper);}
+.insight-card.has-photo:nth-child(3) .card-photo .kicker{background:var(--butter);color:var(--ink);}
 @media(max-width:640px){
   .insight-card .stripe{padding:7px 16px;}
   .insight-card .kicker{font-size:10px;letter-spacing:.16em;}
+  .insight-card.has-photo .card-photo{aspect-ratio:2/1;}
 }
 .insight-card .body{padding:26px 24px 24px;flex:1;display:flex;flex-direction:column;gap:12px;}
 .insight-card h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.12;color:var(--ink);}
