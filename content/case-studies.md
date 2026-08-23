@@ -109,8 +109,11 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
       <span class="read">Read the reading &rarr;</span>
     </div>
   </a>
-  <a class="case-card c-coral" href="/case-finance">
-    <div class="stripe"><span class="tag">Finance · Payment rails</span></div>
+  <a class="case-card c-coral has-photo" href="/case-finance">
+    <div class="case-photo">
+      <img src="/assets/img/case-finance-hero.jpg" alt="A market vendor in a headscarf and yellow shirt confirms a mobile-money payment on her phone across the counter from a male customer holding his phone; fresh produce, onions and tomatoes on the stall.">
+      <span class="tag">Finance &middot; Payment rails</span>
+    </div>
     <div class="body">
       <h3>The Payment Rail: What Mobile Money Carries</h3>
       <p>Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.</p>
