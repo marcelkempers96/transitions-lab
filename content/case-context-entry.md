@@ -10,10 +10,8 @@
 
 <div class="case-meta">
   <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's Context Entry practice</span></div>
-  <div><span class="k">Sector</span><span class="v">Mobility · consumer hardware · market entry</span></div>
-  <div><span class="k">Region</span><span class="v">East Africa (Kenya, Uganda, Tanzania, Rwanda)</span></div>
-  <div><span class="k">Lab programme</span><span class="v">Market &amp; Expansion Research</span></div>
-  <div><span class="k">Companion service</span><span class="v"><a href="/entering-a-new-context">Entering a New Context</a></span></div>
+  <div><span class="k">Sector</span><span class="v">Mobility · consumer hardware · market entry (East Africa)</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/entering-a-new-context">Entering a New Context</a> · <a href="/market-expansion">Market &amp; Expansion Research</a></span></div>
 </div>
 
 ---

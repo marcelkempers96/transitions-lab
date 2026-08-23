@@ -73,6 +73,14 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
       <span class="read">Read the reading &rarr;</span>
     </div>
   </a>
+  <a class="case-card c-plum" href="/case-rd-prototype">
+    <div class="stripe"><span class="tag">East Africa · R&amp;D-stage prototype</span></div>
+    <div class="body">
+      <h3>Before the Freeze: A Cold-Chain Prototype Field Test</h3>
+      <p>What a European hardware venture learns when a lab-tested solar vaccine fridge meets a rural East African clinic for the first time. The R&amp;D-stage counterpart to Market Entry: the same discipline applied before the design freezes. See <a href="/research-development">Research &amp; Development Support</a>.</p>
+      <span class="read">Read the reading &rarr;</span>
+    </div>
+  </a>
   <a class="case-card c-butter" href="/case-manufacturing">
     <div class="stripe"><span class="tag">East Africa · Manufacturing</span></div>
     <div class="body">

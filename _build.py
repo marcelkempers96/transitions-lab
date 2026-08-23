@@ -96,6 +96,7 @@ HERO_COLOR: dict[str, str] = {
     "case-mimaji": "butter",
     "case-statia": "butter",
     "case-context-entry": "butter",
+    "case-rd-prototype": "butter",
     "case-manufacturing": "butter",
     "case-ai-digital": "butter",
     "case-finance": "butter",
@@ -153,18 +154,18 @@ EXPERTISE = [
 ]
 
 LIBRARY = [
+    ("articles", "Articles &amp; insights"),
     ("case-studies", "Case studies"),
-    ("brw", "The BRW framework"),
-    ("readiness-levels", "TRL & SRL"),
     ("resources", "Resources"),
-    ("articles", "Articles"),
+    ("brw", "The BRW framework"),
+    ("readiness-levels", "TRL &amp; SRL"),
 ]
 
 NAV = [
     {"slug": "__about", "label": "About", "dropdown": ABOUT},
     {"slug": "__services", "label": "Services", "dropdown": SERVICES},
     {"slug": "__expertise", "label": "Expertise", "dropdown": EXPERTISE},
-    {"slug": "__library", "label": "Library", "dropdown": LIBRARY},
+    {"slug": "__library", "label": "Reading", "dropdown": LIBRARY},
     {"slug": "contact", "href": "/contact", "label": "Contact", "cta": True},
 ]
 
@@ -351,6 +352,10 @@ META: dict[str, dict[str, str]] = {
     "case-context-entry": {
         "title": "Before the Capital: A Market-Entry Study | Transitions Lab",
         "description": "What a mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one.",
+    },
+    "case-rd-prototype": {
+        "title": "Before the Freeze: An R&D-Stage Field Test of a Cold-Chain Prototype | Transitions Lab",
+        "description": "What a European hardware venture learns when a lab-tested solar vaccine fridge meets a rural East African clinic for the first time, and how that evidence changes the next design cycle. An illustrative R&D-Support case.",
     },
     "case-manufacturing": {
         "title": "Assembly to Value: Local Manufacturing in East Africa | Transitions Lab",

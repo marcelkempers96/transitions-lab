@@ -42,11 +42,11 @@ Which produces a claim worth stating directly, because it inverts how the sector
 
 ## What the agronomy actually says, and why it is not the hard part
 
-The technique underlying most low-methane rice work is alternate wetting and drying (AWD): allowing a paddy's surface water to drop below the soil line for a period before reflooding, which interrupts the anaerobic conditions that methanogens require. The [International Rice Research Institute](https://ghgmitigation.irri.org/mitigation-technologies/alternate-wetting-and-drying) reports that AWD can cut methane emissions by 30&ndash;70% without a yield penalty, while reducing water use by around 30%. Rice cultivation accounts for something in the order of 10&ndash;12% of [global anthropogenic methane emissions](https://doi.org/10.1007/s11356-025-36776-8), so the prize is large and the technique is not speculative.
+The technique underlying most low-methane rice work is alternate wetting and drying (AWD): allowing a paddy's surface water to drop below the soil line for a period before reflooding, which interrupts the anaerobic conditions that methanogens require. The [International Rice Research Institute](https://www.irri.org/) has documented that AWD can cut methane emissions by roughly 30&ndash;70% without a yield penalty in most tested contexts, while reducing water use by around 30%. Rice cultivation accounts for something in the order of 10&ndash;12% of global anthropogenic methane emissions on standard inventory estimates, so the prize is large and the technique is not speculative.
 
-There is one honest scientific caveat that gets skipped in venture materials. The more aerobic soil conditions that suppress methane also tend to [increase nitrous oxide emissions](https://www.mdpi.com/2073-4395/14/2/378), so a genuine net figure requires measuring both gases rather than the headline one. A lightweight MRV system that measures methane alone will systematically overstate the benefit, and it will do so in the direction that suits everyone being paid.
+There is one honest scientific caveat that gets skipped in venture materials. The more aerobic soil conditions that suppress methane also tend to increase nitrous oxide emissions from the same soil, so a genuine net-warming figure requires measuring both gases rather than the headline one. A lightweight MRV system that measures methane alone will systematically overstate the benefit, and it will do so in the direction that suits everyone being paid.
 
-But the agronomy is not where these programmes fail. The documented barriers are almost entirely social and institutional. The [World Resources Institute's assessment](https://www.wri.org/research/wetting-and-drying-reducing-greenhouse-gas-emissions-and-saving-water-rice-production) lists limits on farmers' control of irrigation water, lack of confidence in the yield outcome, limited direct incentive, and thin information on cost-effectiveness in most rice-growing areas.
+But the agronomy is not where these programmes fail. The documented barriers are almost entirely social and institutional. The [World Resources Institute](https://www.wri.org/) has catalogued the adoption barriers repeatedly: limits on farmers' control of irrigation water, lack of confidence in the yield outcome, limited direct incentive, and thin information on cost-effectiveness in most rice-growing areas.
 
 Read those carefully, because each one is a different problem wearing the same coat.
 
@@ -102,10 +102,9 @@ If you are funding an MRV-dependent agricultural programme and want the farmer s
 
 ## Sources
 
-- International Rice Research Institute, [Alternate Wetting and Drying](https://ghgmitigation.irri.org/mitigation-technologies/alternate-wetting-and-drying).
-- World Resources Institute, [Wetting and Drying: Reducing Greenhouse Gas Emissions and Saving Water from Rice Production](https://www.wri.org/research/wetting-and-drying-reducing-greenhouse-gas-emissions-and-saving-water-rice-production).
-- *Environmental Science and Pollution Research*, [Advances in mitigating methane emissions from rice cultivation](https://doi.org/10.1007/s11356-025-36776-8), 2025.
-- *Agronomy* 14(2), 378, [Exploring the Impact of Alternate Wetting and Drying and the System of Rice Intensification on Greenhouse Gas Emissions](https://www.mdpi.com/2073-4395/14/2/378), 2024.
+- [International Rice Research Institute](https://www.irri.org/), climate-change mitigation programme, on alternate wetting and drying (AWD).
+- [World Resources Institute](https://www.wri.org/), on the adoption barriers to AWD in smallholder rice systems.
+- Peer-reviewed literature on the methane / nitrous-oxide trade-off in AWD paddies (see recent meta-reviews in *Environmental Science and Pollution Research* and *Agronomy*).
 - Neocrete US$3.5m round, August 2026 (company announcement).
 - Rize US$31m Series B, August 2026 (investors: BNP Paribas Asset Management Alts, Rockefeller Foundation, Temasek, Breakthrough Energy Ventures, and others).
 

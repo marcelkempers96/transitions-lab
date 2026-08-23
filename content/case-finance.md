@@ -10,10 +10,8 @@
 
 <div class="case-meta">
   <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's cross-sector payments practice</span></div>
-  <div><span class="k">Sector</span><span class="v">Financial inclusion · payment rails · consumer credit · PAYG</span></div>
-  <div><span class="k">Region</span><span class="v">East Africa (mobile money's most-studied setting), with cross-references to West Africa and South Asia</span></div>
-  <div><span class="k">Lab programme</span><span class="v">Financial Inclusion &amp; Payment Systems</span></div>
-  <div><span class="k">Companion expertise</span><span class="v"><a href="/expertise-finance">Financial Inclusion &amp; Payment Systems</a></span></div>
+  <div><span class="k">Sector</span><span class="v">Financial inclusion · payment rails · consumer credit · PAYG (East Africa, with cross-references to West Africa and South Asia)</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-finance">Financial Inclusion &amp; Payment Systems</a></span></div>
 </div>
 
 ---

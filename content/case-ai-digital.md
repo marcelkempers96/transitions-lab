@@ -10,10 +10,8 @@
 
 <div class="case-meta">
   <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's digital-services practice</span></div>
-  <div><span class="k">Sector</span><span class="v">Digital services · mobile-first apps · digital public infrastructure · AI in emerging markets</span></div>
-  <div><span class="k">Region</span><span class="v">Cross-regional (East Africa, West Africa, Southeast Asia)</span></div>
-  <div><span class="k">Lab programme</span><span class="v">AI &amp; Digital Systems</span></div>
-  <div><span class="k">Companion expertise</span><span class="v"><a href="/expertise-ai-digital">AI &amp; Digital Systems</a></span></div>
+  <div><span class="k">Sector</span><span class="v">Digital services · mobile-first apps · digital public infrastructure · AI in emerging markets (cross-regional)</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-ai-digital">AI &amp; Digital Systems</a></span></div>
 </div>
 
 ---

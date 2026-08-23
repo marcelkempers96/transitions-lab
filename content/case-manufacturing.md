@@ -10,10 +10,8 @@
 
 <div class="case-meta">
   <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's local-manufacturing practice</span></div>
-  <div><span class="k">Sector</span><span class="v">Local assembly · supplier ecosystems · industrial policy · e-mobility manufacturing</span></div>
-  <div><span class="k">Region</span><span class="v">East Africa (Kenya, Uganda, Rwanda, Ethiopia), with cross-references to Nigeria and Morocco</span></div>
-  <div><span class="k">Lab programme</span><span class="v">Local Manufacturing &amp; Supply Chains</span></div>
-  <div><span class="k">Companion expertise</span><span class="v"><a href="/expertise-manufacturing">Local Manufacturing &amp; Supply Chains</a></span></div>
+  <div><span class="k">Sector</span><span class="v">Local assembly · supplier ecosystems · industrial policy (East Africa, cross-references to Nigeria and Morocco)</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-manufacturing">Local Manufacturing &amp; Supply Chains</a></span></div>
 </div>
 
 ---

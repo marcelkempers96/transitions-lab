@@ -88,8 +88,8 @@ If you are investing in a platform-anchored fleet or charging network and want t
 
 ## Sources
 
-- Grab investment in EBOOST (Vietnam), August 2026 announcement: 2,500+ charging points, 10,000+ users, target of 6,000+ ports by early 2028.
-- Yulu US$93m round, August 2026: fleet expansion from ~50,000 to 200,000 electric two-wheelers, supporting 750,000+ daily deliveries.
+- [Grab](https://www.grab.com/) investment in [EBOOST](https://eboost.vn/) (Vietnam), August 2026 announcement: 2,500+ charging points, 10,000+ users, target of 6,000+ ports by early 2028.
+- [Yulu](https://www.yulu.bike/) US$93m round, August 2026: fleet expansion from ~50,000 to 200,000 electric two-wheelers, supporting 750,000+ daily deliveries.
 - Transitions Lab, [Who Absorbs the Gap](/insight-absorbing-the-gap), 18 June 2026.
 
 ---

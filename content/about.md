@@ -8,8 +8,8 @@ Established in 2026, on the back of years of sustained fieldwork on infrastructu
 
 <div class="callout c-coral">
   <span class="kicker">What we believe</span>
-  <h3>Technology is not destiny</h3>
-  <p>A new technology can widen access or narrow it, respect people's lives or override them. The difference is rarely the technology. It is whether anyone was paying honest attention, early enough to matter. That attention is the Lab's reason to exist.</p>
+  <h3>People first, technology second, place always</h3>
+  <p>A technology only matters when it meets a person, in a place. That is the level the Lab studies from. Not the specification sheet, not the pilot slide deck, not the aggregate figure, but the daily arithmetic of the household, the shift, the field, the shop counter where the technology either lands or does not. Everything the Lab does starts there and reports back.</p>
 </div>
 
 ---

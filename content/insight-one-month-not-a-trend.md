@@ -76,7 +76,7 @@ If you are a funder being handed a number and you want to know whether it means 
 
 ## Sources
 
-- Southeast Asian startup funding series, June to July 2026 (widely reported).
+- Southeast Asian venture-funding series, June to July 2026 (widely reported; underlying data typically compiled from Crunchbase or DealStreetAsia trackers).
 - Transitions Lab, [The Asymmetry Nobody Is Metering](/insight-ai-absorptive-capacity).
 - Transitions Lab, [Europe Invents, America Scales](/insight-eu-us).
 
