@@ -779,13 +779,17 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 .prose .case-grid .case-card .stripe{
   padding:14px 22px;border-bottom:2px solid var(--ink);
   display:flex;align-items:center;justify-content:center;
-  aspect-ratio:3/2;text-align:center;
+  min-height:110px;text-align:center;
 }
 /* Photo variant: replaces the coloured stripe with a real image.
    The tag becomes a small chip overlaid in the top-left of the photo. */
 .prose .case-grid .case-card.has-photo .case-photo{
   position:relative;border-bottom:2px solid var(--ink);
-  aspect-ratio:3/2;overflow:hidden;background:var(--paper-2);
+  aspect-ratio:16/9;overflow:hidden;background:var(--paper-2);
+}
+@media(max-width:640px){
+  .prose .case-grid .case-card.has-photo .case-photo{aspect-ratio:2/1;}
+  .prose .case-grid .case-card .stripe{min-height:88px;}
 }
 .prose .case-grid .case-card.has-photo .case-photo img{
   width:100%;height:100%;object-fit:cover;display:block;
