@@ -8,6 +8,11 @@
 
 <img class="sector-icon" src="/assets/icons/icon-ai-digital.png" alt="AI and digital systems sector icon" aria-hidden="true">
 
+<figure>
+  <img src="/assets/img/case-ai-digital-hero.jpg" alt="A young extension worker shows a phone screen in offline mode to an elderly farmer in a kofia hat, who is writing in a paper ledger. Mud-brick wall and thatched roof behind them." class="diagram">
+  <figcaption>An offline-mode digital tool meeting the setting it was built for. The screen says "offline mode"; the farmer is still keeping his own paper record. Both are correct.</figcaption>
+</figure>
+
 <div class="case-meta">
   <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's digital-services practice</span></div>
   <div><span class="k">Sector</span><span class="v">Digital services · mobile-first apps · digital public infrastructure · AI in emerging markets (cross-regional)</span></div>
