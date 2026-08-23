@@ -8,6 +8,11 @@
 
 <img class="sector-icon" src="/assets/icons/icon-manufacturing.png" alt="Local manufacturing sector icon" aria-hidden="true">
 
+<figure>
+  <img src="/assets/img/case-manufacturing-hero.jpg" alt="A young mechanic in blue overalls working on the wiring loom of an assembled two-wheeler chassis in a small East African assembly workshop, with parts racks and other workers in the background." class="diagram">
+  <figcaption>An assembly shop in East Africa. Whether "local manufacturing" is a value chain or a label is decided by what happens on this floor, and by which of the parts on the racks come from local suppliers.</figcaption>
+</figure>
+
 <div class="case-meta">
   <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's local-manufacturing practice</span></div>
   <div><span class="k">Sector</span><span class="v">Local assembly · supplier ecosystems · industrial policy (East Africa, cross-references to Nigeria and Morocco)</span></div>

@@ -87,8 +87,11 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
       <span class="read">Read the reading &rarr;</span>
     </div>
   </a>
-  <a class="case-card c-butter" href="/case-manufacturing">
-    <div class="stripe"><span class="tag">East Africa · Manufacturing</span></div>
+  <a class="case-card c-butter has-photo" href="/case-manufacturing">
+    <div class="case-photo">
+      <img src="/assets/img/case-manufacturing-hero.jpg" alt="A young mechanic in blue overalls working on the wiring loom of an assembled two-wheeler chassis in a small East African assembly workshop, with parts racks and other workers in the background.">
+      <span class="tag">East Africa &middot; Manufacturing</span>
+    </div>
     <div class="body">
       <h3>Assembly to Value: Local Manufacturing in East Africa</h3>
       <p>When a product moves from imported to locally assembled, whether the "local" part actually reaches the workers, suppliers, and customers it promises to.</p>
