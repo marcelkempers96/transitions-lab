@@ -684,7 +684,17 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   border:2px solid var(--ink);background:var(--paper);
   margin:2em 0;box-shadow:6px 6px 0 var(--ink);
   display:flex;flex-direction:column;
+  /* Stretched-link pattern: any child anchor's ::after covers the
+     whole card, so the entire block is clickable, not just the h3. */
+  position:relative;
+  transition:transform .12s ease,box-shadow .12s ease;
 }
+.prose .whatwedo-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
+.prose .whatwedo-card .whatwedo-head a::after{
+  content:"";position:absolute;inset:0;z-index:1;
+}
+/* Keep any secondary anchors (in the sub-strip) clickable above the overlay. */
+.prose .whatwedo-card .whatwedo-sub a{position:relative;z-index:2;}
 .prose .whatwedo-card .whatwedo-head{
   padding:24px 26px;border-bottom:2px solid var(--ink);color:var(--ink);
 }
