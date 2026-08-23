@@ -4,7 +4,7 @@
 
 *The European Social Fund Plus backs socially innovative projects across Europe, and asks them to prove what actually works. That proof, independent, field-based evidence of what a social experiment does to the people it serves, is what the Lab provides.*
 
-<p class="article-meta"><span class="article-date">June 2026</span> · <span class="article-reading-time">9 min read</span></p>
+<p class="article-meta"><span class="article-date">June 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
 <!-- IMAGE esf-hero: hero photo | A social-innovation setting: a training programme, a care service, a community initiative in a European context, with people present. Documentary. | Full-bleed hero under the standfirst. -->
 
@@ -66,3 +66,15 @@ If you are preparing a proposal under the ESF Social Innovation+ Initiative, an 
 
 *See the Lab's [European Impact Tracking](/european-impact-tracking) service, [Research & Development Support](/research-development) for the R&D-stage evidence that feeds an SRL claim on socially-innovative products, and [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) for the full three-part loop. To discuss a consortium role, see [Contact](/contact). For the ESF+ social innovation programme itself, see the [European Commission's page](https://european-social-fund-plus.ec.europa.eu/en/social-innovation).*
 
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

@@ -4,7 +4,7 @@
 
 *A diesel generator charging an electric motorcycle is not a contradiction. It is a ledger entry. Where the grid is unreliable, adoption is decided by which party absorbs the volatility, and whether they can survive holding it.*
 
-<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">9 min read</span></p>
+<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
 ## Electric mobility where the grid cannot be assumed
 
@@ -151,3 +151,16 @@ If you are weighing an entry decision and the electricity question keeps getting
 ---
 
 *This is an independent insight piece by Transitions Lab. For the underlying method, see [Field Research](/field-research) and the [BRW framework](/brw). For the field case behind the argument, see [the mobility case](/case-roam).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

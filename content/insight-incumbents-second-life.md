@@ -4,7 +4,7 @@
 
 *Coal India is opening a Singapore trading office with a mandate reaching into bauxite, lithium and critical minerals. Incumbents carrying their capabilities into the new regime is a good-news story about competence. It is a much harder story about conduct.*
 
-<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">9 min read</span></p>
+<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
 ## What travels with a capability
 
@@ -128,3 +128,16 @@ If you are assessing an incumbent expansion and the conduct question is being an
 ---
 
 *This is an independent insight piece by Transitions Lab. For the framework this reading uses, see [BRW](/brw); for the diagnostic behind it, see [Four Ways a Transition Lands](/insight-transitions-outcomes). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

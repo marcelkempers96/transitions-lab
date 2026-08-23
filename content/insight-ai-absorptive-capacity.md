@@ -4,7 +4,7 @@
 
 *The debate about AI and climate is stuck on how much electricity data centres draw. New modelling suggests the decisive variable is different: which sectors are ready to convert AI into productivity, and the fossil economy has a forty-year head start.*
 
-<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">10 min read</span></p>
+<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
 ## Why AI reaches the fossil economy first
 
@@ -139,3 +139,16 @@ The Lab works on this at the boundary of [AI and digital systems](/expertise-ai-
 ---
 
 *This is an independent insight piece by Transitions Lab. For the methodological spine, see the [BRW framework](/brw); for the four-quadrant reading of state capacity and niche success, see [Four Ways a Transition Lands](/insight-transitions-outcomes). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

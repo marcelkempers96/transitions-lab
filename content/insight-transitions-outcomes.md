@@ -4,7 +4,7 @@
 
 *A useful diagnostic sits at the intersection of two things people usually study separately: how much room a niche technology has been given to succeed, and how much capacity the state has to organise around it. Read together, they sort every real transition into one of four patterns, and each pattern has a different failure mode.*
 
-<p class="article-meta"><span class="article-date">August 2026</span> · <span class="article-reading-time">10 min read</span></p>
+<p class="article-meta"><span class="article-date">August 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
 Most writing on socio-technical transitions treats them as a race between an incumbent regime and a challenger niche. That framing is not wrong, but it hides the variable that tends to decide the pace and the fairness of the outcome: what the state is doing while the niche is trying to break through. A country can have world-leading niche innovation and still stall if the public architecture around it is thin; another can have deep state capacity and no niche worth aligning it to. The interesting configurations are the ones where both are moving, or neither.
 
@@ -97,3 +97,16 @@ This piece draws on the broad literature on socio-technical transitions and on s
 ---
 
 *This is an independent insight piece by Transitions Lab. For the methodological spine behind the reading, see the [BRW framework](/brw). For the field work behind the case placements, see [Case Studies](/case-studies). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

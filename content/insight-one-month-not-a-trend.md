@@ -4,6 +4,8 @@
 
 *Southeast Asian startup funding fell about 84% in a month while climate companies kept raising. Both halves of that sentence deserve more scepticism than they are getting, and the second one hides a structural problem for the founders being congratulated.*
 
+<p class="article-meta"><span class="article-date">23 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
+
 Southeast Asian startup funding fell roughly 84% from June to July 2026, to around US$698m. Climate-oriented companies kept raising through the same period.
 
 The reading being circulated is that capital has become selective and infrastructure-minded, favouring businesses attached to physical demand over lightly differentiated consumer software. That may well be true. It is not what this number shows, and the gap between the two is worth a few minutes because the same reasoning error turns up constantly in impact claims.
@@ -83,3 +85,16 @@ If you are a funder being handed a number and you want to know whether it means 
 ---
 
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [For Funders](/for-funders). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

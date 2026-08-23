@@ -4,6 +4,8 @@
 
 *One climate venture needs a verification apparatus, a certification chain, and an AI stack to function. Another needs a purchase order. The difference is not technical. It is the distance between the person who bears the cost of change and the person who receives the benefit.*
 
+<p class="article-meta"><span class="article-date">23 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
+
 Two climate ventures raised money this month in the same region, in the same week, with the same broad purpose. They have almost nothing else in common, and the difference between them is the most useful thing in the briefing.
 
 **Neocrete**, a New Zealand company, raised US$3.5m to commercialise an additive that lets lower-quality fly ash and volcanic ash replace roughly 30–50% of the cement in concrete. In Brunei the technology is slated for a deployment of around 65,000 cubic metres at the Muara Port redevelopment, which the company estimates could avoid on the order of 5,200 tonnes of CO₂ while also reducing material costs.
@@ -111,3 +113,16 @@ If you are funding an MRV-dependent agricultural programme and want the farmer s
 ---
 
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Impact Measurement](/impact-measurement) and [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

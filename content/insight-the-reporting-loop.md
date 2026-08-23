@@ -4,7 +4,7 @@
 
 *Why funders keep learning about their impact from the people least able to tell them the truth, and what a structural fix would have to look like.*
 
-<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">10 min read</span></p>
+<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
 There is a structural oddity at the heart of philanthropy and public funding that almost no one names, because naming it is awkward for everyone involved. The funder wants to know whether its money worked. The only party positioned to tell it is the grantee. And the grantee's continued existence depends on the answer being yes.
 
@@ -112,3 +112,16 @@ The reporting loop has held for decades because breaking it is hard. It is not i
 ---
 
 *This is an independent insight piece by Transitions Lab. For the accompanying service, see [For Funders](/for-funders). To discuss a portfolio, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

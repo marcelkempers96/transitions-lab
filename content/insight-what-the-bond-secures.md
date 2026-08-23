@@ -4,6 +4,8 @@
 
 *African off-grid solar has become an asset class by turning household repayments into collateral. The security is not the hardware. It is the ability to switch the light off. Water finance is now attempting the same move without that mechanism.*
 
+<p class="article-meta"><span class="article-date">24 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
+
 Africa's largest pay-as-you-go solar operators have stopped raising venture rounds and started issuing paper. d.light issued a US$50m green bond in June. Sun King has previously raised US$286m through securitised debt, using streams of household repayments as collateral. Local currency reached a record 47.2% of sector funding in 2025.
 
 That last number deserves more attention than it usually gets. Currency mismatch has killed more African energy companies than weak demand ever has: revenue in shillings or naira, debt in dollars, and a devaluation that wipes out a functioning business with satisfied customers. A sector that has moved almost half its funding into local currency has solved a problem that defeated the previous two decades of energy-access finance. Whatever else follows in this piece, that is a genuine achievement.
@@ -117,3 +119,16 @@ If you are underwriting a receivables-backed portfolio and want the household si
 ---
 
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access &amp; Off-Grid Systems](/expertise-energy), [Water &amp; Sanitation](/expertise-water), and [Financial Inclusion &amp; Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

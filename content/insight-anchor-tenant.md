@@ -4,6 +4,8 @@
 
 *Grab is putting a charging network inside its driver app. Yulu is renting out 200,000 electric bikes. Both are solving an infrastructure-financing problem by owning the demand. That works, and it concentrates three dependencies on one counterparty.*
 
+<p class="article-meta"><span class="article-date">23 August 2026</span> · <span class="article-reading-time">7 min read</span></p>
+
 Charging infrastructure has a circular problem that everybody in the sector can recite. Chargers are not built because there are too few electric vehicles. Vehicles are not bought because there are too few chargers. The conventional answers are public subsidy, a mandate, or patience.
 
 Two announcements this month describe a third answer, and it is the one that is actually working in Asia.
@@ -95,3 +97,16 @@ If you are investing in a platform-anchored fleet or charging network and want t
 ---
 
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility) and [Financial Inclusion & Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>

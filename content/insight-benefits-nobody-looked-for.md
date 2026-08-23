@@ -4,6 +4,8 @@
 
 *New evidence that upgrading informal settlements delivers heat resilience raises a harder question than whether it is true. Slum upgrading has been happening for fifty years. The benefit was not hidden. Nobody was collecting the data, because it was not in the results framework.*
 
+<p class="article-meta"><span class="article-date">24 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
+
 A study published in *npj Urban Sustainability* on 10 August finds empirical evidence that upgrading informal settlements produces meaningful heat resilience benefits even where climate adaptation was never the purpose of the intervention. Better infrastructure, better health outcomes during heatwaves. Drainage, housing, streets, shade and basic services functioning as adaptation technology without being labelled as such.
 
 The finding is welcome and plausible. The more useful question is a different one.
@@ -111,3 +113,16 @@ If you are running or funding an upgrading programme and suspect it is doing mor
 ---
 
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Monitoring, Evaluation &amp; Dissemination](/monitoring-evaluation-dissemination) and [Impact Measurement](/impact-measurement). To discuss a study, see [Contact](/contact).*
+
+<div class="article-nav">
+  <a class="article-nav-card" href="/articles">
+    <span class="anc-label">Read more</span>
+    <span class="anc-title">Articles &amp; insights</span>
+    <span class="anc-cta">See all articles &rarr;</span>
+  </a>
+  <a class="article-nav-card" href="/case-studies">
+    <span class="anc-label">See it in the field</span>
+    <span class="anc-title">Case studies</span>
+    <span class="anc-cta">See all case studies &rarr;</span>
+  </a>
+</div>
