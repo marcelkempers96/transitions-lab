@@ -35,6 +35,11 @@ Grounded in real engagements: electric transport in Nairobi ([Kenyan e-mobility 
 
 Most research fails in one of two directions: too elaborate to repeat affordably, or too thin to tell you anything new. Our standard is the middle: structured enough to compare, rich enough to matter.
 
+<figure>
+  <img src="/assets/img/photo-field-survey.jpg" alt="A researcher holds a phone displaying a mobility survey with the title 'Kibera Mobility Study'; a respondent in a cap sits opposite, thinking through the answer. A boda-boda motorcycle is parked behind them." class="diagram">
+  <figcaption>A mobility survey in progress in Kibera, Nairobi. Structured instrument, in-person delivery, one respondent at a time. Every answer is a person, not a row in a dataset.</figcaption>
+</figure>
+
 ---
 
 ## Ethics and rigour are not optional extras
