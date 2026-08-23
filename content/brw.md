@@ -4,7 +4,7 @@
 
 *Bypass, Repurpose, Weaken: a mechanism-based typology of the strategies a niche actor uses to engage an entrenched regime, classified by how each strategy acts on a specific lock-in barrier.*
 
-<p class="article-meta"><span class="article-date">July 2026</span> &middot; <span class="article-reading-time">12 min read</span></p>
+<p class="article-meta"><span class="article-date">July 2026</span> · <span class="article-reading-time">12 min read</span></p>
 
 Every niche technology arrives into a world already run by an incumbent regime: an aligned configuration of technologies, infrastructures, institutions, habits, and expectations that resists change. How a niche actor engages that regime, barrier by barrier, largely determines whether it succeeds and for whom.
 
@@ -60,4 +60,4 @@ That cross-sector, mechanism-level reading is precisely the kind of insight a co
 
 ---
 
-*The BRW framework is developed in full, with its academic grounding and a worked case study, in the downloadable [BRW Framework resource](/assets/resource-brw-framework.pdf). It runs through the Lab's [articles](/articles) and [case studies](https://www.transitionslab.org/case-studies.html). To discuss how it applies to your work, see [Contact](https://www.transitionslab.org/contact.html).*
+*The BRW framework is developed in full, with its academic grounding and a worked case study, in the downloadable [BRW Framework resource](/assets/resource-brw-framework.pdf). It runs through the Lab's [articles](/articles) and [case studies](/case-studies). To discuss how it applies to your work, see [Contact](/contact).*

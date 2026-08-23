@@ -26,7 +26,7 @@ It is the only region-scale story in the world where, in some years, the number 
 
 The technology is largely settled. Whether a household connects, keeps paying, and benefits depends on affordability, reliability, and whether the system was designed around how people actually use power.
 
-The Lab documents that. We are the party asking whether locally-owned developers can scale, whether access converts into the productive uses that make it self-sustaining, and **who sits at the very end of the access curve**, the finding that decides if a transition is fair. Our [Pyropower case study](https://www.transitionslab.org/case-pyropower.html) shows waste-to-energy at the smallholder scale.
+The Lab documents that. We are the party asking whether locally-owned developers can scale, whether access converts into the productive uses that make it self-sustaining, and **who sits at the very end of the access curve**, the finding that decides if a transition is fair. Our [Pyropower case study](/case-pyropower) shows waste-to-energy at the smallholder scale.
 
 ---
 
@@ -48,8 +48,8 @@ We draw on our own fieldwork and the public evidence base.
 - IEA, [Financing Electricity Access in Africa](https://www.iea.org/reports/financing-electricity-access-in-africa).
 - World Bank & ESMAP, [Tracking SDG7](https://trackingsdg7.esmap.org/) and [Mission 300](https://www.worldbank.org/en/news/press-release/2025/06/25/energy-access-has-improved-yet-international-financial-support-still-needed-to-boost-progress-and-address-disparities).
 - ESMAP, [Off-Grid Solar Market Trends](https://www.esmap.org/).
-- Our own [Pyropower case study](https://www.transitionslab.org/case-pyropower.html).
+- Our own [Pyropower case study](/case-pyropower).
 
 ---
 
-*See the [Pyropower case study](https://www.transitionslab.org/case-pyropower.html). For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*See the [Pyropower case study](/case-pyropower). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

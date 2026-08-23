@@ -72,7 +72,7 @@ Waste into worth is the easy part to demonstrate. Worth into whose hands is the 
 
 ---
 
-*For the Lab's field methods, see [Field Research](https://www.transitionslab.org/field-research.html). For impact measurement of programmes like this, see [Impact Measurement](https://www.transitionslab.org/impact-measurement.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*For the Lab's field methods, see [Field Research](/field-research). For impact measurement of programmes like this, see [Impact Measurement](/impact-measurement). To discuss a study, see [Contact](/contact).*
 
 ---
 

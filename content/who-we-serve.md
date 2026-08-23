@@ -2,7 +2,7 @@
 
 # Who We Serve
 
-*Five kinds of organisation come to the Lab, each with a different decision to make. What holds them together is an independent read of what a technology or programme actually does to real people.*
+*Five kinds of organisation come to the Lab. Each with a different decision in front of them, each needing evidence they can act on.*
 
 Different audiences arrive with different questions. Most engagements combine more than one of the Lab's services. Every card below names the mix that tends to fit, and links you straight into it.
 
@@ -22,7 +22,7 @@ Different audiences arrive with different questions. Most engagements combine mo
   </div>
 </div>
 
-<div class="target-card c-cobalt" id="funders">
+<div class="target-card c-butter" id="funders">
   <div class="target-head">
     <h3>Funders &amp; public bodies</h3>
   </div>

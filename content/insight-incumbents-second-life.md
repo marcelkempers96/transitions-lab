@@ -4,7 +4,7 @@
 
 *Coal India is opening a Singapore trading office with a mandate reaching into bauxite, lithium and critical minerals. Incumbents carrying their capabilities into the new regime is a good-news story about competence. It is a much harder story about conduct.*
 
-<p class="article-meta"><span class="article-date">22 August 2026</span> &middot; <span class="article-reading-time">9 min read</span></p>
+<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">9 min read</span></p>
 
 ## What travels with a capability
 

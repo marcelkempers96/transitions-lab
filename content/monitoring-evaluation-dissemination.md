@@ -46,7 +46,7 @@ MED is not improvised. It rests on decades of evaluation methodology, and the La
 
 **Reach, depth, experience.** The Lab reads impact across three dimensions of its own measurement method: reach (who is affected, and who is left out), depth (how materially things change), and experience (what the change feels like to the people inside it). This keeps evaluation attentive to distribution and equity, which aggregate figures routinely hide.
 
-**Societal Readiness alongside Technology Readiness.** For technology projects, the Lab pairs technical maturity (TRL) with Societal Readiness Levels (SRL), which measure how ready society is to adopt and benefit from an innovation. Reading both axes together is what prevents the classic failure of a technically finished result that society will not accept. See the Lab's [readiness levels explainer](https://www.transitionslab.org/readiness-levels.html).
+**Societal Readiness alongside Technology Readiness.** For technology projects, the Lab pairs technical maturity (TRL) with Societal Readiness Levels (SRL), which measure how ready society is to adopt and benefit from an innovation. Reading both axes together is what prevents the classic failure of a technically finished result that society will not accept. See the Lab's [readiness levels explainer](/readiness-levels).
 
 **Baselines and mixed methods.** Impact is a change, and a change needs a before. Every design captures a baseline with the same instrument that will be used again later, and combines quantitative reach with qualitative depth, because neither alone tells the whole story.
 
@@ -66,7 +66,7 @@ The Lab acts as the independent MED partner that keeps this rigorous and honest:
 - **Run throughout.** Continuous monitoring against indicators, midline reads that let the consortium steer while there is still time, and an evidence trail that maps to periodic reporting.
 - **Close with proof.** An endline evaluation against the DAC criteria and the project's own targets, with dissemination that genuinely reaches the intended audiences and the documentation to show it.
 
-This connects directly to the Lab's dedicated [European Impact Tracking](https://www.transitionslab.org/european-impact-tracking.html) service, the baseline-to-endline measurement that sits at the heart of a strong PDEC.
+This connects directly to the Lab's dedicated [European Impact Tracking](/european-impact-tracking) service, the baseline-to-endline measurement that sits at the heart of a strong PDEC.
 
 ---
 
@@ -76,16 +76,16 @@ This connects directly to the Lab's dedicated [European Impact Tracking](https:/
 
 The Lab's field engagements show MED as a live system rather than a paperwork exercise.
 
-[**Rangers for marine ecosystems, Reef Support →**](https://www.transitionslab.org/case-reef-support.html)
+[**Rangers for marine ecosystems, Reef Support →**](/case-reef-support)
 A study in the measurement-to-action gap: sensors and satellites produce data, but the evaluation question is whether that evidence is trusted and owned enough to change what communities and decision-makers actually do. Dissemination here is not a report; it is a shared, credible picture of reef health.
 
-[**Electric transport in Nairobi, Roam →**](https://www.transitionslab.org/case-roam.html)
+[**Electric transport in Nairobi, Roam →**](/case-roam)
 Monitoring adoption against a baseline, evaluating what actually moves a rider (running cost, financing, charging access), and reading who is reached and who is priced out, the reach, depth, and experience dimensions in practice.
 
 [**The measurement method, in full →**](/assets/resource-measurement-method.pdf)
 The Lab's five-stage method (Scope, Design, Collect, Analyse & benchmark, Deliver) and the reach, depth, experience lens, set out as a downloadable guide with a worked example.
 
-[**The European impact-tracking template →**](https://www.transitionslab.org/impact-tracking-template.html)
+[**The European impact-tracking template →**](/impact-tracking-template)
 A fill-in baseline, midline, and endline framework a project can run from day one.
 
 ---
@@ -114,7 +114,7 @@ European Commission (2021). *Horizon Europe Model Grant Agreement*, Article 17 (
 
 European Commission / REA. *Guide on Communication, Dissemination and Exploitation for Horizon Europe beneficiaries*. Research Executive Agency.
 
-Innovation Fund Denmark (2018). *Societal Readiness Levels (SRL)*. See the Lab's [readiness levels explainer](https://www.transitionslab.org/readiness-levels.html) for the full account.
+Innovation Fund Denmark (2018). *Societal Readiness Levels (SRL)*. See the Lab's [readiness levels explainer](/readiness-levels) for the full account.
 
 ---
 

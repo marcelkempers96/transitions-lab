@@ -42,5 +42,5 @@ Context Entry is a specific application of the Lab's whole method: start from th
 
 ---
 
-*This is an illustrative composite of the Lab's [market and expansion research](https://www.transitionslab.org/what-we-do.html), drawn from the pattern of Context Entry work rather than a single named client. To discuss a study for your own expansion, see [Contact](https://www.transitionslab.org/contact.html).*
+*This is an illustrative composite of the Lab's [market and expansion research](/what-we-do), drawn from the pattern of Context Entry work rather than a single named client. To discuss a study for your own expansion, see [Contact](/contact).*
 

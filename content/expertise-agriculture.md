@@ -23,7 +23,7 @@ A waste-to-value technology can offer three things at once, fuel, better soil, c
 
 The Lab documents that. We are usually the only party asking whether an open-source or decentralised model widens access or quietly concentrates benefit among the already-resourced, and whether a carbon-market promise reaches the farmer or is captured upstream. Those are the findings a partner cannot get from a yield trial.
 
-Our [Pyropower case study](https://www.transitionslab.org/case-pyropower.html) in Lombok traces exactly this: farmers who named an open-source kiln *Tumbuh*, "to grow," and what that adoption did, and did not, distribute.
+Our [Pyropower case study](/case-pyropower) in Lombok traces exactly this: farmers who named an open-source kiln *Tumbuh*, "to grow," and what that adoption did, and did not, distribute.
 
 ---
 
@@ -56,8 +56,8 @@ We draw on our own fieldwork and the public evidence base.
 - CGIAR, [agriculture research in low-income contexts](https://www.cgiar.org/).
 - IFAD, [rural development and smallholder livelihoods](https://www.ifad.org/).
 - UNIDO, [agro-industrial processing and value addition](https://www.unido.org/).
-- Our own [Pyropower case study](https://www.transitionslab.org/case-pyropower.html).
+- Our own [Pyropower case study](/case-pyropower).
 
 ---
 
-*See the [Pyropower case study](https://www.transitionslab.org/case-pyropower.html). For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*See the [Pyropower case study](/case-pyropower). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

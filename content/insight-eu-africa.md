@@ -4,7 +4,7 @@
 
 *Europe is committing hundreds of billions to Africa, and Africa is becoming the largest growth market of the century. Where do the two genuinely fit, and what stands between the investment and the impact it promises?*
 
-<p class="article-meta"><span class="article-date">July 2026</span> &middot; <span class="article-reading-time">11 min read</span></p>
+<p class="article-meta"><span class="article-date">July 2026</span> · <span class="article-reading-time">11 min read</span></p>
 
 <!-- IMAGE eu-africa-hero: diagram or photo | A transatlantic/Euro-African corridor map, or a strong field image tying the two - a port, a solar array, a market. House navy + ochre. | Full-width hero under the standfirst. -->
 
@@ -73,4 +73,4 @@ This piece draws on public analysis.
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](https://www.transitionslab.org/what-we-do.html) and [European Impact Tracking](https://www.transitionslab.org/european-impact-tracking.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [European Impact Tracking](/european-impact-tracking). To discuss a study, see [Contact](/contact).*

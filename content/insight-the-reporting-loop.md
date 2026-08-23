@@ -4,7 +4,7 @@
 
 *Why funders keep learning about their impact from the people least able to tell them the truth, and what a structural fix would have to look like.*
 
-<p class="article-meta"><span class="article-date">22 August 2026</span> &middot; <span class="article-reading-time">10 min read</span></p>
+<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">10 min read</span></p>
 
 There is a structural oddity at the heart of philanthropy and public funding that almost no one names, because naming it is awkward for everyone involved. The funder wants to know whether its money worked. The only party positioned to tell it is the grantee. And the grantee's continued existence depends on the answer being yes.
 

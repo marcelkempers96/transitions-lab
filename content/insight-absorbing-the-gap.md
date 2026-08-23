@@ -4,7 +4,7 @@
 
 *A diesel generator charging an electric motorcycle is not a contradiction. It is a ledger entry. Where the grid is unreliable, adoption is decided by which party absorbs the volatility, and whether they can survive holding it.*
 
-<p class="article-meta"><span class="article-date">22 August 2026</span> &middot; <span class="article-reading-time">9 min read</span></p>
+<p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">9 min read</span></p>
 
 ## Electric mobility where the grid cannot be assumed
 

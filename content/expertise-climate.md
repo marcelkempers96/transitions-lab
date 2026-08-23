@@ -28,7 +28,7 @@ The Lab documents that gap. We treat measurement-to-action as a transition in it
 
 The principle holds across systems, and we deliberately work across several, so a partner is not buying a single-habitat specialist:
 
-- **Marine and coral reef** systems, where satellites, sensors, and community rangers must be braided into one trusted picture. Our [Reef Support case study](https://www.transitionslab.org/case-reef-support.html) is the worked example.
+- **Marine and coral reef** systems, where satellites, sensors, and community rangers must be braided into one trusted picture. Our [Reef Support case study](/case-reef-support) is the worked example.
 - **Coastal and fishing** communities adapting to ecosystem change and shifting livelihoods.
 - **Forest, mangrove, and wetland** monitoring, where local stewardship and carbon claims meet.
 - **Freshwater and catchment** ecosystems, linking to the Lab's water expertise.
@@ -54,8 +54,8 @@ We draw on our own fieldwork and the public evidence base.
 - UNEP, [marine, biodiversity, and ecosystem work](https://www.unep.org/).
 - IPBES, [global biodiversity assessments](https://www.ipbes.net/).
 - World Bank, [climate adaptation and resilience](https://www.worldbank.org/en/topic/climatechange).
-- Our own [Reef Support case study](https://www.transitionslab.org/case-reef-support.html).
+- Our own [Reef Support case study](/case-reef-support).
 
 ---
 
-*See the [Reef Support case study](https://www.transitionslab.org/case-reef-support.html). For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

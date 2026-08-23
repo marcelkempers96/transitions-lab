@@ -28,7 +28,7 @@ The multiplier is real, but only if the value is genuinely retained. Assembly th
 
 The Lab documents the difference: whether local suppliers are truly integrated or left at the low-skill edge, whether the jobs created are quality jobs, and whether small enterprises benefit or are squeezed. Those distributional findings are what a partner needs to know before claiming a development dividend, and what they cannot get from output figures alone.
 
-This connects directly to the Lab's [e-mobility](https://www.transitionslab.org/expertise-e-mobility.html) and energy work, where local assembly is central.
+This connects directly to the Lab's [e-mobility](/expertise-e-mobility) and energy work, where local assembly is central.
 
 ---
 
@@ -53,4 +53,4 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). See also our [E-Mobility expertise](https://www.transitionslab.org/expertise-e-mobility.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*For how we study transitions like this, see [Field Research](/field-research). See also our [E-Mobility expertise](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*

@@ -4,7 +4,7 @@
 
 *A useful diagnostic sits at the intersection of two things people usually study separately: how much room a niche technology has been given to succeed, and how much capacity the state has to organise around it. Read together, they sort every real transition into one of four patterns, and each pattern has a different failure mode.*
 
-<p class="article-meta"><span class="article-date">August 2026</span> &middot; <span class="article-reading-time">10 min read</span></p>
+<p class="article-meta"><span class="article-date">August 2026</span> · <span class="article-reading-time">10 min read</span></p>
 
 Most writing on socio-technical transitions treats them as a race between an incumbent regime and a challenger niche. That framing is not wrong, but it hides the variable that tends to decide the pace and the fairness of the outcome: what the state is doing while the niche is trying to break through. A country can have world-leading niche innovation and still stall if the public architecture around it is thin; another can have deep state capacity and no niche worth aligning it to. The interesting configurations are the ones where both are moving, or neither.
 

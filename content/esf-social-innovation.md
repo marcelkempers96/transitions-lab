@@ -4,7 +4,7 @@
 
 *The European Social Fund Plus backs socially innovative projects across Europe, and asks them to prove what actually works. That proof, independent, field-based evidence of what a social experiment does to the people it serves, is what the Lab provides.*
 
-<p class="article-meta"><span class="article-date">June 2026</span> &middot; <span class="article-reading-time">9 min read</span></p>
+<p class="article-meta"><span class="article-date">June 2026</span> · <span class="article-reading-time">9 min read</span></p>
 
 <!-- IMAGE esf-hero: hero photo | A social-innovation setting: a training programme, a care service, a community initiative in a European context, with people present. Documentary. | Full-bleed hero under the standfirst. -->
 
@@ -38,7 +38,7 @@ The Lab acts as the independent measurement and evidence partner on a social-inn
 
 **An honest scaling judgement.** Scaling a social innovation that does not actually work wastes public money and trust. The Lab's independence is the point: it reports what the evidence says, including when the finding is that an approach should not be scaled as-is.
 
-This connects directly to the Lab's wider [Monitoring, Evaluation & Dissemination](https://www.transitionslab.org/monitoring-evaluation-dissemination.html) offer and its [European Impact Tracking](https://www.transitionslab.org/european-impact-tracking.html) service.
+This connects directly to the Lab's wider [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) offer and its [European Impact Tracking](/european-impact-tracking) service.
 
 ---
 

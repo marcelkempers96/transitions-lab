@@ -53,4 +53,4 @@ We draw on the Lab's water roots in Delft, our own fieldwork, and the public evi
 
 ---
 
-*For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). For the Lab's water programme, see [Water Access](https://www.transitionslab.org/water.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*For how we study transitions like this, see [Field Research](/field-research). For the Lab's water programme, see [Water Access](/water). To discuss a study, see [Contact](/contact).*

@@ -4,7 +4,7 @@
 
 *Europe produces world-class innovation and struggles to commercialise it. The United States does the reverse. What does that asymmetry mean for European technology, and where can an independent research team add value in the gap between the two?*
 
-<p class="article-meta"><span class="article-date">July 2026</span> &middot; <span class="article-reading-time">10 min read</span></p>
+<p class="article-meta"><span class="article-date">July 2026</span> · <span class="article-reading-time">10 min read</span></p>
 
 <!-- IMAGE eu-us-hero: diagram or photo | Split-image or diagram contrasting a European lab/research setting with a US scale-up/market setting. Or a clean transatlantic map diagram. House navy + ochre. | Full-width hero under the standfirst. -->
 
@@ -73,4 +73,4 @@ This piece draws on public analysis.
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](https://www.transitionslab.org/what-we-do.html) and [European Impact Tracking](https://www.transitionslab.org/european-impact-tracking.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [European Impact Tracking](/european-impact-tracking). To discuss a study, see [Contact](/contact).*

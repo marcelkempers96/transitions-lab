@@ -26,7 +26,7 @@ The central risk is not technical failure. It is that these tools are deployed i
 
 The World Bank frames AI readiness as four Cs, connectivity, compute, context, competency. The Lab works on the last two, the human and local ones.
 
-A model trained elsewhere may not fit local realities; a service may assume connectivity or literacy that is not there; a tool may shine in a demo and fail in a clinic. The Lab documents whether an AI system is trusted, usable, owned, and acted upon, the questions that decide real-world impact and that pure model evaluation never touches. Our [Reef Support case study](https://www.transitionslab.org/case-reef-support.html) shows the pattern: the real challenge was human trust, not accuracy.
+A model trained elsewhere may not fit local realities; a service may assume connectivity or literacy that is not there; a tool may shine in a demo and fail in a clinic. The Lab documents whether an AI system is trusted, usable, owned, and acted upon, the questions that decide real-world impact and that pure model evaluation never touches. Our [Reef Support case study](/case-reef-support) shows the pattern: the real challenge was human trust, not accuracy.
 
 ---
 
@@ -47,8 +47,8 @@ We draw on our own fieldwork and the public evidence base.
 - World Bank, [Digital Progress and Trends Report 2025](https://www.worldbank.org/en/publication/dptr2025-ai-foundations) and the [Atlas of AI inequalities](https://data360.worldbank.org/en/atlas/artificial-intelligence/).
 - World Bank, [World Development Report 2026 on AI](https://www.worldbank.org/en/publication/wdr2026).
 - IMF, [research on AI, compute access, and inequality](https://www.imf.org/).
-- Our own [Reef Support case study](https://www.transitionslab.org/case-reef-support.html).
+- Our own [Reef Support case study](/case-reef-support).
 
 ---
 
-*See the [Reef Support case study](https://www.transitionslab.org/case-reef-support.html). For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

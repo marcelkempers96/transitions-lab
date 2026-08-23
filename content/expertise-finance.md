@@ -26,7 +26,7 @@ An electric motorcycle is adopted only if a rider can pay over time. A solar sys
 
 A financing model designed to help can also move risk onto those least able to bear it. The line between the two is invisible in adoption figures and clear only in the field.
 
-The Lab documents it: whether pay-as-you-go genuinely expands opportunity, who is reached and who stays excluded, and how the friction of fees decides whether a transition holds. Our [Roam case study](https://www.transitionslab.org/case-roam.html) shows the double edge, pay-as-you-go is what lets a rider earn into ownership, and the per-transaction fee is the thing they would fix first.
+The Lab documents it: whether pay-as-you-go genuinely expands opportunity, who is reached and who stays excluded, and how the friction of fees decides whether a transition holds. Our [Roam case study](/case-roam) shows the double edge, pay-as-you-go is what lets a rider earn into ownership, and the per-transaction fee is the thing they would fix first.
 
 ---
 
@@ -47,8 +47,8 @@ We draw on the Lab's own finance research programme, our fieldwork, and the publ
 - World Bank, [Global Findex Database](https://www.worldbank.org/en/publication/globalfindex).
 - CGAP, [research on financial services for the poor](https://www.cgap.org/).
 - GSMA, [State of the Industry Report on Mobile Money](https://www.gsma.com/mobilefordevelopment/mobile-money/).
-- Our own [Finance programme](https://www.transitionslab.org/finance.html) and [Roam case study](https://www.transitionslab.org/case-roam.html).
+- Our own [Finance programme](/finance) and [Roam case study](/case-roam).
 
 ---
 
-*See the [Roam case study](https://www.transitionslab.org/case-roam.html) and the [Finance programme](https://www.transitionslab.org/finance.html). For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*See the [Roam case study](/case-roam) and the [Finance programme](/finance). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

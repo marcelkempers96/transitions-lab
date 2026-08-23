@@ -29,7 +29,7 @@ And the economics have tipped. A recent [World Bank analysis](https://www.worldb
 
 The vehicle works. Whether a rider adopts turns on the daily economics of their route, the reliability of charging, and financing that removes the battery, the costliest part, from the purchase.
 
-The Lab documents what actually carries a rider across, and, just as valuable to a partner, **who gets left behind** when financing or home charging is out of reach. That distributional read is the insight a sales figure hides. Our [Roam case study](https://www.transitionslab.org/case-roam.html) traces one manufacturer's crossing in Nairobi.
+The Lab documents what actually carries a rider across, and, just as valuable to a partner, **who gets left behind** when financing or home charging is out of reach. That distributional read is the insight a sales figure hides. Our [Roam case study](/case-roam) traces one manufacturer's crossing in Nairobi.
 
 ---
 
@@ -54,4 +54,4 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*See the [Roam case study](https://www.transitionslab.org/case-roam.html). For how we study transitions like this, see [Field Research](https://www.transitionslab.org/field-research.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*See the [Roam case study](/case-roam). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

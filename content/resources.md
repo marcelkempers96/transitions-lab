@@ -28,7 +28,7 @@ The Lab's intellectual foundation, set out plainly: what a socio-technical syste
 
 ## Understanding technical and social readiness
 
-[**TRL and SRL: The Two Axes of Readiness →**](https://www.transitionslab.org/readiness-levels.html)
+[**TRL and SRL: The Two Axes of Readiness →**](/readiness-levels)
 A full explainer of Technology Readiness Levels and Societal Readiness Levels, with academic references: where each came from, what the nine levels mean, and why reading both together is essential. Includes two downloadable guides.
 
 [**Technology Readiness Levels, explained →**](/assets/resource-trl-explained.pdf)
@@ -58,10 +58,10 @@ How the Lab turns raw interviews, surveys, and observational data into defensibl
 
 ## Instruments to use in the field
 
-[**In-Depth Interview Guide →**](https://www.transitionslab.org/interview-guide.html)
+[**In-Depth Interview Guide →**](/interview-guide)
 A demonstration of the depth the Lab reaches in qualitative fieldwork: the "five levels down" principle, the funnel structure of a session, and the probing techniques that get from surface fact to lived meaning.
 
-[**European Impact-Tracking Template →**](https://www.transitionslab.org/impact-tracking-template.html)
+[**European Impact-Tracking Template →**](/impact-tracking-template)
 A fill-in framework for measuring the before-and-after impact of a European project, demonstration, or socially innovative action: set up at the start, run while the work is live, closed out with proof.
 
 ---
@@ -76,4 +76,4 @@ If a framework or method here fits a decision you are facing, that is usually th
 
 ---
 
-*For how the Lab applies these in practice, see [What We Do](https://www.transitionslab.org/what-we-do.html) and [How It Works](https://www.transitionslab.org/how-it-works.html). To discuss a study, see [Contact](https://www.transitionslab.org/contact.html).*
+*For how the Lab applies these in practice, see [What We Do](/what-we-do) and [How It Works](/how-it-works). To discuss a study, see [Contact](/contact).*
