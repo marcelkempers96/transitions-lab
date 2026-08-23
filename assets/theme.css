@@ -763,11 +763,17 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .prose .case-grid .case-card:hover{transform:translate(-3px,-3px);}
 .prose .case-grid .case-card .stripe{
-  padding:14px 20px;border-bottom:2px solid var(--ink);
+  padding:8px 18px;border-bottom:2px solid var(--ink);
+  display:flex;align-items:center;min-height:0;
 }
 .prose .case-grid .case-card .tag{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:11px;letter-spacing:.20em;text-transform:uppercase;font-weight:800;
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
+  line-height:1.2;
+}
+@media(max-width:640px){
+  .prose .case-grid .case-card .stripe{padding:7px 16px;}
+  .prose .case-grid .case-card .tag{font-size:10px;letter-spacing:.16em;}
 }
 .prose .case-grid .case-card.c-coral .stripe{background:var(--coral);color:var(--ink);}
 .prose .case-grid .case-card.c-butter .stripe{background:var(--butter);color:var(--ink);}
