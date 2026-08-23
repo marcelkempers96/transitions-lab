@@ -33,7 +33,6 @@ Different audiences arrive with different questions. Most engagements combine mo
     <div class="target-ctas">
       <a class="target-cta" href="/for-funders">For Funders &rarr;</a>
       <a class="target-cta" href="/measuring-change">Measuring Change &rarr;</a>
-      <a class="target-cta" href="/reporting-to-funders">Reporting to Funders &rarr;</a>
     </div>
   </div>
 </div>

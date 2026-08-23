@@ -1100,19 +1100,7 @@ def build_home() -> str:
       <a href="/expertise-climate">Climate Resilience</a>
     </div>
 
-    <p class="net-logos-label">Partners we have worked with</p>
-    <div class="net-logo-bar" aria-label="Partner logos">
-      <div class="net-logo-track">
-        <a href="/case-roam" title="Roam"><img src="/assets/logos/logo-roam.png" alt="Roam"></a>
-        <a href="/case-mimaji" title="MiMaji Foundation"><img src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
-        <a href="/case-reef-support" title="Reef Support"><img src="/assets/logos/logo-reef-support.png" alt="Reef Support"></a>
-        <a href="https://www.tudelft.nl/" target="_blank" rel="noopener" title="TU Delft"><img src="/assets/logos/logo-tu-delft.png" alt="TU Delft"></a>
-        <a href="/case-roam" title="Roam" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-roam.png" alt="" aria-hidden="true"></a>
-        <a href="/case-mimaji" title="MiMaji Foundation" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-mimaji.png" alt="" aria-hidden="true"></a>
-        <a href="/case-reef-support" title="Reef Support" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-reef-support.png" alt="" aria-hidden="true"></a>
-        <a href="https://www.tudelft.nl/" target="_blank" rel="noopener" title="TU Delft" aria-hidden="true" tabindex="-1"><img src="/assets/logos/logo-tu-delft.png" alt="" aria-hidden="true"></a>
-      </div>
-    </div>
+    <p style="margin-top:36px;"><a href="/expertise" class="btn btn-ghost">See all expertise &rarr;</a></p>
   </div>
 </section>
 
@@ -1160,28 +1148,6 @@ def build_home() -> str:
   <div class="wrap">
     <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is <span class="highlight">paying honest attention</span> to what happens to people on the ground.</blockquote>
     <cite>- Transitions Lab</cite>
-  </div>
-</section>
-
-<!-- OUR EXPERTISE - eight fields in a bordered grid -->
-<section class="section-paper">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Our expertise</p>
-      <h2>Where the Lab has depth.</h2>
-      <p>Eight sectors we work in, with real fieldwork behind each one. Every study starts where the people are.</p>
-    </div>
-    <div class="expertise-grid">
-      <a class="exp-card" href="/expertise-e-mobility"><img class="exp-icon" src="/assets/icons/icon-emobility.png" alt="" aria-hidden="true"><div class="exp-num">01</div><h3>E-Mobility &amp; Transport</h3><p>Electric two- and three-wheelers, bus fleets, and the finance that carries them.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-energy"><img class="exp-icon" src="/assets/icons/icon-energy.png" alt="" aria-hidden="true"><div class="exp-num">02</div><h3>Energy Access</h3><p>Off-grid solar, mini-grids, and the boundary where public planning takes over.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-water"><img class="exp-icon" src="/assets/icons/icon-water.png" alt="" aria-hidden="true"><div class="exp-num">03</div><h3>Water &amp; Sanitation</h3><p>Safe water access, transparency, and community-based accountability.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-agriculture"><img class="exp-icon" src="/assets/icons/icon-agriculture.png" alt="" aria-hidden="true"><div class="exp-num">04</div><h3>Regenerative Agriculture</h3><p>Smallholder adoption of technologies that turn waste into soil, energy, and income.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-manufacturing"><img class="exp-icon" src="/assets/icons/icon-manufacturing.png" alt="" aria-hidden="true"><div class="exp-num">05</div><h3>Local Manufacturing</h3><p>Where imports become assembly, and assembly becomes value that stays.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-ai-digital"><img class="exp-icon" src="/assets/icons/icon-ai-digital.png" alt="" aria-hidden="true"><div class="exp-num">06</div><h3>AI &amp; Digital</h3><p>Mobile money, digital public infrastructure, and the interoperability gap.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-finance"><img class="exp-icon" src="/assets/icons/icon-finance.png" alt="" aria-hidden="true"><div class="exp-num">07</div><h3>Financial Inclusion</h3><p>Payment rails and credit systems that carry every other transition.</p><span class="arrow">→</span></a>
-      <a class="exp-card" href="/expertise-climate"><img class="exp-icon" src="/assets/icons/icon-climate.png" alt="" aria-hidden="true"><div class="exp-num">08</div><h3>Climate &amp; Ecosystems</h3><p>Satellites, sensors, and community rangers in environmental monitoring.</p><span class="arrow">→</span></a>
-    </div>
-    <p style="text-align:center;margin-top:48px;"><a href="/expertise" class="btn btn-ghost">Explore all expertise →</a></p>
   </div>
 </section>
 

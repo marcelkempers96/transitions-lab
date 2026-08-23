@@ -123,7 +123,7 @@ We work with:
 
 ## Independence is the whole point
 
-The reason to bring in the Lab is the reason a project cannot do this convincingly itself. We are independent of the intervention we are measuring. We are [social and technical at once](/about) - we start from the people a project affects, and we also understand the system being demonstrated. And we report what the data says, including when it is inconvenient. Our published [articles](/articles) and [articles](/articles) are the proof of that method; the same discipline is what a commissioning consortium receives.
+The reason to bring in the Lab is the reason a project cannot do this convincingly itself. We are independent of the intervention we are measuring. We are [social and technical at once](/about) - we start from the people a project affects, and we also understand the system being demonstrated. And we report what the data says, including when it is inconvenient. Our published [articles](/articles) and [case studies](/case-studies) are the proof of that method; the same discipline is what a commissioning consortium receives.
 
 That independence is not a marketing line. It is the source of the evidence's value. A result the Lab reports means something a self-assessment cannot.
 
