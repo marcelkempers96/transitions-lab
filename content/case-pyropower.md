@@ -10,7 +10,10 @@
   <div><span class="k">Lab themes</span><span class="v">Decentralised energy · waste-to-value · smallholder livelihoods</span></div>
 </div>
 
-<!-- IMAGE pyro-hero: hero photo | The Pyropower kiln in use on a Lombok smallholding, or a farmer holding biochar. Earthy, working-farm documentary feel. | Full-width hero under the metadata block. -->
+<figure>
+  <img src="/assets/img/case-pyropower-hero.jpg" alt="A smallholder farmer in a straw hat holds a handful of finished biochar in cupped hands, standing beside a large metal kiln with a fire visible at the base. Bamboo stacks and processed pieces around the working area." class="diagram">
+  <figcaption>A farmer in Lombok with a handful of finished biochar. The kiln behind him turns crop waste into three things at once: heat, soil amendment, and, potentially, a carbon-market income.</figcaption>
+</figure>
 
 ---
 
@@ -28,7 +31,12 @@ Most clean-energy transitions are studied at the scale of grids and utilities. T
 
 What makes the case unusually rich is a deliberate design choice: in 2020 Pyropower open-sourced the kiln. That single decision changes the nature of the transition the Lab is observing. An open-source device is not a product a farmer receives; it is a technology a community can adapt to local needs and materials, lower the cost of, and cut the middlemen out of. The farmers in Lombok nicknamed the device *Tumbuh*, Bahasa for "to grow", because of what biochar did to their fields. A technology that earns a local name from its users is a technology that has crossed into their world rather than been imposed on it.
 
-<!-- IMAGE pyro-soil: photo | Close-up of biochar being worked into soil, or a before/after of a field. Tangible proof of "to grow". | Near the open-source / Tumbuh passage. --> That crossing is the thing worth studying.
+That crossing is the thing worth studying.
+
+<figure>
+  <img src="/assets/img/case-pyropower-soil.jpg" alt="Two weathered hands work black biochar granules into rich brown soil beside a metal basin holding more biochar. Green shoots and dry stalks in the background of the working field." class="diagram">
+  <figcaption>Biochar worked into a Lombok field. This is where "Tumbuh" (to grow) becomes visible: the black grains hold water and nutrients that the soil on its own would let past.</figcaption>
+</figure>
 
 ---
 
