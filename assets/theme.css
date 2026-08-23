@@ -537,13 +537,17 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .logo-strip a{display:inline-flex;align-items:center;justify-content:center;padding:8px 6px;}
 .logo-strip img{
-  height:56px;width:auto;max-width:220px;object-fit:contain;
-  display:block;opacity:.75;transition:opacity .15s ease;
+  height:72px;width:auto;max-width:240px;object-fit:contain;
+  display:block;opacity:.85;transition:opacity .15s ease;
 }
+/* MiMaji's mark carries a small stack and clear space that shrinks
+   visually next to word-mark logos, so it gets a targeted size boost. */
+.logo-strip img[alt*="MiMaji"]{height:104px;max-width:200px;}
 .logo-strip a:hover img{opacity:1;}
 @media(max-width:640px){
   .logo-strip{gap:32px;}
-  .logo-strip img{height:44px;max-width:160px;}
+  .logo-strip img{height:56px;max-width:180px;}
+  .logo-strip img[alt*="MiMaji"]{height:80px;max-width:160px;}
 }
 
 /* Assumption vs field reality: two-column split rows, used on the R&D
@@ -1098,24 +1102,66 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   .network-grid .network-card:not(:last-child){border-bottom:2px solid var(--paper);}
 }
 
+/* ── Free-resources grid (home page): downloadable frameworks and
+   method pages, each as a paper card with a small tag, title, blurb,
+   and a Download / Read / Open CTA line. */
+.resource-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:2px solid var(--ink);
+}
+.resource-card{
+  display:flex;flex-direction:column;gap:10px;
+  padding:24px 22px 22px;background:var(--paper);color:var(--ink);
+  border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);
+  text-decoration:none;transition:background .12s ease,transform .12s ease;
+}
+.resource-card:nth-child(3n){border-right:0;}
+.resource-card:nth-last-child(-n+3){border-bottom:0;}
+.resource-card:hover{background:var(--butter);}
+.resource-card .resource-tag{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.20em;text-transform:uppercase;font-weight:800;
+  color:var(--orange);
+}
+.resource-card h3{
+  font-size:19px;font-weight:800;line-height:1.15;letter-spacing:-.015em;
+  color:var(--ink);margin:0;
+}
+.resource-card p{
+  font-size:14.5px;line-height:1.5;margin:0;color:var(--ink);font-weight:500;flex:1;
+}
+.resource-card .resource-cta{
+  margin-top:8px;font-weight:800;font-size:14px;color:var(--ink);
+  letter-spacing:.01em;
+}
+@media(max-width:860px){
+  .resource-grid{grid-template-columns:1fr;}
+  .resource-card{border-right:0;}
+  .resource-card:not(:last-child){border-bottom:2px solid var(--ink);}
+  .resource-card:last-child{border-bottom:0;}
+}
+
 /* ── Serve grid (home page): 5 target-type cards in coloured blocks ── */
 .serve-grid{
   display:grid;grid-template-columns:repeat(5,1fr);gap:0;
   border:2px solid var(--ink);
 }
 .serve-grid a{
-  padding:26px 22px;background:var(--paper);color:var(--ink);
+  padding:18px 18px 20px;background:var(--paper);color:var(--ink);
   border-right:2px solid var(--ink);text-decoration:none;
-  display:flex;flex-direction:column;gap:10px;min-height:200px;
-  transition:transform .12s ease;
+  display:flex;flex-direction:column;gap:8px;min-height:150px;
+  transition:transform .12s ease,background .15s ease;
+  border-top:6px solid var(--ink);
 }
 .serve-grid a:last-child{border-right:0;}
-/* Distinct palette from .what-grid so the two home rows read apart. */
-.serve-grid a:nth-child(1){background:var(--plum);color:var(--paper);}
-.serve-grid a:nth-child(2){background:var(--forest);color:var(--paper);}
-.serve-grid a:nth-child(3){background:var(--euro-blue);color:var(--paper);}
-.serve-grid a:nth-child(4){background:var(--coral);}
-.serve-grid a:nth-child(5){background:var(--cobalt);color:var(--paper);}
+/* Quiet cream palette so the euro-blue consortia card carries the
+   colour weight, and the rest sit as neutral containers. */
+.serve-grid a:nth-child(1){background:var(--paper);color:var(--ink);border-top-color:var(--plum);}
+.serve-grid a:nth-child(2){background:var(--paper);color:var(--ink);border-top-color:var(--forest);}
+.serve-grid a:nth-child(3){background:var(--euro-blue);color:var(--paper);border-top-color:var(--euro-gold);}
+.serve-grid a:nth-child(4){background:var(--paper);color:var(--ink);border-top-color:var(--coral);}
+.serve-grid a:nth-child(5){background:var(--paper);color:var(--ink);border-top-color:var(--cobalt);}
+.serve-grid a:nth-child(n+1):not(:nth-child(3)):hover{background:var(--paper-2);}
 .serve-grid a .serve-tag{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
@@ -1123,13 +1169,13 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .serve-grid .serve-flag{
   height:14px;width:20px;display:inline-block;flex:none;
-  border:1.5px solid var(--ink);object-fit:cover;
+  border:1.5px solid var(--paper);object-fit:cover;
 }
 .serve-grid a h3{
-  font-size:20px;font-weight:800;letter-spacing:-.015em;line-height:1.1;color:inherit;
+  font-size:17px;font-weight:800;letter-spacing:-.015em;line-height:1.15;color:inherit;
 }
-.serve-grid a p{font-size:14.5px;line-height:1.45;margin:0;color:inherit;font-weight:500;flex:1;}
-.serve-grid a .arrow{margin-top:auto;font-weight:800;font-size:20px;}
+.serve-grid a p{font-size:13.5px;line-height:1.45;margin:0;color:inherit;font-weight:500;flex:1;}
+.serve-grid a .arrow{margin-top:auto;font-weight:800;font-size:18px;}
 .serve-grid a:hover{transform:translate(-2px,-2px);}
 @media(max-width:860px){
   .serve-grid{grid-template-columns:1fr;}

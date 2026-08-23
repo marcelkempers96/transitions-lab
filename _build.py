@@ -108,6 +108,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-incumbents-second-life": "butter",
     "qualitative-vs-quantitative": "cobalt",
     "insight-the-reporting-loop": "butter",
+    "insight-distance-work-reward": "butter",
+    "insight-one-month-not-a-trend": "butter",
+    "insight-anchor-tenant": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -396,6 +399,18 @@ META: dict[str, dict[str, str]] = {
     "insight-the-reporting-loop": {
         "title": "The Reporting Loop: Why Funders Learn From Grantees | Transitions Lab",
         "description": "The structural reason grant portfolios keep looking rosier than they are, why more dashboards and more indicators don't fix it, and what a genuine alternative would have to look like.",
+    },
+    "insight-distance-work-reward": {
+        "title": "The Distance Between the Work and the Reward | Transitions Lab",
+        "description": "One climate venture needs a verification apparatus to function. Another needs a purchase order. The difference is the distance between the person who bears the cost of change and the person who receives the benefit.",
+    },
+    "insight-one-month-not-a-trend": {
+        "title": "One Month Is Not a Trend: Venture Money and Infrastructure Economics | Transitions Lab",
+        "description": "Southeast Asian startup funding fell 84% in a month while climate companies kept raising. A percentage without its base is not a finding, and infrastructure economics do not fit a ten-year fund.",
+    },
+    "insight-anchor-tenant": {
+        "title": "The Anchor Tenant: How Platforms Became the Utility Nobody Elected | Transitions Lab",
+        "description": "Grab is putting a charging network inside its driver app. Yulu is renting out 200,000 electric bikes. Both solve an infrastructure-financing problem by owning the demand, and concentrate three dependencies on one counterparty.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1224,6 +1239,56 @@ def build_home() -> str:
       </a>
     </div>
     <p style="text-align:center;margin-top:48px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
+  </div>
+</section>
+
+<!-- FREE RESOURCES - grid of downloadable frameworks and method pages -->
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Free resources</p>
+      <h2>Frameworks, methods, and tools, published openly.</h2>
+      <p>The intellectual apparatus behind the Lab's work, free to download, use, and cite. A working understanding of how technologies meet real people is more useful in the world than in a drawer.</p>
+    </div>
+    <div class="resource-grid">
+      <a class="resource-card" href="/assets/resource-brw-framework.pdf">
+        <span class="resource-tag">PDF &middot; 10 pages</span>
+        <h3>The BRW Framework</h3>
+        <p>Bypass, Repurpose, Weaken. The Lab's mechanism-based typology of how a niche technology engages an entrenched regime.</p>
+        <span class="resource-cta">Download &rarr;</span>
+      </a>
+      <a class="resource-card" href="/assets/resource-measurement-method.pdf">
+        <span class="resource-tag">PDF &middot; 10 pages</span>
+        <h3>Measuring What Actually Changed</h3>
+        <p>The Lab's methodology: the five-stage method, read across the reach, depth, and experience dimensions, with the baseline discipline that carries it.</p>
+        <span class="resource-cta">Download &rarr;</span>
+      </a>
+      <a class="resource-card" href="/readiness-levels">
+        <span class="resource-tag">Page + 2 PDFs</span>
+        <h3>TRL &amp; SRL Explained</h3>
+        <p>Technology and Societal Readiness Levels, with academic references. Two nine-level scales and why reading them together is the point.</p>
+        <span class="resource-cta">Read &rarr;</span>
+      </a>
+      <a class="resource-card" href="/assets/resource-interview-guide.pdf">
+        <span class="resource-tag">PDF &middot; 12 pages</span>
+        <h3>The In-Depth Interview Guide</h3>
+        <p>The five-levels-down principle behind the Lab's qualitative reach, and the probing techniques that get an interview from fact to meaning.</p>
+        <span class="resource-cta">Download &rarr;</span>
+      </a>
+      <a class="resource-card" href="/impact-tracking-template">
+        <span class="resource-tag">Template</span>
+        <h3>Impact-Tracking Template</h3>
+        <p>A fill-in baseline-midline-endline framework for European projects and any programme that needs to prove what it changed.</p>
+        <span class="resource-cta">Open &rarr;</span>
+      </a>
+      <a class="resource-card" href="/assets/resource-transitions-primer.pdf">
+        <span class="resource-tag">PDF &middot; 8 pages</span>
+        <h3>Reading a Transition: A Primer</h3>
+        <p>What a socio-technical system is, why the human side comes first, and how to turn that reading into evidence.</p>
+        <span class="resource-cta">Download &rarr;</span>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:48px;"><a href="/resources" class="btn btn-ghost">See all resources &rarr;</a></p>
   </div>
 </section>
 

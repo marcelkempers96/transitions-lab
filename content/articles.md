@@ -13,6 +13,24 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 <div class="article-list">
 
   <div class="article-item">
+    <a class="article-title" href="/insight-anchor-tenant">The Anchor Tenant: How Platforms Became the Utility Nobody Elected</a>
+    <div class="article-meta">23 August 2026</div>
+    <p class="article-desc">Platforms are solving the charging-infrastructure financing problem by owning the demand. It works, and it concentrates three dependencies, work, vehicle, energy, on one counterparty.</p>
+  </div>
+
+  <div class="article-item">
+    <a class="article-title" href="/insight-distance-work-reward">The Distance Between the Work and the Reward</a>
+    <div class="article-meta">23 August 2026</div>
+    <p class="article-desc">What the size of an MRV budget is actually telling you about the deal underneath it. Elaborate verification means the benefit and the burden have been separated, and separated benefits need continuous machinery to stay connected.</p>
+  </div>
+
+  <div class="article-item">
+    <a class="article-title" href="/insight-one-month-not-a-trend">One Month Is Not a Trend, and Venture Money Is the Wrong Shape</a>
+    <div class="article-meta">23 August 2026</div>
+    <p class="article-desc">A percentage without its base is not a finding, and infrastructure economics do not fit a ten-year fund. Two reading errors from one month of Southeast Asian venture data.</p>
+  </div>
+
+  <div class="article-item">
     <a class="article-title" href="/insight-the-reporting-loop">The Reporting Loop: Why Funders Learn From Grantees</a>
     <div class="article-meta">15 August 2026</div>
     <p class="article-desc">Why grant portfolios keep looking rosier than they are, why more dashboards and more indicators don't fix it, and what a genuine alternative would have to look like. The reasoning behind the Lab's dedicated <a href="/for-funders">For Funders</a> service.</p>

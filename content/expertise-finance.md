@@ -51,4 +51,4 @@ We draw on the Lab's own finance research programme, our fieldwork, and the publ
 
 ---
 
-*See the [Roam case study](/case-roam) and the [Finance programme](/finance). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*Related reading: [The Anchor Tenant](/insight-anchor-tenant) on platform-anchored charging economics, and [One Month Is Not a Trend](/insight-one-month-not-a-trend) on venture-money mismatch with infrastructure economics. See the [Roam case study](/case-roam) and the [Payment Rail reading](/case-finance). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

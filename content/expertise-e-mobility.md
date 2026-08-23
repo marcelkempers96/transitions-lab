@@ -54,4 +54,4 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*See the [Roam case study](/case-roam). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*Related reading: [The Anchor Tenant](/insight-anchor-tenant) on how platforms are financing charging infrastructure by owning the demand, and [Who Absorbs the Gap](/insight-absorbing-the-gap) on which party carries the reliability risk. See the [Roam case study](/case-roam). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
