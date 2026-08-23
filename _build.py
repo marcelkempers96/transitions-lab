@@ -112,6 +112,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-distance-work-reward": "butter",
     "insight-one-month-not-a-trend": "butter",
     "insight-anchor-tenant": "butter",
+    "insight-benefits-nobody-looked-for": "butter",
+    "insight-same-queue": "butter",
+    "insight-what-the-bond-secures": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -416,6 +419,18 @@ META: dict[str, dict[str, str]] = {
     "insight-anchor-tenant": {
         "title": "The Anchor Tenant: How Platforms Became the Utility Nobody Elected | Transitions Lab",
         "description": "Grab is putting a charging network inside its driver app. Yulu is renting out 200,000 electric bikes. Both solve an infrastructure-financing problem by owning the demand, and concentrate three dependencies on one counterparty.",
+    },
+    "insight-benefits-nobody-looked-for": {
+        "title": "The Benefits Nobody Was Looking For | Transitions Lab",
+        "description": "New evidence that upgrading informal settlements produces heat resilience raises a harder question than whether it is true. The benefit was not hidden; it was never in the results framework.",
+    },
+    "insight-same-queue": {
+        "title": "Standing in the Same Queue | Transitions Lab",
+        "description": "A 74 MW solar plant in Timor-Leste and an AI data-centre order from the same factories. Transformer lead times have doubled since 2021. Nobody publishes what small buyers in small markets are actually paying, or waiting.",
+    },
+    "insight-what-the-bond-secures": {
+        "title": "What the Bond Is Actually Secured On | Transitions Lab",
+        "description": "African off-grid solar has become an asset class by turning household repayments into collateral. The security is not the hardware. It is the ability to switch the light off, and water has no equivalent.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1196,12 +1211,12 @@ def build_home() -> str:
           <span class="read">Read →</span>
         </div>
       </a>
-      <a class="insight-card" href="/insight-eu-us">
-        <div class="stripe"><span class="kicker">Insight · Europe</span></div>
+      <a class="insight-card" href="/insight-what-the-bond-secures">
+        <div class="stripe"><span class="kicker">Insight &middot; Energy &amp; Finance</span></div>
         <div class="body">
-          <h3>Europe Invents, America Scales</h3>
-          <p>Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. Where independent evidence fits in the gap.</p>
-          <span class="read">Read →</span>
+          <h3>What the Bond Is Actually Secured On</h3>
+          <p>Off-grid solar became an asset class by turning household repayments into collateral. What secures the paper is the ability to switch the light off, and water has no equivalent.</p>
+          <span class="read">Read &rarr;</span>
         </div>
       </a>
     </div>

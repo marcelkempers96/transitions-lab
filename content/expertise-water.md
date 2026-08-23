@@ -53,4 +53,7 @@ We draw on the Lab's water roots in Delft, our own fieldwork, and the public evi
 
 ---
 
+*Related reading: [What the Bond Is Actually Secured On](/insight-what-the-bond-secures), and why the same securitisation move does not transfer to water.*
+
+
 *For how we study transitions like this, see [Field Research](/field-research). For the Lab's water programme, see [Water Access](/water). To discuss a study, see [Contact](/contact).*

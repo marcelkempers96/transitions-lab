@@ -53,4 +53,7 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
+*Related reading: [Standing in the Same Queue](/insight-same-queue), on how the physical stack of transformers and switchgear has become the binding constraint.*
+
+
 *For how we study transitions like this, see [Field Research](/field-research). See also our [E-Mobility expertise](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*

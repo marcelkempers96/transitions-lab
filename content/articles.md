@@ -13,6 +13,24 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 <div class="article-list">
 
   <div class="article-item">
+    <a class="article-title" href="/insight-what-the-bond-secures">What the Bond Is Actually Secured On</a>
+    <div class="article-meta">24 August 2026</div>
+    <p class="article-desc">Off-grid solar became an asset class by turning household repayments into collateral. What secures the paper is the ability to switch the light off, and water has no equivalent.</p>
+  </div>
+
+  <div class="article-item">
+    <a class="article-title" href="/insight-benefits-nobody-looked-for">The Benefits Nobody Was Looking For</a>
+    <div class="article-meta">24 August 2026</div>
+    <p class="article-desc">Settlement upgrading has delivered heat resilience for decades. Nobody measured it, because a results framework can only find what it was told to look for.</p>
+  </div>
+
+  <div class="article-item">
+    <a class="article-title" href="/insight-same-queue">Standing in the Same Queue</a>
+    <div class="article-meta">24 August 2026</div>
+    <p class="article-desc">A solar plant in Timor-Leste and an AI data centre order from the same factories. Lead times have doubled, and nobody measures what small buyers wait.</p>
+  </div>
+
+  <div class="article-item">
     <a class="article-title" href="/insight-anchor-tenant">The Anchor Tenant: How Platforms Became the Utility Nobody Elected</a>
     <div class="article-meta">23 August 2026</div>
     <p class="article-desc">Platforms are solving the charging-infrastructure financing problem by owning the demand. It works, and it concentrates three dependencies, work, vehicle, energy, on one counterparty.</p>
