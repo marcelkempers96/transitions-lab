@@ -43,7 +43,7 @@ Every R&D engagement is scoped to a specific design decision, but four questions
 
 <div class="callout c-forest">
   <span class="kicker">Question 03 · Where the SRL actually sits</span>
-  <p>[Societal Readiness Levels](/readiness-levels) name the axis TRL cannot see. Claiming SRL 5 (validated in the relevant context in co-operation with stakeholders) requires evidence from the stakeholders, gathered by someone with no stake in the answer. We turn an asserted SRL into a substantiated one, and we do it in a form a reviewer or evaluator can read.</p>
+  <p><a href="/readiness-levels">Societal Readiness Levels</a> name the axis TRL cannot see. Claiming SRL 5 (validated in the relevant context in co-operation with stakeholders) requires evidence from the stakeholders, gathered by someone with no stake in the answer. We turn an asserted SRL into a substantiated one, and we do it in a form a reviewer or evaluator can read.</p>
 </div>
 
 <div class="callout c-plum">
