@@ -41,6 +41,11 @@ The manufacturer's own framing is unusually honest about this. Their country lea
 
 The headline finding from the field is not about emissions. It is about cash. Riders consistently describe the switch in the language of daily savings: fuel that once cost a four-figure sum in shillings per day replaced by an overnight charge costing a fraction of it. For a household running on thin daily margins, that difference is not abstract: it is school fees, food, the gap between a good week and a bad one. The mobility provider structures ownership around this reality through pay-as-you-go financing over twelve to eighteen months, so the vehicle can be earned into rather than bought outright.
 
+<figure>
+  <img src="/assets/img/case-mobility-economics.jpg" alt="Bar chart comparing daily running cost of an electric motorcycle versus petrol. The petrol bar fills roughly 85 percent of the horizontal scale; the overnight-charge bar is roughly a quarter of that." class="diagram">
+  <figcaption>Daily running cost, electric motorcycle versus petrol. The overnight charge is a fraction of a day's petrol; the difference is the money that fuels everything else in the household.</figcaption>
+</figure>
+
 The transition, in other words, is being carried by financing architecture as much as by the motorcycle. This matches the Lab's cross-sector reading: in emerging-market infrastructure transitions, the payment and financing layer often does more of the work than the technology itself.
 
 ### Range anxiety is a lived experience, not a spec sheet
