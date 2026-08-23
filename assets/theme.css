@@ -1157,16 +1157,16 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   border-right:2px solid var(--ink);text-decoration:none;
   display:flex;flex-direction:column;gap:8px;min-height:150px;
   transition:transform .12s ease,background .15s ease;
-  border-top:6px solid var(--ink);
 }
 .serve-grid a:last-child{border-right:0;}
 /* Quiet cream palette so the euro-blue consortia card carries the
-   colour weight, and the rest sit as neutral containers. */
-.serve-grid a:nth-child(1){background:var(--paper);color:var(--ink);border-top-color:var(--plum);}
-.serve-grid a:nth-child(2){background:var(--paper);color:var(--ink);border-top-color:var(--forest);}
-.serve-grid a:nth-child(3){background:var(--euro-blue);color:var(--paper);border-top-color:var(--euro-gold);}
-.serve-grid a:nth-child(4){background:var(--paper);color:var(--ink);border-top-color:var(--coral);}
-.serve-grid a:nth-child(5){background:var(--paper);color:var(--ink);border-top-color:var(--cobalt);}
+   colour weight on its own, and the rest sit as neutral containers
+   separated only by the grid's plain black gridlines. */
+.serve-grid a:nth-child(1){background:var(--paper);color:var(--ink);}
+.serve-grid a:nth-child(2){background:var(--paper);color:var(--ink);}
+.serve-grid a:nth-child(3){background:var(--euro-blue);color:var(--paper);}
+.serve-grid a:nth-child(4){background:var(--paper);color:var(--ink);}
+.serve-grid a:nth-child(5){background:var(--paper);color:var(--ink);}
 .serve-grid a:nth-child(n+1):not(:nth-child(3)):hover{background:var(--paper-2);}
 .serve-grid a .serve-tag{
   font-family:'Hanken Grotesk',sans-serif;
@@ -1174,8 +1174,9 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   display:inline-flex;align-items:center;gap:8px;
 }
 .serve-grid .serve-flag{
-  height:14px;width:20px;display:inline-block;flex:none;
+  height:16px;width:22px;display:inline-block;flex:none;
   border:1.5px solid var(--paper);object-fit:cover;
+  margin-left:10px;vertical-align:-2px;
 }
 .serve-grid a h3{
   font-size:17px;font-weight:800;letter-spacing:-.015em;line-height:1.15;color:inherit;

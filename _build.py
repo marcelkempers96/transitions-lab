@@ -1139,7 +1139,7 @@ def build_home() -> str:
         <span class="arrow">→</span>
       </a>
       <a href="/who-we-serve#consortia">
-        <h3><img src="/assets/img/eu-flag-small.jpg" alt="" class="serve-flag" aria-hidden="true">European consortia</h3>
+        <h3>European consortia <img src="/assets/img/eu-flag-small.jpg" alt="" class="serve-flag" aria-hidden="true"></h3>
         <p>The independent measurement partner, from baseline through endline.</p>
         <span class="arrow">→</span>
       </a>
