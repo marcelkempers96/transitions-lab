@@ -796,11 +796,18 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .prose .case-grid .case-card.has-photo .case-photo .tag{
   position:absolute;top:10px;left:10px;z-index:1;
-  padding:4px 10px;background:var(--ink);color:var(--paper);
+  padding:5px 12px;border:2px solid var(--ink);
   font-family:'Hanken Grotesk',sans-serif;
   font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
   line-height:1.2;
 }
+/* Chip colour matches the card's semantic colour class, so the tag on
+   a photo reads as the same colour token as its coloured-stripe twin. */
+.prose .case-grid .case-card.c-coral.has-photo .case-photo .tag{background:var(--coral);color:var(--ink);}
+.prose .case-grid .case-card.c-butter.has-photo .case-photo .tag{background:var(--butter);color:var(--ink);}
+.prose .case-grid .case-card.c-cobalt.has-photo .case-photo .tag{background:var(--cobalt);color:var(--paper);}
+.prose .case-grid .case-card.c-forest.has-photo .case-photo .tag{background:var(--forest);color:var(--paper);}
+.prose .case-grid .case-card.c-plum.has-photo .case-photo .tag{background:var(--plum);color:var(--paper);}
 .prose .case-grid .case-card .stripe .tag{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:13px;letter-spacing:.20em;text-transform:uppercase;font-weight:800;
