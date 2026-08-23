@@ -67,7 +67,7 @@ Turnaround: six weeks in the field, two weeks to a full write-up. Inside the R&D
 
 ## Where this shows up in the Lab's live work
 
-The pattern this reading is built from runs through the Lab's live engagements. [Roam](/case-roam) is the clearest example on the technical side: an electric motorcycle iterated for Nairobi conditions, where the rider's daily arithmetic decided which design choices were viable. [Pyropower](/case-pyropower) is the equivalent on the smallholder-hardware side: a portable kiln whose next iteration was designed against direct interviews with the farmers who operated the first one. [MiMaji](/case-mimaji) is the service-design equivalent: a water-transparency tool co-designed with the residents whose access to that information had never been mapped.
+The pattern this reading is built from runs through the Lab's live engagements. [the mobility case](/case-roam) is the clearest example on the technical side: an electric motorcycle iterated for Nairobi conditions, where the rider's daily arithmetic decided which design choices were viable. [Pyropower](/case-pyropower) is the equivalent on the smallholder-hardware side: a portable kiln whose next iteration was designed against direct interviews with the farmers who operated the first one. [MiMaji](/case-mimaji) is the service-design equivalent: a water-transparency tool co-designed with the residents whose access to that information had never been mapped.
 
 Each of these engagements is at post-launch stage. The R&D case above is the same discipline applied earlier: before the design freezes, while the evidence can still change it.
 

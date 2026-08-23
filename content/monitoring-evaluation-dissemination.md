@@ -79,7 +79,7 @@ The Lab's field engagements show MED as a live system rather than a paperwork ex
 [**Rangers for marine ecosystems, Reef Support →**](/case-reef-support)
 A study in the measurement-to-action gap: sensors and satellites produce data, but the evaluation question is whether that evidence is trusted and owned enough to change what communities and decision-makers actually do. Dissemination here is not a report; it is a shared, credible picture of reef health.
 
-[**Electric transport in Nairobi, Roam →**](/case-roam)
+[**Electric transport in Nairobi →**](/case-roam)
 Monitoring adoption against a baseline, evaluating what actually moves a rider (running cost, financing, charging access), and reading who is reached and who is priced out, the reach, depth, and experience dimensions in practice.
 
 [**The measurement method, in full →**](/assets/resource-measurement-method.pdf)

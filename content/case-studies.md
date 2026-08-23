@@ -13,8 +13,11 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
 ## Field cases
 
 <div class="case-grid">
-  <a class="case-card c-coral" href="/case-roam">
-    <div class="stripe"><span class="tag">Kenya · E-mobility</span></div>
+  <a class="case-card c-coral has-photo" href="/case-roam">
+    <div class="case-photo">
+      <img src="/assets/img/case-mobility-hero.jpg" alt="A boda-boda rider on an electric motorcycle at first light on a Nairobi commercial street.">
+      <span class="tag">Kenya · E-mobility</span>
+    </div>
     <div class="body">
       <h3>Crossing the Threshold: Electric Transport in Nairobi</h3>
       <p>A market of millions of petrol motorcycles being asked to switch to electric. The motorcycle was never the hard part; the financing, the charging, and the after-sales network around it are what carry a rider across the threshold.</p>

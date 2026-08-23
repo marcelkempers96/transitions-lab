@@ -13,7 +13,7 @@ Different audiences arrive with different questions. Most engagements combine mo
   <div class="target-body">
     <p class="lede">A product that works in one market doesn't automatically work in the next. Before you commit a scaling budget to an assumption, we go and see.</p>
     <p>The signal from a new market is usually ambiguous: are those early sales real demand, or the founder's network? Do the segments from home even exist here? Is the payment stack the one your ops team assumed? We reach the people whose behaviour will decide the outcome and report what they actually do, want, and can afford. We read the strategy through the <a href="/brw">BRW framework</a> to name the barriers you are bypassing, repurposing, or weakening, and where the fit breaks.</p>
-    <p>Most engagements start with an entry read and continue as measurement once you're live. See the <a href="/case-roam">Roam case study</a> for what that looks like end to end.</p>
+    <p>Most engagements start with an entry read and continue as measurement once you're live. See the <a href="/case-roam">mobility case study</a> for what that looks like end to end.</p>
     <span class="kicker-line">Services that fit</span>
     <div class="target-ctas">
       <a class="target-cta" href="/entering-a-new-context">Entering a New Context &rarr;</a>

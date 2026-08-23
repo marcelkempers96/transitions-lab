@@ -12,7 +12,7 @@ The most important evidence about a technology is held by the people living insi
 
 The Lab works in settings that defeat conventional research: low-connectivity, multilingual, informal, dispersed. These are also the settings where bad evidence does the most damage. Running research well here demands researchers who speak the language, know the place, and understand the working lives of the people they talk to.
 
-Grounded in real engagements: electric transport in Nairobi ([Roam](/case-roam)), decentralised clean energy in Lombok ([Pyropower](/case-pyropower)), water transparency in Nairobi ([MiMaji](/case-mimaji)), and five years of sustained fieldwork in Kenya. We do not parachute in. We work through people already part of the context.
+Grounded in real engagements: electric transport in Nairobi ([Kenyan e-mobility case](/case-roam)), decentralised clean energy in Lombok ([Pyropower](/case-pyropower)), water transparency in Nairobi ([MiMaji](/case-mimaji)), and five years of sustained fieldwork in Kenya. We do not parachute in. We work through people already part of the context.
 
 <figure>
   <img src="/assets/img/photo-field-interview.jpg" alt="A researcher takes notes while a woman speaks, seated in the doorway of her home. A recorded, consented interview in the setting the respondent lives in." class="diagram">

@@ -26,7 +26,7 @@ An electric motorcycle is adopted only if a rider can pay over time. A solar sys
 
 A financing model designed to help can also move risk onto those least able to bear it. The line between the two is invisible in adoption figures and clear only in the field.
 
-The Lab documents it: whether pay-as-you-go genuinely expands opportunity, who is reached and who stays excluded, and how the friction of fees decides whether a transition holds. Our [Roam case study](/case-roam) shows the double edge, pay-as-you-go is what lets a rider earn into ownership, and the per-transaction fee is the thing they would fix first.
+The Lab documents it: whether pay-as-you-go genuinely expands opportunity, who is reached and who stays excluded, and how the friction of fees decides whether a transition holds. Our [the mobility case study](/case-roam) shows the double edge, pay-as-you-go is what lets a rider earn into ownership, and the per-transaction fee is the thing they would fix first.
 
 ---
 
@@ -47,8 +47,8 @@ We draw on the Lab's own finance research programme, our fieldwork, and the publ
 - World Bank, [Global Findex Database](https://www.worldbank.org/en/publication/globalfindex).
 - CGAP, [research on financial services for the poor](https://www.cgap.org/).
 - GSMA, [State of the Industry Report on Mobile Money](https://www.gsma.com/mobilefordevelopment/mobile-money/).
-- Our own [Finance programme](/finance) and [Roam case study](/case-roam).
+- Our own [Finance programme](/finance) and [the mobility case study](/case-roam).
 
 ---
 
-*Related reading: [The Anchor Tenant](/insight-anchor-tenant) on platform-anchored charging economics, and [One Month Is Not a Trend](/insight-one-month-not-a-trend) on venture-money mismatch with infrastructure economics. See the [Roam case study](/case-roam) and the [Payment Rail reading](/case-finance). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*Related reading: [The Anchor Tenant](/insight-anchor-tenant) on platform-anchored charging economics, and [One Month Is Not a Trend](/insight-one-month-not-a-trend) on venture-money mismatch with infrastructure economics. See the [mobility case study](/case-roam) and the [Payment Rail reading](/case-finance). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

@@ -43,7 +43,7 @@ ASSET_CSS_V = _asset_hash("assets/theme.css")
 # top of the expertise page prose, linking to a specific case study.
 # Kicker uses the same coloured-stripe treatment as home insight cards.
 FEATURED_CASE: dict[str, dict[str, str]] = {
-    "expertise-e-mobility":    {"slug": "case-roam",         "kind": "case",    "kicker": "Kenya · E-mobility",   "title": "Electric transport in Nairobi",           "blurb": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with Roam.", "colour": "coral"},
+    "expertise-e-mobility":    {"slug": "case-roam",         "kind": "case",    "kicker": "Kenya · E-mobility",   "title": "Electric transport in Nairobi",           "blurb": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.", "colour": "coral"},
     "expertise-energy":        {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Energy",   "title": "Biochar & clean energy in Lombok",         "blurb": "Smallholder farmers turn crop waste into heat, soil, and income on a decentralised, open-source kiln.", "colour": "butter"},
     "expertise-water":         {"slug": "case-mimaji",       "kind": "case",    "kicker": "Kenya · Water",         "title": "Water transparency in Nairobi",           "blurb": "Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.", "colour": "cobalt"},
     "expertise-agriculture":   {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Agriculture","title": "Biochar in Lombok",                       "blurb": "Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.", "colour": "coral"},
@@ -330,7 +330,7 @@ META: dict[str, dict[str, str]] = {
         "description": "Where the Lab has worked on the ground: electric transport in Nairobi, biochar in Lombok, marine rangers in Indonesia. Real transitions, studied.",
     },
     "case-roam": {
-        "title": "Electric Transport in Nairobi: Roam | Transitions Lab",
+        "title": "Electric Transport in Nairobi | Transitions Lab",
         "description": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, and what carries riders across it. A field case study.",
     },
     "case-pyropower": {
@@ -452,7 +452,7 @@ STUB_TITLES: dict[str, str] = {
     "interview-guide": "Interview Guide",
     "impact-tracking-template": "Impact Tracking Template",
     "brw": "The BRW Framework",
-    "case-roam": "Roam - Electric Transport in Nairobi",
+    "case-roam": "Electric Transport in Nairobi",
     "case-pyropower": "Pyropower - Biochar in Lombok",
     "case-reef-support": "Reef Support - Community Marine Rangers",
     "case-mimaji": "MiMaji - Water Transparency in Nairobi",
@@ -1222,7 +1222,7 @@ def build_home() -> str:
         <div class="stripe"><span class="kicker">Kenya · E-mobility</span></div>
         <div class="body">
           <h3>Electric transport in Nairobi</h3>
-          <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with Roam.</p>
+          <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.</p>
           <span class="read">Read the case →</span>
         </div>
       </a>
@@ -1303,7 +1303,6 @@ def build_home() -> str:
     <p class="eyebrow">Partners &amp; collaborators</p>
     <p style="max-width:56ch;margin:0 auto 40px;font-size:17px;line-height:1.5;">Organisations whose engagements or research base the Lab has worked with, published with, or built its methods alongside.</p>
     <div class="logo-strip">
-      <a href="/case-roam" title="Roam - electric transport in Nairobi"><img src="/assets/logos/logo-roam.png" alt="Roam"></a>
       <a href="/case-mimaji" title="MiMaji Foundation - water transparency in Nairobi"><img src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
       <a href="/case-reef-support" title="Reef Support - community reef monitoring"><img src="/assets/logos/logo-reef-support.png" alt="Reef Support"></a>
       <a href="https://www.tudelft.nl/" target="_blank" rel="noopener" title="Delft University of Technology"><img src="/assets/logos/logo-tu-delft.png" alt="TU Delft"></a>

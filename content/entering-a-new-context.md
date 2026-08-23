@@ -64,7 +64,7 @@ The same [five-stage method](/how-it-works) as every Lab engagement, compressed 
 1. **Scope.** A short design conversation frames the exact go/no-go the study is meant to inform, the segments it must reach, and the evidence that would genuinely change the decision.
 2. **Design.** A mixed-method instrument, a short repeatable survey on demand and price, paired with in-depth interviews to reach the reasoning the numbers alone won't yield. Grounded in the [interview guide](/interview-guide).
 3. **Collect.** Local field researchers who speak the language and know the market reach respondents directly, with recorded, consented interviews. We do not parachute in.
-4. **Analyse & benchmark.** Reads against comparable data where it exists (Roam-adjacent for e-mobility, GOGLA-adjacent for off-grid, and so on) so a number carries its comparison. Failure modes named explicitly.
+4. **Analyse & benchmark.** Reads against comparable data where it exists (e-mobility-adjacent for e-mobility, GOGLA-adjacent for off-grid, and so on) so a number carries its comparison. Failure modes named explicitly.
 5. **Deliver.** A decision-maker briefing, a segment-level read of where adoption is real and where it is fragile, and the instrument in a form that can be re-run for a second market or a second quarter.
 
 <figure>
@@ -78,7 +78,7 @@ Turnaround is measured in weeks. Where the answer is "not yet, and here's why," 
 
 ## Where this shows up in the Lab's work
 
-The best-documented public example is the [Roam case study](/case-roam) in Nairobi, where the question was exactly this shape: will the daily economics of an electric two-wheeler hold once the subsidy ends, and for which rider segments? The [Before the Capital](/case-context-entry) reading generalises the pattern across sectors where a European venture is weighing a new-market commitment. For the wider frame on why market entry into a low-state-capacity context succeeds or plateaus, see the [Four Ways a Transition Lands](/insight-transitions-outcomes) matrix; for reading which incumbent barriers your entry actually engages, the [BRW framework](/brw); and for the reliability question that decides e-mobility entry decisions, [Who Absorbs the Gap](/insight-absorbing-the-gap).
+The best-documented public example is the [mobility case study](/case-roam) in Nairobi, where the question was exactly this shape: will the daily economics of an electric two-wheeler hold once the subsidy ends, and for which rider segments? The [Before the Capital](/case-context-entry) reading generalises the pattern across sectors where a European venture is weighing a new-market commitment. For the wider frame on why market entry into a low-state-capacity context succeeds or plateaus, see the [Four Ways a Transition Lands](/insight-transitions-outcomes) matrix; for reading which incumbent barriers your entry actually engages, the [BRW framework](/brw); and for the reliability question that decides e-mobility entry decisions, [Who Absorbs the Gap](/insight-absorbing-the-gap).
 
 ---
 

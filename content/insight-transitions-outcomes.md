@@ -53,7 +53,7 @@ The partial-breakthrough pattern of most emerging-market technology transitions,
 
 - **M-Pesa** ([Safaricom](https://www.safaricom.co.ke/personal/m-pesa)): mobile money leapfrogged bank branches without waiting for the state to build a formal payments infrastructure, then hit its ceiling at the payment-rail interoperability the state was slow to require.
 - **Pay-as-you-go solar** (see [GOGLA](https://www.gogla.org/) for the market data): pico-solar and solar-home systems reached tens of millions of off-grid households through a purely commercial niche, then plateaued at the grid boundary that only public planning can move.
-- **Roam boda-boda**: electric two-wheelers crossing the affordability threshold in Kenya on ride-to-own finance, without waiting for a national EV strategy. The full [case study](/case-roam) traces where the leapfrog lands and where it stops.
+- **Kenyan e-mobility (boda-boda)**: electric two-wheelers crossing the affordability threshold in Kenya on ride-to-own finance, without waiting for a national EV strategy. The full [case study](/case-roam) traces where the leapfrog lands and where it stops.
 
 The word *bounded* is doing a lot of work here. Bounded leapfrogging is genuinely valuable, and is often the only workable strategy in a low-capacity context, but its ceiling is set by the parts of the incumbent regime the niche cannot renegotiate alone. Studying the shape of that ceiling is a large part of what the Lab does. See the [Water Access programme](/water) and the [Finance programme](/finance) for two extended readings of the pattern.
 
@@ -76,7 +76,7 @@ Every one of these questions is answerable only with field evidence, from the pe
 
 Applied to the [case studies](/case-studies) on this site:
 
-- **Bounded leapfrogging (low state, high niche):** [Roam](/case-roam) (Kenyan e-mobility), [Pyropower](/case-pyropower) (Lombok biochar), [MiMaji](/case-mimaji) (Nairobi water transparency).
+- **Bounded leapfrogging (low state, high niche):** [Electric transport in Nairobi](/case-roam) (Kenyan e-mobility), [Pyropower](/case-pyropower) (Lombok biochar), [MiMaji](/case-mimaji) (Nairobi water transparency).
 - **Coordinated transition (high state, high niche):** the [European Impact Tracking](/european-impact-tracking) engagements typically sit here, because the projects the Lab measures independently are those where a European public programme is trying to build alongside a specific innovation niche.
 - **Directed transition (high state, low niche):** the [St. Eustatius Transport Directorate](/case-statia) work is a public-sector engagement in a small-state context, where the niche is thin and the state is doing most of the visible work.
 - **Stalled regime:** the Lab has written about the failure mode from a distance (see the [EU-US insight](/insight-eu-us) on Europe's climate-tech Series B gap), but has not, by design, taken on stalled cases as commissioned engagements, because the useful next-step evidence is rarely available.

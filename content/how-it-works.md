@@ -41,7 +41,7 @@ We start from a decision, never from a dataset we happen to have. We work from t
   <span class="stage-eyebrow">Collect</span>
   <h2>Reach the people, properly</h2>
   <p>Trained researchers who speak the language and know the place reach respondents directly, by phone, face-to-face, or on site. We work only with participants who have given informed, recorded, revocable consent, and we anonymise by default. In difficult contexts, low-connectivity, multilingual, informal, dispersed, this stage is where most studies quietly fail; it is where the Lab's <a href="/field-research">field research</a> craft matters most.</p>
-  <p>Consent and ethics standards follow the international framework independent research is held to. See the <a href="/case-roam">Roam</a>, <a href="/case-mimaji">MiMaji</a>, and <a href="/case-pyropower">Pyropower</a> cases for three contrasting examples of how this stage plays out on the ground.</p>
+  <p>Consent and ethics standards follow the international framework independent research is held to. See the <a href="/case-roam">Electric transport in Nairobi</a>, <a href="/case-mimaji">MiMaji</a>, and <a href="/case-pyropower">Pyropower</a> cases for three contrasting examples of how this stage plays out on the ground.</p>
   <div class="callout c-cobalt">
     <span class="kicker">Consent & ethics standards we work to</span>
     <ul>
@@ -55,7 +55,7 @@ We start from a decision, never from a dataset we happen to have. We work from t
   <div class="links">
     <span class="label">Related</span>
     <a href="/field-research">Field research</a>
-    <a href="/case-roam">Roam case</a>
+    <a href="/case-roam">Mobility case</a>
     <a href="/case-mimaji">MiMaji case</a>
     <a href="/case-pyropower">Pyropower case</a>
     <a href="/case-statia">St. Eustatius case</a>
@@ -109,10 +109,10 @@ Take a manufacturer weighing whether to expand electric two-wheelers into a new 
 - **01 Scope.** The real decision is not "are riders satisfied" but "does the daily economics work well enough for adoption to hold once the subsidy ends"; we identify the rider segments that hold the answer.
 - **02 Design.** A short repeatable survey on running costs and switching intent, paired with a smaller set of in-depth interviews using the [interview guide](/interview-guide) to reach the reasoning underneath the numbers, is built to fit the exact question.
 - **03 Collect.** Local researchers who ride the same routes reach riders directly, with consent, in their own language ([field research](/field-research)). Consent is recorded and revocable.
-- **04 Analyse.** Running costs and switching intent are read against comparable data from the [Roam](/case-roam) engagement and, where relevant, [GOGLA](https://www.gogla.org/) market signals; qualitative interviews explain the numbers.
+- **04 Analyse.** Running costs and switching intent are read against comparable data from the [the mobility](/case-roam) engagement and, where relevant, [GOGLA](https://www.gogla.org/) market signals; qualitative interviews explain the numbers.
 - **05 Deliver.** Within weeks the manufacturer has a segmented read on where adoption is real, where it is fragile, and what would have to change to hold it, along with the instrument to run the same measurement again next quarter.
 
-The [Roam case study](/case-roam) shows this shape of engagement in a real market. For a very different context under the same method, see the [MiMaji water-transparency case](/case-mimaji) in Nairobi and the [St. Eustatius Transport Directorate case](/case-statia) in the Dutch Caribbean.
+The [the mobility case study](/case-roam) shows this shape of engagement in a real market. For a very different context under the same method, see the [MiMaji water-transparency case](/case-mimaji) in Nairobi and the [St. Eustatius Transport Directorate case](/case-statia) in the Dutch Caribbean.
 
 ---
 

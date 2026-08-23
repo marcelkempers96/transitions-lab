@@ -58,7 +58,7 @@ Field research at three levels of the value chain, deliberately.
 
 ## Where this shows up in the Lab's live work
 
-The most-documented adjacent engagement is [Roam](/case-roam), whose electric motorcycles are designed and manufactured in Nairobi rather than assembled from imported CKD kits. Reading Roam through the local-manufacturing lens surfaces the same questions this reading is built around: how much value is captured domestically, whether the supplier ecosystem is growing, whether the workers benefit, whether customers experience the local origin as a signal of trust or an operational risk.
+The most-documented adjacent engagement is [the mobility case](/case-roam), whose electric motorcycles are designed and manufactured in Nairobi rather than assembled from imported CKD kits. Reading the case through the local-manufacturing lens surfaces the same questions this reading is built around: how much value is captured domestically, whether the supplier ecosystem is growing, whether the workers benefit, whether customers experience the local origin as a signal of trust or an operational risk.
 
 The wider pattern, why some local-manufacturing pushes create durable capability and others create only relocated packaging, is the same pattern the [Insight on Europe Invents, America Scales](/insight-eu-us) reads for the invention-versus-commercialisation asymmetry that shapes what a local-assembly economy can actually build.
 
@@ -70,4 +70,4 @@ For the underlying strategic frame, see the [BRW framework](/brw). For the field
 
 ---
 
-*This is a Lab reading of the local-manufacturing question, drawn from the same field method used in the [Roam case study](/case-roam) and applied across the Lab's manufacturing practice. To discuss a study, see [Contact](/contact).*
+*This is a Lab reading of the local-manufacturing question, drawn from the same field method used in the [mobility case study](/case-roam) and applied across the Lab's manufacturing practice. To discuss a study, see [Contact](/contact).*

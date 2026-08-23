@@ -32,7 +32,7 @@ The pattern is not confined to mobility. It shows up in off-grid solar ventures 
 
 ### The optimisation metric is local, and often surprising
 
-What a user actually optimises for is rarely what the product was designed around. A venture may compete on a feature it considers decisive, while the local user is quietly deciding on something else entirely, a running cost, a repair network, a trust relationship, a financing structure. The first job of the study is to find the real metric, not the assumed one. In electric two-wheeler adoption in Kenya, for instance, the [Roam engagement](/case-roam) showed that the decisive variable was not range or top speed but the daily cash-flow arithmetic of a boda-boda rider on thin margins.
+What a user actually optimises for is rarely what the product was designed around. A venture may compete on a feature it considers decisive, while the local user is quietly deciding on something else entirely, a running cost, a repair network, a trust relationship, a financing structure. The first job of the study is to find the real metric, not the assumed one. In electric two-wheeler adoption in Kenya, for instance, the [mobility engagement](/case-roam) showed that the decisive variable was not range or top speed but the daily cash-flow arithmetic of a boda-boda rider on thin margins.
 
 ### Adoption is a switch, not a first purchase
 
@@ -62,7 +62,7 @@ In a market-entry decision, that honesty is the entire value: it is far cheaper 
 
 Context Entry is a specific application of the Lab's whole method: start from the people, find the real optimisation metric, read the switching cost, map the stack, measure who is reached, name the failure modes. The same discipline that evaluates a completed programme, applied before a decision instead of after, becomes the most valuable evidence a venture can buy, because it changes a decision while the decision is still open.
 
-For the named field engagement that best shows this in practice, see the [Roam case study](/case-roam). For the wider pattern that decides bounded-leapfrog outcomes, see [Four Ways a Transition Lands](/insight-transitions-outcomes) and [Who Absorbs the Gap](/insight-absorbing-the-gap).
+For the named field engagement that best shows this in practice, see the [mobility case study](/case-roam). For the wider pattern that decides bounded-leapfrog outcomes, see [Four Ways a Transition Lands](/insight-transitions-outcomes) and [Who Absorbs the Gap](/insight-absorbing-the-gap).
 
 ---
 

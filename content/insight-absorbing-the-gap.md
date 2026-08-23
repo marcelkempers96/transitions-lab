@@ -150,4 +150,4 @@ If you are weighing an entry decision and the electricity question keeps getting
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the underlying method, see [Field Research](/field-research) and the [BRW framework](/brw). For the field case behind the argument, see [Roam](/case-roam).*
+*This is an independent insight piece by Transitions Lab. For the underlying method, see [Field Research](/field-research) and the [BRW framework](/brw). For the field case behind the argument, see [the mobility case](/case-roam).*

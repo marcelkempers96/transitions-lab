@@ -56,7 +56,7 @@ The [BRW framework](/brw) enters at analysis: is the payment product bypassing t
 
 ## Where the payment rail carries other transitions
 
-The clearest illustration is [Roam in Nairobi](/case-roam), where PAYG financing on the electric motorcycle, priced against a rider's daily fare income and enforced through a payment rail the rider already uses, is what actually carries the e-mobility transition across the affordability threshold. Without the rail, the vehicle would not have crossed; with it, adoption follows the arithmetic. The same pattern runs through off-grid solar (SolShare, M-KOPA, Sun King, Fenix, and others built on PAYG rails), agricultural inputs on credit against future harvest, and school-fee financing.
+The clearest illustration is [the mobility case in Nairobi](/case-roam), where PAYG financing on the electric motorcycle, priced against a rider's daily fare income and enforced through a payment rail the rider already uses, is what actually carries the e-mobility transition across the affordability threshold. Without the rail, the vehicle would not have crossed; with it, adoption follows the arithmetic. The same pattern runs through off-grid solar (SolShare, M-KOPA, Sun King, Fenix, and others built on PAYG rails), agricultural inputs on credit against future harvest, and school-fee financing.
 
 Every one of these products is a claim about the payment rail as much as it is about the product itself. Reading the rail is therefore not a specialist detour; it is the pre-condition for reading any of the transitions the rail carries.
 
@@ -68,4 +68,4 @@ For the strategic reading of why leapfrogs of this shape plateau at the interope
 
 ---
 
-*This is a Lab reading of the payment-and-credit rail question, drawn from the same field method used in the [Roam](/case-roam) engagement and applied across the Lab's cross-sector work. To discuss a study, see [Contact](/contact).*
+*This is a Lab reading of the payment-and-credit rail question, drawn from the same field method used in the [the mobility](/case-roam) engagement and applied across the Lab's cross-sector work. To discuss a study, see [Contact](/contact).*

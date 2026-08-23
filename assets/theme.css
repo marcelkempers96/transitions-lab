@@ -780,6 +780,22 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   padding:8px 18px;border-bottom:2px solid var(--ink);
   display:flex;align-items:center;min-height:0;
 }
+/* Photo variant: replaces the coloured stripe with a real image.
+   The tag becomes a small chip overlaid in the top-left of the photo. */
+.prose .case-grid .case-card.has-photo .case-photo{
+  position:relative;border-bottom:2px solid var(--ink);
+  aspect-ratio:3/2;overflow:hidden;background:var(--paper-2);
+}
+.prose .case-grid .case-card.has-photo .case-photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.prose .case-grid .case-card.has-photo .case-photo .tag{
+  position:absolute;top:10px;left:10px;z-index:1;
+  padding:4px 10px;background:var(--ink);color:var(--paper);
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
+  line-height:1.2;
+}
 .prose .case-grid .case-card .tag{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
