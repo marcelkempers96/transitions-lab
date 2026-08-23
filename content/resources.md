@@ -17,10 +17,10 @@ They are free to download, use, and cite with attribution. They also show, plain
 ## How the Lab reads the world
 
 [**The BRW Framework →**](/assets/resource-brw-framework.pdf)
-*Bypass, Repurpose, Weaken.* The Lab's signature strategic framework: a mechanism-based typology of how a niche technology engages an entrenched regime, classifying each strategy by what it does to a specific lock-in barrier, and matching mechanisms to barriers. A working tool for innovators and funders, grounded in field research. **PDF, 10 pages.**
+*Bypass, Repurpose, Weaken.* The Lab's signature strategic framework: a mechanism-based typology of how a niche technology engages an entrenched regime, classifying each strategy by what it does to a specific lock-in barrier, and matching mechanisms to barriers. A working tool for innovators and funders, grounded in field research. **PDF, 16 pages.**
 
 [**Reading a Transition: A Primer →**](/assets/resource-transitions-primer.pdf)
-The Lab's intellectual foundation, set out plainly: what a socio-technical system is, why the human side comes first, the recurring dynamics to look for in any transition, and how to turn that reading into evidence. **PDF, 8 pages.**
+The Lab's intellectual foundation, set out plainly: what a socio-technical system is, why the human side comes first, the recurring dynamics to look for in any transition, and how to turn that reading into evidence. **PDF, 18 pages.**
 
 ---
 
@@ -32,10 +32,10 @@ The Lab's intellectual foundation, set out plainly: what a socio-technical syste
 A full explainer of Technology Readiness Levels and Societal Readiness Levels, with academic references: where each came from, what the nine levels mean, and why reading both together is essential. Includes two downloadable guides.
 
 [**Technology Readiness Levels, explained →**](/assets/resource-trl-explained.pdf)
-The origins (NASA, Sadin 1974, Mankins 1995), the nine-level scale, what TRL does well, and the crucial dimension it leaves out. Fully referenced. **PDF, 10 pages.**
+The origins (NASA, Sadin 1974, Mankins 1995), the nine-level scale, what TRL does well, and the crucial dimension it leaves out. Fully referenced. **PDF, 12 pages.**
 
 [**Societal Readiness Levels, explained →**](/assets/resource-srl-explained.pdf)
-The social counterpart to TRL, and the framework closest to the Lab's work: origins (Innovation Fund Denmark 2018, Bruno et al. 2020, Bernstein et al. 2022), the nine-level scale, and why SRL decides success as often as the technology does. Fully referenced. **PDF, 8 pages.**
+The social counterpart to TRL, and the framework closest to the Lab's work: origins (Innovation Fund Denmark 2018, Bruno et al. 2020, Bernstein et al. 2022), the nine-level scale, and why SRL decides success as often as the technology does. Fully referenced. **PDF, 12 pages.**
 
 ---
 
@@ -44,13 +44,13 @@ The social counterpart to TRL, and the framework closest to the Lab's work: orig
 ## How the Lab measures
 
 [**Measuring What Actually Changed →**](/assets/resource-measurement-method.pdf)
-The Lab's methodology for field research and impact measurement: the five-stage method (Scope, Design, Collect, Analyse & benchmark, Deliver), read across the Reach, Depth, and Experience dimensions, and the baseline discipline that separates real impact measurement from after-the-fact assertion. **PDF, 10 pages.**
+The Lab's methodology for field research and impact measurement: the five-stage method (Scope, Design, Collect, Analyse & benchmark, Deliver), read across the Reach, Depth, and Experience dimensions, and the baseline discipline that separates real impact measurement from after-the-fact assertion. **PDF, 21 pages.**
+
+[**Making Data Mean Something: The Lab's Data-Analysis Method →**](/assets/resource-data-analysis.pdf)
+How the Lab turns raw interviews, surveys, and observational data into defensible findings: the coding workflow, two-pass reconciliation, cross-respondent synthesis, and the discipline of naming disconfirming cases explicitly. **PDF, 15 pages.**
 
 [**Ethics & Consent in the Field →**](/assets/resource-field-ethics.pdf)
-The Lab's working standard for doing primary research with people, honestly and safely: the four principles, informed consent done properly, power and vulnerability in the field, and data protection from collection to deletion. **PDF, 7 pages.**
-
-[**From Transcript to Evidence: The Lab's Data-Analysis Method →**](/assets/resource-data-analysis.pdf)
-How the Lab turns raw interviews, surveys, and observational data into defensible findings: the coding workflow, two-pass reconciliation, cross-respondent synthesis, and the discipline of naming disconfirming cases explicitly. **PDF.**
+The Lab's working standard for doing primary research with people, honestly and safely: the four principles, informed consent done properly, power and vulnerability in the field, and data protection from collection to deletion. **PDF, 15 pages.**
 
 ---
 
@@ -58,8 +58,8 @@ How the Lab turns raw interviews, surveys, and observational data into defensibl
 
 ## Instruments to use in the field
 
-[**In-Depth Interview Guide →**](/interview-guide)
-A demonstration of the depth the Lab reaches in qualitative fieldwork: the "five levels down" principle, the funnel structure of a session, and the probing techniques that get from surface fact to lived meaning.
+[**In-Depth Interview Guide →**](/assets/resource-interview-guide.pdf)
+A demonstration of the depth the Lab reaches in qualitative fieldwork: the "five levels down" principle, the funnel structure of a session, and the probing techniques that get from surface fact to lived meaning. **PDF, 26 pages.** Also available as [a web page](/interview-guide).
 
 [**European Impact-Tracking Template →**](/impact-tracking-template)
 A fill-in framework for measuring the before-and-after impact of a European project, demonstration, or socially innovative action: set up at the start, run while the work is live, closed out with proof.
