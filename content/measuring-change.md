@@ -8,7 +8,11 @@ Most writing about a new technology or programme arrives ahead of the evidence. 
 
 Measuring Change is two connected disciplines. The first is **field research**, the primary contact with the people a transition affects. The second is **impact measurement**, the frame that turns those conversations and numbers into a defensible reading of what changed. This page carries both.
 
-*Read either method in full: [Field Research](/field-research) or [Impact Measurement](/impact-measurement).*
+<div class="method-pointer">
+  <span class="mp-label">Read either method</span>
+  <a class="mp-btn" href="/field-research">Field Research &rarr;</a>
+  <a class="mp-btn" href="/impact-measurement">Impact Measurement &rarr;</a>
+</div>
 
 ---
 

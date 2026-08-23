@@ -8,7 +8,11 @@ The riskiest research a Lab partner commissions is the research that precedes a 
 
 **Entering a New Context** is the service for that decision. It reaches the people whose behaviour will decide the outcome and reports what they actually do, want, and can afford.
 
-*Read the underlying methods in full: [Research & Development Support](/research-development) for the earlier-stage decisions (what to build, whom for, and whether the prototype meets its real environment), and [Market & Expansion Research](/market-expansion) for the launch decision itself.*
+<div class="method-pointer">
+  <span class="mp-label">Read the underlying methods</span>
+  <a class="mp-btn" href="/research-development">Research &amp; Development Support &rarr;</a>
+  <a class="mp-btn" href="/market-expansion">Market &amp; Expansion Research &rarr;</a>
+</div>
 
 ---
 

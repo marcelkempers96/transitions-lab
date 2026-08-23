@@ -32,7 +32,11 @@ Reporting to Funders is one connected system, not three afterthoughts. The three
 
 The three are one loop. Monitoring feeds evaluation; evaluation sharpens what is worth disseminating; dissemination and its uptake become the next thing to monitor. Designed together from day one, they make a project legible to itself and credible to everyone else.
 
-*Read the full method: [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination).*
+<div class="method-pointer">
+  <span class="mp-label">Read the underlying methods</span>
+  <a class="mp-btn" href="/monitoring-evaluation-dissemination">Monitoring, Evaluation &amp; Dissemination &rarr;</a>
+  <a class="mp-btn" href="/european-impact-tracking">European Impact Tracking &rarr;</a>
+</div>
 
 ---
 
