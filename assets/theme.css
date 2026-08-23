@@ -1190,15 +1190,18 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   transition:transform .12s ease,background .15s ease;
 }
 .serve-grid a:last-child{border-right:0;}
-/* Quiet cream palette so the euro-blue consortia card carries the
-   colour weight on its own, and the rest sit as neutral containers
-   separated only by the grid's plain black gridlines. */
-.serve-grid a:nth-child(1){background:var(--paper);color:var(--ink);}
-.serve-grid a:nth-child(2){background:var(--paper);color:var(--ink);}
+/* Warm palette. Companies and Funders carry a coral / butter accent
+   to lift them out of the neutral row; European consortia keeps its
+   euro-blue anchor; NGOs and Research stay quiet cream so the row
+   has a rhythm rather than five equally loud blocks. */
+.serve-grid a:nth-child(1){background:var(--coral);color:var(--ink);}
+.serve-grid a:nth-child(2){background:var(--butter);color:var(--ink);}
 .serve-grid a:nth-child(3){background:var(--euro-blue);color:var(--paper);}
 .serve-grid a:nth-child(4){background:var(--paper);color:var(--ink);}
 .serve-grid a:nth-child(5){background:var(--paper);color:var(--ink);}
-.serve-grid a:nth-child(n+1):not(:nth-child(3)):hover{background:var(--paper-2);}
+.serve-grid a:nth-child(1):hover{background:#e58c74;}
+.serve-grid a:nth-child(2):hover{background:#eecd6a;}
+.serve-grid a:nth-child(4):hover,.serve-grid a:nth-child(5):hover{background:var(--paper-2);}
 .serve-grid a .serve-tag{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
