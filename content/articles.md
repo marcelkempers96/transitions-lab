@@ -90,10 +90,13 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <p class="article-desc">Europe produces world-class innovation and struggles to commercialise it; the United States does the reverse. What the asymmetry means, and where an independent evidence layer fits in the gap.</p>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-eu-africa">The EU and Africa: Opportunity, Compatibility, and the Evidence In Between</a>
-    <div class="article-meta">30 January 2026</div>
-    <p class="article-desc">Europe is committing hundreds of billions to Africa; Africa is becoming the largest growth market of the century. Where the two genuinely fit, and what stands between the investment and the impact it promises.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-eu-africa"><img class="article-thumb" src="/assets/img/insight-eu-africa-diagram.jpg" alt="Schematic map showing three arrows from Europe crossing the Mediterranean into Africa, each landing on a solar-panel, port, and mobile-money icon."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-eu-africa">The EU and Africa: Opportunity, Compatibility, and the Evidence In Between</a>
+      <div class="article-meta">30 January 2026</div>
+      <p class="article-desc">Europe is committing hundreds of billions to Africa; Africa is becoming the largest growth market of the century. Where the two genuinely fit, and what stands between the investment and the impact it promises.</p>
+    </div>
   </div>
 
   <div class="article-item">

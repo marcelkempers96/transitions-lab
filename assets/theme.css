@@ -671,6 +671,24 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 /* ── Article list (on /articles): scannable stack of pieces, each with
    a bold title link, a small meta line (date or tag), and a body blurb. */
 .prose .article-list{margin:24px 0 32px;}
+/* Optional thumbnail on an article-item: side image on desktop, top
+   image on mobile. The item without a thumbnail keeps the plain
+   stacked look; the item with one gets a two-column split. */
+.prose .article-list .article-item.has-thumb{
+  display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:start;
+}
+.prose .article-list .article-item.has-thumb .article-thumb{
+  display:block;width:100%;height:auto;
+  border:2px solid var(--ink);object-fit:cover;
+  aspect-ratio:3/2;background:var(--paper-2);
+}
+.prose .article-list .article-item.has-thumb .article-body{display:block;}
+.prose .article-list .article-item.has-thumb .article-thumb-link{display:block;}
+.prose .article-list .article-item.has-thumb .article-title{display:inline-block;}
+.prose .article-list .article-item.has-thumb:first-child{padding-top:8px;}
+@media(max-width:640px){
+  .prose .article-list .article-item.has-thumb{grid-template-columns:1fr;gap:12px;}
+}
 .prose .article-list .article-item{
   border-top:1px solid var(--ink);padding:22px 0 4px;
 }

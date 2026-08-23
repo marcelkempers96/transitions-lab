@@ -6,7 +6,10 @@
 
 <p class="article-meta"><span class="article-date">July 2026</span> · <span class="article-reading-time">11 min read</span></p>
 
-<!-- IMAGE eu-africa-hero: diagram or photo | A transatlantic/Euro-African corridor map, or a strong field image tying the two - a port, a solar array, a market. House navy + ochre. | Full-width hero under the standfirst. -->
+<figure>
+  <img src="/assets/img/insight-eu-africa-diagram.jpg" alt="Schematic map: a blue Europe at the top with three arrows crossing the Mediterranean into a butter-yellow Africa below, each arrow landing on a small icon — a solar panel, a port with a crane, and a mobile-money handset." class="diagram">
+  <figcaption>Three of the corridors European capital is committing to. The question is not whether the money moves; it is what the money reaches, and with whose evidence.</figcaption>
+</figure>
 
 Two facts are reshaping the relationship between Europe and Africa. Europe needs new markets, secure supply chains, and clean-energy partners. Africa needs investment, industrialisation, and jobs at a scale no other region will match. On paper, the interests align almost perfectly. The question is whether the alignment survives contact with reality, and that is a question about evidence.
 
