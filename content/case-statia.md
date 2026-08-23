@@ -4,6 +4,12 @@
 
 *What it takes to plan transport for a community of a few thousand people, where every assumption imported from a large mainland system fails. A reading of the public-sector transport question in the Dutch Caribbean.*
 
+<div class="case-meta">
+  <div><span class="k">Location</span><span class="v">St. Eustatius, Dutch Caribbean</span></div>
+  <div><span class="k">Sector</span><span class="v">Public-sector transport · small-island systems</span></div>
+  <div><span class="k">Lab programme</span><span class="v">Dutch Caribbean Practice</span></div>
+</div>
+
 <!-- IMAGE statia-hero: hero photo | A road, vehicle, or harbour scene on St. Eustatius, showing the island's scale and terrain. Documentary. | Full-bleed hero under the standfirst. -->
 
 ## The transition in one sentence

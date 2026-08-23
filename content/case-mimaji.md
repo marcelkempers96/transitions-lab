@@ -4,7 +4,13 @@
 
 *How open data about water quality and price becomes a socio-technical intervention in its own right, changing who can hold a water system to account. A field engagement with the MiMaji Foundation.*
 
-<img class="partner-logo" src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation">
+<a href="https://www.mimaji.org" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
+
+<div class="case-meta">
+  <div><span class="k">Location</span><span class="v">Nairobi, Kenya</span></div>
+  <div><span class="k">Sector</span><span class="v">Water &amp; sanitation · open environmental data · community accountability</span></div>
+  <div><span class="k">Lab programme</span><span class="v">Water &amp; Sanitation Transitions</span></div>
+</div>
 
 ## The transition in one sentence
 

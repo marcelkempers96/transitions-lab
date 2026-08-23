@@ -546,6 +546,41 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   .logo-strip img{height:44px;max-width:160px;}
 }
 
+/* Assumption vs field reality: two-column split rows, used on the R&D
+   service page to show design assumptions against what fieldwork
+   surfaces. Reads distinctly from the failure-mode UL callouts other
+   service pages use. */
+.prose .assumption-grid{
+  border:2px solid var(--ink);background:var(--paper);
+  margin:1.6em 0 2em;box-shadow:6px 6px 0 var(--ink);
+}
+.prose .assumption-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:2px solid var(--ink);
+}
+.prose .assumption-row:last-child{border-bottom:0;}
+.prose .assumption-row > div{padding:20px 24px 22px;}
+.prose .assumption-row .ar-assumption{
+  background:var(--paper-2);border-right:2px solid var(--ink);
+  color:var(--ink);
+}
+.prose .assumption-row .ar-reality{
+  background:var(--paper);color:var(--ink);
+}
+.prose .assumption-row .ar-tag{
+  display:block;font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
+  color:var(--ink);opacity:.55;margin:0 0 8px;
+}
+.prose .assumption-row .ar-assumption .ar-tag{color:var(--ink);opacity:.55;}
+.prose .assumption-row .ar-reality .ar-tag{color:var(--orange);opacity:1;}
+.prose .assumption-row p{margin:0;font-size:16px;line-height:1.5;font-weight:500;}
+.prose .assumption-row .ar-reality p{font-weight:500;}
+@media(max-width:720px){
+  .prose .assumption-row{grid-template-columns:1fr;}
+  .prose .assumption-row .ar-assumption{border-right:0;border-bottom:2px solid var(--ink);}
+}
+
 /* Metadata block on case pages: Location / Sector / Programme, one per row. */
 .prose .case-meta{
   display:grid;grid-template-columns:1fr;gap:0;
@@ -567,6 +602,28 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 @media(max-width:640px){
   .prose .case-meta > div{grid-template-columns:1fr;gap:4px;padding:12px 16px;}
 }
+
+/* "Illustrative composite" badge on a Lab-reading case page. Signals
+   to the reader that the case is a sector composite rather than a
+   named client engagement, without hiding it in fine print. */
+.prose .illustrative-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  border:2px solid var(--ink);background:var(--butter);color:var(--ink);
+  padding:8px 14px;margin:0 0 1.6em;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.prose .illustrative-badge::before{content:"§";color:var(--orange);font-size:15px;}
+
+/* Sector topic icon shown at the top of a case-reading page in place
+   of the partner logo real cases carry. Same footprint as the logo
+   so the layout stays consistent across the two card types. */
+.prose .sector-icon{
+  display:block;height:96px;width:auto;max-width:120px;
+  margin:0 0 1.4em;object-fit:contain;
+}
+@media(max-width:640px){.prose .sector-icon{height:72px;}}
 
 /* Single partner logo on a case-study page, inline below the standfirst. */
 .prose .partner-logo{

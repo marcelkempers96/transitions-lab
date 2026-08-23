@@ -105,17 +105,31 @@ Related programmes and companion services: [European Impact Tracking](/european-
 
 ---
 
-## Common failure modes at R&D stage
+## Where the design assumption meets the field
 
-<div class="callout c-coral">
-  <span class="kicker">What we most often see, and fix</span>
-  <ul>
-    <li><strong>The user is a persona, not a person.</strong> Design decisions justified against an inherited archetype nobody has spoken to. Fix by grounding personas in primary interviews, in the setting.</li>
-    <li><strong>The prototype meets a caricature of its environment.</strong> Lab-grade infrastructure assumed where field conditions are messier. Fix with prototype-in-context sessions, not lab demos.</li>
-    <li><strong>The SRL claim is aspirational, not evidenced.</strong> A high SRL number in the proposal, no primary evidence behind it in the report. Fix with an evidence file per level, gathered by an independent partner.</li>
-    <li><strong>Formative research is skipped for time.</strong> A missed month of user research at the start costs a year of iteration later. Fix by putting the first field round inside the design phase, not after it.</li>
-    <li><strong>Stakeholder input is confused with co-design.</strong> Two workshops with self-selected participants passed off as co-creation. Fix by structuring co-design as recurring, reciprocal, and honest about who was in the room and who was not.</li>
-  </ul>
+Every R&D failure mode we see at this stage has the same underlying shape: a plausible assumption the design team was working from, and a field reality the design team had not yet met. The value of independent field work is closing that gap while the design is still open.
+
+<div class="assumption-grid">
+  <div class="assumption-row">
+    <div class="ar-assumption"><span class="ar-tag">What the design assumes</span><p>The user is the persona in the deck.</p></div>
+    <div class="ar-reality"><span class="ar-tag">What the field shows</span><p>The persona was inherited from the home market and nobody has spoken to a target user in the target setting. The person the design should have been built for often does not fit the archetype at all.</p></div>
+  </div>
+  <div class="assumption-row">
+    <div class="ar-assumption"><span class="ar-tag">What the design assumes</span><p>The prototype meets a lab-grade version of its environment.</p></div>
+    <div class="ar-reality"><span class="ar-tag">What the field shows</span><p>Power flickers, connectivity drops, devices are shared, dust and heat and repair-shop culture behave in ways the design cycle never rehearsed. Prototype-in-context sessions surface these on the first day.</p></div>
+  </div>
+  <div class="assumption-row">
+    <div class="ar-assumption"><span class="ar-tag">What the design assumes</span><p>The SRL claim is the level the proposal committed to.</p></div>
+    <div class="ar-reality"><span class="ar-tag">What the field shows</span><p>The evidence behind the claimed level is often thin: workshops with a friendly stakeholder group, self-report from the project team, testimonials picked for the report. An evidence file per level, gathered by an independent partner, is what makes the number defensible.</p></div>
+  </div>
+  <div class="assumption-row">
+    <div class="ar-assumption"><span class="ar-tag">What the design assumes</span><p>Formative research can be caught up later.</p></div>
+    <div class="ar-reality"><span class="ar-tag">What the field shows</span><p>A missed month of user research at the start typically costs a year of iteration later, and freezes design choices that field evidence would have overturned. The first field round belongs inside the design phase, not after it.</p></div>
+  </div>
+  <div class="assumption-row">
+    <div class="ar-assumption"><span class="ar-tag">What the design assumes</span><p>Stakeholder workshops equal co-design.</p></div>
+    <div class="ar-reality"><span class="ar-tag">What the field shows</span><p>Two workshops with self-selected participants are not co-creation. Real co-design is recurring, reciprocal, structured, and honest about who was in the room and who was not.</p></div>
+  </div>
 </div>
 
 ---
