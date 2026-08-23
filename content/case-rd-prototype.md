@@ -4,12 +4,9 @@
 
 *What a European hardware venture learns when a lab-tested solar vaccine fridge meets a rural East African clinic for the first time, and how that evidence changes the next design cycle.*
 
-<span class="illustrative-badge">Illustrative composite &middot; not a named engagement</span>
-
 <img class="sector-icon" src="/assets/icons/icon-energy.png" alt="Cold-chain / off-grid energy sector icon" aria-hidden="true">
 
 <div class="case-meta">
-  <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's R&amp;D Support practice</span></div>
   <div><span class="k">Sector</span><span class="v">Cold chain · off-grid energy · rural health infrastructure (East Africa)</span></div>
   <div><span class="k">Lab programme</span><span class="v"><a href="/research-development">Research &amp; Development Support</a> · <a href="/expertise-energy">Energy Access &amp; Off-Grid Systems</a></span></div>
 </div>

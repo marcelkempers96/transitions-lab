@@ -94,4 +94,4 @@ If you are investing in a platform-anchored fleet or charging network and want t
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility &amp; Transport](/expertise-e-mobility) and [Financial Inclusion &amp; Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility) and [Financial Inclusion & Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*

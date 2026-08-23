@@ -4,7 +4,7 @@
 
 *What happens when a product moves from being imported to being assembled locally, and whether the "local" part actually reaches the workers, suppliers, and customers it promises to.*
 
-<span class="illustrative-badge">Illustrative composite &middot; not a named engagement</span>
+<span class="illustrative-badge">Illustrative composite · not a named engagement</span>
 
 <img class="sector-icon" src="/assets/icons/icon-manufacturing.png" alt="Local manufacturing sector icon" aria-hidden="true">
 
@@ -66,7 +66,7 @@ The wider pattern, why some local-manufacturing pushes create durable capability
 
 Local manufacturing is not a single policy question but a chain of them. Where each link sits, and who benefits at each step, is a field question, not an accounting one. The Lab's reading of these transitions starts with the workers, moves to the suppliers, and reaches the customers, and reports what the evidence says, including where the "local" claim breaks down.
 
-For the underlying strategic frame, see the [BRW framework](/brw). For the field methods behind the reading, see [Field Research](/field-research). For the sector page, see [Local Manufacturing &amp; Supply Chains](/expertise-manufacturing).
+For the underlying strategic frame, see the [BRW framework](/brw). For the field methods behind the reading, see [Field Research](/field-research). For the sector page, see [Local Manufacturing & Supply Chains](/expertise-manufacturing).
 
 ---
 

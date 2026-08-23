@@ -1,4 +1,4 @@
-§ / Insight, Capital &amp; Method
+§ / Insight, Capital & Method
 
 # One Month Is Not a Trend
 

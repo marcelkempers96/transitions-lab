@@ -1,10 +1,10 @@
-§ / Field reading, AI &amp; digital systems
+§ / Field reading, AI & digital systems
 
 # Digital Services in Low-Connectivity Contexts
 
 *What happens when a digital tool designed for high-bandwidth, always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.*
 
-<span class="illustrative-badge">Illustrative composite &middot; not a named engagement</span>
+<span class="illustrative-badge">Illustrative composite · not a named engagement</span>
 
 <img class="sector-icon" src="/assets/icons/icon-ai-digital.png" alt="AI and digital systems sector icon" aria-hidden="true">
 
@@ -62,4 +62,4 @@ Digital services that reach real users at scale are not accidents. They are the 
 
 ---
 
-*This is a Lab reading of the digital-service adoption question, drawn from the same field method used in the [MiMaji](/case-mimaji) engagement on water transparency, which is itself a digital-service adoption question dressed as a water question. For the wider expertise, see [AI &amp; Digital Systems](/expertise-ai-digital). To discuss a study, see [Contact](/contact).*
+*This is a Lab reading of the digital-service adoption question, drawn from the same field method used in the [MiMaji](/case-mimaji) engagement on water transparency, which is itself a digital-service adoption question dressed as a water question. For the wider expertise, see [AI & Digital Systems](/expertise-ai-digital). To discuss a study, see [Contact](/contact).*

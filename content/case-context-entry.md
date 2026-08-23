@@ -4,7 +4,7 @@
 
 *What a European mobility venture learns before committing to a new market, and how field evidence turns a hopeful expansion into a reasoned one.*
 
-<span class="illustrative-badge">Illustrative composite &middot; not a named engagement</span>
+<span class="illustrative-badge">Illustrative composite · not a named engagement</span>
 
 <img class="sector-icon" src="/assets/icons/icon-emobility.png" alt="E-mobility sector icon" aria-hidden="true">
 
@@ -48,7 +48,7 @@ An expansion that reaches only the top of a market may still fail its own busine
 
 ## How the Lab studies a case like this
 
-Trained local field researchers put into the actual market, reaching real prospective users in their own language and context, over four to six weeks. Interviews with 40&ndash;80 prospective users across the segments the venture intends to serve, structured around observed behaviour rather than stated preference. Agent- and distributor-network mapping in two or three focal locations. A short repeatable survey, in the local language, that captures walk-away price and stated intent alongside the behavioural read from the interviews. Regulatory and payments-stack review, done from the user's side.
+Trained local field researchers put into the actual market, reaching real prospective users in their own language and context, over four to six weeks. Interviews with 40–80 prospective users across the segments the venture intends to serve, structured around observed behaviour rather than stated preference. Agent- and distributor-network mapping in two or three focal locations. A short repeatable survey, in the local language, that captures walk-away price and stated intent alongside the behavioural read from the interviews. Regulatory and payments-stack review, done from the user's side.
 
 The venture's own strategy is read through the [BRW framework](/brw) to locate the real barriers the entry will engage: which incumbent barriers it bypasses, which it repurposes, which it tries to weaken. That reading tells the study team where to look for the strongest and weakest points, before the field work begins.
 
@@ -66,4 +66,4 @@ For the named field engagement that best shows this in practice, see the [Roam c
 
 ---
 
-*This is an illustrative composite of the Lab's [Market &amp; Expansion Research](/market-expansion) practice, drawn from the pattern of Context Entry work rather than a single named client. For the full service, see [Entering a New Context](/entering-a-new-context). To discuss a study for your own expansion, see [Contact](/contact).*
+*This is an illustrative composite of the Lab's [Market & Expansion Research](/market-expansion) practice, drawn from the pattern of Context Entry work rather than a single named client. For the full service, see [Entering a New Context](/entering-a-new-context). To discuss a study for your own expansion, see [Contact](/contact).*

@@ -4,7 +4,7 @@
 
 *Every other transition, electric mobility, off-grid solar, water services, agri-inputs, depends on one prior question: can people pay for it, over time, in the way their income actually arrives?*
 
-<span class="illustrative-badge">Illustrative composite &middot; not a named engagement</span>
+<span class="illustrative-badge">Illustrative composite · not a named engagement</span>
 
 <img class="sector-icon" src="/assets/icons/icon-finance.png" alt="Financial inclusion sector icon" aria-hidden="true">
 
@@ -64,7 +64,7 @@ Every one of these products is a claim about the payment rail as much as it is a
 
 Finance is the transition that decides how far the others go. A payment rail that reaches everyone is a public good; a payment rail that reaches most but excludes the rest is a mechanism of inequality. The Lab reads them from the user side, in the daily-economics rhythm they actually meet, and reports honestly where the rail carries the promise it was sold on and where it breaks.
 
-For the strategic reading of why leapfrogs of this shape plateau at the interoperability boundary that only public planning can move, see [Four Ways a Transition Lands](/insight-transitions-outcomes) and [Who Absorbs the Gap](/insight-absorbing-the-gap). For the wider expertise, see [Financial Inclusion &amp; Payment Systems](/expertise-finance).
+For the strategic reading of why leapfrogs of this shape plateau at the interoperability boundary that only public planning can move, see [Four Ways a Transition Lands](/insight-transitions-outcomes) and [Who Absorbs the Gap](/insight-absorbing-the-gap). For the wider expertise, see [Financial Inclusion & Payment Systems](/expertise-finance).
 
 ---
 
