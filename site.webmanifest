@@ -1,0 +1,15 @@
+{
+  "name": "Transitions Lab",
+  "short_name": "Transitions Lab",
+  "description": "Independent research on how technologies meet real people.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F5EDDD",
+  "theme_color": "#F5EDDD",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
