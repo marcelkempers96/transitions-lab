@@ -96,7 +96,7 @@ If you are investing in a platform-anchored fleet or charging network and want t
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility) and [Financial Inclusion & Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility) and [Financial Inclusion & Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact). See also [Who Holds the Pen on the Standard](/insight-who-holds-the-pen) on the same asymmetry playing out in Kenya's open battery-swap network.*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

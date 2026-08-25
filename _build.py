@@ -115,6 +115,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-benefits-nobody-looked-for": "butter",
     "insight-same-queue": "butter",
     "insight-what-the-bond-secures": "butter",
+    "insight-hurdle-not-risk": "butter",
+    "insight-capability-slow-part": "butter",
+    "insight-who-holds-the-pen": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -431,6 +434,18 @@ META: dict[str, dict[str, str]] = {
     "insight-what-the-bond-secures": {
         "title": "What the Bond Is Actually Secured On | Transitions Lab",
         "description": "African off-grid solar has become an asset class by turning household repayments into collateral. The security is not the hardware. It is the ability to switch the light off, and water has no equivalent.",
+    },
+    "insight-hurdle-not-risk": {
+        "title": "The Hurdle Is Not the Risk | Transitions Lab",
+        "description": "A new vehicle aims to channel Nigerian pension savings into climate infrastructure, backed by a US$253m first-loss commitment. The evidence suggests credit risk is not what has been keeping the funds out.",
+    },
+    "insight-capability-slow-part": {
+        "title": "Capability Is the Slow Part | Transitions Lab",
+        "description": "A fabrication programme in Nigeria and a 24 GW target in Indonesia are constrained by the same thing, and it is not money. Capability formation runs on a decade timescale, not a twelve-month one.",
+    },
+    "insight-who-holds-the-pen": {
+        "title": "Who Holds the Pen on the Standard | Transitions Lab",
+        "description": "An open battery-swapping network in Kenya solves the fragmentation problem holding African motorcycle electrification back. Open architecture is a technical property; whether the standard is governed is a separate question.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",

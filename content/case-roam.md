@@ -76,4 +76,4 @@ The motorcycle was never the hard part. The hard part is everything around it. T
 
 ---
 
-*This case study is part of the Lab's [E-Mobility & Transport](/expertise-e-mobility) programme. For the Lab's field methods, see [Field Research](/field-research). To discuss a study in your own market, see [Contact](/contact).*
+*This case study is part of the Lab's [E-Mobility & Transport](/expertise-e-mobility) programme. For the Lab's field methods, see [Field Research](/field-research). To discuss a study in your own market, see [Contact](/contact). See also [Who Holds the Pen on the Standard](/insight-who-holds-the-pen) on the governance of Kenya's open battery-swap network.*

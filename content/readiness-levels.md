@@ -72,4 +72,4 @@ The guides above carry full citations. Key sources include Mankins (1995) and th
 
 ---
 
-*For the R&D-stage service that turns an asserted SRL into a substantiated one, see [Research & Development Support](/research-development). For the Lab's other frameworks and methods, see [Resources](/resources). For how the Lab applies readiness thinking in practice, see [What We Do](/what-we-do). To discuss a study, see [Contact](/contact).*
+*Related reading: [Capability Is the Slow Part](/insight-capability-slow-part) on why adopting-side readiness is the binding constraint on transition speed. For the R&D-stage service that turns an asserted SRL into a substantiated one, see [Research & Development Support](/research-development). For the Lab's other frameworks and methods, see [Resources](/resources). For how the Lab applies readiness thinking in practice, see [What We Do](/what-we-do). To discuss a study, see [Contact](/contact).*

@@ -54,4 +54,4 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [The Anchor Tenant](/insight-anchor-tenant) on how platforms are financing charging infrastructure by owning the demand, and [Who Absorbs the Gap](/insight-absorbing-the-gap) on which party carries the reliability risk. See the [mobility case study](/case-roam). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*Related reading: [Who Holds the Pen on the Standard](/insight-who-holds-the-pen) on the governance of Kenya's open battery-swap network, and [The Anchor Tenant](/insight-anchor-tenant) on how platforms are financing charging infrastructure by owning the demand, and [Who Absorbs the Gap](/insight-absorbing-the-gap) on which party carries the reliability risk. See the [mobility case study](/case-roam). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
