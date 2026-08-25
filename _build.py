@@ -1257,28 +1257,37 @@ def build_home() -> str:
       <p>Most commissioned work is delivered privately. The engagements below are the ones partners have agreed to share.</p>
     </div>
     <div class="insight-row">
-      <a class="insight-card" href="/case-roam">
-        <div class="stripe"><span class="kicker">Kenya · E-mobility</span></div>
+      <a class="insight-card has-photo" href="/case-roam">
+        <div class="card-photo">
+          <img src="/assets/img/case-mobility-card.jpg" alt="A boda-boda rider in a hi-vis vest and yellow helmet on a teal electric motorcycle, threading through Nairobi traffic.">
+          <span class="kicker">Kenya &middot; E-mobility</span>
+        </div>
         <div class="body">
           <h3>Electric transport in Nairobi</h3>
           <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.</p>
-          <span class="read">Read the case →</span>
+          <span class="read">Read the case &rarr;</span>
         </div>
       </a>
-      <a class="insight-card" href="/case-pyropower">
-        <div class="stripe"><span class="kicker">Indonesia · Agriculture</span></div>
+      <a class="insight-card has-photo" href="/case-pyropower">
+        <div class="card-photo">
+          <img src="/assets/img/case-pyropower-hero.jpg" alt="A smallholder farmer in a straw hat holds a handful of biochar, standing beside a large kiln with a fire visible at the base.">
+          <span class="kicker">Indonesia &middot; Agriculture</span>
+        </div>
         <div class="body">
           <h3>Biochar in Lombok</h3>
           <p>Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.</p>
-          <span class="read">Read the case →</span>
+          <span class="read">Read the case &rarr;</span>
         </div>
       </a>
-      <a class="insight-card" href="/case-mimaji">
-        <div class="stripe"><span class="kicker">Kenya · Water</span></div>
+      <a class="insight-card has-photo" href="/case-mimaji">
+        <div class="card-photo">
+          <img src="/assets/img/case-mimaji-hero.jpg" alt="A woman and a boy at a Nairobi settlement standpipe fill yellow jerry cans; a public tap runs into the container in the foreground.">
+          <span class="kicker">Kenya &middot; Water</span>
+        </div>
         <div class="body">
           <h3>Water transparency in Nairobi</h3>
           <p>Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.</p>
-          <span class="read">Read the case →</span>
+          <span class="read">Read the case &rarr;</span>
         </div>
       </a>
     </div>
