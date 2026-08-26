@@ -897,7 +897,14 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     """Wrap body content in the shared page shell."""
     canonical = f"{SITE_URL}/{slug}" if slug != "index" else f"{SITE_URL}/"
     og_url = canonical
-    og_image = f"{SITE_URL}/assets/og-image.png"
+    # Prefer a slug-specific 1200x627 OG card if one exists, otherwise fall
+    # back to the site-wide default. LinkedIn needs an absolute URL to a
+    # real 1.91:1 image plus explicit width/height to render the large card.
+    slug_og = ROOT / "assets" / "og" / f"{slug}.png"
+    if slug_og.exists():
+        og_image = f"{SITE_URL}/assets/og/{slug}.png"
+    else:
+        og_image = f"{SITE_URL}/assets/og-image.png"
     robots = "noindex, follow" if noindex else "index, follow"
     meta_title = META.get(slug, {}).get("title")
     full_title = meta_title or (title if slug == "index" else f"{title} | Transitions Lab")
@@ -929,11 +936,16 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 <meta property="og:description" content="{htmllib.escape(description, quote=True)}">
 <meta property="og:url" content="{og_url}">
 <meta property="og:image" content="{og_image}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="{htmllib.escape(full_title, quote=True)}">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{htmllib.escape(full_title, quote=True)}">
 <meta name="twitter:description" content="{htmllib.escape(description, quote=True)}">
 <meta name="twitter:image" content="{og_image}">
+<meta name="twitter:image:alt" content="{htmllib.escape(full_title, quote=True)}">
 {FONT_LINKS}
 <link rel="stylesheet" href="/assets/theme.css?v={ASSET_CSS_V}">
 {extra_head}
