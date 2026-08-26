@@ -6,7 +6,7 @@
 
 <p class="article-meta"><span class="article-date">25 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
-Africa Finance Corporation has launched ICRF Nigeria, a domestic vehicle designed to channel Nigerian pension funds, insurers, and asset managers into climate-resilient African infrastructure. It feeds AFC Capital Partners' US$750m Infrastructure Climate-Resilient Fund, which already holds a US$253m first-loss commitment from the Green Climate Fund and aims to mobilise as much as US$3.7bn across ten to twelve projects.
+[Africa Finance Corporation](https://www.africafc.org/) has launched ICRF Nigeria, a domestic vehicle designed to channel Nigerian pension funds, insurers, and asset managers into climate-resilient African infrastructure. It feeds AFC Capital Partners' Infrastructure Climate-Resilient Fund (target size in the region of US$750m), which already holds a first-loss commitment of around US$253m from the [Green Climate Fund](https://www.greenclimate.fund/) and aims to mobilise as much as US$3.7bn across ten to twelve projects. Fund size, first-loss size, and mobilisation targets are as reported by AFC.
 
 The premise is one of the most important in African transition finance, and it is correct. Enormous pools of domestic long-term savings exist. They are overwhelmingly invested in government paper. Redirecting even a modest share into productive infrastructure would do more for the continent's transition than another decade of importing climate capital from Europe.
 
@@ -99,7 +99,7 @@ If you are a trustee, a sponsor, or a concessional funder in one of these struct
 
 ## Sources
 
-- Africa Finance Corporation, ICRF Nigeria launch, August 2026 (company announcement).
+- [Africa Finance Corporation](https://www.africafc.org/), ICRF Nigeria launch, August 2026 (company announcement). Fund size, first-loss commitment, and mobilisation targets are as reported by AFC; a [Green Climate Fund](https://www.greenclimate.fund/) partnership underpins the concessional layer.
 - Nairametrics, [Pension fund assets grow to ₦29.52 trillion in March 2026](https://nairametrics.com/2026/05/07/pension-fund-assets-grow-to-n29-52-trillion-in-march-2026/), May 2026.
 - Nairametrics, [PenCom plans infrastructure fund to unlock Nigeria's pension assets](https://nairametrics.com/2026/07/09/pencom-plans-infrastructure-fund-to-unlock-nigerias-22-billion-pension-assets/), July 2026.
 - CNBC Africa, [Will Nigeria sustain pension asset growth momentum in H2 2026](https://www.cnbcafrica.com/media/7782906015273/will-nigeria-sustain-pension-asset-growth-momentum-in-h226), July 2026.

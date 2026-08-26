@@ -6,7 +6,7 @@
 
 <p class="article-meta"><span class="article-date">23 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
-Southeast Asian startup funding fell roughly 84% from June to July 2026, to around US$698m. Climate-oriented companies kept raising through the same period.
+Southeast Asian startup funding [as reported by regional deal trackers](https://www.dealstreetasia.com/) fell roughly 84% from June to July 2026, to around US$698m on the numbers most widely quoted. Climate-oriented companies kept raising through the same period. The 84% is quoted here as it appeared in the reporting under discussion, not as an audited figure — that is part of the point of the piece.
 
 The reading being circulated is that capital has become selective and infrastructure-minded, favouring businesses attached to physical demand over lightly differentiated consumer software. That may well be true. It is not what this number shows, and the gap between the two is worth a few minutes because the same reasoning error turns up constantly in impact claims.
 

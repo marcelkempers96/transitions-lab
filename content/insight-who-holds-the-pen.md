@@ -6,7 +6,7 @@
 
 <p class="article-meta"><span class="article-date">25 August 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
-SUN Mobility and Vivo Energy have launched an open-architecture battery-swapping network in Kenya, with 35 stations operating across Nairobi and Mombasa and vehicles from more than ten manufacturers able to use the system. Twenty of the sites sit at existing Shell forecourts, and the partnership could eventually give SUN Mobility access to more than 4,200 Shell- and Engen-branded sites across 29 African countries.
+[SUN Mobility](https://www.sunmobility.co.in/) and [Vivo Energy](https://www.vivoenergy.com/) have launched an open-architecture battery-swapping network in Kenya. Company announcements at launch describe roughly 35 stations operating across Nairobi and Mombasa, vehicles from more than ten manufacturers able to use the system, and around twenty of the sites at existing Shell forecourts. Vivo Energy itself operates Shell- and Engen-branded sites across [more than 20 African countries](https://www.vivoenergy.com/), which is the distribution asset behind the partnership.
 
 The station count is the headline. The manufacturer count is the story.
 
@@ -72,7 +72,7 @@ A swap station needs an urban plot in a high-traffic location, a grid connection
 
 Fuel forecourts meet every one of them. They have the land, the power connection, the security infrastructure, the staff, the permits and, importantly, the habit. A rider already knows where the Shell station is.
 
-That is why the number worth attending to is 4,200 sites across 29 countries. It is a distribution asset that no e-mobility company could assemble in a decade at any plausible cost of capital, and it means the practical gatekeeper of motorcycle electrification across much of the continent may turn out to be an incumbent fuel retailer.
+That is why the [Vivo Energy footprint](https://www.vivoenergy.com/) matters more than the swap technology. It is a distribution asset that no e-mobility company could assemble in a decade at any plausible cost of capital, and it means the practical gatekeeper of motorcycle electrification across much of the continent may turn out to be an incumbent fuel retailer.
 
 This is not a bad outcome. Incumbent assets being redeployed into a transition is usually how transitions actually happen at speed, and we have argued that [what travels with an incumbent](/insight-incumbents-second-life) is worth examining precisely because the redeployment is valuable enough to be worth getting right. But it does change what the strategic question is. Manufacturers negotiating access to a battery standard are, in substance, negotiating access to a property portfolio.
 
@@ -110,7 +110,7 @@ If you are a manufacturer, a regulator, or a funder with a position in this netw
 
 ## Sources
 
-- SUN Mobility and Vivo Energy launch open battery-swapping network in Kenya, August 2026 (company announcement).
+- [SUN Mobility](https://www.sunmobility.co.in/) and [Vivo Energy](https://www.vivoenergy.com/), open battery-swapping network launch in Kenya, August 2026 (company announcements). Station counts, manufacturer counts, and site-count figures are as reported by the two companies at launch and have not been independently verified by the Lab.
 - Ostrom, E. (1990), *Governing the Commons: The Evolution of Institutions for Collective Action*, Cambridge University Press.
 
 ---

@@ -6,7 +6,7 @@
 
 <p class="article-meta"><span class="article-date">24 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
-Africa's largest pay-as-you-go solar operators have stopped raising venture rounds and started issuing paper. d.light issued a US$50m green bond in June. Sun King has previously raised US$286m through securitised debt, using streams of household repayments as collateral. Local currency reached a record 47.2% of sector funding in 2025.
+Africa's largest pay-as-you-go solar operators have stopped raising venture rounds and started issuing paper. [d.light](https://www.dlight.com/) issued a green bond in the region of US$50m in June. [Sun King](https://www.sunking.com/) has previously raised roughly US$286m through securitised debt, using streams of household repayments as collateral. Sector-tracker figures for 2025 show local currency reaching close to half of off-grid solar funding. All three numbers are as reported by the companies and industry trackers, and are used here to illustrate the direction of the shift rather than as audited totals.
 
 That last number deserves more attention than it usually gets. Currency mismatch has killed more African energy companies than weak demand ever has: revenue in shillings or naira, debt in dollars, and a devaluation that wipes out a functioning business with satisfied customers. A sector that has moved almost half its funding into local currency has solved a problem that defeated the previous two decades of energy-access finance. Whatever else follows in this piece, that is a genuine achievement.
 
@@ -69,7 +69,7 @@ The point is not that these numbers will look bad. Some operators would probably
 
 ## Which brings us to water
 
-On 13 August, Aqua for All opened a call for impact-oriented fund managers working in water, sanitation, energy and climate in emerging markets. The structure is €1&ndash;5m into private funds, using equity or first-loss equity, alongside up to €150,000 of technical assistance, with the explicit purpose of making water and sanitation investments investable for private capital.
+On 13 August, [Aqua for All](https://aquaforall.org/) opened a call for impact-oriented fund managers working in water, sanitation, energy and climate in emerging markets. The call, as announced, offers commitments in the €1–5m range into private funds using equity or first-loss equity, alongside modest technical-assistance grants, with the explicit purpose of making water and sanitation investments investable for private capital.
 
 The intent is the same as the solar story: convert a grant-dependent sector into a financeable one. The obstacle is that water does not have the mechanism that made solar work.
 
@@ -113,8 +113,8 @@ If you are underwriting a receivables-backed portfolio and want the household si
 
 ## Sources
 
-- Associated Press, coverage of Africa's off-grid solar financing shift (d.light green bond, Sun King securitisation, 47.2% local-currency share), August 2026.
-- Aqua for All, funding call for impact-oriented fund managers in water, sanitation, energy and climate, 13 August 2026.
+- [d.light](https://www.dlight.com/) and [Sun King](https://www.sunking.com/) company communications on debt and securitisation transactions; sector figures compiled by trackers such as [GOGLA](https://www.gogla.org/). Specific dollar amounts and the local-currency percentage are as reported and have not been independently verified by the Lab.
+- [Aqua for All](https://aquaforall.org/), funding call for impact-oriented fund managers in water, sanitation, energy and climate, 13 August 2026.
 
 ---
 

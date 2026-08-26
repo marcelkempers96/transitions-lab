@@ -10,7 +10,7 @@ Two climate ventures raised money this month in the same region, in the same wee
 
 **Neocrete**, a New Zealand company, raised US$3.5m to commercialise an additive that lets lower-quality fly ash and volcanic ash replace roughly 30–50% of the cement in concrete. In Brunei the technology is slated for a deployment of around 65,000 cubic metres at the Muara Port redevelopment, which the company estimates could avoid on the order of 5,200 tonnes of CO₂ while also reducing material costs.
 
-**Rize**, based in Singapore, closed a US$31m Series B backed by BNP Paribas Asset Management Alts, the Rockefeller Foundation, Temasek, and Breakthrough Energy Ventures among others. It works with farmers in Vietnam and Indonesia to introduce lower-methane rice-growing techniques, and builds traceability, carbon certification, and AI tools around the value chain.
+**[Rize](https://www.rize.ag/)**, based in Singapore, closed a Series B in the region of US$31m backed by BNP Paribas Asset Management Alts, the Rockefeller Foundation, Temasek, and Breakthrough Energy Ventures among others. It works with farmers in Vietnam and Indonesia to introduce lower-methane rice-growing techniques, and builds traceability, carbon certification, and AI tools around the value chain.
 
 Notice what Neocrete does not need. No certification chain. No traceability layer. No behaviour-change programme. No verification apparatus at all, in order for the product to be adopted. A contractor buys it because the concrete is cheaper, and the emissions reduction happens as a by-product of a procurement decision that would have been made anyway.
 
@@ -107,8 +107,8 @@ If you are funding an MRV-dependent agricultural programme and want the farmer s
 - [International Rice Research Institute](https://www.irri.org/), climate-change mitigation programme, on alternate wetting and drying (AWD).
 - [World Resources Institute](https://www.wri.org/), on the adoption barriers to AWD in smallholder rice systems.
 - Peer-reviewed literature on the methane / nitrous-oxide trade-off in AWD paddies (see recent meta-reviews in *Environmental Science and Pollution Research* and *Agronomy*).
-- Neocrete US$3.5m round, August 2026 (company announcement).
-- Rize US$31m Series B, August 2026 (investors: BNP Paribas Asset Management Alts, Rockefeller Foundation, Temasek, Breakthrough Energy Ventures, and others).
+- [Neocrete](https://www.neocrete.co.nz/) round, August 2026 (company announcement). US$3.5m figure is as reported by the company.
+- [Rize](https://www.rize.ag/) Series B, August 2026 (investors as named by the company: BNP Paribas Asset Management Alts, Rockefeller Foundation, Temasek, Breakthrough Energy Ventures, and others). US$31m figure is as reported by the company.
 
 ---
 

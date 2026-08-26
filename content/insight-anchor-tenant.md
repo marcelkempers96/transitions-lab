@@ -10,9 +10,9 @@ Charging infrastructure has a circular problem that everybody in the sector can 
 
 Two announcements this month describe a third answer, and it is the one that is actually working in Asia.
 
-Grab has invested in the Vietnamese charging startup EBOOST, which already runs more than 2,500 charging points serving over 10,000 users. The network is being built directly into the Grab Driver app, so a driver finds a charger, starts a session, and pays without leaving the interface they already use for work. The two companies intend to help build more than 6,000 charging ports by early 2028.
+[Grab](https://www.grab.com/) has invested in the Vietnamese charging startup [EBOOST](https://eboost.vn/), which the two companies describe as running around 2,500 charging points and serving upwards of 10,000 users at the time of the announcement. The network is being built directly into the Grab Driver app, so a driver finds a charger, starts a session, and pays without leaving the interface they already use for work. Company statements target more than 6,000 charging ports by early 2028.
 
-Separately, India's Yulu has raised US$93m to grow its electric two-wheeler fleet from roughly 50,000 vehicles to 200,000 over two years. Riders do not buy the vehicle. They subscribe. The fleet already supports more than 750,000 deliveries a day, mostly for quick commerce and food delivery.
+Separately, India's [Yulu](https://www.yulu.bike/) has raised roughly US$93m to grow its electric two-wheeler fleet from roughly 50,000 vehicles to around 200,000 over two years, per its own announcements. Riders do not buy the vehicle. They subscribe. The company reports the fleet supporting hundreds of thousands of deliveries a day, mostly for quick commerce and food delivery.
 
 Neither company is primarily an energy business. Both are doing something that energy businesses have never been able to do on their own, which is to make charging infrastructure bankable. The mechanism has a name, borrowed from a much older industry.
 
@@ -90,8 +90,8 @@ If you are investing in a platform-anchored fleet or charging network and want t
 
 ## Sources
 
-- [Grab](https://www.grab.com/) investment in [EBOOST](https://eboost.vn/) (Vietnam), August 2026 announcement: 2,500+ charging points, 10,000+ users, target of 6,000+ ports by early 2028.
-- [Yulu](https://www.yulu.bike/) US$93m round, August 2026: fleet expansion from ~50,000 to 200,000 electric two-wheelers, supporting 750,000+ daily deliveries.
+- [Grab](https://www.grab.com/) investment in [EBOOST](https://eboost.vn/) (Vietnam), August 2026 (company announcements). Station, user, and port-target figures are as reported by the two companies.
+- [Yulu](https://www.yulu.bike/) funding round, August 2026 (company announcement). Fleet growth from ~50,000 to ~200,000 vehicles and daily-delivery figures are as reported by the company.
 - Transitions Lab, [Who Absorbs the Gap](/insight-absorbing-the-gap), 18 June 2026.
 
 ---

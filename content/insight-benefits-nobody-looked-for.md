@@ -6,7 +6,7 @@
 
 <p class="article-meta"><span class="article-date">24 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
-A study published in *npj Urban Sustainability* on 10 August finds empirical evidence that upgrading informal settlements produces meaningful heat resilience benefits even where climate adaptation was never the purpose of the intervention. Better infrastructure, better health outcomes during heatwaves. Drainage, housing, streets, shade and basic services functioning as adaptation technology without being labelled as such.
+A study published in [*npj Urban Sustainability*](https://www.nature.com/npjurbansustain/) in August 2026 finds empirical evidence that upgrading informal settlements produces meaningful heat-resilience benefits even where climate adaptation was never the purpose of the intervention. Better infrastructure, better health outcomes during heatwaves. Drainage, housing, streets, shade and basic services functioning as adaptation technology without being labelled as such.
 
 The finding is welcome and plausible. The more useful question is a different one.
 
@@ -107,7 +107,7 @@ If you are running or funding an upgrading programme and suspect it is doing mor
 
 ## Sources
 
-- *npj Urban Sustainability*, empirical study on informal-settlement upgrading and heat resilience, 10 August 2026.
+- [*npj Urban Sustainability*](https://www.nature.com/npjurbansustain/), empirical study on informal-settlement upgrading and heat resilience, August 2026. Study specifics (title, authors, DOI) are as reported in the briefing and should be verified against the journal's archive before citation.
 - Merton, R. K. (1936), [The Unanticipated Consequences of Purposive Social Action](https://doi.org/10.2307/2084615), *American Sociological Review* 1(6), 894–904.
 
 ---

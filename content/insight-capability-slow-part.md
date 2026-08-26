@@ -8,9 +8,9 @@
 
 Two announcements in today's briefing appear to belong to different conversations.
 
-Off-grid energy investor All On has launched a twelve-month Innovation Ecosystem Development Programme, backed by the Global Energy Alliance for People and Planet. Ten Nigerian clean-energy ventures will receive technical expertise, prototyping facilities, fabrication equipment, venture-building support, and mentorship, rather than another pitch competition and a cash prize.
+Off-grid energy investor [All On](https://www.all-on.com/) has launched a twelve-month Innovation Ecosystem Development Programme, backed by the [Global Energy Alliance for People and Planet](https://www.energyalliance.org/). Ten Nigerian clean-energy ventures will receive technical expertise, prototyping facilities, fabrication equipment, venture-building support, and mentorship, rather than another pitch competition and a cash prize.
 
-Separately, a Tara Climate Foundation assessment reports that its Asian focus markets added 35 GW of renewables in 2025, with solar capacity up 16% and wind up 11%. Indonesia's latest electricity plan targets 24 GW of solar and wind plus more than 10 GW of storage by 2034, while ASEAN countries align sustainable-finance taxonomies and governments refine auctions, power-purchase agreements, and corporate procurement rules.
+Separately, a [Tara Climate Foundation](https://www.taraclimate.org/) assessment reports its Asian focus markets adding on the order of 35 GW of renewables in 2025, with solar capacity up in the mid-teens and wind in the low-teens as a percentage. Indonesia's latest electricity plan (RUPTL) targets [roughly 24 GW of solar and wind plus more than 10 GW of storage by 2034](https://www.iesr.or.id/en/), while ASEAN countries align sustainable-finance taxonomies and governments refine auctions, power-purchase agreements, and corporate procurement rules.
 
 One is a small programme for ten companies. The other is a regional capacity build measured in tens of gigawatts. They are the same problem at two scales, and the reason to put them together is that neither is short of money.
 
@@ -108,8 +108,8 @@ If you are designing a capability programme and want the right things measured f
 
 ## Sources
 
-- All On, Innovation Ecosystem Development Programme launch, 24 August 2026 (programme announcement).
-- Tara Climate Foundation, Asian focus markets assessment, August 2026.
+- [All On](https://www.all-on.com/), Innovation Ecosystem Development Programme launch, 24 August 2026 (programme announcement), backed by the [Global Energy Alliance for People and Planet](https://www.energyalliance.org/).
+- [Tara Climate Foundation](https://www.taraclimate.org/), Asian focus markets assessment, August 2026. Capacity and growth figures are as reported by the foundation and have not been independently re-computed by the Lab.
 - Lall, S. (1992), [Technological capabilities and industrialization](https://doi.org/10.1016/0305-750X(92)90097-F), *World Development* 20(2), 165–186.
 
 ---
