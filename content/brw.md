@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">July 2026</span> · <span class="article-reading-time">3 min read</span></p>
 
+<figure>
+<img src="/assets/img/brw-diagram.jpg" alt="Line-art diagram on a sage-green panel: a plain brick wall stands on the left; a dashed path curves around it from below and finishes as an arrow pointing up and away on the right." class="diagram">
+<figcaption>The wall is the incumbent regime. The dashed path is what the niche actually does in practice: bypass where it can, repurpose what it must, weaken what it cannot avoid.</figcaption>
+</figure>
+
+
 Every niche technology arrives into a world already run by an incumbent regime: an aligned configuration of technologies, infrastructures, institutions, habits, and expectations that resists change. How a niche actor engages that regime, barrier by barrier, largely determines whether it succeeds and for whom.
 
 The BRW framework is the Lab's way of reading that engagement. Unlike typologies that classify a strategy by its ambition relative to the regime as a whole, BRW classifies each strategy by its **functional mechanism**: what it actually does to a particular lock-in barrier. This shift in the unit of analysis, from the niche-regime relationship to the strategy-barrier relationship, is what makes the framework precise, because a single niche actor routinely deploys different mechanisms against different barriers within the same regime.

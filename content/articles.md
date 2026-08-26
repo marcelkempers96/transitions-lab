@@ -93,22 +93,31 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-the-reporting-loop">The Reporting Loop: Why Funders Learn From Grantees</a>
-    <div class="article-meta">15 August 2026</div>
-    <p class="article-desc">Why grant portfolios keep looking rosier than they are, why more dashboards and more indicators don't fix it, and what a genuine alternative would have to look like. The reasoning behind the Lab's dedicated <a href="/for-funders">For Funders</a> service.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-the-reporting-loop"><img class="article-thumb" src="/assets/img/insight-the-reporting-loop-diagram.jpg" alt="Yellow funder institution at the top, grantees at the bottom, a central reporting dashboard, and two curved arrows forming a closed loop between them."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-the-reporting-loop">The Reporting Loop: Why Funders Learn From Grantees</a>
+      <div class="article-meta">15 August 2026</div>
+      <p class="article-desc">Why grant portfolios keep looking rosier than they are, why more dashboards and more indicators don't fix it, and what a genuine alternative would have to look like. The reasoning behind the Lab's dedicated <a href="/for-funders">For Funders</a> service.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-ai-absorptive-capacity">The Asymmetry Nobody Is Metering: Why AI Reaches the Fossil Economy First</a>
-    <div class="article-meta">22 July 2026</div>
-    <p class="article-desc">The climate debate about AI is stuck on electricity consumption. The decisive variable is which sectors are ready to convert AI into productivity, and the fossil economy has a forty-year head start.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-ai-absorptive-capacity"><img class="article-thumb" src="/assets/img/insight-ai-absorptive-capacity-diagram.jpg" alt="AI chip on the left, a heavy coral arrow to a fossil-economy panel with a refinery and pumpjack, and a thin dashed arrow to a clean-economy panel with a turbine, solar and battery."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-ai-absorptive-capacity">The Asymmetry Nobody Is Metering: Why AI Reaches the Fossil Economy First</a>
+      <div class="article-meta">22 July 2026</div>
+      <p class="article-desc">The climate debate about AI is stuck on electricity consumption. The decisive variable is which sectors are ready to convert AI into productivity, and the fossil economy has a forty-year head start.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-absorbing-the-gap">Who Absorbs the Gap: Electric Mobility Where the Grid Cannot Be Assumed</a>
-    <div class="article-meta">18 June 2026</div>
-    <p class="article-desc">Where the grid is unreliable, adoption is decided by which party absorbs the volatility. A reliability ledger for reading market-entry decisions in e-mobility.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-absorbing-the-gap"><img class="article-thumb" src="/assets/img/insight-absorbing-the-gap-diagram.jpg" alt="Three-stage diagram: unreliable grid with a broken pylon on the left, a central scales circle labelled 'Who absorbs the gap?' with rider, building and renewables satellites, and an e-motorcycle beside a swap cabinet on the right."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-absorbing-the-gap">Who Absorbs the Gap: Electric Mobility Where the Grid Cannot Be Assumed</a>
+      <div class="article-meta">18 June 2026</div>
+      <p class="article-desc">Where the grid is unreliable, adoption is decided by which party absorbs the volatility. A reliability ledger for reading market-entry decisions in e-mobility.</p>
+    </div>
   </div>
 
   <div class="article-item has-thumb">
@@ -126,10 +135,13 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <p class="article-desc">A two-axis diagnostic that sorts every real transition into one of four patterns: directed, coordinated, stalled, or bounded leapfrogging. Where each fails, and how the Lab reads its own cases against the matrix.</p>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/brw">The BRW Framework: Bypass, Repurpose, Weaken</a>
-    <div class="article-meta">24 March 2026</div>
-    <p class="article-desc">The Lab's signature typology of how new infrastructure engages the systems it arrives into. Three mechanisms, matched to the three barriers a niche technology actually meets.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/brw"><img class="article-thumb" src="/assets/img/brw-diagram.jpg" alt="Plain brick wall on the left with a dashed detour path curving past it and finishing as an arrow on the right."></a>
+    <div class="article-body">
+      <a class="article-title" href="/brw">The BRW Framework: Bypass, Repurpose, Weaken</a>
+      <div class="article-meta">24 March 2026</div>
+      <p class="article-desc">The Lab's signature typology of how new infrastructure engages the systems it arrives into. Three mechanisms, matched to the three barriers a niche technology actually meets.</p>
+    </div>
   </div>
 
   <div class="article-item">

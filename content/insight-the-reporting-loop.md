@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-the-reporting-loop-diagram.jpg" alt="Line-art diagram: a yellow classical funder building labelled 'Funders' at the top and a bottom scene with a house, two people crouched planting a seedling, labelled 'Grantees'. Between them, a central dashboard with a pie chart and a bar chart labelled 'Reporting loop'. A coral upward arrow curves from grantees to funders on the left; a green downward arrow curves back on the right." class="diagram">
+<figcaption>The grantee at the bottom produces the evidence. The funder at the top decides the next grant on it. Everyone acts in good faith, and the loop still produces a systematically flattering picture, because it is built to.</figcaption>
+</figure>
+
+
 There is a structural oddity at the heart of philanthropy and public funding that almost no one names, because naming it is awkward for everyone involved. The funder wants to know whether its money worked. The only party positioned to tell it is the grantee. And the grantee's continued existence depends on the answer being yes.
 
 This is the reporting loop: a closed circuit in which the organisation being evaluated is also the organisation supplying the evaluation, to a funder who will decide, on the strength of that evaluation, whether to fund it again. Everyone in the loop is acting in good faith. The loop still produces a systematically flattering picture, because it is built to.

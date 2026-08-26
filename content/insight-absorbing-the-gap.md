@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">22 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-absorbing-the-gap-diagram.jpg" alt="Line-art diagram in three stages. On the left, 'Unreliable grid': a leaning pylon with a red cross, orange lightning bolts, and a transformer. In the middle, 'Who absorbs the gap?': a yellow scales circle in the centre with three satellite circles (a rider in a helmet, a small building, and a renewable-energy icon) connected by dotted lines. On the right, 'E-mobility': an electric motorcycle beside a battery-swap cabinet." class="diagram">
+<figcaption>The grid on the left is unreliable. The market on the right forms anyway. The scales in the middle are the decision that decides which party carries the volatility, and whether they can survive holding it.</figcaption>
+</figure>
+
+
 ## Electric mobility where the grid cannot be assumed
 
 In Lagos this year, some electric-vehicle dealerships and battery-swap stations kept their chargers running on petrol and diesel generators. Nigeria waived taxes on nearly four thousand electric vehicles in the first half of 2026, added VAT exemptions and zero import duties, and watched the vehicles arrive into an electricity system of roughly four thousand megawatts serving more than two hundred million people.
