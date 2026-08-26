@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">26 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-paying-for-what-we-curtail-diagram.jpg" alt="Line-art diagram: a mixed generation stack on the left (thermal chimneys, hydro, solar array and geothermal), a dashed arrow to an electricity bill in the centre showing four coloured cost bands labelled Capacity, Energy, Network and Other with three dollar signs beneath, and a further dashed arrow through a crossed circle to a transmission pylon with a broken line, a clipboard payment and coin stacks on the right." class="diagram">
+<figcaption>Generation on the left. The tariff in the middle is a stack of bands. On the right, the payments run whether the electricity is taken or not.</figcaption>
+</figure>
+
+
 ## What Kenya's tariff says about where value has moved
 
 Kenya has outlined plans to raise generation capacity from roughly 1.5 gigawatts to about 5.5 gigawatts, with substantial additional geothermal and hydro and a proposed two-gigawatt nuclear component. The country already produces around 93 per cent of its electricity from renewable sources, and power remains expensive because of transmission losses, financing costs, ageing infrastructure and contractual problems elsewhere in the system.

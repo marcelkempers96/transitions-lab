@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">26 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-downstream-of-the-buyer-diagram.jpg" alt="Line-art diagram: a trader building on the left with a leaf logo, a dashed arrow chain through Credit (a yellow coin), Training (a blue instructor circle), to a smallholder on the right with a bowl of coffee cherries beside a small house and a coffee plant. A second dashed arrow returns underneath through Offtake (a bag of beans) to a Resilience shield with a check." class="diagram">
+<figcaption>Credit and training move outwards to the farmer. Offtake returns to the buyer. Resilience sits at the end of that loop, and no earlier.</figcaption>
+</figure>
+
+
 ## What lending to a trader says about where the constraint sits
 
 The [Asian Development Bank](https://www.adb.org/) has approved a US$100 million loan to [Louis Dreyfus Company](https://www.ldc.com/) to support procurement, processing and export supply chains involving smallholder coffee and cotton farmers in Indonesia, Vietnam, India and Pakistan. The programme is designed to improve market access while connecting farmers with training, certified inputs, climate-adaptive practices and sustainability programmes, and its design explicitly addresses barriers faced by women farmers.

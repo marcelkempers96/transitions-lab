@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">26 August 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-own-the-battery-diagram.jpg" alt="Line-art diagram: on the left a firm-owned warehouse with battery packs on shelves and a green check mark; a small cloud with a bar chart above it, and a dashed arrow from the warehouse to a partner shopfront on the right, where a swap cabinet, a plant and a green e-motorcycle stand under a yellow awning." class="diagram">
+<figcaption>Own the batteries in the warehouse on the left. Contract for the shopfront on the right. The cloud in the middle is the telemetry that makes the arrangement work.</figcaption>
+</figure>
+
+
 ## The make-or-buy decision inside a swap network
 
 [Battery Smart](https://www.batterysmart.in/) has raised around US$19.5 million in Series C funding, led by Rising Tide Ventures with Ecosystem Integrity Fund and Blume Ventures participating. The company runs a decentralised swapping network for electric two- and three-wheelers, built on local partner locations rather than company-owned stations.
