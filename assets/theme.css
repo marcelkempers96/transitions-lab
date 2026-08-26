@@ -367,7 +367,6 @@ section + section{border-top:2px solid var(--ink);}
   .insight-card .stripe{padding:7px 16px;}
   .insight-card .stripe .kicker{font-size:10px;letter-spacing:.16em;}
   .insight-card.has-photo .card-photo .kicker{font-size:12px;letter-spacing:.18em;padding:10px 16px;}
-  .insight-card.has-photo .card-photo{aspect-ratio:3/2;}
 }
 .insight-card .body{padding:26px 24px 24px;flex:1;display:flex;flex-direction:column;gap:12px;}
 .insight-card h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.12;color:var(--ink);}
