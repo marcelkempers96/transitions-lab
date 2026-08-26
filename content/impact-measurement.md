@@ -34,6 +34,19 @@ Reach, depth, and experience read together give a project a picture of impact th
 
 ---
 
+## How strong is the evidence
+
+Not all evidence carries the same weight. The Lab classifies every finding it reports against a five-tier pyramid, from what was delivered at the base to a causal contribution established at the top. The pyramid is the honest answer to the question every funder eventually asks, which is whether the number in the report is a claim, an observation, or a conclusion.
+
+<figure>
+  <img src="/assets/img/impact-evidence-pyramid.jpg" alt="Evidence Strength Pyramid. From base to apex, five tiers: Activity Data (what was delivered or reached); Self-Reported Outcome (participants report perceived change); Observed Change (behaviour or condition has measurably changed); Triangulated Evidence (multiple sources confirm the change); Attributable Impact (causal contribution established). An arrow on the left runs from 'weaker evidence' at the base to 'stronger evidence' at the top." class="diagram">
+  <figcaption>Every finding the Lab reports carries an explicit place on this pyramid. Most claims made about programmes sit on the bottom two tiers and are reported as if they sat on the top two. Naming the tier is how the reporting stays honest.</figcaption>
+</figure>
+
+Two working rules follow from the pyramid. Most claims made about programmes sit on the bottom two tiers, and most reports present them as if they sat on the top two, which is where the reporting-loop pressure we describe in [Why funders learn from grantees](/insight-the-reporting-loop) shows up in practice. And moving a study up the pyramid is a design choice made before the fieldwork, not a rhetorical move made in the write-up: a baseline captured, a second source lined up, a control identified. What you can honestly claim at the end is set by what you built in at the start.
+
+---
+
 ## The kinds of impact we track
 
 Impact is not one thing. On any given study, we typically measure a mix of the following, calibrated to the specific decision the research is meant to inform.
