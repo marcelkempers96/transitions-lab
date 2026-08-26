@@ -5,8 +5,8 @@
 *A technology can be ready and still fail. Understanding both Technology Readiness and Societal Readiness, and why the second decides success as often as the first.*
 
 <figure>
-  <img src="/assets/img/trl-srl-matrix.jpg" alt="Two-axis TRL-SRL matrix showing four quadrants: Waiting (low TRL, high SRL - wanted, not yet built); Ready (high TRL, high SRL - works, and society is ready); Early (low TRL, low SRL - neither ready); Dangerous (high TRL, low SRL - works, but rejected or mistrusted)." class="diagram">
-  <figcaption>Read together, Technology Readiness (TRL) and Societal Readiness (SRL) sort every innovation into one of four quadrants. The "dangerous" quadrant - technically finished but socially rejected or mistrusted - is where the most expensive failures cluster.</figcaption>
+  <img src="/assets/img/readiness-levels-diagram.jpg" alt="Line-art diagram: on the left a sage-green Technology Readiness Level ladder with a TRL disc on top, labelled Basic principles, Prototype and Lab proven at the rungs; on the right a pale-blue Societal Readiness Level ladder with an SRL disc on top, labelled Not yet accepted, Early use and In daily life. A dashed line runs across the gap between the two ladders, labelled 'The missing middle: context, affordability, trust, infrastructure and institutions determine whether a technology can cross the gap.'" class="diagram">
+  <figcaption>Technology Readiness on the left, Societal Readiness on the right. The missing middle between them is where most technologies fail to cross, and where the Lab's work sits.</figcaption>
 </figure>
 
 Most people in innovation know Technology Readiness Levels: the nine-point NASA scale for how mature a technology is. Far fewer know its essential counterpart, Societal Readiness Levels, which measure how ready society is to adopt, trust, and benefit from that technology. Reading the two together is one of the most useful things an innovator, funder, or researcher can do, and getting it wrong is one of the most common and expensive mistakes in the field.
