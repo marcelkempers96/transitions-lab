@@ -347,14 +347,13 @@ section + section{border-top:2px solid var(--ink);}
 /* Photo variant: replaces the coloured stripe with a diagram or photo.
    Kicker becomes a small chip overlaid top-left, matching case-card. */
 .insight-card.has-photo .card-photo{
-  position:relative;border-bottom:2px solid var(--ink);
-  aspect-ratio:3/2;overflow:hidden;background:var(--paper-2);
+  border-bottom:2px solid var(--ink);background:var(--paper-2);
+  display:flex;flex-direction:column;
 }
 .insight-card.has-photo .card-photo img{
-  width:100%;height:100%;object-fit:contain;display:block;
+  width:100%;aspect-ratio:3/2;object-fit:contain;display:block;background:var(--paper-2);
 }
 .insight-card.has-photo .card-photo .kicker{
-  position:absolute;top:0;left:0;right:0;z-index:1;
   padding:12px 20px;border-bottom:2px solid var(--ink);
   font-family:'Hanken Grotesk',sans-serif;
   font-size:13px;letter-spacing:.20em;text-transform:uppercase;font-weight:800;
@@ -823,17 +822,16 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 /* Photo variant: replaces the coloured stripe with a real image.
    The tag becomes a small chip overlaid in the top-left of the photo. */
 .prose .case-grid .case-card.has-photo .case-photo{
-  position:relative;border-bottom:2px solid var(--ink);
-  aspect-ratio:3/2;overflow:hidden;background:var(--paper-2);
+  border-bottom:2px solid var(--ink);background:var(--paper-2);
+  display:flex;flex-direction:column;
 }
 @media(max-width:640px){
   .prose .case-grid .case-card .stripe{padding:18px 20px;}
 }
 .prose .case-grid .case-card.has-photo .case-photo img{
-  width:100%;height:100%;object-fit:contain;display:block;
+  width:100%;aspect-ratio:3/2;object-fit:contain;display:block;background:var(--paper-2);
 }
 .prose .case-grid .case-card.has-photo .case-photo .tag{
-  position:absolute;top:0;left:0;right:0;z-index:1;
   padding:12px 20px;border-bottom:2px solid var(--ink);
   font-family:'Hanken Grotesk',sans-serif;
   font-size:13px;letter-spacing:.20em;text-transform:uppercase;font-weight:800;
