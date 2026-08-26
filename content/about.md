@@ -36,9 +36,7 @@ The published work is the proof of the method. The contracted work is the same m
 
 ## Where we work
 
-Based in **Delft, The Netherlands**, alongside the research community at <a href="https://www.tudelft.nl/" target="_blank" rel="noopener">TU Delft</a>. We do fieldwork in the contexts that defeat conventional research: low-connectivity, multilingual, informal, dispersed. We do not parachute in. We work through researchers and partners who already speak the language and know the place.
-
-<a href="https://www.tudelft.nl/" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-tu-delft.png" alt="TU Delft" style="max-width:180px;height:auto;"></a>
+Based in **Delft, The Netherlands**. We do fieldwork in the contexts that defeat conventional research: low-connectivity, multilingual, informal, dispersed. We do not parachute in. We work through researchers and partners who already speak the language and know the place.
 
 <figure>
   <img src="/assets/img/photo-coastal-community.jpg" alt="A coastal fishing community at sunset: household kitchen gardens in the foreground, a black water tank, rooftop solar panels on a nearby shack, and small fishing boats moored along the pier." class="diagram">

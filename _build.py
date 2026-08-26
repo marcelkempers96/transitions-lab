@@ -1360,7 +1360,6 @@ def build_home() -> str:
     <div class="logo-strip">
       <a href="/case-mimaji" title="MiMaji Foundation - water transparency in Nairobi"><img src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
       <a href="/case-reef-support" title="Reef Support - community reef monitoring"><img src="/assets/logos/logo-reef-support.png" alt="Reef Support"></a>
-      <a href="https://www.tudelft.nl/" target="_blank" rel="noopener" title="Delft University of Technology"><img src="/assets/logos/logo-tu-delft.png" alt="TU Delft"></a>
     </div>
   </div>
 </section>

@@ -68,7 +68,7 @@ A technical assessment would measure the kiln's energy output, biochar yield, an
 
 The Lab works from the human side first. We would ask what changed for a household after the kiln arrived, in income, in labour, in the condition of their land, and trace that change back through the technology that produced it. We would look hard at the distribution of benefit: who adopted, who did not, and why. And we would treat the carbon-market promise sceptically until the evidence shows it reaching the farmer rather than stopping short. That combination, genuine understanding of the pyrolysis technology, paired with rigorous fieldwork on what it does to livelihoods, is what lets a project tell the difference between a device that works and a transition that holds.
 
-The Delft connection is not incidental. The Lab's own roots run through Delft, and a TU-Delft spin-out working at the smallholder scale in Indonesia is close to home, both geographically, in the Lab's network, and intellectually, in the questions it raises.
+The Delft connection is not incidental. The Lab's own roots run through Delft, and a Delft-based spin-out working at the smallholder scale in Indonesia is close to home, both geographically, in the Lab's network, and intellectually, in the questions it raises.
 
 ---
 
