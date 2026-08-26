@@ -1326,18 +1326,6 @@ def build_home() -> str:
       <p>The intellectual apparatus behind the Lab's work, free to download, use, and cite. A working understanding of how technologies meet real people is more useful in the world than in a drawer.</p>
     </div>
     <div class="resource-grid">
-      <a class="resource-card" href="/assets/resource-brw-framework.pdf">
-        <span class="resource-tag">PDF &middot; 10 pages</span>
-        <h3>The BRW Framework</h3>
-        <p>Bypass, Repurpose, Weaken. The Lab's mechanism-based typology of how a niche technology engages an entrenched regime.</p>
-        <span class="resource-cta">Download &rarr;</span>
-      </a>
-      <a class="resource-card" href="/assets/resource-measurement-method.pdf">
-        <span class="resource-tag">PDF &middot; 10 pages</span>
-        <h3>Measuring What Actually Changed</h3>
-        <p>The Lab's methodology: the five-stage method, read across the reach, depth, and experience dimensions, with the baseline discipline that carries it.</p>
-        <span class="resource-cta">Download &rarr;</span>
-      </a>
       <a class="resource-card" href="/readiness-levels">
         <span class="resource-tag">Page + 2 PDFs</span>
         <h3>TRL &amp; SRL Explained</h3>
