@@ -37,6 +37,11 @@ The bottleneck sits at a specific stage. [At the crucial Series B stage, where c
 
 The structural reading, echoed across the sector, is that [the US maintains leadership through deep capital markets and industrial absorption capacity, while Europe remains the frontier for high-complexity climate tech](https://stateofclimatetech.com/), sustained by robust policy frameworks and public funding. Europe is the laboratory; America is the factory floor.
 
+<figure>
+  <img src="/assets/img/photo-eu-us-diptych.jpg" alt="A photographic diptych. On the left, a young European engineer at a workbench in a small studio, hand-soldering a delicate robotic prototype; a European city skyline with church spires is visible through the window behind him, with schematics pinned on the wall. On the right, a large American factory floor with a US flag hanging from the ceiling, three workers in orange safety vests walking past cylindrical industrial modules, and a forklift moving stock alongside them." class="diagram">
+  <figcaption>Europe is the laboratory; America is the factory floor. Literally.</figcaption>
+</figure>
+
 ---
 
 **§ 3 / Why this is not simply a story of American superiority**
