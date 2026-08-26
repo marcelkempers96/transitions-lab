@@ -10,7 +10,10 @@
   <div><span class="k">Lab programme</span><span class="v">Dutch Caribbean Practice</span></div>
 </div>
 
-<!-- IMAGE statia-hero: hero photo | A road, vehicle, or harbour scene on St. Eustatius, showing the island's scale and terrain. Documentary. | Full-bleed hero under the standfirst. -->
+<figure>
+  <img src="/assets/img/case-statia-hero.jpg" alt="Aerial view of St. Eustatius: a small volcanic island with the Quill cone rising to the right, the settled plain and airstrip running across the middle, and industrial oil terminals visible on the low western tip; deep-blue Caribbean sea on all sides." class="diagram">
+  <figcaption>The whole island in one frame. Every transport question here begins with the fact that the population, the terrain and the industrial footprint all fit inside this photograph.</figcaption>
+</figure>
 
 ## The transition in one sentence
 

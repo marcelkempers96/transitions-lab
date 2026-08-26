@@ -35,8 +35,11 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
       <span class="read">Read the case &rarr;</span>
     </div>
   </a>
-  <a class="case-card c-forest" href="/case-reef-support">
-    <div class="stripe"><span class="tag">Marine · Community monitoring</span></div>
+  <a class="case-card c-forest has-photo" href="/case-reef-support">
+    <div class="case-photo">
+      <img src="/assets/img/case-reef-support-hero.jpg" alt="A community ranger in a mask and snorkel, chest-deep in clear reef water, writing on a waterproof clipboard beside a coral-survey quadrat; a small research skiff moored just off the reef edge in the background.">
+      <span class="tag">Marine &middot; Community monitoring</span>
+    </div>
     <div class="body">
       <h3>A Shared View of the Reef</h3>
       <p>Community rangers, field sensors, and satellite data braided into a single picture of reef health. Whether the rangers own the data and the community trusts the numbers decides if the reef is actually better protected.</p>
@@ -54,8 +57,11 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
       <span class="read">Read the case &rarr;</span>
     </div>
   </a>
-  <a class="case-card c-plum" href="/case-statia">
-    <div class="stripe"><span class="tag">Dutch Caribbean · Public sector</span></div>
+  <a class="case-card c-plum has-photo" href="/case-statia">
+    <div class="case-photo">
+      <img src="/assets/img/case-statia-hero.jpg" alt="Aerial view of St. Eustatius: a small volcanic island with the Quill cone rising to the right, the settled plain and airstrip running across the middle, and industrial oil terminals visible on the low western tip; deep-blue Caribbean sea on all sides.">
+      <span class="tag">Dutch Caribbean &middot; Public sector</span>
+    </div>
     <div class="body">
       <h3>Mobility on a Small Island: St. Eustatius</h3>
       <p>Planning transport for a community of a few thousand, where every assumption imported from a large mainland system fails. A public-sector reading in the Lab's Dutch Caribbean practice, in Dutch and English.</p>

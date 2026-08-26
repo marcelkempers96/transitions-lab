@@ -12,7 +12,10 @@
   <div><span class="k">Lab themes</span><span class="v">Socio-technical monitoring systems · community data · trust in evidence</span></div>
 </div>
 
-<!-- IMAGE reef-hero: hero photo | A community ranger in/near the water, or a vivid reef shot with a monitoring context. Blue, alive, human-present. | Full-width hero under the metadata block. -->
+<figure>
+  <img src="/assets/img/case-reef-support-hero.jpg" alt="A community ranger in a mask and snorkel, chest-deep in clear reef water, writing on a waterproof clipboard beside a coral-survey quadrat; a small research skiff moored just off the reef edge in the background." class="diagram">
+  <figcaption>The reef is being read by the person who lives with it. The socio-technical question is whether the rest of the monitoring system credits that reading enough to act on it.</figcaption>
+</figure>
 
 ---
 
