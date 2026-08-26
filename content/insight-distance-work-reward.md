@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">23 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-distance-work-reward-diagram.jpg" alt="Line-art diagram of a left-to-right chain. On the left, 'Work': three field workers planting and tending vegetation with a mountain, water and solar panels behind them. In the middle, 'Verification': a ticked checklist, a magnifying glass with a checkmark, a report, and a dashboard screen with a pie chart and line graph. On the right, 'Reward': a certificate with a ribbon and two stacks of coins." class="diagram">
+<figcaption>The verification apparatus in the middle exists to carry value from the work on the left to the reward on the right. Its size is a measure of the distance between them.</figcaption>
+</figure>
+
+
 Two climate ventures raised money this month in the same region, in the same week, with the same broad purpose. They have almost nothing else in common, and the difference between them is the most useful thing in the briefing.
 
 **Neocrete**, a New Zealand company, raised US$3.5m to commercialise an additive that lets lower-quality fly ash and volcanic ash replace roughly 30–50% of the cement in concrete. In Brunei the technology is slated for a deployment of around 65,000 cubic metres at the Muara Port redevelopment, which the company estimates could avoid on the order of 5,200 tonnes of CO₂ while also reducing material costs.

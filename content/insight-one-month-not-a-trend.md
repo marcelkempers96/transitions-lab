@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">23 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-one-month-not-a-trend-diagram.jpg" alt="Line-art diagram: a small coral chart labelled '1 month' sits above a short yellow bar labelled 'Venture money' with a dollar-coin at its head. Both hover over the near end of a long timeline drawn as a bridge crossing water, then a road running past trees to a distant factory, spanning the full width of the image and captioned 'Long-term'." class="diagram">
+<figcaption>The venture bar and the one-month spike sit at the near end of the timeline. Infrastructure lives at the other end, and the two horizons do not match.</figcaption>
+</figure>
+
+
 Southeast Asian startup funding [as reported by regional deal trackers](https://www.dealstreetasia.com/) fell roughly 84% from June to July 2026, to around US$698m on the numbers most widely quoted. Climate-oriented companies kept raising through the same period. The 84% is quoted here as it appeared in the reporting under discussion, not as an audited figure — that is part of the point of the piece.
 
 The reading being circulated is that capital has become selective and infrastructure-minded, favouring businesses attached to physical demand over lightly differentiated consumer software. That may well be true. It is not what this number shows, and the gap between the two is worth a few minutes because the same reasoning error turns up constantly in impact claims.

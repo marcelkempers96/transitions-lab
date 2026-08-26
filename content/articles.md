@@ -48,34 +48,49 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-benefits-nobody-looked-for">The Benefits Nobody Was Looking For</a>
-    <div class="article-meta">24 August 2026</div>
-    <p class="article-desc">Settlement upgrading has delivered heat resilience for decades. Nobody measured it, because a results framework can only find what it was told to look for.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-benefits-nobody-looked-for"><img class="article-thumb" src="/assets/img/insight-benefits-nobody-looked-for-diagram.jpg" alt="Coral upgraded-settlement panel on the left; pale-blue measurement clipboard and bar chart on the right, with a dashed 'Heat resilience' circle sitting outside what was counted."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-benefits-nobody-looked-for">The Benefits Nobody Was Looking For</a>
+      <div class="article-meta">24 August 2026</div>
+      <p class="article-desc">Settlement upgrading has delivered heat resilience for decades. Nobody measured it, because a results framework can only find what it was told to look for.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-same-queue">Standing in the Same Queue</a>
-    <div class="article-meta">24 August 2026</div>
-    <p class="article-desc">A solar plant in Timor-Leste and an AI data centre order from the same factories. Lead times have doubled, and nobody measures what small buyers wait.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-same-queue"><img class="article-thumb" src="/assets/img/insight-same-queue-diagram.jpg" alt="Yellow Timor-Leste solar panel and coral AI data centre both feeding into one factory, with a queue of people and boxes stretching to an hourglass below."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-same-queue">Standing in the Same Queue</a>
+      <div class="article-meta">24 August 2026</div>
+      <p class="article-desc">A solar plant in Timor-Leste and an AI data centre order from the same factories. Lead times have doubled, and nobody measures what small buyers wait.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-anchor-tenant">The Anchor Tenant: How Platforms Became the Utility Nobody Elected</a>
-    <div class="article-meta">23 August 2026</div>
-    <p class="article-desc">Platforms are solving the charging-infrastructure financing problem by owning the demand. It works, and it concentrates three dependencies, work, vehicle, energy, on one counterparty.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-anchor-tenant"><img class="article-thumb" src="/assets/img/insight-anchor-tenant-diagram.jpg" alt="Three coloured circles — yellow Work with a briefcase, green Vehicle with an e-motorbike, coral Energy with a charger — all connected via dotted lines to a central blue platform circle showing a building and dashboard."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-anchor-tenant">The Anchor Tenant: How Platforms Became the Utility Nobody Elected</a>
+      <div class="article-meta">23 August 2026</div>
+      <p class="article-desc">Platforms are solving the charging-infrastructure financing problem by owning the demand. It works, and it concentrates three dependencies, work, vehicle, energy, on one counterparty.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-distance-work-reward">The Distance Between the Work and the Reward</a>
-    <div class="article-meta">23 August 2026</div>
-    <p class="article-desc">What the size of an MRV budget is actually telling you about the deal underneath it. Elaborate verification means the benefit and the burden have been separated, and separated benefits need continuous machinery to stay connected.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-distance-work-reward"><img class="article-thumb" src="/assets/img/insight-distance-work-reward-diagram.jpg" alt="Left-to-right verification chain: field workers on the left, a run of checklist, magnifying glass, report and dashboard in the middle, certificate and coin stacks on the right."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-distance-work-reward">The Distance Between the Work and the Reward</a>
+      <div class="article-meta">23 August 2026</div>
+      <p class="article-desc">What the size of an MRV budget is actually telling you about the deal underneath it. Elaborate verification means the benefit and the burden have been separated, and separated benefits need continuous machinery to stay connected.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-one-month-not-a-trend">One Month Is Not a Trend, and Venture Money Is the Wrong Shape</a>
-    <div class="article-meta">23 August 2026</div>
-    <p class="article-desc">A percentage without its base is not a finding, and infrastructure economics do not fit a ten-year fund. Two reading errors from one month of Southeast Asian venture data.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-one-month-not-a-trend"><img class="article-thumb" src="/assets/img/insight-one-month-not-a-trend-diagram.jpg" alt="Small coral one-month spike and a short yellow venture-money bar sitting above the near end of a long infrastructure timeline that runs from a bridge to a distant factory."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-one-month-not-a-trend">One Month Is Not a Trend, and Venture Money Is the Wrong Shape</a>
+      <div class="article-meta">23 August 2026</div>
+      <p class="article-desc">A percentage without its base is not a finding, and infrastructure economics do not fit a ten-year fund. Two reading errors from one month of Southeast Asian venture data.</p>
+    </div>
   </div>
 
   <div class="article-item">

@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">24 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-benefits-nobody-looked-for-diagram.jpg" alt="Line-art diagram in two panels: on the left, a coral scene of an upgraded settlement, single-storey houses with drainpipes, a rain-water butt, a shade tree and a family sitting outside; on the right, a pale-blue clipboard with three ticked items, a rising bar chart and a dashed circle labelled 'Heat resilience' sitting outside the counted set." class="diagram">
+<figcaption>Upgrading on the left produced the benefit. The dashed circle on the right is the one that was never in the results framework, which is why nobody counted it for thirty years.</figcaption>
+</figure>
+
+
 A study published in [*npj Urban Sustainability*](https://www.nature.com/npjurbansustain/) in August 2026 finds empirical evidence that upgrading informal settlements produces meaningful heat-resilience benefits even where climate adaptation was never the purpose of the intervention. Better infrastructure, better health outcomes during heatwaves. Drainage, housing, streets, shade and basic services functioning as adaptation technology without being labelled as such.
 
 The finding is welcome and plausible. The more useful question is a different one.
