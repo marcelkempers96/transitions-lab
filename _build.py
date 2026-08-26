@@ -118,6 +118,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-hurdle-not-risk": "butter",
     "insight-capability-slow-part": "butter",
     "insight-who-holds-the-pen": "butter",
+    "insight-paying-for-what-we-curtail": "butter",
+    "insight-downstream-of-the-buyer": "butter",
+    "insight-own-the-battery": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -446,6 +449,18 @@ META: dict[str, dict[str, str]] = {
     "insight-who-holds-the-pen": {
         "title": "Who Holds the Pen on the Standard | Transitions Lab",
         "description": "An open battery-swapping network in Kenya solves the fragmentation problem holding African motorcycle electrification back. Open architecture is a technical property; whether the standard is governed is a separate question.",
+    },
+    "insight-paying-for-what-we-curtail": {
+        "title": "Paying for Power You Curtail | Transitions Lab",
+        "description": "Kenya generates around 93 per cent of its electricity from renewables and has some of the region's most expensive power. A plan to more than triple generation does not address why.",
+    },
+    "insight-downstream-of-the-buyer": {
+        "title": "Resilience Is Downstream of the Buyer | Transitions Lab",
+        "description": "A development bank lent US$100 million to a commodity trader to reach smallholders. That is a diagnosis, and it revives an old question about bundled credit, inputs and offtake.",
+    },
+    "insight-own-the-battery": {
+        "title": "Own the Battery, Rent the Shopfront | Transitions Lab",
+        "description": "Two battery-swapping companies raised money this month with opposite architectures. The choice is a make-or-buy decision with a testable answer.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1239,14 +1254,14 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-eu-us">
+      <a class="insight-card has-photo" href="/insight-own-the-battery">
         <div class="card-photo">
-          <img src="/assets/img/insight-eu-us-diagram.jpg" alt="Two-panel diagram: on the left, a European institutional building and a lightbulb on a butter background; on the right, a US factory and stacks of coins on a coral background, with a faltering dashed arrow between the two.">
-          <span class="kicker">Insight &middot; Europe</span>
+          <img src="/assets/img/insight-who-holds-the-pen-diagram.jpg" alt="Kenya battery-swap station on the left and a governance circle on the right, standing in for the make-or-buy decision inside a swap network.">
+          <span class="kicker">Insight &middot; E-Mobility</span>
         </div>
         <div class="body">
-          <h3>Europe Invents, America Scales</h3>
-          <p>Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. Where independent evidence fits in the gap.</p>
+          <h3>Own the Battery, Rent the Shopfront</h3>
+          <p>Two swap networks raised money this month with opposite architectures. The choice is a make-or-buy decision with a testable answer.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

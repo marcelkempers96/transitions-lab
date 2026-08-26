@@ -52,7 +52,7 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [Capability Is the Slow Part](/insight-capability-slow-part) on why storage and grid-code capability, not money, is the binding constraint. [What the Bond Is Actually Secured On](/insight-what-the-bond-secures), on how pay-as-you-go solar became an asset class.*
+*Related reading: [Paying for Power You Curtail](/insight-paying-for-what-we-curtail) on why clean generation and cheap electricity are not the same thing, [Capability Is the Slow Part](/insight-capability-slow-part) on why storage and grid-code capability, not money, is the binding constraint, and [What the Bond Is Actually Secured On](/insight-what-the-bond-secures) on how pay-as-you-go solar became an asset class. For the full series, see [Articles](/articles).*
 
 
 *See the [Pyropower case study](/case-pyropower). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

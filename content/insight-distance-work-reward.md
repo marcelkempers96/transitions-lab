@@ -118,7 +118,7 @@ If you are funding an MRV-dependent agricultural programme and want the farmer s
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Impact Measurement](/impact-measurement) and [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Impact Measurement](/impact-measurement) and [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination). See also [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on the same order of constraints in smallholder agriculture. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

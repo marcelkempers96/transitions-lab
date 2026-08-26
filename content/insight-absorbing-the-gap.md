@@ -156,7 +156,7 @@ If you are weighing an entry decision and the electricity question keeps getting
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the underlying method, see [Field Research](/field-research) and the [BRW framework](/brw). For the field case behind the argument, see [the mobility case](/case-roam).*
+*This is an independent insight piece by Transitions Lab. For the underlying method, see [Field Research](/field-research) and the [BRW framework](/brw). For the field case behind the argument, see [the mobility case](/case-roam). See also [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on network architecture in the same market.*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">
