@@ -74,8 +74,11 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
 </div>
 
 <div class="case-grid">
-  <a class="case-card c-forest" href="/case-context-entry">
-    <div class="stripe"><span class="tag">East Africa · Market entry</span></div>
+  <a class="case-card c-forest has-photo" href="/case-context-entry">
+    <div class="case-photo">
+      <img src="/assets/img/case-context-entry-hero.jpg" alt="Two commercial riders on electric motorcycles queue at a modern charging column beside a Lagos street forecourt, while a fruit vendor with a covered stall and jerry cans of fuel serves customers on the opposite side of the same yard.">
+      <span class="tag">East Africa &middot; Market entry</span>
+    </div>
     <div class="body">
       <h3>Before the Capital: A Market-Entry Study</h3>
       <p>What a European mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one. See also the dedicated <a href="/market-expansion">Market & Expansion Research</a> service.</p>
