@@ -1215,8 +1215,12 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- STATEMENT - forest block with big text -->
-<section class="statement">
+<!-- STATEMENT - forest block with big text on a video background -->
+<section class="statement has-video">
+  <video class="statement-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="/assets/media/statement.mp4" type="video/mp4">
+  </video>
+  <div class="statement-veil" aria-hidden="true"></div>
   <div class="wrap">
     <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is <span class="highlight">paying honest attention</span> to what happens to people on the ground.</blockquote>
     <cite>- Transitions Lab</cite>

@@ -375,7 +375,18 @@ section + section{border-top:2px solid var(--ink);}
 .insight-card:hover{background:var(--butter);}
 
 /* ── Statement block ──────────────────────────────────────── */
-.statement{padding:140px 0;background:var(--forest);color:var(--paper);}
+.statement{padding:140px 0;background:var(--forest);color:var(--paper);position:relative;overflow:hidden;}
+.statement .wrap{position:relative;z-index:2;}
+.statement.has-video .statement-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center center;
+  z-index:0;display:block;pointer-events:none;
+}
+.statement.has-video .statement-veil{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(20,42,32,.72) 0%,rgba(20,42,32,.82) 55%,rgba(20,42,32,.90) 100%);
+}
 .statement blockquote{
   font-size:clamp(30px,4.6vw,56px);
   line-height:1.15;font-weight:700;letter-spacing:-.02em;
