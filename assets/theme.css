@@ -354,18 +354,19 @@ section + section{border-top:2px solid var(--ink);}
   width:100%;height:100%;object-fit:contain;display:block;
 }
 .insight-card.has-photo .card-photo .kicker{
-  position:absolute;top:10px;left:10px;z-index:1;
-  padding:5px 12px;border:2px solid var(--ink);
+  position:absolute;top:0;left:0;right:0;z-index:1;
+  padding:12px 20px;border-bottom:2px solid var(--ink);
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
-  line-height:1.2;
+  font-size:13px;letter-spacing:.20em;text-transform:uppercase;font-weight:800;
+  line-height:1.3;text-align:left;
 }
 .insight-card.has-photo:nth-child(1) .card-photo .kicker{background:var(--coral);color:var(--ink);}
 .insight-card.has-photo:nth-child(2) .card-photo .kicker{background:var(--cobalt);color:var(--paper);}
 .insight-card.has-photo:nth-child(3) .card-photo .kicker{background:var(--butter);color:var(--ink);}
 @media(max-width:640px){
   .insight-card .stripe{padding:7px 16px;}
-  .insight-card .kicker{font-size:10px;letter-spacing:.16em;}
+  .insight-card .stripe .kicker{font-size:10px;letter-spacing:.16em;}
+  .insight-card.has-photo .card-photo .kicker{font-size:12px;letter-spacing:.18em;padding:10px 16px;}
   .insight-card.has-photo .card-photo{aspect-ratio:3/2;}
 }
 .insight-card .body{padding:26px 24px 24px;flex:1;display:flex;flex-direction:column;gap:12px;}
@@ -832,11 +833,11 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   width:100%;height:100%;object-fit:contain;display:block;
 }
 .prose .case-grid .case-card.has-photo .case-photo .tag{
-  position:absolute;top:10px;left:10px;z-index:1;
-  padding:5px 12px;border:2px solid var(--ink);
+  position:absolute;top:0;left:0;right:0;z-index:1;
+  padding:12px 20px;border-bottom:2px solid var(--ink);
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
-  line-height:1.2;
+  font-size:13px;letter-spacing:.20em;text-transform:uppercase;font-weight:800;
+  line-height:1.3;text-align:left;
 }
 /* Chip colour matches the card's semantic colour class, so the tag on
    a photo reads as the same colour token as its coloured-stripe twin. */
@@ -851,12 +852,12 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   line-height:1.3;
 }
 .prose .case-grid .case-card.has-photo .case-photo .tag{
-  font-size:10.5px;letter-spacing:.18em;
+  font-size:13px;letter-spacing:.20em;
 }
 @media(max-width:640px){
   .prose .case-grid .case-card .stripe{padding:12px 18px;}
   .prose .case-grid .case-card .stripe .tag{font-size:12px;letter-spacing:.18em;}
-  .prose .case-grid .case-card.has-photo .case-photo .tag{font-size:10px;letter-spacing:.16em;}
+  .prose .case-grid .case-card.has-photo .case-photo .tag{font-size:12px;letter-spacing:.18em;padding:10px 16px;}
 }
 .prose .case-grid .case-card.c-coral .stripe{background:var(--coral);color:var(--ink);}
 .prose .case-grid .case-card.c-butter .stripe{background:var(--butter);color:var(--ink);}
