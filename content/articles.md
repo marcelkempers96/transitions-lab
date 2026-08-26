@@ -129,10 +129,13 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-transitions-outcomes">Four Ways a Transition Lands: Reading State Capacity Against Niche Success</a>
-    <div class="article-meta">12 April 2026</div>
-    <p class="article-desc">A two-axis diagnostic that sorts every real transition into one of four patterns: directed, coordinated, stalled, or bounded leapfrogging. Where each fails, and how the Lab reads its own cases against the matrix.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-transitions-outcomes"><img class="article-thumb" src="/assets/img/insight-transitions-outcomes-diagram.jpg" alt="Four small icons: a splitting arrow, two puzzle pieces, a tilted lever, and a dashed circle with an escaping arrow — one symbol for each of the four transition outcomes."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-transitions-outcomes">Four Ways a Transition Lands: Reading State Capacity Against Niche Success</a>
+      <div class="article-meta">12 April 2026</div>
+      <p class="article-desc">A two-axis diagnostic that sorts every real transition into one of four patterns: directed, coordinated, stalled, or bounded leapfrogging. Where each fails, and how the Lab reads its own cases against the matrix.</p>
+    </div>
   </div>
 
   <div class="article-item has-thumb">

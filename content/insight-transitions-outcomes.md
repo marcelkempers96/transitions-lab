@@ -11,8 +11,8 @@ Most writing on socio-technical transitions treats them as a race between an inc
 The Lab's shorthand for that reading is the two-axis matrix below. It draws on the long-running [multi-level perspective](https://transitionsnetwork.org/about-strn/what-is-sustainability-transitions-research/) on socio-technical transitions and on the parallel literature on [state capacity and industrial policy](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en), and locates every transition case the Lab has studied somewhere on it.
 
 <figure>
-  <img src="/assets/img/insight-transitions-matrix.jpg" alt="Two-axis matrix charting Transitions Outcomes by Niche Success (x-axis, low to high) against State Capacity (y-axis, low to high). Four labelled quadrants: Directed Transitions (high state, low niche); Coordinated Transition (high state, high niche); Stalled Regime (low state, low niche); Bounded Leapfrogging (low state, high niche)." class="diagram">
-  <figcaption>Four transition patterns emerge when the niche and the state are read against each other. Each carries its own opportunities and its own failure modes.</figcaption>
+  <img src="/assets/img/insight-transitions-outcomes-diagram.jpg" alt="Line-art panel of four small symbols representing four distinct transition outcomes: a splitting dashed arrow (a decision to be made), two puzzle pieces fitting together (coordination), a tilted lever on a fulcrum (a weakened or imbalanced regime), and a dashed circle from which an arrow escapes (a bounded trajectory that eventually breaks out)." class="diagram">
+  <figcaption>Every real transition sits in one of four patterns. The two on the left describe how the state acts; the two on the right describe what the niche can do about it when the state does not.</figcaption>
 </figure>
 
 ---
