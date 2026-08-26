@@ -6,6 +6,11 @@
 
 <p class="article-meta"><span class="article-date">25 August 2026</span> · <span class="article-reading-time">9 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-capability-slow-part-diagram.jpg" alt="Line-art diagram: on the left a green Nigerian workshop with a welder and a rising staircase of gears labelled Capability; in the centre a hands-holding-tools symbol with the caption 'Built slowly. Lasts long.' above a small dotted coin-stack labelled 'Money can be available.'; on the right a coral Indonesian panel with a factory, wind turbine, solar array and a 24 GW target ring." class="diagram">
+<figcaption>Capability sits in the middle, and travels at its own speed. Money can be present in Nigeria and targets can be declared in Indonesia; neither shortens the years it takes to build the layer between them.</figcaption>
+</figure>
+
 Two announcements in today's briefing appear to belong to different conversations.
 
 Off-grid energy investor [All On](https://www.all-on.com/) has launched a twelve-month Innovation Ecosystem Development Programme, backed by the [Global Energy Alliance for People and Planet](https://www.energyalliance.org/). Ten Nigerian clean-energy ventures will receive technical expertise, prototyping facilities, fabrication equipment, venture-building support, and mentorship, rather than another pitch competition and a cash prize.

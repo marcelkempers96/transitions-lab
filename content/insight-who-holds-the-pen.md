@@ -6,6 +6,11 @@
 
 <p class="article-meta"><span class="article-date">25 August 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-who-holds-the-pen-diagram.jpg" alt="Line-art diagram: a butter-yellow map of Kenya containing an open battery-swap station and three interchangeable batteries, with a dotted arrow leading to a pale-blue governance circle containing a signed standards document, a worker, an office worker and an institutional building." class="diagram">
+<figcaption>Open architecture on the left is a technical property. The governance question — who signs the standard, on what terms, with what recourse — sits on the right, and is a separate settlement.</figcaption>
+</figure>
+
 [SUN Mobility](https://www.sunmobility.co.in/) and [Vivo Energy](https://www.vivoenergy.com/) have launched an open-architecture battery-swapping network in Kenya. Company announcements at launch describe roughly 35 stations operating across Nairobi and Mombasa, vehicles from more than ten manufacturers able to use the system, and around twenty of the sites at existing Shell forecourts. Vivo Energy itself operates Shell- and Engen-branded sites across [more than 20 African countries](https://www.vivoenergy.com/), which is the distribution asset behind the partnership.
 
 The station count is the headline. The manufacturer count is the story.

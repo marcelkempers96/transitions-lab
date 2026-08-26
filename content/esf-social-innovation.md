@@ -6,6 +6,11 @@
 
 <p class="article-meta"><span class="article-date">June 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
+<figure>
+<img src="/assets/img/esf-social-innovation-diagram.jpg" alt="Line-art diagram in three linked circles: a public institutional building with a document on the left, a clipboard with a bar chart and magnifying glass in the centre, and a household with figures and a young plant on the right." class="diagram">
+<figcaption>Funder on the left, community on the right. The middle circle is the independent evidence layer that keeps the two connected honestly.</figcaption>
+</figure>
+
 <!-- IMAGE esf-hero: hero photo | A social-innovation setting: a training programme, a care service, a community initiative in a European context, with people present. Documentary. | Full-bleed hero under the standfirst. -->
 
 The European Social Fund Plus (ESF+) is one of the EU's principal instruments for investing in people. Alongside employment and inclusion, it supports social innovation: new ideas, practices, and policies that address social challenges, from helping young people who are not in employment, education, or training into the labour market, to housing, to reshaping how care is delivered for an ageing population.

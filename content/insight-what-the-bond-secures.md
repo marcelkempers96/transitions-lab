@@ -6,6 +6,11 @@
 
 <p class="article-meta"><span class="article-date">24 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-what-the-bond-secures-diagram.jpg" alt="Line-art diagram: on the left, a butter-yellow panel with a solar home, a battery, a lightbulb and an ON/OFF lock feeding into a phone with a dollar sign and a tick; on the right, a pale-blue panel with a water kiosk and jerry can, a phone with a dollar sign, and a dotted question-mark circle where the enforcement mechanism should be." class="diagram">
+<figcaption>What secures the paper on the left is the ability to switch the light off from a distance. Water on the right has no equivalent mechanism, which is why the same investors have not written the same instrument for it.</figcaption>
+</figure>
+
 Africa's largest pay-as-you-go solar operators have stopped raising venture rounds and started issuing paper. [d.light](https://www.dlight.com/) issued a green bond in the region of US$50m in June. [Sun King](https://www.sunking.com/) has previously raised roughly US$286m through securitised debt, using streams of household repayments as collateral. Sector-tracker figures for 2025 show local currency reaching close to half of off-grid solar funding. All three numbers are as reported by the companies and industry trackers, and are used here to illustrate the direction of the shift rather than as audited totals.
 
 That last number deserves more attention than it usually gets. Currency mismatch has killed more African energy companies than weak demand ever has: revenue in shillings or naira, debt in dollars, and a devaluation that wipes out a functioning business with satisfied customers. A sector that has moved almost half its funding into local currency has solved a problem that defeated the previous two decades of energy-access finance. Whatever else follows in this piece, that is a genuine achievement.

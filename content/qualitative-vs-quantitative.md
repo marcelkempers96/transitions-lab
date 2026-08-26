@@ -4,6 +4,11 @@
 
 *What numbers can measure, and what only people can tell you. The Lab's plain-language guide to the two kinds of research evidence, and how they work together.*
 
+<figure>
+<img src="/assets/img/qualitative-vs-quantitative-diagram.jpg" alt="Line-art diagram: a pie chart, bar chart and checklist on the left; two people in conversation with speech bubbles on the right; both point via dashed arrows into a central document with a lightbulb." class="diagram">
+<figcaption>Numbers on the left establish scale and pattern. Conversation on the right explains mechanism, experience and meaning. The document in the middle is what a good study produces when both are done properly.</figcaption>
+</figure>
+
 Every serious study of impact eventually meets the same fork. Do you count, or do you ask? Do you measure how many and how much across a large group, or do you sit with a smaller number of people and understand how and why? The honest answer, most of the time, is both. But the two produce different kinds of evidence, and knowing which one answers which question is the difference between a study that informs a decision and one that merely decorates it.
 
 This page sets out the distinction plainly, and then makes the case that most organisations under-invest in: what qualitative evidence can tell you that numbers, on their own, never will.

@@ -4,6 +4,11 @@
 
 *A demonstration of the depth the Lab reaches in qualitative fieldwork, how a single conversation moves from surface fact to the meaning, friction, and lived experience that survey data cannot reach.*
 
+<figure>
+<img src="/assets/img/interview-guide-diagram.jpg" alt="Line-art diagram of a friendly in-depth interview: two people seated across a table, the participant gesturing in a green top, the researcher taking notes in a pale-blue shirt, with a small recorder, a note sheet and a green notebook on the table between them." class="diagram">
+<figcaption>The in-depth interview is a controlled, patient conversation. The instruments on the table between the two chairs are almost the entire toolkit.</figcaption>
+</figure>
+
 A survey tells you *what* changed. An interview, done well, tells you *why*, *how it felt*, and *what the person would do about it*. This guide shows the structure and the probing technique behind that depth. It is built to be adapted to any subject, a technology, a service, a transition.
 
 ---
