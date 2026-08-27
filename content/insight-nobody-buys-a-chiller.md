@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">27 August 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-nobody-buys-a-chiller-diagram.jpg" alt="Line-art diagram: a small industrial building on the left, a large chiller unit in the middle with a compressor and pipework, and a circular monitoring cluster on the right containing a laptop with a downward-trending line chart, a clipboard, a gauge and a coin." class="diagram">
+<figcaption>The building on the left is the plant. The chiller in the middle is the equipment. The monitoring circle on the right is the actual product — a claim about the energy that was not consumed.</figcaption>
+</figure>
+
+
 ## Efficiency as a service, and the awkward thing at the centre of it
 
 Singapore's August Energy and India's Energeia have launched a US$100 million platform to finance energy-efficiency upgrades for commercial and industrial customers, covering cooling, heating, compressed air, motors, fuel switching and renewable systems, with customers avoiding upfront capital expenditure.

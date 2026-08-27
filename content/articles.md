@@ -12,22 +12,31 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 
 <div class="article-list">
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-second-step">The Value Is in the Second Step</a>
-    <div class="article-meta">27 August 2026</div>
-    <p class="article-desc">Firm power was the constraint on African mineral processing and it now has an answer in the Congolese copperbelt. The tariff schedule was always the other half.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-second-step"><img class="article-thumb" src="/assets/img/insight-second-step-diagram.jpg" alt="Two value chains — ore to refined copper on top, renewables to shipped ammonia below — with the shining second step at the end of each."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-second-step">The Value Is in the Second Step</a>
+      <div class="article-meta">27 August 2026</div>
+      <p class="article-desc">Firm power was the constraint on African mineral processing and it now has an answer in the Congolese copperbelt. The tariff schedule was always the other half.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-nobody-buys-a-chiller">Nobody Buys a Chiller</a>
-    <div class="article-meta">27 August 2026</div>
-    <p class="article-desc">Efficiency projects with three-year paybacks do not get done, and financing is not the main reason. The product being sold is a counterfactual.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-nobody-buys-a-chiller"><img class="article-thumb" src="/assets/img/insight-nobody-buys-a-chiller-diagram.jpg" alt="Small industrial building on the left, a chiller unit in the middle, and a monitoring cluster of laptop, clipboard, gauge and coin on the right."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-nobody-buys-a-chiller">Nobody Buys a Chiller</a>
+      <div class="article-meta">27 August 2026</div>
+      <p class="article-desc">Efficiency projects with three-year paybacks do not get done, and financing is not the main reason. The product being sold is a counterfactual.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-right-to-the-tree">The Right That Matters Is to the Tree</a>
-    <div class="article-meta">27 August 2026</div>
-    <p class="article-desc">A US$2 billion restoration programme has launched. The evidence says the constraint is not ownership of the land but permission to cut the tree down.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-right-to-the-tree"><img class="article-thumb" src="/assets/img/insight-right-to-the-tree-diagram.jpg" alt="Institution and land map on the left, a young tree in a fenced enclosure in the centre, a signed harvest permit and a stack of logs on the right."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-right-to-the-tree">The Right That Matters Is to the Tree</a>
+      <div class="article-meta">27 August 2026</div>
+      <p class="article-desc">A US$2 billion restoration programme has launched. The evidence says the constraint is not ownership of the land but permission to cut the tree down.</p>
+    </div>
   </div>
 
   <div class="article-item has-thumb">

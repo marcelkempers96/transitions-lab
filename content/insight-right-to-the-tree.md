@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">27 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-right-to-the-tree-diagram.jpg" alt="Line-art diagram: an institutional building on the left with a dashed arrow to a stylised land parcel map, a young tree standing inside a fenced enclosure in the centre, and a permit certificate with a ribbon on the upper right connected by an arrow to a small stack of harvested logs and a leafy sprig on the lower right." class="diagram">
+<figcaption>The building on the left grants the land. The certificate on the right grants the harvest. Only the second decides whether the tree in the middle is worth planting.</figcaption>
+</figure>
+
+
 ## What a decade of restoration finance will run into first
 
 The [Asian Development Bank](https://www.adb.org/) and partners have launched the FIELD Initiative, aiming to mobilise at least US$2 billion by 2035 for land restoration and anti-desertification programmes across Asia and the Pacific, explicitly linking degraded landscapes with rural livelihoods, food security and water resilience.

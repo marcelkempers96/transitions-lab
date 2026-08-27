@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">27 August 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-second-step-diagram.jpg" alt="Line-art diagram in two chains. Top chain: a mountain with an ore cart at the pit, an arrow to a smelter under a warm sun, an arrow to a stack of shining refined copper sheets. Bottom chain: a wind turbine and solar array, an arrow to a green-tanked hydrogen plant under a warm sun, an arrow to a spherical-tanked ammonia carrier at sea." class="diagram">
+<figcaption>Two chains, each ending one step to the right of where the raw material was. The step from ore to cathode, and from electricity to ammonia, is where the value sits and where the tariff schedule bites.</figcaption>
+</figure>
+
+
 ## Firm power solves the constraint everyone talks about, and not the one that follows
 
 Two announcements this week describe the same ambition on different continents.
