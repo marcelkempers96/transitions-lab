@@ -103,7 +103,7 @@ If you are assessing an incumbent expansion and the conduct question is being an
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the framework this reading uses, see [BRW](/brw); for the diagnostic behind it, see [Four Ways a Transition Lands](/insight-transitions-outcomes). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the framework this reading uses, see [BRW](/brw); for the diagnostic behind it, see [Four Ways a Transition Lands](/insight-transitions-outcomes). See also [The Value Is in the Second Step](/insight-second-step) on what actually travels with an industrial operator into a new role. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

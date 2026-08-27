@@ -53,7 +53,7 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [Capability Is the Slow Part](/insight-capability-slow-part) on why firm and state capability, not capital, is the binding constraint. [Standing in the Same Queue](/insight-same-queue), on how the physical stack of transformers and switchgear has become the binding constraint.*
+*Related reading: [The Value Is in the Second Step](/insight-second-step) on why firm power solves the constraint everyone talks about and not the one that follows, [Capability Is the Slow Part](/insight-capability-slow-part) on why firm and state capability, not capital, is the binding constraint, and [Standing in the Same Queue](/insight-same-queue) on how the physical stack of transformers and switchgear has become the binding constraint. For the full series, see [Articles](/articles).*
 
 
 *For how we study transitions like this, see [Field Research](/field-research). See also our [E-Mobility expertise](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*

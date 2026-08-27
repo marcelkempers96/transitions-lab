@@ -60,4 +60,4 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on why bundled credit-and-offtake keeps reappearing, and [The Distance Between the Work and the Reward](/insight-distance-work-reward) on what the size of an MRV budget is actually telling you. See the [Pyropower case study](/case-pyropower). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*Related reading: [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on why the constraint on restoration is the harvest permit rather than ownership of the land, [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on why bundled credit-and-offtake keeps reappearing, and [The Distance Between the Work and the Reward](/insight-distance-work-reward) on what the size of an MRV budget is actually telling you. See the [Pyropower case study](/case-pyropower). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

@@ -80,7 +80,7 @@ Waste into worth is the easy part to demonstrate. Worth into whose hands is the 
 
 ---
 
-*For the Lab's field methods, see [Field Research](/field-research). For impact measurement of programmes like this, see [Impact Measurement](/impact-measurement). See also [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on why the offtake relationship decides what a smallholder can adopt. To discuss a study, see [Contact](/contact).*
+*For the Lab's field methods, see [Field Research](/field-research). For impact measurement of programmes like this, see [Impact Measurement](/impact-measurement). See also [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on why the offtake relationship decides what a smallholder can adopt, and [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on why the rights position decides what a land programme actually delivers. To discuss a study, see [Contact](/contact).*
 
 ---
 

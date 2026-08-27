@@ -121,6 +121,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-paying-for-what-we-curtail": "butter",
     "insight-downstream-of-the-buyer": "butter",
     "insight-own-the-battery": "butter",
+    "insight-nobody-buys-a-chiller": "butter",
+    "insight-second-step": "butter",
+    "insight-right-to-the-tree": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -461,6 +464,18 @@ META: dict[str, dict[str, str]] = {
     "insight-own-the-battery": {
         "title": "Own the Battery, Rent the Shopfront | Transitions Lab",
         "description": "Two battery-swapping companies raised money this month with opposite architectures. The choice is a make-or-buy decision with a testable answer.",
+    },
+    "insight-nobody-buys-a-chiller": {
+        "title": "Nobody Buys a Chiller | Transitions Lab",
+        "description": "Industrial efficiency projects with three-year paybacks routinely do not get done. A new US$100 million platform treats that as a financing problem. It is mostly a risk and attention problem, and the product being sold is a counterfactual.",
+    },
+    "insight-second-step": {
+        "title": "The Value Is in the Second Step | Transitions Lab",
+        "description": "Firm power was the binding constraint on African mineral processing. It now has a working answer in the Congolese copperbelt. The tariff schedule was always the other half.",
+    },
+    "insight-right-to-the-tree": {
+        "title": "The Right That Matters Is to the Tree | Transitions Lab",
+        "description": "A US$2 billion restoration programme has launched for Asia and the Pacific. The evidence says the constraint is not ownership of the land but permission to cut the tree down.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1270,14 +1285,14 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-own-the-battery">
+      <a class="insight-card has-photo" href="/insight-second-step">
         <div class="card-photo">
-          <img src="/assets/img/insight-own-the-battery-diagram.jpg" alt="Firm-owned battery warehouse on the left connected by dashed arrow and a telemetry cloud to a partner shopfront on the right with a swap cabinet and e-motorcycle.">
-          <span class="kicker">Insight &middot; E-Mobility</span>
+          <img src="/assets/img/insight-capability-slow-part-diagram.jpg" alt="Nigerian workshop on the left, hands-holding-tools capability symbol in the centre, Indonesian industry and 24 GW target on the right, standing in for the second-step processing question.">
+          <span class="kicker">Insight &middot; Industrial Policy</span>
         </div>
         <div class="body">
-          <h3>Own the Battery, Rent the Shopfront</h3>
-          <p>Two swap networks raised money this month with opposite architectures. The choice is a make-or-buy decision with a testable answer.</p>
+          <h3>The Value Is in the Second Step</h3>
+          <p>Firm power was the constraint on African mineral processing and it now has an answer in the Congolese copperbelt. The tariff schedule was always the other half.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
