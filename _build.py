@@ -68,6 +68,45 @@ TOPIC_ICONS: dict[str, str] = {
     "expertise-climate":       "/assets/icons/icon-climate.png",
 }
 
+# Pages that get a compact "Start a study" contact block auto-appended at
+# the bottom of the .prose body. Add a slug here to give it the block.
+CONTACT_CTA_PAGES: set[str] = {
+    "how-it-works",
+    "who-we-serve",
+    "what-we-do",
+    "for-funders",
+}
+
+# The compact contact block. Same form as /contact but abbreviated fields.
+# Submissions go to marcelxingkai@hotmail.com via FormSubmit for now.
+CONTACT_CTA_HTML = """<section class="section-paper contact-cta-block" style="border-top:2px solid var(--ink);">
+  <div class="wrap" style="max-width:900px;">
+    <p class="eyebrow">Start a study</p>
+    <h2 style="font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.1;margin:0 0 14px;">Tell us the decision. We will design the study.</h2>
+    <p style="font-size:17px;line-height:1.55;margin:0 0 28px;max-width:56ch;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.</p>
+    <form class="contact-form" action="https://formsubmit.co/marcelxingkai@hotmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New enquiry from transitionslab.org">
+      <input type="hidden" name="_next" value="/contact?sent=1">
+      <input type="text" name="_honey" style="display:none">
+      <div>
+        <label for="cfx-name">Your name</label>
+        <input id="cfx-name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div>
+        <label for="cfx-email">Email</label>
+        <input id="cfx-email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div class="full">
+        <label for="cfx-decision">The decision you are facing</label>
+        <textarea id="cfx-decision" name="decision" required placeholder="What do you need to know, and who does the answer need to come from?"></textarea>
+      </div>
+      <button type="submit" class="contact-submit">Send message &rarr;</button>
+      <p class="form-note">Confidential from the first message. Or write to <a href="mailto:marcelxingkai@hotmail.com">marcelxingkai@hotmail.com</a> directly.</p>
+    </form>
+  </div>
+</section>"""
+
 # Per-page hero band colour. Adds `hero-<colour>` to <section class="page-hero">.
 # Not every slug is listed — anything absent renders on the default paper hero.
 HERO_COLOR: dict[str, str] = {
@@ -1094,6 +1133,8 @@ def build_content_page(slug: str, md: str) -> str:
 </section>"""
 
     body = page_hero + "\n\n" + prose_section
+    if slug in CONTACT_CTA_PAGES:
+        body += "\n\n" + CONTACT_CTA_HTML
     return page_shell(slug=slug, title=title, description=description, body=body)
 
 
@@ -1154,8 +1195,8 @@ def build_home() -> str:
     <h1><span id="hero-headline" data-text="A transition is a decision."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
     <p class="lede" id="hero-subhead" data-text="Every transition - energy, mobility, industry - is a series of decisions taken by someone and landing on someone else. Transitions Lab is the independent evidence that keeps those decisions honest about the people they meet."></p>
     <div class="cta-row">
-      <a href="/contact" class="btn btn-ink">Start a study →</a>
-      <a href="/how-it-works" class="btn btn-ghost">See how we work</a>
+      <a href="/how-it-works" class="btn btn-ink">Start a study →</a>
+      <a href="/what-we-do" class="btn btn-ghost">See what we do</a>
     </div>
   </div>
 </section>
@@ -1431,7 +1472,7 @@ def build_home() -> str:
     <p class="eyebrow">Start a study</p>
     <h2 style="font-size:clamp(34px,5vw,60px);letter-spacing:-.02em;line-height:1.05;">Tell us the decision. We will design the study.</h2>
     <p style="font-size:20px;margin:22px auto 42px;max-width:56ch;color:var(--paper);font-weight:500;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.</p>
-    <a href="/contact" class="btn">Start a study →</a>
+    <a href="/how-it-works" class="btn">Start a study →</a>
   </div>
 </section>
 """

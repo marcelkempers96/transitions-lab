@@ -6,7 +6,7 @@
 
 The best engagements start from a real question, not a request for a quote. A clear question is enough to start; shaping the rest is part of what we do.
 
-<form class="contact-form" action="https://formsubmit.co/hello@transitionslab.org" method="POST">
+<form class="contact-form" action="https://formsubmit.co/marcelxingkai@hotmail.com" method="POST">
   <input type="hidden" name="_captcha" value="true">
   <input type="hidden" name="_subject" value="New enquiry from transitionslab.org">
   <input type="hidden" name="_next" value="/contact?sent=1">

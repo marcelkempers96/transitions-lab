@@ -105,3 +105,63 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
+/* ── Articles filter (on /articles) ──
+   Chip rows for category / geography / month. One active chip per group;
+   the "All" chip clears that group. An item is shown when every group
+   either has "All" selected, or the item matches the selected value. */
+(function () {
+  var bar = document.querySelector(".article-filter");
+  if (!bar) return;
+  var listSel = bar.getAttribute("data-filter-target") || ".article-list";
+  var list = document.querySelector(listSel);
+  if (!list) return;
+  var items = list.querySelectorAll(".article-item");
+  var empty = bar.querySelector(".filter-empty");
+  var resetBtn = bar.querySelector(".filter-reset");
+
+  function apply() {
+    var filters = {};
+    bar.querySelectorAll(".filter-group").forEach(function (g) {
+      var group = g.getAttribute("data-group");
+      var active = g.querySelector(".filter-chip.is-active");
+      filters[group] = active ? active.getAttribute("data-value") : "";
+    });
+
+    var shown = 0;
+    items.forEach(function (item) {
+      var ok = true;
+      Object.keys(filters).forEach(function (group) {
+        var wanted = filters[group];
+        if (!wanted) return;
+        var actual = item.getAttribute("data-" + (group === "month" ? "month" : group === "geography" ? "geography" : "category"));
+        if (actual !== wanted) ok = false;
+      });
+      item.setAttribute("data-hidden", ok ? "false" : "true");
+      if (ok) shown++;
+    });
+
+    if (empty) empty.hidden = shown > 0;
+  }
+
+  bar.querySelectorAll(".filter-group").forEach(function (g) {
+    g.addEventListener("click", function (e) {
+      var chip = e.target.closest(".filter-chip");
+      if (!chip) return;
+      g.querySelectorAll(".filter-chip").forEach(function (c) { c.classList.remove("is-active"); });
+      chip.classList.add("is-active");
+      apply();
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", function () {
+      bar.querySelectorAll(".filter-group").forEach(function (g) {
+        g.querySelectorAll(".filter-chip").forEach(function (c) { c.classList.remove("is-active"); });
+        var allChip = g.querySelector(".filter-chip.is-all");
+        if (allChip) allChip.classList.add("is-active");
+      });
+      apply();
+    });
+  }
+})();
