@@ -108,7 +108,7 @@ If you are designing one of these vehicles and want the farmer side understood b
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture &amp; Land Systems](/expertise-agriculture) and [Financial Inclusion &amp; Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Financial Inclusion & Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

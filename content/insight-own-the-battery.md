@@ -115,7 +115,7 @@ If you are deciding a network architecture for a market you do not yet know well
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility &amp; Transport](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

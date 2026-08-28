@@ -124,7 +124,7 @@ If you are financing generation in a system whose cost problem sits somewhere el
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access &amp; Off-Grid Systems](/expertise-energy). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

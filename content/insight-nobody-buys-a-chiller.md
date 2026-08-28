@@ -114,7 +114,7 @@ If you are signing or underwriting one of these contracts and want the measureme
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access &amp; Off-Grid Systems](/expertise-energy) and [Local Manufacturing &amp; Supply Chains](/expertise-manufacturing). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy) and [Local Manufacturing & Supply Chains](/expertise-manufacturing). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

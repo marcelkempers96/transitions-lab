@@ -104,7 +104,7 @@ If you are building or funding an MRV platform and want the field component desi
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture &amp; Land Systems](/expertise-agriculture) and [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

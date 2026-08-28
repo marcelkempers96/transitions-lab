@@ -131,7 +131,7 @@ If you are negotiating an anchor-load agreement, the terms above are worth putti
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [AI &amp; Digital Systems](/expertise-ai-digital) and [Energy Access &amp; Off-Grid Systems](/expertise-energy). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [AI & Digital Systems](/expertise-ai-digital) and [Energy Access & Off-Grid Systems](/expertise-energy). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

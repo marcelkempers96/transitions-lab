@@ -119,7 +119,7 @@ If you are designing a capability programme and want the right things measured f
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing &amp; Supply Chains](/expertise-manufacturing) and [Energy Access &amp; Off-Grid Systems](/expertise-energy). See also [Paying for Power You Curtail](/insight-paying-for-what-we-curtail), which reads the same slow-implementation problem at the level of a single national grid, [The Value Is in the Second Step](/insight-second-step) on why operations capability is the part that has to be built rather than procured, and [Behind the Border](/insight-behind-the-border) on why the behind-the-border capabilities decide whether regional value chains form. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [Paying for Power You Curtail](/insight-paying-for-what-we-curtail), which reads the same slow-implementation problem at the level of a single national grid, [The Value Is in the Second Step](/insight-second-step) on why operations capability is the part that has to be built rather than procured, and [Behind the Border](/insight-behind-the-border) on why the behind-the-border capabilities decide whether regional value chains form. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

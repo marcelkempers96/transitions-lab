@@ -113,7 +113,7 @@ If you are a trustee, a sponsor, or a concessional funder in one of these struct
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Financial Inclusion &amp; Payment Systems](/expertise-finance) and [For Funders](/for-funders). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Financial Inclusion & Payment Systems](/expertise-finance) and [For Funders](/for-funders). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

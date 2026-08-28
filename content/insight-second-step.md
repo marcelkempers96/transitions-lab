@@ -108,7 +108,7 @@ If you are developing a processing complex and want the regional consequences un
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing &amp; Supply Chains](/expertise-manufacturing) and [Energy Access &amp; Off-Grid Systems](/expertise-energy). See also [Behind the Border](/insight-behind-the-border) on why variance rather than tariff is what forecloses regional specialisation. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [Behind the Border](/insight-behind-the-border) on why variance rather than tariff is what forecloses regional specialisation. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">
