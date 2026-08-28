@@ -11,6 +11,12 @@
 <figcaption>The wall is the incumbent regime. The dashed path is what the niche actually does in practice: bypass where it can, repurpose what it must, weaken what it cannot avoid.</figcaption>
 </figure>
 
+<div class="callout c-butter">
+  <span class="kicker">Download &middot; PDF, 10 pages</span>
+  <h3 style="margin:.2em 0 .4em;">Get the BRW Framework as a PDF</h3>
+  <p>The full framework, with its academic grounding and a worked case study, in one document. Free to download, use, and cite.</p>
+  <p style="margin-top:16px;"><a href="/assets/resource-brw-framework.pdf" class="btn btn-ink" download>Download the PDF &rarr;</a></p>
+</div>
 
 Every niche technology arrives into a world already run by an incumbent regime: an aligned configuration of technologies, infrastructures, institutions, habits, and expectations that resists change. How a niche actor engages that regime, barrier by barrier, largely determines whether it succeeds and for whom.
 
