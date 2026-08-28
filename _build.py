@@ -1151,8 +1151,8 @@ def build_home() -> str:
   </video>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="wrap">
-    <h1><span id="hero-headline" data-text="Technology is not destiny."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
-    <p class="lede" id="hero-subhead" data-text="It can be steered, if someone is paying honest attention to what happens to people on the ground. Transitions Lab is that attention."></p>
+    <h1><span id="hero-headline" data-text="A transition is a decision."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
+    <p class="lede" id="hero-subhead" data-text="Every transition — energy, mobility, water, industry — is a series of decisions taken by someone and landing on someone else. Transitions Lab is the independent evidence that keeps those decisions honest about the people they meet."></p>
     <div class="cta-row">
       <a href="/contact" class="btn btn-ink">Start a study →</a>
       <a href="/how-it-works" class="btn btn-ghost">See how we work</a>
@@ -1265,6 +1265,7 @@ def build_home() -> str:
   <div class="wrap">
     <blockquote class="reveal">The most useful thing we do is <span class="highlight">listen to the people</span> a technology is about to meet, and report what they say honestly.</blockquote>
     <cite>- Transitions Lab</cite>
+    <p style="margin-top:36px;"><a href="/field-research" class="btn">See how we listen &rarr;</a></p>
   </div>
 </section>
 
