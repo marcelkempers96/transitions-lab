@@ -53,7 +53,7 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [Behind the Border](/insight-behind-the-border) on why variance rather than tariff forecloses regional specialisation, [The Value Is in the Second Step](/insight-second-step) on why firm power solves the constraint everyone talks about and not the one that follows, and [The Transition Does Not Have a Jobs Number](/insight-no-jobs-number) on why the employment story depends on which technology gets built where. For the full series, see [Articles](/articles).*
+*Related reading: [Behind the Border](/insight-behind-the-border) on why variance rather than tariff forecloses regional specialisation, [The Value Is in the Second Step](/insight-second-step) on why firm power solves the constraint everyone talks about and not the one that follows, and [Capability Is the Slow Part](/insight-capability-slow-part) on why firm and state capability, not capital, is the binding constraint. For the full series, see [Articles](/articles).*
 
 
 *For how we study transitions like this, see [Field Research](/field-research). See also our [E-Mobility expertise](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*

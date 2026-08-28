@@ -127,7 +127,6 @@ HERO_COLOR: dict[str, str] = {
     "insight-behind-the-border": "butter",
     "insight-the-smelter-contract": "butter",
     "insight-cheaper-to-verify": "butter",
-    "insight-no-jobs-number": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -492,10 +491,6 @@ META: dict[str, dict[str, str]] = {
     "insight-cheaper-to-verify": {
         "title": "The Cheaper It Gets to Verify, the Less Anyone Visits | Transitions Lab",
         "description": "Satellite radar can now confirm whether a rice paddy was flooded, plot by plot. That is a real advance. It also removes the last budgeted reason anybody had to go and look.",
-    },
-    "insight-no-jobs-number": {
-        "title": "The Transition Does Not Have a Jobs Number | Transitions Lab",
-        "description": "Four announcements in one week describe four different labour events, and only one of them is job creation. The transition's employment story depends on which technology gets built, where, and who is standing nearby.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1152,13 +1147,12 @@ def build_home() -> str:
 <!-- HERO - typewriter tagline on video background -->
 <section class="hero has-video">
   <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <source src="/assets/media/hero.mp4" type="video/mp4">
+    <source src="/assets/media/statement.mp4" type="video/mp4">
   </video>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="eyebrow">Field research &amp; impact measurement</p>
-    <h1><span id="hero-headline" data-text="Listening to the people."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
-    <p class="lede" id="hero-subhead" data-text="Transitions Lab gets you honest, field-grounded evidence about how technologies meet real people - gathered by researchers who live in the places we study."></p>
+    <h1><span id="hero-headline" data-text="Technology is not destiny."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
+    <p class="lede" id="hero-subhead" data-text="It can be steered, if someone is paying honest attention to what happens to people on the ground. Transitions Lab is that attention."></p>
     <div class="cta-row">
       <a href="/contact" class="btn btn-ink">Start a study →</a>
       <a href="/how-it-works" class="btn btn-ghost">See how we work</a>
@@ -1265,11 +1259,11 @@ def build_home() -> str:
 <!-- STATEMENT - forest block with big text on a video background -->
 <section class="statement has-video">
   <video class="statement-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <source src="/assets/media/statement.mp4" type="video/mp4">
+    <source src="/assets/media/hero.mp4" type="video/mp4">
   </video>
   <div class="statement-veil" aria-hidden="true"></div>
   <div class="wrap">
-    <blockquote class="reveal">Technology is not destiny. It can be steered, if someone is <span class="highlight">paying honest attention</span> to what happens to people on the ground.</blockquote>
+    <blockquote class="reveal">The most useful thing we do is <span class="highlight">listen to the people</span> a technology is about to meet, and report what they say honestly.</blockquote>
     <cite>- Transitions Lab</cite>
   </div>
 </section>
@@ -1377,29 +1371,41 @@ def build_home() -> str:
       <p>The intellectual apparatus behind the Lab's work, free to download, use, and cite. A working understanding of how technologies meet real people is more useful in the world than in a drawer.</p>
     </div>
     <div class="resource-grid">
+      <a class="resource-card" href="/brw">
+        <span class="resource-tag">Framework</span>
+        <h3>The BRW Framework</h3>
+        <p>Bypass, Repurpose, Weaken. Three mechanisms matched to the three barriers a niche technology actually meets, and why the choice decides what a transition reaches.</p>
+        <span class="resource-cta">Read &rarr;</span>
+      </a>
+      <a class="resource-card" href="/insight-transitions-outcomes">
+        <span class="resource-tag">Diagnostic</span>
+        <h3>Four Ways a Transition Lands</h3>
+        <p>State capacity against niche success. A two-axis diagnostic that sorts every real transition into directed, coordinated, stalled or bounded leapfrogging.</p>
+        <span class="resource-cta">Read &rarr;</span>
+      </a>
       <a class="resource-card" href="/readiness-levels">
         <span class="resource-tag">Page + 2 PDFs</span>
         <h3>TRL &amp; SRL Explained</h3>
-        <p>Technology and Societal Readiness Levels, with academic references. Two nine-level scales and why reading them together is the point.</p>
+        <p>Technology and Societal Readiness Levels. Two nine-level scales and the missing middle where most technologies fail to cross.</p>
         <span class="resource-cta">Read &rarr;</span>
-      </a>
-      <a class="resource-card" href="/assets/resource-interview-guide.pdf">
-        <span class="resource-tag">PDF &middot; 12 pages</span>
-        <h3>The In-Depth Interview Guide</h3>
-        <p>The five-levels-down principle behind the Lab's qualitative reach, and the probing techniques that get an interview from fact to meaning.</p>
-        <span class="resource-cta">Download &rarr;</span>
-      </a>
-      <a class="resource-card" href="/impact-tracking-template">
-        <span class="resource-tag">Template</span>
-        <h3>Impact-Tracking Template</h3>
-        <p>A fill-in baseline-midline-endline framework for European projects and any programme that needs to prove what it changed.</p>
-        <span class="resource-cta">Open &rarr;</span>
       </a>
       <a class="resource-card" href="/assets/resource-transitions-primer.pdf">
         <span class="resource-tag">PDF &middot; 8 pages</span>
         <h3>Reading a Transition: A Primer</h3>
         <p>What a socio-technical system is, why the human side comes first, and how to turn that reading into evidence.</p>
         <span class="resource-cta">Download &rarr;</span>
+      </a>
+      <a class="resource-card" href="/impact-measurement">
+        <span class="resource-tag">Framework</span>
+        <h3>The Evidence Strength Pyramid</h3>
+        <p>Five tiers from activity data at the base to attributable impact at the top. The honest answer to whether a report's number is a claim, an observation, or a conclusion.</p>
+        <span class="resource-cta">Read &rarr;</span>
+      </a>
+      <a class="resource-card" href="/impact-tracking-template">
+        <span class="resource-tag">Template</span>
+        <h3>Impact-Tracking Template</h3>
+        <p>A fill-in baseline-midline-endline framework for any programme that needs to prove what a transition actually changed.</p>
+        <span class="resource-cta">Open &rarr;</span>
       </a>
     </div>
     <p style="text-align:center;margin-top:48px;"><a href="/resources" class="btn btn-ghost">See all resources &rarr;</a></p>

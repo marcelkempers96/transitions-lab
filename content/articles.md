@@ -30,12 +30,6 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <p class="article-desc">Satellite radar can confirm a paddy was flooded, plot by plot. It also removes the last budgeted reason anybody had to go and look.</p>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-no-jobs-number">The Transition Does Not Have a Jobs Number</a>
-    <div class="article-meta">28 August 2026</div>
-    <p class="article-desc">Four announcements, four different labour events, and only one of them is job creation.</p>
-  </div>
-
   <div class="article-item has-thumb">
     <a class="article-thumb-link" href="/insight-second-step"><img class="article-thumb" src="/assets/img/insight-second-step-diagram.jpg" alt="Two value chains — ore to refined copper on top, renewables to shipped ammonia below — with the shining second step at the end of each."></a>
     <div class="article-body">
