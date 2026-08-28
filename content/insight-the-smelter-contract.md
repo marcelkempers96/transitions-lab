@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">28 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-the-smelter-contract-diagram.jpg" alt="Line-art diagram: on the left a hydro dam nestled in a green valley with trees; a dashed line to a transmission pylon and transformer; a dashed line to a signed contract certificate with a ribbon; a dashed line to a data-centre building on the right, capped with a small coral circle containing a chip icon." class="diagram">
+<figcaption>Every asset to the left of the certificate belongs to the host for a century. The building on the right is on a six-year contract. That asymmetry decides who writes the terms at renegotiation.</figcaption>
+</figure>
+
+
 ## What sixty years of anchor-load bargains should tell anyone signing one
 
 [Anthropic](https://www.anthropic.com/) has agreed to spend around US$45 billion over six years renting computing capacity from [Nscale](https://www.nscale.com/), using [Nvidia's](https://www.nvidia.com/) Vera Rubin systems, with the West Virginia capacity alone representing about 460 megawatts.

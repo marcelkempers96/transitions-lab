@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">28 August 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-cheaper-to-verify-diagram.jpg" alt="Line-art diagram: a satellite in orbit at the top left projects a cone of radar signal down onto a grid of green rice paddies below; a dashed arrow leads to a laptop in the centre showing a plot map with a green tick and a rising line chart; a further dashed arrow leads to a faded figure of a farmer with a clipboard standing on a dashed-outline plot on the right, rendered semi-transparent to indicate absence." class="diagram">
+<figcaption>The satellite confirms the practice. The dashboard bills against it. The person on the right, whose visit produced almost everything anyone knew about the programme, is being drawn in dashed lines.</figcaption>
+</figure>
+
+
 ## What falling measurement costs quietly take away
 
 [Mitti Labs](https://mittilabs.com/) has raised around US$9.5 million to expand from India into Indonesia and the Philippines. Its platform combines satellite radar, field observations and physical models to build plot-level digital twins of rice fields, supporting water management and methane reduction interventions alongside farmers.

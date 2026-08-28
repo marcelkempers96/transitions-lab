@@ -6,6 +6,12 @@
 
 <p class="article-meta"><span class="article-date">28 August 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
+<figure>
+<img src="/assets/img/insight-behind-the-border-diagram.jpg" alt="Line-art diagram in two mirror-image panels separated by a small border kiosk with a dashed line marking the border. Each panel — one on a yellow blob, one on a coral blob — contains a factory with a truck on the road plus three sub-icons: a warehouse full of inventory, a clipboard of paperwork, and an electricity pylon with lightning bolts." class="diagram">
+<figcaption>The border kiosk in the middle is what a free-trade agreement acts on. The three sub-icons on either side — warehouses of buffer inventory, paperwork queues and unreliable power — are the behind-the-border costs that decide whether anybody bothers to trade across it.</figcaption>
+</figure>
+
+
 ## Why variance, not level, is what forecloses specialisation
 
 The World Bank has launched [*Integrating Africa: From Threads to Hubs*](https://au.int/en/documents/20260814/integrating-africa-threads-hubs), arguing that the next stage of the African Continental Free Trade Area is interoperability: customs, transport, payments, standards, energy, finance and digital systems that work across borders rather than only tariff schedules that permit trade across them. The report identifies four priorities, including strengthening regional value chains and reducing behind-the-border trade frictions.

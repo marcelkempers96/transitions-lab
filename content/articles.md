@@ -12,22 +12,31 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 
 <div class="article-list">
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-behind-the-border">Behind the Border</a>
-    <div class="article-meta">28 August 2026</div>
-    <p class="article-desc">Around 60 per cent of Africa's trade costs sit inside countries, not at their borders. Variance, not price, is what stops firms depending on each other.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-behind-the-border"><img class="article-thumb" src="/assets/img/insight-behind-the-border-diagram.jpg" alt="Two mirror-image industrial scenes on yellow and coral, separated by a small border kiosk, each showing the warehouses, paperwork and unreliable-grid icons that make up behind-the-border cost."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-behind-the-border">Behind the Border</a>
+      <div class="article-meta">28 August 2026</div>
+      <p class="article-desc">Around 60 per cent of Africa's trade costs sit inside countries, not at their borders. Variance, not price, is what stops firms depending on each other.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-the-smelter-contract">The Smelter Contract</a>
-    <div class="article-meta">28 August 2026</div>
-    <p class="article-desc">A US$45 billion compute deal includes 460 MW at one site. That is how smelters buy power, and there is sixty years of evidence about those bargains.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-the-smelter-contract"><img class="article-thumb" src="/assets/img/insight-the-smelter-contract-diagram.jpg" alt="Hydro dam on the left, transmission pylon and transformer in the middle, signed certificate, and a data-centre building with a chip icon on the right — the compute-deal-as-smelter-contract in one line."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-the-smelter-contract">The Smelter Contract</a>
+      <div class="article-meta">28 August 2026</div>
+      <p class="article-desc">A US$45 billion compute deal includes 460 MW at one site. That is how smelters buy power, and there is sixty years of evidence about those bargains.</p>
+    </div>
   </div>
 
-  <div class="article-item">
-    <a class="article-title" href="/insight-cheaper-to-verify">The Cheaper It Gets to Verify, the Less Anyone Visits</a>
-    <div class="article-meta">28 August 2026</div>
-    <p class="article-desc">Satellite radar can confirm a paddy was flooded, plot by plot. It also removes the last budgeted reason anybody had to go and look.</p>
+  <div class="article-item has-thumb">
+    <a class="article-thumb-link" href="/insight-cheaper-to-verify"><img class="article-thumb" src="/assets/img/insight-cheaper-to-verify-diagram.jpg" alt="Satellite beaming radar down onto rice paddies on the left, a laptop dashboard with a verified plot in the centre, and a faded farmer with a clipboard on the right drawn in dashed lines."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-cheaper-to-verify">The Cheaper It Gets to Verify, the Less Anyone Visits</a>
+      <div class="article-meta">28 August 2026</div>
+      <p class="article-desc">Satellite radar can confirm a paddy was flooded, plot by plot. It also removes the last budgeted reason anybody had to go and look.</p>
+    </div>
   </div>
 
   <div class="article-item has-thumb">
