@@ -51,4 +51,4 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*Related reading: [The Smelter Contract](/insight-the-smelter-contract) on why a US$45 billion compute deal is an anchor-load bargain by any other name, and [The Cheaper It Gets to Verify, the Less Anyone Visits](/insight-cheaper-to-verify) on what falls out of view when remote sensing removes the reason to visit. See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

@@ -118,7 +118,7 @@ If you are running or funding an upgrading programme and suspect it is doing mor
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Monitoring, Evaluation &amp; Dissemination](/monitoring-evaluation-dissemination) and [Impact Measurement](/impact-measurement). See also [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller) on the same measurement-instrument failure inside an efficiency contract, and [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on the version that appears in restoration-programme accounting. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Monitoring, Evaluation &amp; Dissemination](/monitoring-evaluation-dissemination) and [Impact Measurement](/impact-measurement). See also [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller) on the same measurement-instrument failure inside an efficiency contract, [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on the version that appears in restoration-programme accounting, and [The Cheaper It Gets to Verify, the Less Anyone Visits](/insight-cheaper-to-verify) on what falls out of view when the field visit is no longer required. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

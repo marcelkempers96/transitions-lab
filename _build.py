@@ -124,6 +124,10 @@ HERO_COLOR: dict[str, str] = {
     "insight-nobody-buys-a-chiller": "butter",
     "insight-second-step": "butter",
     "insight-right-to-the-tree": "butter",
+    "insight-behind-the-border": "butter",
+    "insight-the-smelter-contract": "butter",
+    "insight-cheaper-to-verify": "butter",
+    "insight-no-jobs-number": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -476,6 +480,22 @@ META: dict[str, dict[str, str]] = {
     "insight-right-to-the-tree": {
         "title": "The Right That Matters Is to the Tree | Transitions Lab",
         "description": "A US$2 billion restoration programme has launched for Asia and the Pacific. The evidence says the constraint is not ownership of the land but permission to cut the tree down.",
+    },
+    "insight-behind-the-border": {
+        "title": "Behind the Border | Transitions Lab",
+        "description": "Around 60 per cent of Africa's trade costs sit inside countries rather than at their borders. Variance, not price, is what stops firms depending on each other.",
+    },
+    "insight-the-smelter-contract": {
+        "title": "The Smelter Contract | Transitions Lab",
+        "description": "A US$45 billion compute deal includes 460 MW at one site. That is how smelters buy power, and there is sixty years of evidence about those bargains.",
+    },
+    "insight-cheaper-to-verify": {
+        "title": "The Cheaper It Gets to Verify, the Less Anyone Visits | Transitions Lab",
+        "description": "Satellite radar can now confirm whether a rice paddy was flooded, plot by plot. That is a real advance. It also removes the last budgeted reason anybody had to go and look.",
+    },
+    "insight-no-jobs-number": {
+        "title": "The Transition Does Not Have a Jobs Number | Transitions Lab",
+        "description": "Four announcements in one week describe four different labour events, and only one of them is job creation. The transition's employment story depends on which technology gets built, where, and who is standing nearby.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1285,14 +1305,14 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-second-step">
+      <a class="insight-card has-photo" href="/insight-behind-the-border">
         <div class="card-photo">
-          <img src="/assets/img/insight-second-step-diagram.jpg" alt="Two value chains — ore to refined copper on top, renewables to shipped ammonia below — with the shining second step at the end of each.">
+          <img src="/assets/img/insight-same-queue-diagram.jpg" alt="Diagram standing in for the behind-the-border insight: a shared supply chain with a queue of buyers stretching to an hourglass, illustrating how variance decides who depends on whom.">
           <span class="kicker">Insight &middot; Industrial Policy</span>
         </div>
         <div class="body">
-          <h3>The Value Is in the Second Step</h3>
-          <p>Firm power was the constraint on African mineral processing and it now has an answer in the Congolese copperbelt. The tariff schedule was always the other half.</p>
+          <h3>Behind the Border</h3>
+          <p>Around 60 per cent of Africa's trade costs sit inside countries, not at their borders. Variance, not price, is what stops firms depending on each other.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

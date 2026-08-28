@@ -77,4 +77,4 @@ See [Who We Serve](/who-we-serve) for how the fit works in each case.
 
 ---
 
-*For how a study runs end to end, see [How It Works](/how-it-works). For measurement, see [Impact Measurement](/impact-measurement). For why household-level reporting can flatter a programme that has shifted control of income, see [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer). To discuss a study, see [Contact](/contact).*
+*For how a study runs end to end, see [How It Works](/how-it-works). For measurement, see [Impact Measurement](/impact-measurement). For why household-level reporting can flatter a programme that has shifted control of income, see [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer). For why remote verification quietly removes the incidental social evidence field visits used to produce, see [The Cheaper It Gets to Verify, the Less Anyone Visits](/insight-cheaper-to-verify). To discuss a study, see [Contact](/contact).*
