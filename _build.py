@@ -1254,7 +1254,11 @@ def build_home() -> str:
 </section>
 
 <!-- NETWORK - short intro, expertise strip, partner-logo marquee -->
-<section class="section-forest" style="color:var(--paper);">
+<section class="section-forest has-video" style="color:var(--paper);">
+  <video class="section-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="/assets/media/network.mp4" type="video/mp4">
+  </video>
+  <div class="section-veil" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow" style="color:var(--butter);">Our network</p>

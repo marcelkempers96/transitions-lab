@@ -395,6 +395,26 @@ section + section{border-top:2px solid var(--ink);}
   background:
     linear-gradient(180deg,rgba(20,42,32,.72) 0%,rgba(20,42,32,.82) 55%,rgba(20,42,32,.90) 100%);
 }
+
+/* Generic video-backdrop pattern for any .section-*.has-video block. */
+.section-forest.has-video,
+.section-cobalt.has-video,
+.section-plum.has-video{position:relative;overflow:hidden;}
+.section-forest.has-video > .wrap,
+.section-cobalt.has-video > .wrap,
+.section-plum.has-video > .wrap{position:relative;z-index:2;}
+.has-video > .section-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center center;
+  z-index:0;display:block;pointer-events:none;
+}
+.has-video > .section-veil{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+}
+.section-forest.has-video > .section-veil{
+  background:
+    linear-gradient(180deg,rgba(20,42,32,.78) 0%,rgba(20,42,32,.84) 55%,rgba(20,42,32,.90) 100%);
+}
 .statement blockquote{
   font-size:clamp(30px,4.6vw,56px);
   line-height:1.15;font-weight:700;letter-spacing:-.02em;
