@@ -170,6 +170,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-warm-house-not-cheaper": "butter",
     "insight-enough-demonstrations": "butter",
     "insight-lock-in-both-ways": "butter",
+    "insight-stacking-not-switching": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -550,6 +551,10 @@ META: dict[str, dict[str, str]] = {
     "insight-lock-in-both-ways": {
         "title": "The Lock-In Runs Both Ways | Transitions Lab",
         "description": "The DRC wants to make battery precursor rather than export cobalt. The barrier is qualification, and the same mechanism that shuts the door is why it is worth opening, if the window stays open.",
+    },
+    "insight-stacking-not-switching": {
+        "title": "Stacking, Not Switching | Transitions Lab",
+        "description": "Africa will install 17 GW of solar this year and three quarters of it is invisible to official statistics. We can see it because China publishes what it ships. Capacity installed is not fuel displaced.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1365,7 +1370,18 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-customers-who-can-leave">
+      <a class="insight-card has-photo" href="/insight-stacking-not-switching">
+        <div class="card-photo">
+          <img src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="A butter-yellow title card marking Stacking, Not Switching, on Africa's solar boom, invisible installations, and the difference between capacity installed and fuel displaced.">
+          <span class="kicker">Insight &middot; Energy Access</span>
+        </div>
+        <div class="body">
+          <h3>Stacking, Not Switching</h3>
+          <p>Africa will install 17 GW of solar this year and three quarters of it is invisible to official statistics. We know because China publishes what it ships.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-customers-who-can-leave">
         <div class="card-photo">
           <img src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="Line-art diagram: transmission pylons and a substation on the left, with dashed arrows forking right to a row of small houses (households that stay on the grid) and to a mine headframe. A further arrow leads from the mine to a wind turbine, solar array and battery, showing the industrial customer leaving to self-supply.">
           <span class="kicker">Insight &middot; Energy Systems</span>
@@ -1395,17 +1411,6 @@ def build_home() -> str:
         <div class="body">
           <h3>Europe Has Enough Demonstrations</h3>
           <p>Crop forecasts are down across Europe and the pilots have done their job. What comes next is not a bigger pilot.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo desktop-only" href="/insight-lock-in-both-ways">
-        <div class="card-photo">
-          <img src="/assets/img/insight-lock-in-both-ways-diagram.jpg" alt="A left-to-right sequence in line-art: a mine entrance with an ore cart, then a refining plant, then a qualification gate with a ticked clipboard and an hourglass, then a battery cathode factory building. A dashed loop-back arrow runs underneath from the factory back to the mine, showing that any process change can send the entrant back to the beginning.">
-          <span class="kicker">Insight &middot; Industrial Policy</span>
-        </div>
-        <div class="body">
-          <h3>The Lock-In Runs Both Ways</h3>
-          <p>The DRC wants to make battery precursor rather than export cobalt. The barrier is qualification, and the same mechanism that shuts the door is why it is worth opening.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

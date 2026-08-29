@@ -156,7 +156,7 @@ If you are weighing an entry decision and the electricity question keeps getting
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the underlying method, see [Field Research](/field-research) and the [BRW framework](/brw). For the field case behind the argument, see [the mobility case](/case-roam). See also [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on network architecture in the same market, and [The Customers Who Can Leave](/insight-customers-who-can-leave) on households as the shock absorber of last resort when the larger customers step out of the loop.*
+*This is an independent insight piece by Transitions Lab. For the underlying method, see [Field Research](/field-research) and the [BRW framework](/brw). For the field case behind the argument, see [the mobility case](/case-roam). See also [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on network architecture in the same market, [The Customers Who Can Leave](/insight-customers-who-can-leave) on households as the shock absorber of last resort when the larger customers step out of the loop, and [Stacking, Not Switching](/insight-stacking-not-switching) on the reliability calculation that decides which fuel a firm still burns after the panels are on the roof.*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

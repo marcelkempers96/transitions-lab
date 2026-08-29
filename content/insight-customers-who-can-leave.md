@@ -141,7 +141,7 @@ If you are financing network infrastructure in a system where the largest custom
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy) and [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [Paying for Power You Curtail](/insight-paying-for-what-we-curtail) on how price signals redistribute cost in a grid, [Behind the Border](/insight-behind-the-border) on the infrastructure the public purse is being asked to fund, and [Absorbing the Gap](/insight-absorbing-the-gap) on households as the shock absorber of last resort. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy) and [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [Stacking, Not Switching](/insight-stacking-not-switching) on the same defection dynamic across the continent that South Africa can see and most other utilities cannot, [Paying for Power You Curtail](/insight-paying-for-what-we-curtail) on how price signals redistribute cost in a grid, [Behind the Border](/insight-behind-the-border) on the infrastructure the public purse is being asked to fund, and [Absorbing the Gap](/insight-absorbing-the-gap) on households as the shock absorber of last resort. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">
