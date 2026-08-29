@@ -49,7 +49,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 </div>
 
 <div class="article-list"><div class="article-item has-thumb" data-category="energy" data-geography="africa" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-stacking-not-switching"><img class="article-thumb" src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="A butter-yellow title card marking Stacking, Not Switching, on Africa's solar boom, invisible installations and the difference between capacity installed and fuel displaced."></a>
+    <a class="article-thumb-link" href="/insight-stacking-not-switching"><img class="article-thumb" src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="Line-art scene: container ship and shipping form on the left, dashed arrows up to solar panels and a transmission pylon and down to a factory with a battery on one side and a diesel generator on the other — the site stacking sources, not switching."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-stacking-not-switching">Stacking, Not Switching</a>
       <div class="article-meta">29 August 2026</div>

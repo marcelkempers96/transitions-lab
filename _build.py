@@ -1372,7 +1372,7 @@ def build_home() -> str:
       </a>
       <a class="insight-card has-photo" href="/insight-stacking-not-switching">
         <div class="card-photo">
-          <img src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="A butter-yellow title card marking Stacking, Not Switching, on Africa's solar boom, invisible installations, and the difference between capacity installed and fuel displaced.">
+          <img src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="Line-art scene: a container ship and a shipping form on the left, dashed arrows to solar panels and a transmission pylon in the sky, and downward to a small factory with a battery on one side and a diesel generator on the other — the site is stacking sources, not switching.">
           <span class="kicker">Insight &middot; Energy Access</span>
         </div>
         <div class="body">
