@@ -101,7 +101,7 @@ If you are financing industrial infrastructure and want to know what firms actua
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Energy Access & Off-Grid Systems](/expertise-energy). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [The Customers Who Can Leave](/insight-customers-who-can-leave) on the same infrastructure being funded from the public purse while the most creditworthy users step off it. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

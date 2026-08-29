@@ -48,7 +48,39 @@ The Lab publishes articles for the same reason it takes on any research: some qu
   <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="industrial-policy" data-geography="africa" data-month="2026-08">
+<div class="article-list"><div class="article-item has-thumb" data-category="energy" data-geography="africa" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-customers-who-can-leave"><img class="article-thumb" src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="A butter-yellow title card marking The Customers Who Can Leave, on utilities, self-supply and who pays when the largest users exit the grid."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-customers-who-can-leave">The Customers Who Can Leave</a>
+      <div class="article-meta">29 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-energy">Energy</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
+      <p class="article-desc">South African miners are building three gigawatts of their own power. Whether that strengthens the grid or hollows it is decided in tariff design.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-warm-house-not-cheaper"><img class="article-thumb" src="/assets/img/insight-warm-house-not-cheaper-diagram.jpg" alt="A butter-yellow title card marking A Warm House Is Not a Cheaper One, on the prebound effect and Greece's Social Climate Plan."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-warm-house-not-cheaper">A Warm House Is Not a Cheaper One</a>
+      <div class="article-meta">29 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">Europe</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <p class="article-desc">Greece has €4.77 billion for vulnerable households. The evidence says the poorest will receive comfort rather than savings, which is not what the fund promised.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="agriculture" data-geography="europe" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-enough-demonstrations"><img class="article-thumb" src="/assets/img/insight-enough-demonstrations-diagram.jpg" alt="A butter-yellow title card marking Europe Has Enough Demonstrations, on adaptation pilots and the voltage drop between demonstration and scale."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-enough-demonstrations">Europe Has Enough Demonstrations</a>
+      <div class="article-meta">29 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-agriculture">Agriculture</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <p class="article-desc">Crop forecasts are down across Europe and the pilots have done their job. What comes next is not a bigger pilot.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="industrial-policy" data-geography="africa" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-lock-in-both-ways"><img class="article-thumb" src="/assets/img/insight-lock-in-both-ways-diagram.jpg" alt="A butter-yellow title card marking The Lock-In Runs Both Ways, on precursor qualification, path dependence and the Musompo zone."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-lock-in-both-ways">The Lock-In Runs Both Ways</a>
+      <div class="article-meta">29 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-industrial-policy">Industrial Policy</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
+      <p class="article-desc">The DRC wants to make battery precursor rather than export cobalt. The barrier is qualification, and the same mechanism that shuts the door is why it is worth opening.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="industrial-policy" data-geography="africa" data-month="2026-08">
     <a class="article-thumb-link" href="/insight-behind-the-border"><img class="article-thumb" src="/assets/img/insight-behind-the-border-diagram.jpg" alt="Two mirror-image industrial scenes on yellow and coral, separated by a small border kiosk, each showing the warehouses, paperwork and unreliable-grid icons that make up behind-the-border cost."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-behind-the-border">Behind the Border</a>

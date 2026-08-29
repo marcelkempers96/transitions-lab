@@ -129,7 +129,7 @@ If you are designing or funding restoration at landscape scale and want the righ
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Climate Resilience & Ecosystems](/expertise-climate). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Climate Resilience & Ecosystems](/expertise-climate). See also [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on why capital and tenure decide who adopts a practice at scale. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

@@ -103,7 +103,7 @@ If you are assessing an incumbent expansion and the conduct question is being an
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the framework this reading uses, see [BRW](/brw); for the diagnostic behind it, see [Four Ways a Transition Lands](/insight-transitions-outcomes). See also [The Value Is in the Second Step](/insight-second-step) on what actually travels with an industrial operator into a new role, and [The Smelter Contract](/insight-the-smelter-contract) on what a large operator's assumptions about who bears risk actually carry into a host region. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the framework this reading uses, see [BRW](/brw); for the diagnostic behind it, see [Four Ways a Transition Lands](/insight-transitions-outcomes). See also [The Value Is in the Second Step](/insight-second-step) on what actually travels with an industrial operator into a new role, [The Smelter Contract](/insight-the-smelter-contract) on what a large operator's assumptions about who bears risk actually carry into a host region, and [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on the terms of the sale a new precursor entrant will be audited against. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

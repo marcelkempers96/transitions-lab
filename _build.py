@@ -166,6 +166,10 @@ HERO_COLOR: dict[str, str] = {
     "insight-behind-the-border": "butter",
     "insight-the-smelter-contract": "butter",
     "insight-cheaper-to-verify": "butter",
+    "insight-customers-who-can-leave": "butter",
+    "insight-warm-house-not-cheaper": "butter",
+    "insight-enough-demonstrations": "butter",
+    "insight-lock-in-both-ways": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -530,6 +534,22 @@ META: dict[str, dict[str, str]] = {
     "insight-cheaper-to-verify": {
         "title": "The Cheaper It Gets to Verify, the Less Anyone Visits | Transitions Lab",
         "description": "Satellite radar can now confirm whether a rice paddy was flooded, plot by plot. That is a real advance. It also removes the last budgeted reason anybody had to go and look.",
+    },
+    "insight-customers-who-can-leave": {
+        "title": "The Customers Who Can Leave | Transitions Lab",
+        "description": "South African miners are building three gigawatts of their own power. Every large customer that leaves the grid takes its share of the fixed costs with it. Tariff design decides who pays.",
+    },
+    "insight-warm-house-not-cheaper": {
+        "title": "A Warm House Is Not a Cheaper One | Transitions Lab",
+        "description": "Greece has €4.77 billion for vulnerable households. The prebound effect says the poorest will receive comfort rather than savings, which is a real benefit and not the one the fund promised.",
+    },
+    "insight-enough-demonstrations": {
+        "title": "Europe Has Enough Demonstrations | Transitions Lab",
+        "description": "European crop forecasts are down and the pilots have done their job. Feasibility evidence is not adoption evidence, because of who volunteers for a demonstration.",
+    },
+    "insight-lock-in-both-ways": {
+        "title": "The Lock-In Runs Both Ways | Transitions Lab",
+        "description": "The DRC wants to make battery precursor rather than export cobalt. The barrier is qualification, and the same mechanism that shuts the door is why it is worth opening, if the window stays open.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1341,14 +1361,14 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-behind-the-border">
+      <a class="insight-card has-photo" href="/insight-customers-who-can-leave">
         <div class="card-photo">
-          <img src="/assets/img/insight-behind-the-border-diagram.jpg" alt="Two mirror-image industrial scenes on yellow and coral, separated by a small border kiosk, showing the warehouses, paperwork and unreliable-grid icons that make up behind-the-border cost.">
-          <span class="kicker">Insight &middot; Industrial Policy</span>
+          <img src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="A butter-yellow title card marking The Customers Who Can Leave, on utilities, industrial self-supply and who pays when the largest customers exit the grid.">
+          <span class="kicker">Insight &middot; Energy Systems</span>
         </div>
         <div class="body">
-          <h3>Behind the Border</h3>
-          <p>Around 60 per cent of Africa's trade costs sit inside countries, not at their borders. Variance, not price, is what stops firms depending on each other.</p>
+          <h3>The Customers Who Can Leave</h3>
+          <p>South African miners are building three gigawatts of their own power. Whether that strengthens the grid or hollows it is decided in tariff design.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
