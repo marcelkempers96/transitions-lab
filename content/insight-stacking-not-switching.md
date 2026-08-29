@@ -14,7 +14,7 @@
 
 ## What Africa's solar boom is, what it is not, and why we can only see it through somebody else's customs data
 
-Ember and the African Tech Futures Lab have published estimates showing that [Africa will install a record 17 gigawatts of solar in 2026, up 45 per cent year on year and the third consecutive record](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), equivalent to around a hundred thousand panels a day. Thirty six of Africa's fifty four countries are expected to install record amounts, with nineteen countries growing more than 100 per cent year on year, including 544 per cent in the Democratic Republic of Congo, 282 per cent in Zimbabwe, 176 per cent in Egypt and 117 per cent in Zambia. South Africa's share of African installations will fall below a fifth for the first time since 2019.
+Ember and the African Tech Futures Lab have published estimates showing that [Africa will install a record 17 gigawatts of solar in 2026, up 45 per cent year on year and the third consecutive record](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), equivalent to around a hundred thousand panels a day. [Thirty six of Africa's fifty four countries are expected to install record amounts](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), with [nineteen countries growing more than 100 per cent year on year](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), including [544 per cent in the Democratic Republic of Congo, 282 per cent in Zimbabwe, 176 per cent in Egypt and 117 per cent in Zambia](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/). [South Africa's share of African installations will fall below a fifth for the first time since 2019](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/).
 
 <figure class="tl-figure">
 <img src="/assets/img/insight-stacking-ember-chart.jpg" alt="Small-multiple bar charts for 36 African countries showing annual solar capacity installed in megawatts from 2023 to 2026. In almost every panel the 2026 bar is the tallest, often by a wide margin. Countries covered include Algeria, Burundi, Cabo Verde, Cameroon, Central African Republic, Comoros, Congo (DRC), Congo (Rep.), Egypt, Equatorial Guinea, Eswatini, Ethiopia, Gabon, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Libya, Madagascar, Mauritius, Morocco, Mozambique, Namibia, Niger, Nigeria, Rwanda, Seychelles, Sierra Leone, Somalia, Sudan, Tanzania, Togo, Uganda, Zambia and Zimbabwe.">
@@ -22,24 +22,20 @@ Ember and the African Tech Futures Lab have published estimates showing that [Af
 </figure>
 
 
-This is not a marginal development and it should not be read as one. Senegal will add solar capacity between 2023 and 2026 equivalent to almost 80 per cent of its entire 2023 grid capacity, with the DRC and Kenya each adding more than half. The 2026 installations will generate around 23 terawatt hours a year, which is 2.3 per cent of Africa's electricity generation, slightly above the 2.2 per cent average annual demand growth of the previous decade.
+This is not a marginal development and it should not be read as one. [Senegal will add solar capacity between 2023 and 2026 equivalent to almost 80 per cent of its entire 2023 grid capacity, with the DRC and Kenya each adding more than half](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/). The [2026 installations will generate around 23 terawatt hours a year](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), which is [2.3 per cent of Africa's electricity generation, slightly above the 2.2 per cent average annual demand growth of the previous decade](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/).
 
-In ten countries, this year's new solar adds more than a tenth of annual grid generation.
+The step change is clearest where Ember gives explicit year-on-year figures. In these four countries, 2025 annual installations approximately quadruple, triple or double in 2026.
 
-| Country | New solar as share of annual grid generation |
-|---|---|
-| Sierra Leone | 97% |
-| Togo | 24% |
-| Somalia | 21% |
-| Djibouti | 21% |
-| DRC | 14% |
-| Comoros | 14% |
-| Namibia | 12% |
-| Liberia | 12% |
-| Chad | 11% |
-| Lesotho | 10% |
+| Country | 2025 solar additions (approx.) | 2026 solar additions (approx.) | 2025 to 2026 change |
+|---|---|---|---|
+| Congo (DRC) | ~200 MW | ~1,300 MW | +544% |
+| Zimbabwe | ~105 MW | ~400 MW | +282% |
+| Egypt | ~725 MW | ~2,000 MW | +176% |
+| Zambia | ~275 MW | ~600 MW | +117% |
 
-Those ten countries are home to around 190 million people.
+*Year-on-year change is Ember's exact figure. Annual megawatt values are approximations read off Ember's chart above, given here to show the absolute scale that the percentage sits on top of.*
+
+The share-of-grid picture the record represents is worth naming directly. In [ten countries, 2026 new solar adds more than a tenth of annual grid generation](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/): Sierra Leone at 97 per cent, Togo at 24, Somalia and Djibouti at 21 each, DRC and Comoros at 14 each, Namibia and Liberia at 12 each, Chad at 11 and Lesotho at 10. Those ten countries are home to around 190 million people.
 
 The analysis is careful, the methodology is transparent, and the finding is important. What follows is not a challenge to any of it. It is about three things the number cannot tell you, and the first concerns how it was produced.
 
@@ -47,15 +43,15 @@ The analysis is careful, the methodology is transparent, and the finding is impo
 
 ## The instrument is somebody else's customs office
 
-Ember's estimates are not built from African statistics, because those largely do not exist. Official national solar capacity reporting could be found for only 36 of 54 countries, only 14 of those covered 2025, and only three, South Africa, Tunisia and Tanzania, publish solar data monthly or quarterly. Ember's 2025 estimate of 12.0 gigawatts is roughly double the International Energy Agency's 6.2 and more than double IRENA's 4.6.
+Ember's estimates are not built from African statistics, because those largely do not exist. [Official national solar capacity reporting could be found for only 36 of 54 countries, only 14 of those covered 2025, and only three, South Africa, Tunisia and Tanzania, publish solar data monthly or quarterly](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/). [Ember's 2025 estimate of 12.0 gigawatts is roughly double the International Energy Agency's 6.2 and more than double IRENA's 4.6](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/).
 
-The estimates are built instead from Chinese customs data, calibrated against the finding that around 73 per cent of Chinese exports are installed, with an average delay of about six months.
+The estimates are built instead from Chinese customs data, calibrated against the finding that [around 73 per cent of Chinese exports are installed, with an average delay of about six months](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/).
 
 That is a resourceful and legitimate method, and it is the only one currently capable of seeing the phenomenon. It is also worth stating plainly what it means: **the most consequential energy development on the African continent is visible primarily through the administrative records of the country selling the equipment.**
 
-The instrument works because 94 per cent of panels installed in Africa are still imported from China. It is an artefact of dependence. And it therefore has a property that deserves more attention than it has received: **its accuracy degrades in direct proportion to Africa's success at building its own industry.**
+The instrument works because [94 per cent of panels installed in Africa are still imported from China](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/). It is an artefact of dependence. And it therefore has a property that deserves more attention than it has received: **its accuracy degrades in direct proportion to Africa's success at building its own industry.**
 
-That is not hypothetical. African panel manufacturing is expected to quadruple to around 3.5 gigawatts in 2026, roughly a fifth of what the continent installs, led by new plants in Egypt and Tanzania. Ember also notes that large Chinese cell and wafer shipments to Africa appear to indicate re-shipment rather than use in African panel manufacturing, which means the signal is already partly contaminated.
+That is not hypothetical. [African panel manufacturing is expected to quadruple to around 3.5 gigawatts in 2026, roughly a fifth of what the continent installs, led by new plants in Egypt and Tanzania](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/). Ember also notes that [large Chinese cell and wafer shipments to Africa appear to indicate re-shipment rather than use in African panel manufacturing](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), which means the signal is already partly contaminated.
 
 Follow that forward. A country that succeeds in manufacturing domestically stops importing finished panels, and disappears from the only dataset that could see its solar growth. A country that assembles panels from imported cells appears in the data as importing something that is not a panel. The better African manufacturing gets, the blinder the measurement becomes, and the gap will open first in exactly the countries with the most active industrial policy.
 
@@ -86,7 +82,7 @@ There is also a point worth making about who owns the evidence base. A continent
 
 The second thing the number cannot tell you is who is buying, and there is a strong clue in the economics.
 
-Ember puts a year of Chinese panel imports at around 2.4 billion dollars, and notes that generating the same electricity from diesel would cost approximately that every three months. It also observes that Africa now imports more dollars of batteries than solar panels from China, led by Nigeria and the DRC.
+Ember puts [a year of Chinese panel imports at around 2.4 billion dollars, and notes that generating the same electricity from diesel would cost approximately that every three months](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/). It also observes that [Africa now imports more dollars of batteries than solar panels from China, led by Nigeria and the DRC](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/).
 
 Read those two facts together. Batteries are the tell. A household with no electricity connection and no generator does not begin its energy transition by buying a battery bank. A business that has been running a diesel generator for fifteen years does exactly that, because the generator is what the battery replaces.
 
@@ -94,7 +90,7 @@ The payback that is driving this boom is diesel payback. And diesel is owned by 
 
 That has a consequence which the phrase "record solar" tends to obscure. **The solar boom and the electricity access gap are largely two different populations.**
 
-Ember's own decomposition supports this. Roughly 75 per cent of capacity added between 2023 and 2025 is distributed solar, meaning small scale, customer side installations, mostly rooftops, and only a quarter is explained by utility-scale and off-grid solar together, with off-grid growing fast but still small in this context. Customer side means there was a customer, with a roof, a business or a house, and usually an existing electricity bill or fuel bill to reduce.
+Ember's own decomposition supports this. [Roughly 75 per cent of capacity added between 2023 and 2025 is distributed solar, meaning small scale, customer side installations, mostly rooftops](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), and only a quarter is explained by utility-scale and off-grid solar together, with off-grid growing fast but still small in this context. Customer side means there was a customer, with a roof, a business or a house, and usually an existing electricity bill or fuel bill to reduce.
 
 None of this makes the boom less important. Reducing the cost of power for African industry and commerce is one of the more valuable things that could happen to the continent's economy, and it is happening faster than any policy achieved. It does mean that a number describing panels installed should not be used, without further work, to argue that the access problem is solving itself. Those are different claims requiring different evidence, and only one of them is supported here.
 
