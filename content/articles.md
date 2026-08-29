@@ -22,7 +22,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <button type="button" class="filter-chip" data-value="finance">Finance</button>
     <button type="button" class="filter-chip" data-value="measurement">Measurement</button>
     <button type="button" class="filter-chip" data-value="ai-digital">AI &amp; Digital</button>
-    <button type="button" class="filter-chip" data-value="europe">Europe</button>
+    <button type="button" class="filter-chip" data-value="europe">EU Policy</button>
     <button type="button" class="filter-chip" data-value="method">Method</button>
   </div>
   <div class="filter-group" data-group="geography">
@@ -61,7 +61,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <div class="article-body">
       <a class="article-title" href="/insight-warm-house-not-cheaper">A Warm House Is Not a Cheaper One</a>
       <div class="article-meta">29 August 2026</div>
-      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">Europe</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">EU Policy</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
       <p class="article-desc">Greece has €4.77 billion for vulnerable households. The evidence says the poorest will receive comfort rather than savings, which is not what the fund promised.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="agriculture" data-geography="europe" data-month="2026-08">
@@ -277,7 +277,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <div class="article-body">
       <a class="article-title" href="/insight-eu-us">Europe Invents, America Scales</a>
       <div class="article-meta">27 February 2026</div>
-      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">Europe</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">EU Policy</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
       <p class="article-desc">Europe produces world-class innovation and struggles to commercialise it; the United States does the reverse. What the asymmetry means, and where an independent evidence layer fits in the gap.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="europe" data-geography="africa" data-month="2026-01">
@@ -285,7 +285,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <div class="article-body">
       <a class="article-title" href="/insight-eu-africa">The EU and Africa: Opportunity, Compatibility, and the Evidence In Between</a>
       <div class="article-meta">30 January 2026</div>
-      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">Europe</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">EU Policy</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
       <p class="article-desc">Europe is committing hundreds of billions to Africa; Africa is becoming the largest growth market of the century. Where the two genuinely fit, and what stands between the investment and the impact it promises.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-01">
@@ -293,7 +293,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
     <div class="article-body">
       <a class="article-title" href="/esf-social-innovation">ESF+ Social Innovation: Independent Measurement</a>
       <div class="article-meta">12 January 2026</div>
-      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">Europe</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">EU Policy</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
       <p class="article-desc">The European Social Fund Plus backs socially innovative projects across Europe and asks them to prove what actually works. What that proof looks like, done independently and honestly, and where the Lab fits.</p>
     </div>
   </div>
