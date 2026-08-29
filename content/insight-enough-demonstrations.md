@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">29 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-enough-demonstrations-diagram.jpg" alt="Two columns of paired attributes — demonstration on the left, at-scale on the right — for who participates, who delivers, capital cost, advisory contact, exposure to a bad year, and catchment interaction, each row showing what the pilot took for granted and what scaling actually encounters." class="diagram">
-<figcaption>None of these differences concern the practice itself, which is why more agronomic evidence does not close the gap.</figcaption>
+<img src="/assets/img/insight-enough-demonstrations-diagram.jpg" alt="Three panels connected by dashed arrows: on the left, a small demonstration plot with a single tree, a pond and a few rows of crops; in the middle, a clipboard of ticked items above three coloured figures representing the project team; on the right, a wide landscape at scale with a village of houses, a wind turbine, a water tower and solar panels sitting alongside patchworked fields." class="diagram">
+<figcaption>The demonstration on the left and the landscape on the right are not the same experiment. The evidence that carries between them lives in the people, not in the plot.</figcaption>
 </figure>
 
 

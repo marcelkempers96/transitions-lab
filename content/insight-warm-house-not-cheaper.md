@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">29 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-warm-house-not-cheaper-diagram.jpg" alt="Three side-by-side bars — a dashed outline showing the calculated pre-retrofit energy consumption, a solid orange bar showing much lower actual pre-retrofit use, and a slightly shorter orange bar showing actual post-retrofit use — with the gap between calculated and actual labelled as the energy the household was never using." class="diagram">
-<figcaption>The projected saving is measured from the dashed bar. The household lives in the orange one.</figcaption>
+<img src="/assets/img/insight-warm-house-not-cheaper-diagram.jpg" alt="Three houses in sequence: on the left, a cold, leaky home with wavy blue draught lines and a shivering figure standing inside; in the middle, a home under retrofit with a worker installing insulation panels and a heat pump outside the wall; on the right, a warm home with the lamp on and a family sitting together on the sofa." class="diagram">
+<figcaption>The retrofit works. The saving arrives as warmth rather than as money, and that is a real benefit and not the one the programme is being funded to deliver.</figcaption>
 </figure>
 
 

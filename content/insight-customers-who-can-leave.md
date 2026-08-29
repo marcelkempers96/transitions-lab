@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">29 August 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="A closed loop of four boxes — sales fall, fixed costs spread over fewer units, tariffs rise, and departures accelerate — with a bright orange box off to one side showing the customers with capital stepping out of the loop while a faded box shows the customers who cannot leave staying in it." class="diagram">
-<figcaption>Every step of this cycle is a rational decision by the party taking it, which is what makes it difficult to stop by exhortation.</figcaption>
+<img src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="Line-art diagram: transmission pylons and a substation on the left, dashed arrows forking right to a row of small houses (households) and to a mine headframe, and a further arrow from the mine to a wind turbine, solar array and battery — the industrial customer leaving the grid to build its own supply." class="diagram">
+<figcaption>The grid keeps serving the households. The customer that was paying to keep it there is walking to the right of the frame.</figcaption>
 </figure>
 
 

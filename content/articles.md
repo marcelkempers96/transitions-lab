@@ -49,7 +49,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 </div>
 
 <div class="article-list"><div class="article-item has-thumb" data-category="energy" data-geography="africa" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-customers-who-can-leave"><img class="article-thumb" src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="A butter-yellow title card marking The Customers Who Can Leave, on utilities, self-supply and who pays when the largest users exit the grid."></a>
+    <a class="article-thumb-link" href="/insight-customers-who-can-leave"><img class="article-thumb" src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="Line-art diagram: transmission pylons and a substation on the left, dashed arrows forking right to a row of small houses and to a mine, and a further arrow from the mine to a wind turbine, solar array and battery — the industrial customer leaving to self-supply."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-customers-who-can-leave">The Customers Who Can Leave</a>
       <div class="article-meta">29 August 2026</div>
@@ -57,7 +57,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">South African miners are building three gigawatts of their own power. Whether that strengthens the grid or hollows it is decided in tariff design.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-warm-house-not-cheaper"><img class="article-thumb" src="/assets/img/insight-warm-house-not-cheaper-diagram.jpg" alt="A butter-yellow title card marking A Warm House Is Not a Cheaper One, on the prebound effect and Greece's Social Climate Plan."></a>
+    <a class="article-thumb-link" href="/insight-warm-house-not-cheaper"><img class="article-thumb" src="/assets/img/insight-warm-house-not-cheaper-diagram.jpg" alt="Three houses in sequence — a cold leaky home with a shivering figure, a home being retrofitted with insulation and a heat pump, a warm lit home with a family on the sofa — the retrofit journey the Social Climate Fund is buying."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-warm-house-not-cheaper">A Warm House Is Not a Cheaper One</a>
       <div class="article-meta">29 August 2026</div>
@@ -65,7 +65,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">Greece has €4.77 billion for vulnerable households. The evidence says the poorest will receive comfort rather than savings, which is not what the fund promised.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="agriculture" data-geography="europe" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-enough-demonstrations"><img class="article-thumb" src="/assets/img/insight-enough-demonstrations-diagram.jpg" alt="A butter-yellow title card marking Europe Has Enough Demonstrations, on adaptation pilots and the voltage drop between demonstration and scale."></a>
+    <a class="article-thumb-link" href="/insight-enough-demonstrations"><img class="article-thumb" src="/assets/img/insight-enough-demonstrations-diagram.jpg" alt="Three panels: a small demonstration plot with tree, pond and rows of crops; a clipboard of ticks above the coloured figures of the project team; a wide village landscape at scale with fields, wind turbine, water tower and solar panels."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-enough-demonstrations">Europe Has Enough Demonstrations</a>
       <div class="article-meta">29 August 2026</div>
@@ -73,7 +73,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">Crop forecasts are down across Europe and the pilots have done their job. What comes next is not a bigger pilot.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="industrial-policy" data-geography="africa" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-lock-in-both-ways"><img class="article-thumb" src="/assets/img/insight-lock-in-both-ways-diagram.jpg" alt="A butter-yellow title card marking The Lock-In Runs Both Ways, on precursor qualification, path dependence and the Musompo zone."></a>
+    <a class="article-thumb-link" href="/insight-lock-in-both-ways"><img class="article-thumb" src="/assets/img/insight-lock-in-both-ways-diagram.jpg" alt="A left-to-right sequence: a mine entrance with an ore cart, a refining plant, a qualification gate with a ticked clipboard and hourglass, and a battery cathode factory — with a dashed loop-back arrow returning from factory to mine."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-lock-in-both-ways">The Lock-In Runs Both Ways</a>
       <div class="article-meta">29 August 2026</div>
