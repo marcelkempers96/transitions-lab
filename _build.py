@@ -1372,6 +1372,39 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-warm-house-not-cheaper">
+        <div class="card-photo">
+          <img src="/assets/img/insight-warm-house-not-cheaper-diagram.jpg" alt="A butter-yellow title card marking A Warm House Is Not a Cheaper One, on the prebound effect and Greece's Social Climate Plan.">
+          <span class="kicker">Insight &middot; Just Transition</span>
+        </div>
+        <div class="body">
+          <h3>A Warm House Is Not a Cheaper One</h3>
+          <p>Greece has €4.77 billion for vulnerable households. The evidence says the poorest will receive comfort rather than savings, which is not what the fund promised.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-enough-demonstrations">
+        <div class="card-photo">
+          <img src="/assets/img/insight-enough-demonstrations-diagram.jpg" alt="A butter-yellow title card marking Europe Has Enough Demonstrations, on adaptation pilots and the voltage drop between demonstration and scale.">
+          <span class="kicker">Insight &middot; Adaptation</span>
+        </div>
+        <div class="body">
+          <h3>Europe Has Enough Demonstrations</h3>
+          <p>Crop forecasts are down across Europe and the pilots have done their job. What comes next is not a bigger pilot.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-lock-in-both-ways">
+        <div class="card-photo">
+          <img src="/assets/img/insight-lock-in-both-ways-diagram.jpg" alt="A butter-yellow title card marking The Lock-In Runs Both Ways, on precursor qualification, path dependence and the Musompo zone.">
+          <span class="kicker">Insight &middot; Industrial Policy</span>
+        </div>
+        <div class="body">
+          <h3>The Lock-In Runs Both Ways</h3>
+          <p>The DRC wants to make battery precursor rather than export cobalt. The barrier is qualification, and the same mechanism that shuts the door is why it is worth opening.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
     </div>
     <p style="text-align:center;margin-top:48px;"><a href="/articles" class="btn btn-ghost">See all articles →</a></p>
   </div>

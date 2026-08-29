@@ -336,6 +336,11 @@ section + section{border-top:2px solid var(--ink);}
   transition:background .15s ease;
 }
 .insight-card:last-child{border-right:0;}
+/* When the row runs to two rows of three (six total), the third card
+   ends the first row and needs no right border, and the first three
+   need a bottom rule to separate them from the second row. */
+.insight-row:has(> .insight-card:nth-child(6)) .insight-card:nth-child(3){border-right:0;}
+.insight-row:has(> .insight-card:nth-child(6)) .insight-card:nth-child(-n+3){border-bottom:2px solid var(--ink);}
 .insight-card .stripe{
   padding:8px 18px;display:flex;align-items:center;
   border-bottom:2px solid var(--ink);min-height:0;
@@ -363,6 +368,9 @@ section + section{border-top:2px solid var(--ink);}
 .insight-card.has-photo:nth-child(1) .card-photo .kicker{background:var(--coral);color:var(--ink);}
 .insight-card.has-photo:nth-child(2) .card-photo .kicker{background:var(--cobalt);color:var(--paper);}
 .insight-card.has-photo:nth-child(3) .card-photo .kicker{background:var(--butter);color:var(--ink);}
+.insight-card.has-photo:nth-child(4) .card-photo .kicker{background:var(--butter);color:var(--ink);}
+.insight-card.has-photo:nth-child(5) .card-photo .kicker{background:var(--forest);color:var(--paper);}
+.insight-card.has-photo:nth-child(6) .card-photo .kicker{background:var(--coral);color:var(--ink);}
 @media(max-width:640px){
   .insight-card .stripe{padding:7px 16px;}
   .insight-card .stripe .kicker{font-size:10px;letter-spacing:.16em;}
@@ -1734,3 +1742,27 @@ footer.site .legal{grid-column:1/-1;border-top:2px solid var(--paper);margin-top
 
 /* Hidden by the filter script. */
 .prose .article-list .article-item[data-hidden="true"]{display:none !important;}
+
+/* Same butter-on-hover treatment as the home resource cards. Applied to
+   the article list on /articles and to the target-card blocks on
+   /who-we-serve so hoverable content signals its clickability the same
+   way across the site. Article-item gets side padding baked in so the
+   hover band reads as a tinted rectangle, not an edge-to-edge wash. */
+.prose .article-list .article-item{
+  padding-left:14px;padding-right:14px;margin-left:-14px;margin-right:-14px;
+  transition:background .15s ease;border-radius:2px;
+}
+.prose .article-list .article-item:hover{background:var(--butter);}
+.prose .target-card{
+  transition:transform .12s ease,box-shadow .12s ease,background .15s ease;
+}
+.prose .target-card:hover{background:var(--butter);}
+/* The butter-headed card keeps a paper-2 wash so its body still shifts
+   against the header on hover. */
+.prose .target-card.c-butter:hover{background:var(--paper-2);}
+
+/* Utility: hide on narrow viewports. Used for the second-row insight
+   cards on the home page so mobile keeps the shorter three-card view. */
+@media(max-width:860px){
+  .desktop-only{display:none !important;}
+}
