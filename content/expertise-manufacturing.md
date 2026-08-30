@@ -15,7 +15,7 @@ Assembling vehicles, solar units, or processing equipment near where they are us
 **§ 1 / The market, in brief**
 
 - [Africa's manufacturing value-added grew from **$285bn (2020) to $351bn (2025)**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025), yet the continent is still under **2% of global output**.
-- Manufacturing is about [**10.4% of continental GDP**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025), well below the [**20%** UNIDO ties to real structural transformation](https://www.unido.org/).
+- Manufacturing is about [**10.4% of continental GDP**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025), well below the [**20%**](https://www.unido.org/) UNIDO ties to real structural transformation.
 - Each manufacturing job generates, on average, around [**2.5 additional jobs** elsewhere](https://www.unido.org/).
 
 ---

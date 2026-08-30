@@ -14,7 +14,7 @@
 
 ## What Zimbabwe and Morocco reveal about sequencing, credibility and third party access
 
-Zimbabwe intends to prohibit the export of lithium concentrates from January 2027, a decision [announced by Mines Minister Winston Chitando in June 2025](https://www.mining.com/web/zimbabwe-to-ban-export-of-lithium-concentrates-from-2027/) on the basis that domestic processing capacity would exist by then. Two lithium sulphate plants were named: Bikita Minerals, owned by Sinomine, and Prospect Lithium Zimbabwe, owned by Zhejiang Huayou Cobalt. Zimbabwe [holds Africa's largest lithium reserves](https://www.spglobal.com/energy/en/news-research/latest-news/metals/061125-zimbabwe-to-ban-lithium-concentrate-exports-from-2027-to-boost-refining), and its principal lithium assets are Chinese owned, with Arcadia acquired by Huayou for 422 million dollars in 2021 and Bikita by Sinomine.
+Zimbabwe intends to prohibit the export of lithium concentrates from January 2027, a decision [announced in June 2025](https://www.mining.com/web/zimbabwe-to-ban-export-of-lithium-concentrates-from-2027/) by Mines Minister Winston Chitando on the basis that domestic processing capacity would exist by then. Two lithium sulphate plants were named: Bikita Minerals, owned by Sinomine, and Prospect Lithium Zimbabwe, owned by Zhejiang Huayou Cobalt. Zimbabwe holds [Africa's largest lithium reserves](https://www.spglobal.com/energy/en/news-research/latest-news/metals/061125-zimbabwe-to-ban-lithium-concentrate-exports-from-2027-to-boost-refining), and its principal lithium assets are Chinese owned, with Arcadia acquired by Huayou for 422 million dollars in 2021 and Bikita by Sinomine.
 
 The situation now, as reported, is that only one lithium sulphate facility is operational, and it cannot take material from third party mines.
 
@@ -32,7 +32,7 @@ An export ban is not a tax. It is a threat, and a threat only produces investmen
 
 Kydland and Prescott's account of time inconsistency describes exactly this situation. A policy that is optimal to announce may not be optimal to execute when the moment arrives, and rational actors, knowing this, discount the announcement in advance. The announcement's power comes from the government's ability to bind itself, not from the announcement itself.
 
-Zimbabwe has a revealed preference on this. In 2023 the government required lithium miners to submit plans for local refineries by March 2024, and [softened its stance after lithium prices collapsed](https://www.mining.com/web/zimbabwe-to-ban-export-of-lithium-concentrates-from-2027/).
+Zimbabwe has a revealed preference on this. In 2023 the government required lithium miners to submit plans for local refineries by March 2024, and [softened its stance](https://www.mining.com/web/zimbabwe-to-ban-export-of-lithium-concentrates-from-2027/) after lithium prices collapsed.
 
 That is the single most important fact in the file, and it is not a criticism of the decision. Relenting was probably correct at the time. But it taught every producer in the country what the government does when enforcing the rule would be expensive, and producers have priced that lesson ever since.
 

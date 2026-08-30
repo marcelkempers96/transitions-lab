@@ -24,7 +24,7 @@ That is not an accident, and understanding why is more valuable than the finding
 
 ## Merton's asymmetry
 
-Robert Merton set out the problem in 1936, in a paper that remains the clearest statement of it. [The unanticipated consequences of purposive social action](https://doi.org/10.2307/2084615) are not a marginal case. They are a general feature of deliberate intervention in social systems, and Merton's taxonomy is explicitly symmetrical: an action can produce an unexpected drawback, a perverse result that defeats its own purpose, and an unexpected benefit.
+Robert Merton set out the problem in 1936, in a paper that remains the clearest statement of it. The [unanticipated consequences](https://doi.org/10.2307/2084615) of purposive social action are not a marginal case. They are a general feature of deliberate intervention in social systems, and Merton's taxonomy is explicitly symmetrical: an action can produce an unexpected drawback, a perverse result that defeats its own purpose, and an unexpected benefit.
 
 The development sector has internalised two thirds of that taxonomy and almost entirely ignored the third.
 

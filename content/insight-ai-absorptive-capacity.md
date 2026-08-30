@@ -40,7 +40,7 @@ So the honest question about AI and the energy transition is not a question abou
 
 ## Absorptive capacity, and who has been building it
 
-[Cohen and Levinthal's 1990 paper on absorptive capacity](https://doi.org/10.2307/2393553) supplies the missing measure. A firm's ability to recognise the value of new external knowledge, assimilate it, and apply it commercially is a function of prior related investment. Absorptive capacity is cumulative and path-dependent. You cannot buy it in the year you need it.
+Cohen and Levinthal's 1990 paper on [absorptive capacity](https://doi.org/10.2307/2393553) supplies the missing measure. A firm's ability to recognise the value of new external knowledge, assimilate it, and apply it commercially is a function of prior related investment. Absorptive capacity is cumulative and path-dependent. You cannot buy it in the year you need it.
 
 Now compare the two sides.
 

@@ -30,7 +30,7 @@ A manufacturer buying recyclate buys a promise about a material whose entire his
 
 Almost none of that is verifiable by inspection, and the properties that matter most, long term ageing and fatigue behaviour, cannot be tested quickly at all. The buyer is not assessing a material. They are assessing a claim.
 
-George Akerlof described what happens to a market in that condition. In [conditions of quality uncertainty where the buyer cannot distinguish good from bad](https://doi.org/10.2307/1879431), the buyer rationally pays no more than the expected value across the distribution of quality on offer. Sellers whose material is genuinely better than average cannot obtain a price that reflects it, so they withdraw, downgrade, or sell into applications where the difference does not matter. What remains in the market is material worth roughly the average price, and the average falls.
+George Akerlof described what happens to a market in that condition. In conditions of [quality uncertainty](https://doi.org/10.2307/1879431) where the buyer cannot distinguish good from bad, the buyer rationally pays no more than the expected value across the distribution of quality on offer. Sellers whose material is genuinely better than average cannot obtain a price that reflects it, so they withdraw, downgrade, or sell into applications where the difference does not matter. What remains in the market is material worth roughly the average price, and the average falls.
 
 Now put that next to the thing everyone in the sector complains about.
 

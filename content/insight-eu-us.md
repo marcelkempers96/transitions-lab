@@ -21,9 +21,9 @@ Europe files the patents, publishes the papers, and increasingly starts the comp
 
 ## A commercialisation problem, not an ideas problem
 
-The [2024 Draghi report on European competitiveness](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en) put the matter starkly. Europe is [failing to translate innovation into commercialisation, and innovative companies that want to scale up are hindered at every stage by inconsistent and restrictive regulation](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en). The result is a talent and capital drain: many European entrepreneurs prefer to seek financing from US venture capitalists and scale up in the US market.
+The [2024 Draghi report](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en) on European competitiveness put the matter starkly. Europe is failing to translate innovation into commercialisation, and innovative companies that want to scale up are [hindered at every stage](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en) by inconsistent and restrictive regulation. The result is a talent and capital drain: many European entrepreneurs prefer to seek financing from US venture capitalists and scale up in the US market.
 
-The scale of the divergence is measurable. Over roughly the last half-century, [no EU company with a market capitalisation above €100 billion has been created from scratch](https://www.bcg.com/publications/2024/draghi-report-future-of-eus-industrial-strategy), while all six US companies valued at around one trillion euros were created in that period. On research intensity, between 2014 and 2022 [US R&D spending rose to 3.59% of GDP while the EU crept to just 2.11%](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en). Draghi's proposed remedy is enormous: [around €800 billion in additional annual investment, equivalent to 4 to 5% of EU GDP](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en).
+The scale of the divergence is measurable. Over roughly the last half-century, [no EU company above €100 billion](https://www.bcg.com/publications/2024/draghi-report-future-of-eus-industrial-strategy) has been created from scratch, while all six US companies valued at around one trillion euros were created in that period. On research intensity, between 2014 and 2022 [US R&D spending rose to 3.59% of GDP](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en) while the EU crept to just 2.11%. Draghi's proposed remedy is enormous: around [€800 billion in additional annual investment](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en), equivalent to 4 to 5% of EU GDP.
 
 ---
 
@@ -31,11 +31,11 @@ The scale of the divergence is measurable. Over roughly the last half-century, [
 
 ## Europe creates, then loses the scale-up
 
-Nowhere is the pattern clearer than in climate technology, a sector close to the Lab's own work. Europe now [creates more climate tech startups than the United States, yet far fewer reach industrial or commercial maturity](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech). The problem is not innovation, it is capital.
+Nowhere is the pattern clearer than in climate technology, a sector close to the Lab's own work. Europe now creates [more climate tech startups than the United States](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech), yet far fewer reach industrial or commercial maturity. The problem is not innovation, it is capital.
 
-The bottleneck sits at a specific stage. [At the crucial Series B stage, where companies move from prototype to scale, Europe faces a persistent funding gap](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech). The data is blunt: [from 2020 to 2025 the US launched 29 climate funds over $500 million, while Europe raised only 11](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech). The consequence is a quiet export of European breakthroughs to American balance sheets.
+The bottleneck sits at a specific stage. At the crucial Series B stage, where companies move from prototype to scale, Europe faces a [persistent funding gap](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech). The data is blunt: from 2020 to 2025 the US launched [29 climate funds over $500 million, versus 11 in Europe](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech). The consequence is a quiet export of European breakthroughs to American balance sheets.
 
-The structural reading, echoed across the sector, is that [the US maintains leadership through deep capital markets and industrial absorption capacity, while Europe remains the frontier for high-complexity climate tech](https://stateofclimatetech.com/), sustained by robust policy frameworks and public funding. Europe is the laboratory; America is the factory floor.
+The structural reading, echoed across the sector, is that the US maintains leadership through [deep capital markets and industrial absorption](https://stateofclimatetech.com/), while Europe remains the frontier for high-complexity climate tech, sustained by robust policy frameworks and public funding. Europe is the laboratory; America is the factory floor.
 
 <figure>
   <img src="/assets/img/photo-eu-us-diptych.jpg" alt="A photographic diptych. On the left, a young European engineer at a workbench in a small studio, hand-soldering a delicate robotic prototype; a European city skyline with church spires is visible through the window behind him, with schematics pinned on the wall. On the right, a large American factory floor with a US flag hanging from the ceiling, three workers in orange safety vests walking past cylindrical industrial modules, and a forklift moving stock alongside them." class="diagram">
@@ -48,9 +48,9 @@ The structural reading, echoed across the sector, is that [the US maintains lead
 
 ## Complementarity, not competition
 
-The transatlantic frame is often drawn as a race. It is more accurate, and more useful, to see it as a division of strengths. Europe's regulatory leadership has [successfully incentivised early adoption of clean technologies, while the US has excelled at scaling innovation rapidly](https://www.cleantechforeurope.com/publications/cleantech-annual-briefing-2025).
+The transatlantic frame is often drawn as a race. It is more accurate, and more useful, to see it as a division of strengths. Europe's regulatory leadership has [incentivised early adoption of clean technologies](https://www.cleantechforeurope.com/publications/cleantech-annual-briefing-2025), while the US has excelled at scaling innovation rapidly.
 
-Even Draghi's own framing is not adversarial: strengthening EU competitiveness [is not at odds with the need to strengthen transatlantic economic cooperation](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en). The European advantage is real, its ability to integrate technologies into complex systems and to build them under demanding standards, and it is precisely the kind of advantage that needs careful documentation to be understood and defended.
+Even Draghi's own framing is not adversarial: strengthening EU competitiveness [is not at odds with transatlantic cooperation](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en). The European advantage is real, its ability to integrate technologies into complex systems and to build them under demanding standards, and it is precisely the kind of advantage that needs careful documentation to be understood and defended.
 
 ---
 

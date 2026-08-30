@@ -16,7 +16,7 @@
 
 The World Bank has launched [*Integrating Africa: From Threads to Hubs*](https://au.int/en/documents/20260814/integrating-africa-threads-hubs), arguing that the next stage of the African Continental Free Trade Area is interoperability: customs, transport, payments, standards, energy, finance and digital systems that work across borders rather than only tariff schedules that permit trade across them. The report identifies four priorities, including strengthening regional value chains and reducing behind-the-border trade frictions.
 
-One reported finding deserves to be pulled out and left on its own. Around [60 per cent of Africa's total trade costs come from behind-the-border barriers rather than from border controls](https://nairametrics.com/2026/08/18/world-bank-60-of-africas-trade-costs-come-from-within-countries/), with customs clearance inefficiencies, regulatory misalignment, weak logistics services, fragmented transit systems and poor infrastructure named as the sources.
+One reported finding deserves to be pulled out and left on its own. Around [60 per cent of Africa's trade costs](https://nairametrics.com/2026/08/18/world-bank-60-of-africas-trade-costs-come-from-within-countries/) come from behind-the-border barriers rather than from border controls, with customs clearance inefficiencies, regulatory misalignment, weak logistics services, fragmented transit systems and poor infrastructure named as the sources.
 
 Sit with what that means for a free trade area. Reducing tariffs is what a free trade area does. Tariff reduction acts on the smaller share of the cost, and the [tariff schedules themselves](/insight-second-step) are only part of even that share.
 

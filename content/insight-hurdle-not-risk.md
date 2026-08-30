@@ -27,9 +27,9 @@ That is the number everybody quotes, and on its own it supports the usual story:
 
 Two other numbers complicate that story considerably.
 
-**Infrastructure allocation is far below what regulation permits, and it is falling.** Pension investment in infrastructure funds stood at ₦224.23bn in March 2026, down 25.26% in a single month, against a total asset base of ₦29.5 trillion. That is under 1%. Allocations to infrastructure and other alternatives [remain below 5% despite significantly higher regulatory limits](https://www.cnbcafrica.com/media/7782906015273/will-nigeria-sustain-pension-asset-growth-momentum-in-h226).
+**Infrastructure allocation is far below what regulation permits, and it is falling.** Pension investment in infrastructure funds stood at ₦224.23bn in March 2026, down 25.26% in a single month, against a total asset base of ₦29.5 trillion. That is under 1%. Allocations to infrastructure and other alternatives remain [below 5%](https://www.cnbcafrica.com/media/7782906015273/will-nigeria-sustain-pension-asset-growth-momentum-in-h226) despite significantly higher regulatory limits.
 
-**Meanwhile, the same funds took on substantially more risk elsewhere.** Pension fund administrators [increased holdings of domestic ordinary shares from ₦3.96 trillion at the end of 2025 to ₦5.46 trillion by March 2026, a 38% rise in a quarter](https://newtelegraphng.com/pencoms-capital-market-push-n31-32tn-pension-assets-could-transform-investment-landscape/).
+**Meanwhile, the same funds took on substantially more risk elsewhere.** Pension fund administrators increased holdings of domestic ordinary shares from ₦3.96 trillion at the end of 2025 to ₦5.46 trillion by March 2026, a [38% rise in a quarter](https://newtelegraphng.com/pencoms-capital-market-push-n31-32tn-pension-assets-could-transform-investment-landscape/).
 
 Read those together. These are not funds incapable of taking risk, nor funds prevented from taking risk by a regulatory cap. They are funds actively increasing exposure to Nigerian corporate equity, a volatile asset class, at speed, while simultaneously reducing an infrastructure allocation that sits at a small fraction of the permitted ceiling.
 
@@ -94,7 +94,7 @@ If the diagnosis above is right, four things would do more than expanding the fi
 
 **A secondary market, even a thin one.** Any mechanism that allows an administrator to exit a position addresses the liquidity constraint directly, and the liquidity constraint is doing more work here than the credit constraint.
 
-It is also worth noting that PenCom itself is [developing an infrastructure vehicle to channel pension assets](https://nairametrics.com/2026/07/09/pencom-plans-infrastructure-fund-to-unlock-nigerias-22-billion-pension-assets/). Two parallel efforts pointing at the same pool of money, one from a regulator and one from a development finance institution, is either productive competition or duplicated plumbing, and which it turns out to be depends on whether they converge on a common instrument standard.
+It is also worth noting that PenCom itself is [developing an infrastructure vehicle](https://nairametrics.com/2026/07/09/pencom-plans-infrastructure-fund-to-unlock-nigerias-22-billion-pension-assets/) to channel pension assets. Two parallel efforts pointing at the same pool of money, one from a regulator and one from a development finance institution, is either productive competition or duplicated plumbing, and which it turns out to be depends on whether they converge on a common instrument standard.
 
 The Lab works on this at the intersection of [financial inclusion](/expertise-finance) and [energy access](/expertise-energy). Where a financing structure depends on outcomes at project level, somebody independent of the sponsor should be establishing what those outcomes actually are, which is ordinary [impact measurement](/impact-measurement) applied to a fiduciary question.
 

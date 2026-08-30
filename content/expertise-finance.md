@@ -15,7 +15,7 @@ An electric motorcycle is adopted only if a rider can pay over time. A solar sys
 **§ 1 / The market, in brief**
 
 - [Mobile money brought **hundreds of millions** of previously unbanked people into digital finance](https://www.gsma.com/mobilefordevelopment/mobile-money/), with East Africa leading globally.
-- But [an account is not credit, and access is not benefit](https://www.worldbank.org/en/publication/globalfindex): fees, over-indebtedness, and exclusion persist beneath the headline numbers.
+- But [an account is not credit](https://www.worldbank.org/en/publication/globalfindex), and access is not benefit: fees, over-indebtedness, and exclusion persist beneath the headline numbers.
 - Nearly every transition the Lab studies **rides on top of** a financing layer.
 
 ---

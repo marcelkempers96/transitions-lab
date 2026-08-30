@@ -60,7 +60,7 @@ The programme distributes resources. The evaluation should measure functionings.
 
 There is a specific, empirically established phenomenon that will affect this programme more than any other, and it is not widely enough known outside building physics.
 
-Sunikka-Blank and Galvin analysed 3,400 German homes, comparing calculated energy performance ratings against actual measured consumption. They found that [occupants consumed on average 30 per cent less heating energy than the calculated rating predicted](https://doi.org/10.1080/09613218.2012.690952), and named this the prebound effect. Crucially, the gap [widens as the calculated rating worsens](https://doi.org/10.1080/09613218.2012.690952): a dwelling rated at 300 kilowatt hours per square metre per year was likely to be consuming around 40 per cent below its calculated value, with the gap reaching roughly 60 per cent at the worst ratings.
+Sunikka-Blank and Galvin analysed 3,400 German homes, comparing calculated energy performance ratings against actual measured consumption. They found that occupants consumed on average [30 per cent less heating energy](https://doi.org/10.1080/09613218.2012.690952) than the calculated rating predicted, and named this the prebound effect. Crucially, the gap [widens as the rating worsens](https://doi.org/10.1080/09613218.2012.690952): a dwelling rated at 300 kilowatt hours per square metre per year was likely to be consuming around 40 per cent below its calculated value, with the gap reaching roughly 60 per cent at the worst ratings.
 
 The reason is not mysterious. People in cold, leaky homes do not heat them to twenty one degrees. They cannot afford to, so they heat one room, or heat for four hours, or wear coats indoors.
 
