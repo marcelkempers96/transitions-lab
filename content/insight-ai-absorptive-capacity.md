@@ -28,7 +28,7 @@ They are also the wrong denominator. The question is not how much energy AI cons
 
 ## What general-purpose technologies actually do
 
-[Bresnahan and Trajtenberg](https://doi.org/10.1016/0304-4076(94)01598-T) gave economics the term *general-purpose technology* in 1995. The steam engine, electrification, the semiconductor. Three properties: pervasiveness across sectors, continuous improvement over time, and, decisively, the capacity to spawn complementary innovation in the sectors that adopt them.
+[Bresnahan and Trajtenberg](https://doi.org/10.1016/0304-4076%2894%2901598-T) gave economics the term *general-purpose technology* in 1995. The steam engine, electrification, the semiconductor. Three properties: pervasiveness across sectors, continuous improvement over time, and, decisively, the capacity to spawn complementary innovation in the sectors that adopt them.
 
 That third property is where the actual value lives, and it is the one the current discussion skips. A general-purpose technology on its own produces very little. Electrification did not raise American manufacturing productivity by replacing steam engines with electric motors. [Paul David's well-known account of this](https://ideas.repec.org/a/aea/aecrev/v80y1990i2p355-61.html) shows the gains arrived roughly forty years later, once factories were physically redesigned around distributed power: single-storey layouts, machines arranged by process flow rather than by proximity to a driveshaft. The technology was available for decades before the complementary reorganisation caught up.
 
@@ -138,7 +138,7 @@ The Lab works on this at the boundary of [AI and digital systems](/expertise-ai-
 
 - Reuters, "Nvidia invests in Cloverleaf Infrastructure," 21 August 2026.
 - *npj Climate Action*, "AI-driven productivity gains and global CO₂ emissions," August 2026.
-- Bresnahan, T. and Trajtenberg, M. (1995), ["General purpose technologies: engines of growth?"](https://doi.org/10.1016/0304-4076(94)01598-T), *Journal of Econometrics* 65(1), 83–108.
+- Bresnahan, T. and Trajtenberg, M. (1995), ["General purpose technologies: engines of growth?"](https://doi.org/10.1016/0304-4076%2894%2901598-T), *Journal of Econometrics* 65(1), 83–108.
 - Cohen, W. and Levinthal, D. (1990), ["Absorptive Capacity: A New Perspective on Learning and Innovation"](https://doi.org/10.2307/2393553), *Administrative Science Quarterly* 35(1), 128–152.
 - David, P. (1990), ["The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox"](https://ideas.repec.org/a/aea/aecrev/v80y1990i2p355-61.html), *American Economic Review* 80(2), 355–361.
 

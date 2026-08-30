@@ -23,7 +23,7 @@ One is a small programme for ten companies. The other is a regional capacity bui
 
 ## What Lall established, and why it keeps being forgotten
 
-Sanjaya Lall's 1992 work on [technological capabilities and industrialisation](https://doi.org/10.1016/0305-750X(92)90097-F) set out something that development practice keeps having to relearn.
+Sanjaya Lall's 1992 work on [technological capabilities and industrialisation](https://doi.org/10.1016/0305-750X%2892%2990097-F) set out something that development practice keeps having to relearn.
 
 Technology does not arrive as a working capability. A firm that buys equipment has bought equipment. Turning that into the ability to design, produce, adapt, improve, and troubleshoot is a separate process, and it is expensive, incremental, largely tacit, and accumulated through repetition and failure over years. Lall's framework locates capability in the interaction of three things: incentives that make learning worth doing, human capital able to do the learning, and institutions that support it. Remove any one and the other two do not compensate.
 
@@ -115,7 +115,7 @@ If you are designing a capability programme and want the right things measured f
 
 - [All On](https://www.all-on.com/), Innovation Ecosystem Development Programme launch, 24 August 2026 (programme announcement), backed by the [Global Energy Alliance for People and Planet](https://www.energyalliance.org/).
 - [Tara Climate Foundation](https://www.taraclimate.org/), Asian focus markets assessment, August 2026. Capacity and growth figures are as reported by the foundation and have not been independently re-computed by the Lab.
-- Lall, S. (1992), [Technological capabilities and industrialization](https://doi.org/10.1016/0305-750X(92)90097-F), *World Development* 20(2), 165–186.
+- Lall, S. (1992), [Technological capabilities and industrialization](https://doi.org/10.1016/0305-750X%2892%2990097-F), *World Development* 20(2), 165–186.
 
 ---
 

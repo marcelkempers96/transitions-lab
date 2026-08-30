@@ -100,7 +100,7 @@ None of this makes the boom less important. Reducing the cost of power for Afric
 
 The third thing follows from the second, and it has a name in the energy access literature that deserves to be applied here.
 
-Masera, Saatkamp and Kammen showed, against the then dominant [energy ladder model](https://doi.org/10.1016/S0305-750X(00)00076-0), that households do not progress cleanly from one fuel to the next as income rises. They accumulate options and use several at once, choosing between them by cost, reliability and task. The pattern was named fuel stacking and it has held up across three decades of household energy research.
+Masera, Saatkamp and Kammen showed, against the then dominant [energy ladder model](https://doi.org/10.1016/S0305-750X%2800%2900076-0), that households do not progress cleanly from one fuel to the next as income rises. They accumulate options and use several at once, choosing between them by cost, reliability and task. The pattern was named fuel stacking and it has held up across three decades of household energy research.
 
 The extension we would make, and it is ours rather than theirs, is that firms stack supply the same way households stack fuels. A Nigerian factory with a grid connection, a diesel generator and a new rooftop array is not switching. It is holding a portfolio and dispatching from it: grid when it is available and cheap, solar in the middle of the day, battery through the evening peak, diesel in the rainy week and during the outage that lasts three days.
 
@@ -155,7 +155,7 @@ If you are planning generation, financing a network, or writing an access strate
 ## Sources
 
 - Ember and African Tech Futures Lab, [The take-off in African solar that official statistics can't yet see](https://ember-energy.org/latest-insights/the-take-off-in-african-solar-that-official-statistics-cant-yet-see/), 26 August 2026.
-- Masera, O. R., Saatkamp, B. D. and Kammen, D. M. (2000), [From Linear Fuel Switching to Multiple Cooking Strategies: A Critique and Alternative to the Energy Ladder Model](https://doi.org/10.1016/S0305-750X(00)00076-0), *World Development* 28(12), 2083 to 2103.
+- Masera, O. R., Saatkamp, B. D. and Kammen, D. M. (2000), [From Linear Fuel Switching to Multiple Cooking Strategies: A Critique and Alternative to the Energy Ladder Model](https://doi.org/10.1016/S0305-750X%2800%2900076-0), *World Development* 28(12), 2083 to 2103.
 
 ---
 
