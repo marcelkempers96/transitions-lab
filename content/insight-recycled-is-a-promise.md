@@ -53,7 +53,7 @@ That distinction matters because the two diagnoses imply different investments. 
 
 ## Akerlof also named the remedies
 
-The 1970 paper does not stop at the failure. It identifies the institutions that arise to counteract quality uncertainty: guarantees, brand names, chains, and licensing. Translate those into secondary materials and the list is specific.
+The [1970 paper](https://doi.org/10.2307/1879431) does not stop at the failure. It identifies the institutions that arise to counteract quality uncertainty: guarantees, brand names, chains, and licensing. Translate those into secondary materials and the list is specific.
 
 **Standards that specify performance rather than composition.** A recyclate specified as post-consumer content of a particular polymer tells a buyer nothing about whether it will survive their process. A specification written against the properties that matter for an application is what allows a premium to be paid for meeting it.
 
