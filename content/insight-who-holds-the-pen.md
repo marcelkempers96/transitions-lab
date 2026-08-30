@@ -120,7 +120,7 @@ If you are a manufacturer, a regulator, or a funder with a position in this netw
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility). See also [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on the make-or-buy decision inside a swap network. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility). See also [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on the make-or-buy decision inside a swap network, and [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on the same monopsony question arriving in mineral processing. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

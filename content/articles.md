@@ -48,7 +48,39 @@ The Lab publishes articles for the same reason it takes on any research: some qu
   <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="energy" data-geography="africa" data-month="2026-08">
+<div class="article-list"><div class="article-item has-thumb" data-category="industrial-policy" data-geography="africa" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-ban-is-not-the-policy"><img class="article-thumb" src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="A butter-yellow title card marking The Ban Is Not the Policy, on Zimbabwe's lithium export restriction, Morocco's LFP plant at Kenitra, and the difference between a threat and an operating plant."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-ban-is-not-the-policy">The Ban Is Not the Policy</a>
+      <div class="article-meta">30 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-industrial-policy">Industrial Policy</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
+      <p class="article-desc">Zimbabwe stops lithium concentrate exports in January with one plant running. Whether that captures value depends on a detail nobody discusses.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-fire-and-livelihood"><img class="article-thumb" src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="A butter-yellow title card marking The Fire Was Put Out by People Making a Living, on rural depopulation, fuel accumulation, and the difference between paying for a practice and keeping the person."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-fire-and-livelihood">The Fire Was Put Out by People Making a Living</a>
+      <div class="article-meta">30 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">EU Policy</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <p class="article-desc">Fuel management was a by-product of farming, never a service anybody bought. Buying it directly costs far more and lasts only as long as the budget.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-recycled-is-a-promise"><img class="article-thumb" src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="A butter-yellow title card marking A Recycled Material Is a Promise, on the Akerlof lemons mechanism in secondary materials markets, and the institutions that would let a buyer pay a premium for quality they cannot see."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-recycled-is-a-promise">A Recycled Material Is a Promise</a>
+      <div class="article-meta">30 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">EU Policy</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <p class="article-desc">None of the bottlenecks Europe found in 120 circularity projects is a recycling technology. They are all institutions for verifying a claim.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="ai-digital" data-geography="global" data-month="2026-08">
+    <a class="article-thumb-link" href="/insight-who-does-it-fail-for"><img class="article-thumb" src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="A butter-yellow title card marking Who Does It Fail For?, on average accuracy versus the distribution an institution actually experiences, and on evaluating a system on the people it was built to include."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-who-does-it-fail-for">Who Does It Fail For?</a>
+      <div class="article-meta">30 August 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-ai-digital">AI &amp; Digital</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
+      <p class="article-desc">An accuracy figure is an average and a clinic experiences a distribution. The errors fall along the same axis as the exclusion the system was built to fix.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="energy" data-geography="africa" data-month="2026-08">
     <a class="article-thumb-link" href="/insight-stacking-not-switching"><img class="article-thumb" src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="Line-art scene: container ship and shipping form on the left, dashed arrows up to solar panels and a transmission pylon and down to a factory with a battery on one side and a diesel generator on the other — the site stacking sources, not switching."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-stacking-not-switching">Stacking, Not Switching</a>

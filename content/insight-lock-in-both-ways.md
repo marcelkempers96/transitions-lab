@@ -138,7 +138,7 @@ If you are assessing an industrial zone whose viability depends on a customer re
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Climate & Ecosystems](/expertise-climate). See also [The Value Is in the Second Step](/insight-second-step) on firm power and the move up the value chain, and [What an Incumbent Brings With It](/insight-incumbents-second-life) on the terms an industrial operator carries into a new region. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Climate & Ecosystems](/expertise-climate). See also [The Value Is in the Second Step](/insight-second-step) on firm power and the move up the value chain, [What an Incumbent Brings With It](/insight-incumbents-second-life) on the terms an industrial operator carries into a new region, [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on the export restriction that only bites once the plant and its access terms exist, and [A Recycled Material Is a Promise](/insight-recycled-is-a-promise) on the same qualification barrier in secondary materials. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">
