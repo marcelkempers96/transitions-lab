@@ -28,7 +28,7 @@ The forum's conclusion is right and slightly imprecise, and the imprecision matt
 
 ## Why the pilot result does not transfer
 
-There is a well developed literature on what happens to an intervention between a successful trial and a scaled programme. The finding is consistent enough to have a name, the voltage drop, and the mechanisms are specific rather than mysterious.
+There is a well developed literature on what happens to an intervention between a successful trial and a scaled programme. The finding is consistent enough to have a name, the [voltage drop](https://doi.org/10.1111/iere.12464), and the mechanisms are specific rather than mysterious.
 
 **Participant selection.** Demonstration sites are not random. They are farms whose operators volunteered, which means farms with time, curiosity, some financial cushion, an existing relationship with an advisory service, and usually a successor. Every one of those characteristics is correlated with the capacity to adopt. The demonstration therefore measures the effect of the practice on the population least representative of the one that has to adopt it next.
 

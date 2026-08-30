@@ -54,7 +54,7 @@ Four failure modes follow, and all four are predictable.
 
 **Production change.** Output rises thirty per cent, energy consumption rises with it, and measured savings turn negative against an unadjusted baseline. The adjustment formula is where these contracts are actually decided, and it is usually drafted last and read least.
 
-**Rebound.** A cold room that is cheaper to run gets run colder, or longer, or with the door open. That is a genuine gain in service and a loss in the savings calculation. The customer is better off and the contract says otherwise.
+**[Rebound](https://doi.org/10.1016/j.enpol.2008.11.026).** A cold room that is cheaper to run gets run colder, or longer, or with the door open. That is a genuine gain in service and a loss in the savings calculation. The customer is better off and the contract says otherwise.
 
 **Attribution across bundled measures.** Install new motors, a chiller and a control system together and the saving is real but unallocatable between them, which matters the moment one component underperforms.
 

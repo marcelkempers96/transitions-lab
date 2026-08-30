@@ -101,7 +101,7 @@ Nobody is currently set up to answer it, and it is the question that will be ask
 
 A meaningful share of Greek households rent, and the rental stock is disproportionately older and less efficient. Retrofit programmes interact badly with rented housing in a way that is well documented and consistently under-planned.
 
-**The split incentive.** The landlord pays for the work, the tenant receives the lower bill. Absent a mechanism, the landlord has no reason to act, so the worst stock is renovated last.
+**The [split incentive](https://doi.org/10.1787/9789264038950-en).** The landlord pays for the work, the tenant receives the lower bill. Absent a mechanism, the landlord has no reason to act, so the worst stock is renovated last.
 
 **Value capture through rent.** Where the landlord does act, the improvement is capitalised into the rent. The tenant may end up paying more in total, with a warmer home and less money, and the programme records a completed renovation.
 

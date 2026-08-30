@@ -45,7 +45,7 @@ Which makes sense the moment it is stated. A tree is only an asset to the person
 This has a direct and cheap implication. The lowest-cost intervention available to a restoration programme may not be seedlings, nurseries or extension. It may be a functioning, predictable harvest-permit system, which costs a fraction of the planting budget and determines whether the planting survives.
 
 <div class="callout c-forest">
-  <span class="kicker">Rights to land are a bundle, not a single thing</span>
+  <span class="kicker">Rights to land are <a href="https://doi.org/10.2307/3146375">a bundle, not a single thing</a></span>
   <p>Six rights typically sit inside a tenure arrangement. Restoration programmes concentrate attention on the top two, because those are the ones a project can grant. The row that predicts investment is one it usually cannot.</p>
   <ul>
     <li><strong>Access.</strong> May enter the land.</li>
