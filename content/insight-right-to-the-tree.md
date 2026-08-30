@@ -14,7 +14,7 @@
 
 ## What a decade of restoration finance will run into first
 
-The [Asian Development Bank](https://www.adb.org/) and partners have launched the FIELD Initiative, aiming to mobilise at least US$2 billion by 2035 for land restoration and anti-desertification programmes across Asia and the Pacific, explicitly linking degraded landscapes with rural livelihoods, food security and water resilience.
+The [Asian Development Bank](https://www.adb.org/) and partners have launched the [FIELD Initiative](https://www.adb.org/what-we-do/sectors/agriculture-natural-resources-rural-development), aiming to mobilise at least US$2 billion by 2035 for land restoration and anti-desertification programmes across Asia and the Pacific, explicitly linking degraded landscapes with rural livelihoods, food security and water resilience.
 
 Two things about that are worth noting before anything else. A commitment running to 2035 is the correct timescale for restoration, which produces nothing measurable for years, and it is rare in adaptation finance. And framing degraded land as inseparable from livelihoods is right, and is the framing most restoration programmes have historically avoided because it makes the work harder.
 

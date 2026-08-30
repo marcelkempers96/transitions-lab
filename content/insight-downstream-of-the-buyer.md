@@ -83,7 +83,7 @@ This is the layer where a programme like this is won or lost, and it is where [o
 
 ## The design grant is the higher-leverage instrument
 
-Separately, [Convergence](https://www.convergence.finance/) and the Australian government have opened a new cycle of the Asia Climate Solutions Design Grant, focused on climate-resilient agriculture and nature-based solutions in Southeast Asia. It funds teams designing financial vehicles rather than funding farms directly, with women's economic participation written into the mandate.
+Separately, [Convergence](https://www.convergence.finance/) and the Australian government have opened a new cycle of the [Asia Climate Solutions Design Grant](https://www.convergence.finance/design-funding/asia-climate-solutions-design-grant/), focused on climate-resilient agriculture and nature-based solutions in Southeast Asia. It funds teams designing financial vehicles rather than funding farms directly, with women's economic participation written into the mandate.
 
 That is a correct read of the aggregation problem. Individual farmers are too small for institutional investors, unfamiliar technologies read as risky to banks, and the vehicle that bridges them has to be designed by somebody before it can be funded by anybody.
 

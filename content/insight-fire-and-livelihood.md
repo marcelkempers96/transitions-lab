@@ -63,7 +63,7 @@ When the priced output failed, the unpriced one went with it. The lamb market we
 
 ## The economics of prevention, and why money is not the constraint
 
-The cost comparison, where it has been made, is stark. The EU LIFE Landscape Fire project has been reported as putting the cost of reintroducing grazing at around [60 to 80 euros per hectare](https://www.techtimes.com/articles/322544/20260731/grazing-was-europes-firebreak-rural-depopulation-left-forests-tinder.htm), against roughly 1,000 euros per hectare for manual fuel clearing. If that holds, prevention through grazing is between twelve and seventeen times cheaper than the mechanical alternative, and both are far cheaper than suppression and reconstruction.
+The cost comparison, where it has been made, is stark. The [EU LIFE](https://cinea.ec.europa.eu/programmes/life_en) Landscape Fire project has been reported as putting the cost of reintroducing grazing at around [60 to 80 euros per hectare](https://www.techtimes.com/articles/322544/20260731/grazing-was-europes-firebreak-rural-depopulation-left-forests-tinder.htm), against roughly 1,000 euros per hectare for manual fuel clearing. If that holds, prevention through grazing is between twelve and seventeen times cheaper than the mechanical alternative, and both are far cheaper than suppression and reconstruction.
 
 That figure needs verifying against the project itself before anybody builds a case on it, and it is flagged accordingly. But the direction is not in dispute, and it produces an uncomfortable conclusion: the constraint on European wildfire prevention is not primarily money and not primarily technique.
 

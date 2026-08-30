@@ -87,7 +87,7 @@ It is not a bill reduction. And a fund that was justified partly on the grounds 
 
 There is a structural feature of the Social Climate Fund that evaluation designs tend to treat as background and which is central to whether any household ends up better off.
 
-The fund is financed substantially from carbon pricing revenues, and the extension of emissions trading to buildings and road transport raises the price of heating fuel and motor fuel for the same households the fund is designed to protect. The money being distributed and the cost being imposed reach the same doorstep.
+The fund is financed substantially from carbon pricing revenues, and the [extension of emissions trading to buildings and road transport](https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets/ets2-buildings-road-transport-and-additional-sectors_en) raises the price of heating fuel and motor fuel for the same households the fund is designed to protect. The money being distributed and the cost being imposed reach the same doorstep.
 
 That makes the honest question a net one. Did this household's total position improve, counting the subsidy received, the running cost of whatever was installed, and the increase in the price of the fuel it still buys.
 

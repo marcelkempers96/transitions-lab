@@ -16,7 +16,7 @@
 
 Two announcements this week describe the same ambition on different continents.
 
-[CrossBoundary Energy](https://www.crossboundary.com/energy/) has confirmed that its solar and storage plant serving the Kamoa-Kakula copper complex in the Democratic Republic of Congo has entered commercial operation, combining around 233 megawatts peak of solar with 526 megawatt-hours of battery storage to provide a firm 30 megawatt supply to the mine.
+[CrossBoundary Energy](https://www.crossboundary.com/energy/) has confirmed that its solar and storage plant serving the [Kamoa-Kakula copper complex](https://www.ivanhoemines.com/projects/kamoa-kakula-copper-complex/) in the Democratic Republic of Congo has entered commercial operation, combining around 233 megawatts peak of solar with 526 megawatt-hours of battery storage to provide a firm 30 megawatt supply to the mine.
 
 Separately, [KBR](https://www.kbr.com/) has been selected for pre-FEED work on ORNX Green Hydrogen's proposed project near Laayoune, Morocco, supported by [United States Trade and Development Agency](https://ustda.gov/) funding. The integrated complex would use around 900 megawatts of electrolysers to produce roughly 560,000 tonnes of ammonia a year.
 

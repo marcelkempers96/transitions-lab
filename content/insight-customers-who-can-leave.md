@@ -14,7 +14,7 @@
 
 ## Industrial self-supply, the utility death spiral, and the difference between wheeling and islanding
 
-South Africa's largest miners are building their own electricity system. [Anglo American's Envusa platform](https://www.angloamerican.com/) targets around three gigawatts by 2030. [Sibanye](https://www.sibanyestillwater.com/) expects renewables to cover roughly 64 per cent of its South African electricity requirement by 2028. [Exxaro's](https://www.exxaro.com/) existing 68 megawatt Grootegeluk solar plant has reportedly reduced its grid dependence by around 30 per cent.
+South Africa's largest miners are building their own electricity system. [Anglo American's](https://www.angloamerican.com/) [Envusa platform](https://www.envusa.energy/) targets around three gigawatts by 2030. [Sibanye](https://www.sibanyestillwater.com/) expects renewables to cover roughly 64 per cent of its South African electricity requirement by 2028. [Exxaro's](https://www.exxaro.com/) existing 68 megawatt Grootegeluk solar plant has reportedly reduced its grid dependence by around 30 per cent.
 
 Read on its own, this is a good news story about corporate decarbonisation and about private capital building generation that the state has struggled to finance. It is also the clearest illustration available anywhere of a dynamic that will shape emerging market electricity systems for the next two decades, and the mining sector is simply where it becomes impossible to ignore.
 

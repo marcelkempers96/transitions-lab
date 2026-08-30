@@ -14,7 +14,7 @@
 
 ## Why downcycling is partly an information failure, and what fixes it
 
-The European Commission has drawn together findings from 120 Horizon 2020 and Horizon Europe projects to inform the forthcoming [Circular Economy Act](https://environment.ec.europa.eu/topics/circular-economy_en), spanning construction, textiles, electronics, plastics, mobility and bio-based industries. The recurring bottlenecks it identifies concern procurement, producer responsibility, markets for recycled materials, regional cooperation and the recovery of critical raw materials.
+The European Commission has drawn together findings from 120 [Horizon 2020](https://cordis.europa.eu/programme/id/H2020) and [Horizon Europe](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) projects to inform the forthcoming [Circular Economy Act](https://environment.ec.europa.eu/topics/circular-economy_en), spanning construction, textiles, electronics, plastics, mobility and bio-based industries. The recurring bottlenecks it identifies concern procurement, producer responsibility, markets for recycled materials, regional cooperation and the recovery of critical raw materials.
 
 Read that list again. Not one item on it is a recycling technology.
 

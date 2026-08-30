@@ -14,7 +14,7 @@
 
 ## An average accuracy figure cannot answer the only question that matters in a clinic
 
-Nigerian company [Intron](https://www.intron.io/) has released Sahara v2.5, extending bilingual speech recognition across twelve African language combinations and adding a trilingual Kinyarwanda, English and French model. The system is built around code-switching, meaning it is designed for how people actually speak in healthcare, finance, courts and commerce, rather than assuming a conversation stays in one language.
+Nigerian company [Intron](https://www.intron.io/) has released [Sahara v2.5](https://www.intron.io/sahara), extending bilingual speech recognition across twelve African language combinations and adding a trilingual Kinyarwanda, English and French model. The system is built around code-switching, meaning it is designed for how people actually speak in healthcare, finance, courts and commerce, rather than assuming a conversation stays in one language.
 
 Separately, a [Joint Research Centre](https://joint-research-centre.ec.europa.eu/) study published on 28 August finds that generative AI can help authorities synthesise fragmented disease outbreak information, and warns against immediate wide-scale deployment, recommending staged pilots, human oversight, validation, bias testing, interoperable data standards and training before such systems are embedded in public health surveillance.
 
