@@ -93,7 +93,7 @@ The policy implication is not that payment schemes are wrong. They are the only 
 
 **Traditional management is not automatically good management.** Grazing at the wrong intensity degrades soil and vegetation. Dead wood has real ecological value as habitat and nutrient return, so clearing everything is neither affordable nor desirable. The target is heterogeneity, not tidiness, and the difference matters because a tidiness objective is easier to inspect and will therefore be what a scheme measures.
 
-**Abandonment is not the only mechanism, and the wrong diagnosis produces the wrong instrument.** France's Gironde fires ran through highly connected planted pine, which is a product of intensification rather than abandonment. Both produce the same fatal property, which is landscape scale continuity, by opposite routes. A grazing subsidy is the correct instrument for one and irrelevant to the other, and a European scheme designed for the Mediterranean case will do little in the Landes.
+**Abandonment is not the only mechanism, and the wrong diagnosis produces the wrong instrument.** [France's Gironde fires](https://www.breakthroughjournal.org/p/climate-change-alone-doesnt-explain) ran through highly connected planted pine, which is a product of intensification rather than abandonment. Both produce the same fatal property, which is landscape scale continuity, by opposite routes. A grazing subsidy is the correct instrument for one and irrelevant to the other, and a European scheme designed for the Mediterranean case will do little in the Landes.
 
 ---
 
