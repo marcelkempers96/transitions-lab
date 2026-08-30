@@ -34,7 +34,7 @@ George Akerlof described what happens to a market in that condition. In conditio
 
 Now put that next to the thing everyone in the sector complains about.
 
-**Downcycling is usually presented as a technical limitation: polymer chains shorten, fibres get shorter, alloys accumulate tramp elements. All true. But a substantial part of downcycling is the Akerlof mechanism operating in a materials market.** Good recyclate ends up in park benches and drainage pipe not only because its properties have degraded, but because there is no way for its producer to prove they have not degraded enough to matter, and therefore no way to be paid for the difference.
+**Downcycling is usually presented as a technical limitation: polymer chains shorten, fibres get shorter, alloys accumulate tramp elements. All true. But a substantial part of downcycling is the [Akerlof mechanism](https://doi.org/10.2307/1879431) operating in a materials market.** Good recyclate ends up in park benches and drainage pipe not only because its properties have degraded, but because there is no way for its producer to prove they have not degraded enough to matter, and therefore no way to be paid for the difference.
 
 That distinction matters because the two diagnoses imply different investments. If downcycling is purely technical, the answer is better sorting and better reprocessing, which is what fifteen years of demonstration funding has largely bought. If a meaningful part of it is informational, the answer is testing infrastructure, standards, liability and traceability, which is what the Commission's own bottleneck list describes.
 
@@ -83,7 +83,7 @@ Seen that way, the Commission's bottleneck list is not a list of separate proble
 
 There is a comparison here that European circularity research is not making, and it is one of the few places where evidence from outside Europe is directly instructive rather than merely interesting.
 
-Repair and reuse markets in East and West African cities move very large volumes of electronics, appliances, vehicle parts and materials with no certification infrastructure whatsoever. They face exactly the Akerlof problem in acute form, and they have solved it, partially, with entirely different institutions: personal reputation, repeat dealing within a physical market where a seller cannot disappear, warranty offered by the trader rather than the manufacturer, and inspection knowledge held by technicians who can assess a component by handling it.
+Repair and reuse markets in East and West African cities move very large volumes of electronics, appliances, vehicle parts and materials with no certification infrastructure whatsoever. They face exactly the [Akerlof problem](https://doi.org/10.2307/1879431) in acute form, and they have solved it, partially, with entirely different institutions: personal reputation, repeat dealing within a physical market where a seller cannot disappear, warranty offered by the trader rather than the manufacturer, and inspection knowledge held by technicians who can assess a component by handling it.
 
 Two things follow, and both need saying.
 
