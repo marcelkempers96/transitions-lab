@@ -43,7 +43,7 @@ The emissions figure itself is modelled, not measured. Radar sees flooding; an e
 
 ## Legibility, and what it costs
 
-James Scott's account of legibility is the right frame here. Administering anything at scale requires simplifying it into categories a distant office can process, and those simplifications then become the reality decisions are made on. What is not in the register does not exist administratively. The local practical knowledge that does not fit the categories, what Scott called *métis*, is not merely omitted; it becomes invisible to the institution, and its absence is not noticed because there is no slot in the form where it would have gone.
+[James Scott's account of legibility](https://yalebooks.yale.edu/book/9780300078152/seeing-like-a-state/) is the right frame here. Administering anything at scale requires simplifying it into categories a distant office can process, and those simplifications then become the reality decisions are made on. What is not in the register does not exist administratively. The local practical knowledge that does not fit the categories, what Scott called *métis*, is not merely omitted; it becomes invisible to the institution, and its absence is not noticed because there is no slot in the form where it would have gone.
 
 A plot-level digital twin is an unusually clean example. It is a register of rice fields legible to a carbon buyer in another jurisdiction, and it is a considerable achievement. Everything in the right-hand column above is *métis*.
 

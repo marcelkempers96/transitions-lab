@@ -48,7 +48,7 @@ The dam is still there. It is a genuine national asset and Ghana's electrificati
 
 ## The bargain obsolesces in the wrong direction
 
-Raymond Vernon described the obsolescing bargain: a foreign investor holds maximum leverage before committing capital, and loses it once the plant is built and cannot be moved, at which point the host can revise the terms.
+Raymond Vernon described the [obsolescing bargain](https://archive.org/details/sovereigntyatbay0000vern): a foreign investor holds maximum leverage before committing capital, and loses it once the plant is built and cannot be moved, at which point the host can revise the terms.
 
 Anchor-load deals invert this, and the inversion is the thing worth understanding.
 

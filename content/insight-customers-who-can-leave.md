@@ -24,7 +24,7 @@ The customers leaving the grid are the ones that were paying for it.
 
 ## What a death spiral is, and why the usual version is too gentle
 
-The utility death spiral entered energy economics in the early 2010s, most prominently through an Edison Electric Institute analysis of distributed generation, though the underlying logic is much older and applies to any network industry with high fixed costs and a declining volume base.
+The utility death spiral entered energy economics in the early 2010s, most prominently through an [Edison Electric Institute analysis of distributed generation](https://www.eei.org/-/media/Project/EEI/Documents/Issues-and-Policy/Finance-And-Tax/disruptivechallenges.pdf), though the underlying logic is much older and applies to any network industry with high fixed costs and a declining volume base.
 
 The mechanism is simple and self-reinforcing. A utility's costs are largely fixed: generation plant, transmission, distribution, debt service, staff. Its revenue is largely volumetric, recovered per kilowatt hour sold. When sales fall, fixed costs are spread across fewer units, so the tariff rises. The higher tariff improves the economics of self-supply, so more customers leave, so sales fall further.
 

@@ -87,7 +87,7 @@ The people who lose access are, predictably, the ones with the weakest claim to 
 
 The tenure story is not universal and a piece arguing it should say so.
 
-Place and Hazell's work in Ghana, Kenya and Rwanda concluded that land rights were not determinants of agricultural investment, and later work finds farmers without formal tenure investing in soil fertility, tree planting and conservation anyway. The Chinese finding that formal land-tenure security was insignificant while harvest rights mattered points the same way from the other direction.
+[Place and Hazell's work in Ghana, Kenya and Rwanda](https://doi.org/10.2307/1242953) concluded that land rights were not determinants of agricultural investment, and later work finds farmers without formal tenure investing in soil fertility, tree planting and conservation anyway. The Chinese finding that formal land-tenure security was insignificant while harvest rights mattered points the same way from the other direction.
 
 What that body of evidence supports is not "secure title first". It is that the operative variable is perceived security over a specific right, that which right matters varies by system, and that it cannot be read off a national tenure classification. It has to be established locally, by asking, before the planting plan is drawn.
 

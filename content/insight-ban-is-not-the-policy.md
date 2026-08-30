@@ -30,7 +30,7 @@ The comparison is instructive because export restrictions are the most popular i
 
 An export ban is not a tax. It is a threat, and a threat only produces investment if the people who must invest believe it will be carried out.
 
-Kydland and Prescott's account of time inconsistency describes exactly this situation. A policy that is optimal to announce may not be optimal to execute when the moment arrives, and rational actors, knowing this, discount the announcement in advance. The announcement's power comes from the government's ability to bind itself, not from the announcement itself.
+[Kydland and Prescott's account of time inconsistency](https://doi.org/10.1086/260580) describes exactly this situation. A policy that is optimal to announce may not be optimal to execute when the moment arrives, and rational actors, knowing this, discount the announcement in advance. The announcement's power comes from the government's ability to bind itself, not from the announcement itself.
 
 Zimbabwe has a revealed preference on this. In 2023 the government required lithium miners to submit plans for local refineries by March 2024, and [softened its stance](https://www.mining.com/web/zimbabwe-to-ban-export-of-lithium-concentrates-from-2027/) after lithium prices collapsed.
 

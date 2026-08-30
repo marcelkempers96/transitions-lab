@@ -38,7 +38,7 @@ Every one of those is measurable. None is measured by an installation count.
 
 ## The capability approach names the problem precisely
 
-Amartya Sen's distinction between resources and capabilities is the right instrument here, and it is not a philosophical flourish.
+[Amartya Sen's distinction between resources and capabilities](https://global.oup.com/academic/product/development-as-freedom-9780198297581) is the right instrument here, and it is not a philosophical flourish.
 
 A heat pump is a resource. What matters is whether the household can convert that resource into a functioning, which in this case is a warm home it can afford to keep warm. Sen's conversion factors are the things that determine the exchange rate between the two, and they vary enormously across exactly the population this fund targets.
 

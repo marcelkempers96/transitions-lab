@@ -35,7 +35,7 @@ The history of technical standards is largely a history of this distinction bein
 
 ## What the commons literature already knows about this
 
-Shared infrastructure that many parties depend on, that none of them individually owns, and that degrades if it is mismanaged is not a new problem. Elinor Ostrom spent a career documenting how communities govern exactly this class of resource successfully, and the conditions she identified are specific rather than vague.
+Shared infrastructure that many parties depend on, that none of them individually owns, and that degrades if it is mismanaged is not a new problem. [Elinor Ostrom](https://doi.org/10.1017/CBO9780511807763) spent a career documenting how communities govern exactly this class of resource successfully, and the conditions she identified are specific rather than vague.
 
 Clearly defined boundaries around who may use the resource. Collective-choice arrangements in which those affected by the rules participate in making them. Monitoring that the users trust. Graduated sanctions rather than arbitrary exclusion. Accessible and low-cost conflict resolution. And recognition by outside authorities of the users' right to organise their own governance.
 

@@ -24,7 +24,7 @@ If the returns were as good as the spreadsheet claims, firms would take them. So
 
 ## What the literature calls this, and why the unfashionable explanation matters
 
-Adam Jaffe and Robert Stavins gave the phenomenon its name in 1994, asking [what the energy efficiency gap actually means](https://scholar.harvard.edu/stavins/publications/energy-efficiency-gap-what-does-it-mean). The modern review by Gerarden, Newell and Stavins sorts the explanations into three groups: market failures, behavioural explanations, and flaws in the models that generate the estimates.
+Adam Jaffe and Robert Stavins gave the phenomenon its name in 1994, asking [what the energy efficiency gap actually means](https://scholar.harvard.edu/stavins/publications/energy-efficiency-gap-what-does-it-mean). The modern review by [Gerarden, Newell and Stavins](https://doi.org/10.1257/jel.20161360) sorts the explanations into three groups: market failures, behavioural explanations, and flaws in the models that generate the estimates.
 
 The third group is the one efficiency advocates dislike, and it is frequently correct. The engineering payback omits real costs.
 

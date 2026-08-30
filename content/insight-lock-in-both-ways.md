@@ -48,7 +48,7 @@ That is the definition of a lock-in, and its effects run in both directions. Qua
 
 ## Arthur's four mechanisms, present in full
 
-W. Brian Arthur's 1989 account of competing technologies and lock-in identified four sources of increasing returns that cause an early lead to become self-reinforcing. Precursor supply exhibits all four, which is unusual and worth walking through, because it explains why the current concentration of the industry is stable rather than accidental.
+[W. Brian Arthur's 1989 account of competing technologies and lock-in](https://doi.org/10.2307/2234208) identified four sources of increasing returns that cause an early lead to become self-reinforcing. Precursor supply exhibits all four, which is unusual and worth walking through, because it explains why the current concentration of the industry is stable rather than accidental.
 
 **Large set-up costs.** A precursor plant is capital intensive, and the fixed cost is spread over volume, so an incumbent with scale has a unit cost the entrant cannot match at start-up.
 
@@ -58,7 +58,7 @@ W. Brian Arthur's 1989 account of competing technologies and lock-in identified 
 
 **Adaptive expectations.** A purchaser choosing a supplier is partly forecasting who will still be supplying in ten years. Uncertainty about a new entrant is itself a reason to prefer the incumbent, which makes the expectation self-fulfilling.
 
-Paul David's account of QWERTY makes the general point that the outcome need not be efficient. A configuration can persist because of the sequence in which it was adopted rather than because it is the best available, and it can persist long after the conditions that produced it have changed.
+[Paul David's account of QWERTY](https://www.jstor.org/stable/1805621) makes the general point that the outcome need not be efficient. A configuration can persist because of the sequence in which it was adopted rather than because it is the best available, and it can persist long after the conditions that produced it have changed.
 
 Applied here: the concentration of precursor and cathode active material production in China is not a natural consequence of geology, and it is not primarily a cost phenomenon. It is a path dependent outcome of deliberate investment made when the industry was young and qualification relationships had not yet formed. Chemistry World's account of the lithium iron phosphate story makes the same point about a different chemistry: strategic government support, early licensing access and large scale manufacturing [allowed China to commercialise LFP rapidly](https://www.chemistryworld.com/features/the-battery-chemistry-race-shaping-the-future-of-electric-vehicles/4023302.article) while Western countries missed early opportunities.
 

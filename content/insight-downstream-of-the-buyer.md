@@ -38,7 +38,7 @@ So lending to the entity that provides the offtake, the inputs and the extension
 
 ## Interlinked contracts, and what they hide
 
-When a single counterparty supplies credit and inputs and buys the output, the arrangement is what the literature calls an interlinked contract. Pranab Bardhan, and Braverman and Stiglitz in the early 1980s, established both why these arrangements are efficient and what they cost.
+When a single counterparty supplies credit and inputs and buys the output, the arrangement is what the literature calls an interlinked contract. [Pranab Bardhan](https://doi.org/10.1093/oxfordjournals.oep.a041454), and [Braverman and Stiglitz](https://www.jstor.org/stable/1808582) in the early 1980s, established both why these arrangements are efficient and what they cost.
 
 They are efficient for a specific reason. Smallholder lending fails on collateral and on enforcement. A farmer has no security to pledge and a lender has no cheap way to compel repayment. Interlinking solves both at once: the crop is the collateral, and the lender recovers at the point of purchase, so default requires the farmer to sell elsewhere, which is difficult and observable. The same relationship that carries the credit carries the sale, which collapses two expensive monitoring problems into one cheap one.
 
