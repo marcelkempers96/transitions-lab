@@ -39,6 +39,19 @@ def _asset_hash(rel_path: str) -> str:
 ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
 
+# Post-processor: append ?v=<hash> to every /assets/img/... URL in the
+# rendered HTML so a new image binary picks up a new URL, forcing
+# browsers and Vercel's edge cache to refetch rather than serve the
+# stale copy. Runs once per file at write time.
+_IMG_URL_RE = re.compile(r'(/assets/img/[^"\')\s?#]+)')
+
+def _cache_bust_images(html: str) -> str:
+    def _rewrite(m: re.Match) -> str:
+        url = m.group(1)
+        h = _asset_hash(url.lstrip("/"))
+        return f"{url}?v={h}"
+    return _IMG_URL_RE.sub(_rewrite, html)
+
 # Featured case per expertise page. Renders a bordered case-card at the
 # top of the expertise page prose, linking to a specific case study.
 # Kicker uses the same coloured-stripe treatment as home insight cards.
@@ -1634,7 +1647,7 @@ def main() -> None:
     written: list[str] = []
 
     # 1. Home
-    home_html = build_home()
+    home_html = _cache_bust_images(build_home())
     (ROOT / "index.html").write_text(home_html, encoding="utf-8")
     written.append("/")
     print("[home]  index.html")
@@ -1650,7 +1663,7 @@ def main() -> None:
         except Exception as e:
             print(f"[skip]  {slug}.md: {e}")
             continue
-        (ROOT / f"{slug}.html").write_text(page, encoding="utf-8")
+        (ROOT / f"{slug}.html").write_text(_cache_bust_images(page), encoding="utf-8")
         real_slugs.add(slug)
         written.append(f"/{slug}")
         print(f"[page]  {slug}.html")
@@ -1659,12 +1672,12 @@ def main() -> None:
     for slug, title in STUB_TITLES.items():
         if slug in real_slugs:
             continue
-        (ROOT / f"{slug}.html").write_text(build_stub_page(slug, title), encoding="utf-8")
+        (ROOT / f"{slug}.html").write_text(_cache_bust_images(build_stub_page(slug, title)), encoding="utf-8")
         print(f"[stub]  {slug}.html")
         # stubs deliberately excluded from sitemap
 
     # 4. 404
-    (ROOT / "404.html").write_text(build_404(), encoding="utf-8")
+    (ROOT / "404.html").write_text(_cache_bust_images(build_404()), encoding="utf-8")
     print("[404]   404.html")
 
     # 5. Sitemap
