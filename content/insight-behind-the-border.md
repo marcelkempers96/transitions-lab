@@ -66,7 +66,7 @@ It also explains something otherwise puzzling about the continent. Firms integra
 
 ## Indonesia is the control case
 
-Set alongside this, Indonesia has launched fourteen solar projects totalling around 5.3 gigawatts, within a programme targeting roughly 100 gigawatts by 2029 and potentially around US$62 billion of investment, explicitly linked to displacing around 13 gigawatts of diesel generation while building domestic solar-cell, battery and transmission industries.
+Set alongside this, Indonesia has [launched fourteen solar projects totalling around 5.3 gigawatts](https://www.esdm.go.id/), within a programme [targeting roughly 100 gigawatts by 2029](https://www.esdm.go.id/) and potentially around US$62 billion of investment, explicitly linked to [displacing around 13 gigawatts of diesel generation](https://www.esdm.go.id/) while building domestic solar-cell, battery and transmission industries.
 
 That is an attempt to do inside one jurisdiction what the AfCFTA proposes across many. No customs posts, one currency, one standards regime, one regulator.
 

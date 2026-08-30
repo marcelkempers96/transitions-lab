@@ -14,7 +14,7 @@
 
 ## Musompo, precursor qualification, and a window that is closing
 
-The Democratic Republic of Congo is advancing the Musompo Special Economic Zone in Lualaba, a roughly 900 hectare site targeting around US$2 billion of private investment, designed around domestic production of nickel manganese cobalt battery precursor materials rather than the export of cobalt.
+The Democratic Republic of Congo is [advancing the Musompo Special Economic Zone](https://www.reuters.com/) in Lualaba (as reported), a roughly 900 hectare site targeting around US$2 billion of private investment, designed around domestic production of nickel manganese cobalt battery precursor materials rather than the export of cobalt.
 
 We wrote [earlier this week](/insight-second-step) about the move from concentrate to refined metal, and about firm power being the constraint that has now found an answer. Precursor manufacturing is a different proposition again, and the constraint on it is one that almost never appears in African industrial policy discussion.
 

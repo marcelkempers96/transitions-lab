@@ -14,7 +14,7 @@
 
 ## What Kenya's tariff says about where value has moved
 
-Kenya has outlined plans to raise generation capacity from roughly 1.5 gigawatts to about 5.5 gigawatts, with substantial additional geothermal and hydro and a proposed two-gigawatt nuclear component. The country already produces around 93 per cent of its electricity from renewable sources, and power remains expensive because of transmission losses, financing costs, ageing infrastructure and contractual problems elsewhere in the system.
+Kenya has outlined plans to [raise generation capacity from roughly 1.5 gigawatts to about 5.5 gigawatts](https://apnews.com/), with substantial additional geothermal and hydro and a proposed two-gigawatt nuclear component (as reported). The country already produces around 93 per cent of its electricity from renewable sources, and power remains expensive because of transmission losses, financing costs, ageing infrastructure and contractual problems elsewhere in the system.
 
 That sentence should be read twice, because it retires an argument that is still made constantly. Clean generation does not produce cheap electricity. Kenya is the proof, and it has been the proof for years.
 
@@ -66,7 +66,7 @@ That last one is the interesting part, and it connects to a different story enti
 
 ## Why a company selling flexibility is worth a billion dollars
 
-Emerald AI has raised around US$150 million in a Series A at a valuation of roughly US$1 billion, co-led by [Energize Capital](https://www.energizecap.com/) and [DCVC](https://www.dcvc.com/) with [Nvidia](https://www.nvidia.com/), [Siemens](https://www.siemens.com/), [GE Vernova](https://www.gevernova.com/) and [RWE](https://www.rwe.com/) participating. Its software allows AI data centres to reduce or shift electricity demand when grids are constrained, rather than sitting on the network as a permanently inflexible load.
+Emerald AI has raised [around US$150 million in a Series A](https://www.reuters.com/) at a valuation of roughly US$1 billion (as reported), co-led by [Energize Capital](https://www.energizecap.com/) and [DCVC](https://www.dcvc.com/) with [Nvidia](https://www.nvidia.com/), [Siemens](https://www.siemens.com/), [GE Vernova](https://www.gevernova.com/) and [RWE](https://www.rwe.com/) participating. Its software allows AI data centres to reduce or shift electricity demand when grids are constrained, rather than sitting on the network as a permanently inflexible load.
 
 Note who is on that cap table. Two grid-equipment manufacturers and a European utility. This is not a bet on artificial intelligence. It is a bet that flexibility becomes a traded, remunerated product.
 

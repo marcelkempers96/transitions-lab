@@ -14,7 +14,7 @@
 
 ## Industrial self-supply, the utility death spiral, and the difference between wheeling and islanding
 
-South Africa's largest miners are building their own electricity system. Anglo American's Envusa platform targets around three gigawatts by 2030. Sibanye expects renewables to cover roughly 64 per cent of its South African electricity requirement by 2028. Exxaro's existing 68 megawatt Grootegeluk solar plant has reportedly reduced its grid dependence by around 30 per cent.
+South Africa's largest miners are building their own electricity system. [Anglo American's Envusa platform](https://www.angloamerican.com/) targets around three gigawatts by 2030. [Sibanye](https://www.sibanyestillwater.com/) expects renewables to cover roughly 64 per cent of its South African electricity requirement by 2028. [Exxaro's](https://www.exxaro.com/) existing 68 megawatt Grootegeluk solar plant has reportedly reduced its grid dependence by around 30 per cent.
 
 Read on its own, this is a good news story about corporate decarbonisation and about private capital building generation that the state has struggled to finance. It is also the clearest illustration available anywhere of a dynamic that will shape emerging market electricity systems for the next two decades, and the mining sector is simply where it becomes impossible to ignore.
 
@@ -104,7 +104,7 @@ But it settles the wrong question. Nobody sensible opposes corporate renewable p
 
 ## Public money rebuilding what private money is exiting
 
-South Africa also signed two loan agreements worth around 405 million dollars with the [New Development Bank](/insight-behind-the-border) this week for domestic infrastructure.
+South Africa also signed two loan agreements worth [around 405 million dollars](https://www.ndb.int/press_release/) with the [New Development Bank](/insight-behind-the-border) this week for domestic infrastructure.
 
 Set that against the three gigawatts of private mining generation and the shape of the problem becomes visible. Public and concessional capital is being borrowed to maintain a system that the most creditworthy users are leaving, and the repayment will be recovered from a customer base with a declining share of the country's most valuable load.
 

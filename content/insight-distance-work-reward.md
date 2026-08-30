@@ -14,7 +14,7 @@
 
 Two climate ventures raised money this month in the same region, in the same week, with the same broad purpose. They have almost nothing else in common, and the difference between them is the most useful thing in the briefing.
 
-**Neocrete**, a New Zealand company, raised US$3.5m to commercialise an additive that lets lower-quality fly ash and volcanic ash replace roughly 30–50% of the cement in concrete. In Brunei the technology is slated for a deployment of around 65,000 cubic metres at the Muara Port redevelopment, which the company estimates could avoid on the order of 5,200 tonnes of CO₂ while also reducing material costs.
+**[Neocrete](https://www.neocrete.co.nz/)**, a New Zealand company, raised US$3.5m to commercialise an additive that lets lower-quality fly ash and volcanic ash replace roughly 30–50% of the cement in concrete. In Brunei the technology is slated for a deployment of around 65,000 cubic metres at the Muara Port redevelopment, which the company estimates could avoid on the order of 5,200 tonnes of CO₂ while also reducing material costs.
 
 **[Rize](https://www.rize.ag/)**, based in Singapore, closed a Series B in the region of US$31m backed by BNP Paribas Asset Management Alts, the Rockefeller Foundation, Temasek, and Breakthrough Energy Ventures among others. It works with farmers in Vietnam and Indonesia to introduce lower-methane rice-growing techniques, and builds traceability, carbon certification, and AI tools around the value chain.
 
@@ -50,7 +50,7 @@ Which produces a claim worth stating directly, because it inverts how the sector
 
 ## What the agronomy actually says, and why it is not the hard part
 
-The technique underlying most low-methane rice work is alternate wetting and drying (AWD): allowing a paddy's surface water to drop below the soil line for a period before reflooding, which interrupts the anaerobic conditions that methanogens require. The [International Rice Research Institute](https://www.irri.org/) has documented that AWD can cut methane emissions by roughly 30–70% without a yield penalty in most tested contexts, while reducing water use by around 30%. Rice cultivation accounts for something in the order of 10–12% of global anthropogenic methane emissions on standard inventory estimates, so the prize is large and the technique is not speculative.
+The technique underlying most low-methane rice work is alternate wetting and drying (AWD): allowing a paddy's surface water to drop below the soil line for a period before reflooding, which interrupts the anaerobic conditions that methanogens require. The [International Rice Research Institute](https://www.irri.org/) has documented that AWD can cut methane emissions by roughly 30–70% without a yield penalty in most tested contexts, while reducing water use by around 30%. Rice cultivation accounts for [something in the order of 10–12% of global anthropogenic methane emissions](https://www.fao.org/climate-change/our-work/what-we-do/methane/en/) on standard inventory estimates, so the prize is large and the technique is not speculative.
 
 There is one honest scientific caveat that gets skipped in venture materials. The more aerobic soil conditions that suppress methane also tend to increase nitrous oxide emissions from the same soil, so a genuine net-warming figure requires measuring both gases rather than the headline one. A lightweight MRV system that measures methane alone will systematically overstate the benefit, and it will do so in the direction that suits everyone being paid.
 

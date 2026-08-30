@@ -14,7 +14,7 @@
 
 ## Why the Social Climate Fund's hardest measurement problem is already known
 
-The European Commission has endorsed [Greece's €4.77 billion Social Climate Plan](https://ec.europa.eu/commission/presscorner/), directed at vulnerable households, transport users and micro-enterprises, covering building efficiency, clean heating and cooling, renewable energy integration and low and zero emission mobility, funded partly from carbon pricing revenues.
+The European Commission has endorsed [Greece's €4.77 billion Social Climate Plan](https://climate.ec.europa.eu/eu-action/climate-strategies-targets/social-climate-fund_en), directed at vulnerable households, transport users and micro-enterprises, covering building efficiency, clean heating and cooling, renewable energy integration and low and zero emission mobility, funded partly from carbon pricing revenues.
 
 This is the just transition moving from principle into several million individual interventions, and it is the largest natural experiment in distributional climate policy that Europe has ever run. It deserves to be evaluated properly, which means being clear in advance about what would count as success.
 

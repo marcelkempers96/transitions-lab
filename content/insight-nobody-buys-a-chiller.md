@@ -14,7 +14,7 @@
 
 ## Efficiency as a service, and the awkward thing at the centre of it
 
-Singapore's August Energy and India's Energeia have launched a US$100 million platform to finance energy-efficiency upgrades for commercial and industrial customers, covering cooling, heating, compressed air, motors, fuel switching and renewable systems, with customers avoiding upfront capital expenditure.
+Singapore's [August Energy](https://augustenergy.com/) and India's [Energeia](https://energeia.co.in/) have launched a US$100 million platform to finance energy-efficiency upgrades for commercial and industrial customers (as reported), covering cooling, heating, compressed air, motors, fuel switching and renewable systems, with customers avoiding upfront capital expenditure.
 
 The problem it addresses is one of the oldest and most stubborn in energy. Industrial efficiency projects routinely show paybacks of two to four years. They routinely do not happen. Engineers produce the calculation, management agrees it looks good, and the chiller is still there five years later.
 

@@ -8,7 +8,7 @@
 
 ## What travels with a capability
 
-Coal India, the largest coal producer in the world, is establishing its first overseas trading office in Singapore. The mandate reaches past coal into iron ore and strategic minerals. The state-owned company is reported to be evaluating bauxite opportunities in Ghana and elsewhere in Africa, lithium in Chile, and critical-mineral assets in Canada and Australia, as India works to reduce its dependence on Chinese supply chains.
+[Coal India](https://www.coalindia.in/), the largest coal producer in the world, is [establishing its first overseas trading office](https://www.reuters.com/) in Singapore (as reported). The mandate reaches past coal into iron ore and strategic minerals. The state-owned company is reported to be evaluating bauxite opportunities in Ghana and elsewhere in Africa, lithium in Chile, and critical-mineral assets in Canada and Australia, as India works to reduce its dependence on Chinese supply chains.
 
 The obvious reading is optimistic, and it is not wrong. Incumbents do not only obstruct transitions. Sometimes they carry them. Danish shipyards became the industrial base for offshore wind. Dutch dredging and offshore engineering firms, built on oil and gas and land reclamation, now install the foundations for wind farms in the North Sea. Norwegian subsea competence moved into offshore carbon storage. The capability that was assembled for the old regime turns out to be the fastest available route into the new one.
 

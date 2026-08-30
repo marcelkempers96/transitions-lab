@@ -14,7 +14,7 @@
 
 ## Electric mobility where the grid cannot be assumed
 
-In Lagos this year, some electric-vehicle dealerships and battery-swap stations kept their chargers running on petrol and diesel generators. Nigeria waived taxes on nearly four thousand electric vehicles in the first half of 2026, added VAT exemptions and zero import duties, and watched the vehicles arrive into an electricity system of roughly four thousand megawatts serving more than two hundred million people.
+In Lagos this year, some electric-vehicle dealerships and battery-swap stations kept their chargers running on petrol and diesel generators. Nigeria [waived taxes on nearly four thousand electric vehicles](https://www.reuters.com/) in the first half of 2026 (as reported), added VAT exemptions and zero import duties, and watched the vehicles arrive into an electricity system of roughly four thousand megawatts serving more than two hundred million people.
 
 The easy response is irony. Electric vehicles charged by diesel. A transition that is not a transition.
 
@@ -105,9 +105,9 @@ The generator behind the swap station, in other words, is the price of moving th
 
 ## The same question, asked at continental scale
 
-The International Energy Agency's 2026 Southeast Asia outlook is the same problem written with more zeros. Regional electricity demand is already growing at twice the rate of overall energy use. Electric-vehicle sales more than doubled in 2025 to roughly half a million, and the electric share of two- and three-wheeler sales could approach sixty per cent by 2035 under current policy.
+The International Energy Agency's [2026 Southeast Asia outlook](https://www.iea.org/reports/southeast-asia-energy-outlook-2024) is the same problem written with more zeros. Regional electricity demand is already growing at [twice the rate](https://www.iea.org/reports/southeast-asia-energy-outlook-2024) of overall energy use. Electric-vehicle sales [more than doubled in 2025](https://www.iea.org/reports/southeast-asia-energy-outlook-2024) to roughly half a million, and the electric share of two- and three-wheeler sales could approach sixty per cent by 2035 under current policy.
 
-The constraint is no longer generation. Transmission and distribution networks would need to more than double in length by 2050. Annual grid and storage investment needs to rise from around thirteen billion dollars to fifty billion, including an estimated twenty-seven billion dollars of ASEAN Power Grid interconnection by 2040. Regional clean-energy investment has climbed sixty per cent since 2015 to more than one hundred billion dollars in 2025, and the region still attracts around three per cent of global energy investment while holding about nine per cent of the world's population.
+The constraint is no longer generation. Transmission and distribution networks would need to more than double in length by 2050. Annual grid and storage investment needs to [rise from around thirteen billion dollars to fifty billion](https://www.iea.org/reports/southeast-asia-energy-outlook-2024), including an estimated twenty-seven billion dollars of ASEAN Power Grid interconnection by 2040. Regional clean-energy investment has [climbed sixty per cent since 2015](https://www.iea.org/reports/southeast-asia-energy-outlook-2024) to more than one hundred billion dollars in 2025, and the region still attracts around three per cent of global energy investment while holding about nine per cent of the world's population.
 
 Read through the ledger, that is a decision to place the burden on the state and the multilateral financier rather than on riders and operators. It is the more efficient allocation, because interconnection is a shared asset and generators are not. It is also the slower one, and the gap between the vehicles arriving and the network arriving is exactly where individual operators will be forced to hold volatility they did not budget for.
 
