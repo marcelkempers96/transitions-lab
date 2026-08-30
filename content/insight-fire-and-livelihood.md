@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">30 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="A butter-yellow title card marking The Fire Was Put Out by People Making a Living, on rural depopulation, fuel accumulation, and the difference between paying for a practice and keeping the person." class="diagram">
-<figcaption>The activity had two outputs. Only one had a market. When the market failed, the other went with it.</figcaption>
+<img src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="Line-art landscape: on the left, a shepherd with a flock of sheep, a farmer digging a bed of vegetables, and a coppicer at a stack of firewood beside a young tree, all at work in a broken-up countryside; on the right, an untended shrubland with a fire burning through it, flames and smoke rising from a continuous fuel bed." class="diagram">
+<figcaption>The people on the left produced lamb, vegetables and firewood. They also, incidentally, produced the gap on the ground that keeps the scene on the right from being a single run.</figcaption>
 </figure>
 
 

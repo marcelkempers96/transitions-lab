@@ -1392,7 +1392,7 @@ def build_home() -> str:
       </a>
       <a class="insight-card has-photo" href="/insight-ban-is-not-the-policy">
         <div class="card-photo">
-          <img src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="A butter-yellow title card marking The Ban Is Not the Policy, on Zimbabwe's lithium export restriction, Morocco's LFP plant at Kenitra, and the difference between a threat and an operating plant.">
+          <img src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="Line-art sequence: on the left a mine entrance with an ore cart of concentrate; then a shipping document stamped with a red no-export symbol, with a dashed arrow ending in a cross; then a refining plant under a warm sun; then a battery cell with piles of intermediate materials at its foot - the chain that a ban is meant to force into place.">
           <span class="kicker">Insight &middot; Industrial Policy</span>
         </div>
         <div class="body">
@@ -1403,7 +1403,7 @@ def build_home() -> str:
       </a>
       <a class="insight-card has-photo desktop-only" href="/insight-fire-and-livelihood">
         <div class="card-photo">
-          <img src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="A butter-yellow title card marking The Fire Was Put Out by People Making a Living, on rural depopulation, fuel accumulation, and the difference between paying for a practice and keeping the person.">
+          <img src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="Line-art landscape: on the left, a shepherd with a flock of sheep, a farmer digging a bed of vegetables, and a coppicer at a stack of firewood beside a young tree - people at work in the countryside; on the right, an untended shrubland burning, with flames and smoke rising from a continuous fuel bed.">
           <span class="kicker">Insight &middot; Rural Transition</span>
         </div>
         <div class="body">
@@ -1414,7 +1414,7 @@ def build_home() -> str:
       </a>
       <a class="insight-card has-photo desktop-only" href="/insight-recycled-is-a-promise">
         <div class="card-photo">
-          <img src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="A butter-yellow title card marking A Recycled Material Is a Promise, on the Akerlof lemons mechanism in secondary materials markets, and the institutions that would let a buyer pay a premium for quality they cannot see.">
+          <img src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="Line-art scene: on the left, a recycling symbol above a bin of mixed coloured pellets and shredded material; in the middle, a laboratory flask beside a clipboard with a green tick and a certification rosette overhead; on the right, a factory with rolls of finished product stacked at its entrance.">
           <span class="kicker">Insight &middot; Circular Economy</span>
         </div>
         <div class="body">
@@ -1425,7 +1425,7 @@ def build_home() -> str:
       </a>
       <a class="insight-card has-photo desktop-only" href="/insight-who-does-it-fail-for">
         <div class="card-photo">
-          <img src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="A butter-yellow title card marking Who Does It Fail For?, on average accuracy versus the distribution an institution actually experiences, and on evaluating a system on the people it was built to include.">
+          <img src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="Line-art diagram: on the left a microphone and a model panel emitting a voice waveform that then splits along a dashed fork; the upper path runs to a group of three figures, a green tick and a clean transcription; the lower path runs to a single figure of colour, an amber warning and a broken, uneven transcription.">
           <span class="kicker">Insight &middot; AI &amp; Public Services</span>
         </div>
         <div class="body">

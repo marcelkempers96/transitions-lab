@@ -49,7 +49,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 </div>
 
 <div class="article-list"><div class="article-item has-thumb" data-category="industrial-policy" data-geography="africa" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-ban-is-not-the-policy"><img class="article-thumb" src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="A butter-yellow title card marking The Ban Is Not the Policy, on Zimbabwe's lithium export restriction, Morocco's LFP plant at Kenitra, and the difference between a threat and an operating plant."></a>
+    <a class="article-thumb-link" href="/insight-ban-is-not-the-policy"><img class="article-thumb" src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="Line-art sequence: mine and ore cart, then a shipping document stamped with a no-export symbol and a crossed dashed arrow, then a refining plant, then a battery cell beside piles of intermediate material."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-ban-is-not-the-policy">The Ban Is Not the Policy</a>
       <div class="article-meta">30 August 2026</div>
@@ -57,7 +57,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">Zimbabwe stops lithium concentrate exports in January with one plant running. Whether that captures value depends on a detail nobody discusses.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-fire-and-livelihood"><img class="article-thumb" src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="A butter-yellow title card marking The Fire Was Put Out by People Making a Living, on rural depopulation, fuel accumulation, and the difference between paying for a practice and keeping the person."></a>
+    <a class="article-thumb-link" href="/insight-fire-and-livelihood"><img class="article-thumb" src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="Line-art landscape: shepherd and flock, farmer digging vegetables, coppicer at a stack of firewood beside a tree — and to the right, an untended shrubland burning."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-fire-and-livelihood">The Fire Was Put Out by People Making a Living</a>
       <div class="article-meta">30 August 2026</div>
@@ -65,7 +65,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">Fuel management was a by-product of farming, never a service anybody bought. Buying it directly costs far more and lasts only as long as the budget.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-recycled-is-a-promise"><img class="article-thumb" src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="A butter-yellow title card marking A Recycled Material Is a Promise, on the Akerlof lemons mechanism in secondary materials markets, and the institutions that would let a buyer pay a premium for quality they cannot see."></a>
+    <a class="article-thumb-link" href="/insight-recycled-is-a-promise"><img class="article-thumb" src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="Line-art scene: recycling symbol above a bin of mixed pellets, then a lab flask with a certification clipboard and a rosette, then a factory with rolls of finished product at its entrance."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-recycled-is-a-promise">A Recycled Material Is a Promise</a>
       <div class="article-meta">30 August 2026</div>
@@ -73,7 +73,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">None of the bottlenecks Europe found in 120 circularity projects is a recycling technology. They are all institutions for verifying a claim.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="ai-digital" data-geography="global" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-who-does-it-fail-for"><img class="article-thumb" src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="A butter-yellow title card marking Who Does It Fail For?, on average accuracy versus the distribution an institution actually experiences, and on evaluating a system on the people it was built to include."></a>
+    <a class="article-thumb-link" href="/insight-who-does-it-fail-for"><img class="article-thumb" src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="Line-art diagram: microphone and model emitting a voice waveform that forks — upper path to three figures, a tick and a clean transcription; lower path to a single figure, an amber warning and a broken transcription."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-who-does-it-fail-for">Who Does It Fail For?</a>
       <div class="article-meta">30 August 2026</div>

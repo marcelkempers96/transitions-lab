@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">30 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="A butter-yellow title card marking A Recycled Material Is a Promise, on the Akerlof lemons mechanism in secondary materials markets, and the institutions that would let a buyer pay a premium for quality they cannot see." class="diagram">
-<figcaption>The buyer cannot inspect the past of the material. What they are pricing is a promise.</figcaption>
+<img src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="Line-art scene: on the left, a recycling symbol above a bin of mixed coloured pellets and shredded material; in the middle, a laboratory flask beside a clipboard with a green tick and a certification rosette overhead; on the right, a factory with rolls of finished product stacked at its entrance." class="diagram">
+<figcaption>Everything on the left arrives as a mixture with no history. Whether the buyer on the right will pay for it depends on what the certification in the middle can actually stand behind.</figcaption>
 </figure>
 
 

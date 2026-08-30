@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">30 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="A butter-yellow title card marking The Ban Is Not the Policy, on Zimbabwe's lithium export restriction, Morocco's LFP plant at Kenitra, and the difference between a threat and an operating plant." class="diagram">
-<figcaption>An export ban is a threat. A ban paired with an open plant is an industrial policy. Zimbabwe has one instrument. Morocco is running the other.</figcaption>
+<img src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="Line-art sequence: on the left a mine entrance with an ore cart of concentrate; then a shipping document stamped with a red no-export symbol, with a dashed arrow ending in a cross; then a refining plant under a warm sun; then a battery cell with piles of intermediate materials at its foot." class="diagram">
+<figcaption>The ban stops the export. Whether the arrow across the middle actually reaches the refinery, and whether other people's ore can enter it, is the whole policy.</figcaption>
 </figure>
 
 

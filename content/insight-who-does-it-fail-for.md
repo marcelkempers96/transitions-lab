@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">30 August 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="A butter-yellow title card marking Who Does It Fail For?, on average accuracy versus the distribution an institution actually experiences, and on evaluating a system on the people it was built to include." class="diagram">
-<figcaption>An average sits well below the tail. The people in the tail are the ones the system was built for.</figcaption>
+<img src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="Line-art diagram: on the left a microphone and a model panel emitting a voice waveform that then splits along a dashed fork; the upper path runs to a group of three figures, a green tick and a clean transcription; the lower path runs to a single figure of colour, an amber warning and a broken, uneven transcription." class="diagram">
+<figcaption>The same model. The same waveform. Two very different experiences of it, and only the top one appears in the accuracy number.</figcaption>
 </figure>
 
 
