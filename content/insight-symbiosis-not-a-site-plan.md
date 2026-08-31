@@ -30,6 +30,11 @@ The term industrial symbiosis was coined to describe the network of by-product e
 
 Kalundborg was not planned. The exchanges [arose through private initiative rather than government planning](https://en.wikipedia.org/wiki/Kalundborg_Eco-industrial_Park), and developed over a period of about twenty years. Firms discovered, one bilateral deal at a time, that a neighbour's waste had value, usually because a manager knew another manager.
 
+<figure>
+<img src="/assets/img/insight-symbiosis-not-a-site-plan-bilateral-deal.jpg" alt="Horizontal line-art timeline titled one bilateral deal at a time. A ground line runs across the frame with five year marks: 1972, 1980, 1990, 2000, 2010. Above the line, industrial buildings appear progressively left to right: a power station with a cooling tower at the far left, then a refinery joining, then a pharmaceutical plant with a green cross, then a plasterboard works, then a fish farm and a district heating symbol at the far right. Each new building is connected to earlier ones by a single hand-drawn coloured pipe in coral, blue, green or butter, so the network of pipes visibly thickens from left to right. Footer: Kalundborg, Denmark. Nobody drew this in advance." class="diagram">
+<figcaption>The pipes on the right are the network. Each one arrived because one manager telephoned another, not because a plan required it.</figcaption>
+</figure>
+
 Chertow's 2007 assessment of what happened next is the sentence every industrial park programme should read. Since 1989, efforts to [replicate deliberately what was largely self-organising in Kalundborg](https://doi.org/10.1162/jiec.2007.1110) have followed many paths, some with much success and some with very little. The deliberate replication of an accreted system has a mixed record, and the mixed part is not usually a technical failure.
 
 The follow-on work with John Ehrenfeld on organising self-organising systems frames the problem honestly in its title. You are trying to design something whose defining property was that nobody designed it.
@@ -49,6 +54,11 @@ The engineering is the easy part. A pipe carrying waste heat between two plants 
 **Exposure to their quality control.** A by-product stream is not a specified product. Its composition varies with what the producing plant was doing that week, and the receiving plant absorbs that variance.
 
 **Shared liability and shared reputation.** Effluent, emissions and safety incidents in a connected system are harder to attribute, and the connection itself becomes a channel for regulatory and reputational risk.
+
+<figure>
+<img src="/assets/img/insight-symbiosis-not-a-site-plan-what-pipe-commits.jpg" alt="Line-art diagram of two factory buildings side by side, labelled supplier and receiver, joined by a single thick horizontal pipe carrying a small steam motif. Descending from the pipe, four short dashed lines each ending in a small circular icon and a serif label: a clock face labelled their shift pattern, a padlock labelled their survival, a beaker with uneven fill labelled their quality variance, and two overlapping speech marks labelled shared liability. To the right of the receiver building, a faint dashed outline of a supply lorry labelled fallback, if contracted, drawn much lighter than the rest." class="diagram">
+<figcaption>Four dashed obligations hang off one pipe. The pipe is the easy part; the obligations are what a factory manager has to underwrite before any of it moves.</figcaption>
+</figure>
 
 Read that list and the twenty years at Kalundborg stop looking like inefficiency. They look like the time it takes to build enough trust and enough operating history for a manager to accept those exposures.
 
@@ -81,6 +91,11 @@ Two consequences follow.
 **Attribution becomes genuinely difficult, and that is not a reason to avoid it.** If shared infrastructure works, the evidence is investments that would not otherwise have happened. That requires a counterfactual, and the honest version is comparing against similar sites without the shared investment rather than asserting the difference. It is the same problem as [any programme whose product is an enabling condition](/insight-benefits-nobody-looked-for), and it is answerable with the right design chosen at the start.
 
 **Sequencing determines whether it works at all.** Shared infrastructure sized for an industrial ecosystem that does not yet exist is a stranded asset. Sized for the anchor tenant alone, it forecloses the ecosystem. The judgement between those two is the whole design decision, and it is made once, early, usually with insufficient information.
+
+<figure>
+<img src="/assets/img/insight-symbiosis-not-a-site-plan-sized-once.jpg" alt="Chart titled Shared infrastructure is sized once. A single horizontal capacity bar running the width of the plot area, divided into three segments and labelled inside each: a large cobalt anchor tenant demand segment, a medium butter headroom for later entrants segment, and a smaller coral smaller firms segment at the right. Above the bar, two nested brackets with serif labels: one spanning only the cobalt segment reading sized here: the ecosystem never forms, and one spanning the whole bar reading sized here: stranded until it does. Footer: Schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>Two brackets, one bar. Either bracket names a real failure mode, and the choice is a single sizing decision made early.</figcaption>
+</figure>
 
 The inclusion of smaller firms in the priorities is the part most likely to be quietly dropped. Shared infrastructure is easiest to justify on the anchor's demand, and access terms for smaller users tend to be settled after the anchor's contract is signed, at which point the anchor has no reason to accept anything that raises its own cost. This is the [third party access question](/insight-ban-is-not-the-policy) arriving in an industrial zone, and the answer has the same shape: published terms, decided before commitment, or it will not happen.
 
