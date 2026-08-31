@@ -30,6 +30,11 @@ That matters for evaluation in a specific way. If the route already carried the 
 
 The JRC's own [consolidated assessment](https://publications.jrc.ec.europa.eu/repository/bitstream/JRC142789/JRC142789_01.pdf) contains a related and easily missed observation. Along the corridors, lower-performing areas are found on the core infrastructure lines themselves, including the Abidjan to Bouaké stretch, while the high performance concentrates in the large agglomerations. Being on the corridor is not the same as benefiting from it. Much of the value pools at the ends.
 
+<figure>
+<img src="/assets/img/insight-twenty-kilometres-off-value-pools.jpg" alt="Chart titled Performance pools at the ends, not along the line. Horizontal axis labelled position along corridor, with Abidjan at the left, midpoint in the centre, Ouagadougou at the right. Vertical axis labelled relative performance. A cobalt line runs high at both endpoints and dips across the middle third of the axis. The dip region is shaded lightly in coral and annotated with a small callout: lower-performing cells on the core infrastructure line. Footer: Schematic, after the JRC CUSA consolidated assessment. Transitions Lab, 2026." class="diagram">
+<figcaption>Two ends and a middle. The middle is where the road runs and where the value does not accumulate.</figcaption>
+</figure>
+
 ---
 
 ## The mechanism nobody measures
@@ -40,9 +45,19 @@ Transport infrastructure lowers the cost of reaching a market from the places it
 
 Before the upgrade, both faced a bad road and competed on roughly equal terms. After it, one of them has a structural cost advantage on the same product in the same market. Nothing was taken from the second trader. Their costs are unchanged. Their competitive position is worse.
 
+<figure>
+<img src="/assets/img/insight-twenty-kilometres-off-distance-from-road.jpg" alt="Line-art map schematic. A thick paved road runs the width of the frame with a lorry on it. Directly on the road, two small market towns drawn as clusters of houses with a coral shopfront and thriving market stall each. Above each town, a short dashed coral arrow labelled to market. Below the road, connected by a thin dashed hand-drawn track, a small village at a measured 20 km distance, drawn in sky-blue with an empty market stall. A long dashed blue arrow curves upward from that village labelled to market, ending well beyond the frame." class="diagram">
+<figcaption>Two towns on the road, one village off it. The distance nobody records is the one that changes the price.</figcaption>
+</figure>
+
 **A corridor redistributes market access before it creates it, and the losers experience no measurable event.** No road was closed. No price was raised. Their margin simply erodes as somebody else's falls, and there is no line in any monitoring framework where that appears.
 
 This is the standard result in economic geography rather than a novel claim, and it has a second-order effect that matters more. Lower transport costs also make it cheaper for goods to flow *into* the region from the capital or the port. A local producer of a tradeable good who was previously protected by the cost of reaching them now faces competition from a larger, cheaper producer at the other end of the improved road. Corridors expand markets in both directions, and the direction that gets modelled is usually the export one.
+
+<figure>
+<img src="/assets/img/insight-twenty-kilometres-off-both-directions.jpg" alt="Line-art diagram of a corridor with a port and cranes on the left and an inland capital city with a domed government building on the right. A thick coral arrow running left to right across the top labelled what the region sells, reaching the market cheaper. A thick cobalt arrow running right to left across the bottom labelled what the capital makes, reaching the region cheaper. Midway between the two ends, a small green workshop drawn in forest colour with a question mark above it and a thin serif label the domestic producer of the same good." class="diagram">
+<figcaption>Corridors run in two directions. The direction the model shows is the coral one. The direction the local producer feels is the cobalt one.</figcaption>
+</figure>
 
 Whether the net effect on a given place is positive is an empirical question with a genuinely uncertain answer. It depends on what that place produces, whether it is a net seller or buyer of tradeables, whether its producers can scale, and whether anybody there has the working capital to take advantage of a market that has just become reachable. None of that is knowable from a gravity model.
 

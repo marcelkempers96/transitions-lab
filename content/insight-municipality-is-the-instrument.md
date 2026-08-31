@@ -16,6 +16,11 @@
 
 The [European Environment Agency](https://www.eea.europa.eu/en/analysis/publications/climate-resilience-in-smaller-communities) has published a briefing on climate resilience in Europe's small municipalities, and it contains one comparison that should reframe how adaptation funding is designed. Only [16 per cent of small municipalities have adaptation action plans, against 28 per cent of larger ones](https://www.eea.europa.eu/en/newsroom/news/extreme-weather-and-uneven-climate-adaptation-challenge-europes-resilience), in a Union where [over 40 per cent of the population lives in municipalities of fewer than 20,000 inhabitants](https://www.eea.europa.eu/en/analysis/publications/climate-resilience-in-smaller-communities), including suburbs, towns and rural areas.
 
+<figure>
+<img src="/assets/img/insight-municipality-is-the-instrument-plan-gap.jpg" alt="Bar chart titled Small municipalities are half as likely to have an adaptation plan. Vertical axis 0 to 40 per cent. Two vertical bars. Left coral bar labelled Small municipalities reaches 16 per cent, value printed above. Right cobalt bar labelled Larger municipalities reaches 28 per cent, value printed above. To the right of the two bars, set apart, a butter-yellow horizontal chip labelled Share of EU population living in municipalities under 20,000 people, reads 40 per cent plus. Footer: European Environment Agency, Small but mighty, June 2026." class="diagram">
+<figcaption>Half the plans, more than double the exposure. The chip on the right is the population the shorter bar has to serve.</figcaption>
+</figure>
+
 The briefing is careful to lead with what small municipalities achieve rather than what they lack, and it is right to. [Ober-Grafendorf in Austria, Kajárpéc in Hungary and Samsø in Denmark](https://www.eea.europa.eu/en/newsroom/news/extreme-weather-and-uneven-climate-adaptation-challenge-europes-resilience) are offered as cases where very small communities have delivered meaningful resilience. The constraints it then names are financial and human capacity, access to knowledge networks, expertise and data, and responsibilities that are missing or unclear.
 
 The academic picture agrees and is blunter about how thin the evidence is. A [systematic review of adaptation in small and medium-sized municipalities](https://doi.org/10.1007/s10668-023-02999-3) found 115 initiatives in the peer-reviewed literature between 2015 and 2021, and concluded that understanding of the specific barriers these administrations face remains limited, because the scholarship has concentrated on large cities.
@@ -33,6 +38,11 @@ Jeffrey Pressman and Aaron Wildavsky's [*Implementation*](https://www.ucpress.ed
 Now apply that to a flood resilience project in a municipality of four thousand people.
 
 The clearance points are largely fixed by law and procedure, and they do not scale with population. A risk assessment. A council decision. A funding application, usually competitive. Procurement above threshold, which means a tender, an evaluation panel, a standstill period and possibly a challenge. Planning permission. Environmental screening. Landowner agreement. A construction contract. Supervision. Commissioning. A maintenance regime and a budget line to fund it for twenty years.
+
+<figure>
+<img src="/assets/img/insight-municipality-is-the-instrument-clearance-points.jpg" alt="Line-art diagram. On the left, a large classical city hall with a flag on top and multiple staff at desks visible through the windows. On the right, a much smaller village hall with only one figure at a single desk visible. Above each building, an identical vertical stack of ten pastel document icons in different accent colours, each labelled: risk assessment, council decision, funding bid, tender, evaluation, standstill, planning, environmental screening, landowner consent, maintenance contract. A dashed arrow drops from the base of the right-hand stack down to the single figure below." class="diagram">
+<figcaption>The two stacks are identical. The staff underneath them are not, and that is the whole mechanism.</figcaption>
+</figure>
 
 A city of four hundred thousand faces the same list with a legal department, a procurement team, an in-house engineer, a grants officer and a climate unit. A municipality of four thousand faces it with a clerk, a part-time technical officer and a mayor who has another job.
 
