@@ -42,6 +42,11 @@ There is a well developed literature on what happens to an intervention between 
 
 None of this is a criticism of demonstration projects, which do exactly what they were designed to do. They establish that a practice can work under favourable conditions with competent support. That is necessary information and it is not adoption evidence, and treating one as the other is the error that produces a scaled programme with disappointing uptake and no explanation for it.
 
+<figure>
+<img src="/assets/img/insight-enough-demonstrations-voltage-drop.jpg" alt="Bar chart titled From pilot to programme, the voltage drop. Vertical axis is Adoption rate as a percentage from zero to one hundred. Left bar in cobalt reaches eighty-five per cent, labelled demonstration site, value printed above. Right bar in coral reaches twenty-five per cent, labelled at scale three years later, value printed above. A dashed grey arc runs from the top of the left bar down to the top of the right bar, labelled the drop. To the right of the chart, a small annotation list heads What changes at scale: participant selection, implementer selection, support intensity, duration, general equilibrium. Footer: Schematic, after the adoption literature. Positions illustrative." class="diagram">
+<figcaption>The drop is not a failure of the practice. It is the difference between the volunteer and the median farm, held over enough years for a bad season.</figcaption>
+</figure>
+
 ---
 
 ## Europe is about to rediscover a literature it already has

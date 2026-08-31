@@ -70,16 +70,10 @@ What actually happens after such a retrofit is that the household heats the whol
 
 It is not a bill reduction. And a fund that was justified partly on the grounds of protecting vulnerable households from rising heating costs will have delivered comfort where it promised affordability, and will report a savings figure that was never going to materialise.
 
-<div class="callout c-butter">
-  <span class="kicker">Where the benefit of a retrofit actually lands</span>
-  <p>Three bars, schematic, following the pattern established by Sunikka-Blank and Galvin (2012).</p>
-  <ul>
-    <li><strong>Calculated, before retrofit.</strong> A tall outline showing what the energy performance rating predicts the household should be consuming to hold the whole house at a standard temperature.</li>
-    <li><strong>Actual, before retrofit.</strong> A far shorter bar showing what the household actually consumes, because it cannot afford to hold the whole house at that temperature and does not.</li>
-    <li><strong>Actual, after retrofit.</strong> A bar shorter still than the previous actual, but only slightly. Most of the improvement arrives as warmth rather than as money.</li>
-  </ul>
-  <p>The gap between the first bar and the second is energy the household was never using. The projected saving is measured from a level the household never reached.</p>
-</div>
+<figure>
+<img src="/assets/img/insight-warm-house-not-cheaper-prebound-gap.jpg" alt="Bar chart titled A retrofit cannot save energy that was never being used. Vertical axis is an energy index from zero to one hundred. Three bars. On the left, a dashed sky-blue outline bar reaching one hundred labelled calculated energy performance rating, pre-retrofit. In the middle, a solid coral bar reaching sixty labelled actual consumption, pre-retrofit, with a dashed grey arc from the top of the first bar down to its top labelled the prebound gap, energy the household was never using. On the right, a solid coral bar reaching fifty-four labelled actual consumption, post-retrofit, with a short coral arrow from the middle bar labelled the saving actually realised and a note the rest arrives as warmth, not as money. Footer: Schematic after Sunikka-Blank and Galvin, 2012." class="diagram">
+<figcaption>The saving is the short coral arrow. Most of the gap the funding was justified against was energy the household could never afford to use.</figcaption>
+</figure>
 
 ---
 
@@ -106,6 +100,11 @@ A meaningful share of Greek households rent, and the rental stock is disproporti
 **Value capture through rent.** Where the landlord does act, the improvement is capitalised into the rent. The tenant may end up paying more in total, with a warmer home and less money, and the programme records a completed renovation.
 
 **Tenure churn.** A tenant who moves before or shortly after the work receives nothing at all, and the benefit accrues entirely to the owner and the next occupant, who may not be vulnerable.
+
+<figure>
+<img src="/assets/img/insight-warm-house-not-cheaper-tenant-exposure.jpg" alt="Line-art cross-section of a terraced house, with a bedroom on the upper floor and a living room on the ground floor visible through cut-away walls. Three arrows point down at the house from above with coloured labels: coral split incentive, butter value capture through rent, sky tenure churn. To the right of the house, a small figure walks away pulling a wheeled suitcase, following a dashed arrow leaving the frame. Footer: Every arrow above is an invisible failure that a completion-count records as a success." class="diagram">
+<figcaption>The three arrows above the house are risks the household never sees separately. The figure walking off the frame is the one the programme records last.</figcaption>
+</figure>
 
 A programme that measures renovations completed will score all three of these as successes. A programme that measures whether vulnerable households became better off will score two of them as failures, and would have known to design against them.
 

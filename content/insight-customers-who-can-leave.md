@@ -83,6 +83,11 @@ A corporate renewable project can be built in two fundamentally different ways.
 
 **Islanded.** Generation sits at or near the load, connected behind the meter, with the grid used only as backup or not at all. Nothing is contributed to network costs, and the utility loses both the energy sale and the network charge.
 
+<figure>
+<img src="/assets/img/insight-customers-who-can-leave-wheeled-vs-islanded.jpg" alt="Line-art diagram titled Wheeled versus islanded. On the far left, a coral solar array with a sun labelled Wheeled, sits somewhere else, uses the network, pays use-of-system, with a solid coral arrow running into the national transmission grid drawn as three pylons and cables in the centre. On the far right, a cobalt solar array next to a small factory building labelled Islanded, sits at the load, no network use, no payment, connected to the grid only by a thin dashed cobalt arrow. Footer text at the bottom of the frame: The regulator's job is the difference between the two." class="diagram">
+<figcaption>Both look like solar. The tariff schedule decides which one the company builds, and the utility either keeps a paying customer or loses one entirely.</figcaption>
+</figure>
+
 These two look similar in a press release and are opposite in their effect on the system. Wheeling keeps the fixed cost base spread across the large users. Islanding removes them from it entirely.
 
 Which one a company chooses is not a matter of corporate values. It is decided almost entirely by two tariff parameters: the use of system charge levied on wheeled power, and the standby or capacity charge levied on a self supplier that still wants the grid available when the sun is not shining.
