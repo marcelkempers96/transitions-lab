@@ -40,6 +40,11 @@ The consequence is a trap with a specific shape. A ban is meant to force investm
 
 An announcement made in a strong market and enforced in a weak one requires more institutional commitment than most governments possess, and the ones that have succeeded, Indonesia most prominently, did so by holding the line through several years of complaint and by staging the restriction over roughly six years rather than announcing it once.
 
+<figure>
+<img src="/assets/img/insight-ban-is-not-the-policy-credibility-gap.jpg" alt="A schematic chart with two overlaid series against a horizontal axis running 2022 to 2028. A coral line shows an index of the lithium price rising steeply from 100 in 2022 to a peak near 360 in early 2023, collapsing to 60 by 2024 and sitting flat around 65 through 2026 to 2028. A cobalt step-line labelled Government position sits low until mid-2024, steps up at the March 2024 refinery-plan mandate, drops at the policy-softened marker in 2025, then steps up again at the January 2027 export-ban announcement. A vertical dotted line at 2027 marks the date the ban is meant to bite." class="diagram">
+<figcaption>The step up in 2027 sits on the flat part of the price line. The mandate that was softened sat on the collapse.</figcaption>
+</figure>
+
 ---
 
 ## The third party access problem, which is the more serious one
@@ -51,6 +56,11 @@ If the operating lithium sulphate plant is captive to its owner's mine and canno
 Follow it through for a mid-sized Zimbabwean producer with no plant of its own. It may not export concentrate. The only domestic buyer of its concentrate is a plant owned by a competitor, which has no obligation to take the material and every reason to price it at whatever the producer's alternative is worth, which is now nothing.
 
 The value does not move from a foreign refiner to Zimbabwe. It moves from smaller Zimbabwean-operating miners to the two large Chinese owned integrated operators. That is a redistribution among producers inside the country, not a capture of value for the country, and the fiscal position may barely change.
+
+<figure>
+<img src="/assets/img/insight-ban-is-not-the-policy-whose-ore.jpg" alt="Line-art diagram titled Whose ore reaches the plant? A single lithium sulphate plant on the right, drawn as a small industrial building with three reactor tanks and a chimney. Two solid coral arrows enter it from the left labelled Owner's mine and Owner's second mine. Three dashed cobalt arrows rise from three third-party mines at the bottom of the frame toward a red closed-barrier gate that sits between them and the plant, and none of the three arrows crosses it." class="diagram">
+<figcaption>Two arrows in, three arrows stopped at the gate. Which of those two rows describes the plant on the day the ban lands is the entire policy.</figcaption>
+</figure>
 
 **Tolling access is therefore not a technical footnote. It is the difference between an industrial policy and a transfer.** A restriction paired with a regulated obligation for processing plants to accept third party material at published, non-discriminatory terms is a fundamentally different instrument from a restriction alone, and it is the version that has a chance of building a supplier base rather than concentrating one.
 

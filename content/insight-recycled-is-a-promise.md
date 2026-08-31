@@ -32,6 +32,11 @@ Almost none of that is verifiable by inspection, and the properties that matter 
 
 George Akerlof described what happens to a market in that condition. In conditions of [quality uncertainty](https://doi.org/10.2307/1879431) where the buyer cannot distinguish good from bad, the buyer rationally pays no more than the expected value across the distribution of quality on offer. Sellers whose material is genuinely better than average cannot obtain a price that reflects it, so they withdraw, downgrade, or sell into applications where the difference does not matter. What remains in the market is material worth roughly the average price, and the average falls.
 
+<figure>
+<img src="/assets/img/insight-recycled-is-a-promise-akerlof-price.jpg" alt="A schematic chart titled One price, whatever the quality was. Horizontal axis labelled Quality of batch, poor to excellent. Vertical axis labelled Willingness to pay per tonne. A tall coral bell curve spans the axis. A single horizontal cobalt line runs across the plot at roughly the mean of the coral curve, labelled the price a buyer will pay when they cannot tell batches apart. To the right of the mean, the area under the coral curve above the cobalt line is hatched out and labelled good batches that leave the market. Footer: Schematic, after Akerlof, 1970." class="diagram">
+<figcaption>The hatched area is the material worth more than the buyer will pay. Its producer either subsidises the average or exits, and the average falls.</figcaption>
+</figure>
+
 Now put that next to the thing everyone in the sector complains about.
 
 **Downcycling is usually presented as a technical limitation: polymer chains shorten, fibres get shorter, alloys accumulate tramp elements. All true. But a substantial part of downcycling is the [Akerlof mechanism](https://doi.org/10.2307/1879431) operating in a materials market.** Good recyclate ends up in park benches and drainage pipe not only because its properties have degraded, but because there is no way for its producer to prove they have not degraded enough to matter, and therefore no way to be paid for the difference.

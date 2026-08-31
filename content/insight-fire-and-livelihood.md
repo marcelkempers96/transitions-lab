@@ -16,6 +16,11 @@
 
 As of 26 August 2026, [634,022 hectares](https://joint-research-centre.ec.europa.eu/scientific-activities/natural-and-man-made-hazards/forest-fires/current-wildfire-situation-europe_en) had burned across the European Union. That is below the 984,559 hectares recorded by the same date in 2025, the worst year on record, and roughly [double the 2006 to 2025 average](https://joint-research-centre.ec.europa.eu/scientific-activities/natural-and-man-made-hazards/forest-fires/current-wildfire-situation-europe_en) of 313,246 hectares.
 
+<figure>
+<img src="/assets/img/insight-fire-and-livelihood-burnt-area.jpg" alt="Vertical bar chart of European burnt area in thousand hectares, from 2006 to 2026. Bars from 2006 to 2021 sit in muted grey between roughly 200 and 480. The 2022, 2023, 2025 and 2026 bars are picked out in coral with values labelled 800, 504, 985 and 634. A dashed cobalt horizontal line runs across the chart at 313 labelled 2006-2025 twenty-year average. Footer: European Commission JRC / EFFIS, EU-27 total, as at 26 August 2026." class="diagram">
+<figcaption>Two of the last four years are catastrophic. The average line was drawn from a series that already includes them.</figcaption>
+</figure>
+
 Both halves of that sentence matter. This is not the worst year, and it is twice a twenty year average that already includes several catastrophic seasons. The distribution has moved, and the tail has moved further than the mean.
 
 The national figures show where. By early August, Spain accounted for around [38 per cent of the EU total](https://www.euronews.com/business/2026/08/13/wildfires-in-europe-is-2026-already-the-worst-year-on-record), more than double its own fourteen year average for the date, while France had burned [more than three times its average](https://www.euronews.com/business/2026/08/13/wildfires-in-europe-is-2026-already-the-worst-year-on-record), the worst year since 2012. A fire beginning near Saumos in the Gironde burned about [42,000 hectares](https://www.breakthroughjournal.org/p/climate-change-alone-doesnt-explain) within five days and forced roughly 220,000 evacuations.
@@ -29,6 +34,11 @@ That framing is correct and it is usually left at the level of an observation. I
 ## The forest is growing, and that is part of the problem
 
 The structural change is measurable. European forest area has [increased by around 11 per cent since 1990](https://www.breakthroughjournal.org/p/climate-change-alone-doesnt-explain), while total cropland and grassland declined over the same period. Some of that is deliberate afforestation. A great deal of it, particularly around the Mediterranean, is [abandoned agricultural land](https://www.breakthroughjournal.org/p/climate-change-alone-doesnt-explain) undergoing natural regeneration into forest, shrubland and other woody vegetation.
+
+<figure>
+<img src="/assets/img/insight-fire-and-livelihood-land-use.jpg" alt="Two side-by-side vertical stacked bars, each 100 per cent tall, labelled 1990 and 2025. Segments in each bar: forest in dark green, cropland in butter yellow, grassland in sky blue. In 1990 the shares are forest 34 per cent, cropland 36 per cent, grassland 30 per cent; in 2025 the shares are forest 45 per cent, cropland 31 per cent, grassland 24 per cent. Coloured horizontal arrows between the two bars annotate the per-segment change: forest plus 11 per cent, cropland minus 5 per cent, grassland minus 6 per cent." class="diagram">
+<figcaption>The composition changed underneath the fires. What replaced the grazed pasture and the cultivated field is what carries the flame.</figcaption>
+</figure>
 
 The consequence is fuel accumulation across formerly managed landscapes, and more importantly fuel continuity. A grazed pasture, an orchard or a cultivated field [interrupts a fire](https://www.breakthroughjournal.org/p/climate-change-alone-doesnt-explain). A continuous shrubland does not. The difference between a landscape that burns in patches and one that burns in a single run is not the total quantity of vegetation but whether it is broken up.
 
