@@ -31,6 +31,11 @@ It says nothing about who decides what the interface is, how it changes, who is 
 
 The history of technical standards is largely a history of this distinction being learned the hard way. A specification controlled by a single firm is open in the sense that others may use it, and closed in the sense that they cannot influence it. Both statements are true simultaneously, and which one matters depends entirely on whether the standard-holder's interests stay aligned with yours.
 
+<figure>
+<img src="/assets/img/insight-who-holds-the-pen-standards.jpg" alt="Two stacked panels titled Standards decide who competes with whom. Upper panel labelled Closed standard in coral: a single swap station in the centre with a battery next to it, and a red closed-gate icon at each end of the frame with dashed coral lines running to them. Lower panel labelled Open standard in cobalt: three swap operators drawn as small stations of different accent colours sitting on a shared horizontal rail, each tapped into a shared battery-pack outline drawn in dashed lines beneath the rail. Footer: Who writes the specification decides who gets to compete." class="diagram">
+<figcaption>The upper panel is one operator inside two closed gates. The lower panel is three operators on the same rail. The difference is who wrote the specification, not what the batteries look like.</figcaption>
+</figure>
+
 ---
 
 ## What the commons literature already knows about this

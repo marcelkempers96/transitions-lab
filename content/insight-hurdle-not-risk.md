@@ -29,6 +29,11 @@ Two other numbers complicate that story considerably.
 
 **Infrastructure allocation is far below what regulation permits, and it is falling.** Pension investment in infrastructure funds stood at ₦224.23bn in March 2026, down 25.26% in a single month, against a total asset base of ₦29.5 trillion. That is under 1%. Allocations to infrastructure and other alternatives remain [below 5%](https://www.cnbcafrica.com/media/7782906015273/will-nigeria-sustain-pension-asset-growth-momentum-in-h226) despite significantly higher regulatory limits.
 
+<figure>
+<img src="/assets/img/insight-hurdle-not-risk-pension-donut.jpg" alt="Donut chart titled Nigerian pension fund allocation, March 2026, with ₦29.5tn total printed in the centre. Five segments labelled with their share: cobalt Federal government bonds at 43 per cent (largest), butter domestic equities at 25 per cent, sky money market at 15 per cent, plum corporate bonds at 16 per cent, and a small coral segment for infrastructure funds at 1 per cent. A coral callout box points at the tiny coral segment and reads below the regulatory ceiling of 5 per cent. Footer: ₦29.5 trillion total, PenCom data." class="diagram">
+<figcaption>Four segments compete for the bulk of the pool. The one segment that would fund the shortfall the country most needs is the sliver.</figcaption>
+</figure>
+
 **Meanwhile, the same funds took on substantially more risk elsewhere.** Pension fund administrators increased holdings of domestic ordinary shares from ₦3.96 trillion at the end of 2025 to ₦5.46 trillion by March 2026, a [38% rise in a quarter](https://newtelegraphng.com/pencoms-capital-market-push-n31-32tn-pension-assets-could-transform-investment-landscape/).
 
 Read those together. These are not funds incapable of taking risk, nor funds prevented from taking risk by a regulatory cap. They are funds actively increasing exposure to Nigerian corporate equity, a volatile asset class, at speed, while simultaneously reducing an infrastructure allocation that sits at a small fraction of the permitted ceiling.
