@@ -26,6 +26,11 @@ No one designs the reporting loop. It assembles itself out of reasonable decisio
 
 A funder cannot personally observe every project it backs, so it asks grantees to report. Reporting is expensive for a grantee, so the funder standardises it into indicators. The indicators become the terms on which the next grant is judged, so the grantee, rationally, manages toward the indicators. And because the grantee both defines much of what is measured and writes the account of it, the report drifts, gently, honestly, toward the version of events that supports renewal.
 
+<figure>
+<img src="/assets/img/insight-the-reporting-loop-loop.jpg" alt="Circular diagram titled The reporting loop. Five boxes arranged around a ring and connected by cobalt arrows running clockwise: fund at the top, grant at the upper right, report at the lower right, citation at the lower left, next fund at the upper left, closing the ring back to fund. In the middle of the loop a small grey figure of a person stands with a caption beneath reading the person the report was about, unconnected to any of the arrows. Footer: A citation loop is not a feedback loop." class="diagram">
+<figcaption>The five arrows connect five parties to the same account. The figure in the middle is what the account was for and is not on the ring.</figcaption>
+</figure>
+
 Add the emotional reality and the drift gets stronger. The people writing these reports believe in their work, often rightly. They have watched it help someone. When they round a participation figure up, or describe a mixed result in its best light, they are not lying; they are advocating for something they have seen do good. Advocacy and assessment are different activities, and the reporting loop asks one person to do both at once, for an audience holding their funding.
 
 The result is not fraud. It is something harder to correct than fraud: a whole sector's evidence base tilted a few degrees toward optimism, everywhere, all the time, by people doing their sincere best.

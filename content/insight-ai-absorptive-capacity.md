@@ -20,6 +20,11 @@ Nvidia took a [minority stake in Cloverleaf Infrastructure](https://www.reuters.
 
 Separately, a peer-reviewed study in [*npj Climate Action*](https://www.nature.com/npjclimataction/) modelled artificial intelligence not as an electricity consumer but as a productivity amplifier operating across the whole energy economy. Under its scenarios, productivity improvements in fossil-fuel extraction can outweigh AI-enabled efficiency gains in renewables, [raising annual emissions by an estimated 0.47 to 1.8 gigatonnes](https://www.nature.com/npjclimataction/) of carbon dioxide. For AI to deliver a net reduction, the model finds that renewable-sector productivity improvements would need to be roughly four to five times greater than fossil-sector improvements.
 
+<figure>
+<img src="/assets/img/insight-ai-absorptive-capacity-both-directions.jpg" alt="Horizontal bar chart titled AI-enabled productivity, both directions. A shared vertical zero line runs down the middle. A small cobalt bar extends left from the zero line labelled renewables productivity gains. A much larger coral bar extends right from the zero line labelled fossil-extraction productivity, plus 0.47 to 1.8 gigatonnes of carbon dioxide per year. Beneath the bars an annotation reads for net reduction, renewable-sector improvements need to be four to five times larger than the fossil-sector gains they compete with. Footer: After npj Climate Action, 2026." class="diagram">
+<figcaption>Both bars move. The coral one is bigger, and the annotation names the ratio the clean side must run to stand still.</figcaption>
+</figure>
+
 Almost all public discussion of AI and climate is a metering exercise. Terawatt hours per data centre, power usage effectiveness, water withdrawal, the carbon intensity of the grid at the point of connection. These are measurable, which is most of why they are measured.
 
 They are also the wrong denominator. The question is not how much energy AI consumes. It is which systems AI makes more productive, and the answer to that is not determined by policy intention. It is determined by which sectors are structurally ready to absorb it.

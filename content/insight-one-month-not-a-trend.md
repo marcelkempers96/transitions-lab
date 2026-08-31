@@ -14,6 +14,11 @@
 
 Southeast Asian startup funding [as reported by regional deal trackers](https://www.dealstreetasia.com/) fell roughly 84% from June to July 2026, to around US$698m on the numbers most widely quoted. Climate-oriented companies kept raising through the same period. The 84% is quoted here as it appeared in the reporting under discussion, not as an audited figure — that is part of the point of the piece.
 
+<figure>
+<img src="/assets/img/insight-one-month-not-a-trend-twelve-months.jpg" alt="Bar chart titled Twelve months, not one. Vertical axis monthly investment flow as an index from zero to two hundred. Twelve monthly bars from January to December, most in coral hovering between 90 and 120, with a single cobalt bar for August reaching 180 with a small annotation reading reported +84% jump pointing at it. A grey trend line runs across the chart at a gentle upward slope. Footer: A single month is a data point. Twelve months is a signal." class="diagram">
+<figcaption>Eleven months land on the trend line. The twelfth is what gets written about. Both are the same series.</figcaption>
+</figure>
+
 The reading being circulated is that capital has become selective and infrastructure-minded, favouring businesses attached to physical demand over lightly differentiated consumer software. That may well be true. It is not what this number shows, and the gap between the two is worth a few minutes because the same reasoning error turns up constantly in impact claims.
 
 ---

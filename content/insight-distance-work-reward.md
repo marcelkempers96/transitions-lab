@@ -98,6 +98,11 @@ It is an argument about what to fund alongside it, and what to require as eviden
 
 ## The general point
 
+<figure>
+<img src="/assets/img/insight-distance-work-reward-where-work-is.jpg" alt="Line-art diagram titled Where the work is, where the money is. On the left, a small figure in a conical hat bends over a rice paddy, coloured coral, with palm trees behind. On the right, a cobalt office desk and chair with a computer monitor and a small plant. A long dashed grey arrow runs from the paddy across the whole frame to the desk, labelled in the middle four years, three intermediaries, one MRV report. Footer: The person doing the work carries the risk. The person receiving the credit does not know their name." class="diagram">
+<figcaption>The distance is what the verification apparatus is paid to bridge. Neither end can see the other without it, and neither knows what the other is being asked to bear.</figcaption>
+</figure>
+
 The sector tends to treat verification infrastructure as a technical achievement, and to celebrate its sophistication. It is more useful to read it as a diagnostic reading of the underlying deal. Elaborate MRV means the benefit and the burden have been separated, and separated benefits need continuous machinery to stay connected. Simple adoption means they were never separated in the first place.
 
 Neocrete's proposition works because a contractor in Brunei saves money. The 5,200 tonnes are close to incidental to the decision that produces them, which is exactly why the decision will keep being made. Very few climate interventions have that shape. The ones that do not need somebody, independently, to keep checking that the connection between the work and the reward still holds.

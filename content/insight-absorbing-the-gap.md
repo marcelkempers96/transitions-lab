@@ -113,6 +113,11 @@ Read through the ledger, that is a decision to place the burden on the state and
 
 Two markets, two answers, one question. Southeast Asia is attempting to socialise the gap. Nigeria, for now, is privatising it. Both are legitimate paths. They produce very different businesses, very different unit economics, and very different people bearing the cost of the transition.
 
+<figure>
+<img src="/assets/img/insight-absorbing-the-gap-two-donuts.jpg" alt="Two side-by-side donut charts titled Who absorbs the reliability gap. Left donut labelled Southeast Asia, socialised: a large cobalt segment labelled grid operator taking most of the ring, and a smaller coral segment labelled operator / user completing it. Right donut labelled Nigeria, privatised: a large coral segment labelled operator balance sheet taking most of the ring, a smaller yellow segment labelled rider and a small cobalt segment labelled grid completing it. Footer: Two markets, two answers, one question." class="diagram">
+<figcaption>Same question, different colours. Where the coral sits is the question, and it is the same question every emerging market answers eventually.</figcaption>
+</figure>
+
 ---
 
 ## What this looks like from the saddle
