@@ -32,6 +32,11 @@ Read the Kamoa-Kakula configuration again. Two hundred and thirty-three megawatt
 
 That is roughly eight times the nameplate solar capacity for each unit of dependable supply, plus enough storage to carry the load through the night. This is what firmness costs in a system with no dispatchable backup worth relying on.
 
+<figure>
+<img src="/assets/img/insight-second-step-firm-mw.jpg" alt="Horizontal bar chart titled How much solar and battery for one firm megawatt. Sub-title notes it is an equipment-sizing comparison, not a common-unit axis. Three bars. Butter yellow bar labelled Solar peak nameplate, 233 MW, printed at the end of the bar. Coral bar labelled Battery storage, 526 MWh. Short cobalt bar labelled Firm dispatchable supply, 30 MW. A large annotation to the right of the chart reads approximately 8 times nameplate solar for each dependable MW. Footer: Kamoa-Kakula solar and storage plant, as reported by CrossBoundary Energy (2026)." class="diagram">
+<figcaption>Eight to one on nameplate, plus a battery bank the size of a small utility, to get one dependable megawatt. That is what firmness costs in a system with no dispatchable backup.</figcaption>
+</figure>
+
 It matters because processing, unlike extraction, cannot be interrupted. A concentrator can tolerate a stoppage. A smelter, a refinery or an electrolyser cannot, or can only at considerable cost, because thermal cycling damages equipment and interrupted electrochemistry wastes product. Continuous industrial load is the hardest thing to serve from intermittent generation, and it is precisely the load that beneficiation requires.
 
 So the constraint on African mineral processing has never been mainly about mineral policy or investor appetite. It has been that firm industrial power at competitive cost was unavailable, and that grid connections capable of supplying it did not exist. A private power-purchase agreement with enough storage attached is the first credible answer to that, which is why this plant is more significant than another mine installing panels.

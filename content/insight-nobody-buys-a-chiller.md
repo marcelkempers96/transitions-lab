@@ -48,6 +48,11 @@ Here is the difficulty that has broken energy-service companies repeatedly for t
 
 Payment depends on savings measured against a baseline, and the baseline describes a world that did not happen. Every party to the contract is settling against a counterfactual, and counterfactuals are contestable in a way that delivered goods are not.
 
+<figure>
+<img src="/assets/img/insight-nobody-buys-a-chiller-counterfactual.jpg" alt="Line-art diagram titled Selling a counterfactual. On the left, an old chiller with dashed coral arrows drawn radiating outward to indicate heat loss. A solid arrow points right to a new efficient chiller with two horizontal lines extending to the right edge of the frame: a solid cobalt line labelled actual consumption at a low level, and a dashed grey line above it labelled what would have been consumed, ending in a question mark. Between the two lines at the right, a small bracket labels the gap claimed savings. Footer: The savings figure is the distance between two lines. Only one of them exists." class="diagram">
+<figcaption>The blue line is real. The grey dashed line is a claim about a world that did not happen. The bracket in between is the invoice.</figcaption>
+</figure>
+
 Four failure modes follow, and all four are predictable.
 
 **Baseline gaming, in both directions.** A customer coming off a bad year has an incentive to set a baseline that flatters future savings. A provider negotiating hard has the opposite incentive. Neither party is behaving badly. The instrument invites it.

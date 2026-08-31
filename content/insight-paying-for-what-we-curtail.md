@@ -28,6 +28,11 @@ The delivered cost of electricity is a stack of bands, and generation is one of 
 
 For June 2026 meter readings, the [regulator](https://www.epra.go.ke/) applied a fuel-energy cost charge of [314 Kenyan cents per kilowatt-hour](https://eastleighvoice.co.ke/business/370528/kenyans-to-pay-more-for-electricity-after-epra-introduces-new-tariff-adjustments) and a forex-fluctuation charge of about 72 cents, having applied a [fuel charge of 347 cents](https://kenyanwallstreet.com/kenya-power-tariff-review-withdrawn-2026) and a forex adjustment of 123 cents in April. A system that is overwhelmingly renewable is still passing through a fuel charge, because the marginal dispatchable plant is thermal and the contracts sit in dollars. Consumers were asked to absorb about [779 million shillings of forex losses](https://www.kenyans.co.ke/news/124477-epra-announces-new-electricity-charges-consumers-pay-extra-ksh387-unit) in a single month, of which independent power producers accounted for roughly 85 per cent.
 
+<figure>
+<img src="/assets/img/insight-paying-for-what-we-curtail-kenya-stack.jpg" alt="Single horizontal stacked bar titled Kenya's electricity charge, by component, with the sub-title Illustrative composition of the June 2026 tariff. Five segments running left to right, each labelled inside the bar: cobalt energy charge, coral fuel-energy cost charge (thermal), butter forex-fluctuation adjustment, sky take-or-pay pass-through, forest WARMA and levies. Footer: June 2026 tariff, as applied by EPRA. Segments to scale; values approximate." class="diagram">
+<figcaption>Only the leftmost segment pays for the electron. The next three pay for the contract structure around it, and the tariff cannot lower them.</figcaption>
+</figure>
+
 **Capacity paid for and not used.**
 
 [Kenya Power](https://kplc.co.ke/) has been contractually obliged to pay for contracted capacity it does not need, [curtailing cheaper renewable generation](https://serrarigroup.com/kenya-dismantles-legacy-power-tariff-framework-to-enable-market-driven-electricity-procurement/) while continuing to pay expensive independent producers under take-or-pay provisions. This is the part worth sitting with. The utility pays for output it declines to take, and it declines to take cheaper output in order to honour the payment.

@@ -44,18 +44,10 @@ Which makes sense the moment it is stated. A tree is only an asset to the person
 
 This has a direct and cheap implication. The lowest-cost intervention available to a restoration programme may not be seedlings, nurseries or extension. It may be a functioning, predictable harvest-permit system, which costs a fraction of the planting budget and determines whether the planting survives.
 
-<div class="callout c-forest">
-  <span class="kicker">Rights to land are <a href="https://doi.org/10.2307/3146375">a bundle, not a single thing</a></span>
-  <p>Six rights typically sit inside a tenure arrangement. Restoration programmes concentrate attention on the top two, because those are the ones a project can grant. The row that predicts investment is one it usually cannot.</p>
-  <ul>
-    <li><strong>Access.</strong> May enter the land.</li>
-    <li><strong>Use.</strong> May take a crop or graze.</li>
-    <li><strong>Management.</strong> May change what grows.</li>
-    <li><strong>Harvest.</strong> May cut and sell the tree. <em>The one that predicts investment.</em></li>
-    <li><strong>Exclusion.</strong> May keep others out.</li>
-    <li><strong>Transfer.</strong> May sell or bequeath.</li>
-  </ul>
-</div>
+<figure>
+<img src="/assets/img/insight-right-to-the-tree-rights-bundle.jpg" alt="Concentric-ring diagram titled The rights bundle. A small young tree in green sits at the centre. Six rings surround it, alternating: coral solid rings labelled right to sell, right to prune and right to fence for the rights the smallholder holds here; dashed grey rings labelled right to harvest, right to weed and right to plant for the rights held elsewhere. A small legend at the lower right marks solid coral as held here and dashed grey as held elsewhere. Footer: A right to the land is not a right to the tree." class="diagram">
+<figcaption>Six rings around one tree. Which of them is solid and which is dashed decides whether a household plants, and no programme design has changed which is which.</figcaption>
+</figure>
 
 ---
 

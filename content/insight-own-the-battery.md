@@ -40,6 +40,11 @@ A shopfront in a dense neighbourhood is not specialised to battery swapping in a
 
 So: own the batteries, rent the shopfront. Battery Smart's architecture is not a capital-efficiency trick. It is the arrangement Williamson's framework predicts, and the reason it holds is that the firm retains ownership of the asset whose mistreatment would be expensive and contracts for the asset whose substitution is easy.
 
+<figure>
+<img src="/assets/img/insight-own-the-battery-margin-swap-network.jpg" alt="Chart titled Where the margin sits, along a swap network. Six vertical bars along a horizontal axis, labelled left to right: cell manufacture, pack assembly, battery ownership, swap dispatch, shopfront operation, rider financing. The four outer bars are cobalt and taller; the two middle bars, battery ownership and swap dispatch, are coral and shorter, marked with a bracket above them reading the firm keeps these. Vertical axis labelled relative margin / control. Footer: Schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>The bars on the ends are where the biggest margins sit and where the firm does not need to be. The two coral bars in the middle are what a swap network is actually a business at.</figcaption>
+</figure>
+
 ---
 
 ## The thing that makes it work is not the swapping
