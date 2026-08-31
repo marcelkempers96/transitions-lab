@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">31 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-symbiosis-not-a-site-plan-diagram.jpg" alt="Line-art comparison: on the left, a cluster of four small factories connected by solid pipes for steam, water and by-products, with a handshake symbol at the centre; on the right, the same four factories drawn on a surveyor's grid with dashed unconnected pipe stubs and a clipboard site plan propped against one wall." class="diagram">
-<figcaption>The exchanges on the left took two decades and personal trust. The ones on the right are a drawing.</figcaption>
+<img src="/assets/img/insight-symbiosis-not-a-site-plan-diagram.jpg" alt="Line-art comparison split into two panels. Left panel: four small factories arranged around a central handshake symbol, joined by a dense network of curved pipes in coral, sky and forest carrying steam, water and by-products between them. Right panel: the same four factories drawn on a surveyor's grid with dashed pipe stubs that do not connect to anything, and a rolled site plan clipboard propped against one wall." class="diagram">
+<figcaption>The exchanges on the left took twenty years and a handshake per pipe. The ones on the right are a drawing.</figcaption>
 </figure>
 
 

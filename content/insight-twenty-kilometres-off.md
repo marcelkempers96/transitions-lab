@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">31 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-twenty-kilometres-off-diagram.jpg" alt="Line-art map schematic: a thick paved corridor running from a port city to an inland capital with lorries on it and market stalls thriving at two towns along its length, and twenty kilometres to one side, connected only by a thin dashed track, a smaller village whose stall stands empty." class="diagram">
-<figcaption>The corridor did not reach this village. It reached its competitors.</figcaption>
+<img src="/assets/img/insight-twenty-kilometres-off-diagram.jpg" alt="Line-art map: a port with a container ship and cranes at the far left, a paved corridor running the full width with lorries on it and two bustling market towns along its length, and an inland capital city at the far right. Twenty kilometres below the corridor, connected only by a thin dashed hand-drawn track, a single smaller village with a lone market stall and no traffic." class="diagram">
+<figcaption>The lorries move between the towns on the road and the two capitals at its ends. The village below is measured against the same competitors, on a track nothing came down.</figcaption>
 </figure>
 
 

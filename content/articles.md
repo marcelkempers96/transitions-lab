@@ -49,7 +49,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
 </div>
 
 <div class="article-list"><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-municipality-is-the-instrument"><img class="article-thumb" src="/assets/img/insight-municipality-is-the-instrument-diagram.jpg" alt="A butter-yellow title card marking The Municipality Is the Instrument, on the clearance points that do not shrink with the council."></a>
+    <a class="article-thumb-link" href="/insight-municipality-is-the-instrument"><img class="article-thumb" src="/assets/img/insight-municipality-is-the-instrument-diagram.jpg" alt="Line-art: large domed city hall with staff at many desks on the left, a small pitched-roof village hall with one person on the right, and matching document icons above each — one tidy, one with warning lines."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-municipality-is-the-instrument">The Municipality Is the Instrument</a>
       <div class="article-meta">31 August 2026</div>
@@ -57,7 +57,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">Only 16 per cent of Europe's small municipalities have an adaptation plan. The clearance points do not shrink with the council, and that is the constraint.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="industrial-policy" data-geography="africa" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-symbiosis-not-a-site-plan"><img class="article-thumb" src="/assets/img/insight-symbiosis-not-a-site-plan-diagram.jpg" alt="A butter-yellow title card marking Symbiosis Does Not Arrive on a Site Plan, on eco-industrial parks and the twenty-year accretion of trust."></a>
+    <a class="article-thumb-link" href="/insight-symbiosis-not-a-site-plan"><img class="article-thumb" src="/assets/img/insight-symbiosis-not-a-site-plan-diagram.jpg" alt="Line-art comparison: on the left, four factories joined by a dense network of pipes around a central handshake; on the right, the same four factories on a surveyor's grid with disconnected pipe stubs and a rolled site plan propped against a wall."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-symbiosis-not-a-site-plan">Symbiosis Does Not Arrive on a Site Plan</a>
       <div class="article-meta">31 August 2026</div>
@@ -65,7 +65,7 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <p class="article-desc">Rwanda and Namibia are taking the industrial ecosystem as the unit. The model they are borrowing accreted over twenty years and was never designed.</p>
     </div>
   </div><div class="article-item has-thumb" data-category="europe" data-geography="africa" data-month="2026-08">
-    <a class="article-thumb-link" href="/insight-twenty-kilometres-off"><img class="article-thumb" src="/assets/img/insight-twenty-kilometres-off-diagram.jpg" alt="A butter-yellow title card marking The Village Twenty Kilometres Off the Road, on corridors and the places they do not run through."></a>
+    <a class="article-thumb-link" href="/insight-twenty-kilometres-off"><img class="article-thumb" src="/assets/img/insight-twenty-kilometres-off-diagram.jpg" alt="Line-art map: a port with cranes on the left, a paved corridor running to an inland capital with lorries and two thriving market towns along its length, and twenty kilometres off it a single village with an empty stall, connected only by a dashed track."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-twenty-kilometres-off">The Village Twenty Kilometres Off the Road</a>
       <div class="article-meta">31 August 2026</div>

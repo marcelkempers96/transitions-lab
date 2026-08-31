@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">31 August 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-municipality-is-the-instrument-diagram.jpg" alt="Line-art sequence: a large city hall with many staff at desks on the left, a dashed arrow running to a small village hall with a single desk and one person on the right, and above the small hall a stack of documents labelled tender, permit, appraisal and maintenance contract, all the same height as the stack above the large hall." class="diagram">
-<figcaption>The paperwork does not shrink with the council. That is the whole problem.</figcaption>
+<img src="/assets/img/insight-municipality-is-the-instrument-diagram.jpg" alt="Line-art scene: a large two-storey city hall on the left with a domed roof and flag, several staff visible at desks with laptops through the windows, and above it a single tidy document icon with a green tick. On the right, a small pitched-roof village hall labelled Village Hall and one person at a laptop through the window, and above it a matching document icon surrounded by orange radiating lines to mark strain. A long dashed arrow crosses the empty space between the two buildings." class="diagram">
+<figcaption>Two buildings, one instrument. The document on the right is the same size as the one on the left. That is the whole problem.</figcaption>
 </figure>
 
 
