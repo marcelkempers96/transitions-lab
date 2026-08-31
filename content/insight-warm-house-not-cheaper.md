@@ -141,7 +141,7 @@ If you are designing the monitoring framework for a Social Climate Plan and want
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Impact Measurement](/impact-measurement), [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [Benefits Nobody Looked For](/insight-benefits-nobody-looked-for) on measuring the effects programmes were not designed to detect, and [What the Bond Secures](/insight-what-the-bond-secures) on the household-side cost of an intervention. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Impact Measurement](/impact-measurement), [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [Benefits Nobody Looked For](/insight-benefits-nobody-looked-for) on measuring the effects programmes were not designed to detect, [What the Bond Secures](/insight-what-the-bond-secures) on the household-side cost of an intervention, and [The Municipality Is the Instrument](/insight-municipality-is-the-instrument) on the small council that a European adaptation scheme has to be delivered through. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

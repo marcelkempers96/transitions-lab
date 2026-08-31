@@ -142,7 +142,7 @@ If you are assessing a beneficiation programme against a legislated deadline, [t
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on qualification as the barrier above lithium sulphate, [Who Holds the Pen](/insight-who-holds-the-pen) on the same monopsony question in an open standard, and [Capability Is the Slow Part](/insight-capability-slow-part) on the decade it takes for local integration to appear as capability. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on qualification as the barrier above lithium sulphate, [Who Holds the Pen](/insight-who-holds-the-pen) on the same monopsony question in an open standard, [Capability Is the Slow Part](/insight-capability-slow-part) on the decade it takes for local integration to appear as capability, and [Symbiosis Does Not Arrive on a Site Plan](/insight-symbiosis-not-a-site-plan) on third-party access to shared infrastructure inside an industrial zone. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

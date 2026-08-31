@@ -76,7 +76,7 @@ This piece draws on public analysis.
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [European Impact Tracking](/european-impact-tracking). To discuss a study, see [Contact](/contact). See also [The Hurdle Is Not the Risk](/insight-hurdle-not-risk) on why the strongest domestic answer to imported capital may be a pension-fund question.*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [European Impact Tracking](/european-impact-tracking). See also [The Hurdle Is Not the Risk](/insight-hurdle-not-risk) on why the strongest domestic answer to imported capital may be a pension-fund question, and [The Village Twenty Kilometres Off the Road](/insight-twenty-kilometres-off) on how a Global Gateway corridor redistributes market access before it creates it. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

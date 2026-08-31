@@ -188,6 +188,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-fire-and-livelihood": "butter",
     "insight-recycled-is-a-promise": "butter",
     "insight-who-does-it-fail-for": "butter",
+    "insight-municipality-is-the-instrument": "butter",
+    "insight-symbiosis-not-a-site-plan": "butter",
+    "insight-twenty-kilometres-off": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -588,6 +591,18 @@ META: dict[str, dict[str, str]] = {
     "insight-who-does-it-fail-for": {
         "title": "Who Does It Fail For? | Transitions Lab",
         "description": "An accuracy figure is an average and a clinic experiences a distribution. The errors from a system built to include underserved speakers will fall along the same axis as the exclusion.",
+    },
+    "insight-municipality-is-the-instrument": {
+        "title": "The Municipality Is the Instrument | Transitions Lab",
+        "description": "Only 16 per cent of Europe's small municipalities have an adaptation plan. Every adaptation instrument assumes an organisation of a certain size. Below that, more funding does not help.",
+    },
+    "insight-symbiosis-not-a-site-plan": {
+        "title": "Symbiosis Does Not Arrive on a Site Plan | Transitions Lab",
+        "description": "Rwanda and Namibia are taking the industrial ecosystem as the unit of intervention. The model they are borrowing accreted over twenty years and was never designed.",
+    },
+    "insight-twenty-kilometres-off": {
+        "title": "The Village Twenty Kilometres Off the Road | Transitions Lab",
+        "description": "A corridor redistributes market access before it creates it, and the places that lose experience no measurable event.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1403,7 +1418,40 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-ban-is-not-the-policy">
+      <a class="insight-card has-photo" href="/insight-municipality-is-the-instrument">
+        <div class="card-photo">
+          <img src="/assets/img/insight-municipality-is-the-instrument-diagram.jpg" alt="A butter-yellow title card marking The Municipality Is the Instrument, on the clearance points that do not shrink with the council.">
+          <span class="kicker">Insight &middot; Adaptation &amp; Governance</span>
+        </div>
+        <div class="body">
+          <h3>The Municipality Is the Instrument</h3>
+          <p>Only 16 per cent of Europe's small municipalities have an adaptation plan. The clearance points do not shrink with the council, and that is the constraint.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-symbiosis-not-a-site-plan">
+        <div class="card-photo">
+          <img src="/assets/img/insight-symbiosis-not-a-site-plan-diagram.jpg" alt="A butter-yellow title card marking Symbiosis Does Not Arrive on a Site Plan, on eco-industrial parks and the twenty-year accretion of trust.">
+          <span class="kicker">Insight &middot; Industrial Policy</span>
+        </div>
+        <div class="body">
+          <h3>Symbiosis Does Not Arrive on a Site Plan</h3>
+          <p>Rwanda and Namibia are taking the industrial ecosystem as the unit. The model they are borrowing accreted over twenty years and was never designed.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-twenty-kilometres-off">
+        <div class="card-photo">
+          <img src="/assets/img/insight-twenty-kilometres-off-diagram.jpg" alt="A butter-yellow title card marking The Village Twenty Kilometres Off the Road, on corridors and the places they do not run through.">
+          <span class="kicker">Insight &middot; Infrastructure</span>
+        </div>
+        <div class="body">
+          <h3>The Village Twenty Kilometres Off the Road</h3>
+          <p>A corridor redistributes market access before it creates it, and the places that lose experience no measurable event.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-ban-is-not-the-policy">
         <div class="card-photo">
           <img src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="Line-art sequence: on the left a mine entrance with an ore cart of concentrate; then a shipping document stamped with a red no-export symbol, with a dashed arrow ending in a cross; then a refining plant under a warm sun; then a battery cell with piles of intermediate materials at its foot - the chain that a ban is meant to force into place.">
           <span class="kicker">Insight &middot; Industrial Policy</span>
@@ -1411,39 +1459,6 @@ def build_home() -> str:
         <div class="body">
           <h3>The Ban Is Not the Policy</h3>
           <p>Zimbabwe stops lithium concentrate exports in January with one plant running. Whether that captures value depends on a detail nobody discusses.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo desktop-only" href="/insight-fire-and-livelihood">
-        <div class="card-photo">
-          <img src="/assets/img/insight-fire-and-livelihood-diagram.jpg" alt="Line-art landscape: on the left, a shepherd with a flock of sheep, a farmer digging a bed of vegetables, and a coppicer at a stack of firewood beside a young tree - people at work in the countryside; on the right, an untended shrubland burning, with flames and smoke rising from a continuous fuel bed.">
-          <span class="kicker">Insight &middot; Rural Transition</span>
-        </div>
-        <div class="body">
-          <h3>The Fire Was Put Out by People Making a Living</h3>
-          <p>Fuel management was a by-product of farming, never a service anybody bought. Buying it directly costs far more and lasts only as long as the budget.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo desktop-only" href="/insight-recycled-is-a-promise">
-        <div class="card-photo">
-          <img src="/assets/img/insight-recycled-is-a-promise-diagram.jpg" alt="Line-art scene: on the left, a recycling symbol above a bin of mixed coloured pellets and shredded material; in the middle, a laboratory flask beside a clipboard with a green tick and a certification rosette overhead; on the right, a factory with rolls of finished product stacked at its entrance.">
-          <span class="kicker">Insight &middot; Circular Economy</span>
-        </div>
-        <div class="body">
-          <h3>A Recycled Material Is a Promise</h3>
-          <p>None of the bottlenecks Europe found in 120 circularity projects is a recycling technology. They are all institutions for verifying a claim.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo desktop-only" href="/insight-who-does-it-fail-for">
-        <div class="card-photo">
-          <img src="/assets/img/insight-who-does-it-fail-for-diagram.jpg" alt="Line-art diagram: on the left a microphone and a model panel emitting a voice waveform that then splits along a dashed fork; the upper path runs to a group of three figures, a green tick and a clean transcription; the lower path runs to a single figure of colour, an amber warning and a broken, uneven transcription.">
-          <span class="kicker">Insight &middot; AI &amp; Public Services</span>
-        </div>
-        <div class="body">
-          <h3>Who Does It Fail For?</h3>
-          <p>An accuracy figure is an average and a clinic experiences a distribution. The errors fall along the same axis as the exclusion the system was built to fix.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
