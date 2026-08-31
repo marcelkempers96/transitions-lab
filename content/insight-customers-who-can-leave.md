@@ -38,6 +38,11 @@ The version usually discussed is about households with rooftop solar, and it is 
 
 The numbers behind that are not marginal. Eskom's demand fell [1.9 per cent, then 2.9 per cent, then 4.9 per cent](https://mybroadband.co.za/news/energy/659583-eskom-has-a-new-enemy.html) across 2023, 2024 and 2025, and in the first 29 weeks of 2026 residual demand was down 9.1 per cent year on year and 15.6 per cent against the same period in 2022. The utility expected sales of [179,000 gigawatt hours](https://mybroadband.co.za/news/energy/650223-andre-de-ruyters-warning-about-eskom-is-becoming-a-reality.html) for the financial year to March 2026, which would be the first time since 2000 that demand fell below 180,000. Behind the meter rooftop solar alone grew by more than five thousand megawatts between 2022 and 2026.
 
+<figure>
+<img src="/assets/img/insight-customers-who-can-leave-eskom-sales.jpg" alt="Horizontal bar chart titled Eskom sales, year-on-year change, 2022 to 2026. Four coral bars extending leftward from a cobalt zero line, values printed at the end of each bar. Top bar: 2023 at minus 1.9 per cent. Below: 2024 at minus 2.9 per cent. Below: 2025 at minus 4.9 per cent. Bottom bar, longest: 2026 first 29 weeks year on year at minus 9.1 per cent. Footer: MyBroadband / Eskom demand data as reported. Transitions Lab, 2026." class="diagram">
+<figcaption>The rate of departure is not steady. Each year the bar is longer than the last, and the departures accelerating are the ones with the balance sheet to leave.</figcaption>
+</figure>
+
 Tariffs have moved in the opposite direction throughout, rising more than 1,100 per cent since 2007, with further approved increases of 8.76 per cent in 2026 and [9.19 per cent in 2027](https://poweroptimal.com/2026-update-eskom-tariff-increases-vs-inflation-since-1988-with-projections-to-2028/) against much lower inflation.
 
 That is not a forecast of a death spiral. It is a description of one in progress.

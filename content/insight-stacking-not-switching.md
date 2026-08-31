@@ -57,24 +57,10 @@ Follow that forward. A country that succeeds in manufacturing domestically stops
 
 There is also a point worth making about who owns the evidence base. A continent whose energy transition is legible mainly through another government's trade statistics is in a weak position if those statistics become less detailed, less timely or less freely published. That is not a prediction. It is a dependency that currently has no backup.
 
-<div class="callout c-butter">
-  <span class="kicker">What the estimate is made of, and what it cannot contain</span>
-  <p>Ember's chain, in order:</p>
-  <ul>
-    <li><strong>Chinese customs export declaration</strong> for the shipment of finished panels.</li>
-    <li><strong>Assume 73 per cent gets installed</strong>, calibrated from historical shipment-to-installation ratios.</li>
-    <li><strong>Apply a six month average lag</strong> between shipment and commissioning.</li>
-    <li><strong>Estimated capacity installed, by country</strong> — the number that lands in the report.</li>
-  </ul>
-  <p>Not in the chain at any point:</p>
-  <ul>
-    <li>Who bought it: a mine, a factory, a shop, a household, a mini-grid operator.</li>
-    <li>What it replaced: grid supply, a diesel generator, or nothing at all.</li>
-    <li>What the buyer still burns alongside it, and how much less than before.</li>
-    <li>Whether the household had electricity before this panel arrived.</li>
-  </ul>
-  <p>Every question that determines what the boom means for a household sits below the line.</p>
-</div>
+<figure>
+<img src="/assets/img/insight-stacking-not-switching-what-crosses-border.jpg" alt="Line-art diagram titled What crosses the border, and what does not. Four cobalt boxes running left to right connected by solid arrows: Chinese customs declaration, assume 73% installed, apply 6-month lag, estimated installed capacity. A horizontal dashed grey line sits beneath them labelled what the estimate cannot see. Below the line, four small coral question-mark icons labelled who bought it, what it replaced, what the buyer still burns, and whether the household had electricity before. Footer: Chain after Ember (2026). Unobserved items are ours." class="diagram">
+<figcaption>Everything above the line is observed. Everything below it is a field question, and every question there decides what the boom means for a household.</figcaption>
+</figure>
 
 ---
 
@@ -111,6 +97,11 @@ Two consequences follow, and both matter for anybody using these figures.
 **The generator does not leave.** It is retained as insurance, which is rational, and its capital cost is already sunk. So the transition looks, from the site, like a large reduction in fuel purchases rather than a change of system. That is a good outcome. It is not the same outcome as displacement, and a plan that assumes the generator has gone will be wrong about emissions, about fuel imports and about resilience.
 
 There is an unusually cheap test available here. Most of these countries publish refined product import volumes, and so do the exporters. Diesel imports set against estimated solar installations, country by country, over four years, would give a first empirical handle on how much of this capacity is displacing fuel and how much is being stacked on top of it. As far as we can establish, nobody has put those two series side by side. It would take one analyst a few weeks.
+
+<figure>
+<img src="/assets/img/insight-stacking-not-switching-test-nobody-run.jpg" alt="Two side-by-side chart panels titled The test nobody has run. Both panels share the same horizontal axis marked Four years and the same vertical axis marked Relative level. Left panel labelled If solar is displacing diesel: a coral solar-installations line rises sharply while a cobalt diesel-imports line falls in a mirror image, the two lines crossing in the middle. Right panel labelled If solar is being stacked on top of diesel: the coral solar line rises just as sharply while the cobalt diesel line stays roughly flat across the axis. Footer: Same countries. Same four years. Two panels because nobody has plotted the second series." class="diagram">
+<figcaption>Both panels are possible. Which one is true is a question a single analyst could answer, and it decides what the boom means for the atmosphere.</figcaption>
+</figure>
 
 ---
 

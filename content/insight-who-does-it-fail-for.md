@@ -48,16 +48,10 @@ Which produces the failure mode worth naming precisely.
 
 This is not a criticism of Intron, whose entire premise is that generic models fail African speakers and that context-specific systems are needed. It is the next question after that one, and it is not answered by a benchmark.
 
-<div class="callout c-butter">
-  <span class="kicker">One average, several very different experiences</span>
-  <p>A single reported accuracy figure sits at the mean of a distribution of error rates across speaker groups. The distribution is not random.</p>
-  <ul>
-    <li><strong>Low error rate.</strong> Urban, younger, professional register speakers sit well below the reported average, and their experience is close to the marketing.</li>
-    <li><strong>The reported average.</strong> The only number that reaches a procurement decision.</li>
-    <li><strong>High error rate.</strong> Rural, older speakers with dense code-switching sit well above the average, and their experience is not visible in it.</li>
-  </ul>
-  <p>The speakers on the right are the ones the system was built to include, and the ones least able to tell anybody it did not understand them.</p>
-</div>
+<figure>
+<img src="/assets/img/insight-who-does-it-fail-for-average.jpg" alt="A schematic bell curve titled The average that a procurement document sees. The coral distribution runs across a horizontal axis labelled Word error rate by speaker group. A dashed cobalt vertical line at the peak of the curve is labelled reported average. Three annotated points sit below the axis: on the left, a small figure and label urban, younger, professional register; near the mean, three grouped figures with no label; on the right, a single figure and label rural, older, dense code-switching. Footer: Schematic pattern, documented by Koenecke et al. (2020). Positions illustrative." class="diagram">
+<figcaption>The dashed line is the whole procurement decision. The figures on the far right are the whole reason the system was built.</figcaption>
+</figure>
 
 ---
 

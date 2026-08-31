@@ -104,6 +104,11 @@ The research question is which parts of that transfer. Where can reputation subs
 
 Circularity evaluation currently counts tonnes collected and tonnes recycled, which measures the top of the chain and tells you nothing about whether the material circulated.
 
+<figure>
+<img src="/assets/img/insight-recycled-is-a-promise-where-material-stops.jpg" alt="Line-art sequence titled Where the material stops. Six labelled boxes running left to right connected by dashed arrows: Collection, Sorting, Reprocessing, Qualification, Purchase, Second use. All boxes drawn in cobalt outline except Qualification, which is filled coral with a red cross floating above it, and a small caption beneath reading the link most flows fail at. Footer: Locating the failure precisely is cheap and almost never done." class="diagram">
+<figcaption>Five links pass. Qualification is the one where the material stops, and it is the link the sector is worst at describing.</figcaption>
+</figure>
+
 **Rejection rates, and the stated reason for each.** The most informative dataset in the sector and one nobody publishes. A buyer who rejects a batch knows exactly why.
 
 **The price discount of recycled against virgin, by application.** Tracked over time, this is the direct measure of whether the information problem is easing. If the discount is not narrowing, no amount of collection is building a market.
