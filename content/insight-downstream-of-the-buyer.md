@@ -42,6 +42,11 @@ When a single counterparty supplies credit and inputs and buys the output, the a
 
 They are efficient for a specific reason. Smallholder lending fails on collateral and on enforcement. A farmer has no security to pledge and a lender has no cheap way to compel repayment. Interlinking solves both at once: the crop is the collateral, and the lender recovers at the point of purchase, so default requires the farmer to sell elsewhere, which is difficult and observable. The same relationship that carries the credit carries the sale, which collapses two expensive monitoring problems into one cheap one.
 
+<figure>
+<img src="/assets/img/insight-downstream-of-the-buyer-chain-risk.jpg" alt="Line-art chain of five figures running left to right, connected by solid arrows: smallholder drawn as a small farmhouse in a field, cooperative drawn as a shed with three figures inside, aggregator drawn as a warehouse with sacks of grain, processor drawn as a small factory with a chimney, and buyer drawn as a multi-storey office building. Above the chain, a coral bar labelled price volatility tapers from thick at the smallholder end to thin at the buyer end. Below the chain, a cobalt bar labelled capital cushion tapers in the opposite direction, thin at the smallholder end and thick at the buyer end. Footer: The party with the least cushion carries the most risk. That is not accidental." class="diagram">
+<figcaption>The two bars point in opposite directions. The party the price moves for the most is the party with the least to absorb it, and interlinked contracts settle the two together.</figcaption>
+</figure>
+
 The cost is not usually exploitation in the crude sense. It is **price opacity**.
 
 When inputs, credit and offtake are bundled into one relationship, the farmer receives a single set of terms and cannot decompose it. The interest rate is embedded in the input price, or in the price paid for the crop, or in both. There is no line item. A farmer can be entirely satisfied with the relationship, can be materially better off than before it, and can still be unable to state what the credit cost or to compare it with an alternative. Neither can the funder, unless somebody goes and reconstructs it.
