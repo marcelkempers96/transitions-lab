@@ -20,6 +20,11 @@ The technical proposition is sound and the problem it addresses is real. Synthet
 
 Nobody should be dismissive about this. Verification cost has been the binding constraint on paying smallholders for practice change, and this class of tool genuinely removes it.
 
+<figure>
+<img src="/assets/img/insight-cheaper-to-verify-satellite-records.jpg" alt="Two-panel line-art diagram titled What a satellite records, and what it does not. Left panel titled What the radar sees: an overhead view of a single rice paddy with regular rows of shoots on a sky-blue flooded ground, and a small legend chip labelled flooded / not flooded with a coral tick beside it. Right panel titled What the radar does not see: a paddy edge with three figures standing at the bank, a farmer holding a labelled container of pesticide, a woman with a wage slip in hand and a small child, each with a small grey question mark hovering above their head. Footer: The satellite answers the funder's question. It does not answer the household's." class="diagram">
+<figcaption>The left panel is what a payment can be tied to. The right panel is what a household lives with, and the two panels are the reason a satellite alone is not enough.</figcaption>
+</figure>
+
 What follows from removing it is less obvious, and it is the reason to write about this at all.
 
 ---

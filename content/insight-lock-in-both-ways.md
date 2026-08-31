@@ -64,20 +64,10 @@ Applied here: the concentration of precursor and cathode active material product
 
 Somebody entered when the window was open. That is the whole mechanism, and it is the reason Musompo is worth taking seriously rather than dismissing.
 
-<div class="callout c-butter">
-  <span class="kicker">Years of cost before the first tonne is sold</span>
-  <p>The qualification sequence a new precursor entrant faces, in order.</p>
-  <ul>
-    <li><strong>Samples</strong> to the cell manufacturer's laboratory.</li>
-    <li><strong>Analytical characterisation</strong> against the customer's material specification.</li>
-    <li><strong>Small cell builds</strong> to check that finished cells assemble and perform.</li>
-    <li><strong>Cycling</strong> over hundreds or thousands of cycles to establish degradation behaviour.</li>
-    <li><strong>Pilot line trials</strong> on the customer's production equipment.</li>
-    <li><strong>Validation</strong> at commercial scale.</li>
-    <li><strong>Supply</strong>, at last, under a limited agreement with continued monitoring.</li>
-  </ul>
-  <p>Plant capital is committed before the first step, and no revenue arrives until the last. Any change in process, feedstock or plant afterwards can send the entrant back through the sequence.</p>
-</div>
+<figure>
+<img src="/assets/img/insight-lock-in-both-ways-years-of-cost.jpg" alt="Horizontal timeline chart titled Years of cost before the first tonne is sold. Six cobalt segment blocks running left to right, each labelled samples, characterisation, cell builds, cycling, pilot line, validation. A seventh coral segment on the right labelled supply. Beneath the first six blocks, a long coral bar running the full width labelled plant capital committed, no revenue. Below that, a dashed grey loop-back arrow running from the supply segment back to the start, labelled any process change can send you back. Footer: Indicative sequence. Stage durations vary by chemistry." class="diagram">
+<figcaption>Six segments of cost. One segment of revenue. The dashed loop-back is the reason nobody switches once qualified.</figcaption>
+</figure>
 
 ---
 

@@ -20,6 +20,11 @@ Read that as an energy contract rather than a technology one, because that is wh
 
 Which means the relevant precedent is not the history of cloud computing. It is the history of electro-intensive industrial siting, and that history is unusually well documented.
 
+<figure>
+<img src="/assets/img/insight-the-smelter-contract-sixty-years.jpg" alt="Horizontal timeline titled Sixty years of large industrial power bargains. The axis runs from 1960 to 2026 with ticks at every decade. Five coral markers connected by vertical lead lines to captions: Iceland aluminium 1969 above the line, Pacific Northwest aluminium 1970s below, Guinea Simandou tolling 1990s above, Mozambique Mozal 2000 below, US data-centre contracts 2020s above. Footer: Illustrative sample. Transitions Lab, 2026." class="diagram">
+<figcaption>Different decade, different mineral, same shape of contract. The West Virginia deal sits on the right-hand marker.</figcaption>
+</figure>
+
 *A disclosure worth making up front. The counterparty in the deal above is the company that makes the model used to draft these articles. The analysis here is the treatment the Lab would apply to any counterparty and takes no position favourable to Anthropic; the piece is published only because the same discipline is being applied.*
 
 ---

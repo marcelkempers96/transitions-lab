@@ -18,6 +18,11 @@ The World Bank has launched [*Integrating Africa: From Threads to Hubs*](https:/
 
 One reported finding deserves to be pulled out and left on its own. Around [60 per cent of Africa's trade costs](https://nairametrics.com/2026/08/18/world-bank-60-of-africas-trade-costs-come-from-within-countries/) come from behind-the-border barriers rather than from border controls, with customs clearance inefficiencies, regulatory misalignment, weak logistics services, fragmented transit systems and poor infrastructure named as the sources.
 
+<figure>
+<img src="/assets/img/insight-behind-the-border-trade-cost.jpg" alt="Single horizontal stacked bar titled Africa's trade cost, by where it sits, filling the width of the frame. Left segment forty per cent in cobalt labelled 40% at the border, with sub-label tariffs, customs. Right segment sixty per cent in coral labelled 60% behind the border, with four small tick lines dropping to sub-labels beneath: customs clearance inefficiency, regulatory misalignment, weak logistics, unreliable power. Footer: After the World Bank Integrating Africa report, 2026." class="diagram">
+<figcaption>The tariff schedule acts on the left segment. Everything on the right is where the argument for regional value chains actually lives or fails.</figcaption>
+</figure>
+
 Sit with what that means for a free trade area. Reducing tariffs is what a free trade area does. Tariff reduction acts on the smaller share of the cost, and the [tariff schedules themselves](/insight-second-step) are only part of even that share.
 
 The larger part is inside the country, and it has a common character across every domain the report names.
@@ -31,6 +36,11 @@ Consider a component maker in one country supplying an assembler in another.
 The border crossing takes two days on average. It also ranges from six hours to nine days depending on the shift, the paperwork, the inspector and the season. The assembler does not plan around two days. The assembler holds nine days of buffer inventory, because a line stoppage costs more than warehousing does.
 
 The working capital tied up in that buffer, across every input, is the actual cost of the border, and it does not appear in the average. Averages are what get published. Variance is what determines whether anybody specialises.
+
+<figure>
+<img src="/assets/img/insight-behind-the-border-two-distributions.jpg" alt="Chart titled Same average delivery time, very different buffer inventory. Two overlaid probability distributions on the same horizontal axis of delivery days, sharing a common mean. A tall narrow blue distribution labelled narrow variance peaks sharply at the mean. A wide low coral distribution labelled wide variance spreads across the whole axis with a long right-hand tail. A vertical dashed grey line runs through the shared mean labelled the number that gets published. A short annotation on the coral tail labelled the ninetieth percentile the firm actually sizes against. Footer: Only the average is usually published. The tail is what decides whether a firm depends on anybody." class="diagram">
+<figcaption>Both distributions publish the same average. The firm buying under the coral one buys nine days of buffer that the firm under the blue one does not need.</figcaption>
+</figure>
 
 The same structure governs electricity, and this is where the second announcement fits.
 
