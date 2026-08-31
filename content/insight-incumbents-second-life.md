@@ -89,6 +89,11 @@ Incumbent redeployment is one of the most powerful mechanisms available to any t
 
 It is also a moment where the social terms of the old regime get an opportunity to travel into the new one, wearing the credibility of a green transition. The technology changes. The routines do not, unless somebody deliberately changes them, and nobody changes what nobody measures.
 
+<figure>
+<img src="/assets/img/insight-incumbents-second-life-what-travels.jpg" alt="Line-art diagram titled What travels with an operator into a new role. A large mining haul truck loaded with ore drives across the frame from left to right along a solid ground line, crossing a vertical dashed line marking the transition from an old role to a new one. Above the truck, three cobalt boxes connect by thin lead lines to the vehicle, labelled technical capability, state relationships and commodity-trading expertise. Below the truck, three coral boxes connect by lead lines from the ground, labelled disclosure practices, community engagement culture and social licence baggage. Footer: Incumbent redeployment is powerful. The competence and the conduct both travel." class="diagram">
+<figcaption>The blue boxes above the truck are the reason redeployment works. The coral boxes below are what nobody accepts by signing the contract but everybody accepts anyway.</figcaption>
+</figure>
+
 Our position on this is the same one we take everywhere: the human and social side has to be understood first, and the technical assessment sits on top of it rather than the reverse. That is what [field research](/field-research) is for, and it is why the Lab starts with the people a project actually meets rather than with the project's documentation. The pattern shows up in our work on [local manufacturing](/expertise-manufacturing) and [climate and ecosystems](/expertise-climate), and it runs through our reading of [European capital moving into African markets](/insight-eu-africa), where the distance between commitment and outcome is made of exactly this material.
 
 If you are assessing an incumbent expansion and the conduct question is being answered with a policy document, [tell us what you need to know](/contact).

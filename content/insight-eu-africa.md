@@ -21,6 +21,11 @@ Two facts are reshaping the relationship between Europe and Africa. Europe needs
 
 The demographic arithmetic is unlike anywhere else. Africa's population is projected to [nearly double from 1.5 to 2.5 billion](https://futures.issafrica.org/thematic/03-demographic-dividend/) between 2025 and 2050, the highest regional growth rate in the world, accounting for more than half of global population growth through 2050. By mid-century, hundreds of millions of Africans are expected to join the middle class, with consumer and business spending projected to reach [$16.1 trillion](https://www.brookings.edu/articles/5-assets-africa-can-turn-into-good-jobs-at-scale/).
 
+<figure>
+<img src="/assets/img/insight-eu-africa-demographic.jpg" alt="Vertical bar chart titled African population, 2025 to 2050. Vertical axis population in billions, zero to three. Two bars: cobalt 2025 bar at 1.5 billion, taller coral 2050 bar at 2.5 billion, values printed above each. Beneath the main chart, a single horizontal stacked bar labelled share of global population growth, 2025 to 2050, with a coral segment labelled Africa greater than 50 per cent taking more than half its length and a grey segment labelled rest of world completing the bar. Footer: ISS Africa Futures." class="diagram">
+<figcaption>The bar on the right is where the customers are. The row underneath is where more than half of every additional consumer on the planet will be.</figcaption>
+</figure>
+
 Crucially for Europe, this is a market with room to build, not just to sell into. As the world's [least-industrialised continent](https://www.brookings.edu/articles/5-assets-africa-can-turn-into-good-jobs-at-scale/), contributing less than 2% of global manufacturing, Africa offers the greatest opportunities for productivity gains and per-capita income growth. The [African Continental Free Trade Area](https://au-afcfta.org/) is the mechanism meant to unlock it: a single market across 54 countries in which manufactured goods scale first through AfCFTA-enabled regional demand, then expand into global markets.
 
 ---

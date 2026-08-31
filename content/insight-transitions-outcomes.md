@@ -15,6 +15,11 @@ The Lab's shorthand for that reading is the two-axis matrix below. It draws on t
   <figcaption>State capacity on the vertical axis, niche success on the horizontal. Every real transition sits in one of the four quadrants; where it lands decides which levers actually shift it.</figcaption>
 </figure>
 
+<figure>
+<img src="/assets/img/insight-transitions-outcomes-four-cases.jpg" alt="A single 2x2 matrix with the same axes as the previous diagram, state capacity vertical (low to high), niche success horizontal (low to high). Four labelled dots placed on the plane: a coral Norway EVs dot in the top-right quadrant, a cobalt Kenya M-Pesa dot in the top-right quadrant slightly lower, a green Nigeria E-mobility dot in the bottom-right quadrant, and a yellow European heat pumps dot in the top-left quadrant. Footer: A diagnostic, not a scoreboard." class="diagram">
+<figcaption>Same axes, different cases. The point is not that one dot beats another. It is that the quadrant a case lands in changes which lever moves it.</figcaption>
+</figure>
+
 ---
 
 ## Directed Transition (high state, low niche)

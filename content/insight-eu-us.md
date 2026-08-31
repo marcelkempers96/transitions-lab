@@ -25,6 +25,11 @@ The [2024 Draghi report](https://commission.europa.eu/topics/eu-competitiveness/
 
 The scale of the divergence is measurable. Over roughly the last half-century, [no EU company above €100 billion](https://www.bcg.com/publications/2024/draghi-report-future-of-eus-industrial-strategy) has been created from scratch, while all six US companies valued at around one trillion euros were created in that period. On research intensity, between 2014 and 2022 [US R&D spending rose to 3.59% of GDP](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en) while the EU crept to just 2.11%. Draghi's proposed remedy is enormous: around [€800 billion in additional annual investment](https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en), equivalent to 4 to 5% of EU GDP.
 
+<figure>
+<img src="/assets/img/insight-eu-us-rd-intensity.jpg" alt="Line chart titled R&D intensity, US vs EU, 2014 to 2022. Vertical axis R&D spend as a percentage of GDP from 1.5 to 4.0 per cent. Horizontal axis 2014 to 2022. A coral US line rises steadily from around 2.7 per cent in 2014 to 3.59 per cent in 2022, labelled at the right edge. A cobalt EU line rises much more slowly from 2.0 per cent to 2.11 per cent over the same period, labelled at the right edge. A vertical bracket on the right marks the widening space between the two endpoints, labelled the gap widened, not narrowed. Footer: Draghi report, 2024." class="diagram">
+<figcaption>Both lines go up. Only one of them goes up fast enough to keep pace, and the space between them at 2022 is the space between an innovator and a scaler.</figcaption>
+</figure>
+
 ---
 
 **§ 2 / The clearest case: climate and deep tech**
@@ -34,6 +39,11 @@ The scale of the divergence is measurable. Over roughly the last half-century, [
 Nowhere is the pattern clearer than in climate technology, a sector close to the Lab's own work. Europe now creates [more climate tech startups than the United States](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech), yet far fewer reach industrial or commercial maturity. The problem is not innovation, it is capital.
 
 The bottleneck sits at a specific stage. At the crucial Series B stage, where companies move from prototype to scale, Europe faces a [persistent funding gap](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech). The data is blunt: from 2020 to 2025 the US launched [29 climate funds over $500 million, versus 11 in Europe](https://www.worldfund.vc/knowledge/series-b-funding-gap-in-european-climate-tech). The consequence is a quiet export of European breakthroughs to American balance sheets.
+
+<figure>
+<img src="/assets/img/insight-eu-us-funding-gap.jpg" alt="Two-bar chart titled US and EU climate funds over $500 million, 2020 to 2025. Vertical axis is the number of funds from zero to thirty. Left coral bar labelled US reaches 29, printed above the bar. Right cobalt bar labelled EU reaches 11, printed above the bar. Footer: Worldfund analysis." class="diagram">
+<figcaption>Twenty-nine to eleven, at the stage a climate hardware company either scales in place or is bought and moved.</figcaption>
+</figure>
 
 The structural reading, echoed across the sector, is that the US maintains leadership through [deep capital markets and industrial absorption](https://stateofclimatetech.com/), while Europe remains the frontier for high-complexity climate tech, sustained by robust policy frameworks and public funding. Europe is the laboratory; America is the factory floor.
 
