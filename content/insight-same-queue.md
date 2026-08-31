@@ -20,6 +20,11 @@ Separately, Timor-Leste is advancing its first utility-scale renewable project: 
 
 These are not separate stories. Both projects need step-up transformers, switchgear, high-voltage cable, power electronics and a grid connection. They are ordering from the same small set of factories, and factory slots are allocated by order book rather than by need.
 
+<figure>
+<img src="/assets/img/insight-same-queue-order-book.jpg" alt="Diagram titled Two projects order from the same six factories. Six identical factory icons drawn in a row across the top of the frame. Beneath each factory, two vertical stacks of order tickets. The upper stack, coral, labelled AI factories, approximately $100 billion in orders, is very tall. The lower row, cobalt, labelled Timor-Leste solar-storage, approximately $100 million in orders, is a single ticket-thin bar. Footer: Factory slots are allocated by order book rather than by need." class="diagram">
+<figcaption>Same six factories. Two projects. The order book decides who gets slot one and who waits.</figcaption>
+</figure>
+
 ---
 
 ## The constraint has moved from electrons to objects

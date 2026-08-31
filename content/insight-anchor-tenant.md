@@ -30,6 +30,11 @@ Shopping centres are not financed on the strength of the small units. They are f
 
 The binding constraint on charging infrastructure has never really been the price of the hardware. It is that nobody will lend against an asset whose revenue depends on a diffuse population of consumers who might show up. Utilisation is the whole business. A charger at 15% utilisation is a write-off and the same charger at 45% is an annuity, and the difference is not technical.
 
+<figure>
+<img src="/assets/img/insight-anchor-tenant-utilisation.jpg" alt="Chart titled A swap station's utilisation, with and without an anchor tenant. Horizontal axis is hours from zero to twenty-four. Vertical axis is utilisation. A coral line for ride-hail fleet plus retail riders sits high across the whole day with a gentle bulge in the evening peak. A cobalt line for retail-only riders sits near zero most of the time with sharp spikes around 6am, noon, and the evening rush. A dashed grey horizontal line across the middle is labelled break-even utilisation, and the coral line sits above it while the cobalt line only briefly touches it during peaks. Footer: Illustrative pattern. Transitions Lab, 2026." class="diagram">
+<figcaption>Both stations are the same asset. Only one of them is financeable, and the difference is a duty cycle written into a lease.</figcaption>
+</figure>
+
 A ride-hailing platform with a concentrated driver fleet has something no utility and no charge-point operator has ever had: it knows where the demand is, when it will arrive, and how long it will stay, because it is dispatching it. Gig fleets also have duty cycles that are close to ideal for charger economics. High daily mileage, predictable dwell windows between shifts, and drivers whose income depends on not queueing.
 
 Putting the charging network inside the driver app is the contractual instrument. It is a soft exclusivity, achieved through convenience rather than through a signed volume commitment, and it produces most of the same financing effect.

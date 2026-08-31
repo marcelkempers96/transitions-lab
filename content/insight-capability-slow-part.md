@@ -51,17 +51,10 @@ That is not a criticism of the programme, which has to have a duration and twelv
 
 This matters because capability programmes are increasingly funded through venture logic, with cohort outcomes, portfolio returns, and graduation rates as the reported metrics. Those metrics actively penalise the thing the programme exists to produce. A programme judged on how many of its ten companies raised a Series A will optimise for selecting companies that were nearly investable already, which is the opposite of building the layer that was missing.
 
-<div class="callout c-butter">
-  <span class="kicker">The clock speeds of a transition</span>
-  <ul>
-    <li><strong>Announcing a capacity target:</strong> months.</li>
-    <li><strong>Procuring and installing hardware:</strong> 1 to 2 years.</li>
-    <li><strong>Auctions, PPAs, grid codes, permitting:</strong> 3 to 5 years.</li>
-    <li><strong>Firm-level engineering capability:</strong> a decade or more, and not purchasable.</li>
-    <li><strong>Trust with affected communities:</strong> continuous, and destroyable in a single season.</li>
-  </ul>
-  <p>Programmes are funded on the timescale of the top two rows and judged on outcomes that belong to the bottom two.</p>
-</div>
+<figure>
+<img src="/assets/img/insight-capability-slow-part-timeline.jpg" alt="Horizontal stacked bar chart titled Procurement is quick. Capability is slow. A single bar running across the width with a years axis from zero to twelve underneath. Segments from left to right: cobalt design and procure at 2 years, butter commission at 1 year, then three coral segments in sequence, steady operation at 2 years, domestic supplier base at 3 years, and domestic engineering deep bench at 4 years. A bracket above the three coral segments is labelled this is where most industrial-policy timelines end. Footer: Indicative. Transitions Lab, 2026." class="diagram">
+<figcaption>Programmes are funded on the timescale of the first two blocks and judged on outcomes that belong to the last three.</figcaption>
+</figure>
 
 ---
 

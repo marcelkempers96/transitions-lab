@@ -66,6 +66,11 @@ Three things would settle this, none of them exotic.
 
 **Expenditure substitution, measured directly.** What did the household spend less on in the months when the payment was tight. This requires asking people, repeatedly, over time, which is the only method that produces the answer.
 
+<figure>
+<img src="/assets/img/insight-what-the-bond-secures-monthly-cost.jpg" alt="Stacked bar chart titled The monthly cost of light, in a lease-to-own household. A single vertical bar centred on a zero line, with a labelled arrow on the left running upward through added costs and downward through avoided cost. Above the zero line, four coral segments stacked bottom to top: SHS lease instalment, mobile money fee, airtime for confirmation, household service call. Below the zero line, one sky-blue hatched segment labelled daily kerosene equivalent (avoided). Footer: Schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>The blue below zero is the money not spent on kerosene. The coral above zero is what replaced it, and only one of the two is in the collateral file.</figcaption>
+</figure>
+
 **Function at year four.** Securitised paper matures. Batteries degrade. The interesting question for anyone claiming durable electrification is what proportion of systems are still working two years after the final payment, when there is no longer any commercial relationship and no lockout to enforce anything.
 
 The point is not that these numbers will look bad. Some operators would probably do well on all three, and would benefit from being able to prove it. The point is that nobody currently knows, and the financing structure has removed the incentive to find out.
