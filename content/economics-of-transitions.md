@@ -8,7 +8,19 @@ Transitions are usually discussed in the language of technology: what is newer, 
 
 This page is a plain-language map of those ideas. Each concept is defined in a sentence or two, and then tied to a published piece where we applied it to a specific, real case, so the abstraction stays anchored to something that actually happened. It is meant to be read either straight through, as a primer on the economics of transitions, or dipped into, as a glossary.
 
-The concepts are grouped into seven clusters: how transitions unfold, market structure and lock-in, finance and capital structure, value capture and industrial policy, cost and price, measurement and information, and distribution and who is left out.
+<div class="callout c-cobalt">
+  <span class="kicker">In this map</span>
+  <h3>Seven clusters</h3>
+  <ul>
+    <li><a href="#cluster-1">1. How transitions unfold</a></li>
+    <li><a href="#cluster-2">2. Market structure and lock-in</a></li>
+    <li><a href="#cluster-3">3. Finance and capital structure</a></li>
+    <li><a href="#cluster-4">4. Value capture and industrial policy</a></li>
+    <li><a href="#cluster-5">5. Cost, price, and contracts</a></li>
+    <li><a href="#cluster-6">6. Measurement, information, and verification</a></li>
+    <li><a href="#cluster-7">7. Distribution, incidence, and who is left out</a></li>
+  </ul>
+</div>
 
 Where a concept has a home in the established economics literature, we name the classical term and its source, so the Lab's applied readings are anchored to the canonical work rather than floating free of it. Full references are listed at the end. The aim is not to dress the ideas in jargon but to show that most of what decides a transition was named, and formalised, decades ago, and is still the right lens today.
 
@@ -17,6 +29,8 @@ Where a concept has a home in the established economics literature, we name the 
 </figure>
 
 ---
+
+<span id="cluster-1"></span>
 
 ## 1. How transitions unfold
 
@@ -70,6 +84,8 @@ Where a concept has a home in the established economics literature, we name the 
 
 ---
 
+<span id="cluster-2"></span>
+
 ## 2. Market structure and lock-in
 
 ### Make-or-buy (vertical integration)
@@ -101,6 +117,8 @@ Where a concept has a home in the established economics literature, we name the 
 **An open technical standard is a different thing from an openly governed one.** Whoever holds the pen on a standard shapes the market that forms around it, which is a governance question, not a technical one. Drawn out in [Who Holds the Pen on the Standard](/insight-who-holds-the-pen).
 
 ---
+
+<span id="cluster-3"></span>
 
 ## 3. Finance and capital structure
 
@@ -146,6 +164,8 @@ Where a concept has a home in the established economics literature, we name the 
 
 ---
 
+<span id="cluster-4"></span>
+
 ## 4. Value capture and industrial policy
 
 ### Appropriability and complementary assets
@@ -182,6 +202,8 @@ Where a concept has a home in the established economics literature, we name the 
 
 ---
 
+<span id="cluster-5"></span>
+
 ## 5. Cost, price, and contracts
 
 ### The contractual cost stack
@@ -205,6 +227,8 @@ Where a concept has a home in the established economics literature, we name the 
 **Intermittent generation and firm, dispatchable power are different products with different values.** Much of the difficulty in mineral processing and industrialisation comes down to the cost and availability of firm power, addressed in [The Value Is in the Second Step](/insight-second-step).
 
 ---
+
+<span id="cluster-6"></span>
 
 ## 6. Measurement, information, and verification
 
@@ -241,6 +265,8 @@ Where a concept has a home in the established economics literature, we name the 
 **A percentage without its base is not a finding, and one month is not a trend.** Two of the commonest reading errors, drawn from a single month of venture data, in [One Month Is Not a Trend](/insight-one-month-not-a-trend).
 
 ---
+
+<span id="cluster-7"></span>
 
 ## 7. Distribution, incidence, and who is left out
 
