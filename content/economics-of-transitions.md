@@ -12,6 +12,10 @@ The concepts are grouped into seven clusters: how transitions unfold, market str
 
 Where a concept has a home in the established economics literature, we name the classical term and its source, so the Lab's applied readings are anchored to the canonical work rather than floating free of it. Full references are listed at the end. The aim is not to dress the ideas in jargon but to show that most of what decides a transition was named, and formalised, decades ago, and is still the right lens today.
 
+<figure>
+<img src="/assets/img/economics-of-transitions-gates.jpg" alt="Line-art sequence: a light bulb feeding into a series of five coloured gates labelled cost, capital, contracts, verification, distribution, ending in a small town with houses and a shopfront. The idea passes through every gate before it lands in the world." class="diagram">
+</figure>
+
 ---
 
 ## 1. How transitions unfold
@@ -23,6 +27,10 @@ Where a concept has a home in the established economics literature, we name the 
 ### The niche, the regime, and the landscape
 
 **Change arrives from protected niches, is resisted by an entrenched regime, and is pushed or slowed by a wider landscape of prices, politics, and crises.** This multi-level view is the backbone of transition studies, and the frame beneath most of the concepts below.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-arc.jpg" alt="Line-art timeline reading left to right across four blocks: a small niche greenhouse with a seedling on the left, a coral trough labelled transition trough, a yellow rising staircase labelled acceleration, and a green plateau labelled new regime with wind turbines, solar panels and buildings. Above the trough, a small lightning bolt labelled window with a dashed arrow leading up onto the acceleration steps." class="diagram">
+</figure>
 
 ### Bypass, Repurpose, Weaken (the BRW framework)
 
@@ -72,6 +80,10 @@ Where a concept has a home in the established economics literature, we name the 
 
 **Whoever owns the demand can finance the infrastructure.** Platforms solve the chicken-and-egg problem of new infrastructure by controlling the customer relationship, which works, and quietly concentrates several dependencies on one counterparty. Set out in [The Anchor Tenant: How Platforms Became the Utility Nobody Elected](/insight-anchor-tenant).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-platform.jpg" alt="Line-art diagram: three supplier factories on the left feed into a central platform building; the platform sends arrows to a column of customer figures on the right. A standard document sits above the platform, feeding into it. A green arc labelled 'more users, more value' curves from the customers back to the platform. A dashed orange line at the bottom labelled 'bypass' runs directly from suppliers to customers, skipping the platform." class="diagram">
+</figure>
+
 ### Network effects (network externalities)
 
 **A product whose value to each user rises with the number of other users, a phone, a payment rail, a charging standard, tends toward a single winner, because adoption is self-reinforcing.** [Katz and Shapiro (1985)](https://www.jstor.org/stable/1814809) formalised network externalities and showed why compatibility and sponsorship decide these markets. Network effects are the flip side of lock-in: the same mechanism that helps a niche reach critical mass then makes the resulting incumbent very hard to dislodge.
@@ -95,6 +107,10 @@ Where a concept has a home in the established economics literature, we name the 
 ### Matching the instrument to the cash flow
 
 **The right kind of money depends on the shape of the thing being financed. Equity suits uncertain, high-upside ventures; working capital suits predictable, short-cycle needs.** Using the wrong instrument distorts what a founder optimises for. We work through this for a Nigerian agritech in [Equity Is the Wrong Money for a Warehouse](/insight-wrong-money-for-a-warehouse), and the mismatch between infrastructure economics and a ten-year venture fund in [One Month Is Not a Trend](/insight-one-month-not-a-trend).
+
+<figure>
+<img src="/assets/img/economics-of-transitions-instruments.jpg" alt="Three puzzle pieces stacked vertically. Top, coral: working capital, illustrated by a grain sack and coin in a loop, labelled 'short cycle, predictable return'. Middle, blue: long-term debt, illustrated by a power plant and transmission line, labelled 'long life, steady cash flow'. Bottom, forest: equity, illustrated by branching dashed arrows, labelled 'uncertain outcome, high upside'." class="diagram">
+</figure>
 
 ### Collateral and securitisation
 
@@ -135,6 +151,10 @@ Where a concept has a home in the established economics literature, we name the 
 ### Appropriability and complementary assets
 
 **Inventing something valuable and capturing the value from it are two different problems, and the second is often the harder one.** [Teece (1986)](https://doi.org/10.1016/0048-7333%2886%2990027-2) showed that whether an innovator profits, rather than an imitator or a supplier, depends on the strength of the appropriability regime and on who controls the complementary assets, the manufacturing, distribution, and qualification needed to bring the innovation to market. This is the classical frame beneath the whole of this cluster: the value in a transition is captured by whoever holds the scarce complementary asset, which is rarely the inventor.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-ladder.jpg" alt="Rising stepped bar chart, left to right: yellow extract with a mine cart, coral process with a refinery, blue qualify with a certified document, forest manufacture with a battery cell. A cobalt arrow labelled 'value captured' rises across the tops. A bracket beneath the last three bars is labelled 'complementary assets'." class="diagram">
+</figure>
 
 ### The second step (moving up the value chain)
 
