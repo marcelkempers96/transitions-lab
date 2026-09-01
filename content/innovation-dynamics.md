@@ -156,17 +156,33 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 **A firm's ability to recognise the value of new external knowledge, assimilate it, and apply it depends on how much related knowledge it already has, so the capacity to learn is itself cumulative.** [Cohen and Levinthal (1990)](https://doi.org/10.2307/2393553) named this absorptive capacity, and it explains why a country or firm cannot simply buy its way into a frontier technology: without the prior base, the new knowledge cannot be absorbed. It is the deep reason capability is slow to build, explored in the field in [Capability Is the Slow Part](/insight-capability-slow-part).
 
+<figure>
+<img src="/assets/img/innovation-dynamics-absorptive-capacity.jpg" alt="Diagram titled 'absorptive capacity is cumulative'. Left column shows a knowledge document falling off a broken edge and coming to rest below with the note 'knowledge cannot be absorbed'. Right side shows a rising staircase of four coloured steps labelled 1 related knowledge, 2 recognise value, 3 assimilate, 4 apply, with the same knowledge document being carried up each step and finally handed to a factory at the top right. Caption beneath: the ability to learn depends on what is already known." class="diagram">
+</figure>
+
 ### Make-or-buy as technology strategy
 
 **Which parts of a technology a firm develops in-house and which it sources is a strategic choice about where its distinctive capability should sit, not only a transaction-cost calculation.** [Coase (1937)](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) and Williamson (1985) gave the economics (see the [economics page](/economics-of-transitions)); in technology strategy the added consideration is that outsourcing a component can hollow out the capability a firm will need for the next generation. We read this in battery-swap architecture in [Own the Battery, Rent the Shopfront](/insight-own-the-battery) and in what an incumbent carries into a new regime in [The Incumbent's Second Life](/insight-incumbents-second-life).
+
+<figure>
+<img src="/assets/img/innovation-dynamics-make-or-buy.jpg" alt="Timeline diagram: a factory today branches into two paths. Upper 'make' branch shows two engineers at a computer with a stack of books, labelled 'higher effort now', leading right to a fully rendered next-generation robot labelled 'capability retained'. Lower 'buy' branch shows a signed contract and a delivery truck, labelled 'lower effort now', leading right to a dashed outline of a missing robot labelled 'capability hollowed out'. A warning bracket beneath the lower branch reads 'the outsourced component becomes the missing knowledge'. Caption beneath: make-or-buy also decides what the firm will know tomorrow." class="diagram">
+</figure>
 
 ### The qualification barrier
 
 **To sell into a demanding buyer's supply chain, a producer's output must be qualified, certified as fit, and qualification, not the technology or the capital, is often the true gate to a market.** This is where appropriability meets the field: the complementary asset the innovator most often lacks is acceptance by the buyer. Drawn out for battery-precursor material in [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) and for export policy in [The Ban Is Not the Policy](/insight-ban-is-not-the-policy).
 
+<figure>
+<img src="/assets/img/innovation-dynamics-qualification.jpg" alt="Line-art sequence: a factory produces a component that passes through two open gates labelled 'technology works' and 'capital available', then meets a red stop sign labelled 'the true barrier', then a taller closed gate labelled 'qualification' with three tags attached, testing, certification, buyer acceptance. Beyond it, warehouses and a delivery truck marked 'market access'. Caption beneath: being able to make it is not the same as being allowed to sell it." class="diagram">
+</figure>
+
 ### The incumbent's advantage in the next regime
 
 **When a transition arrives, the incumbent is not always the loser. A firm that carries transferable capability, distribution, relationships, or process skill into the new regime can win it, which is why some petrol-era players thrive in electric mobility.** Reading what actually transfers, and what does not, is the strategic question. Set out in [The Incumbent's Second Life](/insight-incumbents-second-life).
+
+<figure>
+<img src="/assets/img/innovation-dynamics-incumbent-transfer.jpg" alt="Diagram: a coral 'old regime' factory with a fuel pump on the left, feeding six capability blocks up a bracket labelled 'transferable capability'. Four green blocks, distribution, customer relationships, process discipline, service network, pass through a central filter labelled 'what transfers?' and re-emerge on the right, feeding a blue 'new regime' factory with a battery and electric motor. Two coral blocks, combustion expertise and fuel infrastructure, are diverted down to a dashed box labelled 'obsolete'. Caption beneath: the incumbent survives when its useful capabilities outlive its technology." class="diagram">
+</figure>
 
 ### Modularity and the mirroring hypothesis
 
@@ -179,6 +195,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ### Open innovation
 
 **Firms once did their research behind closed doors and commercialised only what they invented; increasingly, valuable knowledge flows across the firm's boundary in both directions, and the task is to manage those flows rather than seal them.** Chesbrough (2003) called this open innovation. It matters for transitions because the knowledge a niche needs is usually scattered across many actors, universities, suppliers, users, rivals, and the players who assemble it fastest, rather than the ones who guard their own, tend to set the pace. Closed strategies that worked in a stable regime often fail in the open, fast-moving early phase of a transition.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-open-innovation.jpg" alt="Two panels side by side. Left panel 'closed innovation': a walled firm doing internal research feeds only into its own market; universities, users, suppliers and other firms sit outside in grey, disconnected. Footer: knowledge stays inside the firm. Right panel 'open innovation': the same four external actors, universities, users, suppliers, other firms, each connected by bidirectional arrows to the firm's internal research, which combines with them into an assembled-knowledge puzzle, which then feeds both the firm's own market and an external market via a globe. Footer: knowledge moves in both directions. Caption spanning both: the strategic task is to manage flows, not seal the boundary." class="diagram">
+</figure>
 
 ---
 
