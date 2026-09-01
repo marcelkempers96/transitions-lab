@@ -4,6 +4,10 @@
 
 *A working glossary of the economic ideas behind how technologies actually land, each tied to a case we have written about.*
 
+<figure>
+<img src="/assets/img/economics-of-transitions-gates.jpg" alt="Line-art sequence: a light bulb feeding into a series of five coloured gates labelled cost, capital, contracts, verification, distribution, ending in a small town with houses and a shopfront. The idea passes through every gate before it lands in the world." class="diagram">
+</figure>
+
 Transitions are usually discussed in the language of technology: what is newer, cleaner, cheaper, more advanced. But whether a technology actually reaches the people it was built for is decided far more often by economics than by engineering. Who bears a cost, who captures a value, how a cash flow is shaped, what a market will and will not price, which risk is real and which is merely perceived, these are the questions that decide a transition, and they are economic questions.
 
 This page is a plain-language map of those ideas. Each concept is defined in a sentence or two, and then tied to a published piece where we applied it to a specific, real case, so the abstraction stays anchored to something that actually happened. It is meant to be read either straight through, as a primer on the economics of transitions, or dipped into, as a glossary.
@@ -23,10 +27,6 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
     <li><a href="#cluster-7">7. Distribution, incidence, and who is left out</a></li>
   </ul>
 </div>
-
-<figure>
-<img src="/assets/img/economics-of-transitions-gates.jpg" alt="Line-art sequence: a light bulb feeding into a series of five coloured gates labelled cost, capital, contracts, verification, distribution, ending in a small town with houses and a shopfront. The idea passes through every gate before it lands in the world." class="diagram">
-</figure>
 
 ---
 
