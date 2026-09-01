@@ -38,6 +38,11 @@ So the demand curve for this plant's product is drawn by a regulation. Remove th
 
 The useful way to put it: in a conventional resource project, the thing underneath the asset is geological. Here, the thing underneath the asset is a paragraph in another jurisdiction's statute book, and paragraphs can be amended.
 
+<figure>
+<img src="/assets/img/insight-the-mandate-is-the-mine-two-things.jpg" alt="Line-art diagram split by a hairline vertical rule. Left half: a conventional mine headframe drawn above layered rock strata in forest and butter, labelled beneath 'the resource is geological'. Right half: an electrolyser and a hydrogen storage tank drawn above the open pages of a legal statute book with a single highlighted paragraph in coral, labelled beneath 'the resource is legislative'. Both structures drawn at exactly the same size so the comparison is visual." class="diagram">
+<figcaption>Same scale, different substrate. One can be surveyed. The other can be amended.</figcaption>
+</figure>
+
 ---
 
 ## How solid is the paragraph
@@ -53,6 +58,11 @@ Sit with that. Thirteen Member States, eighteen months after the deadline, had n
 This is the part a project sponsor should be pricing, and it is not the headline risk. The headline risk is that the mandate is repealed, which is unlikely. The real risk is softer and far more common: a review clause exercised, a compliance deadline extended, a flexibility mechanism introduced, penalties set low enough to make paying them cheaper than buying the fuel, or a shortfall permitted to be made up in a later period. Each of those leaves the regulation formally intact and destroys the price.
 
 There is precedent for exactly this in European renewable support. Several Member States revised feed-in tariff arrangements after investment had been committed, in ways investors regarded as retroactive, and the resulting arbitration cases ran for a decade. The lesson those disputes taught was not that European regulation is unreliable. It was that the durability of a support scheme is a function of what it costs the government to keep it, and that cost rises when the technology stays expensive.
+
+<figure>
+<img src="/assets/img/insight-the-mandate-is-the-mine-wedges.jpg" alt="Line-art diagram: a sturdy upright pillar labelled at its base 'the mandate, formally intact'. Around the pillar, five small wedges are being inserted at different heights in orange, blue, yellow, sky and forest, each labelled: 'review clause exercised', 'deadline extended', 'flexibility mechanism added', 'penalty set below the fuel price', 'shortfall carried to a later period'. The pillar remains upright and undamaged. To one side, a small figure with a clipboard looks at the pillar and not at the wedges." class="diagram">
+<figcaption>The mandate does not have to fall for the price to. Each wedge is compatible with the regulation staying on the books.</figcaption>
+</figure>
 
 ---
 

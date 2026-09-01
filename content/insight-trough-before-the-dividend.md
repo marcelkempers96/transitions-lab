@@ -30,6 +30,11 @@ The economics of a practice change like reduced tillage are not a step from one 
 
 Year zero involves capital: a direct drill or seeder, possibly new sprayer capacity, and the disposal or idling of equipment that already exists and is often still being paid for. Years one and two frequently involve a yield penalty while soil structure, biology and weed pressure adjust, and while the operator learns a system they have not run before. Agronomic support in that period is not optional and is not free. Only after that does the input saving become the dominant term and the curve rise above where it started.
 
+<figure>
+<img src="/assets/img/insight-trough-before-the-dividend-j-curve.jpg" alt="Chart, 'Farm margin through a transition to reduced tillage'. A single smooth coral curve plotted against a horizontal axis labelled year 0 to year 8 and a vertical axis labelled farm margin, with a horizontal cobalt dashed baseline for the pre-transition margin. The curve drops below the baseline after year 0, reaches its lowest point between years 1 and 2, crosses back above the baseline around year 3 and rises steadily to sit well above it by year 8. The area between the curve and the baseline where the curve is below is lightly shaded coral. Annotation inside: 'the trough: capital spent, yield adjusting, learning'. Annotation on the rising section: 'the resilience dividend, and where every published figure is measured'. Footnote: Schematic. Depth and duration vary by system and are not measured. Transitions Lab, 2026." class="diagram">
+<figcaption>The reported economics live on the rising half. The failure mode lives in the dip.</figcaption>
+</figure>
+
 So the practice can be unambiguously profitable across ten years and unaffordable in year two. Those are different questions and only the first is being answered.
 
 A farm with retained earnings, low debt and a supportive lender can stand in the trough. A tenant farm, a heavily indebted farm, a farm whose operator is five years from retirement with no successor, or a farm whose entire margin is the subsidy payment cannot. **Adaptive capacity is not primarily a knowledge variable. It is a balance sheet variable**, and it is distributed in a way that is well known and rarely reported alongside the practice results.
@@ -45,6 +50,11 @@ There is a methodological issue with the evidence base that is worth naming care
 A case study is written about a farm that completed the transition. Farms that began the change and reverted after two bad years do not become case studies. Nobody writes up an abandoned conversion, no advisory service nominates it, and the farmer has no reason to volunteer.
 
 So the reported economics are conditional on persistence. The figures describe what the practice delivers to a farm that got through, and they say nothing about the probability of getting through. Both numbers are needed to make a decision and only one exists.
+
+<figure>
+<img src="/assets/img/insight-trough-before-the-dividend-case-set.jpg" alt="Line-art diagram: a wide horizontal band representing a transition period. Twelve small identical farm icons enter from the left. Eight continue across the band and emerge on the right inside a bordered box in cobalt labelled 'written up as case studies'. Four turn downward partway across and exit the band via dashed coral lines to a faint unbordered area labelled 'reverted, and not written up', with a question mark above them. The four departing icons are drawn at reduced weight so they read as absent." class="diagram">
+<figcaption>The case set is what got through. The informative group is what left the band, and nobody looks for them.</figcaption>
+</figure>
 
 **The missing statistic is the reversion rate.** Of farms that begin a transition to reduced tillage, what proportion are still practising it in year five, and what distinguishes them from the ones who stopped. That single number would do more for European adaptation policy than another synthesis of successful cases, and it is obtainable, because advisory services, machinery dealers and cooperatives know exactly who went back.
 
@@ -69,6 +79,11 @@ The point is not that anybody made an error. It is that a figure detaches from i
 If the binding constraint is a temporary cash flow problem rather than a knowledge or attitude problem, then the standard instruments are aimed at the wrong stage.
 
 Advisory services, demonstration farms and information campaigns address knowledge. Capital grants address the equipment cost, which is real and is only the first part of the curve. Almost nothing addresses the two or three years in the middle, which is where farms actually fail.
+
+<figure>
+<img src="/assets/img/insight-trough-before-the-dividend-instruments.jpg" alt="Line-art timeline with three segments labelled 'decision', 'the trough, years 1 to 3', 'dividend'. Above the timeline, existing instruments drawn as small labelled objects with arrows onto it: an open book labelled 'advisory services' and a demonstration field sign labelled 'demonstration farms' landing on the decision segment, and a coin stack labelled 'capital grant' landing at the very start of the trough. The middle of the trough segment is conspicuously empty with a dashed outline of a missing object labelled 'nothing lands here'. Below the timeline, four proposed instruments in sky blue with dotted leader lines up into the trough: 'bridging finance', 'transition insurance', 'front-loaded payments', 'longer tenancy'." class="diagram">
+<figcaption>The existing instruments land on the wrong end of the curve. The middle is the whole failure zone.</figcaption>
+</figure>
 
 Four instruments would, and none is exotic.
 
