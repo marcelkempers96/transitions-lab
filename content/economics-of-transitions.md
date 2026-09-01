@@ -22,8 +22,6 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
   </ul>
 </div>
 
-Where a concept has a home in the established economics literature, we name the classical term and its source, so the Lab's applied readings are anchored to the canonical work rather than floating free of it. Full references are listed at the end. The aim is not to dress the ideas in jargon but to show that most of what decides a transition was named, and formalised, decades ago, and is still the right lens today.
-
 <figure>
 <img src="/assets/img/economics-of-transitions-gates.jpg" alt="Line-art sequence: a light bulb feeding into a series of five coloured gates labelled cost, capital, contracts, verification, distribution, ending in a small town with houses and a shopfront. The idea passes through every gate before it lands in the world." class="diagram">
 </figure>
