@@ -59,6 +59,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">Whether someone adopts a technology turns on two perceptions above all: how useful they think it is, and how easy they think it is to use.</span> [Davis (1989)](https://doi.org/10.2307/249008) built the technology acceptance model around perceived usefulness and perceived ease of use, and its enduring lesson is that adoption is driven by perception, not by the objective properties of the device. A technology that is genuinely useful but perceived as hard, or genuinely simple but perceived as pointless, will not be adopted. What people believe about a technology is the thing to measure.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-tam.jpg" alt="Two-by-two quadrant: 'easy to use' on the horizontal axis, 'useful' on the vertical, with four device icons placed. Top-right, useful and easy, a green laptop with a tick labelled 'adopt'. Top-left, useful but hard, an old desktop tower in grey. Bottom two quadrants hold a tablet and a phone in grey. Caption context: the adopt quadrant is defined by perception, not by objective performance." class="diagram">
+</figure>
+
 ### Performance, effort, social influence, and conditions
 
 <span class="highlight">Later work widened the picture. Venkatesh and colleagues unified the acceptance literature into four drivers: performance expectancy (will it help), effort expectancy (is it hard), social influence (do people I respect use it), and facilitating conditions (do I have the support and infrastructure to use it).</span> [Venkatesh et al. (2003)](https://doi.org/10.2307/30036540) drew the picture together. The third and fourth are the ones engineers most often forget: adoption is social and infrastructural, not just individual, and a good product with no social proof or no support around it stalls.
@@ -71,9 +75,17 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">An innovation spreads through a population in a sequence, innovators, early adopters, early and late majority, laggards, and each group adopts for different reasons and responds to different evidence.</span> Rogers (1962) mapped this. The behavioural lesson, and a recurring field finding, is that the enthusiast who adopts first is not representative of the majority who must adopt later, so evidence gathered from early users systematically misleads about how the mainstream will respond. The competitive-dynamics reading of the same curve is on the [technology & innovation dynamics page](/innovation-dynamics).
 
+<figure>
+<img src="/assets/img/human-side-of-technology-diffusion.jpg" alt="Bell curve split into coloured segments beneath, coral innovators, yellow early adopters, big blue majority, green laggards, with brackets labelling innovators, early adopters and majority. Caption context: the tail on the left is who you meet first, and it is not the population you have to convince to reach scale." class="diagram">
+</figure>
+
 ### Adoption is not a switch
 
 <span class="highlight">People rarely replace one thing cleanly with another. They add the new alongside the old, keep the incumbent as a fallback, and shift gradually as trust builds, so real adoption looks like stacking, not switching.</span> We read this behaviour in African solar in [Stacking, Not Switching](/insight-stacking-not-switching).
+
+<figure>
+<img src="/assets/img/human-side-of-technology-adoption-not-switch.jpg" alt="Three-panel time sequence of a household kitchen. Panel one, the woman cooks on a large coral wood stove ('fallback'), a small blue gas stove ('new technology') stands beside it. Panel two, she cooks on the new stove, the fallback is still there at the same size. Panel three, the new stove is now the big one and the fallback has shrunk but has not disappeared. Caption context: the fallback stays for years even when the new technology is winning." class="diagram">
+</figure>
 
 ---
 
@@ -85,9 +97,17 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">Before a person will use a technology that touches their money, their health, or their safety, they must trust it, the device, the provider, and the system behind it, and trust is slow to build and fast to lose.</span> Much of what looks like irrational resistance is a rational withholding of trust from a system that has not yet earned it. In many of the Lab's field settings, trust, not price or performance, is the binding constraint on adoption, and it is built through experience and social proof, not through specifications.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-trust.jpg" alt="Diagram: a woman on the left steps onto a series of green stepping stones under a slowly rising blue line, bracketed as 'repeated experience', with the stones growing in size as she progresses. At the far right the last stone is broken, a sharp coral line falls to the ground beside a downcast man labelled 'one failure'. Caption context: many small experiences build the line; one failure collapses it." class="diagram">
+</figure>
+
 ### Risk perception
 
 <span class="highlight">People do not assess risk the way an actuary does. Perceived risk is shaped by whether a hazard is familiar, voluntary, controllable, and fairly distributed, so a small but dreaded or imposed risk can weigh more heavily than a large but familiar one.</span> [Slovic (1987)](https://doi.org/10.1126/science.3563507) mapped these dimensions. A transition that dismisses public concern as innumeracy misreads it: the concern is usually about control, fairness, and unfamiliarity, and it has to be engaged on those terms, not corrected with a statistic.
+
+<figure>
+<img src="/assets/img/human-side-of-technology-risk-perception.jpg" alt="Diagram: on the left a 'calculated risk' probability dial from 0 to 100. On the right a person considers a panel of four perceived-risk dimensions, control (shield), familiarity (house), fairness (balance scales), choice (door). Caption context: the dial is what the actuary sees; the four icons are what the person weighs." class="diagram">
+</figure>
 
 ### Legitimacy and the right to operate
 
