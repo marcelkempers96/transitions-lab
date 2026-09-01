@@ -62,6 +62,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <span class="highlight">A practice can be profitable over ten years and unaffordable in year two.</span> The transition itself is the most vulnerable moment, because costs arrive before benefits, and the dip in between is where most attempts fail. We trace this through European farms in [The Trough Before the Dividend](/insight-trough-before-the-dividend).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-transition-trough.jpg" alt="Chart: net value on the vertical axis against time on the horizontal axis. A single curve starts on the zero baseline, dips into a coral trough labelled 'upfront cost', then rises through zero and into a rising blue segment labelled 'transition dividend' at the far right. Caption context: the same investment is a cost in year two and a dividend in year eight." class="diagram">
+</figure>
+
 ### Stacking, not switching
 
 <span class="highlight">Transitions rarely proceed by clean replacement. More often a new source is added alongside the old one, and the incumbent is retained as backup, so the picture is one of accumulation rather than substitution.</span> We read this in African solar in [Stacking, Not Switching](/insight-stacking-not-switching).
@@ -70,9 +74,17 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <span class="highlight">Some technologies get more valuable the more they are used: each new adopter improves the infrastructure, deepens the supply of skills, and raises the credibility of the option for the next adopter.</span> Formalised by Arthur (1989), this is the engine that lets a niche eventually overtake an incumbent, and the reason the early going is so slow, the returns only compound once a threshold is crossed. The idea has a long lineage, reaching back to [Marshall (1890)](https://www.econlib.org/library/Marshall/marP.html) on the external economies that accrue to a growing industry. The strategic reading of the same mechanism, as the engine that lets a niche cross the chasm, is on the [technology & innovation dynamics page](/innovation-dynamics).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-increasing-returns.jpg" alt="Chart: unit cost on the vertical axis against time on the horizontal axis. A coral incumbent curve slopes down gently and plateaus. A blue emerging-technology curve starts high, drops steeply, and crosses the incumbent line at a marked point labelled 'cost crossover'. Caption context: increasing returns to adoption drive the crossing, and once it happens the incumbent no longer competes on price." class="diagram">
+</figure>
+
 ### Timing and the window of opportunity
 
 <span class="highlight">A niche does not break through on its own schedule; it breaks through when a shock, a price spike, a policy shift, a crisis, opens a window in the regime.</span> A technology that is ready when the window opens succeeds, and one that is not may wait years for the next. The transition turns on readiness meeting timing, not merit alone.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-timing.jpg" alt="Chart: monthly cost on the vertical axis against time on the horizontal axis. A blue cost curve declines steadily, crossing a coral dashed 'affordability threshold' line at a marked dot. A green arrow reads 'adoption begins' just after the crossing. Caption context: the window opens the moment cost drops below what people can pay, not when the technology is invented." class="diagram">
+</figure>
 
 ---
 
@@ -328,6 +340,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <figure>
 <img src="/assets/img/economics-of-transitions-externalities.jpg" alt="Chart: a coral demand curve slopes down, a blue private cost curve slopes up, a green social cost curve slopes up above the blue line. Two equilibrium dots, one at the demand-social cost crossing labelled 'social optimum', one at the demand-private cost crossing labelled 'market output'. A coral bracket beneath spans the gap between them, labelled 'over-produced'. Caption context: when a real cost is not priced, the market delivers more of it than the world wants." class="diagram">
+</figure>
+
+<figure>
+<img src="/assets/img/economics-of-transitions-externalities-positive.jpg" alt="Chart: a blue supply curve slopes up, a coral private-benefit curve slopes down, a green social-benefit curve slopes down above the private-benefit line. Two equilibrium dots, one at supply-private benefit labelled 'market adoption', one at supply-social benefit labelled 'social optimum'. A green bracket beneath spans the gap between them, labelled 'under-supplied'. Caption context: the mirror case, when a real benefit is not priced, the market delivers less of it than the world wants." class="diagram">
 </figure>
 
 ### Public goods and the free-rider problem
