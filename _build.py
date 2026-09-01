@@ -200,6 +200,7 @@ HERO_COLOR: dict[str, str] = {
     "brw": "cobalt",
     "readiness-levels": "cobalt",
     "resources": "cobalt",
+    "economics-of-transitions": "cobalt",
     "interview-guide": "cobalt",
     "impact-tracking-template": "cobalt",
     # Research programmes (forest)
@@ -618,6 +619,10 @@ META: dict[str, dict[str, str]] = {
     "insight-trough-before-the-dividend": {
         "title": "The Trough Before the Dividend | Transitions Lab",
         "description": "European farm-resilience evidence shows the practice is profitable across ten years and unaffordable in year two. Adaptive capacity is a balance-sheet variable, not a knowledge variable.",
+    },
+    "economics-of-transitions": {
+        "title": "The Economics of Transitions | Transitions Lab",
+        "description": "A working glossary of the economic ideas behind how technologies actually land, each anchored to a canonical source and tied to a Lab case where the concept applies.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",

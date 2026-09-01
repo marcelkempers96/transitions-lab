@@ -22,6 +22,9 @@ They are free to download, use, and cite with attribution. They also show, plain
 [**Reading a Transition: A Primer →**](/assets/resource-transitions-primer.pdf)
 The Lab's intellectual foundation, set out plainly: what a socio-technical system is, why the human side comes first, the recurring dynamics to look for in any transition, and how to turn that reading into evidence. **PDF, 18 pages.**
 
+[**The Economics of Transitions →**](/economics-of-transitions)
+A working glossary of the economic ideas that decide whether a technology actually lands, each anchored to its canonical source (Coase, Akerlof, Arthur, Teece, Williamson and others) and tied to a Lab case where the concept applies. Seven clusters, from lock-in and market structure to distribution and who is left out. **Web page.**
+
 ---
 
 **§ 2 / Readiness frameworks**
