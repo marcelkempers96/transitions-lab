@@ -56,6 +56,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 **Innovation ranges from incremental improvements that reinforce existing competences to radical breaks that render them obsolete.** The distinction matters because incumbents are structurally good at the first and structurally bad at the second: their skills, suppliers, and customers all pull toward the familiar. Most failed transitions are radical innovations judged by incremental standards.
 
+<figure>
+<img src="/assets/img/innovation-dynamics-incremental-radical.jpg" alt="Two panels side by side. Left panel labelled 'incremental innovation', yellow header, showing a green factory refined step by step across five iterations with dots down to icons for gear, chip, sparkle, leaf and dollar; footer band reads 'reinforces existing capabilities'. Right panel labelled 'radical innovation', coral header, showing the same green factory on the left, an X marked 'competence destroyed' at midpoint, and a new 3D-printer beside it; three green worker/warehouse/team icons on the left of the X and three coral counterparts on the right; footer band reads 'renders existing capabilities obsolete'." class="diagram">
+</figure>
+
 ### Architectural innovation
 
 **An innovation can leave every component unchanged and still destroy an incumbent, if it changes the way the components are linked.** [Henderson and Clark (1990)](https://doi.org/10.2307/2393549) showed that this architectural innovation is peculiarly deadly because incumbents, whose knowledge is organised around the old architecture, often fail even to perceive it as a threat. It looks like a minor rearrangement and is in fact a redefinition. Many transitions are architectural: the pieces are familiar, the system is new.
@@ -72,9 +76,17 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 **Technical progress does not explore every possible direction; it follows a paradigm, a shared sense of what the relevant problems are and how to solve them, and advances along the trajectories that paradigm defines.** [Dosi (1982)](https://doi.org/10.1016/0048-7333%2882%2990016-6) drew the analogy to Kuhn's scientific paradigms: a paradigm acts as a lens that focuses effort on some avenues and makes others nearly invisible, which is why breakthroughs so often come from outside the incumbent's field of view. For a transition, the paradigm is the deep reason an industry keeps improving the wrong thing, refining the combustion engine while the problem quietly becomes the powertrain, and why genuine change usually requires a paradigm shift, not just harder work along the existing trajectory.
 
+<figure>
+<img src="/assets/img/innovation-dynamics-paradigm.jpg" alt="Diagram: a factory on the left projects a yellow spotlight beam to the right, labelled 'the problems the paradigm can see'. Inside the beam, four combustion engines evolve step by step from left to right through 'efficiency' and 'refinement' toward an arrow labelled 'paradigm shift'. Outside the beam, in the darker area beneath it, an alternative path of battery to electric motor sits with an arrow labelled 'the alternative outside the field of view'. Caption beneath: a paradigm directs attention before it directs investment." class="diagram">
+</figure>
+
 ### General purpose technologies and the productivity paradox
 
 **Some technologies, steam, electricity, the computer, are not single innovations but platforms that reshape every sector they touch, and their gains show up slowly, because the economy has to reorganise around them first.** [Bresnahan and Trajtenberg (1995)](https://doi.org/10.1016/0304-4076%2894%2901598-T) named these general purpose technologies; [David (1990)](https://www.jstor.org/stable/2006600) showed, through the example of the electric dynamo, that the productivity payoff can lag the invention by decades while factories, skills, and institutions are rebuilt around it. The lesson for a transition is patience with a twist: the absence of measured gains in the early years is not evidence the technology has failed, it is evidence the complementary reorganisation has not happened yet.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-productivity-paradox.jpg" alt="Chart titled 'The productivity payoff arrives late'. A lightbulb labelled 'invention arrives' sits at the left of a horizontal timeline. A wide yellow band across the middle of the timeline labelled 'complementary reorganisation' contains four icons: processes, skills, organisations, institutions. A coral line labelled 'measured gains remain small' runs flat across the band, then bends sharply upward at the far right as 'productivity appears'. Caption beneath: the technology arrives before the economy is ready to use it." class="diagram">
+</figure>
 
 ---
 
@@ -106,6 +118,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 **Moving first can secure a lead through learning, network effects, and pre-emption, or it can mean bearing the cost of educating a market that a fast follower then captures.** Whether the pioneer or the follower wins depends on the appropriability regime and the pace of change, which is why "first" is a strategy, not a guarantee.
 
+<figure>
+<img src="/assets/img/innovation-dynamics-first-mover.jpg" alt="Two parallel paths ending at a shop labelled 'early position'. Top path labelled 'first mover': a coral bulldozer clears a dashed path past three milestones marked 'technology risk', 'market education', 'infrastructure', then arrives at the shop under an orange flag. Bottom path labelled 'fast follower': a blue car drives on a paved dashed road past three milestones marked 'observed demand', 'lower uncertainty', 'faster scaling', arriving at the same shop. Beside the shop a footer reads 'market leadership is not guaranteed'. Caption beneath: moving first creates options and costs." class="diagram">
+</figure>
+
 ### Innovation ecosystems and co-innovation risk
 
 **A firm's own innovation can be excellent and still fail commercially if the other innovations it depends on, the complements, the infrastructure, the partners upstream and downstream, are not ready.** Adner (2006) called this the "wide lens": the innovator's real risk is often not execution but the readiness of the ecosystem around it, and the more partners a promising technology needs, the more ways it can be held up by the slowest of them. Electric mobility is the textbook case: a good vehicle is not enough if the charging, the financing, the mechanics, and the grid are not ready together. Reading the whole ecosystem, not just the product, is what separates a technology that could work from one that will.
@@ -123,6 +139,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ### Profiting from innovation (appropriability and complementary assets)
 
 **Inventing something valuable and capturing the value from it are different problems, and the second is usually harder.** [Teece (1986)](https://doi.org/10.1016/0048-7333%2886%2990027-2) showed that whether the innovator profits, rather than an imitator or a supplier, depends on the strength of the appropriability regime and on who controls the complementary assets: the manufacturing, distribution, brand, and qualification needed to bring the innovation to market. This is the single most useful frame in technology strategy, and it explains why the inventor is so often not the one who gets rich. We apply the make-or-buy version to network architecture in [Own the Battery, Rent the Shopfront](/insight-own-the-battery).
+
+<figure>
+<img src="/assets/img/innovation-dynamics-profiting.jpg" alt="Diagram titled 'Inventing value is not the same as capturing it'. A scientist with a lightbulb labelled 'innovation' sits at the far left, with a small coin stack below labelled 'who controls the route to market?'. Arrows lead right through four yellow tiles: manufacturing (factory), qualification (certified rosette), distribution (warehouse and truck), market access (network of figures). Rising coin stacks above each tile show the value building. A bracket beneath the middle four tiles reads 'complementary assets'. A final arrow leads to a forest labelled 'value captured'." class="diagram">
+</figure>
 
 ### Dynamic capabilities
 
