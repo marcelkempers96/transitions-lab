@@ -6,7 +6,7 @@
 
 The Lab's other theory pages take the view from above. The [economics of transitions](/economics-of-transitions) asks who bears a cost and who captures a value. The [technology & innovation dynamics](/innovation-dynamics) page asks how a technology evolves and how firms compete to own it. The [transitions primer](/resources) asks how whole systems move. This page takes the view from the ground: what happens when a real person, in a real place, actually meets the technology.
 
-It is the lens the Lab leads with. Social science first, technical depth alongside, is not a slogan; it is a claim about where transitions are actually decided. A payment app can be cheaper, faster, and better in every measurable way and still fail because people do not trust it, cannot fit it into how they already live, or were never the people the designers pictured. The reasons are behavioural, social, and cultural, and they are invisible to a specification, a cost model, or a strategy deck. They become visible only by going and asking.
+It is the lens the Lab leads with. Social science first, technical depth alongside, is not a slogan; it is a claim about where transitions are actually decided. A payment app can be cheaper, faster, and better in every measurable way and still fail because people do not trust it, cannot fit it into how they already live, or were never the people the designers pictured. The reasons are behavioural, social, and cultural, and they are invisible to a specification, a cost model, or a strategy deck. They become visible only by **[going and asking](/field-research)**.
 
 <div class="callout c-cobalt">
   <span class="kicker">In this map</span>
@@ -175,7 +175,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Practice theory
 
-<span class="highlight">Much of what a technology has to change is not a decision but a practice, a routine bundle of materials, competences, and meanings that people perform without deliberating: how a household cooks, travels, washes, keeps warm.</span> Shove and colleagues (2012) argue that these practices, not individual choices, are the real unit of change, and that a transition succeeds only when the whole practice is reconfigured, not when a single product is swapped in. This is why giving someone a cleaner cooker often fails: the cooking practice, the fuel, the pot, the timing, the taste, the skill, did not change with it.
+<span class="highlight">Much of what a technology has to change is not a decision but a practice, a routine bundle of materials, competences, and meanings that people perform without deliberating: how a household cooks, travels, washes, keeps warm.</span> [Shove and colleagues (2012)](https://en.wikipedia.org/wiki/Practice_theory) argue that these practices, not individual choices, are the real unit of change, and that a transition succeeds only when the whole practice is reconfigured, not when a single product is swapped in. This is why giving someone a cleaner cooker often fails: the cooking practice, the fuel, the pot, the timing, the taste, the skill, did not change with it.
 
 <figure>
 <img src="/assets/img/human-side-of-technology-practice-theory.jpg" alt="Diagram: three coloured circles arranged around a central coral cooking pot. Top-left circle 'materials' with a stove icon; top-right circle 'competence' with two hands kneading; bottom circle 'meaning' with a family at a dinner table. Caption context: swapping the pot alone is not enough, all three sides of the practice have to change." class="diagram">
@@ -199,7 +199,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Convenience usually wins
 
-<span class="highlight">When a new technology asks for more effort than the incumbent, even a small amount more, it tends to lose, because convenience is weighed far more heavily than people admit or than merit would justify.</span> Many transitions fail not on cost or performance but on friction: an extra step, a wait, a hassle. The Lab's fix-it question in the field, what would you change first, so often surfaces a friction, not a feature, because friction is what actually governs everyday use.
+<span class="highlight">When a new technology asks for more effort than the incumbent, even a small amount more, it tends to lose, because convenience is weighed far more heavily than people admit or than merit would justify.</span> Many transitions fail not on cost or performance but on friction: an extra step, a wait, a hassle. The Lab's **[fix-it question in the field](/interview-guide)**, what would you change first, so often surfaces a friction, not a feature, because friction is what actually governs everyday use.
 
 ---
 
@@ -209,7 +209,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### The imagined user versus the real one
 
-<span class="highlight">Designers build for a user they picture, and that imagined user is usually more literate, more connected, more moneyed, and more like the designer than the real population.</span> The gap between the imagined user and the real one is where exclusion is manufactured, quietly, at the design stage, long before deployment. The Lab's core method, going to the people a technology actually reaches, exists precisely to close this gap, and its second-perspective work exists because the people who collect feedback from their own users rarely find the ones they never reached.
+<span class="highlight">Designers build for a user they picture, and that imagined user is usually more literate, more connected, more moneyed, and more like the designer than the real population.</span> The gap between the imagined user and the real one is where exclusion is manufactured, quietly, at the design stage, long before deployment. The Lab's core method, **[going to the people a technology actually reaches](/field-research)**, exists precisely to close this gap, and its **[second-perspective work](/reporting-to-funders)** exists because the people who collect feedback from their own users rarely find the ones they never reached.
 
 <figure>
 <img src="/assets/img/human-side-of-technology-imagined-user.jpg" alt="Diagram: a designer at a drawing board on the left sketches a single generic user figure on a pad, with a dashed arrow leading right to a group of four diverse real users, an older woman with a walking frame, a young man in a hoodie holding a phone, a woman with a laptop, and a man in a wheelchair. Labels beneath: 'imagined user' and 'real users'. Caption context: the gap between the two is where exclusion is manufactured." class="diagram">
@@ -217,7 +217,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Exclusion by design
 
-<span class="highlight">A technology can exclude not through malice but through assumptions baked into it: an interface that assumes literacy, a service that assumes a bank account, a device that assumes reliable power.</span> These assumptions are invisible to those who meet them and decisive for those who do not. Reading a technology for its embedded assumptions, and asking who they quietly shut out, is a standing part of the Lab's fieldwork.
+<span class="highlight">A technology can exclude not through malice but through assumptions baked into it: an interface that assumes literacy, a service that assumes a bank account, a device that assumes reliable power.</span> These assumptions are invisible to those who meet them and decisive for those who do not. Reading a technology for its embedded assumptions, and asking who they quietly shut out, is a standing part of **[the Lab's fieldwork](/field-research)**.
 
 <figure>
 <img src="/assets/img/human-side-of-technology-exclusion.jpg" alt="Diagram: three coral figures blocked in turn at three plinths labelled 'literacy', 'bank account', 'reliable power'. To the right, a wider archway lets a blue figure walk through unimpeded toward a small house and tree. Caption context: the assumptions that let one person through are the assumptions that shut everyone else out." class="diagram">
@@ -225,7 +225,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Courtesy bias and the sponsor effect
 
-<span class="highlight">People tend to tell a researcher, especially one associated with the provider, what they think the researcher wants to hear, so feedback collected by an organisation from its own users runs systematically positive.</span> This is a behavioural fact about the interview itself, and it is the reason independent data collection produces materially different results from self-report. It is the human-behaviour foundation of the economic argument in [The Reporting Loop](/insight-the-reporting-loop).
+<span class="highlight">People tend to tell a researcher, especially one associated with the provider, what they think the researcher wants to hear, so feedback collected by an organisation from its own users runs systematically positive.</span> This is a behavioural fact about the interview itself, and it is the reason **[independent data collection](/reporting-to-funders)** produces materially different results from self-report. It is the human-behaviour foundation of the economic argument in [The Reporting Loop](/insight-the-reporting-loop).
 
 <figure>
 <img src="/assets/img/human-side-of-technology-courtesy-bias.jpg" alt="Two-panel diagram titled 'Who asks changes the answer'. Left panel: a respondent in a yellow jumper speaks to a man with a company lanyard and clipboard, her speech bubble reads 'everything works'. Arrow to right panel: the same respondent speaks to an independent researcher with glasses and a notebook, her speech bubble reads 'here is what fails'. Caption context: the same person answers a different question depending on who is holding the pen." class="diagram">
@@ -255,7 +255,7 @@ Pinch, T. J., and Bijker, W. E. (1984). [The social construction of facts and ar
 
 Rogers, E. M. (1962). [*Diffusion of Innovations*](https://en.wikipedia.org/wiki/Diffusion_of_innovations). New York: Free Press.
 
-Shove, E., Pantzar, M., and Watson, M. (2012). *The Dynamics of Social Practice: Everyday Life and How It Changes*. London: SAGE.
+Shove, E., Pantzar, M., and Watson, M. (2012). [*The Dynamics of Social Practice: Everyday Life and How It Changes*](https://en.wikipedia.org/wiki/Practice_theory). London: SAGE.
 
 Simon, H. A. (1955). [A behavioral model of rational choice](https://doi.org/10.2307/1884852). *Quarterly Journal of Economics*, 69(1), 99 to 118.
 
