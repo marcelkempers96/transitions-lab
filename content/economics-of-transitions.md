@@ -12,7 +12,7 @@ Transitions are usually discussed in the language of technology: what is newer, 
 
 This page is a plain-language map of those ideas. Each concept is defined in a sentence or two, and then tied to a published piece where we applied it to a specific, real case, so the abstraction stays anchored to something that actually happened. It is meant to be read either straight through, as a primer on the economics of transitions, or dipped into, as a glossary.
 
-Read this page alongside the [technology & innovation dynamics](/innovation-dynamics) companion, which takes the same terrain from the management-of-technology side, and the [transitions primer](/resources), which sets out the socio-technical frame in full. A handful of foundational ideas, path dependence, network effects, increasing returns, appropriability, deliberately appear on more than one page, because they genuinely belong to more than one literature; each page treats them through its own lens and points to the others.
+Read this page alongside the [human side of technology](/human-side-of-technology), which reads the same terrain from the behaviour-and-perception side; the [technology & innovation dynamics](/innovation-dynamics) companion, which takes it from the management-of-technology side; and the [transitions primer](/resources), which sets out the socio-technical frame in full. A handful of foundational ideas, path dependence, network effects, increasing returns, appropriability, deliberately appear on more than one page, because they genuinely belong to more than one literature; each page treats them through its own lens and points to the others.
 
 <div class="callout c-cobalt">
   <span class="kicker">In this map</span>
@@ -64,7 +64,7 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 ### The transition trough (the J-curve of change)
 
-<span class="highlight">A practice can be profitable over ten years and unaffordable in year two.</span> The transition itself is the most vulnerable moment, because costs arrive before benefits, and the dip in between is where most attempts fail. We trace this through European farms in [The Trough Before the Dividend](/insight-trough-before-the-dividend).
+<span class="highlight">A practice can be profitable over ten years and unaffordable in year two.</span> The transition itself is the most vulnerable moment, because costs arrive before benefits, and the dip in between is where most attempts fail. We trace this through European farms in [The Trough Before the Dividend](/insight-trough-before-the-dividend). The behavioural cousin, why loss aversion makes the trough feel deeper than the numbers suggest, is on the [human side of technology page](/human-side-of-technology).
 
 <figure>
 <img src="/assets/img/economics-of-transitions-transition-trough.jpg" alt="Chart: net value on the vertical axis against time on the horizontal axis. A single curve starts on the zero baseline, dips into a coral trough labelled 'upfront cost', then rises through zero and into a rising blue segment labelled 'transition dividend' at the far right. Caption context: the same investment is a cost in year two and a dividend in year eight." class="diagram">
@@ -314,7 +314,7 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 ### The reporting loop
 
-<span class="highlight">When the party being evaluated is also the party supplying the evaluation, to a funder deciding on renewal, the evidence base tilts optimistic by construction, and more dashboards do not fix it.</span> This is the reasoning behind the Lab's funder service, set out in [The Reporting Loop](/insight-the-reporting-loop).
+<span class="highlight">When the party being evaluated is also the party supplying the evaluation, to a funder deciding on renewal, the evidence base tilts optimistic by construction, and more dashboards do not fix it.</span> This is the reasoning behind the Lab's funder service, set out in [The Reporting Loop](/insight-the-reporting-loop). The behavioural foundation, courtesy bias in the interview itself, is on the [human side of technology page](/human-side-of-technology).
 
 ### Reading a number honestly
 

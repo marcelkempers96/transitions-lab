@@ -202,6 +202,7 @@ HERO_COLOR: dict[str, str] = {
     "resources": "cobalt",
     "economics-of-transitions": "cobalt",
     "innovation-dynamics": "cobalt",
+    "human-side-of-technology": "cobalt",
     "interview-guide": "cobalt",
     "impact-tracking-template": "cobalt",
     # Research programmes (forest)
@@ -628,6 +629,10 @@ META: dict[str, dict[str, str]] = {
     "innovation-dynamics": {
         "title": "Technology & Innovation Dynamics | Transitions Lab",
         "description": "Management of technology, how technologies and the firms behind them evolve, compete, and win. Five clusters, each anchored to its canonical source and, where the Lab has one, an applied case.",
+    },
+    "human-side-of-technology": {
+        "title": "The Human Side of Technology | Transitions Lab",
+        "description": "Social science and human behaviour: why people adopt, resist, trust, and abandon technologies, and why none of it shows up in the specification. Six clusters, each anchored to its canonical source.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",

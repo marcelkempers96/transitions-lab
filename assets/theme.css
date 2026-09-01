@@ -579,13 +579,16 @@ section + section{border-top:2px solid var(--ink);}
 .prose a:active > .format-badge{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink);}
 /* Definition highlight — yellow marker, no bold */
 .prose .highlight{background:var(--butter);color:var(--ink);padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
-/* Cluster.concept numbering on the two theory-map pages */
+/* Cluster.concept numbering on the theory-map pages */
 body[data-page="economics-of-transitions"] .prose,
-body[data-page="innovation-dynamics"] .prose{counter-reset:cluster;}
+body[data-page="innovation-dynamics"] .prose,
+body[data-page="human-side-of-technology"] .prose{counter-reset:cluster;}
 body[data-page="economics-of-transitions"] .prose h2,
-body[data-page="innovation-dynamics"] .prose h2{counter-increment:cluster;counter-reset:concept;}
+body[data-page="innovation-dynamics"] .prose h2,
+body[data-page="human-side-of-technology"] .prose h2{counter-increment:cluster;counter-reset:concept;}
 body[data-page="economics-of-transitions"] .prose h3::before,
-body[data-page="innovation-dynamics"] .prose h3::before{
+body[data-page="innovation-dynamics"] .prose h3::before,
+body[data-page="human-side-of-technology"] .prose h3::before{
   content:counter(cluster) "." counter(concept) "  ";
   counter-increment:concept;color:var(--coral);font-weight:800;margin-right:.35em;
 }

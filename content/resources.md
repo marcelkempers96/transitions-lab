@@ -16,6 +16,9 @@ They are free to download, use, and cite with attribution. They also show, plain
 
 ## How the Lab reads the world
 
+[**The Human Side of Technology →**](/human-side-of-technology)
+Social science and human behaviour: why people adopt, resist, trust, and abandon technologies, and why none of it shows up in the specification. Anchored to Simon, Kahneman-Tversky, Davis, Ajzen, Rogers, Slovic, Pinch-Bijker, Hughes, Shove, Thaler-Sunstein and others. Six clusters, from how people decide to who gets left out. The lens the Lab leads with. [<span class="format-badge fmt-web">See 26 concepts &rarr;</span>](/human-side-of-technology)
+
 [**The BRW Framework →**](/assets/resource-brw-framework.pdf)
 *Bypass, Repurpose, Weaken.* The Lab's signature strategic framework: a mechanism-based typology of how a niche technology engages an entrenched regime, classifying each strategy by what it does to a specific lock-in barrier, and matching mechanisms to barriers. A working tool for innovators and funders, grounded in field research. [<span class="format-badge fmt-pdf">PDF · 16 pages</span>](/assets/resource-brw-framework.pdf)
 
