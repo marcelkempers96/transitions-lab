@@ -97,6 +97,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">A system that works well on average can fail badly for a specific group, and when it does, it forfeits that group's trust entirely.</span> A confident aggregate accuracy figure can conceal exactly the failures that matter most to the people a technology was meant to include. Set out for AI systems in [Who Does It Fail For?](/insight-who-does-it-fail-for).
 
+<figure>
+<img src="/assets/img/human-side-of-technology-average-fails.jpg" alt="Row of nine blue and green figures with ticks on their chests grouped under a bracket labelled 'high average'. One coral figure with an X sits to the right under a smaller bracket labelled 'one group left out'. Caption context: the same aggregate accuracy is a success for the many and a full failure for the group it excludes." class="diagram">
+</figure>
+
 ---
 
 <span id="cluster-4"></span>
@@ -111,13 +115,25 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">The same technology means different things to different people, and those meanings, not the object alone, drive how it is used, resisted, or repurposed.</span> A mobile phone is a status object, a livelihood tool, a safety device, or a distraction depending on who holds it. A transition that assumes everyone reads the technology the way its designers do will be surprised by how it is actually taken up, which is why the Lab asks what a technology means to people, not just whether they use it.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-interpretive-flexibility.jpg" alt="Diagram: a large phone in the centre with four users around it, each connected to a different meaning icon in the corners: livelihood (coin stack), safety (shield with tick), connection (speech bubble), status (star). Caption context: same object, four different technologies depending on who is holding it." class="diagram">
+</figure>
+
 ### The user as designer (appropriation)
 
 <span class="highlight">People do not passively accept technologies as given; they modify, misuse, and repurpose them to fit their own lives, and this appropriation is a form of design in its own right.</span> The workaround, the unofficial use, the hack, these are signals of what people actually needed, which the original design missed. Watching how a technology is appropriated in the field is one of the richest sources of insight the Lab has, because it reveals the gap between what was built and what was wanted.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-appropriation.jpg" alt="Diagram: a plain kettle on the left labelled 'designed use'. A user in the middle turns a screw with a screwdriver. On the right, the same kettle labelled 'actual use' now has a mug clipped onto it with a spoon poking out. Caption context: what a user attaches to a design is a signal of what the design was missing." class="diagram">
+</figure>
+
 ### Large technical systems and momentum
 
 <span class="highlight">Big technological systems, grids, road networks, payment rails, accumulate momentum: as they grow, the sunk investment, the institutions, and the habits built around them make their direction progressively harder to change.</span> Hughes (1983) showed this for electrification. It is the human-and-institutional counterpart of lock-in: the system resists redirection not only for economic reasons but because so many people's routines, skills, and expectations are bound up in it.
+
+<figure>
+<img src="/assets/img/human-side-of-technology-momentum.jpg" alt="Diagram: a large wheel made of four coloured puzzle pieces, infrastructure, skills, institutions, routines, being pushed along a track by a coral arrow. Speed lines behind the wheel indicate motion. Caption context: the four pieces lock together and the wheel is progressively harder to turn." class="diagram">
+</figure>
 
 ---
 
@@ -128,6 +144,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ### Practice theory
 
 <span class="highlight">Much of what a technology has to change is not a decision but a practice, a routine bundle of materials, competences, and meanings that people perform without deliberating: how a household cooks, travels, washes, keeps warm.</span> Shove and colleagues (2012) argue that these practices, not individual choices, are the real unit of change, and that a transition succeeds only when the whole practice is reconfigured, not when a single product is swapped in. This is why giving someone a cleaner cooker often fails: the cooking practice, the fuel, the pot, the timing, the taste, the skill, did not change with it.
+
+<figure>
+<img src="/assets/img/human-side-of-technology-practice-theory.jpg" alt="Diagram: three coloured circles arranged around a central coral cooking pot. Top-left circle 'materials' with a stove icon; top-right circle 'competence' with two hands kneading; bottom circle 'meaning' with a family at a dinner table. Caption context: swapping the pot alone is not enough, all three sides of the practice have to change." class="diagram">
+</figure>
 
 ### Habit and the limits of information
 
