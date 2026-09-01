@@ -37,6 +37,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">People feel losses roughly twice as heavily as equivalent gains, and they judge outcomes against a reference point rather than in absolute terms.</span> [Kahneman and Tversky (1979)](https://doi.org/10.2307/1914185) formalised this as prospect theory, and it reshapes how a transition should be framed: asking a household to give up something certain (the familiar cooker, the petrol bike) for a larger but uncertain future gain runs straight into loss aversion. The switch is not resisted because people cannot do the maths; it is resisted because the maths is not how people weigh a loss. This is the behavioural cousin of the economic argument on the [transition trough](/economics-of-transitions).
 
+<figure>
+<img src="/assets/img/human-side-of-technology-loss-aversion.jpg" alt="Diagram: a seesaw with a coral 'loss' block on the left tipping down, and a two-block green 'equivalent gain' on the right lifting up. A person stands at the pivot watching. Caption context: the same magnitude on both sides, but the seesaw tips toward the loss." class="diagram">
+</figure>
+
 ### Framing and mental accounting
 
 <span class="highlight">The same choice, described two different ways, produces two different decisions, and people file money and costs into separate mental accounts that they treat differently.</span> [Tversky and Kahneman (1981)](https://doi.org/10.1126/science.7455683) showed this for framing. A daily payment and an equivalent annual one feel different; a saving framed as avoided loss lands harder than one framed as a gain. For a transition this means the framing of an offer, and how it fits a person's mental accounts, can matter as much as its actual terms, which is why the Lab's interviews probe how people describe a cost, not just what it is.
@@ -45,9 +49,17 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">People systematically overweight the present and underweight the future, and they do so inconsistently, being patient about the distant future but impatient right now.</span> This is why a technology with high upfront cost and delayed benefit, efficiency, solar, insulation, is under-adopted even when the long-run case is overwhelming: the upfront cost is felt now, the benefit is discounted away. Pay-as-you-go financing works precisely because it moves the cost into the same present as the benefit.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-present-bias.jpg" alt="Scene: a person stands on a path next to a small coral gift labelled 'now', looking down a curving dashed track toward a much larger green gift far away labelled 'later'. Caption context: the far-larger prize loses to the smaller one that is here already." class="diagram">
+</figure>
+
 ### The counterfactual is hard to feel
 
 <span class="highlight">People struggle to value a saving relative to a future that will not happen, because the avoided cost is invisible, it never arrives to be noticed.</span> This behavioural fact sits underneath a market failure the Lab has written about: efficiency measures with fast paybacks go unbought because the benefit is a non-event. Set out in [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller).
+
+<figure>
+<img src="/assets/img/human-side-of-technology-counterfactual.jpg" alt="Two-row diagram. Top row: a house connected by a straight line to a coral BILL with a dollar sign, labelled 'cost'. Bottom row: the same house now with an efficient thermostat, connected by a line to an empty dashed box labelled 'avoided cost', with a puzzled figure below shading his eyes to see something that is not there. Caption context: the cost is visible when it arrives; the saving is invisible because it never does." class="diagram">
+</figure>
 
 ---
 
