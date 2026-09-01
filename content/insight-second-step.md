@@ -113,7 +113,7 @@ If you are developing a processing complex and want the regional consequences un
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [Behind the Border](/insight-behind-the-border) on why variance rather than tariff is what forecloses regional specialisation, and [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on the qualification barrier that governs the step after refining. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [Behind the Border](/insight-behind-the-border) on why variance rather than tariff is what forecloses regional specialisation, [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on the qualification barrier that governs the step after refining, and [The Mandate Is the Mine](/insight-the-mandate-is-the-mine) on where a synthetic fuel plant's demand actually comes from. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

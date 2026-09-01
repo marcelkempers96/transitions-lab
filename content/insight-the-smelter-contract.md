@@ -136,7 +136,7 @@ If you are negotiating an anchor-load agreement, the terms above are worth putti
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [AI & Digital Systems](/expertise-ai-digital) and [Energy Access & Off-Grid Systems](/expertise-energy). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [AI & Digital Systems](/expertise-ai-digital) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [The Mandate Is the Mine](/insight-the-mandate-is-the-mine) on the same single-counterparty structure where the counterparty is a European quota rather than a data-centre. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

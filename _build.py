@@ -191,6 +191,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-municipality-is-the-instrument": "butter",
     "insight-symbiosis-not-a-site-plan": "butter",
     "insight-twenty-kilometres-off": "butter",
+    "insight-wrong-money-for-a-warehouse": "butter",
+    "insight-the-mandate-is-the-mine": "butter",
+    "insight-trough-before-the-dividend": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -603,6 +606,18 @@ META: dict[str, dict[str, str]] = {
     "insight-twenty-kilometres-off": {
         "title": "The Village Twenty Kilometres Off the Road | Transitions Lab",
         "description": "A corridor redistributes market access before it creates it, and the places that lose experience no measurable event.",
+    },
+    "insight-wrong-money-for-a-warehouse": {
+        "title": "Equity Is the Wrong Money for a Warehouse | Transitions Lab",
+        "description": "A Nigerian agritech has raised working capital on the domestic commercial paper market. The right instrument arriving for the first time changes what a founder should be optimising for.",
+    },
+    "insight-the-mandate-is-the-mine": {
+        "title": "The Mandate Is the Mine | Transitions Lab",
+        "description": "A R47 billion synthetic aviation fuel project in the Northern Cape is being built against demand that exists only because of an EU quota. The resource underneath this asset is legislative.",
+    },
+    "insight-trough-before-the-dividend": {
+        "title": "The Trough Before the Dividend | Transitions Lab",
+        "description": "European farm-resilience evidence shows the practice is profitable across ten years and unaffordable in year two. Adaptive capacity is a balance-sheet variable, not a knowledge variable.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",
@@ -1418,7 +1433,40 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-municipality-is-the-instrument">
+      <a class="insight-card has-photo" href="/insight-wrong-money-for-a-warehouse">
+        <div class="card-photo">
+          <img src="/assets/img/insight-wrong-money-for-a-warehouse-diagram.jpg" alt="Line-art sequence: a warehouse stacked with grain sacks on the left; above it two funding routes drawn as separate paths, one a long arrow labelled with a ten-year horizon curving far off to the right, the other a short tight loop returning to the warehouse within one season; a harvest calendar wheel sits between them.">
+          <span class="kicker">Insight &middot; Finance &amp; Agriculture</span>
+        </div>
+        <div class="body">
+          <h3>Equity Is the Wrong Money for a Warehouse</h3>
+          <p>A Nigerian agritech has raised working capital on the domestic commercial paper market. Matching the instrument to the shape of the cash flow changes what a founder should be optimising for.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-the-mandate-is-the-mine">
+        <div class="card-photo">
+          <img src="/assets/img/insight-the-mandate-is-the-mine-hero.jpg" alt="Line-art sequence: a solar array and electrolyser in an arid landscape on the left, a tank of synthetic fuel and a cargo ship in the middle, and on the right, in place of a market or a refinery, an open legal statute book with a percentage figure on the page, drawn at the same scale as the industrial objects.">
+          <span class="kicker">Insight &middot; Industrial Policy</span>
+        </div>
+        <div class="body">
+          <h3>The Mandate Is the Mine</h3>
+          <p>A R47 billion synthetic aviation fuel plant is being built against demand that exists only because of an EU quota. That is a legitimate asset and a different risk.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-trough-before-the-dividend">
+        <div class="card-photo">
+          <img src="/assets/img/insight-trough-before-the-dividend-hero.jpg" alt="Line-art scene: a farm income curve drawn as a physical earthwork across a field, dipping into a visible trough in the middle before rising higher than it began, with a farmer and a tractor standing at the lowest point of the dip and a bank building visible on the far horizon.">
+          <span class="kicker">Insight &middot; Agriculture &amp; Adaptation</span>
+        </div>
+        <div class="body">
+          <h3>The Trough Before the Dividend</h3>
+          <p>Farms are most vulnerable during the transition itself. A practice can be profitable over ten years and unaffordable in year two.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo desktop-only" href="/insight-municipality-is-the-instrument">
         <div class="card-photo">
           <img src="/assets/img/insight-municipality-is-the-instrument-diagram.jpg" alt="Line-art scene: a large two-storey city hall on the left with a domed roof and flag, several staff visible at desks with laptops through the windows, and above it a single tidy document icon with a green tick. On the right, a small pitched-roof village hall with a Village Hall sign and one person at a laptop through the window, and above it a matching document icon surrounded by orange radiating lines to mark strain. A long dashed arrow crosses the empty space between the two buildings.">
           <span class="kicker">Insight &middot; Adaptation &amp; Governance</span>
@@ -1426,39 +1474,6 @@ def build_home() -> str:
         <div class="body">
           <h3>The Municipality Is the Instrument</h3>
           <p>Only 16 per cent of Europe's small municipalities have an adaptation plan. The clearance points do not shrink with the council, and that is the constraint.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo desktop-only" href="/insight-symbiosis-not-a-site-plan">
-        <div class="card-photo">
-          <img src="/assets/img/insight-symbiosis-not-a-site-plan-diagram.jpg" alt="Line-art comparison split into two panels. Left panel: four small factories arranged around a central handshake symbol, joined by a dense network of curved pipes in coral, sky and forest carrying steam, water and by-products between them. Right panel: the same four factories drawn on a surveyor's grid with dashed pipe stubs that do not connect to anything, and a rolled site plan clipboard propped against one wall.">
-          <span class="kicker">Insight &middot; Industrial Policy</span>
-        </div>
-        <div class="body">
-          <h3>Symbiosis Does Not Arrive on a Site Plan</h3>
-          <p>Rwanda and Namibia are taking the industrial ecosystem as the unit. The model they are borrowing accreted over twenty years and was never designed.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo desktop-only" href="/insight-twenty-kilometres-off">
-        <div class="card-photo">
-          <img src="/assets/img/insight-twenty-kilometres-off-diagram.jpg" alt="Line-art map: a port with a container ship and cranes at the far left, a paved corridor running the full width with lorries on it and two bustling market towns along its length, and an inland capital city at the far right. Twenty kilometres below the corridor, connected only by a thin dashed hand-drawn track, a single smaller village with a lone market stall and no traffic.">
-          <span class="kicker">Insight &middot; Infrastructure</span>
-        </div>
-        <div class="body">
-          <h3>The Village Twenty Kilometres Off the Road</h3>
-          <p>A corridor redistributes market access before it creates it, and the places that lose experience no measurable event.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo desktop-only" href="/insight-ban-is-not-the-policy">
-        <div class="card-photo">
-          <img src="/assets/img/insight-ban-is-not-the-policy-diagram.jpg" alt="Line-art sequence: on the left a mine entrance with an ore cart of concentrate; then a shipping document stamped with a red no-export symbol, with a dashed arrow ending in a cross; then a refining plant under a warm sun; then a battery cell with piles of intermediate materials at its foot - the chain that a ban is meant to force into place.">
-          <span class="kicker">Insight &middot; Industrial Policy</span>
-        </div>
-        <div class="body">
-          <h3>The Ban Is Not the Policy</h3>
-          <p>Zimbabwe stops lithium concentrate exports in January with one plant running. Whether that captures value depends on a detail nobody discusses.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

@@ -113,7 +113,7 @@ If you are designing one of these vehicles and want the farmer side understood b
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Financial Inclusion & Payment Systems](/expertise-finance). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Financial Inclusion & Payment Systems](/expertise-finance). See also [Equity Is the Wrong Money for a Warehouse](/insight-wrong-money-for-a-warehouse) on why matching the instrument to the shape of the cash flow is the same question at a different point in the chain. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

@@ -81,7 +81,7 @@ This piece draws on public analysis.
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [European Impact Tracking](/european-impact-tracking). See also [The Hurdle Is Not the Risk](/insight-hurdle-not-risk) on why the strongest domestic answer to imported capital may be a pension-fund question, and [The Village Twenty Kilometres Off the Road](/insight-twenty-kilometres-off) on how a Global Gateway corridor redistributes market access before it creates it. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [European Impact Tracking](/european-impact-tracking). See also [The Hurdle Is Not the Risk](/insight-hurdle-not-risk) on why the strongest domestic answer to imported capital may be a pension-fund question, [The Village Twenty Kilometres Off the Road](/insight-twenty-kilometres-off) on how a Global Gateway corridor redistributes market access before it creates it, and [The Mandate Is the Mine](/insight-the-mandate-is-the-mine) on the same asymmetry when a physical asset is underwritten against another jurisdiction's regulation. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

@@ -128,7 +128,7 @@ If you are underwriting a receivables-backed portfolio and want the household si
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy), [Water & Sanitation](/expertise-water), and [Financial Inclusion & Payment Systems](/expertise-finance). See also [A Warm House Is Not a Cheaper One](/insight-warm-house-not-cheaper) on the same net-cost logic inside a European retrofit programme. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy), [Water & Sanitation](/expertise-water), and [Financial Inclusion & Payment Systems](/expertise-finance). See also [A Warm House Is Not a Cheaper One](/insight-warm-house-not-cheaper) on the same net-cost logic inside a European retrofit programme, and [Equity Is the Wrong Money for a Warehouse](/insight-wrong-money-for-a-warehouse) on matching the instrument to the shape of the cash flow at a shorter tenor. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

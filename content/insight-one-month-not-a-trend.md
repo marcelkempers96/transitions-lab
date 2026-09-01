@@ -95,7 +95,7 @@ If you are a funder being handed a number and you want to know whether it means 
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [For Funders](/for-funders). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [For Funders](/for-funders). See also [Equity Is the Wrong Money for a Warehouse](/insight-wrong-money-for-a-warehouse) on the same instrument mismatch at a shorter tenor. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">
