@@ -104,6 +104,10 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
 
 **When a large customer can leave a shared system and supply itself, the economics of the system for everyone left behind change sharply.** Whether self-supply strengthens or hollows out the grid is decided in tariff design, which we examine in [The Customers Who Can Leave](/insight-customers-who-can-leave).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-customer-bypass.jpg" alt="Two panels side by side. Left panel: factory and row of homes hang off a transmission line under a long single cobalt bar 'shared network costs'. A coral dashed 'customer bypass' arrow lifts one customer off the grid down to a self-supply set-up of factory, solar and battery, labelled 'self-supply may be rational individually'. Right panel: the same grid without the departed customer, with the cobalt bar broken into thicker segments over the remaining homes labelled 'cost shifted to those who remain', with a tariff-pressure gauge climbing to the side. Caption beneath: leaving the shared system changes its economics for everyone else." class="diagram">
+</figure>
+
 ### Behind-the-border costs
 
 **The friction that stops firms trading and depending on each other often sits inside a country, not at its border: unreliable power, warehousing, paperwork, and above all variance.** It is variance, not average price, that prevents firms relying on one another. We show this for African trade in [Behind the Border](/insight-behind-the-border).
@@ -309,6 +313,10 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
 ### Public goods and the free-rider problem
 
 **Some benefits, once produced, are available to everyone and cannot be withheld from those who do not pay, clean air, fire management, a stable climate, so no private party has the incentive to supply them, and they are systematically under-produced.** [Samuelson (1954)](https://doi.org/10.2307/1925895) gave the formal definition. Much transition infrastructure has a public-good character, which is precisely why it does not appear without public provision or a deliberately engineered price.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-public-goods.jpg" alt="Diagram: six houses in a row sit under a wide blue band labelled 'shared protection', with a note above 'non-payers cannot be excluded'. The leftmost two houses drop coins into a small collection pot labelled 'pay'; a bracket over the remaining four houses labels them 'do not pay'. To the right, a funding bar shows the cobalt fill only partway across a dashed outline labelled 'under-funded'. Caption beneath: everyone benefits, so too few volunteer to pay." class="diagram">
+</figure>
 
 ---
 
