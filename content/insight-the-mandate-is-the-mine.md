@@ -30,6 +30,11 @@ Synthetic aviation fuel is not a product that airlines buy because they prefer i
 
 Nobody buys a fuel at several times the price of the identical-performing alternative unless they are required to.
 
+<figure>
+<img src="/assets/img/insight-the-mandate-is-the-mine-demand-curve.jpg" alt="Stepped line chart, 'The synthetic fuel sub-mandate, share of fuel supplied at EU airports'. Cobalt steps rising across a horizontal axis labelled 2030, 2032, 2035, 2040, 2045, 2050 with values printed beside each step: 0.7 per cent, 1.2 per cent, 5 per cent, 10 per cent, 15 per cent, 35 per cent. Vertical axis 0 to 40 per cent. A coral vertical marker at 2030 annotated 'the year this plant needs a buyer'. Footnote: ReFuelEU Aviation, Regulation (EU) 2023/2405. Schedule as published by EASA." class="diagram">
+<figcaption>The demand curve for this plant is a schedule of numbers in a regulation, not a price signal from an airline.</figcaption>
+</figure>
+
 They are required to. Under [ReFuelEU Aviation](https://www.easa.europa.eu/en/light/topics/fit-55-and-refueleu-aviation), fuel supplied at EU airports must meet a rising sustainable aviation fuel share, and within that a specific sub-mandate for synthetic fuels: [0.7 per cent from 2030, 1.2 per cent from 2032, 5 per cent from 2035, 10 per cent by 2040 and 35 per cent by 2050](https://www.easa.europa.eu/en/light/topics/fit-55-and-refueleu-aviation). The European Commission estimates that meeting the 2035 targets will require [6.8 million tonnes](https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/120825-eu-launches-coalition-of-8-member-states-to-accelerate-e-saf-scale-up) of aviation and maritime e-fuels.
 
 So the demand curve for this plant's product is drawn by a regulation. Remove the sub-mandate and the product has no buyer at any volume that would justify 47 billion rand.

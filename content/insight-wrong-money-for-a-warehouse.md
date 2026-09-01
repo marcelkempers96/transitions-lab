@@ -28,11 +28,21 @@ A business that buys crops from farmers, stores them and sells them on has a spe
 
 That is self-liquidating credit. The loan repays itself out of the transaction it financed. It is the oldest category in commercial banking and it is matched, by design, to short-dated instruments: trade finance, warehouse receipts, revolving facilities, commercial paper.
 
+<figure>
+<img src="/assets/img/insight-wrong-money-for-a-warehouse-loop-vs-line.jpg" alt="Split diagram. Left panel: coin, grain sack and warehouse arranged in a coral loop, labelled beneath 'working capital: money out and back within one season'. Right panel: a lab flask, an office building and a set of ascending steps arranged along a cobalt arrow pointing to the right, labelled beneath 'growth capital: no repayment date'." class="diagram">
+<figcaption>Two different cash-flow shapes. Two different instruments. Most balance sheets fund both with one.</figcaption>
+</figure>
+
 Now consider what happens when a business like that funds inventory with venture equity.
 
 Equity is permanent capital. It has no maturity, it cannot be repaid, and it is priced for the possibility of a very large outcome. Using it to buy grain that will be sold in four months means the most expensive money on the balance sheet is doing the job of the cheapest. Every naira of inventory is funded by a claim on the company forever.
 
 Founders feel this as dilution and describe it as the cost of growth. It is better understood as an instrument mismatch. **The correct question is not how much money the business needs but what shape the cash flow is, and the shape here is a loop, not a line.**
+
+<figure>
+<img src="/assets/img/insight-wrong-money-for-a-warehouse-three-ways.jpg" alt="Horizontal bar chart, 'The same money, priced three ways'. A short sky bar labelled 'short-dated commercial paper, one season'. A longer butter bar labelled 'bank revolving facility, where available'. A very long coral bar labelled 'venture equity used for inventory, implied cost over the holding period'. Horizontal axis: cost of capital, illustrative. Footnote: Schematic. The implied cost of equity used as working capital is rarely calculated. Transitions Lab, 2026." class="diagram">
+<figcaption>The instrument on the balance sheet is not the price the business pays. Equity funding a four-month holding period is the most expensive line most founders never calculate.</figcaption>
+</figure>
 
 A 50 billion naira commercial paper programme is a facility that can be drawn, repaid and drawn again, in the currency the revenue is earned in, at a tenor that matches the crop cycle. That is the right instrument, and its arrival is a bigger event for this category of business than another equity round would be.
 
@@ -47,6 +57,11 @@ The obvious question is why a business with self-liquidating inventory needs a c
 That is a precise description of agricultural trading in most African markets. The collateral is inventory of uncertain grade, in warehouses of uncertain security, in a sector the bank's risk committee has been burned by before. The bank cannot tell the good operator from the bad one, so it declines the category.
 
 Which is what makes a public issue interesting as a mechanism rather than just as a headline. A rated, disclosed, publicly placed instrument substitutes public information for the bank's private screening. Audited accounts, a rating, a prospectus and a programme approved by a regulator do the work the credit officer could not do. The company is not proving it is a better risk. It is making itself legible to a different class of lender.
+
+<figure>
+<img src="/assets/img/insight-wrong-money-for-a-warehouse-rationing.jpg" alt="Line-art diagram: a queue of observationally identical applicants stands outside a shuttered bank counter with an interest-rate dial rising and a downward arrow labelled 'quality of the pool'. To the right, an open door and a single figure walking through it towards a stack of documents labelled 'audited accounts, rating, prospectus'." class="diagram">
+<figcaption>The bank does not raise the price. It closes the window. The route out is producing the disclosure that lets somebody else price you.</figcaption>
+</figure>
 
 That is the general lesson and it travels well beyond agriculture. **The route out of credit rationing is usually not a better pitch to a bank. It is producing the disclosure that lets somebody else price you.**
 
