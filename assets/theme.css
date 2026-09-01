@@ -566,13 +566,17 @@ section + section{border-top:2px solid var(--ink);}
 .prose .callout p:last-child{margin-bottom:0;}
 .prose .format-badge{
   display:inline-block;font-family:'Hanken Grotesk',sans-serif;
-  font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
-  padding:5px 11px 4px;border:2px solid var(--ink);
-  box-shadow:2px 2px 0 var(--ink);vertical-align:baseline;
+  font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+  padding:8px 14px 7px;border:2px solid var(--ink);
+  box-shadow:3px 3px 0 var(--ink);vertical-align:baseline;
   line-height:1;white-space:nowrap;text-decoration:none;
+  transition:transform .12s ease,box-shadow .12s ease;
 }
 .prose .format-badge.fmt-pdf{background:var(--coral);color:var(--ink);}
 .prose .format-badge.fmt-web{background:var(--cobalt);color:var(--paper);}
+.prose a:has(> .format-badge){text-decoration:none;background:transparent;}
+.prose a:hover > .format-badge{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
+.prose a:active > .format-badge{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink);}
 /* Definition highlight — yellow marker, no bold */
 .prose .highlight{background:var(--butter);color:var(--ink);padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
 /* Cluster.concept numbering on the two theory-map pages */

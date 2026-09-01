@@ -17,16 +17,16 @@ They are free to download, use, and cite with attribution. They also show, plain
 ## How the Lab reads the world
 
 [**The BRW Framework →**](/assets/resource-brw-framework.pdf)
-*Bypass, Repurpose, Weaken.* The Lab's signature strategic framework: a mechanism-based typology of how a niche technology engages an entrenched regime, classifying each strategy by what it does to a specific lock-in barrier, and matching mechanisms to barriers. A working tool for innovators and funders, grounded in field research. <span class="format-badge fmt-pdf">PDF · 16 pages</span>
+*Bypass, Repurpose, Weaken.* The Lab's signature strategic framework: a mechanism-based typology of how a niche technology engages an entrenched regime, classifying each strategy by what it does to a specific lock-in barrier, and matching mechanisms to barriers. A working tool for innovators and funders, grounded in field research. [<span class="format-badge fmt-pdf">PDF · 16 pages</span>](/assets/resource-brw-framework.pdf)
 
 [**Reading a Transition: A Primer →**](/assets/resource-transitions-primer.pdf)
-The Lab's intellectual foundation, set out plainly: what a socio-technical system is, why the human side comes first, the recurring dynamics to look for in any transition, and how to turn that reading into evidence. <span class="format-badge fmt-pdf">PDF · 18 pages</span>
+The Lab's intellectual foundation, set out plainly: what a socio-technical system is, why the human side comes first, the recurring dynamics to look for in any transition, and how to turn that reading into evidence. [<span class="format-badge fmt-pdf">PDF · 18 pages</span>](/assets/resource-transitions-primer.pdf)
 
 [**The Economics of Transitions →**](/economics-of-transitions)
-A working glossary of the economic ideas that decide whether a technology actually lands, each anchored to its canonical source (Coase, Akerlof, Arthur, Teece, Williamson and others) and tied to a Lab case where the concept applies. Seven clusters, from lock-in and market structure to distribution and who is left out. <span class="format-badge fmt-web">Web page</span>
+A working glossary of the economic ideas that decide whether a technology actually lands, each anchored to its canonical source (Coase, Akerlof, Arthur, Teece, Williamson and others) and tied to a Lab case where the concept applies. Seven clusters, from lock-in and market structure to distribution and who is left out. [<span class="format-badge fmt-web">See 48 concepts &rarr;</span>](/economics-of-transitions)
 
 [**Technology & Innovation Dynamics →**](/innovation-dynamics)
-The management-of-technology companion to the economics map: how a technology itself evolves, how firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt. Anchored to Foster, Utterback, Henderson-Clark, Christensen, Teece, Cohen-Levinthal, Rogers, Geels and others. Five clusters, from the shape of technological change to the bridge to socio-technical transitions. <span class="format-badge fmt-web">Web page</span>
+The management-of-technology companion to the economics map: how a technology itself evolves, how firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt. Anchored to Foster, Utterback, Henderson-Clark, Christensen, Teece, Cohen-Levinthal, Rogers, Geels and others. Five clusters, from the shape of technological change to the bridge to socio-technical transitions. [<span class="format-badge fmt-web">See 31 concepts &rarr;</span>](/innovation-dynamics)
 
 ---
 
@@ -38,10 +38,10 @@ The management-of-technology companion to the economics map: how a technology it
 A full explainer of Technology Readiness Levels and Societal Readiness Levels, with academic references: where each came from, what the nine levels mean, and why reading both together is essential. Includes two downloadable guides.
 
 [**Technology Readiness Levels, explained →**](/assets/resource-trl-explained.pdf)
-The origins (NASA, Sadin 1974, Mankins 1995), the nine-level scale, what TRL does well, and the crucial dimension it leaves out. Fully referenced. <span class="format-badge fmt-pdf">PDF · 12 pages</span>
+The origins (NASA, Sadin 1974, Mankins 1995), the nine-level scale, what TRL does well, and the crucial dimension it leaves out. Fully referenced. [<span class="format-badge fmt-pdf">PDF · 12 pages</span>](/assets/resource-trl-explained.pdf)
 
 [**Societal Readiness Levels, explained →**](/assets/resource-srl-explained.pdf)
-The social counterpart to TRL, and the framework closest to the Lab's work: origins (Innovation Fund Denmark 2018, Bruno et al. 2020, Bernstein et al. 2022), the nine-level scale, and why SRL decides success as often as the technology does. Fully referenced. <span class="format-badge fmt-pdf">PDF · 12 pages</span>
+The social counterpart to TRL, and the framework closest to the Lab's work: origins (Innovation Fund Denmark 2018, Bruno et al. 2020, Bernstein et al. 2022), the nine-level scale, and why SRL decides success as often as the technology does. Fully referenced. [<span class="format-badge fmt-pdf">PDF · 12 pages</span>](/assets/resource-srl-explained.pdf)
 
 ---
 
@@ -50,13 +50,13 @@ The social counterpart to TRL, and the framework closest to the Lab's work: orig
 ## How the Lab measures
 
 [**Measuring What Actually Changed →**](/assets/resource-measurement-method.pdf)
-The Lab's methodology for field research and impact measurement: the five-stage method (Scope, Design, Collect, Analyse & benchmark, Deliver), read across the Reach, Depth, and Experience dimensions, and the baseline discipline that separates real impact measurement from after-the-fact assertion. <span class="format-badge fmt-pdf">PDF · 21 pages</span>
+The Lab's methodology for field research and impact measurement: the five-stage method (Scope, Design, Collect, Analyse & benchmark, Deliver), read across the Reach, Depth, and Experience dimensions, and the baseline discipline that separates real impact measurement from after-the-fact assertion. [<span class="format-badge fmt-pdf">PDF · 21 pages</span>](/assets/resource-measurement-method.pdf)
 
 [**Making Data Mean Something: The Lab's Data-Analysis Method →**](/assets/resource-data-analysis.pdf)
-How the Lab turns raw interviews, surveys, and observational data into defensible findings: the coding workflow, two-pass reconciliation, cross-respondent synthesis, and the discipline of naming disconfirming cases explicitly. <span class="format-badge fmt-pdf">PDF · 15 pages</span>
+How the Lab turns raw interviews, surveys, and observational data into defensible findings: the coding workflow, two-pass reconciliation, cross-respondent synthesis, and the discipline of naming disconfirming cases explicitly. [<span class="format-badge fmt-pdf">PDF · 15 pages</span>](/assets/resource-data-analysis.pdf)
 
 [**Ethics & Consent in the Field →**](/assets/resource-field-ethics.pdf)
-The Lab's working standard for doing primary research with people, honestly and safely: the four principles, informed consent done properly, power and vulnerability in the field, and data protection from collection to deletion. <span class="format-badge fmt-pdf">PDF · 15 pages</span>
+The Lab's working standard for doing primary research with people, honestly and safely: the four principles, informed consent done properly, power and vulnerability in the field, and data protection from collection to deletion. [<span class="format-badge fmt-pdf">PDF · 15 pages</span>](/assets/resource-field-ethics.pdf)
 
 ---
 
@@ -65,7 +65,7 @@ The Lab's working standard for doing primary research with people, honestly and 
 ## Instruments to use in the field
 
 [**In-Depth Interview Guide →**](/assets/resource-interview-guide.pdf)
-A demonstration of the depth the Lab reaches in qualitative fieldwork: the "five levels down" principle, the funnel structure of a session, and the probing techniques that get from surface fact to lived meaning. <span class="format-badge fmt-pdf">PDF · 26 pages</span> Also available as [a web page](/interview-guide).
+A demonstration of the depth the Lab reaches in qualitative fieldwork: the "five levels down" principle, the funnel structure of a session, and the probing techniques that get from surface fact to lived meaning. [<span class="format-badge fmt-pdf">PDF · 26 pages</span>](/assets/resource-interview-guide.pdf) Also available as [a web page](/interview-guide).
 
 [**European Impact-Tracking Template →**](/impact-tracking-template)
 A fill-in framework for measuring the before-and-after impact of a European project, demonstration, or socially innovative action: set up at the start, run while the work is live, closed out with proof.
