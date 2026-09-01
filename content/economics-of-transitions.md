@@ -58,6 +58,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <span class="highlight">Reading state capacity against niche strength sorts every real transition into one of four patterns: directed, coordinated, stalled, or bounded leapfrogging.</span> The diagnostic, and how the Lab reads its own cases against it, is in [Four Ways a Transition Lands](/insight-transitions-outcomes).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-four-ways.jpg" alt="Two-by-two chart: horizontal axis 'infrastructure investment', vertical axis 'technology investment'. A small coral dot in the bottom-left quadrant labelled 'low-investment trap'. A larger green dot in the top-right quadrant labelled 'coordinated transition'. A dashed arrow leads from the trap corner to the coordinated one. Caption context: the same country can sit in either corner, and the choice between them is coordination as much as capital." class="diagram">
+</figure>
+
 ### The transition trough (the J-curve of change)
 
 <span class="highlight">A practice can be profitable over ten years and unaffordable in year two.</span> The transition itself is the most vulnerable moment, because costs arrive before benefits, and the dip in between is where most attempts fail. We trace this through European farms in [The Trough Before the Dividend](/insight-trough-before-the-dividend).
@@ -70,12 +74,20 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <span class="highlight">Transitions rarely proceed by clean replacement. More often a new source is added alongside the old one, and the incumbent is retained as backup, so the picture is one of accumulation rather than substitution.</span> We read this in African solar in [Stacking, Not Switching](/insight-stacking-not-switching).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-adoption-curve.jpg" alt="Chart: adoption on the vertical axis against time on the horizontal, with a smooth S-curve rising through three labelled bands, experimentation, take-off, maturity, separated by dashed vertical lines. Caption context: the shape most stacked adoption traces before it looks like substitution." class="diagram">
+</figure>
+
 ### Increasing returns to adoption
 
 <span class="highlight">Some technologies get more valuable the more they are used: each new adopter improves the infrastructure, deepens the supply of skills, and raises the credibility of the option for the next adopter.</span> Formalised by Arthur (1989), this is the engine that lets a niche eventually overtake an incumbent, and the reason the early going is so slow, the returns only compound once a threshold is crossed. The idea has a long lineage, reaching back to [Marshall (1890)](https://www.econlib.org/library/Marshall/marP.html) on the external economies that accrue to a growing industry. The strategic reading of the same mechanism, as the engine that lets a niche cross the chasm, is on the [technology & innovation dynamics page](/innovation-dynamics).
 
 <figure>
 <img src="/assets/img/economics-of-transitions-increasing-returns.jpg" alt="Chart: unit cost on the vertical axis against time on the horizontal axis. A coral incumbent curve slopes down gently and plateaus. A blue emerging-technology curve starts high, drops steeply, and crosses the incumbent line at a marked point labelled 'cost crossover'. Caption context: increasing returns to adoption drive the crossing, and once it happens the incumbent no longer competes on price." class="diagram">
+</figure>
+
+<figure>
+<img src="/assets/img/economics-of-transitions-learning-curve.jpg" alt="Chart: unit cost on the vertical axis against cumulative deployment on the horizontal, with a smooth downward-decaying curve. A coral dot at the top-left of the curve is labelled 'early deployment'; a coral dot at the bottom-right is labelled 'scale'. Caption context: the mechanism, every doubling of cumulative deployment takes a slice off the unit cost." class="diagram">
 </figure>
 
 ### Timing and the window of opportunity
@@ -110,6 +122,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <figure>
 <img src="/assets/img/economics-of-transitions-platform.jpg" alt="Line-art diagram: three supplier factories on the left feed into a central platform building; the platform sends arrows to a column of customer figures on the right. A standard document sits above the platform, feeding into it. A green arc labelled 'more users, more value' curves from the customers back to the platform. A dashed orange line at the bottom labelled 'bypass' runs directly from suppliers to customers, skipping the platform." class="diagram">
+</figure>
+
+<figure>
+<img src="/assets/img/economics-of-transitions-network-value.jpg" alt="Chart: value on the vertical axis against users on the horizontal, with a curve rising slowly then steeply upward. A coral dot midway is marked 'tipping point'; the upper end is labelled 'more useful'. Caption context: value grows faster than linearly in the number of users, which is why the first few adopters look pointless and the last few look inevitable." class="diagram">
 </figure>
 
 ### Customer bypass (grid defection)
@@ -231,6 +247,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 ### Supply-chain congestion and the shared queue
 
 <span class="highlight">Small buyers of transition hardware, solar plants, data centres, factories, often order from the same constrained suppliers, and when lead times double it is the small and un-tracked buyers who wait longest.</span> Set out in [Standing in the Same Queue](/insight-same-queue).
+
+<figure>
+<img src="/assets/img/economics-of-transitions-queue.jpg" alt="Supply-and-demand chart with a kinked supply curve. The blue supply line rises gently to a marked 'capacity limit' then bends sharply vertical. The coral demand line crosses the supply line at the kink. A coral bracket to the right of the kink along the quantity axis is labelled 'unmet demand'. Caption context: at the capacity limit, additional demand does not raise supplied quantity, it just extends the queue." class="diagram">
+</figure>
 
 ---
 
