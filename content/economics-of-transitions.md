@@ -38,6 +38,10 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
 
 **Once a system is established, the cost of switching away from it rises over time, so an inferior option can persist simply because it arrived first and everything else organised around it.** The formal result is due to [Arthur (1989)](https://doi.org/10.2307/2234208), who showed that under increasing returns an economy can lock in to a technological path that is neither efficient, predictable, nor easily shifted by tax or subsidy, and to [David (1985)](https://www.jstor.org/stable/1805621), whose study of the QWERTY keyboard made path dependence concrete. Lock-in is the central reason good technologies fail: the barrier is rarely the artefact, it is the system it must displace. We set out the full mechanism in the [transitions primer](/resources), and its two-directional form, where the same barrier that keeps a country out of a market is also what makes entering worthwhile, in [The Lock-In Runs Both Ways](/insight-lock-in-both-ways). Read this alongside the strategic reading of the same result on the [innovation dynamics page](/innovation-dynamics), where an early lead in a path-dependent technology is worth fighting for out of proportion to its immediate value.
 
+<figure>
+<img src="/assets/img/economics-of-transitions-path-dependence.jpg" alt="Diagram: from a small early choice, a fat coral 'installed path' arrow runs across the page, accreting labelled complements above it, infrastructure, trained workers, suppliers, standards, customers. Below, a blue path for a 'better technology, later arrival' runs beneath and hits a dark switching-costs wall before it can rejoin. Caption beneath: history changes the cost of choosing differently." class="diagram">
+</figure>
+
 ### The niche, the regime, and the landscape
 
 **Change arrives from protected niches, is resisted by an entrenched regime, and is pushed or slowed by a wider landscape of prices, politics, and crises.** This multi-level view is the backbone of transition studies, and the frame beneath most of the concepts below.
@@ -85,12 +89,16 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
 **Whoever owns the demand can finance the infrastructure.** Platforms solve the chicken-and-egg problem of new infrastructure by controlling the customer relationship, which works, and quietly concentrates several dependencies on one counterparty. Set out in [The Anchor Tenant: How Platforms Became the Utility Nobody Elected](/insight-anchor-tenant).
 
 <figure>
-<img src="/assets/img/economics-of-transitions-platform.jpg" alt="Line-art diagram: three supplier factories on the left feed into a central platform building; the platform sends arrows to a column of customer figures on the right. A standard document sits above the platform, feeding into it. A green arc labelled 'more users, more value' curves from the customers back to the platform. A dashed orange line at the bottom labelled 'bypass' runs directly from suppliers to customers, skipping the platform." class="diagram">
+<img src="/assets/img/economics-of-transitions-anchor-tenant.jpg" alt="Diagram: a large cobalt block labelled 'owns the demand' sits at the centre; a blue arrow labelled 'finances the infrastructure' runs left from it into a yellow column of infrastructure icons, charging station, warehouse, transmission pylon, with a truck, factory and shop feeding in from the far left, together labelled 'market becomes possible'. From the base of the demand block, a fan of six small shops (customers) drops down. A coral arrow labelled 'single-counterparty dependence' loops from the customers back into the demand block. Caption beneath: whoever aggregates demand can make the asset bankable." class="diagram">
 </figure>
 
 ### Network effects (network externalities)
 
 **A product whose value to each user rises with the number of other users, a phone, a payment rail, a charging standard, tends toward a single winner, because adoption is self-reinforcing.** [Katz and Shapiro (1985)](https://www.jstor.org/stable/1814809) formalised network externalities and showed why compatibility and sponsorship decide these markets. Network effects are the flip side of lock-in: the same mechanism that helps a niche reach critical mass then makes the resulting incumbent very hard to dislodge. The competitive-strategy reading, of standards battles won on timing and compatibility, is on the [innovation dynamics page](/innovation-dynamics).
+
+<figure>
+<img src="/assets/img/economics-of-transitions-platform.jpg" alt="Line-art diagram: three supplier factories on the left feed into a central platform building; the platform sends arrows to a column of customer figures on the right. A standard document sits above the platform, feeding into it. A green arc labelled 'more users, more value' curves from the customers back to the platform. A dashed orange line at the bottom labelled 'bypass' runs directly from suppliers to customers, skipping the platform." class="diagram">
+</figure>
 
 ### Customer bypass (grid defection)
 
@@ -118,6 +126,10 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
 
 **An asset class is created when a stream of repayments can be made into collateral.** Off-grid solar became bankable because a missed payment could be enforced by switching the light off remotely; assets without an equivalent enforcement mechanism, like water, cannot copy the model. Explained in [What the Bond Is Actually Secured On](/insight-what-the-bond-secures).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-collateral.jpg" alt="Two panels side by side. Left panel 'repayment can be enforced': a house with rooftop solar, a payment agreement, a remote on/off switch, three receipts, and a securitised bond. Footer notes: enforceable cash flow, securitisable. Right panel 'repayment cannot be enforced': a water tank with figures collecting water into jerry cans, a payment agreement with an X, a broken chain of receipts, and a dashed grey bond. Footer notes: weak collateral, cannot copy the model. Caption beneath: the asset class is created by what secures the repayment stream." class="diagram">
+</figure>
+
 ### Asymmetric information and adverse selection
 
 **When one side of a deal knows more than the other, the better-informed party can exploit the gap, and in the extreme the good options are driven out and only the bad remain.** [Akerlof's (1970)](https://doi.org/10.2307/1879431) "market for lemons" is the founding statement, and it sits underneath much transition finance: a lender who cannot tell a good borrower from a bad one prices for the average, which pushes the good borrower away. Enforcement mechanisms, collateral, and independent verification all exist to close this information gap.
@@ -125,6 +137,10 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
 ### Signalling
 
 **When quality cannot be observed directly, the informed party can spend on a costly, hard-to-fake signal, a certification, a guarantee, a track record, to prove it.** [Spence (1973)](https://doi.org/10.2307/1882010) formalised signalling, and it explains why credible proof is worth paying for in exactly the markets where asymmetric information bites: the signal is not the quality, but it is the only way the quality becomes visible.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-signalling.jpg" alt="Diagram: two factories on the left, both marked 'quality cannot be seen', with an upper one growing deep roots into a healthy soil bed and a lower one with shallow roots in a poor coral soil bed. Both pass through a central 'costly signal' column carrying a certification, a shield tick and a growth chart. The upper factory's signal, backed by a coin stack labelled 'the signal is costly because quality supports it', reaches a buyer figure labelled 'credible quality'. The lower factory's signal, a lightweight certificate marked 'easy to fake, not believed', is stopped by a red X. A dark cobalt banner beneath reads: a signal makes hidden quality visible without being the quality itself." class="diagram">
+</figure>
 
 ### First-loss capital and the risk that actually binds
 
@@ -137,6 +153,10 @@ Read this page alongside the [innovation dynamics](/innovation-dynamics) compani
 ### The counterfactual as the product
 
 **Some things are hard to sell because what the buyer is really being asked to purchase is a counterfactual, a saving relative to a future that will not happen, which is inherently hard to prove.** This is why efficiency projects with fast paybacks still do not get done, as we argue in [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller).
+
+<figure>
+<img src="/assets/img/economics-of-transitions-counterfactual.jpg" alt="Diagram: a puzzled buyer with a question mark asking 'how is the avoided cost proved?' points to an efficient industrial chiller marked 'pay today'. From the chiller two futures branch. Upper branch, dashed coral, 'future without the project': the chiller with a long full-length coral bar labelled 'energy cost', with a note 'this future will never occur'. Lower branch, cobalt, 'future with the project': the same chiller with a short blue bar 'energy cost' plus a yellow dashed rectangle beside it labelled 'the saving being sold'. Caption beneath: the product is a difference between two futures, only one of which can be observed." class="diagram">
+</figure>
 
 ### Patient capital and the tenor mismatch
 
