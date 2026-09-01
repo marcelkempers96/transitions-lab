@@ -5,7 +5,7 @@
 *A working glossary of the economic ideas behind how technologies actually land, each tied to a case we have written about.*
 
 <figure>
-<img src="/assets/img/economics-of-transitions-gates.jpg" alt="Line-art sequence: a light bulb feeding into a series of five coloured gates labelled cost, capital, contracts, verification, distribution, ending in a small town with houses and a shopfront. The idea passes through every gate before it lands in the world." class="diagram">
+<img src="/assets/img/economics-of-transitions-hero.jpg" alt="Illustrated title card: an industrial landscape on the left with a wind turbine, factory and solar array, a bridge arching across with money flowing over it, a small city on the right with houses, shops and residents. Underneath the bridge, people on the ground use an EV, a bicycle and a laptop. A funding-bar sits along the bottom edge." class="diagram">
 </figure>
 
 Transitions are usually discussed in the language of technology: what is newer, cleaner, cheaper, more advanced. But whether a technology actually reaches the people it was built for is decided far more often by economics than by engineering. Who bears a cost, who captures a value, how a cash flow is shaped, what a market will and will not price, which risk is real and which is merely perceived, these are the questions that decide a transition, and they are economic questions.

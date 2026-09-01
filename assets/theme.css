@@ -577,6 +577,37 @@ section + section{border-top:2px solid var(--ink);}
 .prose a:has(> .format-badge){text-decoration:none;background:transparent;}
 .prose a:hover > .format-badge{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
 .prose a:active > .format-badge{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink);}
+/* Theory maps compact row on the homepage */
+.theory-maps-section{padding:56px 0 72px;}
+.theory-maps-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;
+}
+@media (max-width:960px){.theory-maps-row{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.theory-maps-row{grid-template-columns:1fr;}}
+.theory-map-card{
+  display:flex;flex-direction:column;gap:8px;
+  background:var(--paper);border:2px solid var(--ink);color:var(--ink);
+  padding:18px 20px 20px;box-shadow:4px 4px 0 var(--ink);
+  text-decoration:none;transition:transform .12s ease,box-shadow .12s ease;
+}
+.theory-map-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);text-decoration:none;background:var(--butter);}
+.theory-map-card:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink);}
+.theory-map-card .tm-eyebrow{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
+  color:var(--coral);
+}
+.theory-map-card h3{
+  margin:0;font-size:18px;line-height:1.25;font-weight:800;letter-spacing:-.01em;color:var(--ink);
+}
+.theory-map-card p{
+  margin:0;font-size:14.5px;line-height:1.45;color:var(--ink);flex-grow:1;
+}
+.theory-map-card .tm-cta{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+  color:var(--cobalt);margin-top:4px;
+}
 /* Definition highlight — yellow marker, no bold */
 .prose .highlight{background:var(--butter);color:var(--ink);padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
 /* Cluster.concept numbering on the theory-map pages */

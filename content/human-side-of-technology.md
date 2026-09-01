@@ -4,6 +4,10 @@
 
 *Social science and human behaviour: why people adopt, resist, trust, and abandon technologies, and why none of it shows up in the specification, each idea tied to the literature and, where we have one, a case.*
 
+<figure>
+<img src="/assets/img/human-side-of-technology-hero.jpg" alt="Illustrated title card: a woman in the centre looks thoughtfully at her phone. Around her sit five small icons of the forces the page maps, a green tick for adoption, a shield for trust, a family cooking for practice, a sync arrow for habit, two people talking for social influence, and doors for legitimacy, each connected to her by a dashed line." class="diagram">
+</figure>
+
 The Lab's other theory pages take the view from above. The [economics of transitions](/economics-of-transitions) asks who bears a cost and who captures a value. The [technology & innovation dynamics](/innovation-dynamics) page asks how a technology evolves and how firms compete to own it. The [transitions primer](/resources) asks how whole systems move. This page takes the view from the ground: what happens when a real person, in a real place, actually meets the technology.
 
 It is the lens the Lab leads with. Social science first, technical depth alongside, is not a slogan; it is a claim about where transitions are actually decided. A payment app can be cheaper, faster, and better in every measurable way and still fail because people do not trust it, cannot fit it into how they already live, or were never the people the designers pictured. The reasons are behavioural, social, and cultural, and they are invisible to a specification, a cost model, or a strategy deck. They become visible only by **[going and asking](/field-research)**.

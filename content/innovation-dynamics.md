@@ -4,6 +4,10 @@
 
 *Management of technology: how technologies and the firms behind them actually evolve, compete, and win, each idea tied to the literature and, where we have one, a case.*
 
+<figure>
+<img src="/assets/img/innovation-dynamics-hero.jpg" alt="Illustrated title card: on the left an inventor at a workbench works on a prototype device with tools and a schematic; three early product experiments (a radio, a smart speaker, a smartwatch) feed by arrows into a central phone with a learning curve and puzzle pieces below it; on the right a network of connected users, a factory, a shop and an institution show the innovation spreading through the world." class="diagram">
+</figure>
+
 The [economics of transitions](/economics-of-transitions) page asks who bears a cost, who captures a value, and what a market will price. The [human side of technology](/human-side-of-technology) page asks what happens when a real person meets the technology in a real place. This page asks a different and complementary question: how does a technology itself evolve, how do firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt? These are the questions of the management-of-technology and innovation-studies literatures, and they sit underneath every transition the Lab studies.
 
 The distinction is worth stating plainly. Economics is the lens of allocation and welfare: prices, incidence, market failure, finance. Innovation dynamics is the lens of evolution and strategy: how a technology matures, how a dominant design emerges, how firms build the capabilities to ride or resist change, how an innovation diffuses through a population. The two overlap, path dependence and network effects live in both, but they answer different questions, and keeping them separate makes each sharper.
