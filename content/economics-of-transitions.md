@@ -150,6 +150,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <span class="highlight">Blended-finance instruments like first-loss capital address credit risk. But if investors are behaving in a way that suggests credit risk is not the binding constraint, the instrument is aimed at the wrong hurdle.</span> We read this in Nigerian capital allocation in [The Hurdle Is Not the Risk](/insight-hurdle-not-risk).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-first-loss.jpg" alt="Supply-and-demand chart. A coral demand curve slopes down. A blue supply curve slopes up. A green 'with support' curve sits to the right of supply, showing the shift a de-risking instrument produces. The original equilibrium is marked at the demand-supply crossing; the shifted equilibrium at the demand-with-support crossing is labelled 'lower price' and 'higher adoption'. Caption context: support only helps if the binding constraint is what is being supported." class="diagram">
+</figure>
+
 ### Bundled credit and reaching the smallholder
 
 <span class="highlight">When a development bank lends through a commodity trader to reach smallholders, the structure is itself a diagnosis of where the working relationships lie, and revives an old question about bundling credit with an offtake relationship.</span> Examined in [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer).
@@ -166,9 +170,17 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <span class="highlight">Infrastructure returns arrive over fifteen or twenty years; most funds must return capital in ten.</span> When the tenor of the money is shorter than the life of the asset, good projects go unfunded not because they are bad but because they are the wrong shape for the available capital. The mismatch, not the project, is the problem.
 
+<figure>
+<img src="/assets/img/economics-of-transitions-patient-capital.jpg" alt="Supply-and-demand chart. Coral demand slopes down, blue short-dated supply slopes up steeply, green 'with support' patient-capital supply sits to the right of the blue line. Two dashed horizontals show the pre-support equilibrium price ('lower price') at the demand-supply crossing and the post-support price at the demand-with-support crossing, plus a lower-x marker labelled 'higher adoption'. Caption context: longer-tenor capital reshapes what is financeable at a given price." class="diagram">
+</figure>
+
 ### The cost of capital as the real price
 
 <span class="highlight">For a capital-intensive transition, the interest rate matters more than the technology cost.</span> A solar plant that is cheap to build can still be unaffordable where capital is expensive, so the same project pencils out in one country and fails in another purely on the cost of finance. This is why the price of money, not the price of panels, often decides where a transition happens.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-cost-of-capital.jpg" alt="Chart: financing cost on the vertical axis, perceived risk on the horizontal axis, a rising coral line. A blue dot on the lower-left of the line is labelled 'proven market'; a coral dot on the upper-right labelled 'uncertain transition'. Dashed horizontals mark the two financing-cost levels. Caption context: the price of money can decide whether the same project is built or shelved." class="diagram">
+</figure>
 
 ---
 
@@ -199,6 +211,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 ### The mandate as the asset
 
 <span class="highlight">When demand for a product exists only because a regulation requires it, the regulation is the asset, and its risk profile is political, not commercial.</span> A plant built against an EU quota is a legitimate asset of a particular and unusual kind. Examined in [The Mandate Is the Mine](/insight-the-mandate-is-the-mine).
+
+<figure>
+<img src="/assets/img/economics-of-transitions-mandate.jpg" alt="Two-by-two chart: horizontal axis 'commercial return', vertical axis 'social value'. A coral rectangle in the upper-left quadrant, high social value with negative commercial return, is labelled 'missing market' with a dot inside. The upper-right quadrant, high social value with positive commercial return, is labelled 'investable'. Caption context: a mandate moves a proposition across the y-axis by creating commercial return where none existed." class="diagram">
+</figure>
 
 ### Supply-chain congestion and the shared queue
 
@@ -309,6 +325,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 ### Externalities and the missing price
 
 <span class="highlight">Many transition problems exist because a real cost or benefit is not priced: pollution that no one pays for, resilience that no one is rewarded for.</span> Where the price is missing, the market sends the wrong signal, and correcting it, through a tax, a subsidy, a mandate, is often the whole substance of transition policy. [Pigou (1920)](https://www.econlib.org/library/NPDBooks/Pigou/pgEW.html) proposed the corrective tax; [Coase (1960)](https://doi.org/10.1086/466560) showed that where transaction costs are low the parties may bargain to the efficient outcome without one, which is why the transaction-cost structure, not just the externality, decides the right instrument. The absence of a price, not the presence of a bad one, is frequently the root problem.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-externalities.jpg" alt="Chart: a coral demand curve slopes down, a blue private cost curve slopes up, a green social cost curve slopes up above the blue line. Two equilibrium dots, one at the demand-social cost crossing labelled 'social optimum', one at the demand-private cost crossing labelled 'market output'. A coral bracket beneath spans the gap between them, labelled 'over-produced'. Caption context: when a real cost is not priced, the market delivers more of it than the world wants." class="diagram">
+</figure>
 
 ### Public goods and the free-rider problem
 
