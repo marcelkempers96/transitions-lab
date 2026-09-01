@@ -90,6 +90,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 **A firm's own innovation can be excellent and still fail commercially if the other innovations it depends on, the complements, the infrastructure, the partners upstream and downstream, are not ready.** Adner (2006) called this the "wide lens": the innovator's real risk is often not execution but the readiness of the ecosystem around it, and the more partners a promising technology needs, the more ways it can be held up by the slowest of them. Electric mobility is the textbook case: a good vehicle is not enough if the charging, the financing, the mechanics, and the grid are not ready together. Reading the whole ecosystem, not just the product, is what separates a technology that could work from one that will.
 
+<figure>
+<img src="/assets/img/innovation-dynamics-ecosystem.jpg" alt="Four horizontal arrows extending to the right toward a door labelled 'commercial launch' with an electric motorbike behind it. Each arrow is labelled at its left end: charging, finance, mechanics, grid. The first three arrows reach the launch line; the grid arrow is shorter and continues as a dashed line, marked 'co-innovation risk'. Caption beneath: the slowest complement sets the launch date." class="diagram">
+</figure>
+
 ---
 
 <span id="cluster-3"></span>
@@ -103,6 +107,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ### Dynamic capabilities
 
 **In a fast-changing environment, what matters is not a firm's current resources but its ability to sense change, seize opportunities, and reconfigure itself in response.** Teece, Pisano, and Shuen (1997) called this bundle of higher-order abilities dynamic capabilities, and it is why some firms survive successive transitions while others, equally strong at any single moment, do not. A transition is precisely the environment where dynamic capability, not static advantage, decides who is left standing.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-dynamic-capabilities.jpg" alt="Three coloured circles arranged in a loop with arrows connecting them: sky-blue 'sense, recognise change' at top-left, coral 'seize, commit resources' at top-right, forest 'reconfigure, change the organisation' at the bottom. A small firm icon labelled 'dynamic capability' sits at the centre. Caption beneath: advantage is the ability to change, not the resources held today." class="diagram">
+</figure>
 
 ### Absorptive capacity
 
@@ -124,6 +132,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 **How a product is divided into components shapes how the industry that makes it is divided into firms.** Baldwin and Clark (2000) showed that modularity, splitting a system into parts that connect through standard interfaces, lets different firms innovate on different modules independently, which speeds progress but also lets the value migrate to whoever controls the parts that matter. The related mirroring hypothesis holds that the structure of an organisation tends to mirror the architecture of the product it builds. For a transition this is decisive: modularising a technology (battery, motor, controller, chassis as separable parts) opens it to new entrants and reshuffles who captures the value, which is often the real contest behind an apparently technical standards choice.
 
+<figure>
+<img src="/assets/img/innovation-dynamics-modularity.jpg" alt="Two rows. Top row labelled 'product architecture': four connected modules in sequence, battery (yellow), motor (coral), controller (blue), chassis (green), each linked to the next by interface pins. Bottom row labelled 'industry structure': four firm buildings in the same colours, each dotted-linked up to the module above it, labelled battery firm, motor firm, controller firm, chassis firm. A bracket above the controller module reads 'value can migrate to the controlling module'. Caption beneath: organisation mirrors architecture." class="diagram">
+</figure>
+
 ### Open innovation
 
 **Firms once did their research behind closed doors and commercialised only what they invented; increasingly, valuable knowledge flows across the firm's boundary in both directions, and the task is to manage those flows rather than seal them.** Chesbrough (2003) called this open innovation. It matters for transitions because the knowledge a niche needs is usually scattered across many actors, universities, suppliers, users, rivals, and the players who assemble it fastest, rather than the ones who guard their own, tend to set the pace. Closed strategies that worked in a stable regime often fail in the open, fast-moving early phase of a transition.
@@ -137,6 +149,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ### Diffusion of innovations
 
 **An innovation spreads through a population not all at once but in a predictable sequence, innovators, early adopters, early and late majority, laggards, each group persuaded by different things.** Rogers (1962) mapped this, and the practical lesson is that the tactics that win the early adopters are not the ones that win the majority; many innovations stall precisely at that handover. Reading where an innovation sits in its diffusion curve tells you who to convince next, and how.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-diffusion.jpg" alt="S-curve chart titled 'Diffusion changes who must be convinced'. Cumulative adoption on the y axis, adopters over time on the x axis. Five coloured segments beneath the curve label the adopter groups left to right: coral innovators, yellow early adopters, sky-blue early majority, sage late majority, forest laggards. A short vertical dashed pair marks 'the chasm' between early adopters and early majority. A dot on the rising curve is labelled 'mainstream adoption'. Two brackets above the curve read 'vision, novelty, tolerance for rough edges' on the left and 'reliability, proof, compatibility' on the right." class="diagram">
+</figure>
 
 ### The chasm between early adopters and the majority
 
@@ -161,6 +177,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ## 5. The bridge to socio-technical transitions
 
 The innovation-dynamics literature above studies technologies and firms. The transitions literature scales the same questions up to whole systems, energy, mobility, food, where the "technology" is a regime of infrastructure, institutions, and behaviour, and the "firm" is a society. The bridge is worth naming, because the Lab works at exactly this join.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-mlp-brw.jpg" alt="Three stacked coloured bands. Top yellow band labelled 'landscape, pressures the system' with icons for prices, policy and a storm. Middle coral band labelled 'regime, the established system' with factory, government building and clipboard. Bottom sky band labelled 'niche, novelty develops here' with a small greenhouse containing solar panel and battery. A red arrow from landscape presses down on regime; a blue arrow from niche pushes up into regime. Beneath, a forest-green panel labelled 'BRW: how the niche engages the barrier' splits into three cells: Bypass (a solid square dashed to a hollow one), Repurpose (factory arrows to solar and battery), Weaken (a full column reduced to a partial one). Caption beneath: levels describe the system; BRW identifies the field strategy." class="diagram">
+</figure>
 
 ### The multi-level perspective
 
