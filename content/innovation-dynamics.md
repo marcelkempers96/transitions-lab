@@ -1,6 +1,6 @@
 § / Resources
 
-# Innovation Dynamics
+# Technology & Innovation Dynamics
 
 *Management of technology: how technologies and the firms behind them actually evolve, compete, and win, each idea tied to the literature and, where we have one, a case.*
 
@@ -298,13 +298,13 @@ Henderson, R. M., and Clark, K. B. (1990). [Architectural innovation: The reconf
 
 Katz, M. L., and Shapiro, C. (1985). [Network externalities, competition, and compatibility](https://www.jstor.org/stable/1814809). *American Economic Review*, 75(3), 424 to 440.
 
-Kemp, R., Schot, J., and Hoogma, R. (1998). [Regime shifts to sustainability through processes of niche formation: The approach of strategic niche management](https://doi.org/10.1080/09537329808524310). *Technology Analysis &amp; Strategic Management*, 10(2), 175 to 198.
+Kemp, R., Schot, J., and Hoogma, R. (1998). [Regime shifts to sustainability through processes of niche formation: The approach of strategic niche management](https://doi.org/10.1080/09537329808524310). *Technology Analysis & Strategic Management*, 10(2), 175 to 198.
 
 Rip, A., and Kemp, R. (1998). Technological change. In S. Rayner and E. L. Malone (Eds.), *Human Choice and Climate Change* (Vol. 2, pp. 327 to 399). Columbus: Battelle Press.
 
 Rogers, E. M. (1962). *Diffusion of Innovations*. New York: Free Press.
 
-Schumpeter, J. A. (1942). *Capitalism, Socialism and Democracy*. New York: Harper &amp; Brothers.
+Schumpeter, J. A. (1942). *Capitalism, Socialism and Democracy*. New York: Harper & Brothers.
 
 Teece, D. J. (1986). [Profiting from technological innovation: Implications for integration, collaboration, licensing and public policy](https://doi.org/10.1016/0048-7333%2886%2990027-2). *Research Policy*, 15(6), 285 to 305.
 

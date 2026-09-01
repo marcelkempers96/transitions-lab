@@ -626,7 +626,7 @@ META: dict[str, dict[str, str]] = {
         "description": "A working glossary of the economic ideas behind how technologies actually land, each anchored to a canonical source and tied to a Lab case where the concept applies.",
     },
     "innovation-dynamics": {
-        "title": "Innovation Dynamics | Transitions Lab",
+        "title": "Technology & Innovation Dynamics | Transitions Lab",
         "description": "Management of technology, how technologies and the firms behind them evolve, compete, and win. Five clusters, each anchored to its canonical source and, where the Lab has one, an applied case.",
     },
     "readiness-levels": {
