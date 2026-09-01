@@ -133,9 +133,17 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">Most everyday technology use is habitual, performed automatically with little conscious thought, which is why information campaigns so often fail to change behaviour: they target the deliberating mind, but the behaviour lives in habit.</span> Behaviour change usually requires disrupting the routine or changing the context, not simply supplying better facts. A transition strategy built on "if people only knew" tends to underperform, because knowing is not where the behaviour comes from.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-habit.jpg" alt="Diagram: a stack of information leaflets on the left with a speech bubble reading 'information', a dashed arrow pointing right to a green circular loop containing a walking figure labelled 'habit'. Caption context: the leaflet lands on the deliberating mind, the behaviour runs on the loop." class="diagram">
+</figure>
+
 ### Choice architecture and defaults
 
 <span class="highlight">Because so much behaviour is automatic, the way choices are arranged, what is the default, what is easiest, what is most visible, shapes what people do, often more than persuasion does.</span> Thaler and Sunstein (2008) called this choice architecture, and its most powerful tool is the default: people tend to stick with whatever they are given unless they actively opt out. For a transition, setting the sustainable option as the default, rather than exhorting people to choose it, is frequently the higher-leverage move.
+
+<figure>
+<img src="/assets/img/human-side-of-technology-defaults.jpg" alt="Diagram: six figures walk along a broad green 'default' arrow leading toward a solar-and-wind icon; one figure has broken off and follows a narrower coral 'opt out' arrow past a barrier. Caption context: the default is the higher-leverage lever, exhortation is not." class="diagram">
+</figure>
 
 ### Convenience usually wins
 
@@ -151,13 +159,25 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 <span class="highlight">Designers build for a user they picture, and that imagined user is usually more literate, more connected, more moneyed, and more like the designer than the real population.</span> The gap between the imagined user and the real one is where exclusion is manufactured, quietly, at the design stage, long before deployment. The Lab's core method, going to the people a technology actually reaches, exists precisely to close this gap, and its second-perspective work exists because the people who collect feedback from their own users rarely find the ones they never reached.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-imagined-user.jpg" alt="Diagram: a designer at a drawing board on the left sketches a single generic user figure on a pad, with a dashed arrow leading right to a group of four diverse real users, an older woman with a walking frame, a young man in a hoodie holding a phone, a woman with a laptop, and a man in a wheelchair. Labels beneath: 'imagined user' and 'real users'. Caption context: the gap between the two is where exclusion is manufactured." class="diagram">
+</figure>
+
 ### Exclusion by design
 
 <span class="highlight">A technology can exclude not through malice but through assumptions baked into it: an interface that assumes literacy, a service that assumes a bank account, a device that assumes reliable power.</span> These assumptions are invisible to those who meet them and decisive for those who do not. Reading a technology for its embedded assumptions, and asking who they quietly shut out, is a standing part of the Lab's fieldwork.
 
+<figure>
+<img src="/assets/img/human-side-of-technology-exclusion.jpg" alt="Diagram: three coral figures blocked in turn at three plinths labelled 'literacy', 'bank account', 'reliable power'. To the right, a wider archway lets a blue figure walk through unimpeded toward a small house and tree. Caption context: the assumptions that let one person through are the assumptions that shut everyone else out." class="diagram">
+</figure>
+
 ### Courtesy bias and the sponsor effect
 
 <span class="highlight">People tend to tell a researcher, especially one associated with the provider, what they think the researcher wants to hear, so feedback collected by an organisation from its own users runs systematically positive.</span> This is a behavioural fact about the interview itself, and it is the reason independent data collection produces materially different results from self-report. It is the human-behaviour foundation of the economic argument in [The Reporting Loop](/insight-the-reporting-loop).
+
+<figure>
+<img src="/assets/img/human-side-of-technology-courtesy-bias.jpg" alt="Two-panel diagram titled 'Who asks changes the answer'. Left panel: a respondent in a yellow jumper speaks to a man with a company lanyard and clipboard, her speech bubble reads 'everything works'. Arrow to right panel: the same respondent speaks to an independent researcher with glasses and a notebook, her speech bubble reads 'here is what fails'. Caption context: the same person answers a different question depending on who is holding the pen." class="diagram">
+</figure>
 
 ### The intra-household distribution
 
