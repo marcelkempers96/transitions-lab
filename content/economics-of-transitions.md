@@ -186,6 +186,10 @@ Read this page alongside the [technology & innovation dynamics](/innovation-dyna
 
 <span class="highlight">When a development bank lends through a commodity trader to reach smallholders, the structure is itself a diagnosis of where the working relationships lie, and revives an old question about bundling credit with an offtake relationship.</span> Examined in [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-bundled-credit.jpg" alt="Supply-and-demand chart. Coral demand slopes down, blue supply slopes up, green 'with support' curve sits to the right of supply. The original equilibrium is marked at demand-supply and labelled 'lower price'; the shifted equilibrium at demand-with-support is dashed down to 'higher adoption' on the quantity axis. Caption context: bundling operates as its own form of support, shifting effective supply and reaching buyers a standalone loan cannot." class="diagram">
+</figure>
+
 ### The counterfactual as the product
 
 <span class="highlight">Some things are hard to sell because what the buyer is really being asked to purchase is a counterfactual, a saving relative to a future that will not happen, which is inherently hard to prove.</span> This is why efficiency projects with fast paybacks still do not get done, as we argue in [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller).
