@@ -737,6 +737,7 @@ def rewrite_links(url: str) -> str:
 
 
 IMAGE_COMMENT_INLINE_RE = re.compile(r"<!--\s*IMAGE\b.*?-->", re.DOTALL)
+INLINE_SPAN_RE = re.compile(r"<span\b[^>]*>.*?</span>", re.DOTALL)
 TABLE_SEP_RE = re.compile(r"^\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)+\|?\s*$")
 
 
@@ -781,8 +782,8 @@ def inline(text: str) -> str:
     real HTML comments in the output so they stay invisible on the page but
     remain visible in view-source for whoever is later swapping images in.
     """
-    # Stash any inline IMAGE comments so HTML escaping doesn't turn them
-    # into literal &lt;!-- IMAGE …&gt; text on the page.
+    # Stash any inline IMAGE comments and <span> tags so HTML escaping does
+    # not turn them into literal text on the page.
     stashed: list[str] = []
 
     def _stash(m: re.Match) -> str:
@@ -790,6 +791,7 @@ def inline(text: str) -> str:
         return f"\x00IMG{len(stashed) - 1}\x00"
 
     text = IMAGE_COMMENT_INLINE_RE.sub(_stash, text)
+    text = INLINE_SPAN_RE.sub(_stash, text)
 
     # Escape first so we don't corrupt user text; then re-inject our tags
     text = htmllib.escape(text, quote=False)
