@@ -573,6 +573,18 @@ section + section{border-top:2px solid var(--ink);}
 }
 .prose .format-badge.fmt-pdf{background:var(--coral);color:var(--ink);}
 .prose .format-badge.fmt-web{background:var(--cobalt);color:var(--paper);}
+/* Definition highlight — yellow marker, no bold */
+.prose .highlight{background:var(--butter);color:var(--ink);padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+/* Cluster.concept numbering on the two theory-map pages */
+body[data-page="economics-of-transitions"] .prose,
+body[data-page="innovation-dynamics"] .prose{counter-reset:cluster;}
+body[data-page="economics-of-transitions"] .prose h2,
+body[data-page="innovation-dynamics"] .prose h2{counter-increment:cluster;counter-reset:concept;}
+body[data-page="economics-of-transitions"] .prose h3::before,
+body[data-page="innovation-dynamics"] .prose h3::before{
+  content:counter(cluster) "." counter(concept) "  ";
+  counter-increment:concept;color:var(--coral);font-weight:800;margin-right:.35em;
+}
 .prose .callout ul{margin:.6em 0 0;padding-left:1.2em;}
 .prose .callout li{color:inherit;font-size:16px;line-height:1.55;}
 .prose .callout a:not(.btn){color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
