@@ -575,7 +575,9 @@ section + section{border-top:2px solid var(--ink);}
 .prose .format-badge.fmt-web{background:var(--cobalt);color:var(--paper);}
 .prose .callout ul{margin:.6em 0 0;padding-left:1.2em;}
 .prose .callout li{color:inherit;font-size:16px;line-height:1.55;}
-.prose .callout a{color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.prose .callout a:not(.btn){color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.prose .callout a.btn-ink{color:var(--paper);}
+.prose .callout a.btn-ink:hover{color:var(--butter);}
 .prose .callout.c-cobalt a:hover,.prose .callout.c-forest a:hover{background:var(--butter);color:var(--ink);}
 
 /* ── Pill labels (inline chip badges) ── */
