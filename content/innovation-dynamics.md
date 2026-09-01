@@ -32,13 +32,25 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 **A technology improves slowly at first, then rapidly as effort compounds, then slowly again as it approaches physical limits. Performance plotted against effort or time traces an S.** Foster (1986) made the S-curve a tool of technology strategy: the incumbent riding a maturing curve is most vulnerable exactly when its technology looks most refined, because a new technology on a younger, steeper curve is about to overtake it. Reading which curve a technology sits on, and how much room it has left, is the first question of technology management.
 
+<figure>
+<img src="/assets/img/innovation-dynamics-s-curve.jpg" alt="Chart titled 'Two technology S-curves'. Coral curve for the maturing incumbent rises early and plateaus. Blue curve for the younger technology starts later, rises steeply and crosses the coral curve at a point labelled 'overtake'. A dashed annotation on the blue curve above the crossing reads 'room left to improve'. Axes: performance against effort and time." class="diagram">
+</figure>
+
 ### Dominant design
 
 **Early in a technology's life, many rival designs compete; then the market converges on one configuration that becomes the reference every competitor must adopt.** [Utterback and Abernathy (1975)](https://doi.org/10.1016/0305-0483%2875%2990068-7); Abernathy and Utterback (1978) named this the dominant design, and showed that its emergence flips the basis of competition from product innovation to process and cost. Before the dominant design, the game is invention; after it, the game is efficiency. Much of a transition's turbulence is the fight to set the dominant design, because whoever sets it shapes the market that forms around it.
 
+<figure>
+<img src="/assets/img/innovation-dynamics-dominant-design.jpg" alt="Left side labelled 'product experimentation', with five different early product designs (a radio, a canister, a microwave, a clock, a lamp) each drawn in a different colour, feeding by lines into a central box labelled 'dominant design'. From that box, an arrow leads right to a row of four identical radios on a production line, under the label 'process and cost', with a downward arrow indicating declining unit cost. A dashed line beneath the dominant-design box reads 'the basis of competition changes'." class="diagram">
+</figure>
+
 ### The fluid, transitional, and specific phases
 
 **The Abernathy-Utterback model divides an industry's life into phases: a fluid phase of rapid, uncertain product experimentation; a transitional phase as a dominant design emerges; and a specific phase of incremental, cost-focused process innovation.** Knowing which phase a technology is in tells you what kind of competitor wins, the agile experimenter early, the efficient scaler late, and warns when the rules are about to change.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-phases.jpg" alt="Chart titled 'How the basis of innovation changes'. Three vertical bands across the x-axis labelled fluid, transitional, specific. A coral product-innovation curve is high and oscillating in the fluid phase, then declines. A blue process-innovation curve is low in the fluid phase, rises through the transitional phase and plateaus high in the specific phase. The curves cross at the boundary of the transitional band, marked as 'dominant design'. Bottom labels: many designs, convergence, scale and efficiency. Axes: high to low intensity against industry maturity." class="diagram">
+</figure>
 
 ### Radical versus incremental innovation
 
@@ -47,6 +59,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ### Architectural innovation
 
 **An innovation can leave every component unchanged and still destroy an incumbent, if it changes the way the components are linked.** [Henderson and Clark (1990)](https://doi.org/10.2307/2393549) showed that this architectural innovation is peculiarly deadly because incumbents, whose knowledge is organised around the old architecture, often fail even to perceive it as a threat. It looks like a minor rearrangement and is in fact a redefinition. Many transitions are architectural: the pieces are familiar, the system is new.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-architectural.jpg" alt="Two labelled panels side by side. Left panel 'old architecture': four coloured blocks battery, motor, controller, chassis arranged as a square with a full ring of connections. Arrow between panels. Right panel 'new architecture': the same four coloured blocks re-linked around a central controller in a hub configuration, with different connections. Caption beneath: components unchanged, relationships redefined." class="diagram">
+</figure>
 
 ### Path dependence in technology
 
@@ -69,6 +85,10 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 ### Disruptive innovation
 
 **An innovation that is worse on the metrics incumbents value, but better on a new dimension (cheaper, simpler, more accessible), can take root in a low-end or new market the incumbent ignores, then improve until it displaces them from above.** Christensen (1997) formalised this, and the key insight is counter-intuitive: incumbents fail not because they are badly managed but because they are well managed, listening to their best customers is exactly what makes them miss the disruption. The Lab reads this pattern in emerging-market technology, where the "worse" product that serves the underserved is often the one that scales.
+
+<figure>
+<img src="/assets/img/innovation-dynamics-disruptive.jpg" alt="Chart titled 'Sustaining and disruptive trajectories'. Coral line labelled 'sustaining innovation' rises gently across the top. Two dashed lines below it bracket a band labelled 'what existing customers demand'. A blue S-curve labelled with the disruptive path begins in a shaded blue rectangle at bottom-left labelled 'new or underserved market' with a start-dot marked 'worse on incumbent metrics', then curves up steeply and crosses the customer-demand band at a marked dot labelled 'displacement becomes possible'. Axes: performance against time." class="diagram">
+</figure>
 
 ### Sustaining versus disruptive trajectories
 
