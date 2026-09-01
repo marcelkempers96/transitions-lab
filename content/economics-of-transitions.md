@@ -188,6 +188,10 @@ Where a concept has a home in the established economics literature, we name the 
 
 **A headline price often hides that most of the cost is contractual rather than physical.** Kenya can be 93 per cent renewable and still expensive because three of four cost bands are set in contracts, not at any power station. Broken down in [Paying for Power You Curtail](/insight-paying-for-what-we-curtail).
 
+<figure>
+<img src="/assets/img/economics-of-transitions-cost-stack.jpg" alt="Diagram: a small yellow block labelled 'technology' with a solar panel and pylon on the left, and to its right a long horizontal bar in three coloured segments labelled capital, contracts, risk, bracketed above as 'final price'. Caption beneath: the physical cost is only one part." class="diagram">
+</figure>
+
 ### Long-term power contracts and the anchor buyer
 
 **A very large buyer of power, a smelter historically, a data centre today, negotiates a bargain of a specific shape, and there is sixty years of evidence about how those bargains work out for the host system.** Drawn out in [The Smelter Contract](/insight-the-smelter-contract).
@@ -207,6 +211,10 @@ Where a concept has a home in the established economics literature, we name the 
 ### A claim is only as good as its verification
 
 **Across a large sample of circularity projects, none of the binding bottlenecks was a recycling technology; they were all institutions for verifying a claim.** A recycled material is a promise, and promises need machinery to be trusted. Set out in [A Recycled Material Is a Promise](/insight-recycled-is-a-promise).
+
+<figure>
+<img src="/assets/img/economics-of-transitions-verification.jpg" alt="Line-art chain, left to right: a speech bubble containing a leaf and a tick labelled 'claim', arrow to a small sensor with an antenna and a data sheet labelled 'measurement', arrow to a magnifier over a checklist labelled 'independent verification', arrow to a stamped document labelled 'trusted evidence'. Below the verification step, a vertical scale labelled 'cost of verification' running from low to high, and below the whole chain an eye connected by a dashed line to the low end of the scale." class="diagram">
+</figure>
 
 ### Verification cost and the disappearance of the visit
 
@@ -239,6 +247,10 @@ Where a concept has a home in the established economics literature, we name the 
 ### Incidence: who actually bears a cost or gains a benefit
 
 **The party a policy names is often not the party that ends up carrying the cost or receiving the gain.** Asking where the burden and the benefit actually fall, rather than where they were assigned, is the core of distributional analysis, and it runs through most of the pieces in this section.
+
+<figure>
+<img src="/assets/img/economics-of-transitions-incidence.jpg" alt="Tree diagram: a policy document at the top, arrow down to a single bar labelled 'average result', which fans out into four columns of different heights, each above a small group of figures, labelled left to right: who gains, who gains less, who pays, who is left out." class="diagram">
+</figure>
 
 ### A warm house is not a cheaper one
 
