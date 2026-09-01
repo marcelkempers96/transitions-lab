@@ -96,7 +96,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Disruptive innovation
 
-<span class="highlight">An innovation that is worse on the metrics incumbents value, but better on a new dimension (cheaper, simpler, more accessible), can take root in a low-end or new market the incumbent ignores, then improve until it displaces them from above.</span> Christensen (1997) formalised this, and the key insight is counter-intuitive: incumbents fail not because they are badly managed but because they are well managed, listening to their best customers is exactly what makes them miss the disruption. The Lab reads this pattern in emerging-market technology, where the "worse" product that serves the underserved is often the one that scales.
+<span class="highlight">An innovation that is worse on the metrics incumbents value, but better on a new dimension (cheaper, simpler, more accessible), can take root in a low-end or new market the incumbent ignores, then improve until it displaces them from above.</span> [Christensen (1997)](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma) formalised this, and the key insight is counter-intuitive: incumbents fail not because they are badly managed but because they are well managed, listening to their best customers is exactly what makes them miss the disruption. The Lab reads this pattern in emerging-market technology, where the "worse" product that serves the underserved is often the one that scales.
 
 <figure>
 <img src="/assets/img/innovation-dynamics-disruptive.jpg" alt="Chart titled 'Sustaining and disruptive trajectories'. Coral line labelled 'sustaining innovation' rises gently across the top. Two dashed lines below it bracket a band labelled 'what existing customers demand'. A blue S-curve labelled with the disruptive path begins in a shaded blue rectangle at bottom-left labelled 'new or underserved market' with a start-dot marked 'worse on incumbent metrics', then curves up steeply and crosses the customer-demand band at a marked dot labelled 'displacement becomes possible'. Axes: performance against time." class="diagram">
@@ -112,7 +112,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Creative destruction
 
-<span class="highlight">New combinations do not add to an economy so much as replace what came before, so innovation and disruption are one process seen from two sides.</span> Schumpeter (1942) named the "perennial gale of creative destruction." For technology management it is the founding fact: competitive advantage is temporary by construction, and a firm's task is not to defend a position but to keep generating the next one.
+<span class="highlight">New combinations do not add to an economy so much as replace what came before, so innovation and disruption are one process seen from two sides.</span> [Schumpeter (1942)](https://en.wikipedia.org/wiki/Capitalism%2C_Socialism_and_Democracy) named the "perennial gale of creative destruction." For technology management it is the founding fact: competitive advantage is temporary by construction, and a firm's task is not to defend a position but to keep generating the next one.
 
 ### First-mover advantage, and its limits
 
@@ -124,7 +124,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Innovation ecosystems and co-innovation risk
 
-<span class="highlight">A firm's own innovation can be excellent and still fail commercially if the other innovations it depends on, the complements, the infrastructure, the partners upstream and downstream, are not ready.</span> Adner (2006) called this the "wide lens": the innovator's real risk is often not execution but the readiness of the ecosystem around it, and the more partners a promising technology needs, the more ways it can be held up by the slowest of them. Electric mobility is the textbook case: a good vehicle is not enough if the charging, the financing, the mechanics, and the grid are not ready together. Reading the whole ecosystem, not just the product, is what separates a technology that could work from one that will.
+<span class="highlight">A firm's own innovation can be excellent and still fail commercially if the other innovations it depends on, the complements, the infrastructure, the partners upstream and downstream, are not ready.</span> [Adner (2006)](https://hbr.org/2006/04/match-your-innovation-strategy-to-your-innovation-ecosystem) called this the "wide lens": the innovator's real risk is often not execution but the readiness of the ecosystem around it, and the more partners a promising technology needs, the more ways it can be held up by the slowest of them. Electric mobility is the textbook case: a good vehicle is not enough if the charging, the financing, the mechanics, and the grid are not ready together. Reading the whole ecosystem, not just the product, is what separates a technology that could work from one that will.
 
 <figure>
 <img src="/assets/img/innovation-dynamics-ecosystem.jpg" alt="Four horizontal arrows extending to the right toward a door labelled 'commercial launch' with an electric motorbike behind it. Each arrow is labelled at its left end: charging, finance, mechanics, grid. The first three arrows reach the launch line; the grid arrow is shorter and continues as a dashed line, marked 'co-innovation risk'. Caption beneath: the slowest complement sets the launch date." class="diagram">
@@ -146,7 +146,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Dynamic capabilities
 
-<span class="highlight">In a fast-changing environment, what matters is not a firm's current resources but its ability to sense change, seize opportunities, and reconfigure itself in response.</span> Teece, Pisano, and Shuen (1997) called this bundle of higher-order abilities dynamic capabilities, and it is why some firms survive successive transitions while others, equally strong at any single moment, do not. A transition is precisely the environment where dynamic capability, not static advantage, decides who is left standing.
+<span class="highlight">In a fast-changing environment, what matters is not a firm's current resources but its ability to sense change, seize opportunities, and reconfigure itself in response.</span> [Teece, Pisano, and Shuen (1997)](https://doi.org/10.1002/%28SICI%291097-0266%28199708%2918%3A7%3C509%3A%3AAID-SMJ882%3E3.0.CO%3B2-Z) called this bundle of higher-order abilities dynamic capabilities, and it is why some firms survive successive transitions while others, equally strong at any single moment, do not. A transition is precisely the environment where dynamic capability, not static advantage, decides who is left standing.
 
 <figure>
 <img src="/assets/img/innovation-dynamics-dynamic-capabilities.jpg" alt="Three coloured circles arranged in a loop with arrows connecting them: sky-blue 'sense, recognise change' at top-left, coral 'seize, commit resources' at top-right, forest 'reconfigure, change the organisation' at the bottom. A small firm icon labelled 'dynamic capability' sits at the centre. Caption beneath: advantage is the ability to change, not the resources held today." class="diagram">
@@ -162,7 +162,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Make-or-buy as technology strategy
 
-<span class="highlight">Which parts of a technology a firm develops in-house and which it sources is a strategic choice about where its distinctive capability should sit, not only a transaction-cost calculation.</span> [Coase (1937)](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) and Williamson (1985) gave the economics (see the [economics page](/economics-of-transitions)); in technology strategy the added consideration is that outsourcing a component can hollow out the capability a firm will need for the next generation. We read this in battery-swap architecture in [Own the Battery, Rent the Shopfront](/insight-own-the-battery) and in what an incumbent carries into a new regime in [The Incumbent's Second Life](/insight-incumbents-second-life).
+<span class="highlight">Which parts of a technology a firm develops in-house and which it sources is a strategic choice about where its distinctive capability should sit, not only a transaction-cost calculation.</span> [Coase (1937)](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) and [Williamson (1985)](https://en.wikipedia.org/wiki/Oliver_E._Williamson) gave the economics (see the [economics page](/economics-of-transitions)); in technology strategy the added consideration is that outsourcing a component can hollow out the capability a firm will need for the next generation. We read this in battery-swap architecture in [Own the Battery, Rent the Shopfront](/insight-own-the-battery) and in what an incumbent carries into a new regime in [The Incumbent's Second Life](/insight-incumbents-second-life).
 
 <figure>
 <img src="/assets/img/innovation-dynamics-make-or-buy.jpg" alt="Timeline diagram: a factory today branches into two paths. Upper 'make' branch shows two engineers at a computer with a stack of books, labelled 'higher effort now', leading right to a fully rendered next-generation robot labelled 'capability retained'. Lower 'buy' branch shows a signed contract and a delivery truck, labelled 'lower effort now', leading right to a dashed outline of a missing robot labelled 'capability hollowed out'. A warning bracket beneath the lower branch reads 'the outsourced component becomes the missing knowledge'. Caption beneath: make-or-buy also decides what the firm will know tomorrow." class="diagram">
@@ -194,7 +194,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Open innovation
 
-<span class="highlight">Firms once did their research behind closed doors and commercialised only what they invented; increasingly, valuable knowledge flows across the firm's boundary in both directions, and the task is to manage those flows rather than seal them.</span> Chesbrough (2003) called this open innovation. It matters for transitions because the knowledge a niche needs is usually scattered across many actors, universities, suppliers, users, rivals, and the players who assemble it fastest, rather than the ones who guard their own, tend to set the pace. Closed strategies that worked in a stable regime often fail in the open, fast-moving early phase of a transition.
+<span class="highlight">Firms once did their research behind closed doors and commercialised only what they invented; increasingly, valuable knowledge flows across the firm's boundary in both directions, and the task is to manage those flows rather than seal them.</span> [Chesbrough (2003)](https://en.wikipedia.org/wiki/Open_innovation) called this open innovation. It matters for transitions because the knowledge a niche needs is usually scattered across many actors, universities, suppliers, users, rivals, and the players who assemble it fastest, rather than the ones who guard their own, tend to set the pace. Closed strategies that worked in a stable regime often fail in the open, fast-moving early phase of a transition.
 
 <figure>
 <img src="/assets/img/innovation-dynamics-open-innovation.jpg" alt="Two panels side by side. Left panel 'closed innovation': a walled firm doing internal research feeds only into its own market; universities, users, suppliers and other firms sit outside in grey, disconnected. Footer: knowledge stays inside the firm. Right panel 'open innovation': the same four external actors, universities, users, suppliers, other firms, each connected by bidirectional arrows to the firm's internal research, which combines with them into an assembled-knowledge puzzle, which then feeds both the firm's own market and an external market via a globe. Footer: knowledge moves in both directions. Caption spanning both: the strategic task is to manage flows, not seal the boundary." class="diagram">
@@ -208,7 +208,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Diffusion of innovations
 
-<span class="highlight">An innovation spreads through a population not all at once but in a predictable sequence, innovators, early adopters, early and late majority, laggards, each group persuaded by different things.</span> Rogers (1962) mapped this, and the practical lesson is that the tactics that win the early adopters are not the ones that win the majority; many innovations stall precisely at that handover. Reading where an innovation sits in its diffusion curve tells you who to convince next, and how. The adopter-behaviour reading of the same curve, why the enthusiast is not representative of the majority, is on the [human side of technology page](/human-side-of-technology).
+<span class="highlight">An innovation spreads through a population not all at once but in a predictable sequence, innovators, early adopters, early and late majority, laggards, each group persuaded by different things.</span> [Rogers (1962)](https://en.wikipedia.org/wiki/Diffusion_of_innovations) mapped this, and the practical lesson is that the tactics that win the early adopters are not the ones that win the majority; many innovations stall precisely at that handover. Reading where an innovation sits in its diffusion curve tells you who to convince next, and how. The adopter-behaviour reading of the same curve, why the enthusiast is not representative of the majority, is on the [human side of technology page](/human-side-of-technology).
 
 <figure>
 <img src="/assets/img/innovation-dynamics-diffusion.jpg" alt="S-curve chart titled 'Diffusion changes who must be convinced'. Cumulative adoption on the y axis, adopters over time on the x axis. Five coloured segments beneath the curve label the adopter groups left to right: coral innovators, yellow early adopters, sky-blue early majority, sage late majority, forest laggards. A short vertical dashed pair marks 'the chasm' between early adopters and early majority. A dot on the rising curve is labelled 'mainstream adoption'. Two brackets above the curve read 'vision, novelty, tolerance for rough edges' on the left and 'reliability, proof, compatibility' on the right." class="diagram">
@@ -216,11 +216,11 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### The chasm between early adopters and the majority
 
-<span class="highlight">The gap between the visionaries who will tolerate a rough product and the pragmatists who will not is where many technologies die.</span> The early market and the mainstream market want different things, and a product tuned to the first can fail to cross to the second. In a transition, this chasm is often the real barrier, not the technology and not the price, but the leap from the enthusiasts to the ordinary user.
+<span class="highlight">The gap between the visionaries who will tolerate a rough product and the pragmatists who will not is where many technologies die.</span> The named form, [Moore's chasm](https://en.wikipedia.org/wiki/Crossing_the_Chasm), has been the language of technology marketing for three decades. The early market and the mainstream market want different things, and a product tuned to the first can fail to cross to the second. In a transition, this chasm is often the real barrier, not the technology and not the price, but the leap from the enthusiasts to the ordinary user.
 
 ### Increasing returns to adoption
 
-<span class="highlight">Some technologies get more valuable the more they are adopted: each user improves the infrastructure, deepens the skill base, and raises the option's credibility for the next user.</span> Arthur (1989) formalised this (see the [economics page](/economics-of-transitions) for the economic treatment); in innovation dynamics it is the engine that lets a niche cross the chasm and eventually overtake an incumbent, and the reason the early going is so slow.
+<span class="highlight">Some technologies get more valuable the more they are adopted: each user improves the infrastructure, deepens the skill base, and raises the option's credibility for the next user.</span> [Arthur (1989)](https://doi.org/10.2307/2234208) formalised this (see the [economics page](/economics-of-transitions) for the economic treatment); in innovation dynamics it is the engine that lets a niche cross the chasm and eventually overtake an incumbent, and the reason the early going is so slow.
 
 ### Adoption is not a switch
 
@@ -266,7 +266,7 @@ The concepts above draw on the following canonical sources in the management-of-
 
 Abernathy, W. J., and Utterback, J. M. (1978). Patterns of industrial innovation. *Technology Review*, 80(7), 40 to 47.
 
-Adner, R. (2006). Match your innovation strategy to your innovation ecosystem. *Harvard Business Review*, 84(4), 98 to 107.
+Adner, R. (2006). [Match your innovation strategy to your innovation ecosystem](https://hbr.org/2006/04/match-your-innovation-strategy-to-your-innovation-ecosystem). *Harvard Business Review*, 84(4), 98 to 107.
 
 Arthur, W. B. (1989). [Competing technologies, increasing returns, and lock-in by historical events](https://doi.org/10.2307/2234208). *The Economic Journal*, 99(394), 116 to 131.
 
@@ -274,9 +274,9 @@ Baldwin, C. Y., and Clark, K. B. (2000). *Design Rules, Volume 1: The Power of M
 
 Bresnahan, T. F., and Trajtenberg, M. (1995). [General purpose technologies: 'Engines of growth'?](https://doi.org/10.1016/0304-4076%2894%2901598-T) *Journal of Econometrics*, 65(1), 83 to 108.
 
-Chesbrough, H. W. (2003). *Open Innovation: The New Imperative for Creating and Profiting from Technology*. Boston: Harvard Business School Press.
+Chesbrough, H. W. (2003). [*Open Innovation: The New Imperative for Creating and Profiting from Technology*](https://en.wikipedia.org/wiki/Open_innovation). Boston: Harvard Business School Press.
 
-Christensen, C. M. (1997). *The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail*. Boston: Harvard Business School Press.
+Christensen, C. M. (1997). [*The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail*](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma). Boston: Harvard Business School Press.
 
 Coase, R. H. (1937). [The nature of the firm](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x). *Economica*, 4(16), 386 to 405.
 
@@ -302,17 +302,17 @@ Kemp, R., Schot, J., and Hoogma, R. (1998). [Regime shifts to sustainability thr
 
 Rip, A., and Kemp, R. (1998). Technological change. In S. Rayner and E. L. Malone (Eds.), *Human Choice and Climate Change* (Vol. 2, pp. 327 to 399). Columbus: Battelle Press.
 
-Rogers, E. M. (1962). *Diffusion of Innovations*. New York: Free Press.
+Rogers, E. M. (1962). [*Diffusion of Innovations*](https://en.wikipedia.org/wiki/Diffusion_of_innovations). New York: Free Press.
 
-Schumpeter, J. A. (1942). *Capitalism, Socialism and Democracy*. New York: Harper & Brothers.
+Schumpeter, J. A. (1942). [*Capitalism, Socialism and Democracy*](https://en.wikipedia.org/wiki/Capitalism%2C_Socialism_and_Democracy). New York: Harper & Brothers.
 
 Teece, D. J. (1986). [Profiting from technological innovation: Implications for integration, collaboration, licensing and public policy](https://doi.org/10.1016/0048-7333%2886%2990027-2). *Research Policy*, 15(6), 285 to 305.
 
-Teece, D. J., Pisano, G., and Shuen, A. (1997). Dynamic capabilities and strategic management. *Strategic Management Journal*, 18(7), 509 to 533.
+Teece, D. J., Pisano, G., and Shuen, A. (1997). [Dynamic capabilities and strategic management](https://doi.org/10.1002/%28SICI%291097-0266%28199708%2918%3A7%3C509%3A%3AAID-SMJ882%3E3.0.CO%3B2-Z). *Strategic Management Journal*, 18(7), 509 to 533.
 
 Utterback, J. M., and Abernathy, W. J. (1975). [A dynamic model of process and product innovation](https://doi.org/10.1016/0305-0483%2875%2990068-7). *Omega*, 3(6), 639 to 656.
 
-Williamson, O. E. (1985). *The Economic Institutions of Capitalism*. New York: Free Press.
+Williamson, O. E. (1985). [*The Economic Institutions of Capitalism*](https://en.wikipedia.org/wiki/Oliver_E._Williamson). New York: Free Press.
 
 ---
 

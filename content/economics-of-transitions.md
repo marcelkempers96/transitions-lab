@@ -80,7 +80,7 @@ Read this page alongside the [human side of technology](/human-side-of-technolog
 
 ### Increasing returns to adoption
 
-<span class="highlight">Some technologies get more valuable the more they are used: each new adopter improves the infrastructure, deepens the supply of skills, and raises the credibility of the option for the next adopter.</span> Formalised by Arthur (1989), this is the engine that lets a niche eventually overtake an incumbent, and the reason the early going is so slow, the returns only compound once a threshold is crossed. The idea has a long lineage, reaching back to [Marshall (1890)](https://www.econlib.org/library/Marshall/marP.html) on the external economies that accrue to a growing industry. The strategic reading of the same mechanism, as the engine that lets a niche cross the chasm, is on the [technology & innovation dynamics page](/innovation-dynamics).
+<span class="highlight">Some technologies get more valuable the more they are used: each new adopter improves the infrastructure, deepens the supply of skills, and raises the credibility of the option for the next adopter.</span> Formalised by [Arthur (1989)](https://doi.org/10.2307/2234208), this is the engine that lets a niche eventually overtake an incumbent, and the reason the early going is so slow, the returns only compound once a threshold is crossed. The idea has a long lineage, reaching back to [Marshall (1890)](https://www.econlib.org/library/Marshall/marP.html) on the external economies that accrue to a growing industry. The strategic reading of the same mechanism, as the engine that lets a niche cross the chasm, is on the [technology & innovation dynamics page](/innovation-dynamics).
 
 <figure>
 <img src="/assets/img/economics-of-transitions-increasing-returns.jpg" alt="Chart: unit cost on the vertical axis against time on the horizontal axis. A coral incumbent curve slopes down gently and plateaus. A blue emerging-technology curve starts high, drops steeply, and crosses the incumbent line at a marked point labelled 'cost crossover'. Caption context: increasing returns to adoption drive the crossing, and once it happens the incumbent no longer competes on price." class="diagram">
@@ -272,7 +272,7 @@ Read this page alongside the [human side of technology](/human-side-of-technolog
 
 ### Long-term power contracts and the anchor buyer
 
-<span class="highlight">A very large buyer of power, a smelter historically, a data centre today, negotiates a bargain of a specific shape, and there is sixty years of evidence about how those bargains work out for the host system.</span> Drawn out in [The Smelter Contract](/insight-the-smelter-contract).
+<span class="highlight">A very large buyer of power, a smelter historically, a data centre today, negotiates a bargain of a specific shape, and there is sixty years of evidence about how those bargains work out for the host system.</span> The named instrument is the power purchase agreement, or PPA. Drawn out in [The Smelter Contract](/insight-the-smelter-contract).
 
 ### Tariff design as the decisive variable
 
@@ -416,7 +416,7 @@ Spence, M. (1973). [Job market signalling](https://doi.org/10.2307/1882010). *Qu
 
 Teece, D. J. (1986). [Profiting from technological innovation: Implications for integration, collaboration, licensing and public policy](https://doi.org/10.1016/0048-7333%2886%2990027-2). *Research Policy*, 15(6), 285 to 305.
 
-Williamson, O. E. (1985). *The Economic Institutions of Capitalism*. New York: Free Press.
+Williamson, O. E. (1985). [*The Economic Institutions of Capitalism*](https://en.wikipedia.org/wiki/Oliver_E._Williamson). New York: Free Press.
 
 For the transitions-studies frameworks that sit alongside these (the multi-level perspective, strategic niche management, and technological transition pathways), see the [transitions primer](/resources) and the [readiness levels](/readiness-levels) explainer, which carry their own references.
 

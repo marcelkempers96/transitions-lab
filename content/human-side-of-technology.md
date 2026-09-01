@@ -81,11 +81,11 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Reasoned action and planned behaviour
 
-<span class="highlight">Intentions, not attitudes, predict behaviour, and intentions are shaped by three things: a person's own attitude, the social norm they perceive, and how much control they feel they have.</span> Fishbein and Ajzen (1975) and [Ajzen (1991)](https://doi.org/10.1016/0749-5978%2891%2990020-T) built the theories of reasoned action and planned behaviour on this, and the practical consequence is sharp: changing what people think of a technology is not enough if the perceived norm is against it or if people feel they cannot actually act. Perceived behavioural control, whether a person believes they can do the thing, is often the missing piece.
+<span class="highlight">Intentions, not attitudes, predict behaviour, and intentions are shaped by three things: a person's own attitude, the social norm they perceive, and how much control they feel they have.</span> [Fishbein and Ajzen (1975)](https://en.wikipedia.org/wiki/Theory_of_reasoned_action) and [Ajzen (1991)](https://doi.org/10.1016/0749-5978%2891%2990020-T) built the theories of reasoned action (TRA) and planned behaviour (TPB) on this, and the practical consequence is sharp: changing what people think of a technology is not enough if the perceived norm is against it or if people feel they cannot actually act. Perceived behavioural control, whether a person believes they can do the thing, is often the missing piece.
 
 ### Diffusion and the adopter categories
 
-<span class="highlight">An innovation spreads through a population in a sequence, innovators, early adopters, early and late majority, laggards, and each group adopts for different reasons and responds to different evidence.</span> Rogers (1962) mapped this. The behavioural lesson, and a recurring field finding, is that the enthusiast who adopts first is not representative of the majority who must adopt later, so evidence gathered from early users systematically misleads about how the mainstream will respond. The competitive-dynamics reading of the same curve is on the [technology & innovation dynamics page](/innovation-dynamics).
+<span class="highlight">An innovation spreads through a population in a sequence, innovators, early adopters, early and late majority, laggards, and each group adopts for different reasons and responds to different evidence.</span> [Rogers (1962)](https://en.wikipedia.org/wiki/Diffusion_of_innovations) mapped this. The behavioural lesson, and a recurring field finding, is that the enthusiast who adopts first is not representative of the majority who must adopt later, so evidence gathered from early users systematically misleads about how the mainstream will respond. The competitive-dynamics reading of the same curve is on the [technology & innovation dynamics page](/innovation-dynamics).
 
 <figure>
 <img src="/assets/img/human-side-of-technology-diffusion.jpg" alt="Bell curve split into coloured segments beneath, coral innovators, yellow early adopters, big blue majority, green laggards, with brackets labelling innovators, early adopters and majority. Caption context: the tail on the left is who you meet first, and it is not the population you have to convince to reach scale." class="diagram">
@@ -123,7 +123,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Legitimacy and the right to operate
 
-<span class="highlight">A technology needs not only to work but to be seen as legitimate, by users, communities, and authorities, or it will be resisted regardless of its merits.</span> Legitimacy is a social judgement about whether a technology and its provider have the right to do what they are doing, and it can be withheld even from something that performs well. Reading who confers legitimacy in a given setting, and on what terms, is often the difference between a pilot that is tolerated and one that is embraced.
+<span class="highlight">A technology needs not only to work but to be seen as legitimate, by users, communities, and authorities, or it will be resisted regardless of its merits.</span> Legitimacy is a social judgement about whether a technology and its provider have the right to do what they are doing, and it can be withheld even from something that performs well. In extractive-industry practice the same idea is named the [social licence to operate](https://en.wikipedia.org/wiki/Social_license). Reading who confers legitimacy in a given setting, and on what terms, is often the difference between a pilot that is tolerated and one that is embraced.
 
 ### The average hides who it fails
 
@@ -161,7 +161,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Large technical systems and momentum
 
-<span class="highlight">Big technological systems, grids, road networks, payment rails, accumulate momentum: as they grow, the sunk investment, the institutions, and the habits built around them make their direction progressively harder to change.</span> Hughes (1983) showed this for electrification. It is the human-and-institutional counterpart of lock-in: the system resists redirection not only for economic reasons but because so many people's routines, skills, and expectations are bound up in it.
+<span class="highlight">Big technological systems, grids, road networks, payment rails, accumulate momentum: as they grow, the sunk investment, the institutions, and the habits built around them make their direction progressively harder to change.</span> [Hughes (1983)](https://en.wikipedia.org/wiki/Thomas_P._Hughes) showed this for electrification, and the frame is known in the literature as large technical systems, or LTS. It is the human-and-institutional counterpart of lock-in: the system resists redirection not only for economic reasons but because so many people's routines, skills, and expectations are bound up in it.
 
 <figure>
 <img src="/assets/img/human-side-of-technology-momentum.jpg" alt="Diagram: a large wheel made of four coloured puzzle pieces, infrastructure, skills, institutions, routines, being pushed along a track by a coral arrow. Speed lines behind the wheel indicate motion. Caption context: the four pieces lock together and the wheel is progressively harder to turn." class="diagram">
@@ -191,7 +191,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ### Choice architecture and defaults
 
-<span class="highlight">Because so much behaviour is automatic, the way choices are arranged, what is the default, what is easiest, what is most visible, shapes what people do, often more than persuasion does.</span> Thaler and Sunstein (2008) called this choice architecture, and its most powerful tool is the default: people tend to stick with whatever they are given unless they actively opt out. For a transition, setting the sustainable option as the default, rather than exhorting people to choose it, is frequently the higher-leverage move.
+<span class="highlight">Because so much behaviour is automatic, the way choices are arranged, what is the default, what is easiest, what is most visible, shapes what people do, often more than persuasion does.</span> [Thaler and Sunstein (2008)](https://en.wikipedia.org/wiki/Nudge_%28book%29) called this choice architecture, and its most powerful tool is the default: people tend to stick with whatever they are given unless they actively opt out. For a transition, setting the sustainable option as the default, rather than exhorting people to choose it, is frequently the higher-leverage move.
 
 <figure>
 <img src="/assets/img/human-side-of-technology-defaults.jpg" alt="Diagram: six figures walk along a broad green 'default' arrow leading toward a solar-and-wind icon; one figure has broken off and follows a narrower coral 'opt out' arrow past a barrier. Caption context: the default is the higher-leverage lever, exhortation is not." class="diagram">
@@ -245,15 +245,15 @@ Ajzen, I. (1991). [The theory of planned behavior](https://doi.org/10.1016/0749-
 
 Davis, F. D. (1989). [Perceived usefulness, perceived ease of use, and user acceptance of information technology](https://doi.org/10.2307/249008). *MIS Quarterly*, 13(3), 319 to 340.
 
-Fishbein, M., and Ajzen, I. (1975). *Belief, Attitude, Intention and Behavior: An Introduction to Theory and Research*. Reading, MA: Addison-Wesley.
+Fishbein, M., and Ajzen, I. (1975). [*Belief, Attitude, Intention and Behavior: An Introduction to Theory and Research*](https://en.wikipedia.org/wiki/Theory_of_reasoned_action). Reading, MA: Addison-Wesley.
 
-Hughes, T. P. (1983). *Networks of Power: Electrification in Western Society, 1880 to 1930*. Baltimore: Johns Hopkins University Press.
+Hughes, T. P. (1983). [*Networks of Power: Electrification in Western Society, 1880 to 1930*](https://en.wikipedia.org/wiki/Thomas_P._Hughes). Baltimore: Johns Hopkins University Press.
 
 Kahneman, D., and Tversky, A. (1979). [Prospect theory: An analysis of decision under risk](https://doi.org/10.2307/1914185). *Econometrica*, 47(2), 263 to 291.
 
 Pinch, T. J., and Bijker, W. E. (1984). [The social construction of facts and artefacts](https://doi.org/10.1177/030631284014003004). *Social Studies of Science*, 14(3), 399 to 441.
 
-Rogers, E. M. (1962). *Diffusion of Innovations*. New York: Free Press.
+Rogers, E. M. (1962). [*Diffusion of Innovations*](https://en.wikipedia.org/wiki/Diffusion_of_innovations). New York: Free Press.
 
 Shove, E., Pantzar, M., and Watson, M. (2012). *The Dynamics of Social Practice: Everyday Life and How It Changes*. London: SAGE.
 
@@ -261,7 +261,7 @@ Simon, H. A. (1955). [A behavioral model of rational choice](https://doi.org/10.
 
 Slovic, P. (1987). [Perception of risk](https://doi.org/10.1126/science.3563507). *Science*, 236(4799), 280 to 285.
 
-Thaler, R. H., and Sunstein, C. R. (2008). *Nudge: Improving Decisions About Health, Wealth, and Happiness*. New Haven: Yale University Press.
+Thaler, R. H., and Sunstein, C. R. (2008). [*Nudge: Improving Decisions About Health, Wealth, and Happiness*](https://en.wikipedia.org/wiki/Nudge_%28book%29). New Haven: Yale University Press.
 
 Tversky, A., and Kahneman, D. (1981). [The framing of decisions and the psychology of choice](https://doi.org/10.1126/science.7455683). *Science*, 211(4481), 453 to 458.
 
