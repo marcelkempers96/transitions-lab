@@ -201,6 +201,7 @@ HERO_COLOR: dict[str, str] = {
     "readiness-levels": "cobalt",
     "resources": "cobalt",
     "economics-of-transitions": "cobalt",
+    "innovation-dynamics": "cobalt",
     "interview-guide": "cobalt",
     "impact-tracking-template": "cobalt",
     # Research programmes (forest)
@@ -623,6 +624,10 @@ META: dict[str, dict[str, str]] = {
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
         "description": "A working glossary of the economic ideas behind how technologies actually land, each anchored to a canonical source and tied to a Lab case where the concept applies.",
+    },
+    "innovation-dynamics": {
+        "title": "Innovation Dynamics | Transitions Lab",
+        "description": "Management of technology, how technologies and the firms behind them evolve, compete, and win. Five clusters, each anchored to its canonical source and, where the Lab has one, an applied case.",
     },
     "readiness-levels": {
         "title": "TRL and SRL Explained: The Two Axes of Readiness | Transitions Lab",

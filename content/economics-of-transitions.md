@@ -8,6 +8,8 @@ Transitions are usually discussed in the language of technology: what is newer, 
 
 This page is a plain-language map of those ideas. Each concept is defined in a sentence or two, and then tied to a published piece where we applied it to a specific, real case, so the abstraction stays anchored to something that actually happened. It is meant to be read either straight through, as a primer on the economics of transitions, or dipped into, as a glossary.
 
+Read this page alongside the [innovation dynamics](/innovation-dynamics) companion, which takes the same terrain from the management-of-technology side, and the [transitions primer](/resources), which sets out the socio-technical frame in full. A handful of foundational ideas, path dependence, network effects, increasing returns, appropriability, deliberately appear on more than one page, because they genuinely belong to more than one literature; each page treats them through its own lens and points to the others.
+
 <div class="callout c-cobalt">
   <span class="kicker">In this map</span>
   <h3>Seven clusters</h3>
@@ -34,7 +36,7 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 
 ### Path dependence and lock-in
 
-**Once a system is established, the cost of switching away from it rises over time, so an inferior option can persist simply because it arrived first and everything else organised around it.** The formal result is due to [Arthur (1989)](https://doi.org/10.2307/2234208), who showed that under increasing returns an economy can lock in to a technological path that is neither efficient, predictable, nor easily shifted by tax or subsidy, and to [David (1985)](https://www.jstor.org/stable/1805621), whose study of the QWERTY keyboard made path dependence concrete. Lock-in is the central reason good technologies fail: the barrier is rarely the artefact, it is the system it must displace. We set out the full mechanism in the [transitions primer](/resources), and its two-directional form, where the same barrier that keeps a country out of a market is also what makes entering worthwhile, in [The Lock-In Runs Both Ways](/insight-lock-in-both-ways).
+**Once a system is established, the cost of switching away from it rises over time, so an inferior option can persist simply because it arrived first and everything else organised around it.** The formal result is due to [Arthur (1989)](https://doi.org/10.2307/2234208), who showed that under increasing returns an economy can lock in to a technological path that is neither efficient, predictable, nor easily shifted by tax or subsidy, and to [David (1985)](https://www.jstor.org/stable/1805621), whose study of the QWERTY keyboard made path dependence concrete. Lock-in is the central reason good technologies fail: the barrier is rarely the artefact, it is the system it must displace. We set out the full mechanism in the [transitions primer](/resources), and its two-directional form, where the same barrier that keeps a country out of a market is also what makes entering worthwhile, in [The Lock-In Runs Both Ways](/insight-lock-in-both-ways). Read this alongside the strategic reading of the same result on the [innovation dynamics page](/innovation-dynamics), where an early lead in a path-dependent technology is worth fighting for out of proportion to its immediate value.
 
 ### The niche, the regime, and the landscape
 
@@ -62,23 +64,11 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 
 ### Increasing returns to adoption
 
-**Some technologies get more valuable the more they are used: each new adopter improves the infrastructure, deepens the supply of skills, and raises the credibility of the option for the next adopter.** Formalised by Arthur (1989), this is the engine that lets a niche eventually overtake an incumbent, and the reason the early going is so slow, the returns only compound once a threshold is crossed. The idea has a long lineage, reaching back to [Marshall (1890)](https://www.econlib.org/library/Marshall/marP.html) on the external economies that accrue to a growing industry.
-
-### Sunk costs and asset specificity
-
-**A cost already incurred and unrecoverable should not, in theory, affect a forward-looking decision, yet sunk investments in specific assets, a refinery, a grid, a skilled workforce, are exactly what make a regime hard to leave.** Where an asset is specialised to one use (asset specificity, in Williamson's 1985 term), the party that owns it is exposed, and that exposure shapes who invests and who hesitates. Much of the inertia in a transition is sunk cost wearing the mask of prudence.
-
-### The S-curve of adoption
-
-**Adoption typically follows an S-shape: a long, flat, discouraging beginning, then a steep acceleration once the enabling conditions line up, then a plateau as the market saturates.** Reading where a technology sits on its curve, and not mistaking the flat early phase for failure, is one of the most common judgement calls in a transition.
+**Some technologies get more valuable the more they are used: each new adopter improves the infrastructure, deepens the supply of skills, and raises the credibility of the option for the next adopter.** Formalised by Arthur (1989), this is the engine that lets a niche eventually overtake an incumbent, and the reason the early going is so slow, the returns only compound once a threshold is crossed. The idea has a long lineage, reaching back to [Marshall (1890)](https://www.econlib.org/library/Marshall/marP.html) on the external economies that accrue to a growing industry. The strategic reading of the same mechanism, as the engine that lets a niche cross the chasm, is on the [innovation dynamics page](/innovation-dynamics).
 
 ### Timing and the window of opportunity
 
 **A niche does not break through on its own schedule; it breaks through when a shock, a price spike, a policy shift, a crisis, opens a window in the regime.** A technology that is ready when the window opens succeeds, and one that is not may wait years for the next. The transition turns on readiness meeting timing, not merit alone.
-
-### Creative destruction
-
-**New combinations do not simply add to an economy; they destroy the old arrangements they replace, so growth and disruption are the same process seen from two sides.** Schumpeter (1942) named this the "perennial gale of creative destruction," and it is the deep reason a transition is never only technical: it dismantles firms, skills, and livelihoods even as it builds their successors. Every concept in the distribution cluster below is, in a sense, a footnote to this one.
 
 ---
 
@@ -88,7 +78,7 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 
 ### Make-or-buy (vertical integration)
 
-**A firm must decide which parts of its value chain to own and which to source from others. The choice turns on transaction costs: when depending on an outside party is too risky or too variable, a firm integrates.** This is the founding question of the theory of the firm, posed by [Coase (1937)](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) and developed into transaction-cost economics by Williamson (1985), who tied the make-or-buy decision to uncertainty, frequency, and asset specificity. We apply it to battery-swap network architecture in [Own the Battery, Rent the Shopfront](/insight-own-the-battery), and to make-or-buy under uncertainty in [The Anchor Tenant](/insight-anchor-tenant).
+**A firm must decide which parts of its value chain to own and which to source from others. The choice turns on transaction costs: when depending on an outside party is too risky or too variable, a firm integrates.** This is the founding question of the theory of the firm, posed by [Coase (1937)](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) and developed into transaction-cost economics by Williamson (1985), who tied the make-or-buy decision to uncertainty, frequency, and asset specificity. We apply it to battery-swap network architecture in [Own the Battery, Rent the Shopfront](/insight-own-the-battery), and to make-or-buy under uncertainty in [The Anchor Tenant](/insight-anchor-tenant). The capability-strategy reading of the same decision, why outsourcing can hollow out the ability to build the next generation, is on the [innovation dynamics page](/innovation-dynamics).
 
 ### The anchor tenant and demand aggregation
 
@@ -100,7 +90,7 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 
 ### Network effects (network externalities)
 
-**A product whose value to each user rises with the number of other users, a phone, a payment rail, a charging standard, tends toward a single winner, because adoption is self-reinforcing.** [Katz and Shapiro (1985)](https://www.jstor.org/stable/1814809) formalised network externalities and showed why compatibility and sponsorship decide these markets. Network effects are the flip side of lock-in: the same mechanism that helps a niche reach critical mass then makes the resulting incumbent very hard to dislodge.
+**A product whose value to each user rises with the number of other users, a phone, a payment rail, a charging standard, tends toward a single winner, because adoption is self-reinforcing.** [Katz and Shapiro (1985)](https://www.jstor.org/stable/1814809) formalised network externalities and showed why compatibility and sponsorship decide these markets. Network effects are the flip side of lock-in: the same mechanism that helps a niche reach critical mass then makes the resulting incumbent very hard to dislodge. The competitive-strategy reading, of standards battles won on timing and compatibility, is on the [innovation dynamics page](/innovation-dynamics).
 
 ### Customer bypass (grid defection)
 
@@ -109,10 +99,6 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 ### Behind-the-border costs
 
 **The friction that stops firms trading and depending on each other often sits inside a country, not at its border: unreliable power, warehousing, paperwork, and above all variance.** It is variance, not average price, that prevents firms relying on one another. We show this for African trade in [Behind the Border](/insight-behind-the-border).
-
-### Standards and who governs them
-
-**An open technical standard is a different thing from an openly governed one.** Whoever holds the pen on a standard shapes the market that forms around it, which is a governance question, not a technical one. Drawn out in [Who Holds the Pen on the Standard](/insight-who-holds-the-pen).
 
 ---
 
@@ -168,7 +154,7 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 
 ### Appropriability and complementary assets
 
-**Inventing something valuable and capturing the value from it are two different problems, and the second is often the harder one.** [Teece (1986)](https://doi.org/10.1016/0048-7333%2886%2990027-2) showed that whether an innovator profits, rather than an imitator or a supplier, depends on the strength of the appropriability regime and on who controls the complementary assets, the manufacturing, distribution, and qualification needed to bring the innovation to market. This is the classical frame beneath the whole of this cluster: the value in a transition is captured by whoever holds the scarce complementary asset, which is rarely the inventor.
+**Inventing something valuable and capturing the value from it are two different problems, and the second is often the harder one.** The value in a commodity or technology chain is captured by whoever holds the scarce complementary asset, which is rarely the inventor. The full technology-strategy treatment, following [Teece (1986)](https://doi.org/10.1016/0048-7333%2886%2990027-2), is on the [innovation dynamics page](/innovation-dynamics); the two entries that follow read the same fact as a value-capture and market-barrier question.
 
 <figure>
 <img src="/assets/img/economics-of-transitions-ladder.jpg" alt="Rising stepped bar chart, left to right: yellow extract with a mine cart, coral process with a refinery, blue qualify with a certified document, forest manufacture with a battery cell. A cobalt arrow labelled 'value captured' rises across the tops. A bracket beneath the last three bars is labelled 'complementary assets'." class="diagram">
@@ -181,10 +167,6 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 ### Qualification as the real barrier
 
 **To move up a value chain, output must be qualified, certified as good enough to enter a buyer's supply chain, and qualification, not technology or capital, is often the true gate.** The same mechanism that shuts the door is why the door is worth opening. Drawn out for battery precursor in the DRC in [The Lock-In Runs Both Ways](/insight-lock-in-both-ways), and for export bans in [The Ban Is Not the Policy](/insight-ban-is-not-the-policy).
-
-### Capability as the slow constraint
-
-**Money can be moved in a budget cycle; the ability to actually make things accretes over a decade.** When two industrial programmes are constrained by the same thing and it is not money, capability is usually the answer. Argued across Nigeria and Indonesia in [Capability Is the Slow Part](/insight-capability-slow-part), and on what transfers when an incumbent carries its capability into a new regime in [The Incumbent's Second Life](/insight-incumbents-second-life).
 
 ### Industrial symbiosis is grown, not planned
 
@@ -296,10 +278,6 @@ This page is a plain-language map of those ideas. Each concept is defined in a s
 
 **Administrative and clearance burdens do not scale down with the size of the body carrying them, so a small municipality faces almost the same fixed hurdle as a large one with a fraction of the capacity.** Set out in [The Municipality Is the Instrument](/insight-municipality-is-the-instrument).
 
-### Enough demonstrations
-
-**Once a practice is proven, more pilots do not advance it; the constraint moves from proof to scale, and the economics of scaling are different from the economics of demonstrating.** Argued for European agriculture in [Europe Has Enough Demonstrations](/insight-enough-demonstrations).
-
 ### The just transition and stranded livelihoods
 
 **A transition that is good in aggregate still imposes concentrated losses on the people tied to the old system: the petrol mechanic, the coal town, the fuel vendor.** Ignoring those losses is not only unjust, it is destabilising, because the people who lose are usually organised enough to slow or reverse the change. Whose livelihood is stranded, and whether they are compensated or abandoned, is an economic question before it is a moral one.
@@ -345,8 +323,6 @@ Marshall, A. (1890). [*Principles of Economics*](https://www.econlib.org/library
 Pigou, A. C. (1920). [*The Economics of Welfare*](https://www.econlib.org/library/NPDBooks/Pigou/pgEW.html). London: Macmillan.
 
 Samuelson, P. A. (1954). [The pure theory of public expenditure](https://doi.org/10.2307/1925895). *Review of Economics and Statistics*, 36(4), 387 to 389.
-
-Schumpeter, J. A. (1942). *Capitalism, Socialism and Democracy*. New York: Harper &amp; Brothers.
 
 Spence, M. (1973). [Job market signalling](https://doi.org/10.2307/1882010). *Quarterly Journal of Economics*, 87(3), 355 to 374.
 

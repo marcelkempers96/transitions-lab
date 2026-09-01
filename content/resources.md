@@ -25,6 +25,9 @@ The Lab's intellectual foundation, set out plainly: what a socio-technical syste
 [**The Economics of Transitions →**](/economics-of-transitions)
 A working glossary of the economic ideas that decide whether a technology actually lands, each anchored to its canonical source (Coase, Akerlof, Arthur, Teece, Williamson and others) and tied to a Lab case where the concept applies. Seven clusters, from lock-in and market structure to distribution and who is left out. **Web page.**
 
+[**Innovation Dynamics →**](/innovation-dynamics)
+The management-of-technology companion to the economics map: how a technology itself evolves, how firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt. Anchored to Foster, Utterback, Henderson-Clark, Christensen, Teece, Cohen-Levinthal, Rogers, Geels and others. Five clusters, from the shape of technological change to the bridge to socio-technical transitions. **Web page.**
+
 ---
 
 **§ 2 / Readiness frameworks**
