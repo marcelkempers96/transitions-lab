@@ -817,8 +817,16 @@ def inline(text: str) -> str:
     text = ITALIC_RE.sub(r"<em>\1</em>", text)
     text = INLINE_CODE_RE.sub(r"<code>\1</code>", text)
 
-    # Restore the stashed HTML comments
+    # Restore the stashed HTML. For <span> tags, recursively process the inner
+    # content so markdown links, bold, italic, and code inside a highlight or
+    # other inline span still get rendered.
+    span_split = re.compile(r"(<span\b[^>]*>)(.*)(</span>)", re.DOTALL)
     for idx, comment in enumerate(stashed):
+        if comment.startswith("<span"):
+            m = span_split.match(comment)
+            if m:
+                open_tag, inner, close_tag = m.group(1), m.group(2), m.group(3)
+                comment = open_tag + inline(inner) + close_tag
         text = text.replace(f"\x00IMG{idx}\x00", comment)
     return text
 
