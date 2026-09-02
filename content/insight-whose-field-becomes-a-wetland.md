@@ -34,9 +34,17 @@ Restoration is the mirror image, and the mechanism runs the same way with the si
 
 **The benefits are diffuse.** Flood attenuation for a town downstream, water quality for a catchment, carbon storage for everybody, biodiversity for the future. Each beneficiary gains something real and small, most do not know they are beneficiaries, and none will ever attribute a flood that did not happen to a wetland restored fifteen years earlier.
 
+<figure>
+<img src="/assets/img/insight-whose-field-becomes-a-wetland-concentrated-diffuse.jpg" alt="Diagram: on the left four coral figures standing close together holding placards, labelled 'four people, one large loss each, easy to find one another'. A red arrow leads up from them to a small ministry building at the top. On the right, roughly forty small blue figures scattered widely across the space with no connecting arrow to the ministry, labelled 'forty thousand people, one small gain each, most unaware'. A hairline vertical rule between the two sides." class="diagram">
+</figure>
+
 That asymmetry predicts, without any bad faith on anyone's part, that opposition will be organised and articulate while support will be broad and passive. It also predicts where restoration will actually be sited: on land whose users are least able to object. Public land, marginal land, land held by absent owners, land farmed by tenants rather than owners, and regions with less political weight.
 
 **Which means the distributional question is not whether restoration is worth doing. It is whether the sites chosen reflect ecological priority or the path of least resistance, and those two criteria produce different maps.**
+
+<figure>
+<img src="/assets/img/insight-whose-field-becomes-a-wetland-two-maps.jpg" alt="Two identical-shape regional maps side by side, each with a river, settlements and field boundaries. Left map labelled 'ecological priority', with six shaded restoration patches in forest green distributed across the catchment including several on prime land near the river. Right map labelled 'sites selected', with six shaded patches in coral, mostly clustered at the edges on marginal upland and on a plot marked with a small public building symbol, and conspicuously absent from the river margin. Between the two maps, a small annotation: 'the difference is the finding'." class="diagram">
+</figure>
 
 That is checkable. It requires comparing the ecological priority ranking against the sites actually selected, and looking at the tenure, ownership and political characteristics of both sets. Nobody appears to be planning to do it, and the draft plans submitted yesterday are the baseline that would make it possible.
 
@@ -47,6 +55,10 @@ That is checkable. It requires comparing the ecological priority ranking against
 The compensation instruments available are mostly annual payments for foregone production, and they are poorly matched to what is being asked.
 
 Restoration is frequently irreversible in practice. Rewetting peat, removing drainage, breaching an embankment or restoring a floodplain changes what the land can do more or less permanently. So a farmer is being asked to accept a permanent change to an asset in exchange for a payment stream that lasts as long as a funding programme, in a policy environment that has changed direction twice in a decade.
+
+<figure>
+<img src="/assets/img/insight-whose-field-becomes-a-wetland-permanent-vs-annual.jpg" alt="Bar chart, 'What is asked, and what is offered'. Two horizontal bars aligned on a shared axis running year 0 to year 40. Top bar cobalt, labelled 'the change in what the land can do', extends the full width without interruption. Bottom bar coral, labelled 'the payment, as long as the programme lasts', extends only about a fifth of the width and then stops as a dashed continuation. A bracket beneath the dashed section labelled 'the landowner carries this part'. Footnote: Schematic. Transitions Lab, 2026." class="diagram">
+</figure>
 
 Read from the landowner's side, declining is not obstruction. It is a rational assessment of counterparty risk against an irreversible commitment. The same reasoning applies as in [the trough farmers face during a practice change](/insight-trough-before-the-dividend): the instrument on offer does not match the shape of what is being asked.
 

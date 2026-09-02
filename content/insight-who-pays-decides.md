@@ -62,6 +62,10 @@ None of that means the neglected technologies are better. It means the selection
 
 Fervo's resource is in Utah because that is where the geology is. The data centre is going there because the power is. That is efficient for both parties and it means new firm generation is being sited where a private customer wants it rather than where a grid is constrained. A gigawatt built next to a load that consumes it entirely relieves nothing elsewhere.
 
+<figure>
+<img src="/assets/img/insight-who-pays-decides-built-where.jpg" alt="Diagram: on the left, inside a dashed boundary, a geothermal wellhead sits next to a small power plant connected by a short thick line directly to a large low data centre building. Labelled beneath 'one campus, one gigawatt, fully consumed'. Separated by open space to the right, a distant town with houses, a factory and a hospital, connected to nothing. A thin dashed line runs partway toward the town and stops short. Labelled beneath 'the constrained part of the grid'." class="diagram">
+</figure>
+
 **Talent and supply chain follow too.**
 
 Enhanced geothermal draws on drilling crews, rigs and subsurface engineering. So does conventional oil and gas, and so, increasingly, does carbon storage. The adjacency that makes geothermal attractive as a labour transition also means these sectors compete for the same finite pool of people, and the sector paying data centre prices will win.
@@ -69,6 +73,10 @@ Enhanced geothermal draws on drilling crews, rigs and subsurface engineering. So
 **The premium may not survive contact with cost pressure.**
 
 Corporate clean power procurement has been generous while compute margins have been extraordinary. If those margins compress, the willingness to pay above market for carbon-free firm power is the first line item to be examined, and the technologies that scaled on that premium will discover their real cost curve at an awkward moment.
+
+<figure>
+<img src="/assets/img/insight-who-pays-decides-premium-margin.jpg" alt="Chart, 'The premium is a function of somebody else's margin'. A cobalt line labelled 'compute margin' starts high and declines across the frame. A coral line labelled 'willingness to pay a premium for firm clean power' tracks it closely with a short lag. A flat yellow line labelled 'underlying cost of first-of-a-kind firm generation' declines only slightly. Where the coral line crosses the yellow, a marker: 'the technologies that scaled on the premium meet their real cost curve here'. Axis: today to ten years. Footnote: Schematic. Transitions Lab, 2026." class="diagram">
+</figure>
 
 ---
 
