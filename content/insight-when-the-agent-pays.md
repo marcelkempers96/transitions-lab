@@ -32,6 +32,10 @@ The cap is the smallest part of it. What does the work is that the delegate is a
 
 **Replace that delegate with an agent and the cap remains and everything else disappears.** There is no relationship, no accumulated judgement about their reliability, no embarrassment, and no way to ask what they were thinking that produces an answer you can evaluate.
 
+<figure>
+<img src="/assets/img/insight-when-the-agent-pays-cap.jpg" alt="Diagram: two panels separated by a hairline vertical rule. Left panel, a person and a family member facing each other across a small table, with four sky-blue icons floating above them labelled 'a relationship', 'observed judgement', 'the ability to ask why', 'embarrassment'. A coral 'spending cap' rectangle sits beneath the table. Right panel, the same person facing a small machine figure across the same table. The four sky-blue icons are drawn as faint dashed outlines only, clearly absent. The coral 'spending cap' remains solid and unchanged." class="diagram">
+</figure>
+
 The formal structure of the delegation is identical. Its safety properties are not, and a numeric limit is being asked to carry a load that was previously carried by social accountability.
 
 That is not an argument against building it. It is an argument that the framework needs a substitute for the missing element rather than an extension of the existing one, and the substitute has to be built deliberately.
@@ -45,6 +49,10 @@ The deeper problem is that agentic payments collapse a distinction that almost a
 Payment dispute regimes everywhere separate two categories. A transaction you authorised, which you generally cannot reverse simply because you regret it. And a transaction somebody else caused by impersonating you, which is fraud, and which the system absorbs.
 
 The line between them is authentication. Was it you.
+
+<figure>
+<img src="/assets/img/insight-when-the-agent-pays-authorisation-line.jpg" alt="Diagram: a horizontal line across the frame with a small gate at its centre labelled 'authentication: was it you'. Above the line, a butter-yellow region labelled 'authorised: you live with it'. Below the line, a sky-blue region labelled 'unauthorised: the system absorbs it'. To the right, a dashed coral rectangle sitting awkwardly overlapping the gate and both regions, labelled 'authorised, and not intended', with a small question mark inside." class="diagram">
+</figure>
 
 An agent operating under a registered delegation is, by construction, authorised. It authenticates correctly because it was given permission to. Every transaction it makes falls on the authorised side of the line, including the ones the user did not want, did not expect, would not have made, and cannot explain.
 
@@ -74,7 +82,11 @@ Two features of this design make monitoring unusually difficult, and one of them
 
 **The rail does not see what was bought.** NPCI confirms that a payment request is authentic and [does not access the details of what was purchased](https://stellagent.ai/insights/india-npci-unified-agent-protocol-upi), which mirrors how UPI works today and is a genuine privacy protection. In a human-initiated system that is exactly right. In an agentic system it means the infrastructure that could detect a pattern of wrong purchases is, by design, unable to.
 
-**Audit trails are reviewed by whoever is capable of reviewing them.** A log of forty small transactions a month is monitorable by a person with a smartphone, time and numeracy. It is not monitorable by a user with a feature phone, limited literacy, or an account operated on their behalf by a shopkeeper. UPI's reach is its great achievement, and reach means the delegation will be available to users whose ability to audit an agent is very limited.
+**Audit trails are reviewed by whoever is capable of reviewing them.** A log of forty small transactions a month is monitorable by a person with a smartphone, time and numeracy. It is not monitorable by a user with a feature phone, limited literacy, or an account operated on their behalf by a shopkeeper.
+
+<figure>
+<img src="/assets/img/insight-when-the-agent-pays-audit.jpg" alt="Three figures in a row, each with a transaction log beside them. First figure seated at a desk with a large smartphone, log fully legible with tick marks down all 40 entries, in cobalt, labelled 'audits easily'. Second figure standing with a small feature phone, the log shorter and cut off at entry 15, labelled 'audits partially'. Third figure standing beside a shopkeeper who is holding the phone and the log, in coral, labelled 'does not hold the record'." class="diagram">
+</figure> UPI's reach is its great achievement, and reach means the delegation will be available to users whose ability to audit an agent is very limited.
 
 Which produces the distributional question, and it is the same shape as the one in [automated speech systems](/insight-who-does-it-fail-for): the failure will fall hardest on the users least able to detect it and least able to contest it, which is the population the infrastructure was celebrated for reaching.
 

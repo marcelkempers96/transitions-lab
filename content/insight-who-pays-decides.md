@@ -46,6 +46,10 @@ The market size effect is the one operating here, and it is powerful because the
 
 **A data centre wants power that is firm, continuous, co-locatable, quick to deploy and available in blocks of hundreds of megawatts at a single point.**
 
+<figure>
+<img src="/assets/img/insight-who-pays-decides-ranked.jpg" alt="Horizontal bar chart, 'Ranked against one buyer's specification'. Long coral bars for enhanced geothermal, gas with carbon capture and advanced nuclear; a shorter yellow bar for solar with multi-hour storage; three conspicuously short sky-blue bars for demand response and flexibility, seasonal storage, and heat networks and process heat. A dashed vertical line marked 'below this line, no private champion'. Axis: fit with a firm, continuous, co-locatable, large-block load. Footnote: Qualitative assessment. Transitions Lab, 2026." class="diagram">
+</figure>
+
 Rank clean technologies against that specification and the ordering is not the same as the one a decarbonising grid would produce.
 
 Enhanced geothermal fits almost perfectly: firm, baseload, dispatchable, sited where the resource is, scalable in large blocks. Gas with carbon capture fits. Advanced nuclear fits, if it ever arrives. Large solar paired with multi-hour storage fits reasonably.
