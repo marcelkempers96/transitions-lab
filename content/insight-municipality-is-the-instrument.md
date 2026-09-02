@@ -118,7 +118,7 @@ If you are designing an adaptation programme that has to reach places without a 
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Climate & Ecosystems](/expertise-climate). See also [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on why a pilot cannot tell you what will scale, [A Warm House Is Not a Cheaper One](/insight-warm-house-not-cheaper) on what a European household actually receives from an adaptation subsidy, and [Capability Is the Slow Part](/insight-capability-slow-part) on why institutional capability runs on a decade timescale. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Climate & Ecosystems](/expertise-climate). See also [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on why a pilot cannot tell you what will scale, [A Warm House Is Not a Cheaper One](/insight-warm-house-not-cheaper) on what a European household actually receives from an adaptation subsidy, [Capability Is the Slow Part](/insight-capability-slow-part) on why institutional capability runs on a decade timescale, and [Whose Field Becomes a Wetland](/insight-whose-field-becomes-a-wetland) on how implementation quietly decides which sites a restoration plan reaches. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

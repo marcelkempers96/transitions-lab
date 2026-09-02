@@ -52,7 +52,7 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [The Smelter Contract](/insight-the-smelter-contract) on what sixty years of anchor-load bargains should tell anyone signing one, [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller) on the counterfactual at the centre of efficiency-as-a-service, and [Paying for Power You Curtail](/insight-paying-for-what-we-curtail) on why clean generation and cheap electricity are not the same thing. For the full series, see [Articles](/articles).*
+*Related reading: [The Smelter Contract](/insight-the-smelter-contract) on what sixty years of anchor-load bargains should tell anyone signing one, [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller) on the counterfactual at the centre of efficiency-as-a-service, [Paying for Power You Curtail](/insight-paying-for-what-we-curtail) on why clean generation and cheap electricity are not the same thing, and [Who Pays Decides What Gets Built](/insight-who-pays-decides) on the hyperscaler class now setting the direction of firm clean generation. For the full series, see [Articles](/articles).*
 
 
 *See the [Pyropower case study](/case-pyropower). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

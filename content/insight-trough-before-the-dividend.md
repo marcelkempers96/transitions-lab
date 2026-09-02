@@ -122,7 +122,7 @@ If you are designing support for an agricultural transition and need the trough 
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture](/expertise-agriculture). See also [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on why a pilot cannot tell you what will scale, [The Benefits Nobody Was Looking For](/insight-benefits-nobody-looked-for) on outcomes no results framework asked for, and [Equity Is the Wrong Money for a Warehouse](/insight-wrong-money-for-a-warehouse) on matching the instrument to the shape of the need. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture](/expertise-agriculture). See also [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on why a pilot cannot tell you what will scale, [The Benefits Nobody Was Looking For](/insight-benefits-nobody-looked-for) on outcomes no results framework asked for, [Equity Is the Wrong Money for a Warehouse](/insight-wrong-money-for-a-warehouse) on matching the instrument to the shape of the need, and [Whose Field Becomes a Wetland](/insight-whose-field-becomes-a-wetland) on the same instrument mismatch when the change to the land is permanent. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

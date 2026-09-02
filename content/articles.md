@@ -50,7 +50,31 @@ The Lab publishes articles for the same reason it takes on any research: some qu
   <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="finance" data-geography="africa" data-month="2026-09">
+<div class="article-list"><div class="article-item has-thumb" data-category="energy" data-geography="global" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-who-pays-decides"><img class="article-thumb" src="/assets/img/insight-who-pays-decides-hero.jpg" alt="Line-art scene: a row of four clean energy technologies drawn side by side, a geothermal wellhead, a solar array with batteries, a tidal turbine and a district heating plant. A single large buyer figure with a signed contract stands in front of the first two."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-who-pays-decides">Who Pays Decides What Gets Built</a>
+      <div class="article-meta">2 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-energy">Energy</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
+      <p class="article-desc">Firm clean power finally has a buyer willing to pay a premium. That solves the hardest problem in energy innovation and hands the direction of technical change to one customer class.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="ai-digital" data-geography="asia" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-when-the-agent-pays"><img class="article-thumb" src="/assets/img/insight-when-the-agent-pays-hero.jpg" alt="Line-art sequence: on the left a person handing a payment card to a family member, in the middle the same gesture but the receiving hand belongs to a small featureless machine figure, and on the right a dispute counter with a clerk and an empty chair."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-when-the-agent-pays">When the Agent Pays</a>
+      <div class="article-meta">2 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-ai-digital">AI &amp; Digital</span> <span class="article-chip chip-geo chip-geo-asia">Asia</span></div>
+      <p class="article-desc">India is extending a family delegation framework to software agents. The mechanism transfers and the thing that made it safe does not.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="europe" data-geography="europe" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-whose-field-becomes-a-wetland"><img class="article-thumb" src="/assets/img/insight-whose-field-becomes-a-wetland-hero.jpg" alt="Line-art scene: a single farm field in the foreground being drawn over with water hatching to indicate rewetting, with one farmhouse beside it, while in the far background a whole town of small rooftops sits behind a river, drawn much smaller and unlabelled."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-whose-field-becomes-a-wetland">Whose Field Becomes a Wetland</a>
+      <div class="article-meta">2 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-europe">EU Policy</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <p class="article-desc">Restoration costs are concentrated and its benefits are diffuse, which predicts who organises and where the sites end up.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="finance" data-geography="africa" data-month="2026-09">
     <a class="article-thumb-link" href="/insight-wrong-money-for-a-warehouse"><img class="article-thumb" src="/assets/img/insight-wrong-money-for-a-warehouse-diagram.jpg" alt="Line-art sequence: a warehouse of grain sacks on the left; above it two funding routes drawn as separate paths, one a long ten-year arrow curving off to the right, the other a short tight loop returning to the warehouse within one season; a harvest calendar wheel sits between them."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-wrong-money-for-a-warehouse">Equity Is the Wrong Money for a Warehouse</a>

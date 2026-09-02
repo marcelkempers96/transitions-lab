@@ -58,7 +58,7 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on why the constraint on restoration is a rights question before it is an agronomic one, and [The Benefits Nobody Was Looking For](/insight-benefits-nobody-looked-for) on why the heat-resilience effect of settlement upgrading went unmeasured for fifty years.*
+*Related reading: [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on why the constraint on restoration is a rights question before it is an agronomic one, [The Benefits Nobody Was Looking For](/insight-benefits-nobody-looked-for) on why the heat-resilience effect of settlement upgrading went unmeasured for fifty years, and [Whose Field Becomes a Wetland](/insight-whose-field-becomes-a-wetland) on how allocation, not ecology, is the unsettled question in Europe's restoration law.*
 
 
 *See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*

@@ -109,7 +109,7 @@ If you are building or funding an MRV platform and want the field component desi
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Regenerative Agriculture & Land Systems](/expertise-agriculture) and [Field Research](/field-research). See also [When the Agent Pays](/insight-when-the-agent-pays) on the same disappearing-visit dynamic when an agent transacts on the user's behalf. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

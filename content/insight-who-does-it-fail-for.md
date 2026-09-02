@@ -121,7 +121,7 @@ If you are deploying a language or decision system into a public service and wan
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [AI & Digital Systems](/expertise-ai-digital) and [Field Research](/field-research). See also [Benefits Nobody Looked For](/insight-benefits-nobody-looked-for) on evaluation that only returns answers to the questions it was built around, and [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller) on the structural conflict of a supplier reporting its own accuracy figure. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [AI & Digital Systems](/expertise-ai-digital) and [Field Research](/field-research). See also [Benefits Nobody Looked For](/insight-benefits-nobody-looked-for) on evaluation that only returns answers to the questions it was built around, [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller) on the structural conflict of a supplier reporting its own accuracy figure, and [When the Agent Pays](/insight-when-the-agent-pays) on the same distributional pattern inside a national payments framework. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">
