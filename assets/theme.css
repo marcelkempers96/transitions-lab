@@ -610,6 +610,19 @@ section + section{border-top:2px solid var(--ink);}
 }
 /* Definition highlight — yellow marker, no bold */
 .prose .highlight{background:var(--butter);color:var(--ink);padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+/* Article aside — flagship-piece callout box, butter tint with coral left rule */
+.prose .tl-box{
+  background:rgba(243,220,148,0.35);
+  border-left:6px solid var(--coral);
+  border-top:none;border-right:none;border-bottom:none;
+  padding:20px 24px 22px;margin:2em 0;
+}
+.prose .tl-box p{margin:0 0 .7em;font-size:16px;line-height:1.55;color:var(--ink);}
+.prose .tl-box p:last-child{margin-bottom:0;}
+.prose .tl-box p strong:first-child{
+  font-size:17.5px;letter-spacing:-.005em;display:inline-block;margin-bottom:2px;
+}
+.prose .tl-box a{color:var(--ink);}
 /* Cluster.concept numbering on the theory-map pages */
 body[data-page="economics-of-transitions"] .prose,
 body[data-page="innovation-dynamics"] .prose,

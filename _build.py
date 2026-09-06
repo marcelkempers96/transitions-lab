@@ -197,6 +197,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-who-pays-decides": "butter",
     "insight-when-the-agent-pays": "butter",
     "insight-whose-field-becomes-a-wetland": "butter",
+    "insight-a-thousand-cars-one-risk": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -636,6 +637,10 @@ META: dict[str, dict[str, str]] = {
     "insight-whose-field-becomes-a-wetland": {
         "title": "Whose Field Becomes a Wetland | Transitions Lab",
         "description": "Europe's restoration law's hard part is allocation. Costs are concentrated and benefits are diffuse, which predicts who organises and where the sites end up.",
+    },
+    "insight-a-thousand-cars-one-risk": {
+        "title": "A Thousand Cars, One Risk | Transitions Lab",
+        "description": "Tesla put around a thousand driverless Cybercabs on Austin streets. A taxi fleet with drivers is a thousand independent risks. A robotaxi fleet is one risk repeated a thousand times.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
@@ -1451,6 +1456,17 @@ def build_home() -> str:
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="insight-row">
+      <a class="insight-card has-photo" href="/insight-a-thousand-cars-one-risk">
+        <div class="card-photo">
+          <img src="/assets/img/insight-a-thousand-cars-one-risk-hero.jpg" alt="Line-art comparison: on the left a row of taxis each with a distinct small driver figure at the wheel; on the right an identical row of driverless two-seater vehicles connected upward by dashed lines to a single cloud-shaped software icon.">
+          <span class="kicker">Insight &middot; E-Mobility</span>
+        </div>
+        <div class="body">
+          <h3>A Thousand Cars, One Risk</h3>
+          <p>A taxi fleet with drivers is a thousand independent risks. A robotaxi fleet is one risk repeated a thousand times, and that is a different asset entirely.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
       <a class="insight-card has-photo" href="/insight-who-pays-decides">
         <div class="card-photo">
           <img src="/assets/img/insight-who-pays-decides-hero.jpg" alt="Line-art scene: a row of four clean energy technologies drawn side by side, a geothermal wellhead, a solar array with batteries, a tidal turbine and a district heating plant. A single large buyer figure with a signed contract stands in front of the first two.">
@@ -1470,17 +1486,6 @@ def build_home() -> str:
         <div class="body">
           <h3>When the Agent Pays</h3>
           <p>India is extending a family delegation framework to software agents on UPI. The mechanism transfers and the thing that made it safe does not.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo" href="/insight-whose-field-becomes-a-wetland">
-        <div class="card-photo">
-          <img src="/assets/img/insight-whose-field-becomes-a-wetland-hero.jpg" alt="Line-art scene: a single farm field in the foreground being drawn over with water hatching to indicate rewetting, with one farmhouse beside it, while in the far background a whole town of small rooftops sits behind a river.">
-          <span class="kicker">Insight &middot; Nature Restoration</span>
-        </div>
-        <div class="body">
-          <h3>Whose Field Becomes a Wetland</h3>
-          <p>Europe's restoration law's hard part is allocation. Costs are concentrated and benefits are diffuse, which predicts who organises and where the sites end up.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

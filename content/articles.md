@@ -50,7 +50,15 @@ The Lab publishes articles for the same reason it takes on any research: some qu
   <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="energy" data-geography="global" data-month="2026-09">
+<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="global" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-a-thousand-cars-one-risk"><img class="article-thumb" src="/assets/img/insight-a-thousand-cars-one-risk-hero.jpg" alt="Line-art comparison: on the left a row of taxis each with a distinct small driver figure at the wheel; on the right an identical row of driverless two-seater vehicles connected upward by dashed lines to a single cloud-shaped software icon."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-a-thousand-cars-one-risk">A Thousand Cars, One Risk</a>
+      <div class="article-meta">6 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-e-mobility">E-Mobility</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
+      <p class="article-desc">A taxi fleet with drivers is a thousand independent risks. A robotaxi fleet is one risk repeated a thousand times, and that is a different asset entirely.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="energy" data-geography="global" data-month="2026-09">
     <a class="article-thumb-link" href="/insight-who-pays-decides"><img class="article-thumb" src="/assets/img/insight-who-pays-decides-hero.jpg" alt="Line-art scene: a row of four clean energy technologies drawn side by side, a geothermal wellhead, a solar array with batteries, a tidal turbine and a district heating plant. A single large buyer figure with a signed contract stands in front of the first two."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-who-pays-decides">Who Pays Decides What Gets Built</a>
