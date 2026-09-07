@@ -17,7 +17,7 @@ They are free to download, use, and cite with attribution. They also show, plain
 ## How the Lab reads the world
 
 [**The Human Side of Technology →**](/human-side-of-technology)
-Social science and human behaviour: why people adopt, resist, trust, and abandon technologies, and why none of it shows up in the specification. Anchored to Simon, Kahneman-Tversky, Davis, Ajzen, Rogers, Slovic, Pinch-Bijker, Hughes, Shove, Thaler-Sunstein and others. Six clusters, from how people decide to who gets left out. The lens the Lab leads with. [<span class="format-badge fmt-web">See 26 concepts &rarr;</span>](/human-side-of-technology)
+Social science and human behaviour: why people adopt, resist, trust, and abandon technologies, and why none of it shows up in the specification. Anchored to Simon, Kahneman-Tversky, Davis, Ajzen, Rogers, Slovic, Pinch-Bijker, Hughes, Shove, Thaler-Sunstein and others. Six clusters, from how people decide to who gets left out. The lens the Lab leads with. [<span class="format-badge fmt-web">See 26 concepts →</span>](/human-side-of-technology)
 
 [**The BRW Framework →**](/assets/resource-brw-framework.pdf)
 *Bypass, Repurpose, Weaken.* The Lab's signature strategic framework: a mechanism-based typology of how a niche technology engages an entrenched regime, classifying each strategy by what it does to a specific lock-in barrier, and matching mechanisms to barriers. A working tool for innovators and funders, grounded in field research. [<span class="format-badge fmt-pdf">PDF · 16 pages</span>](/assets/resource-brw-framework.pdf)
@@ -26,10 +26,10 @@ Social science and human behaviour: why people adopt, resist, trust, and abandon
 The Lab's intellectual foundation, set out plainly: what a socio-technical system is, why the human side comes first, the recurring dynamics to look for in any transition, and how to turn that reading into evidence. [<span class="format-badge fmt-pdf">PDF · 18 pages</span>](/assets/resource-transitions-primer.pdf)
 
 [**The Economics of Transitions →**](/economics-of-transitions)
-A working glossary of the economic ideas that decide whether a technology actually lands, each anchored to its canonical source (Coase, Akerlof, Arthur, Teece, Williamson and others) and tied to a Lab case where the concept applies. Seven clusters, from lock-in and market structure to distribution and who is left out. [<span class="format-badge fmt-web">See 48 concepts &rarr;</span>](/economics-of-transitions)
+A working glossary of the economic ideas that decide whether a technology actually lands, each anchored to its canonical source (Coase, Akerlof, Arthur, Teece, Williamson and others) and tied to a Lab case where the concept applies. Seven clusters, from lock-in and market structure to distribution and who is left out. [<span class="format-badge fmt-web">See 48 concepts →</span>](/economics-of-transitions)
 
 [**Technology & Innovation Dynamics →**](/innovation-dynamics)
-The management-of-technology companion to the economics map: how a technology itself evolves, how firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt. Anchored to Foster, Utterback, Henderson-Clark, Christensen, Teece, Cohen-Levinthal, Rogers, Geels and others. Five clusters, from the shape of technological change to the bridge to socio-technical transitions. [<span class="format-badge fmt-web">See 31 concepts &rarr;</span>](/innovation-dynamics)
+The management-of-technology companion to the economics map: how a technology itself evolves, how firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt. Anchored to Foster, Utterback, Henderson-Clark, Christensen, Teece, Cohen-Levinthal, Rogers, Geels and others. Five clusters, from the shape of technological change to the bridge to socio-technical transitions. [<span class="format-badge fmt-web">See 31 concepts →</span>](/innovation-dynamics)
 
 ---
 
