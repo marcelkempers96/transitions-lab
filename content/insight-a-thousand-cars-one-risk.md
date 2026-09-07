@@ -123,6 +123,24 @@ Whether it plays out that way is an empirical question, and it is worth watching
 
 ---
 
+## Shenzhen has been running this for years, and almost nobody in the Western conversation mentions it
+
+Any argument about robotaxi deployment that starts in Austin is starting in the wrong place. Shenzhen has commercial fully-driverless operations from multiple operators including [AutoX](https://www.autox.ai/), which received the Pingshan district commercial permit in 2021, [Baidu's Apollo Go](https://en.wikipedia.org/wiki/Apollo_Go), [Pony.ai](https://pony.ai/) and [WeRide](https://www.weride.ai/), running for years across designated zones and across other Chinese cities including Wuhan, Beijing and Guangzhou (as reported).
+
+The Western robotaxi conversation almost never references this, which is a strange omission given that a working commercial deployment at scale is exactly the evidence base the argument turns on. Some of the silence is language and a walled information environment. Some of it is that Chinese operators publish little of the insurance and liability detail that would make the comparison directly usable. And some of it is that the model itself is structurally different, in ways that matter for the questions this article has been asking.
+
+Three differences stand out.
+
+**The operator holds the balance sheet, not a third-party buyer.** The Chinese deployment is overwhelmingly operator-run rather than sold to independent fleet buyers to run their own local services. That collapses the specific problem this article is about, a fleet owner holding correlated risk they cannot control, into a more familiar problem of a single operator carrying its own exposure. The insurability question does not disappear, but it stops being a market-formation question.
+
+**Liability is settled by state alignment rather than by law.** Municipal permits, state-adjacent data infrastructure and state-aligned insurers sit behind the deployment in a way that no equivalent structure sits behind Austin. Whether that is a durable answer or a temporarily-suspended question is not obvious, but it is a very different arrangement from a self-certified vehicle running in a jurisdiction where the certification is under audit.
+
+**The data question is closed.** Chinese fleets record everything and share it with the state. Whether and how it also reaches insurers is not public. A Western observer trying to price the correlated tail from Chinese claims data cannot, and neither can a Western regulator learning from Chinese operational experience.
+
+None of that makes Shenzhen a distraction. It means the Chinese case answers the insurability question by removing it from the private market entirely, which is a genuine answer and not a transferable one. It is worth watching precisely because it is the closest thing to a working long-run robotaxi economy that anywhere has, and it does not use the model the Cybercab proposition assumes.
+
+---
+
 ## Three pathways, and who ends up holding what
 
 The robotaxi is one of at least three routes an electric taxi transition can take, and all three are running simultaneously in different regions. The useful comparison is not which technology is better. It is who ends up holding each thing that has to be held.
@@ -145,14 +163,14 @@ Each distributes value differently. The third is the only one in which the party
 
 The strongest way to settle any of this is not to argue about it. It is to measure the same variables across cities sitting at different points on the same transition, and the informative cities are not the obvious ones.
 
-| What to establish | Austin | Singapore | Jakarta | Nairobi |
-|---|---|---|---|---|
-| Driver earnings as a share of the fare | Largest single cost, so autonomy has most to save | High, with structured licensing | Moderate, under two-wheeler competition | Low in absolute terms, and the household's whole income |
-| Capital cost and availability | Cheap, deep leasing market | Cheap, state-shaped, quota-constrained | Expensive, currency exposed | Very expensive, short tenor, currency exposed |
-| What the driver does beyond driving | Little beyond the ride | Little, addresses well mapped | Route knowledge, informal access, negotiation | Addressing, road judgement, safety screening, cash |
-| Charging and depot land | Available, cheap, peripheral | Scarce and centrally planned | Scarce, congested, informally held | Scarce, expensive, grid-constrained |
-| Who currently carries the risk | Driver, then insurer | Operator, under licence conditions | Driver, largely uninsured | Driver, effectively uninsured |
-| Regulatory readiness for driverless | Contested and moving | Structured, permissive, deliberate | Absent | Absent |
+| What to establish | Austin | Singapore | Shenzhen | Jakarta | Nairobi |
+|---|---|---|---|---|---|
+| Driver earnings as a share of the fare | Largest single cost, so autonomy has most to save | High, with structured licensing | Modest, high-scale operator fleets | Moderate, under two-wheeler competition | Low in absolute terms, and the household's whole income |
+| Capital cost and availability | Cheap, deep leasing market | Cheap, state-shaped, quota-constrained | Cheap, state-shaped, mission-aligned domestic finance | Expensive, currency exposed | Very expensive, short tenor, currency exposed |
+| What the driver does beyond driving | Little beyond the ride | Little, addresses well mapped | Little inside mapped zones | Route knowledge, informal access, negotiation | Addressing, road judgement, safety screening, cash |
+| Charging and depot land | Available, cheap, peripheral | Scarce and centrally planned | State-coordinated at scale | Scarce, congested, informally held | Scarce, expensive, grid-constrained |
+| Who currently carries the risk | Driver, then insurer | Operator, under licence conditions | Operator, state-aligned insurer, municipal permit | Driver, largely uninsured | Driver, effectively uninsured |
+| Regulatory readiness for driverless | Contested and moving | Structured, permissive, deliberate | Permitted, commercial, running at scale for years | Absent | Absent |
 
 Read down any column and the picture is coherent. Read across any row and the transferability question answers itself.
 
@@ -216,6 +234,13 @@ If you are assessing a robotaxi fleet proposition, or writing the rules one will
 - Biener, C., Eling, M. and Wirfs, J. H. (2014), [Insurability of cyber risk: an empirical analysis](https://www.genevaassociation.org/sites/default/files/research-topics-document-type/pdf_public/ga2014-if14-biener_elingwirfs.pdf), The Geneva Association.
 - [The insurability frontier of AI risk: mapping threats to affirmative coverage, silent exposures and exclusions](https://arxiv.org/pdf/2605.18784), 2026.
 - Biener, C. and Eling, M. (2012), [Insurability in microinsurance markets: an analysis of problems and potential solutions](https://link.springer.com/article/10.1057/gpp.2011.29), *The Geneva Papers on Risk and Insurance* 37.
+
+**China deployments**
+
+- [AutoX](https://www.autox.ai/), fully-driverless commercial operations in Shenzhen since 2021 under the Pingshan district permit (as reported).
+- Baidu, [Apollo Go](https://en.wikipedia.org/wiki/Apollo_Go) commercial robotaxi service across multiple Chinese cities including Shenzhen, Wuhan, Beijing, Guangzhou and Chongqing (as reported).
+- [Pony.ai](https://pony.ai/) commercial robotaxi operations in Shenzhen, Guangzhou and Beijing (as reported).
+- [WeRide](https://www.weride.ai/) autonomous mobility deployments across Chinese and other cities (as reported).
 
 **Liability**
 
