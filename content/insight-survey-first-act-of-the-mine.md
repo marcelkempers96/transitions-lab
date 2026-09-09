@@ -72,6 +72,10 @@ The cost of knowing what is on and under a piece of ground has been falling for 
 
 Synthetic aperture radar sees through cloud and at night. Optical imaging sees material and vegetation detail that radar cannot. Fusing them removes the constraint that has limited Earth observation in exactly the regions where minerals, forests and agriculture matter most, and where cloud cover has meant the tropics are the least-observed part of the planet.
 
+<figure>
+<img src="/assets/img/insight-survey-first-act-of-the-mine-cloud.jpg" alt="Two panels separated by a hairline vertical rule. Left panel labelled 'optical alone': a satellite above a thick band of cloud, with coral optical rays stopping at the cloud and the ground beneath rendered blank and featureless. Right panel labelled 'optical and radar together': the same satellite above the same cloud band, with sky-blue radar arcs passing through the cloud and coral optical rays; the ground beneath rendered in full detail with mountains, a river, a track and a small exploration camp." class="diagram">
+</figure>
+
 That has two consequences pulling in opposite directions, and both are worth stating.
 
 **It democratises observation.** A ministry, an NGO, an insurer or a farmer cooperative can buy imagery that was previously the preserve of states and majors. Independent verification of what is happening on a landscape becomes affordable, which changes the balance in every dispute where one party currently controls the evidence.

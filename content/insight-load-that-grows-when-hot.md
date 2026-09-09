@@ -32,6 +32,10 @@ So the correct description is a flat base with a weather-dependent addition on t
 
 **Which is the same day the rest of the system peaks.**
 
+<figure>
+<img src="/assets/img/insight-load-that-grows-when-hot-load-split.jpg" alt="Stacked area chart, 'A data centre's load, split'. Horizontal axis from 'mild week' to 'hot week'. Lower band in cobalt, perfectly flat across the whole width, labelled inside 'computing load'. Upper band in coral, thin at the left and growing substantially towards the right, labelled inside 'cooling load'. Above the chart, a yellow line rising in the same direction labelled 'national system peak demand'. A bracket at the right spanning both rising elements labelled 'these arrive on the same afternoon'. Footnote: Schematic. Transitions Lab, 2026." class="diagram">
+</figure>
+
 Residential and commercial air conditioning across the country is doing exactly the same thing for exactly the same reason. Data centre cooling demand is therefore positively correlated with system peak demand, and a load that is correlated with peak is the most expensive kind of load a system can acquire.
 
 The distinction is not academic. A perfectly flat load lets a utility spread fixed costs over more hours without new peak capacity. A peak-correlated load requires new peak capacity, which is the most capital-intensive thing a power system buys and the least utilised. Two customers taking the same annual energy can impose entirely different capacity costs, and the tariff structures used to attract data centre investment across the region generally do not distinguish between them.
