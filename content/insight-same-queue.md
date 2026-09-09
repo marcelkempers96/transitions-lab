@@ -120,7 +120,7 @@ If you are financing energy infrastructure in a small market and want to know wh
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy) and [Local Manufacturing & Supply Chains](/expertise-manufacturing). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy) and [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Load That Grows When It Is Hot](/insight-load-that-grows-when-hot) on the same equipment-and-capacity constraint pushed into cooling systems by a load correlated with weather. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

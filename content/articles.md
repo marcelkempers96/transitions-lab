@@ -50,7 +50,31 @@ The Lab publishes articles for the same reason it takes on any research: some qu
   <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="global" data-month="2026-09">
+<div class="article-list"><div class="article-item has-thumb" data-category="industrial-policy" data-geography="global" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-survey-first-act-of-the-mine"><img class="article-thumb" src="/assets/img/insight-survey-first-act-of-the-mine-hero.jpg" alt="Line-art: a small satellite in orbit emitting straight optical rays and concentric radar arcs through a band of cloud onto a landscape of contour lines, with a locked archive cabinet standing at the edge between the landscape and small figures."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-survey-first-act-of-the-mine">The Survey Is the First Act of the Mine</a>
+      <div class="article-meta">8 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-industrial-policy">Industrial Policy</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
+      <p class="article-desc">Congo is spending $180 million to know what is under its own ground and keeping the answer. Owning the survey is the negotiation, conducted in advance.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="agriculture" data-geography="europe" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-adoption-is-the-research"><img class="article-thumb" src="/assets/img/insight-adoption-is-the-research-hero.jpg" alt="Line-art kitchen scene: a clean improved cookstove standing unlit and dusty with a pot stacked on top as storage, while beside it a traditional three-stone fire is in use with a cooking pot over it and a figure tending it."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-adoption-is-the-research">Adoption Is Not the End of the Research</a>
+      <div class="article-meta">8 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-agriculture">Agriculture</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <p class="article-desc">Europe has identified the gap between research and uptake. Filling it means treating uptake as science rather than outreach.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="energy" data-geography="asia" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-load-that-grows-when-hot"><img class="article-thumb" src="/assets/img/insight-load-that-grows-when-hot-hero.jpg" alt="Line-art scene: a long low data centre building with rooftop cooling units beneath a high sun with heat lines rising; a thermometer stands beside the building with its column high, and a transmission tower behind carries sagging lines toward a distant town."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-load-that-grows-when-hot">The Load That Grows When It Is Hot</a>
+      <div class="article-meta">8 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-energy">Energy</span> <span class="article-chip chip-geo chip-geo-asia">Asia</span></div>
+      <p class="article-desc">Data centres are planned as flat demand. Cooling load rises with temperature, which is the same day the rest of the system peaks.</p>
+    </div>
+  </div><div class="article-item has-thumb" data-category="e-mobility" data-geography="global" data-month="2026-09">
     <a class="article-thumb-link" href="/insight-a-thousand-cars-one-risk"><img class="article-thumb" src="/assets/img/insight-a-thousand-cars-one-risk-hero.jpg" alt="Line-art comparison: on the left a row of taxis each with a distinct small driver figure at the wheel; on the right an identical row of driverless two-seater vehicles connected upward by dashed lines to a single cloud-shaped software icon."></a>
     <div class="article-body">
       <a class="article-title" href="/insight-a-thousand-cars-one-risk">A Thousand Cars, One Risk</a>

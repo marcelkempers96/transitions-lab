@@ -130,7 +130,7 @@ If you are designing a zone whose value depends on exchanges between firms that 
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on third party access as the difference between industrial policy and a transfer, [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on asset specificity and where the boundary of a firm falls, and [Capability Is the Slow Part](/insight-capability-slow-part) on why the institutional layer takes a decade. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on third party access as the difference between industrial policy and a transfer, [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on asset specificity and where the boundary of a firm falls, [Capability Is the Slow Part](/insight-capability-slow-part) on why the institutional layer takes a decade, and [The Survey Is the First Act of the Mine](/insight-survey-first-act-of-the-mine) on third-party access rules that decide whether an information asset builds an ecosystem or concentrates one. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

@@ -198,6 +198,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-when-the-agent-pays": "butter",
     "insight-whose-field-becomes-a-wetland": "butter",
     "insight-a-thousand-cars-one-risk": "butter",
+    "insight-survey-first-act-of-the-mine": "butter",
+    "insight-adoption-is-the-research": "butter",
+    "insight-load-that-grows-when-hot": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -641,6 +644,18 @@ META: dict[str, dict[str, str]] = {
     "insight-a-thousand-cars-one-risk": {
         "title": "A Thousand Cars, One Risk | Transitions Lab",
         "description": "Tesla put around a thousand driverless Cybercabs on Austin streets. A taxi fleet with drivers is a thousand independent risks. A robotaxi fleet is one risk repeated a thousand times.",
+    },
+    "insight-survey-first-act-of-the-mine": {
+        "title": "The Survey Is the First Act of the Mine | Transitions Lab",
+        "description": "Congo is spending $180 million to map what is under its own ground and intends to keep the result in a state databank with tiered access. Owning the survey is the negotiation, conducted in advance.",
+    },
+    "insight-adoption-is-the-research": {
+        "title": "Adoption Is Not the End of the Research | Transitions Lab",
+        "description": "Europe has identified the gap between research and uptake. Filling it means treating uptake as science rather than outreach, with a method, a budget line and an independent evaluator.",
+    },
+    "insight-load-that-grows-when-hot": {
+        "title": "The Load That Grows When It Is Hot | Transitions Lab",
+        "description": "Data centres are planned as flat demand. Cooling load rises with temperature, which is the same day the rest of the system peaks. That is not baseload, and grid planning treats it as the opposite.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
@@ -1467,25 +1482,25 @@ def build_home() -> str:
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-who-pays-decides">
+      <a class="insight-card has-photo" href="/insight-survey-first-act-of-the-mine">
         <div class="card-photo">
-          <img src="/assets/img/insight-who-pays-decides-hero.jpg" alt="Line-art scene: a row of four clean energy technologies drawn side by side, a geothermal wellhead, a solar array with batteries, a tidal turbine and a district heating plant. A single large buyer figure with a signed contract stands in front of the first two.">
-          <span class="kicker">Insight &middot; Energy Systems</span>
+          <img src="/assets/img/insight-survey-first-act-of-the-mine-hero.jpg" alt="Line-art scene: a small satellite in orbit emitting straight optical rays and concentric radar arcs through a band of cloud onto a landscape of contour lines, with a locked archive cabinet standing at the edge between the landscape and small figures.">
+          <span class="kicker">Insight &middot; Minerals &amp; Information</span>
         </div>
         <div class="body">
-          <h3>Who Pays Decides What Gets Built</h3>
-          <p>Firm clean power finally has a buyer willing to pay a premium. That solves the hardest problem in energy innovation and hands the direction of technical change to one customer class.</p>
+          <h3>The Survey Is the First Act of the Mine</h3>
+          <p>Congo is spending $180 million to know what is under its own ground and keeping the answer. Owning the survey is the negotiation, conducted in advance.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-when-the-agent-pays">
+      <a class="insight-card has-photo" href="/insight-load-that-grows-when-hot">
         <div class="card-photo">
-          <img src="/assets/img/insight-when-the-agent-pays-hero.jpg" alt="Line-art sequence: on the left a person handing a payment card to a family member, in the middle the same gesture but the receiving hand belongs to a small featureless machine figure, and on the right a dispute counter with a clerk and an empty chair.">
-          <span class="kicker">Insight &middot; AI &amp; Digital</span>
+          <img src="/assets/img/insight-load-that-grows-when-hot-hero.jpg" alt="Line-art scene: a long low data centre building with rooftop cooling units beneath a high sun with heat lines rising; a thermometer stands beside the building with its column high, and a transmission tower behind carries sagging lines toward a distant town.">
+          <span class="kicker">Insight &middot; Energy Systems</span>
         </div>
         <div class="body">
-          <h3>When the Agent Pays</h3>
-          <p>India is extending a family delegation framework to software agents on UPI. The mechanism transfers and the thing that made it safe does not.</p>
+          <h3>The Load That Grows When It Is Hot</h3>
+          <p>Data centres are planned as flat demand. Cooling load rises with temperature, which is the same day the rest of the system peaks.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
