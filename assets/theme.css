@@ -586,7 +586,7 @@ section + section{border-top:2px solid var(--ink);}
 @media (max-width:560px){.theory-maps-row{grid-template-columns:1fr;}}
 .theory-map-card{
   display:flex;flex-direction:column;gap:8px;
-  background:var(--paper);border:2px solid var(--ink);color:var(--ink);
+  background:var(--white);border:2px solid var(--ink);color:var(--ink);
   padding:18px 20px 20px;box-shadow:4px 4px 0 var(--ink);
   text-decoration:none;transition:transform .12s ease,box-shadow .12s ease;
 }
