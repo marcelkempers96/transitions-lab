@@ -50,6 +50,10 @@ So a discipline grew up around the second question, with its own methods, outcom
 
 Agricultural and energy research has broadly not done this. It has demonstration projects, which prove feasibility under favourable conditions, and it has dissemination, which is communication. It does not, generally, have a research function whose subject is what happens when a technology meets an ordinary user with an ordinary budget and an existing way of doing things that works well enough.
 
+<figure>
+<img src="/assets/img/insight-adoption-is-the-research-two-questions.jpg" alt="Diagram: a horizontal project timeline divided into two unequal segments. The left segment labelled 'does it work' takes up four-fifths of the width and contains a lab bench, a test rig and a stack of published papers, all in cobalt. The right narrow segment labelled 'does anyone use it' contains only a coral megaphone icon labelled 'dissemination'. Beneath the right segment, a dashed empty box the same size as the left, labelled in coral 'the research that is missing'." class="diagram">
+</figure>
+
 That is the gap the Commission's strategy has identified. Naming it is progress. Filling it requires treating it as science rather than outreach, and that means it has to be designed in at the start, funded on its own terms, and reported whether or not the answer is flattering.
 
 <aside class="tl-box">

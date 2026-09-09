@@ -32,6 +32,10 @@ Kenneth Arrow set out the problem in 1962, in [*Economic Welfare and the Allocat
 
 Apply that to a mineral licensing round and the asymmetry is stark. A government auctioning an unsurveyed block cannot value what it is selling. A bidder who has flown the block, or bought data from somebody who has, can. The government is in the position of the party that must reveal to learn and cannot learn without revealing, and the standard resolution, which is to let the bidder do the survey in exchange for the right to develop what they find, hands the informational advantage to the counterparty as a matter of design.
 
+<figure>
+<img src="/assets/img/insight-survey-first-act-of-the-mine-who-knows.jpg" alt="Diagram: two figures at a negotiating table with a single unsigned document between them. Above the left figure, a thought bubble containing a detailed cross-section of rock strata with a coral ore body clearly marked; the label beneath reads 'has flown the block'. Above the right figure, an identical-shaped thought bubble containing only a blank sheet with a question mark; label beneath 'is selling it'. Beneath both, a cross-section of layered rock strata continues into the ground." class="diagram">
+</figure>
+
 **Owning the survey is therefore not a preliminary to negotiating. It is the negotiation, conducted in advance.**
 
 That is what makes the Congolese decision more interesting than its price tag. One hundred and eighty million dollars is a large sum against a survey budget and a trivial one against the value of the deposits it will locate. If it shifts the terms of even a handful of subsequent licences, it is among the cheapest interventions available in resource governance.
@@ -43,6 +47,10 @@ That is what makes the Congolese decision more interesting than its price tag. O
 The design detail worth attending to is the tiering.
 
 A state that publishes everything gets exploration interest and gives away its bargaining position at the same time. A state that publishes nothing gets neither. Tiered disclosure is the institutional answer to Arrow's problem: reveal enough to attract a bid, withhold enough to price it, and control the sequence in which the two happen.
+
+<figure>
+<img src="/assets/img/insight-survey-first-act-of-the-mine-tiers.jpg" alt="Diagram: a stacked cabinet of four drawers, each progressively narrower toward the top, labelled at the left published index, regional datasets, block-level geophysics, interpreted prospects. Small figures stand at the bottom drawer in a row of six, three at regional datasets, one at block-level geophysics, none at interpreted prospects. Keyholes on each drawer, coral on the upper two. Bracket at the right spans the upper two drawers labelled 'where the bargaining position lives'." class="diagram">
+</figure>
 
 It also does something less discussed. Whoever controls the sequence controls which deposits are developed first, and in what order the country's geology is converted into projects. That is a genuine industrial policy instrument, because the state can decline to release data on a deposit until conditions exist to process it domestically, rather than watching the easiest ore leave first.
 
