@@ -777,9 +777,15 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 .prose .article-meta{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;
-  color:var(--ink);opacity:.65;margin:1em 0 2em;
+  color:var(--ink);opacity:.65;margin:1em 0 6px;
 }
 .prose .article-meta span{white-space:nowrap;}
+.prose .article-byline{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:14px;letter-spacing:.01em;font-weight:500;
+  color:var(--ink);opacity:.7;margin:0 0 2em;
+}
+.prose .article-byline .article-author{font-weight:700;opacity:1;}
 
 /* ── Article list (on /articles): scannable stack of pieces, each with
    a bold title link, a small meta line (date or tag), and a body blurb. */
@@ -818,6 +824,10 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 .prose .article-list .article-meta{
   margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.08em;
   text-transform:uppercase;color:var(--ink);opacity:.62;
+}
+.prose .article-list .article-item-byline{
+  margin-top:3px;font-size:13px;font-weight:600;letter-spacing:.01em;
+  color:var(--ink);opacity:.62;
 }
 .prose .article-list .article-desc{
   margin:10px 0 0;color:var(--ink);

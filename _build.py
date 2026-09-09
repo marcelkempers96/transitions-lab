@@ -308,6 +308,22 @@ def render_nav(current_slug: str) -> str:
 # Per-page metadata: description, and any category label to show as eyebrow
 # ────────────────────────────────────────────────────────────────────────────
 
+# Article authorship. Default is Marcel Kempers; add per-slug overrides
+# here when a piece has a different author or a co-author group.
+# The byline appears on the article page (under the date + reading-time
+# row) and on the /articles listing card. Slugs that never render an
+# `<p class="article-meta">` block (index, expertise pages, resources)
+# never see a byline — the injector is a no-op there.
+DEFAULT_AUTHOR = "Marcel Kempers"
+AUTHORS: dict[str, str] = {
+    # Example override:
+    # "insight-some-piece": "Ada Nwosu",
+}
+
+def author_for(slug: str) -> str:
+    return AUTHORS.get(slug, DEFAULT_AUTHOR)
+
+
 # Per-page SEO metadata, keyed by slug. Follows the Lab's SEO metadata guide:
 # title tag format "Primary Keyword | Transitions Lab" (under 60 chars),
 # meta description 140-155 chars, active voice, primary keyword natural.
@@ -1256,6 +1272,39 @@ def build_content_page(slug: str, md: str) -> str:
     {'<p class="lede">' + standfirst_html + '</p>' if standfirst_html else ''}
   </div>
 </section>"""
+
+    # Byline on the article page: inject a separate line right after the
+    # <p class="article-meta"> paragraph so the reader sees date, reading
+    # time, then the author. No-op on pages that never render that meta
+    # paragraph (expertise pages, resources, indexes).
+    author = author_for(slug)
+    body_html = re.sub(
+        r'(<p class="article-meta">.*?</p>)',
+        rf'\1\n<p class="article-byline">By <span class="article-author">{author}</span></p>',
+        body_html,
+        count=1,
+        flags=re.S,
+    )
+
+    # Byline on the /articles listing: inject a small line inside each
+    # article-item body, right after the date meta div, using the same
+    # per-slug author lookup so overrides propagate here automatically.
+    if slug == "articles":
+        def _inject_listing_byline(m: re.Match) -> str:
+            item_slug = m.group(1)
+            title_html = m.group(2)
+            date_html = m.group(3)
+            au = author_for(item_slug)
+            return (
+                f'<a class="article-title" href="/{item_slug}">{title_html}</a>\n'
+                f'      <div class="article-meta">{date_html}</div>\n'
+                f'      <div class="article-item-byline">By {au}</div>'
+            )
+        body_html = re.sub(
+            r'<a class="article-title" href="/([a-z0-9\-]+)">([^<]+)</a>\s*<div class="article-meta">([^<]+)</div>',
+            _inject_listing_byline,
+            body_html,
+        )
 
     # Featured case study card, injected at the top of expertise-page prose
     featured = FEATURED_CASE.get(slug)
