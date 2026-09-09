@@ -46,6 +46,11 @@ If the binding constraint is the option value of waiting, then interventions div
 
 That is the practical implication and it is counterintuitive: **for a project stuck before a final investment decision, a smaller instrument that removes uncertainty will often move the decision when a larger one that improves returns will not.**
 
+<figure>
+<img src="/assets/img/insight-strategic-not-financeable-instruments.jpg" alt="Diagram: two probability distribution curves drawn side by side over a shared baseline, each with a vertical dashed marker showing its mean. Left curve, drawn wide and low in sky blue, with a dashed outline of an earlier curve to its left and a rightward arrow pushing the whole curve to the right without changing its width, labelled beneath 'grants and concessional debt: moves the mean'. Right curve, drawn as the same wide sky-blue curve with a second narrower curve superimposed inside it in coral, with two inward-pointing arrows squeezing the sides, mean unchanged, labelled beneath 'offtake, price floor, binding timetable: narrows the distribution'. A small annotation beneath both reads 'only one of these shortens the wait'." class="diagram">
+<figcaption>Two kinds of instrument, and the option value of waiting responds to only one of them.</figcaption>
+</figure>
+
 It also explains why critical minerals are particularly badly served by the standard toolkit. Mineral prices are exceptionally volatile, and lithium's recent history is the obvious example. Volatility is the input that makes waiting valuable. A subsidy calibrated against an average price does almost nothing to the variance, and it is the variance that is holding the decision.
 
 <aside class="tl-box">
