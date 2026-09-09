@@ -77,6 +77,11 @@ A fuller readiness picture for capital-intensive transition infrastructure would
 
 **Financial.** Is the distribution of outcomes narrow enough that a committee will exercise the option rather than hold it. Not assessed anywhere.
 
+<figure>
+<img src="/assets/img/insight-strategic-not-financeable-readiness.jpg" alt="Bar chart, 'Readiness, as assessed and as needed'. Four horizontal rows labelled technical, regulatory, market, financial. Each row has two bars: cobalt for 'currently assessed' and coral for 'needed for a decision'. Technical: cobalt and coral bars roughly equal length, extending most of the width. Regulatory: cobalt bar half the length of a longer coral bar. Market: cobalt bar a short stub against a coral bar extending nearly the full width. Financial: no cobalt bar at all, drawn as an empty dashed rectangle, against the longest coral bar of any row. Legend top right identifies the two colours. Footnote: Qualitative. Transitions Lab, 2026." class="diagram">
+<figcaption>Four dimensions, one of them not assessed at all, and the gap widens as you move down the list.</figcaption>
+</figure>
+
 The fourth is not the same as the third. A project can have a buyer and still fail to reach a decision if the price in that contract floats with a volatile index, because the contract transfers volume risk and leaves price risk where it was.
 
 This is the argument for treating [readiness as a property of the setting rather than the technology](/readiness-levels), extended into the financial layer. It is measurable. It requires asking investment committees what they would need to see, which is a straightforward research exercise that nobody appears to be running.
