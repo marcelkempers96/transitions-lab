@@ -76,6 +76,10 @@ Four concrete changes, none of which requires new instruments.
 
 **Report abandonment as a result.** A farmer who tried a practice and stopped holds the most informative account available, and no current reporting template asks for it. This is the same [selection problem](/insight-trough-before-the-dividend) that makes a set of successful case studies an unreliable guide to what will happen next.
 
+<figure>
+<img src="/assets/img/insight-adoption-is-the-research-sample.jpg" alt="Diagram: three groups of small human figures along a ground line. First group, eight solid cobalt figures inside a bordered box labelled 'adopted, and surveyed'. Second group, five sky-blue figures inside a dashed box labelled 'tried it and stopped'. Third group, six faint figures with no box labelled 'never took it up'. A bracket spans the second and third groups, labelled 'where the finding is, and where the list does not exist'." class="diagram">
+</figure>
+
 **Separate the evaluator from the deliverer.** A consortium reporting on its own uptake is being asked to hold two positions. The cookstove finding exists because a research team with no stake in the distribution programme measured it independently, four years later, and was free to publish a null result.
 
 That last point is where most of the difficulty sits, and it is organisational rather than intellectual.

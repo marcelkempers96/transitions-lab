@@ -44,6 +44,10 @@ There is a loop here worth setting out explicitly, because each step is individu
 
 Higher ambient temperature raises cooling demand. Higher cooling demand raises electricity consumption. In Malaysia's case, the projected response is additional gas-fired capacity, up to 9 gigawatts by 2032, because gas is what can be built at that speed and can follow load. Additional gas generation adds emissions. Emissions contribute, at a global scale, to the warming that raised the ambient temperature.
 
+<figure>
+<img src="/assets/img/insight-load-that-grows-when-hot-loop.jpg" alt="Diagram: five labelled objects arranged in a clockwise loop. A sun with heat lines labelled 'higher ambient temperature', a rooftop chiller unit labelled 'more cooling energy', a meter dial labelled 'more electricity', a gas turbine and factory labelled 'more firm capacity built', and a small emissions cloud labelled 'more emissions'. The final closing arrow from emissions back to the sun is drawn lighter and longer, annotated 'slower, larger, and not on anybody's balance sheet'. Beside the loop, a small water droplet with a downward arrow labelled 'and the same story for water'." class="diagram">
+</figure>
+
 No single link in that chain is surprising. The consequence is that the electricity requirement of a data centre built in a hot climate is not a fixed number. It is a number that rises over the asset's life, in the same direction as the climate, and both the grid plan and the developer's cost model typically hold it constant.
 
 There is a second-order version affecting water. Evaporative cooling is efficient and it consumes water, and it consumes more of it in exactly the conditions when water is scarcest. A facility designed around evaporative cooling in a drought-exposed catchment has a demand profile correlated with drought, which is the same structural problem in a different resource.
@@ -63,6 +67,10 @@ There is a second-order version affecting water. Evaporative cooling is efficien
 Southeast Asia is acquiring data centre load quickly, and the tariffs and connection agreements being signed now will govern for a decade or more. Four things are decided in those documents and are worth deciding deliberately.
 
 **Whether the tariff prices coincident peak.** A demand charge based on a facility's contribution at system peak, rather than on its annual energy, would price the actual cost imposed. This is standard practice for large industrial customers in many systems and it is frequently waived to attract data centre investment.
+
+<figure>
+<img src="/assets/img/insight-load-that-grows-when-hot-bills.jpg" alt="Chart, 'Identical bills, very different costs'. Two 24-hour load profiles side by side. Left blue profile perfectly flat across the day, labelled 'truly flat load'. Right coral profile flat for most of the day with a pronounced bulge in the late afternoon around 18:00, labelled 'flat load plus cooling' with a subtitle 'the same annual energy, and new capacity required'. Vertical dashed cobalt line through both charts at 18:00 labelled 'system peak'. Footnote: Schematic. Transitions Lab, 2026." class="diagram">
+</figure>
 
 **Whether flexibility is contracted rather than hoped for.** Some computing can be shifted in time or place. Some cannot. A connection agreement that specifies how much load can be curtailed or deferred on a system peak day, and at what compensation, converts an unpriced risk into a contracted service. We described [the missing market for flexibility](/insight-paying-for-what-we-curtail) in a Kenyan context, and here the counterparty is large, sophisticated and entirely capable of participating if there is a product to buy.
 
