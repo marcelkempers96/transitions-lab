@@ -66,6 +66,14 @@ The Lab publishes articles for the same reason it takes on any research: some qu
       <div class="article-chips"><span class="article-chip chip-cat chip-cat-agriculture">Agriculture</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
       <p class="article-desc">Europe has identified the gap between research and uptake. Filling it means treating uptake as science rather than outreach.</p>
     </div>
+  </div><div class="article-item has-thumb" data-category="finance" data-geography="europe" data-month="2026-09">
+    <a class="article-thumb-link" href="/insight-strategic-not-financeable"><img class="article-thumb" src="/assets/img/insight-strategic-not-financeable-hero.jpg" alt="Line-art scene: a processing plant drawn in outline as an unbuilt proposal on a drawing board, with a large ornate stamp reading STRATEGIC pressed across it, while beside the board a banker's desk holds a closed ledger and a calendar with no date circled."></a>
+    <div class="article-body">
+      <a class="article-title" href="/insight-strategic-not-financeable">Strategic Is Not the Same as Financeable</a>
+      <div class="article-meta">8 September 2026</div>
+      <div class="article-chips"><span class="article-chip chip-cat chip-cat-finance">Finance</span> <span class="article-chip chip-geo chip-geo-europe">Europe</span></div>
+      <p class="article-desc">Twenty-three of sixty designated projects may not reach a decision. They may not need more money. They may need less uncertainty.</p>
+    </div>
   </div><div class="article-item has-thumb" data-category="energy" data-geography="asia" data-month="2026-09">
     <a class="article-thumb-link" href="/insight-load-that-grows-when-hot"><img class="article-thumb" src="/assets/img/insight-load-that-grows-when-hot-hero.jpg" alt="Line-art scene: a long low data centre building with rooftop cooling units beneath a high sun with heat lines rising; a thermometer stands beside the building with its column high, and a transmission tower behind carries sagging lines toward a distant town."></a>
     <div class="article-body">

@@ -119,7 +119,7 @@ If you are financing an industrial project whose demand comes from somebody else
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Value Is in the Second Step](/insight-second-step) on why processing rather than export is where the value sits, [Capability Is the Slow Part](/insight-capability-slow-part) on what determines whether a plant leaves capability behind, and [The Smelter Contract](/insight-the-smelter-contract) on long-lived assets built for a single counterparty. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Value Is in the Second Step](/insight-second-step) on why processing rather than export is where the value sits, [Capability Is the Slow Part](/insight-capability-slow-part) on what determines whether a plant leaves capability behind, [The Smelter Contract](/insight-the-smelter-contract) on long-lived assets built for a single counterparty, and [Strategic Is Not the Same as Financeable](/insight-strategic-not-financeable) on why designation and subsidy do not move a final investment decision when the binding constraint is variance rather than expected return. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

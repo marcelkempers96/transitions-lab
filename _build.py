@@ -201,6 +201,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
     "insight-load-that-grows-when-hot": "butter",
+    "insight-strategic-not-financeable": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -656,6 +657,10 @@ META: dict[str, dict[str, str]] = {
     "insight-load-that-grows-when-hot": {
         "title": "The Load That Grows When It Is Hot | Transitions Lab",
         "description": "Data centres are planned as flat demand. Cooling load rises with temperature, which is the same day the rest of the system peaks. That is not baseload, and grid planning treats it as the opposite.",
+    },
+    "insight-strategic-not-financeable": {
+        "title": "Strategic Is Not the Same as Financeable | Transitions Lab",
+        "description": "Twenty-three of sixty EU strategic critical mineral projects may not reach a final investment decision. Instruments that raise the mean and instruments that narrow the distribution are not the same thing.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
