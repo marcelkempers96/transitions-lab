@@ -237,7 +237,7 @@ section + section{border-top:2px solid var(--ink);}
 
 /* ── Page hero (interior pages) ───────────────────────────── */
 .page-hero{
-  padding:104px 0 76px;background:var(--paper);color:var(--ink);
+  padding:104px 0 76px;background:var(--white);color:var(--ink);
   border-bottom:2px solid var(--ink);position:relative;
 }
 .page-hero .eyebrow{color:var(--orange);}
