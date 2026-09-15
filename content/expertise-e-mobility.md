@@ -1,8 +1,10 @@
-§ / Expertise
+§ / Programmes
 
 # E-Mobility & Transport Infrastructure
 
-*How electric and shared transport crosses from novelty to default in markets built around petrol, and whether the infrastructure keeps pace with the vehicles.*
+*How electric and shared transport crosses from novelty to default, and what it does to the livelihoods built on the vehicles it replaces.*
+
+<p class="research-areas-strip"><strong>Research areas:</strong> Rider and operator economics · Batteries, charging and swap infrastructure</p>
 
 <figure>
   <img src="/assets/img/photo-emobility-forecourt.jpg" alt="Electric motorcycles queueing at a petrol-station forecourt in a busy working street, alongside an ageing sedan and a street vendor." class="diagram">

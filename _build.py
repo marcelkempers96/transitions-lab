@@ -58,12 +58,10 @@ def _cache_bust_images(html: str) -> str:
 FEATURED_CASE: dict[str, dict[str, str]] = {
     "expertise-e-mobility":    {"slug": "case-roam",         "kind": "case",    "kicker": "Kenya · E-mobility",   "title": "Electric transport in Nairobi",           "blurb": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.", "colour": "coral"},
     "expertise-energy":        {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Energy",   "title": "Biochar & clean energy in Lombok",         "blurb": "Smallholder farmers turn crop waste into heat, soil, and income on a decentralised, open-source kiln.", "colour": "butter"},
-    "expertise-water":         {"slug": "case-mimaji",       "kind": "case",    "kicker": "Kenya · Water",         "title": "Water transparency in Nairobi",           "blurb": "Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.", "colour": "cobalt"},
     "expertise-agriculture":   {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Agriculture","title": "Biochar in Lombok",                       "blurb": "Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.", "colour": "coral"},
     "expertise-manufacturing": {"slug": "case-manufacturing","kind": "reading", "kicker": "East Africa · Manufacturing","title": "Assembly to Value: Local Manufacturing","blurb": "When a product moves from imported to locally assembled, whether the 'local' part actually reaches workers, suppliers, and customers.", "colour": "butter"},
     "expertise-ai-digital":    {"slug": "case-ai-digital",   "kind": "reading", "kicker": "AI & Digital",          "title": "Digital Services in Low-Connectivity Contexts","blurb": "When a digital tool designed for always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.", "colour": "cobalt"},
     "expertise-finance":       {"slug": "case-finance",      "kind": "reading", "kicker": "Finance · Payment rails","title": "The Payment Rail: What Mobile Money Carries","blurb": "Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.", "colour": "butter"},
-    "expertise-climate":       {"slug": "case-reef-support", "kind": "case",    "kicker": "Marine · Community rangers","title": "A Shared View of the Reef",                "blurb": "Rangers, sensors, and satellite data braided into a single picture of reef health, with Reef Support.", "colour": "coral"},
 }
 
 
@@ -73,12 +71,10 @@ FEATURED_CASE: dict[str, dict[str, str]] = {
 TOPIC_ICONS: dict[str, str] = {
     "expertise-e-mobility":    "/assets/icons/icon-emobility.png",
     "expertise-energy":        "/assets/icons/icon-energy.png",
-    "expertise-water":         "/assets/icons/icon-water.png",
     "expertise-agriculture":   "/assets/icons/icon-agriculture.png",
     "expertise-manufacturing": "/assets/icons/icon-manufacturing.png",
     "expertise-ai-digital":    "/assets/icons/icon-ai-digital.png",
     "expertise-finance":       "/assets/icons/icon-finance.png",
-    "expertise-climate":       "/assets/icons/icon-climate.png",
 }
 
 # Pages that get a compact "Start a study" contact block auto-appended at
@@ -407,40 +403,32 @@ META: dict[str, dict[str, str]] = {
         "description": "Tell us the decision you are facing and we will tell you honestly whether research can help. Confidential from the first message. No cost to ask.",
     },
     "expertise": {
-        "title": "Expertise | Eight Transitions We Study | Transitions Lab",
-        "description": "The transitions the Lab knows deeply, from e-mobility and energy access to AI, water, agriculture, manufacturing, finance, and climate.",
+        "title": "Programmes | Six Transitions We Study | Transitions Lab",
+        "description": "Six standing research programmes: green industrialisation, e-mobility, energy and water systems, agriculture and ecosystems, AI and digital, financial inclusion. Each runs in Europe and where our cases come from.",
     },
     "expertise-e-mobility": {
         "title": "E-Mobility & Transport Research | Transitions Lab",
         "description": "How electric and shared transport crosses from novelty to default in markets built around petrol, and whether the infrastructure keeps pace.",
     },
     "expertise-energy": {
-        "title": "Energy Access & Off-Grid Systems Research | Transitions Lab",
-        "description": "How decentralised energy reaches the hundreds of millions still beyond the grid, and whether it reaches them fairly and durably.",
-    },
-    "expertise-water": {
-        "title": "Water & Sanitation Research | Transitions Lab",
-        "description": "How safe water and sanitation are delivered, sustained, and trusted, in the one region where the number of people without access is still rising.",
+        "title": "Energy & Water Systems Research | Transitions Lab",
+        "description": "How energy and water systems are built, paid for and relied on, where the network reaches and where it never did. Mini-grids, grid integration, water delivery.",
     },
     "expertise-agriculture": {
-        "title": "Regenerative Agriculture & Agri-Tech Research | Transitions Lab",
-        "description": "How smallholders adopt technologies that turn waste into value and degraded land into productive soil, with GIS and spatial fieldwork.",
+        "title": "Agriculture & Ecosystems Research | Transitions Lab",
+        "description": "How farmers and fishers adopt and benefit from new technology, and what the monitoring behind a payment actually costs them. Waste-to-value, verification, coastal work.",
     },
     "expertise-manufacturing": {
-        "title": "Local Manufacturing & Supply Chains Research | Transitions Lab",
-        "description": "How productive capacity is built where things are used, and whether local assembly and value addition actually reach the people they promise to.",
+        "title": "Green Industrialisation & Local Manufacturing Research | Transitions Lab",
+        "description": "How productive capacity is built where things are used, who captures the value, and whether the workforce capability a plant assumes actually arrives with it.",
     },
     "expertise-ai-digital": {
         "title": "AI & Digital Systems Research | Transitions Lab",
-        "description": "How AI and digital tools land in contexts they were not designed for, and whether they close divides or widen them. Trust, context, competency.",
+        "description": "How AI and digital tools land in contexts they were not designed for. Data centres, automation, and who a deployed system fails for.",
     },
     "expertise-finance": {
-        "title": "Financial Inclusion & Payment Systems Research | Transitions Lab",
-        "description": "How payment, credit, and financing systems carry, or block, every other transition that depends on people being able to pay over time.",
-    },
-    "expertise-climate": {
-        "title": "Climate Resilience & Ecosystems Research | Transitions Lab",
-        "description": "How communities and ecosystems adapt to a changing climate, across reefs, forests, wetlands, and biodiversity, and how monitoring drives action.",
+        "title": "Financial Inclusion Research | Transitions Lab",
+        "description": "How payment, credit and financing systems carry, or block, every other transition that depends on someone being able to pay over time, and who is left outside them.",
     },
     "case-studies": {
         "title": "Case Studies | Field Research in Action | Transitions Lab",
@@ -791,13 +779,11 @@ STUB_TITLES: dict[str, str] = {
     "qualitative-vs-quantitative": "Qualitative vs Quantitative",
     "for-funders": "For Funders",
     "insight-the-reporting-loop": "The Reporting Loop",
-    "expertise-energy": "Energy Access & Off-Grid Systems",
-    "expertise-water": "Water & Sanitation",
-    "expertise-agriculture": "Regenerative Agriculture & Agri-Tech",
-    "expertise-manufacturing": "Local Manufacturing & Supply Chains",
+    "expertise-energy": "Energy & Water Systems",
+    "expertise-agriculture": "Agriculture & Ecosystems",
+    "expertise-manufacturing": "Green Industrialisation & Local Manufacturing",
     "expertise-ai-digital": "AI & Digital Systems",
-    "expertise-finance": "Financial Inclusion & Payment Systems",
-    "expertise-climate": "Climate Resilience & Ecosystems",
+    "expertise-finance": "Financial Inclusion",
 }
 
 # Sitemap priority per section (approximate).

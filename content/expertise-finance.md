@@ -1,8 +1,10 @@
-§ / Expertise
+§ / Programmes
 
-# Financial Inclusion & Payment Systems
+# Financial Inclusion
 
-*How payment, credit, and financing systems carry, or block, every other transition that depends on people being able to pay over time.*
+*How payment, credit and financing systems carry, or block, every other transition that depends on someone being able to pay over time, and who is left outside them.*
+
+<p class="research-areas-strip"><strong>Research areas:</strong> Asset finance and default risk · Who gets included and who does not</p>
 
 <!-- IMAGE finance-hero: hero photo | Someone using mobile money or a payment system in a market or shop - a vendor, a customer, a phone transaction. Everyday, real. | Full-width hero under the standfirst. -->
 

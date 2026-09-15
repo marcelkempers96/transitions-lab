@@ -1,8 +1,10 @@
-§ / Expertise
+§ / Programmes
 
-# Local Manufacturing & Supply Chains
+# Green Industrialisation & Local Manufacturing
 
-*How productive capacity is built where things are used, and whether local assembly and value addition actually reach the people they promise to.*
+*How productive capacity is built where things are used, who captures the value, and whether the workforce capability a plant assumes actually arrives with it.*
+
+<p class="research-areas-strip"><strong>Research areas:</strong> Critical raw materials and processing · Circular economy and e-waste · Assembly, suppliers and workforce capability</p>
 
 <!-- IMAGE mfg-hero: hero photo | Local assembly line or workshop, workers building or assembling products. Real industrial setting, human-present. | Full-width hero under the standfirst. -->
 

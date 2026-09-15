@@ -1137,6 +1137,17 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   font-size:15.5px;line-height:1.45;margin:0;color:var(--ink);font-weight:500;
   max-width:60ch;
 }
+.prose ul.expertise-list p.research-areas{
+  margin-top:10px;font-size:13.5px;line-height:1.5;opacity:.82;
+  font-weight:500;letter-spacing:.005em;
+}
+.prose ul.expertise-list p.research-areas strong{font-weight:800;}
+.prose p.research-areas-strip{
+  margin:12px 0 28px;padding:14px 18px;
+  background:var(--butter);border:2px solid var(--ink);
+  font-size:15px;line-height:1.5;font-weight:500;color:var(--ink);
+}
+.prose p.research-areas-strip strong{font-weight:800;letter-spacing:.02em;}
 .prose ul.expertise-list .arrow{
   position:absolute;top:24px;right:26px;
   font-size:26px;font-weight:800;color:var(--ink);line-height:1;

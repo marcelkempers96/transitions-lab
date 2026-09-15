@@ -1,8 +1,10 @@
-§ / Expertise
+§ / Programmes
 
 # AI & Digital Systems
 
-*How artificial intelligence and digital tools land in contexts they were not designed for, and whether they close divides or widen them.*
+*How artificial intelligence and digital tools land in contexts they were not designed for.*
+
+<p class="research-areas-strip"><strong>Research areas:</strong> Data centres and digital infrastructure · Automation and skills displacement</p>
 
 <!-- IMAGE ai-hero: hero photo | Someone using a digital tool or phone in a field/community setting - a health worker, farmer, or ranger with a device. Technology-meets-people, not a server room. | Full-width hero under the standfirst. -->
 

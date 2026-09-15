@@ -4,7 +4,11 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/applied-research", "destination": "/impact-measurement", "permanent": true },
-    { "source": "/applied-research.html", "destination": "/impact-measurement", "permanent": true }
+    { "source": "/applied-research.html", "destination": "/impact-measurement", "permanent": true },
+    { "source": "/expertise-water", "destination": "/expertise-energy", "permanent": true },
+    { "source": "/expertise-water.html", "destination": "/expertise-energy", "permanent": true },
+    { "source": "/expertise-climate", "destination": "/expertise-agriculture", "permanent": true },
+    { "source": "/expertise-climate.html", "destination": "/expertise-agriculture", "permanent": true }
   ],
   "headers": [
     {
