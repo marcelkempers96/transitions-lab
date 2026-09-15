@@ -32,6 +32,11 @@ Two further findings matter more than the headline number. Almost all displaced 
 
 **So the problem is not primarily that people cannot find work. It is that the wage attached to twenty years of specific experience does not transfer, and there is little evidence it ever comes back.**
 
+<figure>
+<img src="/assets/img/insight-factory-and-the-town-earnings.jpg" alt="Chart, 'They found work. The earnings did not come back.' A horizontal axis running from '5 years before separation' through 'separation' to '10 years after'. A cobalt dashed line rises gently across the whole range, labelled 'expected earnings'. A coral solid line tracks it, begins to fall slightly before the separation marker, drops sharply at separation, recovers partially, and then runs flat and permanently below the dashed line, labelled 'actual earnings'. A small sky-blue marker on the recovering coral line is labelled 'stable employment found'. The persistent gap between the two lines is shaded and annotated 'this is the harm, and retraining does not address it'. Footnote: Pattern after Jacobson, LaLonde and Sullivan (1993). Schematic, not Italian data. Transitions Lab, 2026." class="diagram">
+<figcaption>Employment returns fairly quickly. The old wage does not.</figcaption>
+</figure>
+
 That is why retraining, taken alone, has such a poor record. Retraining addresses employability, and employability was not the binding constraint. A fifty-two-year-old furnace operator with a new certificate is employable and will earn substantially less, and no amount of certification changes that, because what has been lost is the value of experience in a specific production system that no longer exists.
 
 ---
@@ -59,6 +64,11 @@ The court order is immediate. The environmental harm is present tense and has be
 So the closure is fast and the replacement is slow, and the interval between them is where a regional economy either survives or does not. Everything that determines the outcome happens in that interval: whether the skilled workforce stays or disperses, whether the supplier firms survive on other work, whether the young leave.
 
 Once a workforce disperses it does not reassemble. A plant commissioned in 2033 into a region whose skilled labour left in 2028 will import its operators, and the industrial case for building it there weakens accordingly. That is the [capability question](/insight-capability-slow-part) operating in reverse: capability that took decades to accumulate can be lost in a few years, and the loss is not recoverable on the same timescale.
+
+<figure>
+<img src="/assets/img/insight-factory-and-the-town-interval.jpg" alt="Diagram: a horizontal timeline. At the far left a blast furnace drawn solid, with a heavy vertical coral line beside it labelled 'court order, immediate'. At the far right an electric arc furnace drawn in dashed outline, labelled 'replacement, if financed'. Between them a wide bracketed span labelled 'the interval'. Inside the span, four small icons in sequence with arrows: a group of workers labelled 'workforce disperses', a small workshop labelled 'supplier firms end', a group of figures with suitcases labelled 'out-migration', and a head with a brain labelled 'tacit knowledge'. Beneath the whole span: 'everything that decides the outcome happens here'." class="diagram">
+<figcaption>Fast closure, slow replacement, and the interval between them is where a regional economy either survives or does not.</figcaption>
+</figure>
 
 ---
 

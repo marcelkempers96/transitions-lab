@@ -34,6 +34,11 @@ It works badly here, because the contribution is global, delayed, diffuse and pr
 
 **Deciding whether a mine is green therefore requires converting a watershed into tonnes of carbon dioxide, or refusing to, and there is no technically correct exchange rate between them.**
 
+<figure>
+<img src="/assets/img/insight-when-is-a-mine-green-units.jpg" alt="Diagram: two columns separated by a hairline vertical rule. Left column headed 'the contribution' with four small sky-blue icons stacked vertically and labelled: a wind turbine labelled 'global', a calendar labelled 'delayed', scattered dots labelled 'diffuse' and a die labelled 'probabilistic'. Right column headed 'the harm' with four coral icons: a single valley labelled 'local', a clock labelled 'immediate', a dense grid of dots labelled 'concentrated' and a solid square labelled 'certain'. At the base between the columns, an equals sign with a question mark through it." class="diagram">
+<figcaption>Both pans of the scale are full. The units on each side do not convert.</figcaption>
+</figure>
+
 That is not an argument that the question is unanswerable. Societies make exactly this kind of trade constantly, through planning systems, courts, compensation regimes and elections. It is an argument about where the answer should be produced. A trade-off between a distant global benefit and a concentrated local harm is a political decision, and putting it inside a financial classification framework moves it from a forum with affected parties into one without them.
 
 The people whose water it is are not represented at a sustainable finance workshop. That is not a criticism of the workshop, which is the right body to address the financial question. It is an observation about what the financial question quietly contains.
@@ -69,6 +74,11 @@ That creates a specific risk in the taxonomy's design. Conditions that are meani
 The useful research question is therefore comparative and empirical rather than definitional. Do financiers, regulators, mining companies and affected communities use the same definition of a sustainable mineral project? Our strong expectation, from adjacent work, is that they do not, and that the divergence is systematic rather than random: financiers assess disclosure, regulators assess compliance, companies assess permits obtained, and communities assess whether the water is still drinkable.
 
 That is testable by asking each group the same questions about the same project, in Europe and in a producing country, and comparing the answers. Nobody appears to have done it, and it would tell the Commission more about whether its framework will work than another round of criteria drafting.
+
+<figure>
+<img src="/assets/img/insight-when-is-a-mine-green-four-views.jpg" alt="Diagram: a single mine site at the centre of the frame with a headframe, processing building, tailings and a small waterbody. Four figures stand at the four corners, each holding a different viewing document that touches the site along a sightline in a distinct colour. Top left, financier looking at a bar chart and labelled 'financier, looking at disclosure'. Top right, regulator looking at a checklist and labelled 'regulator, looking at compliance'. Bottom left, company official looking at a permit map and labelled 'company, looking at permits obtained'. Bottom right, community member looking at a water quality note and labelled 'community, looking at the water'. Beneath: 'the same project, four sustainability assessments'." class="diagram">
+<figcaption>Four groups looking at the same mine and reading it through different documents.</figcaption>
+</figure>
 
 ---
 

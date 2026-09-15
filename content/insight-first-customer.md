@@ -32,6 +32,11 @@ If it fails, the municipality gets a failed asset, an audit, a local news story 
 
 **So the first buyer bears the full cost of the risk and captures a small fraction of the benefit.** Everything else accrues to subsequent buyers, to the supplier and to the public generally. That is a positive externality in the strict sense, and the standard consequence of a positive externality is under-provision. Nobody wants to be first. Everybody would like to be second.
 
+<figure>
+<img src="/assets/img/insight-first-customer-risk-benefit.jpg" alt="Chart, 'The first order carries the risk and creates the evidence'. Three horizontal paired bars, one per buyer. First buyer: a very long coral bar labelled risk borne and a tiny sky-blue bar labelled benefit captured. Second buyer: a short coral bar and a long sky-blue bar. Tenth buyer: an almost-invisible coral bar against a full-width sky-blue bar. Legend below identifies risk borne in coral and benefit captured in sky blue. Footnote: Schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>Every subsequent buyer benefits from a proof the first one paid for.</figcaption>
+</figure>
+
 That is a structural explanation rather than a cultural one, and it matters because the two imply different remedies. If procurement officials are simply risk-averse, the answer is training and guidance. If being first is genuinely a bad individual deal that produces a large collective good, the answer is to change the deal.
 
 ---
