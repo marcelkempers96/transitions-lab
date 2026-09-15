@@ -243,7 +243,6 @@ The Lab's approach draws on a long-standing qualitative-research tradition, adap
 - [Robert S. Weiss, *Learning from Strangers*](https://www.simonandschuster.com/books/Learning-From-Strangers/Robert-S-Weiss/9780684823126) - a canonical text on qualitative interviewing that this guide's funnel and probing structure draws on.
 - [Steinar Kvale & Svend Brinkmann, *InterViews*](https://us.sagepub.com/en-us/nam/interviews/book239402) - the reference work on the seven stages of an interview inquiry.
 - [Innovations for Poverty Action](https://poverty-action.org/researchers/rigor-and-ethics) and [J-PAL](https://www.povertyactionlab.org/research-resources/data-and-code-availability) on ethics and data integrity in field research.
-- [60 Decibels' Lean Data method](https://60decibels.com/how-we-work/) - our qualitative reach reads well alongside its lived-experience quantitative frame.
 - [OECD DAC evaluation criteria](https://www.oecd.org/dac/evaluation/daccriteriaforevaluatingdevelopmentassistance.htm) - the standard the depth findings feed into on any commissioned evaluation.
 
 ---

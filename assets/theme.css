@@ -1244,10 +1244,122 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   letter-spacing:.02em;color:var(--ink);
 }
 
+/* Programme page closing block:
+   1) "Where to next" — clean chip row of standardised links.
+   2) "Contact us today" — three brief route descriptors on ink,
+      with a single Start-a-conversation CTA.
+   Replaces the italics prose footer on programme pages. */
+.prose .programme-footer{margin:32px 0 8px;}
+.prose .programme-footer h3{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:800;color:var(--coral);margin:0 0 14px;
+}
+.prose .programme-footer .footer-links{
+  display:flex;flex-wrap:wrap;gap:10px;margin:0 0 40px;
+}
+.prose .programme-footer .footer-links a{
+  display:inline-block;padding:10px 16px;
+  background:var(--white);color:var(--ink);border:2px solid var(--ink);
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:14px;font-weight:800;letter-spacing:-.005em;
+  text-decoration:none;transition:background .12s ease;
+}
+.prose .programme-footer .footer-links a:hover{background:var(--butter);}
+
+.prose .contact-cta-programme{
+  margin:12px 0 8px;padding:34px 32px 30px;
+  background:var(--ink);color:var(--paper);
+  border:2px solid var(--ink);
+}
+.prose .contact-cta-programme .cta-eyebrow{
+  display:block;font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:800;color:var(--butter);margin:0 0 10px;
+}
+.prose .contact-cta-programme h3{
+  font-size:26px;font-weight:800;letter-spacing:-.01em;
+  color:var(--paper);margin:0 0 8px;
+}
+.prose .contact-cta-programme .lede{
+  font-size:15px;line-height:1.5;color:var(--paper);opacity:.9;
+  margin:0 0 22px;
+}
+.prose .contact-cta-programme .contact-options{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;margin:0 0 26px;
+}
+.prose .contact-cta-programme .contact-options > div{
+  padding:14px 16px;background:rgba(245,237,221,0.08);
+  border:1.5px solid rgba(245,237,221,0.28);
+}
+.prose .contact-cta-programme .contact-options strong{
+  display:block;font-size:14px;font-weight:800;color:var(--paper);
+  letter-spacing:-.005em;margin-bottom:4px;
+}
+.prose .contact-cta-programme .contact-options span{
+  display:block;font-size:12.5px;line-height:1.35;
+  color:var(--paper);opacity:.72;
+}
+.prose .contact-cta-programme .cta-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.prose .contact-cta-programme .cta-actions a{
+  display:inline-block;padding:12px 22px;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:14px;font-weight:800;letter-spacing:.01em;
+  text-decoration:none;border:2px solid var(--paper);
+  transition:background .12s ease, color .12s ease;
+}
+.prose .contact-cta-programme .cta-actions .cta-primary{
+  background:var(--paper);color:var(--ink);
+}
+.prose .contact-cta-programme .cta-actions .cta-primary:hover{
+  background:var(--butter);
+}
+.prose .contact-cta-programme .cta-actions .cta-secondary{
+  background:transparent;color:var(--paper);
+}
+.prose .contact-cta-programme .cta-actions .cta-secondary:hover{
+  background:rgba(245,237,221,0.14);
+}
+
+/* Ethics/consent standards box: neutral paper ground, highlighted
+   butter title, tighter list spacing. Deliberately understated to
+   read as reference material rather than a marketing panel. */
+.prose .ethics-box{
+  margin:20px 0 24px;padding:20px 22px 18px;
+  background:var(--paper);border:2px solid var(--ink);
+}
+.prose .ethics-box .ethics-title{
+  display:inline-block;padding:4px 10px;margin:0 0 14px;
+  background:var(--butter);color:var(--ink);
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:800;
+}
+.prose .ethics-box ul{
+  margin:0;padding:0;list-style:none;
+}
+.prose .ethics-box li{
+  margin:0;padding:8px 0 8px 20px;
+  font-size:14px;line-height:1.45;color:var(--ink);
+  border-bottom:1px solid rgba(10,10,10,0.14);
+  position:relative;
+}
+.prose .ethics-box li:last-child{border-bottom:0;padding-bottom:2px;}
+.prose .ethics-box li:first-child{padding-top:2px;}
+.prose .ethics-box li::before{
+  content:"";position:absolute;left:0;top:16px;
+  width:6px;height:6px;background:var(--ink);border-radius:50%;
+}
+.prose .ethics-box a{color:var(--ink);font-weight:800;
+  text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;}
+
 /* ── SDG contribution block on programme pages ─────────────────
-   Numbered tiles in the goal's official brand colour, with the
-   full name below. The block sits under the research-areas strip
-   as a "Contributes to" row, and re-uses on /sdgs at larger size.
+   Each row: a coloured SDG icon tile on the left (SVG image with
+   the goal number and pictogram baked in) and a right rectangle
+   with a short programme-tailored line. Cards stack cleanly on
+   mobile.
 */
 .prose .sdg-block{
   margin:0 0 34px;padding:16px 18px 18px;
@@ -1264,48 +1376,48 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 .prose .sdg-row a{
   display:flex;align-items:stretch;text-decoration:none;color:var(--ink);
   border:2px solid var(--ink);background:var(--white);
-  min-height:64px;transition:transform .12s ease;
+  min-height:88px;transition:transform .12s ease;
 }
 .prose .sdg-row a:hover{transform:translate(-2px,-2px);}
-.prose .sdg-row .sdg-num{
-  display:flex;align-items:center;justify-content:center;
-  width:64px;flex-shrink:0;
-  font-family:'Hanken Grotesk',sans-serif;font-weight:900;
-  font-size:26px;color:#fff;letter-spacing:-.02em;
+.prose .sdg-row .sdg-icon{
+  width:88px;flex-shrink:0;
   border-right:2px solid var(--ink);
+  background-size:cover;background-position:center;
+  background-repeat:no-repeat;
 }
 .prose .sdg-row .sdg-name{
-  padding:10px 14px;display:flex;align-items:center;
-  font-size:13.5px;line-height:1.25;font-weight:700;
-  max-width:200px;
+  padding:12px 16px;display:flex;align-items:center;
+  font-size:14px;line-height:1.28;font-weight:700;
+  max-width:240px;color:var(--ink);
 }
 @media(max-width:640px){
-  .prose .sdg-row .sdg-name{font-size:12.5px;max-width:170px;}
+  .prose .sdg-row .sdg-icon{width:76px;}
+  .prose .sdg-row .sdg-name{font-size:13px;max-width:200px;padding:10px 14px;}
 }
 
-/* Official SDG brand colours, tile numerals */
-.sdg-01 .sdg-num{background:#E5243B;}
-.sdg-02 .sdg-num{background:#DDA63A;}
-.sdg-03 .sdg-num{background:#4C9F38;}
-.sdg-04 .sdg-num{background:#C5192D;}
-.sdg-05 .sdg-num{background:#FF3A21;}
-.sdg-06 .sdg-num{background:#26BDE2;}
-.sdg-07 .sdg-num{background:#FCC30B;color:#1a1a1a;}
-.sdg-08 .sdg-num{background:#A21942;}
-.sdg-09 .sdg-num{background:#FD6925;}
-.sdg-10 .sdg-num{background:#DD1367;}
-.sdg-11 .sdg-num{background:#FD9D24;}
-.sdg-12 .sdg-num{background:#BF8B2E;}
-.sdg-13 .sdg-num{background:#3F7E44;}
-.sdg-14 .sdg-num{background:#0A97D9;}
-.sdg-15 .sdg-num{background:#56C02B;}
-.sdg-16 .sdg-num{background:#00689D;}
-.sdg-17 .sdg-num{background:#19486A;}
+/* Each row picks up the goal's SVG icon by class. */
+.sdg-01 .sdg-icon{background-image:url(/assets/img/sdg/sdg-01.svg);}
+.sdg-02 .sdg-icon{background-image:url(/assets/img/sdg/sdg-02.svg);}
+.sdg-03 .sdg-icon{background-image:url(/assets/img/sdg/sdg-03.svg);}
+.sdg-04 .sdg-icon{background-image:url(/assets/img/sdg/sdg-04.svg);}
+.sdg-05 .sdg-icon{background-image:url(/assets/img/sdg/sdg-05.svg);}
+.sdg-06 .sdg-icon{background-image:url(/assets/img/sdg/sdg-06.svg);}
+.sdg-07 .sdg-icon{background-image:url(/assets/img/sdg/sdg-07.svg);}
+.sdg-08 .sdg-icon{background-image:url(/assets/img/sdg/sdg-08.svg);}
+.sdg-09 .sdg-icon{background-image:url(/assets/img/sdg/sdg-09.svg);}
+.sdg-10 .sdg-icon{background-image:url(/assets/img/sdg/sdg-10.svg);}
+.sdg-11 .sdg-icon{background-image:url(/assets/img/sdg/sdg-11.svg);}
+.sdg-12 .sdg-icon{background-image:url(/assets/img/sdg/sdg-12.svg);}
+.sdg-13 .sdg-icon{background-image:url(/assets/img/sdg/sdg-13.svg);}
+.sdg-14 .sdg-icon{background-image:url(/assets/img/sdg/sdg-14.svg);}
+.sdg-15 .sdg-icon{background-image:url(/assets/img/sdg/sdg-15.svg);}
+.sdg-16 .sdg-icon{background-image:url(/assets/img/sdg/sdg-16.svg);}
+.sdg-17 .sdg-icon{background-image:url(/assets/img/sdg/sdg-17.svg);}
 
 /* Larger presentation on /sdgs itself */
-.prose .sdg-index .sdg-row a{min-height:96px;}
-.prose .sdg-index .sdg-row .sdg-num{width:96px;font-size:36px;}
-.prose .sdg-index .sdg-row .sdg-name{font-size:15px;max-width:280px;padding:14px 18px;}
+.prose .sdg-index .sdg-row a{min-height:120px;}
+.prose .sdg-index .sdg-row .sdg-icon{width:120px;}
+.prose .sdg-index .sdg-row .sdg-name{font-size:15px;max-width:300px;padding:16px 20px;}
 .prose ul.expertise-list .arrow{
   position:absolute;top:24px;right:26px;
   font-size:26px;font-weight:800;color:var(--ink);line-height:1;

@@ -15,8 +15,8 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-09"><a href="/sdgs#g9"><span class="sdg-num">9</span><span class="sdg-name">Industry, Innovation and Infrastructure</span></a></li>
-    <li class="sdg-10"><a href="/sdgs#g10"><span class="sdg-num">10</span><span class="sdg-name">Reduced Inequalities</span></a></li>
+    <li class="sdg-09"><a href="/sdgs#g9"><span class="sdg-icon" role="img" aria-label="SDG 9 Industry, Innovation and Infrastructure"></span><span class="sdg-name">Compute infrastructure siting and load</span></a></li>
+    <li class="sdg-10"><a href="/sdgs#g10"><span class="sdg-icon" role="img" aria-label="SDG 10 Reduced Inequalities"></span><span class="sdg-name">Who a deployed system fails</span></a></li>
   </ul>
 </div>
 
@@ -100,4 +100,30 @@ For the full series across the transitions we study, see [Articles](/articles).
 
 ---
 
-*See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). See also sibling programmes [Energy & Water Systems](/expertise-energy) and [Green Industrialisation & Local Manufacturing](/expertise-manufacturing), and the [Technology & Innovation Dynamics](/innovation-dynamics) theory map. Research by [Sustainable Development Goal](/sdgs). To discuss a study, see [Contact](/contact).*
+<div class="programme-footer">
+  <h3>Where to next</h3>
+  <div class="footer-links">
+    <a href="/case-reef-support">Reef Support case</a>
+    <a href="/field-research">Field Research method</a>
+    <a href="/expertise-energy">Energy &amp; Water Systems</a>
+    <a href="/expertise-manufacturing">Green Industrialisation &amp; Local Manufacturing</a>
+    <a href="/innovation-dynamics">Technology &amp; Innovation Dynamics</a>
+    <a href="/sdgs">Research by SDG</a>
+    <a href="/articles">All articles</a>
+  </div>
+</div>
+
+<div class="contact-cta-programme">
+  <span class="cta-eyebrow">Contact us today</span>
+  <h3>Independent evidence on AI and digital systems.</h3>
+  <p class="lede">If you are deploying, financing or regulating an AI or digital system into a context it was not built for, tell us the decision you are facing.</p>
+  <div class="contact-options">
+    <div><strong>Enter a new context</strong><span>Market entry &amp; adoption</span></div>
+    <div><strong>Measure change</strong><span>Reach, depth, outcomes</span></div>
+    <div><strong>Report to funders</strong><span>Baseline through endline</span></div>
+  </div>
+  <div class="cta-actions">
+    <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>
+    <a href="/what-we-do" class="cta-secondary">See how we work</a>
+  </div>
+</div>

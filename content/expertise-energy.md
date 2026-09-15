@@ -16,9 +16,9 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-07"><a href="/sdgs#g7"><span class="sdg-num">7</span><span class="sdg-name">Affordable and Clean Energy</span></a></li>
-    <li class="sdg-06"><a href="/sdgs#g6"><span class="sdg-num">6</span><span class="sdg-name">Clean Water and Sanitation</span></a></li>
-    <li class="sdg-11"><a href="/sdgs#g11"><span class="sdg-num">11</span><span class="sdg-name">Sustainable Cities and Communities</span></a></li>
+    <li class="sdg-07"><a href="/sdgs#g7"><span class="sdg-icon" role="img" aria-label="SDG 7 Affordable and Clean Energy"></span><span class="sdg-name">Reaching the last mile fairly</span></a></li>
+    <li class="sdg-06"><a href="/sdgs#g6"><span class="sdg-icon" role="img" aria-label="SDG 6 Clean Water and Sanitation"></span><span class="sdg-name">Water access that is trusted</span></a></li>
+    <li class="sdg-11"><a href="/sdgs#g11"><span class="sdg-icon" role="img" aria-label="SDG 11 Sustainable Cities and Communities"></span><span class="sdg-name">Grid integration on the ground</span></a></li>
   </ul>
 </div>
 
@@ -137,4 +137,31 @@ For the full series across the transitions we study, see [Articles](/articles).
 
 ---
 
-*See the [Pyropower case study](/case-pyropower) and the [MiMaji water transparency case study](/case-mimaji). For how we study transitions like this, see [Field Research](/field-research). See also sibling programmes [AI & Digital Systems](/expertise-ai-digital) and [Financial Inclusion](/expertise-finance), and the [Economics of Transitions](/economics-of-transitions) theory map. Research by [Sustainable Development Goal](/sdgs). To discuss a study, see [Contact](/contact).*
+<div class="programme-footer">
+  <h3>Where to next</h3>
+  <div class="footer-links">
+    <a href="/case-pyropower">Pyropower case</a>
+    <a href="/case-mimaji">MiMaji water case</a>
+    <a href="/field-research">Field Research method</a>
+    <a href="/expertise-ai-digital">AI &amp; Digital Systems</a>
+    <a href="/expertise-finance">Financial Inclusion</a>
+    <a href="/economics-of-transitions">Economics of Transitions</a>
+    <a href="/sdgs">Research by SDG</a>
+    <a href="/articles">All articles</a>
+  </div>
+</div>
+
+<div class="contact-cta-programme">
+  <span class="cta-eyebrow">Contact us today</span>
+  <h3>Independent evidence on energy and water systems.</h3>
+  <p class="lede">If you are building, financing or regulating a network reaching households the grid was not built for, tell us the decision you are facing.</p>
+  <div class="contact-options">
+    <div><strong>Enter a new context</strong><span>Market entry &amp; adoption</span></div>
+    <div><strong>Measure change</strong><span>Reach, depth, outcomes</span></div>
+    <div><strong>Report to funders</strong><span>Baseline through endline</span></div>
+  </div>
+  <div class="cta-actions">
+    <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>
+    <a href="/what-we-do" class="cta-secondary">See how we work</a>
+  </div>
+</div>

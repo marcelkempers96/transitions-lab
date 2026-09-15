@@ -105,7 +105,7 @@ Templates can be handed over for a partner to run with the Lab's support, or ope
 
 ## Reach, depth, and experience - for the people a project serves
 
-We measure **reach**: who is actually being affected, and who is being left out. We measure **depth**: how materially lives, work, or systems change, beyond the headcount. And we measure **experience**: what the change feels like to the people inside it, the friction they encounter, and the thing they would fix first. This three-dimensional reading is elaborated on the [Impact Measurement](/impact-measurement) page and draws on the framing developed by [60 Decibels](https://60decibels.com/) for lived-impact reporting.
+We measure **reach**: who is actually being affected, and who is being left out. We measure **depth**: how materially lives, work, or systems change, beyond the headcount. And we measure **experience**: what the change feels like to the people inside it, the friction they encounter, and the thing they would fix first. This three-dimensional reading is elaborated on the [Impact Measurement](/impact-measurement) page.
 
 Because the instruments are standardised and repeatable, a project's measurement does not end as a single number. It becomes a trajectory that can be managed, compared, and defended.
 
