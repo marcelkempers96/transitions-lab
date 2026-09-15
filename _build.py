@@ -1565,36 +1565,36 @@ def build_home() -> str:
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="insight-row">
-      <a class="insight-card has-photo" href="/insight-permit-is-not-the-project">
+      <a class="insight-card has-photo" href="/insight-extent-of-the-market">
         <div class="card-photo">
-          <img src="/assets/img/insight-permit-is-not-the-project-hero.jpg" alt="Line-art scene: a stopwatch in the foreground stopped at a short reading, sitting on a stamped permit document; behind it and much larger, an unbuilt processing plant drawn in outline with scaffolding, a group of small figures holding placards at its gate, and a courthouse in the far distance.">
-          <span class="kicker">Insight &middot; Governance &amp; Minerals</span>
+          <img src="/assets/img/insight-extent-of-the-market-hero.jpg" alt="Line-art scene: fifty-four small identical workshops each containing a complete miniature production line, drawn in a crowded grid; beside them, one large open-sided factory whose production line runs continuously across three separate ground sections divided by dotted border lines.">
+          <span class="kicker">Insight &middot; Green Industrialisation &middot; Africa</span>
         </div>
         <div class="body">
-          <h3>The Permit Is Not the Project</h3>
-          <p>Europe is measuring application-to-decision time. The number that decides whether a plant gets built is decision-to-operation, and nobody publishes it.</p>
+          <h3>The Extent of the Market</h3>
+          <p>The AfCFTA wants two or three cross-border anchor projects rather than fifty-four national strategies. Adam Smith explained why in 1776, and the obstacles are not tariffs.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-factory-and-the-town">
+      <a class="insight-card has-photo" href="/insight-local-content-local-benefit">
         <div class="card-photo">
-          <img src="/assets/img/insight-factory-and-the-town-hero.jpg" alt="Line-art scene: a large steelworks with cooling towers and a blast furnace drawn in outline at the top of the frame, and beneath it, connected by fine radiating lines, a dense town of small buildings so that the works and the town read as one structure.">
-          <span class="kicker">Insight &middot; Just Transition</span>
+          <img src="/assets/img/insight-local-content-local-benefit-hero.jpg" alt="Line-art scene: a mine gate with a single tender box mounted beside it, and three contractor vans queued at the gate each with a bid envelope, while behind the vans a group of workers stands holding wage slips; an arrow runs from the workers' slips toward the bid envelopes.">
+          <span class="kicker">Insight &middot; Green Industrialisation &middot; Africa</span>
         </div>
         <div class="body">
-          <h3>The Factory Cannot Transition Without the Town</h3>
-          <p>Taranto's blast furnaces are being closed by court order. Most of the loss is not unemployment. It is lower wages, permanently, and no retraining course changes that.</p>
+          <h3>Local Content Is Not the Same as Local Benefit</h3>
+          <p>Ghana is transferring mining work to Ghanaian contractors and workers warn wages will fall. Competition among sellers to one buyer transmits the pressure to labour by design.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-when-is-a-mine-green">
+      <a class="insight-card has-photo" href="/insight-no-going-back">
         <div class="card-photo">
-          <img src="/assets/img/insight-when-is-a-mine-green-hero.jpg" alt="Line-art scene: a set of old balance scales, with a wind turbine, a battery and a power line stacked on one pan, and on the other pan a river, a small settlement and a hillside, the two pans hanging almost level, with a label plate on the central column that has been left blank.">
-          <span class="kicker">Insight &middot; Finance &amp; Minerals</span>
+          <img src="/assets/img/insight-no-going-back-hero.jpg" alt="Line-art scene: a wetland drawn in three overlapping states, a faint historical version with reeds and wading birds, a present version with lower water and different vegetation, and a solid future version containing unfamiliar species, with three small groups of figures standing at the edge pointing at different versions.">
+          <span class="kicker">Insight &middot; Agriculture &amp; Ecosystems</span>
         </div>
         <div class="body">
-          <h3>When Is a Mine Green Infrastructure?</h3>
-          <p>Europe is deciding how sustainable finance frameworks should treat critical minerals mining. A classification question that is really a distributional one.</p>
+          <h3>When There Is No Going Back</h3>
+          <p>A €40 million European research programme has opened on novel ecosystems. Once a historical baseline is off the table, restoration is a choice about which future counts.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
