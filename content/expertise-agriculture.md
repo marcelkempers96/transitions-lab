@@ -17,9 +17,9 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-02"><a href="/sdgs#g2"><span class="sdg-icon" role="img" aria-label="SDG 2 Zero Hunger"></span><span class="sdg-name">Smallholder yields and income</span></a></li>
-    <li class="sdg-15"><a href="/sdgs#g15"><span class="sdg-icon" role="img" aria-label="SDG 15 Life on Land"></span><span class="sdg-name">Soil, forest, wetland monitoring</span></a></li>
-    <li class="sdg-14"><a href="/sdgs#g14"><span class="sdg-icon" role="img" aria-label="SDG 14 Life Below Water"></span><span class="sdg-name">Coastal and fisher livelihoods</span></a></li>
+    <li class="sdg-02"><a href="/sdgs#g2"><img class="sdg-icon" src="/assets/img/sdg/sdg-02.svg" alt="SDG 2 Zero Hunger"><span class="sdg-name">Smallholder yields and income</span></a></li>
+    <li class="sdg-15"><a href="/sdgs#g15"><img class="sdg-icon" src="/assets/img/sdg/sdg-15.svg" alt="SDG 15 Life on Land"><span class="sdg-name">Soil, forest, wetland monitoring</span></a></li>
+    <li class="sdg-14"><a href="/sdgs#g14"><img class="sdg-icon" src="/assets/img/sdg/sdg-14.svg" alt="SDG 14 Life Below Water"><span class="sdg-name">Coastal and fisher livelihoods</span></a></li>
   </ul>
 </div>
 

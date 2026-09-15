@@ -15,9 +15,9 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-11"><a href="/sdgs#g11"><span class="sdg-icon" role="img" aria-label="SDG 11 Sustainable Cities and Communities"></span><span class="sdg-name">Cleaner urban mobility, at scale</span></a></li>
-    <li class="sdg-13"><a href="/sdgs#g13"><span class="sdg-icon" role="img" aria-label="SDG 13 Climate Action"></span><span class="sdg-name">Petrol to electric, where it works</span></a></li>
-    <li class="sdg-08"><a href="/sdgs#g8"><span class="sdg-icon" role="img" aria-label="SDG 8 Decent Work and Economic Growth"></span><span class="sdg-name">Rider livelihoods and daily earnings</span></a></li>
+    <li class="sdg-11"><a href="/sdgs#g11"><img class="sdg-icon" src="/assets/img/sdg/sdg-11.svg" alt="SDG 11 Sustainable Cities and Communities"><span class="sdg-name">Cleaner urban mobility, at scale</span></a></li>
+    <li class="sdg-13"><a href="/sdgs#g13"><img class="sdg-icon" src="/assets/img/sdg/sdg-13.svg" alt="SDG 13 Climate Action"><span class="sdg-name">Petrol to electric, where it works</span></a></li>
+    <li class="sdg-08"><a href="/sdgs#g8"><img class="sdg-icon" src="/assets/img/sdg/sdg-08.svg" alt="SDG 8 Decent Work and Economic Growth"><span class="sdg-name">Rider livelihoods and daily earnings</span></a></li>
   </ul>
 </div>
 
