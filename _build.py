@@ -245,15 +245,13 @@ SERVICES = [
 ]
 
 EXPERTISE = [
-    ("expertise", "All expertise"),
+    ("expertise", "All programmes"),
+    ("expertise-manufacturing", "Green Industrialisation & Local Manufacturing"),
     ("expertise-e-mobility", "E-Mobility & Transport"),
-    ("expertise-energy", "Energy Access"),
-    ("expertise-water", "Water & Sanitation"),
-    ("expertise-agriculture", "Regenerative Agriculture"),
-    ("expertise-manufacturing", "Local Manufacturing"),
+    ("expertise-energy", "Energy & Water Systems"),
+    ("expertise-agriculture", "Agriculture & Ecosystems"),
     ("expertise-ai-digital", "AI & Digital"),
     ("expertise-finance", "Financial Inclusion"),
-    ("expertise-climate", "Climate & Ecosystems"),
 ]
 
 LIBRARY = [
@@ -266,8 +264,8 @@ LIBRARY = [
 
 NAV = [
     {"slug": "__about", "label": "About", "dropdown": ABOUT},
-    {"slug": "__services", "label": "Services", "dropdown": SERVICES},
-    {"slug": "__expertise", "label": "Expertise", "dropdown": EXPERTISE},
+    {"slug": "__services", "label": "Work with us", "dropdown": SERVICES},
+    {"slug": "__expertise", "label": "Programmes", "dropdown": EXPERTISE},
     {"slug": "__library", "label": "Reading", "dropdown": LIBRARY},
     {"slug": "contact", "href": "/contact", "label": "Contact", "cta": True},
 ]
@@ -342,7 +340,7 @@ def author_for(slug: str) -> str:
 META: dict[str, dict[str, str]] = {
     "index": {
         "title": "Transitions Lab | Technology Adoption & Transition Research",
-        "description": "Independent research on technology adoption, technology transitions, societal readiness and emerging markets, grounded in applied social science and field research.",
+        "description": "Transitions Lab is an independent research team. We build deep, honest understanding of socio-technical transitions in the places they actually happen, so human values and lived experience shape how technologies arrive.",
     },
     "about": {
         "title": "About | Technology Transition Research | Transitions Lab",
@@ -1266,11 +1264,12 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     </div>
     <div>
       <h4>Research</h4>
-      <a href="/expertise">Expertise</a>
+      <a href="/expertise">Programmes</a>
       <a href="/case-studies">Case studies</a>
       <a href="/articles">Articles</a>
       <a href="/resources">Resources</a>
       <a href="/readiness-levels">TRL &amp; SRL</a>
+      <a href="/sdgs">Research by SDG</a>
     </div>
     <div>
       <h4>The Lab</h4>
@@ -1430,7 +1429,7 @@ def build_home() -> str:
     """
     slug = "index"
     title = "Transitions Lab - Aligning technology with the people it is meant to serve"
-    description = "Transitions Lab is an independent research team. We build deep, honest understanding of socio-technical transitions in emerging markets, so human values and lived experience shape how technologies arrive."
+    description = "Transitions Lab is an independent research team. We build deep, honest understanding of socio-technical transitions in the places they actually happen, so human values and lived experience shape how technologies arrive."
 
     nav_html = render_nav(slug)
     canonical = f"{SITE_URL}/"
@@ -1495,22 +1494,22 @@ def build_home() -> str:
     <div class="section-head reveal">
       <p class="eyebrow" style="color:var(--butter);">Our network</p>
       <h2 style="color:var(--paper);">A global team of researchers, analysts, and field partners.</h2>
-      <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts, and long-standing partners in the places we work.</p>
+      <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts and long-standing partners, in Europe and in the places our cases come from.</p>
     </div>
 
-    <p class="net-expertise-label">What we bring, across sectors</p>
+    <p class="net-expertise-label">Programmes</p>
     <div class="net-expertise-row">
+      <a href="/expertise-manufacturing">Green Industrialisation &amp; Local Manufacturing</a>
       <a href="/expertise-e-mobility">E-Mobility &amp; Transport</a>
-      <a href="/expertise-energy">Energy Access &amp; Off-Grid</a>
-      <a href="/expertise-water">Water &amp; Sanitation</a>
-      <a href="/expertise-agriculture">Regenerative Agriculture</a>
-      <a href="/expertise-manufacturing">Local Manufacturing</a>
+      <a href="/expertise-energy">Energy &amp; Water Systems</a>
+      <a href="/expertise-agriculture">Agriculture &amp; Ecosystems</a>
       <a href="/expertise-ai-digital">AI &amp; Digital</a>
       <a href="/expertise-finance">Financial Inclusion</a>
-      <a href="/expertise-climate">Climate Resilience</a>
     </div>
 
-    <p style="margin-top:36px;"><a href="/expertise" class="btn btn-ghost">See all expertise &rarr;</a></p>
+    <p class="net-expertise-note" style="color:var(--paper);opacity:.85;margin-top:22px;max-width:640px;">Each programme runs in Europe and in the places our cases come from. The questions do not change when the postcode does.</p>
+
+    <p style="margin-top:36px;"><a href="/expertise" class="btn btn-ghost">See all programmes &rarr;</a></p>
   </div>
 </section>
 

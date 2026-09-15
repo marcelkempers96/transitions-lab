@@ -30,8 +30,9 @@ Named so it's easy to point at: "roll back to pre-restructure-2026-08-27".
 
 ---
 
-## `pre-major-change-2026-09-15`
+## `pre-major-change-2026-09-15` — aka **before PROGRAMME CHANGE 15 SEPT**
 
+- **Rollback trigger phrase (Marcel):** "go back to before PROGRAMME CHANGE 15 SEPT"
 - **Commit:** `6da43eb`
 - **Subject:** Five more inline figures across three articles
 - **What is on the site at this point:**
