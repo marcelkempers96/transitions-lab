@@ -53,4 +53,9 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [The Smelter Contract](/insight-the-smelter-contract) on why a US$45 billion compute deal is an anchor-load bargain by any other name, [The Cheaper It Gets to Verify, the Less Anyone Visits](/insight-cheaper-to-verify) on what falls out of view when remote sensing removes the reason to visit, and [When the Agent Pays](/insight-when-the-agent-pays) on the consumer-protection line that agentic payments collapse. See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). To discuss a study, see [Contact](/contact).*
+*Related reading, data centres and digital infrastructure: [The Load That Grows When It Is Hot](/insight-load-that-grows-when-hot) on why cooling-driven data centre demand is not baseload, and [The Smelter Contract](/insight-the-smelter-contract) on why a US$45 billion compute deal is an anchor-load bargain by any other name. Both shared with [Energy & Water Systems](/expertise-energy).*
+
+*Automation and skills displacement: [The Asymmetry Nobody Is Metering](/insight-ai-absorptive-capacity) on absorptive capacity as the missing side of the AI conversation, [Who Does It Fail For?](/insight-who-does-it-fail-for) on the distribution a benchmarked model is deployed into, [When the Agent Pays](/insight-when-the-agent-pays) on the consumer-protection line that agentic payments collapse, and [A Thousand Cars, One Risk](/insight-a-thousand-cars-one-risk) on what changes when a fleet of independent drivers becomes one risk repeated. For the full series, see [Articles](/articles).*
+
+
+*See the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). See also sibling programmes [Energy & Water Systems](/expertise-energy) and [Green Industrialisation & Local Manufacturing](/expertise-manufacturing), and the [Technology & Innovation Dynamics](/innovation-dynamics) theory map. Research by [Sustainable Development Goal](/sdgs). To discuss a study, see [Contact](/contact).*
