@@ -36,6 +36,11 @@ The passenger pays for that with spontaneity. They must decide the night before 
 
 **That is the actual trade, and it is worth naming plainly: instantaneous matching is a premium feature, and most urban transport systems in the world have never offered it.** A bus does not come when you summon it. Neither does a train, a minibus taxi on a fixed route, or a shared taxi that departs when full.
 
+<figure>
+<img src="/assets/img/insight-scheduled-not-summoned-two-days.jpg" alt="Diagram: two horizontal timelines representing a single driver's working day. Upper timeline labelled 'summoned' shows four short sky-blue blocks each containing one passenger figure, separated by long empty white gaps annotated 'waiting or circulating'. Lower timeline labelled 'scheduled' shows four wide coral blocks each containing four passenger figures, separated only by two short empty gaps. Beneath both, a note reads 'same hours, same car'." class="diagram">
+<figcaption>The same driver, the same twelve hours, and a very different day.</figcaption>
+</figure>
+
 ---
 
 ## Why this matters beyond one company

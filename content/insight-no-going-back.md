@@ -26,6 +26,11 @@ Daniel Pauly named the underlying problem in a single page in 1995. Writing abou
 
 The concept has travelled well beyond fisheries because the mechanism is general. What counts as normal for a landscape is anchored to living memory, and living memory is short.
 
+<figure>
+<img src="/assets/img/insight-no-going-back-baseline.jpg" alt="Chart, 'Each generation starts its baseline where it arrived'. A single cobalt line falling gently from upper left in 1900 to lower right in 2026, with three coral dashed markers and dots along the line at three different points, each labelled 'the normal a career began with'. A vertical bracket at the far left spans the full height of the decline, annotated 'the loss nobody experienced'. Footnote: After Pauly (1995). Schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>The line only ever goes down. Each career reads its starting point as the baseline.</figcaption>
+</figure>
+
 Novel ecosystems research inverts the problem rather than solving it. Shifting baselines describe a baseline that slides downward unnoticed. A novel ecosystem is one where the historical baseline is known, is not in dispute, and is simply unreachable, because the temperature, rainfall, species assemblage or hydrology that supported it no longer exist.
 
 **Which removes the thing that made restoration look technical.** A target drawn from history has the enormous political advantage of appearing to be a fact rather than a preference. Once the historical state is off the table, the target has to be chosen, and a chosen target is a policy with winners and losers rather than a scientific finding with a confidence interval.
@@ -45,6 +50,11 @@ A transformed landscape usually has several plausible trajectories, and the diff
 **Maximise continuity of livelihood.** Keeps the grazing, the fishing, the tourism or the cultural practice going in some form, even if the ecology is not what an ecologist would choose.
 
 Those four produce different landscapes. Nothing in the science selects between them, and the selection is currently being made inside research consortia and agency guidance rather than anywhere with a mandate.
+
+<figure>
+<img src="/assets/img/insight-no-going-back-four-futures.jpg" alt="Diagram: a single starting point at the left labelled 'the transformed landscape today', from which four coloured paths diverge to the right. Each ends in a small scene: a dense conifer plantation labelled 'dense plantation — maximum carbon', a mixed wetland with a wading bird labelled 'maximum biodiversity, new species', a small town beside a wide riverbank labelled 'maximum flood attenuation', and a grazed pasture with cattle labelled 'continuity of livelihood'. A fifth dashed grey path runs down and off to a small cross labelled 'the historical state'. Beneath the endpoints: 'nothing in the ecology chooses between these'." class="diagram">
+<figcaption>Four plausible destinations, and nothing in the ecology decides between them.</figcaption>
+</figure>
 
 ---
 

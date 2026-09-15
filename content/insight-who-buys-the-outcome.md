@@ -28,6 +28,11 @@ Carbon stored in soil and biomass. Slower runoff, which reduces flood peaks down
 
 Only one of those has a market. Carbon has a certification framework, a unit, a registry and a buyer, so carbon is what gets paid for, and everything else is delivered free.
 
+<figure>
+<img src="/assets/img/insight-who-buys-the-outcome-six-outputs.jpg" alt="Diagram: a farmer and a tractor at the centre left, on a ground line. Six arrows fan out to icons in thin serif labels: a carbon molecule labelled 'carbon' in coral, a river with reduced flow labelled 'flood attenuation' in sky blue, a water treatment works labelled 'treatment cost avoided' in sky blue, a bird and flower labelled 'biodiversity' in sky blue, a soil profile with seedlings labelled 'the farmer's own resilience' in sky blue, and a small hotel or footpath sign labelled 'amenity' in sky blue. Only the carbon arrow, drawn in coral, has a return line curving back to the farmer with a small coin along it. The other five arrows carry no return." class="diagram">
+<figcaption>Six outputs. One of them has a price. The other five arrive free.</figcaption>
+</figure>
+
 That produces two failures at once, and they pull in opposite directions.
 
 **The farmer is underpaid**, because they are compensated for one of six outputs while bearing the cost of producing all of them. Which is the [distance between the work and the reward](/insight-distance-work-reward) that runs through every payment-for-outcomes scheme.
@@ -53,6 +58,11 @@ Each of them would rationally pay something for the outcome. None of them pays, 
 **And nobody has the mandate to convene it.** Each institution is set up to buy its own inputs, not to co-purchase a shared outcome from a third party.
 
 Read the Buyers Club against that list and its function is clear. It is not a subsidy and it is not a standard. It is an attempt to reduce the transaction cost of a multilateral bargain that everybody would benefit from and nobody can organise.
+
+<figure>
+<img src="/assets/img/insight-who-buys-the-outcome-ring.jpg" alt="Diagram: five institutional buildings arranged in a loose ring, each labelled: water utility, municipality, insurer, food company, housing. In the middle of the ring, a single small farmer standing in a field. From each building a dashed arrow points not at the field but sideways at the next building along, forming a closed circle of deferral. No arrow reaches the centre. Beneath the ring, a note reads 'each would pay if the others did'." class="diagram">
+<figcaption>Everybody is waiting for somebody else, which is what a positive externality looks like from the inside.</figcaption>
+</figure>
 
 ---
 
