@@ -30,6 +30,14 @@ Named so it's easy to point at: "roll back to pre-restructure-2026-08-27".
 
 ---
 
+## `PROGRAMME CHANGE 15 SEPT` — first commit after the change
+
+- **Commit:** `1e2309e` (step 8, SDG page + programme SDG rows)
+- **Delivered:** Nav labels (Programmes, Work with us) · six-item dropdown industrialisation first · homepage meta description and programme row rebuild · /expertise heading and intro rewrite with research-areas lines · two merges (water into energy, climate into agriculture, permanent Vercel redirects) · four title changes · butter research-areas strip and coloured SDG "Contributes to" row on every programme page · /what-we-do renamed to Work with us with ABSORBS → METHODS and a European consortia card · related-reading pass extending each programme's article coverage per file 5 · new /sdgs page with the eleven claimed / six declined index · footer Research column relabelled Programmes and gained a Research by SDG link.
+- **Held over for next pass:** official UN numbered SDG SVGs to drop into `/assets/img/sdg/` (chip markup already in place; will swap on next build without content changes) · article-filter chip taxonomy on /articles is still the older category set (Governance & Minerals, Just Transition, Finance & Minerals are on cards but not chips) · optional homepage hero eyebrow "What a technology does once people live with it" not added · KvK number and PIC on /who-we-serve consortia anchor not added.
+
+---
+
 ## `pre-major-change-2026-09-15` — aka **before PROGRAMME CHANGE 15 SEPT**
 
 - **Rollback trigger phrase (Marcel):** "go back to before PROGRAMME CHANGE 15 SEPT"
