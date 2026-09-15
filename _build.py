@@ -207,6 +207,10 @@ HERO_COLOR: dict[str, str] = {
     "insight-when-is-a-mine-green": "butter",
     "insight-extent-of-the-market": "butter",
     "insight-who-buys-the-outcome": "butter",
+    "insight-no-going-back": "butter",
+    "insight-scheduled-not-summoned": "butter",
+    "insight-first-customer": "butter",
+    "insight-local-content-local-benefit": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -702,6 +706,22 @@ META: dict[str, dict[str, str]] = {
     "insight-who-buys-the-outcome": {
         "title": "Who Buys the Outcome? | Transitions Lab",
         "description": "The Commission's carbon farming buyers club identifies the right problem. A farmer produces six outputs, one has a price, and the other five beneficiaries are not on the invoice.",
+    },
+    "insight-no-going-back": {
+        "title": "When There Is No Going Back | Transitions Lab",
+        "description": "A €40 million European research programme has opened on novel ecosystems. Once a historical baseline is off the table, restoration becomes a choice about which future counts.",
+    },
+    "insight-scheduled-not-summoned": {
+        "title": "Scheduled, Not Summoned | Transitions Lab",
+        "description": "A Lagos operator is halving mobility fares by scheduling passengers rather than summoning them. It removed the most expensive feature in urban mobility, which is spontaneity.",
+    },
+    "insight-first-customer": {
+        "title": "Nobody Wants to Be the First Customer | Transitions Lab",
+        "description": "Europe is reforming procurement to weight quality, resilience and supply chains against price. The gap is real. The first buyer pays for everybody else, and lowest-price tendering makes it worse.",
+    },
+    "insight-local-content-local-benefit": {
+        "title": "Local Content Is Not the Same as Local Benefit | Transitions Lab",
+        "description": "Ghana is transferring mining work to Ghanaian contractors and workers warn wages will fall. Competition among sellers to one buyer transmits the pressure to labour by design.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
