@@ -169,13 +169,12 @@ For the full series across every research area, see [Articles](/articles).
 </div>
 
 <div class="contact-cta-programme">
-  <span class="cta-eyebrow">Contact us today</span>
   <h3>Independent evidence on agriculture and ecosystems.</h3>
   <p class="lede">If you are designing a scheme, technology or verification framework that lands on the people at the end of the food and ecosystem chain, tell us the decision you are facing.</p>
   <div class="contact-options">
-    <div><strong>Enter a new context</strong><span>Market entry &amp; adoption</span></div>
-    <div><strong>Measure change</strong><span>Reach, depth, outcomes</span></div>
-    <div><strong>Report to funders</strong><span>Baseline through endline</span></div>
+    <a href="/entering-a-new-context"><strong>Enter a new context</strong><span>Market entry &amp; adoption</span></a>
+    <a href="/measuring-change"><strong>Measure change</strong><span>Reach, depth, outcomes</span></a>
+    <a href="/reporting-to-funders"><strong>Report to funders</strong><span>Baseline through endline</span></a>
   </div>
   <div class="cta-actions">
     <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>

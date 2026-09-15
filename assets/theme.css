@@ -1268,58 +1268,60 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 .prose .programme-footer .footer-links a:hover{background:var(--butter);}
 
 .prose .contact-cta-programme{
-  margin:12px 0 8px;padding:34px 32px 30px;
-  background:var(--ink);color:var(--paper);
+  margin:12px 0 8px;padding:36px 34px 32px;
+  background:#CFE1EE;color:var(--ink);
   border:2px solid var(--ink);
-}
-.prose .contact-cta-programme .cta-eyebrow{
-  display:block;font-family:'Hanken Grotesk',sans-serif;
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-  font-weight:800;color:var(--butter);margin:0 0 10px;
+  box-shadow:6px 6px 0 var(--ink);
 }
 .prose .contact-cta-programme h3{
-  font-size:26px;font-weight:800;letter-spacing:-.01em;
-  color:var(--paper);margin:0 0 8px;
+  font-size:28px;font-weight:800;letter-spacing:-.01em;
+  color:var(--ink);margin:0 0 10px;line-height:1.15;
 }
 .prose .contact-cta-programme .lede{
-  font-size:15px;line-height:1.5;color:var(--paper);opacity:.9;
-  margin:0 0 22px;
+  font-size:15.5px;line-height:1.55;color:var(--ink);opacity:.82;
+  margin:0 0 24px;
 }
 .prose .contact-cta-programme .contact-options{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:14px;margin:0 0 26px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;margin:0 0 28px;
 }
-.prose .contact-cta-programme .contact-options > div{
-  padding:14px 16px;background:rgba(245,237,221,0.08);
-  border:1.5px solid rgba(245,237,221,0.28);
+.prose .contact-cta-programme .contact-options a{
+  display:block;padding:16px 18px;
+  background:var(--white);color:var(--ink);
+  border:2px solid var(--ink);text-decoration:none;
+  transition:background .12s ease, transform .12s ease, box-shadow .12s ease;
+}
+.prose .contact-cta-programme .contact-options a:hover{
+  background:var(--butter);transform:translate(-2px,-2px);
+  box-shadow:4px 4px 0 var(--ink);
 }
 .prose .contact-cta-programme .contact-options strong{
-  display:block;font-size:14px;font-weight:800;color:var(--paper);
+  display:block;font-size:15px;font-weight:800;color:var(--ink);
   letter-spacing:-.005em;margin-bottom:4px;
 }
 .prose .contact-cta-programme .contact-options span{
-  display:block;font-size:12.5px;line-height:1.35;
-  color:var(--paper);opacity:.72;
+  display:block;font-size:13px;line-height:1.35;
+  color:var(--ink);opacity:.7;
 }
 .prose .contact-cta-programme .cta-actions{display:flex;flex-wrap:wrap;gap:12px;}
 .prose .contact-cta-programme .cta-actions a{
   display:inline-block;padding:12px 22px;
   font-family:'Hanken Grotesk',sans-serif;
   font-size:14px;font-weight:800;letter-spacing:.01em;
-  text-decoration:none;border:2px solid var(--paper);
+  text-decoration:none;border:2px solid var(--ink);
   transition:background .12s ease, color .12s ease;
 }
 .prose .contact-cta-programme .cta-actions .cta-primary{
-  background:var(--paper);color:var(--ink);
+  background:var(--ink);color:var(--paper);
 }
 .prose .contact-cta-programme .cta-actions .cta-primary:hover{
-  background:var(--butter);
+  background:var(--cobalt);color:var(--paper);
 }
 .prose .contact-cta-programme .cta-actions .cta-secondary{
-  background:transparent;color:var(--paper);
+  background:transparent;color:var(--ink);
 }
 .prose .contact-cta-programme .cta-actions .cta-secondary:hover{
-  background:rgba(245,237,221,0.14);
+  background:var(--white);
 }
 
 /* Ethics/consent standards box: neutral paper ground, highlighted
