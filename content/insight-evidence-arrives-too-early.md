@@ -75,6 +75,11 @@ Climate services are largely built to answer the question a scientist finds inte
 
 **Honesty about what is not attributable.** A single dry summer is weather. The institution has to act anyway, and a climate service that will only speak about thirty-year trends leaves the decision-maker to improvise the connection themselves.
 
+<figure>
+<img src="/assets/img/insight-evidence-arrives-too-early-two-clocks.jpg" alt="Chart, 'The decision and the evidence run on different clocks'. A single horizontal timeline with four marked points and small scenes above: permit decision (document with seal), construction (crane), operation (plant), measured outcome (wetland with wading bird). Beneath the timeline, two horizontal bars: a short coral bar labelled 'evidence available for decision' stops at the permit decision point; a much longer sky-blue bar labelled 'evidence available for outcome' extends all the way to the measured outcome point. A bracket between the two ends is annotated 'what must be assumed'. Footnote: Schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>The interval between the two bars is what the decision-maker fills in from somewhere.</figcaption>
+</figure>
+
 ---
 
 ## What would be worth measuring

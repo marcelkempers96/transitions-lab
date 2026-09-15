@@ -30,6 +30,11 @@ Now put that against African market sizes. Very few individual African economies
 
 **Which is why fifty-four national battery strategies produce fifty-four sub-scale plants, and a single regional chain could produce one of each at scale.**
 
+<figure>
+<img src="/assets/img/insight-extent-of-the-market-scale-curve.jpg" alt="Chart, 'Scale changes the market'. A single descending unit-cost curve falls steeply from upper left and flattens to the right. Three points sit on it: a green 'local' dot high on the steep part, a sky-blue 'regional' dot lower and to the right, and a coral 'cross-border' dot on the flat tail. A short striped barrier is drawn on the axis between regional and cross-border. Beneath: 'the market is not the map; it is the reachable demand.'" class="diagram">
+<figcaption>The same curve, three different points on it. Only the last one clears efficient scale.</figcaption>
+</figure>
+
 The specific version under discussion runs from Congolese minerals through Zambian processing, on regional power, into regional manufacturing, selling into an AfCFTA-wide market. No single country does everything. Each does one stage at a size that works.
 
 That is the correct diagnosis, and it has been the correct diagnosis for a long time, which raises the obvious question of why it has not happened.
@@ -41,6 +46,11 @@ That is the correct diagnosis, and it has been the correct diagnosis for a long 
 The obstacles are not the ones usually listed, and tariffs are among the least of them.
 
 **Every link becomes a border risk.** A Zambian precursor plant whose feedstock comes from Congo has made its production schedule dependent on a customs post. We have argued that [variance rather than level is what forecloses specialisation](/insight-behind-the-border): a firm does not plan around an average clearance time, it holds inventory against the worst case, and the working capital tied up in that buffer is the real cost of the border.
+
+<figure>
+<img src="/assets/img/insight-extent-of-the-market-borders.jpg" alt="Diagram, 'Every border adds an inventory decision'. A horizontal chain of five icons connected by arrows: a factory, a warehouse of pallets, a customs booth with a striped barrier, a second warehouse of pallets, and a small shop. A bracket runs across the whole chain labelled 'working capital tied up'." class="diagram">
+<figcaption>The border does not stop the goods. It adds a warehouse.</figcaption>
+</figure>
 
 **Somebody has to be first, and asymmetrically exposed.** In a chain, the processing plant cannot operate without the upstream supply, and the upstream expansion is not worth financing without the downstream buyer. Each waits for the other, and the wait is rational for both. An anchor project is precisely an attempt to break that, which is why doing two or three rather than fifty-four is the point.
 

@@ -60,9 +60,19 @@ Here is the practical version of the same point, and it is measurable.
 
 Permitting reform is assessed against a specific statistic: the elapsed time from application to decision. That number is published, it is comparable across jurisdictions, it is what industry associations cite, and it is what a reform is designed to reduce.
 
+<figure>
+<img src="/assets/img/insight-permit-is-not-the-project-two-clocks.jpg" alt="Diagram: two clocks side by side. On the left, a sage-green clock labelled 'administrative time' with a permit document beneath it. On the right, a sky-blue clock labelled 'project time' with a factory beneath it. A dashed arrow runs between them annotated 'not the same clock'." class="diagram">
+<figcaption>Two clocks, one file. Reform is optimising the left one.</figcaption>
+</figure>
+
 The number that determines whether a country gets a mine is different. It is the time from decision to operation, and it contains things the first number excludes: judicial review, appeal, injunction, protest, renegotiation with a municipality, a condition imposed late because it was not imposed early, and the construction delay that follows from any of them.
 
 **A permitting process that is fast and contested can produce a slower project than one that is slow and accepted.**
+
+<figure>
+<img src="/assets/img/insight-permit-is-not-the-project-delay-stages.jpg" alt="Chart, 'Delay accumulates after approval'. A horizontal stacked bar starts at a 'permit granted' marker and runs to the right, divided into five segments each labelled with a small scene above: finance (coin stack), land (field), procurement (warehouse), grid connection (pylon), construction (crane and building). A bracket beneath the whole bar reads 'time before the project exists'. Footnote: Stage lengths are schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>The permit clock stops here. The project clock has not yet begun.</figcaption>
+</figure>
 
 That is not a hypothesis about the future. It is the ordinary history of contested infrastructure, and the mechanism is simple. Objections that cannot be raised during a process are raised after it, in a forum with less flexibility and more delay. A consultation is cheap. A judicial review is not.
 
