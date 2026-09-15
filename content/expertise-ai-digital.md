@@ -7,8 +7,8 @@
 <div class="research-areas-panel">
   <span class="ra-label">Research areas</span>
   <ul>
-    <li>Data centres and digital infrastructure</li>
-    <li>Automation and skills displacement</li>
+    <li><a href="#ra-data-centres">Data centres and digital infrastructure</a></li>
+    <li><a href="#ra-automation">Automation and skills displacement</a></li>
   </ul>
 </div>
 
@@ -26,9 +26,9 @@ AI is the newest transition the Lab studies, and the one where its posture, soci
 
 ## Inside the programme
 
-<span class="ra-name">Data centres and digital infrastructure</span> asks the physical siting question that a policy conversation about AI usually skips. Where the load lands, whose grid firms it, whose water cools it, and whether the anchor-tenant contract that pays for it looks anything like a supply arrangement other industrial users can access. The Lab treats a data centre the same way it treats a smelter: a large industrial customer arriving in a place, with the same distributional consequences to read.
+<span class="ra-name" id="ra-data-centres">Data centres and digital infrastructure</span> asks the physical siting question that a policy conversation about AI usually skips. Where the load lands, whose grid firms it, whose water cools it, and whether the anchor-tenant contract that pays for it looks anything like a supply arrangement other industrial users can access. The Lab treats a data centre the same way it treats a smelter: a large industrial customer arriving in a place, with the same distributional consequences to read.
 
-<span class="ra-name">Automation and skills displacement</span> asks what happens on the ground when a benchmarked model is deployed into a distribution the benchmark did not sample. The Lab looks at absorptive capacity, at where the model fails and for whom, and at the ordinary consumer-protection categories that agentic systems quietly collapse. The unit of study is the person on the other side of the decision.
+<span class="ra-name" id="ra-automation">Automation and skills displacement</span> asks what happens on the ground when a benchmarked model is deployed into a distribution the benchmark did not sample. The Lab looks at absorptive capacity, at where the model fails and for whom, and at the ordinary consumer-protection categories that agentic systems quietly collapse. The unit of study is the person on the other side of the decision.
 
 ---
 

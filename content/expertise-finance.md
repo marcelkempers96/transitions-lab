@@ -7,8 +7,8 @@
 <div class="research-areas-panel">
   <span class="ra-label">Research areas</span>
   <ul>
-    <li>Asset finance and default risk</li>
-    <li>Who gets included and who does not</li>
+    <li><a href="#ra-asset-finance">Asset finance and default risk</a></li>
+    <li><a href="#ra-inclusion">Who gets included and who does not</a></li>
   </ul>
 </div>
 
@@ -27,9 +27,9 @@ Financial inclusion quietly determines the fate of the others. An electric motor
 
 ## Inside the programme
 
-<span class="ra-name">Asset finance and default risk</span> is about matching the instrument to the shape of the cash flow. Working capital for a season, hire-purchase for a decade, project finance for a plant: each has its own tenor, security and covenant, and a mismatch between the instrument and the underlying economics is one of the most reliable predictors of a project stalling. The Lab studies which instruments carry a transition and which quietly transfer the risk to the party least able to bear it.
+<span class="ra-name" id="ra-asset-finance">Asset finance and default risk</span> is about matching the instrument to the shape of the cash flow. Working capital for a season, hire-purchase for a decade, project finance for a plant: each has its own tenor, security and covenant, and a mismatch between the instrument and the underlying economics is one of the most reliable predictors of a project stalling. The Lab studies which instruments carry a transition and which quietly transfer the risk to the party least able to bear it.
 
-<span class="ra-name">Who gets included and who does not</span> is the distributional companion to the first. A payment rail can bring millions of previously unbanked users into digital finance and still stop at the point where the most excluded live. The Lab documents who is reached, who stays outside, and how the friction of fees or the shape of a scoring model decides whether inclusion is a real change or an accounting one.
+<span class="ra-name" id="ra-inclusion">Who gets included and who does not</span> is the distributional companion to the first. A payment rail can bring millions of previously unbanked users into digital finance and still stop at the point where the most excluded live. The Lab documents who is reached, who stays outside, and how the friction of fees or the shape of a scoring model decides whether inclusion is a real change or an accounting one.
 
 ---
 

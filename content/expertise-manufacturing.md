@@ -7,9 +7,9 @@
 <div class="research-areas-panel">
   <span class="ra-label">Research areas</span>
   <ul>
-    <li>Critical raw materials and processing</li>
-    <li>Circular economy and e-waste</li>
-    <li>Assembly, suppliers and workforce capability</li>
+    <li><a href="#ra-crm">Critical raw materials and processing</a></li>
+    <li><a href="#ra-circular">Circular economy and e-waste</a></li>
+    <li><a href="#ra-assembly">Assembly, suppliers and workforce capability</a></li>
   </ul>
 </div>
 
@@ -26,11 +26,11 @@
 
 ## Inside the programme
 
-<span class="ra-name">Critical raw materials and processing</span> is where the transition's material bill actually gets paid. The Lab studies who negotiates the extraction, who runs the refinery, and what share of the resulting value stays in the country the ore came from. Ownership of the geological survey, the terms of the offtake, and the workforce that operates the plant are all parts of the same distributional question.
+<span class="ra-name" id="ra-crm">Critical raw materials and processing</span> is where the transition's material bill actually gets paid. The Lab studies who negotiates the extraction, who runs the refinery, and what share of the resulting value stays in the country the ore came from. Ownership of the geological survey, the terms of the offtake, and the workforce that operates the plant are all parts of the same distributional question.
 
-<span class="ra-name">Circular economy and e-waste</span> is the other half of the same chain. Secondary materials and second-life equipment are cheaper, less carbon-intensive and structurally awkward to qualify. The Lab looks at whether recycled and reused streams reach the customers that would use them, how end-of-life claims are verified, and where a promise of a circular chain quietly reverts to a linear one.
+<span class="ra-name" id="ra-circular">Circular economy and e-waste</span> is the other half of the same chain. Secondary materials and second-life equipment are cheaper, less carbon-intensive and structurally awkward to qualify. The Lab looks at whether recycled and reused streams reach the customers that would use them, how end-of-life claims are verified, and where a promise of a circular chain quietly reverts to a linear one.
 
-<span class="ra-name">Assembly, suppliers and workforce capability</span> asks whether the plant a policy assumes will actually be there in five years. Capability accumulates over decades, disperses in a few, and is not recoverable on the same timescale. The Lab documents which supplier ecosystems form around a new line, which do not, and what the wage and skills trajectory of the people on that line looks like against the plans that were made for them.
+<span class="ra-name" id="ra-assembly">Assembly, suppliers and workforce capability</span> asks whether the plant a policy assumes will actually be there in five years. Capability accumulates over decades, disperses in a few, and is not recoverable on the same timescale. The Lab documents which supplier ecosystems form around a new line, which do not, and what the wage and skills trajectory of the people on that line looks like against the plans that were made for them.
 
 ---
 

@@ -7,9 +7,9 @@
 <div class="research-areas-panel">
   <span class="ra-label">Research areas</span>
   <ul>
-    <li>Mini-grids and off-grid supply</li>
-    <li>Renewables, storage and grid integration</li>
-    <li>Water delivery, vendors and payment</li>
+    <li><a href="#ra-mini-grids">Mini-grids and off-grid supply</a></li>
+    <li><a href="#ra-grid">Renewables, storage and grid integration</a></li>
+    <li><a href="#ra-water">Water delivery, vendors and payment</a></li>
   </ul>
 </div>
 
@@ -28,11 +28,11 @@ Energy and water are the two systems everything else in a transition rests on. T
 
 ## Inside the programme
 
-<span class="ra-name">Mini-grids and off-grid supply</span> is the research area closest to the Lab's earliest energy fieldwork. A pay-as-you-go connection is a mini-utility with a repayment schedule, and its success depends on affordability at a household's real income, reliability that people plan against, and after-sales that outlives the founder. The Lab looks at what actually keeps a household paying, and who sits at the very end of the access curve when everybody else has moved on.
+<span class="ra-name" id="ra-mini-grids">Mini-grids and off-grid supply</span> is the research area closest to the Lab's earliest energy fieldwork. A pay-as-you-go connection is a mini-utility with a repayment schedule, and its success depends on affordability at a household's real income, reliability that people plan against, and after-sales that outlives the founder. The Lab looks at what actually keeps a household paying, and who sits at the very end of the access curve when everybody else has moved on.
 
-<span class="ra-name">Renewables, storage and grid integration</span> is where the same programme meets the grid that already exists. Curtailment, storage siting, coincident peak, and the anchor-tenant contracts that decide who firms the system: none of these are engineering questions in the strict sense. Each is a decision about who bears the cost of a shared piece of infrastructure, and the Lab reads them through the utility, the developer, the industrial buyer, and the residential customer at once.
+<span class="ra-name" id="ra-grid">Renewables, storage and grid integration</span> is where the same programme meets the grid that already exists. Curtailment, storage siting, coincident peak, and the anchor-tenant contracts that decide who firms the system: none of these are engineering questions in the strict sense. Each is a decision about who bears the cost of a shared piece of infrastructure, and the Lab reads them through the utility, the developer, the industrial buyer, and the residential customer at once.
 
-<span class="ra-name">Water delivery, vendors and payment</span> is the other half of the same argument, at a different tap. Kiosks, meters, vending points and household connections are all payment interfaces layered over a delivery system that has to be trusted before it is used. The Lab studies transboundary and drought-stressed catchments alongside the peri-urban vendor markets where the affordability question is at its sharpest.
+<span class="ra-name" id="ra-water">Water delivery, vendors and payment</span> is the other half of the same argument, at a different tap. Kiosks, meters, vending points and household connections are all payment interfaces layered over a delivery system that has to be trusted before it is used. The Lab studies transboundary and drought-stressed catchments alongside the peri-urban vendor markets where the affordability question is at its sharpest.
 
 Water is where the Lab's roots run deepest: based in Delft, a global centre of water research, we pair genuine technical understanding of water systems with the field methods to study how they actually serve people.
 

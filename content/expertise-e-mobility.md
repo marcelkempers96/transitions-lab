@@ -7,8 +7,8 @@
 <div class="research-areas-panel">
   <span class="ra-label">Research areas</span>
   <ul>
-    <li>Rider and operator economics</li>
-    <li>Batteries, charging and swap infrastructure</li>
+    <li><a href="#ra-riders">Rider and operator economics</a></li>
+    <li><a href="#ra-batteries">Batteries, charging and swap infrastructure</a></li>
   </ul>
 </div>
 
@@ -28,9 +28,9 @@
 
 ## Inside the programme
 
-<span class="ra-name">Rider and operator economics</span> starts from the daily cash-flow arithmetic of the people doing the work. A boda-boda rider, a matatu operator, a scheduled-shuttle driver: what does the vehicle earn today, net of fuel or charging, financing and maintenance, and how many hours of the day is it certain to be earning at all. The Lab studies the load factor, the fare, and the point at which a switch from petrol to electric stops being a policy question and becomes a decision the rider makes for themselves.
+<span class="ra-name" id="ra-riders">Rider and operator economics</span> starts from the daily cash-flow arithmetic of the people doing the work. A boda-boda rider, a matatu operator, a scheduled-shuttle driver: what does the vehicle earn today, net of fuel or charging, financing and maintenance, and how many hours of the day is it certain to be earning at all. The Lab studies the load factor, the fare, and the point at which a switch from petrol to electric stops being a policy question and becomes a decision the rider makes for themselves.
 
-<span class="ra-name">Batteries, charging and swap infrastructure</span> is the physical system that decides whether the switch holds. Home charging, swap networks, standards and after-sales all sit inside a single question about make-or-buy and where the risk parks overnight. The Lab looks at how a swap network's density, uptime and pricing behave once a fleet is depending on it, who sets the standard, and who is included in the resulting network.
+<span class="ra-name" id="ra-batteries">Batteries, charging and swap infrastructure</span> is the physical system that decides whether the switch holds. Home charging, swap networks, standards and after-sales all sit inside a single question about make-or-buy and where the risk parks overnight. The Lab looks at how a swap network's density, uptime and pricing behave once a fleet is depending on it, who sets the standard, and who is included in the resulting network.
 
 ---
 

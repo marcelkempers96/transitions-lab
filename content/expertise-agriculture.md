@@ -7,10 +7,10 @@
 <div class="research-areas-panel">
   <span class="ra-label">Research areas</span>
   <ul>
-    <li>Waste-to-value and soil restoration</li>
-    <li>On-farm technology adoption</li>
-    <li>Coastal and marine monitoring</li>
-    <li>Carbon and biodiversity verification</li>
+    <li><a href="#ra-waste-value">Waste-to-value and soil restoration</a></li>
+    <li><a href="#ra-on-farm">On-farm technology adoption</a></li>
+    <li><a href="#ra-coastal">Coastal and marine monitoring</a></li>
+    <li><a href="#ra-verification">Carbon and biodiversity verification</a></li>
   </ul>
 </div>
 
@@ -32,13 +32,13 @@ A farmer and a fisher have more in common than a policy framework usually admits
 
 ## Inside the programme
 
-<span class="ra-name">Waste-to-value and soil restoration</span> asks whether a technology that turns crop waste or degraded land into a productive resource actually reaches the smallholder it was designed for. Biochar, composting and cover-cropping have all been trialled repeatedly; the Lab studies which benefit (fuel, soil, income or carbon) actually moves a farmer to adopt, and how uptake looks by crop, season and household.
+<span class="ra-name" id="ra-waste-value">Waste-to-value and soil restoration</span> asks whether a technology that turns crop waste or degraded land into a productive resource actually reaches the smallholder it was designed for. Biochar, composting and cover-cropping have all been trialled repeatedly; the Lab studies which benefit (fuel, soil, income or carbon) actually moves a farmer to adopt, and how uptake looks by crop, season and household.
 
-<span class="ra-name">On-farm technology adoption</span> is the wider research area behind the specific waste-to-value case. From irrigation to sensors to advisory apps, the failure mode is usually not the tool itself but the fit with the farmer's own working day, the availability of finance and repair, and the incumbent practice already in the field. The Lab tests uptake against the alternative that already works.
+<span class="ra-name" id="ra-on-farm">On-farm technology adoption</span> is the wider research area behind the specific waste-to-value case. From irrigation to sensors to advisory apps, the failure mode is usually not the tool itself but the fit with the farmer's own working day, the availability of finance and repair, and the incumbent practice already in the field. The Lab tests uptake against the alternative that already works.
 
-<span class="ra-name">Coastal and marine monitoring</span> extends the same logic offshore. Community rangers, satellite feeds, sensors and citizen science all layer over each other on the same reef or fishery, and the Lab looks at whether the layers braid into one trusted picture or contradict each other. The [Reef Support case study](/case-reef-support) is the worked example.
+<span class="ra-name" id="ra-coastal">Coastal and marine monitoring</span> extends the same logic offshore. Community rangers, satellite feeds, sensors and citizen science all layer over each other on the same reef or fishery, and the Lab looks at whether the layers braid into one trusted picture or contradict each other. The [Reef Support case study](/case-reef-support) is the worked example.
 
-<span class="ra-name">Carbon and biodiversity verification</span> is where the measurement question meets the payment. Whether an outcome is trusted enough to change behaviour depends on who verified it and who the beneficiary is, and the Lab documents the gap between a measurement designed for a market and one designed for the community that lives with the landscape.
+<span class="ra-name" id="ra-verification">Carbon and biodiversity verification</span> is where the measurement question meets the payment. Whether an outcome is trusted enough to change behaviour depends on who verified it and who the beneficiary is, and the Lab documents the gap between a measurement designed for a market and one designed for the community that lives with the landscape.
 
 ---
 
