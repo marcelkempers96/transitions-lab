@@ -16,9 +16,9 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-09"><a href="/sdgs#g9"><img class="sdg-icon" src="/assets/img/sdg/sdg-09.svg" alt="SDG 9 Industry, Innovation and Infrastructure"><span class="sdg-name">Building productive capacity where used</span></a></li>
-    <li class="sdg-08"><a href="/sdgs#g8"><img class="sdg-icon" src="/assets/img/sdg/sdg-08.svg" alt="SDG 8 Decent Work and Economic Growth"><span class="sdg-name">Wages that survive the transition</span></a></li>
-    <li class="sdg-12"><a href="/sdgs#g12"><img class="sdg-icon" src="/assets/img/sdg/sdg-12.svg" alt="SDG 12 Responsible Consumption and Production"><span class="sdg-name">Circular chains, secondary materials</span></a></li>
+    <li class="sdg-09"><a href="/sdgs#g9"><span class="sdg-num">9</span><span class="sdg-name"><span class="sdg-goal-title">Goal 9: Industry, Innovation and Infrastructure</span><span class="sdg-tailored">Building productive capacity where used</span></span></a></li>
+    <li class="sdg-08"><a href="/sdgs#g8"><span class="sdg-num">8</span><span class="sdg-name"><span class="sdg-goal-title">Goal 8: Decent Work and Economic Growth</span><span class="sdg-tailored">Wages that survive the transition</span></span></a></li>
+    <li class="sdg-12"><a href="/sdgs#g12"><span class="sdg-num">12</span><span class="sdg-name"><span class="sdg-goal-title">Goal 12: Responsible Consumption and Production</span><span class="sdg-tailored">Circular chains, secondary materials</span></span></a></li>
   </ul>
 </div>
 

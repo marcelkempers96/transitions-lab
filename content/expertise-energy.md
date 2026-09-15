@@ -16,9 +16,9 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-07"><a href="/sdgs#g7"><img class="sdg-icon" src="/assets/img/sdg/sdg-07.svg" alt="SDG 7 Affordable and Clean Energy"><span class="sdg-name">Reaching the last mile fairly</span></a></li>
-    <li class="sdg-06"><a href="/sdgs#g6"><img class="sdg-icon" src="/assets/img/sdg/sdg-06.svg" alt="SDG 6 Clean Water and Sanitation"><span class="sdg-name">Water access that is trusted</span></a></li>
-    <li class="sdg-11"><a href="/sdgs#g11"><img class="sdg-icon" src="/assets/img/sdg/sdg-11.svg" alt="SDG 11 Sustainable Cities and Communities"><span class="sdg-name">Grid integration on the ground</span></a></li>
+    <li class="sdg-07"><a href="/sdgs#g7"><span class="sdg-num">7</span><span class="sdg-name"><span class="sdg-goal-title">Goal 7: Affordable and Clean Energy</span><span class="sdg-tailored">Reaching the last mile fairly</span></span></a></li>
+    <li class="sdg-06"><a href="/sdgs#g6"><span class="sdg-num">6</span><span class="sdg-name"><span class="sdg-goal-title">Goal 6: Clean Water and Sanitation</span><span class="sdg-tailored">Water access that is trusted</span></span></a></li>
+    <li class="sdg-11"><a href="/sdgs#g11"><span class="sdg-num">11</span><span class="sdg-name"><span class="sdg-goal-title">Goal 11: Sustainable Cities and Communities</span><span class="sdg-tailored">Grid integration on the ground</span></span></a></li>
   </ul>
 </div>
 

@@ -1381,25 +1381,67 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   min-height:88px;transition:transform .12s ease;
 }
 .prose .sdg-row a:hover{transform:translate(-2px,-2px);}
-.prose .sdg-row .sdg-icon{
-  display:block;width:88px;height:88px;flex-shrink:0;
+.prose .sdg-row .sdg-num{
+  display:flex;align-items:center;justify-content:center;
+  width:88px;flex-shrink:0;
   border-right:2px solid var(--ink);
-  object-fit:cover;object-position:center;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-weight:900;font-size:38px;color:#fff;letter-spacing:-.03em;
 }
 .prose .sdg-row .sdg-name{
-  padding:12px 16px;display:flex;align-items:center;
-  font-size:14px;line-height:1.28;font-weight:700;
-  max-width:240px;color:var(--ink);
+  padding:12px 18px;display:flex;flex-direction:column;justify-content:center;
+  max-width:260px;color:var(--ink);
+}
+.prose .sdg-row .sdg-goal-title{
+  display:block;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;line-height:1.25;font-weight:700;
+  letter-spacing:.02em;color:var(--ink);opacity:.6;
+  margin-bottom:4px;
+}
+.prose .sdg-row .sdg-tailored{
+  display:block;
+  font-size:14.5px;line-height:1.28;font-weight:800;
+  letter-spacing:-.005em;color:var(--ink);
 }
 @media(max-width:640px){
-  .prose .sdg-row .sdg-icon{width:76px;height:76px;}
-  .prose .sdg-row .sdg-name{font-size:13px;max-width:200px;padding:10px 14px;}
+  .prose .sdg-row .sdg-num{width:76px;font-size:32px;}
+  .prose .sdg-row .sdg-name{max-width:210px;padding:10px 14px;}
+  .prose .sdg-row .sdg-tailored{font-size:13.5px;}
+  .prose .sdg-row .sdg-goal-title{font-size:10.5px;}
 }
 
-/* Larger presentation on /sdgs itself */
-.prose .sdg-index .sdg-row a{min-height:120px;}
-.prose .sdg-index .sdg-row .sdg-icon{width:120px;height:120px;}
-.prose .sdg-index .sdg-row .sdg-name{font-size:15px;max-width:300px;padding:16px 20px;}
+/* Larger presentation on /sdgs itself. There the right rectangle
+   just carries the official goal name at bigger scale — no tailored
+   line is needed because the paragraph beneath already describes
+   which programmes contribute to it. */
+.prose .sdg-index .sdg-row a{min-height:110px;}
+.prose .sdg-index .sdg-row .sdg-num{width:110px;font-size:52px;}
+.prose .sdg-index .sdg-row .sdg-name{
+  padding:16px 22px;font-size:16px;font-weight:800;
+  max-width:320px;
+}
+.prose .sdg-index .sdg-row .sdg-tailored{font-size:16px;}
+.prose .sdg-index .sdg-row .sdg-goal-title{display:none;}
+
+/* Official SDG brand colours on the numbered tile. */
+.sdg-01 .sdg-num{background:#E5243B;}
+.sdg-02 .sdg-num{background:#DDA63A;}
+.sdg-03 .sdg-num{background:#4C9F38;}
+.sdg-04 .sdg-num{background:#C5192D;}
+.sdg-05 .sdg-num{background:#FF3A21;}
+.sdg-06 .sdg-num{background:#26BDE2;}
+.sdg-07 .sdg-num{background:#FCC30B;color:#1a1a1a;}
+.sdg-08 .sdg-num{background:#A21942;}
+.sdg-09 .sdg-num{background:#FD6925;}
+.sdg-10 .sdg-num{background:#DD1367;}
+.sdg-11 .sdg-num{background:#FD9D24;}
+.sdg-12 .sdg-num{background:#BF8B2E;}
+.sdg-13 .sdg-num{background:#3F7E44;}
+.sdg-14 .sdg-num{background:#0A97D9;}
+.sdg-15 .sdg-num{background:#56C02B;}
+.sdg-16 .sdg-num{background:#00689D;}
+.sdg-17 .sdg-num{background:#19486A;}
 .prose ul.expertise-list .arrow{
   position:absolute;top:24px;right:26px;
   font-size:26px;font-weight:800;color:var(--ink);line-height:1;

@@ -15,8 +15,8 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-09"><a href="/sdgs#g9"><img class="sdg-icon" src="/assets/img/sdg/sdg-09.svg" alt="SDG 9 Industry, Innovation and Infrastructure"><span class="sdg-name">Compute infrastructure siting and load</span></a></li>
-    <li class="sdg-10"><a href="/sdgs#g10"><img class="sdg-icon" src="/assets/img/sdg/sdg-10.svg" alt="SDG 10 Reduced Inequalities"><span class="sdg-name">Who a deployed system fails</span></a></li>
+    <li class="sdg-09"><a href="/sdgs#g9"><span class="sdg-num">9</span><span class="sdg-name"><span class="sdg-goal-title">Goal 9: Industry, Innovation and Infrastructure</span><span class="sdg-tailored">Compute infrastructure siting and load</span></span></a></li>
+    <li class="sdg-10"><a href="/sdgs#g10"><span class="sdg-num">10</span><span class="sdg-name"><span class="sdg-goal-title">Goal 10: Reduced Inequalities</span><span class="sdg-tailored">Who a deployed system fails</span></span></a></li>
   </ul>
 </div>
 

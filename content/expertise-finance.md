@@ -15,9 +15,9 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-01"><a href="/sdgs#g1"><img class="sdg-icon" src="/assets/img/sdg/sdg-01.svg" alt="SDG 1 No Poverty"><span class="sdg-name">Financing that reaches households</span></a></li>
-    <li class="sdg-08"><a href="/sdgs#g8"><img class="sdg-icon" src="/assets/img/sdg/sdg-08.svg" alt="SDG 8 Decent Work and Economic Growth"><span class="sdg-name">Instruments matched to cash flow</span></a></li>
-    <li class="sdg-10"><a href="/sdgs#g10"><img class="sdg-icon" src="/assets/img/sdg/sdg-10.svg" alt="SDG 10 Reduced Inequalities"><span class="sdg-name">Who is left outside credit</span></a></li>
+    <li class="sdg-01"><a href="/sdgs#g1"><span class="sdg-num">1</span><span class="sdg-name"><span class="sdg-goal-title">Goal 1: No Poverty</span><span class="sdg-tailored">Financing that reaches households</span></span></a></li>
+    <li class="sdg-08"><a href="/sdgs#g8"><span class="sdg-num">8</span><span class="sdg-name"><span class="sdg-goal-title">Goal 8: Decent Work and Economic Growth</span><span class="sdg-tailored">Instruments matched to cash flow</span></span></a></li>
+    <li class="sdg-10"><a href="/sdgs#g10"><span class="sdg-num">10</span><span class="sdg-name"><span class="sdg-goal-title">Goal 10: Reduced Inequalities</span><span class="sdg-tailored">Who is left outside credit</span></span></a></li>
   </ul>
 </div>
 
