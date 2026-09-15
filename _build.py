@@ -347,8 +347,8 @@ META: dict[str, dict[str, str]] = {
         "description": "Independent evidence for companies entering markets, funders needing portfolio proof, European consortia, NGOs, and research teams. Find the fit.",
     },
     "what-we-do": {
-        "title": "What We Do | Field Research & Impact Measurement",
-        "description": "Independent field research, impact measurement, and European impact tracking for technology in the real world. Evidence you can act on, not a slide deck.",
+        "title": "Work with us | Field Research & Impact Measurement | Transitions Lab",
+        "description": "Three questions clients bring to the Lab: entering a new context, measuring change, reporting to funders. Independent evidence you can act on, not a slide deck.",
     },
     "field-research": {
         "title": "Field Research in Emerging Markets | Transitions Lab",

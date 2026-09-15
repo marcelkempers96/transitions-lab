@@ -1,12 +1,12 @@
 § / Overview
 
-# What We Do
+# Work with us
 
 *Independent research on how technologies meet real people, turned into evidence innovators and institutions can act on.*
 
-The Lab does one thing, in several forms: it builds honest understanding of how a technology behaves once real people live with it, so the people steering a transition can steer it toward human values, not away from them. **People first, technology second, place always.**
+The Lab does one thing: it builds honest understanding of how a technology behaves once real people live with it, so the people steering a transition can steer it toward human values, not away from them. **People first, technology second, place always.**
 
-Below, three questions clients bring us. Each links to the primary service page, and lists the underlying method pages absorbed into it.
+Below, three questions clients bring us. Each links to the primary service page, and lists the method pages behind it.
 
 <div class="whatwedo-card c-butter">
   <div class="whatwedo-head">
@@ -14,7 +14,7 @@ Below, three questions clients bring us. Each links to the primary service page,
     <p>Independent field evidence for the decision to enter a new market or launch a new product line. Who adopts, at what price, and which failure modes to name early.</p>
   </div>
   <div class="whatwedo-sub">
-    <span class="sub-label">Absorbs</span>
+    <span class="sub-label">Methods</span>
     <ul>
       <li><a href="/research-development">Research &amp; Development Support</a> - the earlier-stage decisions: what to build, whom for, and whether the prototype meets its real environment. TRL and SRL, read together, for corporate R&amp;D and European R&amp;D consortia.</li>
       <li><a href="/market-expansion">Market &amp; Expansion Research</a> - the launch decision itself: demand vs stated, segments the local reality uses, the stack that carries adoption, failure modes named early.</li>
@@ -28,7 +28,7 @@ Below, three questions clients bring us. Each links to the primary service page,
     <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, measured from the human side first.</p>
   </div>
   <div class="whatwedo-sub">
-    <span class="sub-label">Absorbs</span>
+    <span class="sub-label">Methods</span>
     <ul>
       <li><a href="/field-research">Field Research</a> - the primary-research method: interviews, surveys, baselines, ethics standards.</li>
       <li><a href="/impact-measurement">Impact Measurement</a> - the reach / depth / experience frame that reads the fieldwork into a defensible impact claim.</li>
@@ -42,7 +42,7 @@ Below, three questions clients bring us. Each links to the primary service page,
     <p>Monitoring, evaluation, dissemination as one connected system. Independent, set up at the start, closed with proof, including for European Grant Agreements.</p>
   </div>
   <div class="whatwedo-sub">
-    <span class="sub-label">Absorbs</span>
+    <span class="sub-label">Methods</span>
     <ul>
       <li><a href="/monitoring-evaluation-dissemination">Monitoring, Evaluation &amp; Dissemination</a> - the full three-part loop and its scientific basis (theory of change, OECD-DAC criteria).</li>
       <li><a href="/european-impact-tracking">European Impact Tracking</a> - the specifics of Horizon, ESF+, LIFE, EIC, and the Article-17 PDEC.</li>
@@ -64,12 +64,19 @@ Below, three questions clients bring us. Each links to the primary service page,
 
 ## The audience layer
 
-Beyond the client-question spine, one dedicated offer exists for a specific audience:
+Beyond the client-question spine, two dedicated routes exist for specific audiences:
 
 <div class="whatwedo-card c-plum">
   <div class="whatwedo-head">
     <a href="/for-funders"><h3>For Funders &rarr;</h3></a>
     <p>Independent, field-verified evidence of what each grant is producing. SROI to standard, portfolio benchmarking, and a dashboard behind which every figure has been checked.</p>
+  </div>
+</div>
+
+<div class="whatwedo-card c-cobalt">
+  <div class="whatwedo-head">
+    <a href="/who-we-serve#consortia"><h3>European consortia &rarr;</h3></a>
+    <p>The independent measurement partner, from baseline through endline. Field capability, readiness assessment and impact tracking as a defined work package.</p>
   </div>
 </div>
 
