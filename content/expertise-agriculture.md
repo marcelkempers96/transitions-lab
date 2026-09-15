@@ -6,6 +6,15 @@
 
 <p class="research-areas-strip"><strong>Research areas:</strong> Waste-to-value and soil restoration · On-farm technology adoption · Coastal and marine monitoring · Carbon and biodiversity verification</p>
 
+<div class="sdg-block">
+  <span class="sdg-label">Contributes to</span>
+  <ul class="sdg-row">
+    <li class="sdg-02"><a href="/sdgs#g2"><span class="sdg-num">2</span><span class="sdg-name">Zero Hunger</span></a></li>
+    <li class="sdg-15"><a href="/sdgs#g15"><span class="sdg-num">15</span><span class="sdg-name">Life on Land</span></a></li>
+    <li class="sdg-14"><a href="/sdgs#g14"><span class="sdg-num">14</span><span class="sdg-name">Life Below Water</span></a></li>
+  </ul>
+</div>
+
 <figure>
   <img src="/assets/img/photo-agriculture-circle.jpg" alt="Six women farmers sitting in a circle at the edge of a harvested field, with hand tools and a water pot between them, in conversation." class="diagram">
   <figcaption>Farmer meetings on the field, not in a workshop hall. This is where a technology gets accepted, adapted, or quietly refused.</figcaption>

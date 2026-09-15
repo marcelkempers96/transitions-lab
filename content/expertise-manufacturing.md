@@ -6,6 +6,15 @@
 
 <p class="research-areas-strip"><strong>Research areas:</strong> Critical raw materials and processing · Circular economy and e-waste · Assembly, suppliers and workforce capability</p>
 
+<div class="sdg-block">
+  <span class="sdg-label">Contributes to</span>
+  <ul class="sdg-row">
+    <li class="sdg-09"><a href="/sdgs#g9"><span class="sdg-num">9</span><span class="sdg-name">Industry, Innovation and Infrastructure</span></a></li>
+    <li class="sdg-08"><a href="/sdgs#g8"><span class="sdg-num">8</span><span class="sdg-name">Decent Work and Economic Growth</span></a></li>
+    <li class="sdg-12"><a href="/sdgs#g12"><span class="sdg-num">12</span><span class="sdg-name">Responsible Consumption and Production</span></a></li>
+  </ul>
+</div>
+
 <!-- IMAGE mfg-hero: hero photo | Local assembly line or workshop, workers building or assembling products. Real industrial setting, human-present. | Full-width hero under the standfirst. -->
 
 Local manufacturing is where a technology transition meets the question of who captures its value.

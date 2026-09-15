@@ -6,6 +6,15 @@
 
 <p class="research-areas-strip"><strong>Research areas:</strong> Rider and operator economics · Batteries, charging and swap infrastructure</p>
 
+<div class="sdg-block">
+  <span class="sdg-label">Contributes to</span>
+  <ul class="sdg-row">
+    <li class="sdg-11"><a href="/sdgs#g11"><span class="sdg-num">11</span><span class="sdg-name">Sustainable Cities and Communities</span></a></li>
+    <li class="sdg-13"><a href="/sdgs#g13"><span class="sdg-num">13</span><span class="sdg-name">Climate Action</span></a></li>
+    <li class="sdg-08"><a href="/sdgs#g8"><span class="sdg-num">8</span><span class="sdg-name">Decent Work and Economic Growth</span></a></li>
+  </ul>
+</div>
+
 <figure>
   <img src="/assets/img/photo-emobility-forecourt.jpg" alt="Electric motorcycles queueing at a petrol-station forecourt in a busy working street, alongside an ageing sedan and a street vendor." class="diagram">
   <figcaption>The transition, mid-sentence: electric two-wheelers at a petrol forecourt in a market street. The vehicles are already there; the infrastructure is being renegotiated.</figcaption>

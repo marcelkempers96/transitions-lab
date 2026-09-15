@@ -6,6 +6,14 @@
 
 <p class="research-areas-strip"><strong>Research areas:</strong> Data centres and digital infrastructure · Automation and skills displacement</p>
 
+<div class="sdg-block">
+  <span class="sdg-label">Contributes to</span>
+  <ul class="sdg-row">
+    <li class="sdg-09"><a href="/sdgs#g9"><span class="sdg-num">9</span><span class="sdg-name">Industry, Innovation and Infrastructure</span></a></li>
+    <li class="sdg-10"><a href="/sdgs#g10"><span class="sdg-num">10</span><span class="sdg-name">Reduced Inequalities</span></a></li>
+  </ul>
+</div>
+
 <!-- IMAGE ai-hero: hero photo | Someone using a digital tool or phone in a field/community setting - a health worker, farmer, or ranger with a device. Technology-meets-people, not a server room. | Full-width hero under the standfirst. -->
 
 AI is the newest transition the Lab studies, and the one where its posture, social science first, technical literacy alongside, matters most.

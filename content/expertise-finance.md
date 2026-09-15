@@ -6,6 +6,15 @@
 
 <p class="research-areas-strip"><strong>Research areas:</strong> Asset finance and default risk · Who gets included and who does not</p>
 
+<div class="sdg-block">
+  <span class="sdg-label">Contributes to</span>
+  <ul class="sdg-row">
+    <li class="sdg-01"><a href="/sdgs#g1"><span class="sdg-num">1</span><span class="sdg-name">No Poverty</span></a></li>
+    <li class="sdg-08"><a href="/sdgs#g8"><span class="sdg-num">8</span><span class="sdg-name">Decent Work and Economic Growth</span></a></li>
+    <li class="sdg-10"><a href="/sdgs#g10"><span class="sdg-num">10</span><span class="sdg-name">Reduced Inequalities</span></a></li>
+  </ul>
+</div>
+
 <!-- IMAGE finance-hero: hero photo | Someone using mobile money or a payment system in a market or shop - a vendor, a customer, a phone transaction. Everyday, real. | Full-width hero under the standfirst. -->
 
 Financial inclusion quietly determines the fate of the others.

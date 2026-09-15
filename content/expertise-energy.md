@@ -6,6 +6,15 @@
 
 <p class="research-areas-strip"><strong>Research areas:</strong> Mini-grids and off-grid supply · Renewables, storage and grid integration · Water delivery, vendors and payment</p>
 
+<div class="sdg-block">
+  <span class="sdg-label">Contributes to</span>
+  <ul class="sdg-row">
+    <li class="sdg-07"><a href="/sdgs#g7"><span class="sdg-num">7</span><span class="sdg-name">Affordable and Clean Energy</span></a></li>
+    <li class="sdg-06"><a href="/sdgs#g6"><span class="sdg-num">6</span><span class="sdg-name">Clean Water and Sanitation</span></a></li>
+    <li class="sdg-11"><a href="/sdgs#g11"><span class="sdg-num">11</span><span class="sdg-name">Sustainable Cities and Communities</span></a></li>
+  </ul>
+</div>
+
 <!-- IMAGE energy-hero: hero photo | Solar mini-grid, home solar panel, water point or piped connection in daily use. Real, working, daylight. | Full-width hero under the standfirst. -->
 
 Energy and water are the two systems everything else in a transition rests on. They are also the two where the same research question keeps arriving in different clothes: how does a metered, paid-for service reach a household the network was not built for, and stay reliable enough that people plan around it.

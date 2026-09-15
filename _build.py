@@ -193,6 +193,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-who-pays-decides": "butter",
     "insight-when-the-agent-pays": "butter",
     "insight-whose-field-becomes-a-wetland": "butter",
+    "sdgs": "coral",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -405,6 +406,10 @@ META: dict[str, dict[str, str]] = {
     "expertise": {
         "title": "Programmes | Six Transitions We Study | Transitions Lab",
         "description": "Six standing research programmes: green industrialisation, e-mobility, energy and water systems, agriculture and ecosystems, AI and digital, financial inclusion. Each runs in Europe and where our cases come from.",
+    },
+    "sdgs": {
+        "title": "Research by Sustainable Development Goal | Transitions Lab",
+        "description": "Which of the Lab's programmes contribute to which Sustainable Development Goals. Eleven goals claimed with programmes behind them; six declined openly, so the eleven hold up.",
     },
     "expertise-e-mobility": {
         "title": "E-Mobility & Transport Research | Transitions Lab",
