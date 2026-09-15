@@ -27,3 +27,21 @@ Vercel will redeploy automatically.
   - Case-studies overview with all photo cards
 
 Named so it's easy to point at: "roll back to pre-restructure-2026-08-27".
+
+---
+
+## `pre-major-change-2026-09-15`
+
+- **Commit:** `6da43eb`
+- **Subject:** Five more inline figures across three articles
+- **What is on the site at this point:**
+  - 58 insight articles, 105 content pages total
+  - September 2026 batches published: 8, 9, 10, 11 and 12 Sept (Survey, Adoption, Load, Strategic, Thousand Cars, Factory & Town, Mine Green, Extent, Evidence, Who Buys, No Going Back, Scheduled Not Summoned, First Customer, Local Content, Permit Is Not the Project)
+  - Author byline system live: `DEFAULT_AUTHOR = "Marcel Kempers"` in `_build.py` with per-slug `AUTHORS` override dict; renders on every insight article and on `/articles` listing cards
+  - White cards across `.resource-card`, `.serve-grid`, `.theory-map-card`, `.case-card` and default `.page-hero` — cream ground, white plates
+  - Home page **Latest insights** row leads with Permit / Factory / Mine Green
+  - Illustrated heroes and multiple in-body figures on the recent batch, styled to the Register A line-art convention
+  - Filter chips on `/articles` cover 11 categories, 5 geographies, Sep 2026 back to Jan 2026
+  - Theory maps compact row on home linking Human Side / Economics / Innovation Dynamics / Transitions primer
+
+Named so it's easy to point at: "roll back to pre-major-change-2026-09-15".
