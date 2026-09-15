@@ -56,12 +56,10 @@ def _cache_bust_images(html: str) -> str:
 # top of the expertise page prose, linking to a specific case study.
 # Kicker uses the same coloured-stripe treatment as home insight cards.
 FEATURED_CASE: dict[str, dict[str, str]] = {
-    "expertise-e-mobility":    {"slug": "case-roam",         "kind": "case",    "kicker": "Kenya · E-mobility",   "title": "Electric transport in Nairobi",           "blurb": "How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.", "colour": "coral"},
-    "expertise-energy":        {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Energy",   "title": "Biochar & clean energy in Lombok",         "blurb": "Smallholder farmers turn crop waste into heat, soil, and income on a decentralised, open-source kiln.", "colour": "butter"},
-    "expertise-agriculture":   {"slug": "case-pyropower",    "kind": "case",    "kicker": "Indonesia · Agriculture","title": "Biochar in Lombok",                       "blurb": "Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.", "colour": "coral"},
-    "expertise-manufacturing": {"slug": "case-manufacturing","kind": "reading", "kicker": "East Africa · Manufacturing","title": "Assembly to Value: Local Manufacturing","blurb": "When a product moves from imported to locally assembled, whether the 'local' part actually reaches workers, suppliers, and customers.", "colour": "butter"},
-    "expertise-ai-digital":    {"slug": "case-ai-digital",   "kind": "reading", "kicker": "AI & Digital",          "title": "Digital Services in Low-Connectivity Contexts","blurb": "When a digital tool designed for always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.", "colour": "cobalt"},
-    "expertise-finance":       {"slug": "case-finance",      "kind": "reading", "kicker": "Finance · Payment rails","title": "The Payment Rail: What Mobile Money Carries","blurb": "Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.", "colour": "butter"},
+    # Featured Lab reading cards on programme pages temporarily
+    # withheld while the pages carry programme content rather than
+    # single-piece framings. Re-add per programme when a specific
+    # piece is chosen.
 }
 
 

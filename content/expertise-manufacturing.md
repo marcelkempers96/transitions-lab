@@ -4,7 +4,14 @@
 
 *How productive capacity is built where things are used, who captures the value, and whether the workforce capability a plant assumes actually arrives with it.*
 
-<p class="research-areas-strip"><strong>Research areas:</strong> Critical raw materials and processing · Circular economy and e-waste · Assembly, suppliers and workforce capability</p>
+<div class="research-areas-panel">
+  <span class="ra-label">Research areas</span>
+  <ul>
+    <li>Critical raw materials and processing</li>
+    <li>Circular economy and e-waste</li>
+    <li>Assembly, suppliers and workforce capability</li>
+  </ul>
+</div>
 
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
@@ -17,45 +24,33 @@
 
 <!-- IMAGE mfg-hero: hero photo | Local assembly line or workshop, workers building or assembling products. Real industrial setting, human-present. | Full-width hero under the standfirst. -->
 
-Local manufacturing is where a technology transition meets the question of who captures its value.
+## Inside the programme
 
-Assembling vehicles, solar units, or processing equipment near where they are used promises jobs, skills, and retained value. The promise is not automatic, and the gap between promise and reality is where the Lab works.
+<span class="ra-name">Critical raw materials and processing</span> is where the transition's material bill actually gets paid. The Lab studies who negotiates the extraction, who runs the refinery, and what share of the resulting value stays in the country the ore came from. Ownership of the geological survey, the terms of the offtake, and the workforce that operates the plant are all parts of the same distributional question.
 
----
+<span class="ra-name">Circular economy and e-waste</span> is the other half of the same chain. Secondary materials and second-life equipment are cheaper, less carbon-intensive and structurally awkward to qualify. The Lab looks at whether recycled and reused streams reach the customers that would use them, how end-of-life claims are verified, and where a promise of a circular chain quietly reverts to a linear one.
 
-**§ 1 / The market, in brief**
-
-- [Africa's manufacturing value-added grew from **$285bn (2020) to $351bn (2025)**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025), yet the continent is still under **2% of global output**.
-- Manufacturing is about [**10.4% of continental GDP**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025), well below the [**20%**](https://www.unido.org/) UNIDO ties to real structural transformation.
-- Each manufacturing job generates, on average, around [**2.5 additional jobs** elsewhere](https://www.unido.org/).
+<span class="ra-name">Assembly, suppliers and workforce capability</span> asks whether the plant a policy assumes will actually be there in five years. Capability accumulates over decades, disperses in a few, and is not recoverable on the same timescale. The Lab documents which supplier ecosystems form around a new line, which do not, and what the wage and skills trajectory of the people on that line looks like against the plans that were made for them.
 
 ---
 
-**§ 2 / What we see that others miss**
+## The market, in brief
 
-## Whether "local" is real, or local in name only
+- Africa's manufacturing value-added grew from [**$285bn**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025) in 2020 to [**$351bn**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025) in 2025 (AfDB), yet the continent is still under **2% of global output**.
+- Manufacturing is about [**10.4%**](https://www.afdb.org/en/documents/africa-industrialisation-index-2025) of continental GDP (AfDB), well below the [**20%**](https://www.unido.org/) UNIDO ties to real structural transformation.
+- Each manufacturing job generates, on average, around [**2.5 additional jobs**](https://www.unido.org/) elsewhere in the economy (UNIDO).
+
+---
+
+## What we see that others miss
 
 The multiplier is real, but only if the value is genuinely retained. Assembly that imports every component and exports the margin delivers little.
 
 The Lab documents the difference: whether local suppliers are truly integrated or left at the low-skill edge, whether the jobs created are quality jobs, and whether small enterprises benefit or are squeezed. Those distributional findings are what a partner needs to know before claiming a development dividend, and what they cannot get from output figures alone.
 
-This connects directly to the Lab's [e-mobility](/expertise-e-mobility) and energy work, where local assembly is central.
-
 ---
 
-**§ 3 / Topics we are following**
-
-- Whether local assembly retains value and builds skills, or is assembly in name only.
-- How manufacturing jobs translate into the wider employment multiplier in practice.
-- Whether SMEs are integrated into value chains or left at the margin.
-- What determines the quality of the jobs a new line creates.
-- Who is included in the local supply chains that form around a new industry.
-
----
-
-**§ 4 / Knowledge we draw on**
-
-We draw on our own fieldwork and the public evidence base.
+## Knowledge we draw on
 
 - AfDB, [Africa Industrialisation Index 2025](https://www.afdb.org/en/documents/africa-industrialisation-index-2025).
 - UNIDO, [industrial development and productive capacity](https://www.unido.org/).
@@ -64,11 +59,68 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading, critical raw materials and processing: [The Survey Is the First Act of the Mine](/insight-survey-first-act-of-the-mine) on why the geological survey is not preliminary to a licensing negotiation but the negotiation itself, [The Mandate Is the Mine](/insight-the-mandate-is-the-mine) on a green industrial plant built against a European quota rather than a demand curve, [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on why an export restriction only transfers value once domestic capacity exists, [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on qualification as the barrier above lithium sulphate, [The Value Is in the Second Step](/insight-second-step) on where the value in a mineral chain actually sits, [When Is a Mine Green Infrastructure?](/insight-when-is-a-mine-green) on incommensurability inside sustainable finance taxonomies, [Local Content Is Not the Same as Local Benefit](/insight-local-content-local-benefit) on the monopsony a local-content rule creates, and [The Permit Is Not the Project](/insight-permit-is-not-the-project) on the two clocks a permitting reform is optimising.*
+## Related reading
 
-*Circular economy and e-waste: [A Recycled Material Is a Promise](/insight-recycled-is-a-promise) on the same qualification barrier in secondary materials, and [What an Incumbent Brings With It](/insight-incumbents-second-life) on second lives and the terms an operator carries.*
+<div class="reading-group">
+  <h3>Critical raw materials and processing</h3>
+  <div class="reading-cards">
+    <a href="/insight-survey-first-act-of-the-mine">
+      <h4>The Survey Is the First Act of the Mine</h4>
+      <p>Why the geological survey is not preliminary to a licensing negotiation but the negotiation itself.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-when-is-a-mine-green">
+      <h4>When Is a Mine Green Infrastructure?</h4>
+      <p>Incommensurability inside sustainable finance taxonomies, and who gets to decide which harms count.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-local-content-local-benefit">
+      <h4>Local Content Is Not the Same as Local Benefit</h4>
+      <p>Ghana miners and the monopsony a local-content rule quietly creates.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
 
-*Assembly, suppliers and workforce capability: [Capability Is the Slow Part](/insight-capability-slow-part) on why firm and state capability, not capital, is the binding constraint, [The Factory Cannot Transition Without the Town](/insight-factory-and-the-town) on Taranto and the displaced-worker evidence that says most of the loss is lower wages, [Behind the Border](/insight-behind-the-border) on why variance rather than tariff forecloses regional specialisation, [Standing in the Same Queue](/insight-same-queue) on the physical equipment constraint underneath all of this, [Symbiosis Does Not Arrive on a Site Plan](/insight-symbiosis-not-a-site-plan) on the institutional layer that a shared industrial system has to accrete, [The Extent of the Market](/insight-extent-of-the-market) on the AfCFTA anchor-project logic and the obstacles that are not tariffs, [Nobody Wants to Be the First Customer](/insight-first-customer) on the positive-externality reason first buyers do not exist, and [The Village Twenty Kilometres Off the Road](/insight-twenty-kilometres-off) on why variance rather than distance stops firms trading across a corridor. For the full series, see [Articles](/articles).*
+<div class="reading-group">
+  <h3>Circular economy and e-waste</h3>
+  <div class="reading-cards">
+    <a href="/insight-recycled-is-a-promise">
+      <h4>A Recycled Material Is a Promise</h4>
+      <p>The qualification barrier in secondary materials, and why the promise is the hard part.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-incumbents-second-life">
+      <h4>What an Incumbent Brings With It</h4>
+      <p>Second lives and the terms an operator carries into a new region.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
 
+<div class="reading-group">
+  <h3>Assembly, suppliers and workforce capability</h3>
+  <div class="reading-cards">
+    <a href="/insight-capability-slow-part">
+      <h4>Capability Is the Slow Part</h4>
+      <p>Firm and state capability, not capital, is the binding constraint on the transition speed.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-factory-and-the-town">
+      <h4>The Factory Cannot Transition Without the Town</h4>
+      <p>Taranto and the displaced-worker evidence that says most of the loss is lower wages, permanently.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-extent-of-the-market">
+      <h4>The Extent of the Market</h4>
+      <p>The AfCFTA anchor-project logic, and the obstacles that are not tariffs.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
+
+For the full series across every research area, see [Articles](/articles).
+
+---
 
 *See the [Assembly to Value case study](/case-manufacturing) and the [Pyropower case study](/case-pyropower). For how we study transitions like this, see [Field Research](/field-research). See also sibling programmes [E-Mobility & Transport](/expertise-e-mobility) and [Energy & Water Systems](/expertise-energy), and the [Economics of Transitions](/economics-of-transitions) theory map. Research by [Sustainable Development Goal](/sdgs). To discuss a study, see [Contact](/contact).*

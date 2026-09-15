@@ -1142,12 +1142,85 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   font-weight:500;letter-spacing:.005em;
 }
 .prose ul.expertise-list p.research-areas strong{font-weight:800;}
+/* Research areas: highlighted panel at the top of every programme
+   page, and a lighter inline emphasis in the stanzas below. */
+.prose .research-areas-panel{
+  margin:12px 0 28px;padding:22px 24px 20px;
+  background:var(--butter);border:2px solid var(--ink);
+  box-shadow:6px 6px 0 var(--ink);
+}
+.prose .research-areas-panel .ra-label{
+  display:block;font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:800;color:var(--coral);margin-bottom:12px;
+}
+.prose .research-areas-panel ul{
+  list-style:none;padding:0;margin:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 18px;
+}
+.prose .research-areas-panel li{
+  padding:0;margin:0;font-size:16px;line-height:1.35;
+  font-weight:800;color:var(--ink);letter-spacing:-.005em;
+  position:relative;padding-left:18px;
+}
+.prose .research-areas-panel li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:10px;height:10px;background:var(--coral);border:2px solid var(--ink);
+}
+
+/* Legacy strip class kept in case older content still uses it. */
 .prose p.research-areas-strip{
   margin:12px 0 28px;padding:14px 18px;
   background:var(--butter);border:2px solid var(--ink);
   font-size:15px;line-height:1.5;font-weight:500;color:var(--ink);
 }
 .prose p.research-areas-strip strong{font-weight:800;letter-spacing:.02em;}
+
+/* Inline emphasis: when a stanza describes a research area by name,
+   the name is bolded and picks up a subtle coral underline so a
+   reader can pattern-match to the panel above. */
+.prose .ra-name{
+  font-weight:800;color:var(--ink);
+  border-bottom:2px solid var(--coral);padding-bottom:1px;
+}
+
+/* Reading cards: replaces italics prose in the related-reading
+   section. Small stack of headed groups; each group holds up to
+   three cards linking to the underlying articles. */
+.prose .reading-group{margin:0 0 34px;}
+.prose .reading-group > h3{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:18px;font-weight:800;letter-spacing:-.005em;
+  margin:0 0 14px;color:var(--ink);
+  padding-bottom:8px;border-bottom:2px solid var(--ink);
+}
+.prose .reading-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.prose .reading-cards a{
+  display:flex;flex-direction:column;gap:8px;
+  padding:18px 20px 18px;background:var(--white);color:var(--ink);
+  border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);
+  text-decoration:none;transition:transform .12s ease, box-shadow .12s ease;
+}
+.prose .reading-cards a:hover{
+  transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);
+  background:var(--butter);
+}
+.prose .reading-cards h4{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:16.5px;font-weight:800;letter-spacing:-.01em;
+  line-height:1.2;margin:0;color:var(--ink);
+}
+.prose .reading-cards p{
+  font-size:14px;line-height:1.45;font-weight:500;color:var(--ink);
+  margin:0;opacity:.85;
+}
+.prose .reading-cards .read-cue{
+  margin-top:auto;font-weight:800;font-size:13px;
+  letter-spacing:.02em;color:var(--ink);
+}
 
 /* ── SDG contribution block on programme pages ─────────────────
    Numbered tiles in the goal's official brand colour, with the

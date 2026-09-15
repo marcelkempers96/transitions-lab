@@ -4,7 +4,15 @@
 
 *How farmers and fishers adopt and benefit from new technology, and what the monitoring behind a payment actually costs them.*
 
-<p class="research-areas-strip"><strong>Research areas:</strong> Waste-to-value and soil restoration · On-farm technology adoption · Coastal and marine monitoring · Carbon and biodiversity verification</p>
+<div class="research-areas-panel">
+  <span class="ra-label">Research areas</span>
+  <ul>
+    <li>Waste-to-value and soil restoration</li>
+    <li>On-farm technology adoption</li>
+    <li>Coastal and marine monitoring</li>
+    <li>Carbon and biodiversity verification</li>
+  </ul>
+</div>
 
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
@@ -22,74 +30,37 @@
 
 A farmer and a fisher have more in common than a policy framework usually admits. Both depend on a natural system they do not control. Both are downstream of a buyer who sets the price. Both are the party being monitored by somebody else's instruments, for a decision made somewhere else.
 
-That is the shared question this programme is built around: how a technology, a scheme or a measurement lands on the people at the end of the food and ecosystem chain, and whether they end up better off after it has passed through.
+## Inside the programme
 
-The smallholder farm, often under two hectares, runs on thin margins and little slack. A new tool has to make sense in the terms of the farmer's own working day, or it will not be taken up, however sound the science. The same is true for a coastal community reading its own reef.
+<span class="ra-name">Waste-to-value and soil restoration</span> asks whether a technology that turns crop waste or degraded land into a productive resource actually reaches the smallholder it was designed for. Biochar, composting and cover-cropping have all been trialled repeatedly; the Lab studies which benefit (fuel, soil, income or carbon) actually moves a farmer to adopt, and how uptake looks by crop, season and household.
 
----
+<span class="ra-name">On-farm technology adoption</span> is the wider research area behind the specific waste-to-value case. From irrigation to sensors to advisory apps, the failure mode is usually not the tool itself but the fit with the farmer's own working day, the availability of finance and repair, and the incumbent practice already in the field. The Lab tests uptake against the alternative that already works.
 
-**§ 1 / What we see that others miss**
+<span class="ra-name">Coastal and marine monitoring</span> extends the same logic offshore. Community rangers, satellite feeds, sensors and citizen science all layer over each other on the same reef or fishery, and the Lab looks at whether the layers braid into one trusted picture or contradict each other. The [Reef Support case study](/case-reef-support) is the worked example.
 
-## Which benefit actually drives adoption
-
-A waste-to-value technology can offer three things at once, fuel, better soil, carbon income. A technical assessment counts all three. Only fieldwork reveals which one actually moves a farmer to adopt, and it differs by crop, season, and household.
-
-The Lab documents that. We are usually the only party asking whether an open-source or decentralised model widens access or quietly concentrates benefit among the already-resourced, and whether a carbon-market promise reaches the farmer or is captured upstream. Those are the findings a partner cannot get from a yield trial.
-
-Our [Pyropower case study](/case-pyropower) in Lombok traces exactly this: farmers who named an open-source kiln *Tumbuh*, "to grow," and what that adoption did, and did not, distribute.
-
-## The measurement-to-action gap
-
-Most monitoring effort goes into better sensing. The failure almost always happens later, in the gap between a reading and a decision. An early-warning signal that no one acts on, a biodiversity figure a community does not believe, a dataset that never reaches a decision-maker in a usable form, these are the silent failures, and they are invisible to anyone measuring only technical accuracy.
-
-The Lab documents that gap. We treat measurement-to-action as a transition in its own right, and we are usually the only party in a project asking whether the evidence is trusted, owned, and used, rather than merely correct. That is the insight a consortium cannot generate from inside its own instruments.
+<span class="ra-name">Carbon and biodiversity verification</span> is where the measurement question meets the payment. Whether an outcome is trusted enough to change behaviour depends on who verified it and who the beneficiary is, and the Lab documents the gap between a measurement designed for a market and one designed for the community that lives with the landscape.
 
 ---
-
-**§ 2 / Spatial and GIS work**
 
 ## Reading agriculture and ecosystems in space
 
 Both agriculture and ecosystems are inherently spatial, and the Lab brings geographic information systems (GIS) into its fieldwork. We combine ground-level interviews and surveys with satellite and remote-sensing layers, land-use and soil data, geotagged farmer and ranger observations, so that lived experience can be read against the landscape it happens in.
 
-This matters because a survey tells you *what* changed and GIS tells you *where*, and the two together reveal patterns neither can alone: which fields improved, which communities were reached, which reefs recovered, where a technology clustered and where it never arrived. Pairing spatial analysis with human fieldwork is a distinctive part of how the Lab works.
+This matters because a survey tells you *what* changed and GIS tells you *where*, and the two together reveal patterns neither can alone: which fields improved, which communities were reached, which reefs recovered, where a technology clustered and where it never arrived.
 
 ---
 
-**§ 3 / Across ecosystems, not just one**
+## What we see that others miss
 
-## Where we work
+A waste-to-value technology can offer three things at once, fuel, better soil, carbon income. A technical assessment counts all three. Only fieldwork reveals which one actually moves a farmer to adopt, and it differs by crop, season, and household.
 
-The principle holds across systems, and we deliberately work across several, so a partner is not buying a single-habitat specialist:
+The Lab documents that. We are usually the only party asking whether an open-source or decentralised model widens access or quietly concentrates benefit among the already-resourced, and whether a carbon-market promise reaches the farmer or is captured upstream. Our [Pyropower case study](/case-pyropower) in Lombok traces exactly this: farmers who named an open-source kiln *Tumbuh*, "to grow," and what that adoption did, and did not, distribute.
 
-- **Marine and coral reef** systems, where satellites, sensors, and community rangers must be braided into one trusted picture. Our [Reef Support case study](/case-reef-support) is the worked example.
-- **Coastal and fishing** communities adapting to ecosystem change and shifting livelihoods.
-- **Forest, mangrove, and wetland** monitoring, where local stewardship and carbon claims meet.
-- **Freshwater and catchment** ecosystems, linking to the Lab's water expertise in [Energy & Water Systems](/expertise-energy).
-- **Terrestrial biodiversity** and community-based conservation, where who owns the data decides whether it changes behaviour.
-- **Agricultural landscapes** at the smallholder scale, where the same measurement questions arrive through a farm gate rather than a jetty.
+Most monitoring effort goes into better sensing. The failure almost always happens later, in the gap between a reading and a decision. The Lab documents that gap, and we are usually the only party in a project asking whether the evidence is trusted, owned, and used, rather than merely correct.
 
 ---
 
-**§ 4 / Topics we are following**
-
-- Which benefit actually drives smallholder adoption, and how that shifts by crop and context.
-- Whether open-source and decentralised models widen access or concentrate it.
-- How carbon and biochar markets reach, or bypass, the farmer.
-- What regenerative practices do to soil, yield, and income over time, measured with spatial data.
-- How waste-to-value technologies change labour, especially for women.
-- Where adoption clusters geographically, and which areas are left out.
-- Whether community rangers and monitors are genuine co-owners of the data, or unpaid sensors for someone else's model.
-- How local and scientific knowledge are reconciled, and whose reading prevails when they conflict.
-- What makes an environmental figure trusted enough to actually change behaviour.
-- Whether early-warning and adaptation systems reach the ground, or stall above it.
-- How biodiversity and carbon claims hold up to the people they most affect.
-
----
-
-**§ 5 / Knowledge we draw on**
-
-We draw on our own fieldwork and the public evidence base.
+## Knowledge we draw on
 
 - FAO, [smallholder and family farming research](https://www.fao.org/family-farming/en/).
 - CGIAR, [agriculture research in low-income contexts](https://www.cgiar.org/).
@@ -103,7 +74,84 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading: [The Cheaper It Gets to Verify, the Less Anyone Visits](/insight-cheaper-to-verify) on what falls out of view when remote sensing removes the reason to visit the plot, [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on why the constraint on restoration is the harvest permit rather than ownership, [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on why bundled credit-and-offtake keeps reappearing, [The Trough Before the Dividend](/insight-trough-before-the-dividend) on why adaptive capacity is a balance-sheet variable rather than a knowledge one, [Adoption Is Not the End of the Research](/insight-adoption-is-the-research) on treating uptake as science rather than outreach, [The Distance Between the Work and the Reward](/insight-distance-work-reward) on what a payment-for-outcomes scheme actually asks of a farmer, [Whose Field Becomes a Wetland](/insight-whose-field-becomes-a-wetland) on how allocation, not ecology, is the unsettled question in Europe's restoration law, [When There Is No Going Back](/insight-no-going-back) on novel ecosystems and the choice of target, [Who Buys the Outcome?](/insight-who-buys-the-outcome) on the carbon farming buyers club, [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on the gap between pilot and deployment, [The Fire Was Put Out by People Making a Living](/insight-fire-and-livelihood) on wildfire and rural land management, [The Municipality Is the Instrument](/insight-municipality-is-the-instrument) on implementation capacity, and [The Benefits Nobody Was Looking For](/insight-benefits-nobody-looked-for) on outcomes no framework asked for. For the full series, see [Articles](/articles).*
+## Related reading
 
+<div class="reading-group">
+  <h3>Waste-to-value and soil restoration</h3>
+  <div class="reading-cards">
+    <a href="/insight-trough-before-the-dividend">
+      <h4>The Trough Before the Dividend</h4>
+      <p>Why adaptive capacity is a balance-sheet variable rather than a knowledge one.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-right-to-the-tree">
+      <h4>The Right That Matters Is to the Tree</h4>
+      <p>The specific right, not ownership, is what predicts investment in land.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
+
+<div class="reading-group">
+  <h3>On-farm technology adoption</h3>
+  <div class="reading-cards">
+    <a href="/insight-adoption-is-the-research">
+      <h4>Adoption Is Not the End of the Research</h4>
+      <p>Uptake is the research question, not a communications budget.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-enough-demonstrations">
+      <h4>Europe Has Enough Demonstrations</h4>
+      <p>Why a pilot cannot tell you what will scale.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-downstream-of-the-buyer">
+      <h4>Resilience Is Downstream of the Buyer</h4>
+      <p>The order of constraints on the household side of the deal.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
+
+<div class="reading-group">
+  <h3>Coastal and marine monitoring</h3>
+  <div class="reading-cards">
+    <a href="/insight-fire-and-livelihood">
+      <h4>The Fire Was Put Out by People Making a Living</h4>
+      <p>Wildfire is substantially a rural land-management question, not only a climate one.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-municipality-is-the-instrument">
+      <h4>The Municipality Is the Instrument</h4>
+      <p>Implementation capacity decides what any plan delivers on the ground.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
+
+<div class="reading-group">
+  <h3>Carbon and biodiversity verification</h3>
+  <div class="reading-cards">
+    <a href="/insight-cheaper-to-verify">
+      <h4>The Cheaper It Gets to Verify</h4>
+      <p>What falls out of view when remote sensing removes the reason to visit.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-whose-field-becomes-a-wetland">
+      <h4>Whose Field Becomes a Wetland</h4>
+      <p>Allocation, not ecology, is the unsettled question in Europe's restoration law.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-who-buys-the-outcome">
+      <h4>Who Buys the Outcome?</h4>
+      <p>The carbon farming buyers club, and the missing invoice several beneficiaries share.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
+
+For the full series across every research area, see [Articles](/articles).
+
+---
 
 *See the [Pyropower case study](/case-pyropower) and the [Reef Support case study](/case-reef-support). For how we study transitions like this, see [Field Research](/field-research). See also sibling programmes [Green Industrialisation & Local Manufacturing](/expertise-manufacturing) and [Energy & Water Systems](/expertise-energy), and the [Human Side of Technology](/human-side-of-technology) theory map. Research by [Sustainable Development Goal](/sdgs). To discuss a study, see [Contact](/contact).*

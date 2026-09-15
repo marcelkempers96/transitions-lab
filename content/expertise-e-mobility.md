@@ -4,7 +4,13 @@
 
 *How electric and shared transport crosses from novelty to default, and what it does to the livelihoods built on the vehicles it replaces.*
 
-<p class="research-areas-strip"><strong>Research areas:</strong> Rider and operator economics · Batteries, charging and swap infrastructure</p>
+<div class="research-areas-panel">
+  <span class="ra-label">Research areas</span>
+  <ul>
+    <li>Rider and operator economics</li>
+    <li>Batteries, charging and swap infrastructure</li>
+  </ul>
+</div>
 
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
@@ -20,43 +26,31 @@
   <figcaption>The transition, mid-sentence: electric two-wheelers at a petrol forecourt in a market street. The vehicles are already there; the infrastructure is being renegotiated.</figcaption>
 </figure>
 
-The electric transition in emerging markets is not led by cars. It is led by the two- and three-wheelers and shared minibuses that already move most people.
+## Inside the programme
 
-And the economics have tipped. A recent [World Bank analysis](https://www.worldbank.org/en/news/feature/2026/06/29/dont-let-a-crisis-go-to-waste-pivoting-africa-s-transport-to-clean-energy) finds that in the highest-use segments, the lifetime cost of an electric vehicle is already below petrol, without subsidy.
+<span class="ra-name">Rider and operator economics</span> starts from the daily cash-flow arithmetic of the people doing the work. A boda-boda rider, a matatu operator, a scheduled-shuttle driver: what does the vehicle earn today, net of fuel or charging, financing and maintenance, and how many hours of the day is it certain to be earning at all. The Lab studies the load factor, the fare, and the point at which a switch from petrol to electric stops being a policy question and becomes a decision the rider makes for themselves.
+
+<span class="ra-name">Batteries, charging and swap infrastructure</span> is the physical system that decides whether the switch holds. Home charging, swap networks, standards and after-sales all sit inside a single question about make-or-buy and where the risk parks overnight. The Lab looks at how a swap network's density, uptime and pricing behave once a fleet is depending on it, who sets the standard, and who is included in the resulting network.
 
 ---
 
 ## The market, in brief
 
-- Electric two-wheeler sales in Africa reached around [**70,000 units in 2025**](https://www.iea.org/reports/global-ev-outlook-2025), up nearly eightfold from 9,000 in 2024.
-- Kenya alone has an estimated [**three million motorcycle-taxi riders**](https://africaema.org/africas-electric-mobility-status-2025/).
-- Adoption is now **outrunning the infrastructure**: charging, battery-swapping, and after-sales are not scaling at the pace of the vehicles.
+- Electric two-wheeler sales in Africa reached around [**70,000 units**](https://www.iea.org/reports/global-ev-outlook-2025) in 2025 (IEA), up nearly eightfold from 9,000 in 2024.
+- Kenya alone has an estimated [**three million**](https://africaema.org/africas-electric-mobility-status-2025/) motorcycle-taxi riders (Africa E-Mobility Alliance).
+- In the highest-use segments, lifetime cost of an electric vehicle is already [**below petrol**](https://www.worldbank.org/en/news/feature/2026/06/29/dont-let-a-crisis-go-to-waste-pivoting-africa-s-transport-to-clean-energy), without subsidy (World Bank).
 
 ---
 
-**§ 2 / What we see that others miss**
-
-## The switch is financial, not mechanical
+## What we see that others miss
 
 The vehicle works. Whether a rider adopts turns on the daily economics of their route, the reliability of charging, and financing that removes the battery, the costliest part, from the purchase.
 
-The Lab documents what actually carries a rider across, and, just as valuable to a partner, **who gets left behind** when financing or home charging is out of reach. That distributional read is the insight a sales figure hides. Our [the mobility case study](/case-roam) traces one manufacturer's crossing in Nairobi.
+The Lab documents what actually carries a rider across, and, just as valuable to a partner, **who gets left behind** when financing or home charging is out of reach. That distributional read is the insight a sales figure hides. Our [mobility case study](/case-roam) traces one manufacturer's crossing in Nairobi.
 
 ---
 
-**§ 3 / Topics we are following**
-
-- What carries a commercial rider across the switch, and who is excluded.
-- How battery-swapping and battery-as-a-service change the economics and the risk.
-- Whether charging infrastructure is scaling where adoption concentrates, or lagging it.
-- How after-sales networks decide whether a transition holds past the first sale.
-- How e-bus electrification lands for passengers, not just fleet operators.
-
----
-
-**§ 4 / Knowledge we draw on**
-
-We draw on our own fieldwork and the public evidence base.
+## Knowledge we draw on
 
 - World Bank, [economics of electric mobility in Africa](https://www.worldbank.org/en/news/feature/2026/06/29/dont-let-a-crisis-go-to-waste-pivoting-africa-s-transport-to-clean-energy).
 - IEA, [Global EV Outlook](https://www.iea.org/reports/global-ev-outlook-2025).
@@ -65,9 +59,52 @@ We draw on our own fieldwork and the public evidence base.
 
 ---
 
-*Related reading, rider and operator economics: [The Anchor Tenant](/insight-anchor-tenant) on how platforms are financing charging infrastructure by owning the demand, [Who Absorbs the Gap](/insight-absorbing-the-gap) on who bears the affordability distance in a petrol-dominated market, and [Scheduled, Not Summoned](/insight-scheduled-not-summoned) on how a Lagos operator halved fares by removing spontaneity rather than replacing the vehicle.*
+## Related reading
 
-*Batteries, charging and swap infrastructure: [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on the make-or-buy decision inside a swap network, [Who Holds the Pen on the Standard](/insight-who-holds-the-pen) on the governance of Kenya's open battery-swap network, and [A Thousand Cars, One Risk](/insight-a-thousand-cars-one-risk) on what changes when the driver comes out of the taxi and a thousand independent risks become one risk repeated a thousand times. For the full series across the transitions we study, see [Articles](/articles).*
+<div class="reading-group">
+  <h3>Rider and operator economics</h3>
+  <div class="reading-cards">
+    <a href="/insight-anchor-tenant">
+      <h4>The Anchor Tenant</h4>
+      <p>How platforms are financing charging infrastructure by owning the demand.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-absorbing-the-gap">
+      <h4>Who Absorbs the Gap</h4>
+      <p>Who bears the affordability distance in a petrol-dominated market.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-scheduled-not-summoned">
+      <h4>Scheduled, Not Summoned</h4>
+      <p>A Lagos operator halved fares by removing spontaneity, not by replacing the vehicle.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
 
+<div class="reading-group">
+  <h3>Batteries, charging and swap infrastructure</h3>
+  <div class="reading-cards">
+    <a href="/insight-own-the-battery">
+      <h4>Own the Battery, Rent the Shopfront</h4>
+      <p>The make-or-buy decision inside a swap network, and what it does to the balance sheet.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-who-holds-the-pen">
+      <h4>Who Holds the Pen on the Standard</h4>
+      <p>The governance of Kenya's open battery-swap network, and who is not in the room.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+    <a href="/insight-a-thousand-cars-one-risk">
+      <h4>A Thousand Cars, One Risk</h4>
+      <p>When the driver comes out of the taxi, a thousand independent risks become one repeated.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
+
+For the full series across the transitions we study, see [Articles](/articles).
+
+---
 
 *See the [mobility case study](/case-roam). For how we study transitions like this, see [Field Research](/field-research). See also sibling programmes [Green Industrialisation & Local Manufacturing](/expertise-manufacturing) and [Financial Inclusion](/expertise-finance), and the [Technology & Innovation Dynamics](/innovation-dynamics) theory map. Research by [Sustainable Development Goal](/sdgs). To discuss a study, see [Contact](/contact).*
