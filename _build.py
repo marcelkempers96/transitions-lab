@@ -202,6 +202,11 @@ HERO_COLOR: dict[str, str] = {
     "insight-adoption-is-the-research": "butter",
     "insight-load-that-grows-when-hot": "butter",
     "insight-strategic-not-financeable": "butter",
+    "insight-factory-and-the-town": "butter",
+    "insight-evidence-arrives-too-early": "butter",
+    "insight-when-is-a-mine-green": "butter",
+    "insight-extent-of-the-market": "butter",
+    "insight-who-buys-the-outcome": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -677,6 +682,26 @@ META: dict[str, dict[str, str]] = {
     "insight-strategic-not-financeable": {
         "title": "Strategic Is Not the Same as Financeable | Transitions Lab",
         "description": "Twenty-three of sixty EU strategic critical mineral projects may not reach a final investment decision. Instruments that raise the mean and instruments that narrow the distribution are not the same thing.",
+    },
+    "insight-factory-and-the-town": {
+        "title": "The Factory Cannot Transition Without the Town | Transitions Lab",
+        "description": "An Italian court has upheld the shutdown of the Taranto blast furnaces. The displaced-worker evidence says most of the loss is not unemployment. It is lower wages, permanently.",
+    },
+    "insight-evidence-arrives-too-early": {
+        "title": "The Evidence Arrives Too Early | Transitions Lab",
+        "description": "Hungary's central bank is considering climate scenarios in monetary policy. Climate models run to 2100. Monetary policy runs to two years. Carney called it the tragedy of the horizon.",
+    },
+    "insight-when-is-a-mine-green": {
+        "title": "When Is a Mine Green Infrastructure? | Transitions Lab",
+        "description": "Europe is deciding how sustainable finance frameworks should treat critical minerals mining. It sounds like a classification question. It is really a distributional one.",
+    },
+    "insight-extent-of-the-market": {
+        "title": "The Extent of the Market | Transitions Lab",
+        "description": "The AfCFTA Secretariat wants two or three cross-border anchor projects rather than fifty-four national strategies. Adam Smith explained why in 1776, and the obstacles are not tariffs.",
+    },
+    "insight-who-buys-the-outcome": {
+        "title": "Who Buys the Outcome? | Transitions Lab",
+        "description": "The Commission's carbon farming buyers club identifies the right problem. A farmer produces six outputs, one has a price, and the other five beneficiaries are not on the invoice.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
@@ -1525,36 +1550,36 @@ def build_home() -> str:
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="insight-row">
-      <a class="insight-card has-photo" href="/insight-a-thousand-cars-one-risk">
+      <a class="insight-card has-photo" href="/insight-factory-and-the-town">
         <div class="card-photo">
-          <img src="/assets/img/insight-a-thousand-cars-one-risk-hero.jpg" alt="Line-art comparison: on the left a row of taxis each with a distinct small driver figure at the wheel; on the right an identical row of driverless two-seater vehicles connected upward by dashed lines to a single cloud-shaped software icon.">
-          <span class="kicker">Insight &middot; E-Mobility</span>
+          <img src="/assets/img/insight-factory-and-the-town-hero.jpg" alt="Line-art scene: a large steelworks with cooling towers and a blast furnace drawn in outline at the top of the frame, and beneath it, connected by fine radiating lines, a dense town of small buildings so that the works and the town read as one structure.">
+          <span class="kicker">Insight &middot; Just Transition</span>
         </div>
         <div class="body">
-          <h3>A Thousand Cars, One Risk</h3>
-          <p>A taxi fleet with drivers is a thousand independent risks. A robotaxi fleet is one risk repeated a thousand times, and that is a different asset entirely.</p>
+          <h3>The Factory Cannot Transition Without the Town</h3>
+          <p>Taranto's blast furnaces are being closed by court order. Most of the loss is not unemployment. It is lower wages, permanently, and no retraining course changes that.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-survey-first-act-of-the-mine">
+      <a class="insight-card has-photo" href="/insight-when-is-a-mine-green">
         <div class="card-photo">
-          <img src="/assets/img/insight-survey-first-act-of-the-mine-hero.jpg" alt="Line-art scene: a small satellite in orbit emitting straight optical rays and concentric radar arcs through a band of cloud onto a landscape of contour lines, with a locked archive cabinet standing at the edge between the landscape and small figures.">
-          <span class="kicker">Insight &middot; Minerals &amp; Information</span>
+          <img src="/assets/img/insight-when-is-a-mine-green-hero.jpg" alt="Line-art scene: a set of old balance scales, with a wind turbine, a battery and a power line stacked on one pan, and on the other pan a river, a small settlement and a hillside, the two pans hanging almost level, with a label plate on the central column that has been left blank.">
+          <span class="kicker">Insight &middot; Finance &amp; Minerals</span>
         </div>
         <div class="body">
-          <h3>The Survey Is the First Act of the Mine</h3>
-          <p>Congo is spending $180 million to know what is under its own ground and keeping the answer. Owning the survey is the negotiation, conducted in advance.</p>
+          <h3>When Is a Mine Green Infrastructure?</h3>
+          <p>Europe is deciding how sustainable finance frameworks should treat critical minerals mining. A classification question that is really a distributional one.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
-      <a class="insight-card has-photo" href="/insight-load-that-grows-when-hot">
+      <a class="insight-card has-photo" href="/insight-extent-of-the-market">
         <div class="card-photo">
-          <img src="/assets/img/insight-load-that-grows-when-hot-hero.jpg" alt="Line-art scene: a long low data centre building with rooftop cooling units beneath a high sun with heat lines rising; a thermometer stands beside the building with its column high, and a transmission tower behind carries sagging lines toward a distant town.">
-          <span class="kicker">Insight &middot; Energy Systems</span>
+          <img src="/assets/img/insight-extent-of-the-market-hero.jpg" alt="Line-art scene: fifty-four small identical workshops each containing a complete miniature production line, drawn in a crowded grid; beside them, one large open-sided factory whose production line runs continuously across three separate ground sections divided by dotted border lines.">
+          <span class="kicker">Insight &middot; Industrial Policy</span>
         </div>
         <div class="body">
-          <h3>The Load That Grows When It Is Hot</h3>
-          <p>Data centres are planned as flat demand. Cooling load rises with temperature, which is the same day the rest of the system peaks.</p>
+          <h3>The Extent of the Market</h3>
+          <p>The AfCFTA wants two or three cross-border anchor projects rather than fifty-four national strategies. Adam Smith explained why in 1776, and the obstacles are not tariffs.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
