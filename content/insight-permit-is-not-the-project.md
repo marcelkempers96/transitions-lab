@@ -68,6 +68,11 @@ That is not a hypothesis about the future. It is the ordinary history of contest
 
 The evidence is already in this file. A deregulatory measure announced in December 2025 to accelerate access to raw materials has, within nine months, produced a formal complaint to the Ombudswoman. That proceeding is itself time, and it arrived before a single permit was granted under the revised rules, which do not yet exist.
 
+<figure>
+<img src="/assets/img/insight-permit-is-not-the-project-horizons.jpg" alt="Chart, 'Evidence matures on five different horizons'. Five horizontal sky-blue bars of increasing length labelled from top: technical (shortest), commercial, social, environmental, institutional (longest). Each bar terminates in a coral dot marking when that kind of evidence has matured. Time axis runs left to right beneath. A note reads 'the decision usually sits near the first endpoint'." class="diagram">
+<figcaption>The decision is taken at the shortest horizon. The evidence for the others arrives later and, when it disagrees, arrives in a courtroom.</figcaption>
+</figure>
+
 Nobody publishes the second number. That is the research question, and it is answerable: take the European mining and processing projects permitted over the last fifteen years, measure decision-to-operation alongside application-to-decision, and see whether the jurisdictions with the fastest permits have the fastest projects.
 
 <aside class="tl-box">

@@ -47,6 +47,11 @@ Lowest-price award has a specific property in this context. It is defensible. An
 
 An official who awards to a more expensive bid on grounds of quality, resilience or supply chain has taken a position that has to be justified, and will be re-examined if anything goes wrong. The asymmetry is not about the rules. It is about what is defensible afterwards.
 
+<figure>
+<img src="/assets/img/insight-first-customer-two-officials.jpg" alt="Diagram: two officials seated at identical desks with a supplier opposite each. Left panel shows a clipboard reading 'lowest compliant price' with a sky-blue tick above it. Right panel shows a clipboard reading 'quality weighted award' with a coral stack of justification papers hovering above it. Beneath both, a note reads 'the rules permit both. Only one requires an explanation.'" class="diagram">
+<figcaption>Two lawful positions with very different personal exposure to challenge.</figcaption>
+</figure>
+
 Allowing non-price criteria therefore does something necessary and insufficient. It removes a prohibition. It does not remove the personal exposure of the person exercising the new discretion, and discretion that carries personal risk without personal reward tends not to be exercised.
 
 The measures that would change behaviour are duller than the proposal and mostly sit below it. Standardised evaluation frameworks that make a quality-weighted award the default rather than a deviation. Central framework agreements so that the risk of first purchase is taken once, by an institution built to take it, rather than repeatedly by small buyers. Explicit indemnity or insurance for first-of-a-kind installations. And published guidance that an official can point to.

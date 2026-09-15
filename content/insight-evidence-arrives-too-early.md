@@ -34,6 +34,11 @@ The bank is not being asked to act on a projection for 2070. It is being asked t
 
 **Which suggests the practical question is not how to make institutions think longer. It is where a long-horizon risk has already produced a short-horizon consequence, because that is where evidence can enter a decision without anybody changing their mandate.**
 
+<figure>
+<img src="/assets/img/insight-evidence-arrives-too-early-crossings.jpg" alt="Diagram: a single horizontal time axis. A coral dot near the left labelled 'commitment' marks where a decision is made. A shorter coral bar beneath, labelled 'evidence observed', spans only from that commitment to a midpoint. A much longer dashed sky-blue bar beneath, labelled 'risk exposed', spans from the commitment all the way to a sky-blue dot far to the right, annotated 'the long risk crosses in here'." class="diagram">
+<figcaption>Commitment is made on the short bar. The risk sits on the long one, and does not wait for permission to arrive.</figcaption>
+</figure>
+
 Food price volatility is the clearest current example. Insurance repricing is another. Infrastructure outage frequency is a third. In each case the physical driver is slow and the consequence is annual.
 
 ---

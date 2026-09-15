@@ -24,6 +24,11 @@ The timing is pointed, arriving after Uber's exit from the Nigerian market. But 
 
 Strip a ride down to its costs and almost all of them are fixed to the vehicle and the hour rather than to the passenger. The car is depreciating whether it holds one person or four. The fuel difference between carrying one and four is small. The driver is paid for the hour either way. Insurance, maintenance and financing are all per vehicle.
 
+<figure>
+<img src="/assets/img/insight-scheduled-not-summoned-cost.jpg" alt="Chart, 'Almost nothing in a ride varies with the passenger'. A single vertical stacked bar labelled 'cost of one vehicle-hour', divided from bottom to top into segments in sky blue labelled depreciation, financing, insurance, maintenance and driver time. A thin coral segment sits at the very top labelled 'fuel attributable to an extra passenger', annotated 'the only part that changes when you add someone'. Footnote: Schematic. Transitions Lab, 2026." class="diagram">
+<figcaption>Almost every line in the cost stack is paid whether the seat behind is filled or empty.</figcaption>
+</figure>
+
 Which means the single most powerful lever on the cost of a ride is the number of people in the car, and the second most powerful is the proportion of the driver's working day that is spent carrying anybody at all.
 
 Conventional ride-hailing is structurally bad at both. It matches one request to one vehicle, so occupancy is usually one. And it requires the driver to be available and idle in order to be summonable, so a substantial share of the working day is spent circulating or waiting.
