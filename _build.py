@@ -211,6 +211,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-scheduled-not-summoned": "butter",
     "insight-first-customer": "butter",
     "insight-local-content-local-benefit": "butter",
+    "insight-permit-is-not-the-project": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -722,6 +723,10 @@ META: dict[str, dict[str, str]] = {
     "insight-local-content-local-benefit": {
         "title": "Local Content Is Not the Same as Local Benefit | Transitions Lab",
         "description": "Ghana is transferring mining work to Ghanaian contractors and workers warn wages will fall. Competition among sellers to one buyer transmits the pressure to labour by design.",
+    },
+    "insight-permit-is-not-the-project": {
+        "title": "The Permit Is Not the Project | Transitions Lab",
+        "description": "Europe is reopening its water law to speed mineral permits. The statistic being measured is application-to-decision. The one that decides whether the plant is built is decision-to-operation.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
@@ -1570,6 +1575,17 @@ def build_home() -> str:
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="insight-row">
+      <a class="insight-card has-photo" href="/insight-permit-is-not-the-project">
+        <div class="card-photo">
+          <img src="/assets/img/insight-permit-is-not-the-project-hero.jpg" alt="Line-art scene: a stopwatch in the foreground stopped at a short reading, sitting on a stamped permit document; behind it and much larger, an unbuilt processing plant drawn in outline with scaffolding, a group of small figures holding placards at its gate, and a courthouse in the far distance.">
+          <span class="kicker">Insight &middot; Governance &amp; Minerals</span>
+        </div>
+        <div class="body">
+          <h3>The Permit Is Not the Project</h3>
+          <p>Europe is measuring application-to-decision time. The number that decides whether a plant gets built is decision-to-operation, and nobody publishes it.</p>
+          <span class="read">Read &rarr;</span>
+        </div>
+      </a>
       <a class="insight-card has-photo" href="/insight-factory-and-the-town">
         <div class="card-photo">
           <img src="/assets/img/insight-factory-and-the-town-hero.jpg" alt="Line-art scene: a large steelworks with cooling towers and a blast furnace drawn in outline at the top of the frame, and beneath it, connected by fine radiating lines, a dense town of small buildings so that the works and the town read as one structure.">
@@ -1589,17 +1605,6 @@ def build_home() -> str:
         <div class="body">
           <h3>When Is a Mine Green Infrastructure?</h3>
           <p>Europe is deciding how sustainable finance frameworks should treat critical minerals mining. A classification question that is really a distributional one.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo" href="/insight-extent-of-the-market">
-        <div class="card-photo">
-          <img src="/assets/img/insight-extent-of-the-market-hero.jpg" alt="Line-art scene: fifty-four small identical workshops each containing a complete miniature production line, drawn in a crowded grid; beside them, one large open-sided factory whose production line runs continuously across three separate ground sections divided by dotted border lines.">
-          <span class="kicker">Insight &middot; Industrial Policy</span>
-        </div>
-        <div class="body">
-          <h3>The Extent of the Market</h3>
-          <p>The AfCFTA wants two or three cross-border anchor projects rather than fifty-four national strategies. Adam Smith explained why in 1776, and the obstacles are not tariffs.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
