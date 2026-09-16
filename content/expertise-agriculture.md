@@ -17,9 +17,9 @@
 <div class="sdg-block">
   <span class="sdg-label">Contributes to</span>
   <ul class="sdg-row">
-    <li class="sdg-02"><a href="/sdgs#g2"><span class="sdg-num">2</span><span class="sdg-name"><span class="sdg-goal-title">Goal 2: Zero Hunger</span><span class="sdg-tailored">Smallholder yields and income</span></span></a></li>
-    <li class="sdg-15"><a href="/sdgs#g15"><span class="sdg-num">15</span><span class="sdg-name"><span class="sdg-goal-title">Goal 15: Life on Land</span><span class="sdg-tailored">Soil, forest, wetland monitoring</span></span></a></li>
-    <li class="sdg-14"><a href="/sdgs#g14"><span class="sdg-num">14</span><span class="sdg-name"><span class="sdg-goal-title">Goal 14: Life Below Water</span><span class="sdg-tailored">Coastal and fisher livelihoods</span></span></a></li>
+    <li class="sdg-02"><a href="/sdgs#g2"><img class="sdg-icon" src="/assets/img/sdg/sdg-02.png" alt="SDG 2"><span class="sdg-name"><span class="sdg-goal-title">Goal 2: Zero Hunger</span><span class="sdg-tailored">Smallholder yields and income</span></span></a></li>
+    <li class="sdg-15"><a href="/sdgs#g15"><img class="sdg-icon" src="/assets/img/sdg/sdg-15.png" alt="SDG 15"><span class="sdg-name"><span class="sdg-goal-title">Goal 15: Life on Land</span><span class="sdg-tailored">Soil, forest, wetland monitoring</span></span></a></li>
+    <li class="sdg-14"><a href="/sdgs#g14"><img class="sdg-icon" src="/assets/img/sdg/sdg-14.png" alt="SDG 14"><span class="sdg-name"><span class="sdg-goal-title">Goal 14: Life Below Water</span><span class="sdg-tailored">Coastal and fisher livelihoods</span></span></a></li>
   </ul>
 </div>
 
