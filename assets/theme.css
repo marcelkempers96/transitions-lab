@@ -1375,6 +1375,21 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   outline-color:#F5EFE1;
 }
 
+/* In-text headings on case studies and insight articles are
+   ALWAYS serif (Fraunces), regardless of the reader-toolbar
+   font choice. Body copy, standfirst and h1 still follow the
+   toolbar; only the h2/h3/h4 that sit inside the prose lock
+   to serif so the section breaks read editorial. */
+body[data-page^="case-"] .prose h2,
+body[data-page^="case-"] .prose h3,
+body[data-page^="case-"] .prose h4,
+body[data-page^="insight-"] .prose h2,
+body[data-page^="insight-"] .prose h3,
+body[data-page^="insight-"] .prose h4{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif;
+  letter-spacing:-.012em;font-weight:600;
+}
+
 /* Serif font: applies to the whole reading surface — headings,
    standfirst, byline, AND body copy — when data-font="serif". */
 :root[data-font="serif"] .prose,
