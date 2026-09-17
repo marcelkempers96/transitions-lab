@@ -7,15 +7,8 @@
 <div class="case-meta">
   <div><span class="k">Location</span><span class="v">Nairobi and greater Kenya</span></div>
   <div><span class="k">Sector</span><span class="v">Electric mobility · informal transport · vehicle financing</span></div>
-  <div><span class="k">Lab programme</span><span class="v">Electrification & E-Mobility Transitions</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-e-mobility">Electrification &amp; E-Mobility Transitions</a></span></div>
 </div>
-
-<figure>
-  <img src="/assets/img/case-mobility-hero.jpg" alt="A boda-boda rider on an electric motorcycle at first light on a Nairobi commercial street; corrugated-iron shopfronts and dust in the air behind." class="diagram">
-  <figcaption>A rider begins the working day. The transition to electric is not decided by the vehicle, but by everything around it: financing, charging, and the after-sales network that keeps it on the road.</figcaption>
-</figure>
-
----
 
 ## The transition in one sentence
 
@@ -30,6 +23,11 @@ This is the kind of transition the Lab exists to study. Not the launch event or 
 The boda boda, the commercial motorcycle taxi, is the circulatory system of urban East Africa. For a rider, the motorcycle is not a lifestyle choice; it is a working asset that has to earn every day. That single fact reshapes the entire electric transition. A rider does not ask whether an electric motorcycle is good for the planet. They ask whether it earns more than it costs, whether it can be fixed when it breaks, and whether the day's income survives the switch.
 
 This is precisely where a technical reading and a human reading have to meet. The engineering question, range, charge time, battery durability, is real. But it is downstream of a human question: does the economics of a rider's day actually work on electric? The Lab's interest is in the second question, and in how the first either serves it or gets in its way.
+
+<figure>
+  <img src="/assets/img/case-mobility-hero.jpg" alt="A boda-boda rider on an electric motorcycle at first light on a Nairobi commercial street; corrugated-iron shopfronts and dust in the air behind." class="diagram">
+  <figcaption>A boda-boda rider at first light on a Nairobi commercial street.</figcaption>
+</figure>
 
 The manufacturer's own framing is unusually honest about this. Their country lead has put it plainly: every hour a rider spends off the road is income lost. That is not a marketing line; it is the constraint the whole transition turns on.
 

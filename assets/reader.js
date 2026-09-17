@@ -1,9 +1,10 @@
 /* Reader preferences: serif toggle, font size, background theme.
    State lives on <html data-theme|data-font|data-size> and persists
    in localStorage so the choice follows the reader across pages.
-   Applied inline in the head (see FLASH_INIT in _build.py) to avoid
-   a first-paint flicker. The toolbar buttons wire into the same
-   apply() calls; aria-pressed reflects current state. */
+   The FLASH_INIT snippet in the head sets these attributes before
+   first paint AND stashes the values on window.__tlR; this module
+   reflects them onto the toolbar buttons the moment the toolbar
+   exists in the DOM, and wires button clicks. */
 (function () {
   var html = document.documentElement;
   var KEY_THEME = 'tl_r_theme_v1';
@@ -43,17 +44,26 @@
     }
   };
 
-  // Restore on DOM ready (head-inline init already set the attrs; this
-  // re-syncs aria-pressed after the toolbar exists in the DOM).
-  document.addEventListener('DOMContentLoaded', function () {
-    apply.theme(safeGet(KEY_THEME, 'warm'));
-    apply.font(safeGet(KEY_FONT, 'sans'));
-    apply.size(safeGet(KEY_SIZE, '0'));
-  });
+  function init() {
+    // Prefer the values FLASH_INIT already read from localStorage in
+    // the head; fall back to a re-read if the flash guard was blocked.
+    var r = window.__tlR || {};
+    apply.theme(r.theme || safeGet(KEY_THEME, 'warm'));
+    apply.font(r.font || safeGet(KEY_FONT, 'sans'));
+    apply.size(r.size || safeGet(KEY_SIZE, '0'));
+  }
+
+  // Robust init: run immediately if DOMContentLoaded already fired
+  // (defer scripts often land after that), otherwise wait for it.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
   // Delegated click handler for toolbar buttons.
   document.addEventListener('click', function (e) {
-    var t = e.target.closest && e.target.closest('[data-set-theme],[data-set-font],[data-size-step]');
+    var t = e.target && e.target.closest && e.target.closest('[data-set-theme],[data-set-font],[data-size-step]');
     if (!t) return;
     e.preventDefault();
     if (t.hasAttribute('data-set-theme')) apply.theme(t.getAttribute('data-set-theme'));

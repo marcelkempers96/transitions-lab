@@ -7,15 +7,8 @@
 <div class="case-meta">
   <div><span class="k">Location</span><span class="v">Lombok, Indonesia</span></div>
   <div><span class="k">Sector</span><span class="v">Clean energy · circular economy · regenerative agriculture · carbon</span></div>
-  <div><span class="k">Lab themes</span><span class="v">Decentralised energy · waste-to-value · smallholder livelihoods</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-energy">Energy Access &amp; Off-Grid Systems</a> · <a href="/expertise-agriculture">Regenerative Agriculture &amp; Land Use</a></span></div>
 </div>
-
-<figure>
-  <img src="/assets/img/case-pyropower-hero.jpg" alt="A smallholder farmer in a straw hat holds a handful of finished biochar in cupped hands, standing beside a large metal kiln with a fire visible at the base. Bamboo stacks and processed pieces around the working area." class="diagram">
-  <figcaption>A farmer in Lombok with a handful of finished biochar. The kiln behind him turns crop waste into three things at once: heat, soil amendment, and, potentially, a carbon-market income.</figcaption>
-</figure>
-
----
 
 ## The transition in one sentence
 
@@ -48,7 +41,22 @@ The kiln's appeal is that it answers more than one problem at once. A farmer fee
 
 <!-- IMAGE pyro-threevalue: diagram | Simple diagram: one waste-stream input branching into three outputs - Heat / Biochar (soil) / Carbon income. House colours, clean. | Beside the "three kinds of value" section. -->, a conversion of something worthless, even harmful when open-burned, into three distinct goods.
 
+<figure>
+  <img src="/assets/img/case-pyropower-kiln-demo.png" alt="Two-panel field photograph: on the left, a Lombok farmer in a black-and-white floral shirt demonstrating a small stainless-steel Pyropower kiln, freshly finished biochar heaped beside it on the concrete pad; on the right, a young researcher in a green t-shirt loading dried cassava stalks into the same kiln under a tree at another homestead." class="diagram">
+  <figcaption>The Pyropower kiln, being demonstrated and used at two Lombok homesteads.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/case-pyropower-hero.jpg" alt="A smallholder farmer in a straw hat holds a handful of finished biochar in cupped hands, standing beside a large metal kiln with a fire visible at the base. Bamboo stacks and processed pieces around the working area." class="diagram">
+  <figcaption>A farmer in Lombok with a handful of finished biochar.</figcaption>
+</figure>
+
 The Lab's interest is in how a household actually weighs those three values. Which one does the work of adoption, the fuel saving, the yield increase, or the carbon income? The answer is rarely the one a project assumes, and it tends to differ by crop, by season, and by household. This is precisely the kind of question that survey headcounts miss and that only direct, structured conversation with farmers can answer.
+
+<figure>
+  <img src="/assets/img/case-pyropower-fieldwork.png" alt="Four-panel Lombok field-research collage: a researcher taking notes with a woman in a mauve headscarf beside a pile of dried husks; two farmers standing while a researcher plants a sapling into a mulched hole; a farmer in a green t-shirt showing coffee cherries on the branch; a hand holding up a coffee-leaf specimen for inspection." class="diagram">
+  <figcaption>Fieldwork on the Lombok smallholdings — interviews, planting, and crop inspection.</figcaption>
+</figure>
 
 ### Open-sourcing changes who holds the power
 
@@ -62,6 +70,11 @@ These are not criticisms of the model; they are the questions that determine whe
     Your browser does not support embedded video.
   </video>
   <figcaption>The chief of the village and members of the farmers' association at the Lombok kiln demonstration.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/case-pyropower-programme.png" alt="Four-panel programme collage from the Lombok engagement: a signed agreement being held up with the village chief in a white peci and elders; a handshake and signed agreement with the farmers' association over an outdoor table of coffee cups; the field team on the flatbed of a Suzuki pickup; a large group photograph at the end of the visit under a mango tree." class="diagram">
+  <figcaption>Signed agreements with the village chief and the farmers' association; the field team on the ground; the closing group photograph.</figcaption>
 </figure>
 
 ### The diaspora of a single idea

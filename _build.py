@@ -41,15 +41,19 @@ ASSET_CSS_V = _asset_hash("assets/theme.css")
 ASSET_CONSENT_V = _asset_hash("assets/consent.js")
 ASSET_READER_V = _asset_hash("assets/reader.js")
 
-# Inline flash-of-unstyled-theme guard: reads saved reader prefs from
-# localStorage and sets data-theme/data-font/data-size on <html> BEFORE
-# any paint. Kept tiny so it inlines cleanly in the head.
+# Inline flash-of-unstyled-theme guard. Runs in the head BEFORE any
+# paint: reads saved reader prefs from localStorage and stashes them on
+# <html> as data-theme / data-font / data-size, and on window.__tlR so
+# the toolbar's aria-pressed can be reflected as soon as it exists in
+# the DOM (see reader.js). Kept tiny so it inlines cleanly.
 FLASH_INIT = (
     "<script>(function(){try{var d=document.documentElement,"
-    "g=function(k,f){try{return localStorage.getItem(k)||f;}catch(_){return f;}};"
-    "d.setAttribute('data-theme',g('tl_r_theme_v1','warm'));"
-    "d.setAttribute('data-font',g('tl_r_font_v1','sans'));"
-    "d.setAttribute('data-size',g('tl_r_size_v1','0'));"
+    "g=function(k,f){try{return localStorage.getItem(k)||f;}catch(_){return f;}},"
+    "t=g('tl_r_theme_v1','warm'),f=g('tl_r_font_v1','sans'),s=g('tl_r_size_v1','0');"
+    "d.setAttribute('data-theme',t);"
+    "d.setAttribute('data-font',f);"
+    "d.setAttribute('data-size',s);"
+    "window.__tlR={theme:t,font:f,size:s};"
     "}catch(_){}})();</script>"
 )
 
@@ -60,7 +64,7 @@ FLASH_INIT = (
 READER_TOOLBAR_HTML = (
     '<div class="reader-toolbar" role="toolbar" aria-label="Reading preferences">'
     '  <div class="rt-group" role="group" aria-label="Font family">'
-    '    <button type="button" class="rt-btn rt-sans-btn" data-set-font="sans" aria-pressed="true">Aa</button>'
+    '    <button type="button" class="rt-btn rt-sans-btn" data-set-font="sans" aria-pressed="false">Aa</button>'
     '    <button type="button" class="rt-btn rt-serif-btn" data-set-font="serif" aria-pressed="false">Aa</button>'
     '  </div>'
     '  <div class="rt-group" role="group" aria-label="Text size">'
@@ -69,7 +73,7 @@ READER_TOOLBAR_HTML = (
     '  </div>'
     '  <div class="rt-group" role="group" aria-label="Background">'
     '    <button type="button" class="rt-btn rt-swatch" data-set-theme="light" aria-label="Light" aria-pressed="false"><span class="rt-dot rt-dot-light"></span></button>'
-    '    <button type="button" class="rt-btn rt-swatch" data-set-theme="warm" aria-label="Warm" aria-pressed="true"><span class="rt-dot rt-dot-warm"></span></button>'
+    '    <button type="button" class="rt-btn rt-swatch" data-set-theme="warm" aria-label="Warm" aria-pressed="false"><span class="rt-dot rt-dot-warm"></span></button>'
     '    <button type="button" class="rt-btn rt-swatch" data-set-theme="dark" aria-label="Dark" aria-pressed="false"><span class="rt-dot rt-dot-dark"></span></button>'
     '  </div>'
     '</div>'

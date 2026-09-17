@@ -9,21 +9,19 @@
 <div class="case-meta">
   <div><span class="k">Location</span><span class="v">Lombok, Indonesia, and coastal partner sites</span></div>
   <div><span class="k">Sector</span><span class="v">Marine conservation · environmental monitoring · community science</span></div>
-  <div><span class="k">Lab themes</span><span class="v">Socio-technical monitoring systems · community data · trust in evidence</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-agriculture">Marine &amp; Land Ecosystems</a></span></div>
 </div>
-
-<figure>
-  <img src="/assets/img/case-reef-support-hero.jpg" alt="A community ranger in a mask and snorkel, chest-deep in clear reef water, writing on a waterproof clipboard beside a coral-survey quadrat; a small research skiff moored just off the reef edge in the background." class="diagram">
-  <figcaption>The reef is being read by the person who lives with it. The socio-technical question is whether the rest of the monitoring system credits that reading enough to act on it.</figcaption>
-</figure>
-
----
 
 ## The transition in one sentence
 
 The health of a coral reef, an ecosystem that occupies a fraction of the ocean yet [shelters a quarter of its species](https://www.unep.org/topics/ocean-seas-and-coasts/ecosystems/coral-reefs), is being made legible by braiding together three very different kinds of evidence: satellites overhead, sensors in the water, and rangers from the coastal communities who live with the reef.
 
 The technology here is not a vehicle or a kiln. It is a monitoring system: a way of seeing. And the hardest problems in a way of seeing are not optical. They are human, about who collects the data, who trusts it, and whether it ever turns into action.
+
+<figure>
+  <img src="/assets/img/case-reef-support-hero.jpg" alt="A community ranger in a mask and snorkel, chest-deep in clear reef water, writing on a waterproof clipboard beside a coral-survey quadrat; a small research skiff moored just off the reef edge in the background." class="diagram">
+  <figcaption>A community ranger surveying a reef in Lombok.</figcaption>
+</figure>
 
 ---
 

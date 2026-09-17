@@ -6,23 +6,21 @@
 
 <a href="https://www.mimaji.org" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
 
-<figure>
-  <img src="/assets/img/case-mimaji-hero.jpg" alt="A woman and a boy at a Nairobi settlement standpipe fill yellow jerry cans; a public tap runs into the container in the foreground; other residents wait behind." class="diagram">
-  <figcaption>A settlement standpipe in Nairobi. The households paying the most per litre for water buy it here, in a market where price and quality have almost no visible signal. Making that signal visible is what MajiMap sets out to do; whether the households on the wrong side of that market can see it and use it is what we are measuring.</figcaption>
-</figure>
-
 <div class="case-meta">
   <div><span class="k">Partner</span><span class="v"><a href="https://www.mimaji.org" target="_blank" rel="noopener">MiMaji Foundation</a></span></div>
   <div><span class="k">Location</span><span class="v">Nairobi, Kenya · settlement fieldwork across several sub-counties</span></div>
   <div><span class="k">Sector</span><span class="v">Water &amp; sanitation · open environmental data · community accountability</span></div>
-  <div><span class="k">Lab programme</span><span class="v">Water &amp; Sanitation Transitions</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-energy">Water &amp; Sanitation Transitions</a></span></div>
 </div>
-
----
 
 ## The engagement in one sentence
 
 MiMaji publishes water-price and water-quality data as an open public map; the Lab is measuring whether that map reaches, is trusted by, and changes the behaviour of the households on the wrong side of Nairobi's water-market asymmetry.
+
+<figure>
+  <img src="/assets/img/case-mimaji-hero.jpg" alt="A woman and a boy at a Nairobi settlement standpipe fill yellow jerry cans; a public tap runs into the container in the foreground; other residents wait behind." class="diagram">
+  <figcaption>A settlement standpipe in Nairobi.</figcaption>
+</figure>
 
 ## Why this engagement matters
 

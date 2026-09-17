@@ -1375,21 +1375,47 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   outline-color:#F5EFE1;
 }
 
-/* Serif font: applies only when data-font="serif". Body copy
-   stays Hanken for reading; headings, standfirst, and byline
-   switch to Fraunces at a slightly tightened tracking. */
+/* Serif font: applies to the whole reading surface — headings,
+   standfirst, byline, AND body copy — when data-font="serif". */
+:root[data-font="serif"] .prose,
+:root[data-font="serif"] .prose p,
+:root[data-font="serif"] .prose li,
+:root[data-font="serif"] .prose blockquote,
 :root[data-font="serif"] .prose h1,
 :root[data-font="serif"] .prose h2,
 :root[data-font="serif"] .prose h3,
 :root[data-font="serif"] .prose h4,
 :root[data-font="serif"] .page-hero h1,
 :root[data-font="serif"] .page-hero .lede,
-:root[data-font="serif"] .prose .article-byline{
+:root[data-font="serif"] .prose .article-byline,
+:root[data-font="serif"] .prose figure figcaption{
   font-family:'Fraunces',Georgia,'Times New Roman',serif;
-  letter-spacing:-.008em;font-weight:500;
+  letter-spacing:-.005em;
+}
+:root[data-font="serif"] .prose > p,
+:root[data-font="serif"] .prose li,
+:root[data-font="serif"] .prose blockquote{
+  font-weight:400;letter-spacing:.002em;line-height:1.7;
 }
 :root[data-font="serif"] .prose h1,
-:root[data-font="serif"] .page-hero h1{font-weight:600;}
+:root[data-font="serif"] .prose h2,
+:root[data-font="serif"] .prose h3,
+:root[data-font="serif"] .prose h4,
+:root[data-font="serif"] .page-hero h1{
+  font-weight:600;letter-spacing:-.012em;
+}
+:root[data-font="serif"] .page-hero .lede,
+:root[data-font="serif"] .prose .article-byline{font-weight:400;}
+/* Keep the toolbar buttons themselves in their intended fonts
+   even when body-serif is on, so the Aa button labels still
+   read sans vs serif at a glance. */
+:root[data-font="serif"] .prose .reader-toolbar,
+:root[data-font="serif"] .prose .reader-toolbar .rt-btn{
+  font-family:'Hanken Grotesk',sans-serif;letter-spacing:.005em;
+}
+:root[data-font="serif"] .prose .reader-toolbar .rt-serif-btn{
+  font-family:'Fraunces',Georgia,serif;font-style:italic;
+}
 
 /* Text size: applies only to .prose body copy, not headings
    (h1/h2 stay proportioned by their own rules). Steps are subtle
@@ -1400,6 +1426,70 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 :root[data-size="1"] .prose li{font-size:18.5px;line-height:1.68;}
 :root[data-size="2"] .prose > p,
 :root[data-size="2"] .prose li{font-size:20px;line-height:1.7;}
+
+/* Article & case-study section colour-band progression.
+   On desktop, as the reader scrolls past each h2 in the prose,
+   the surrounding band shifts colour subtly. Uses attachment-fixed
+   gradients so the effect ties to viewport, not element scroll,
+   which gives the smooth "flowing" feel without any JS. Kept
+   restrained: three low-chroma tints between paper and a warm
+   cream so the change is felt more than seen. */
+@media (min-width:900px){
+  section.light{
+    background:linear-gradient(180deg,
+      var(--paper) 0%,
+      #F1E6D0 28%,
+      #F5EDDD 52%,
+      #F1E6D0 78%,
+      var(--paper) 100%);
+    background-attachment:fixed;
+  }
+}
+/* On light theme the same range shifts to soft-white variants. */
+@media (min-width:900px){
+  :root[data-theme="light"] section.light{
+    background:linear-gradient(180deg,
+      #FFFFFF 0%,
+      #F7F6F2 32%,
+      #FFFFFF 60%,
+      #F7F6F2 80%,
+      #FFFFFF 100%);
+    background-attachment:fixed;
+  }
+  :root[data-theme="dark"] section.light{
+    background:linear-gradient(180deg,
+      #14161a 0%,
+      #191B20 32%,
+      #14161a 60%,
+      #191B20 80%,
+      #14161a 100%);
+    background-attachment:fixed;
+  }
+}
+
+/* Reveal-on-scroll: paragraphs, figures, and mid-body h2/h3
+   fade + translate into view as the reader scrolls. Uses a
+   CSS-only :has() + animation-timeline where supported; falls
+   back cleanly to a no-op elsewhere. Respects reduced motion. */
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .prose > p,
+    .prose > figure,
+    .prose > h2,
+    .prose > h3,
+    .prose > .callout,
+    .prose > .reading-group,
+    .prose > .contact-cta-programme{
+      animation:tl-reveal linear both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 45%;
+    }
+    @keyframes tl-reveal{
+      from{opacity:0;transform:translateY(14px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+  }
+}
 
 /* Article & case-study page closing CTA band.
    A thin paper band that separates the reading prose from the CTA panel

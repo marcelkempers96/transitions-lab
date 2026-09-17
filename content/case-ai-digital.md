@@ -8,11 +8,6 @@
 
 <img class="sector-icon" src="/assets/icons/icon-ai-digital.png" alt="AI and digital systems sector icon" aria-hidden="true">
 
-<figure>
-  <img src="/assets/img/case-ai-digital-hero.jpg" alt="A young extension worker shows a phone screen in offline mode to an elderly farmer in a kofia hat, who is writing in a paper ledger. Mud-brick wall and thatched roof behind them." class="diagram">
-  <figcaption>An offline-mode digital tool meeting the setting it was built for. The screen says "offline mode"; the farmer is still keeping his own paper record. Both are correct.</figcaption>
-</figure>
-
 <div class="case-meta">
   <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's digital-services practice</span></div>
   <div><span class="k">Sector</span><span class="v">Digital services · mobile-first apps · digital public infrastructure · AI in emerging markets (cross-regional)</span></div>
@@ -28,6 +23,11 @@ An app that works flawlessly in a testing office often fails in exactly the sett
 ## Why this reading matters
 
 The story that "digital services will leapfrog institutional gaps" has become received wisdom. In practice, digital tools reach the people they were built for more reliably than the ones they were promised to serve. The failure is rarely the technology; it is the assumptions embedded in it. Constant connectivity. A private, personal device. English or French. Literacy in the app's genre. A payment method already set up. Any one of these missing quietly excludes a user, and the user then shows up in the metrics as "low engagement" rather than "the product was not built for them."
+
+<figure>
+  <img src="/assets/img/case-ai-digital-hero.jpg" alt="A young extension worker shows a phone screen in offline mode to an elderly farmer in a kofia hat, who is writing in a paper ledger. Mud-brick wall and thatched roof behind them." class="diagram">
+  <figcaption>An offline-mode digital tool being shown to a farmer keeping a paper ledger.</figcaption>
+</figure>
 
 The pattern shows up across sectors. Health apps that assume the patient owns the phone the appointment is booked on. Agricultural advisory services that assume a smartphone where the household has a feature phone. Government service portals that assume steady electricity for the router. AI-powered assistants trained on languages the intended user does not read. The specifics differ; the shape of the exclusion is the same.
 

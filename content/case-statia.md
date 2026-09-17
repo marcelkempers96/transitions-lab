@@ -7,12 +7,12 @@
 <div class="case-meta">
   <div><span class="k">Location</span><span class="v">St. Eustatius, Dutch Caribbean</span></div>
   <div><span class="k">Sector</span><span class="v">Public-sector transport · small-island systems</span></div>
-  <div><span class="k">Lab programme</span><span class="v">Dutch Caribbean Practice</span></div>
+  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-e-mobility">Dutch Caribbean Practice</a></span></div>
 </div>
 
 <figure>
   <img src="/assets/img/case-statia-hero.jpg" alt="Aerial view of St. Eustatius: a small volcanic island with the Quill cone rising to the right, the settled plain and airstrip running across the middle, and industrial oil terminals visible on the low western tip; deep-blue Caribbean sea on all sides." class="diagram">
-  <figcaption>The whole island in one frame. Every transport question here begins with the fact that the population, the terrain and the industrial footprint all fit inside this photograph.</figcaption>
+  <figcaption>Aerial view of St. Eustatius: the Quill, the settled plain, and the oil terminals in one frame.</figcaption>
 </figure>
 
 ## The transition in one sentence
