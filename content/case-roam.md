@@ -33,11 +33,6 @@ This is precisely where a technical reading and a human reading have to meet. Th
 
 The manufacturer's own framing is unusually honest about this. Their country lead has put it plainly: every hour a rider spends off the road is income lost. That is not a marketing line; it is the constraint the whole transition turns on.
 
-<figure>
-  <img src="/assets/img/case-roam-mechanics.jpg" alt="A Nairobi streetside repair scene at midday: two young mechanics kneeling beside an electric motorcycle with the seat lifted, one holding a spanner, the other checking a wiring loom; a queue of petrol boda bodas behind, a shop awning in matatu-yellow." class="diagram">
-  <figcaption>Repair on the street, not in a dealership. The transition holds only if the same corner that fixes a petrol motorcycle can also fix an electric one.</figcaption>
-</figure>
-
 ---
 
 ## What the evidence on the ground shows
@@ -55,17 +50,7 @@ The transition, in other words, is being carried by financing architecture as mu
 
 ### Range anxiety is a lived experience, not a spec sheet
 
-<figure>
-  <img src="/assets/img/case-roam-market-stall.jpg" alt="An orange electric motorcycle branded NGONYA parked at a market stall in Nairobi, a rider on a phone leaning on the handlebars while a stallholder counts money at the neighbouring kiosk; wooden produce crates and hand-painted signs behind." class="diagram">
-  <figcaption>An electric two-wheeler at a market kiosk. The rider is not thinking about the powertrain; they are thinking about the day.</figcaption>
-</figure>
-
 The technical answer to range, a dual-battery setup, charging from any standard outlet, a portable charger, matters. But what the Lab listens for is how range *feels* in a working day. A rider who can charge at home overnight and start every day fully powered describes something a spec sheet cannot: the disappearance of the petrol-station queue from their morning, and with it a small daily anxiety. Long-distance public expeditions by the manufacturer, thousands of kilometres of solar-supported riding across the region, function as public proof that the range objection can be answered. On the ground, the proof that matters is quieter: the rider who simply stopped thinking about it.
-
-<figure>
-  <img src="/assets/img/case-roam-cheche-show.jpg" alt="A Cheche EV trade-show booth with an electric motorcycle on a raised platform, a rolled banner beside it, two staff members in branded shirts explaining the swap station to a small crowd; conference hall lighting and other exhibitors visible behind." class="diagram">
-  <figcaption>The public-facing side of the transition: a trade-show booth translating the daily-cost argument to buyers, financiers and fleet operators.</figcaption>
-</figure>
 
 ### After-sales is where transitions are won or lost
 

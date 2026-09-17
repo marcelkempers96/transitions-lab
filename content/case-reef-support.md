@@ -33,10 +33,7 @@ The technology here is not a vehicle or a kiln. It is a monitoring system: a way
 
 This sits squarely in the Lab's domain. The live Transitions Lab site already names marine monitoring as operational substrate beneath its programmes; Reef Support is the applied edge of that interest. It is also the clearest of the three cases for demonstrating a particular truth: that a monitoring technology is only as good as the social system that feeds and trusts it.
 
-<figure>
-  <img src="/assets/img/case-reef-amba-training.jpg" alt="Amba Stapert, in a blue Reef Support t-shirt, inside an open-air Lombok lab beside a UV-lit coral tank; she points at a coral fragment while two women from the local community lean in to look at the same spot; snorkels drying overhead." class="diagram">
-  <figcaption>Amba Stapert, the first Reef Ranger, training two community members at the Lombok lab. The programme spreads by being learned in the same room, on the same tank.</figcaption>
-</figure>
+Amba Stapert, the first Reef Ranger, sits at the origin of the community-training arm of the programme.
 
 ---
 
@@ -48,16 +45,6 @@ This sits squarely in the Lab's domain. The live Transitions Lab site already na
 
 <!-- IMAGE reef-layers: diagram | Three-layer diagram: Satellite (wide) / Sensors (mid) / Rangers (ground) converging into one "shared view of reef health". This is the signature visual of the case. House colours. | Beside the "three layers of evidence" section. -->
 
-<figure>
-  <img src="/assets/img/case-reef-ai-detection.jpg" alt="A close-up reef photograph with computer-vision bounding boxes overlaid on individual coral colonies; each box labelled 'coral' with a confidence percentage between 30 and 76; different corals shaded purple, green, blue, orange by the model." class="diagram">
-  <figcaption>The AI layer sees what a spec sheet sees: a coral, a percentage, a bounding box. The socio-technical question is whether the ranger in the water agrees.</figcaption>
-</figure>
-
-<figure>
-  <img src="/assets/img/case-reef-quadrat.jpg" alt="A community ranger diver in scuba gear holding a PVC-frame quadrat over a mixed coral bommie in clear teal water; a work-glove hand steadying the frame; a large boulder coral behind." class="diagram">
-  <figcaption>The ground-truth layer. The quadrat is what turns a satellite pixel or an AI label into a claim a marine biologist will act on.</figcaption>
-</figure>
-
 The Lab's interest is in that word *align*. Satellites are wide but shallow; field observation is deep but narrow. Bringing them into agreement is partly a technical problem and substantially a human one, it depends on rangers and community teams contributing geotagged observations, images, and local knowledge in a consistent, trustworthy way. The system's reliability rests on the weakest-resourced link in that chain. Understanding where that chain holds and where it frays is fieldwork, not data science.
 
 ### The ranger is the system, not an accessory to it
@@ -66,22 +53,7 @@ The most important design decision Reef Support has made is to put community ran
 
 <!-- IMAGE reef-ranger: photo | A ranger collecting data - photographing coral, logging an observation on a device. Shows "the ranger is the system". | In the Reef Ranger programme section. -->
 
-<figure>
-  <img src="/assets/img/case-reef-ranger-team.jpg" alt="Four Reef Rangers standing knee-deep in shallow water on a Lombok beach after a dive: three men and one woman in wetsuits, holding orange, yellow and blue fins, tanks and regulators still on; a small speedboat moored behind and palms overhanging." class="diagram">
-  <figcaption>The team as it actually looks on a working morning. A mix of international rangers and Indonesian counterparts; the design intent is that the ranger role sits with the locals, not with the visitors.</figcaption>
-</figure>
-
-<figure>
-  <img src="/assets/img/case-reef-amba-portrait.jpg" alt="Amba Stapert giving a two-thumbs-up in front of the coral display tanks at the Lombok lab, wearing a light-blue Reef Support t-shirt and a wetsuit pulled down to the waist; the tanks softly lit blue behind her." class="diagram">
-  <figcaption>End of a shift at the lab. A ranger role is only durable if it is liveable; the everyday version of the work is what the case study is really watching.</figcaption>
-</figure>
-
 This is where the Lab leans in hardest. A community-led monitoring system raises questions a technical audit never reaches. Are rangers genuinely co-owners of the data, or unpaid sensors for someone else's model? Does the training build durable local capacity, or dependence? When the satellite and the ranger disagree, whose reading prevails, and who decides? These are socio-technical questions in the truest sense, and they determine whether a monitoring system earns the trust of the community it depends on. A reef-health figure that local stewards do not believe will not change local behaviour, however technically sound it is.
-
-<figure>
-  <img src="/assets/img/case-reef-restoration.jpg" alt="An underwater view of a Reef Ranger in dark scuba gear working on a hexagonal steel restoration frame planted on the sea floor, tying coral fragments into the mesh with a gloved hand; a small blue equipment basket beside them and healthy coral fragments visible on the frame." class="diagram">
-  <figcaption>Restoration work on the frame. Every fragment tied in is also a data point in the survey the rangers keep.</figcaption>
-</figure>
 
 ### From measurement to action is its own transition
 
@@ -103,14 +75,9 @@ Reef Support is the Lab's cleanest example of a socio-technical monitoring syste
 
 A shared view of the reef is not a technical achievement. It is a social one that technology makes possible. Studying which it actually becomes is the work.
 
-<figure>
-  <img src="/assets/img/case-reef-madagascar.jpg" alt="A magazine-style cover reading 'Reef Ranger Madagascar' in white and green over a beach photo of three young divers standing on the sand with wetsuits and fins, tropical forest behind, and the Reef Support wordmark at the base." class="diagram">
-  <figcaption>The programme travelling. What was named in Lombok is now recognisable in Madagascar; whether the socio-technical model travels with it is the question the Lab tracks.</figcaption>
-</figure>
-
 ---
 
-*Field photographs from the Lombok programme are courtesy of the [Indonesian Niru Foundation](https://www.niru-foundation.org/) and are used with permission.*
+*Field photographs from the Lombok programme are courtesy of the Indonesian Niru Foundation and are used with permission.*
 
 *For the Lab's field methods, see [Field Research](/field-research). For impact measurement of monitoring and conservation programmes, see [Impact Measurement](/impact-measurement). To discuss a study, see [Contact](/contact).*
 

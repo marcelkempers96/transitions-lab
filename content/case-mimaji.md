@@ -30,11 +30,6 @@ Nairobi's water story is not primarily a story about pipes. It is a story about 
 
 MiMaji works on exactly this, through community water-quality testing, WASH education in schools and community groups, and MajiMap, its public open-data map of water quality, price and access across the city. The intervention is not a pipe. It is a change to the informational environment in which price is set and safety is assessed, and its success or failure is measured on the same terms.
 
-<figure>
-  <img src="/assets/img/case-mimaji-maji-moyo.jpg" alt="A woman in a floral skirt laughs beside a bright red vendor kiosk painted 'Maji Moyo 100% pure' with an M-PESA paybill number stencilled to the left of a card reader and two green taps; a yellow and a blue jerry can at her feet on the concrete pad, red earth and trees behind." class="diagram">
-  <figcaption>Where the price is actually set. An M-PESA-metered vendor kiosk in a Nairobi settlement; the household paying here can see the paybill number but not the water quality it delivers.</figcaption>
-</figure>
-
 That is a socio-technical question before it is a data question, and it is the question the Lab is engaged to answer.
 
 ## What we are doing on the ground
@@ -62,17 +57,7 @@ None of the following is a final finding. The engagement is live, and the honest
 
 **Reach follows the phone that already had a browser open.** The households consulting MajiMap first are the ones who already had smartphones with data, who already spoke the language the map is in, and who already had a habit of looking things up. That is exactly the population the transparency is *least* needed by. Extending reach to the households on the wrong side of the asymmetry is a distribution problem, not a product problem, and it requires channels that are not the map itself.
 
-<figure>
-  <img src="/assets/img/case-mimaji-sensors.jpg" alt="A two-panel photograph: on the left, a small white weatherproof telemetry unit with a stubby antenna, clamped to a black distribution pipe with stainless hose clips; on the right, the same unit type mounted on top of a black plastic water storage tank, powered by a small tilted solar panel against a warm dusk sky." class="diagram">
-  <figcaption>The hardware layer behind the map. Low-cost cellular sensors on pipes and rooftop tanks are what makes the price-and-quality signal update between the ranger visits.</figcaption>
-</figure>
-
 **The credibility of MiMaji as source is high where MiMaji has been physically present.** In settlements where testing has been visibly done in the open, on someone's tap, with a result written down and left with the household, the map is treated as evidence. In settlements where testing has happened elsewhere and only the aggregated result is on the app, the same map is treated as opinion. The physical act of testing is doing more work than the data layer sitting on top of it. That is important, because it means the map's credibility is a downstream product of MiMaji's ranger-style presence, not an intrinsic property of the data.
-
-<figure>
-  <img src="/assets/img/case-mimaji-verify.jpg" alt="A hand holds a phone in a kitchen; the phone screen shows the MiMaji app on a 'Bottle Verified' screen with a green tick, a bottle ID, a registration date, and a 'Last verified today' line; in the background a 20-litre refillable water bottle stands beside a kettle, with a QR sticker labelled 'MiMaji Scan to verify' stuck to the bottle." class="diagram">
-  <figcaption>Verification at the point of use. A household scans the bottle to check it is original and refilled by a registered vendor; the same scan feeds the MajiMap price signal from the demand side.</figcaption>
-</figure>
 
 **Vendor behaviour moves slowly and unevenly.** In some sites there is early evidence of vendors adjusting posted prices when a comparable price is known and consulted, in a way that would not be visible from the utility side. In others there is no observable movement, and vendors report that the households they sell to are not the households consulting the map. Both patterns are informative.
 
@@ -100,11 +85,6 @@ The engagement continues through the next monitoring cycle. Two things sit at th
 ## The wider reading
 
 Water transparency in Nairobi is a specific case of a general pattern the Lab studies everywhere: technologies whose effect is informational and distributional rather than physical. The same logic runs through open data in energy, health and agriculture. In each, the question is not whether the information is correct, but whether it lands where the power imbalance sits, and shifts it.
-
-<figure>
-  <img src="/assets/img/case-mimaji-kiosk.jpg" alt="A small blue-and-white metered water kiosk at a market with a chalked-on tariff of K25 per 20 litres, a queue of four women in bright wraps and two children filling green and yellow jerry cans at the counter window, bricks stacked to one side and hills in the distance." class="diagram">
-  <figcaption>The same problem in a different city. A metered kiosk elsewhere in the region: publicly posted tariff, publicly visible queue, but the water-quality signal still travels off the wall.</figcaption>
-</figure>
 
 ---
 
