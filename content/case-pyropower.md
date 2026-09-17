@@ -34,6 +34,11 @@ What makes the case unusually rich is a deliberate design choice: in 2020 Pyropo
 That crossing is the thing worth studying.
 
 <figure>
+  <img src="/assets/img/case-pyropower-around-the-kiln.jpg" alt="Three farmers around the Pyropower kiln at dusk: one feeding dried husks into the top, another crouched watching the flame at the base, a third talking to a child holding a plastic pail. Bamboo racks and a covered tarp behind." class="diagram">
+  <figcaption>Around the kiln at the end of a day. Nobody has to run it, but somebody always does. The rhythm of feeding it has become part of the household.</figcaption>
+</figure>
+
+<figure>
   <img src="/assets/img/case-pyropower-soil.jpg" alt="Two weathered hands work black biochar granules into rich brown soil beside a metal basin holding more biochar. Green shoots and dry stalks in the background of the working field." class="diagram">
   <figcaption>Biochar worked into a Lombok field. This is where "Tumbuh" (to grow) becomes visible: the black grains hold water and nutrients that the soil on its own would let past.</figcaption>
 </figure>
@@ -48,6 +53,11 @@ The kiln's appeal is that it answers more than one problem at once. A farmer fee
 
 <!-- IMAGE pyro-threevalue: diagram | Simple diagram: one waste-stream input branching into three outputs - Heat / Biochar (soil) / Carbon income. House colours, clean. | Beside the "three kinds of value" section. -->, a conversion of something worthless, even harmful when open-burned, into three distinct goods.
 
+<figure>
+  <img src="/assets/img/case-pyropower-tobacco-heat.jpg" alt="Racks of tobacco leaves curing over a low vented heat source connected by simple ducting to the kiln, leaves already dry and orange in the late-afternoon light, a farmer adjusting a rack strap." class="diagram">
+  <figcaption>The heat that used to come from firewood. On a tobacco farm, this is the reason the farmer shows up to feed the kiln even in the rain.</figcaption>
+</figure>
+
 The Lab's interest is in how a household actually weighs those three values. Which one does the work of adoption, the fuel saving, the yield increase, or the carbon income? The answer is rarely the one a project assumes, and it tends to differ by crop, by season, and by household. This is precisely the kind of question that survey headcounts miss and that only direct, structured conversation with farmers can answer.
 
 ### Open-sourcing changes who holds the power
@@ -55,6 +65,19 @@ The Lab's interest is in how a household actually weighs those three values. Whi
 When a technology is open-source, the transition stops being about distribution and starts being about appropriation, in the good sense. The kiln can be adapted to local applications, built with local materials, and maintained without dependence on a distant supplier. For the Lab, this raises the most important socio-technical questions in the case: Who in the community actually has the skills and capital to build and run one? Does open-sourcing widen access, or does it quietly concentrate the benefit among those already best resourced? Does the carbon-market opportunity reach the farmer, or get captured upstream?
 
 These are not criticisms of the model; they are the questions that determine whether its promise is realised fairly. They are answerable only on the ground, and only by asking.
+
+<figure>
+  <img src="/assets/img/case-pyropower-local-build.jpg" alt="A young Lombok technician crouched beside a partly built kiln body, cutting a steel drum with a hand grinder; sparks and a bright arc; sheet metal, a welding mask, and improvised jigs around him." class="diagram">
+  <figcaption>A local build in progress. The open-sourced design is being copied and adapted from local scrap; the question the Lab tracks is who owns the resulting skill.</figcaption>
+</figure>
+
+<figure>
+  <video controls muted playsinline preload="metadata" class="diagram" style="width:100%;height:auto;border-radius:8px;">
+    <source src="/assets/video/case-pyropower-lombok.mp4" type="video/mp4">
+    Your browser does not support embedded video.
+  </video>
+  <figcaption>A minute on the ground in Lombok. The kiln at work, the farmers around it, the ordinary rhythm the case study is really about.</figcaption>
+</figure>
 
 ### The diaspora of a single idea
 
