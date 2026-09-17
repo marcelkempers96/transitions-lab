@@ -85,6 +85,29 @@ CONTACT_CTA_PAGES: set[str] = {
     "for-funders",
 }
 
+# The lighter article-page CTA. No inline form — just three route cards
+# and a Start-a-conversation button pointing at /contact. Sits at the foot
+# of every case study and insight article via ARTICLE_CTA_HTML below.
+ARTICLE_CTA_HTML = """<section class="light article-cta-band">
+  <div class="wrap-prose">
+    <div class="prose">
+      <div class="contact-cta-programme">
+        <h3>Continue with the Lab</h3>
+        <p class="lede">If this reads close to a decision you are weighing, we would like to hear about it. A short note is enough to start.</p>
+        <div class="contact-options">
+          <a href="/entering-a-new-context"><strong>Entering a new context</strong><span>A first read of a market, technology or region.</span></a>
+          <a href="/measuring-change"><strong>Measuring change</strong><span>Field measurement that connects action to outcome.</span></a>
+          <a href="/reporting-to-funders"><strong>Reporting to funders</strong><span>Evidence packaged for the reader who will act on it.</span></a>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>
+          <a href="/case-studies" class="cta-secondary">More field cases</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+
 # The compact contact block. Same form as /contact but abbreviated fields.
 # Submissions go to marcelxingkai@hotmail.com via FormSubmit for now.
 CONTACT_CTA_HTML = """<section class="section-paper contact-cta-block" style="border-top:2px solid var(--ink);">
@@ -1282,7 +1305,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="/who-we-serve">Who we serve</a>
       <a href="/for-funders">For Funders</a>
       <a href="/contact">Contact</a>
-      <a href="https://www.linkedin.com/company/transitionslab/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="legal">
       <span>© Transitions Lab 2026 · Delft, The Netherlands</span>
@@ -1405,6 +1428,8 @@ def build_content_page(slug: str, md: str) -> str:
     body = page_hero + "\n\n" + prose_section
     if slug in CONTACT_CTA_PAGES:
         body += "\n\n" + CONTACT_CTA_HTML
+    elif slug.startswith("case-") or slug.startswith("insight-"):
+        body += "\n\n" + ARTICLE_CTA_HTML
     return page_shell(slug=slug, title=title, description=description, body=body)
 
 

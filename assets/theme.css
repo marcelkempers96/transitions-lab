@@ -1244,6 +1244,17 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   letter-spacing:.02em;color:var(--ink);
 }
 
+/* Article & case-study page closing CTA band.
+   A thin paper band that separates the reading prose from the CTA panel
+   so the "Continue with the Lab" block reads as its own moment. */
+section.article-cta-band{
+  background:var(--paper);
+  border-top:1px solid rgba(10,10,10,.08);
+  padding:8px 0 40px;
+}
+section.article-cta-band .wrap-prose{padding-top:0;padding-bottom:0;}
+section.article-cta-band .prose{padding-top:0;}
+
 /* Programme page closing block:
    1) "Where to next" — clean chip row of standardised links.
    2) "Contact us today" — three brief route descriptors on ink,
