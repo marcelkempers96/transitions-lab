@@ -2466,3 +2466,31 @@ footer.site .legal{grid-column:1/-1;border-top:2px solid var(--paper);margin-top
   #cookie-banner .cookie-actions{width:100%;}
   #cookie-banner .cookie-btn{flex:1;}
 }
+
+/* Dark theme override: the cookie banner is on top of a charcoal
+   page, so the default white bar would glare. Swap to a charcoal
+   plate with cream text, a light hairline top border, and the
+   button treatment inverted (cream primary / dark ghost). */
+:root[data-theme="dark"] #cookie-banner{
+  background:#1A1D22;color:#E8E4DA;
+  border-top:1px solid rgba(232,228,218,.14);
+  box-shadow:0 -8px 24px rgba(0,0,0,.4);
+}
+:root[data-theme="dark"] #cookie-banner .cookie-text strong{color:#F5EFE1;}
+:root[data-theme="dark"] #cookie-banner .cookie-text p{color:rgba(232,228,218,.82);}
+:root[data-theme="dark"] #cookie-banner .cookie-text a{color:#F0B48C;}
+:root[data-theme="dark"] #cookie-banner .cookie-btn{
+  border-color:rgba(232,228,218,.32);background:transparent;color:#E8E4DA;
+}
+:root[data-theme="dark"] #cookie-banner .cookie-btn-primary{
+  background:#F5EFE1;color:#14161a;border-color:#F5EFE1;
+}
+:root[data-theme="dark"] #cookie-banner .cookie-btn-primary:hover{
+  background:#F0B48C;border-color:#F0B48C;color:#14161a;
+}
+:root[data-theme="dark"] #cookie-banner .cookie-btn-ghost{
+  background:transparent;color:#E8E4DA;
+}
+:root[data-theme="dark"] #cookie-banner .cookie-btn-ghost:hover{
+  background:rgba(232,228,218,.08);
+}
