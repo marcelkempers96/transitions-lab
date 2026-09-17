@@ -1397,7 +1397,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
   <div class="cookie-inner">
     <div class="cookie-text">
       <strong>A note on cookies.</strong>
-      <p>The Lab uses privacy-respecting analytics (page views, no personal identifiers) served by our host, Vercel. They load only if you accept. See our <a href="/cookies">cookie policy</a> for details, and change your mind any time via <em>Cookie preferences</em> in the footer.</p>
+      <p>The Lab uses privacy-respecting analytics (page views, no personal identifiers). They load only if you accept. See our <a href="/cookies">cookie policy</a> for details, and change your mind any time via <em>Cookie preferences</em> in the footer.</p>
     </div>
     <div class="cookie-actions">
       <button id="cookie-reject" class="cookie-btn cookie-btn-ghost" type="button">Reject</button>
