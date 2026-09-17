@@ -328,7 +328,7 @@ NAV = [
     {"slug": "__services", "label": "Work with us", "dropdown": SERVICES},
     {"slug": "__expertise", "label": "Programmes", "dropdown": EXPERTISE},
     {"slug": "__library", "label": "Reading", "dropdown": LIBRARY},
-    {"slug": "contact", "href": "/contact", "label": "Contact", "cta": True},
+    {"slug": "contact", "href": "/contact", "label": "Contact"},
 ]
 
 
