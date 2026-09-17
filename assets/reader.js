@@ -1,15 +1,27 @@
 /* Reader preferences: serif toggle, font size, background theme.
    State lives on <html data-theme|data-font|data-size> and persists
-   in localStorage so the choice follows the reader across pages.
-   The FLASH_INIT snippet in the head sets these attributes before
-   first paint AND stashes the values on window.__tlR; this module
-   reflects them onto the toolbar buttons the moment the toolbar
-   exists in the DOM, and wires button clicks. */
+   in localStorage so the choice is remembered across visits.
+
+   IMPORTANT — scope: preferences apply ONLY on case-* and insight-*
+   pages (the pages that carry the reader toolbar). Every other page
+   in the site renders in the default theme regardless of what the
+   reader picked last, so navigating from an article to /about or
+   /expertise-energy never carries a dark ground or serif body along.
+   The prefs are still written to localStorage on those article pages
+   so the next case study or insight article restores them. The
+   FLASH_INIT snippet in the head enforces the scope before first
+   paint; this module reflects saved values onto the toolbar buttons
+   and wires clicks. */
 (function () {
   var html = document.documentElement;
   var KEY_THEME = 'tl_r_theme_v1';
   var KEY_FONT  = 'tl_r_font_v1';
   var KEY_SIZE  = 'tl_r_size_v1';
+
+  // Article-scope check: the reader prefs only take effect on
+  // case-* and insight-* pages. The check runs from the URL path
+  // so this module needs no build-time page-type input.
+  var isArticle = /^\/(case|insight)-/.test(location.pathname);
 
   function safeGet(k, d) { try { return localStorage.getItem(k) || d; } catch (_) { return d; } }
   function safeSet(k, v) { try { localStorage.setItem(k, v); } catch (_) {} }
@@ -25,13 +37,13 @@
   var apply = {
     theme: function (v) {
       if (v !== 'light' && v !== 'warm' && v !== 'dark') v = 'warm';
-      html.setAttribute('data-theme', v);
+      if (isArticle) html.setAttribute('data-theme', v);
       safeSet(KEY_THEME, v);
       syncPressed('data-set-theme', v);
     },
     font: function (v) {
       if (v !== 'sans' && v !== 'serif') v = 'sans';
-      html.setAttribute('data-font', v);
+      if (isArticle) html.setAttribute('data-font', v);
       safeSet(KEY_FONT, v);
       syncPressed('data-set-font', v);
     },
@@ -39,7 +51,7 @@
       var n = parseInt(v, 10); if (isNaN(n)) n = 0;
       if (n < -1) n = -1; if (n > 2) n = 2;
       var s = String(n);
-      html.setAttribute('data-size', s);
+      if (isArticle) html.setAttribute('data-size', s);
       safeSet(KEY_SIZE, s);
     }
   };
@@ -61,7 +73,10 @@
     init();
   }
 
-  // Delegated click handler for toolbar buttons.
+  // Delegated click handler for toolbar buttons. Only wired on
+  // article pages because that is the only surface that renders
+  // the toolbar in the first place; keeping the listener unconditional
+  // is harmless but the guard makes intent explicit.
   document.addEventListener('click', function (e) {
     var t = e.target && e.target.closest && e.target.closest('[data-set-theme],[data-set-font],[data-size-step]');
     if (!t) return;

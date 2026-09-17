@@ -46,14 +46,25 @@ ASSET_READER_V = _asset_hash("assets/reader.js")
 # <html> as data-theme / data-font / data-size, and on window.__tlR so
 # the toolbar's aria-pressed can be reflected as soon as it exists in
 # the DOM (see reader.js). Kept tiny so it inlines cleanly.
+#
+# Reader prefs ONLY apply on case-* and insight-* pages. Every other
+# page renders in the site's default theme regardless of what the
+# reader picked last; the prefs are still remembered so the choice
+# is restored the next time they open an article. That check runs
+# here rather than in reader.js so the default theme paints without
+# a flicker on non-article pages.
 FLASH_INIT = (
-    "<script>(function(){try{var d=document.documentElement,"
+    "<script>(function(){try{"
+    "var d=document.documentElement,"
+    "isArticle=/^\\/(case|insight)-/.test(location.pathname),"
     "g=function(k,f){try{return localStorage.getItem(k)||f;}catch(_){return f;}},"
     "t=g('tl_r_theme_v1','warm'),f=g('tl_r_font_v1','sans'),s=g('tl_r_size_v1','0');"
+    "window.__tlR={theme:t,font:f,size:s,isArticle:isArticle};"
+    "if(isArticle){"
     "d.setAttribute('data-theme',t);"
     "d.setAttribute('data-font',f);"
     "d.setAttribute('data-size',s);"
-    "window.__tlR={theme:t,font:f,size:s};"
+    "}"
     "}catch(_){}})();</script>"
 )
 
