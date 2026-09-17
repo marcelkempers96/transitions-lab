@@ -441,8 +441,18 @@ section + section{border-top:2px solid var(--ink);}
 .prose h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;letter-spacing:-.02em;margin-top:1.8em;line-height:1.05;color:var(--ink);}
 .prose h3{font-size:24px;font-weight:800;letter-spacing:-.015em;margin-top:1.6em;line-height:1.1;color:var(--ink);}
 .prose p{font-size:18px;line-height:1.7;color:var(--ink);font-weight:400;}
-.prose a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;transition:background .15s ease;}
-.prose a:hover{background:var(--butter);}
+.prose a{
+  color:var(--ink);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-decoration-color:rgba(10,10,10,.32);
+  text-underline-offset:3px;
+  transition:background .15s ease, text-decoration-color .15s ease;
+}
+.prose a:hover{
+  background:var(--butter);
+  text-decoration-color:var(--ink);
+}
 .prose ul,.prose ol{padding-left:1.4em;margin:0;}
 .prose li{margin:.4em 0;font-size:18px;line-height:1.65;color:var(--ink);}
 .prose blockquote{
@@ -644,7 +654,8 @@ body[data-page="human-side-of-technology"] .prose h3::before{
 }
 .prose .callout ul{margin:.6em 0 0;padding-left:1.2em;}
 .prose .callout li{color:inherit;font-size:16px;line-height:1.55;}
-.prose .callout a:not(.btn){color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.prose .callout a:not(.btn){color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(10,10,10,.35);text-underline-offset:3px;}
+.prose .callout a:not(.btn):hover{text-decoration-color:var(--ink);}
 .prose .callout a.btn-ink{color:var(--paper);}
 .prose .callout a.btn-ink:hover{color:var(--butter);}
 .prose .callout.c-cobalt a:hover,.prose .callout.c-forest a:hover{background:var(--butter);color:var(--ink);}
@@ -888,7 +899,8 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .prose .whatwedo-card .whatwedo-sub ul{margin:0;padding-left:1.2em;}
 .prose .whatwedo-card .whatwedo-sub li{font-size:15px;line-height:1.5;margin:.35em 0;color:var(--ink);}
-.prose .whatwedo-card .whatwedo-sub a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600;}
+.prose .whatwedo-card .whatwedo-sub a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(10,10,10,.35);text-underline-offset:3px;font-weight:600;}
+.prose .whatwedo-card .whatwedo-sub a:hover{text-decoration-color:var(--ink);}
 
 /* ── Service grid (on /what-we-do): 2-column bordered coloured cards. */
 .prose .service-grid{
@@ -1445,8 +1457,8 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 :root[data-theme="dark"] .prose h2,
 :root[data-theme="dark"] .prose h3,
 :root[data-theme="dark"] .prose h4{color:#F5EFE1;}
-:root[data-theme="dark"] .prose a{color:#F0B48C;}
-:root[data-theme="dark"] .prose a:hover{color:#F5C79E;}
+:root[data-theme="dark"] .prose a{color:#F0B48C;text-decoration-color:rgba(240,180,140,.42);}
+:root[data-theme="dark"] .prose a:hover{color:#F5C79E;text-decoration-color:#F0B48C;background:transparent;}
 :root[data-theme="dark"] .prose figure figcaption{color:rgba(232,228,218,.68);}
 :root[data-theme="dark"] .prose hr{border-color:rgba(232,228,218,.15);}
 :root[data-theme="dark"] .prose .article-byline{color:rgba(232,228,218,.62);}
