@@ -34,7 +34,7 @@
 <meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
 <meta name="twitter:image:alt" content="Transitions Lab | Technology Adoption &amp; Transition Research">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/theme.css?v=22dab65b">
+<link rel="stylesheet" href="/assets/theme.css?v=aeb42f8f">
 
 </head>
 <body data-page="index">
@@ -456,11 +456,25 @@
     </div>
     <div class="legal">
       <span>© Transitions Lab 2026 · Delft, The Netherlands</span>
-      <span>Independent research, no trackers</span>
+      <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
     </div>
   </div>
 </footer>
 
+<div id="cookie-banner" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>A note on cookies.</strong>
+      <p>The Lab uses privacy-respecting analytics (page views, no personal identifiers) served by our host, Vercel. They load only if you accept. See our <a href="/cookies">cookie policy</a> for details, and change your mind any time via <em>Cookie preferences</em> in the footer.</p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-reject" class="cookie-btn cookie-btn-ghost" type="button">Reject</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn-primary" type="button">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/consent.js?v=ef374375" defer></script>
 <script src="/assets/site.js?v=6185b0f9" defer></script>
 </body>
 </html>

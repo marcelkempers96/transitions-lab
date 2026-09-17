@@ -38,6 +38,7 @@ def _asset_hash(rel_path: str) -> str:
 
 ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
+ASSET_CONSENT_V = _asset_hash("assets/consent.js")
 
 # Post-processor: append ?v=<hash> to every /assets/img/... URL in the
 # rendered HTML so a new image binary picks up a new URL, forcing
@@ -192,6 +193,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-when-the-agent-pays": "butter",
     "insight-whose-field-becomes-a-wetland": "butter",
     "sdgs": "coral",
+    "privacy": "sky",
+    "terms": "sky",
+    "cookies": "sky",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -408,6 +412,18 @@ META: dict[str, dict[str, str]] = {
     "sdgs": {
         "title": "Research by Sustainable Development Goal | Transitions Lab",
         "description": "Which of the Lab's programmes contribute to which Sustainable Development Goals. Eleven goals claimed with programmes behind them; six declined openly, so the eleven hold up.",
+    },
+    "privacy": {
+        "title": "Privacy | Transitions Lab",
+        "description": "How Transitions Lab handles your data on this site. Short, because we handle very little of it. No advertising trackers, no sold data.",
+    },
+    "terms": {
+        "title": "Terms of use | Transitions Lab",
+        "description": "The short version of what you can expect from the Transitions Lab website and what we ask in return. Reading resource, not professional advice; Lab's own copyright.",
+    },
+    "cookies": {
+        "title": "Cookie policy | Transitions Lab",
+        "description": "Everything the Lab's website stores in your browser, what it's for, and how to change your mind. No cookies by default; optional privacy-respecting analytics.",
     },
     "expertise-e-mobility": {
         "title": "E-Mobility & Transport Research | Transitions Lab",
@@ -1270,11 +1286,25 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     </div>
     <div class="legal">
       <span>© Transitions Lab 2026 · Delft, The Netherlands</span>
-      <span>Independent research, no trackers</span>
+      <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
     </div>
   </div>
 </footer>
 
+<div id="cookie-banner" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>A note on cookies.</strong>
+      <p>The Lab uses privacy-respecting analytics (page views, no personal identifiers) served by our host, Vercel. They load only if you accept. See our <a href="/cookies">cookie policy</a> for details, and change your mind any time via <em>Cookie preferences</em> in the footer.</p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-reject" class="cookie-btn cookie-btn-ghost" type="button">Reject</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn-primary" type="button">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/consent.js?v={ASSET_CONSENT_V}" defer></script>
 <script src="/assets/site.js?v={ASSET_JS_V}" defer></script>
 </body>
 </html>

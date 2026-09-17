@@ -2154,3 +2154,53 @@ footer.site .legal{grid-column:1/-1;border-top:2px solid var(--paper);margin-top
 @media(max-width:860px){
   .desktop-only{display:none !important;}
 }
+
+/* ── Cookie consent banner ─────────────────────────────────────
+   Bottom-fixed paper plate with an ink border and 6px ink shadow,
+   two buttons (Reject and Accept). Rendered by default at the very
+   end of body and shown only on first visit; the consent module
+   toggles [hidden] on it.
+*/
+#cookie-banner{
+  position:fixed;left:16px;right:16px;bottom:16px;
+  z-index:200;max-width:820px;margin:0 auto;
+  background:var(--paper);color:var(--ink);
+  border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);
+  padding:20px 24px 18px;
+}
+#cookie-banner .cookie-inner{
+  display:flex;flex-wrap:wrap;gap:18px;align-items:center;
+  justify-content:space-between;
+}
+#cookie-banner .cookie-text{flex:1 1 320px;min-width:260px;}
+#cookie-banner .cookie-text strong{
+  display:block;font-family:'Hanken Grotesk',sans-serif;
+  font-size:15px;font-weight:800;letter-spacing:-.005em;
+  margin-bottom:6px;
+}
+#cookie-banner .cookie-text p{
+  font-size:13.5px;line-height:1.5;margin:0;color:var(--ink);opacity:.82;
+}
+#cookie-banner .cookie-text a{
+  color:var(--ink);text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:3px;
+}
+#cookie-banner .cookie-actions{
+  display:flex;gap:10px;flex-wrap:wrap;
+}
+#cookie-banner .cookie-btn{
+  display:inline-block;padding:10px 20px;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:13.5px;font-weight:800;letter-spacing:.01em;
+  border:2px solid var(--ink);cursor:pointer;
+  transition:background .12s ease, color .12s ease;
+}
+#cookie-banner .cookie-btn-primary{background:var(--ink);color:var(--paper);}
+#cookie-banner .cookie-btn-primary:hover{background:var(--cobalt);}
+#cookie-banner .cookie-btn-ghost{background:var(--white);color:var(--ink);}
+#cookie-banner .cookie-btn-ghost:hover{background:var(--butter);}
+@media(max-width:520px){
+  #cookie-banner{left:8px;right:8px;bottom:8px;padding:16px 18px 14px;}
+  #cookie-banner .cookie-actions{width:100%;}
+  #cookie-banner .cookie-btn{flex:1;}
+}
