@@ -61,7 +61,7 @@ These are not criticisms of the model; they are the questions that determine whe
     <source src="/assets/video/case-pyropower-lombok.mp4" type="video/mp4">
     Your browser does not support embedded video.
   </video>
-  <figcaption>The chief of the village and members of the farmers' association at the Lombok demonstration. The kiln at work, the farmers around it, the ordinary rhythm the case study is really about.</figcaption>
+  <figcaption>The chief of the village and members of the farmers' association at the Lombok kiln demonstration.</figcaption>
 </figure>
 
 ### The diaspora of a single idea

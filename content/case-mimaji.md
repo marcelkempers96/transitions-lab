@@ -32,12 +32,12 @@ MiMaji works on exactly this, through community water-quality testing, WASH educ
 
 <figure>
   <img src="/assets/img/case-mimaji-maji-moyo.jpg" alt="A woman in a floral skirt laughs beside a bright red vendor kiosk painted 'Maji Moyo 100% pure' with an M-PESA paybill number stencilled on green, a card reader in a metal frame, blue delivery hoses feeding two green taps and painted symbols for drinking, cooking, farming and washing; a yellow and a blue jerry can beside her." class="diagram">
-  <figcaption>Where the price is actually set. An M-PESA-metered vendor kiosk in a rural Kenya settlement; the household paying here can read the paybill number and the tap symbols, but the water quality behind them is invisible without the map.</figcaption>
+  <figcaption>An M-PESA-metered water vendor kiosk in a rural Kenya settlement, price stencilled on the wall.</figcaption>
 </figure>
 
 <figure>
   <img src="/assets/img/case-mimaji-household.png" alt="A Nairobi kitchen at midday: a mother in a patterned wax-print top, a father in a white polo shirt filling a glass at a running tap, two young boys at the sink — one drinking, one washing his hands; a dish rack, a saucepan and a bright window behind." class="diagram">
-  <figcaption>The household on the demand side. Everything the map has to reach — a father filling a glass, a child at the tap — is downstream of a purchase that already happened at the kiosk.</figcaption>
+  <figcaption>A Nairobi household kitchen, water drawn from the tap.</figcaption>
 </figure>
 
 That is a socio-technical question before it is a data question, and it is the question the Lab is engaged to answer.
@@ -71,7 +71,7 @@ None of the following is a final finding. The engagement is live, and the honest
 
 <figure>
   <img src="/assets/img/case-mimaji-verify.png" alt="A hand holds a smartphone in a kitchen; the phone screen shows the MiMaji app on a 'Bottle Verified' screen with a green tick, a 20L refillable bottle ID (MMJ-7X9K-L2P3), a registration date of 16 May 2024, and a 'Last Verified today' line; a large blue 20L water bottle with a MiMaji QR sticker stands beside it, a brass kettle out of focus behind." class="diagram">
-  <figcaption>Verification at the point of use. A household scans the QR to confirm the bottle is registered and refilled by a MiMaji-listed vendor; the same scan feeds the demand-side price signal back to the map.</figcaption>
+  <figcaption>MiMaji's bottle-verification screen after a household QR scan of a 20L refillable bottle.</figcaption>
 </figure>
 
 **Vendor behaviour moves slowly and unevenly.** In some sites there is early evidence of vendors adjusting posted prices when a comparable price is known and consulted, in a way that would not be visible from the utility side. In others there is no observable movement, and vendors report that the households they sell to are not the households consulting the map. Both patterns are informative.
@@ -103,7 +103,7 @@ Water transparency in Nairobi is a specific case of a general pattern the Lab st
 
 <figure>
   <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk in Chipata reading 'Eastern Water and Sewerage Co Ltd' and 'Mchini Kiosk No. 10' with a chalked tariff 'K25 per 20 litres', a queue of women in bright wraps and small children filling green and yellow jerry cans at the counter window, bricks stacked to one side and hills in the distance." class="diagram">
-  <figcaption>The same problem in a different city. A metered utility kiosk in Chipata: the tariff is chalked publicly, the queue is public, but the water-quality signal still travels off the wall. The MajiMap logic has cousins wherever price is posted and safety is not.</figcaption>
+  <figcaption>A metered utility water kiosk in Chipata, Zambia. Tariff publicly posted, quality not.</figcaption>
 </figure>
 
 ---
