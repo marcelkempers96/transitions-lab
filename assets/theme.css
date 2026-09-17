@@ -1783,6 +1783,12 @@ section.article-cta-band .prose{padding-top:0;}
   padding:12px 18px;display:flex;flex-direction:column;justify-content:center;
   max-width:260px;color:var(--ink);
 }
+/* On programme pages the SDG contribution tiles read as a
+   short brief, not a reference table — the 'Goal N: Name'
+   subtext is hidden so only the tailored line and the icon
+   carry the meaning. The /sdgs reference page keeps the
+   goal title visible because that page IS the reference. */
+body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
 .prose .sdg-row .sdg-goal-title{
   display:block;
   font-family:'Hanken Grotesk',sans-serif;
