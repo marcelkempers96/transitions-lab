@@ -1221,28 +1221,130 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   gap:16px;
 }
 .prose .reading-cards a{
+  position:relative;isolation:isolate;overflow:hidden;
   display:flex;flex-direction:column;gap:8px;
-  padding:18px 20px 18px;background:var(--white);color:var(--ink);
-  border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);
-  text-decoration:none;transition:transform .12s ease, box-shadow .12s ease;
+  padding:20px 22px 20px;color:var(--ink);
+  border:1px solid rgba(10,10,10,.14);border-radius:6px;
+  background-color:rgba(255,251,241,.5);
+  background-image:var(--rc-hero,none);
+  background-size:cover;background-position:center;
+  box-shadow:0 4px 14px rgba(10,10,10,.06);
+  text-decoration:none;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+/* Soft pastel wash on top of the hero image. The wash carries a
+   nuanced colour so cards feel warm and varied without shouting;
+   :nth-child rotates through four low-chroma tints (sky, coral,
+   butter, forest) so a row of cards reads as a set rather than
+   uniform white plates. */
+.prose .reading-cards a::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(160deg,
+    rgba(255,251,241,.86) 0%,
+    rgba(245,237,221,.88) 100%);
+}
+.prose .reading-cards a:nth-child(4n+1)::before{
+  background:linear-gradient(160deg,
+    rgba(232,244,251,.86) 0%,
+    rgba(207,225,238,.88) 100%);
+}
+.prose .reading-cards a:nth-child(4n+2)::before{
+  background:linear-gradient(160deg,
+    rgba(250,236,227,.86) 0%,
+    rgba(238,214,199,.88) 100%);
+}
+.prose .reading-cards a:nth-child(4n+3)::before{
+  background:linear-gradient(160deg,
+    rgba(243,236,209,.86) 0%,
+    rgba(228,220,178,.88) 100%);
+}
+.prose .reading-cards a:nth-child(4n+4)::before{
+  background:linear-gradient(160deg,
+    rgba(228,238,231,.86) 0%,
+    rgba(202,222,213,.88) 100%);
+}
+/* When a hero image is present, thin the wash a touch so the
+   photograph reads through as a felt-more-than-seen ghost. */
+.prose .reading-cards a[data-has-hero]::before{
+  background:linear-gradient(160deg,
+    rgba(255,251,241,.80) 0%,
+    rgba(245,237,221,.86) 100%);
+}
+.prose .reading-cards a[data-has-hero]:nth-child(4n+1)::before{
+  background:linear-gradient(160deg,
+    rgba(232,244,251,.78) 0%,
+    rgba(207,225,238,.86) 100%);
+}
+.prose .reading-cards a[data-has-hero]:nth-child(4n+2)::before{
+  background:linear-gradient(160deg,
+    rgba(250,236,227,.78) 0%,
+    rgba(238,214,199,.86) 100%);
+}
+.prose .reading-cards a[data-has-hero]:nth-child(4n+3)::before{
+  background:linear-gradient(160deg,
+    rgba(243,236,209,.78) 0%,
+    rgba(228,220,178,.86) 100%);
+}
+.prose .reading-cards a[data-has-hero]:nth-child(4n+4)::before{
+  background:linear-gradient(160deg,
+    rgba(228,238,231,.78) 0%,
+    rgba(202,222,213,.86) 100%);
 }
 .prose .reading-cards a:hover{
-  transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);
-  background:var(--butter);
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(10,10,10,.10);
+  border-color:rgba(10,10,10,.24);
 }
+.prose .reading-cards a:hover::before{filter:saturate(115%) brightness(1.02);}
 .prose .reading-cards h4{
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:16.5px;font-weight:800;letter-spacing:-.01em;
+  font-family:'Fraunces',Georgia,serif;
+  font-size:18px;font-weight:600;letter-spacing:-.012em;
   line-height:1.2;margin:0;color:var(--ink);
 }
 .prose .reading-cards p{
-  font-size:14px;line-height:1.45;font-weight:500;color:var(--ink);
-  margin:0;opacity:.85;
+  font-size:14px;line-height:1.5;font-weight:500;color:var(--ink);
+  margin:0;opacity:.82;
 }
 .prose .reading-cards .read-cue{
-  margin-top:auto;font-weight:800;font-size:13px;
-  letter-spacing:.02em;color:var(--ink);
+  margin-top:auto;font-weight:800;font-size:12.5px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+  opacity:.78;
 }
+
+/* Dark theme: switch the pastel washes to warm charcoal tones
+   with a low-chroma coloured accent, keep hero image visible. */
+:root[data-theme="dark"] .prose .reading-cards a{
+  color:#E8E4DA;border-color:rgba(232,228,218,.15);
+  box-shadow:0 4px 14px rgba(0,0,0,.35);
+}
+:root[data-theme="dark"] .prose .reading-cards a::before{
+  background:linear-gradient(160deg,
+    rgba(26,29,34,.82) 0%,
+    rgba(20,22,26,.90) 100%);
+}
+:root[data-theme="dark"] .prose .reading-cards a:nth-child(4n+1)::before{
+  background:linear-gradient(160deg,
+    rgba(26,34,42,.82) 0%,
+    rgba(20,22,26,.90) 100%);
+}
+:root[data-theme="dark"] .prose .reading-cards a:nth-child(4n+2)::before{
+  background:linear-gradient(160deg,
+    rgba(42,30,25,.82) 0%,
+    rgba(20,22,26,.90) 100%);
+}
+:root[data-theme="dark"] .prose .reading-cards a:nth-child(4n+3)::before{
+  background:linear-gradient(160deg,
+    rgba(38,34,20,.82) 0%,
+    rgba(20,22,26,.90) 100%);
+}
+:root[data-theme="dark"] .prose .reading-cards a:nth-child(4n+4)::before{
+  background:linear-gradient(160deg,
+    rgba(21,31,27,.82) 0%,
+    rgba(20,22,26,.90) 100%);
+}
+:root[data-theme="dark"] .prose .reading-cards h4{color:#F5EFE1;}
+:root[data-theme="dark"] .prose .reading-cards p{color:rgba(232,228,218,.72);}
+:root[data-theme="dark"] .prose .reading-cards .read-cue{color:#F0B48C;opacity:1;}
 
 /* Reader toolbar — sits at the top of case-study and insight prose.
    Three pill groups on one line: font family (sans / serif),

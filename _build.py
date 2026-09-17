@@ -92,6 +92,45 @@ def _cache_bust_images(html: str) -> str:
         return f"{url}?v={h}"
     return _IMG_URL_RE.sub(_rewrite, html)
 
+
+# Post-processor: on programme pages and cases where reading-cards
+# grids appear, look up each linked article's hero image and stamp
+# it onto the <a> as an inline --rc-hero variable so the CSS can
+# render it as a soft, ghosted background behind the card text.
+_READING_GROUP_RE = re.compile(
+    r'(<div class="reading-cards">)(.*?)(</div>\s*</div>)',
+    re.S,
+)
+_READING_LINK_RE = re.compile(
+    r'(<a\s+href="/(insight-[a-z0-9\-]+|case-[a-z0-9\-]+)")(\s*[^>]*>)'
+)
+
+def _add_reading_card_heroes(html: str) -> str:
+    """Add --rc-hero inline style to each reading-card link that has
+    a matching hero image on disk. No-op for links whose hero is
+    missing; those still render on the pastel gradient alone."""
+
+    def _process_group(m: re.Match) -> str:
+        open_tag = m.group(1)
+        inner = m.group(2)
+        close_tag = m.group(3)
+
+        def _process_link(am: re.Match) -> str:
+            a_open = am.group(1)
+            slug = am.group(2)
+            tail = am.group(3)
+            hero_rel = f"assets/img/{slug}-hero.jpg"
+            if (ROOT / hero_rel).exists():
+                return (
+                    f'{a_open} style="--rc-hero:url(/{hero_rel})"'
+                    f' data-has-hero="1"{tail}'
+                )
+            return am.group(0)
+
+        return open_tag + _READING_LINK_RE.sub(_process_link, inner) + close_tag
+
+    return _READING_GROUP_RE.sub(_process_group, html)
+
 # Featured case per expertise page. Renders a bordered case-card at the
 # top of the expertise page prose, linking to a specific case study.
 # Kicker uses the same coloured-stripe treatment as home insight cards.
@@ -1932,7 +1971,7 @@ def main() -> None:
     written: list[str] = []
 
     # 1. Home
-    home_html = _cache_bust_images(build_home())
+    home_html = _cache_bust_images(_add_reading_card_heroes(build_home()))
     (ROOT / "index.html").write_text(home_html, encoding="utf-8")
     written.append("/")
     print("[home]  index.html")
@@ -1948,7 +1987,7 @@ def main() -> None:
         except Exception as e:
             print(f"[skip]  {slug}.md: {e}")
             continue
-        (ROOT / f"{slug}.html").write_text(_cache_bust_images(page), encoding="utf-8")
+        (ROOT / f"{slug}.html").write_text(_cache_bust_images(_add_reading_card_heroes(page)), encoding="utf-8")
         real_slugs.add(slug)
         written.append(f"/{slug}")
         print(f"[page]  {slug}.html")
