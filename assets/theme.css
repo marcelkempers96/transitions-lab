@@ -1244,6 +1244,163 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
   letter-spacing:.02em;color:var(--ink);
 }
 
+/* Reader toolbar — sits at the top of case-study and insight prose.
+   Three pill groups on one line: font family (sans / serif),
+   text size (- / +), and background theme (light / warm / dark).
+   Small, restrained, right-aligned. State persisted via reader.js. */
+.prose .reader-toolbar{
+  display:flex;align-items:center;justify-content:flex-end;
+  gap:10px;margin:-4px 0 22px;
+  font-family:'Hanken Grotesk',sans-serif;
+  flex-wrap:nowrap;
+}
+.prose .reader-toolbar .rt-group{
+  display:inline-flex;align-items:center;gap:2px;
+  border:1px solid rgba(10,10,10,.14);
+  border-radius:999px;padding:2px;
+  background:rgba(255,255,255,.55);
+  backdrop-filter:saturate(140%) blur(2px);
+}
+.prose .reader-toolbar .rt-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:30px;height:26px;padding:0 9px;
+  background:transparent;color:var(--ink);
+  border:0;border-radius:999px;cursor:pointer;
+  font-family:inherit;font-size:12.5px;font-weight:600;
+  letter-spacing:.005em;line-height:1;
+  transition:background .12s ease, color .12s ease;
+}
+.prose .reader-toolbar .rt-btn:hover{background:rgba(10,10,10,.06);}
+.prose .reader-toolbar .rt-btn:focus-visible{
+  outline:2px solid var(--ink);outline-offset:2px;
+}
+.prose .reader-toolbar .rt-btn[aria-pressed="true"]{
+  background:var(--ink);color:#F5EFE1;
+}
+.prose .reader-toolbar .rt-btn .rt-mini{
+  font-size:11px;margin-left:1px;opacity:.85;
+}
+.prose .reader-toolbar .rt-sans-btn{font-family:'Hanken Grotesk',sans-serif;}
+.prose .reader-toolbar .rt-serif-btn{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif;
+  font-style:italic;font-weight:500;letter-spacing:-.005em;
+}
+.prose .reader-toolbar .rt-swatch{padding:0;width:26px;min-width:26px;}
+.prose .reader-toolbar .rt-swatch .rt-dot{
+  display:block;width:14px;height:14px;border-radius:999px;
+  border:1px solid rgba(10,10,10,.28);
+}
+.prose .reader-toolbar .rt-dot-light{background:#FFFFFF;}
+.prose .reader-toolbar .rt-dot-warm{background:#F5EDDD;}
+.prose .reader-toolbar .rt-dot-dark{background:#14161a;border-color:rgba(255,255,255,.28);}
+.prose .reader-toolbar .rt-swatch[aria-pressed="true"]{background:transparent;}
+.prose .reader-toolbar .rt-swatch[aria-pressed="true"] .rt-dot{
+  outline:2px solid var(--ink);outline-offset:2px;
+}
+@media(max-width:520px){
+  .prose .reader-toolbar{gap:6px;justify-content:flex-start;}
+  .prose .reader-toolbar .rt-btn{min-width:28px;height:24px;padding:0 7px;font-size:12px;}
+}
+
+/* Global reader preferences.
+   The <html> element carries data-theme=warm|light|dark,
+   data-font=sans|serif, and data-size=-1|0|1|2. The FLASH_INIT
+   inline script in <head> sets these before first paint. */
+
+/* Theme: LIGHT. Body switches to pure white, page-hero fades
+   through white, prose lifts on white ground. */
+:root[data-theme="light"] body{background:#FFFFFF;}
+:root[data-theme="light"] section.light{background:#FFFFFF;}
+:root[data-theme="light"] .page-hero{background:#FFFFFF;}
+:root[data-theme="light"] .page-hero.hero-sky{background:linear-gradient(180deg,#EAF3FA 0%,#FFFFFF 100%);}
+:root[data-theme="light"] .page-hero.hero-coral{background:linear-gradient(180deg,#FAECE3 0%,#FFFFFF 100%);}
+:root[data-theme="light"] .page-hero.hero-forest{background:linear-gradient(180deg,#E4EDE8 0%,#FFFFFF 100%);}
+:root[data-theme="light"] section.article-cta-band{background:#FFFFFF;}
+:root[data-theme="light"] .prose .reader-toolbar .rt-group{background:rgba(0,0,0,.02);}
+
+/* Theme: DARK. Charcoal ground, warm cream text, softened
+   figure and callout treatments so the case studies remain
+   readable at the low-light setting. */
+:root[data-theme="dark"] body{background:#14161a;color:#E8E4DA;}
+:root[data-theme="dark"] section.light{background:#14161a;}
+:root[data-theme="dark"] .page-hero{background:#0F1114;color:#E8E4DA;}
+:root[data-theme="dark"] .page-hero.hero-sky{background:linear-gradient(180deg,#1A222A 0%,#14161a 100%);}
+:root[data-theme="dark"] .page-hero.hero-coral{background:linear-gradient(180deg,#2A1E19 0%,#14161a 100%);}
+:root[data-theme="dark"] .page-hero.hero-forest{background:linear-gradient(180deg,#151F1B 0%,#14161a 100%);}
+:root[data-theme="dark"] .page-hero h1,
+:root[data-theme="dark"] .page-hero .lede{color:#F5EFE1;}
+:root[data-theme="dark"] .prose,
+:root[data-theme="dark"] .prose p,
+:root[data-theme="dark"] .prose li,
+:root[data-theme="dark"] .prose blockquote{color:#E8E4DA;}
+:root[data-theme="dark"] .prose h1,
+:root[data-theme="dark"] .prose h2,
+:root[data-theme="dark"] .prose h3,
+:root[data-theme="dark"] .prose h4{color:#F5EFE1;}
+:root[data-theme="dark"] .prose a{color:#F0B48C;}
+:root[data-theme="dark"] .prose a:hover{color:#F5C79E;}
+:root[data-theme="dark"] .prose figure figcaption{color:rgba(232,228,218,.68);}
+:root[data-theme="dark"] .prose hr{border-color:rgba(232,228,218,.15);}
+:root[data-theme="dark"] .prose .article-byline{color:rgba(232,228,218,.62);}
+:root[data-theme="dark"] .prose .contact-cta-programme{
+  background:#1D2831;border-color:rgba(232,228,218,.2);
+  box-shadow:6px 6px 0 rgba(232,228,218,.14);color:#E8E4DA;
+}
+:root[data-theme="dark"] .prose .contact-cta-programme h3,
+:root[data-theme="dark"] .prose .contact-cta-programme .lede{color:#F5EFE1;}
+:root[data-theme="dark"] .prose .contact-cta-programme .contact-options a{
+  background:#14161a;border-color:rgba(232,228,218,.22);color:#E8E4DA;
+}
+:root[data-theme="dark"] .prose .contact-cta-programme .contact-options strong{color:#F5EFE1;}
+:root[data-theme="dark"] .prose .contact-cta-programme .contact-options span{color:rgba(232,228,218,.62);}
+:root[data-theme="dark"] .prose .contact-cta-programme .cta-actions .cta-primary{
+  background:#F5EFE1;color:#14161a;
+}
+:root[data-theme="dark"] .prose .contact-cta-programme .cta-actions .cta-primary:hover{
+  background:#F0B48C;
+}
+:root[data-theme="dark"] section.article-cta-band{
+  background:#14161a;border-top-color:rgba(232,228,218,.1);
+}
+:root[data-theme="dark"] .prose .reader-toolbar .rt-group{
+  border-color:rgba(232,228,218,.22);
+  background:rgba(20,22,26,.55);
+}
+:root[data-theme="dark"] .prose .reader-toolbar .rt-btn{color:#E8E4DA;}
+:root[data-theme="dark"] .prose .reader-toolbar .rt-btn:hover{background:rgba(232,228,218,.08);}
+:root[data-theme="dark"] .prose .reader-toolbar .rt-btn[aria-pressed="true"]{
+  background:#F5EFE1;color:#14161a;
+}
+:root[data-theme="dark"] .prose .reader-toolbar .rt-swatch[aria-pressed="true"] .rt-dot{
+  outline-color:#F5EFE1;
+}
+
+/* Serif font: applies only when data-font="serif". Body copy
+   stays Hanken for reading; headings, standfirst, and byline
+   switch to Fraunces at a slightly tightened tracking. */
+:root[data-font="serif"] .prose h1,
+:root[data-font="serif"] .prose h2,
+:root[data-font="serif"] .prose h3,
+:root[data-font="serif"] .prose h4,
+:root[data-font="serif"] .page-hero h1,
+:root[data-font="serif"] .page-hero .lede,
+:root[data-font="serif"] .prose .article-byline{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif;
+  letter-spacing:-.008em;font-weight:500;
+}
+:root[data-font="serif"] .prose h1,
+:root[data-font="serif"] .page-hero h1{font-weight:600;}
+
+/* Text size: applies only to .prose body copy, not headings
+   (h1/h2 stay proportioned by their own rules). Steps are subtle
+   so the layout doesn't reflow dramatically. */
+:root[data-size="-1"] .prose > p,
+:root[data-size="-1"] .prose li{font-size:15.5px;line-height:1.6;}
+:root[data-size="1"] .prose > p,
+:root[data-size="1"] .prose li{font-size:18.5px;line-height:1.68;}
+:root[data-size="2"] .prose > p,
+:root[data-size="2"] .prose li{font-size:20px;line-height:1.7;}
+
 /* Article & case-study page closing CTA band.
    A thin paper band that separates the reading prose from the CTA panel
    so the "Continue with the Lab" block reads as its own moment. */

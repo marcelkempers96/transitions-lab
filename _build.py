@@ -39,6 +39,41 @@ def _asset_hash(rel_path: str) -> str:
 ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
 ASSET_CONSENT_V = _asset_hash("assets/consent.js")
+ASSET_READER_V = _asset_hash("assets/reader.js")
+
+# Inline flash-of-unstyled-theme guard: reads saved reader prefs from
+# localStorage and sets data-theme/data-font/data-size on <html> BEFORE
+# any paint. Kept tiny so it inlines cleanly in the head.
+FLASH_INIT = (
+    "<script>(function(){try{var d=document.documentElement,"
+    "g=function(k,f){try{return localStorage.getItem(k)||f;}catch(_){return f;}};"
+    "d.setAttribute('data-theme',g('tl_r_theme_v1','warm'));"
+    "d.setAttribute('data-font',g('tl_r_font_v1','sans'));"
+    "d.setAttribute('data-size',g('tl_r_size_v1','0'));"
+    "}catch(_){}})();</script>"
+)
+
+# The reader toolbar rendered at the top of case-*/insight-* prose.
+# Three groups on one line: font family (sans / serif), size (- / +),
+# and background theme (light / warm / dark). Small, restrained; no
+# chunky text. State persisted by reader.js in localStorage.
+READER_TOOLBAR_HTML = (
+    '<div class="reader-toolbar" role="toolbar" aria-label="Reading preferences">'
+    '  <div class="rt-group" role="group" aria-label="Font family">'
+    '    <button type="button" class="rt-btn rt-sans-btn" data-set-font="sans" aria-pressed="true">Aa</button>'
+    '    <button type="button" class="rt-btn rt-serif-btn" data-set-font="serif" aria-pressed="false">Aa</button>'
+    '  </div>'
+    '  <div class="rt-group" role="group" aria-label="Text size">'
+    '    <button type="button" class="rt-btn rt-size-btn" data-size-step="-1" aria-label="Smaller text">A<span class="rt-mini">&minus;</span></button>'
+    '    <button type="button" class="rt-btn rt-size-btn" data-size-step="1" aria-label="Larger text">A<span class="rt-mini">+</span></button>'
+    '  </div>'
+    '  <div class="rt-group" role="group" aria-label="Background">'
+    '    <button type="button" class="rt-btn rt-swatch" data-set-theme="light" aria-label="Light" aria-pressed="false"><span class="rt-dot rt-dot-light"></span></button>'
+    '    <button type="button" class="rt-btn rt-swatch" data-set-theme="warm" aria-label="Warm" aria-pressed="true"><span class="rt-dot rt-dot-warm"></span></button>'
+    '    <button type="button" class="rt-btn rt-swatch" data-set-theme="dark" aria-label="Dark" aria-pressed="false"><span class="rt-dot rt-dot-dark"></span></button>'
+    '  </div>'
+    '</div>'
+)
 
 # Post-processor: append ?v=<hash> to every /assets/img/... URL in the
 # rendered HTML so a new image binary picks up a new URL, forcing
@@ -1202,7 +1237,7 @@ def md_body_to_html(md: str) -> str:
 FONT_LINKS = (
     '<link rel="preconnect" href="https://fonts.googleapis.com">'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    '<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">'
+    '<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">'
 )
 
 
@@ -1235,6 +1270,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 <meta name="author" content="Transitions Lab">
 <meta name="robots" content="{robots}">
 <meta name="theme-color" content="#F5EDDD">
+{FLASH_INIT}
 <link rel="canonical" href="{canonical}">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
@@ -1328,6 +1364,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 </div>
 
 <script src="/assets/consent.js?v={ASSET_CONSENT_V}" defer></script>
+<script src="/assets/reader.js?v={ASSET_READER_V}" defer></script>
 <script src="/assets/site.js?v={ASSET_JS_V}" defer></script>
 </body>
 </html>
@@ -1416,9 +1453,12 @@ def build_content_page(slug: str, md: str) -> str:
             f'</a>'
         )
 
+    is_article = slug.startswith("case-") or slug.startswith("insight-")
+    toolbar_html = READER_TOOLBAR_HTML if is_article else ""
     prose_section = f"""<section class="light">
   <div class="wrap-prose">
     <div class="prose">
+      {toolbar_html}
       {featured_html}
       {body_html}
     </div>
