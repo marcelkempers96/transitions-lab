@@ -290,8 +290,14 @@ document.addEventListener('DOMContentLoaded', function () {
    under it, using each section's declared colour class. */
 (function () {
   var page = document.body.getAttribute("data-page") || "";
-  var pageAllowed = { index: true };
-  if (!pageAllowed[page]) return;
+  // Enabled on the home page, and on every case-study and insight
+  // article. Every other page (programme pages, /about, /contact,
+  // etc.) skips the floating arrow.
+  var pageAllowed =
+    page === "index" ||
+    page.indexOf("case-") === 0 ||
+    page.indexOf("insight-") === 0;
+  if (!pageAllowed) return;
 
   var sections = Array.prototype.filter.call(
     document.querySelectorAll("body > section"),
