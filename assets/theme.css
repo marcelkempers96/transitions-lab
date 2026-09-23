@@ -1736,6 +1736,9 @@ body[data-page^="insight-"] .prose h4{
 :root[data-theme="dark"] .prose .quote-carousel .quote-dot.is-active{background:#F5EFE1;}
 @media(max-width:520px){
   .prose .quote-carousel .quote-slide p{font-size:15.5px;}
+  .prose .finding-stats{
+    grid-template-columns:1fr;gap:18px;
+  }
   .prose .finding-stats .n{font-size:36px;}
 }
 
