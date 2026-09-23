@@ -60,9 +60,35 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.reveal:not(.in)').forEach(function (el) { io.observe(el); });
+
+    // Serve-grid cards: on mobile the CSS starts them off-screen right
+    // and translates them into place when this observer flags them
+    // in-view. Use a fresh observer with a slightly earlier threshold
+    // so the slide-in triggers before the card is fully on screen.
+    if (window.matchMedia && window.matchMedia('(max-width: 860px)').matches) {
+      var serveIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in-view');
+            serveIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('.serve-grid a').forEach(function (el, i) {
+        // Stagger the slide-in so the row does not fire in one block.
+        el.style.transitionDelay = (i * 70) + 'ms';
+        serveIo.observe(el);
+      });
+    } else {
+      // Desktop: skip the entrance transform, cards render in place.
+      document.querySelectorAll('.serve-grid a').forEach(function (el) {
+        el.classList.add('is-in-view');
+      });
+    }
   } else {
     // Fallback: show everything if IO unsupported or motion is reduced
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    document.querySelectorAll('.serve-grid a').forEach(function (el) { el.classList.add('is-in-view'); });
   }
 
   // ── Typewriter — hero headline then subhead ────────────────

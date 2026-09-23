@@ -2542,9 +2542,28 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
 .serve-grid a p{font-size:13.5px;line-height:1.45;margin:0;color:inherit;font-weight:500;flex:1;}
 .serve-grid a:hover{transform:translate(-2px,-2px);}
 @media(max-width:860px){
-  .serve-grid{grid-template-columns:1fr;}
-  .serve-grid a{border-right:0;}
+  .serve-grid{grid-template-columns:1fr;overflow-x:hidden;}
+  .serve-grid a{
+    border-right:0;min-height:0;padding-bottom:18px;
+  }
+  .serve-grid a p{flex:none;}
   .serve-grid a:not(:last-child){border-bottom:2px solid var(--ink);}
+  /* Mobile scroll-in: each card starts off-screen right and glides
+     into place when the IntersectionObserver in site.js flags it
+     in view. Stagger delay is injected inline in JS so a row of
+     five cards does not enter as a single block. */
+  .serve-grid a{
+    opacity:0;transform:translateX(40px);
+    transition:opacity .55s ease, transform .55s cubic-bezier(.22,.61,.36,1),
+               transform .12s ease, background .15s ease;
+    will-change:opacity, transform;
+  }
+  .serve-grid a.is-in-view{opacity:1;transform:translateX(0);}
+  /* Preserve the existing translate-on-hover motion after arrival. */
+  .serve-grid a.is-in-view:hover{transform:translate(-2px,-2px);}
+}
+@media (prefers-reduced-motion: reduce){
+  .serve-grid a{opacity:1 !important;transform:none !important;transition:none;}
 }
 
 /* European-blue skin for the European Impact Tracking page.
