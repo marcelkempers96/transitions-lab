@@ -18,6 +18,7 @@ subset used by these content files.
 from __future__ import annotations
 import hashlib
 import html as htmllib
+import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -1939,7 +1940,41 @@ def build_home() -> str:
 
     # No canvas animation on the home page - the ambient gradient in the
     # .hero rules gives enough visual life without a moving canvas.
-    return page_shell(slug=slug, title=title, description=description, body=body)
+    #
+    # JSON-LD site-name markup. Google reads the WebSite name off the
+    # homepage and uses it as the site name in search results, in place
+    # of the raw domain 'www.transitionslab.org'. Also declares the
+    # Organization so a sitelinks card can pick it up.
+    site_ld = (
+        '<script type="application/ld+json">'
+        '{'
+        '"@context":"https://schema.org",'
+        '"@graph":['
+        '{'
+        '"@type":"WebSite",'
+        '"@id":"' + SITE_URL + '/#website",'
+        '"url":"' + SITE_URL + '/",'
+        '"name":"Transitions Lab",'
+        '"alternateName":"transitionslab.org",'
+        '"description":' + json.dumps(description) + ','
+        '"inLanguage":"en-GB",'
+        '"publisher":{"@id":"' + SITE_URL + '/#org"}'
+        '},'
+        '{'
+        '"@type":"Organization",'
+        '"@id":"' + SITE_URL + '/#org",'
+        '"name":"Transitions Lab",'
+        '"url":"' + SITE_URL + '/",'
+        '"logo":"' + SITE_URL + '/assets/logo-dark.png",'
+        '"foundingLocation":"Delft, The Netherlands",'
+        '"sameAs":["https://www.linkedin.com/company/transitions-lab-org/"]'
+        '}'
+        ']'
+        '}'
+        '</script>'
+    )
+    return page_shell(slug=slug, title=title, description=description,
+                      body=body, extra_head=site_ld)
 
 
 # ────────────────────────────────────────────────────────────────────────────
