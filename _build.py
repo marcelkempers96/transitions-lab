@@ -1601,13 +1601,6 @@ def build_home() -> str:
     og_image = f"{SITE_URL}/assets/og-image.png"
 
     body = """
-<!-- FLASH BANNER - thin, light announcement of the latest flagship article -->
-<a class="flash-banner" href="/insight-the-saving-is-agreed">
-  <span class="flash-eyebrow">New · Field findings</span>
-  <span class="flash-body">Read the latest article on <em>Nairobi's electric transition</em>.</span>
-  <span class="flash-cue" aria-hidden="true">→</span>
-</a>
-
 <!-- HERO - typewriter tagline on video background -->
 <section class="hero has-video">
   <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
@@ -1623,6 +1616,13 @@ def build_home() -> str:
     </div>
   </div>
 </section>
+
+<!-- FLASH BANNER - thin coloured announcement of the latest flagship article -->
+<a class="flash-banner flash-banner--coral" href="/insight-the-saving-is-agreed">
+  <span class="flash-eyebrow">New field findings</span>
+  <span class="flash-body">Read the latest article on <em>Nairobi's electric transition</em>.</span>
+  <span class="flash-cue" aria-hidden="true">→</span>
+</a>
 
 <!-- WHAT WE DO - service cards -->
 <section class="section-white">

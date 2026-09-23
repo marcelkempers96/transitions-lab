@@ -1845,44 +1845,55 @@ body > section{position:relative;}
   .scroll-next svg{width:14px;height:14px;}
 }
 
-/* Home-page flash banner: thin, light, single-line announcement
-   pointing at the latest flagship article. Sits above the video
-   hero, does not compete with it. Wraps to two lines on narrow
-   screens; hidden if any future page reuses the shell without
-   one. */
+/* Home-page flash banner: thin coloured announcement pointing at
+   the latest flagship article. Sits BELOW the hero, above the
+   'What we do' section. Solid coral plate with white text so the
+   line reads as a proper banner without being loud. Wraps to two
+   lines on narrow screens. */
 .flash-banner{
   display:flex;align-items:center;justify-content:center;gap:14px;
-  padding:10px 22px;background:rgba(255,251,241,.9);
-  border-bottom:1px solid rgba(10,10,10,.10);
-  color:var(--ink);text-decoration:none;
+  padding:12px 22px;
+  background:var(--coral);color:#FFFFFF;
+  border-top:1px solid rgba(10,10,10,.14);
+  border-bottom:1px solid rgba(10,10,10,.14);
+  text-decoration:none;
   font-family:'Hanken Grotesk',sans-serif;
   font-size:13.5px;line-height:1.35;font-weight:500;
-  transition:background .14s ease, border-color .14s ease;
+  transition:background .14s ease;
 }
-.flash-banner:hover{
-  background:var(--butter);border-color:rgba(10,10,10,.22);
-}
+.flash-banner:hover{background:#D45520;}
 .flash-banner .flash-eyebrow{
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  font-weight:800;color:var(--coral);
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:800;color:#FFFFFF;
+  padding-right:14px;border-right:1px solid rgba(255,255,255,.4);
 }
 .flash-banner .flash-body{
-  color:var(--ink);opacity:.82;
+  color:#FFFFFF;opacity:.94;
 }
 .flash-banner .flash-body em{
   font-style:normal;font-weight:700;opacity:1;
+  border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:1px;
 }
 .flash-banner .flash-cue{
-  font-weight:700;color:var(--ink);opacity:.7;
+  font-weight:700;color:#FFFFFF;
   transition:transform .14s ease;
 }
-.flash-banner:hover .flash-cue{transform:translateX(3px);opacity:1;}
+.flash-banner:hover .flash-cue{transform:translateX(3px);}
+/* Optional colour variants — same layout, different tint. */
+.flash-banner--ink{background:var(--ink);}
+.flash-banner--ink:hover{background:#1A1D22;}
+.flash-banner--cobalt{background:var(--cobalt);}
+.flash-banner--cobalt:hover{background:#284a75;}
 @media(max-width:640px){
   .flash-banner{
     flex-wrap:wrap;justify-content:flex-start;gap:6px 10px;
-    padding:8px 16px;font-size:12.5px;
+    padding:10px 16px;font-size:12.5px;
   }
-  .flash-banner .flash-eyebrow{font-size:10px;letter-spacing:.12em;}
+  .flash-banner .flash-eyebrow{
+    font-size:10px;letter-spacing:.14em;
+    border-right:0;padding-right:0;
+    flex-basis:100%;
+  }
 }
 
 /* Play-button overlay on the Lombok case-study card. Marks a card
