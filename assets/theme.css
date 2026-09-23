@@ -1780,22 +1780,30 @@ body[data-page^="insight-"] .prose h4{
 html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
 
-/* Scroll-next arrow — a small circular down-chevron injected by
-   site.js at the bottom-centre of each top-level section on the
-   home page. Adapts colour to the parent section (ink on paper /
-   cream on ink) via nested overrides. Elegant, restrained, with
-   a gentle 3px bounce animation to hint interactivity. */
+/* Floating scroll-next arrow — one fixed circular button pinned
+   to the bottom-centre of the viewport that always jumps to the
+   next section. Adapts light/dark tone to whichever section is
+   currently under it (see site.js). Hides as it approaches the
+   footer. Elegant, restrained, with a gentle 3px bounce. */
 body > section{position:relative;}
 .scroll-next{
-  position:absolute;left:50%;bottom:24px;transform:translateX(-50%);
   display:inline-flex;align-items:center;justify-content:center;
-  width:42px;height:42px;padding:0;
-  background:transparent;color:var(--ink);
+  width:44px;height:44px;padding:0;
+  background:rgba(255,251,241,.72);color:var(--ink);
+  backdrop-filter:blur(6px) saturate(120%);
+  -webkit-backdrop-filter:blur(6px) saturate(120%);
   border:1.5px solid rgba(10,10,10,.35);border-radius:999px;
-  cursor:pointer;z-index:5;
-  animation:scroll-next-bounce 2.4s ease-in-out infinite;
+  cursor:pointer;
   transition:background .16s ease, color .16s ease,
-             border-color .16s ease, transform .16s ease;
+             border-color .16s ease, transform .16s ease,
+             opacity .24s ease;
+}
+.scroll-next--fixed{
+  position:fixed;left:50%;bottom:28px;
+  transform:translateX(-50%);
+  z-index:180;
+  animation:scroll-next-bounce 2.4s ease-in-out infinite;
+  box-shadow:0 6px 18px rgba(10,10,10,.14);
 }
 .scroll-next:hover{
   background:var(--ink);color:var(--paper);
@@ -1810,31 +1818,28 @@ body > section{position:relative;}
   0%,100%{transform:translate(-50%,0);}
   50%{transform:translate(-50%,4px);}
 }
-/* Dark-ground sections: ink hero, statement video block, ink section,
-   any section that opts in via .scroll-next--on-dark. */
-.hero .scroll-next,
-.statement .scroll-next,
-.section-ink .scroll-next,
-.section-forest .scroll-next,
-.section-cobalt .scroll-next,
-.section-plum .scroll-next,
+/* Dark-ground override via JS-toggled class. Cream on ink with a
+   translucent dark plate so the arrow still reads over a video. */
 .scroll-next--on-dark{
-  color:var(--paper);border-color:rgba(245,239,225,.42);
+  background:rgba(20,22,26,.55);color:var(--paper);
+  border-color:rgba(245,239,225,.55);
+  box-shadow:0 6px 18px rgba(0,0,0,.32);
 }
-.hero .scroll-next:hover,
-.statement .scroll-next:hover,
-.section-ink .scroll-next:hover,
-.section-forest .scroll-next:hover,
-.section-cobalt .scroll-next:hover,
-.section-plum .scroll-next:hover{
+.scroll-next--on-dark:hover{
   background:var(--paper);color:var(--ink);border-color:var(--paper);
+}
+/* Hide state: fade out and disable clicks. */
+.scroll-next.is-hidden{
+  opacity:0;pointer-events:none;
+  animation-play-state:paused;
 }
 /* Reduced motion: keep the button visible but stop the bounce. */
 @media (prefers-reduced-motion: reduce){
   .scroll-next{animation:none;}
 }
 @media(max-width:520px){
-  .scroll-next{width:36px;height:36px;bottom:18px;}
+  .scroll-next{width:38px;height:38px;}
+  .scroll-next--fixed{bottom:20px;}
   .scroll-next svg{width:14px;height:14px;}
 }
 

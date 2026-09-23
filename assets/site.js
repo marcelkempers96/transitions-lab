@@ -254,28 +254,25 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 })();
 
-/* Scroll-next arrow: injects a small circular down-arrow button at
-   the bottom-centre of each top-level <section> on the home page,
-   and smooth-scrolls to the next sibling section on click. Skips
-   the very last section so there is no arrow pointing into the
-   footer. On other pages the effect is opt-in via body[data-page]
-   whitelist below. */
+/* Floating scroll-next arrow: one fixed-position circular button
+   pinned at the bottom-centre of the viewport that always jumps
+   to the next top-level <section> on the page. Its target is
+   recomputed on scroll from the current scroll position so a
+   click always advances to whichever section is next below.
+   Hides automatically as the reader approaches the footer.
+   Adapts light/dark tone to whichever section is currently
+   under it, using each section's declared colour class. */
 (function () {
   var page = document.body.getAttribute("data-page") || "";
   var pageAllowed = { index: true };
   if (!pageAllowed[page]) return;
 
-  // Collect all body-level sections (skips the flash banner because
-  // it is an <a>, and skips <footer>).
   var sections = Array.prototype.filter.call(
     document.querySelectorAll("body > section"),
-    function (s) {
-      // Skip elements that are not visually a scroll target.
-      if (s.classList.contains("section-hidden")) return false;
-      return true;
-    }
+    function (s) { return !s.classList.contains("section-hidden"); }
   );
   if (sections.length < 2) return;
+  var footer = document.querySelector("body > footer.site");
 
   var svg =
     '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" ' +
@@ -283,33 +280,90 @@ document.addEventListener('DOMContentLoaded', function () {
     'stroke-linecap="round" stroke-linejoin="round">' +
     '<path d="M6 9l6 6 6-6"/></svg>';
 
-  sections.forEach(function (sec, i) {
-    if (i === sections.length - 1) return; // last section — no button
-    // Do not stack a second button if one is already present.
-    if (sec.querySelector(":scope > .scroll-next")) return;
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "scroll-next scroll-next--fixed";
+  btn.setAttribute("aria-label", "Scroll to next section");
+  btn.innerHTML = svg;
+  document.body.appendChild(btn);
 
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "scroll-next";
-    btn.setAttribute("aria-label", "Scroll to next section");
-    btn.innerHTML = svg;
-    sec.appendChild(btn);
+  // Classes on <section> that mean "dark ground" — flip the arrow
+  // to cream on ink so it stays visible against the video and the
+  // ink-tinted sections.
+  var DARK_CLASSES = [
+    "hero", "statement", "section-ink", "section-forest",
+    "section-cobalt", "section-plum"
+  ];
+  function isDark(sec) {
+    if (!sec) return false;
+    for (var i = 0; i < DARK_CLASSES.length; i++) {
+      if (sec.classList.contains(DARK_CLASSES[i])) return true;
+    }
+    return false;
+  }
 
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      var target = sections[i + 1];
-      if (!target) return;
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      // Move focus lightly so keyboard users land on the new
-      // section without a scroll flash.
-      if (typeof target.focus === "function") {
-        var prevTab = target.getAttribute("tabindex");
-        target.setAttribute("tabindex", "-1");
-        target.focus({ preventScroll: true });
-        if (prevTab === null) {
-          setTimeout(function () { target.removeAttribute("tabindex"); }, 400);
-        }
+  function nextTarget() {
+    // Find the first section whose top sits below the current
+    // scroll position (plus a small tolerance for anchored headers).
+    var y = window.scrollY + 80;
+    for (var i = 0; i < sections.length; i++) {
+      var top = sections[i].offsetTop;
+      if (top > y + 40) return sections[i];
+    }
+    return null;
+  }
+
+  function currentSection() {
+    var probe = window.scrollY + window.innerHeight - 90;
+    var last = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      var top = sections[i].offsetTop;
+      if (top <= probe) last = sections[i];
+    }
+    return last;
+  }
+
+  function update() {
+    // Hide as we approach the footer, so the arrow does not linger
+    // over the credits.
+    var hide = false;
+    if (footer) {
+      var fr = footer.getBoundingClientRect();
+      if (fr.top < window.innerHeight * 0.85) hide = true;
+    } else if (!nextTarget()) {
+      hide = true;
+    }
+    btn.classList.toggle("is-hidden", hide);
+
+    // Tint according to whichever section currently sits under it.
+    var cur = currentSection();
+    btn.classList.toggle("scroll-next--on-dark", isDark(cur));
+  }
+
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    var target = nextTarget();
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (typeof target.focus === "function") {
+      var prevTab = target.getAttribute("tabindex");
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+      if (prevTab === null) {
+        setTimeout(function () { target.removeAttribute("tabindex"); }, 400);
       }
-    });
+    }
   });
+
+  var raf = null;
+  function schedule() {
+    if (raf) return;
+    raf = window.requestAnimationFrame(function () {
+      raf = null;
+      update();
+    });
+  }
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  update();
 })();
