@@ -1699,12 +1699,13 @@ body[data-page^="insight-"] .prose h4{
   opacity:1;transform:translateY(0);pointer-events:auto;position:relative;
 }
 .prose .quote-carousel .quote-slide p{
-  font-family:'Fraunces',Georgia,serif;font-style:italic;
+  font-family:'Fraunces',Georgia,serif;font-style:normal;
   font-size:17px;line-height:1.5;font-weight:400;
   color:var(--ink);margin:0 auto 12px;letter-spacing:-.003em;
   max-width:52ch;text-align:center;
 }
-.prose .quote-carousel .quote-slide cite{
+.prose .quote-carousel .quote-slide cite,
+.prose .quote-carousel .quote-slide cite *{
   font-family:'Hanken Grotesk',sans-serif;font-style:normal;
   font-size:12px;letter-spacing:.06em;text-transform:uppercase;
   color:var(--ink);opacity:.55;font-weight:700;
