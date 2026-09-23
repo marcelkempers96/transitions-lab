@@ -253,3 +253,63 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 })();
+
+/* Scroll-next arrow: injects a small circular down-arrow button at
+   the bottom-centre of each top-level <section> on the home page,
+   and smooth-scrolls to the next sibling section on click. Skips
+   the very last section so there is no arrow pointing into the
+   footer. On other pages the effect is opt-in via body[data-page]
+   whitelist below. */
+(function () {
+  var page = document.body.getAttribute("data-page") || "";
+  var pageAllowed = { index: true };
+  if (!pageAllowed[page]) return;
+
+  // Collect all body-level sections (skips the flash banner because
+  // it is an <a>, and skips <footer>).
+  var sections = Array.prototype.filter.call(
+    document.querySelectorAll("body > section"),
+    function (s) {
+      // Skip elements that are not visually a scroll target.
+      if (s.classList.contains("section-hidden")) return false;
+      return true;
+    }
+  );
+  if (sections.length < 2) return;
+
+  var svg =
+    '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" ' +
+    'fill="none" stroke="currentColor" stroke-width="2" ' +
+    'stroke-linecap="round" stroke-linejoin="round">' +
+    '<path d="M6 9l6 6 6-6"/></svg>';
+
+  sections.forEach(function (sec, i) {
+    if (i === sections.length - 1) return; // last section — no button
+    // Do not stack a second button if one is already present.
+    if (sec.querySelector(":scope > .scroll-next")) return;
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "scroll-next";
+    btn.setAttribute("aria-label", "Scroll to next section");
+    btn.innerHTML = svg;
+    sec.appendChild(btn);
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var target = sections[i + 1];
+      if (!target) return;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Move focus lightly so keyboard users land on the new
+      // section without a scroll flash.
+      if (typeof target.focus === "function") {
+        var prevTab = target.getAttribute("tabindex");
+        target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+        if (prevTab === null) {
+          setTimeout(function () { target.removeAttribute("tabindex"); }, 400);
+        }
+      }
+    });
+  });
+})();

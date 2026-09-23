@@ -1727,6 +1727,69 @@ body[data-page^="insight-"] .prose h4{
 }
 :root[data-theme="dark"] .prose .article-share .share-copied{background:#F5EFE1;color:#14161a;}
 
+/* Smooth anchor navigation site-wide, so the scroll-next arrow
+   and any in-page anchor link glide instead of jumping. */
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+
+/* Scroll-next arrow — a small circular down-chevron injected by
+   site.js at the bottom-centre of each top-level section on the
+   home page. Adapts colour to the parent section (ink on paper /
+   cream on ink) via nested overrides. Elegant, restrained, with
+   a gentle 3px bounce animation to hint interactivity. */
+body > section{position:relative;}
+.scroll-next{
+  position:absolute;left:50%;bottom:24px;transform:translateX(-50%);
+  display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;padding:0;
+  background:transparent;color:var(--ink);
+  border:1.5px solid rgba(10,10,10,.35);border-radius:999px;
+  cursor:pointer;z-index:5;
+  animation:scroll-next-bounce 2.4s ease-in-out infinite;
+  transition:background .16s ease, color .16s ease,
+             border-color .16s ease, transform .16s ease;
+}
+.scroll-next:hover{
+  background:var(--ink);color:var(--paper);
+  border-color:var(--ink);
+  animation-play-state:paused;
+  transform:translate(-50%,-1px);
+}
+.scroll-next:focus-visible{
+  outline:2px solid var(--ink);outline-offset:3px;
+}
+@keyframes scroll-next-bounce{
+  0%,100%{transform:translate(-50%,0);}
+  50%{transform:translate(-50%,4px);}
+}
+/* Dark-ground sections: ink hero, statement video block, ink section,
+   any section that opts in via .scroll-next--on-dark. */
+.hero .scroll-next,
+.statement .scroll-next,
+.section-ink .scroll-next,
+.section-forest .scroll-next,
+.section-cobalt .scroll-next,
+.section-plum .scroll-next,
+.scroll-next--on-dark{
+  color:var(--paper);border-color:rgba(245,239,225,.42);
+}
+.hero .scroll-next:hover,
+.statement .scroll-next:hover,
+.section-ink .scroll-next:hover,
+.section-forest .scroll-next:hover,
+.section-cobalt .scroll-next:hover,
+.section-plum .scroll-next:hover{
+  background:var(--paper);color:var(--ink);border-color:var(--paper);
+}
+/* Reduced motion: keep the button visible but stop the bounce. */
+@media (prefers-reduced-motion: reduce){
+  .scroll-next{animation:none;}
+}
+@media(max-width:520px){
+  .scroll-next{width:36px;height:36px;bottom:18px;}
+  .scroll-next svg{width:14px;height:14px;}
+}
+
 /* Home-page flash banner: thin, light, single-line announcement
    pointing at the latest flagship article. Sits above the video
    hero, does not compete with it. Wraps to two lines on narrow
