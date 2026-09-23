@@ -165,3 +165,91 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 })();
+
+/* Quote carousel: rotates <blockquote class="quote-slide"> children inside
+   .quote-carousel. Auto-advances every data-autoplay ms (default 6000);
+   pauses on hover or when the pointer enters the carousel; wraps prev/
+   next around; syncs .quote-dots for tab-navigation. */
+(function () {
+  var carousels = document.querySelectorAll(".quote-carousel");
+  if (!carousels.length) return;
+
+  carousels.forEach(function (c) {
+    var slides = c.querySelectorAll(".quote-slide");
+    if (slides.length < 2) return;
+    var dots = c.querySelector(".quote-dots");
+    var prev = c.querySelector(".quote-prev");
+    var next = c.querySelector(".quote-next");
+    var i = 0;
+    var timer = null;
+    var delay = parseInt(c.getAttribute("data-autoplay"), 10) || 6000;
+
+    if (dots) {
+      for (var k = 0; k < slides.length; k++) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "quote-dot" + (k === 0 ? " is-active" : "");
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", "Quote " + (k + 1));
+        dot.dataset.i = k;
+        dots.appendChild(dot);
+      }
+    }
+
+    function show(n) {
+      i = ((n % slides.length) + slides.length) % slides.length;
+      slides.forEach(function (s, idx) { s.classList.toggle("is-active", idx === i); });
+      if (dots) dots.querySelectorAll(".quote-dot").forEach(function (d, idx) {
+        d.classList.toggle("is-active", idx === i);
+      });
+    }
+    function tick() { show(i + 1); }
+    function start() { stop(); timer = setInterval(tick, delay); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    if (prev) prev.addEventListener("click", function () { show(i - 1); start(); });
+    if (next) next.addEventListener("click", function () { show(i + 1); start(); });
+    if (dots) dots.addEventListener("click", function (e) {
+      var d = e.target.closest(".quote-dot"); if (!d) return;
+      show(parseInt(d.dataset.i, 10)); start();
+    });
+    c.addEventListener("mouseenter", stop);
+    c.addEventListener("mouseleave", start);
+    c.addEventListener("focusin", stop);
+    c.addEventListener("focusout", start);
+    start();
+  });
+})();
+
+/* Share buttons: writes into a hidden `data-share-url` template so the
+   LinkedIn / X / Copy buttons carry the current page URL and title.
+   Copy shows a brief "Copied" tooltip; failure falls back gracefully. */
+(function () {
+  var bars = document.querySelectorAll(".article-share");
+  if (!bars.length) return;
+  var url = location.href.split("#")[0];
+  var title = document.title || "";
+  bars.forEach(function (bar) {
+    var li = bar.querySelector(".share-linkedin");
+    var tw = bar.querySelector(".share-twitter");
+    var cp = bar.querySelector(".share-copy");
+    if (li) li.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+    if (tw) tw.href = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(title);
+    if (cp) cp.addEventListener("click", function (e) {
+      e.preventDefault();
+      var done = function () {
+        cp.classList.add("is-copied");
+        setTimeout(function () { cp.classList.remove("is-copied"); }, 1400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done, done);
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = url; document.body.appendChild(ta);
+        ta.select(); try { document.execCommand("copy"); } catch(_) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+})();

@@ -72,6 +72,25 @@ FLASH_INIT = (
 # Three groups on one line: font family (sans / serif), size (- / +),
 # and background theme (light / warm / dark). Small, restrained; no
 # chunky text. State persisted by reader.js in localStorage.
+# Share row rendered under the standfirst on case-*/insight-* pages.
+# LinkedIn + X + copy-link buttons; JS in site.js wires the URLs and
+# the copy handler. Small, restrained visual weight.
+ARTICLE_SHARE_HTML = (
+    '<div class="article-share" role="group" aria-label="Share this article">'
+    '  <span class="share-label">Share</span>'
+    '  <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">'
+    '    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18.34H5.67V9.67h2.67v8.67zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 10H15.67V14c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.4H10V9.67h2.56v1.18h.04a2.8 2.8 0 0 1 2.53-1.39c2.71 0 3.21 1.78 3.21 4.1v4.88z"/></svg>'
+    '  </a>'
+    '  <a class="share-btn share-twitter" href="#" target="_blank" rel="noopener" aria-label="Share on X">'
+    '    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="currentColor"><path d="M17.53 3H20.9l-7.36 8.4L22.2 21h-6.8l-5.32-6.96L4.04 21H.66l7.87-8.99L.4 3h6.98l4.81 6.36L17.53 3zm-1.18 16h1.87L7.74 4.9H5.73L16.35 19z"/></svg>'
+    '  </a>'
+    '  <button type="button" class="share-btn share-copy" aria-label="Copy link">'
+    '    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'
+    '    <span class="share-copied">Copied</span>'
+    '  </button>'
+    '</div>'
+)
+
 READER_TOOLBAR_HTML = (
     '<div class="reader-toolbar" role="toolbar" aria-label="Reading preferences">'
     '  <div class="rt-group" role="group" aria-label="Font family">'
@@ -323,6 +342,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-first-customer": "butter",
     "insight-local-content-local-benefit": "butter",
     "insight-permit-is-not-the-project": "butter",
+    "insight-the-saving-is-agreed": "butter",
     "for-funders": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
@@ -828,6 +848,10 @@ META: dict[str, dict[str, str]] = {
     "insight-no-going-back": {
         "title": "When There Is No Going Back | Transitions Lab",
         "description": "A €40 million European research programme has opened on novel ecosystems. Once a historical baseline is off the table, restoration becomes a choice about which future counts.",
+    },
+    "insight-the-saving-is-agreed": {
+        "title": "The Saving Is Agreed | Transitions Lab",
+        "description": "Twenty-three interviews with riders, mechanics, a lender's agent, a manufacturer and a policy advocate in Nairobi. Nobody disputes that an electric motorcycle is cheaper to run — and very little else about the transition is settled.",
     },
     "insight-scheduled-not-summoned": {
         "title": "Scheduled, Not Summoned | Transitions Lab",
@@ -1509,12 +1533,14 @@ def build_content_page(slug: str, md: str) -> str:
 
     is_article = slug.startswith("case-") or slug.startswith("insight-")
     toolbar_html = READER_TOOLBAR_HTML if is_article else ""
+    share_html = ARTICLE_SHARE_HTML if is_article else ""
     prose_section = f"""<section class="light">
   <div class="wrap-prose">
     <div class="prose">
       {toolbar_html}
       {featured_html}
       {body_html}
+      {share_html}
     </div>
   </div>
 </section>"""
@@ -1712,6 +1738,18 @@ def build_home() -> str:
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="insight-row">
+      <a class="insight-card has-photo insight-card--flagship" href="/insight-the-saving-is-agreed">
+        <div class="card-photo">
+          <img src="/assets/img/insight-the-saving-is-agreed-hero.jpg" alt="Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving.">
+          <span class="kicker">Field flagship &middot; E-Mobility &middot; Nairobi</span>
+        </div>
+        <div class="body">
+          <span class="flagship-eyebrow">New · Field findings</span>
+          <h3>The Saving Is Agreed</h3>
+          <p>Twenty-three interviews with riders, mechanics, a lender's agent, a manufacturer and a policy advocate. Nobody disputes that an electric motorcycle is cheaper to run — and very little else about the transition is settled.</p>
+          <span class="read">Read the seven findings &rarr;</span>
+        </div>
+      </a>
       <a class="insight-card has-photo" href="/insight-extent-of-the-market">
         <div class="card-photo">
           <img src="/assets/img/insight-extent-of-the-market-hero.jpg" alt="Line-art scene: fifty-four small identical workshops each containing a complete miniature production line, drawn in a crowded grid; beside them, one large open-sided factory whose production line runs continuously across three separate ground sections divided by dotted border lines.">
@@ -1720,17 +1758,6 @@ def build_home() -> str:
         <div class="body">
           <h3>The Extent of the Market</h3>
           <p>The AfCFTA wants two or three cross-border anchor projects rather than fifty-four national strategies. Adam Smith explained why in 1776, and the obstacles are not tariffs.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo" href="/insight-local-content-local-benefit">
-        <div class="card-photo">
-          <img src="/assets/img/insight-local-content-local-benefit-hero.jpg" alt="Line-art scene: a mine gate with a single tender box mounted beside it, and three contractor vans queued at the gate each with a bid envelope, while behind the vans a group of workers stands holding wage slips; an arrow runs from the workers' slips toward the bid envelopes.">
-          <span class="kicker">Insight &middot; Green Industrialisation &middot; Africa</span>
-        </div>
-        <div class="body">
-          <h3>Local Content Is Not the Same as Local Benefit</h3>
-          <p>Ghana is transferring mining work to Ghanaian contractors and workers warn wages will fall. Competition among sellers to one buyer transmits the pressure to labour by design.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>
