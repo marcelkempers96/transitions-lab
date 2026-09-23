@@ -1727,6 +1727,25 @@ body[data-page^="insight-"] .prose h4{
 }
 :root[data-theme="dark"] .prose .article-share .share-copied{background:#F5EFE1;color:#14161a;}
 
+/* Play-button overlay on the Lombok case-study card. Marks a card
+   whose thumbnail is a freeze frame of the field video. Sits at
+   the middle of the photo; the whole card still links to the
+   case page, which is where the video actually plays. */
+.insight-card--video .card-photo{position:relative;}
+.insight-card--video .card-play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  display:inline-flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:999px;
+  background:rgba(10,10,10,.72);color:#F5EFE1;
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+  transition:background .16s ease, transform .16s ease;
+  pointer-events:none;
+}
+.insight-card--video .card-play svg{margin-left:3px;}
+.insight-card--video:hover .card-play{
+  background:rgba(10,10,10,.9);transform:translate(-50%,-50%) scale(1.05);
+}
+
 /* Flagship article-item on /articles: coral border-left + eyebrow. */
 .article-item--flagship{position:relative;padding-left:22px;}
 .article-item--flagship::before{

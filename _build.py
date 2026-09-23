@@ -1729,6 +1729,56 @@ def build_home() -> str:
   </div>
 </section>
 
+<!-- CASE STUDIES - three field cases -->
+<section class="section-paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Case studies</p>
+      <h2>Where we've worked on the ground.</h2>
+      <p>Most commissioned work is delivered privately. The engagements below are the ones partners have agreed to share.</p>
+    </div>
+    <div class="insight-row">
+      <a class="insight-card has-photo" href="/case-roam">
+        <div class="card-photo">
+          <img src="/assets/img/case-roam-market-stall.png" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
+          <span class="kicker">Kenya &middot; E-mobility</span>
+        </div>
+        <div class="body">
+          <h3>Electric transport in Nairobi</h3>
+          <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.</p>
+          <span class="read">Read the case &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo insight-card--video" href="/case-pyropower">
+        <div class="card-photo">
+          <img src="/assets/img/case-pyropower-village-meeting.jpg" alt="Freeze frame from the Lombok field video: the researcher sitting on the pavement with the village chief and members of the farmers' association discussing the biochar kiln.">
+          <span class="card-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="kicker">Indonesia &middot; Agriculture</span>
+        </div>
+        <div class="body">
+          <h3>Biochar in Lombok</h3>
+          <p>Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.</p>
+          <span class="read">Read the case &rarr;</span>
+        </div>
+      </a>
+      <a class="insight-card has-photo" href="/case-mimaji">
+        <div class="card-photo">
+          <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk with a chalked tariff and a queue of women and children filling green and yellow jerry cans at the counter window.">
+          <span class="kicker">Kenya &middot; Water</span>
+        </div>
+        <div class="body">
+          <h3>Water transparency in Nairobi</h3>
+          <p>Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.</p>
+          <span class="read">Read the case &rarr;</span>
+        </div>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:48px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
+  </div>
+</section>
+
 <!-- LATEST INSIGHTS - three cards with coloured stripes -->
 <section class="section-white">
   <div class="wrap">
@@ -1811,53 +1861,6 @@ def build_home() -> str:
         <span class="tm-cta">Open the primer &rarr;</span>
       </a>
     </div>
-  </div>
-</section>
-
-<!-- CASE STUDIES - three field cases -->
-<section class="section-paper">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Case studies</p>
-      <h2>Where we've worked on the ground.</h2>
-      <p>Most commissioned work is delivered privately. The engagements below are the ones partners have agreed to share.</p>
-    </div>
-    <div class="insight-row">
-      <a class="insight-card has-photo" href="/case-roam">
-        <div class="card-photo">
-          <img src="/assets/img/case-mobility-card.jpg" alt="A boda-boda rider in a hi-vis vest and yellow helmet on a teal electric motorcycle, threading through Nairobi traffic.">
-          <span class="kicker">Kenya &middot; E-mobility</span>
-        </div>
-        <div class="body">
-          <h3>Electric transport in Nairobi</h3>
-          <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.</p>
-          <span class="read">Read the case &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo" href="/case-pyropower">
-        <div class="card-photo">
-          <img src="/assets/img/case-pyropower-hero.jpg" alt="A smallholder farmer in a straw hat holds a handful of biochar, standing beside a large kiln with a fire visible at the base.">
-          <span class="kicker">Indonesia &middot; Agriculture</span>
-        </div>
-        <div class="body">
-          <h3>Biochar in Lombok</h3>
-          <p>Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.</p>
-          <span class="read">Read the case &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo" href="/case-mimaji">
-        <div class="card-photo">
-          <img src="/assets/img/case-mimaji-hero.jpg" alt="A woman and a boy at a Nairobi settlement standpipe fill yellow jerry cans; a public tap runs into the container in the foreground.">
-          <span class="kicker">Kenya &middot; Water</span>
-        </div>
-        <div class="body">
-          <h3>Water transparency in Nairobi</h3>
-          <p>Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.</p>
-          <span class="read">Read the case &rarr;</span>
-        </div>
-      </a>
-    </div>
-    <p style="text-align:center;margin-top:48px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
   </div>
 </section>
 
