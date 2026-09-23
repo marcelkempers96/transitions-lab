@@ -1732,7 +1732,6 @@ def build_home() -> str:
   <div class="statement-veil" aria-hidden="true"></div>
   <div class="wrap">
     <blockquote class="reveal">The most useful thing we do is <span class="highlight">listen to the people</span> a technology is about to meet, and report what they say honestly.</blockquote>
-    <cite>- Transitions Lab</cite>
     <p style="margin-top:36px;"><a href="/field-research" class="btn">See how we listen &rarr;</a></p>
   </div>
 </section>
