@@ -1748,7 +1748,7 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-roam">
         <div class="card-photo">
           <img src="/assets/img/case-roam-market-stall.png" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
-          <span class="kicker">Kenya &middot; E-mobility</span>
+          <span class="kicker kicker--mobility">Kenya &middot; E-mobility</span>
         </div>
         <div class="body">
           <h3>Electric transport in Nairobi</h3>
@@ -1762,7 +1762,7 @@ def build_home() -> str:
           <span class="card-play" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </span>
-          <span class="kicker">Indonesia &middot; Agriculture</span>
+          <span class="kicker kicker--agriculture">Indonesia &middot; Agriculture</span>
         </div>
         <div class="body">
           <h3>Biochar in Lombok</h3>
@@ -1773,7 +1773,7 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-mimaji">
         <div class="card-photo">
           <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk with a chalked tariff and a queue of women and children filling green and yellow jerry cans at the counter window.">
-          <span class="kicker">Kenya &middot; Water</span>
+          <span class="kicker kicker--water">Kenya &middot; Water</span>
         </div>
         <div class="body">
           <h3>Water transparency in Nairobi</h3>
