@@ -1611,24 +1611,25 @@ body[data-page^="insight-"] .prose h4{
 :root[data-size="2"] .prose li{font-size:20px;line-height:1.7;}
 
 /* Field-findings header stat row: three big numerals under the
-   standfirst on flagship-style pieces like The Saving Is Agreed. */
+   standfirst on flagship-style pieces like The Saving Is Agreed.
+   No box — the numerals sit on the page ground and centre-align. */
 .prose .finding-stats{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:18px;margin:22px 0 32px;padding:22px 24px;
-  border:1px solid rgba(10,10,10,.12);
-  background:rgba(255,255,255,.55);
+  gap:24px;margin:28px 0 36px;padding:0;
+  border:0;background:transparent;
+  text-align:center;
 }
-.prose .finding-stats > div{display:flex;flex-direction:column;gap:4px;}
+.prose .finding-stats > div{
+  display:flex;flex-direction:column;gap:4px;align-items:center;
+}
 .prose .finding-stats .n{
-  font-family:'Fraunces',Georgia,serif;font-size:38px;font-weight:600;
-  letter-spacing:-.02em;line-height:1;color:var(--ink);
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:42px;font-weight:800;letter-spacing:-.02em;
+  line-height:1;color:var(--ink);
 }
 .prose .finding-stats .k{
   font-size:12.5px;letter-spacing:.02em;color:var(--ink);opacity:.72;
   line-height:1.35;
-}
-:root[data-theme="dark"] .prose .finding-stats{
-  background:rgba(20,22,26,.55);border-color:rgba(232,228,218,.16);
 }
 :root[data-theme="dark"] .prose .finding-stats .n{color:#F5EFE1;}
 :root[data-theme="dark"] .prose .finding-stats .k{color:rgba(232,228,218,.72);}
@@ -1681,33 +1682,36 @@ body[data-page^="insight-"] .prose h4{
 }
 
 /* Quote carousel: rotating rider-voice blockquotes. Only one slide
-   is visible at a time; opacity fade + tiny translate on rotation. */
+   is visible at a time; opacity fade + tiny translate on rotation.
+   No box — the quote sits on the page ground and centre-aligns. */
 .prose .quote-carousel{
-  position:relative;margin:28px 0 34px;padding:36px 40px 28px;
-  background:rgba(255,251,241,.5);
-  border-left:3px solid var(--coral);
+  position:relative;margin:28px 0 34px;padding:12px 0 8px;
+  background:transparent;border:0;text-align:center;
 }
-.prose .quote-carousel .quote-track{position:relative;min-height:180px;}
+.prose .quote-carousel .quote-track{position:relative;min-height:160px;}
 .prose .quote-carousel .quote-slide{
   position:absolute;inset:0;margin:0;padding:0;border:0;
   opacity:0;transform:translateY(6px);pointer-events:none;
   transition:opacity .5s ease, transform .5s ease;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
 }
 .prose .quote-carousel .quote-slide.is-active{
   opacity:1;transform:translateY(0);pointer-events:auto;position:relative;
 }
 .prose .quote-carousel .quote-slide p{
   font-family:'Fraunces',Georgia,serif;font-style:italic;
-  font-size:22px;line-height:1.45;font-weight:400;
-  color:var(--ink);margin:0 0 14px;letter-spacing:-.005em;
+  font-size:17px;line-height:1.5;font-weight:400;
+  color:var(--ink);margin:0 auto 12px;letter-spacing:-.003em;
+  max-width:52ch;text-align:center;
 }
 .prose .quote-carousel .quote-slide cite{
   font-family:'Hanken Grotesk',sans-serif;font-style:normal;
-  font-size:13px;letter-spacing:.05em;text-transform:uppercase;
-  color:var(--ink);opacity:.62;font-weight:600;
+  font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink);opacity:.55;font-weight:700;
 }
 .prose .quote-carousel .quote-nav{
   display:flex;align-items:center;gap:18px;margin-top:14px;
+  justify-content:center;
 }
 .prose .quote-carousel .quote-btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -1723,9 +1727,7 @@ body[data-page^="insight-"] .prose h4{
   cursor:pointer;transition:background .18s ease;
 }
 .prose .quote-carousel .quote-dot.is-active{background:var(--ink);}
-:root[data-theme="dark"] .prose .quote-carousel{
-  background:rgba(20,22,26,.6);border-left-color:#F0B48C;
-}
+:root[data-theme="dark"] .prose .quote-carousel{background:transparent;}
 :root[data-theme="dark"] .prose .quote-carousel .quote-slide p{color:#F5EFE1;}
 :root[data-theme="dark"] .prose .quote-carousel .quote-slide cite{color:rgba(232,228,218,.62);}
 :root[data-theme="dark"] .prose .quote-carousel .quote-btn{color:#E8E4DA;border-color:rgba(232,228,218,.24);}
@@ -1733,8 +1735,8 @@ body[data-page^="insight-"] .prose h4{
 :root[data-theme="dark"] .prose .quote-carousel .quote-dot{background:rgba(232,228,218,.22);}
 :root[data-theme="dark"] .prose .quote-carousel .quote-dot.is-active{background:#F5EFE1;}
 @media(max-width:520px){
-  .prose .quote-carousel{padding:26px 22px 22px;}
-  .prose .quote-carousel .quote-slide p{font-size:18.5px;}
+  .prose .quote-carousel .quote-slide p{font-size:15.5px;}
+  .prose .finding-stats .n{font-size:36px;}
 }
 
 /* Article share row: LinkedIn / X / Copy-link, small pill buttons.
