@@ -1727,6 +1727,46 @@ body[data-page^="insight-"] .prose h4{
 }
 :root[data-theme="dark"] .prose .article-share .share-copied{background:#F5EFE1;color:#14161a;}
 
+/* Home-page flash banner: thin, light, single-line announcement
+   pointing at the latest flagship article. Sits above the video
+   hero, does not compete with it. Wraps to two lines on narrow
+   screens; hidden if any future page reuses the shell without
+   one. */
+.flash-banner{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:10px 22px;background:rgba(255,251,241,.9);
+  border-bottom:1px solid rgba(10,10,10,.10);
+  color:var(--ink);text-decoration:none;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:13.5px;line-height:1.35;font-weight:500;
+  transition:background .14s ease, border-color .14s ease;
+}
+.flash-banner:hover{
+  background:var(--butter);border-color:rgba(10,10,10,.22);
+}
+.flash-banner .flash-eyebrow{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--coral);
+}
+.flash-banner .flash-body{
+  color:var(--ink);opacity:.82;
+}
+.flash-banner .flash-body em{
+  font-style:normal;font-weight:700;opacity:1;
+}
+.flash-banner .flash-cue{
+  font-weight:700;color:var(--ink);opacity:.7;
+  transition:transform .14s ease;
+}
+.flash-banner:hover .flash-cue{transform:translateX(3px);opacity:1;}
+@media(max-width:640px){
+  .flash-banner{
+    flex-wrap:wrap;justify-content:flex-start;gap:6px 10px;
+    padding:8px 16px;font-size:12.5px;
+  }
+  .flash-banner .flash-eyebrow{font-size:10px;letter-spacing:.12em;}
+}
+
 /* Play-button overlay on the Lombok case-study card. Marks a card
    whose thumbnail is a freeze frame of the field video. Sits at
    the middle of the photo; the whole card still links to the
