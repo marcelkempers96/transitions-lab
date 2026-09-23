@@ -39,8 +39,7 @@ The published work is the proof of the method. The contracted work is the same m
 Based in **Delft, The Netherlands**. We do fieldwork in the contexts that defeat conventional research: low-connectivity, multilingual, informal, dispersed. We do not parachute in. We work through researchers and partners who already speak the language and know the place.
 
 <figure>
-  <img src="/assets/img/photo-coastal-community.jpg" alt="A coastal fishing community at sunset: household kitchen gardens in the foreground, a black water tank, rooftop solar panels on a nearby shack, and small fishing boats moored along the pier." class="diagram">
-  <figcaption>One frame, several transitions at once: household water storage, kitchen gardens, rooftop solar, small-boat fishing. The contexts we work in rarely have one thing changing at a time.</figcaption>
+  <img src="/assets/img/about-delft-station.jpg" alt="Delft station and Gemeente Delft building on a bright day: a modern glass structure with vertical fritted panels reflecting the sky, low canopies over the entrances and a paved plaza in front." class="diagram">
 </figure>
 
 ---
