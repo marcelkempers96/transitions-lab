@@ -6,11 +6,6 @@
 
 <p class="article-meta"><span class="article-date">22 September 2026</span> · <span class="article-reading-time">6 min read</span></p>
 
-<figure>
-<img src="/assets/img/insight-the-saving-is-agreed-hero.jpg" alt="Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving." class="diagram">
-<figcaption>The saving is not in dispute. The hours are.</figcaption>
-</figure>
-
 Nobody we interviewed in Nairobi claimed that petrol is cheaper to fuel, including the riders still riding it. The seven findings below concern what that agreement leaves unsettled, from twenty-three interviews across the people an electric motorcycle meets: riders on both technologies, one who went back, the garages that repair them, a lender's agent, a manufacturer and a policy advocate.
 
 <div class="finding-stats">
