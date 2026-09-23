@@ -1849,6 +1849,34 @@ body > section{position:relative;}
   .scroll-next svg{width:14px;height:14px;}
 }
 
+/* Flagship article hero: layer a blurred hero image behind the
+   butter tint so the band carries an atmospheric ghost of the
+   piece's subject. Overlay stays translucent so the yellow tone
+   and the text contrast are preserved. */
+body[data-page="insight-the-saving-is-agreed"] section.page-hero{
+  position:relative;isolation:isolate;overflow:hidden;
+}
+body[data-page="insight-the-saving-is-agreed"] section.page-hero::before{
+  content:"";position:absolute;inset:-32px;z-index:-2;
+  background-image:url('/assets/img/insight-the-saving-is-agreed-hero.jpg');
+  background-size:cover;background-position:center;
+  filter:blur(22px) saturate(120%);
+  transform:scale(1.15);
+}
+body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:rgba(243,215,101,.72);
+}
+body[data-page="insight-the-saving-is-agreed"] section.page-hero > .wrap{
+  position:relative;z-index:1;
+}
+:root[data-theme="dark"] body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
+  background:rgba(20,22,26,.72);
+}
+:root[data-theme="light"] body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
+  background:rgba(255,255,255,.72);
+}
+
 /* Home-page flash banner: thin coloured announcement pointing at
    the latest flagship article. Sits BELOW the hero, above the
    'What we do' section. Solid coral plate with white text so the
