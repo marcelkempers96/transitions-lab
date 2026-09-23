@@ -2248,6 +2248,13 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   .what-grid .what-card{border-right:0;}
   .what-grid .what-card:not(:last-child){border-bottom:2px solid var(--ink);}
 }
+/* Phone-only: drop the 'CLIENT QUESTION 01/02/03' eyebrow. The
+   ordinal is redundant on a single-column stack, and losing the
+   tag lets the heading and the copy lead the card. Kept on
+   desktop where the three columns benefit from the ordinal cue. */
+@media(max-width:640px){
+  .what-grid .what-card .what-tag{display:none;}
+}
 
 /* ── Network expertise strip (home page, forest block): the eight
    expertise pill-links, followed by an auto-scrolling partner-logo bar. */
