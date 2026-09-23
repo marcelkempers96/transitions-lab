@@ -2506,9 +2506,22 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
 }
 .serve-grid a h3{
   font-size:17px;font-weight:800;letter-spacing:-.015em;line-height:1.15;color:inherit;
+  display:inline;
 }
+/* Arrow sits inline right after the heading text so the eye reads
+   'NGOs & programmes →' as one phrase. Kept as a pseudo-element so
+   the source HTML stays clean; the standalone .arrow span from the
+   old bottom-anchor layout is hidden. */
+.serve-grid a h3::after{
+  content:"\00a0\2192";
+  display:inline;font-weight:800;font-size:17px;
+  transition:transform .16s ease;
+}
+.serve-grid a:hover h3::after{
+  content:"\00a0\00a0\2192";
+}
+.serve-grid a .arrow{display:none;}
 .serve-grid a p{font-size:13.5px;line-height:1.45;margin:0;color:inherit;font-weight:500;flex:1;}
-.serve-grid a .arrow{margin-top:auto;font-weight:800;font-size:18px;}
 .serve-grid a:hover{transform:translate(-2px,-2px);}
 @media(max-width:860px){
   .serve-grid{grid-template-columns:1fr;}
