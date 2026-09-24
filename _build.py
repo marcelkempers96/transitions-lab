@@ -1642,8 +1642,12 @@ def build_home() -> str:
   <span class="flash-cue" aria-hidden="true">→</span>
 </a>
 
-<!-- WHAT WE DO - service cards -->
-<section class="section-paper">
+<!-- WHAT WE DO - service cards on a background video -->
+<section class="section-paper what-we-do-section has-video">
+  <video class="section-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="/assets/media/what-we-do.mp4" type="video/mp4">
+  </video>
+  <div class="section-video-veil" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">What we do</p>

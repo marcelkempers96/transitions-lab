@@ -2619,6 +2619,29 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   height:44px;width:44px;display:block;object-fit:contain;
   margin:0 0 4px;align-self:flex-start;
 }
+/* Section-video treatment: reused pattern from the hero and the
+   statement block. The section owns a full-bleed background <video>
+   under a paper-tinted veil so the text and coloured cards on top
+   stay legible. */
+.section-paper.has-video{position:relative;isolation:isolate;overflow:hidden;}
+.section-paper .section-video{
+  position:absolute;inset:0;z-index:-2;
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  pointer-events:none;
+}
+.section-paper .section-video-veil{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(245,237,221,.72) 0%,rgba(245,237,221,.78) 55%,rgba(245,237,221,.86) 100%);
+}
+/* On the What-we-do section specifically, the coloured cards
+   are the star; the video reads as a felt atmosphere behind them.
+   A slightly stronger veil keeps card contrast intact. */
+.what-we-do-section .section-video-veil{
+  background:
+    linear-gradient(180deg,rgba(245,237,221,.78) 0%,rgba(245,237,221,.82) 55%,rgba(245,237,221,.88) 100%);
+}
+
 @media(max-width:860px){
   .what-grid{grid-template-columns:1fr;}
   .what-grid .what-card{
