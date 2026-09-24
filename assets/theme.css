@@ -1867,6 +1867,123 @@ body > section{position:relative;}
   .scroll-next svg{width:14px;height:14px;}
 }
 
+/* ────────────────────────────────────────────────────────────
+   SUBTLE-GRADIENT TREATMENT
+   Applied to every coloured hero band and coloured container
+   across the site. Same principle as the flagship article
+   hero: replace the flat colour plate with a layered radial-
+   gradient composition so the surface reads as textured
+   atmosphere. Two soft light spots and one shadow spot per
+   container, tuned to the base tint. No pseudo-elements
+   needed — everything lives in a single background:
+   declaration that stacks the gradients over the base colour.
+   ──────────────────────────────────────────────────────────── */
+
+/* Page heroes: every hero-* variant. */
+.page-hero.hero-sky{
+  background:
+    radial-gradient(1200px 620px at 18% 12%, rgba(255,255,255,.32), transparent 55%),
+    radial-gradient(1000px 540px at 82% 90%, rgba(30,58,95,.18), transparent 60%),
+    radial-gradient(700px 440px at 50% 100%, rgba(255,255,255,.14), transparent 55%),
+    #CFE1EE;
+}
+.page-hero.hero-coral{
+  background:
+    radial-gradient(1200px 620px at 18% 12%, rgba(255,255,255,.24), transparent 55%),
+    radial-gradient(1000px 540px at 82% 90%, rgba(112,42,12,.22), transparent 60%),
+    radial-gradient(700px 440px at 50% 100%, rgba(255,255,255,.10), transparent 55%),
+    var(--coral);
+}
+.page-hero.hero-butter{
+  background:
+    radial-gradient(1200px 620px at 18% 12%, rgba(255,255,255,.28), transparent 55%),
+    radial-gradient(1000px 540px at 82% 90%, rgba(122,98,10,.18), transparent 60%),
+    radial-gradient(700px 440px at 50% 100%, rgba(255,255,255,.12), transparent 55%),
+    var(--butter);
+}
+.page-hero.hero-forest{
+  background:
+    radial-gradient(1200px 620px at 18% 12%, rgba(245,239,225,.16), transparent 55%),
+    radial-gradient(1000px 540px at 82% 90%, rgba(0,0,0,.32), transparent 60%),
+    radial-gradient(700px 440px at 50% 100%, rgba(245,239,225,.08), transparent 55%),
+    var(--forest);
+}
+.page-hero.hero-cobalt{
+  background:
+    radial-gradient(1200px 620px at 18% 12%, rgba(245,239,225,.16), transparent 55%),
+    radial-gradient(1000px 540px at 82% 90%, rgba(0,0,0,.30), transparent 60%),
+    radial-gradient(700px 440px at 50% 100%, rgba(245,239,225,.08), transparent 55%),
+    var(--cobalt);
+}
+.page-hero.hero-plum{
+  background:
+    radial-gradient(1200px 620px at 18% 12%, rgba(245,239,225,.16), transparent 55%),
+    radial-gradient(1000px 540px at 82% 90%, rgba(0,0,0,.30), transparent 60%),
+    radial-gradient(700px 440px at 50% 100%, rgba(245,239,225,.08), transparent 55%),
+    var(--plum);
+}
+
+/* Homepage 'What we do' cards: the three coloured client-question
+   cards each pick up the treatment tuned to their base tint. */
+.what-grid .what-card.c-butter{
+  background:
+    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.28), transparent 55%),
+    radial-gradient(600px 340px at 85% 85%, rgba(122,98,10,.18), transparent 60%),
+    var(--butter);
+}
+.what-grid .what-card.c-coral{
+  background:
+    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.22), transparent 55%),
+    radial-gradient(600px 340px at 85% 85%, rgba(112,42,12,.22), transparent 60%),
+    var(--coral);
+}
+.what-grid .what-card.c-cobalt{
+  background:
+    radial-gradient(700px 400px at 20% 15%, rgba(245,239,225,.14), transparent 55%),
+    radial-gradient(600px 340px at 85% 85%, rgba(0,0,0,.30), transparent 60%),
+    var(--cobalt);
+}
+
+/* 'Who we serve' cards on the home page: coral, butter and
+   euro-blue variants get the same layered treatment; the two
+   quiet paper cards stay flat. */
+.serve-grid a:nth-child(1){
+  background:
+    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.22), transparent 55%),
+    radial-gradient(600px 340px at 85% 85%, rgba(112,42,12,.20), transparent 60%),
+    var(--coral);
+}
+.serve-grid a:nth-child(2){
+  background:
+    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.28), transparent 55%),
+    radial-gradient(600px 340px at 85% 85%, rgba(122,98,10,.18), transparent 60%),
+    var(--butter);
+}
+.serve-grid a:nth-child(3){
+  background:
+    radial-gradient(700px 400px at 20% 15%, rgba(245,239,225,.16), transparent 55%),
+    radial-gradient(600px 340px at 85% 85%, rgba(0,0,0,.30), transparent 60%),
+    var(--euro-blue);
+}
+
+/* Article & case-study 'Connect with the Lab' CTA plate. */
+.prose .contact-cta-programme{
+  background:
+    radial-gradient(900px 500px at 20% 15%, rgba(255,255,255,.36), transparent 55%),
+    radial-gradient(700px 400px at 85% 85%, rgba(30,58,95,.16), transparent 60%),
+    #CFE1EE;
+}
+
+/* Free-resources cards on the home page: they sit on white by
+   default; the same gradient rig gives them a subtle warm/cool
+   organic tint without changing the base. */
+.resource-card{
+  background:
+    radial-gradient(700px 400px at 15% 10%, rgba(255,238,200,.18), transparent 55%),
+    radial-gradient(600px 340px at 90% 95%, rgba(0,0,0,.05), transparent 60%),
+    var(--white);
+}
+
 /* Flagship article hero: layer a blurred hero image behind the
    butter tint so the band carries an atmospheric ghost of the
    piece's subject. Overlay stays translucent so the yellow tone
