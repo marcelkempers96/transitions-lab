@@ -1654,20 +1654,20 @@ def build_home() -> str:
       <a class="what-card c-butter" href="/entering-a-new-context">
         <span class="what-tag">Client question 01</span>
         <h3>Entering a new context</h3>
-        <p>Independent field evidence for the decision to enter a new market or launch a new product line. Who adopts, at what price, and which failure modes to name early.</p>
+        <p>Independent field evidence before you enter a market. Who adopts, at what price, and what fails early.</p>
         <span class="what-more">Read more →</span>
       </a>
       <a class="what-card c-coral" href="/measuring-change">
         <span class="what-tag">Client question 02</span>
         <h3>Measuring change</h3>
-        <p>What actually changes, for whom, and through what pathway. Reach, depth, and experience, measured from the human side first.</p>
+        <p>What actually changes, for whom, and how. Reach, depth and experience — from the human side.</p>
         <span class="what-more">Read more →</span>
       </a>
       <a class="what-card c-cobalt" href="/reporting-to-funders">
         <img class="what-flag" src="/assets/icons/icon-eu.png" alt="" aria-hidden="true">
         <span class="what-tag">Client question 03</span>
         <h3>Reporting to funders</h3>
-        <p>Monitoring, evaluation, dissemination as one connected system. Independent, set up at the start, closed with proof, including for European Grant Agreements.</p>
+        <p>Monitoring, evaluation and dissemination as one system. Set up at the start, closed with proof.</p>
         <span class="what-more">Read more →</span>
       </a>
     </div>
