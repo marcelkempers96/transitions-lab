@@ -1706,7 +1706,8 @@ body[data-page^="insight-"] .prose h4{
 }
 .prose .quote-carousel .quote-slide cite,
 .prose .quote-carousel .quote-slide cite *{
-  font-family:'Hanken Grotesk',sans-serif;font-style:normal;
+  font-family:'Hanken Grotesk',sans-serif !important;
+  font-style:normal !important;
   font-size:12px;letter-spacing:.06em;text-transform:uppercase;
   color:var(--ink);opacity:.55;font-weight:700;
 }
@@ -1741,6 +1742,19 @@ body[data-page^="insight-"] .prose h4{
     grid-template-columns:1fr;gap:18px;
   }
   .prose .finding-stats .n{font-size:36px;}
+  /* Mobile: separate the flagship-article mini-sections (stats,
+     quotes, findings) with a wider vertical margin and a soft
+     forest-tinted top rule, so each block reads as its own beat
+     on the small screen instead of running into the next. */
+  .prose .finding-stats,
+  .prose .quote-carousel{
+    margin-top:36px;padding-top:28px;
+    border-top:1px solid rgba(15,61,46,.14);
+  }
+  .prose .finding-cards{
+    margin-top:36px;padding-top:20px;
+    border-top:1px solid rgba(15,61,46,.14);
+  }
 }
 
 /* Article share row: LinkedIn / X / Copy-link, small pill buttons.
