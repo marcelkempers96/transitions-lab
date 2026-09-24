@@ -3002,8 +3002,18 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
 .tbl td{border-right:2px solid var(--ink);}
 .tbl td:last-child{border-right:0;}
 @media(max-width:640px){
-  .tbl{font-size:14px;min-width:520px;}
-  .tbl th,.tbl td{padding:10px 12px;}
+  .tbl{font-size:13.5px;min-width:0;table-layout:fixed;width:100%;}
+  .tbl th,.tbl td{
+    padding:8px 10px;
+    word-break:break-word;overflow-wrap:break-word;
+    hyphens:auto;
+  }
+  .table-wrap{
+    /* Drop the right-edge fade on mobile — the table now fits
+       the viewport instead of scrolling sideways, so the fade
+       would suggest hidden content that is no longer there. */
+    background:none;
+  }
 }
 
 /* ── Legacy grids used on interior pages ──────────────────── */
