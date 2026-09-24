@@ -1984,32 +1984,57 @@ body > section{position:relative;}
     var(--white);
 }
 
-/* Flagship article hero: layer a blurred hero image behind the
-   butter tint so the band carries an atmospheric ghost of the
-   piece's subject. Overlay stays translucent so the yellow tone
-   and the text contrast are preserved. */
-body[data-page="insight-the-saving-is-agreed"] section.page-hero{
+/* Article & case-study page heroes: when the page carries a
+   matching hero photograph (post-processor in _build.py stamps
+   --hero-bg on the section), layer that image behind the tinted
+   hero band. Blur is subtle so the scene is recognisable; the
+   overlay stays translucent so the base tint (butter, coral,
+   sky, etc.) and the text contrast are preserved.
+
+   Scoped via [data-hero-bg="1"] so pages without a hero image
+   fall back to the flat radial-gradient treatment above. */
+section.page-hero[data-hero-bg]{
   position:relative;isolation:isolate;overflow:hidden;
 }
-body[data-page="insight-the-saving-is-agreed"] section.page-hero::before{
+section.page-hero[data-hero-bg]::before{
   content:"";position:absolute;inset:-16px;z-index:-2;
-  background-image:url('/assets/img/insight-the-saving-is-agreed-hero.jpg');
+  background-image:var(--hero-bg);
   background-size:cover;background-position:center;
   filter:blur(6px) saturate(112%);
   transform:scale(1.06);
 }
-body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
+section.page-hero[data-hero-bg]::after{
   content:"";position:absolute;inset:0;z-index:-1;
-  background:rgba(243,215,101,.52);
 }
-body[data-page="insight-the-saving-is-agreed"] section.page-hero > .wrap{
+section.page-hero[data-hero-bg] > .wrap{
   position:relative;z-index:1;
 }
-:root[data-theme="dark"] body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
-  background:rgba(20,22,26,.58);
+/* Per-tint translucent overlays. Warm theme (the default) matches
+   each hero-* variant; light and dark themes swap in white or
+   charcoal so the image reads correctly on any reader theme. */
+section.page-hero.hero-butter[data-hero-bg]::after{
+  background:rgba(243,215,101,.52);
 }
-:root[data-theme="light"] body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
-  background:rgba(255,255,255,.56);
+section.page-hero.hero-coral[data-hero-bg]::after{
+  background:rgba(232,100,44,.52);
+}
+section.page-hero.hero-sky[data-hero-bg]::after{
+  background:rgba(207,225,238,.56);
+}
+section.page-hero.hero-forest[data-hero-bg]::after{
+  background:rgba(15,61,46,.60);
+}
+section.page-hero.hero-cobalt[data-hero-bg]::after{
+  background:rgba(30,58,95,.60);
+}
+section.page-hero.hero-plum[data-hero-bg]::after{
+  background:rgba(107,46,75,.60);
+}
+:root[data-theme="dark"] section.page-hero[data-hero-bg]::after{
+  background:rgba(20,22,26,.58) !important;
+}
+:root[data-theme="light"] section.page-hero[data-hero-bg]::after{
+  background:rgba(255,255,255,.58) !important;
 }
 
 /* Home-page flash banner: thin coloured announcement pointing at

@@ -1471,7 +1471,25 @@ def build_content_page(slug: str, md: str) -> str:
     topic_icon = TOPIC_ICONS.get(slug, "")
     icon_html = f'<img src="{topic_icon}" alt="" class="topic-icon" aria-hidden="true">' if topic_icon else ''
 
-    page_hero = f"""<section class="{hero_class}">
+    # Layer the article/case-study hero photograph behind the tinted
+    # hero band when a matching image exists on disk. The image is
+    # stamped as an inline --hero-bg custom property and the tint
+    # goes on top via CSS. Case-roam uses case-mobility-hero.jpg
+    # as its historical filename; every other slug follows
+    # <slug>-hero.jpg.
+    hero_bg_style = ""
+    hero_bg_filename_map = {
+        "case-roam": "case-mobility-hero.jpg",
+    }
+    hero_bg_filename = hero_bg_filename_map.get(slug, f"{slug}-hero.jpg")
+    if (slug.startswith("case-") or slug.startswith("insight-")) and \
+       (ROOT / "assets" / "img" / hero_bg_filename).exists():
+        hero_bg_style = (
+            f' style="--hero-bg:url(/assets/img/{hero_bg_filename})"'
+            f' data-hero-bg="1"'
+        )
+
+    page_hero = f"""<section class="{hero_class}"{hero_bg_style}>
   <div class="wrap">
     {icon_html}
     {'<p class="eyebrow">' + inline(hero_eyebrow) + '</p>' if hero_eyebrow else ''}
