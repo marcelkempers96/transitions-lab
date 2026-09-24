@@ -1648,7 +1648,6 @@ def build_home() -> str:
     <div class="section-head reveal">
       <p class="eyebrow">What we do</p>
       <h2>Independent evidence, three ways in.</h2>
-      <p>We reach the people a technology or programme actually meets, measure what changes, and report it honestly.</p>
     </div>
     <div class="what-grid">
       <a class="what-card c-butter" href="/entering-a-new-context">
