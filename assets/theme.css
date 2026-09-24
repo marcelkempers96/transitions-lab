@@ -1942,20 +1942,20 @@ body > section{position:relative;}
    cards each pick up the treatment tuned to their base tint. */
 .what-grid .what-card.c-butter{
   background:
-    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.28), transparent 55%),
-    radial-gradient(600px 340px at 85% 85%, rgba(122,98,10,.18), transparent 60%),
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.42), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(122,98,10,.28), transparent 62%),
     var(--butter);
 }
 .what-grid .what-card.c-coral{
   background:
-    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.22), transparent 55%),
-    radial-gradient(600px 340px at 85% 85%, rgba(112,42,12,.22), transparent 60%),
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.34), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(112,42,12,.32), transparent 62%),
     var(--coral);
 }
 .what-grid .what-card.c-cobalt{
   background:
-    radial-gradient(700px 400px at 20% 15%, rgba(245,239,225,.14), transparent 55%),
-    radial-gradient(600px 340px at 85% 85%, rgba(0,0,0,.30), transparent 60%),
+    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.42), transparent 62%),
     var(--cobalt);
 }
 
@@ -1964,21 +1964,137 @@ body > section{position:relative;}
    quiet paper cards stay flat. */
 .serve-grid a:nth-child(1){
   background:
-    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.22), transparent 55%),
-    radial-gradient(600px 340px at 85% 85%, rgba(112,42,12,.20), transparent 60%),
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.34), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(112,42,12,.30), transparent 62%),
     var(--coral);
 }
 .serve-grid a:nth-child(2){
   background:
-    radial-gradient(700px 400px at 20% 15%, rgba(255,255,255,.28), transparent 55%),
-    radial-gradient(600px 340px at 85% 85%, rgba(122,98,10,.18), transparent 60%),
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.42), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(122,98,10,.28), transparent 62%),
     var(--butter);
 }
 .serve-grid a:nth-child(3){
   background:
-    radial-gradient(700px 400px at 20% 15%, rgba(245,239,225,.16), transparent 55%),
-    radial-gradient(600px 340px at 85% 85%, rgba(0,0,0,.30), transparent 60%),
+    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.40), transparent 62%),
     var(--euro-blue);
+}
+
+/* Insight-card & case-card kicker strips: the coloured top bar
+   over the photograph on every home-page insight and case card,
+   plus their listing counterparts. Same rig — light spot,
+   shadow spot, base tint — applied to every colour variant.
+   Position-based nth-child fallback and topic-modifier
+   overrides both covered. */
+.insight-card.has-photo:nth-child(1) .card-photo .kicker{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.30), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(112,42,12,.28), transparent 62%),
+    var(--coral);
+}
+.insight-card.has-photo:nth-child(2) .card-photo .kicker{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(0,0,0,.34), transparent 62%),
+    var(--cobalt);
+}
+.insight-card.has-photo:nth-child(3) .card-photo .kicker,
+.insight-card.has-photo:nth-child(4) .card-photo .kicker{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.36), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(122,98,10,.26), transparent 62%),
+    var(--butter);
+}
+.insight-card.has-photo:nth-child(5) .card-photo .kicker{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(0,0,0,.38), transparent 62%),
+    var(--forest);
+}
+.insight-card.has-photo:nth-child(6) .card-photo .kicker{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.30), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(112,42,12,.28), transparent 62%),
+    var(--coral);
+}
+/* Topic-modifier overrides — always beat the position defaults. */
+.insight-card.has-photo .card-photo .kicker.kicker--water{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.44), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(30,58,95,.20), transparent 62%),
+    #CFE1EE;
+}
+.insight-card.has-photo .card-photo .kicker.kicker--mobility{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.30), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(112,42,12,.28), transparent 62%),
+    var(--coral);
+}
+.insight-card.has-photo .card-photo .kicker.kicker--agriculture{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(0,0,0,.38), transparent 62%),
+    var(--forest);
+}
+.insight-card.has-photo .card-photo .kicker.kicker--energy{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.36), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(122,98,10,.26), transparent 62%),
+    var(--butter);
+}
+.insight-card.has-photo .card-photo .kicker.kicker--finance{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(0,0,0,.36), transparent 62%),
+    var(--plum);
+}
+.insight-card.has-photo .card-photo .kicker.kicker--digital{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(0,0,0,.34), transparent 62%),
+    var(--cobalt);
+}
+
+/* Home 'Latest insights' plain colored stripes on the small
+   variants (insight-card without has-photo). */
+.insight-card:nth-child(1) .stripe{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.30), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(112,42,12,.28), transparent 62%),
+    var(--coral);
+}
+.insight-card:nth-child(2) .stripe{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(245,239,225,.22), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(0,0,0,.34), transparent 62%),
+    var(--cobalt);
+}
+.insight-card:nth-child(3) .stripe{
+  background:
+    radial-gradient(560px 220px at 15% 20%, rgba(255,255,255,.36), transparent 60%),
+    radial-gradient(480px 200px at 88% 88%, rgba(122,98,10,.26), transparent 62%),
+    var(--butter);
+}
+
+/* Flash banner (coral, ink, cobalt variants). */
+.flash-banner{
+  background:
+    radial-gradient(900px 240px at 16% 10%, rgba(255,255,255,.28), transparent 60%),
+    radial-gradient(700px 220px at 88% 92%, rgba(112,42,12,.30), transparent 62%),
+    var(--coral);
+}
+.flash-banner--ink{
+  background:
+    radial-gradient(900px 240px at 16% 10%, rgba(245,239,225,.16), transparent 60%),
+    radial-gradient(700px 220px at 88% 92%, rgba(0,0,0,.50), transparent 62%),
+    var(--ink);
+}
+.flash-banner--cobalt{
+  background:
+    radial-gradient(900px 240px at 16% 10%, rgba(245,239,225,.20), transparent 60%),
+    radial-gradient(700px 220px at 88% 92%, rgba(0,0,0,.38), transparent 62%),
+    var(--cobalt);
 }
 
 /* Article & case-study 'Connect with the Lab' CTA plate. */
