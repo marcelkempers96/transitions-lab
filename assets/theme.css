@@ -1497,6 +1497,21 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 :root[data-theme="dark"] .page-hero.hero-forest{background:linear-gradient(180deg,#151F1B 0%,#14161a 100%);}
 :root[data-theme="dark"] .page-hero h1,
 :root[data-theme="dark"] .page-hero .lede{color:#F5EFE1;}
+/* Eyebrow tint on dark theme: force a warm coral accent across
+   every hero-* variant, so the small caps line reads against
+   the charcoal ground instead of disappearing (the light-hero
+   variants set it to ink, which is invisible on dark). */
+:root[data-theme="dark"] .page-hero .eyebrow,
+:root[data-theme="dark"] .page-hero.hero-butter .eyebrow,
+:root[data-theme="dark"] .page-hero.hero-coral .eyebrow,
+:root[data-theme="dark"] .page-hero.hero-sky .eyebrow{
+  color:#F0B48C !important;opacity:1;
+}
+:root[data-theme="dark"] .page-hero.hero-forest .eyebrow,
+:root[data-theme="dark"] .page-hero.hero-cobalt .eyebrow,
+:root[data-theme="dark"] .page-hero.hero-plum .eyebrow{
+  color:var(--butter);opacity:1;
+}
 :root[data-theme="dark"] .prose,
 :root[data-theme="dark"] .prose p,
 :root[data-theme="dark"] .prose li,
