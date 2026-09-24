@@ -2621,8 +2621,15 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
 }
 @media(max-width:860px){
   .what-grid{grid-template-columns:1fr;}
-  .what-grid .what-card{border-right:0;}
+  .what-grid .what-card{
+    border-right:0;min-height:0;padding:22px 24px 20px;
+  }
   .what-grid .what-card:not(:last-child){border-bottom:2px solid var(--ink);}
+  /* Mobile: drop the flex:1 stretch on the paragraph and the
+     margin-top:auto on the Read-more cue so each card sizes
+     to its own content — no more empty space below the CTA. */
+  .what-grid .what-card p{flex:none;}
+  .what-grid .what-card .what-more{margin-top:6px;}
 }
 /* Phone-only: drop the 'CLIENT QUESTION 01/02/03' eyebrow. The
    ordinal is redundant on a single-column stack, and losing the
