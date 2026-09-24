@@ -1764,7 +1764,6 @@ def build_home() -> str:
     <div class="section-head reveal">
       <p class="eyebrow">Case studies</p>
       <h2>Where we've worked on the ground.</h2>
-      <p>Most commissioned work is delivered privately. The engagements below are the ones partners have agreed to share.</p>
     </div>
     <div class="insight-row">
       <a class="insight-card has-photo" href="/case-roam">
