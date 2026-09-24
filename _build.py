@@ -1643,7 +1643,7 @@ def build_home() -> str:
 </a>
 
 <!-- WHAT WE DO - service cards -->
-<section class="section-white">
+<section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">What we do</p>
