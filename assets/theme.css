@@ -1875,24 +1875,24 @@ body[data-page="insight-the-saving-is-agreed"] section.page-hero{
   position:relative;isolation:isolate;overflow:hidden;
 }
 body[data-page="insight-the-saving-is-agreed"] section.page-hero::before{
-  content:"";position:absolute;inset:-32px;z-index:-2;
+  content:"";position:absolute;inset:-16px;z-index:-2;
   background-image:url('/assets/img/insight-the-saving-is-agreed-hero.jpg');
   background-size:cover;background-position:center;
-  filter:blur(22px) saturate(120%);
-  transform:scale(1.15);
+  filter:blur(6px) saturate(112%);
+  transform:scale(1.06);
 }
 body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
   content:"";position:absolute;inset:0;z-index:-1;
-  background:rgba(243,215,101,.72);
+  background:rgba(243,215,101,.52);
 }
 body[data-page="insight-the-saving-is-agreed"] section.page-hero > .wrap{
   position:relative;z-index:1;
 }
 :root[data-theme="dark"] body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
-  background:rgba(20,22,26,.72);
+  background:rgba(20,22,26,.58);
 }
 :root[data-theme="light"] body[data-page="insight-the-saving-is-agreed"] section.page-hero::after{
-  background:rgba(255,255,255,.72);
+  background:rgba(255,255,255,.56);
 }
 
 /* Home-page flash banner: thin coloured announcement pointing at
