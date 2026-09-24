@@ -214,11 +214,15 @@ section + section{border-top:2px solid var(--ink);}
   z-index:0;display:block;pointer-events:none;
 }
 /* Cream veil over the video for text legibility, warm-toned so the
-   design still reads as light. Sits between the video and the copy. */
+   design still reads as light. Sits between the video and the copy.
+   Kept lighter so the construction footage stays visible under the
+   copy; the veil dims into the bottom-left corner behind the CTAs
+   where the text needs stronger contrast. */
 .hero-veil{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(180deg,rgba(245,237,221,.62) 0%,rgba(245,237,221,.82) 55%,rgba(245,237,221,.92) 100%);
+    linear-gradient(180deg,rgba(245,237,221,.28) 0%,rgba(245,237,221,.36) 55%,rgba(245,237,221,.48) 100%),
+    radial-gradient(1000px 700px at 8% 40%, rgba(245,237,221,.42), transparent 65%);
 }
 .hero.has-video .eyebrow{color:var(--orange);}
 .hero.has-video h1,.hero.has-video .lede{color:var(--ink);}
