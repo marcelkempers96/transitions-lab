@@ -192,7 +192,11 @@ section.dark.glow::before{content:none;}
 
 /* Section heads */
 .section-head{max-width:64ch;margin-bottom:60px;}
-.section-head h2{font-size:clamp(30px,4.2vw,56px);letter-spacing:-.03em;line-height:1.05;font-weight:800;}
+.section-head h2{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif;
+  font-size:clamp(30px,4.2vw,56px);letter-spacing:-.02em;
+  line-height:1.05;font-weight:600;
+}
 .section-head p{font-size:20px;margin:20px 0 0;line-height:1.5;max-width:56ch;font-weight:500;}
 
 /* Hairline between adjacent sections */
