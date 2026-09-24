@@ -50,10 +50,9 @@ The Lab publishes articles for the same reason it takes on any research: some qu
   <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb article-item--flagship" data-category="e-mobility" data-geography="africa" data-month="2026-09">
+<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
     <a class="article-thumb-link" href="/insight-the-saving-is-agreed"><img class="article-thumb" src="/assets/img/insight-the-saving-is-agreed-hero.jpg" alt="Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving."></a>
     <div class="article-body">
-      <span class="flagship-eyebrow">Field flagship</span>
       <a class="article-title" href="/insight-the-saving-is-agreed">The Saving Is Agreed: Seven Findings from Nairobi's Electric Transition</a>
       <div class="article-meta">22 September 2026</div>
       <div class="article-chips"><span class="article-chip chip-cat chip-cat-e-mobility">E-Mobility</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
