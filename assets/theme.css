@@ -1705,11 +1705,15 @@ body[data-page^="insight-"] .prose h4{
   max-width:52ch;text-align:center;
 }
 .prose .quote-carousel .quote-slide cite,
-.prose .quote-carousel .quote-slide cite *{
+.prose .quote-carousel .quote-slide cite *,
+.prose .quote-carousel .quote-slide .quote-cite,
+.prose .quote-carousel .quote-slide .quote-cite *{
   font-family:'Hanken Grotesk',sans-serif !important;
   font-style:normal !important;
+  font-weight:700 !important;
   font-size:12px;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--ink);opacity:.55;font-weight:700;
+  color:var(--ink);opacity:.55;
+  display:block;
 }
 .prose .quote-carousel .quote-nav{
   display:flex;align-items:center;gap:18px;margin-top:14px;

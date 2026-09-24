@@ -18,23 +18,23 @@ Nobody we interviewed in Nairobi claimed that petrol is cheaper to fuel, includi
   <div class="quote-track">
     <blockquote class="quote-slide is-active">
       <p>"I have seen three people, from Uber car, to boda boda… this guy has a car, paying 1,500 per day, fuel, going home with only 1,000 or 2,000."</p>
-      <cite>Electric rider, 29</cite>
+      <span class="quote-cite">Electric rider, 29</span>
     </blockquote>
     <blockquote class="quote-slide">
       <p>"Time is money. So for boda boda riders, time is actually money. So the more you stay there, especially during the rush hours, you lose quite a lot of money."</p>
-      <cite>Electric rider, part-time</cite>
+      <span class="quote-cite">Electric rider, part-time</span>
     </blockquote>
     <blockquote class="quote-slide">
       <p>"You can be missing out the charging stations around. But… petrol stations are all over. So, I cannot run out of fuel, not unless I don't have the cash."</p>
-      <cite>Petrol rider, five years</cite>
+      <span class="quote-cite">Petrol rider, five years</span>
     </blockquote>
     <blockquote class="quote-slide">
       <p>"If you are not going to learn the repair of the electric motorcycle… in the future, our income is going to fall."</p>
-      <cite>Mechanic, seven-person garage</cite>
+      <span class="quote-cite">Mechanic, seven-person garage</span>
     </blockquote>
     <blockquote class="quote-slide">
       <p>"When you go to a group of riders, let's say they are 10, you will not lack one or 2 who is open-minded…"</p>
-      <cite>Sales agent, pay-as-you-go lender</cite>
+      <span class="quote-cite">Sales agent, pay-as-you-go lender</span>
     </blockquote>
   </div>
   <div class="quote-nav">
