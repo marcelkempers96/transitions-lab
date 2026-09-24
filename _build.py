@@ -1693,7 +1693,7 @@ def build_home() -> str:
       <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts and long-standing partners, in Europe and in the places our cases come from.</p>
     </div>
 
-    <p class="net-expertise-label">Programmes</p>
+    <p class="net-expertise-label">Current programmes</p>
     <div class="net-expertise-row">
       <a href="/expertise-manufacturing">Green Industrialisation</a>
       <a href="/expertise-e-mobility">E-Mobility &amp; Transport</a>
