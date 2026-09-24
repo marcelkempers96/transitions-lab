@@ -3204,6 +3204,19 @@ footer.site .legal > span{white-space:nowrap;}
     border:0;box-shadow:none;padding:0 0 12px 12px;min-width:0;
   }
   .nav .nav-dropdown a{padding:12px 4px;font-size:15.5px;background:transparent!important;}
+  /* Selected-item indicator on mobile is a subtle left rule +
+     coral accent, not an extra bottom border. The desktop
+     underline treatment creates a double border with the
+     item's top divider and pushes the label 2px down; on
+     mobile that reads as a chunky misalignment. */
+  .nav nav.open > a.current,
+  .nav nav.open > details.nav-group.current > summary.nav-label{
+    border-bottom:0;padding-bottom:0;
+    color:var(--coral);
+  }
+  .nav nav.open > a.current{padding-left:12px;box-shadow:inset 3px 0 0 var(--coral);}
+  .nav nav.open > details.nav-group.current{box-shadow:inset 3px 0 0 var(--coral);}
+  .nav nav.open > details.nav-group.current > summary.nav-label{padding-left:12px;}
 }
 
 @media(prefers-reduced-motion:reduce){
