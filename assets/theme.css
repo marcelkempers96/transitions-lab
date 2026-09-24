@@ -216,13 +216,21 @@ section + section{border-top:2px solid var(--ink);}
 /* Cream veil over the video for text legibility, warm-toned so the
    design still reads as light. Sits between the video and the copy.
    Kept lighter so the construction footage stays visible under the
-   copy; the veil dims into the bottom-left corner behind the CTAs
-   where the text needs stronger contrast. */
+   copy; a stronger radial cream lifts the area behind the h1 and
+   standfirst so the text reads without darkening the whole hero. */
 .hero-veil{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(180deg,rgba(245,237,221,.28) 0%,rgba(245,237,221,.36) 55%,rgba(245,237,221,.48) 100%),
-    radial-gradient(1000px 700px at 8% 40%, rgba(245,237,221,.42), transparent 65%);
+    linear-gradient(180deg,rgba(245,237,221,.30) 0%,rgba(245,237,221,.38) 55%,rgba(245,237,221,.50) 100%),
+    radial-gradient(900px 780px at 6% 38%, rgba(245,237,221,.72), transparent 62%);
+}
+/* Standfirst gets a subtle cream halo so the copy lifts off any
+   busy footage that happens to be behind it. */
+.hero.has-video .lede{
+  text-shadow:0 1px 2px rgba(255,251,241,.9), 0 0 12px rgba(255,251,241,.55);
+}
+.hero.has-video h1{
+  text-shadow:0 1px 2px rgba(255,251,241,.75);
 }
 .hero.has-video .eyebrow{color:var(--orange);}
 .hero.has-video h1,.hero.has-video .lede{color:var(--ink);}
