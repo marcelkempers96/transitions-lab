@@ -1642,10 +1642,13 @@ def build_home() -> str:
   <span class="flash-cue" aria-hidden="true">→</span>
 </a>
 
-<!-- WHAT WE DO - service cards on a background video -->
+<!-- WHAT WE DO - service cards on a background video (portrait on mobile, landscape on desktop) -->
 <section class="section-paper what-we-do-section has-video">
-  <video class="section-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <source src="/assets/media/what-we-do.mp4" type="video/mp4">
+  <video class="section-video section-video-mobile" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="/assets/media/what-we-do-mobile.mp4" type="video/mp4">
+  </video>
+  <video class="section-video section-video-desktop" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="/assets/media/what-we-do-desktop.mp4" type="video/mp4">
   </video>
   <div class="section-video-veil" aria-hidden="true"></div>
   <div class="wrap">
