@@ -1711,9 +1711,7 @@ def build_home() -> str:
 <section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Who we serve</p>
-      <h2>Who commissions the Lab.</h2>
-      <p>Five kinds of organisation, each with a different decision in front of them. Tap through for how the fit works in each case.</p>
+      <h2>We work with</h2>
     </div>
     <div class="serve-grid">
       <a href="/who-we-serve#companies">
