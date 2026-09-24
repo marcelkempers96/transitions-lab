@@ -299,10 +299,28 @@ document.addEventListener('DOMContentLoaded', function () {
     page.indexOf("insight-") === 0;
   if (!pageAllowed) return;
 
-  var sections = Array.prototype.filter.call(
-    document.querySelectorAll("body > section"),
-    function (s) { return !s.classList.contains("section-hidden"); }
-  );
+  // Article and case-study pages have almost everything wrapped in
+  // one big <section class="light"> with all the prose inside, so
+  // 'next section' would jump straight from the hero to the footer.
+  // On article pages we step through the h2s inside .prose instead,
+  // treating each written section as a stop. Non-article pages keep
+  // the body > section pattern from the home page.
+  var isArticlePage = page.indexOf("case-") === 0 || page.indexOf("insight-") === 0;
+  var sections;
+  if (isArticlePage) {
+    sections = [];
+    var heroSec = document.querySelector('body > section.page-hero');
+    if (heroSec) sections.push(heroSec);
+    var proseH2s = document.querySelectorAll('.prose > h2');
+    for (var pi = 0; pi < proseH2s.length; pi++) sections.push(proseH2s[pi]);
+    var ctaSec = document.querySelector('body > section.article-cta-band');
+    if (ctaSec) sections.push(ctaSec);
+  } else {
+    sections = Array.prototype.filter.call(
+      document.querySelectorAll("body > section"),
+      function (s) { return !s.classList.contains("section-hidden"); }
+    );
+  }
   if (sections.length < 2) return;
   var footer = document.querySelector("body > footer.site");
 
