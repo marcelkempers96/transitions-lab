@@ -1689,7 +1689,7 @@ def build_home() -> str:
 
     <p class="net-expertise-label">Programmes</p>
     <div class="net-expertise-row">
-      <a href="/expertise-manufacturing">Green Industrialisation &amp; Local Manufacturing</a>
+      <a href="/expertise-manufacturing">Green Industrialisation</a>
       <a href="/expertise-e-mobility">E-Mobility &amp; Transport</a>
       <a href="/expertise-energy">Energy &amp; Water Systems</a>
       <a href="/expertise-agriculture">Agriculture &amp; Ecosystems</a>

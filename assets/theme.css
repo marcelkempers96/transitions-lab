@@ -2634,11 +2634,15 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   display:flex;flex-wrap:wrap;gap:10px;margin:0 0 8px;
 }
 .net-expertise-row a{
-  display:inline-block;padding:10px 16px;
+  display:inline-flex;align-items:center;padding:10px 16px;
   border:2px solid var(--paper);color:var(--paper);
-  font-size:14px;font-weight:600;line-height:1;letter-spacing:.01em;
+  font-size:14px;font-weight:600;line-height:1.15;letter-spacing:.01em;
   text-decoration:none;background:transparent;
+  white-space:nowrap;
   transition:background .12s ease,color .12s ease;
+}
+@media(max-width:520px){
+  .net-expertise-row a{white-space:normal;line-height:1.2;}
 }
 .net-expertise-row a:hover{background:var(--butter);color:var(--ink);border-color:var(--butter);}
 
