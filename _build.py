@@ -1632,7 +1632,7 @@ def build_home() -> str:
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="wrap">
     <h1><span id="hero-headline" data-text="A transition is a decision."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
-    <p class="lede" id="hero-subhead" data-text="Every transition — energy, mobility, industry — is decisions taken by some and landing on others. We are the independent evidence that keeps them honest."></p>
+    <p class="lede" id="hero-subhead" data-text="Every transition - energy, mobility, industry - is decisions taken by some and landing on others. We are the independent evidence that keeps them honest."></p>
     <div class="cta-row">
       <a href="/how-it-works" class="btn btn-ink">Start a study →</a>
       <a href="/what-we-do" class="btn btn-ghost">See what we do</a>

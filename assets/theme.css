@@ -1780,7 +1780,7 @@ body[data-page^="insight-"] .prose h4{
   transition:background .12s ease, border-color .12s ease;
 }
 .prose .quote-carousel .quote-btn:hover{background:rgba(10,10,10,.06);}
-.prose .quote-carousel .quote-dots{display:flex;gap:6px;flex:1;}
+.prose .quote-carousel .quote-dots{display:flex;gap:6px;flex:0 0 auto;justify-content:center;}
 .prose .quote-carousel .quote-dot{
   width:22px;height:3px;padding:0;border:0;background:rgba(10,10,10,.22);
   cursor:pointer;transition:background .18s ease;
