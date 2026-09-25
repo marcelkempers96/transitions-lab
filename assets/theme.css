@@ -193,9 +193,9 @@ section.dark.glow::before{content:none;}
 /* Section heads */
 .section-head{max-width:64ch;margin-bottom:60px;}
 .section-head h2{
-  font-family:'Instrument Serif','Fraunces',Georgia,serif;
-  font-size:clamp(30px,4.2vw,56px);letter-spacing:-.02em;
-  line-height:1.05;font-weight:400;
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-size:clamp(30px,4.2vw,56px);letter-spacing:-.01em;
+  line-height:1.05;font-weight:500;
 }
 .section-head p{font-size:20px;margin:20px 0 0;line-height:1.5;max-width:56ch;font-weight:500;}
 
@@ -1488,8 +1488,8 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 }
 .prose .reader-toolbar .rt-sans-btn{font-family:'Hanken Grotesk',sans-serif;}
 .prose .reader-toolbar .rt-serif-btn{
-  font-family:'Instrument Serif','Fraunces',Georgia,serif;
-  font-style:italic;font-weight:400;letter-spacing:-.005em;
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-style:italic;font-weight:500;letter-spacing:-.002em;
 }
 .prose .reader-toolbar .rt-swatch{padding:0;width:26px;min-width:26px;}
 .prose .reader-toolbar .rt-swatch .rt-dot{
@@ -1607,8 +1607,8 @@ body[data-page^="case-"] .prose h4,
 body[data-page^="insight-"] .prose h2,
 body[data-page^="insight-"] .prose h3,
 body[data-page^="insight-"] .prose h4{
-  font-family:'Instrument Serif','Fraunces',Georgia,serif;
-  letter-spacing:-.012em;font-weight:400;
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  letter-spacing:-.002em;font-weight:500;
 }
 
 /* Serif font: applies to the whole reading surface — headings,
@@ -1625,8 +1625,8 @@ body[data-page^="insight-"] .prose h4{
 :root[data-font="serif"] .page-hero .lede,
 :root[data-font="serif"] .prose .article-byline,
 :root[data-font="serif"] .prose figure figcaption{
-  font-family:'Instrument Serif','Fraunces',Georgia,serif;
-  letter-spacing:-.005em;
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  letter-spacing:-.002em;
 }
 :root[data-font="serif"] .prose > p,
 :root[data-font="serif"] .prose li,
@@ -1650,7 +1650,7 @@ body[data-page^="insight-"] .prose h4{
   font-family:'Hanken Grotesk',sans-serif;letter-spacing:.005em;
 }
 :root[data-font="serif"] .prose .reader-toolbar .rt-serif-btn{
-  font-family:'Instrument Serif','Fraunces',Georgia,serif;font-style:italic;
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;font-style:italic;
 }
 
 /* Text size: applies only to .prose body copy, not headings
@@ -1715,8 +1715,8 @@ body[data-page^="insight-"] .prose h4{
   padding-top:4px;
 }
 .prose .finding-card .finding-h{
-  font-family:'Instrument Serif','Fraunces',Georgia,serif;font-size:20px;font-weight:400;
-  letter-spacing:-.012em;line-height:1.28;color:var(--ink);
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;font-size:20px;font-weight:500;
+  letter-spacing:-.002em;line-height:1.28;color:var(--ink);
 }
 .prose .finding-card > p{
   padding:0 40px 24px 44px;margin:0 0 4px;
@@ -1752,9 +1752,9 @@ body[data-page^="insight-"] .prose h4{
   opacity:1;transform:translateY(0);pointer-events:auto;position:relative;
 }
 .prose .quote-carousel .quote-slide p{
-  font-family:'Instrument Serif','Fraunces',Georgia,serif;font-style:normal;
-  font-size:17px;line-height:1.5;font-weight:400;
-  color:var(--ink);margin:0 auto 12px;letter-spacing:-.003em;
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;font-style:normal;
+  font-size:17px;line-height:1.5;font-weight:500;
+  color:var(--ink);margin:0 auto 12px;letter-spacing:0;
   max-width:52ch;text-align:center;
 }
 .prose .quote-carousel .quote-slide cite,
