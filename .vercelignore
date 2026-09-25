@@ -1,0 +1,21 @@
+# Vercel does not run our Python builder — the HTML is pre-built
+# and committed. Anything below is source-only and never served,
+# so excluding it from every deployment upload shrinks the
+# deployment-storage footprint.
+
+# Source markdown (the built .html at root is what serves)
+content/
+
+# Build script + its scratch files
+_build.py
+
+# Repo docs
+RESTORE_POINTS.md
+README.md
+CLAUDE.md
+
+# Editor / OS junk that occasionally slips into a repo
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
