@@ -1766,7 +1766,7 @@ def build_home() -> str:
     <div class="insight-row">
       <a class="insight-card has-photo" href="/case-roam">
         <div class="card-photo">
-          <img src="/assets/img/case-roam-market-stall.png" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
+          <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
           <span class="kicker kicker--mobility">Kenya &middot; E-mobility</span>
         </div>
         <div class="body">

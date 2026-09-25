@@ -32,7 +32,7 @@ This is precisely where a technical reading and a human reading have to meet. Th
 The manufacturer's own framing is unusually honest about this. Their country lead has put it plainly: every hour a rider spends off the road is income lost. That is not a marketing line; it is the constraint the whole transition turns on.
 
 <figure>
-  <img src="/assets/img/case-roam-mechanics.png" alt="A Nairobi roadside scene at first light: a red Boxer 100 boda-boda propped on its side stand next to a green-and-red boda-boda, a mechanic in an orange top squatting between them working on a chain, another rider in a high-vis vest and a helmet leaning over one of the bikes; a blue lorry in the background, dusty red-earth ground and a busy junction beyond." class="diagram">
+  <img src="/assets/img/case-roam-mechanics.jpg" alt="A Nairobi roadside scene at first light: a red Boxer 100 boda-boda propped on its side stand next to a green-and-red boda-boda, a mechanic in an orange top squatting between them working on a chain, another rider in a high-vis vest and a helmet leaning over one of the bikes; a blue lorry in the background, dusty red-earth ground and a busy junction beyond." class="diagram">
   <figcaption>Roadside repair on the Nairobi Eastern Bypass.</figcaption>
 </figure>
 
@@ -54,14 +54,14 @@ The transition, in other words, is being carried by financing architecture as mu
 ### Range anxiety is a lived experience, not a spec sheet
 
 <figure>
-  <img src="/assets/img/case-roam-market-stall.png" alt="A bright-orange NGONYA electric motorcycle parked in front of a small Nairobi hardware kiosk with a corrugated green roof and a Toyota Genuine Parts sign; twin detachable battery boxes visible under the seat, an orange helmet resting on the tank; three mechanics sitting to one side, one changing a wheel, another cradling a small child in a faded blue Youth Self Help Group doorway." class="diagram">
+  <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange NGONYA electric motorcycle parked in front of a small Nairobi hardware kiosk with a corrugated green roof and a Toyota Genuine Parts sign; twin detachable battery boxes visible under the seat, an orange helmet resting on the tank; three mechanics sitting to one side, one changing a wheel, another cradling a small child in a faded blue Youth Self Help Group doorway." class="diagram">
   <figcaption>An electric two-wheeler at a Nairobi shopfront, twin battery packs visible under the seat.</figcaption>
 </figure>
 
 The technical answer to range, a dual-battery setup, charging from any standard outlet, a portable charger, matters. But what the Lab listens for is how range *feels* in a working day. A rider who can charge at home overnight and start every day fully powered describes something a spec sheet cannot: the disappearance of the petrol-station queue from their morning, and with it a small daily anxiety. Long-distance public expeditions by the manufacturer, thousands of kilometres of solar-supported riding across the region, function as public proof that the range objection can be answered. On the ground, the proof that matters is quieter: the rider who simply stopped thinking about it.
 
 <figure>
-  <img src="/assets/img/case-roam-cheche-show.png" alt="A Cheche electric-motorbike trade-show booth under a red-and-white striped canopy; a young man in a black polo shirt hands a leaflet to a booth attendant in a red Cheche polo standing behind a matte-grey electric motorcycle on a raised white platform; a Head of State to Own Electric Vehicle banner behind the bike; a stack of yellow battery-swap lockers to the left; an attendee seated behind the counter." class="diagram">
+  <img src="/assets/img/case-roam-cheche-show.jpg" alt="A Cheche electric-motorbike trade-show booth under a red-and-white striped canopy; a young man in a black polo shirt hands a leaflet to a booth attendant in a red Cheche polo standing behind a matte-grey electric motorcycle on a raised white platform; a Head of State to Own Electric Vehicle banner behind the bike; a stack of yellow battery-swap lockers to the left; an attendee seated behind the counter." class="diagram">
   <figcaption>A Cheche electric-motorbike stand at a Nairobi trade show.</figcaption>
 </figure>
 

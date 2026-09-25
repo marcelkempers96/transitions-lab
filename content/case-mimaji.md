@@ -34,7 +34,7 @@ MiMaji works on exactly this, through community water-quality testing, WASH educ
 </figure>
 
 <figure>
-  <img src="/assets/img/case-mimaji-household.png" alt="A Nairobi kitchen at midday: a mother in a patterned wax-print top, a father in a white polo shirt filling a glass at a running tap, two young boys at the sink — one drinking, one washing his hands; a dish rack, a saucepan and a bright window behind." class="diagram">
+  <img src="/assets/img/case-mimaji-household.jpg" alt="A Nairobi kitchen at midday: a mother in a patterned wax-print top, a father in a white polo shirt filling a glass at a running tap, two young boys at the sink — one drinking, one washing his hands; a dish rack, a saucepan and a bright window behind." class="diagram">
   <figcaption>A Nairobi household kitchen, water drawn from the tap.</figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ None of the following is a final finding. The engagement is live, and the honest
 **The credibility of MiMaji as source is high where MiMaji has been physically present.** In settlements where testing has been visibly done in the open, on someone's tap, with a result written down and left with the household, the map is treated as evidence. In settlements where testing has happened elsewhere and only the aggregated result is on the app, the same map is treated as opinion. The physical act of testing is doing more work than the data layer sitting on top of it. That is important, because it means the map's credibility is a downstream product of MiMaji's ranger-style presence, not an intrinsic property of the data.
 
 <figure>
-  <img src="/assets/img/case-mimaji-verify.png" alt="A hand holds a smartphone in a kitchen; the phone screen shows the MiMaji app on a 'Bottle Verified' screen with a green tick, a 20L refillable bottle ID (MMJ-7X9K-L2P3), a registration date of 16 May 2024, and a 'Last Verified today' line; a large blue 20L water bottle with a MiMaji QR sticker stands beside it, a brass kettle out of focus behind." class="diagram">
+  <img src="/assets/img/case-mimaji-verify.jpg" alt="A hand holds a smartphone in a kitchen; the phone screen shows the MiMaji app on a 'Bottle Verified' screen with a green tick, a 20L refillable bottle ID (MMJ-7X9K-L2P3), a registration date of 16 May 2024, and a 'Last Verified today' line; a large blue 20L water bottle with a MiMaji QR sticker stands beside it, a brass kettle out of focus behind." class="diagram">
   <figcaption>MiMaji's bottle-verification screen after a household QR scan of a 20L refillable bottle.</figcaption>
 </figure>
 
