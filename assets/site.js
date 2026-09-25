@@ -417,3 +417,72 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener("resize", schedule);
   update();
 })();
+
+/* Flagship-article finding-stats: count each numeral up from 0
+   to its target value the first time the row scrolls into view.
+   Respects prefers-reduced-motion (renders final value immediately). */
+(function () {
+  var els = document.querySelectorAll('.prose .finding-stats .n');
+  if (!els.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  els.forEach(function (el) {
+    var raw = (el.textContent || '').trim();
+    var target = parseInt(raw.replace(/[^0-9]/g, ''), 10);
+    if (isNaN(target)) return;
+    el.dataset.target = target;
+    if (reduce) return;                   // keep the number as-is
+    el.textContent = '0';
+  });
+  if (reduce) return;
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) {
+      if (el.dataset.target) el.textContent = el.dataset.target;
+    });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      if (el.classList.contains('is-counted')) return;
+      el.classList.add('is-counted');
+      var target = parseInt(el.dataset.target, 10);
+      var duration = 1400;
+      var start = performance.now();
+      function step(now) {
+        var t = Math.min((now - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+        el.textContent = String(Math.round(target * eased));
+        if (t < 1) requestAnimationFrame(step);
+        else el.textContent = String(target);
+      }
+      requestAnimationFrame(step);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.5, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { if (el.dataset.target) io.observe(el); });
+})();
+
+/* Reveal-in-view for the finding-stats numerals: fade + upward
+   translate as each column enters viewport. Paired with the
+   count-up in the block above so both fire together. */
+(function () {
+  var items = document.querySelectorAll('.prose .finding-stats > div');
+  if (!items.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, i) {
+      if (entry.isIntersecting) {
+        var idx = Array.prototype.indexOf.call(items, entry.target);
+        entry.target.style.transitionDelay = (idx * 120) + 'ms';
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35, rootMargin: '0px 0px -6% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();

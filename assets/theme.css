@@ -1665,20 +1665,28 @@ body[data-page^="insight-"] .prose h4{
 
 /* Field-findings header stat row: three big numerals under the
    standfirst on flagship-style pieces like The Saving Is Agreed.
-   No box — the numerals sit on the page ground and centre-align. */
+   No box — the numerals sit on the page ground and centre-align.
+   Now reads as its own beat with generous top and bottom air and
+   subtle hairlines above and below on desktop, so it separates
+   from the surrounding prose without a chunky box. */
 .prose .finding-stats{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:24px;margin:28px 0 36px;padding:0;
-  border:0;background:transparent;
-  text-align:center;
+  gap:36px;margin:72px auto 72px;padding:44px 0;
+  border-top:1px solid rgba(10,10,10,.14);
+  border-bottom:1px solid rgba(10,10,10,.14);
+  background:transparent;text-align:center;max-width:820px;
 }
 .prose .finding-stats > div{
-  display:flex;flex-direction:column;gap:4px;align-items:center;
+  display:flex;flex-direction:column;gap:8px;align-items:center;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
 }
+.prose .finding-stats > div.is-in{opacity:1;transform:none;}
 .prose .finding-stats .n{
   font-family:'Hanken Grotesk',sans-serif;
-  font-size:42px;font-weight:800;letter-spacing:-.02em;
+  font-size:56px;font-weight:800;letter-spacing:-.02em;
   line-height:1;color:var(--ink);
+  font-variant-numeric:tabular-nums;
 }
 .prose .finding-stats .k{
   font-size:12.5px;letter-spacing:.02em;color:var(--ink);opacity:.72;
@@ -1734,12 +1742,16 @@ body[data-page^="insight-"] .prose h4{
   .prose .finding-card > p{padding:0 12px 20px 0;font-size:15.5px;}
 }
 
-/* Quote carousel: rotating rider-voice blockquotes. Only one slide
-   is visible at a time; opacity fade + tiny translate on rotation.
-   No box — the quote sits on the page ground and centre-aligns. */
+/* Quote carousel: rotating rider-voice blockquotes. Now given
+   the visual weight of its own section — 96px top and bottom
+   margins, wider padding, a very soft paper band so the reader
+   registers it as a separate beat while scrolling. */
 .prose .quote-carousel{
-  position:relative;margin:28px 0 34px;padding:12px 0 8px;
-  background:transparent;border:0;text-align:center;
+  position:relative;margin:96px calc(-1 * clamp(16px,4vw,64px)) 96px;
+  padding:80px clamp(24px,6vw,80px);
+  background:linear-gradient(180deg,rgba(255,251,241,.62),rgba(245,237,221,.72));
+  border:0;text-align:center;border-radius:2px;
+  box-shadow:inset 0 1px 0 rgba(10,10,10,.06), inset 0 -1px 0 rgba(10,10,10,.06);
 }
 .prose .quote-carousel .quote-track{position:relative;min-height:160px;}
 .prose .quote-carousel .quote-slide{
@@ -1794,23 +1806,19 @@ body[data-page^="insight-"] .prose h4{
 :root[data-theme="dark"] .prose .quote-carousel .quote-dot{background:rgba(232,228,218,.22);}
 :root[data-theme="dark"] .prose .quote-carousel .quote-dot.is-active{background:#F5EFE1;}
 @media(max-width:520px){
-  .prose .quote-carousel .quote-slide p{font-size:15.5px;}
+  .prose .quote-carousel .quote-slide p{font-size:16.5px;}
   .prose .finding-stats{
-    grid-template-columns:1fr;gap:18px;
+    grid-template-columns:1fr;gap:32px;
+    margin:48px 0;padding:36px 0;
   }
-  .prose .finding-stats .n{font-size:36px;}
-  /* Mobile: separate the flagship-article mini-sections (stats,
-     quotes, findings) with a wider vertical margin and a soft
-     forest-tinted top rule, so each block reads as its own beat
-     on the small screen instead of running into the next. */
-  .prose .finding-stats,
+  .prose .finding-stats .n{font-size:52px;}
   .prose .quote-carousel{
-    margin-top:36px;padding-top:28px;
-    border-top:1px solid rgba(15,61,46,.14);
+    margin:56px calc(-1 * clamp(12px,4vw,20px)) 56px;
+    padding:56px 22px;
   }
   .prose .finding-cards{
-    margin-top:36px;padding-top:20px;
-    border-top:1px solid rgba(15,61,46,.14);
+    margin-top:48px;padding-top:24px;
+    border-top:1px solid rgba(10,10,10,.14);
   }
 }
 
