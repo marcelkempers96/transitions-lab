@@ -1489,10 +1489,15 @@ def build_content_page(slug: str, md: str) -> str:
             f' data-hero-bg="1"'
         )
 
+    # Small-caps eyebrow above the h1 (parsed from the '§ / …' line
+    # at the top of each markdown source) is suppressed site-wide.
+    # It was duplicating the h1 ('Resources' above 'Resources',
+    # 'About' above 'About', etc.) and adding no information on
+    # article and case pages either. The category information now
+    # lives in the meta chips and the URL slug alone.
     page_hero = f"""<section class="{hero_class}"{hero_bg_style}>
   <div class="wrap">
     {icon_html}
-    {'<p class="eyebrow">' + inline(hero_eyebrow) + '</p>' if hero_eyebrow else ''}
     <h1>{inline(title)}</h1>
     {'<p class="lede">' + standfirst_html + '</p>' if standfirst_html else ''}
   </div>
