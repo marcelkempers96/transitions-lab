@@ -2178,32 +2178,44 @@ section.page-hero[data-hero-bg]::after{
 section.page-hero[data-hero-bg] > .wrap{
   position:relative;z-index:1;
 }
-/* Per-tint translucent overlays. Warm theme (the default) matches
-   each hero-* variant; light and dark themes swap in white or
-   charcoal so the image reads correctly on any reader theme. */
-section.page-hero.hero-butter[data-hero-bg]::after{
-  background:rgba(243,215,101,.52);
+/* Cover-image treatment: any page-hero with a background photo
+   swaps the tinted overlay for a deep charcoal gradient so the
+   image reads as an editorial cover with white type on top.
+   Same rig regardless of which hero-* colour the page was
+   originally tagged with. */
+section.page-hero[data-hero-bg]::after{
+  background:
+    linear-gradient(180deg,
+      rgba(10,10,10,.42) 0%,
+      rgba(10,10,10,.58) 55%,
+      rgba(10,10,10,.72) 100%);
 }
-section.page-hero.hero-coral[data-hero-bg]::after{
-  background:rgba(232,100,44,.52);
+/* White type on the image; small text-shadow lifts it off any
+   busy area the blurred background happens to show. */
+section.page-hero[data-hero-bg] h1,
+section.page-hero[data-hero-bg] .lede,
+section.page-hero[data-hero-bg] .eyebrow{
+  color:#FFFFFF !important;
+  text-shadow:0 1px 3px rgba(0,0,0,.35);
 }
-section.page-hero.hero-sky[data-hero-bg]::after{
-  background:rgba(207,225,238,.56);
+section.page-hero[data-hero-bg] .eyebrow{
+  color:#F0B48C !important;
 }
-section.page-hero.hero-forest[data-hero-bg]::after{
-  background:rgba(15,61,46,.60);
-}
-section.page-hero.hero-cobalt[data-hero-bg]::after{
-  background:rgba(30,58,95,.60);
-}
-section.page-hero.hero-plum[data-hero-bg]::after{
-  background:rgba(107,46,75,.60);
-}
+/* Reader-theme overrides. Dark theme just deepens the plate,
+   light theme uses a lighter grey wash but keeps white text. */
 :root[data-theme="dark"] section.page-hero[data-hero-bg]::after{
-  background:rgba(20,22,26,.58) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(10,10,10,.55) 0%,
+      rgba(10,10,10,.72) 55%,
+      rgba(10,10,10,.85) 100%) !important;
 }
 :root[data-theme="light"] section.page-hero[data-hero-bg]::after{
-  background:rgba(255,255,255,.58) !important;
+  background:
+    linear-gradient(180deg,
+      rgba(30,30,30,.30) 0%,
+      rgba(30,30,30,.46) 55%,
+      rgba(30,30,30,.60) 100%) !important;
 }
 
 /* Home-page flash banner: thin coloured announcement pointing at
