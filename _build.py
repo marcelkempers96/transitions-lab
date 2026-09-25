@@ -1693,7 +1693,6 @@ def build_home() -> str:
   <div class="section-veil" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow" style="color:var(--butter);">Our network</p>
       <h2 style="color:var(--paper);">A global team of researchers, analysts, and field partners.</h2>
       <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts and long-standing partners, in Europe and in the places our cases come from.</p>
     </div>
