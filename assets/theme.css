@@ -2793,18 +2793,18 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--ink);
 }
 .what-grid .what-card.c-cobalt .what-tag{color:rgba(245,239,225,.72);}
-.what-grid .what-card h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink);}
+.what-grid .what-card h3{font-family:'Newsreader',Georgia,'Times New Roman',serif;font-size:30px;font-weight:500;letter-spacing:-.018em;line-height:1.08;color:var(--ink);}
 .what-grid .what-card p{font-size:15.5px;line-height:1.5;margin:0;color:var(--ink);font-weight:500;flex:1;}
 .what-grid .what-card .what-more{margin-top:auto;font-weight:800;color:var(--ink);}
 .what-grid .what-card .what-flag{
   height:96px;width:96px;display:block;object-fit:contain;
-  margin:0 0 14px;align-self:flex-start;
+  margin:0 0 2px;align-self:flex-start;
 }
 /* The EU-flag icon fills its frame edge-to-edge, so at the shared
    96px it overpowers the illustration icons that carry generous
    internal whitespace. Bring it down to a proportional size. */
 .what-grid .what-card .what-flag[src*="icon-eu"]{
-  height:38px;width:38px;margin-bottom:24px;
+  height:38px;width:38px;margin-bottom:14px;
 }
 /* Section-video treatment: reused pattern from the hero and the
    statement block. The section owns a full-bleed background <video>
