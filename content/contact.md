@@ -6,7 +6,7 @@
 
 The best engagements start from a real question, not a request for a quote. A clear question is enough to start; shaping the rest is part of what we do.
 
-<form class="contact-form" action="https://formsubmit.co/marcelxingkai@hotmail.com" method="POST">
+<form class="contact-form" action="https://formsubmit.co/hello@transitionslab.org" method="POST">
   <input type="hidden" name="_captcha" value="true">
   <input type="hidden" name="_subject" value="New enquiry from transitionslab.org">
   <input type="hidden" name="_next" value="/contact?sent=1">
@@ -48,8 +48,19 @@ The best engagements start from a real question, not a request for a quote. A cl
 ## Direct contact
 
 - **Email** · [hello@transitionslab.org](mailto:hello@transitionslab.org)
-- **Based in** · Delft, The Netherlands
+- **Registered office** · Stieltjesweg 302 A, 2628 CK Delft, The Netherlands
 - **Response** · a few working days for serious enquiries.
+
+---
+
+## Company details
+
+- **Legal entity** · Transitions Lab B.V. (Besloten Vennootschap, Dutch limited company)
+- **KVK-nummer** · 42170233
+- **Vestigingsnummer** · 000066760275
+- **Statutaire naam** · Transitions Lab B.V.
+- **Activity** · Holdings- en financieringsactiviteiten
+- **Registered office** · Stieltjesweg 302 A, 2628 CK Delft, The Netherlands
 
 ---
 

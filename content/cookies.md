@@ -84,4 +84,10 @@ If we ever add a category of cookie beyond what is listed above, we will update 
 
 ---
 
-*See also our [privacy policy](/privacy) and [terms of use](/terms). To reach us about anything on this page, [contact us](/contact).*
+*See also our [privacy policy](/privacy) and [terms of use](/terms). To reach us about anything on this page, [contact us](/contact) or write to [hello@transitionslab.org](mailto:hello@transitionslab.org).*
+
+---
+
+## Publisher
+
+This website is operated by **Transitions Lab B.V.**, KVK 42170233, Stieltjesweg 302 A, 2628 CK Delft, The Netherlands.

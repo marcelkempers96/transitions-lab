@@ -218,13 +218,13 @@ ARTICLE_CTA_HTML = """<section class="light article-cta-band">
 </section>"""
 
 # The compact contact block. Same form as /contact but abbreviated fields.
-# Submissions go to marcelxingkai@hotmail.com via FormSubmit for now.
+# Submissions go to hello@transitionslab.org via FormSubmit.
 CONTACT_CTA_HTML = """<section class="section-paper contact-cta-block" style="border-top:2px solid var(--ink);">
   <div class="wrap" style="max-width:900px;">
     <p class="eyebrow">Start a study</p>
     <h2 style="font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.1;margin:0 0 14px;">Tell us the decision. We will design the study.</h2>
     <p style="font-size:17px;line-height:1.55;margin:0 0 28px;max-width:56ch;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.</p>
-    <form class="contact-form" action="https://formsubmit.co/marcelxingkai@hotmail.com" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/hello@transitionslab.org" method="POST">
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_subject" value="New enquiry from transitionslab.org">
       <input type="hidden" name="_next" value="/contact?sent=1">
@@ -242,7 +242,7 @@ CONTACT_CTA_HTML = """<section class="section-paper contact-cta-block" style="bo
         <textarea id="cfx-decision" name="decision" required placeholder="What do you need to know, and who does the answer need to come from?"></textarea>
       </div>
       <button type="submit" class="contact-submit">Send message &rarr;</button>
-      <p class="form-note">Confidential from the first message. Or write to <a href="mailto:marcelxingkai@hotmail.com">marcelxingkai@hotmail.com</a> directly.</p>
+      <p class="form-note">Confidential from the first message. Or write to <a href="mailto:hello@transitionslab.org">hello@transitionslab.org</a> directly.</p>
     </form>
   </div>
 </section>"""
@@ -1429,7 +1429,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="legal">
-      <span>© Transitions Lab 2026 · Delft, The Netherlands</span>
+      <span>© Transitions Lab B.V. 2026 · Delft, The Netherlands · KVK 42170233</span>
       <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
     </div>
   </div>
@@ -1990,9 +1990,13 @@ def build_home() -> str:
         '"@type":"Organization",'
         '"@id":"' + SITE_URL + '/#org",'
         '"name":"Transitions Lab",'
+        '"legalName":"Transitions Lab B.V.",'
         '"url":"' + SITE_URL + '/",'
         '"logo":"' + SITE_URL + '/assets/logo-dark.png",'
         '"foundingLocation":"Delft, The Netherlands",'
+        '"vatID":"","taxID":"42170233",'
+        '"identifier":{"@type":"PropertyValue","propertyID":"KVK","value":"42170233"},'
+        '"address":{"@type":"PostalAddress","streetAddress":"Stieltjesweg 302 A","postalCode":"2628 CK","addressLocality":"Delft","addressCountry":"NL"},'
         '"sameAs":["https://www.linkedin.com/company/transitions-lab-org/"]'
         '}'
         ']'

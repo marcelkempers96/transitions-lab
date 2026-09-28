@@ -82,6 +82,17 @@ These terms are governed by the laws of the Netherlands, and any dispute is subj
 
 ---
 
+## Publisher
+
+This website is operated by **Transitions Lab B.V.**, a Dutch besloten vennootschap.
+
+- **KVK-nummer** · 42170233
+- **Vestigingsnummer** · 000066760275
+- **Registered office** · Stieltjesweg 302 A, 2628 CK Delft, The Netherlands
+- **Contact** · [hello@transitionslab.org](mailto:hello@transitionslab.org)
+
+---
+
 ## Changes
 
 If we change these terms materially, the *Last updated* date changes and we may draw your attention to it on relevant pages. Continued use of the site after the change means you have accepted the new version.
