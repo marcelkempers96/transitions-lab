@@ -1665,12 +1665,12 @@ def build_content_page(slug: str, md: str) -> str:
   </div>
 </section>"""
 
-    # Strip a trailing italic-prose 'see also' paragraph on any page
-    # that will pick up the standard final CTA panel below. Keeps
-    # every content page ending in the button-driven panel rather
-    # than a dense italic footnote.
-    if _wants_final_cta(slug):
-        prose_section = _TRAILING_ITALIC_RE.sub("", prose_section)
+    # Strip a trailing italic-prose 'see also' paragraph on every
+    # content page. The italic footer treatment is retired site-
+    # wide - programme pages (which do not get the CTA panel
+    # either) still had these stale, so the strip needs to run
+    # independently of the CTA injection below.
+    prose_section = _TRAILING_ITALIC_RE.sub("", prose_section)
 
     body = page_hero + "\n\n" + prose_section
     if _wants_final_cta(slug):
