@@ -10,7 +10,7 @@ The evidence that decides whether a technology works is held by the people insid
 
 ## Where we work
 
-Low-connectivity, multilingual, informal, dispersed — the settings that defeat conventional research.
+Low-connectivity, multilingual, informal, dispersed. The settings that defeat conventional research.
 
 We work through researchers already part of the context. No parachuting in. Recent ground: [electric transport in Nairobi](/case-roam), [decentralised clean energy in Lombok](/case-pyropower), [water transparency in Nairobi](/case-mimaji).
 
