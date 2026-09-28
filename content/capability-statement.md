@@ -4,6 +4,10 @@
 
 *An independent research team that studies how technologies meet real people - and turns that reading into evidence institutions and innovators can act on. Based in Delft, working across Europe and in the places our cases come from.*
 
+<figure>
+  <img src="/assets/img/capability-statement-hero.jpg" alt="Line-art illustration on warm cream ground: three field researchers crouched around a paper map spread on the earth, one taking notes, one gesturing at a detail, one listening. Small vignettes around the edges in the same line style show a market kiosk with a queue, a battery-swap cabinet with an electric motorcycle, a solar-panel rooftop with a black water tank, and a smallholder in a field." class="diagram">
+</figure>
+
 The Lab is engaged where a decision cannot be settled from a desk. Where the evidence a client actually needs sits with the household, the rider, the ranger, the mechanic, the vendor, the operator - and where getting the answer right matters enough to send someone properly trained to ask.
 
 ## Core capabilities
@@ -28,6 +32,11 @@ We favour depth where the question rewards depth, and count carefully where the 
 - **Mixed-method integration** so a single reading survives cross-examination on both sides.
 
 Every engagement carries pre-tested instruments, cognitive checks in the local language(s), safeguarding protocols with named accountability, and a back-check regime on ~10% of collected data before it is trusted.
+
+<figure>
+  <img src="/assets/img/capability-statement-fgd.jpg" alt="Photograph of a focus group discussion under an acacia tree in an East African field setting. A female moderator in a patterned wrap and headscarf stands with a phone, leading the discussion. Twelve participants, mostly women in colourful wax-print skirts and headscarves plus one man in a blue shirt, sit on blue plastic chairs in a semi-circle around her. Dry grassland and a distant hill line behind." class="diagram">
+  <figcaption>Focus group discussion in the field. Local-lead moderation in-language, seated respondents, named consent recorded before the session begins.</figcaption>
+</figure>
 
 See how the mix plays out in practice on [Field Research](/field-research) and on the [Impact Measurement](/impact-measurement) framework page.
 
