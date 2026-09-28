@@ -68,7 +68,7 @@ The framework's central proposition is a strategy-barrier alignment: **bypass** 
 
 BRW turns a vague question, will this transition succeed?, into a precise, testable one: is each strategy in the portfolio aligned with the barrier it targets, and where is it misaligned? Because the framework is comparative and mechanism-based, it lets the Lab tell an innovator or funder which barriers they are actually engaging, whether their strategic mix fits, and where they are most likely to stall.
 
-That cross-sector, mechanism-level reading is precisely the kind of insight a consortium cannot produce from inside a single deployment. It is one of the clearest reasons to bring the Lab in.
+That cross-sector, mechanism-level reading is what a consortium cannot produce from inside a single deployment.
 
 ---
 

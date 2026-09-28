@@ -8,11 +8,9 @@
 <img src="/assets/img/economics-of-transitions-hero.jpg" alt="Illustrated title card: an industrial landscape on the left with a wind turbine, factory and solar array, a bridge arching across with money flowing over it, a small city on the right with houses, shops and residents. Underneath the bridge, people on the ground use an EV, a bicycle and a laptop. A funding-bar sits along the bottom edge." class="diagram">
 </figure>
 
-Transitions are usually discussed in the language of technology: what is newer, cleaner, cheaper, more advanced. But whether a technology actually reaches the people it was built for is decided far more often by economics than by engineering. Who bears a cost, who captures a value, how a cash flow is shaped, what a market will and will not price, which risk is real and which is merely perceived, these are the questions that decide a transition, and they are economic questions.
+Whether a technology actually reaches the people it was built for is decided far more often by economics than by engineering. Who bears a cost, who captures a value, how a cash flow is shaped, what a market will and will not price, which risk is real and which is merely perceived, these are the questions that decide a transition.
 
-This page is a plain-language map of those ideas. Each concept is defined in a sentence or two, and then tied to a published piece where we applied it to a specific, real case, so the abstraction stays anchored to something that actually happened. It is meant to be read either straight through, as a primer on the economics of transitions, or dipped into, as a glossary.
-
-Read this page alongside the [human side of technology](/human-side-of-technology), which reads the same terrain from the behaviour-and-perception side; the [technology & innovation dynamics](/innovation-dynamics) companion, which takes it from the management-of-technology side; and the [transitions primer](/resources), which sets out the socio-technical frame in full. A handful of foundational ideas, path dependence, network effects, increasing returns, appropriability, deliberately appear on more than one page, because they genuinely belong to more than one literature; each page treats them through its own lens and points to the others.
+Read alongside the [human side of technology](/human-side-of-technology), the [technology & innovation dynamics](/innovation-dynamics) companion, and the [transitions primer](/resources).
 
 <div class="callout c-cobalt">
   <span class="kicker">In this map</span>
@@ -424,11 +422,9 @@ For the transitions-studies frameworks that sit alongside these (the multi-level
 
 ## How to use this map
 
-These concepts are not academic ornaments. Each one is a lens the Lab actually uses when reading a real deployment: before a company enters a market, before a funder renews a grant, before a consortium claims an impact. The economics is where the decisive questions usually hide, and naming the concept is the first step to asking whether it applies to the case in front of you.
+Each concept is a lens the Lab uses when reading a real deployment: before a company enters a market, before a funder renews a grant, before a consortium claims an impact. Naming the concept is the first step to asking whether it applies to the case in front of you.
 
-For the full arguments, follow the links to the individual pieces. For the frameworks behind them, see the [BRW framework](/brw), the [readiness levels](/readiness-levels), and the [resources library](/resources). For how the Lab applies all of this to a specific case, see [What We Do](/what-we-do), and to discuss a study, [Contact](/contact).
-
-*This page is a living map and grows as the Lab publishes. The economics of a transition is rarely the first thing discussed and is usually the thing that decides it.*
+For the full arguments, follow the links. For the frameworks behind them, see the [BRW framework](/brw), the [readiness levels](/readiness-levels), and the [resources library](/resources). To discuss a study, [Contact](/contact).
 
 <div class="article-nav">
   <a class="article-nav-card" href="/resources">

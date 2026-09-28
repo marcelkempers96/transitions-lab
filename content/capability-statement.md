@@ -94,7 +94,7 @@ Where a programme runs its own standing consultant pool, the Lab is set up to pl
 
 **Behavioural and design research.** Ethnographic and qualitative work on practice, preference and decision-making in the household, at the point of use. The [Pyropower case study](/case-pyropower) shows the method on a smallholder kiln; the [interview guide](/interview-guide) sets out the discipline.
 
-Roster engagements typically run 8 to 15 hours a week and close with handover-ready outputs. The Lab is available as an individual researcher lead, as a small team, or as a contracted delivery unit for a defined scope. Proposals covering two or more of the skill areas above are the usual configuration; single-area engagements are welcome too.
+Roster engagements typically run 8 to 15 hours a week and close with handover-ready outputs. The Lab is available as an individual researcher lead, as a small team, or as a contracted delivery unit for a defined scope.
 
 <div class="contact-cta-programme">
   <h3>Get in touch</h3>

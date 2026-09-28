@@ -20,7 +20,7 @@ We **publish our own research** openly: [articles](/articles) on finance, electr
 
 We **work under contract** for organisations that need evidence they cannot generate themselves: [field research](/field-research), [impact measurement](/impact-measurement), and the [European projects](/european-impact-tracking) that need an independent measurement partner.
 
-The published work is the proof of the method. The contracted work is the same method, made available. Because we are independent of what we measure, we report what the evidence says. Including when it is inconvenient.
+Because we are independent of what we measure, we report what the evidence says. Including when it is inconvenient.
 
 ---
 
