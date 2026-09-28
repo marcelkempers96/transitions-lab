@@ -2019,25 +2019,38 @@ body > section{position:relative;}
     #6C6252;
 }
 
-/* 'Who we serve' cards on the home page: same warm-neutral
-   grayscale treatment. Cards 4 and 5 stay flat paper. */
+/* 'Who we serve' cards on the home page: warm-neutral gradient
+   across all five cards, so the row reads as a single graded
+   palette rather than a colour block plus two flat whites. */
 .serve-grid a:nth-child(1){
   background:
     radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.55), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(52,44,28,.18), transparent 62%),
-    #EEE4CE;
+    radial-gradient(700px 380px at 88% 88%, rgba(52,44,28,.16), transparent 62%),
+    #F0E6D0;
 }
 .serve-grid a:nth-child(2){
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.42), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(40,32,18,.24), transparent 62%),
-    #D2C7AD;
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.48), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(40,32,18,.20), transparent 62%),
+    #E1D5BB;
 }
 .serve-grid a:nth-child(3){
   background:
     radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.20), transparent 60%),
     radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.28), transparent 62%),
     #6C6252;
+}
+.serve-grid a:nth-child(4){
+  background:
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.42), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(40,32,18,.22), transparent 62%),
+    #D5C9AF;
+}
+.serve-grid a:nth-child(5){
+  background:
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.36), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(40,32,18,.26), transparent 62%),
+    #C4B89D;
 }
 
 /* Insight-card & case-card kicker strips: the coloured top bar
@@ -2956,14 +2969,15 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
    as a graded step rather than five saturated blocks; colour is
    reserved for creative surfaces (case-study and article cards).
    NGOs and Research stay flat paper. */
-.serve-grid a:nth-child(1){background:#EEE4CE;color:var(--ink);}
-.serve-grid a:nth-child(2){background:#D2C7AD;color:var(--ink);}
+.serve-grid a:nth-child(1){background:#F0E6D0;color:var(--ink);}
+.serve-grid a:nth-child(2){background:#E1D5BB;color:var(--ink);}
 .serve-grid a:nth-child(3){background:#6C6252;color:var(--paper);}
-.serve-grid a:nth-child(4){background:var(--white);color:var(--ink);}
-.serve-grid a:nth-child(5){background:var(--white);color:var(--ink);}
-.serve-grid a:nth-child(1):hover{background:#E8DBC0;}
-.serve-grid a:nth-child(2):hover{background:#C7BB9E;}
-.serve-grid a:nth-child(4):hover,.serve-grid a:nth-child(5):hover{background:var(--paper);}
+.serve-grid a:nth-child(4){background:#D5C9AF;color:var(--ink);}
+.serve-grid a:nth-child(5){background:#C4B89D;color:var(--ink);}
+.serve-grid a:nth-child(1):hover{background:#EADFC5;}
+.serve-grid a:nth-child(2):hover{background:#D6C9AC;}
+.serve-grid a:nth-child(4):hover{background:#CABE9F;}
+.serve-grid a:nth-child(5):hover{background:#B9AC8E;}
 .serve-grid a .serve-tag{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;
