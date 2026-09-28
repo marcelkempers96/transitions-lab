@@ -11,6 +11,26 @@
 
 A survey tells you *what* changed. An interview, done well, tells you *why*, *how it felt*, and *what the person would do about it*. This guide shows the structure and the probing technique behind that depth. It is built to be adapted to any subject, a technology, a service, a transition.
 
+### Downloadable versions
+
+[**In-Depth Interview Guide →**](/assets/resource-interview-guide.pdf)
+
+[<span class="format-badge fmt-pdf">PDF · 26 pages</span>](/assets/resource-interview-guide.pdf)
+
+The full guide as a printable PDF: the five-levels-down principle, the funnel structure, and the probing techniques worked through in detail.
+
+[**Ethics & Consent in the Field →**](/assets/resource-field-ethics.pdf)
+
+[<span class="format-badge fmt-pdf">PDF · 15 pages</span>](/assets/resource-field-ethics.pdf)
+
+The Lab's working standard for doing primary research with people, honestly and safely: informed consent, power and vulnerability, and data protection from collection to deletion.
+
+[**Making Data Mean Something &rarr;**](/assets/resource-data-analysis.pdf)
+
+[<span class="format-badge fmt-pdf">PDF · 15 pages</span>](/assets/resource-data-analysis.pdf)
+
+How the Lab turns interview transcripts into defensible findings: the coding workflow, two-pass reconciliation, cross-respondent synthesis, and the discipline of naming disconfirming cases.
+
 ---
 
 **§ 1 / The principle of depth**
