@@ -2361,7 +2361,7 @@ section.page-hero[data-hero-bg] .eyebrow{
 }
 .flash-banner:hover{background:#D45520;}
 .flash-banner .flash-eyebrow{
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;
   font-weight:800;color:#FFFFFF;
   padding-right:14px;border-right:1px solid rgba(255,255,255,.4);
 }
