@@ -170,6 +170,12 @@ section{padding:110px 0;position:relative;}
 section.section-paper{background:var(--paper);color:var(--ink);}
 section.section-white{background:var(--white);color:var(--ink);}
 section.section-forest{background:var(--forest);color:var(--paper);}
+section.section-sky-light{background:#CFE1EE;color:var(--ink);}
+section.section-sky-light h1,section.section-sky-light h2,section.section-sky-light h3,section.section-sky-light h4{color:var(--ink);}
+section.section-sky-light .eyebrow{color:var(--ink);opacity:.68;}
+section.section-sky-light p{color:var(--ink);}
+section.section-sky-light .btn{background:var(--ink);color:var(--paper);}
+section.section-sky-light .btn:hover{background:#1c1c1c;color:#fff;}
 section.section-coral{background:var(--coral);color:var(--ink);}
 section.section-butter{background:var(--butter);color:var(--ink);}
 section.section-cobalt{background:var(--cobalt);color:var(--paper);}
@@ -1990,47 +1996,48 @@ body > section{position:relative;}
     var(--plum);
 }
 
-/* Homepage 'What we do' cards: the three coloured client-question
-   cards each pick up the treatment tuned to their base tint. */
+/* Homepage 'What we do' cards: warm-neutral grayscale (light /
+   medium / dark) so colour is reserved for creative surfaces
+   like case-study and article cards. Same layered depth rig
+   as before, retuned onto the neutral base. */
 .what-grid .what-card.c-butter{
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.42), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(122,98,10,.28), transparent 62%),
-    var(--butter);
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.55), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(52,44,28,.18), transparent 62%),
+    #EEE4CE;
 }
 .what-grid .what-card.c-coral{
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.34), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(112,42,12,.32), transparent 62%),
-    var(--coral);
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.42), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(40,32,18,.24), transparent 62%),
+    #D2C7AD;
 }
 .what-grid .what-card.c-cobalt{
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.22), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.42), transparent 62%),
-    var(--cobalt);
+    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.16), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.48), transparent 62%),
+    #2E2B24;
 }
 
-/* 'Who we serve' cards on the home page: coral, butter and
-   euro-blue variants get the same layered treatment; the two
-   quiet paper cards stay flat. */
+/* 'Who we serve' cards on the home page: same warm-neutral
+   grayscale treatment. Cards 4 and 5 stay flat paper. */
 .serve-grid a:nth-child(1){
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.34), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(112,42,12,.30), transparent 62%),
-    var(--coral);
+    radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.55), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(52,44,28,.18), transparent 62%),
+    #EEE4CE;
 }
 .serve-grid a:nth-child(2){
   background:
     radial-gradient(800px 460px at 18% 12%, rgba(255,255,255,.42), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(122,98,10,.28), transparent 62%),
-    var(--butter);
+    radial-gradient(700px 380px at 88% 88%, rgba(40,32,18,.24), transparent 62%),
+    #D2C7AD;
 }
 .serve-grid a:nth-child(3){
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.22), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.40), transparent 62%),
-    var(--euro-blue);
+    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.16), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.48), transparent 62%),
+    #2E2B24;
 }
 
 /* Insight-card & case-card kicker strips: the coloured top bar
@@ -2671,9 +2678,9 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
 }
 .what-grid .what-card:last-child{border-right:0;}
 .what-grid .what-card:hover{transform:translate(-2px,-2px);}
-.what-grid .what-card.c-butter{background:var(--butter);color:var(--ink);}
-.what-grid .what-card.c-coral{background:var(--coral);color:var(--ink);}
-.what-grid .what-card.c-cobalt{background:var(--cobalt);color:var(--paper);}
+.what-grid .what-card.c-butter{background:#EEE4CE;color:var(--ink);}
+.what-grid .what-card.c-coral{background:#D2C7AD;color:var(--ink);}
+.what-grid .what-card.c-cobalt{background:#2E2B24;color:var(--paper);}
 .what-grid .what-card.c-cobalt h3,
 .what-grid .what-card.c-cobalt p,
 .what-grid .what-card.c-cobalt .what-more{color:var(--paper);}
@@ -2681,7 +2688,7 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   font-family:'Hanken Grotesk',sans-serif;
   font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--ink);
 }
-.what-grid .what-card.c-cobalt .what-tag{color:var(--butter);}
+.what-grid .what-card.c-cobalt .what-tag{color:rgba(245,239,225,.72);}
 .what-grid .what-card h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink);}
 .what-grid .what-card p{font-size:15.5px;line-height:1.5;margin:0;color:var(--ink);font-weight:500;flex:1;}
 .what-grid .what-card .what-more{margin-top:auto;font-weight:800;color:var(--ink);}
@@ -2945,17 +2952,17 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   transition:transform .12s ease,background .15s ease;
 }
 .serve-grid a:last-child{border-right:0;}
-/* Warm palette. Companies and Funders carry a coral / butter accent
-   to lift them out of the neutral row; European consortia keeps its
-   euro-blue anchor; NGOs and Research stay quiet cream so the row
-   has a rhythm rather than five equally loud blocks. */
-.serve-grid a:nth-child(1){background:var(--coral);color:var(--ink);}
-.serve-grid a:nth-child(2){background:var(--butter);color:var(--ink);}
-.serve-grid a:nth-child(3){background:var(--euro-blue);color:var(--paper);}
+/* Warm-neutral grayscale (light / medium / dark) so the row reads
+   as a graded step rather than five saturated blocks; colour is
+   reserved for creative surfaces (case-study and article cards).
+   NGOs and Research stay flat paper. */
+.serve-grid a:nth-child(1){background:#EEE4CE;color:var(--ink);}
+.serve-grid a:nth-child(2){background:#D2C7AD;color:var(--ink);}
+.serve-grid a:nth-child(3){background:#2E2B24;color:var(--paper);}
 .serve-grid a:nth-child(4){background:var(--white);color:var(--ink);}
 .serve-grid a:nth-child(5){background:var(--white);color:var(--ink);}
-.serve-grid a:nth-child(1):hover{background:#e58c74;}
-.serve-grid a:nth-child(2):hover{background:#eecd6a;}
+.serve-grid a:nth-child(1):hover{background:#E8DBC0;}
+.serve-grid a:nth-child(2):hover{background:#C7BB9E;}
 .serve-grid a:nth-child(4):hover,.serve-grid a:nth-child(5):hover{background:var(--paper);}
 .serve-grid a .serve-tag{
   font-family:'Hanken Grotesk',sans-serif;

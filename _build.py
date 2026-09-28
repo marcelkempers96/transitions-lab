@@ -2047,12 +2047,12 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- CTA - cobalt block -->
-<section class="section-cobalt" style="text-align:center;">
-  <div class="wrap on-dark" style="max-width:820px;">
+<!-- CTA - light-sky block -->
+<section class="section-sky-light" style="text-align:center;">
+  <div class="wrap" style="max-width:820px;">
     <p class="eyebrow">Start a study</p>
     <h2 style="font-size:clamp(34px,5vw,60px);letter-spacing:-.02em;line-height:1.05;">Tell us the decision. We will design the study.</h2>
-    <p style="font-size:20px;margin:22px auto 42px;max-width:56ch;color:var(--paper);font-weight:500;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.</p>
+    <p style="font-size:20px;margin:22px auto 42px;max-width:56ch;color:var(--ink);font-weight:500;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.</p>
     <a href="/how-it-works" class="btn">Start a study →</a>
   </div>
 </section>
