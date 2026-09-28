@@ -2014,9 +2014,9 @@ body > section{position:relative;}
 }
 .what-grid .what-card.c-cobalt{
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.16), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.48), transparent 62%),
-    #2E2B24;
+    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.20), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.28), transparent 62%),
+    #6C6252;
 }
 
 /* 'Who we serve' cards on the home page: same warm-neutral
@@ -2035,9 +2035,9 @@ body > section{position:relative;}
 }
 .serve-grid a:nth-child(3){
   background:
-    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.16), transparent 60%),
-    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.48), transparent 62%),
-    #2E2B24;
+    radial-gradient(800px 460px at 18% 12%, rgba(245,239,225,.20), transparent 60%),
+    radial-gradient(700px 380px at 88% 88%, rgba(0,0,0,.28), transparent 62%),
+    #6C6252;
 }
 
 /* Insight-card & case-card kicker strips: the coloured top bar
@@ -2680,7 +2680,7 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
 .what-grid .what-card:hover{transform:translate(-2px,-2px);}
 .what-grid .what-card.c-butter{background:#EEE4CE;color:var(--ink);}
 .what-grid .what-card.c-coral{background:#D2C7AD;color:var(--ink);}
-.what-grid .what-card.c-cobalt{background:#2E2B24;color:var(--paper);}
+.what-grid .what-card.c-cobalt{background:#6C6252;color:var(--paper);}
 .what-grid .what-card.c-cobalt h3,
 .what-grid .what-card.c-cobalt p,
 .what-grid .what-card.c-cobalt .what-more{color:var(--paper);}
@@ -2958,7 +2958,7 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
    NGOs and Research stay flat paper. */
 .serve-grid a:nth-child(1){background:#EEE4CE;color:var(--ink);}
 .serve-grid a:nth-child(2){background:#D2C7AD;color:var(--ink);}
-.serve-grid a:nth-child(3){background:#2E2B24;color:var(--paper);}
+.serve-grid a:nth-child(3){background:#6C6252;color:var(--paper);}
 .serve-grid a:nth-child(4){background:var(--white);color:var(--ink);}
 .serve-grid a:nth-child(5){background:var(--white);color:var(--ink);}
 .serve-grid a:nth-child(1):hover{background:#E8DBC0;}
