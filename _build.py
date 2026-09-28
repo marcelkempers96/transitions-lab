@@ -1787,7 +1787,7 @@ def build_home() -> str:
 <section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>We work with</h2>
+      <h2>We work with <span class="h2-sub">Five decision-makers who commission independent field evidence.</span></h2>
     </div>
     <div class="serve-grid">
       <a href="/who-we-serve#companies">

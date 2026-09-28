@@ -197,6 +197,20 @@ section.dark.glow::before{content:none;}
   font-size:clamp(30px,4.2vw,56px);letter-spacing:-.01em;
   line-height:1.05;font-weight:500;
 }
+/* Small subtitle that sits inline under a section-head h2. Uses the
+   secondary sans (Hanken Grotesk) so it contrasts with the Newsreader
+   serif h2 above it; muted grey so it reads as context, not another
+   headline. */
+.section-head h2 .h2-sub{
+  display:block;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:clamp(14px,1.4vw,17px);
+  letter-spacing:.01em;
+  line-height:1.35;
+  font-weight:500;
+  color:var(--ink);opacity:.62;
+  margin-top:14px;
+}
 .section-head p{font-size:20px;margin:20px 0 0;line-height:1.5;max-width:56ch;font-weight:500;}
 
 /* Hairline between adjacent sections */
