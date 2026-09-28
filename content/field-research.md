@@ -2,60 +2,56 @@
 
 # Field Research
 
-*Rigorous primary research in the places it is hardest to do well, built around direct contact with the people a transition affects.*
+*Primary research in the places it is hardest to do well, built around direct contact with the people a transition affects.*
 
-The most important evidence about a technology is held by the people living inside it: the rider financing an electric motorcycle, the farmer deciding whether the kiln is worth the labour, the ranger who knows the reef better than any satellite. The Lab's field research exists to reach that evidence, systematically, ethically, and to a standard that holds up. It is the capability behind our own [published research](/articles), made available to others.
-
----
-
-## Where the evidence is hardest to gather, and matters most
-
-The Lab works in settings that defeat conventional research: low-connectivity, multilingual, informal, dispersed. These are also the settings where bad evidence does the most damage. Running research well here demands researchers who speak the language, know the place, and understand the working lives of the people they talk to.
-
-Grounded in real engagements: electric transport in Nairobi ([Kenyan e-mobility case](/case-roam)), decentralised clean energy in Lombok ([Pyropower](/case-pyropower)), water transparency in Nairobi ([MiMaji](/case-mimaji)), and five years of sustained fieldwork in Kenya. We do not parachute in. We work through people already part of the context.
-
+The evidence that decides whether a technology works is held by the people inside it — the rider financing an electric motorcycle, the farmer weighing the labour of a new kiln, the ranger who reads the reef better than any satellite. Field research is the discipline of reaching that evidence properly. It is the capability behind our own [published research](/articles), made available to others.
 
 ---
 
-## Mixed-method research, run properly
+## Where we work
+
+Settings that defeat conventional research: low-connectivity, multilingual, informal, dispersed. The places where bad evidence does the most damage.
+
+We work through researchers and partners already part of the context. No parachuting in. Recent ground: [electric transport in Nairobi](/case-roam), [decentralised clean energy in Lombok](/case-pyropower), [water transparency in Nairobi](/case-mimaji), five years of sustained fieldwork in Kenya.
+
+---
+
+## What we bring
 
 <div class="callout c-butter">
-  <span class="kicker">What we bring</span>
   <ul>
-    <li><strong>Interviews and qualitative fieldwork.</strong> Structured, in-depth conversations that reach past what happened to why. See the <a href="/interview-guide">interview guide</a>.</li>
+    <li><strong>In-depth interviews.</strong> Structured conversations that reach past what happened to why. See the <a href="/interview-guide">interview guide</a>.</li>
     <li><strong>Surveys at scale.</strong> Standardised, repeatable, by phone or face-to-face. Short enough to re-run; rich enough to move a decision.</li>
     <li><strong>Baseline, midline, endline.</strong> The before-and-after spine of any impact claim. Uses the <a href="/impact-tracking-template">impact-tracking template</a>.</li>
     <li><strong>Observation and on-site work.</strong> Some things are only visible in the doing.</li>
   </ul>
 </div>
 
-Most research fails in one of two directions: too elaborate to repeat affordably, or too thin to tell you anything new. Our standard is the middle: structured enough to compare, rich enough to matter.
+Most research fails one of two ways: too elaborate to repeat, or too thin to tell you anything new. Our standard is the middle — structured enough to compare, rich enough to matter.
 
 <figure>
   <img src="/assets/img/photo-field-survey.jpg" alt="A researcher holds a phone displaying a mobility survey with the title 'Kibera Mobility Study'; a respondent in a cap sits opposite, thinking through the answer. A boda-boda motorcycle is parked behind them." class="diagram">
-  <figcaption>A mobility survey in progress in Kibera, Nairobi. Structured instrument, in-person delivery, one respondent at a time. Every answer is a person, not a row in a dataset.</figcaption>
+  <figcaption>A mobility survey in progress in Kibera, Nairobi. Every answer is a person, not a row in a dataset.</figcaption>
 </figure>
 
 ---
 
-## Ethics and rigour are not optional extras
+## Ethics and rigour
 
-Informed, recorded, revocable consent. Anonymisation by default. Sampling, translation, and quality control managed end to end. We interview to understand, not to confirm.
+Informed, recorded, revocable consent. Anonymisation by default. Sampling, translation and quality control managed end to end. We interview to understand, not to confirm.
 
 <div class="callout c-cobalt">
-  <span class="kicker">Ethics standards we work to</span>
-  <h3>Consent, anonymity, and independent review</h3>
-  <p>Every study passes an internal ethics check against these references:</p>
+  <h3>Standards we work to</h3>
   <ul>
-    <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">The Belmont Report</a> on respect for persons, beneficence, and justice in human-subjects research.</li>
-    <li><a href="https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/">WMA Declaration of Helsinki</a> on informed consent.</li>
-    <li><a href="https://poverty-action.org/researchers/rigor-and-ethics">Innovations for Poverty Action</a> and <a href="https://www.povertyactionlab.org/research-resources/data-and-code-availability">J-PAL</a> on data integrity and IRB oversight.</li>
-    <li><a href="https://gdpr.eu/">EU GDPR</a> on personal-data handling in every European engagement.</li>
-    <li><a href="https://ethics.esrc.ukri.org/">ESRC Framework for Research Ethics</a> on qualitative fieldwork.</li>
+    <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">The Belmont Report</a> - respect for persons, beneficence, justice.</li>
+    <li><a href="https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/">WMA Declaration of Helsinki</a> - informed consent.</li>
+    <li><a href="https://poverty-action.org/researchers/rigor-and-ethics">Innovations for Poverty Action</a> and <a href="https://www.povertyactionlab.org/research-resources/data-and-code-availability">J-PAL</a> - data integrity, IRB oversight.</li>
+    <li><a href="https://gdpr.eu/">EU GDPR</a> - personal-data handling on every European engagement.</li>
+    <li><a href="https://ethics.esrc.ukri.org/">ESRC Framework for Research Ethics</a> - qualitative fieldwork.</li>
   </ul>
 </div>
 
-Commissioned work belongs to the client and stays private unless the client chooses to publish. The [case studies](/case-studies) on this site are those exceptions.
+Commissioned work belongs to the client and stays private unless they choose to publish. The [case studies](/case-studies) on this site are the exceptions.
 
 ---
 
@@ -69,8 +65,4 @@ Commissioned work belongs to the client and stays private unless the client choo
   <a class="pill c-plum" href="/who-we-serve#researchers">Researchers</a>
 </div>
 
-See [Who We Serve](/who-we-serve) for how the fit works in each case.
-
----
-
-*For how a study runs end to end, see [How It Works](/how-it-works). For measurement, see [Impact Measurement](/impact-measurement). For why household-level reporting can flatter a programme that has shifted control of income, see [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer). For why remote verification quietly removes the incidental social evidence field visits used to produce, see [The Cheaper It Gets to Verify, the Less Anyone Visits](/insight-cheaper-to-verify). To discuss a study, see [Contact](/contact).*
+See [Who We Serve](/who-we-serve) for the fit in each case.
