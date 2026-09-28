@@ -213,18 +213,6 @@ section + section{border-top:2px solid var(--ink);}
 /* Video background — fits/crops (object-fit:cover), never stretches */
 .hero.has-video{color:var(--paper);background:var(--ink);}
 
-/* Hero video is now painted at higher quality (CRF 22) on both
-   desktop and mobile. Text sits on top in white, on a darkened
-   plate that reads as an editorial cover. */
-.hero.has-video h1,
-.hero.has-video .lede,
-.hero.has-video #hero-headline,
-.hero.has-video #hero-subhead{
-  color:#FFFFFF !important;
-  text-shadow:0 1px 3px rgba(0,0,0,.45), 0 0 24px rgba(0,0,0,.25) !important;
-}
-.hero.has-video .eyebrow{color:#F0B48C !important;}
-.hero.has-video .cursor{background:#FFFFFF;}
 .hero-video{
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;object-position:center center;

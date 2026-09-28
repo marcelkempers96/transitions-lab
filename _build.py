@@ -1630,12 +1630,8 @@ def build_home() -> str:
     og_image = f"{SITE_URL}/assets/og-image.png"
 
     body = """
-<!-- HERO - typewriter tagline on video background -->
-<section class="hero has-video">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <source src="/assets/media/statement.mp4" type="video/mp4">
-  </video>
-  <div class="hero-veil" aria-hidden="true"></div>
+<!-- HERO - typewriter tagline on the paper ground, no video -->
+<section class="hero">
   <div class="wrap">
     <h1><span id="hero-headline" data-text="A transition is a decision."></span><span class="cursor" id="hero-cursor" aria-hidden="true"></span></h1>
     <p class="lede" id="hero-subhead" data-text="Every transition - energy, mobility, industry - is decisions taken by some and landing on others. We are the independent evidence that keeps them honest."></p>
