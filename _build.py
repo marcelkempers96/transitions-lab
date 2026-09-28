@@ -183,6 +183,9 @@ TOPIC_ICONS: dict[str, str] = {
     "expertise-manufacturing": "/assets/icons/icon-manufacturing.png",
     "expertise-ai-digital":    "/assets/icons/icon-ai-digital.png",
     "expertise-finance":       "/assets/icons/icon-finance.png",
+    "entering-a-new-context":  "/assets/icons/icon-entering-context.png",
+    "measuring-change":        "/assets/icons/icon-measuring-change.png",
+    "reporting-to-funders":    "/assets/icons/icon-eu.png",
 }
 
 # Legacy compact 'Start a study' inline form. Retired: every page
