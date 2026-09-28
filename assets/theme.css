@@ -559,9 +559,19 @@ section + section{border-top:2px solid var(--ink);}
 .prose .target-card .lede{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:clamp(17px,1.8vw,20px);line-height:1.4;font-weight:600;
-  letter-spacing:-.005em;color:var(--ink);margin:0 0 1em;
+  letter-spacing:-.005em;color:var(--ink);margin:0 0 1.1em;
 }
 .prose .target-card .lede em{font-style:normal;color:var(--orange);}
+/* Editorial serif treatment for the lede paragraph on target cards,
+   giving each audience card a magazine-style opening line to read
+   before the operational prose. */
+.prose .target-card .lede-serif{
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-size:clamp(21px,2.2vw,26px);line-height:1.32;
+  font-weight:500;letter-spacing:-.012em;font-style:italic;
+  color:var(--ink);margin:0 0 1.15em;
+}
+.prose .target-card .lede-serif em{font-style:normal;color:var(--ink);}
 .prose .target-card .kicker-line{
   display:block;font-size:11.5px;font-weight:800;letter-spacing:.18em;
   text-transform:uppercase;color:var(--ink);opacity:.55;margin:0 0 8px;

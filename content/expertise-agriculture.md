@@ -54,9 +54,9 @@ This matters because a survey tells you *what* changed and GIS tells you *where*
 
 A waste-to-value technology can offer three things at once, fuel, better soil, carbon income. A technical assessment counts all three. Only fieldwork reveals which one actually moves a farmer to adopt, and it differs by crop, season, and household.
 
-The Lab documents that. We are usually the only party asking whether an open-source or decentralised model widens access or quietly concentrates benefit among the already-resourced, and whether a carbon-market promise reaches the farmer or is captured upstream. Our [Pyropower case study](/case-pyropower) in Lombok traces exactly this: farmers who named an open-source kiln *Tumbuh*, "to grow," and what that adoption did, and did not, distribute.
+We are usually the only party asking whether an open-source or decentralised model widens access or quietly concentrates benefit among the already-resourced, and whether a carbon-market promise reaches the farmer or is captured upstream. Our [Pyropower case study](/case-pyropower) in Lombok traces exactly this: farmers who named an open-source kiln *Tumbuh*, "to grow," and what that adoption did, and did not, distribute.
 
-Most monitoring effort goes into better sensing. The failure almost always happens later, in the gap between a reading and a decision. The Lab documents that gap, and we are usually the only party in a project asking whether the evidence is trusted, owned, and used, rather than merely correct.
+Most monitoring effort goes into better sensing. The failure almost always happens later, in the gap between a reading and a decision. We are usually the only party in a project asking whether the evidence is trusted, owned, and used, rather than merely correct.
 
 ---
 

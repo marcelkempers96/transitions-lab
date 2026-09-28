@@ -12,7 +12,7 @@ You have moved money out of the door. The harder question is what came back, not
 
 ## The problem with how portfolios are tracked today
 
-Most funders learn about their impact from the people they are funding. Grantees self-report against indicators they helped choose, in narratives written to secure the next round. The result is a portfolio picture that is optimistic by construction, and impossible to compare across grants. Three gaps recur, and they compound each other.
+Most funders learn about their impact from the people they are funding. Grantees self-report against indicators they helped choose, in narratives written to secure the next round. The result is a portfolio picture that is optimistic by construction, and impossible to compare across grants.
 
 <div class="callout c-coral">
   <span class="kicker">Gap 01 · Independence</span>
@@ -40,7 +40,7 @@ For the wider argument behind this diagnosis, see the insight [The Reporting Loo
 The Lab combines its core [field research](/field-research) and [impact measurement](/impact-measurement) with a dedicated portfolio layer built for grantmakers. It sits on top of the services we already provide, tailored to the funder's question: not "did this one project work?" but "what is my whole portfolio achieving, and where should the next pound go?"
 
 **Independent verification, grant by grant.**
-We measure a sample of your grantees ourselves, in the field, using the same discipline we bring to any study: reach, depth, and experience, on a baseline, from the people the grant was meant to serve. The grantee's own report becomes one input among several, checked against primary evidence rather than taken on trust. This is the piece no self-report and no dashboard can supply, and it is the Lab's core advantage.
+We measure a sample of your grantees ourselves, in the field, using the same discipline we bring to any study: reach, depth, and experience, on a baseline, from the people the grant was meant to serve. The grantee's own report becomes one input among several, checked against primary evidence rather than taken on trust.
 
 **A common measurement frame across the portfolio.**
 We define a shared outcome frame at the portfolio level, aligned to established standards ([OECD-DAC evaluation criteria](https://www.oecd.org/dac/evaluation/), a theory of change per grant, common indicators where grants are comparable), so that different grants can finally be read against each other. Where two grants pursue the same outcome, we measure it the same way, and the funder can compare cost per outcome honestly.
@@ -92,7 +92,7 @@ The funder-facing platform brings the portfolio into one view.
 - **Verified social return**, per grant and aggregated to a portfolio ratio that traces down to the underlying field evidence.
 - **Board-ready reporting**, live dashboards and exportable reports that combine the numbers with the field narrative behind them.
 
-What distinguishes it from the grant-management software already on the market is not the dashboard. It is that **every figure in it has been checked against primary field evidence by an independent team.** The platform is only as trustworthy as the data beneath it, and the data beneath it is ours, gathered from the people the grants were meant to serve.
+What distinguishes it from the grant-management software already on the market is not the dashboard. It is that **every figure in it has been checked against primary field evidence by an independent team.**
 
 ---
 

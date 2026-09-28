@@ -61,7 +61,7 @@ Water is where the Lab's roots run deepest: based in Delft, a global centre of w
 
 **Energy.** The technology is largely settled. Whether a household connects, keeps paying, and benefits depends on affordability, reliability, and whether the system was designed around how people actually use power.
 
-The Lab documents that. We are the party asking whether locally-owned developers can scale, whether access converts into the productive uses that make it self-sustaining, and **who sits at the very end of the access curve**, the finding that decides if a transition is fair. Our [Pyropower case study](/case-pyropower) shows waste-to-energy at the smallholder scale.
+We are the party asking whether locally-owned developers can scale, whether access converts into the productive uses that make it self-sustaining, and **who sits at the very end of the access curve**, the finding that decides if a transition is fair. Our [Pyropower case study](/case-pyropower) shows waste-to-energy at the smallholder scale.
 
 **Water.** The technical solutions mostly exist. Success depends on whether infrastructure is sustained, trusted, and maintained, and whether it reaches the rural and marginalised.
 

@@ -45,7 +45,7 @@ Financial inclusion quietly determines the fate of the others. An electric motor
 
 A financing model designed to help can also move risk onto those least able to bear it. The line between the two is invisible in adoption figures and clear only in the field.
 
-The Lab documents it: whether pay-as-you-go genuinely expands opportunity, who is reached and who stays excluded, and how the friction of fees decides whether a transition holds. Our [mobility case study](/case-roam) shows the double edge, pay-as-you-go is what lets a rider earn into ownership, and the per-transaction fee is the thing they would fix first.
+Whether pay-as-you-go genuinely expands opportunity, who is reached and who stays excluded, how the friction of fees decides whether a transition holds. Our [mobility case study](/case-roam) shows the double edge, pay-as-you-go is what lets a rider earn into ownership, and the per-transaction fee is the thing they would fix first.
 
 ---
 

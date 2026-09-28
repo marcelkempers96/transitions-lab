@@ -8,9 +8,9 @@
 <img src="/assets/img/human-side-of-technology-hero.jpg" alt="Illustrated title card: a woman in the centre looks thoughtfully at her phone. Around her sit five small icons of the forces the page maps, a green tick for adoption, a shield for trust, a family cooking for practice, a sync arrow for habit, two people talking for social influence, and doors for legitimacy, each connected to her by a dashed line." class="diagram">
 </figure>
 
-The Lab's other theory pages take the view from above. The [economics of transitions](/economics-of-transitions) asks who bears a cost and who captures a value. The [technology & innovation dynamics](/innovation-dynamics) page asks how a technology evolves and how firms compete to own it. The [transitions primer](/resources) asks how whole systems move. This page takes the view from the ground: what happens when a real person, in a real place, actually meets the technology.
+This page takes the view from the ground: what happens when a real person, in a real place, actually meets the technology. Read alongside the [economics of transitions](/economics-of-transitions), [technology & innovation dynamics](/innovation-dynamics), and the [transitions primer](/resources).
 
-It is the lens the Lab leads with. Social science first, technical depth alongside, is not a slogan; it is a claim about where transitions are actually decided. A payment app can be cheaper, faster, and better in every measurable way and still fail because people do not trust it, cannot fit it into how they already live, or were never the people the designers pictured. The reasons are behavioural, social, and cultural, and they are invisible to a specification, a cost model, or a strategy deck. They become visible only by **[going and asking](/field-research)**.
+A payment app can be cheaper, faster, and better in every measurable way and still fail because people do not trust it, cannot fit it into how they already live, or were never the people the designers pictured. The reasons are behavioural, social, and cultural, and they are invisible to a specification, a cost model, or a strategy deck. They become visible only by **[going and asking](/field-research)**.
 
 <div class="callout c-cobalt">
   <span class="kicker">In this map</span>
@@ -25,7 +25,7 @@ It is the lens the Lab leads with. Social science first, technical depth alongsi
   </ul>
 </div>
 
-Each concept is defined, anchored to its canonical source, and, where the Lab has written about it, linked to the applied case. Full references are at the end. Running underneath all of it is one methodological point: because these forces cannot be read from a distance, the Lab reads them in the field.
+Because these forces cannot be read from a distance, the Lab reads them in the field.
 
 ---
 

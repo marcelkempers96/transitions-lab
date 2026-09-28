@@ -22,7 +22,7 @@
 
 <!-- IMAGE ai-hero: hero photo | Someone using a digital tool or phone in a field/community setting - a health worker, farmer, or ranger with a device. Technology-meets-people, not a server room. | Full-width hero under the standfirst. -->
 
-AI is the newest transition the Lab studies, and the one where its posture, social science first, technical literacy alongside, matters most. The central risk is not technical failure. It is that these tools are deployed into contexts they were never designed for, and either miss the people they should serve or deepen existing divides.
+The central risk is not technical failure. It is that these tools are deployed into contexts they were never designed for, and either miss the people they should serve or deepen existing divides.
 
 ## Inside the programme
 
