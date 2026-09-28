@@ -8,9 +8,9 @@
 <img src="/assets/img/innovation-dynamics-hero.jpg" alt="Illustrated title card: on the left an inventor at a workbench works on a prototype device with tools and a schematic; three early product experiments (a radio, a smart speaker, a smartwatch) feed by arrows into a central phone with a learning curve and puzzle pieces below it; on the right a network of connected users, a factory, a shop and an institution show the innovation spreading through the world." class="diagram">
 </figure>
 
-The [economics of transitions](/economics-of-transitions) page asks who bears a cost, who captures a value, and what a market will price. The [human side of technology](/human-side-of-technology) page asks what happens when a real person meets the technology in a real place. This page asks a different and complementary question: how does a technology itself evolve, how do firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt? These are the questions of the management-of-technology and innovation-studies literatures, and they sit underneath every transition the Lab studies.
+How does a technology itself evolve, how do firms compete to shape and own it, and what decides whether an innovation displaces the incumbent or dies in the attempt? These are the questions of the management-of-technology and innovation-studies literatures.
 
-The distinction is worth stating plainly. Economics is the lens of allocation and welfare: prices, incidence, market failure, finance. Innovation dynamics is the lens of evolution and strategy: how a technology matures, how a dominant design emerges, how firms build the capabilities to ride or resist change, how an innovation diffuses through a population. The two overlap, path dependence and network effects live in both, but they answer different questions, and keeping them separate makes each sharper.
+Read alongside the [economics of transitions](/economics-of-transitions) and the [human side of technology](/human-side-of-technology).
 
 <div class="callout c-cobalt">
   <span class="kicker">In this map</span>
@@ -23,8 +23,6 @@ The distinction is worth stating plainly. Economics is the lens of allocation an
     <li><a href="#cluster-5">5. The bridge to socio-technical transitions</a></li>
   </ul>
 </div>
-
-Each concept is defined, anchored to its canonical source, and, where the Lab has written about it, linked to the applied case. Full references are at the end.
 
 ---
 
@@ -240,7 +238,7 @@ Each concept is defined, anchored to its canonical source, and, where the Lab ha
 
 ## 5. The bridge to socio-technical transitions
 
-The innovation-dynamics literature above studies technologies and firms. The transitions literature scales the same questions up to whole systems, energy, mobility, food, where the "technology" is a regime of infrastructure, institutions, and behaviour, and the "firm" is a society. The bridge is worth naming, because the Lab works at exactly this join.
+The transitions literature scales the same questions up to whole systems, energy, mobility, food, where the "technology" is a regime of infrastructure, institutions, and behaviour, and the "firm" is a society.
 
 <figure>
 <img src="/assets/img/innovation-dynamics-mlp-brw.jpg" alt="Three stacked coloured bands. Top yellow band labelled 'landscape, pressures the system' with icons for prices, policy and a storm. Middle coral band labelled 'regime, the established system' with factory, government building and clipboard. Bottom sky band labelled 'niche, novelty develops here' with a small greenhouse containing solar panel and battery. A red arrow from landscape presses down on regime; a blue arrow from niche pushes up into regime. Beneath, a forest-green panel labelled 'BRW: how the niche engages the barrier' splits into three cells: Bypass (a solid square dashed to a hollow one), Repurpose (factory arrows to solar and battery), Weaken (a full column reduced to a partial one). Caption beneath: levels describe the system; BRW identifies the field strategy." class="diagram">
@@ -320,11 +318,9 @@ Williamson, O. E. (1985). [*The Economic Institutions of Capitalism*](https://en
 
 ---
 
-## How this page relates to the others
+## Reading further
 
-Read this page alongside the [economics of transitions](/economics-of-transitions), which takes the allocation-and-welfare view of the same terrain, and the [transitions primer](/resources), which sets out the socio-technical frame in full. A handful of foundational ideas, path dependence, network effects, increasing returns, appropriability, deliberately appear on more than one page, because they genuinely belong to more than one literature; each page treats them through its own lens and points to the others.
-
-Innovation dynamics is where the Lab's technical literacy and its social-science method meet: understanding how a technology evolves is what lets us read, in the field, whether a specific deployment is riding its curve or about to be overtaken, setting the dominant design or chasing someone else's, building the capability to last or hollowing it out. For how we apply this to a real case, see [What We Do](/what-we-do).
+Understanding how a technology evolves is what lets us read, in the field, whether a specific deployment is riding its curve or about to be overtaken, setting the dominant design or chasing someone else's, building the capability to last or hollowing it out. See [What We Do](/what-we-do), the [economics of transitions](/economics-of-transitions), and the [transitions primer](/resources).
 
 <div class="article-nav">
   <a class="article-nav-card" href="/resources">
