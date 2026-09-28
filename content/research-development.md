@@ -29,7 +29,7 @@ Entering a new context is not one decision; it is a chain of them. The best-know
 
 ## What the study answers
 
-Every R&D engagement is scoped to a specific design decision, but four questions recur.
+Four questions recur.
 
 <div class="callout c-coral">
  <span class="kicker">Question 01 · Whom is this really for</span>
@@ -107,7 +107,7 @@ Related programmes and companion services: [European Impact Tracking](/european-
 
 ## Where the design assumption meets the field
 
-Every R&D failure mode we see at this stage has the same underlying shape: a plausible assumption the design team was working from, and a field reality the design team had not yet met. The value of independent field work is closing that gap while the design is still open.
+Every R&D failure mode we see at this stage has the same underlying shape: a plausible assumption the design team was working from, and a field reality the design team had not yet met.
 
 <div class="assumption-grid">
  <div class="assumption-row">

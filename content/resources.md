@@ -8,7 +8,7 @@
 
 Transitions Lab publishes its frameworks and methods openly, because a good way of understanding the world is more useful in the world than in a drawer. These resources set out how the Lab thinks and works: the frameworks behind our analysis, the methods behind our measurement, and the tools behind our fieldwork.
 
-They are free to download, use, and cite with attribution. They also show, plainly, that the Lab has done its research and formalised its identity: this is the intellectual apparatus a partner is buying into when they commission a study.
+Free to download, use, and cite with attribution.
 
 ---
 
@@ -114,9 +114,9 @@ A fill-in framework for measuring the before-and-after impact of a European proj
 
 ## Open, attributable, and yours to build on
 
-These resources are published under an open, attribution-based approach: use them, adapt them to your work, and cite Transitions Lab. They are deliberately practical, built to be picked up and applied, not admired.
+Use them, adapt them to your work, and cite Transitions Lab. Built to be picked up and applied.
 
-If a framework or method here fits a decision you are facing, that is usually the point at which a conversation is useful. The resources show how we think; a commissioned study applies it to your specific question, in your specific context, with independent evidence.
+A commissioned study applies these to your specific question, in your specific context, with independent evidence.
 
 ---
 
