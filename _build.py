@@ -1792,7 +1792,7 @@ def build_home() -> str:
   <div class="wrap">
     <div class="section-head reveal">
       <h2 style="color:var(--paper);">A global team of researchers, analysts, and field partners.</h2>
-      <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts and long-standing partners, in Europe and in the places our cases come from.</p>
+      <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts and <a href="/who-we-serve" style="color:var(--butter);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;">long-standing partners</a>, in Europe and in the places our cases come from.</p>
     </div>
 
     <p class="net-expertise-label">Current programmes</p>
