@@ -529,6 +529,14 @@ section + section{border-top:2px solid var(--ink);}
   border-left:4px solid var(--ink);padding:.3em 0 .3em 1.2em;margin:1.6em 0;
   font-size:22px;font-weight:600;font-style:italic;color:var(--ink);
 }
+/* Attributed pull-quote: same rule as .prose blockquote, plus a
+   small Hanken attribution line under the quoted paragraph. */
+.prose .pull-quote p{margin:0;}
+.prose .pull-quote footer{
+  margin-top:14px;font-family:'Hanken Grotesk',sans-serif;
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;font-style:normal;color:var(--ink);opacity:.62;
+}
 .prose figure{margin:2em 0;}
 .prose figcaption{font-size:14.5px;color:var(--ink);margin-top:.7em;font-weight:500;}
 .prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:var(--butter);padding:.1em .35em;}

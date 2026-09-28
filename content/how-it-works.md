@@ -4,7 +4,10 @@
 
 *From decision to actionable evidence, in weeks. Every engagement runs the same five stages.*
 
-Start from a decision, work from the human side, report what the evidence says including the inconvenient parts. That is the value of an [independent research team](/about).
+<blockquote class="pull-quote">
+  <p>"Start from a decision. Work from the human side. Report what the evidence says, including the inconvenient parts. That is the value of an <a href="/about">independent research team</a>."</p>
+  <footer>Marcel Kempers, Director</footer>
+</blockquote>
 
 <div class="stage">
  <div class="stage-num">01</div>
