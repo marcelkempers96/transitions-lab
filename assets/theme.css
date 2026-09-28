@@ -1928,14 +1928,24 @@ body[data-page^="insight-"] .prose h4{
    an ink ground with paper-tinted strokes so they read cleanly. */
 .page-hero.hero-forest .article-share--hero .share-btn,
 .page-hero.hero-cobalt .article-share--hero .share-btn,
-.page-hero.hero-plum .article-share--hero .share-btn{
-  background:rgba(255,255,255,.10);color:var(--paper);
-  border-color:rgba(245,239,225,.35);
+.page-hero.hero-plum .article-share--hero .share-btn,
+.page-hero[data-hero-bg="1"] .article-share--hero .share-btn{
+  background:rgba(255,255,255,.14);color:var(--paper);
+  border-color:rgba(245,239,225,.42);
 }
 .page-hero.hero-forest .article-share--hero .share-btn:hover,
 .page-hero.hero-cobalt .article-share--hero .share-btn:hover,
-.page-hero.hero-plum .article-share--hero .share-btn:hover{
-  background:rgba(255,255,255,.20);border-color:rgba(245,239,225,.55);
+.page-hero.hero-plum .article-share--hero .share-btn:hover,
+.page-hero[data-hero-bg="1"] .article-share--hero .share-btn:hover{
+  background:rgba(255,255,255,.24);border-color:rgba(245,239,225,.65);
+}
+/* SHARE label reads as paper on any hero that renders dark
+   (dark-tinted heroes and any hero carrying a background photo). */
+.page-hero.hero-forest .article-share--hero .share-label,
+.page-hero.hero-cobalt .article-share--hero .share-label,
+.page-hero.hero-plum .article-share--hero .share-label,
+.page-hero[data-hero-bg="1"] .article-share--hero .share-label{
+  color:var(--paper);opacity:.85;
 }
 
 /* Smooth anchor navigation site-wide, so the scroll-next arrow
