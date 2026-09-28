@@ -132,21 +132,30 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-/* ── Articles filter (on /articles) ──
+/* ── Articles filter + pagination (on /articles) ──
    Chip rows for category / geography / month. One active chip per group;
    the "All" chip clears that group. An item is shown when every group
-   either has "All" selected, or the item matches the selected value. */
+   either has "All" selected, or the item matches the selected value.
+   The visible set is then paginated (PER_PAGE per page); the pager
+   sits below the list and resets to page 1 whenever a filter changes. */
 (function () {
   var bar = document.querySelector(".article-filter");
   if (!bar) return;
   var listSel = bar.getAttribute("data-filter-target") || ".article-list";
   var list = document.querySelector(listSel);
   if (!list) return;
-  var items = list.querySelectorAll(".article-item");
+  var items = Array.prototype.slice.call(list.querySelectorAll(".article-item"));
   var empty = bar.querySelector(".filter-empty");
   var resetBtn = bar.querySelector(".filter-reset");
+  var PER_PAGE = 20;
+  var page = 1;
 
-  function apply() {
+  var pager = document.createElement("nav");
+  pager.className = "article-pager";
+  pager.setAttribute("aria-label", "Article pages");
+  list.parentNode.insertBefore(pager, list.nextSibling);
+
+  function applyFilters() {
     var filters = {};
     bar.querySelectorAll(".filter-group").forEach(function (g) {
       var group = g.getAttribute("data-group");
@@ -154,20 +163,70 @@ document.addEventListener('DOMContentLoaded', function () {
       filters[group] = active ? active.getAttribute("data-value") : "";
     });
 
-    var shown = 0;
     items.forEach(function (item) {
       var ok = true;
       Object.keys(filters).forEach(function (group) {
         var wanted = filters[group];
         if (!wanted) return;
-        var actual = item.getAttribute("data-" + (group === "month" ? "month" : group === "geography" ? "geography" : "category"));
-        if (actual !== wanted) ok = false;
+        if (item.getAttribute("data-" + group) !== wanted) ok = false;
       });
       item.setAttribute("data-hidden", ok ? "false" : "true");
-      if (ok) shown++;
+    });
+  }
+
+  function applyPagination() {
+    var visible = items.filter(function (it) {
+      return it.getAttribute("data-hidden") !== "true";
+    });
+    var total = visible.length;
+    var pages = Math.max(1, Math.ceil(total / PER_PAGE));
+    if (page > pages) page = pages;
+    if (page < 1) page = 1;
+
+    var startIdx = (page - 1) * PER_PAGE;
+    var endIdx = startIdx + PER_PAGE;
+    items.forEach(function (it) { it.removeAttribute("data-page-hidden"); });
+    visible.forEach(function (it, i) {
+      it.setAttribute("data-page-hidden", (i >= startIdx && i < endIdx) ? "false" : "true");
     });
 
-    if (empty) empty.hidden = shown > 0;
+    renderPager(pages);
+    if (empty) empty.hidden = total > 0;
+  }
+
+  function makeBtn(label, targetPage, isActive, isDisabled, extraClass) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "pager-btn" + (isActive ? " is-active" : "") + (extraClass ? " " + extraClass : "");
+    b.textContent = label;
+    if (isActive) b.setAttribute("aria-current", "page");
+    if (isDisabled) {
+      b.disabled = true;
+    } else {
+      b.addEventListener("click", function () {
+        page = targetPage;
+        applyPagination();
+        var top = list.getBoundingClientRect().top + window.pageYOffset - 20;
+        window.scrollTo({top: top, behavior: "smooth"});
+      });
+    }
+    return b;
+  }
+
+  function renderPager(pages) {
+    pager.innerHTML = "";
+    if (pages <= 1) return;
+    pager.appendChild(makeBtn("Previous", page - 1, false, page === 1, "pager-prev"));
+    for (var p = 1; p <= pages; p++) {
+      pager.appendChild(makeBtn(String(p), p, p === page, false, "pager-num"));
+    }
+    pager.appendChild(makeBtn("Next", page + 1, false, page === pages, "pager-next"));
+  }
+
+  function onFilterChange() {
+    page = 1;
+    applyFilters();
+    applyPagination();
   }
 
   bar.querySelectorAll(".filter-group").forEach(function (g) {
@@ -176,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!chip) return;
       g.querySelectorAll(".filter-chip").forEach(function (c) { c.classList.remove("is-active"); });
       chip.classList.add("is-active");
-      apply();
+      onFilterChange();
     });
   });
 
@@ -187,9 +246,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var allChip = g.querySelector(".filter-chip.is-all");
         if (allChip) allChip.classList.add("is-active");
       });
-      apply();
+      onFilterChange();
     });
   }
+
+  applyFilters();
+  applyPagination();
 })();
 
 /* Quote carousel: rotates <blockquote class="quote-slide"> children inside

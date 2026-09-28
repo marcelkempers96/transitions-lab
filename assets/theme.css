@@ -3424,6 +3424,53 @@ footer.site .legal > span{white-space:nowrap;}
 
 /* Hidden by the filter script. */
 .prose .article-list .article-item[data-hidden="true"]{display:none !important;}
+.prose .article-list .article-item[data-page-hidden="true"]{display:none !important;}
+
+/* Pager below the article list. Injected by site.js after the list. */
+.prose .article-pager{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+  margin:8px 0 32px;padding-top:20px;
+  border-top:1px solid rgba(10,10,10,.14);
+}
+.prose .article-pager .pager-btn{
+  min-width:40px;padding:8px 14px;
+  font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:14px;
+  color:var(--ink);background:var(--white);
+  border:2px solid var(--ink);cursor:pointer;
+  letter-spacing:.02em;
+  transition:transform .1s ease, box-shadow .1s ease;
+}
+.prose .article-pager .pager-btn:hover:not(:disabled){
+  transform:translate(-1px,-1px);
+  box-shadow:2px 2px 0 var(--ink);
+}
+.prose .article-pager .pager-btn.is-active{
+  background:var(--ink);color:var(--paper);
+}
+.prose .article-pager .pager-btn:disabled{
+  opacity:.35;cursor:not-allowed;
+}
+.prose .article-pager .pager-prev,
+.prose .article-pager .pager-next{
+  padding:8px 16px;
+}
+:root[data-theme="dark"] .prose .article-pager{
+  border-top-color:rgba(232,228,218,.16);
+}
+:root[data-theme="dark"] .prose .article-pager .pager-btn{
+  background:transparent;color:var(--ink);border-color:currentColor;
+}
+:root[data-theme="dark"] .prose .article-pager .pager-btn:hover:not(:disabled){
+  box-shadow:2px 2px 0 currentColor;
+}
+:root[data-theme="dark"] .prose .article-pager .pager-btn.is-active{
+  background:var(--ink);color:var(--paper);
+}
+@media(max-width:640px){
+  .prose .article-pager .pager-btn{min-width:36px;padding:7px 10px;font-size:13px;}
+  .prose .article-pager .pager-prev,
+  .prose .article-pager .pager-next{padding:7px 12px;}
+}
 
 /* Same butter-on-hover treatment as the home resource cards. Applied to
    the article list on /articles and to the target-card blocks on
