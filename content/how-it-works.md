@@ -39,18 +39,10 @@ We start from a decision, not a dataset. We work from the human side first. And 
  <span class="stage-eyebrow">Collect</span>
  <h2>Reach the people, properly</h2>
  <p>Trained researchers who speak the language and know the place reach respondents directly, by phone, face-to-face or on site. Informed, recorded, revocable consent. Anonymised by default. In low-connectivity, multilingual and dispersed settings this stage is where most studies quietly fail, and where <a href="/field-research">field research</a> craft matters most.</p>
- <div class="ethics-box">
- <span class="ethics-title">Ethics standards we work to</span>
- <ul>
- <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">The Belmont Report</a> - respect, beneficence, justice.</li>
- <li><a href="https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/">WMA Declaration of Helsinki</a> - informed consent.</li>
- <li><a href="https://poverty-action.org/researchers/rigor-and-ethics">Innovations for Poverty Action</a> and <a href="https://www.povertyactionlab.org/research-resources/data-and-code-availability">J-PAL</a> - data integrity, IRB oversight.</li>
- <li><a href="https://gdpr.eu/">EU GDPR</a> - European personal-data handling.</li>
- <li><a href="https://ethics.esrc.ukri.org/">ESRC Framework for Research Ethics</a> - qualitative fieldwork.</li>
- </ul>
- </div>
+ <p>Every study is held to the same international standards: the Belmont Report, the WMA Declaration of Helsinki, Innovations for Poverty Action and J-PAL, EU GDPR, and the ESRC Framework for Research Ethics. See <a href="/ethics">Research Ethics</a> for the full reference.</p>
  <div class="links">
  <span class="label">Related</span>
+ <a href="/ethics">Research ethics</a>
  <a href="/field-research">Field research</a>
  <a href="/case-roam">Roam</a>
  <a href="/case-mimaji">MiMaji</a>

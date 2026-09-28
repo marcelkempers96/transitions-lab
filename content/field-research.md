@@ -40,16 +40,7 @@ Most research fails one of two ways: too elaborate to repeat, or too thin to tel
 
 Informed, recorded, revocable consent. Anonymisation by default. Sampling, translation and quality control managed end to end. We interview to understand, not to confirm.
 
-<div class="callout c-cobalt">
-  <h3>Standards we work to</h3>
-  <ul>
-    <li><a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">The Belmont Report</a> - respect for persons, beneficence, justice.</li>
-    <li><a href="https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/">WMA Declaration of Helsinki</a> - informed consent.</li>
-    <li><a href="https://poverty-action.org/researchers/rigor-and-ethics">Innovations for Poverty Action</a> and <a href="https://www.povertyactionlab.org/research-resources/data-and-code-availability">J-PAL</a> - data integrity, IRB oversight.</li>
-    <li><a href="https://gdpr.eu/">EU GDPR</a> - personal-data handling on every European engagement.</li>
-    <li><a href="https://ethics.esrc.ukri.org/">ESRC Framework for Research Ethics</a> - qualitative fieldwork.</li>
-  </ul>
-</div>
+We hold every study to the Belmont Report, the WMA Declaration of Helsinki, Innovations for Poverty Action and J-PAL, EU GDPR, and the ESRC Framework for Research Ethics. See [Research Ethics](/ethics) for the full reference.
 
 Commissioned work belongs to the client and stays private unless they choose to publish. The [case studies](/case-studies) on this site are the exceptions.
 

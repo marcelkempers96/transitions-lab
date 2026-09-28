@@ -396,6 +396,7 @@ HERO_COLOR: dict[str, str] = {
     "privacy": "sky",
     "terms": "sky",
     "cookies": "sky",
+    "ethics": "forest",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -626,6 +627,10 @@ META: dict[str, dict[str, str]] = {
     "cookies": {
         "title": "Cookie policy | Transitions Lab",
         "description": "Everything the Lab's website stores in your browser, what it's for, and how to change your mind. No cookies by default; optional privacy-respecting analytics.",
+    },
+    "ethics": {
+        "title": "Research Ethics | Transitions Lab",
+        "description": "The five international frameworks the Lab holds every engagement to - Belmont, Helsinki, IPA and J-PAL, EU GDPR and the ESRC framework - and what consent, data handling and independence look like in practice.",
     },
     "expertise-e-mobility": {
         "title": "E-Mobility & Transport Research | Transitions Lab",
@@ -1504,7 +1509,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     </div>
     <div class="legal">
       <span>© Transitions Lab B.V. 2026 · Delft, The Netherlands · KVK 42170233</span>
-      <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
+      <span><a href="/ethics">Research ethics</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
     </div>
   </div>
 </footer>
