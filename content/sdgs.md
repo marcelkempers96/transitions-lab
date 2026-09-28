@@ -108,7 +108,7 @@ For the six programmes themselves, see [Programmes](/expertise).
   <li class="sdg-15"><a href="/sdgs#g15"><img class="sdg-icon" src="/assets/img/sdg/sdg-15.png" alt="SDG 15"><span class="sdg-name">Life on Land</span></a></li>
 </ul>
 
-<p id="g15">Contributed to by <a href="/expertise-agriculture">Agriculture & Ecosystems</a>. Soil restoration, forest and wetland monitoring, and carbon and biodiversity verification.</p>
+<p id="g15">Contributed to by <a href="/expertise-agriculture">Agriculture & Ecosystems</a>. Soil restoration, forest and wetland monitoring, and carbon and biodiversity verification. See the <a href="/case-pyropower">Pyropower case study</a> on smallholder biochar in Lombok - crop waste turned into soil amendment and carbon-market income.</p>
 
 </div>
 
