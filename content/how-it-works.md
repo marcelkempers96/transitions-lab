@@ -50,6 +50,7 @@
  <a href="/case-roam">Roam</a>
  <a href="/case-mimaji">MiMaji</a>
  <a href="/case-pyropower">Pyropower</a>
+ <a href="/case-reef-support">Reef Support</a>
  </div>
 </div>
 
@@ -95,7 +96,11 @@ Based in Delft, The Netherlands. Fieldwork through researchers and partners who 
 
 ## The five stages in practice
 
-A manufacturer weighing whether to expand electric two-wheelers into a new region.
+Four worked examples from the Lab's field engagements, each stepping through the same five stages.
+
+### E-mobility, Nairobi &middot; [Roam](/case-roam)
+
+A manufacturer weighing whether to expand electric two-wheelers.
 
 - **01 Scope.** The real question is "does the daily economics work well enough for adoption to hold once the subsidy ends," not "are riders satisfied."
 - **02 Design.** A short survey on running costs and switching intent, paired with in-depth [interviews](/interview-guide).
@@ -103,7 +108,37 @@ A manufacturer weighing whether to expand electric two-wheelers into a new regio
 - **04 Analyse.** Running costs read against the [Roam engagement](/case-roam). Qualitative interviews explain the numbers.
 - **05 Deliver.** In weeks: a segmented read on where adoption is real, where it is fragile, and what would have to change. Plus the instrument to re-run next quarter.
 
-For the same method in very different contexts: [MiMaji](/case-mimaji) in Nairobi and [St. Eustatius](/case-statia) in the Dutch Caribbean.
+### Water transparency, Nairobi &middot; [MiMaji](/case-mimaji)
+
+A civic-tech venture asking whether open pricing data actually reaches the households paying most.
+
+- **01 Scope.** Not "is the map accurate," but "does a household on the wrong side of the price gap ever see it, and does seeing it change what they do."
+- **02 Design.** In-depth interviews with kiosk operators and residents, paired with price observations at the tap.
+- **03 Collect.** Enumerators from the settlement, working in-language, reach households the platform's own analytics never sees.
+- **04 Analyse.** Awareness, trust and behaviour change coded across the sample; the price data read against what residents said they paid.
+- **05 Deliver.** A reading of who the tool reaches, who it does not, and where the transparency claim holds. See the full [MiMaji case study](/case-mimaji).
+
+### Smallholder biochar, Lombok &middot; [Pyropower](/case-pyropower)
+
+An open-source clean-energy venture asking which of three values, heat, soil or carbon income, actually pulls adoption on a small farm.
+
+- **01 Scope.** Which household economics carry adoption once the demo team has left, and who among the community can build and run the kiln themselves.
+- **02 Design.** In-depth farmer interviews, kiln-operator observation, and a household-level tracking sheet across seasons.
+- **03 Collect.** Bahasa-speaking researchers with agronomy training reach farmers on their own smallholdings, at their own pace.
+- **04 Analyse.** Adoption traced through household economics, labour hours and yield rather than tonnes of biochar produced.
+- **05 Deliver.** A reading of what earns *Tumbuh* its local name, and what would have to be true for the carbon-market promise to reach the farmer. See the full [Pyropower case study](/case-pyropower).
+
+### Community reef monitoring, Lombok &middot; [Reef Support](/case-reef-support)
+
+A marine-tech partner asking whether community rangers, sensors and satellite data can be braided into a single trustworthy picture of reef health.
+
+- **01 Scope.** Whether the rangers own the data, whether the community trusts the numbers, and whether the reef ends up better protected because of it.
+- **02 Design.** Ranger interviews, community-meeting observation, and a shared indicator framework that survives cross-checking between three data sources.
+- **03 Collect.** Indonesian researchers work alongside the community rangers and the Niru Foundation, in-language and on-water.
+- **04 Analyse.** Data ownership, trust and management response read across ranger, satellite and sensor sources.
+- **05 Deliver.** A reading of when the three-source picture holds up and when it does not, and what changes on the reef when the rangers own the record. See the full [Reef Support case study](/case-reef-support).
+
+For a public-sector reading using the same method, see [St. Eustatius](/case-statia) in the Dutch Caribbean. The full case library is at [Case Studies](/case-studies).
 
 ---
 

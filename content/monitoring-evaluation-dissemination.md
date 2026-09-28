@@ -38,8 +38,6 @@ The three are one loop. Monitoring feeds evaluation; evaluation sharpens what is
 
 ## Built on established evaluation science
 
-MED is not improvised. It rests on decades of evaluation methodology, and the Lab works explicitly within these frameworks so that findings are defensible and comparable.
-
 **Theory of change and the results chain.** Every design begins by making the project's causal logic explicit: the chain from inputs and activities to outputs, outcomes, and impact. This is the backbone of results-based management and the logical framework tradition ([W.K. Kellogg Foundation](https://www.wkkf.org/), 2004; [UNDP](https://www.undp.org/), 2009). Naming the chain in advance is what lets you test it later, rather than asserting success after the fact.
 
 **The OECD-DAC evaluation criteria.** The Lab judges interventions against the [six internationally standard criteria](https://www.oecd.org/dac/evaluation/): relevance, coherence, effectiveness, efficiency, impact, and sustainability (OECD-DAC, adopted 1991; coherence added in the 2019 revision; see the [OECD](https://www.oecd.org/) guidance on applying evaluation criteria thoughtfully). These give donors and evaluation teams a shared language for asking not just "did it work?" but "was it the right thing to do, and will the benefits last?" They are applied thoughtfully and weighted to context, not mechanically, as the OECD's own guidance insists.
@@ -58,7 +56,7 @@ MED is not improvised. It rests on decades of evaluation methodology, and the La
 
 European projects carry specific, contractual obligations, and they are among the most common reasons a consortium comes to the Lab. [Horizon Europe](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) treats **communication, dissemination, and exploitation** as three distinct required activities under Article 17 of its Model Grant Agreement, and expects a **Plan for Dissemination and Exploitation including Communication activities (PDEC)**, typically due by month 6 of the project.
 
-The Commission does not simply expect a project to create channels. It expects it to reach relevant audiences, prepare results for uptake, and prove that what was promised in the Grant Agreement was delivered, with the website, deliverables, and evidence files all telling the same story at reporting time. The most common evaluator criticism is conflating the three activities into one vague block; they must be structured separately, each with its own audience, purpose, and channel.
+The Commission expects a project to reach relevant audiences, prepare results for uptake, and prove that what was promised in the Grant Agreement was delivered, with the website, deliverables, and evidence files all telling the same story at reporting time. The most common evaluator criticism is conflating the three activities into one vague block; they must be structured separately, each with its own audience, purpose, and channel.
 
 The Lab acts as the independent MED partner that keeps this rigorous and honest:
 
@@ -94,9 +92,9 @@ A fill-in baseline, midline, and endline framework a project can run from day on
 
 ## Independence is the point
 
-A project evaluating and disseminating its own impact has every incentive to find and broadcast success. That is not dishonesty; it is gravity. Independent MED exists to counter it, and independence is precisely what gives the evidence, and the dissemination built on it, its credibility with funders, reviewers, and the public.
+A project evaluating and disseminating its own impact has every incentive to find and broadcast success. That is not dishonesty; it is gravity. Independent MED exists to counter it.
 
-The Lab brings social-science fieldcraft and genuine technical literacy to the same table, reports the inconvenient finding as readily as the flattering one, and writes evidence to be used, not filed. That is what makes an MED partner worth having.
+The Lab brings social-science fieldcraft and genuine technical literacy to the same table, reports the inconvenient finding as readily as the flattering one, and writes evidence to be used, not filed.
 
 ---
 

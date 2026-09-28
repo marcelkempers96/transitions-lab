@@ -11,8 +11,6 @@
 
 Every serious study of impact eventually meets the same fork. Do you count, or do you ask? Do you measure how many and how much across a large group, or do you sit with a smaller number of people and understand how and why? The honest answer, most of the time, is both. But the two produce different kinds of evidence, and knowing which one answers which question is the difference between a study that informs a decision and one that merely decorates it.
 
-This page sets out the distinction plainly, and then makes the case that most organisations under-invest in: what qualitative evidence can tell you that numbers, on their own, never will.
-
 ---
 
 ## The two, side by side
@@ -36,7 +34,7 @@ Neither is softer or harder than the other. A biased survey produces confident, 
 
 ## What qualitative evidence can tell you that numbers cannot
 
-A number records the answer. Qualitative evidence reaches the layers beneath it, and those layers are where most of the actionable insight lives. Six things, in particular, only qualitative work can give you.
+A number records the answer. Qualitative evidence reaches the layers beneath it, and those layers are where most of the actionable insight lives.
 
 <div class="callout c-coral">
   <span class="kicker">01 · The reasoning behind a choice</span>

@@ -4,8 +4,6 @@
 
 *What a technology, service or programme actually changes, for whom, and through what pathway. Measured with the people it is meant to serve, and reported honestly.*
 
-Most writing about a new programme arrives ahead of the evidence. Measurement closes that gap. We put honest questions to the people the work is meant to serve, and report what they say - including when it is inconvenient.
-
 Measuring Change is two linked disciplines: **field research** (primary contact with the people a transition affects) and **impact measurement** (the frame that turns those conversations into a defensible reading of what changed).
 
 <div class="method-pointer">
