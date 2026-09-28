@@ -2324,14 +2324,15 @@ section.page-hero[data-hero-bg] .eyebrow{
    content page that carries the final section. Reads as a signed-off
    statement in a light-ink outline, not another CTA. */
 .prose .lab-posture-note{
-  margin:26px 0 8px;padding:20px 22px;
-  background:transparent;border:1px solid rgba(10,10,10,.18);
+  margin:28px 0 8px;padding:0;
+  background:transparent;border:0;
   font-size:14.5px;line-height:1.55;color:var(--ink);
   font-family:'Hanken Grotesk',sans-serif;font-weight:500;
-  opacity:.86;
+  opacity:.78;
+  max-width:60ch;
 }
 :root[data-theme="dark"] .prose .lab-posture-note{
-  border-color:rgba(232,228,218,.24);color:rgba(232,228,218,.86);
+  color:rgba(232,228,218,.82);
 }
 
 /* Article & case-study section colour-band progression.
