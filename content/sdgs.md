@@ -4,7 +4,7 @@
 
 *The Lab's programmes claim eleven of the seventeen Sustainable Development Goals. Only where a programme sits behind them, and only with the modest phrase the framework allows: contributes to.*
 
-The Sustainable Development Goals are a common language for orienting research to public purpose. They are also easy to abuse: a page claiming all seventeen goals claims none of them. This page is the reverse index: which programmes contribute to which goals, and where the Lab does not have work behind a claim, it says so plainly.
+The Sustainable Development Goals are a common language for orienting research to public purpose. They are also easy to abuse: a page claiming all seventeen goals claims none of them. Where the Lab does not have work behind a claim, it says so plainly.
 
 For the six programmes themselves, see [Programmes](/expertise).
 
