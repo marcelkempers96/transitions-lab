@@ -1744,12 +1744,14 @@ def build_home() -> str:
     </div>
     <div class="what-grid">
       <a class="what-card c-butter" href="/entering-a-new-context">
+        <img class="what-flag" src="/assets/icons/icon-entering-context.png" alt="" aria-hidden="true">
         <span class="what-tag">Client question 01</span>
         <h3>Entering a new context</h3>
         <p>Independent field evidence before you enter a market. Who adopts, at what price, and what fails early.</p>
         <span class="what-more">Read more →</span>
       </a>
       <a class="what-card c-coral" href="/measuring-change">
+        <img class="what-flag" src="/assets/icons/icon-measuring-change.png" alt="" aria-hidden="true">
         <span class="what-tag">Client question 02</span>
         <h3>Measuring change</h3>
         <p>What actually changes, for whom, and how. Reach, depth and experience - from the human side.</p>
