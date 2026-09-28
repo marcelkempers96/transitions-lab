@@ -54,8 +54,6 @@ See the full programme index at [Programmes](/expertise), and the reading behind
 
 ## Representative work
 
-Public-facing cases the Lab's partners have agreed to publish. The commissioned portfolio behind them is substantially larger and delivered privately.
-
 - **Nairobi · Electric transport.** Twenty-three interviews with riders, mechanics, a lender's agent, a manufacturer and a policy advocate on Kenya's boda-boda transition. See [The Saving Is Agreed](/insight-the-saving-is-agreed) and the [Roam case study](/case-roam).
 - **Lombok · Decentralised clean energy.** Smallholder biochar kilns and the human-scale conditions under which a technology like this earns its keep. See the [Pyropower case study](/case-pyropower).
 - **Nairobi · Water transparency.** Community-monitored open-data mapping across a low-income settlement water market. See the [MiMaji case study](/case-mimaji).
