@@ -11,8 +11,6 @@
 
 Most people in innovation know Technology Readiness Levels: the nine-point NASA scale for how mature a technology is. Far fewer know its essential counterpart, Societal Readiness Levels, which measure how ready society is to adopt, trust, and benefit from that technology. Reading the two together is one of the most useful things an innovator, funder, or researcher can do, and getting it wrong is one of the most common and expensive mistakes in the field.
 
-This page explains both, with proper references, and offers each as a downloadable guide.
-
 ---
 
 **§ 1 / Technology Readiness Levels (TRL)**

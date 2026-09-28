@@ -42,8 +42,6 @@ Designed together from day one, they make a project legible to itself and credib
 
 ## Built on established science
 
-Not improvised. The Lab works inside the frameworks funders already trust.
-
 - **Theory of change.** Every design begins by making the causal logic explicit: inputs → activities → outputs → outcomes → impact. Naming the chain in advance is what lets you test it later ([W.K. Kellogg Foundation](https://www.wkkf.org/), [UNDP](https://www.undp.org/)).
 - **OECD-DAC criteria.** Six standard criteria: relevance, coherence, effectiveness, efficiency, impact, sustainability. [The shared donor language](https://www.oecd.org/dac/evaluation/).
 - **Reach, depth, experience.** Three dimensions from [Measuring Change](/measuring-change), so evaluation stays attentive to distribution and equity.
