@@ -3244,7 +3244,7 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
 
 /* ── Footer ───────────────────────────────────────────────── */
 footer.site{background:var(--ink);color:var(--paper);padding:78px 0 34px;border-top:2px solid var(--ink);}
-footer.site .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;}
+footer.site .wrap{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1fr 1fr;gap:36px;}
 footer.site .brand{color:var(--paper);}
 footer.site .brand-logo{filter:brightness(0) invert(1);}
 footer.site h4{color:var(--butter);font-family:'Hanken Grotesk';font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:16px;}
