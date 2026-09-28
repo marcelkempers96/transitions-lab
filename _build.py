@@ -1806,6 +1806,17 @@ def build_home() -> str:
           <span class="read">Read the case &rarr;</span>
         </div>
       </a>
+      <a class="insight-card has-photo" href="/case-reef-support">
+        <div class="card-photo">
+          <img src="/assets/img/case-reef-support-mou.jpg" alt="Five people standing under a Lombok beach gazebo, holding signed agreements between them; palms and the water visible in the background.">
+          <span class="kicker kicker--marine">Indonesia &middot; Marine conservation</span>
+        </div>
+        <div class="body">
+          <h3>Rangers for the reef</h3>
+          <p>Community rangers, field sensors and satellite data braided into a single trustworthy picture of reef health, with Reef Support.</p>
+          <span class="read">Read the case &rarr;</span>
+        </div>
+      </a>
     </div>
     <p style="text-align:center;margin-top:48px;"><a href="/case-studies" class="btn btn-ghost">See all case studies →</a></p>
   </div>
