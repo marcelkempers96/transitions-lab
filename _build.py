@@ -185,14 +185,11 @@ TOPIC_ICONS: dict[str, str] = {
     "expertise-finance":       "/assets/icons/icon-finance.png",
 }
 
-# Pages that get a compact "Start a study" contact block auto-appended at
-# the bottom of the .prose body. Add a slug here to give it the block.
-CONTACT_CTA_PAGES: set[str] = {
-    "how-it-works",
-    "who-we-serve",
-    "what-we-do",
-    "for-funders",
-}
+# Legacy compact 'Start a study' inline form. Retired: every page
+# now closes with the standard ARTICLE_CTA_HTML panel instead, so no
+# slug is opted into this any more. The HTML constant is kept below
+# in case a bespoke page ever needs to embed it directly.
+CONTACT_CTA_PAGES: set[str] = set()
 
 # The lighter article-page CTA. No inline form - just three route cards
 # and a Start-a-conversation button pointing at /contact. Sits at the foot
@@ -219,10 +216,33 @@ ARTICLE_CTA_HTML = """<section class="light article-cta-band">
   </div>
 </section>"""
 
-# Pages that end in italic-prose 'see also' paragraphs. These get their
-# trailing italic footer stripped and replaced with the ARTICLE_CTA_HTML
-# panel above. Case studies and insight articles already get this
-# treatment via slug prefix.
+# Pages that do NOT get the standard 'Connect with the Lab' final
+# panel. Everything not listed here (and every case-* / insight-*)
+# gets it, including the italic-prose 'see also' strip above the
+# panel. The home page has its own bespoke footer sections, the
+# programme /expertise-* pages carry their own closing treatment,
+# the legal pages carry their own publisher block, and /contact is
+# itself the form the panel points at.
+FINAL_CTA_EXCLUDE: set[str] = {
+    "index",
+    "404",
+    "contact",
+    "privacy",
+    "terms",
+    "cookies",
+    "expertise",
+    "expertise-agriculture",
+    "expertise-ai-digital",
+    "expertise-e-mobility",
+    "expertise-energy",
+    "expertise-finance",
+    "expertise-manufacturing",
+}
+
+def _wants_final_cta(slug: str) -> bool:
+    return slug not in FINAL_CTA_EXCLUDE
+
+# Retained legacy set (unused now, kept for compatibility).
 FINAL_CTA_PAGES: set[str] = {
     "about",
     "articles",
@@ -1621,17 +1641,14 @@ def build_content_page(slug: str, md: str) -> str:
 </section>"""
 
     # Strip a trailing italic-prose 'see also' paragraph on any page
-    # that will pick up the standard final CTA panel below. Keeps the
-    # content page ending in the button-driven panel rather than a
-    # dense italic footnote.
-    is_article_slug = slug.startswith("case-") or slug.startswith("insight-")
-    if is_article_slug or slug in FINAL_CTA_PAGES or slug in CONTACT_CTA_PAGES:
+    # that will pick up the standard final CTA panel below. Keeps
+    # every content page ending in the button-driven panel rather
+    # than a dense italic footnote.
+    if _wants_final_cta(slug):
         prose_section = _TRAILING_ITALIC_RE.sub("", prose_section)
 
     body = page_hero + "\n\n" + prose_section
-    if slug in CONTACT_CTA_PAGES:
-        body += "\n\n" + CONTACT_CTA_HTML
-    elif is_article_slug or slug in FINAL_CTA_PAGES:
+    if _wants_final_cta(slug):
         body += "\n\n" + ARTICLE_CTA_HTML
     return page_shell(slug=slug, title=title, description=description, body=body)
 
