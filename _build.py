@@ -1483,12 +1483,6 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="/interview-guide">Interview guide</a>
       <a href="/qualitative-vs-quantitative">Qualitative vs quantitative</a>
       <a href="/impact-tracking-template">Impact-tracking template</a>
-      <a href="/monitoring-evaluation-dissemination">Monitoring &amp; evaluation</a>
-      <a href="/european-impact-tracking">European impact tracking</a>
-      <a href="/market-expansion">Market &amp; expansion research</a>
-      <a href="/research-development">R&amp;D support</a>
-      <a href="/brw">BRW framework</a>
-      <a href="/readiness-levels">TRL &amp; SRL</a>
     </div>
     <div>
       <h4>Research</h4>
@@ -1497,6 +1491,8 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="/articles">Articles</a>
       <a href="/resources">Resources</a>
       <a href="/sdgs">Research by SDG</a>
+      <a href="/brw">BRW framework</a>
+      <a href="/readiness-levels">TRL &amp; SRL</a>
     </div>
     <div>
       <h4>The Lab</h4>
