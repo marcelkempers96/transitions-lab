@@ -7,8 +7,8 @@
 <p class="article-meta"><span class="article-date">28 August 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-behind-the-border-diagram.jpg" alt="Line-art diagram in two mirror-image panels separated by a small border kiosk with a dashed line marking the border. Each panel — one on a yellow blob, one on a coral blob — contains a factory with a truck on the road plus three sub-icons: a warehouse full of inventory, a clipboard of paperwork, and an electricity pylon with lightning bolts." class="diagram">
-<figcaption>The border kiosk in the middle is what a free-trade agreement acts on. The three sub-icons on either side — warehouses of buffer inventory, paperwork queues and unreliable power — are the behind-the-border costs that decide whether anybody bothers to trade across it.</figcaption>
+<img src="/assets/img/insight-behind-the-border-diagram.jpg" alt="Line-art diagram in two mirror-image panels separated by a small border kiosk with a dashed line marking the border. Each panel - one on a yellow blob, one on a coral blob - contains a factory with a truck on the road plus three sub-icons: a warehouse full of inventory, a clipboard of paperwork, and an electricity pylon with lightning bolts." class="diagram">
+<figcaption>The border kiosk in the middle is what a free-trade agreement acts on. The three sub-icons on either side - warehouses of buffer inventory, paperwork queues and unreliable power - are the behind-the-border costs that decide whether anybody bothers to trade across it.</figcaption>
 </figure>
 
 
@@ -51,13 +51,13 @@ That framing is the important part. Household electrification and industrial-gra
 A firm can price expensive electricity. It cannot price unpredictable electricity, because unpredictability forces it to size and finance backup generation for the worst case and then run two systems. That doubling is the real cost, and it is invisible in a tariff comparison.
 
 <div class="callout c-coral">
-  <span class="kicker">Same average. The firm plans against the tail.</span>
-  <p>Two distributions of delivery time or hours of supply interruption can share exactly the same mean and impose very different costs. The firm sizes its buffer inventory and its backup generation against the tail, not the mean.</p>
-  <ul>
-    <li><strong>Narrow distribution:</strong> the ninetieth percentile sits close to the average. Small buffer, small backup, thin working capital tied up.</li>
-    <li><strong>Wide distribution:</strong> the ninetieth percentile sits far to the right of the average. Large buffer, standby generator sized for the worst case, and a doubled system running in parallel.</li>
-  </ul>
-  <p>Only the average is usually published. The tail is what actually decides whether a firm depends on somebody else's supply.</p>
+ <span class="kicker">Same average. The firm plans against the tail.</span>
+ <p>Two distributions of delivery time or hours of supply interruption can share exactly the same mean and impose very different costs. The firm sizes its buffer inventory and its backup generation against the tail, not the mean.</p>
+ <ul>
+ <li><strong>Narrow distribution:</strong> the ninetieth percentile sits close to the average. Small buffer, small backup, thin working capital tied up.</li>
+ <li><strong>Wide distribution:</strong> the ninetieth percentile sits far to the right of the average. Large buffer, standby generator sized for the worst case, and a doubled system running in parallel.</li>
+ </ul>
+ <p>Only the average is usually published. The tail is what actually decides whether a firm depends on somebody else's supply.</p>
 </div>
 
 ---
@@ -80,7 +80,7 @@ Set alongside this, Indonesia has [launched fourteen solar projects totalling ar
 
 That is an attempt to do inside one jurisdiction what the AfCFTA proposes across many. No customs posts, one currency, one standards regime, one regulator.
 
-Which makes it unusually informative. If localisation succeeds there, the border was a real constraint elsewhere. If it does not, and the obstacle turns out to be the same set of behind-the-border problems in domestic form — weak supplier reliability, unpredictable permitting, slow payments and unstable grid quality — then the border was never the main thing. Anyone building a case for regional integration should be watching Indonesia closely for that reason, and the [capability question](/insight-capability-slow-part) will decide it.
+Which makes it unusually informative. If localisation succeeds there, the border was a real constraint elsewhere. If it does not, and the obstacle turns out to be the same set of behind-the-border problems in domestic form - weak supplier reliability, unpredictable permitting, slow payments and unstable grid quality - then the border was never the main thing. Anyone building a case for regional integration should be watching Indonesia closely for that reason, and the [capability question](/insight-capability-slow-part) will decide it.
 
 ---
 
@@ -114,14 +114,14 @@ If you are financing industrial infrastructure and want to know what firms actua
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Energy Access & Off-Grid Systems](/expertise-energy). See also [The Customers Who Can Leave](/insight-customers-who-can-leave) on the same infrastructure being funded from the public purse while the most creditworthy users step off it, and [The Village Twenty Kilometres Off the Road](/insight-twenty-kilometres-off) on why variance rather than distance is what stops firms trading across a corridor. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

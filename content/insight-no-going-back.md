@@ -52,7 +52,7 @@ A transformed landscape usually has several plausible trajectories, and the diff
 Those four produce different landscapes. Nothing in the science selects between them, and the selection is currently being made inside research consortia and agency guidance rather than anywhere with a mandate.
 
 <figure>
-<img src="/assets/img/insight-no-going-back-four-futures.jpg" alt="Diagram: a single starting point at the left labelled 'the transformed landscape today', from which four coloured paths diverge to the right. Each ends in a small scene: a dense conifer plantation labelled 'dense plantation — maximum carbon', a mixed wetland with a wading bird labelled 'maximum biodiversity, new species', a small town beside a wide riverbank labelled 'maximum flood attenuation', and a grazed pasture with cattle labelled 'continuity of livelihood'. A fifth dashed grey path runs down and off to a small cross labelled 'the historical state'. Beneath the endpoints: 'nothing in the ecology chooses between these'." class="diagram">
+<img src="/assets/img/insight-no-going-back-four-futures.jpg" alt="Diagram: a single starting point at the left labelled 'the transformed landscape today', from which four coloured paths diverge to the right. Each ends in a small scene: a dense conifer plantation labelled 'dense plantation - maximum carbon', a mixed wetland with a wading bird labelled 'maximum biodiversity, new species', a small town beside a wide riverbank labelled 'maximum flood attenuation', and a grazed pasture with cattle labelled 'continuity of livelihood'. A fifth dashed grey path runs down and off to a small cross labelled 'the historical state'. Beneath the endpoints: 'nothing in the ecology chooses between these'." class="diagram">
 <figcaption>Four plausible destinations, and nothing in the ecology decides between them.</figcaption>
 </figure>
 
@@ -108,14 +108,14 @@ If you are designing a restoration or novel ecosystem programme and want the cho
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Climate & Ecosystems](/expertise-climate). See also [Whose Field Becomes a Wetland](/insight-whose-field-becomes-a-wetland) on who organises when restoration costs are concentrated, [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on which specific right predicts investment in land, and [The Benefits Nobody Was Looking For](/insight-benefits-nobody-looked-for) on outcomes no framework asked for. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

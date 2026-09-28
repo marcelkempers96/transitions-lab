@@ -52,14 +52,14 @@ But pre-specification answers one question well and forecloses another entirely.
 The fix is not to loosen the logframe. It is to stop asking a confirmatory instrument to do exploratory work, and to fund the second function separately.
 
 <div class="callout c-butter">
-  <span class="kicker">What the evaluation system can see</span>
-  <ul>
-    <li><strong>Anticipated &amp; measured</strong> — the logframe. Indicators agreed in advance and collected as designed. Well served by existing practice.</li>
-    <li><strong>Unanticipated &amp; measured</strong> — safeguards. Unanticipated harm, partly covered by grievance mechanisms and impact assessment. Uneven, but it exists.</li>
-    <li><strong>Anticipated &amp; not measured</strong> — delivery failure. The indicator was specified and the data was never collected. A known and fixable problem.</li>
-    <li><strong>Unanticipated &amp; not measured</strong> — no instrument. Real effects, produced for decades, never looked for. Where the heat-resilience finding was sitting.</li>
-  </ul>
-  <p>Three of these quadrants have named professions attached to them. The fourth has almost nobody.</p>
+ <span class="kicker">What the evaluation system can see</span>
+ <ul>
+ <li><strong>Anticipated &amp; measured</strong> - the logframe. Indicators agreed in advance and collected as designed. Well served by existing practice.</li>
+ <li><strong>Unanticipated &amp; measured</strong> - safeguards. Unanticipated harm, partly covered by grievance mechanisms and impact assessment. Uneven, but it exists.</li>
+ <li><strong>Anticipated &amp; not measured</strong> - delivery failure. The indicator was specified and the data was never collected. A known and fixable problem.</li>
+ <li><strong>Unanticipated &amp; not measured</strong> - no instrument. Real effects, produced for decades, never looked for. Where the heat-resilience finding was sitting.</li>
+ </ul>
+ <p>Three of these quadrants have named professions attached to them. The fourth has almost nobody.</p>
 </div>
 
 ---
@@ -126,14 +126,14 @@ If you are running or funding an upgrading programme and suspect it is doing mor
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) and [Impact Measurement](/impact-measurement). See also [Nobody Buys a Chiller](/insight-nobody-buys-a-chiller) on the same measurement-instrument failure inside an efficiency contract, [The Right That Matters Is to the Tree](/insight-right-to-the-tree) on the version that appears in restoration-programme accounting, [The Cheaper It Gets to Verify, the Less Anyone Visits](/insight-cheaper-to-verify) on what falls out of view when the field visit is no longer required, [A Warm House Is Not a Cheaper One](/insight-warm-house-not-cheaper) on the same discovery-versus-verification split inside a Just Transition programme, [Who Does It Fail For?](/insight-who-does-it-fail-for) on evaluation that only returns answers to the questions it was built around, [The Trough Before the Dividend](/insight-trough-before-the-dividend) on the reversion rate no case-study synthesis measures, and [Adoption Is Not the End of the Research](/insight-adoption-is-the-research) on the abandonment finding that only a follow-up outside the delivery consortium can recover. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

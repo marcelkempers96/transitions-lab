@@ -8,7 +8,7 @@
 
 <figure>
 <img src="/assets/img/insight-nobody-buys-a-chiller-diagram.jpg" alt="Line-art diagram: a small industrial building on the left, a large chiller unit in the middle with a compressor and pipework, and a circular monitoring cluster on the right containing a laptop with a downward-trending line chart, a clipboard, a gauge and a coin." class="diagram">
-<figcaption>The building on the left is the plant. The chiller in the middle is the equipment. The monitoring circle on the right is the actual product — a claim about the energy that was not consumed.</figcaption>
+<figcaption>The building on the left is the plant. The chiller in the middle is the equipment. The monitoring circle on the right is the actual product - a claim about the energy that was not consumed.</figcaption>
 </figure>
 
 
@@ -64,13 +64,13 @@ Four failure modes follow, and all four are predictable.
 **Attribution across bundled measures.** Install new motors, a chiller and a control system together and the saving is real but unallocatable between them, which matters the moment one component underperforms.
 
 <div class="callout c-coral">
-  <span class="kicker">What the contract actually settles on</span>
-  <p>The invoice depends on the gap between two lines, and only one of them is data.</p>
-  <ul>
-    <li><strong>Actual measured consumption</strong> after the retrofit. Metered, verifiable, argued about only at the edges.</li>
-    <li><strong>Adjusted baseline</strong>: what consumption <em>would have been</em> without the retrofit, calculated from the pre-retrofit period with adjustments for production, weather and shift patterns.</li>
-  </ul>
-  <p>Only the first line is measured. The second is an estimate. Production changes and rebound both move it, and neither is directly observable. The payment lives in the gap between them.</p>
+ <span class="kicker">What the contract actually settles on</span>
+ <p>The invoice depends on the gap between two lines, and only one of them is data.</p>
+ <ul>
+ <li><strong>Actual measured consumption</strong> after the retrofit. Metered, verifiable, argued about only at the edges.</li>
+ <li><strong>Adjusted baseline</strong>: what consumption <em>would have been</em> without the retrofit, calculated from the pre-retrofit period with adjustments for production, weather and shift patterns.</li>
+ </ul>
+ <p>Only the first line is measured. The second is an estimate. Production changes and rebound both move it, and neither is directly observable. The payment lives in the gap between them.</p>
 </div>
 
 What makes the model work in practice is unglamorous: measurement and verification to a recognised protocol, sub-metering at the equipment rather than at the site boundary, adjustment formulas agreed and worked through with real production scenarios before installation, and a dispute mechanism that does not require anybody to go to court over a chiller.
@@ -122,14 +122,14 @@ If you are signing or underwriting one of these contracts and want the measureme
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy) and [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [Who Does It Fail For?](/insight-who-does-it-fail-for) on the same structural conflict of a supplier reporting its own accuracy figure. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

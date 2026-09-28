@@ -7,7 +7,7 @@
 <p class="article-meta"><span class="article-date">29 August 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="Line-art diagram: transmission pylons and a substation on the left, dashed arrows forking right to a row of small houses (households) and to a mine headframe, and a further arrow from the mine to a wind turbine, solar array and battery — the industrial customer leaving the grid to build its own supply." class="diagram">
+<img src="/assets/img/insight-customers-who-can-leave-diagram.jpg" alt="Line-art diagram: transmission pylons and a substation on the left, dashed arrows forking right to a row of small houses (households) and to a mine headframe, and a further arrow from the mine to a wind turbine, solar array and battery - the industrial customer leaving the grid to build its own supply." class="diagram">
 <figcaption>The grid keeps serving the households. The customer that was paying to keep it there is walking to the right of the frame.</figcaption>
 </figure>
 
@@ -48,15 +48,15 @@ Tariffs have moved in the opposite direction throughout, rising more than 1,100 
 That is not a forecast of a death spiral. It is a description of one in progress.
 
 <div class="callout c-cobalt">
-  <span class="kicker">The loop, and who can step out of it</span>
-  <p>The mechanism is closed and it runs in one direction.</p>
-  <ul>
-    <li><strong>Sales volumes fall.</strong> The customers who can afford to build their own supply do so, taking their share of the load with them.</li>
-    <li><strong>Fixed costs spread over fewer units.</strong> Generation, transmission, distribution, debt service and staff cost the same whether sold across 200 or 180 terawatt hours.</li>
-    <li><strong>Tariffs rise above inflation.</strong> The regulator has few instruments other than the tariff to hold the revenue requirement.</li>
-    <li><strong>Departures accelerate.</strong> Every rise improves the payback on self-supply for whichever customer sits next on the margin.</li>
-  </ul>
-  <p>The loop is not the problem. The asymmetry in who can step out of it is: customers with capital exit, and customers without capital stay and pay the difference.</p>
+ <span class="kicker">The loop, and who can step out of it</span>
+ <p>The mechanism is closed and it runs in one direction.</p>
+ <ul>
+ <li><strong>Sales volumes fall.</strong> The customers who can afford to build their own supply do so, taking their share of the load with them.</li>
+ <li><strong>Fixed costs spread over fewer units.</strong> Generation, transmission, distribution, debt service and staff cost the same whether sold across 200 or 180 terawatt hours.</li>
+ <li><strong>Tariffs rise above inflation.</strong> The regulator has few instruments other than the tariff to hold the revenue requirement.</li>
+ <li><strong>Departures accelerate.</strong> Every rise improves the payback on self-supply for whichever customer sits next on the margin.</li>
+ </ul>
+ <p>The loop is not the problem. The asymmetry in who can step out of it is: customers with capital exit, and customers without capital stay and pay the difference.</p>
 </div>
 
 ---
@@ -154,14 +154,14 @@ If you are financing network infrastructure in a system where the largest custom
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy) and [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [Stacking, Not Switching](/insight-stacking-not-switching) on the same defection dynamic across the continent that South Africa can see and most other utilities cannot, [Paying for Power You Curtail](/insight-paying-for-what-we-curtail) on how price signals redistribute cost in a grid, [Behind the Border](/insight-behind-the-border) on the infrastructure the public purse is being asked to fund, [Absorbing the Gap](/insight-absorbing-the-gap) on households as the shock absorber of last resort, [Who Pays Decides What Gets Built](/insight-who-pays-decides) on the same connection question when a hyperscaler builds its own supply, and [The Load That Grows When It Is Hot](/insight-load-that-grows-when-hot) on the defection dynamic in reverse when a large temperature-sensitive customer arrives on terms that shift cost onto the customers who cannot leave. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

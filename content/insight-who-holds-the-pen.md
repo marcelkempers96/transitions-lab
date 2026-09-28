@@ -8,7 +8,7 @@
 
 <figure>
 <img src="/assets/img/insight-who-holds-the-pen-diagram.jpg" alt="Line-art diagram: a butter-yellow map of Kenya containing an open battery-swap station and three interchangeable batteries, with a dotted arrow leading to a pale-blue governance circle containing a signed standards document, a worker, an office worker and an institutional building." class="diagram">
-<figcaption>Open architecture on the left is a technical property. The governance question — who signs the standard, on what terms, with what recourse — sits on the right, and is a separate settlement.</figcaption>
+<figcaption>Open architecture on the left is a technical property. The governance question - who signs the standard, on what terms, with what recourse - sits on the right, and is a separate settlement.</figcaption>
 </figure>
 
 [SUN Mobility](https://www.sunmobility.co.in/) and [Vivo Energy](https://www.vivoenergy.com/) have launched an open-architecture battery-swapping network in Kenya. Company announcements at launch describe roughly 35 stations operating across Nairobi and Mombasa, vehicles from more than ten manufacturers able to use the system, and around twenty of the sites at existing Shell forecourts. Vivo Energy itself operates Shell- and Engen-branded sites across [more than 20 African countries](https://www.vivoenergy.com/), which is the distribution asset behind the partnership.
@@ -49,15 +49,15 @@ Set the current arrangement against that list honestly. A shared battery-swappin
 None of that is a failing on anybody's part. It is simply what a young commercial partnership looks like before anyone has decided that it is infrastructure. The point is that it will become infrastructure, quite quickly, and the moment to install governance is before the dependency is large enough to make governance politically contested.
 
 <div class="callout c-cobalt">
-  <span class="kicker">Layers of a swap network, by contestability</span>
-  <ul>
-    <li><strong>Battery cells</strong> — many suppliers, easily replaced.</li>
-    <li><strong>Pack assembly</strong> — many suppliers, easily replaced.</li>
-    <li><strong>Vehicles</strong> — many manufacturers, but each carries sunk tooling.</li>
-    <li><strong>Interface specification</strong> — few holders, hard to replace.</li>
-    <li><strong>Serviced urban site</strong> — few holders, hard to replace.</li>
-  </ul>
-  <p>The two layers where surplus accumulates are the interface specification and the physical site. Neither is a battery. Manufacturers building to a shared interface are making a sunk commitment at the commodity end of the stack, in favour of parties at the other end.</p>
+ <span class="kicker">Layers of a swap network, by contestability</span>
+ <ul>
+ <li><strong>Battery cells</strong> - many suppliers, easily replaced.</li>
+ <li><strong>Pack assembly</strong> - many suppliers, easily replaced.</li>
+ <li><strong>Vehicles</strong> - many manufacturers, but each carries sunk tooling.</li>
+ <li><strong>Interface specification</strong> - few holders, hard to replace.</li>
+ <li><strong>Serviced urban site</strong> - few holders, hard to replace.</li>
+ </ul>
+ <p>The two layers where surplus accumulates are the interface specification and the physical site. Neither is a battery. Manufacturers building to a shared interface are making a sunk commitment at the commodity end of the stack, in favour of parties at the other end.</p>
 </div>
 
 ---
@@ -128,14 +128,14 @@ If you are a manufacturer, a regulator, or a funder with a position in this netw
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [E-Mobility & Transport](/expertise-e-mobility). See also [Own the Battery, Rent the Shopfront](/insight-own-the-battery) on the make-or-buy decision inside a swap network, and [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on the same monopsony question arriving in mineral processing. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

@@ -7,10 +7,10 @@
 <a href="https://www.mimaji.org" target="_blank" rel="noopener"><img class="partner-logo" src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
 
 <div class="case-meta">
-  <div><span class="k">Partner</span><span class="v"><a href="https://www.mimaji.org" target="_blank" rel="noopener">MiMaji Foundation</a></span></div>
-  <div><span class="k">Location</span><span class="v">Nairobi, Kenya · settlement fieldwork across several sub-counties</span></div>
-  <div><span class="k">Sector</span><span class="v">Water &amp; sanitation · open environmental data · community accountability</span></div>
-  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-energy">Water &amp; Sanitation Transitions</a></span></div>
+ <div><span class="k">Partner</span><span class="v"><a href="https://www.mimaji.org" target="_blank" rel="noopener">MiMaji Foundation</a></span></div>
+ <div><span class="k">Location</span><span class="v">Nairobi, Kenya · settlement fieldwork across several sub-counties</span></div>
+ <div><span class="k">Sector</span><span class="v">Water &amp; sanitation · open environmental data · community accountability</span></div>
+ <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-energy">Water &amp; Sanitation Transitions</a></span></div>
 </div>
 
 ## The engagement in one sentence
@@ -18,8 +18,8 @@
 MiMaji publishes water-price and water-quality data as an open public map; the Lab is measuring whether that map reaches, is trusted by, and changes the behaviour of the households on the wrong side of Nairobi's water-market asymmetry.
 
 <figure>
-  <img src="/assets/img/case-mimaji-hero.jpg" alt="A woman and a boy at a Nairobi settlement standpipe fill yellow jerry cans; a public tap runs into the container in the foreground; other residents wait behind." class="diagram">
-  <figcaption>A settlement standpipe in Nairobi.</figcaption>
+ <img src="/assets/img/case-mimaji-hero.jpg" alt="A woman and a boy at a Nairobi settlement standpipe fill yellow jerry cans; a public tap runs into the container in the foreground; other residents wait behind." class="diagram">
+ <figcaption>A settlement standpipe in Nairobi.</figcaption>
 </figure>
 
 ## Why this engagement matters
@@ -29,13 +29,13 @@ Nairobi's water story is not primarily a story about pipes. It is a story about 
 MiMaji works on exactly this, through community water-quality testing, WASH education in schools and community groups, and MajiMap, its public open-data map of water quality, price and access across the city. The intervention is not a pipe. It is a change to the informational environment in which price is set and safety is assessed, and its success or failure is measured on the same terms.
 
 <figure>
-  <img src="/assets/img/case-mimaji-maji-moyo.jpg" alt="A woman in a floral skirt laughs beside a bright red vendor kiosk painted 'Maji Moyo 100% pure' with an M-PESA paybill number stencilled on green, a card reader in a metal frame, blue delivery hoses feeding two green taps and painted symbols for drinking, cooking, farming and washing; a yellow and a blue jerry can beside her." class="diagram">
-  <figcaption>An M-PESA-metered water vendor kiosk in a rural Kenya settlement, price stencilled on the wall.</figcaption>
+ <img src="/assets/img/case-mimaji-maji-moyo.jpg" alt="A woman in a floral skirt laughs beside a bright red vendor kiosk painted 'Maji Moyo 100% pure' with an M-PESA paybill number stencilled on green, a card reader in a metal frame, blue delivery hoses feeding two green taps and painted symbols for drinking, cooking, farming and washing; a yellow and a blue jerry can beside her." class="diagram">
+ <figcaption>An M-PESA-metered water vendor kiosk in a rural Kenya settlement, price stencilled on the wall.</figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/img/case-mimaji-household.jpg" alt="A Nairobi kitchen at midday: a mother in a patterned wax-print top, a father in a white polo shirt filling a glass at a running tap, two young boys at the sink — one drinking, one washing his hands; a dish rack, a saucepan and a bright window behind." class="diagram">
-  <figcaption>A Nairobi household kitchen, water drawn from the tap.</figcaption>
+ <img src="/assets/img/case-mimaji-household.jpg" alt="A Nairobi kitchen at midday: a mother in a patterned wax-print top, a father in a white polo shirt filling a glass at a running tap, two young boys at the sink - one drinking, one washing his hands; a dish rack, a saucepan and a bright window behind." class="diagram">
+ <figcaption>A Nairobi household kitchen, water drawn from the tap.</figcaption>
 </figure>
 
 That is a socio-technical question before it is a data question, and it is the question the Lab is engaged to answer.
@@ -45,18 +45,18 @@ That is a socio-technical question before it is a data question, and it is the q
 The Lab's reading is running in three overlapping streams. Together they produce evidence at reach, depth and experience level, which is the same three-part discipline we describe in [Impact Measurement](/impact-measurement).
 
 <div class="callout c-coral">
-  <span class="kicker">01 · Household reach and use</span>
-  <p>A rolling in-depth interview cohort across the settlement clusters MiMaji is active in, sampled to include households on both sides of the price asymmetry, the young women and older women who most often carry the water, and vendors themselves. We are asking a small set of testable questions: do you know MajiMap exists; if you do, when did you last consult it; if you consulted it, did anything you did next change. Reach without behaviour change is diagnostic. Behaviour change without reach is a different story that needs its own explanation.</p>
+ <span class="kicker">01 · Household reach and use</span>
+ <p>A rolling in-depth interview cohort across the settlement clusters MiMaji is active in, sampled to include households on both sides of the price asymmetry, the young women and older women who most often carry the water, and vendors themselves. We are asking a small set of testable questions: do you know MajiMap exists; if you do, when did you last consult it; if you consulted it, did anything you did next change. Reach without behaviour change is diagnostic. Behaviour change without reach is a different story that needs its own explanation.</p>
 </div>
 
 <div class="callout c-cobalt">
-  <span class="kicker">02 · Trust and the credibility of the source</span>
-  <p>Open data changes behaviour only when it is believed. The Lab is mapping who residents credit as the source of a price or quality claim — MiMaji, a neighbour, a vendor, a chief, a health worker, a phone rumour — and where in that ranking MajiMap actually sits. In a market thick with rumour and vendor interest, credibility is the hinge. Documenting it is a first-order finding.</p>
+ <span class="kicker">02 · Trust and the credibility of the source</span>
+ <p>Open data changes behaviour only when it is believed. The Lab is mapping who residents credit as the source of a price or quality claim - MiMaji, a neighbour, a vendor, a chief, a health worker, a phone rumour - and where in that ranking MajiMap actually sits. In a market thick with rumour and vendor interest, credibility is the hinge. Documenting it is a first-order finding.</p>
 </div>
 
 <div class="callout c-forest">
-  <span class="kicker">03 · The market response</span>
-  <p>Whether a vendor changes a posted price when a comparable price becomes publicly known is the observable version of the whole argument. The Lab is running repeat price and quality observations at a set of vendor points over the engagement, alongside conversations with the vendors themselves. Movement in the observed price, one way or the other, is the strongest signal that the intervention has begun to bite.</p>
+ <span class="kicker">03 · The market response</span>
+ <p>Whether a vendor changes a posted price when a comparable price becomes publicly known is the observable version of the whole argument. The Lab is running repeat price and quality observations at a set of vendor points over the engagement, alongside conversations with the vendors themselves. Movement in the observed price, one way or the other, is the strongest signal that the intervention has begun to bite.</p>
 </div>
 
 ## The Lab's early reading
@@ -68,8 +68,8 @@ None of the following is a final finding. The engagement is live, and the honest
 **The credibility of MiMaji as source is high where MiMaji has been physically present.** In settlements where testing has been visibly done in the open, on someone's tap, with a result written down and left with the household, the map is treated as evidence. In settlements where testing has happened elsewhere and only the aggregated result is on the app, the same map is treated as opinion. The physical act of testing is doing more work than the data layer sitting on top of it. That is important, because it means the map's credibility is a downstream product of MiMaji's ranger-style presence, not an intrinsic property of the data.
 
 <figure>
-  <img src="/assets/img/case-mimaji-verify.jpg" alt="A hand holds a smartphone in a kitchen; the phone screen shows the MiMaji app on a 'Bottle Verified' screen with a green tick, a 20L refillable bottle ID (MMJ-7X9K-L2P3), a registration date of 16 May 2024, and a 'Last Verified today' line; a large blue 20L water bottle with a MiMaji QR sticker stands beside it, a brass kettle out of focus behind." class="diagram">
-  <figcaption>MiMaji's bottle-verification screen after a household QR scan of a 20L refillable bottle.</figcaption>
+ <img src="/assets/img/case-mimaji-verify.jpg" alt="A hand holds a smartphone in a kitchen; the phone screen shows the MiMaji app on a 'Bottle Verified' screen with a green tick, a 20L refillable bottle ID (MMJ-7X9K-L2P3), a registration date of 16 May 2024, and a 'Last Verified today' line; a large blue 20L water bottle with a MiMaji QR sticker stands beside it, a brass kettle out of focus behind." class="diagram">
+ <figcaption>MiMaji's bottle-verification screen after a household QR scan of a 20L refillable bottle.</figcaption>
 </figure>
 
 **Vendor behaviour moves slowly and unevenly.** In some sites there is early evidence of vendors adjusting posted prices when a comparable price is known and consulted, in a way that would not be visible from the utility side. In others there is no observable movement, and vendors report that the households they sell to are not the households consulting the map. Both patterns are informative.
@@ -77,15 +77,15 @@ None of the following is a final finding. The engagement is live, and the honest
 **The intervention is doing work that the map alone would not have done.** WASH-education partnerships in schools and community groups appear, in the fieldwork so far, to be the mechanism by which knowledge of the map reaches households that the map alone would not have reached. That is worth naming, because it argues against reading MajiMap as a stand-alone data product and for reading it as a bundle: physical testing plus schools work plus public map, in that order.
 
 <div class="callout c-butter">
-  <span class="kicker">The counter-evidence</span>
-  <p>Not everything we are hearing supports the reading above. Some households consulted the map once, found the vendor nearest to them not listed or listed with stale prices, and stopped. Coverage gaps are the fastest way to lose the credibility MiMaji has otherwise earned, and the fieldwork is surfacing that as a first-order design pressure — arguably more than the accuracy of any individual reading.</p>
+ <span class="kicker">The counter-evidence</span>
+ <p>Not everything we are hearing supports the reading above. Some households consulted the map once, found the vendor nearest to them not listed or listed with stale prices, and stopped. Coverage gaps are the fastest way to lose the credibility MiMaji has otherwise earned, and the fieldwork is surfacing that as a first-order design pressure - arguably more than the accuracy of any individual reading.</p>
 </div>
 
 ## Where the Lab's reading sits
 
 We read MajiMap not as a data product to be assessed for accuracy, but as a socio-technical intervention to be evaluated for effect. It pairs Delft-rooted water understanding with primary fieldwork in the settlements, asking who reaches the information, who trusts it, and what changes when the price of not knowing finally has a number attached.
 
-Through the [BRW framework](/brw), MajiMap reads as a **weaken** strategy against a soft but powerful barrier: the information asymmetry that lets an opaque water market persist. It does not build a parallel water system (bypass) or redirect the utility (repurpose); it erodes the informational foundation on which the inequity rests. That reading tells the Lab exactly where to look for success or failure, which is in whether the transparency actually reaches and is trusted by those on the wrong side of the asymmetry — which is the reading we are running.
+Through the [BRW framework](/brw), MajiMap reads as a **weaken** strategy against a soft but powerful barrier: the information asymmetry that lets an opaque water market persist. It does not build a parallel water system (bypass) or redirect the utility (repurpose); it erodes the informational foundation on which the inequity rests. That reading tells the Lab exactly where to look for success or failure, which is in whether the transparency actually reaches and is trusted by those on the wrong side of the asymmetry - which is the reading we are running.
 
 ## What comes next
 
@@ -100,8 +100,8 @@ The engagement continues through the next monitoring cycle. Two things sit at th
 Water transparency in Nairobi is a specific case of a general pattern the Lab studies everywhere: technologies whose effect is informational and distributional rather than physical. The same logic runs through open data in energy, health and agriculture. In each, the question is not whether the information is correct, but whether it lands where the power imbalance sits, and shifts it.
 
 <figure>
-  <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk in Chipata reading 'Eastern Water and Sewerage Co Ltd' and 'Mchini Kiosk No. 10' with a chalked tariff 'K25 per 20 litres', a queue of women in bright wraps and small children filling green and yellow jerry cans at the counter window, bricks stacked to one side and hills in the distance." class="diagram">
-  <figcaption>A metered utility water kiosk in Chipata, Zambia. Tariff publicly posted, quality not.</figcaption>
+ <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk in Chipata reading 'Eastern Water and Sewerage Co Ltd' and 'Mchini Kiosk No. 10' with a chalked tariff 'K25 per 20 litres', a queue of women in bright wraps and small children filling green and yellow jerry cans at the counter window, bricks stacked to one side and hills in the distance." class="diagram">
+ <figcaption>A metered utility water kiosk in Chipata, Zambia. Tariff publicly posted, quality not.</figcaption>
 </figure>
 
 ---

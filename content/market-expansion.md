@@ -13,14 +13,14 @@ The Lab runs this work through the same [field method](/field-research) we use f
 ## When this is the right service
 
 <div class="callout c-butter">
-  <span class="kicker">Signals it fits</span>
-  <ul>
-    <li>You have a working model in one country or city and are deciding whether to open a second.</li>
-    <li>A funder or board expects an evidence-based go/no-go before it releases scaling capital.</li>
-    <li>Early sales in the new market are ambiguous - is it real demand or the founder's network?</li>
-    <li>The new market's regulatory, payment, or logistics stack differs enough that assumptions from home won't transfer.</li>
-    <li>You need to know who will and who won't adopt, in the segment terms the local reality actually uses.</li>
-  </ul>
+ <span class="kicker">Signals it fits</span>
+ <ul>
+ <li>You have a working model in one country or city and are deciding whether to open a second.</li>
+ <li>A funder or board expects an evidence-based go/no-go before it releases scaling capital.</li>
+ <li>Early sales in the new market are ambiguous - is it real demand or the founder's network?</li>
+ <li>The new market's regulatory, payment, or logistics stack differs enough that assumptions from home won't transfer.</li>
+ <li>You need to know who will and who won't adopt, in the segment terms the local reality actually uses.</li>
+ </ul>
 </div>
 
 ---
@@ -30,30 +30,30 @@ The Lab runs this work through the same [field method](/field-research) we use f
 Every expansion study is scoped to a specific decision, but four questions recur.
 
 <div class="callout c-coral">
-  <span class="kicker">Question 01 · Demand, real vs stated</span>
-  <p>Who says they want it, who has already tried to pay for it, and what the walk-away price actually is. Stated preference is unreliable in a new market; observed behaviour and revealed prices are the readable signal.</p>
+ <span class="kicker">Question 01 · Demand, real vs stated</span>
+ <p>Who says they want it, who has already tried to pay for it, and what the walk-away price actually is. Stated preference is unreliable in a new market; observed behaviour and revealed prices are the readable signal.</p>
 </div>
 
 <div class="callout c-cobalt">
-  <span class="kicker">Question 02 · Segments the local reality uses</span>
-  <p>The customer segmentation from your home market usually breaks. New segments emerge along axes (income timing, informal-sector membership, mobile-money reach) that your existing personas don't see. We build the segmentation from the interviews, not from the deck.</p>
+ <span class="kicker">Question 02 · Segments the local reality uses</span>
+ <p>The customer segmentation from your home market usually breaks. New segments emerge along axes (income timing, informal-sector membership, mobile-money reach) that your existing personas don't see. We build the segmentation from the interviews, not from the deck.</p>
 </div>
 
 <div class="callout c-forest">
-  <span class="kicker">Question 03 · The stack that carries adoption</span>
-  <p>Payment rails, distribution, after-sales, regulatory conditions, competing informal alternatives, trust intermediaries. Any one of them missing is enough to stall the launch. We map the stack in the field, from the user's side, so gaps show up before capital is committed.</p>
+ <span class="kicker">Question 03 · The stack that carries adoption</span>
+ <p>Payment rails, distribution, after-sales, regulatory conditions, competing informal alternatives, trust intermediaries. Any one of them missing is enough to stall the launch. We map the stack in the field, from the user's side, so gaps show up before capital is committed.</p>
 </div>
 
 <div class="callout c-plum">
-  <span class="kicker">Question 04 · Failure modes, named early</span>
-  <p>The specific ways this expansion is most likely to fail, ranked. A pre-mortem grounded in field evidence beats a launch that has to discover its failure modes in production.</p>
+ <span class="kicker">Question 04 · Failure modes, named early</span>
+ <p>The specific ways this expansion is most likely to fail, ranked. A pre-mortem grounded in field evidence beats a launch that has to discover its failure modes in production.</p>
 </div>
 
 ---
 
 <figure>
-  <img src="/assets/img/transition-momentum.jpg" alt="Transition dynamics / momentum chart: six line series (Cost Competitiveness, User Adoption, Infrastructure Coverage, Policy Support, Social Acceptance, Incumbent Resistance) tracked across five market stages (Pre-entry, Pilot, Early Market Entry, Expansion, Scale), with milestone markers along the top (Local partner secured, Pilot launched, Financing secured, Service network expands, Regulatory approval)." class="diagram">
-  <figcaption>Direction and speed, not just the current state. A market-entry reading tracks how the six variables move together as a company crosses from pre-entry to scale, so a fall in one line becomes an early signal, not a surprise a year later.</figcaption>
+ <img src="/assets/img/transition-momentum.jpg" alt="Transition dynamics / momentum chart: six line series (Cost Competitiveness, User Adoption, Infrastructure Coverage, Policy Support, Social Acceptance, Incumbent Resistance) tracked across five market stages (Pre-entry, Pilot, Early Market Entry, Expansion, Scale), with milestone markers along the top (Local partner secured, Pilot launched, Financing secured, Service network expands, Regulatory approval)." class="diagram">
+ <figcaption>Direction and speed, not just the current state. A market-entry reading tracks how the six variables move together as a company crosses from pre-entry to scale, so a fall in one line becomes an early signal, not a surprise a year later.</figcaption>
 </figure>
 
 ## How the study runs
@@ -81,14 +81,14 @@ For the wider frame, see the [Four Ways a Transition Lands](/insight-transitions
 ## Who this is for
 
 <div class="pill-row">
-  <a class="pill c-coral" href="/who-we-serve#companies">Companies</a>
-  <a class="pill c-cobalt" href="/who-we-serve#funders">Investors</a>
-  <a class="pill c-butter" href="/who-we-serve#funders">Development finance</a>
-  <a class="pill c-forest" href="/who-we-serve#companies">Corporate ventures</a>
+ <a class="pill c-coral" href="/who-we-serve#companies">Companies</a>
+ <a class="pill c-cobalt" href="/who-we-serve#funders">Investors</a>
+ <a class="pill c-butter" href="/who-we-serve#funders">Development finance</a>
+ <a class="pill c-forest" href="/who-we-serve#companies">Corporate ventures</a>
 </div>
 
 See [Who We Serve](/who-we-serve) for how the fit works.
 
 ---
 
-*For the earlier stage — the R&D-cycle decisions before the launch decision — see [Research & Development Support](/research-development). For the method behind both, see [Field Research](/field-research). For how a study runs end to end, see [How It Works](/how-it-works). To start a conversation, see [Contact](/contact).*
+*For the earlier stage - the R&D-cycle decisions before the launch decision - see [Research & Development Support](/research-development). For the method behind both, see [Field Research](/field-research). For how a study runs end to end, see [How It Works](/how-it-works). To start a conversation, see [Contact](/contact).*

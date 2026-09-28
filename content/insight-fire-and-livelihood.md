@@ -59,14 +59,14 @@ When the priced output failed, the unpriced one went with it. The lamb market we
 **This is the mechanism, and it means the fire problem is a livelihood problem wearing hazard vocabulary.**
 
 <div class="callout c-butter">
-  <span class="kicker">A priced output and an unpriced one, produced together</span>
-  <p>One activity produced two things. Only one paid.</p>
-  <ul>
-    <li><strong>Grazing, coppicing, cultivation</strong> — the activity that shaped a Mediterranean landscape for most of the twentieth century.</li>
-    <li><strong>Lamb, firewood, food.</strong> Priced, and it stopped paying.</li>
-    <li><strong>Fuel discontinuity.</strong> Never priced, never measured, and it disappeared when the other did.</li>
-  </ul>
-  <p>Buying the unpriced output back directly requires a scheme, an eligibility rule, an inspector, an appeals process and a budget line that survives the next fiscal cycle. It also requires somebody still living there who knows the ground and is willing to do it. The unpriced output was never cheap because it was efficiently produced. It was cheap because somebody was already there doing something else.</p>
+ <span class="kicker">A priced output and an unpriced one, produced together</span>
+ <p>One activity produced two things. Only one paid.</p>
+ <ul>
+ <li><strong>Grazing, coppicing, cultivation</strong> - the activity that shaped a Mediterranean landscape for most of the twentieth century.</li>
+ <li><strong>Lamb, firewood, food.</strong> Priced, and it stopped paying.</li>
+ <li><strong>Fuel discontinuity.</strong> Never priced, never measured, and it disappeared when the other did.</li>
+ </ul>
+ <p>Buying the unpriced output back directly requires a scheme, an eligibility rule, an inspector, an appeals process and a budget line that survives the next fiscal cycle. It also requires somebody still living there who knows the ground and is willing to do it. The unpriced output was never cheap because it was efficiently produced. It was cheap because somebody was already there doing something else.</p>
 </div>
 
 ---
@@ -139,14 +139,14 @@ If you are designing a landscape fire programme and need to know whether it will
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Climate & Ecosystems](/expertise-climate) and [Regenerative Agriculture & Land Systems](/expertise-agriculture). See also [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on why the pilot result is not adoption evidence, and [Distance, Work, Reward](/insight-distance-work-reward) on schemes that end when the payment does. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

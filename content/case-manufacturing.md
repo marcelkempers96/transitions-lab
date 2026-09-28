@@ -9,9 +9,9 @@
 <img class="sector-icon" src="/assets/icons/icon-manufacturing.png" alt="Local manufacturing sector icon" aria-hidden="true">
 
 <div class="case-meta">
-  <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's local-manufacturing practice</span></div>
-  <div><span class="k">Sector</span><span class="v">Local assembly · supplier ecosystems · industrial policy (East Africa, cross-references to Nigeria and Morocco)</span></div>
-  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-manufacturing">Local Manufacturing &amp; Supply Chains</a></span></div>
+ <div><span class="k">Type</span><span class="v">Illustrative composite, drawn from the Lab's local-manufacturing practice</span></div>
+ <div><span class="k">Sector</span><span class="v">Local assembly · supplier ecosystems · industrial policy (East Africa, cross-references to Nigeria and Morocco)</span></div>
+ <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-manufacturing">Local Manufacturing &amp; Supply Chains</a></span></div>
 </div>
 
 ---
@@ -21,8 +21,8 @@
 Local manufacturing is a claim: that value stays where the thing is made. Whether it does depends on decisions that a shipping manifest cannot see.
 
 <figure>
-  <img src="/assets/img/case-manufacturing-hero.jpg" alt="A young mechanic in blue overalls working on the wiring loom of an assembled two-wheeler chassis in a small East African assembly workshop, with parts racks and other workers in the background." class="diagram">
-  <figcaption>An assembly workshop floor in East Africa.</figcaption>
+ <img src="/assets/img/case-manufacturing-hero.jpg" alt="A young mechanic in blue overalls working on the wiring loom of an assembled two-wheeler chassis in a small East African assembly workshop, with parts racks and other workers in the background." class="diagram">
+ <figcaption>An assembly workshop floor in East Africa.</figcaption>
 </figure>
 
 ## Why this reading matters
@@ -44,8 +44,8 @@ A vehicle stamped "assembled in country" can still be 90 percent imported by val
 Assembly-line jobs are not automatically good jobs. Wage levels benchmarked against local cost of living, contract stability (permanent, casual, sub-contracted through an agency), skill development that transfers if the worker leaves, and safety are the measurable dimensions of whether local employment is a real gain or a lower-margin substitute for imports. Only fieldwork with workers and their households can answer this; company HR data reads what the company reports, not what the household experiences.
 
 <figure>
-  <img src="/assets/img/photo-industrial-inspection.jpg" alt="A young African engineer in dark blue coveralls, a blue hard hat, safety glasses and blue nitrile gloves, holding a clipboard and pen, walking through a small industrial processing plant with polished stainless-steel pressure vessels on the right and yellow overhead piping running along the wall on the left." class="diagram">
-  <figcaption>The measurable dimensions of a good job — training that transfers, safety kit that fits, the authority to walk the plant with a clipboard rather than a scanner — are all visible in a single frame. None of them is captured by a jobs-created headline.</figcaption>
+ <img src="/assets/img/photo-industrial-inspection.jpg" alt="A young African engineer in dark blue coveralls, a blue hard hat, safety glasses and blue nitrile gloves, holding a clipboard and pen, walking through a small industrial processing plant with polished stainless-steel pressure vessels on the right and yellow overhead piping running along the wall on the left." class="diagram">
+ <figcaption>The measurable dimensions of a good job - training that transfers, safety kit that fits, the authority to walk the plant with a clipboard rather than a scanner - are all visible in a single frame. None of them is captured by a jobs-created headline.</figcaption>
 </figure>
 
 ### Does the ecosystem grow?

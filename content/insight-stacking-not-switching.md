@@ -7,7 +7,7 @@
 <p class="article-meta"><span class="article-date">29 August 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
 <figure>
-<img src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="Line-art scene: a container ship and a shipping form on the left, dashed arrows leading up to solar panels and a transmission pylon in the sky, and downward to a small factory with a battery unit on one side and a diesel generator on the other. All four supply routes converge on the same building — the site is stacking sources, not switching." class="diagram">
+<img src="/assets/img/insight-stacking-not-switching-diagram.jpg" alt="Line-art scene: a container ship and a shipping form on the left, dashed arrows leading up to solar panels and a transmission pylon in the sky, and downward to a small factory with a battery unit on one side and a diesel generator on the other. All four supply routes converge on the same building - the site is stacking sources, not switching." class="diagram">
 <figcaption>The panels are on the roof, the grid line comes in from one side, the battery bank sits on the other, and the diesel generator has not gone anywhere. That is what the boom looks like from the site.</figcaption>
 </figure>
 
@@ -153,14 +153,14 @@ If you are planning generation, financing a network, or writing an access strate
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Energy Access & Off-Grid Systems](/expertise-energy). See also [The Customers Who Can Leave](/insight-customers-who-can-leave) on what happens when the largest customers exit the grid where the utility can see them, [Paying for Power You Curtail](/insight-paying-for-what-we-curtail) on the take-or-pay bill that outlives the demand forecast, and [Absorbing the Gap](/insight-absorbing-the-gap) on the reliability calculation a firm or household is actually making. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>

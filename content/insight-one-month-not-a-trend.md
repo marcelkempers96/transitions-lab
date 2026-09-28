@@ -12,7 +12,7 @@
 </figure>
 
 
-Southeast Asian startup funding [as reported by regional deal trackers](https://www.dealstreetasia.com/) fell roughly 84% from June to July 2026, to around US$698m on the numbers most widely quoted. Climate-oriented companies kept raising through the same period. The 84% is quoted here as it appeared in the reporting under discussion, not as an audited figure — that is part of the point of the piece.
+Southeast Asian startup funding [as reported by regional deal trackers](https://www.dealstreetasia.com/) fell roughly 84% from June to July 2026, to around US$698m on the numbers most widely quoted. Climate-oriented companies kept raising through the same period. The 84% is quoted here as it appeared in the reporting under discussion, not as an audited figure - that is part of the point of the piece.
 
 <figure>
 <img src="/assets/img/insight-one-month-not-a-trend-twelve-months.jpg" alt="Bar chart titled Twelve months, not one. Vertical axis monthly investment flow as an index from zero to two hundred. Twelve monthly bars from January to December, most in coral hovering between 90 and 120, with a single cobalt bar for August reaching 180 with a small annotation reading reported +84% jump pointing at it. A grey trend line runs across the chart at a gentle upward slope. Footer: A single month is a data point. Twelve months is a signal." class="diagram">
@@ -56,9 +56,9 @@ Put the two together and predictable things follow. Deployment gets pushed faste
 None of this is a criticism of the founders raising or the funds writing the cheques. It is a description of what happens when capital of one shape is the only capital available for assets of another shape.
 
 <div class="callout c-cobalt">
-  <span class="kicker">The corollary</span>
-  <h3>Being funded by venture equity at that stage is often a symptom of the blended-finance market not working, rather than a sign that it is.</h3>
-  <p>The businesses in question want mixed structures: some equity for the technology and team risk, debt or asset finance against deployed hardware, concessional capital for the parts with a public benefit and no private return, and offtake agreements to make the debt lendable. Assembling that is slow, requires several counterparties with different mandates, and has no obvious owner. Venture equity is fast and has one counterparty. So it wins, and the mismatch is deferred to the Series C.</p>
+ <span class="kicker">The corollary</span>
+ <h3>Being funded by venture equity at that stage is often a symptom of the blended-finance market not working, rather than a sign that it is.</h3>
+ <p>The businesses in question want mixed structures: some equity for the technology and team risk, debt or asset finance against deployed hardware, concessional capital for the parts with a public benefit and no private return, and offtake agreements to make the debt lendable. Assembling that is slow, requires several counterparties with different mandates, and has no obvious owner. Venture equity is fast and has one counterparty. So it wins, and the mismatch is deferred to the Series C.</p>
 </div>
 
 ---
@@ -98,14 +98,14 @@ If you are a funder being handed a number and you want to know whether it means 
 *This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [What We Do](/what-we-do) and [For Funders](/for-funders). See also [Equity Is the Wrong Money for a Warehouse](/insight-wrong-money-for-a-warehouse) on the same instrument mismatch at a shorter tenor. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
-  <a class="article-nav-card" href="/articles">
-    <span class="anc-label">Read more</span>
-    <span class="anc-title">Articles &amp; insights</span>
-    <span class="anc-cta">See all articles &rarr;</span>
-  </a>
-  <a class="article-nav-card" href="/case-studies">
-    <span class="anc-label">See it in the field</span>
-    <span class="anc-title">Case studies</span>
-    <span class="anc-cta">See all case studies &rarr;</span>
-  </a>
+ <a class="article-nav-card" href="/articles">
+ <span class="anc-label">Read more</span>
+ <span class="anc-title">Articles &amp; insights</span>
+ <span class="anc-cta">See all articles &rarr;</span>
+ </a>
+ <a class="article-nav-card" href="/case-studies">
+ <span class="anc-label">See it in the field</span>
+ <span class="anc-title">Case studies</span>
+ <span class="anc-cta">See all case studies &rarr;</span>
+ </a>
 </div>
