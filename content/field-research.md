@@ -2,17 +2,17 @@
 
 # Field Research
 
-*Primary research in the places it is hardest to do well, built around direct contact with the people a transition affects.*
+*Primary research in the settings where it is hardest to do well, built around direct contact with the people a transition affects.*
 
-The evidence that decides whether a technology works is held by the people inside it — the rider financing an electric motorcycle, the farmer weighing the labour of a new kiln, the ranger who reads the reef better than any satellite. Field research is the discipline of reaching that evidence properly. It is the capability behind our own [published research](/articles), made available to others.
+The evidence that decides whether a technology works is held by the people inside it: the rider financing an electric motorcycle, the farmer weighing the labour of a new kiln, the ranger who reads the reef better than any satellite. Field research is how we reach that evidence. It is the capability behind our own [published research](/articles), made available to others.
 
 ---
 
 ## Where we work
 
-Settings that defeat conventional research: low-connectivity, multilingual, informal, dispersed. The places where bad evidence does the most damage.
+Low-connectivity, multilingual, informal, dispersed — the settings that defeat conventional research.
 
-We work through researchers and partners already part of the context. No parachuting in. Recent ground: [electric transport in Nairobi](/case-roam), [decentralised clean energy in Lombok](/case-pyropower), [water transparency in Nairobi](/case-mimaji), five years of sustained fieldwork in Kenya.
+We work through researchers already part of the context. No parachuting in. Recent ground: [electric transport in Nairobi](/case-roam), [decentralised clean energy in Lombok](/case-pyropower), [water transparency in Nairobi](/case-mimaji).
 
 ---
 
@@ -27,11 +27,11 @@ We work through researchers and partners already part of the context. No parachu
   </ul>
 </div>
 
-Most research fails one of two ways: too elaborate to repeat, or too thin to tell you anything new. Our standard is the middle — structured enough to compare, rich enough to matter.
+Structured enough to compare. Rich enough to matter.
 
 <figure>
   <img src="/assets/img/photo-field-survey.jpg" alt="A researcher holds a phone displaying a mobility survey with the title 'Kibera Mobility Study'; a respondent in a cap sits opposite, thinking through the answer. A boda-boda motorcycle is parked behind them." class="diagram">
-  <figcaption>A mobility survey in progress in Kibera, Nairobi. Every answer is a person, not a row in a dataset.</figcaption>
+  <figcaption>A mobility survey in progress in Kibera, Nairobi.</figcaption>
 </figure>
 
 ---
@@ -40,9 +40,9 @@ Most research fails one of two ways: too elaborate to repeat, or too thin to tel
 
 Informed, recorded, revocable consent. Anonymisation by default. Sampling, translation and quality control managed end to end. We interview to understand, not to confirm.
 
-We hold every study to the Belmont Report, the WMA Declaration of Helsinki, Innovations for Poverty Action and J-PAL, EU GDPR, and the ESRC Framework for Research Ethics. See [Research Ethics](/ethics) for the full reference.
+Every study is held to the Belmont Report, the WMA Declaration of Helsinki, IPA and J-PAL, EU GDPR, and the ESRC Framework for Research Ethics. See [Research Ethics](/ethics).
 
-Commissioned work belongs to the client and stays private unless they choose to publish. The [case studies](/case-studies) on this site are the exceptions.
+Commissioned work belongs to the client and stays private unless they choose to publish. The [case studies](/case-studies) here are the exceptions.
 
 ---
 
