@@ -345,6 +345,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-permit-is-not-the-project": "butter",
     "insight-the-saving-is-agreed": "butter",
     "for-funders": "cobalt",
+    "capability-statement": "cobalt",
     "esf-social-innovation": "butter",
     # Method / framework pages (deep cobalt)
     "brw": "cobalt",
@@ -657,6 +658,10 @@ META: dict[str, dict[str, str]] = {
     "for-funders": {
         "title": "For Funders | Portfolio Verification, SROI & the Funder Dashboard | Transitions Lab",
         "description": "Independent, field-verified evidence of what a grant portfolio is actually achieving. SROI to standard, portfolio benchmarking, and a dashboard behind which every figure has been checked.",
+    },
+    "capability-statement": {
+        "title": "Capability Statement | Transitions Lab",
+        "description": "The Lab's field-research capabilities, methods, programme reach and engagement types. Independent, evidence-first work designed for decisions that cannot be settled from a desk.",
     },
     "insight-the-reporting-loop": {
         "title": "The Reporting Loop: Why Funders Learn From Grantees | Transitions Lab",
@@ -1419,6 +1424,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="/about">About</a>
       <a href="/who-we-serve">Who we serve</a>
       <a href="/for-funders">For Funders</a>
+      <a href="/capability-statement">Capability statement</a>
       <a href="/contact">Contact</a>
       <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
     </div>

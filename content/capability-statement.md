@@ -1,0 +1,85 @@
+§ / The Lab
+
+# Capability statement
+
+*An independent research team that studies how technologies meet real people — and turns that reading into evidence institutions and innovators can act on. Based in Delft, working across Europe and in the places our cases come from.*
+
+The Lab is engaged where a decision cannot be settled from a desk. Where the evidence a client actually needs sits with the household, the rider, the ranger, the mechanic, the vendor, the operator — and where getting the answer right matters enough to send someone properly trained to ask.
+
+## Core capabilities
+
+**Field evidence for a decision.** Independent research designed to answer one question well, in the setting the technology or programme actually meets. See [Entering a new context](/entering-a-new-context).
+
+**Measurement of change.** What actually changes, for whom, and through what pathway. Reach, depth and experience — measured from the human side first. See [Measuring change](/measuring-change).
+
+**Reporting to funders.** Monitoring, evaluation and dissemination as one connected system. Independent, set up at the start, closed with proof, including for European Grant Agreements. See [Reporting to funders](/reporting-to-funders).
+
+Cross-cutting all three: a defensible reading of the socio-technical system, using the frameworks the Lab publishes and maintains — the [BRW framework](/brw), the [TRL and SRL scales](/readiness-levels), the [Evidence Strength Pyramid](/impact-measurement).
+
+## Methods on the ground
+
+We favour depth where the question rewards depth, and count carefully where the population supports counting. Standard tools in every engagement:
+
+- **In-depth qualitative interviews** with respondents from every side of the system a technology meets — [see how we listen](/interview-guide).
+- **Rapid country appraisals** and stakeholder mapping when a decision is time-boxed.
+- **Standing panels** of respondents when repeat measurement is what the question demands.
+- **Enumerator training and supervision** local to each site, working in-language and with local-lead field ethics.
+- **Quantitative instruments** — surveys, log data, price observation, network telemetry — where they answer a question qualitative work cannot, and only then.
+- **Mixed-method integration** so a single reading survives cross-examination on both sides.
+
+Every engagement carries pre-tested instruments, cognitive checks in the local language(s), safeguarding protocols with named accountability, and a back-check regime on ~10% of collected data before it is trusted.
+
+See how the mix plays out in practice on [Field Research](/field-research) and on the [Impact Measurement](/impact-measurement) framework page.
+
+## Programmes we work across
+
+Six live programmes, each anchored to specific evidence questions rather than a sector logo:
+
+- [Green Industrialisation & Local Manufacturing](/expertise-manufacturing)
+- [E-Mobility & Transport](/expertise-e-mobility)
+- [Energy & Water Systems](/expertise-energy)
+- [Agriculture & Ecosystems](/expertise-agriculture)
+- [AI & Digital Systems](/expertise-ai-digital)
+- [Financial Inclusion](/expertise-finance)
+
+See the full programme index at [Programmes](/expertise), and the reading behind each at [Articles](/articles).
+
+## Representative work
+
+Public-facing cases the Lab's partners have agreed to publish. The commissioned portfolio behind them is substantially larger and delivered privately.
+
+- **Nairobi · Electric transport.** Twenty-three interviews with riders, mechanics, a lender's agent, a manufacturer and a policy advocate on Kenya's boda-boda transition. See [The Saving Is Agreed](/insight-the-saving-is-agreed) and the [Roam case study](/case-roam).
+- **Lombok · Decentralised clean energy.** Smallholder biochar kilns and the human-scale conditions under which a technology like this earns its keep. See the [Pyropower case study](/case-pyropower).
+- **Nairobi · Water transparency.** Community-monitored open-data mapping across a low-income settlement water market. See the [MiMaji case study](/case-mimaji).
+- **Coastal Indonesia · Marine monitoring.** Community rangers, satellite data and reef health braided together into a single trustworthy picture. See the [Reef Support case study](/case-reef-support).
+- **Cross-programme reading.** For the general patterns the Lab tracks across engagements, see [Articles](/articles) and the [full case-study index](/case-studies).
+
+## What makes the work usable
+
+**Independence.** No commission edits a finding. The reader hears what the Lab heard, including the counter-evidence. Independence is stated in writing at the start of every engagement and honoured at endline.
+
+**Local capacity, not visiting expertise.** Fieldwork is led by researchers and partners who already speak the language and know the place. The Lab's central team designs, trains, supervises and reports; the reach is the network's, and the accountability sits with named people in every site.
+
+**Ethics that hold in practice.** Informed consent recorded and revocable. Sensitive-data handling documented and audited. Safeguarding protocols with named contact and escalation paths, appropriate to the setting. Data-protection posture consistent with GDPR where applicable and with each site's local framework.
+
+**Evidence packaged for the reader who will act on it.** A funder brief, a board memo, a peer-reviewable methodological annex — the Lab writes to the person who needs to move next, not to the discipline it comes from. Deliverables named at engagement start, not negotiated at endline.
+
+## How we work with partners
+
+Three engagement types, sized to the decision the work is meant to inform.
+
+**Scoping engagement (2–6 weeks).** A first read of a market, technology or region, before scaling capital is committed. Delivered as an independent context brief with the specific questions a fuller engagement would settle. Fit for teams entering a new geography or considering a new product line.
+
+**Full engagement (3–9 months).** A commissioned study designed around one primary question, with mixed-method fieldwork, an interim readout, and a closed-out finding at endline. Fit for the decision to launch, to invest, to change the design of an existing programme, or to demonstrate impact to a funder or board.
+
+**Standing partnership (12+ months).** A repeat-measurement panel, a rolling context brief across a portfolio, or an evidence function operating alongside a partner's own team. Fit for organisations who need evidence to arrive at the same cadence their decisions do.
+
+Every engagement is agreed in writing before it begins, with independence, deliverables, timelines and safeguarding commitments named at the start.
+
+## Get in touch
+
+Send a short note about the decision you're weighing and who the answer needs to come from. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.
+
+[Start a conversation →](/contact)
+
+*The Lab is an independent research team, not an advocacy organisation. We do not campaign, endorse products, or accept commissions where a finding is expected in advance. Where a partner's own theory of change is what needs testing, that is a legitimate engagement — the Lab tests it, honestly.*
