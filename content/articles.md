@@ -4,8 +4,6 @@
 
 *Independent analysis, opinion, and thought pieces from Transitions Lab. Evidence-first reading of the transitions and relationships we study, applied to the big picture.*
 
-The Lab publishes articles for the same reason it takes on any research: some questions deserve honest, independent attention regardless of who is asking. These pieces sit alongside the [case studies](/case-studies) as the openly-published half of the Lab's work.
-
 ---
 
 ## Latest, newest first
