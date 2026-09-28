@@ -35,7 +35,6 @@ Every engagement carries pre-tested instruments, cognitive checks in the local l
 
 <figure>
   <img src="/assets/img/capability-statement-fgd.jpg" alt="Photograph of a focus group discussion under an acacia tree in an East African field setting. A female moderator in a patterned wrap and headscarf stands with a phone, leading the discussion. Twelve participants, mostly women in colourful wax-print skirts and headscarves plus one man in a blue shirt, sit on blue plastic chairs in a semi-circle around her. Dry grassland and a distant hill line behind." class="diagram">
-  <figcaption>Focus group discussion in the field. Local-lead moderation in-language, seated respondents, named consent recorded before the session begins.</figcaption>
 </figure>
 
 See how the mix plays out in practice on [Field Research](/field-research) and on the [Impact Measurement](/impact-measurement) framework page.
