@@ -655,6 +655,13 @@ section + section{border-top:2px solid var(--ink);}
 .prose a:has(> .format-badge){text-decoration:none;background:transparent;}
 .prose a:hover > .format-badge{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
 .prose a:active > .format-badge{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink);}
+/* A paragraph that only contains a format-badge link (used on
+   /resources under each resource title). Kill the paragraph's
+   usual top margin so the badge sits directly under the title
+   above it, and left-align it regardless of parent text-align. */
+.prose p:has(> a:only-child > .format-badge:only-child){
+  margin:.35em 0 1.15em;text-align:left;
+}
 /* Theory maps compact row on the homepage */
 .theory-maps-section{padding:56px 0 72px;}
 .theory-maps-row{
