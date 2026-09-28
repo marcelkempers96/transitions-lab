@@ -1665,11 +1665,16 @@ body[data-page^="insight-"] .prose h4{
   font-family:'Newsreader',Georgia,'Times New Roman',serif;font-style:italic;
 }
 
-/* Text size: applies only to .prose body copy, not headings
-   (h1/h2 stay proportioned by their own rules). Steps are subtle
-   so the layout doesn't reflow dramatically. */
+/* Text size: applies only to .prose body copy on article pages
+   (data-size is set only on case-*/insight-* via FLASH_INIT).
+   Four levels; default (0) sits between the smallest step and
+   the old base so reading opens at a comfortable-but-quiet
+   size, and stepping up gives a real jump. Non-article pages
+   keep the 18px base rule elsewhere in this file. */
 :root[data-size="-1"] .prose > p,
 :root[data-size="-1"] .prose li{font-size:15.5px;line-height:1.6;}
+:root[data-size="0"] .prose > p,
+:root[data-size="0"] .prose li{font-size:16.75px;line-height:1.64;}
 :root[data-size="1"] .prose > p,
 :root[data-size="1"] .prose li{font-size:18.5px;line-height:1.68;}
 :root[data-size="2"] .prose > p,
