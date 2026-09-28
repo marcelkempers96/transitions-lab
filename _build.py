@@ -114,7 +114,7 @@ READER_TOOLBAR_HTML = (
 # rendered HTML so a new image binary picks up a new URL, forcing
 # browsers and Vercel's edge cache to refetch rather than serve the
 # stale copy. Runs once per file at write time.
-_IMG_URL_RE = re.compile(r'(/assets/img/[^"\')\s?#]+)')
+_IMG_URL_RE = re.compile(r'(/assets/(?:img|icons)/[^"\')\s?#]+)')
 
 def _cache_bust_images(html: str) -> str:
     def _rewrite(m: re.Match) -> str:
