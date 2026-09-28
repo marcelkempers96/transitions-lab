@@ -1582,11 +1582,19 @@ def build_content_page(slug: str, md: str) -> str:
     # 'About' above 'About', etc.) and adding no information on
     # article and case pages either. The category information now
     # lives in the meta chips and the URL slug alone.
+    is_article = slug.startswith("case-") or slug.startswith("insight-")
+    hero_share_html = (
+        ARTICLE_SHARE_HTML.replace(
+            'class="article-share"', 'class="article-share article-share--hero"'
+        )
+        if is_article else ""
+    )
     page_hero = f"""<section class="{hero_class}"{hero_bg_style}>
   <div class="wrap">
     {icon_html}
     <h1>{inline(title)}</h1>
     {'<p class="lede">' + standfirst_html + '</p>' if standfirst_html else ''}
+    {hero_share_html}
   </div>
 </section>"""
 
@@ -1642,7 +1650,6 @@ def build_content_page(slug: str, md: str) -> str:
             f'</a>'
         )
 
-    is_article = slug.startswith("case-") or slug.startswith("insight-")
     toolbar_html = READER_TOOLBAR_HTML if is_article else ""
     share_html = ARTICLE_SHARE_HTML if is_article else ""
     prose_section = f"""<section class="light">

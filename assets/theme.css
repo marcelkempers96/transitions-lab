@@ -1877,6 +1877,49 @@ body[data-page^="insight-"] .prose h4{
 }
 :root[data-theme="dark"] .prose .article-share .share-copied{background:#F5EFE1;color:#14161a;}
 
+/* Hero variant of the share row: rendered in the page-hero on
+   article pages, above the reader toolbar. Mirrors the in-prose
+   look but works on paper and coloured heroes alike. */
+.page-hero .article-share--hero{
+  display:flex;align-items:center;gap:10px;margin:22px 0 0;
+  font-family:'Hanken Grotesk',sans-serif;
+}
+.page-hero .article-share--hero .share-label{
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:800;color:currentColor;opacity:.6;margin-right:4px;
+}
+.page-hero .article-share--hero .share-btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;padding:0;
+  border:1px solid rgba(10,10,10,.22);background:#FFFFFF;color:var(--ink);
+  border-radius:999px;text-decoration:none;cursor:pointer;
+  transition:background .12s ease, transform .12s ease, border-color .12s ease;
+}
+.page-hero .article-share--hero .share-btn:hover{
+  background:var(--butter);transform:translateY(-1px);
+  border-color:rgba(10,10,10,.4);
+}
+.page-hero .article-share--hero .share-copied{
+  position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--ink);color:var(--paper);
+  font-size:11px;letter-spacing:.06em;padding:4px 8px;border-radius:4px;
+  opacity:0;pointer-events:none;transition:opacity .18s ease;white-space:nowrap;
+}
+.page-hero .article-share--hero .share-copy.is-copied .share-copied{opacity:1;}
+/* Dark and coloured hero backgrounds: keep the pill buttons on
+   an ink ground with paper-tinted strokes so they read cleanly. */
+.page-hero.hero-forest .article-share--hero .share-btn,
+.page-hero.hero-cobalt .article-share--hero .share-btn,
+.page-hero.hero-plum .article-share--hero .share-btn{
+  background:rgba(255,255,255,.10);color:var(--paper);
+  border-color:rgba(245,239,225,.35);
+}
+.page-hero.hero-forest .article-share--hero .share-btn:hover,
+.page-hero.hero-cobalt .article-share--hero .share-btn:hover,
+.page-hero.hero-plum .article-share--hero .share-btn:hover{
+  background:rgba(255,255,255,.20);border-color:rgba(245,239,225,.55);
+}
+
 /* Smooth anchor navigation site-wide, so the scroll-next arrow
    and any in-page anchor link glide instead of jumping. */
 html{scroll-behavior:smooth;}
