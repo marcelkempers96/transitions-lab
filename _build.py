@@ -278,8 +278,15 @@ FINAL_CTA_PAGES: set[str] = {
 # used at the foot of most content pages. Matches a final <p> whose only
 # content is one big <em>...</em>, optionally preceded by a horizontal
 # rule and blank space. Applied only on the pages listed above.
+# Match a trailing italic-prose "see also" paragraph on any content page,
+# whether the file ends with it directly (case studies, /about, /articles)
+# or whether an article-nav div follows it (all insight pages). The
+# positive lookahead keeps the article-nav block intact so that only the
+# italic paragraph and its preceding <hr> are removed.
 _TRAILING_ITALIC_RE = re.compile(
-    r'(?:<hr[^>]*/?>\s*)?<p[^>]*>\s*<em>[\s\S]{20,2000}?</em>\s*</p>\s*$',
+    r'(?:<hr[^>]*/?>\s*)?'
+    r'<p[^>]*>\s*<em>[\s\S]{20,2000}?</em>\s*</p>\s*'
+    r'(?=(?:<div[^>]*\bclass\s*=\s*"[^"]*\barticle-nav\b[^"]*"[\s\S]*?</div>\s*)?$)',
 )
 
 # The compact contact block. Same form as /contact but abbreviated fields.
@@ -1528,6 +1535,12 @@ def build_content_page(slug: str, md: str) -> str:
     """Convert a content markdown file to a full HTML page."""
     top_eyebrow, title, standfirst_html, body_html = parse_markdown(md)
 
+    # Retire the italic 'see also' footer paragraph site-wide, both on
+    # pages that end with it directly (case studies, /about, /articles)
+    # and on insight pages where an <div class="article-nav"> block
+    # follows the italic paragraph.
+    body_html = _TRAILING_ITALIC_RE.sub("", body_html)
+
     # Description falls back to plain-text standfirst
     meta = META.get(slug, {})
     description = meta.get("description")
@@ -1641,13 +1654,6 @@ def build_content_page(slug: str, md: str) -> str:
     </div>
   </div>
 </section>"""
-
-    # Strip a trailing italic-prose 'see also' paragraph on every
-    # content page. The italic footer treatment is retired site-
-    # wide - programme pages (which do not get the CTA panel
-    # either) still had these stale, so the strip needs to run
-    # independently of the CTA injection below.
-    prose_section = _TRAILING_ITALIC_RE.sub("", prose_section)
 
     body = page_hero + "\n\n" + prose_section
     if _wants_final_cta(slug):
