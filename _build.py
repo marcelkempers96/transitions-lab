@@ -1725,7 +1725,7 @@ def build_home() -> str:
 </section>
 
 <!-- FLASH BANNER - thin coloured announcement of the latest flagship article -->
-<a class="flash-banner flash-banner--coral" href="/insight-the-saving-is-agreed">
+<a class="flash-banner flash-banner--ink" href="/insight-the-saving-is-agreed">
   <span class="flash-eyebrow">New field findings</span>
   <span class="flash-body">Read the latest article on <em>Nairobi's electric transition</em>.</span>
   <span class="flash-cue" aria-hidden="true">→</span>
