@@ -46,11 +46,6 @@ The kiln's appeal is that it answers more than one problem at once. A farmer fee
  <figcaption>The Pyropower kiln, being demonstrated and used at two Lombok homesteads.</figcaption>
 </figure>
 
-<figure>
- <img src="/assets/img/case-pyropower-hero.jpg" alt="A smallholder farmer in a straw hat holds a handful of finished biochar in cupped hands, standing beside a large metal kiln with a fire visible at the base. Bamboo stacks and processed pieces around the working area." class="diagram">
- <figcaption>A farmer in Lombok with a handful of finished biochar.</figcaption>
-</figure>
-
 The Lab's interest is in how a household actually weighs those three values. Which one does the work of adoption, the fuel saving, the yield increase, or the carbon income? The answer is rarely the one a project assumes, and it tends to differ by crop, by season, and by household. This is precisely the kind of question that survey headcounts miss and that only direct, structured conversation with farmers can answer.
 
 <figure>

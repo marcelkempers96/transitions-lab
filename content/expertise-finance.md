@@ -54,7 +54,7 @@ The Lab documents it: whether pay-as-you-go genuinely expands opportunity, who i
 - World Bank, [Global Findex Database](https://www.worldbank.org/en/publication/globalfindex).
 - CGAP, [research on financial services for the poor](https://www.cgap.org/).
 - GSMA, [State of the Industry Report on Mobile Money](https://www.gsma.com/mobilefordevelopment/mobile-money/).
-- Our own [mobility case study](/case-roam) and [Payment Rail reading](/case-finance).
+- Our own [mobility case study](/case-roam) and [MiMaji water-transparency case](/case-mimaji).
 
 ---
 
@@ -110,7 +110,7 @@ For the full series across the transitions we study, see [Articles](/articles).
   <h3>Where to next</h3>
   <div class="footer-links">
     <a href="/case-roam">Mobility case</a>
-    <a href="/case-finance">Payment Rail reading</a>
+    <a href="/case-mimaji">MiMaji case</a>
     <a href="/field-research">Field Research method</a>
     <a href="/expertise-e-mobility">E-Mobility &amp; Transport</a>
     <a href="/expertise-energy">Energy &amp; Water Systems</a>

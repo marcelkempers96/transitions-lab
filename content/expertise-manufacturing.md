@@ -126,8 +126,8 @@ For the full series across every research area, see [Articles](/articles).
 <div class="programme-footer">
   <h3>Where to next</h3>
   <div class="footer-links">
-    <a href="/case-manufacturing">Assembly to Value case</a>
     <a href="/case-pyropower">Pyropower case</a>
+    <a href="/case-context-entry">Market-Entry reading</a>
     <a href="/field-research">Field Research method</a>
     <a href="/expertise-e-mobility">E-Mobility &amp; Transport</a>
     <a href="/expertise-energy">Energy &amp; Water Systems</a>

@@ -340,10 +340,6 @@ HERO_COLOR: dict[str, str] = {
     "case-mimaji": "butter",
     "case-statia": "butter",
     "case-context-entry": "butter",
-    "case-rd-prototype": "butter",
-    "case-manufacturing": "butter",
-    "case-ai-digital": "butter",
-    "case-finance": "butter",
     "articles": "butter",
     "insight-eu-us": "butter",
     "insight-eu-africa": "butter",
@@ -676,22 +672,6 @@ META: dict[str, dict[str, str]] = {
         "title": "Before the Capital: A Market-Entry Study | Transitions Lab",
         "description": "What a mobility venture learned before committing capital to a new market, and how field evidence turned a hopeful expansion into a reasoned one.",
     },
-    "case-rd-prototype": {
-        "title": "Before the Freeze: An R&D-Stage Field Test of a Cold-Chain Prototype | Transitions Lab",
-        "description": "What a European hardware venture learns when a lab-tested solar vaccine fridge meets a rural East African clinic for the first time, and how that evidence changes the next design cycle. An illustrative R&D-Support case.",
-    },
-    "case-manufacturing": {
-        "title": "Assembly to Value: Local Manufacturing in East Africa | Transitions Lab",
-        "description": "When a product moves from imported to locally assembled, whether the 'local' part actually reaches the workers, suppliers, and customers it promises to.",
-    },
-    "case-ai-digital": {
-        "title": "Digital Services in Low-Connectivity Contexts | Transitions Lab",
-        "description": "When a digital tool designed for always-connected users meets an intermittent phone, a shared device, and a language it wasn't tested in.",
-    },
-    "case-finance": {
-        "title": "The Payment Rail: What Mobile Money Carries | Transitions Lab",
-        "description": "Every transition depends on one prior question: can people pay for it, over time, in the way their income actually arrives.",
-    },
     "insight-eu-us": {
         "title": "Europe Invents, America Scales: The Innovation Gap | Transitions Lab",
         "description": "Europe produces world-class innovation and struggles to commercialise it; the US does the reverse. What the asymmetry means, and where evidence fits.",
@@ -993,9 +973,6 @@ STUB_TITLES: dict[str, str] = {
     "case-mimaji": "MiMaji - Water Transparency in Nairobi",
     "case-statia": "St. Eustatius - Small-Island Mobility",
     "case-context-entry": "Market-Entry Study, East Africa",
-    "case-manufacturing": "Local Manufacturing in East Africa",
-    "case-ai-digital": "Digital Services in Low-Connectivity Contexts",
-    "case-finance": "The Payment Rail: What Mobile Money Carries",
     "insight-eu-us": "Europe Invents, America Scales",
     "insight-eu-africa": "The EU and Africa",
     "insight-transitions-outcomes": "Four Ways a Transition Lands",
