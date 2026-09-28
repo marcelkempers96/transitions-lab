@@ -210,12 +210,57 @@ ARTICLE_CTA_HTML = """<section class="light article-cta-band">
         </div>
         <div class="cta-actions">
           <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>
-          <a href="/case-studies" class="cta-secondary">More field cases</a>
+          <a href="/case-studies" class="cta-secondary">See case studies</a>
+          <a href="/articles" class="cta-secondary">Read the articles</a>
         </div>
       </div>
+      <p class="lab-posture-note">The Lab is an independent research team, not an advocacy organisation. We do not campaign, endorse products, or accept commissions where a finding is expected in advance. Where a partner&#39;s own theory of change is what needs testing, that is a legitimate engagement, and the Lab tests it honestly.</p>
     </div>
   </div>
 </section>"""
+
+# Pages that end in italic-prose 'see also' paragraphs. These get their
+# trailing italic footer stripped and replaced with the ARTICLE_CTA_HTML
+# panel above. Case studies and insight articles already get this
+# treatment via slug prefix.
+FINAL_CTA_PAGES: set[str] = {
+    "about",
+    "articles",
+    "brw",
+    "case-studies",
+    "capability-statement",
+    "economics-of-transitions",
+    "entering-a-new-context",
+    "european-impact-tracking",
+    "field-research",
+    "how-it-works",
+    "human-side-of-technology",
+    "impact-measurement",
+    "impact-tracking-template",
+    "innovation-dynamics",
+    "interview-guide",
+    "market-expansion",
+    "measuring-change",
+    "monitoring-evaluation-dissemination",
+    "qualitative-vs-quantitative",
+    "readiness-levels",
+    "reporting-to-funders",
+    "research-development",
+    "resources",
+    "sdgs",
+    "who-we-serve",
+    "what-we-do",
+    "for-funders",
+    "esf-social-innovation",
+}
+
+# Regex: trailing italic-prose 'see also' block, exactly the pattern we
+# used at the foot of most content pages. Matches a final <p> whose only
+# content is one big <em>...</em>, optionally preceded by a horizontal
+# rule and blank space. Applied only on the pages listed above.
+_TRAILING_ITALIC_RE = re.compile(
+    r'(?:<hr[^>]*/?>\s*)?<p[^>]*>\s*<em>[\s\S]{20,2000}?</em>\s*</p>\s*$',
+)
 
 # The compact contact block. Same form as /contact but abbreviated fields.
 # Submissions go to hello@transitionslab.org via FormSubmit.
@@ -1575,10 +1620,18 @@ def build_content_page(slug: str, md: str) -> str:
   </div>
 </section>"""
 
+    # Strip a trailing italic-prose 'see also' paragraph on any page
+    # that will pick up the standard final CTA panel below. Keeps the
+    # content page ending in the button-driven panel rather than a
+    # dense italic footnote.
+    is_article_slug = slug.startswith("case-") or slug.startswith("insight-")
+    if is_article_slug or slug in FINAL_CTA_PAGES or slug in CONTACT_CTA_PAGES:
+        prose_section = _TRAILING_ITALIC_RE.sub("", prose_section)
+
     body = page_hero + "\n\n" + prose_section
     if slug in CONTACT_CTA_PAGES:
         body += "\n\n" + CONTACT_CTA_HTML
-    elif slug.startswith("case-") or slug.startswith("insight-"):
+    elif is_article_slug or slug in FINAL_CTA_PAGES:
         body += "\n\n" + ARTICLE_CTA_HTML
     return page_shell(slug=slug, title=title, description=description, body=body)
 

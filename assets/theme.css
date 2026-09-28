@@ -2304,6 +2304,21 @@ section.page-hero[data-hero-bg] .eyebrow{
   color:var(--coral);margin-bottom:8px;
 }
 
+/* Lab posture note: the independence disclosure that sits below the
+   'Connect with the Lab' CTA panel on every article, case study and
+   content page that carries the final section. Reads as a signed-off
+   statement in a light-ink outline, not another CTA. */
+.prose .lab-posture-note{
+  margin:26px 0 8px;padding:20px 22px;
+  background:transparent;border:1px solid rgba(10,10,10,.18);
+  font-size:14.5px;line-height:1.55;color:var(--ink);
+  font-family:'Hanken Grotesk',sans-serif;font-weight:500;
+  opacity:.86;
+}
+:root[data-theme="dark"] .prose .lab-posture-note{
+  border-color:rgba(232,228,218,.24);color:rgba(232,228,218,.86);
+}
+
 /* Article & case-study section colour-band progression.
    On desktop, as the reader scrolls past each h2 in the prose,
    the surrounding band shifts colour subtly. Uses attachment-fixed
