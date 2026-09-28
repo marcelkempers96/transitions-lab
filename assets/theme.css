@@ -2706,8 +2706,8 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
 .what-grid .what-card p{font-size:15.5px;line-height:1.5;margin:0;color:var(--ink);font-weight:500;flex:1;}
 .what-grid .what-card .what-more{margin-top:auto;font-weight:800;color:var(--ink);}
 .what-grid .what-card .what-flag{
-  height:44px;width:44px;display:block;object-fit:contain;
-  margin:0 0 4px;align-self:flex-start;
+  height:72px;width:72px;display:block;object-fit:contain;
+  margin:0 0 10px;align-self:flex-start;
 }
 /* Section-video treatment: reused pattern from the hero and the
    statement block. The section owns a full-bleed background <video>
