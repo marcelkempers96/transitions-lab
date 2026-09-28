@@ -8,11 +8,9 @@ We don't claim every sector. We know the ones where our method (social science f
 
 Each programme runs in Europe and in the places our cases come from. The questions do not change when the postcode does.
 
-<div class="callout c-butter">
-  <span class="kicker">A note that runs through all of them</span>
-  <p>Every transition is also a question of <strong>who is served and who is left out</strong>. Equity is not a separate expertise. It is the lens we bring to each of these.</p>
-  <p style="margin-top:10px;">Research can also be browsed by <a href="/sdgs">Sustainable Development Goal</a>.</p>
-</div>
+Every transition is also a question of **who is served and who is left out**. Equity is not a separate expertise. It is the lens we bring to each of these.
+
+Research can also be browsed by [Sustainable Development Goal](/sdgs).
 
 ---
 
