@@ -1407,13 +1407,25 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     meta_title = META.get(slug, {}).get("title")
     full_title = meta_title or (title if slug == "index" else f"{title} | Transitions Lab")
 
+    # Lock pinch-to-zoom on articles and case studies. Those pages
+    # carry the reader toolbar (A- / A+ font-size + serif toggle +
+    # theme) so users have a controlled way to increase text size
+    # without pinch-zoom, and locking prevents the accidental zoom
+    # that scrolls the article sideways on iOS. Everywhere else the
+    # standard responsive viewport applies.
+    if slug.startswith("case-") or slug.startswith("insight-"):
+        viewport_content = ("width=device-width, initial-scale=1.0, "
+                            "maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
+    else:
+        viewport_content = "width=device-width, initial-scale=1.0"
+
     nav_html = render_nav(slug)
 
     head = f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="{viewport_content}">
 <title>{htmllib.escape(full_title)}</title>
 <meta name="description" content="{htmllib.escape(description, quote=True)}">
 <meta name="author" content="Transitions Lab">
