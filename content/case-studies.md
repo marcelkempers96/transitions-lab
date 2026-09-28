@@ -26,7 +26,7 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
   </a>
   <a class="case-card c-butter has-photo" href="/case-pyropower">
     <div class="case-photo">
-      <img src="/assets/img/case-pyropower-soil.jpg" alt="Two weathered hands work black biochar granules into rich brown soil beside a metal basin holding more biochar, on a Lombok smallholding.">
+      <img src="/assets/img/case-pyropower-programme.jpg" alt="Four-panel programme mosaic from the Lombok engagement: a signed agreement held up with the village chief and elders; a handshake and signed agreement with the farmers' association over an outdoor table of coffee cups; the field team on the flatbed of a pickup; the group photograph at the end of the visit under a mango tree.">
       <span class="tag">Indonesia · Agriculture &amp; energy</span>
     </div>
     <div class="body">
