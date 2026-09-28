@@ -6,8 +6,6 @@
 
 The Lab's published research and its applied engagements share one root: direct contact with the people a transition affects. Most commissioned work is delivered privately; the cases below are the exceptions, the engagements partners have agreed to share.
 
-Each card is a link. **§ / Field case** denotes an engagement with a named partner; **§ / Field reading** denotes a Lab-authored composite drawn from the same field method.
-
 ---
 
 ## Field cases

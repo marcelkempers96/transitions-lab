@@ -4,13 +4,13 @@
 
 *What a technology, service, or programme actually changes, for whom, and through what pathway - measured directly with the people it is meant to serve, and reported honestly.*
 
-Most writing about a new technology or programme arrives ahead of the evidence. Impact measurement closes that gap: it puts honest questions to the people the work is meant to serve, from the human side first, independently of the intervention, and reports what the evidence actually says, including when that is inconvenient.
+Impact measurement puts honest questions to the people the work is meant to serve, from the human side first, independently of the intervention, and reports what the evidence actually says, including when that is inconvenient.
 
 ---
 
 ## What we measure - three dimensions of impact
 
-Every study sits inside the same measurement frame, so a result in one context can be read against another and a one-off study becomes a trajectory over time. Three dimensions, each answering a different question.
+Every study sits inside the same measurement frame, so a result in one context can be read against another and a one-off study becomes a trajectory over time.
 
 <div class="callout c-coral">
   <span class="kicker">Dimension 01</span>
@@ -36,14 +36,14 @@ Reach, depth, and experience read together give a project a picture of impact th
 
 ## How strong is the evidence
 
-Not all evidence carries the same weight. The Lab classifies every finding it reports against a five-tier pyramid, from what was delivered at the base to a causal contribution established at the top. The pyramid is the honest answer to the question every funder eventually asks, which is whether the number in the report is a claim, an observation, or a conclusion.
+The Lab classifies every finding it reports against a five-tier pyramid, from what was delivered at the base to a causal contribution established at the top. The pyramid answers whether the number in the report is a claim, an observation, or a conclusion.
 
 <figure>
   <img src="/assets/img/impact-evidence-pyramid.jpg" alt="Evidence Strength Pyramid. From base to apex, five tiers: Activity Data (what was delivered or reached); Self-Reported Outcome (participants report perceived change); Observed Change (behaviour or condition has measurably changed); Triangulated Evidence (multiple sources confirm the change); Attributable Impact (causal contribution established). An arrow on the left runs from 'weaker evidence' at the base to 'stronger evidence' at the top." class="diagram">
   <figcaption>Every finding the Lab reports carries an explicit place on this pyramid. Most claims made about programmes sit on the bottom two tiers and are reported as if they sat on the top two. Naming the tier is how the reporting stays honest.</figcaption>
 </figure>
 
-Two working rules follow from the pyramid. Most claims made about programmes sit on the bottom two tiers, and most reports present them as if they sat on the top two, which is where the reporting-loop pressure we describe in [Why funders learn from grantees](/insight-the-reporting-loop) shows up in practice. And moving a study up the pyramid is a design choice made before the fieldwork, not a rhetorical move made in the write-up: a baseline captured, a second source lined up, a control identified. What you can honestly claim at the end is set by what you built in at the start.
+Most claims made about programmes sit on the bottom two tiers, and most reports present them as if they sat on the top two. This is the reporting-loop pressure we describe in [Why funders learn from grantees](/insight-the-reporting-loop). Moving a study up the pyramid is a design choice made before the fieldwork, not a rhetorical move made in the write-up: a baseline captured, a second source lined up, a control identified. What you can honestly claim at the end is set by what you built in at the start.
 
 ---
 
@@ -71,7 +71,7 @@ Impact is not one thing. On any given study, we typically measure a mix of the f
 
 **We reach respondents directly, in-language.** Trained local researchers who know the place gather data by phone or in person, with informed, recorded, revocable consent. We reach the people the intervention is meant to serve, not proxies for them. See [Field Research](/field-research) for the field methods behind this.
 
-**We report the inconvenient finding.** Independence is the whole point. We publish what the evidence says, including the parts that contradict a client's hopes. That posture is what makes the finding worth the effort of gathering it.
+**We report the inconvenient finding.** Independence is the whole point. We publish what the evidence says, including the parts that contradict a client's hopes.
 
 ---
 
