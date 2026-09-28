@@ -9,7 +9,8 @@
   <ul>
     <li><a href="#ra-mini-grids">Mini-grids and off-grid supply</a></li>
     <li><a href="#ra-grid">Renewables, storage and grid integration</a></li>
-    <li><a href="#ra-water">Water delivery, vendors and payment</a></li>
+    <li><a href="#ra-water-source">Water sources, treatment and rural access</a></li>
+    <li><a href="#ra-water-delivery">Water delivery, vendors and payment</a></li>
   </ul>
 </div>
 
@@ -32,7 +33,9 @@ Energy and water are the two systems everything else in a transition rests on. T
 
 <span class="ra-name" id="ra-grid">Renewables, storage and grid integration</span> is where the same programme meets the grid that already exists. Curtailment, storage siting, coincident peak, and the anchor-tenant contracts that decide who firms the system: none of these are engineering questions in the strict sense. Each is a decision about who bears the cost of a shared piece of infrastructure, and the Lab reads them through the utility, the developer, the industrial buyer, and the residential customer at once.
 
-<span class="ra-name" id="ra-water">Water delivery, vendors and payment</span> is the other half of the same argument, at a different tap. Kiosks, meters, vending points and household connections are all payment interfaces layered over a delivery system that has to be trusted before it is used. The Lab studies transboundary and drought-stressed catchments alongside the peri-urban vendor markets where the affordability question is at its sharpest.
+<span class="ra-name" id="ra-water-source">Water sources, treatment and rural access</span> covers the upstream half of the same system: where clean water is produced, how it is treated, and how it reaches the rural and marginalised households that piped networks were never built for. Boreholes, hand pumps, rainwater harvesting, community-scale treatment and small-town schemes all live here. The Lab studies why one hand pump is maintained ten years on and another abandoned in eighteen months, what builds or erodes trust in a source, and whether sanitation behaviour actually changes beyond the counting of latrines.
+
+<span class="ra-name" id="ra-water-delivery">Water delivery, vendors and payment</span> is the downstream half of the same argument, at a different tap. Kiosks, meters, vending points and household connections are all payment interfaces layered over a delivery system that has to be trusted before it is used. The Lab studies transboundary and drought-stressed catchments alongside the peri-urban vendor markets where the affordability question is at its sharpest.
 
 Water is where the Lab's roots run deepest: based in Delft, a global centre of water research, we pair genuine technical understanding of water systems with the field methods to study how they actually serve people.
 
@@ -117,6 +120,17 @@ The Lab documents why a hand pump is maintained in one village and abandoned in 
     <a href="/insight-load-that-grows-when-hot">
       <h4>The Load That Grows When It Is Hot</h4>
       <p>Cooling-driven data centre demand is not baseload, and grid planning treats it as if it were.</p>
+      <span class="read-cue">Read &rarr;</span>
+    </a>
+  </div>
+</div>
+
+<div class="reading-group">
+  <h3>Water sources, treatment and rural access</h3>
+  <div class="reading-cards">
+    <a href="/case-mimaji">
+      <h4>The MiMaji case</h4>
+      <p>What happens when a household on the wrong side of the price and quality asymmetry can finally see what they pay for.</p>
       <span class="read-cue">Read &rarr;</span>
     </a>
   </div>

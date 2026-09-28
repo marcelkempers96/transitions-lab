@@ -36,7 +36,7 @@ For the six programmes themselves, see [Programmes](/expertise).
   <li class="sdg-06"><a href="/sdgs#g6"><img class="sdg-icon" src="/assets/img/sdg/sdg-06.png" alt="SDG 6"><span class="sdg-name">Clean Water and Sanitation</span></a></li>
 </ul>
 
-<p id="g6">Contributed to by <a href="/expertise-energy">Energy & Water Systems</a>. Water delivery, vendors and payment, both in Delft-adjacent transboundary contexts and in the region where the number of people without safe water is still rising.</p>
+<p id="g6">Contributed to by <a href="/expertise-energy">Energy & Water Systems</a>. Water sources, treatment and rural access alongside delivery, vendors and payment - from Delft-adjacent transboundary and drought-stressed catchments through to the region where the number of people without safe water is still rising.</p>
 
 <p><strong>SDG 7 · Affordable and Clean Energy</strong></p>
 
