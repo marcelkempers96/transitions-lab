@@ -1031,6 +1031,7 @@ LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
 IMAGE_COMMENT_RE = re.compile(r"^<!--\s*IMAGE\s+.*?-->\s*$", re.DOTALL)
 HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture|form|ul|ol|blockquote|nav|article|main|header|footer)\b", re.IGNORECASE)
+HTML_ENTITY_RE = re.compile(r"&(?:#\d+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]{1,31});")
 SECTION_EYEBROW_RE = re.compile(r"^\*\*(§[^*]+)\*\*\s*$")
 TOPLINE_SECTION_RE = re.compile(r"^§\s+/\s*(.+)$")
 ABS_LINK_RE = re.compile(r"https?://(?:www\.)?transitionslab\.org(/[^\"' )]*)?")
@@ -1105,6 +1106,10 @@ def inline(text: str) -> str:
 
     text = IMAGE_COMMENT_INLINE_RE.sub(_stash, text)
     text = INLINE_SPAN_RE.sub(_stash, text)
+    # Preserve any pre-existing HTML entities (&amp;, &rarr;, &middot;,
+    # numeric refs) so the escape step below does not double-escape them
+    # into &amp;amp;, &amp;rarr;, etc.
+    text = HTML_ENTITY_RE.sub(_stash, text)
 
     # Escape first so we don't corrupt user text; then re-inject our tags
     text = htmllib.escape(text, quote=False)

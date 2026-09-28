@@ -45,7 +45,7 @@ Site-level data (the transitionslab.org website) is covered separately in our [p
 
 ---
 
-## Independence &amp; conflicts
+## Independence & conflicts
 
 The Lab is independent of the technologies, ventures, and programmes it studies. We do not take equity, revenue share, or contingent fees. Where a prior relationship with a party in a study could reasonably be seen as a conflict, we disclose it in writing before the engagement starts, and if the disclosure does not resolve it, we do not take the study.
 
