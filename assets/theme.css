@@ -62,7 +62,7 @@ img{max-width:100%;height:auto;display:block;}
 /* Eyebrow */
 .eyebrow{
   font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;
-  text-transform:uppercase;font-weight:800;color:var(--orange);margin:0 0 22px;
+  text-transform:uppercase;font-weight:800;color:var(--ink);opacity:.62;margin:0 0 22px;
   display:inline-block;
 }
 
@@ -189,7 +189,7 @@ section.section-forest .eyebrow,section.section-cobalt .eyebrow,section.section-
 /* Legacy compatibility for pages that still use .light and .dark */
 section.light{background:var(--paper);color:var(--ink);padding:110px 0;}
 section.light h1,section.light h2,section.light h3,section.light h4{color:var(--ink);}
-section.light .eyebrow{color:var(--orange);}
+section.light .eyebrow{color:var(--ink);opacity:.62;}
 section.dark{background:var(--forest);color:var(--paper);padding:110px 0;}
 section.dark h1,section.dark h2,section.dark h3,section.dark h4{color:var(--paper);}
 section.dark .eyebrow{color:var(--butter);}
