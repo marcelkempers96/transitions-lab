@@ -273,18 +273,14 @@ Venkatesh, V., Morris, M. G., Davis, G. B., and Davis, F. D. (2003). [User accep
 
 ---
 
-## How this page relates to the others, and why it comes first
-
-This is the fourth of the Lab's theory references, and in practice it is the one that comes first, because it is the lens the Lab leads with.
+## The four theory references
 
 - **The Human Side of Technology** (this page), how real people perceive, decide, trust, and behave when a technology enters their lives.
 - **[Economics of Transitions](/economics-of-transitions)**, who bears the cost, who captures the value, what the market prices.
 - **[Technology & Innovation Dynamics](/innovation-dynamics)**, how the technology evolves, how firms compete to own it, how it spreads.
 - **[Transitions primer](/resources)**, how niches, regimes, and landscapes interact to move a whole system.
 
-The four pages overlap on purpose. Diffusion of innovations appears here as human behaviour and on the innovation page as competitive dynamics; loss aversion here has a cousin in the economics of the transition trough; the social construction of technology is the ground-level version of the social shaping the transitions literature studies at the system scale. Each page treats the shared idea through its own lens.
-
-The reason this page comes first is methodological. Everything on it, perception, trust, habit, meaning, appropriation, exclusion, has one property in common: it cannot be read from a distance. It does not appear in a specification, a cost model, a patent, or a dashboard. It appears only when you go to where the technology meets the person and ask, carefully and independently, what actually happened. That is what the Lab does, and this page is the theory of why it is necessary. For how we put it into practice, see [What We Do](/what-we-do) and the [In-Depth Interview Guide](/interview-guide).
+Perception, trust, habit, meaning, appropriation, exclusion, none of it appears in a specification, a cost model, a patent, or a dashboard. It appears only when you go to where the technology meets the person and ask what actually happened. See [What We Do](/what-we-do) and the [In-Depth Interview Guide](/interview-guide).
 
 <div class="article-nav">
   <a class="article-nav-card" href="/resources">
