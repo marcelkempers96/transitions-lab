@@ -37,7 +37,7 @@ Each card is a link. **§ / Field case** denotes an engagement with a named part
   </a>
   <a class="case-card c-forest has-photo" href="/case-reef-support">
     <div class="case-photo">
-      <img src="/assets/img/case-reef-support-hero.jpg" alt="A community ranger in a mask and snorkel, chest-deep in clear reef water, writing on a waterproof clipboard beside a coral-survey quadrat; a small research skiff moored just off the reef edge in the background.">
+      <img src="/assets/img/case-reef-support-mou.jpg" alt="Five people standing shoulder-to-shoulder under a beach gazebo on Lombok, holding signed agreements between them; palms and the water visible in the background.">
       <span class="tag">Marine &middot; Community monitoring</span>
     </div>
     <div class="body">

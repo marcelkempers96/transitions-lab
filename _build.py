@@ -1762,14 +1762,14 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- CASE STUDIES - three field cases -->
+<!-- CASE STUDIES - four field cases -->
 <section class="section-paper">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Case studies</p>
       <h2>Where we've worked on the ground.</h2>
     </div>
-    <div class="insight-row">
+    <div class="insight-row insight-row--4">
       <a class="insight-card has-photo" href="/case-roam">
         <div class="card-photo">
           <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
