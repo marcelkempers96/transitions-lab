@@ -27,7 +27,7 @@ The [ESF Social Innovation+ Initiative](https://european-social-fund-plus.ec.eur
 
 Two things run through all of it. First, these are experiments: the point is to test whether a new approach works, not to assume it. Second, the [Commission expects that testing to be rigorous](https://european-social-fund-plus.ec.europa.eu/en/social-innovation). Its own guidance on social experimentation and on scaling up social innovation makes methodology central: a social experiment is only worth scaling if there is credible evidence that it produced the outcome, for whom, and why.
 
-That is precisely the gap the Lab fills. An innovative idea and a research design are different skills, and the teams with the best social innovations are rarely the teams best placed to measure them independently.
+An innovative idea and a research design are different skills, and the teams with the best social innovations are rarely the teams best placed to measure them independently.
 
 ---
 

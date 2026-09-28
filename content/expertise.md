@@ -4,7 +4,7 @@
 
 *Six transitions the Lab knows in depth. Each is a place where a technology is meeting people at scale, and the human questions are as hard as the technical ones.*
 
-Every transition is also a question of **who is served and who is left out**. Equity is not a separate expertise; it is the lens we bring to each of these.
+Every transition is also a question of **who is served and who is left out**.
 
 Research can also be browsed by [Sustainable Development Goal](/sdgs).
 

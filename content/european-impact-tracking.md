@@ -23,7 +23,7 @@ The Lab offers a service line built for exactly this gap: independent impact tra
 
 ## Impact tracking in European projects is harder than it should be
 
-The difficulty is rarely a lack of goodwill. It is structural, and it shows up the same way across programmes.
+The difficulty is structural, and it shows up the same way across programmes.
 
 **The baseline is missing.**
 Impact is a *change*, and a change needs a before. Yet measurement is frequently designed near the end, once there is a report to write, by which point the "before" can only be reconstructed from memory and rounded numbers. Without a baseline captured at the start, there is nothing rigorous to measure against. See our [impact-tracking template](/impact-tracking-template) for a fill-in framework that fixes this at project design.
@@ -99,7 +99,7 @@ Much of the problem is solved before any data is collected, in the design. The L
 
 **Impact-pathway mapping** that makes the logic explicit - from activity to outcome to impact - so everyone can see what is being claimed and what would count as evidence for it. For niche technologies engaging incumbent regimes, this mapping benefits from the [BRW framework](/brw), which names the mechanism the project is deploying against a specific barrier.
 
-Templates can be handed over for a partner to run with the Lab's support, or operated by the Lab as the independent measurement function within the project. Either way, the design is consistent enough that one project's evidence can stand beside another's.
+Templates can be handed over for a partner to run with the Lab's support, or operated by the Lab as the independent measurement function within the project.
 
 ---
 
@@ -126,9 +126,9 @@ We work with:
 
 ## Independence is the whole point
 
-The reason to bring in the Lab is the reason a project cannot do this convincingly itself. We are independent of the intervention we are measuring. We are [social and technical at once](/about) - we start from the people a project affects, and we also understand the system being demonstrated. And we report what the data says, including when it is inconvenient. Our published [articles](/articles) and [case studies](/case-studies) are the proof of that method; the same discipline is what a commissioning consortium receives.
+The reason to bring in the Lab is the reason a project cannot do this convincingly itself. We are independent of the intervention we are measuring. We are [social and technical at once](/about) - we start from the people a project affects, and we also understand the system being demonstrated. We report what the data says, including when it is inconvenient.
 
-That independence is not a marketing line. It is the source of the evidence's value. A result the Lab reports means something a self-assessment cannot.
+A result the Lab reports means something a self-assessment cannot.
 
 ---
 
