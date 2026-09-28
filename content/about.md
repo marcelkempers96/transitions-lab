@@ -10,6 +10,10 @@
   <p>A technology only matters when it meets a person, in a place. Not the specification, not the pilot deck, not the aggregate figure. The daily arithmetic of the household, the shift, the field, the shop counter. That is where the Lab starts, and where it reports back to.</p>
 </div>
 
+<figure>
+  <img src="/assets/img/about-conference.jpg" alt="A packed audience in a modern glass-walled venue with black pendant lamps overhead, facing a presenter off-frame; the front rows are a mix of researchers, funders and practitioners of many nationalities, and a bilingual Japanese-English programme is visible on a screen at the back." class="diagram">
+</figure>
+
 ---
 
 ## Two modes, one method
