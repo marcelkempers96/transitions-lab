@@ -400,6 +400,7 @@ HERO_COLOR: dict[str, str] = {
     "terms": "sky",
     "cookies": "sky",
     "ethics": "forest",
+    "researchers": "forest",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -634,6 +635,10 @@ META: dict[str, dict[str, str]] = {
     "ethics": {
         "title": "Research Ethics | Transitions Lab",
         "description": "The five international frameworks the Lab holds every engagement to - Belmont, Helsinki, IPA and J-PAL, EU GDPR and the ESRC framework - and what consent, data handling and independence look like in practice.",
+    },
+    "researchers": {
+        "title": "Field Researcher Network | Transitions Lab",
+        "description": "The wider network of trained field researchers, local analysts and country leads the Lab works through. Who they are, how they work, and what standards every engagement is held to.",
     },
     "expertise-e-mobility": {
         "title": "E-Mobility & Transport Research | Transitions Lab",
@@ -1792,7 +1797,7 @@ def build_home() -> str:
   <div class="wrap">
     <div class="section-head reveal">
       <h2 style="color:var(--paper);">A global team of researchers, analysts, and field partners.</h2>
-      <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field researchers, local analysts and <a href="/who-we-serve" style="color:var(--butter);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;">long-standing partners</a>, in Europe and in the places our cases come from.</p>
+      <p style="color:var(--paper);">The Lab is a small core in Delft and a wider network of trained field <a href="/researchers" style="color:var(--butter);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;">researchers</a>, local analysts and long-standing <a href="/#partners" style="color:var(--butter);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;">partners</a>, in Europe and in the places our cases come from.</p>
     </div>
 
     <p class="net-expertise-label">Current programmes</p>
@@ -2049,7 +2054,7 @@ def build_home() -> str:
 </section>
 
 <!-- PARTNERS - logo strip -->
-<section class="section-paper" style="padding:72px 0;">
+<section id="partners" class="section-paper" style="padding:72px 0;">
   <div class="wrap" style="text-align:center;">
     <p class="eyebrow">Partners &amp; collaborators</p>
     <p style="max-width:56ch;margin:0 auto 40px;font-size:17px;line-height:1.5;">Organisations whose engagements or research base the Lab has worked with, published with, or built its methods alongside.</p>
