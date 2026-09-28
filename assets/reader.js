@@ -49,7 +49,7 @@
     },
     size: function (v) {
       var n = parseInt(v, 10); if (isNaN(n)) n = 0;
-      if (n < -1) n = -1; if (n > 2) n = 2;
+      if (n < 0) n = 0; if (n > 3) n = 3;
       var s = String(n);
       if (isArticle) html.setAttribute('data-size', s);
       safeSet(KEY_SIZE, s);

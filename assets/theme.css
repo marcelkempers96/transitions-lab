@@ -1556,7 +1556,7 @@ a.pill:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
 
 /* Global reader preferences.
    The <html> element carries data-theme=warm|light|dark,
-   data-font=sans|serif, and data-size=-1|0|1|2. The FLASH_INIT
+   data-font=sans|serif, and data-size=0|1|2|3. The FLASH_INIT
    inline script in <head> sets these before first paint. */
 
 /* Theme: LIGHT. Body switches to pure white, page-hero fades
@@ -1701,18 +1701,17 @@ body[data-page^="insight-"] .prose h4{
 
 /* Text size: applies only to .prose body copy on article pages
    (data-size is set only on case-*/insight-* via FLASH_INIT).
-   Four levels; default (0) sits between the smallest step and
-   the old base so reading opens at a comfortable-but-quiet
-   size, and stepping up gives a real jump. Non-article pages
-   keep the 18px base rule elsewhere in this file. */
-:root[data-size="-1"] .prose > p,
-:root[data-size="-1"] .prose li{font-size:15.5px;line-height:1.6;}
+   Four levels 0..3; the default (0) opens at the smallest step
+   so reading is compact by default and A+ steps the reader up.
+   Non-article pages keep the 18px base rule elsewhere. */
 :root[data-size="0"] .prose > p,
-:root[data-size="0"] .prose li{font-size:16.75px;line-height:1.64;}
+:root[data-size="0"] .prose li{font-size:15.5px;line-height:1.6;}
 :root[data-size="1"] .prose > p,
-:root[data-size="1"] .prose li{font-size:18.5px;line-height:1.68;}
+:root[data-size="1"] .prose li{font-size:16.75px;line-height:1.64;}
 :root[data-size="2"] .prose > p,
-:root[data-size="2"] .prose li{font-size:20px;line-height:1.7;}
+:root[data-size="2"] .prose li{font-size:18.5px;line-height:1.68;}
+:root[data-size="3"] .prose > p,
+:root[data-size="3"] .prose li{font-size:20px;line-height:1.7;}
 
 /* Field-findings header stat row: three big numerals under the
    standfirst on flagship-style pieces like The Saving Is Agreed.
