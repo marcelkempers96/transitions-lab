@@ -33,6 +33,16 @@ This sits squarely in the Lab's domain. The live Transitions Lab site already na
 
 Amba Stapert, the first Reef Ranger, sits at the origin of the community-training arm of the programme.
 
+<figure>
+  <img src="/assets/img/case-reef-support-amba.jpg" alt="Amba Stapert giving a two-thumbs-up in front of the coral display tanks at the Lombok lab, wearing a light-blue Reef Support t-shirt with a wetsuit pulled down to the waist." class="diagram">
+  <figcaption>Amba Stapert at the Lombok lab, the first Reef Ranger the programme trained.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/case-reef-support-coral-work.jpg" alt="A ranger in a Reef Support t-shirt leaning over a coral display tank under blue UV lighting, holding a small tool as she works on a coral fragment; ripples of blue light reflected off the tank surface." class="diagram">
+  <figcaption>Fragment work on the coral display tank. The visible-light survey is the outer layer of a monitoring stack that reaches back into the aquarium and forward into the satellite feed.</figcaption>
+</figure>
+
 ---
 
 ## What the evidence on the ground shows
@@ -42,6 +52,16 @@ Amba Stapert, the first Reef Ranger, sits at the origin of the community-trainin
 [Reef Support](https://reefsupport.org/)'s method blends satellite imagery, temperature, turbidity, chlorophyll proxies that can flag changes early, with field sensors measuring conditions like temperature, salinity, dissolved oxygen and pH where instruments exist, and with diver, drone, and ROV imagery documenting reef structure. The principle they state is that ocean monitoring works best when multiple data layers align, keeping satellite signals grounded in field evidence.
 
 <!-- IMAGE reef-layers: diagram | Three-layer diagram: Satellite (wide) / Sensors (mid) / Rangers (ground) converging into one "shared view of reef health". This is the signature visual of the case. House colours. | Beside the "three layers of evidence" section. -->
+
+<figure>
+  <img src="/assets/img/case-reef-support-data-layers.jpg" alt="Screenshot of the Reef Support environmental-indicators panel: a satellite basemap of an Indonesian island with data layers listed on the left - chlorophyll concentration, sea-surface salinity, sea-surface temperature, sea water velocity - and one indicator active over the map showing a sea-surface temperature reading." class="diagram">
+  <figcaption>The satellite layer, seen from the dashboard side. Each environmental indicator is one signal in a stack the rangers on the ground are checking against.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/case-reef-support-globe.jpg" alt="Reef Support monitoring platform showing a satellite globe view of Africa and the South Atlantic with numbered pins along the coast marking reef monitoring sites, connected by faint tracks in green and pink along the shoreline." class="diagram">
+  <figcaption>The programme's reach travels. What was named on a single Indonesian island is now recognisable on coastlines across two oceans; the reading of whether the socio-technical model travels with it is the question the Lab tracks.</figcaption>
+</figure>
 
 The Lab's interest is in that word *align*. Satellites are wide but shallow; field observation is deep but narrow. Bringing them into agreement is partly a technical problem and substantially a human one, it depends on rangers and community teams contributing geotagged observations, images, and local knowledge in a consistent, trustworthy way. The system's reliability rests on the weakest-resourced link in that chain. Understanding where that chain holds and where it frays is fieldwork, not data science.
 
