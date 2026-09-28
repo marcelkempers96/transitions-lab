@@ -4,7 +4,7 @@
 
 *Independent field evidence for the decision to enter a new market, launch a new product line, or extend a working model into a new geography. The cost of being wrong is a scaling budget; the cost of being right is a scoping conversation.*
 
-The riskiest research a Lab client commissions is the research that precedes a scaling decision. A product that works in one market can land differently in another. A promising segment can be a mirage of survivorship bias. A local partner can look aligned in a deck and misaligned in a working week. Market & expansion research exists to close that gap: to reach the people whose behaviour will decide the outcome and report what they actually do, want, and can afford.
+A product that works in one market can land differently in another. A promising segment can be a mirage of survivorship bias. A local partner can look aligned in a deck and misaligned in a working week. Market & expansion research reaches the people whose behaviour will decide the outcome and reports what they actually do, want, and can afford.
 
 The Lab runs this work through the same [field method](/field-research) we use for impact studies, but pointed at a different decision. Not "did the intervention change lives?" but "will this expansion hold when the subsidy ends, when the influencer network runs out, and when the founder is not in the room?"
 
@@ -27,7 +27,7 @@ The Lab runs this work through the same [field method](/field-research) we use f
 
 ## What the study answers
 
-Every expansion study is scoped to a specific decision, but four questions recur.
+Four questions recur.
 
 <div class="callout c-coral">
  <span class="kicker">Question 01 · Demand, real vs stated</span>

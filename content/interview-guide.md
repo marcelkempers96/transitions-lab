@@ -9,7 +9,7 @@
 <figcaption>The in-depth interview is a controlled, patient conversation. The instruments on the table between the two chairs are almost the entire toolkit.</figcaption>
 </figure>
 
-A survey tells you *what* changed. An interview, done well, tells you *why*, *how it felt*, and *what the person would do about it*. This guide shows the structure and the probing technique behind that depth. It is built to be adapted to any subject, a technology, a service, a transition.
+A survey tells you *what* changed. An interview, done well, tells you *why*, *how it felt*, and *what the person would do about it*.
 
 ### Downloadable versions
 
@@ -205,7 +205,7 @@ Consent is asked again, in the same tone, if the interview reaches a more sensit
 
 ## What derails depth
 
-Even a well-designed guide can slide back to level one or two in the room. These are the recurring reasons.
+Even a well-designed guide can slide back to level one or two in the room.
 
 <div class="callout c-coral">
   <span class="kicker">What not to do</span>
