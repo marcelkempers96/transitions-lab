@@ -2808,6 +2808,16 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   height:96px;width:96px;display:block;object-fit:contain;
   margin:0 0 2px;align-self:flex-start;
 }
+/* Per-icon size nudges: the door illustration reads a step
+   smaller, and the chart-with-figures a half-step smaller than
+   the shared 96px, so the three cards feel proportionally
+   balanced despite their different internal densities. */
+.what-grid .what-card .what-flag[src*="icon-entering-context"]{
+  height:84px;width:84px;
+}
+.what-grid .what-card .what-flag[src*="icon-measuring-change"]{
+  height:90px;width:90px;
+}
 /* The EU-flag icon fills its frame edge-to-edge, so at the shared
    96px it overpowers the illustration icons that carry generous
    internal whitespace. Bring it down to a proportional size. */
