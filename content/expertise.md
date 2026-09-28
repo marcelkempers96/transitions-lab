@@ -4,11 +4,7 @@
 
 *Six transitions the Lab knows in depth. Each is a place where a technology is meeting people at scale, and the human questions are as hard as the technical ones.*
 
-We don't claim every sector. We know the ones where our method (social science first, technical literacy alongside, independence throughout) has the most to offer.
-
-Each programme runs in Europe and in the places our cases come from. The questions do not change when the postcode does.
-
-Every transition is also a question of **who is served and who is left out**. Equity is not a separate expertise. It is the lens we bring to each of these.
+Every transition is also a question of **who is served and who is left out**. Equity is not a separate expertise; it is the lens we bring to each of these.
 
 Research can also be browsed by [Sustainable Development Goal](/sdgs).
 
