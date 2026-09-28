@@ -2548,11 +2548,21 @@ section.article-cta-band .prose{padding-top:0;}
 .prose .programme-footer .footer-links a{
   display:inline-block;padding:10px 16px;
   background:var(--white);color:var(--ink);border:2px solid var(--ink);
+  box-shadow:4px 4px 0 var(--ink);
   font-family:'Hanken Grotesk',sans-serif;
   font-size:14px;font-weight:800;letter-spacing:-.005em;
-  text-decoration:none;transition:background .12s ease;
+  text-decoration:none;
+  transition:background .12s ease, transform .12s ease, box-shadow .12s ease;
 }
-.prose .programme-footer .footer-links a:hover{background:var(--butter);}
+.prose .programme-footer .footer-links a:hover{
+  background:var(--butter);
+  transform:translate(-2px,-2px);
+  box-shadow:6px 6px 0 var(--ink);
+}
+.prose .programme-footer .footer-links a:active{
+  transform:translate(1px,1px);
+  box-shadow:2px 2px 0 var(--ink);
+}
 
 .prose .contact-cta-programme{
   margin:12px 0 8px;padding:36px 34px 32px;
