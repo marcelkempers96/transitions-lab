@@ -2804,7 +2804,7 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
    96px it overpowers the illustration icons that carry generous
    internal whitespace. Bring it down to a proportional size. */
 .what-grid .what-card .what-flag[src*="icon-eu"]{
-  height:64px;width:64px;margin-bottom:22px;
+  height:38px;width:38px;margin-bottom:24px;
 }
 /* Section-video treatment: reused pattern from the hero and the
    statement block. The section owns a full-bleed background <video>
