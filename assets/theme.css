@@ -2780,6 +2780,11 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
   display:flex;flex-direction:column;gap:10px;min-height:220px;
   position:relative;transition:transform .12s ease;
 }
+/* Kill the flex-gap between the icon and the card heading so the
+   two read as one visual unit. The gap is restored between h3
+   and the paragraph beneath it. */
+.what-grid .what-card .what-flag + .what-tag,
+.what-grid .what-card .what-flag + h3{margin-top:-8px;}
 .what-grid .what-card:last-child{border-right:0;}
 .what-grid .what-card:hover{transform:translate(-2px,-2px);}
 .what-grid .what-card.c-butter{background:#EEE4CE;color:var(--ink);}
@@ -2804,7 +2809,7 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
    96px it overpowers the illustration icons that carry generous
    internal whitespace. Bring it down to a proportional size. */
 .what-grid .what-card .what-flag[src*="icon-eu"]{
-  height:38px;width:38px;margin-bottom:14px;
+  height:28px;width:28px;margin-bottom:6px;
 }
 /* Section-video treatment: reused pattern from the hero and the
    statement block. The section owns a full-bleed background <video>
