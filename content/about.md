@@ -4,8 +4,6 @@
 
 *An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.*
 
-Established in 2026, on the back of years of sustained fieldwork on infrastructure transitions in emerging markets. We both publish our own research and work on the ground for others.
-
 <div class="callout c-coral">
   <span class="kicker">What we believe</span>
   <h3>People first, technology second, place always</h3>
