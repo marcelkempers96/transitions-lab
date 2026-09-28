@@ -4,10 +4,10 @@
 
 *An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.*
 
-<div class="callout c-coral">
+<div class="callout c-coral callout--serif">
   <span class="kicker">What we believe</span>
-  <h3>People first, technology second, place always</h3>
-  <p>A technology only matters when it meets a person, in a place. That is the level the Lab studies from. Not the specification sheet, not the pilot slide deck, not the aggregate figure, but the daily arithmetic of the household, the shift, the field, the shop counter where the technology either lands or does not. Everything the Lab does starts there and reports back.</p>
+  <h3>The place is the whole argument</h3>
+  <p>A technology only matters when it meets a person, in a place. Not the specification, not the pilot deck, not the aggregate figure. The daily arithmetic of the household, the shift, the field, the shop counter. That is where the Lab starts, and where it reports back to.</p>
 </div>
 
 ---

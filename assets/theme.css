@@ -666,6 +666,18 @@ section + section{border-top:2px solid var(--ink);}
 .prose .callout h3{margin:0 0 .5em;font-size:22px;font-weight:800;letter-spacing:-.02em;color:inherit;}
 .prose .callout p{margin:0 0 .7em;color:inherit;font-size:16.5px;line-height:1.55;}
 .prose .callout p:last-child{margin-bottom:0;}
+/* Editorial serif treatment for a callout used as a stance /
+   pull-quote (e.g. the "What we believe" panel on /about). */
+.prose .callout.callout--serif h3{
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-size:clamp(26px,3vw,34px);font-weight:500;line-height:1.15;
+  letter-spacing:-.014em;margin:0 0 .55em;
+}
+.prose .callout.callout--serif p{
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-size:clamp(18px,2vw,21px);line-height:1.5;
+  font-weight:400;letter-spacing:.001em;
+}
 .prose .format-badge{
   display:inline-block;font-family:'Hanken Grotesk',sans-serif;
   font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
