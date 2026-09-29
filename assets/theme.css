@@ -147,7 +147,11 @@ header.site{
 .header-tools .search-btn[aria-expanded="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
 
 /* Search overlay: full-viewport dim + a paper-panel input and result
-   list. Rendered once per page; toggled by .search-btn / Esc. */
+   list. Rendered once per page; toggled by .search-btn / Esc.
+   The [hidden] override is required because our .search-overlay rule
+   sets display:flex, which otherwise beats the UA's [hidden]{display:none}. */
+.search-overlay[hidden],
+.header-tools .lang-menu[hidden]{display:none !important;}
 .search-overlay{
   position:fixed;inset:0;z-index:90;
   background:rgba(10,10,10,.42);
