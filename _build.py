@@ -240,6 +240,10 @@ FINAL_CTA_EXCLUDE: set[str] = {
     "expertise-energy",
     "expertise-finance",
     "expertise-manufacturing",
+    # capability-statement embeds its own bespoke "Get in touch" CTA
+    # panel plus posture note in the source; skip the site-wide CTA so
+    # the page doesn't render two of each.
+    "capability-statement",
 }
 
 def _wants_final_cta(slug: str) -> bool:
