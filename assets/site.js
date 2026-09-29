@@ -548,3 +548,172 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.35, rootMargin: '0px 0px -6% 0px' });
   items.forEach(function (el) { io.observe(el); });
 })();
+
+/* ── Header tools: language dropdown + search overlay ────────
+   The language chip is a static UI stub (only English is live;
+   Dutch is shown as "Soon"). The search widget lazy-loads
+   /assets/search-index.json on first open, tokenises the query
+   and ranks entries whose title / description / snippet contain
+   every token. Arrow-keys and Enter navigate results. */
+(function () {
+  var langBtn = document.querySelector('.header-tools .lang-btn');
+  var langMenu = document.querySelector('.header-tools .lang-menu');
+  if (langBtn && langMenu) {
+    var setOpen = function (open) {
+      langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      langMenu.hidden = !open;
+    };
+    langBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(langMenu.hidden);
+    });
+    document.addEventListener('click', function (e) {
+      if (!langMenu.hidden && !langMenu.contains(e.target) && e.target !== langBtn) {
+        setOpen(false);
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !langMenu.hidden) setOpen(false);
+    });
+    // Disabled options are inert; the English option is a no-op.
+    langMenu.querySelectorAll('.lang-option').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (a.classList.contains('is-active') || a.classList.contains('is-disabled')) return;
+        setOpen(false);
+      });
+    });
+  }
+})();
+
+(function () {
+  var openBtn = document.querySelector('.header-tools .search-btn');
+  var overlay = document.querySelector('.search-overlay');
+  if (!openBtn || !overlay) return;
+  var input = overlay.querySelector('.search-input');
+  var closeBtn = overlay.querySelector('.search-close');
+  var results = overlay.querySelector('.search-results');
+  var hint = overlay.querySelector('.search-hint');
+  var indexPromise = null;
+  var activeIndex = -1;
+
+  function loadIndex() {
+    if (!indexPromise) {
+      indexPromise = fetch('/assets/search-index.json', {credentials: 'same-origin'})
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .catch(function () { return []; });
+    }
+    return indexPromise;
+  }
+
+  function openOverlay() {
+    overlay.hidden = false;
+    openBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    loadIndex();
+    setTimeout(function () { input.focus(); input.select(); }, 20);
+  }
+  function closeOverlay() {
+    overlay.hidden = true;
+    openBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function highlight(text, tokens) {
+    var safe = escapeHtml(text || '');
+    tokens.forEach(function (tok) {
+      if (!tok) return;
+      var re = new RegExp('(' + tok.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      safe = safe.replace(re, '<mark>$1</mark>');
+    });
+    return safe;
+  }
+  function score(entry, tokens) {
+    var t = (entry.title || '').toLowerCase();
+    var d = (entry.description || '').toLowerCase();
+    var s = (entry.snippet || '').toLowerCase();
+    var total = 0;
+    for (var i = 0; i < tokens.length; i++) {
+      var tok = tokens[i];
+      var w = 0;
+      if (t.indexOf(tok) !== -1) w += 8;
+      if (d.indexOf(tok) !== -1) w += 4;
+      if (s.indexOf(tok) !== -1) w += 1;
+      if (!w) return 0;  // require every token
+      total += w;
+    }
+    return total;
+  }
+
+  function render(entries, tokens) {
+    activeIndex = -1;
+    if (!entries.length) {
+      results.innerHTML = '<p class="search-no-results">No results.</p>';
+      if (hint) hint.style.display = 'none';
+      return;
+    }
+    if (hint) hint.style.display = '';
+    results.innerHTML = entries.map(function (e) {
+      return (
+        '<a class="search-result" href="' + escapeHtml(e.url) + '">' +
+          (e.kind ? '<span class="sr-kind">' + escapeHtml(e.kind) + '</span>' : '') +
+          '<span class="sr-title">' + highlight(e.title, tokens) + '</span>' +
+          '<span class="sr-desc">' + highlight(e.description || e.snippet.slice(0, 200), tokens) + '</span>' +
+        '</a>'
+      );
+    }).join('');
+  }
+
+  function runQuery(q) {
+    q = q.trim();
+    if (!q) { results.innerHTML = ''; if (hint) hint.style.display = ''; return; }
+    var tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
+    loadIndex().then(function (index) {
+      var scored = index
+        .map(function (e) { return {e: e, s: score(e, tokens)}; })
+        .filter(function (r) { return r.s > 0; })
+        .sort(function (a, b) { return b.s - a.s; })
+        .slice(0, 12)
+        .map(function (r) { return r.e; });
+      render(scored, tokens);
+    });
+  }
+
+  openBtn.addEventListener('click', function (e) { e.preventDefault(); openOverlay(); });
+  closeBtn.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeOverlay();
+  });
+  input.addEventListener('input', function () { runQuery(input.value); });
+  input.addEventListener('keydown', function (e) {
+    var items = results.querySelectorAll('.search-result');
+    if (e.key === 'ArrowDown' && items.length) {
+      e.preventDefault();
+      activeIndex = Math.min(items.length - 1, activeIndex + 1);
+      items.forEach(function (n, i) { n.classList.toggle('is-active', i === activeIndex); });
+      items[activeIndex].scrollIntoView({block: 'nearest'});
+    } else if (e.key === 'ArrowUp' && items.length) {
+      e.preventDefault();
+      activeIndex = Math.max(0, activeIndex - 1);
+      items.forEach(function (n, i) { n.classList.toggle('is-active', i === activeIndex); });
+      items[activeIndex].scrollIntoView({block: 'nearest'});
+    } else if (e.key === 'Enter') {
+      var target = items[activeIndex >= 0 ? activeIndex : 0];
+      if (target) { e.preventDefault(); window.location.href = target.getAttribute('href'); }
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !overlay.hidden) closeOverlay();
+    if ((e.key === '/' || (e.key === 'k' && (e.metaKey || e.ctrlKey))) && overlay.hidden) {
+      var tag = (document.activeElement && document.activeElement.tagName) || '';
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      e.preventDefault();
+      openOverlay();
+    }
+  });
+})();

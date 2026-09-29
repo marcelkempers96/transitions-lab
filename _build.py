@@ -1473,9 +1473,31 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
   <div class="wrap nav">
     <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo-dark.png" alt="Transitions Lab" class="brand-logo"></a>
     {nav_html}
+    <div class="header-tools" role="group" aria-label="Language and search">
+      <div class="lang">
+        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="lang-code">EN</span><svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-menu" hidden role="menu">
+          <a class="lang-option is-active" href="#" data-lang="en" role="menuitem" aria-current="true">English</a>
+          <a class="lang-option is-disabled" href="#" data-lang="nl" role="menuitem" aria-disabled="true">Nederlands<span class="lang-soon">Soon</span></a>
+        </div>
+      </div>
+      <button class="search-btn" type="button" aria-label="Search this site" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    </div>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
 </header>
+
+<div class="search-overlay" hidden role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg class="search-input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-input" placeholder="Search articles, cases, methods…" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" aria-label="Close search">&#215;</button>
+    </div>
+    <div class="search-results" role="listbox" aria-label="Search results"></div>
+    <p class="search-hint"><span class="search-hint-empty">Start typing to search.</span></p>
+  </div>
+</div>
 
 {body}
 
@@ -2229,6 +2251,96 @@ def main() -> None:
     # 5. Sitemap
     (ROOT / "sitemap.xml").write_text(build_sitemap(written), encoding="utf-8")
     print(f"[map]   sitemap.xml ({len(written)} urls)")
+
+    # 6. Client-side search index (JSON consumed by site.js).
+    idx_json, idx_count = build_search_index()
+    (ROOT / "assets" / "search-index.json").write_text(idx_json, encoding="utf-8")
+    print(f"[search] search-index.json ({idx_count} items)")
+
+
+# ────────────────────────────────────────────────────────────────────────────
+# Search index
+# ────────────────────────────────────────────────────────────────────────────
+
+_SEARCH_MD_STRIP = re.compile(
+    r"<!--.*?-->|<[^>]+>|`+|~+|\*{1,3}|_{1,3}|#{1,6}\s|\[|\]\([^)]*\)|>\s|\|[-|: ]+\|",
+    re.DOTALL,
+)
+
+def build_search_index() -> tuple[str, int]:
+    """Build a compact JSON search index of every real page.
+
+    Each entry is {url, title, description, snippet, kind}. The client
+    fetches this once, tokenises the input, and ranks entries whose
+    title / description / snippet contain every token.
+    """
+    import json
+
+    def kind_of(slug: str) -> str:
+        if slug.startswith("case-"): return "Case study"
+        if slug.startswith("insight-"): return "Article"
+        if slug.startswith("expertise-"): return "Programme"
+        if slug == "expertise": return "Programme"
+        if slug in {"about", "contact", "who-we-serve", "for-funders",
+                    "capability-statement", "researchers"}: return "The Lab"
+        if slug in {"field-research", "impact-measurement", "interview-guide",
+                    "qualitative-vs-quantitative", "impact-tracking-template",
+                    "how-it-works", "monitoring-evaluation-dissemination",
+                    "european-impact-tracking", "market-expansion",
+                    "research-development"}: return "Method"
+        if slug in {"resources", "brw", "readiness-levels",
+                    "economics-of-transitions", "human-side-of-technology",
+                    "innovation-dynamics"}: return "Resource"
+        if slug in {"ethics", "privacy", "terms", "cookies"}: return "Policy"
+        if slug in {"articles", "case-studies", "sdgs"}: return "Index"
+        if slug in {"entering-a-new-context", "measuring-change",
+                    "reporting-to-funders"}: return "Service"
+        return ""
+
+    items: list[dict] = []
+
+    # Home entry
+    items.append({
+        "url": "/",
+        "title": "Transitions Lab",
+        "description": "Independent research team studying how technologies meet real people.",
+        "snippet": "Field research, impact measurement, European impact tracking, case studies and articles from Transitions Lab.",
+        "kind": "Home",
+    })
+
+    for md_path in sorted(CONTENT_DIR.glob("*.md")):
+        slug = md_path.stem
+        if slug == "home":
+            continue
+        text = md_path.read_text(encoding="utf-8")
+
+        # Title: first '# ' heading in the file.
+        title_m = re.search(r"^#\s+(.+?)\s*$", text, re.M)
+        title = (title_m.group(1) if title_m else slug).strip()
+
+        meta = META.get(slug, {})
+        description = (meta.get("description") or "").strip()
+        if not description:
+            sf_m = re.search(r"^\*(.+?)\*\s*$", text, re.M)
+            if sf_m:
+                description = sf_m.group(1).strip()
+
+        # Snippet: strip HTML/markdown decoration to leave prose, then
+        # keep the first ~700 characters after the standfirst.
+        body = _SEARCH_MD_STRIP.sub(" ", text)
+        body = re.sub(r"§\s*/[^\n]*", " ", body)
+        body = re.sub(r"\s+", " ", body).strip()
+        snippet = body[:700]
+
+        items.append({
+            "url": f"/{slug}",
+            "title": title,
+            "description": description,
+            "snippet": snippet,
+            "kind": kind_of(slug),
+        })
+
+    return json.dumps(items, ensure_ascii=False, separators=(",", ":")), len(items)
 
 
 if __name__ == "__main__":
