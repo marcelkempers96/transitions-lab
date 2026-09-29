@@ -35,7 +35,7 @@
 <meta name="twitter:image" content="https://transitionslab.org/assets/og/insight-fire-and-livelihood.png">
 <meta name="twitter:image:alt" content="The Fire Was Put Out by People Making a Living | Transitions Lab">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/theme.css?v=4820ac2a">
+<link rel="stylesheet" href="/assets/theme.css?v=25ec84a0">
 
 </head>
 <body data-page="insight-fire-and-livelihood">
@@ -86,14 +86,7 @@
   </details>
   <a href="/contact">Contact</a>
 </nav>
-    <div class="header-tools" role="group" aria-label="Language and search">
-      <div class="lang">
-        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="lang-code">EN</span><svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <div class="lang-menu" hidden role="menu">
-          <a class="lang-option is-active" href="#" data-lang="en" role="menuitem" aria-current="true">English</a>
-          <a class="lang-option is-disabled" href="#" data-lang="nl" role="menuitem" aria-disabled="true">Nederlands<span class="lang-soon">Soon</span></a>
-        </div>
-      </div>
+    <div class="header-tools" role="group" aria-label="Search">
       <button class="search-btn" type="button" aria-label="Search this site" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
     </div>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -284,12 +277,55 @@
       <a href="/contact">Contact</a>
       <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+    <div class="footer-lang">
+      <span class="footer-lang-label">Language</span>
+      <div class="lang lang--footer">
+        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="lang-code">EN</span><svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-menu" hidden role="menu">
+          <a class="lang-option is-active" href="#" data-lang="en" role="menuitem" aria-current="true">English</a>
+          <a class="lang-option" href="#" data-lang="nl" role="menuitem">Nederlands</a>
+          <a class="lang-option" href="#" data-lang="de" role="menuitem">Deutsch</a>
+          <a class="lang-option" href="#" data-lang="fr" role="menuitem">Français</a>
+          <a class="lang-option" href="#" data-lang="es" role="menuitem">Español</a>
+          <a class="lang-option" href="#" data-lang="it" role="menuitem">Italiano</a>
+          <a class="lang-option" href="#" data-lang="pt" role="menuitem">Português</a>
+          <a class="lang-option" href="#" data-lang="pl" role="menuitem">Polski</a>
+          <a class="lang-option" href="#" data-lang="sv" role="menuitem">Svenska</a>
+          <a class="lang-option" href="#" data-lang="da" role="menuitem">Dansk</a>
+          <a class="lang-option is-disabled" href="#" data-lang="no" role="menuitem" aria-disabled="true">Norsk<span class="lang-soon">Soon</span></a>
+          <a class="lang-option is-disabled" href="#" data-lang="fi" role="menuitem" aria-disabled="true">Suomi<span class="lang-soon">Soon</span></a>
+          <a class="lang-option is-disabled" href="#" data-lang="ar" role="menuitem" aria-disabled="true">العربية<span class="lang-soon">Soon</span></a>
+          <a class="lang-option is-disabled" href="#" data-lang="zh-CN" role="menuitem" aria-disabled="true">简体中文<span class="lang-soon">Soon</span></a>
+          <a class="lang-option is-disabled" href="#" data-lang="ja" role="menuitem" aria-disabled="true">日本語<span class="lang-soon">Soon</span></a>
+          <a class="lang-option is-disabled" href="#" data-lang="hi" role="menuitem" aria-disabled="true">हिन्दी<span class="lang-soon">Soon</span></a>
+        </div>
+      </div>
+      <a href="#" class="footer-lang-reset" data-lang-reset hidden>Show original</a>
+    </div>
     <div class="legal">
       <span>© Transitions Lab B.V. 2026 · Delft, The Netherlands · KVK 42170233</span>
       <span><a href="/ethics">Research ethics</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
     </div>
   </div>
 </footer>
+
+<!-- Google Translate widget: renders a hidden gadget the JS in
+     site.js drives. Free, no API key required. Live languages
+     translate automatically; ones marked "Soon" are held back so
+     the layout isn't broken by RTL / CJK edge cases yet. -->
+<div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  function googleTranslateElementInit(){
+    if (!window.google || !google.translate) return;
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,nl,de,fr,es,it,pt,pl,sv,da',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
 <div id="cookie-banner" hidden>
   <div class="cookie-inner">
@@ -306,6 +342,6 @@
 
 <script src="/assets/consent.js?v=ef374375" defer></script>
 <script src="/assets/reader.js?v=1f800e75" defer></script>
-<script src="/assets/site.js?v=90306cec" defer></script>
+<script src="/assets/site.js?v=befe4910" defer></script>
 </body>
 </html>

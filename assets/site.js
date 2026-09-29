@@ -549,40 +549,109 @@ document.addEventListener('DOMContentLoaded', function () {
   items.forEach(function (el) { io.observe(el); });
 })();
 
-/* ── Header tools: language dropdown + search overlay ────────
-   The language chip is a static UI stub (only English is live;
-   Dutch is shown as "Soon"). The search widget lazy-loads
-   /assets/search-index.json on first open, tokenises the query
-   and ranks entries whose title / description / snippet contain
-   every token. Arrow-keys and Enter navigate results. */
+/* ── Footer language selector, driven by Google Translate ─────
+   The dropdown lives in the footer (.footer-lang). Live languages
+   flip the googtrans cookie and reload the page; Google's widget
+   picks up the cookie and translates every subsequent request.
+   The English option resets to source; "Soon"-flagged entries are
+   inert. State is mirrored on the button label. */
 (function () {
-  var langBtn = document.querySelector('.header-tools .lang-btn');
-  var langMenu = document.querySelector('.header-tools .lang-menu');
-  if (langBtn && langMenu) {
-    var setOpen = function (open) {
-      langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      langMenu.hidden = !open;
+  var scope = document.querySelector('.footer-lang');
+  if (!scope) return;
+  var btn = scope.querySelector('.lang-btn');
+  var menu = scope.querySelector('.lang-menu');
+  var label = btn && btn.querySelector('.lang-code');
+  var reset = scope.querySelector('[data-lang-reset]');
+  if (!btn || !menu || !label) return;
+
+  var setOpen = function (open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.hidden = !open;
+  };
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setOpen(menu.hidden);
+  });
+  document.addEventListener('click', function (e) {
+    if (!menu.hidden && !menu.contains(e.target) && e.target !== btn) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.hidden) setOpen(false);
+  });
+
+  // Cookie helpers scoped to google's translate cookie.
+  function readCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+  function writeCookie(name, value, days) {
+    var d = new Date();
+    d.setTime(d.getTime() + (days || 365) * 864e5);
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + d.toUTCString() + '; path=/';
+    // Also write to bare-domain scope so subdomains stay in sync.
+    var host = location.hostname.replace(/^www\./, '');
+    if (host && host.indexOf('.') !== -1) {
+      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + d.toUTCString() + '; path=/; domain=.' + host;
+    }
+  }
+  function clearCookie(name) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    var host = location.hostname.replace(/^www\./, '');
+    if (host && host.indexOf('.') !== -1) {
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.' + host;
+    }
+  }
+
+  function parseGoogTrans(v) {
+    // /en/nl → 'nl'; /auto/xx also possible.
+    if (!v) return 'en';
+    var parts = v.split('/');
+    return (parts[2] || 'en').toLowerCase() || 'en';
+  }
+  function labelForCode(code) {
+    var known = {
+      en:'EN', nl:'NL', de:'DE', fr:'FR', es:'ES', it:'IT', pt:'PT',
+      pl:'PL', sv:'SV', da:'DA', no:'NO', fi:'FI', ar:'AR',
+      'zh-cn':'ZH', ja:'JA', hi:'HI'
     };
-    langBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      setOpen(langMenu.hidden);
+    return known[String(code).toLowerCase()] || String(code).toUpperCase().slice(0, 2);
+  }
+  function reflectState(code) {
+    code = (code || 'en').toLowerCase();
+    label.textContent = labelForCode(code);
+    menu.querySelectorAll('.lang-option').forEach(function (a) {
+      a.classList.toggle('is-active', (a.getAttribute('data-lang') || '').toLowerCase() === code);
     });
-    document.addEventListener('click', function (e) {
-      if (!langMenu.hidden && !langMenu.contains(e.target) && e.target !== langBtn) {
-        setOpen(false);
-      }
+    if (reset) reset.hidden = code === 'en';
+  }
+
+  // Set state from any existing cookie on load.
+  reflectState(parseGoogTrans(readCookie('googtrans')));
+
+  function setLanguage(target) {
+    if (!target || target === 'en') {
+      clearCookie('googtrans');
+      reflectState('en');
+      location.reload();
+      return;
+    }
+    writeCookie('googtrans', '/en/' + target, 365);
+    reflectState(target);
+    location.reload();
+  }
+
+  menu.querySelectorAll('.lang-option').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (a.classList.contains('is-disabled')) return;
+      var target = (a.getAttribute('data-lang') || 'en').toLowerCase();
+      setOpen(false);
+      setLanguage(target);
     });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !langMenu.hidden) setOpen(false);
-    });
-    // Disabled options are inert; the English option is a no-op.
-    langMenu.querySelectorAll('.lang-option').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (a.classList.contains('is-active') || a.classList.contains('is-disabled')) return;
-        setOpen(false);
-      });
-    });
+  });
+
+  if (reset) {
+    reset.addEventListener('click', function (e) { e.preventDefault(); setLanguage('en'); });
   }
 })();
 
