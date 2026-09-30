@@ -53,10 +53,12 @@ button,select{font:inherit;color:inherit}
 
 /* Stage ribbon: the signature element */
 .ribbon{display:grid;grid-template-columns:repeat(var(--stages,3),minmax(0,1fr));gap:0;border-top:1px solid var(--white);border-bottom:1px solid var(--white)}
-.stage-btn{background:transparent;border:0;border-right:1px solid var(--rule);text-align:left;padding:12px 14px 14px;cursor:pointer;position:relative}
+.stage-btn{background:transparent;border:0;border-right:1px solid var(--rule);text-align:left;padding:10px 12px 12px;cursor:pointer;position:relative}
 .stage-btn:last-child{border-right:0}
-.stage-btn .s-name{font-family:var(--f-head);font-size:20px;line-height:1.1;display:block}
-.stage-btn .s-top{font-size:14px;display:block;margin:4px 0 8px}
+/* Ribbon title. Moved off the serif head-font so it reads as a
+   compact UI label instead of an article headline. */
+.stage-btn .s-name{font-family:var(--f-body);font-weight:700;font-size:16px;letter-spacing:-0.005em;line-height:1.1;display:block}
+.stage-btn .s-top{font-size:13px;display:block;margin:3px 0 6px}
 .stage-btn .s-top b{color:var(--orange)}
 .stage-btn[aria-pressed="true"]{background:#141414}
 .stage-btn[aria-pressed="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--orange)}
@@ -176,7 +178,11 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 @media (max-width: 900px){
   .top{grid-template-columns:1fr}
   .status{max-width:none}
-  .ribbon{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);overflow-x:auto}
+  .ribbon{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(130px,1fr);overflow-x:auto}
+  .stage-btn{padding:8px 10px 10px}
+  .stage-btn .s-name{font-size:15px}
+  .stage-btn .s-top{font-size:12px;margin:2px 0 4px}
+  .stage-btn .s-top.s-top-2 .s-lab{min-width:44px;font-size:10px;margin-right:4px}
   .stagearea{grid-template-columns:1fr}
   .mapwrap{border-right:0;border-bottom:1px solid var(--white);min-height:0}
   #map{min-height:0;height:62vh;max-height:560px}
