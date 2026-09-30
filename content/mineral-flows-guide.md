@@ -65,6 +65,25 @@
   <img src="/assets/img/mineral-flows-guide-stress.jpg" alt="Screenshot of the map's Stress test panel with Chile removed. Reports 20% of lithium mining offline (Australia at 46.3% of what is left; HHI 2215 becomes 2836), 24% of lithium refining offline (China at 89.5%; HHI 5225 becomes 8049), 23% of copper mining offline (DRC at 18.2%; HHI 1015 becomes 820), and 7% of copper refining offline (China at 48.4%; HHI 2212 becomes 2501). Beneath, a list of six cut corridors: lithium carbonate from Chile to China, South Korea and Japan." class="diagram">
 </figure>
 - **Save PNG** in the share row snaps only the map and the flow panel. Nothing else. Good for a slide.
+- **Hover a flow** and every other corridor dims to the background so the selected route stands out; the tooltip names the source, target, mineral form and confidence.
+
+<figure>
+  <img src="/assets/img/mineral-flows-guide-desktop.jpg" alt="Desktop screenshot of the Mineral Flows Map on light theme. Left: a world map with dense multi-coloured flow bands converging on China, with major hubs labelled at Canada, United States, Mexico, Cuba, Argentina, Peru, Chile, Brazil, Ghana, Gabon, DR Congo, Zimbabwe, South Africa, Madagascar, Morocco, Poland, Germany, Norway, Finland, United Kingdom, Turkey, Jordan, Egypt, Kazakhstan, Mongolia, India, Myanmar, China, South Korea, Japan, Philippines, Malaysia, Indonesia, Australia and New Caledonia. A tooltip overlays a highlighted rare-earths NdFeB corridor from China to the United States (relative volume 3 of 5, high confidence). Right: the Overview tab table listing largest miner, largest refiner and Africa mines/refines shares for every one of the fifteen chains." class="diagram">
+  <figcaption>All-minerals view on desktop. Hovering a flow dims every other corridor and the tooltip names the source, target, mineral form and confidence. The Overview table on the right lists the largest miner and refiner for every chain in one sweep.</figcaption>
+</figure>
+
+---
+
+## Chain-diagram view (Sankey)
+
+The **Chain diagram** button turns the map into a stage-by-stage flow view for the selected mineral. Countries appear as columns of ranked, colour-coded blocks; ribbons between the columns follow the proportion of each country's output that heads into the next stage. Where a bilateral corridor is in the shipped dataset (e.g. Indonesia's mine output flowing into Indonesian and Chinese refining), that share of the flow follows the corridor; the remainder spreads by downstream share, so the whole diagram still adds to 100% per stage. Country colour is stable across stages, so the eye tracks Indonesia's block from mining through refining and on into cathode manufacturing.
+
+<figure>
+  <img src="/assets/img/mineral-flows-guide-sankey.jpg" alt="Desktop screenshot of the Mineral Flows Map's Chain diagram view for Nickel. Three vertical columns labelled Mining, Refining (all classes) and Cathode active material. Mining column shows Indonesia 59% in pink, Rest of world 12%, Philippines 9%, Russia 6%, Canada 5%, China 3%, Australia 3% and New Caledonia 3%. Refining column shows Indonesia 44% in pink, China 22%, Rest of world 12%, Japan 5%, Russia 5%, Canada 4%, Australia 3%, Norway 3%, Finland 2%. Cathode active material column shows China 85% orange, South Korea 7%, Japan 5%, Rest of world 3%. Coloured ribbons connect the columns proportional to each country's share, so Indonesia's pink block flows from mining into refining and Chinese refining feeds the cathode column. Right panel shows the single-mineral Overview tab: HHI 3650 (highly concentrated) for mining, largest Indonesia 59% (approx 2.1 Mt/y), HHI 2508 for refining (largest Indonesia 44% approx 1.5 Mt/y), HHI 7299 for cathode (largest China 85%). Each stage carries a world-total source line beneath it (USGS MCS 2025 for mining, IEA GCMO 2026 for refining and cathode)." class="diagram">
+  <figcaption>Chain diagram for nickel. Indonesia's pink block passes through mining and refining almost unchanged, then splits into China's orange cathode column. Country colours are stable across stages, so the eye tracks one country's flow through the whole chain.</figcaption>
+</figure>
+
+Chain diagram works one mineral at a time; the *All minerals* chip falls back to a message on that view. The strongest reads are chains where the same country's block dominates every column (graphite, rare earths) and chains where an ore country loses most of its share at refining (Congo cobalt).
 
 ---
 
