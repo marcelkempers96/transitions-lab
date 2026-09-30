@@ -48,7 +48,15 @@
  <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
+<div class="article-list"><div class="article-item has-thumb" data-category="industrial-policy" data-geography="global" data-month="2026-09">
+ <a class="article-thumb-link" href="/insight-where-transition-minerals-go"><img class="article-thumb" src="/assets/img/insight-where-transition-minerals-go-hero.jpg" alt="Illustrated painting: an open-pit mining operation with conveyor belts pouring aggregate onto pale grey stockpiles at the base of a red steel gantry; in the foreground, half of a white electric passenger car with its charging cable running out of the frame across the crushed rock and into the mine."></a>
+ <div class="article-body">
+ <a class="article-title" href="/insight-where-transition-minerals-go">Seven Findings on the Transition-Mineral Chain</a>
+ <div class="article-meta">30 September 2026</div>
+ <div class="article-chips"><span class="article-chip chip-cat chip-cat-industrial-policy">Industrial Policy</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
+ <p class="article-desc">Where the minerals in an electric vehicle come from, who processes them, and who captures the value. A headline reading of 36 studies, with an interactive map behind it.</p>
+ </div>
+ </div><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
  <a class="article-thumb-link" href="/insight-the-saving-is-agreed"><img class="article-thumb" src="/assets/img/insight-the-saving-is-agreed-hero.jpg" alt="Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving."></a>
  <div class="article-body">
  <a class="article-title" href="/insight-the-saving-is-agreed">The Saving Is Agreed: Seven Findings from Nairobi's Electric Transition</a>
