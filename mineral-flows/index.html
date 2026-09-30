@@ -105,6 +105,12 @@ button,select{font:inherit;color:inherit}
 .mapctl .seg-view{border-color:var(--orange);order:-1}
 .mapctl .seg-view .tog{background:var(--black);color:var(--orange);font-weight:700}
 .mapctl .seg-view .tog[aria-pressed="true"]{background:var(--orange);color:var(--black);border-color:var(--orange)}
+/* Sankey view: hide the map-only controls to give the chain diagram
+   the full top strip. Only view-mode toggle and Print stay. */
+.mapwrap.is-sankey .mapctl > #t-flows,
+.mapwrap.is-sankey .mapctl > #t-africa,
+.mapwrap.is-sankey .mapctl > .seg:not(.seg-view){display:none}
+.mapwrap.is-sankey .zoomctl{display:none}
 /* Legend was previously absolutely positioned at the bottom-left of
    the map, which could cover the Stress-test / Country content
    rendered beneath it (particularly on tall panels and on the
@@ -347,6 +353,12 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 /* View mode: Map vs Sankey */
 #sankey{display:block;width:100%;height:100%;min-height:520px;background:var(--black)}
 #sankey:not([hidden]){background:var(--black)}
+@media (max-width:640px){
+  /* Phone: keep the chain diagram at a readable, fixed height instead
+     of stretching to fill the mapwrap. Actual height is also written
+     inline by drawSankey so the two match. */
+  #sankey{min-height:0;height:auto;max-height:460px}
+}
 /* SVGs ignore the `hidden` attribute in some contexts if a display
    rule (e.g. .mapwrap svg{display:block}) beats the UA default.
    Enforce it explicitly so setView() actually swaps the two views. */
@@ -1277,19 +1289,33 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     }
 
     var W = skSvg.clientWidth || 800;
-    var H = skSvg.clientHeight || 560;
-    if (H < 420) H = 520;
-    // Mobile: left margin big enough for mining labels; smaller nodes.
+    var H;
+    // Mobile: cap the Sankey height so it fits the phone viewport
+    // instead of stretching into a two-columns-of-orange wall. On
+    // desktop, keep the taller layout.
     var isMobSk = (W < 640);
+    if (isMobSk){
+      // Match the shipped map's mobile height (~62vh capped at 560).
+      var vh = window.innerHeight || 700;
+      H = Math.min(460, Math.max(320, Math.round(vh * 0.55)));
+      skSvg.setAttribute('height', String(H));
+      skSvg.style.height = H + 'px';
+    } else {
+      H = skSvg.clientHeight || 560;
+      if (H < 420) H = 520;
+    }
+    // Bigger side margins spread the two/three columns further apart
+    // and give the outside labels room. Increased on mobile so the
+    // stages sit further apart with the flow visible between them.
     var margin = isMobSk
-      ? {top: 40, right: 110, bottom: 24, left: 96}
+      ? {top: 32, right: 96, bottom: 18, left: 92}
       : {top: 40, right: 140, bottom: 24, left: 110};
 
     var sankey = d3.sankey()
-      .nodeWidth(isMobSk ? 10 : 14)
-      .nodePadding(isMobSk ? 8 : 10)
+      .nodeWidth(isMobSk ? 12 : 14)
+      .nodePadding(isMobSk ? 10 : 10)
       .extent([[margin.left, margin.top], [W - margin.right, H - margin.bottom]])
-      .nodeAlign(d3.sankeyLeft)
+      .nodeAlign(d3.sankeyJustify)   // spread columns evenly across the extent
       .nodeSort(function(a, b){ return b.share - a.share; });
 
     var graph = { nodes: nodes.map(function(n){ return Object.assign({}, n); }), links: links.map(function(l){ return Object.assign({}, l); }) };
@@ -1413,6 +1439,12 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     var isSankey = (mode === 'sankey');
     vMap.setAttribute('aria-pressed', String(!isSankey));
     vSk.setAttribute('aria-pressed', String(isSankey));
+    // Hide the map-only controls (Trade flows, Africa focus, By stage
+    // / By mineral) when we're on the Sankey — they don't do anything
+    // there and just eat the top strip on mobile, pushing the stage
+    // titles behind the toolbar.
+    var mapWrap = mapSvg.parentNode;
+    if (mapWrap) mapWrap.classList.toggle('is-sankey', isSankey);
     if (isSankey){
       mapSvg.setAttribute('hidden', '');
       skSvg.removeAttribute('hidden');
