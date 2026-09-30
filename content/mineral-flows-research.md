@@ -20,9 +20,12 @@
 
 ## Starting point
 
-This paper takes its cue from Ndubuisi, Avenyo, Owusu and Kassa's World Bank study, republished on 29 September 2026 by *The Conversation* and the South Africa Trade Desk. Their method runs in four steps.
+This paper takes its cue from [Ndubuisi, Avenyo, Owusu and Kassa's World Bank study](https://documents1.worldbank.org/curated/en/099620011192519026/pdf/IDU-959b6025-1de2-4caf-98be-9c8aa42577da.pdf), republished on 29 September 2026 by [*The Conversation*](https://theconversation.com/africa) and the [South Africa Trade Desk](https://www.tradedesk.co.za/). Their method runs in four steps.
 
-First, they identify which transition minerals each African country holds. Second, they follow the trade data (CEPII BACI) to see who exports what to whom. Third, they place each country on the green-technology value chain according to whether it exports ore, processed material or components. Fourth, they review the national and regional policy attached to each stage.
+1. **Deposits.** They identify which transition minerals each African country holds.
+2. **Trade.** They follow the CEPII BACI trade data to see who exports what to whom.
+3. **Value-chain position.** They place each country on the green-technology value chain according to whether it exports ore, processed material or components.
+4. **Policy.** They review the national and regional policy attached to each stage.
 
 They find <a href="#fact-1" id="ref-1" class="fact-ref">forty-eight African countries hold reserves of at least one transition mineral</a>, and that most of what does leave the continent leaves raw or lightly processed, with Asia and China in particular taking over <a href="#fact-2" id="ref-2" class="fact-ref">40% of Africa's ore exports</a>. The distinction between holding a reserve and exporting at scale matters for the map: today only around a dozen African countries appear on it as source hubs, because the rest are pre-export. Congolese cobalt <a href="#fact-3" id="ref-3" class="fact-ref">nearly triples in value</a> between the mine gate and local refining. Their policy conclusion is that individual countries supply too little to bargain alone, so pooled supply, shared processing and common rules matter.
 
