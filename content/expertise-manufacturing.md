@@ -26,7 +26,7 @@
 
 ## Inside the programme
 
-<span class="ra-name" id="ra-crm">Critical raw materials and processing</span> is where the transition's material bill actually gets paid. The Lab studies who negotiates the extraction, who runs the refinery, and what share of the resulting value stays in the country the ore came from. Ownership of the geological survey, the terms of the offtake, and the workforce that operates the plant are all parts of the same distributional question. See our [interactive Mineral Flows Map](/mineral-flows) and the [research paper](/mineral-flows-research) behind it for how the eight transition-mineral chains split between mining, refining and downstream, and where value leaves the countries that produce.
+<span class="ra-name" id="ra-crm">Critical raw materials and processing</span> is where the transition's material bill actually gets paid. The Lab studies who negotiates the extraction, who runs the refinery, and what share of the resulting value stays in the country the ore came from. Ownership of the geological survey, the terms of the offtake, and the workforce that operates the plant are all parts of the same distributional question.
 
 <span class="ra-name" id="ra-circular">Circular economy and e-waste</span> is the other half of the same chain. Secondary materials and second-life equipment are cheaper, less carbon-intensive and structurally awkward to qualify. The Lab looks at whether recycled and reused streams reach the customers that would use them, how end-of-life claims are verified, and where a promise of a circular chain quietly reverts to a linear one.
 

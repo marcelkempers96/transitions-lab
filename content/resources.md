@@ -108,25 +108,13 @@ A demonstration of the depth the Lab reaches in qualitative fieldwork: the "five
 
 A fill-in framework for measuring the before-and-after impact of a European project, demonstration, or socially innovative action: set up at the start, run while the work is live, closed out with proof.
 
----
-
-**§ 5 / Interactive tools**
-
-## Maps and data explorers
-
-[**Mineral Flows Map &rarr;**](/mineral-flows)
-
-[<span class="format-badge fmt-web">Interactive tool &rarr;</span>](/mineral-flows)
-
-Where transition minerals are mined, refined and shipped, for the eight minerals the energy transition depends on. Stage ribbon, corridor layer, policy markers and a country-level stress test. Companion pieces: the [sixty-second guide](/mineral-flows-guide), the [research paper](/mineral-flows-research), and the [headline article](/insight-where-transition-minerals-go).
-
-[**How to read the Mineral Flows Map &rarr;**](/mineral-flows-guide)
-
-Sixty-second walkthrough of the map: the chip row, stage ribbon, four panel tabs (Overview / Country / Stress test / Sources), what each layer toggle does, and the patterns to look for (asymmetry, convergence, non-obvious hubs, chokepoint chains).
+<!-- § 5 / Interactive tools — Mineral Flows Map + guide are currently
+     hidden from public discovery while the review runs. Restore the
+     block below when the review clears. -->
 
 ---
 
-**§ 6 / How to use these**
+**§ 5 / How to use these**
 
 ## Open, attributable, and yours to build on
 
