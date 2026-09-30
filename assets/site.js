@@ -786,3 +786,60 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 })();
+
+/* ── Footer theme toggle (light / dark / auto) ─────────────
+   Site-wide colour scheme toggle. Persists via localStorage
+   under tl_site_theme. Auto follows prefers-color-scheme.
+   The article-reader toolbar's own data-theme (case-*/insight-*
+   pages) takes over only within its scope, so this footer
+   toggle sets the default site theme everywhere else. */
+(function () {
+  var KEY = 'tl_site_theme_v1';
+  var group = document.querySelector('.footer-theme .theme-toggle');
+  if (!group) return;
+  var html = document.documentElement;
+
+  function apply(mode){
+    var effective = mode;
+    if (mode === 'auto'){
+      try {
+        effective = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch(_) { effective = 'light'; }
+    }
+    // Only touch site data-theme on non-article pages; on article
+    // pages the reader toolbar drives it inside its own scope.
+    var isArticle = /^\/(case|insight)-/.test(location.pathname);
+    if (!isArticle){
+      if (effective === 'dark') html.setAttribute('data-theme', 'dark');
+      else html.removeAttribute('data-theme');
+    }
+    group.querySelectorAll('button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-site-theme') === mode ? 'true' : 'false');
+    });
+  }
+
+  var saved = 'auto';
+  try { saved = localStorage.getItem(KEY) || 'auto'; } catch(_){}
+  apply(saved);
+
+  group.addEventListener('click', function(e){
+    var b = e.target.closest('[data-set-site-theme]'); if (!b) return;
+    var mode = b.getAttribute('data-set-site-theme');
+    try { localStorage.setItem(KEY, mode); } catch(_){}
+    apply(mode);
+  });
+
+  // Follow OS changes when the user is on "auto".
+  if (window.matchMedia){
+    try {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var onChange = function(){
+        var cur = 'auto';
+        try { cur = localStorage.getItem(KEY) || 'auto'; } catch(_){}
+        if (cur === 'auto') apply('auto');
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    } catch(_){}
+  }
+})();

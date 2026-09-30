@@ -4012,3 +4012,26 @@ footer.site .legal > span{white-space:nowrap;}
 @media(max-width:640px){
   .page-hero .breadcrumb{font-size:12px;}
 }
+
+/* Footer theme toggle: light / dark / auto */
+.footer-theme{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.footer-theme .theme-toggle{
+  display:inline-flex;border:1.5px solid rgba(245,239,225,.34);border-radius:999px;overflow:hidden;
+}
+.footer-theme .theme-toggle button{
+  padding:6px 12px;background:transparent;color:var(--paper);
+  border:0;border-right:1px solid rgba(245,239,225,.22);
+  font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.08em;font-weight:700;
+  text-transform:uppercase;cursor:pointer;opacity:.62;
+  transition:background .12s ease, opacity .12s ease;
+}
+.footer-theme .theme-toggle button:last-child{border-right:0;}
+.footer-theme .theme-toggle button:hover{opacity:1;background:rgba(245,239,225,.08);}
+.footer-theme .theme-toggle button[aria-pressed="true"]{
+  background:var(--paper);color:var(--ink);opacity:1;
+}
+
+/* Small link right under the tool-cta pill */
+.prose .tool-cta-sub{margin:-14px 0 26px;font-size:14px;color:var(--ink);opacity:.7;}
+.prose .tool-cta-sub a{color:var(--cobalt);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600;}
+.prose .tool-cta-sub a:hover{color:var(--ink);}

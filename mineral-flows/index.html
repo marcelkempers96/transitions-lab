@@ -255,6 +255,11 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 #mapcaption b{color:var(--orange);font-weight:700}
 #mapcaption .mc-sub{opacity:.7;font-size:11px;display:block;margin-top:2px}
 @media(max-width:900px){#mapcaption{bottom:auto;top:60px;left:12px}}
+
+/* Arrowhead uses currentColor via marker-end; set color = the arc stroke. */
+.core{color: inherit}
+.g-flows path.core{color: inherit}
+/* The marker path is filled with currentColor of the referring element. */
 </style>
 </head>
 <body>
@@ -274,14 +279,24 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
     <button type="button" class="ts-btn" data-share="linkedin" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18.34H5.67V9.67h2.67v8.67zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 10H15.67V14c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.4H10V9.67h2.56v1.18h.04a2.8 2.8 0 0 1 2.53-1.39c2.71 0 3.21 1.78 3.21 4.1v4.88z"/></svg> LinkedIn</button>
     <button type="button" class="ts-btn" data-share="copy" aria-label="Copy link">Copy link<span class="ts-copied">Copied</span></button>
     <button type="button" class="ts-btn" data-share="png" aria-label="Save the current view as a PNG">Save PNG</button>
-    <a class="ts-comment" href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">Discuss on LinkedIn &rarr;</a>
+    <a class="ts-comment" href="/mineral-flows-guide" style="margin-left:auto">How to read this map &rarr;</a>
+    <a class="ts-comment" href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener" style="margin-left:0">Discuss on LinkedIn &rarr;</a>
   </div>
   <nav class="minerals" id="minerals" aria-label="Choose a mineral"></nav>
   <section class="ribbon" id="ribbon" aria-label="Value chain stage"></section>
 
   <main class="stagearea">
     <div class="mapwrap" id="mapwrap">
-      <svg id="map" role="img" aria-label="World map of mineral production and trade flows"></svg>
+      <svg id="map" role="img" aria-label="World map of mineral production and trade flows">
+        <defs>
+          <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#FFFFFF" opacity="0.55"/>
+          </marker>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="var(--orange)" stroke-width="1" opacity=".6"/>
+          </pattern>
+        </defs>
+      </svg>
       <div class="mapcaption" id="mapcaption" aria-live="polite"></div>
       <div class="mapctl" role="group" aria-label="Map layers">
         <button class="tog" id="t-flows" aria-pressed="true">Trade flows</button>
@@ -480,13 +495,19 @@ function buildFlowGeo(fl){
 }
 function drawFlowGeometry(){
   const cutting = (f) => state.stress && (f.source === state.stress || f.target === state.stress);
+  // Weight-driven band: heavier flows get more width and more opacity,
+  // lighter flows fade into the background. Exponent 1.55 on weight
+  // makes the difference visible at a glance without shouting.
   gBand.selectAll("path").data(flowGeo, d => d.f.id).join("path")
     .attr("class", d => "band" + (cutting(d.f) ? " cut" : ""))
     .attr("fill", d => flowColour(d.f))
-    .attr("d", d => bandPath(d.a, d.c, d.b, (3 + d.f.weight * 3.4) / Math.sqrt(k)));
+    .attr("fill-opacity", d => 0.20 + 0.14 * (d.f.weight - 1))
+    .attr("d", d => bandPath(d.a, d.c, d.b, (2.2 + Math.pow(d.f.weight, 1.55) * 2.6) / Math.sqrt(k)));
   gCore.selectAll("path").data(flowGeo, d => d.f.id).join("path")
     .attr("class", d => "core" + (cutting(d.f) ? " cut" : ""))
     .attr("stroke", d => flowColour(d.f))
+    .attr("stroke-opacity", d => 0.55 + 0.10 * (d.f.weight - 1))
+    .attr("marker-end", d => cutting(d.f) ? null : "url(#flow-arrow)")
     .attr("d", d => corePath(d.a, d.c, d.b));
   // hubs sized by total corridor weight touching them, like the bright convergence points in flow maps
   const hub = new Map();

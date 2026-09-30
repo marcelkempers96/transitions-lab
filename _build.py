@@ -406,6 +406,7 @@ HERO_COLOR: dict[str, str] = {
     "ethics": "forest",
     "researchers": "forest",
     "mineral-flows-research": "cobalt",
+    "mineral-flows-guide": "cobalt",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -648,6 +649,10 @@ META: dict[str, dict[str, str]] = {
     "mineral-flows-research": {
         "title": "Where Transition Minerals Go: The Evidence Base | Transitions Lab",
         "description": "Structured synthesis of 36 studies behind the Lab's Mineral Flows Map. Six methodological strands, eleven numbered facts, and the verification status of every citation.",
+    },
+    "mineral-flows-guide": {
+        "title": "How to read the Mineral Flows Map | Transitions Lab",
+        "description": "A sixty-second tour of the interactive Mineral Flows Map, the features it carries (Africa focus, stress test, policy layer), and the patterns it makes visible in the transition-mineral chain.",
     },
     "insight-where-transition-minerals-go": {
         "title": "Seven Findings on the Transition-Mineral Chain | Transitions Lab",
@@ -1584,6 +1589,14 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
         </div>
       </div>
       <a href="#" class="footer-lang-reset" data-lang-reset hidden>Show original</a>
+      <span class="footer-theme">
+        <span class="footer-lang-label">Theme</span>
+        <span class="theme-toggle" role="group" aria-label="Colour theme">
+          <button type="button" data-set-site-theme="light" aria-pressed="false">Light</button>
+          <button type="button" data-set-site-theme="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-set-site-theme="auto" aria-pressed="true">Auto</button>
+        </span>
+      </span>
     </div>
     <div class="legal">
       <span>© Transitions Lab B.V. 2026 · Delft, The Netherlands · KVK 42170233</span>
@@ -1682,6 +1695,7 @@ CRUMB_PARENT: dict[str, str | None] = {
 
     # Mineral flows research + companion article live under Articles.
     "mineral-flows-research":              "articles",
+    "mineral-flows-guide":                 "articles",
     "insight-where-transition-minerals-go": "articles",
 }
 
