@@ -344,8 +344,8 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
     <div class="mapwrap" id="mapwrap">
       <svg id="map" role="img" aria-label="World map of mineral production and trade flows">
         <defs>
-          <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#FFFFFF" opacity="0.55"/>
+          <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+            <path d="M0,1 L10,5 L0,9 z" fill="#FFFFFF" opacity="0.85"/>
           </marker>
           <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <line x1="0" y1="0" x2="0" y2="6" stroke="var(--orange)" stroke-width="1" opacity=".6"/>
@@ -634,33 +634,56 @@ function drawMap(){
     .on("mousemove", (e,d) => showTip(`<b>${esc(d.title)}</b> (${d.year})<br>${esc(d.detail)}`, e)).on("mouseleave", hideTip)
     .on("click", (e,d) => { state.country = d.country; state.tab = "country"; update(); });
 
-  // Label every country with data at the current view, not just
-  // the top few. The share threshold falls as the reader zooms in
-  // so more labels reveal themselves at higher zoom.
-  const labelMin = k >= 3 ? 0.5 : k >= 2 ? 0.8 : 1.5;
+  // Label every country with data at the current view. On phones
+  // (mobile viewport), fewer labels fit — use a small share
+  // threshold so the biggest producers still stand out, then let
+  // the collision detector suppress overlaps.
+  const isMobileViewport = W < 640;
+  const labelMin = isMobileViewport ? (k >= 3 ? 0.4 : k >= 2 ? 0.6 : 0.8) : (k >= 3 ? 0.3 : k >= 2 ? 0.5 : 0.6);
   let lead;
   if (isAll()){
-    const tot = new Map(); flowGeo.forEach(({f}) => [f.source, f.target].forEach(i => tot.set(i, (tot.get(i) || 0) + f.weight)));
+    const tot = new Map();
+    flowGeo.forEach(({f}) => [f.source, f.target].forEach(i => tot.set(i, (tot.get(i) || 0) + f.weight)));
     const entries = [...tot.entries()].sort((a,b) => b[1]-a[1]);
-    const showN = k >= 3 ? entries.length : k >= 2 ? Math.min(14, entries.length) : Math.min(6, entries.length);
-    lead = entries.slice(0, showN).map(([iso]) => { const p = pt(iso); return p ? {iso, x:p[0], y:p[1], txt:esc(name(iso))} : null; }).filter(Boolean);
+    // All hubs at every zoom - collision detection culls what does not fit.
+    lead = entries.map(([iso]) => { const p = pt(iso); return p ? {iso, x:p[0], y:p[1], txt:esc(name(iso))} : null; }).filter(Boolean);
   } else {
     lead = ranked(state.stage)
       .filter(([iso, v]) => iso !== "OTHER" && v >= labelMin)
       .map(([iso, v]) => { const p = pt(iso); return p ? {iso, x:p[0], y:p[1], v:v, txt:`${esc(name(iso))} <tspan class="pct">${fmt(v)}</tspan>`} : null; })
       .filter(Boolean);
   }
-  // simple collision avoidance: push a label down when it would sit on an earlier one
-  const placed = []; lead.forEach(d => { d.dy = 0; while (placed.some(p => Math.abs(p.x - d.x) < 70 && Math.abs(p.y + p.dy - (d.y + d.dy)) < 14)) d.dy += 14; placed.push(d); });
+  // Collision avoidance: try nudging down before dropping. Anything
+  // still overlapping after 5 nudges is dropped from the label set
+  // rather than sitting on top of another label.
+  const placed = [];
+  const kept = [];
+  lead.forEach(d => {
+    d.dy = 0;
+    var tries = 0;
+    while (tries < 5 && placed.some(p => Math.abs(p.x - d.x) < 60 && Math.abs(p.y + p.dy - (d.y + d.dy)) < 12)){
+      d.dy += 12;
+      tries += 1;
+    }
+    if (tries < 5){
+      placed.push(d);
+      kept.push(d);
+    }
+  });
+  lead = kept;
   const sh0 = isAll() ? null : shares(state.stage);
   gLbl.selectAll("text").data(lead, d => d.iso).join("text").attr("class","lbl")
     .attr("x", d => d.x + 8 / Math.sqrt(k))
     .attr("y", d => d.y + (13 + d.dy) / Math.sqrt(k))
     .attr("font-size", d => {
-      var base = 10.5;
+      var base = isMobileViewport ? 9.5 : 10.5;
       if (!isAll() && sh0){
         var v = sh0[d.iso] || 0;
-        base = v >= 40 ? 13.5 : v >= 20 ? 12 : v >= 5 ? 11 : 10;
+        if (isMobileViewport){
+          base = v >= 40 ? 11.5 : v >= 20 ? 10.5 : v >= 5 ? 9.5 : 9;
+        } else {
+          base = v >= 40 ? 13.5 : v >= 20 ? 12 : v >= 5 ? 11 : 10;
+        }
       }
       return base / Math.sqrt(k);
     })
