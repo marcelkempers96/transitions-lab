@@ -2096,10 +2096,10 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-roam">
         <div class="card-photo">
           <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
-          <span class="kicker kicker--mobility"><span class="kicker-text">Kenya &middot; E-mobility</span></span>
         </div>
         <div class="body">
           <h3>Electric transport in Nairobi</h3>
+          <p class="case-sub">Nairobi, Kenya &middot; E-Mobility &amp; Transport &middot; with Roam</p>
           <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
@@ -2110,10 +2110,10 @@ def build_home() -> str:
           <span class="card-play" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </span>
-          <span class="kicker kicker--agriculture"><span class="kicker-text">Indonesia &middot; Agriculture</span></span>
         </div>
         <div class="body">
           <h3>Biochar in Lombok</h3>
+          <p class="case-sub">Lombok, Indonesia &middot; Agriculture &amp; Ecosystems &middot; with Pyropower</p>
           <p>Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
@@ -2121,10 +2121,10 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-mimaji">
         <div class="card-photo">
           <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk with a chalked tariff and a queue of women and children filling green and yellow jerry cans at the counter window.">
-          <span class="kicker kicker--water"><span class="kicker-text">Kenya &middot; Water</span></span>
         </div>
         <div class="body">
           <h3>Water transparency in Nairobi</h3>
+          <p class="case-sub">Nairobi, Kenya &middot; Energy &amp; Water Systems &middot; with MiMaji Foundation</p>
           <p>Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
@@ -2132,10 +2132,10 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-reef-support">
         <div class="card-photo">
           <img src="/assets/img/case-reef-support-mou.jpg" alt="Five people standing under a Lombok beach gazebo, holding signed agreements between them; palms and the water visible in the background.">
-          <span class="kicker kicker--marine"><span class="kicker-text">Indonesia &middot; Marine</span></span>
         </div>
         <div class="body">
-          <h3>Rangers for the reef</h3>
+          <h3>Rangers for the reef, Lombok</h3>
+          <p class="case-sub">Lombok, Indonesia &middot; Marine conservation &middot; with Reef Support</p>
           <p>Community rangers, field sensors and satellite data braided into a single trustworthy picture of reef health, with Reef Support.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
