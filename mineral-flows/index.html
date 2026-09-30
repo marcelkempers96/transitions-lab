@@ -254,6 +254,67 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 
 .stage-btn .s-top.s-top-2{display:block;font-size:12.5px;line-height:1.35}
 .stage-btn .s-top.s-top-2 .s-lab{display:inline-block;min-width:56px;color:var(--white);opacity:.62;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-right:6px}
+
+/* Footer theme toggle (map page only) */
+.map-theme{display:inline-flex;align-items:center;gap:10px;flex:1;order:-1;margin-bottom:8px}
+.map-theme .mt-label{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--white);opacity:.6}
+.map-theme .mt-group{display:inline-flex;border:1.5px solid rgba(245,239,225,.34);border-radius:999px;overflow:hidden}
+.map-theme .mt-group button{padding:5px 12px;background:transparent;color:var(--white);border:0;border-right:1px solid rgba(245,239,225,.22);font-family:var(--f-body);font-size:11.5px;letter-spacing:.06em;font-weight:700;text-transform:uppercase;cursor:pointer;opacity:.62;transition:opacity .12s ease,background .12s ease}
+.map-theme .mt-group button:last-child{border-right:0}
+.map-theme .mt-group button:hover{opacity:1;background:rgba(245,239,225,.08)}
+.map-theme .mt-group button[aria-pressed="true"]{background:var(--white);color:var(--black);opacity:1}
+
+/* Light-mode overrides for the map. Invert ground and text; the
+   orange accent, mineral palette, band colours and marker keep
+   working since they're set explicitly. Only the true-black
+   / true-white base variables need swapping. */
+:root[data-map-theme="light"]{
+  --black:#F5EDDD;
+  --white:#0A0A0A;
+  --land:#E5DBC2;
+  --land-edge:#CFC5A8;
+  --rule:#B2A783;
+  --orange-deep:#F1CFA0;
+}
+:root[data-map-theme="light"] html,
+:root[data-map-theme="light"] body{background:#F5EDDD;color:#0A0A0A}
+:root[data-map-theme="light"] .country{fill:#E5DBC2;stroke:#CFC5A8}
+:root[data-map-theme="light"] .graticule{stroke:#D9CFB1}
+:root[data-map-theme="light"] .sphere{fill:#F5EDDD}
+:root[data-map-theme="light"] .core{stroke-opacity:.85}
+:root[data-map-theme="light"] .band{opacity:.42}
+:root[data-map-theme="light"] .lbl{fill:#0A0A0A;stroke:#F5EDDD}
+:root[data-map-theme="light"] .tog{background:#F5EDDD;color:#0A0A0A;border-color:#0A0A0A}
+:root[data-map-theme="light"] .tog[aria-pressed="true"]{color:#B95E00;border-color:#B95E00}
+:root[data-map-theme="light"] .chip{border-color:#0A0A0A;color:#0A0A0A}
+:root[data-map-theme="light"] .chip[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#0A0A0A}
+:root[data-map-theme="light"] .ribbon{border-color:#0A0A0A}
+:root[data-map-theme="light"] .stage-btn{border-right-color:rgba(10,10,10,.15)}
+:root[data-map-theme="light"] .stage-btn[aria-pressed="true"]{background:#EEE4CE}
+:root[data-map-theme="light"] .pane, :root[data-map-theme="light"] .tabs{color:#0A0A0A}
+:root[data-map-theme="light"] .tabs{border-bottom-color:#0A0A0A}
+:root[data-map-theme="light"] .tab{border-right-color:rgba(10,10,10,.15)}
+:root[data-map-theme="light"] .tab[aria-selected="true"]{color:#B95E00;box-shadow:inset 0 -3px 0 #B95E00}
+:root[data-map-theme="light"] .stagearea{border-bottom-color:#0A0A0A}
+:root[data-map-theme="light"] .mapwrap{border-right-color:#0A0A0A}
+:root[data-map-theme="light"] .legend{background:rgba(245,237,221,.92);border-color:rgba(10,10,10,.18);color:#0A0A0A}
+:root[data-map-theme="light"] .tip{background:#F5EDDD;color:#0A0A0A;border-color:#B95E00}
+:root[data-map-theme="light"] .zoomctl button{background:#F5EDDD;color:#0A0A0A;border-color:#0A0A0A}
+:root[data-map-theme="light"] .mf-breadcrumb{background:#F5EDDD;border-bottom-color:rgba(10,10,10,.14)}
+:root[data-map-theme="light"] .mf-breadcrumb a{color:#0A0A0A}
+:root[data-map-theme="light"] .mf-breadcrumb [aria-current="page"]{color:#0A0A0A}
+:root[data-map-theme="light"] .mf-breadcrumb .mf-sep{color:#0A0A0A;opacity:.34}
+:root[data-map-theme="light"] .tool-share .ts-btn{color:#0A0A0A;border-color:#0A0A0A}
+:root[data-map-theme="light"] .tool-share .ts-btn:hover{background:#0A0A0A;color:#F5EDDD}
+:root[data-map-theme="light"] .site-tail{background:#EFE4CE;color:#0A0A0A;border-top-color:rgba(10,10,10,.18)}
+:root[data-map-theme="light"] .site-tail .st-brand .st-name,
+:root[data-map-theme="light"] .site-tail .st-col a,
+:root[data-map-theme="light"] .site-tail .st-legal,
+:root[data-map-theme="light"] .site-tail .st-legal a{color:#0A0A0A}
+:root[data-map-theme="light"] .map-theme .mt-label{color:#0A0A0A}
+:root[data-map-theme="light"] .map-theme .mt-group{border-color:rgba(10,10,10,.34)}
+:root[data-map-theme="light"] .map-theme .mt-group button{color:#0A0A0A;border-right-color:rgba(10,10,10,.14)}
+:root[data-map-theme="light"] .map-theme .mt-group button[aria-pressed="true"]{background:#0A0A0A;color:#F5EDDD}
 </style>
 </head>
 <body>
@@ -855,6 +916,13 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="st-legal">
+      <span class="map-theme">
+        <span class="mt-label">Map theme</span>
+        <span class="mt-group" role="group" aria-label="Map colour theme">
+          <button type="button" data-map-theme="dark" aria-pressed="true">Dark</button>
+          <button type="button" data-map-theme="light" aria-pressed="false">Light</button>
+        </span>
+      </span>
       <span>&copy; Transitions Lab B.V. 2026 &middot; Delft, The Netherlands &middot; KVK 42170233</span>
       <span><a href="/ethics">Research ethics</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>
     </div>
@@ -960,6 +1028,30 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     a.href = url; a.download = name; document.body.appendChild(a); a.click();
     document.body.removeChild(a); setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
   }
+})();
+</script>
+
+<script>
+(function(){
+  var KEY = 'tl_map_theme_v1';
+  var g = document.querySelector('.map-theme .mt-group'); if (!g) return;
+  var html = document.documentElement;
+  function apply(mode){
+    if (mode === 'light') html.setAttribute('data-map-theme','light');
+    else html.removeAttribute('data-map-theme');
+    g.querySelectorAll('button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-map-theme') === (mode || 'dark') ? 'true' : 'false');
+    });
+  }
+  var saved = 'dark';
+  try { saved = localStorage.getItem(KEY) || 'dark'; } catch(_){}
+  apply(saved);
+  g.addEventListener('click', function(e){
+    var b = e.target.closest('[data-map-theme]'); if (!b) return;
+    var mode = b.getAttribute('data-map-theme');
+    try { localStorage.setItem(KEY, mode); } catch(_){}
+    apply(mode);
+  });
 })();
 </script>
 </body>
