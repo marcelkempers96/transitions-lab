@@ -54,7 +54,7 @@ See the full programme index at [Programmes](/expertise), and the reading behind
 
 ## Representative work
 
-- **Nairobi · Electric transport.** Twenty-three interviews with riders, mechanics, a lender's agent, a manufacturer and a policy advocate on Kenya's boda-boda transition. See [The Saving Is Agreed](/insight-the-saving-is-agreed) and the [Roam case study](/case-roam).
+- **Nairobi · Electric transport.** Twenty-three interviews with riders, mechanics, a lender's agent, a manufacturer and a policy advocate on Kenya's boda-boda transition. See [The Saving Is Agreed](/insight-the-saving-is-agreed) and the [Nairobi mobility case study](/case-roam).
 - **Lombok · Decentralised clean energy.** Smallholder biochar kilns and the human-scale conditions under which a technology like this earns its keep. See the [Pyropower case study](/case-pyropower).
 - **Nairobi · Water transparency.** Community-monitored open-data mapping across a low-income settlement water market. See the [MiMaji case study](/case-mimaji).
 - **Coastal Indonesia · Marine monitoring.** Community rangers, satellite data and reef health braided together into a single trustworthy picture. See the [Reef Support case study](/case-reef-support).
@@ -88,7 +88,7 @@ Where a programme runs its own standing consultant pool, the Lab is set up to pl
 
 **Impact measurement and evidence generation.** Monitoring and evaluation design, in-field data collection tools tracking utilisation and outcomes, and pilot evidence packages sized for investor, donor and policy readers. This is the before-and-after measurement offer at the centre of [Measuring change](/measuring-change).
 
-**Financial systems and investor readiness.** Unit-economics modelling and tracking for pay-as-you-go revenue and asset-financed adoption, with rider-side and household-side evidence to check the model against. The [Roam case study](/case-roam) is a live proof point.
+**Financial systems and investor readiness.** Unit-economics modelling and tracking for pay-as-you-go revenue and asset-financed adoption, with rider-side and household-side evidence to check the model against. The [Nairobi mobility case study](/case-roam) is a live proof point.
 
 **Market access and adoption.** Adoption-barrier reading, default-risk indicators, and customer-feedback loops set up to reach the population the market is meant to serve rather than only the population already reached. The [MiMaji case study](/case-mimaji) and [Entering a new context](/entering-a-new-context) sit here.
 

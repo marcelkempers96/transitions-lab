@@ -128,4 +128,4 @@ The map draws current top exporters, not deposit holders. Around a dozen African
 
 Transitions Lab, *Mineral Flows Map*, version 1.1 (indicative), 30 September 2026. Available at `transitionslab.org/mineral-flows`. Data attribution: `transitionslab.org/mineral-flows-attribution`.
 
-For the research paper: [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research). For the headline article: [Seven Findings on the Transition-Mineral Chain](/insight-where-transition-minerals-go). For a walkthrough of the tool: [How to read the Mineral Flows Map](/mineral-flows-guide).
+For the research paper: [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research). For the headline article: [Where transition minerals actually go](/insight-where-transition-minerals-go). For a walkthrough of the tool: [How to read the Mineral Flows Map](/mineral-flows-guide).

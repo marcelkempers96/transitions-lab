@@ -662,15 +662,15 @@ META: dict[str, dict[str, str]] = {
     },
     "mineral-flows-guide": {
         "title": "How to read the Mineral Flows Map | Transitions Lab",
-        "description": "A sixty-second tour of the interactive Mineral Flows Map, the features it carries (Africa focus, stress test, policy layer), and the patterns it makes visible in the transition-mineral chain.",
+        "description": "A sixty-second tour of the interactive Mineral Flows Map, the features it carries (Africa focus, stress test, policy layer), and the patterns it makes visible in the transition mineral chain.",
     },
     "mineral-flows-attribution": {
         "title": "Mineral Flows Map: data attribution | Transitions Lab",
         "description": "Every figure on the Mineral Flows Map, its primary public source, the year of the underlying data, the confidence marker, and when the Lab last refreshed it. Refresh cadence and a version-2 backlog included.",
     },
     "insight-where-transition-minerals-go": {
-        "title": "Seven Findings on the Transition-Mineral Chain | Transitions Lab",
-        "description": "Where the minerals in an electric vehicle come from, who processes them, and who captures the value. A headline reading of 36 studies on the transition-mineral chain.",
+        "title": "Where transition minerals actually go | Transitions Lab",
+        "description": "Where the minerals in an electric vehicle come from, who processes them, and who captures the value. A headline reading of 36 studies on the transition mineral chain.",
     },
     "expertise-e-mobility": {
         "title": "E-Mobility & Transport Research | Transitions Lab",
@@ -2095,12 +2095,12 @@ def build_home() -> str:
     <div class="insight-row insight-row--4">
       <a class="insight-card has-photo" href="/case-roam">
         <div class="card-photo">
-          <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
+          <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
         </div>
         <div class="body">
-          <h3>Electric transport in Nairobi</h3>
-          <p class="case-sub">Nairobi, Kenya &middot; E-Mobility &amp; Transport &middot; with Roam</p>
-          <p>How electric two-wheelers cross the affordability threshold in a petrol-dominated market, with a Kenyan mobility provider.</p>
+          <h3>How Nairobi's boda-bodas go electric</h3>
+          <p class="case-sub">Nairobi, Kenya &middot; E-Mobility &amp; Transport</p>
+          <p>Twenty-three interviews with riders, mechanics, a lender and a manufacturer on what actually decides whether the switch to electric holds after the first month.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
       </a>
@@ -2112,9 +2112,9 @@ def build_home() -> str:
           </span>
         </div>
         <div class="body">
-          <h3>Biochar in Lombok</h3>
+          <h3>Turning crop waste into fuel in Lombok</h3>
           <p class="case-sub">Lombok, Indonesia &middot; Agriculture &amp; Ecosystems &middot; with Pyropower</p>
-          <p>Smallholder farmers turn crop waste into energy and soil on a decentralised, open-source kiln, with Pyropower.</p>
+          <p>An open-source kiln that turns rice husks and coconut shells into cooking fuel and soil, tested household by household with the farmers who would run it.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
       </a>
@@ -2123,9 +2123,9 @@ def build_home() -> str:
           <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk with a chalked tariff and a queue of women and children filling green and yellow jerry cans at the counter window.">
         </div>
         <div class="body">
-          <h3>Water transparency in Nairobi</h3>
+          <h3>Who watches Nairobi's water?</h3>
           <p class="case-sub">Nairobi, Kenya &middot; Energy &amp; Water Systems &middot; with MiMaji Foundation</p>
-          <p>Open data and community accountability change who can hold water systems to account, with the MiMaji Foundation.</p>
+          <p>An open data layer for informal-settlement water kiosks, co-designed with the residents who had never been on any water utility's map.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
       </a>
@@ -2134,9 +2134,9 @@ def build_home() -> str:
           <img src="/assets/img/case-reef-support-mou.jpg" alt="Five people standing under a Lombok beach gazebo, holding signed agreements between them; palms and the water visible in the background.">
         </div>
         <div class="body">
-          <h3>Rangers for the reef, Lombok</h3>
+          <h3>Guarding Lombok's reef with rangers and satellites</h3>
           <p class="case-sub">Lombok, Indonesia &middot; Marine conservation &middot; with Reef Support</p>
-          <p>Community rangers, field sensors and satellite data braided into a single trustworthy picture of reef health, with Reef Support.</p>
+          <p>Village rangers, in-water sensors and satellite imagery braided into one trustworthy picture of reef health, and a governance model to defend it.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
       </a>
@@ -2160,8 +2160,8 @@ def build_home() -> str:
           <span class="kicker">Insight &middot; Industrial Policy &middot; Global</span>
         </div>
         <div class="body">
-          <h3>Seven Findings on the Transition-Mineral Chain</h3>
-          <p>Where the minerals in an electric vehicle come from, who processes them, and who captures the value. A headline reading of 36 studies, with an interactive map.</p>
+          <h3>Where the minerals in your car actually come from</h3>
+          <p>Fifteen critical-material chains, mine to refinery to cathode, drawn as one interactive map. Africa mines a fifth of the world's copper and refines a tenth. Read the seven findings from 36 studies.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

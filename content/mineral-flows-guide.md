@@ -193,7 +193,7 @@ The [Data attribution page](/mineral-flows-attribution) groups the same informat
 
 ## Where to go next
 
-- [Seven Findings on the Transition-Mineral Chain](/insight-where-transition-minerals-go), the article that draws conclusions from the map.
+- [Where transition minerals actually go](/insight-where-transition-minerals-go), the article that draws conclusions from the map.
 - [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research), the research paper listing every source behind every figure.
 - [Green Industrialisation & Local Manufacturing](/expertise-manufacturing), the Lab's programme this tool sits inside.
 - [BReW framework](/brw), the strategic lens the Lab reads these chains through.

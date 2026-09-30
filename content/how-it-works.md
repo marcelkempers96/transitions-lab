@@ -47,7 +47,7 @@
  <span class="label">Related</span>
  <a href="/ethics">Research ethics</a>
  <a href="/field-research">Field research</a>
- <a href="/case-roam">Roam</a>
+ <a href="/case-roam">Nairobi electric transport</a>
  <a href="/case-mimaji">MiMaji</a>
  <a href="/case-pyropower">Pyropower</a>
  <a href="/case-reef-support">Reef Support</a>
@@ -98,14 +98,14 @@ Based in Delft, The Netherlands. Fieldwork through researchers and partners who 
 
 Four worked examples from the Lab's field engagements, each stepping through the same five stages.
 
-### E-mobility, Nairobi &middot; [Roam](/case-roam)
+### Electric transport, Nairobi
 
 A manufacturer weighing whether to expand electric two-wheelers.
 
 - **01 Scope.** The real question is "does the daily economics work well enough for adoption to hold once the subsidy ends," not "are riders satisfied."
 - **02 Design.** A short survey on running costs and switching intent, paired with in-depth [interviews](/interview-guide).
 - **03 Collect.** Local researchers who ride the same routes reach riders directly, in their own language.
-- **04 Analyse.** Running costs read against the [Roam engagement](/case-roam). Qualitative interviews explain the numbers.
+- **04 Analyse.** Running costs read against the [Nairobi field engagement](/case-roam). Qualitative interviews explain the numbers.
 - **05 Deliver.** In weeks: a segmented read on where adoption is real, where it is fragile, and what would have to change. Plus the instrument to re-run next quarter.
 
 ### Water transparency, Nairobi &middot; [MiMaji](/case-mimaji)
