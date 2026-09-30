@@ -1070,6 +1070,16 @@ def rewrite_links(url: str) -> str:
 
 IMAGE_COMMENT_INLINE_RE = re.compile(r"<!--\s*IMAGE\b.*?-->", re.DOTALL)
 INLINE_SPAN_RE = re.compile(r"<span\b[^>]*>.*?</span>", re.DOTALL)
+# Common inline HTML tags allowed to pass through paragraphs
+# untouched. Matches openings, closings and self-closings, with
+# any attribute list. Just the tag boundary is stashed — text
+# between the tags is still html-escaped and markdown-processed.
+INLINE_HTML_TAG_RE = re.compile(
+    r"</?(?:a|strong|em|code|br|mark|sub|sup|abbr|time|kbd|small|"
+    r"i|b|u|s|del|ins|q|cite|figure|img|figcaption)"
+    r"(?:\s+[^>]*)?/?>",
+    re.IGNORECASE,
+)
 TABLE_SEP_RE = re.compile(r"^\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)+\|?\s*$")
 
 
@@ -1124,6 +1134,11 @@ def inline(text: str) -> str:
 
     text = IMAGE_COMMENT_INLINE_RE.sub(_stash, text)
     text = INLINE_SPAN_RE.sub(_stash, text)
+    # Preserve raw inline HTML tags (a, strong, em, code, br, mark,
+    # sub, sup, etc.) authored directly in markdown. Only the tag
+    # boundary is stashed — content between an <a> and </a> is
+    # still html-escaped and markdown-processed as usual.
+    text = INLINE_HTML_TAG_RE.sub(_stash, text)
     # Preserve any pre-existing HTML entities (&amp;, &rarr;, &middot;,
     # numeric refs) so the escape step below does not double-escape them
     # into &amp;amp;, &amp;rarr;, etc.
