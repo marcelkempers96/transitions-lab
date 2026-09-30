@@ -7,7 +7,8 @@
 <p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
 
 <figure>
-  <img src="/assets/img/mineral-flows-guide-overview.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view: a dark globe with a dense weave of coloured arcs converging on East Asia, plus bright endpoints at Chile, Brazil, Peru, DR Congo, South Africa, Zimbabwe, Zambia, Australia, Indonesia, Malaysia, Morocco, Russia, Germany, United States, Canada, Mexico and other hubs. Top toolbar shows the Map / Chain diagram toggle, Trade flows, Africa focus, By stage / By mineral colour switch and a Print button." class="diagram">
+  <img src="/assets/img/mineral-flows-guide-desktop.jpg" alt="Desktop screenshot of the Mineral Flows Map on light theme, all-minerals view. Left: world map with multi-coloured flow bands converging on China; labelled hubs at Canada, United States, Mexico, Cuba, Argentina, Peru, Chile, Brazil, Ghana, Gabon, DR Congo, Zimbabwe, South Africa, Madagascar, Morocco, Poland, Germany, Norway, Finland, United Kingdom, Turkey, Jordan, Egypt, Kazakhstan, Mongolia, India, Myanmar, China, South Korea, Japan, Philippines, Malaysia, Indonesia, Australia and New Caledonia. A tooltip highlights a rare-earths NdFeB magnet corridor from China to the United States (relative volume 3 of 5, high confidence). Right: the Overview tab listing largest miner, largest refiner and Africa mines/refines shares for every one of the fifteen chains." class="diagram">
+  <figcaption>The desktop view. Hover a corridor to dim every other flow and read its source, target, mineral form and confidence. The Overview panel on the right lists the largest miner and refiner for every chain in one sweep.</figcaption>
 </figure>
 
 ---
@@ -66,11 +67,6 @@
 </figure>
 - **Save PNG** in the share row snaps only the map and the flow panel. Nothing else. Good for a slide.
 - **Hover a flow** and every other corridor dims to the background so the selected route stands out; the tooltip names the source, target, mineral form and confidence.
-
-<figure>
-  <img src="/assets/img/mineral-flows-guide-desktop.jpg" alt="Desktop screenshot of the Mineral Flows Map on light theme. Left: a world map with dense multi-coloured flow bands converging on China, with major hubs labelled at Canada, United States, Mexico, Cuba, Argentina, Peru, Chile, Brazil, Ghana, Gabon, DR Congo, Zimbabwe, South Africa, Madagascar, Morocco, Poland, Germany, Norway, Finland, United Kingdom, Turkey, Jordan, Egypt, Kazakhstan, Mongolia, India, Myanmar, China, South Korea, Japan, Philippines, Malaysia, Indonesia, Australia and New Caledonia. A tooltip overlays a highlighted rare-earths NdFeB corridor from China to the United States (relative volume 3 of 5, high confidence). Right: the Overview tab table listing largest miner, largest refiner and Africa mines/refines shares for every one of the fifteen chains." class="diagram">
-  <figcaption>All-minerals view on desktop. Hovering a flow dims every other corridor and the tooltip names the source, target, mineral form and confidence. The Overview table on the right lists the largest miner and refiner for every chain in one sweep.</figcaption>
-</figure>
 
 ---
 
