@@ -3580,6 +3580,12 @@ footer.site .legal > span{white-space:nowrap;}
    living behind opacity:0 for the whole session. */
 html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
 .reveal.in{opacity:1 !important;transform:none !important;}
+/* Respect prefers-reduced-motion: keep the fade so titles still
+   arrive (rather than popping in mid-scroll), but drop the drift and
+   shorten the duration. */
+@media (prefers-reduced-motion: reduce){
+  html.js-anim .reveal{transform:none;transition:opacity .3s ease;}
+}
 .reveal.d1{transition-delay:.08s;}
 .reveal.d2{transition-delay:.16s;}
 .reveal.d3{transition-delay:.24s;}

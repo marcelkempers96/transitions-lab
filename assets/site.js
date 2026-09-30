@@ -50,7 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ── Scroll reveal (big text drifts up + fades in) ───────────
-  if (!reduce && 'IntersectionObserver' in window) {
+  // Run the reveal animation for every reader; the CSS uses a short
+  // opacity-only transition when prefers-reduced-motion is set so it
+  // still respects that preference (no drift), but it plays.
+  if ('IntersectionObserver' in window) {
     // Only now do we tell the stylesheet that we're going to animate
     // reveals. Before this, CSS keeps .reveal fully visible so that a
     // JS block or a stalled boot doesn't leave every section title
@@ -116,39 +119,40 @@ document.addEventListener('DOMContentLoaded', function () {
   if (headline) {
     var hText = headline.getAttribute('data-text') || headline.textContent || '';
     var sText = subhead ? (subhead.getAttribute('data-text') || subhead.textContent || '') : '';
-    if (reduce) {
-      headline.textContent = hText;
-      if (subhead) subhead.textContent = sText;
-      if (cursor) cursor.style.display = 'none';
-    } else {
-      // Now that we're about to type, clear the pre-filled fallback
-      // text (the fallback exists so a slow / blocked JS boot doesn't
-      // leave the hero blank).
-      headline.textContent = '';
-      if (subhead) subhead.textContent = '';
-      var hi = 0, si = 0;
-      var typeSub = function () {
-        if (si <= sText.length) {
-          subhead.textContent = sText.slice(0, si);
-          si++;
-          setTimeout(typeSub, 18);
-        } else if (cursor) {
-          cursor.style.display = 'none';
-        }
-      };
-      var typeHead = function () {
-        if (hi <= hText.length) {
-          headline.textContent = hText.slice(0, hi);
-          hi++;
-          setTimeout(typeHead, 70);
-        } else if (subhead && sText) {
-          setTimeout(typeSub, 350);
-        } else if (cursor) {
-          cursor.style.display = 'none';
-        }
-      };
-      typeHead();
-    }
+    // Always run the typewriter, even when prefers-reduced-motion is
+    // set. The headline is the site's signature entrance and reads as
+    // static text when it doesn't animate. If motion is reduced, run
+    // the animation faster so it still feels sensible.
+    var stepH = reduce ? 26 : 70;
+    var stepS = reduce ? 8  : 18;
+    var pauseHS = reduce ? 140 : 350;
+    // Clear the pre-filled fallback text (the fallback exists so a
+    // slow / blocked JS boot doesn't leave the hero blank) before we
+    // start typing.
+    headline.textContent = '';
+    if (subhead) subhead.textContent = '';
+    var hi = 0, si = 0;
+    var typeSub = function () {
+      if (si <= sText.length) {
+        subhead.textContent = sText.slice(0, si);
+        si++;
+        setTimeout(typeSub, stepS);
+      } else if (cursor) {
+        cursor.style.display = 'none';
+      }
+    };
+    var typeHead = function () {
+      if (hi <= hText.length) {
+        headline.textContent = hText.slice(0, hi);
+        hi++;
+        setTimeout(typeHead, stepH);
+      } else if (subhead && sText) {
+        setTimeout(typeSub, pauseHS);
+      } else if (cursor) {
+        cursor.style.display = 'none';
+      }
+    };
+    typeHead();
   }
 });
 
