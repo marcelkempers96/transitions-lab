@@ -30,6 +30,10 @@
 - **By stage** colours arcs by processing state (orange for ore / concentrate / intermediate, white for refined metal / chemical / component). **By mineral** colours arcs by which mineral they carry. The default is *by mineral* in the all-minerals view and *by stage* on a single mineral.
 - **Zoom in and out** with the buttons on the right of the map or with pinch and scroll. As you zoom, more country labels appear, and the labels shrink with the zoom so they don't cover the geography.
 - **Stress test** is the most useful feature for scenario reading. Pick a country, hit *stress test*, and the map hatches the country out and dims every corridor that touches it; the panel then reports how many percent of each stage is offline and how concentration among the remaining suppliers shifts.
+
+<figure class="photo">
+  <img src="/assets/img/mineral-flows-guide-stress.jpg" alt="Screenshot of the map's Stress test panel with Chile removed. Reports 20% of lithium mining offline (Australia at 46.3% of what is left; HHI 2215 becomes 2836), 24% of lithium refining offline (China at 89.5%; HHI 5225 becomes 8049), 23% of copper mining offline (DRC at 18.2%; HHI 1015 becomes 820), and 7% of copper refining offline (China at 48.4%; HHI 2212 becomes 2501). Beneath, a list of six cut corridors: lithium carbonate from Chile to China, South Korea and Japan." class="diagram">
+</figure>
 - **Save PNG** in the share row snaps only the map and the flow panel. Nothing else. Good for a slide.
 
 ---

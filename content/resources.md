@@ -110,7 +110,23 @@ A fill-in framework for measuring the before-and-after impact of a European proj
 
 ---
 
-**§ 5 / How to use these**
+**§ 5 / Interactive tools**
+
+## Maps and data explorers
+
+[**Mineral Flows Map &rarr;**](/mineral-flows)
+
+[<span class="format-badge fmt-web">Interactive tool &rarr;</span>](/mineral-flows)
+
+Where transition minerals are mined, refined and shipped, for the eight minerals the energy transition depends on. Stage ribbon, corridor layer, policy markers and a country-level stress test. Companion pieces: the [sixty-second guide](/mineral-flows-guide), the [research paper](/mineral-flows-research), and the [headline article](/insight-where-transition-minerals-go).
+
+[**How to read the Mineral Flows Map &rarr;**](/mineral-flows-guide)
+
+Sixty-second walkthrough of the map: the chip row, stage ribbon, four panel tabs (Overview / Country / Stress test / Sources), what each layer toggle does, and the patterns to look for (asymmetry, convergence, non-obvious hubs, chokepoint chains).
+
+---
+
+**§ 6 / How to use these**
 
 ## Open, attributable, and yours to build on
 
