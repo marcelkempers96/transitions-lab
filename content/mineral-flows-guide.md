@@ -14,7 +14,7 @@
 
 ## The sixty-second tour
 
-**1. Pick a mineral.** The chip row at the top runs *All minerals* and eight individual chains (lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals). *All minerals* draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.
+**1. Pick a mineral.** The chip row at the top runs *All minerals* and nine individual chains (lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals, and phosphate — the last covering the LFP battery chain). *All minerals* draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.
 
 **2. Move through the chain.** The stage ribbon below the chips is both the summary and the selector. Each stage shows its largest producer, a strata bar with the full country breakdown, and toggles the map's choropleth when you click it. Rare earths goes Mining → Separation and refining → NdFeB magnets; lithium goes Mining → Refining → Cathode. Watching the strata bar narrow across stages is the whole story: mining is diffuse, refining is not.
 
