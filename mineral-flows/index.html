@@ -193,9 +193,9 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .min-table th, .min-table td{vertical-align:top}
 .min-table td.caret{width:20px;color:var(--orange);font-weight:700;font-family:var(--f-body);font-size:14px;cursor:pointer;user-select:none}
 .min-row{cursor:pointer;transition:background .12s ease}
-.min-row:hover{background:#141414}
-.min-row[aria-expanded="true"]{background:#141414}
-.min-detail td{padding:14px 6px 22px;background:#0a0a0a;border-top:0}
+.min-row:hover{background:rgba(255,255,255,.06)}
+.min-row[aria-expanded="true"]{background:rgba(255,255,255,.08)}
+.min-detail td{padding:14px 6px 22px;background:rgba(255,255,255,.04);border-top:0}
 .min-detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px 24px}
 .share-col h4{font-family:var(--f-head);font-weight:400;font-size:15px;margin:0 0 8px;color:var(--orange)}
 .share-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
@@ -217,11 +217,21 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 }
 .share-list li:nth-child(n+2)::before{opacity:.85}
 .share-list li:nth-child(n+5)::before{opacity:.72}
-.share-list .s-name{position:relative;z-index:1;color:var(--white);font-weight:500}
-.share-list li:first-child .s-name{font-weight:700}
-.share-list .s-pct{position:relative;z-index:1;color:var(--white);font-variant-numeric:tabular-nums;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.55)}
-.share-list li:first-child .s-pct{color:var(--black)}
-.share-total{margin:8px 0 0;font-size:12px;color:var(--white);opacity:.55}
+/* Country name inside a share bar. Uses an ink-on-cream base with a
+   thin outline stroke via paint-order so it stays readable BOTH
+   when it sits on the orange fill of a leader bar AND when it sits
+   on the near-transparent background of a small share. */
+.share-list .s-name{
+  position:relative;z-index:1;color:var(--white);font-weight:600;
+  paint-order:stroke;
+}
+.share-list li:first-child .s-name{font-weight:800;color:#0A0A0A}
+.share-list .s-pct{
+  position:relative;z-index:1;color:var(--white);
+  font-variant-numeric:tabular-nums;font-weight:800;
+}
+.share-list li:first-child .s-pct{color:#0A0A0A}
+.share-total{margin:8px 0 0;font-size:12px;color:var(--white);opacity:.7}
 .min-detail-cta{margin:14px 0 0}
 .min-detail-cta .btn{font-size:13px}
 
