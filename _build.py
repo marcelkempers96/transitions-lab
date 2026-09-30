@@ -407,6 +407,7 @@ HERO_COLOR: dict[str, str] = {
     "researchers": "forest",
     "mineral-flows-research": "cobalt",
     "mineral-flows-guide": "cobalt",
+    "mineral-flows-attribution": "cobalt",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -653,6 +654,10 @@ META: dict[str, dict[str, str]] = {
     "mineral-flows-guide": {
         "title": "How to read the Mineral Flows Map | Transitions Lab",
         "description": "A sixty-second tour of the interactive Mineral Flows Map, the features it carries (Africa focus, stress test, policy layer), and the patterns it makes visible in the transition-mineral chain.",
+    },
+    "mineral-flows-attribution": {
+        "title": "Mineral Flows Map: data attribution | Transitions Lab",
+        "description": "Every figure on the Mineral Flows Map, its primary public source, the year of the underlying data, the confidence marker, and when the Lab last refreshed it. Refresh cadence and a version-2 backlog included.",
     },
     "insight-where-transition-minerals-go": {
         "title": "Seven Findings on the Transition-Mineral Chain | Transitions Lab",
@@ -1688,6 +1693,7 @@ CRUMB_PARENT: dict[str, str | None] = {
     # Mineral flows research + companion article live under Articles.
     "mineral-flows-research":              "articles",
     "mineral-flows-guide":                 "articles",
+    "mineral-flows-attribution":           "articles",
     "insight-where-transition-minerals-go": "articles",
 }
 

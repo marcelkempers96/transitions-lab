@@ -72,7 +72,7 @@ Third, no forecast for lithium price to 2030. This piece is a reading of the cha
 
 ## The map behind the article
 
-The [Mineral Flows Map](/mineral-flows) is the Lab's interactive companion to this piece. New to the tool? Start with the [sixty-second guide](/mineral-flows-guide). It renders every claim above as a corridor, a stage ribbon, or a stress test the reader can run against any country. The [research paper](/mineral-flows-research) sits between the two: every numbered fact in this article links back to the paragraph in the paper where it is derived, and every paragraph in the paper carries the study that supports it.
+The [Mineral Flows Map](/mineral-flows) is the Lab's interactive companion to this piece. It now covers fifteen mineral chains: the eight battery-plus-motor set from version 1, plus phosphate (LFP), boron (magnet crystal), gallium and germanium (wide-bandgap semiconductors), silver (power electronics), silicon (SiC + polysilicon), and fluorspar (electrolyte). New to the tool? Start with the [sixty-second guide](/mineral-flows-guide); for the source behind every figure, see the [data attribution page](/mineral-flows-attribution). It renders every claim above as a corridor, a stage ribbon, or a stress test the reader can run against any country. The [research paper](/mineral-flows-research) sits between the two: every numbered fact in this article links back to the paragraph in the paper where it is derived, and every paragraph in the paper carries the study that supports it.
 
 <p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
 

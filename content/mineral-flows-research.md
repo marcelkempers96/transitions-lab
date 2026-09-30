@@ -10,7 +10,7 @@
 
 <p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
 
-<p class="tool-cta-sub">New to the map? <a href="/mineral-flows-guide">Read the sixty-second guide</a>.</p>
+<p class="tool-cta-sub">New to the map? <a href="/mineral-flows-guide">Read the sixty-second guide</a>. For every source behind every figure, see the <a href="/mineral-flows-attribution">data attribution page</a>.</p>
 
 ---
 
