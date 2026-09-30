@@ -1268,11 +1268,15 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     var W = skSvg.clientWidth || 800;
     var H = skSvg.clientHeight || 560;
     if (H < 420) H = 520;
-    var margin = {top: 30, right: 120, bottom: 20, left: 20};
+    // Mobile: left margin big enough for mining labels; smaller nodes.
+    var isMobSk = (W < 640);
+    var margin = isMobSk
+      ? {top: 40, right: 110, bottom: 24, left: 96}
+      : {top: 40, right: 140, bottom: 24, left: 110};
 
     var sankey = d3.sankey()
-      .nodeWidth(14)
-      .nodePadding(6)
+      .nodeWidth(isMobSk ? 10 : 14)
+      .nodePadding(isMobSk ? 8 : 10)
       .extent([[margin.left, margin.top], [W - margin.right, H - margin.bottom]])
       .nodeAlign(d3.sankeyLeft)
       .nodeSort(function(a, b){ return b.share - a.share; });
@@ -1280,7 +1284,24 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     var graph = { nodes: nodes.map(function(n){ return Object.assign({}, n); }), links: links.map(function(l){ return Object.assign({}, l); }) };
     try { sankey(graph); } catch(e){ console.warn('sankey layout failed:', e); return; }
 
-    // Colour scheme: match the mineral colour (from MCOL) with lighter/darker.
+    // Per-country palette: each country gets a stable hue derived from
+    // a hash of its ISO code, so the same country reads the same
+    // colour across stages and across mineral chains. Cycles across a
+    // rich, high-contrast set. The mineral colour still tints the base.
+    var COUNTRY_PAL = [
+      '#FF6B6B','#4ECDC4','#FFD166','#845EC2','#00C9A7',
+      '#F9AA33','#3A86FF','#FB5607','#8AC926','#FF006E',
+      '#06AED5','#F15BB5','#9B5DE5','#FEE440','#00BBF9',
+      '#38B000','#E63946','#F4A261','#2A9D8F','#E76F51',
+      '#B5179E','#7209B7','#F72585','#FCA311','#14213D',
+      '#EF476F','#118AB2','#073B4C','#D62828','#F77F00',
+    ];
+    function isoColour(iso){
+      if (!iso || iso === 'OTHER') return '#9CA3AF';
+      var h = 0;
+      for (var i = 0; i < iso.length; i++) h = ((h << 5) - h + iso.charCodeAt(i)) | 0;
+      return COUNTRY_PAL[Math.abs(h) % COUNTRY_PAL.length];
+    }
     var mcol = (typeof MCOL !== 'undefined' && MCOL[m.id]) ? MCOL[m.id] : '#FF9A1F';
 
     // Build SVG.
@@ -1305,13 +1326,15 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       skSvg.appendChild(t);
     });
 
-    // Links
+    // Links: colour by their SOURCE country so each origin's flows
+    // read as a single tinted band, and different countries in the
+    // same stage don't collapse into one orange blob.
     var gL = document.createElementNS(ns, 'g'); gL.setAttribute('class', 'sk-links'); skSvg.appendChild(gL);
     graph.links.forEach(function(lk){
       var p = document.createElementNS(ns, 'path');
       p.setAttribute('class', 'sk-link');
       p.setAttribute('d', d3.sankeyLinkHorizontal()(lk));
-      p.setAttribute('stroke', mcol);
+      p.setAttribute('stroke', isoColour(lk.source.iso));
       p.setAttribute('stroke-width', String(Math.max(1, lk.width)));
       var t = document.createElementNS(ns, 'title');
       t.textContent = (lk.source.name) + ' \u2192 ' + (lk.target.name) + '  \u00b7 ' + lk.value.toFixed(1) + '%';
@@ -1321,6 +1344,8 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
 
     // Nodes
     var gN = document.createElementNS(ns, 'g'); gN.setAttribute('class', 'sk-nodes'); skSvg.appendChild(gN);
+    var stageCount = stageIds.length;
+    var fontSize = isMobSk ? 11 : 12.5;
     graph.nodes.forEach(function(n){
       var g = document.createElementNS(ns, 'g'); g.setAttribute('class', 'sk-node');
       var r = document.createElementNS(ns, 'rect');
@@ -1328,20 +1353,31 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       r.setAttribute('y', String(n.y0));
       r.setAttribute('width', String(n.x1 - n.x0));
       r.setAttribute('height', String(Math.max(1, n.y1 - n.y0)));
-      r.setAttribute('fill', mcol);
-      r.setAttribute('fill-opacity', '0.85');
+      r.setAttribute('fill', isoColour(n.iso));
+      r.setAttribute('fill-opacity', '0.92');
+      r.setAttribute('stroke', 'var(--black)');
+      r.setAttribute('stroke-width', '0.5');
       var t = document.createElementNS(ns, 'title');
       t.textContent = n.name + '  \u00b7 ' + n.stageLabel + '  \u00b7 ' + n.share.toFixed(1) + '%';
       r.appendChild(t);
       g.appendChild(r);
-      // Label at the outside edge of the node (right of last column, left of others).
-      var isLast = (n.stage === stageIds[stageIds.length - 1]);
+      // Label positioning:
+      //   - First column (mining): label on the RIGHT of the node, so
+      //     it can't be clipped at x < 0 (was the mobile bug).
+      //   - Last column: label on the LEFT of the node, so it can't
+      //     be clipped at x > W.
+      //   - Middle columns (rare, e.g. rare earths' 3-stage chain):
+      //     label on the RIGHT of the node.
+      var stageIdx = stageIds.indexOf(n.stage);
+      var isFirst = (stageIdx === 0);
+      var isLast = (stageIdx === stageCount - 1);
+      var toRight = !isLast;  // first + middle \u2192 right; last \u2192 left
       var txt = document.createElementNS(ns, 'text');
-      txt.setAttribute('x', String(isLast ? (n.x1 + 6) : (n.x0 - 6)));
+      txt.setAttribute('x', String(toRight ? (n.x1 + 6) : (n.x0 - 6)));
       txt.setAttribute('y', String((n.y0 + n.y1) / 2 + 4));
-      txt.setAttribute('text-anchor', isLast ? 'start' : 'end');
+      txt.setAttribute('text-anchor', toRight ? 'start' : 'end');
       txt.setAttribute('font-family', 'var(--f-body)');
-      txt.setAttribute('font-size', '12');
+      txt.setAttribute('font-size', String(fontSize));
       txt.setAttribute('fill', 'var(--white)');
       // paint-order stroke for legibility
       txt.setAttribute('paint-order', 'stroke');

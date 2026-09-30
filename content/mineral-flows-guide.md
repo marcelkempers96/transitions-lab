@@ -41,6 +41,10 @@
   <div class="step-body">
     <h3 class="step-h">Read the panel on the right.</h3>
     <p>Four tabs. **Overview** is the mineral's headline and a per-stage HHI. **Country** picks one country and shows its role across every stage plus its import and export corridors. **Stress test** removes a country and reports what fraction of each stage goes offline. **Sources** lists every figure with its year, confidence and the studies behind it.</p>
+    <figure class="step-figure">
+      <img src="/assets/img/mineral-flows-guide-overview-tab.jpg" alt="Copper Overview tab: 17% of world mining is in African countries, 9.5% of world refining. Concentration by stage: Mining HHI 1015 (unconcentrated), largest Chile 23%. Refining HHI 2212 (moderately concentrated), largest China 45%.">
+      <figcaption>The Overview tab for copper. Two Africa shares, then per-stage HHI with the largest producer named for each stage.</figcaption>
+    </figure>
   </div>
 </li>
 

@@ -34,6 +34,11 @@ The paper's conclusion, distilled: the transition-mineral chain is defined by on
 
 ## 1. Africa mines the ore and someone else earns the metal.
 
+<figure>
+  <img src="/assets/img/mineral-flows-guide-overview-tab.jpg" alt="Copper Overview tab from the Mineral Flows Map: 17% of world mining is in African countries, 9.5% of world refining. Concentration by stage: Mining HHI 1015 (unconcentrated), largest producer Chile 23%. Refining HHI 2212 (moderately concentrated), largest producer China 45%." class="diagram">
+  <figcaption>The Overview tab in the tool. The two Africa shares up top, then per-stage HHI and the largest producer for each stage of the copper chain.</figcaption>
+</figure>
+
 Africa mines roughly [17% of the world's copper](/mineral-flows-research#fact-11) and [refines about 9%](/mineral-flows-research#fact-11). Ndubuisi and co-authors find that [forty-eight African countries hold reserves](/mineral-flows-research#fact-1) of at least one transition mineral, and that Asia, and China in particular, take over [40% of Africa's ore exports](/mineral-flows-research#fact-2). *Reserves are not the same as exports at scale: the Mineral Flows Map surfaces the current top African exporters (around a dozen), while the other thirty-plus countries hold deposits that have not yet reached international trade.* Congolese cobalt [nearly triples in value](/mineral-flows-research#fact-3) between the mine gate and local refining, meaning the difference between exporting ore and exporting metal is not a rounding error, it is the price of the smelter. The Ndubuisi conclusion is bleaker than any single number: individual countries supply too little to bargain alone, so the value at stake needs pooled supply, shared processing and common rules, which is a political programme, not a policy line.
 
 ## 2. The concentration is the risk, not any single country.
