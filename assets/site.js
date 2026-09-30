@@ -863,7 +863,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ── Footer theme toggle (light / dark / auto) ─────────────
    Site-wide colour scheme toggle. Persists via localStorage
    under tl_site_theme. Auto follows prefers-color-scheme.
-   The article-reader toolbar's own data-theme (case-*/insight-*
+   The article-reader toolbar's own data-theme (case- and insight-
    pages) takes over only within its scope, so this footer
    toggle sets the default site theme everywhere else. */
 (function () {
