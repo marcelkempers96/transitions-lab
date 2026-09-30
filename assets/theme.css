@@ -4301,6 +4301,43 @@ a.tool-feature-cta:hover{border-bottom-color:var(--paper);}
 .prose .tbl.provenance td:nth-child(5) a:hover{text-decoration-color:var(--cobalt);}
 .prose .tbl.provenance td:nth-child(6){white-space:nowrap;opacity:.72;}
 .prose .tbl.provenance td:nth-child(7){white-space:nowrap;opacity:.6;font-variant-numeric:tabular-nums;}
+/* Research paper inline citations. Each Author (Year) mention is
+   wrapped in <a class="ref-cite" href="#bib-key"> and links down to
+   the bibliography section at the bottom. */
+.prose a.ref-cite,
+.prose a.ref-cite:visited{
+  color:var(--ink) !important;
+  text-decoration:underline;
+  text-decoration-color:rgba(31,78,170,.42);
+  text-decoration-thickness:1px;
+  text-underline-offset:2px;
+}
+.prose a.ref-cite:hover{
+  text-decoration-color:var(--cobalt);
+  background:rgba(31,78,170,.06);
+}
+.prose ol.bibliography{
+  list-style:decimal;padding-left:1.6em;margin:12px 0 24px;
+  counter-reset:none;
+}
+.prose ol.bibliography > li{
+  margin:0 0 12px;padding-left:6px;
+  font-size:15px;line-height:1.55;
+  color:var(--ink);
+}
+.prose ol.bibliography > li strong{font-weight:700;}
+.prose ol.bibliography > li em{font-style:italic;}
+.prose ol.bibliography > li a{color:var(--cobalt);font-weight:600;
+  text-decoration:underline;text-decoration-color:rgba(31,78,170,.4);
+  text-underline-offset:2px;white-space:nowrap;}
+.prose ol.bibliography > li a:hover{text-decoration-color:var(--cobalt);}
+.prose ol.bibliography > li:target{
+  background:rgba(31,78,170,.08);
+  outline:2px solid var(--cobalt);
+  outline-offset:4px;
+  border-radius:3px;
+}
+
 /* World-totals table on the research paper's Method section. Same
    compact styling as the provenance table but three data columns
    (mining, refining, downstream) and one source column. */
