@@ -72,14 +72,36 @@
 
 ## Chain-diagram view (Sankey)
 
-The **Chain diagram** button turns the map into a stage-by-stage flow view for the selected mineral. Countries appear as columns of ranked, colour-coded blocks; ribbons between the columns follow the proportion of each country's output that heads into the next stage. Where a bilateral corridor is in the shipped dataset (e.g. Indonesia's mine output flowing into Indonesian and Chinese refining), that share of the flow follows the corridor; the remainder spreads by downstream share, so the whole diagram still adds to 100% per stage. Country colour is stable across stages, so the eye tracks Indonesia's block from mining through refining and on into cathode manufacturing.
+The **Chain diagram** button turns the map into a stage-by-stage flow view for the current mineral. It answers a question the world map cannot: *of the ore mined in country X, how much of it stays there through refining and how much moves on to another country?* That is the "where does value get captured" question, drawn.
 
 <figure>
   <img src="/assets/img/mineral-flows-guide-sankey.jpg" alt="Desktop screenshot of the Mineral Flows Map's Chain diagram view for Nickel. Three vertical columns labelled Mining, Refining (all classes) and Cathode active material. Mining column shows Indonesia 59% in pink, Rest of world 12%, Philippines 9%, Russia 6%, Canada 5%, China 3%, Australia 3% and New Caledonia 3%. Refining column shows Indonesia 44% in pink, China 22%, Rest of world 12%, Japan 5%, Russia 5%, Canada 4%, Australia 3%, Norway 3%, Finland 2%. Cathode active material column shows China 85% orange, South Korea 7%, Japan 5%, Rest of world 3%. Coloured ribbons connect the columns proportional to each country's share, so Indonesia's pink block flows from mining into refining and Chinese refining feeds the cathode column. Right panel shows the single-mineral Overview tab: HHI 3650 (highly concentrated) for mining, largest Indonesia 59% (approx 2.1 Mt/y), HHI 2508 for refining (largest Indonesia 44% approx 1.5 Mt/y), HHI 7299 for cathode (largest China 85%). Each stage carries a world-total source line beneath it (USGS MCS 2025 for mining, IEA GCMO 2026 for refining and cathode)." class="diagram">
-  <figcaption>Chain diagram for nickel. Indonesia's pink block passes through mining and refining almost unchanged, then splits into China's orange cathode column. Country colours are stable across stages, so the eye tracks one country's flow through the whole chain.</figcaption>
+  <figcaption>Chain diagram for nickel. Indonesia's pink block moves through mining and refining almost unchanged; the cathode column then collapses into China's orange. Country colours are stable across stages, so the eye tracks one country's flow through the whole chain.</figcaption>
 </figure>
 
-Chain diagram works one mineral at a time; the *All minerals* chip falls back to a message on that view. The strongest reads are chains where the same country's block dominates every column (graphite, rare earths) and chains where an ore country loses most of its share at refining (Congo cobalt).
+<p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Try the Chain diagram &rarr;</a></p>
+
+### How to read it
+
+**Columns are stages.** Left to right: mining, refining, cathode / downstream, in the order the shipped dataset carries for the current mineral. Lithium goes Mining → Refining (carbonate + hydroxide) → Cathode active material. Rare earths goes Mining → Separation and refining → NdFeB magnets. A two-stage chain (borates, PGMs, silver, fluorspar) shows only two columns.
+
+**Blocks are countries.** In each column, every listed producer gets a coloured block sized to its share of that stage, ranked largest-first, with an *Rest of world* bucket for the remainder. Country colours are stable across stages, so Indonesia's pink block is Indonesia in every column.
+
+**Ribbons are the transition.** A ribbon from country A in column N to country B in column N+1 says: this share of A's mine output ends up as B's refined output (and so on). Where the shipped dataset carries a bilateral corridor for that pair (Indonesian ore into Chinese sulphate; Chilean carbonate into Korean cathode), the ribbon follows it. Where it doesn't, the remainder spreads by the downstream country's share, so every stage still totals 100%.
+
+### When the diagram tells you something the map can't
+
+**Stage collapse.** A country that mines a lot but refines almost nothing shows as a wide block on the left that funnels into other countries' blocks on the right. DR Congo cobalt is the canonical case: Congolese mining ≈ 76%, Congolese refining ≈ 3%; the diagram makes that gap physical.
+
+**Chokepoint chains.** When the same country dominates every column, the diagram is basically one wide band running straight across. Graphite and rare earths look this way. A single-column stress-test on those chains isn't a scenario — the whole diagram would go dark.
+
+**Downstream compression.** Many chains have a diffuse mining column, a moderately concentrated refining column, and one country holding the cathode / magnet / anode column. The eye reads that as blocks getting *narrower* left to right until one big block remains. That is the "processing is not one thing" story the article's finding #5 makes in prose.
+
+### Limits
+
+- Chain diagram works one mineral at a time. Pick a chip other than *All minerals* to see it; the diagram falls back to a placeholder message otherwise.
+- The 70% corridor-following / 30% share-spreading rule is a design choice; the BACI trade refresh (see the [research paper](/mineral-flows-research#method-tonnes)) will replace it with actual contained-metal tonnages per corridor.
+- Cathode / magnet / anode columns without a source-anchored share show only the world's largest producer name; the block sizes there are indicative, not audited.
 
 ---
 

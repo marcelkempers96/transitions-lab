@@ -59,8 +59,10 @@ The IEA's *Global Critical Minerals Outlook 2026* reports that the average share
 
 <figure>
   <img src="/assets/img/mineral-flows-guide-sankey.jpg" alt="Chain diagram (Sankey) view of the Mineral Flows Map for Nickel. Three vertical columns: Mining (Indonesia 59%, Rest of world 12%, Philippines 9%, Russia 6%, Canada 5%, China 3%, Australia 3%, New Caledonia 3%), Refining (Indonesia 44%, China 22%, Rest of world 12%, Japan 5%, Russia 5%, Canada 4%, Australia 3%, Norway 3%, Finland 2%), and Cathode active material (China 85%, South Korea 7%, Japan 5%, Rest of world 3%). Coloured ribbons connect the columns proportional to each country's share. Right panel shows HHI 3650 for mining (Indonesia 59% approx 2.1 Mt/y), HHI 2508 for refining (Indonesia 44% approx 1.5 Mt/y), HHI 7299 for cathode (China 85%)." class="diagram">
-  <figcaption>The map's Chain-diagram view makes the "processing is not one thing" point directly. For nickel, Indonesia's pink block moves through mining and refining almost unchanged; the cathode column then collapses into China. The stage-transition is the story, not the mining share.</figcaption>
+  <figcaption>The map's <strong>Chain-diagram view</strong> draws each mineral's stages as columns and the transitions between them as ribbons. For nickel: Indonesia's pink block passes through mining and refining almost unchanged, then the cathode column collapses into China's orange. The stage-transition is the story, not the mining share. Try it on a single-mineral view; the <a href="/mineral-flows-guide#chain-diagram-view-sankey">guide has a full walkthrough</a>.</figcaption>
 </figure>
+
+<p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the Chain-diagram view &rarr;</a></p>
 
 <figure class="photo">
   <img src="/assets/img/mineral-flows-mine-aerial.jpg" alt="Aerial photograph of an open-pit mining operation: dark grey aggregate stockpiles arranged in a circular pattern around a yellow wheel loader, with two red steel conveyor gantries running from the pit edges towards the centre." class="diagram">
