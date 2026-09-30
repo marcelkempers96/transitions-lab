@@ -1320,12 +1320,15 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       H = skSvg.clientHeight || 560;
       if (H < 420) H = 520;
     }
-    // Bigger side margins spread the two/three columns further apart
-    // and give the outside labels room. Increased on mobile so the
-    // stages sit further apart with the flow visible between them.
+    // Labels always sit OUTSIDE the outer columns (see the label
+    // block below): first column labels to the LEFT of the node,
+    // last column labels to the RIGHT. That means the side margins
+    // need to hold the longest country name plus a share, ~104-120px.
+    // The middle gap between two columns is then the whole
+    // remaining width — no more labels crashing into each other.
     var margin = isMobSk
-      ? {top: 32, right: 96, bottom: 18, left: 92}
-      : {top: 40, right: 140, bottom: 24, left: 110};
+      ? {top: 32, right: 112, bottom: 18, left: 104}
+      : {top: 40, right: 156, bottom: 24, left: 130};
 
     var sankey = d3.sankey()
       .nodeWidth(isMobSk ? 12 : 14)
@@ -1362,22 +1365,26 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     skSvg.innerHTML = '';
     skSvg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
     skSvg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-    // Stage-column titles across the top
-    var byStage = {};
-    graph.nodes.forEach(function(n){ (byStage[n.stage] = byStage[n.stage] || []).push(n); });
-    stageIds.forEach(function(sid){
-      var col = byStage[sid]; if (!col || !col.length) return;
-      var x = col[0].x0;
-      var t = document.createElementNS(ns, 'text');
-      t.setAttribute('class', 'sk-title');
-      t.setAttribute('x', String(x));
-      t.setAttribute('y', String(18));
-      t.setAttribute('font-family', 'var(--f-head)');
-      t.setAttribute('font-size', '13');
-      t.setAttribute('fill', 'var(--white)');
-      t.textContent = m.stages[sid].label || sid;
-      skSvg.appendChild(t);
-    });
+    // Stage-column titles: on desktop only. On mobile the ribbon
+    // above already names each stage of the current mineral, and
+    // stage titles at y=18 collide with the mapctl toolbar strip.
+    if (!isMobSk){
+      var byStage = {};
+      graph.nodes.forEach(function(n){ (byStage[n.stage] = byStage[n.stage] || []).push(n); });
+      stageIds.forEach(function(sid){
+        var col = byStage[sid]; if (!col || !col.length) return;
+        var x = col[0].x0;
+        var t = document.createElementNS(ns, 'text');
+        t.setAttribute('class', 'sk-title');
+        t.setAttribute('x', String(x));
+        t.setAttribute('y', String(18));
+        t.setAttribute('font-family', 'var(--f-head)');
+        t.setAttribute('font-size', '13');
+        t.setAttribute('fill', 'var(--white)');
+        t.textContent = m.stages[sid].label || sid;
+        skSvg.appendChild(t);
+      });
+    }
 
     // Links: colour by their SOURCE country so each origin's flows
     // read as a single tinted band, and different countries in the
@@ -1414,17 +1421,18 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       t.textContent = n.name + '  \u00b7 ' + n.stageLabel + '  \u00b7 ' + n.share.toFixed(1) + '%';
       r.appendChild(t);
       g.appendChild(r);
-      // Label positioning:
-      //   - First column (mining): label on the RIGHT of the node, so
-      //     it can't be clipped at x < 0 (was the mobile bug).
-      //   - Last column: label on the LEFT of the node, so it can't
-      //     be clipped at x > W.
-      //   - Middle columns (rare, e.g. rare earths' 3-stage chain):
-      //     label on the RIGHT of the node.
+      // Label positioning: ALL labels sit OUTSIDE their column so the
+      // middle gap between stages is entirely for flow.
+      //   - First column: label to the LEFT of the node (end-anchored)
+      //   - Last column:  label to the RIGHT of the node (start-anchored)
+      //   - Middle columns (only rare-earths' 3-stage chain today):
+      //     label to the RIGHT of the node so it sits over its own flow
+      //     out; still no crash with the last column because the extent
+      //     evenly divides the middle
       var stageIdx = stageIds.indexOf(n.stage);
       var isFirst = (stageIdx === 0);
       var isLast = (stageIdx === stageCount - 1);
-      var toRight = !isLast;  // first + middle \u2192 right; last \u2192 left
+      var toRight = isLast || (!isFirst && !isLast); // last + middle \u2192 right
       var txt = document.createElementNS(ns, 'text');
       txt.setAttribute('x', String(toRight ? (n.x1 + 6) : (n.x0 - 6)));
       txt.setAttribute('y', String((n.y0 + n.y1) / 2 + 4));
