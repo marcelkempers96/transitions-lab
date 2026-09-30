@@ -1,5 +1,13 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" data-map-theme="light">
+<script>
+// Set the persisted map theme before anything renders, so returning
+// readers who chose dark don't see a light flash first, and new
+// readers land straight on the light default.
+(function(){try{var m=localStorage.getItem('tl_map_theme_v2')||'light';
+if(m==='dark')document.documentElement.removeAttribute('data-map-theme');
+else document.documentElement.setAttribute('data-map-theme','light');}catch(_){}})();
+</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1036,8 +1044,8 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       <span class="map-theme">
         <span class="mt-label">Map theme</span>
         <span class="mt-group" role="group" aria-label="Map colour theme">
-          <button type="button" data-map-theme="dark" aria-pressed="true">Dark</button>
-          <button type="button" data-map-theme="light" aria-pressed="false">Light</button>
+          <button type="button" data-map-theme="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-map-theme="light" aria-pressed="true">Light</button>
         </span>
       </span>
       <span>&copy; Transitions Lab B.V. 2026 &middot; Delft, The Netherlands &middot; KVK 42170233</span>
@@ -1150,18 +1158,21 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
 
 <script>
 (function(){
-  var KEY = 'tl_map_theme_v1';
+  // Bumped storage key so first-time visitors (and returning readers
+  // who never picked a mode) get the new default of light. Anyone
+  // who explicitly chose a mode after this bump keeps their choice.
+  var KEY = 'tl_map_theme_v2';
   var g = document.querySelector('.map-theme .mt-group'); if (!g) return;
   var html = document.documentElement;
   function apply(mode){
     if (mode === 'light') html.setAttribute('data-map-theme','light');
     else html.removeAttribute('data-map-theme');
     g.querySelectorAll('button').forEach(function(b){
-      b.setAttribute('aria-pressed', b.getAttribute('data-map-theme') === (mode || 'dark') ? 'true' : 'false');
+      b.setAttribute('aria-pressed', b.getAttribute('data-map-theme') === (mode || 'light') ? 'true' : 'false');
     });
   }
-  var saved = 'dark';
-  try { saved = localStorage.getItem(KEY) || 'dark'; } catch(_){}
+  var saved = 'light';
+  try { saved = localStorage.getItem(KEY) || 'light'; } catch(_){}
   apply(saved);
   g.addEventListener('click', function(e){
     var b = e.target.closest('[data-map-theme]'); if (!b) return;
