@@ -171,11 +171,29 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .min-detail td{padding:14px 6px 22px;background:#0a0a0a;border-top:0}
 .min-detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px 24px}
 .share-col h4{font-family:var(--f-head);font-weight:400;font-size:15px;margin:0 0 8px;color:var(--orange)}
-.share-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px}
-.share-list li{position:relative;display:grid;grid-template-columns:1fr auto;gap:8px;padding:6px 8px;font-size:13px;background:linear-gradient(90deg,rgba(255,154,31,.16) 0,rgba(255,154,31,.16) var(--w,0%),transparent var(--w,0%));border-left:2px solid var(--orange-deep)}
-.share-list li:first-child{border-left-color:var(--orange)}
-.share-list .s-name{color:var(--white)}
-.share-list .s-pct{color:var(--orange);font-variant-numeric:tabular-nums;font-weight:700}
+.share-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
+.share-list li{
+  position:relative;display:grid;grid-template-columns:1fr auto;
+  align-items:center;gap:10px;
+  padding:9px 12px;font-size:13.5px;
+  background:rgba(255,255,255,.04);
+  overflow:hidden;
+}
+.share-list li::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;
+  width:var(--w,0%);
+  background:linear-gradient(90deg,var(--orange) 0,rgba(255,154,31,.55) 100%);
+  z-index:0;transition:width .35s ease;
+}
+.share-list li:first-child::before{
+  background:linear-gradient(90deg,var(--orange) 0,var(--orange) 100%);
+}
+.share-list li:nth-child(n+2)::before{opacity:.85}
+.share-list li:nth-child(n+5)::before{opacity:.72}
+.share-list .s-name{position:relative;z-index:1;color:var(--white);font-weight:500}
+.share-list li:first-child .s-name{font-weight:700}
+.share-list .s-pct{position:relative;z-index:1;color:var(--white);font-variant-numeric:tabular-nums;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.55)}
+.share-list li:first-child .s-pct{color:var(--black)}
 .share-total{margin:8px 0 0;font-size:12px;color:var(--white);opacity:.55}
 .min-detail-cta{margin:14px 0 0}
 .min-detail-cta .btn{font-size:13px}
@@ -597,7 +615,7 @@ function paneOverviewAll(){
       const total = rows.reduce((n,[,v]) => n + v, 0);
       return `<div class="share-col"><h4>${esc(label)}</h4>`
         + `<ol class="share-list">` + rows.map(([iso,v]) =>
-            `<li><span class="s-name">${iso === "OTHER" ? "Rest of world" : esc(name(iso))}</span><span class="s-pct">${fmt(v)}</span><span class="s-bar" style="--w:${(v/Math.max(rows[0][1],1))*100}%"></span></li>`
+            `<li style="--w:${Math.max(v,0.6)}%"><span class="s-name">${iso === "OTHER" ? "Rest of world" : esc(name(iso))}</span><span class="s-pct">${fmt(v)}</span></li>`
           ).join("") + `</ol><p class="share-total">Total: ${fmt(total)}</p></div>`;
     };
     const rowId = "row-" + m.id;
