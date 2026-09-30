@@ -81,8 +81,12 @@ header.site{
   position:sticky;top:0;z-index:40;
   background:var(--paper);border-bottom:2px solid var(--ink);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;position:relative;}
-.brand{display:inline-flex;align-items:center;text-decoration:none;line-height:1;color:var(--ink);}
+.nav{display:flex;align-items:center;height:76px;position:relative;gap:0;}
+/* Brand hard-pinned left; margin-right:auto shoves every other flex
+   child of .nav (nav links, header-tools, nav-toggle) all the way to
+   the right edge. Belt-and-braces on the flush-right layout the
+   reader asked for. */
+.brand{display:inline-flex;align-items:center;text-decoration:none;line-height:1;color:var(--ink);margin-right:auto;}
 .brand-logo{height:36px;width:auto;max-width:100%;display:block;object-fit:contain;transition:opacity .2s;}
 .brand-logo--footer{height:128px;margin-bottom:14px;}
 .brand:hover .brand-logo{opacity:.85;}
