@@ -1632,6 +1632,117 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     return head
 
 
+# ────────────────────────────────────────────────────────────────────────────
+# Breadcrumbs — Home > Section > Current, rendered above every H1
+# ────────────────────────────────────────────────────────────────────────────
+
+CRUMB_PARENT: dict[str, str | None] = {
+    # Programmes tree
+    "expertise-manufacturing":  "expertise",
+    "expertise-e-mobility":     "expertise",
+    "expertise-energy":         "expertise",
+    "expertise-agriculture":    "expertise",
+    "expertise-ai-digital":     "expertise",
+    "expertise-finance":        "expertise",
+    "sdgs":                     "expertise",
+    "esf-social-innovation":    "expertise",
+
+    # What we do tree
+    "entering-a-new-context":   "what-we-do",
+    "measuring-change":         "what-we-do",
+    "reporting-to-funders":     "what-we-do",
+    "how-it-works":             "what-we-do",
+    "field-research":           "what-we-do",
+    "impact-measurement":       "what-we-do",
+    "market-expansion":         "what-we-do",
+    "research-development":     "what-we-do",
+    "european-impact-tracking": "what-we-do",
+    "monitoring-evaluation-dissemination": "what-we-do",
+
+    # Resources tree
+    "brw":                      "resources",
+    "readiness-levels":         "resources",
+    "human-side-of-technology": "resources",
+    "economics-of-transitions": "resources",
+    "innovation-dynamics":      "resources",
+    "interview-guide":          "resources",
+    "impact-tracking-template": "resources",
+    "qualitative-vs-quantitative": "resources",
+
+    # The Lab tree (About is the section landing)
+    "who-we-serve":             "about",
+    "for-funders":              "about",
+    "capability-statement":     "about",
+    "contact":                  "about",
+    "researchers":              "about",
+    "ethics":                   "about",
+    "privacy":                  "about",
+    "terms":                    "about",
+    "cookies":                  "about",
+
+    # Mineral flows research + companion article live under Articles.
+    "mineral-flows-research":              "articles",
+    "insight-where-transition-minerals-go": "articles",
+}
+
+CRUMB_LABELS: dict[str, str] = {
+    "": "Home",
+    "index": "Home",
+    "expertise": "Programmes",
+    "what-we-do": "What we do",
+    "resources": "Resources",
+    "about": "About",
+    "articles": "Articles",
+    "case-studies": "Case studies",
+    "contact": "Contact",
+}
+
+
+def _crumb_label(slug: str) -> str:
+    if slug in CRUMB_LABELS:
+        return CRUMB_LABELS[slug]
+    # Fall back to the page's own H1 title where the build knows it.
+    m = META.get(slug, {})
+    if "title" in m:
+        return m["title"].split("|")[0].strip()
+    if slug in STUB_TITLES:
+        return STUB_TITLES[slug]
+    return slug.replace("-", " ").title()
+
+
+def _crumb_chain(slug: str) -> list[tuple[str, str]]:
+    """Return breadcrumb items from Home down to (and including) the current
+    page's parent (not the current page itself)."""
+    chain: list[tuple[str, str]] = []
+    # Prefix-based routing catches every case-* and insight-* slug.
+    parent: str | None
+    if slug.startswith("case-") and slug != "case-studies":
+        parent = "case-studies"
+    elif slug.startswith("insight-") and slug in CRUMB_PARENT:
+        parent = CRUMB_PARENT[slug]
+    elif slug.startswith("insight-"):
+        parent = "articles"
+    else:
+        parent = CRUMB_PARENT.get(slug)
+    while parent and parent != "index":
+        chain.append((_crumb_label(parent), "/" + parent))
+        parent = CRUMB_PARENT.get(parent)
+    chain.reverse()
+    return [("Home", "/")] + chain
+
+
+def build_breadcrumbs_html(slug: str) -> str:
+    if slug in {"index", "404"}:
+        return ""
+    items = _crumb_chain(slug)
+    parts = []
+    for label, url in items:
+        parts.append(f'<a href="{url}">{htmllib.escape(label)}</a>')
+    parts.append(f'<span aria-current="page">{htmllib.escape(_crumb_label(slug))}</span>')
+    inner = '<span class="crumb-sep" aria-hidden="true">&rsaquo;</span>'.join(parts)
+    return f'<nav class="breadcrumb" aria-label="Breadcrumb">{inner}</nav>'
+
+
 def build_content_page(slug: str, md: str) -> str:
     """Convert a content markdown file to a full HTML page."""
     top_eyebrow, title, standfirst_html, body_html = parse_markdown(md)
@@ -1689,8 +1800,10 @@ def build_content_page(slug: str, md: str) -> str:
         )
         if is_article else ""
     )
+    breadcrumb_html = build_breadcrumbs_html(slug)
     page_hero = f"""<section class="{hero_class}"{hero_bg_style}>
   <div class="wrap">
+    {breadcrumb_html}
     {icon_html}
     <h1>{inline(title)}</h1>
     {'<p class="lede">' + standfirst_html + '</p>' if standfirst_html else ''}

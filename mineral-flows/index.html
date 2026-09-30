@@ -235,9 +235,27 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .site-tail .st-legal{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;margin-top:8px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--white);opacity:.6}
 .site-tail .st-legal a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 @media(max-width:760px){.site-tail .st-wrap{grid-template-columns:1fr}.site-tail .st-legal{justify-content:flex-start}}
+
+/* Breadcrumb on the tool page — thin dark strip */
+.mf-breadcrumb{background:var(--black);border-bottom:1px solid var(--rule);font-family:var(--f-body);font-size:12.5px}
+.mf-breadcrumb-inner{max-width:1440px;margin:0 auto;padding:9px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.mf-breadcrumb a{color:var(--white);opacity:.72;text-decoration:none}
+.mf-breadcrumb a:hover{opacity:1;color:var(--orange)}
+.mf-breadcrumb .mf-sep{color:var(--white);opacity:.34;font-size:14px}
+.mf-breadcrumb [aria-current="page"]{color:var(--white);opacity:.95;font-weight:600}
 </style>
 </head>
 <body>
+<nav class="mf-breadcrumb" aria-label="Breadcrumb">
+  <div class="mf-breadcrumb-inner">
+    <a href="/">Home</a>
+    <span class="mf-sep" aria-hidden="true">&rsaquo;</span>
+    <a href="/articles">Articles</a>
+    <span class="mf-sep" aria-hidden="true">&rsaquo;</span>
+    <span aria-current="page">Mineral Flows Map</span>
+  </div>
+</nav>
+
 <div class="wrap">
   <div class="tool-share" role="group" aria-label="Share this view">
     <span class="ts-label">Share</span>

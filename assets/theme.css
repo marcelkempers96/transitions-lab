@@ -3974,3 +3974,41 @@ footer.site .legal > span{white-space:nowrap;}
   text-decoration-thickness:1px;text-underline-offset:2px;
 }
 .prose figure.photo .photo-credit a:hover{opacity:1;color:var(--ink);}
+
+/* ── Breadcrumb — Home > Section > Page above every H1 ─── */
+.page-hero .breadcrumb{
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px;
+  margin:0 0 14px;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12.5px;font-weight:500;letter-spacing:.01em;line-height:1.4;
+  color:var(--ink);
+}
+.page-hero .breadcrumb a{
+  color:currentColor;text-decoration:none;opacity:.62;
+  transition:opacity .12s ease;
+}
+.page-hero .breadcrumb a:hover{opacity:1;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
+.page-hero .breadcrumb [aria-current="page"]{
+  color:currentColor;opacity:.88;font-weight:600;
+}
+.page-hero .breadcrumb .crumb-sep{
+  color:currentColor;opacity:.36;font-size:14px;line-height:1;
+  padding:0 1px;
+}
+/* On dark and coloured heroes the paper text needs a slightly
+   lifted breadcrumb opacity so it still reads. */
+.page-hero.hero-forest .breadcrumb,
+.page-hero.hero-cobalt .breadcrumb,
+.page-hero.hero-plum .breadcrumb,
+.page-hero[data-hero-bg="1"] .breadcrumb{color:var(--paper);}
+.page-hero.hero-forest .breadcrumb a,
+.page-hero.hero-cobalt .breadcrumb a,
+.page-hero.hero-plum .breadcrumb a,
+.page-hero[data-hero-bg="1"] .breadcrumb a{opacity:.76;}
+.page-hero.hero-forest .breadcrumb [aria-current="page"],
+.page-hero.hero-cobalt .breadcrumb [aria-current="page"],
+.page-hero.hero-plum .breadcrumb [aria-current="page"],
+.page-hero[data-hero-bg="1"] .breadcrumb [aria-current="page"]{opacity:.95;}
+@media(max-width:640px){
+  .page-hero .breadcrumb{font-size:12px;}
+}
