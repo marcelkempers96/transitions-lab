@@ -2096,6 +2096,7 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-roam">
         <div class="card-photo">
           <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange NGONYA electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
+          <span class="kicker kicker--mobility"><span class="kicker-text">Kenya &middot; E-mobility</span></span>
         </div>
         <div class="body">
           <h3>Electric transport in Nairobi</h3>
@@ -2109,6 +2110,7 @@ def build_home() -> str:
           <span class="card-play" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </span>
+          <span class="kicker kicker--agriculture"><span class="kicker-text">Indonesia &middot; Agriculture</span></span>
         </div>
         <div class="body">
           <h3>Biochar in Lombok</h3>
@@ -2119,6 +2121,7 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-mimaji">
         <div class="card-photo">
           <img src="/assets/img/case-mimaji-comparator-kiosk.jpg" alt="A small blue-and-white metered water kiosk with a chalked tariff and a queue of women and children filling green and yellow jerry cans at the counter window.">
+          <span class="kicker kicker--water"><span class="kicker-text">Kenya &middot; Water</span></span>
         </div>
         <div class="body">
           <h3>Water transparency in Nairobi</h3>
@@ -2129,6 +2132,7 @@ def build_home() -> str:
       <a class="insight-card has-photo" href="/case-reef-support">
         <div class="card-photo">
           <img src="/assets/img/case-reef-support-mou.jpg" alt="Five people standing under a Lombok beach gazebo, holding signed agreements between them; palms and the water visible in the background.">
+          <span class="kicker kicker--marine"><span class="kicker-text">Indonesia &middot; Marine</span></span>
         </div>
         <div class="body">
           <h3>Rangers for the reef</h3>
@@ -2178,16 +2182,6 @@ def build_home() -> str:
         </div>
         <div class="body">
           <p>Taranto's blast furnaces are being closed by court order. The displaced-worker evidence says most of the loss is not unemployment. It is lower wages, permanently.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo" href="/insight-no-going-back">
-        <div class="card-photo">
-          <img src="/assets/img/insight-no-going-back-hero.jpg" alt="Line-art scene: a wetland drawn in three overlapping states, a faint historical version with reeds and wading birds, a present version with lower water and different vegetation, and a solid future version containing unfamiliar species, with three small groups of figures standing at the edge pointing at different versions.">
-          <span class="kicker">Insight &middot; Agriculture &amp; Ecosystems</span>
-        </div>
-        <div class="body">
-          <p>A €40 million European research programme has opened on novel ecosystems. Once a historical baseline is off the table, restoration is a choice about which future counts.</p>
           <span class="read">Read &rarr;</span>
         </div>
       </a>

@@ -23,6 +23,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var details = document.querySelectorAll('.nav details.nav-group');
 
+  // ── Desktop hover behaviour: on wide viewports, moving the mouse
+  //    over a nav group opens it and closes any other; moving off
+  //    all nav groups closes them after a short grace period. This
+  //    guarantees only one dropdown is open at any moment on hover,
+  //    the way the click accordion above already does on tap.
+  (function(){
+    if (!window.matchMedia || !window.matchMedia('(hover: hover) and (min-width: 861px)').matches) return;
+    var closeTimer = null;
+    function openOnly(el){
+      if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
+      details.forEach(function(d){ if (d !== el) d.removeAttribute('open'); });
+      if (el && !el.hasAttribute('open')) el.setAttribute('open', '');
+    }
+    function scheduleCloseAll(){
+      if (closeTimer) clearTimeout(closeTimer);
+      closeTimer = setTimeout(function(){
+        details.forEach(function(d){ d.removeAttribute('open'); });
+      }, 160);
+    }
+    details.forEach(function(d){
+      d.addEventListener('mouseenter', function(){ openOnly(d); });
+      d.addEventListener('mouseleave', function(){ scheduleCloseAll(); });
+    });
+  })();
+
   // ── Mobile menu toggle ──────────────────────────────────────
   var burger = document.querySelector('.nav-toggle');
   var menu = document.getElementById('menu');
