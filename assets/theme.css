@@ -4035,3 +4035,44 @@ footer.site .legal > span{white-space:nowrap;}
 .prose .tool-cta-sub{margin:-14px 0 26px;font-size:14px;color:var(--ink);opacity:.7;}
 .prose .tool-cta-sub a{color:var(--cobalt);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600;}
 .prose .tool-cta-sub a:hover{color:var(--ink);}
+
+/* Guide-hero card: shown near the top of the article to point readers
+   at the sixty-second guide and the map itself. */
+.prose .guide-hero{
+  margin:14px 0 30px;padding:18px 20px 16px;
+  background:var(--cobalt);color:var(--paper);
+  border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);
+  display:block;
+}
+.prose .guide-hero-kicker{
+  margin:0 0 4px;font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.85;
+}
+.prose .guide-hero-title{margin:0 0 6px;font-family:'Playfair Display',serif;font-size:22px;line-height:1.15;font-weight:400;}
+.prose .guide-hero-title a{color:var(--paper);text-decoration:none;border-bottom:1.5px solid rgba(245,239,225,.5);}
+.prose .guide-hero-title a:hover{border-bottom-color:var(--paper);}
+.prose .guide-hero-lede{margin:0 0 12px;font-size:15px;line-height:1.5;max-width:60ch;opacity:.94;}
+.prose .guide-hero-cta{margin:0;display:flex;flex-wrap:wrap;gap:10px;}
+.prose .guide-hero-btn{
+  display:inline-flex;align-items:center;gap:.4em;
+  padding:9px 16px;background:var(--paper);color:var(--ink);
+  border:2px solid var(--ink);
+  font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:13.5px;
+  text-decoration:none;letter-spacing:.005em;
+  transition:transform .12s ease;
+}
+.prose .guide-hero-btn:hover{transform:translate(-1px,-1px);}
+.prose .guide-hero-btn-ghost{background:transparent;color:var(--paper);border-color:var(--paper);}
+.prose .guide-hero-btn-ghost:hover{background:var(--paper);color:var(--ink);}
+
+/* Wide provenance table on the guide page — horizontally scrolls
+   inside a bounded region without breaking the page layout. */
+.prose .table-scroll{
+  margin:16px 0 22px;overflow-x:auto;
+  border:1.5px solid var(--ink);background:var(--paper);
+  -webkit-overflow-scrolling:touch;
+}
+.prose .table-scroll .tbl{margin:0;font-size:13.5px;min-width:820px;}
+.prose .table-scroll .tbl th, .prose .table-scroll .tbl td{padding:8px 10px;vertical-align:top;}
+.prose .table-scroll .tbl thead th{position:sticky;top:0;background:var(--cobalt);color:var(--paper);}
+.prose .table-scroll:focus{outline:2px solid var(--cobalt);outline-offset:2px;}

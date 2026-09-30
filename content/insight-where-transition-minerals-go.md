@@ -6,6 +6,15 @@
 
 <p class="article-meta">30 September 2026 · 8 min read</p>
 
+<aside class="guide-hero" aria-label="Companion guide">
+  <div class="guide-hero-body">
+    <p class="guide-hero-kicker">Read alongside</p>
+    <p class="guide-hero-title"><a href="/mineral-flows-guide">How to read the Mineral Flows Map</a></p>
+    <p class="guide-hero-lede">A sixty-second tour of the interactive tool that sits behind every figure in this article, plus a full data-provenance table naming the source and last-updated date for each of the fifteen mineral chains.</p>
+    <p class="guide-hero-cta"><a href="/mineral-flows-guide" class="guide-hero-btn">Open the guide &rarr;</a> <a href="/mineral-flows" class="guide-hero-btn guide-hero-btn-ghost">Or jump to the map &rarr;</a></p>
+  </div>
+</aside>
+
 <figure>
   <img src="/assets/img/mineral-flows-exploded.jpg" alt="Exploded diagram of a white electric SUV with eight numbered mineral groups around it: 1. Iron ore, 2. Copper, 3. Natural rubber, 4. Lithium, nickel, cobalt and graphite, 5. Bauxite, 6. Silica, 7. Manganese, 8. Silicon. Each mineral connects to the vehicle component it becomes." class="diagram">
 </figure>
