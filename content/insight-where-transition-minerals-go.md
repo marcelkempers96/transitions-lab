@@ -8,7 +8,6 @@
 
 <figure>
   <img src="/assets/img/mineral-flows-exploded.jpg" alt="Exploded diagram of a white electric SUV with eight numbered mineral groups around it: 1. Iron ore, 2. Copper, 3. Natural rubber, 4. Lithium, nickel, cobalt and graphite, 5. Bauxite, 6. Silica, 7. Manganese, 8. Silicon. Each mineral connects to the vehicle component it becomes." class="diagram">
-  <figcaption>The eight mineral groups that go into a single electric vehicle. Numbers 1 to 8 are used as shorthand throughout the piece.</figcaption>
 </figure>
 
 An electric vehicle is a bill of materials pretending to be a machine. Eight mineral groups go into it before it moves. Four decide the battery alone (<strong>4</strong>: lithium, nickel, cobalt, graphite). The rest, from steel (<strong>1</strong>) to copper motor windings (<strong>2</strong>) to the aluminium body (<strong>5</strong>) and the silicon in the control boards (<strong>8</strong>), sit inside the same trade system, with the same pattern: mining is diffuse, refining is not, and the value collects where the refining sits.

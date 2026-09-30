@@ -37,7 +37,6 @@ The Lab's [Mineral Flows Map](/mineral-flows) adopts their four steps as its str
 
 <figure>
   <img src="/assets/img/mineral-flows-exploded.jpg" alt="Illustrated exploded diagram of a white electric SUV, with eight numbered mineral groups arranged around it: 1. Iron ore, feeding into steel bodywork; 2. Copper, feeding into motor windings; 3. Natural rubber, feeding into tyres and wheels; 4. Lithium, nickel, cobalt and graphite, feeding into the battery pack; 5. Bauxite, feeding into aluminium body structures; 6. Silica, feeding into glass; 7. Manganese, feeding into gears; 8. Silicon, feeding into circuit boards." class="diagram">
-  <figcaption>The eight mineral groups that go into a single electric vehicle. Each number is used throughout this paper and the accompanying article as a shorthand for its category.</figcaption>
 </figure>
 
 The passenger EV in the diagram carries at least eight mineral groups, each with its own supply chain, its own concentration pattern, and its own policy layer. The rest of this paper works through the six methodological strands of the literature that measure how those flows behave.
