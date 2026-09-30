@@ -4301,6 +4301,27 @@ a.tool-feature-cta:hover{border-bottom-color:var(--paper);}
 .prose .tbl.provenance td:nth-child(5) a:hover{text-decoration-color:var(--cobalt);}
 .prose .tbl.provenance td:nth-child(6){white-space:nowrap;opacity:.72;}
 .prose .tbl.provenance td:nth-child(7){white-space:nowrap;opacity:.6;font-variant-numeric:tabular-nums;}
+/* World-totals table on the research paper's Method section. Same
+   compact styling as the provenance table but three data columns
+   (mining, refining, downstream) and one source column. */
+.prose .tbl.world-totals{font-size:12.5px;line-height:1.4;min-width:820px;border-collapse:collapse;width:100%;}
+.prose .tbl.world-totals thead th{
+  position:sticky;top:0;background:var(--cobalt);color:var(--paper);
+  font-family:'Hanken Grotesk',sans-serif;font-weight:800;
+  font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+  padding:8px 8px;text-align:left;
+}
+.prose .tbl.world-totals td{padding:7px 8px;vertical-align:top;border-bottom:1px solid rgba(10,10,10,.08);}
+.prose .tbl.world-totals tr:hover td{background:rgba(31,78,170,.05);}
+.prose .tbl.world-totals td:nth-child(1){font-weight:700;white-space:nowrap;min-width:110px;}
+.prose .tbl.world-totals td:nth-child(2),
+.prose .tbl.world-totals td:nth-child(3){min-width:170px;}
+.prose .tbl.world-totals td:nth-child(4){min-width:200px;opacity:.85;}
+.prose .tbl.world-totals td.src{font-size:11.5px;opacity:.72;min-width:200px;}
+@media (max-width:640px){
+  .prose .tbl.world-totals{font-size:11.5px;}
+  .prose .tbl.world-totals td, .prose .tbl.world-totals th{padding:5px 6px;}
+}
 @media (max-width:640px){
   .prose .tbl.provenance{font-size:11px;}
   .prose .tbl.provenance td, .prose .tbl.provenance th{padding:5px 6px;}
