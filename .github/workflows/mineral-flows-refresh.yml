@@ -1,0 +1,115 @@
+name: mineral-flows-refresh
+
+# Bi-weekly (every other Monday, 06:00 UTC) automated freshness pass.
+# Runs the check side of scripts/mineral-flows-tools.py, verifies every
+# bibliography link still resolves, and opens an issue naming anything
+# that needs a manual look. The BACI trade refresh (which needs a
+# manual CEPII download) is intentionally NOT automated - the workflow
+# opens a reminder issue on the same cadence instead.
+
+on:
+  schedule:
+    - cron: "0 6 1-7,15-21 * 1"  # first & third Monday
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: python -m pip install --quiet requests
+
+      - name: Stage tool + data side by side (tools.py expects local layout)
+        run: |
+          mkdir -p tmp/mineral-flows
+          cp scripts/mineral-flows-tools.py tmp/mineral-flows/tools.py
+          cp assets/data/mineral-flows.json  tmp/mineral-flows/data.json
+          cp mineral-flows/index.html         tmp/mineral-flows/mineral-flows.html
+
+      - name: Run house-style and data-integrity check
+        id: check
+        run: |
+          cd tmp/mineral-flows
+          python tools.py check | tee check.log
+        continue-on-error: true
+
+      - name: Verify every bibliography URL still resolves
+        id: links
+        run: |
+          python <<'PY' | tee tmp/link-report.txt
+          import json, requests, pathlib, sys
+          data = json.loads(pathlib.Path("assets/data/mineral-flows.json").read_text())
+          studies = data["bibliography"]["studies"]
+          bad = []
+          for s in studies:
+              url = (s.get("url") or "").strip()
+              if not url.startswith("http"):
+                  bad.append((s["id"], "no url", ""))
+                  continue
+              try:
+                  r = requests.head(url, allow_redirects=True, timeout=15,
+                                    headers={"User-Agent": "transitions-lab-refresh/1.0"})
+                  if r.status_code >= 400:
+                      # Some publishers block HEAD; retry with GET.
+                      r = requests.get(url, allow_redirects=True, timeout=20, stream=True,
+                                       headers={"User-Agent": "transitions-lab-refresh/1.0"})
+                  if r.status_code >= 400:
+                      bad.append((s["id"], f"HTTP {r.status_code}", url))
+              except Exception as e:
+                  bad.append((s["id"], f"error: {type(e).__name__}", url))
+          print(f"checked {len(studies)} studies; broken: {len(bad)}")
+          for row in bad:
+              print(" - ", " | ".join(row))
+          if bad:
+              sys.exit(2)
+          PY
+        continue-on-error: true
+
+      - name: Compose issue body
+        id: body
+        if: steps.check.outcome == 'failure' || steps.links.outcome == 'failure'
+        run: |
+          {
+            echo "## Bi-weekly mineral-flows freshness report"
+            echo ""
+            echo "Automated run at \`$(date -u +%Y-%m-%dT%H:%M:%SZ)\`."
+            echo ""
+            echo "### tools.py check"
+            echo ""
+            echo '```'
+            cat tmp/mineral-flows/check.log 2>/dev/null || echo "(no output)"
+            echo '```'
+            echo ""
+            echo "### Bibliography link check"
+            echo ""
+            echo '```'
+            cat tmp/link-report.txt 2>/dev/null || echo "(no output)"
+            echo '```'
+            echo ""
+            echo "### Reminder"
+            echo ""
+            echo "The BACI trade refresh is NOT automated (CEPII licence requires a manual download)."
+            echo "If it has been more than one release cycle since the last run, download BACI HS17 into \`raw/\`,"
+            echo "run \`python scripts/mineral-flows-tools.py baci --year <year> --release <release>\`, review"
+            echo "the generated \`flows.generated.json\`, and open a PR to replace the \`flows\` section of \`assets/data/mineral-flows.json\`."
+          } > issue-body.md
+
+      - name: Open or update issue
+        if: steps.check.outcome == 'failure' || steps.links.outcome == 'failure'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Mineral Flows: bi-weekly refresh report"
+          content-filepath: issue-body.md
+          labels: mineral-flows, automated

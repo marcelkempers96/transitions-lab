@@ -63,4 +63,6 @@ Third, no forecast for lithium price to 2030. This piece is a reading of the cha
 
 The [Mineral Flows Map](/mineral-flows) is the Lab's interactive companion to this piece. It renders every claim above as a corridor, a stage ribbon, or a stress test the reader can run against any country. The [research paper](/mineral-flows-research) sits between the two: every numbered fact in this article links back to the paragraph in the paper where it is derived, and every paragraph in the paper carries the study that supports it.
 
+<p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
+
 For the frameworks the Lab uses to read these transitions, see the [BReW framework](/brw) and the [Economics of Transitions](/economics-of-transitions). For the fieldwork behind the Industrial Transition programme, see [Green Industrialisation & Local Manufacturing](/expertise-manufacturing). To discuss a commissioned study of a specific chain, see [Contact](/contact).

@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mineral flows | Transitions Lab</title>
+<meta name="description" content="Where transition minerals are mined, refined and shipped, and where value leaves the countries that produce them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<style>
+:root{
+  --black:#000000; --white:#FFFFFF; --orange:#FF9A1F;
+  --land:#1f1f1f; --land-edge:#2e2e2e; --rule:#3a3a3a; --orange-deep:#3a2100;
+  --f-body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-head:"Abel", "Hanken Grotesk", Arial, sans-serif;
+  --panel-w: 390px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;background:var(--black);color:var(--white);font-family:var(--f-body);font-size:16px;line-height:1.5}
+a{color:var(--orange)}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.top{padding:28px 0 18px;display:grid;grid-template-columns:1fr auto;gap:12px 32px;align-items:end}
+.top .kicker{font-size:14px;font-weight:500;margin:0 0 6px}
+.top .kicker a{color:var(--white);text-decoration:none}
+.top h1{font-family:var(--f-head);font-weight:400;font-size:clamp(34px,5.2vw,64px);line-height:1;margin:0;letter-spacing:-0.01em}
+.top .lede{margin:12px 0 0;max-width:60ch;font-size:17px}
+.status{font-size:13px;border:1px solid var(--orange);padding:8px 12px;max-width:34ch;color:var(--white)}
+.status strong{color:var(--orange);font-weight:700}
+
+/* Mineral selector */
+.minerals{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}
+.minerals::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;background:transparent;border:1px solid var(--white);padding:7px 14px;border-radius:999px;cursor:pointer;font-size:15px}
+.chip[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:var(--black);font-weight:700}
+
+/* Stage ribbon: the signature element */
+.ribbon{display:grid;grid-template-columns:repeat(var(--stages,3),minmax(0,1fr));gap:0;border-top:1px solid var(--white);border-bottom:1px solid var(--white)}
+.stage-btn{background:transparent;border:0;border-right:1px solid var(--rule);text-align:left;padding:12px 14px 14px;cursor:pointer;position:relative}
+.stage-btn:last-child{border-right:0}
+.stage-btn .s-name{font-family:var(--f-head);font-size:20px;line-height:1.1;display:block}
+.stage-btn .s-top{font-size:14px;display:block;margin:4px 0 8px}
+.stage-btn .s-top b{color:var(--orange)}
+.stage-btn[aria-pressed="true"]{background:#141414}
+.stage-btn[aria-pressed="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--orange)}
+.strata{display:flex;height:10px;width:100%;background:var(--orange-deep)}
+.strata span{display:block;height:100%;border-right:1px solid var(--black)}
+.stage-step{display:none}
+
+/* Main */
+.stagearea{display:grid;grid-template-columns:minmax(0,1fr) var(--panel-w);gap:0;margin-top:0;border-bottom:1px solid var(--white)}
+.mapwrap{position:relative;min-height:520px;border-right:1px solid var(--white)}
+#map{display:block;width:100%;height:100%;min-height:520px;touch-action:none}
+.country{fill:var(--land);stroke:var(--land-edge);stroke-width:.6px;vector-effect:non-scaling-stroke;cursor:pointer}
+.country.has{cursor:pointer}
+.country.sel{stroke:var(--white);stroke-width:1.6px}
+.country.removed{fill:url(#hatch) !important;stroke:var(--white);stroke-width:1.2px}
+.graticule{fill:none;stroke:#161616;stroke-width:.5px;vector-effect:non-scaling-stroke}
+.sphere{fill:var(--black)}
+/* Flow rendering after geoFluxus: translucent tapered bands under hairline cores, blended with screen so overlaps brighten */
+.g-flows{mix-blend-mode:screen;isolation:auto}
+.band{opacity:.34;cursor:pointer;transition:opacity .2s}
+.core{fill:none;stroke-width:.9px;vector-effect:non-scaling-stroke;stroke-linecap:round;opacity:.9;pointer-events:none}
+.band.cut{opacity:.06}
+.core.cut{opacity:.2;stroke-dasharray:2 4}
+.band:hover{opacity:.6}
+.g-flows.intro{animation:fadein .9s ease-out}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.g-flows.intro{animation:none}}
+.node{fill:var(--white);stroke:none;opacity:.95}
+.node-halo{fill:var(--white);opacity:.18;stroke:none}
+.lbl{font-size:12px;font-weight:500;fill:var(--white);paint-order:stroke;stroke:var(--black);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+.lbl b,.lbl .pct{fill:var(--orange);font-weight:700}
+.seg{display:inline-flex;border:1px solid var(--white);border-radius:4px;overflow:hidden}
+.seg .tog{border:0;border-radius:0}
+.seg .tog+.tog{border-left:1px solid var(--white)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%}
+.corridor{fill:none;stroke:var(--white);stroke-width:2px;stroke-dasharray:5 4;vector-effect:non-scaling-stroke;cursor:pointer}
+.port{fill:var(--black);stroke:var(--white);stroke-width:1.5px;vector-effect:non-scaling-stroke}
+.policy{fill:var(--black);stroke:var(--orange);stroke-width:2px;vector-effect:non-scaling-stroke;cursor:pointer}
+
+.mapctl{position:absolute;left:12px;top:12px;display:flex;flex-wrap:wrap;gap:6px;max-width:calc(100% - 24px)}
+.tog{background:var(--black);border:1px solid var(--white);padding:6px 11px;font-size:14px;cursor:pointer;border-radius:4px}
+.tog[aria-pressed="true"]{border-color:var(--orange);color:var(--orange)}
+.legend{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.85);border:1px solid var(--rule);padding:10px 12px;font-size:13px;display:grid;grid-template-columns:auto;gap:6px 14px;max-width:300px}
+.legend.cols{grid-template-columns:1fr 1fr}
+.legend .row{display:flex;align-items:center;gap:8px}
+.sw{display:inline-block;width:26px;height:0;border-top:3px solid}
+.ramp{height:8px;width:120px;background:linear-gradient(90deg,var(--orange-deep),var(--orange))}
+.zoomctl{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:6px}
+.zoomctl button{width:36px;height:36px;background:var(--black);border:1px solid var(--white);cursor:pointer;font-size:18px;border-radius:4px}
+.tip{position:absolute;pointer-events:none;background:var(--black);border:1px solid var(--orange);padding:8px 10px;font-size:13px;max-width:260px;opacity:0;transition:opacity .12s;z-index:5}
+.tip b{font-weight:700}
+
+/* Panel */
+.panel{display:flex;flex-direction:column;min-width:0}
+.tabs{display:flex;border-bottom:1px solid var(--white)}
+.tab{flex:1;background:transparent;border:0;padding:12px 6px;cursor:pointer;font-size:14px;border-right:1px solid var(--rule)}
+.tab:last-child{border-right:0}
+.tab[aria-selected="true"]{color:var(--orange);box-shadow:inset 0 -3px 0 var(--orange);font-weight:700}
+.pane{padding:18px 18px 28px;overflow:auto;max-height:720px}
+.pane h2{font-family:var(--f-head);font-weight:400;font-size:30px;line-height:1.05;margin:0 0 4px}
+.pane h3{font-family:var(--f-head);font-weight:400;font-size:20px;margin:22px 0 8px}
+.pane p{margin:0 0 10px}
+.uses{font-size:14px}
+.headline{font-size:17px;margin-top:10px;border-left:3px solid var(--orange);padding-left:12px}
+.gap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--white);margin-top:14px}
+.gap div{padding:12px}
+.gap div+div{border-left:1px solid var(--white)}
+.gap .n{font-family:var(--f-head);font-size:40px;line-height:1;color:var(--orange)}
+.gap .t{font-size:13px;display:block;margin-top:4px}
+.conc{display:grid;gap:12px}
+.conc .row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:14px}
+.conc .row .strata{grid-column:1 / -1;height:8px}
+.hhi{font-size:13px}
+.hhi b{color:var(--orange)}
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{padding:10px 0;border-top:1px solid var(--rule);font-size:14px}
+ul.plain li:first-child{border-top:0}
+.tag{display:inline-block;border:1px solid var(--orange);color:var(--orange);font-size:12px;padding:1px 7px;border-radius:999px;margin-right:6px}
+details{margin-top:18px;border-top:1px solid var(--rule);padding-top:10px}
+summary{cursor:pointer;font-weight:500}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:10px}
+th,td{text-align:left;padding:6px 4px;border-bottom:1px solid var(--rule)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.field{display:grid;gap:6px;margin:6px 0 14px}
+.field select{background:var(--black);border:1px solid var(--white);padding:9px 10px;border-radius:4px}
+.btn{background:var(--orange);color:var(--black);border:0;padding:10px 14px;font-weight:700;cursor:pointer;border-radius:4px}
+.btn.ghost{background:transparent;color:var(--white);border:1px solid var(--white)}
+.offline{display:grid;gap:10px}
+.offline .bar{height:10px;background:var(--orange-deep);position:relative}
+.offline .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--orange)}
+.note{font-size:13px;border:1px solid var(--rule);padding:10px;margin-top:16px}
+.bib a{color:var(--white)}
+.bib .meta{font-size:13px}
+.bib .check{font-size:12px;color:var(--orange)}
+.empty{border:1px dashed var(--white);padding:14px;font-size:14px}
+
+footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* Mobile */
+@media (max-width: 900px){
+  .top{grid-template-columns:1fr}
+  .status{max-width:none}
+  .ribbon{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);overflow-x:auto}
+  .stagearea{grid-template-columns:1fr}
+  .mapwrap{border-right:0;border-bottom:1px solid var(--white);min-height:0}
+  #map{min-height:0;height:62vh;max-height:560px}
+  .legend{position:static;border:0;border-top:1px solid var(--rule);max-width:none;grid-template-columns:1fr 1fr}
+  .zoomctl{bottom:auto;top:12px;right:12px}
+  .mapctl{max-width:calc(100% - 70px)}
+  .pane{max-height:none}
+  .tab{font-size:13px}
+  footer{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="kicker"><a href="/">Transitions Lab</a>, Industrial Transition and Value Chains</p>
+      <h1>Where transition minerals go</h1>
+      <p class="lede">Who mines, who refines and who ships to whom, for eight minerals the energy transition depends on. Select a stage to see how concentration shifts as ore becomes material.</p>
+    </div>
+    <p class="status" id="status"></p>
+  </header>
+
+  <nav class="minerals" id="minerals" aria-label="Choose a mineral"></nav>
+  <section class="ribbon" id="ribbon" aria-label="Value chain stage"></section>
+
+  <main class="stagearea">
+    <div class="mapwrap" id="mapwrap">
+      <svg id="map" role="img" aria-label="World map of mineral production and trade flows"></svg>
+      <div class="mapctl" role="group" aria-label="Map layers">
+        <button class="tog" id="t-flows" aria-pressed="true">Trade flows</button>
+        <button class="tog" id="t-africa" aria-pressed="false">Africa focus</button>
+        <button class="tog" id="t-corr" aria-pressed="false">Corridors</button>
+        <button class="tog" id="t-pol" aria-pressed="true">Policy measures</button>
+        <span class="seg" role="group" aria-label="Colour flows by">
+          <button class="tog" id="c-stage" aria-pressed="true">By stage</button>
+          <button class="tog" id="c-mineral" aria-pressed="false">By mineral</button>
+        </span>
+      </div>
+      <div class="zoomctl">
+        <button id="z-in" aria-label="Zoom in">+</button>
+        <button id="z-out" aria-label="Zoom out">&#8722;</button>
+        <button id="z-reset" aria-label="Reset view">&#8634;</button>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="tip" id="tip" role="status" aria-live="polite"></div>
+    </div>
+
+    <aside class="panel">
+      <div class="tabs" role="tablist" aria-label="Details">
+        <button class="tab" role="tab" id="tab-overview" aria-selected="true" aria-controls="pane">Overview</button>
+        <button class="tab" role="tab" id="tab-country" aria-selected="false" aria-controls="pane">Country</button>
+        <button class="tab" role="tab" id="tab-stress" aria-selected="false" aria-controls="pane">Stress test</button>
+        <button class="tab" role="tab" id="tab-sources" aria-selected="false" aria-controls="pane">Sources</button>
+      </div>
+      <div class="pane" id="pane" role="tabpanel"></div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Lines are schematic corridors between production and processing hubs, not shipping routes. Band width shows relative volume and tapers towards the importer. By stage, orange marks ore, concentrate and intermediates and white marks refined metal, chemicals and components.</p>
+    <p>Built by Transitions Lab from USGS, IEA, OECD and peer-reviewed trade and material flow studies. See Sources for the evidence base and data status of each figure.</p>
+  </footer>
+</div>
+
+
+<script>
+fetch('/assets/data/mineral-flows.json', {cache: 'no-cache'})
+  .then(function(r){ if(!r.ok) throw new Error('data '+r.status); return r.json(); })
+  .then(function(_MF_DATA){
+    window.MF_DATA = _MF_DATA;
+(function(){
+"use strict";
+const DATA = window.MF_DATA;
+const C = new Map(DATA.countries.countries.map(c => [c.iso3, c]));
+const BYNUM = new Map(DATA.countries.countries.map(c => [c.iso_num, c]));
+const MIN = DATA.minerals.minerals;
+const STAGE_ORDER = ["mining","refining","downstream"];
+const POLTYPES = DATA.policies.meta.types;
+/* Categorical palette for colour-by-mineral, tuned for screen blending on black. Colour encodes data only; all text stays white. */
+const MCOL = {lithium:"#C9D4FF", cobalt:"#4F8BFF", nickel:"#7FE08A", copper:"#FF9A1F", graphite:"#A98BFF", rare_earths:"#FF4F6D", manganese:"#F2D24B", pgm:"#FFFFFF"};
+const ORANGE = "#FF9A1F", WHITE = "#FFFFFF";
+const MOBILE = window.matchMedia("(max-width: 900px)").matches;
+
+const state = { mineral:"all", stage:"mining", flows:true, africa:false, corr:false, pol:true, col:"mineral", country:null, stress:null, tab:"overview" };
+
+function readHash(){
+  const h = new URLSearchParams(location.hash.slice(1));
+  const m = h.get("m"); if (m && (m === "all" || MIN.find(x => x.id === m))) state.mineral = m;
+  if (h.get("s")) state.stage = h.get("s");
+  if (h.get("c") && C.has(h.get("c"))) state.country = h.get("c");
+  if (h.get("a") === "1") state.africa = true;
+  state.col = h.get("col") || (state.mineral === "all" ? "mineral" : "stage");
+}
+function writeHash(){
+  const h = new URLSearchParams({m:state.mineral});
+  if (!isAll()) h.set("s", state.stage);
+  if (state.country) h.set("c", state.country);
+  if (state.africa) h.set("a","1");
+  h.set("col", state.col);
+  history.replaceState(null, "", "#" + h.toString());
+}
+
+const isAll = () => state.mineral === "all";
+const M = (id) => MIN.find(m => m.id === id);
+const mineral = () => M(state.mineral);
+const stagesOf = (id) => STAGE_ORDER.filter(s => M(id).stages[s]);
+const stages = () => isAll() ? ["mining","refining"] : stagesOf(state.mineral);
+const sharesOf = (id, s) => (M(id).stages[s] || {}).shares || {};
+const shares = (s) => sharesOf(state.mineral, s);
+const labelOf = (id, s) => (M(id).stages[s] || {}).label || s;
+const stageLabel = (s) => isAll() ? (s === "mining" ? "Mining" : "Refining") : labelOf(state.mineral, s);
+const name = (iso) => iso === "OTHER" ? "Others" : (C.get(iso) ? C.get(iso).name : iso);
+const fmt = (v) => (Math.round(v * 10) / 10).toString().replace(/\.0$/, "") + "%";
+const rankedOf = (id, s) => Object.entries(sharesOf(id, s)).filter(([k]) => k !== "OTHER").sort((a,b) => b[1]-a[1]);
+const ranked = (s) => rankedOf(state.mineral, s);
+const hhi = (sh) => Math.round(Object.entries(sh).filter(([k]) => k !== "OTHER").reduce((t,[,v]) => t + v*v, 0));
+const hhiWord = (v) => v >= 2500 ? "highly concentrated" : v >= 1500 ? "moderately concentrated" : "unconcentrated";
+const africaOf = (id, s) => Object.entries(sharesOf(id, s)).reduce((t,[k,v]) => t + (C.get(k) && C.get(k).africa ? v : 0), 0);
+const flowsFor = () => DATA.flows.flows.filter(f => (isAll() || f.mineral === state.mineral) && (!state.africa || (C.get(f.source)||{}).africa || (C.get(f.target)||{}).africa));
+const policiesFor = () => DATA.policies.policies.filter(p => isAll() || p.minerals.includes(state.mineral));
+const esc = (s) => String(s).replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+const flowColour = (f) => state.col === "mineral" ? MCOL[f.mineral] : (f.processed ? WHITE : ORANGE);
+
+document.getElementById("status").innerHTML = "<strong>Working data.</strong> Shares are rounded 2024 and 2025 figures and line widths are relative. Verify before citing.";
+
+/* Mineral chips, with an all-minerals view first */
+const minNav = d3.select("#minerals");
+minNav.selectAll("button").data([{id:"all", name:"All minerals"}].concat(MIN)).join("button")
+  .attr("class","chip").text(d => d.name)
+  .on("click", (e,d) => {
+    const wasAll = isAll(); state.mineral = d.id; state.stress = null;
+    if (!isAll() && !mineral().stages[state.stage]) state.stage = "mining";
+    if (isAll() !== wasAll) state.col = isAll() ? "mineral" : "stage";
+    introFlows = true; update();
+  });
+
+/* Map */
+const svg = d3.select("#map");
+const defs = svg.append("defs");
+const hatch = defs.append("pattern").attr("id","hatch").attr("patternUnits","userSpaceOnUse").attr("width",6).attr("height",6).attr("patternTransform","rotate(45)");
+hatch.append("rect").attr("width",6).attr("height",6).attr("fill","#000");
+hatch.append("line").attr("x1",0).attr("y1",0).attr("x2",0).attr("y2",6).attr("stroke","#FFFFFF").attr("stroke-width",2);
+const glow = defs.append("filter").attr("id","glow").attr("x","-30%").attr("y","-30%").attr("width","160%").attr("height","160%");
+glow.append("feGaussianBlur").attr("stdDeviation", 1.8);
+const gRoot = svg.append("g");
+const gBase = gRoot.append("g"), gLand = gRoot.append("g"), gCorr = gRoot.append("g");
+const gFlows = gRoot.append("g").attr("class","g-flows");
+const gBand = gFlows.append("g").attr("filter", MOBILE ? null : "url(#glow)");
+const gCore = gFlows.append("g");
+const gNode = gFlows.append("g");
+const gPol = gRoot.append("g"), gLbl = gRoot.append("g");
+const projection = d3.geoEqualEarth();
+const path = d3.geoPath(projection);
+let world = null, W = 800, H = 480, k = 1, introFlows = true;
+const tip = document.getElementById("tip");
+
+const zoom = d3.zoom().scaleExtent([1, 9]).on("zoom", (e) => {
+  k = e.transform.k; gRoot.attr("transform", e.transform);
+  gLbl.selectAll("text").attr("font-size", 12 / k).attr("stroke-width", 3 / k);
+  gPol.selectAll("rect").attr("width", 9/k).attr("height", 9/k).attr("x", d => d.x - 4.5/k).attr("y", d => d.y - 4.5/k);
+  gCorr.selectAll("circle").attr("r", 4 / k);
+  gCorr.selectAll("text").attr("font-size", 11 / k).attr("stroke-width", 3 / k);
+  drawFlowGeometry();
+});
+svg.call(zoom);
+d3.select("#z-in").on("click", () => svg.transition().call(zoom.scaleBy, 1.6));
+d3.select("#z-out").on("click", () => svg.transition().call(zoom.scaleBy, 1/1.6));
+d3.select("#z-reset").on("click", () => { state.africa = false; update(); });
+
+function size(){
+  const box = document.getElementById("map").getBoundingClientRect();
+  W = Math.max(320, box.width); H = Math.max(300, box.height);
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+  projection.fitExtent([[8, 56], [W - 8, H - 8]], {type:"Sphere"});
+}
+function pt(iso){ const c = C.get(iso); return c ? projection([c.lon, c.lat]) : null; }
+
+/* Quadratic curve between hubs. Parallel corridors between the same pair are offset so they fan rather than overlap. */
+function ctrl(a, b, lane){
+  const dx = b[0]-a[0], dy = b[1]-a[1], d = Math.hypot(dx, dy);
+  const bend = Math.min(0.26, 50 / Math.max(d, 1) + 0.10) + lane * 0.07;
+  return [(a[0]+b[0])/2 - dy*bend, (a[1]+b[1])/2 + dx*bend];
+}
+function qpt(a, c, b, t){ const u = 1-t; return [u*u*a[0] + 2*u*t*c[0] + t*t*b[0], u*u*a[1] + 2*u*t*c[1] + t*t*b[1]]; }
+function corePath(a, c, b){ return `M${a[0]},${a[1]} Q${c[0]},${c[1]} ${b[0]},${b[1]}`; }
+/* Tapered band: full width at the exporter with a round cap, narrowing to a point at the importer */
+function bandPath(a, c, b, w0){
+  const N = 28, L = [], R = [];
+  for (let i = 0; i <= N; i++){
+    const t = i / N, p = qpt(a, c, b, t);
+    const dx = 2*(1-t)*(c[0]-a[0]) + 2*t*(b[0]-c[0]), dy = 2*(1-t)*(c[1]-a[1]) + 2*t*(b[1]-c[1]);
+    const len = Math.hypot(dx, dy) || 1, nx = -dy/len, ny = dx/len;
+    const w = (w0 * (1 - 0.85 * t)) / 2;
+    L.push([p[0] + nx*w, p[1] + ny*w]); R.push([p[0] - nx*w, p[1] - ny*w]);
+  }
+  const r = w0 / 2;
+  const f1 = (p) => p[0].toFixed(1) + "," + p[1].toFixed(1);
+  return "M" + L.map(f1).join("L") + "L" + R.reverse().map(f1).join("L") + `A${r.toFixed(1)},${r.toFixed(1)} 0 0 1 ${f1(L[0])}Z`;
+}
+let flowGeo = [];
+function buildFlowGeo(fl){
+  const lanes = new Map();
+  flowGeo = fl.map(f => {
+    const a = pt(f.source), b = pt(f.target); if (!a || !b) return null;
+    const key = [f.source, f.target].sort().join("-"); const n = lanes.get(key) || 0; lanes.set(key, n + 1);
+    const lane = (n % 2 ? -1 : 1) * Math.ceil(n / 2);
+    return {f, a, b, c: ctrl(a, b, lane)};
+  }).filter(Boolean);
+}
+function drawFlowGeometry(){
+  const cutting = (f) => state.stress && (f.source === state.stress || f.target === state.stress);
+  gBand.selectAll("path").data(flowGeo, d => d.f.id).join("path")
+    .attr("class", d => "band" + (cutting(d.f) ? " cut" : ""))
+    .attr("fill", d => flowColour(d.f))
+    .attr("d", d => bandPath(d.a, d.c, d.b, (3 + d.f.weight * 3.4) / Math.sqrt(k)));
+  gCore.selectAll("path").data(flowGeo, d => d.f.id).join("path")
+    .attr("class", d => "core" + (cutting(d.f) ? " cut" : ""))
+    .attr("stroke", d => flowColour(d.f))
+    .attr("d", d => corePath(d.a, d.c, d.b));
+  // hubs sized by total corridor weight touching them, like the bright convergence points in flow maps
+  const hub = new Map();
+  flowGeo.forEach(({f, a, b}) => { [[f.source, a],[f.target, b]].forEach(([iso, p]) => { const h = hub.get(iso) || {iso, x:p[0], y:p[1], w:0}; h.w += f.weight; hub.set(iso, h); }); });
+  const hubs = [...hub.values()];
+  gNode.selectAll("circle.node-halo").data(hubs, d => d.iso).join("circle").attr("class","node-halo")
+    .attr("cx", d => d.x).attr("cy", d => d.y).attr("r", d => (3 + Math.sqrt(d.w) * 2.2) / Math.sqrt(k));
+  gNode.selectAll("circle.node").data(hubs, d => d.iso).join("circle").attr("class","node")
+    .attr("cx", d => d.x).attr("cy", d => d.y).attr("r", d => 1.8 / Math.sqrt(k));
+}
+
+function focusAfrica(animate){
+  const p1 = projection([-19, 36]), p2 = projection([55, -36]);
+  const x0 = Math.min(p1[0],p2[0]), x1 = Math.max(p1[0],p2[0]), y0 = Math.min(p1[1],p2[1]), y1 = Math.max(p1[1],p2[1]);
+  const s = Math.min(8, 0.92 / Math.max((x1-x0)/W, (y1-y0)/H));
+  const t = d3.zoomIdentity.translate(W/2, H/2).scale(s).translate(-(x0+x1)/2, -(y0+y1)/2);
+  (animate ? svg.transition().duration(750) : svg).call(zoom.transform, t);
+}
+function showTip(html, ev){
+  tip.innerHTML = html; tip.style.opacity = 1;
+  const r = document.getElementById("mapwrap").getBoundingClientRect();
+  const x = (ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left, y = (ev.touches ? ev.touches[0].clientY : ev.clientY) - r.top;
+  tip.style.left = Math.max(8, Math.min(r.width - 270, x + 14)) + "px"; tip.style.top = Math.max(8, y - 10) + "px";
+}
+function hideTip(){ tip.style.opacity = 0; }
+
+function drawMap(){
+  if (!world) return;
+  size();
+  gBase.selectAll("path.sphere").data([{type:"Sphere"}]).join("path").attr("class","sphere").attr("d", path);
+  gBase.selectAll("path.graticule").data([d3.geoGraticule10()]).join("path").attr("class","graticule").attr("d", path);
+  const sh = isAll() ? {} : shares(state.stage);
+  const max = d3.max(Object.entries(sh).filter(([k]) => k !== "OTHER"), d => d[1]) || 1;
+  /* Muted ramp so the flow lines carry the image, as in geoFluxus maps */
+  const colour = d3.scaleSqrt().domain([0, max]).range(["#2a1b08", "#8a520f"]);
+  gLand.selectAll("path.country").data(world.features, d => d.id).join("path")
+    .attr("class", d => { const c = BYNUM.get(d.id); const iso = c && c.iso3;
+        return "country" + (iso && iso === state.country ? " sel" : "") + (iso && iso === state.stress ? " removed" : ""); })
+    .attr("d", path)
+    .attr("fill", d => { const c = BYNUM.get(d.id); return c && sh[c.iso3] ? colour(sh[c.iso3]) : null; })
+    .on("mousemove", (e,d) => { const c = BYNUM.get(d.id); const nm = c ? c.name : ""; if (!nm) return hideTip();
+        const v = c && sh[c.iso3];
+        showTip(`<b>${esc(nm)}</b><br>${isAll() ? "Select to see its role across minerals" : (v ? fmt(v) + " of world " + esc(stageLabel(state.stage).toLowerCase()) : "Not a listed producer at this stage")}`, e); })
+    .on("mouseleave", hideTip)
+    .on("click", (e,d) => { const c = BYNUM.get(d.id); if (c){ state.country = c.iso3; state.tab = "country"; update(); } });
+
+  const corr = state.corr ? DATA.corridors.corridors : [];
+  gCorr.selectAll("path").data(corr, d => d.id).join("path").attr("class","corridor")
+    .attr("d", d => path({type:"LineString", coordinates:d.path}))
+    .on("mousemove", (e,d) => showTip(`<b>${esc(d.name)}</b><br>${esc(d.note)}`, e)).on("mouseleave", hideTip);
+  gCorr.selectAll("circle").data(corr, d => d.id).join("circle").attr("class","port").attr("r", 4/k)
+    .attr("cx", d => projection(d.path[d.path.length-1])[0]).attr("cy", d => projection(d.path[d.path.length-1])[1]);
+  gCorr.selectAll("text").data(corr, d => d.id).join("text").attr("class","lbl")
+    .attr("x", d => projection(d.path[d.path.length-1])[0] + 6/k).attr("y", d => projection(d.path[d.path.length-1])[1] - 6/k)
+    .attr("font-size", 11/k).attr("stroke-width", 3/k).text(d => d.port);
+
+  buildFlowGeo(state.flows ? flowsFor() : []);
+  drawFlowGeometry();
+  if (introFlows){ gFlows.classed("intro", false); void gFlows.node().getBoundingClientRect(); gFlows.classed("intro", true); introFlows = false; }
+  gBand.selectAll("path.band")
+    .on("mousemove", (e,d) => { const f = d.f; showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}`, e); })
+    .on("mouseleave", hideTip);
+
+  const pol = state.pol ? policiesFor().filter(p => !p.region_label) : [];
+  const polData = pol.map(p => { const a = pt(p.country); return a ? Object.assign({}, p, {x:a[0] + 9, y:a[1] - 9}) : null; }).filter(Boolean);
+  // several measures on one country stack diagonally
+  const seen = new Map(); polData.forEach(p => { const n = seen.get(p.country) || 0; seen.set(p.country, n + 1); p.x += n * 9; p.y -= n * 9; });
+  gPol.selectAll("rect").data(polData, d => d.id).join("rect").attr("class","policy")
+    .attr("width", 9/k).attr("height", 9/k).attr("x", d => d.x - 4.5/k).attr("y", d => d.y - 4.5/k)
+    .attr("transform", d => `rotate(45 ${d.x} ${d.y})`)
+    .on("mousemove", (e,d) => showTip(`<b>${esc(d.title)}</b> (${d.year})<br>${esc(d.detail)}`, e)).on("mouseleave", hideTip)
+    .on("click", (e,d) => { state.country = d.country; state.tab = "country"; update(); });
+
+  let lead;
+  if (isAll()){
+    const tot = new Map(); flowGeo.forEach(({f}) => [f.source, f.target].forEach(i => tot.set(i, (tot.get(i) || 0) + f.weight)));
+    lead = [...tot.entries()].sort((a,b) => b[1]-a[1]).slice(0, 5).map(([iso]) => { const p = pt(iso); return {iso, x:p[0], y:p[1], txt:esc(name(iso))}; });
+  } else {
+    lead = ranked(state.stage).filter(([,v]) => v >= 8).slice(0, 4).map(([iso, v]) => { const p = pt(iso); return p ? {iso, x:p[0], y:p[1], txt:`${esc(name(iso))} <tspan class="pct">${fmt(v)}</tspan>`} : null; }).filter(Boolean);
+  }
+  // simple collision avoidance: push a label down when it would sit on an earlier one
+  const placed = []; lead.forEach(d => { d.dy = 0; while (placed.some(p => Math.abs(p.x - d.x) < 70 && Math.abs(p.y + p.dy - (d.y + d.dy)) < 14)) d.dy += 14; placed.push(d); });
+  gLbl.selectAll("text").data(lead, d => d.iso).join("text").attr("class","lbl")
+    .attr("x", d => d.x + 8).attr("y", d => d.y + 15 + d.dy).attr("font-size", 12/k).attr("stroke-width", 3/k).html(d => d.txt);
+
+  svg.attr("aria-label", isAll() ? `All minerals: ${flowGeo.length} trade corridors` :
+    `${mineral().name}, ${stageLabel(state.stage).toLowerCase()}: ` + ranked(state.stage).slice(0,3).map(([i,v]) => `${name(i)} ${fmt(v)}`).join(", "));
+}
+
+function strata(sh){
+  const r = Object.entries(sh).sort((a,b) => (a[0]==="OTHER") - (b[0]==="OTHER") || b[1]-a[1]);
+  const shades = ["#FF9A1F","#d97e12","#b0660c","#8a4f08","#6a3c05"];
+  return `<div class="strata" aria-hidden="true">` + r.map(([iso,v],i) => `<span style="width:${v}%;background:${iso==="OTHER" ? "#3a2100" : shades[Math.min(i,4)]}" title="${esc(name(iso))} ${fmt(v)}"></span>`).join("") + `</div>`;
+}
+
+function drawRibbon(){
+  const rib = document.getElementById("ribbon");
+  if (isAll()){
+    rib.style.setProperty("--stages", MIN.length);
+    rib.innerHTML = MIN.map(m => { const r = rankedOf(m.id, "refining")[0]; return `<button class="stage-btn" data-m="${m.id}" aria-pressed="false">
+      <span class="s-name"><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</span>
+      <span class="s-top">Refining: ${esc(name(r[0]))} <b>${fmt(r[1])}</b></span>${strata(sharesOf(m.id, "refining"))}</button>`; }).join("");
+    rib.querySelectorAll(".stage-btn").forEach(b => b.addEventListener("click", () => { state.mineral = b.dataset.m; state.stage = "refining"; state.col = "stage"; introFlows = true; update(); }));
+    return;
+  }
+  const st = stages(); rib.style.setProperty("--stages", st.length);
+  rib.innerHTML = st.map(s => { const r = ranked(s)[0]; return `<button class="stage-btn" data-s="${s}" aria-pressed="${s===state.stage}">
+    <span class="s-name">${esc(stageLabel(s))}</span>
+    <span class="s-top">${r ? esc(name(r[0])) + " <b>" + fmt(r[1]) + "</b>" : ""}</span>${strata(shares(s))}</button>`; }).join("");
+  rib.querySelectorAll(".stage-btn").forEach(b => b.addEventListener("click", () => { state.stage = b.dataset.s; update(); }));
+}
+
+function drawLegend(){
+  const lg = document.getElementById("legend");
+  let h = isAll() ? "" : `<div class="row" style="grid-column:1/-1"><span class="ramp" style="background:linear-gradient(90deg,#2a1b08,#8a520f)"></span><span>Share of ${esc(stageLabel(state.stage).toLowerCase())}</span></div>`;
+  if (state.flows){
+    if (state.col === "mineral") h += MIN.map(m => `<div class="row"><span class="dot" style="background:${MCOL[m.id]}"></span><span>${esc(m.name)}</span></div>`).join("");
+    else h += `<div class="row" style="grid-column:1/-1"><span class="sw" style="border-color:#FF9A1F"></span><span>Ore, concentrate, intermediate</span></div><div class="row" style="grid-column:1/-1"><span class="sw" style="border-color:#FFFFFF"></span><span>Refined metal, chemical, component</span></div>`;
+  }
+  if (state.pol) h += `<div class="row" style="grid-column:1/-1"><svg width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="8" height="8" transform="rotate(45 7 7)" fill="#000" stroke="#FF9A1F" stroke-width="2"/></svg><span>Export or industrial policy</span></div>`;
+  if (state.corr) h += `<div class="row" style="grid-column:1/-1"><span class="sw" style="border-color:#FFFFFF;border-top-style:dashed"></span><span>Transport corridor</span></div>`;
+  lg.innerHTML = h; lg.classList.toggle("cols", state.flows && state.col === "mineral");
+}
+
+/* Panes */
+function paneOverviewAll(){
+  let h = `<h2>All eight minerals</h2><p class="headline">Every corridor in the dataset at once. The bright convergence points are where processing concentrates, and most lines end in the same place.</p>`;
+  h += `<table><thead><tr><th>Mineral</th><th>Largest miner</th><th>Largest refiner</th><th class="num">Africa mines</th><th class="num">Africa refines</th></tr></thead><tbody>` +
+    MIN.map(m => { const a = rankedOf(m.id,"mining")[0], b = rankedOf(m.id,"refining")[0];
+      return `<tr><td><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</td><td>${esc(name(a[0]))} ${fmt(a[1])}</td><td>${esc(name(b[0]))} ${fmt(b[1])}</td><td class="num">${fmt(africaOf(m.id,"mining"))}</td><td class="num">${fmt(africaOf(m.id,"refining"))}</td></tr>`; }).join("") + `</tbody></table>`;
+  h += `<p class="note">Select a mineral in the strip above the map to see its stages, or a country to see its role across all eight.</p>`;
+  return h;
+}
+function paneOverview(){
+  if (isAll()) return paneOverviewAll();
+  const m = mineral(), st = stages();
+  const aMine = africaOf(m.id, "mining"), aRef = st.includes("refining") ? africaOf(m.id, "refining") : null;
+  const pols = policiesFor();
+  let h = `<h2>${esc(m.name)}</h2><p class="uses">${esc(m.uses)}</p><p class="headline">${esc(m.headline)}</p>`;
+  h += aMine >= 1 ? `<div class="gap" aria-label="Africa's share by stage"><div><span class="n">${fmt(aMine)}</span><span class="t">of world mining is in African countries</span></div><div><span class="n">${aRef === null ? "n/a" : fmt(aRef)}</span><span class="t">of world ${esc(stageLabel("refining").toLowerCase())} is in African countries</span></div></div>`
+                  : `<p class="note">No African country is listed above 1% of mining for this mineral in the current dataset.</p>`;
+  h += `<h3>Concentration by stage</h3><div class="conc">` + st.map(s => { const r = ranked(s)[0], v = hhi(shares(s));
+      return `<div class="row"><span>${esc(stageLabel(s))}</span><span class="hhi">HHI <b>${v}</b>, ${hhiWord(v)}</span>${strata(shares(s))}<span style="grid-column:1/-1;font-size:13px">Largest: ${esc(name(r[0]))} ${fmt(r[1])}</span></div>`; }).join("") + `</div>`;
+  h += `<p class="note">HHI excludes the unlisted remainder, so values are lower bounds. Above 2,500 is conventionally highly concentrated.</p>`;
+  if (pols.length) h += `<h3>Policy measures</h3><ul class="plain">` + pols.map(p => `<li><span class="tag">${esc(POLTYPES[p.type])}</span>${esc(p.region_label || name(p.country))}, ${p.year}<br><b>${esc(p.title)}</b>. ${esc(p.detail)}</li>`).join("") + `</ul>`;
+  const isos = [...new Set(st.flatMap(s => Object.keys(shares(s))))].filter(i => i !== "OTHER").sort((a,b) => (shares("mining")[b]||0) - (shares("mining")[a]||0));
+  h += `<details><summary>Show the data as a table</summary><table><thead><tr><th>Country</th>${st.map(s => `<th class="num">${esc(stageLabel(s))}</th>`).join("")}</tr></thead><tbody>` +
+       isos.map(i => `<tr><td>${esc(name(i))}</td>${st.map(s => `<td class="num">${shares(s)[i] ? fmt(shares(s)[i]) : ""}</td>`).join("")}</tr>`).join("") +
+       `<tr><td>Others</td>${st.map(s => `<td class="num">${shares(s).OTHER ? fmt(shares(s).OTHER) : ""}</td>`).join("")}</tr></tbody></table></details>`;
+  return h;
+}
+function countryOptions(sel){
+  const involved = new Set();
+  (isAll() ? MIN.map(m => m.id) : [state.mineral]).forEach(id => {
+    stagesOf(id).forEach(s => Object.keys(sharesOf(id, s)).forEach(i => i !== "OTHER" && involved.add(i)));
+    DATA.flows.flows.filter(f => f.mineral === id).forEach(f => { involved.add(f.source); involved.add(f.target); });
+  });
+  return `<option value="">Choose a country</option>` + [...involved].sort((a,b) => name(a).localeCompare(name(b))).map(i => `<option value="${i}" ${i===sel ? "selected" : ""}>${esc(name(i))}</option>`).join("");
+}
+function paneCountry(){
+  let h = `<div class="field"><label for="csel">Country</label><select id="csel">${countryOptions(state.country)}</select></div>`;
+  if (!state.country) return h + `<p class="empty">Select a country on the map or from the list to see its role ${isAll() ? "across all eight minerals" : "in the " + esc(mineral().name.toLowerCase()) + " chain"}.</p>`;
+  const iso = state.country;
+  if (isAll()){
+    h += `<h2>${esc(name(iso))}</h2><table><thead><tr><th>Mineral</th><th class="num">Mining</th><th class="num">Refining</th><th class="num">Corridors</th></tr></thead><tbody>` +
+      MIN.map(m => { const a = sharesOf(m.id,"mining")[iso], b = sharesOf(m.id,"refining")[iso];
+        const n = DATA.flows.flows.filter(f => f.mineral === m.id && (f.source === iso || f.target === iso)).length;
+        return (a || b || n) ? `<tr><td><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</td><td class="num">${a ? fmt(a) : ""}</td><td class="num">${b ? fmt(b) : ""}</td><td class="num">${n || ""}</td></tr>` : ""; }).join("") + `</tbody></table>`;
+  } else {
+    h += `<h2>${esc(name(iso))}</h2><p class="uses">${esc(mineral().name)}</p><div class="conc">` +
+       stages().map(s => { const v = shares(s)[iso]; return `<div class="row"><span>${esc(stageLabel(s))}</span><span class="hhi"><b>${v ? fmt(v) : "under 1% or unlisted"}</b></span></div>`; }).join("") + `</div>`;
+    const out = DATA.flows.flows.filter(f => f.mineral === state.mineral && f.source === iso);
+    const inn = DATA.flows.flows.filter(f => f.mineral === state.mineral && f.target === iso);
+    const li = (f, other) => `<li><span class="tag">${f.processed ? "Processed" : "Raw or intermediate"}</span>${esc(name(other))}<br>${esc(f.form)}, relative volume ${f.weight} of 5${f.note ? ". " + esc(f.note) : ""}</li>`;
+    h += `<h3>Exports</h3>` + (out.length ? `<ul class="plain">${out.map(f => li(f, f.target)).join("")}</ul>` : `<p>No major export corridor recorded.</p>`);
+    h += `<h3>Imports</h3>` + (inn.length ? `<ul class="plain">${inn.map(f => li(f, f.source)).join("")}</ul>` : `<p>No major import corridor recorded.</p>`);
+  }
+  const pols = DATA.policies.policies.filter(p => p.country === iso && !p.region_label);
+  if (pols.length) h += `<h3>Policy measures</h3><ul class="plain">${pols.map(p => `<li><span class="tag">${esc(POLTYPES[p.type])}</span>${p.year}<br><b>${esc(p.title)}</b>. ${esc(p.detail)}</li>`).join("")}</ul>`;
+  h += `<p style="margin-top:16px"><button class="btn" id="to-stress">Stress test ${esc(name(iso))}</button></p>`;
+  return h;
+}
+function stressRow(label, sh, iso){
+  const lost = sh[iso] || 0, rest = 100 - lost;
+  const remaining = Object.entries(sh).filter(([k]) => k !== iso && k !== "OTHER").sort((a,b) => b[1]-a[1]);
+  const top = remaining[0];
+  const newH = rest > 0 ? Math.round(remaining.reduce((t,[,v]) => t + Math.pow(v/rest*100, 2), 0)) : 0;
+  return `<div><div style="display:flex;justify-content:space-between;font-size:14px"><span>${label}</span><b style="color:#FF9A1F">${fmt(lost)} offline</b></div>
+    <div class="bar" role="img" aria-label="${fmt(lost)} of supply offline"><i style="width:${lost}%"></i></div>
+    <div style="font-size:13px">${top ? `Largest remaining: ${esc(name(top[0]))}, ${fmt(top[1]/rest*100)} of what is left. HHI ${hhi(sh)} becomes ${newH}.` : "No listed supplier remains."}</div></div>`;
+}
+function paneStress(){
+  let h = `<h2>What if a supplier goes offline?</h2><p>Remove one country and see how much of each stage disappears and who is left holding the rest.</p>
+    <div class="field"><label for="ssel">Country to remove</label><select id="ssel">${countryOptions(state.stress)}</select></div>`;
+  if (!state.stress) return h + `<p class="empty">Choose a country. The map hatches it and dims the corridors that would be cut.</p>`;
+  const iso = state.stress;
+  if (isAll()){
+    const rows = []; MIN.forEach(m => ["mining","refining"].forEach(s => { if (sharesOf(m.id, s)[iso]) rows.push(stressRow(`${esc(m.name)}, ${esc(labelOf(m.id, s).toLowerCase())}`, sharesOf(m.id, s), iso)); }));
+    h += rows.length ? `<div class="offline">${rows.join("")}</div>` : `<p>${esc(name(iso))} is not a listed miner or refiner of any of the eight minerals.</p>`;
+  } else {
+    h += `<div class="offline">` + stages().map(s => stressRow(esc(stageLabel(s)), shares(s), iso)).join("") + `</div>`;
+  }
+  const cut = flowsFor().filter(f => f.source === iso || f.target === iso);
+  h += `<h3>Corridors cut (${cut.length})</h3>` + (cut.length ? `<ul class="plain">${cut.map(f => `<li>${isAll() ? esc(M(f.mineral).name) + ": " : ""}${esc(name(f.source))} to ${esc(name(f.target))}, ${esc(f.form)}</li>`).join("")}</ul>` : `<p>None recorded.</p>`);
+  h += `<p class="note">This is a static share calculation. Real disruptions play out through stockpiles, diversified supply, material efficiency and substitution, the resilience mechanisms documented after the 2010 rare earth crisis (Sprecher et al. 2015, 2017).</p>`;
+  h += `<p><button class="btn ghost" id="clear-stress">Put ${esc(name(iso))} back</button></p>`;
+  return h;
+}
+function paneSources(){
+  let h = `<h2>Sources</h2><p>${esc(DATA.minerals.meta.warning)}</p>`;
+  const ids = isAll() ? MIN.map(m => m.id) : [state.mineral];
+  h += `<h3>Figures</h3><ul class="plain">` + ids.flatMap(id => stagesOf(id).map(s => `<li><b>${esc(M(id).name)}, ${esc(labelOf(id, s).toLowerCase())}</b>, ${M(id).stages[s].year}, ${esc(M(id).stages[s].confidence)} confidence<br>${esc(M(id).stages[s].basis)}</li>`)).join("") + `</ul>`;
+  const rel = DATA.bibliography.studies.filter(b => isAll() || b.minerals.includes(state.mineral));
+  h += `<h3>Studies behind this view (${rel.length} of ${DATA.bibliography.studies.length})</h3><ul class="plain bib">` +
+    rel.map(b => `<li><span class="tag">${esc(b.method)}</span><br><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)}</a><div class="meta">${esc(b.authors)} (${b.year}), ${esc(b.venue)}</div><div>${esc(b.finding)}</div></li>`).join("") + `</ul>`;
+  h += `<p class="note">Flow rendering follows the convention of geoFluxus material flow maps: translucent bands blended so that overlapping corridors brighten into hubs.</p>`;
+  return h;
+}
+function drawPane(){
+  ["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).setAttribute("aria-selected", t === state.tab));
+  const pane = document.getElementById("pane");
+  pane.innerHTML = state.tab === "overview" ? paneOverview() : state.tab === "country" ? paneCountry() : state.tab === "stress" ? paneStress() : paneSources();
+  const cs = document.getElementById("csel"); if (cs) cs.addEventListener("change", e => { state.country = e.target.value || null; update(); });
+  const ss = document.getElementById("ssel"); if (ss) ss.addEventListener("change", e => { state.stress = e.target.value || null; update(); });
+  const ts = document.getElementById("to-stress"); if (ts) ts.addEventListener("click", () => { state.stress = state.country; state.tab = "stress"; update(); });
+  const cl = document.getElementById("clear-stress"); if (cl) cl.addEventListener("click", () => { state.stress = null; update(); });
+}
+["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).addEventListener("click", () => { state.tab = t; drawPane(); }));
+
+function bindTog(id, key, after){ document.getElementById(id).addEventListener("click", () => { state[key] = !state[key]; if (after) after(); update(); }); }
+bindTog("t-flows","flows", () => { introFlows = true; }); bindTog("t-corr","corr"); bindTog("t-pol","pol");
+bindTog("t-africa","africa", () => { if (state.africa) state.corr = true; });
+document.getElementById("c-stage").addEventListener("click", () => { state.col = "stage"; update(); });
+document.getElementById("c-mineral").addEventListener("click", () => { state.col = "mineral"; update(); });
+
+let lastAfrica = null;
+function update(){
+  minNav.selectAll("button").attr("aria-pressed", d => d.id === state.mineral);
+  document.getElementById("t-flows").setAttribute("aria-pressed", state.flows);
+  document.getElementById("t-africa").setAttribute("aria-pressed", state.africa);
+  document.getElementById("t-corr").setAttribute("aria-pressed", state.corr);
+  document.getElementById("t-pol").setAttribute("aria-pressed", state.pol);
+  document.getElementById("c-stage").setAttribute("aria-pressed", state.col === "stage");
+  document.getElementById("c-mineral").setAttribute("aria-pressed", state.col === "mineral");
+  drawRibbon(); drawMap(); drawLegend(); drawPane(); writeHash();
+  if (lastAfrica !== state.africa){ if (state.africa) focusAfrica(lastAfrica !== null); else if (lastAfrica !== null) svg.transition().duration(600).call(zoom.transform, d3.zoomIdentity); lastAfrica = state.africa; }
+}
+
+readHash();
+if (state.africa) state.corr = true;
+fetch("/assets/data/countries-110m.json", {cache: "force-cache"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).catch(() => fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }))
+  .then(topo => { world = topojson.feature(topo, topo.objects.countries); world.features = world.features.filter(f => f.id !== "010"); update(); })
+  .catch(() => { document.getElementById("mapwrap").insertAdjacentHTML("afterbegin", `<p class="empty" style="margin:60px 16px">The base map did not load. Check the connection or self-host countries-110m.json, then reload. The panel still works.</p>`); update(); });
+let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { drawMap(); if (state.africa) focusAfrica(false); }, 150); });
+})();
+})
+.catch(function(err){
+  var st = document.getElementById('status');
+  if (st) { st.innerHTML = '<strong>Data failed to load.</strong><br>Retry, or check /assets/data/mineral-flows.json'; }
+  console.error('mineral-flows data load failed:', err);
+});
+</script>
+</body>
+</html>

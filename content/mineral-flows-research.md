@@ -8,6 +8,8 @@
   <img src="/assets/img/mineral-flows-hero.jpg" alt="Illustrated painting: an open-pit mining operation with conveyor belts pouring aggregate onto pale grey stockpiles at the base of a red steel gantry. A wheel loader is parked below. In the foreground, half of a white electric passenger car, its charging cable running out of the frame across the crushed rock and into the mine, tracing the physical line from the pit to the vehicle." class="diagram">
 </figure>
 
+<p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
+
 <div class="research-meta">
   <span class="rm-item"><strong>Version</strong> 1.0, indicative</span>
   <span class="rm-item"><strong>Sources tracked</strong> 36 studies</span>

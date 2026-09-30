@@ -3939,3 +3939,21 @@ footer.site .legal > span{white-space:nowrap;}
 :root[data-theme="dark"] .prose ol.fact-list > li:target{
   background:#332e1a;border-left-color:#F5EFE1;
 }
+
+/* Tool-CTA: cobalt pill on paper background linking to the
+   Mineral Flows Map from the article and research paper. */
+.prose .tool-cta{margin:24px 0 28px;}
+.prose .tool-cta-btn{
+  display:inline-flex;align-items:center;gap:.5em;
+  padding:12px 22px;background:var(--cobalt);color:var(--paper);
+  border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);
+  font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:15px;
+  text-decoration:none;letter-spacing:.005em;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.prose .tool-cta-btn:hover{
+  transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);
+}
+.prose .tool-cta-btn:active{
+  transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink);
+}
