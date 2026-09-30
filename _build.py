@@ -1480,6 +1480,8 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
 <meta name="author" content="Transitions Lab">
 <meta name="robots" content="{robots}">
 <meta name="theme-color" content="#F5EDDD">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 {FLASH_INIT}
 <link rel="canonical" href="{canonical}">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
