@@ -161,6 +161,24 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
   .tab{font-size:13px}
   footer{grid-template-columns:1fr}
 }
+
+/* Expandable minerals overview */
+.min-table th, .min-table td{vertical-align:top}
+.min-table td.caret{width:20px;color:var(--orange);font-weight:700;font-family:var(--f-body);font-size:14px;cursor:pointer;user-select:none}
+.min-row{cursor:pointer;transition:background .12s ease}
+.min-row:hover{background:#141414}
+.min-row[aria-expanded="true"]{background:#141414}
+.min-detail td{padding:14px 6px 22px;background:#0a0a0a;border-top:0}
+.min-detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px 24px}
+.share-col h4{font-family:var(--f-head);font-weight:400;font-size:15px;margin:0 0 8px;color:var(--orange)}
+.share-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px}
+.share-list li{position:relative;display:grid;grid-template-columns:1fr auto;gap:8px;padding:6px 8px;font-size:13px;background:linear-gradient(90deg,rgba(255,154,31,.16) 0,rgba(255,154,31,.16) var(--w,0%),transparent var(--w,0%));border-left:2px solid var(--orange-deep)}
+.share-list li:first-child{border-left-color:var(--orange)}
+.share-list .s-name{color:var(--white)}
+.share-list .s-pct{color:var(--orange);font-variant-numeric:tabular-nums;font-weight:700}
+.share-total{margin:8px 0 0;font-size:12px;color:var(--white);opacity:.55}
+.min-detail-cta{margin:14px 0 0}
+.min-detail-cta .btn{font-size:13px}
 </style>
 </head>
 <body>
@@ -332,7 +350,7 @@ function pt(iso){ const c = C.get(iso); return c ? projection([c.lon, c.lat]) : 
 /* Quadratic curve between hubs. Parallel corridors between the same pair are offset so they fan rather than overlap. */
 function ctrl(a, b, lane){
   const dx = b[0]-a[0], dy = b[1]-a[1], d = Math.hypot(dx, dy);
-  const bend = Math.min(0.26, 50 / Math.max(d, 1) + 0.10) + lane * 0.07;
+  const bend = Math.min(0.45, 50 / Math.max(d, 1) + 0.10) + lane * 0.14;
   return [(a[0]+b[0])/2 - dy*bend, (a[1]+b[1])/2 + dx*bend];
 }
 function qpt(a, c, b, t){ const u = 1-t; return [u*u*a[0] + 2*u*t*c[0] + t*t*b[0], u*u*a[1] + 2*u*t*c[1] + t*t*b[1]]; }
@@ -353,11 +371,25 @@ function bandPath(a, c, b, w0){
 }
 let flowGeo = [];
 function buildFlowGeo(fl){
-  const lanes = new Map();
+  // Two lane counters:
+  //  - pairLanes fans corridors that share the same country pair
+  //    (e.g. two COD-CHN products travel on distinct lanes).
+  //  - targetLanes fans corridors that share the same target hub
+  //    (e.g. copper from COD and ZMB both ending at CHN, whose
+  //    origins are geographically close enough to visually merge).
+  const pairLanes = new Map();
+  const targetLanes = new Map();
   flowGeo = fl.map(f => {
     const a = pt(f.source), b = pt(f.target); if (!a || !b) return null;
-    const key = [f.source, f.target].sort().join("-"); const n = lanes.get(key) || 0; lanes.set(key, n + 1);
-    const lane = (n % 2 ? -1 : 1) * Math.ceil(n / 2);
+    const pkey = [f.source, f.target].sort().join("-");
+    const pn = pairLanes.get(pkey) || 0; pairLanes.set(pkey, pn + 1);
+    const pairLane = (pn % 2 ? -1 : 1) * Math.ceil(pn / 2);
+    const tn = targetLanes.get(f.target) || 0; targetLanes.set(f.target, tn + 1);
+    const targetLane = (tn % 2 ? -1 : 1) * Math.ceil(tn / 2);
+    // Combined lane: pair-fan gets the strong signal; target-fan
+    // adds a smaller nudge so different-source-same-target arcs
+    // don't sit on top of each other at world zoom.
+    const lane = pairLane + targetLane * 0.55;
     return {f, a, b, c: ctrl(a, b, lane)};
   }).filter(Boolean);
 }
@@ -497,10 +529,35 @@ function drawLegend(){
 /* Panes */
 function paneOverviewAll(){
   let h = `<h2>All eight minerals</h2><p class="headline">Every corridor in the dataset at once. The bright convergence points are where processing concentrates, and most lines end in the same place.</p>`;
-  h += `<table><thead><tr><th>Mineral</th><th>Largest miner</th><th>Largest refiner</th><th class="num">Africa mines</th><th class="num">Africa refines</th></tr></thead><tbody>` +
-    MIN.map(m => { const a = rankedOf(m.id,"mining")[0], b = rankedOf(m.id,"refining")[0];
-      return `<tr><td><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</td><td>${esc(name(a[0]))} ${fmt(a[1])}</td><td>${esc(name(b[0]))} ${fmt(b[1])}</td><td class="num">${fmt(africaOf(m.id,"mining"))}</td><td class="num">${fmt(africaOf(m.id,"refining"))}</td></tr>`; }).join("") + `</tbody></table>`;
-  h += `<p class="note">Select a mineral in the strip above the map to see its stages, or a country to see its role across all eight.</p>`;
+  h += `<p class="note">Click a mineral row to see the full country breakdown at each stage. Every stage adds to 100%.</p>`;
+  h += `<table class="min-table"><thead><tr><th></th><th>Mineral</th><th>Largest miner</th><th>Largest refiner</th><th class="num">Africa mines</th><th class="num">Africa refines</th></tr></thead><tbody>`;
+  h += MIN.map(m => {
+    const a = rankedOf(m.id,"mining")[0], b = rankedOf(m.id,"refining")[0];
+    const stagesM = stagesOf(m.id);
+    const shareBlock = (stage) => {
+      if (!stagesM.includes(stage)) return "";
+      const label = labelOf(m.id, stage);
+      const rows = Object.entries(sharesOf(m.id, stage)).sort((a,b) => (a[0]==="OTHER") - (b[0]==="OTHER") || b[1]-a[1]);
+      const total = rows.reduce((n,[,v]) => n + v, 0);
+      return `<div class="share-col"><h4>${esc(label)}</h4>`
+        + `<ol class="share-list">` + rows.map(([iso,v]) =>
+            `<li><span class="s-name">${iso === "OTHER" ? "Rest of world" : esc(name(iso))}</span><span class="s-pct">${fmt(v)}</span><span class="s-bar" style="--w:${(v/Math.max(rows[0][1],1))*100}%"></span></li>`
+          ).join("") + `</ol><p class="share-total">Total: ${fmt(total)}</p></div>`;
+    };
+    const rowId = "row-" + m.id;
+    return `<tr class="min-row" data-m="${m.id}" data-detail="${rowId}" tabindex="0" role="button" aria-expanded="false">
+      <td class="caret"><span aria-hidden="true">+</span></td>
+      <td><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</td>
+      <td>${esc(name(a[0]))} ${fmt(a[1])}</td>
+      <td>${esc(name(b[0]))} ${fmt(b[1])}</td>
+      <td class="num">${fmt(africaOf(m.id,"mining"))}</td>
+      <td class="num">${fmt(africaOf(m.id,"refining"))}</td>
+    </tr>
+    <tr class="min-detail" id="${rowId}" hidden><td colspan="6">
+      <div class="min-detail-grid">${shareBlock("mining")}${shareBlock("refining")}${shareBlock("downstream")}</div>
+      <p class="min-detail-cta"><button class="btn ghost" data-open-mineral="${m.id}">Open ${esc(m.name)} view</button></p>
+    </td></tr>`;
+  }).join("") + `</tbody></table>`;
   return h;
 }
 function paneOverview(){
@@ -596,6 +653,22 @@ function drawPane(){
   const ss = document.getElementById("ssel"); if (ss) ss.addEventListener("change", e => { state.stress = e.target.value || null; update(); });
   const ts = document.getElementById("to-stress"); if (ts) ts.addEventListener("click", () => { state.stress = state.country; state.tab = "stress"; update(); });
   const cl = document.getElementById("clear-stress"); if (cl) cl.addEventListener("click", () => { state.stress = null; update(); });
+  // Expandable mineral rows on the All-minerals overview.
+  pane.querySelectorAll(".min-row").forEach(row => {
+    const openRow = () => {
+      const id = row.dataset.detail; if (!id) return;
+      const det = pane.querySelector("#" + id); if (!det) return;
+      const open = row.getAttribute("aria-expanded") === "true";
+      row.setAttribute("aria-expanded", (!open) + "");
+      det.hidden = open;
+      const c = row.querySelector(".caret span"); if (c) c.textContent = open ? "+" : "–";
+    };
+    row.addEventListener("click", openRow);
+    row.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openRow(); } });
+  });
+  pane.querySelectorAll("[data-open-mineral]").forEach(btn => {
+    btn.addEventListener("click", e => { e.stopPropagation(); state.mineral = btn.dataset.openMineral; state.stage = "refining"; state.col = "stage"; introFlows = true; update(); });
+  });
 }
 ["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).addEventListener("click", () => { state.tab = t; drawPane(); }));
 
