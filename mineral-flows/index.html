@@ -179,9 +179,60 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .share-total{margin:8px 0 0;font-size:12px;color:var(--white);opacity:.55}
 .min-detail-cta{margin:14px 0 0}
 .min-detail-cta .btn{font-size:13px}
+
+/* Slim Transitions Lab nav strip at top of the map page */
+.site-navstrip{position:sticky;top:0;z-index:50;background:var(--black);border-bottom:1px solid var(--rule)}
+.site-navstrip .ns-wrap{max-width:1440px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:14px}
+.site-navstrip .ns-brand{display:inline-flex;align-items:center;gap:8px;color:var(--white);text-decoration:none;font-family:var(--f-head);font-size:15px;letter-spacing:.01em}
+.site-navstrip .ns-mark{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--orange) 70%);display:inline-block;box-shadow:0 0 0 1px var(--black)}
+.site-navstrip .ns-tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--orange);padding-left:12px;border-left:1px solid var(--rule);white-space:nowrap}
+.site-navstrip .ns-links{margin-left:auto;display:flex;gap:16px;overflow-x:auto;scrollbar-width:none}
+.site-navstrip .ns-links::-webkit-scrollbar{display:none}
+.site-navstrip .ns-links a{color:var(--white);text-decoration:none;font-size:13px;white-space:nowrap;opacity:.85}
+.site-navstrip .ns-links a:hover{color:var(--orange);opacity:1}
+@media(max-width:640px){.site-navstrip .ns-tag{display:none}}
+
+/* Share row */
+.tool-share{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px;padding:0}
+.tool-share .ts-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--white);opacity:.55;margin-right:2px}
+.tool-share .ts-btn{position:relative;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:transparent;color:var(--white);border:1px solid var(--white);border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;transition:background .12s ease,color .12s ease,border-color .12s ease}
+.tool-share .ts-btn:hover{background:var(--white);color:var(--black)}
+.tool-share .ts-btn svg{display:block}
+.tool-share .ts-btn.is-copied{background:var(--orange);color:var(--black);border-color:var(--orange)}
+.tool-share .ts-copied{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--orange);color:var(--black);border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .18s ease}
+.tool-share .ts-btn.is-copied .ts-copied{opacity:1}
+.tool-share .ts-comment{margin-left:auto;color:var(--orange);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-size:13px;font-weight:600}
+.tool-share .ts-comment:hover{color:#fff}
+
+/* Site-style footer at the bottom of the tool page (dark ink strip) */
+.site-tail{background:#0a0a0a;color:var(--white);border-top:1px solid var(--rule);margin-top:24px;padding:32px 0 28px}
+.site-tail .st-wrap{max-width:1440px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.site-tail .st-brand{display:flex;flex-direction:column;gap:10px}
+.site-tail .st-brand .st-mark{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--orange) 70%);display:inline-block}
+.site-tail .st-brand .st-name{font-family:var(--f-head);font-size:20px;letter-spacing:.005em}
+.site-tail .st-brand .st-mission{font-size:12.5px;line-height:1.55;color:var(--white);opacity:.72;max-width:38ch;margin:4px 0 0;font-weight:500}
+.site-tail .st-col h4{color:var(--orange);font-family:var(--f-body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
+.site-tail .st-col a{display:block;color:var(--white);text-decoration:none;font-size:14px;margin-bottom:8px;opacity:.9}
+.site-tail .st-col a:hover{color:var(--orange);opacity:1}
+.site-tail .st-legal{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;margin-top:8px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--white);opacity:.6}
+.site-tail .st-legal a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+@media(max-width:760px){.site-tail .st-wrap{grid-template-columns:1fr}.site-tail .st-legal{justify-content:flex-start}}
 </style>
 </head>
 <body>
+<nav class="site-navstrip" aria-label="Transitions Lab site">
+  <div class="ns-wrap">
+    <a href="/" class="ns-brand"><span class="ns-mark" aria-hidden="true"></span>Transitions Lab</a>
+    <span class="ns-tag">Mineral Flows Map</span>
+    <div class="ns-links">
+      <a href="/articles">Articles</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/expertise">Programmes</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</nav>
 <div class="wrap">
   <header class="top">
     <div>
@@ -192,6 +243,13 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
     <p class="status" id="status"></p>
   </header>
 
+  <div class="tool-share" role="group" aria-label="Share this view">
+    <span class="ts-label">Share</span>
+    <button type="button" class="ts-btn" data-share="linkedin" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18.34H5.67V9.67h2.67v8.67zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 10H15.67V14c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.4H10V9.67h2.56v1.18h.04a2.8 2.8 0 0 1 2.53-1.39c2.71 0 3.21 1.78 3.21 4.1v4.88z"/></svg> LinkedIn</button>
+    <button type="button" class="ts-btn" data-share="copy" aria-label="Copy link">Copy link<span class="ts-copied">Copied</span></button>
+    <button type="button" class="ts-btn" data-share="png" aria-label="Save the current view as a PNG">Save PNG</button>
+    <a class="ts-comment" href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">Discuss on LinkedIn &rarr;</a>
+  </div>
   <nav class="minerals" id="minerals" aria-label="Choose a mineral"></nav>
   <section class="ribbon" id="ribbon" aria-label="Value chain stage"></section>
 
@@ -252,7 +310,7 @@ const MCOL = {lithium:"#C9D4FF", cobalt:"#4F8BFF", nickel:"#7FE08A", copper:"#FF
 const ORANGE = "#FF9A1F", WHITE = "#FFFFFF";
 const MOBILE = window.matchMedia("(max-width: 900px)").matches;
 
-const state = { mineral:"all", stage:"mining", flows:true, africa:false, corr:false, pol:true, col:"mineral", country:null, stress:null, tab:"overview" };
+const state = window.state = { mineral:"all", stage:"mining", flows:true, africa:false, corr:false, pol:true, col:"mineral", country:null, stress:null, tab:"overview" };
 
 function readHash(){
   const h = new URLSearchParams(location.hash.slice(1));
@@ -704,6 +762,121 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
   if (st) { st.innerHTML = '<strong>Data failed to load.</strong><br>Retry, or check /assets/data/mineral-flows.json'; }
   console.error('mineral-flows data load failed:', err);
 });
+</script>
+
+<footer class="site-tail">
+  <div class="st-wrap">
+    <div class="st-brand">
+      <span class="st-mark" aria-hidden="true"></span>
+      <span class="st-name">Transitions Lab</span>
+      <p class="st-mission">An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.</p>
+    </div>
+    <div class="st-col">
+      <h4>Research</h4>
+      <a href="/expertise">Programmes</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/mineral-flows">Mineral Flows Map</a>
+      <a href="/resources">Resources</a>
+    </div>
+    <div class="st-col">
+      <h4>The Lab</h4>
+      <a href="/about">About</a>
+      <a href="/who-we-serve">Who we serve</a>
+      <a href="/contact">Contact</a>
+      <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="st-legal">
+      <span>&copy; Transitions Lab B.V. 2026 &middot; Delft, The Netherlands &middot; KVK 42170233</span>
+      <span><a href="/ethics">Research ethics</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar = document.querySelector('.tool-share'); if(!bar) return;
+  var pageUrl = function(){ return location.origin + location.pathname + location.hash; };
+
+  function markCopied(btn){
+    btn.classList.add('is-copied');
+    setTimeout(function(){ btn.classList.remove('is-copied'); }, 1400);
+  }
+
+  bar.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-share]'); if(!btn) return;
+    var kind = btn.getAttribute('data-share');
+    if (kind === 'linkedin'){
+      var u = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(pageUrl());
+      window.open(u, '_blank', 'noopener');
+    } else if (kind === 'copy'){
+      var url = pageUrl();
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){ markCopied(btn); }, function(){ prompt('Copy this link', url); });
+      } else {
+        prompt('Copy this link', url);
+      }
+    } else if (kind === 'png'){
+      shareOrDownloadPng(btn);
+    }
+  });
+
+  function ensureH2C(){
+    if (window.html2canvas) return Promise.resolve(window.html2canvas);
+    return new Promise(function(resolve, reject){
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = function(){ resolve(window.html2canvas); };
+      s.onerror = function(){ reject(new Error('html2canvas failed to load')); };
+      document.head.appendChild(s);
+    });
+  }
+
+  function shareOrDownloadPng(btn){
+    var target = document.querySelector('.wrap');
+    if(!target) return;
+    var originalLabel = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = 'Capturing…';
+    ensureH2C().then(function(h2c){
+      return h2c(target, {backgroundColor: '#000000', scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true, allowTaint: true, logging: false, windowWidth: document.documentElement.clientWidth});
+    }).then(function(canvas){
+      var mint = (window.state && window.state.mineral) || 'all';
+      var stg  = (window.state && window.state.stage)   || 'mining';
+      var name = 'mineral-flows-' + mint + '-' + stg + '.png';
+      return new Promise(function(resolve){
+        canvas.toBlob(function(blob){
+          if (!blob){ resolve({blob: null}); return; }
+          // Prefer the native share sheet where it can carry a file.
+          if (navigator.canShare && navigator.share){
+            try {
+              var file = new File([blob], name, {type: 'image/png'});
+              if (navigator.canShare({files: [file]})){
+                navigator.share({files: [file], title: 'Where transition minerals go', text: 'From the Transitions Lab Mineral Flows Map, ' + pageUrl()})
+                  .then(function(){ resolve({blob: blob}); }, function(){ triggerDownload(blob, name); resolve({blob: blob}); });
+                return;
+              }
+            } catch(_) {}
+          }
+          triggerDownload(blob, name);
+          resolve({blob: blob});
+        }, 'image/png');
+      });
+    }).catch(function(err){
+      alert('Could not capture the view (html2canvas ' + (err && err.message ? err.message : 'error') + '). Falling back: use your device screenshot.');
+    }).then(function(){
+      btn.disabled = false;
+      btn.innerHTML = originalLabel;
+    });
+  }
+
+  function triggerDownload(blob, name){
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = name; document.body.appendChild(a); a.click();
+    document.body.removeChild(a); setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }
+})();
 </script>
 </body>
 </html>
