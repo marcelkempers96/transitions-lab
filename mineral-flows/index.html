@@ -243,6 +243,18 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .mf-breadcrumb a:hover{opacity:1;color:var(--orange)}
 .mf-breadcrumb .mf-sep{color:var(--white);opacity:.34;font-size:14px}
 .mf-breadcrumb [aria-current="page"]{color:var(--white);opacity:.95;font-weight:600}
+
+/* Map caption: names the mineral + stage currently coloured
+   and any filters (Africa focus) so switching stages carries a
+   clear signal even when one country dominates every stage. */
+#mapcaption{position:absolute;left:12px;bottom:52px;z-index:3;pointer-events:none;
+  background:rgba(0,0,0,.82);border:1px solid var(--rule);
+  padding:8px 12px;font-size:12.5px;line-height:1.35;color:var(--white);
+  max-width:calc(100% - 24px);letter-spacing:.005em;
+}
+#mapcaption b{color:var(--orange);font-weight:700}
+#mapcaption .mc-sub{opacity:.7;font-size:11px;display:block;margin-top:2px}
+@media(max-width:900px){#mapcaption{bottom:auto;top:60px;left:12px}}
 </style>
 </head>
 <body>
@@ -270,6 +282,7 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
   <main class="stagearea">
     <div class="mapwrap" id="mapwrap">
       <svg id="map" role="img" aria-label="World map of mineral production and trade flows"></svg>
+      <div class="mapcaption" id="mapcaption" aria-live="polite"></div>
       <div class="mapctl" role="group" aria-label="Map layers">
         <button class="tog" id="t-flows" aria-pressed="true">Trade flows</button>
         <button class="tog" id="t-africa" aria-pressed="false">Africa focus</button>
@@ -558,6 +571,16 @@ function drawMap(){
   gLbl.selectAll("text").data(lead, d => d.iso).join("text").attr("class","lbl")
     .attr("x", d => d.x + 8).attr("y", d => d.y + 15 + d.dy).attr("font-size", 12/k).attr("stroke-width", 3/k).html(d => d.txt);
 
+  // Visible view caption: mineral + stage + any filter.
+  var mc = document.getElementById("mapcaption");
+  if (mc){
+    if (isAll()){
+      mc.innerHTML = "Viewing <b>All eight minerals</b>. " + flowGeo.length + " corridors on the map." + (state.africa ? " <span class=\"mc-sub\">Africa focus on: corridors with an African end only.</span>" : "");
+    } else {
+      var top3 = ranked(state.stage).slice(0,3).map(function(r){return name(r[0]) + " " + fmt(r[1]);}).join(", ");
+      mc.innerHTML = "Viewing <b>" + esc(mineral().name) + "</b> \u00b7 " + esc(stageLabel(state.stage).toLowerCase()) + " shares." + "<span class=\"mc-sub\">Top: " + esc(top3) + "</span>";
+    }
+  }
   svg.attr("aria-label", isAll() ? `All minerals: ${flowGeo.length} trade corridors` :
     `${mineral().name}, ${stageLabel(state.stage).toLowerCase()}: ` + ranked(state.stage).slice(0,3).map(([i,v]) => `${name(i)} ${fmt(v)}`).join(", "));
 }
