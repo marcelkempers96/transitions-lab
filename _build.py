@@ -2205,7 +2205,7 @@ def build_home() -> str:
     <div class="section-head reveal">
       <p class="eyebrow">Interactive tool</p>
       <h2>The Mineral Flows Map.</h2>
-      <p>Fifteen critical-material chains, from mine to refinery to cathode, drawn as a single interactive world map. Every corridor is a real bilateral trade flow; every choropleth is a real share; every figure carries a source and a last-updated date. Use it to see who mines, who refines, and who captures the value.</p>
+      <p>A single interactive map of the critical-material chains, from mine to refinery to cathode. Real trade flows, sourced and dated.</p>
     </div>
     <div class="tool-feature-card">
       <a class="tool-feature-photo" href="/mineral-flows" aria-label="Open the Mineral Flows Map">
@@ -2213,12 +2213,12 @@ def build_home() -> str:
       </a>
       <div class="tool-feature-body">
         <span class="tool-feature-kicker">Open the tool</span>
-        <h3><a href="/mineral-flows">Fifteen chains. Ninety-five corridors. One map.</a></h3>
-        <p>All the minerals in an electric vehicle, plus the wide-bandgap semiconductor set and the LFP battery chain. Toggle a Chain-diagram view, stress-test any country, and print or save any view.</p>
+        <h3><a href="/mineral-flows">15+ chains. 95+ corridors.</a></h3>
+        <p>Toggle a chain-diagram view, stress-test any country, and export any state.</p>
         <a class="tool-feature-cta" href="/mineral-flows">Explore the map &rarr;</a>
         <div class="tool-feature-subs">
           <a href="/mineral-flows-guide">Sixty-second guide &rarr;</a>
-          <a href="/mineral-flows-research">Research paper (36 studies) &rarr;</a>
+          <a href="/mineral-flows-research">Research paper &rarr;</a>
         </div>
       </div>
     </div>
