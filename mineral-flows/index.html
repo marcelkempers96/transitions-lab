@@ -238,29 +238,7 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 </style>
 </head>
 <body>
-<nav class="site-navstrip" aria-label="Transitions Lab site">
-  <div class="ns-wrap">
-    <a href="/" class="ns-brand"><span class="ns-mark" aria-hidden="true"></span>Transitions Lab</a>
-    <span class="ns-tag">Mineral Flows Map</span>
-    <div class="ns-links">
-      <a href="/articles">Articles</a>
-      <a href="/case-studies">Case studies</a>
-      <a href="/expertise">Programmes</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </div>
-  </div>
-</nav>
 <div class="wrap">
-  <header class="top">
-    <div>
-      <p class="kicker"><a href="/">Transitions Lab</a>, Industrial Transition and Value Chains</p>
-      <h1>Where transition minerals go</h1>
-      <p class="lede">Who mines, who refines and who ships to whom, for eight minerals the energy transition depends on. Select a stage to see how concentration shifts as ore becomes material.</p>
-    </div>
-    <p class="status" id="status"></p>
-  </header>
-
   <div class="tool-share" role="group" aria-label="Share this view">
     <span class="ts-label">Share</span>
     <button type="button" class="ts-btn" data-share="linkedin" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18.34H5.67V9.67h2.67v8.67zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 10H15.67V14c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.4H10V9.67h2.56v1.18h.04a2.8 2.8 0 0 1 2.53-1.39c2.71 0 3.21 1.78 3.21 4.1v4.88z"/></svg> LinkedIn</button>
@@ -368,7 +346,7 @@ const policiesFor = () => DATA.policies.policies.filter(p => isAll() || p.minera
 const esc = (s) => String(s).replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
 const flowColour = (f) => state.col === "mineral" ? MCOL[f.mineral] : (f.processed ? WHITE : ORANGE);
 
-document.getElementById("status").innerHTML = "<strong>Working data.</strong> Shares are rounded 2024 and 2025 figures and line widths are relative. Verify before citing.";
+(function(){ var st = document.getElementById("status"); if (st) st.innerHTML = "<strong>Working data.</strong> Shares are rounded 2024 and 2025 figures and line widths are relative. Verify before citing."; })();
 
 /* Mineral chips, with an all-minerals view first */
 const minNav = d3.select("#minerals");
