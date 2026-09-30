@@ -20,8 +20,6 @@ Dataset version: **1.1 (indicative)** · Last dataset touch: **30 September 2026
 
 The table names the *primary* source per stage. Where more than one publication was drawn on, the additional sources are named alongside. Confidence markers are the Lab's read of how well the underlying data supports the figure at the stage's resolution: **High** for headline shares in mainstream USGS commodity summaries; **Medium** for IEA outlook chapters or industry-association estimates; **Low** for the frontier chains where public data is patchy (LFP downstream, SiC power devices).
 
-<div class="attribution-table" role="table" aria-label="Data attribution by mineral">
-
 ### Lithium
 - **Mining**, USGS *Mineral Commodity Summaries 2025* (2024 estimates). High. Last updated 30 Sep 2026.
 - **Refining (carbonate + hydroxide)**, IEA *Global Critical Minerals Outlook 2026*. Medium.
@@ -92,8 +90,6 @@ The table names the *primary* source per stage. Where more than one publication 
 ### Fluorspar (LiPF6 electrolyte + PVDF binder)
 - **Mining (acid-grade CaF2)**, USGS MCS 2025 - Fluorspar. High.
 - **Hydrofluoric acid (HF)**, USGS + industry estimates. Medium.
-
-</div>
 
 ---
 
