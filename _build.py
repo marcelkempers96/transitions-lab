@@ -405,6 +405,7 @@ HERO_COLOR: dict[str, str] = {
     "cookies": "sky",
     "ethics": "forest",
     "researchers": "forest",
+    "mineral-flows-research": "cobalt",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -643,6 +644,14 @@ META: dict[str, dict[str, str]] = {
     "researchers": {
         "title": "Field Researcher Network | Transitions Lab",
         "description": "The wider network of trained field researchers, local analysts and country leads the Lab works through. Who they are, how they work, and what standards every engagement is held to.",
+    },
+    "mineral-flows-research": {
+        "title": "Where Transition Minerals Go: The Evidence Base | Transitions Lab",
+        "description": "Structured synthesis of 36 studies behind the Lab's Mineral Flows Map. Six methodological strands, eleven numbered facts, and the verification status of every citation.",
+    },
+    "insight-where-transition-minerals-go": {
+        "title": "Seven Findings on the Transition-Mineral Chain | Transitions Lab",
+        "description": "Where the minerals in an electric vehicle come from, who processes them, and who captures the value. A headline reading of 36 studies on the transition-mineral chain.",
     },
     "expertise-e-mobility": {
         "title": "E-Mobility & Transport Research | Transitions Lab",
