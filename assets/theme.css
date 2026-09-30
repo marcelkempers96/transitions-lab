@@ -417,9 +417,9 @@ section + section{border-top:2px solid var(--ink);}
 }
 @keyframes blink{50%{opacity:0;}}
 .hero .lede{
-  font-size:clamp(19px,2.3vw,25px);
-  line-height:1.45;max-width:52ch;margin:0 0 40px;
-  font-weight:500;min-height:3em;
+  font-size:clamp(15px,1.7vw,19px);
+  line-height:1.5;max-width:48ch;margin:0 0 36px;
+  font-weight:500;min-height:3em;opacity:.88;
 }
 .hero .cta-row{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap;}
 
@@ -2513,9 +2513,11 @@ section.page-hero[data-hero-bg] .eyebrow{
 }
 .flash-banner:hover{background:#D45520;}
 .flash-banner .flash-eyebrow{
-  font-size:11px;letter-spacing:.06em;text-transform:uppercase;
-  font-weight:800;color:#FFFFFF;
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-size:15px;letter-spacing:.01em;text-transform:none;
+  font-weight:500;font-style:italic;color:#FFFFFF;
   padding-right:14px;border-right:1px solid rgba(255,255,255,.4);
+  white-space:nowrap;
 }
 .flash-banner .flash-body{
   color:#FFFFFF;opacity:.94;

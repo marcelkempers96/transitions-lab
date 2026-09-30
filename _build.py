@@ -1829,21 +1829,21 @@ def build_home() -> str:
         <img class="what-flag" src="/assets/icons/icon-entering-context.png" alt="" aria-hidden="true">
         <span class="what-tag">Client question 01</span>
         <h3>Entering a new context</h3>
-        <p>Independent field evidence before you enter a market. Who adopts, at what price, and what fails early.</p>
+        <p>Before you commit capital, we tell you who really adopts, at what price, and where the plan will break.</p>
         <span class="what-more">Read more →</span>
       </a>
       <a class="what-card c-coral" href="/measuring-change">
         <img class="what-flag" src="/assets/icons/icon-measuring-change.png" alt="" aria-hidden="true">
         <span class="what-tag">Client question 02</span>
         <h3>Measuring change</h3>
-        <p>What actually changes, for whom, and how. Reach, depth and experience - from the human side.</p>
+        <p>The evidence of what your programme is changing, for whom, and how much. Read across reach, depth and experience.</p>
         <span class="what-more">Read more →</span>
       </a>
       <a class="what-card c-cobalt" href="/reporting-to-funders">
         <img class="what-flag" src="/assets/icons/icon-eu.png" alt="" aria-hidden="true">
         <span class="what-tag">Client question 03</span>
         <h3>Reporting to funders</h3>
-        <p>Monitoring, evaluation and dissemination as one system. Set up at the start, closed with proof.</p>
+        <p>A baseline-through-endline evidence pack that survives review. Set up with your consortium, closed with proof.</p>
         <span class="what-more">Read more →</span>
       </a>
     </div>
@@ -2038,25 +2038,21 @@ def build_home() -> str:
     </div>
     <div class="theory-maps-row">
       <a class="theory-map-card" href="/human-side-of-technology">
-        <span class="tm-eyebrow">Behaviour</span>
         <h3>The Human Side of Technology</h3>
         <p>Why people adopt, resist, trust, and abandon technologies.</p>
         <span class="tm-cta">See 26 concepts &rarr;</span>
       </a>
       <a class="theory-map-card" href="/economics-of-transitions">
-        <span class="tm-eyebrow">Economics</span>
         <h3>The Economics of Transitions</h3>
         <p>Who bears the cost, who captures the value, what the market prices.</p>
         <span class="tm-cta">See 48 concepts &rarr;</span>
       </a>
       <a class="theory-map-card" href="/innovation-dynamics">
-        <span class="tm-eyebrow">Strategy</span>
         <h3>Technology &amp; Innovation Dynamics</h3>
         <p>How the technology evolves, how firms compete, how it spreads.</p>
         <span class="tm-cta">See 31 concepts &rarr;</span>
       </a>
       <a class="theory-map-card" href="/resources">
-        <span class="tm-eyebrow">System</span>
         <h3>Transitions primer</h3>
         <p>How niches, regimes, and landscapes interact to move a whole system.</p>
         <span class="tm-cta">Open the primer &rarr;</span>
