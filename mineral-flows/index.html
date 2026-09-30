@@ -91,6 +91,12 @@ button,select{font:inherit;color:inherit}
 .mapctl{position:absolute;left:12px;top:12px;display:flex;flex-wrap:wrap;gap:6px;max-width:calc(100% - 24px)}
 .tog{background:var(--black);border:1px solid var(--white);padding:6px 11px;font-size:14px;cursor:pointer;border-radius:4px}
 .tog[aria-pressed="true"]{border-color:var(--orange);color:var(--orange)}
+/* View-mode segmented control (Map / Chain diagram) — the most
+   important control on the strip, so it renders solid orange so
+   readers can find it at a glance. */
+.mapctl .seg-view{border-color:var(--orange);order:-1}
+.mapctl .seg-view .tog{background:var(--black);color:var(--orange);font-weight:700}
+.mapctl .seg-view .tog[aria-pressed="true"]{background:var(--orange);color:var(--black);border-color:var(--orange)}
 .legend{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.85);border:1px solid var(--rule);padding:10px 12px;font-size:13px;display:grid;grid-template-columns:auto;gap:6px 14px;max-width:300px}
 .legend.cols{grid-template-columns:1fr 1fr}
 .legend .row{display:flex;align-items:center;gap:8px}
@@ -157,7 +163,8 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
   #map{min-height:0;height:62vh;max-height:560px}
   .legend{position:static;border:0;border-top:1px solid var(--rule);max-width:none;grid-template-columns:1fr 1fr}
   .zoomctl{bottom:auto;top:12px;right:12px}
-  .mapctl{max-width:calc(100% - 70px)}
+  .mapctl{max-width:calc(100% - 70px);gap:4px}
+  .mapctl .tog{padding:5px 8px;font-size:12px}
   .pane{max-height:none}
   .tab{font-size:13px}
   footer{grid-template-columns:1fr}
@@ -227,8 +234,8 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .site-tail{background:#0a0a0a;color:var(--white);border-top:1px solid var(--rule);margin-top:24px;padding:32px 0 28px}
 .site-tail .st-wrap{max-width:1440px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
 .site-tail .st-brand{display:flex;flex-direction:column;gap:10px}
-.site-tail .st-brand .st-mark{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--orange) 70%);display:inline-block}
-.site-tail .st-brand .st-name{font-family:var(--f-head);font-size:20px;letter-spacing:.005em}
+.site-tail .st-brand .st-logo{display:inline-block;line-height:0}
+.site-tail .st-brand .st-logo-img{height:36px;width:auto;display:block}
 .site-tail .st-brand .st-mission{font-size:12.5px;line-height:1.55;color:var(--white);opacity:.72;max-width:38ch;margin:4px 0 0;font-weight:500}
 .site-tail .st-col h4{color:var(--orange);font-family:var(--f-body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
 .site-tail .st-col a{display:block;color:var(--white);text-decoration:none;font-size:14px;margin-bottom:8px;opacity:.9}
@@ -315,7 +322,7 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 :root[data-map-theme="light"] .tool-share .ts-btn{color:#0A0A0A;border-color:#0A0A0A}
 :root[data-map-theme="light"] .tool-share .ts-btn:hover{background:#0A0A0A;color:#F5EDDD}
 :root[data-map-theme="light"] .site-tail{background:#EFE4CE;color:#0A0A0A;border-top-color:rgba(10,10,10,.18)}
-:root[data-map-theme="light"] .site-tail .st-brand .st-name,
+:root[data-map-theme="light"] .site-tail .st-brand .st-logo-img{filter:invert(1) hue-rotate(180deg)}
 :root[data-map-theme="light"] .site-tail .st-col a,
 :root[data-map-theme="light"] .site-tail .st-legal,
 :root[data-map-theme="light"] .site-tail .st-legal a{color:#0A0A0A}
@@ -394,18 +401,17 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
           </pattern>
         </defs>
       </svg><svg id="sankey" role="img" aria-label="Chain diagram of mineral flows across stages" hidden></svg><div class="mapctl" role="group" aria-label="Map layers">
-        <span class="seg" role="group" aria-label="View mode">
+        <span class="seg seg-view" role="group" aria-label="View mode">
           <button class="tog" id="v-map" aria-pressed="true">Map</button>
           <button class="tog" id="v-sankey" aria-pressed="false">Chain diagram</button>
         </span>
-        <button class="tog" id="btn-print" aria-label="Print">Print</button>
         <button class="tog" id="t-flows" aria-pressed="true">Trade flows</button>
         <button class="tog" id="t-africa" aria-pressed="false">Africa focus</button>
-        <button class="tog" id="t-pol" aria-pressed="true">Policy measures</button>
         <span class="seg" role="group" aria-label="Colour flows by">
           <button class="tog" id="c-stage" aria-pressed="true">By stage</button>
           <button class="tog" id="c-mineral" aria-pressed="false">By mineral</button>
         </span>
+        <button class="tog" id="btn-print" aria-label="Print">Print</button>
       </div>
       <div class="zoomctl">
         <button id="z-in" aria-label="Zoom in">+</button>
@@ -965,20 +971,23 @@ function drawPane(){
 }
 ["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).addEventListener("click", () => { state.tab = t; drawPane(); }));
 
-function bindTog(id, key, after){ document.getElementById(id).addEventListener("click", () => { state[key] = !state[key]; if (after) after(); update(); }); }
-bindTog("t-flows","flows", () => { introFlows = true; }); bindTog("t-pol","pol");
+function bindTog(id, key, after){ var el = document.getElementById(id); if (!el) return; el.addEventListener("click", () => { state[key] = !state[key]; if (after) after(); update(); }); }
+bindTog("t-flows","flows", () => { introFlows = true; });
 bindTog("t-africa","africa");
+// Policy-measure diamonds were removed from the map's own control strip;
+// keep the side-panel policy detail (Country/Sources tabs) intact by
+// forcing the layer off and never re-enabling it via the map UI.
+state.pol = false;
 document.getElementById("c-stage").addEventListener("click", () => { state.col = "stage"; update(); });
 document.getElementById("c-mineral").addEventListener("click", () => { state.col = "mineral"; update(); });
 
 let lastAfrica = null;
 function update(){
   minNav.selectAll("button").attr("aria-pressed", d => d.id === state.mineral);
-  document.getElementById("t-flows").setAttribute("aria-pressed", state.flows);
-  document.getElementById("t-africa").setAttribute("aria-pressed", state.africa);
-  document.getElementById("t-pol").setAttribute("aria-pressed", state.pol);
-  document.getElementById("c-stage").setAttribute("aria-pressed", state.col === "stage");
-  document.getElementById("c-mineral").setAttribute("aria-pressed", state.col === "mineral");
+  var elFlows = document.getElementById("t-flows"); if (elFlows) elFlows.setAttribute("aria-pressed", state.flows);
+  var elAfr = document.getElementById("t-africa"); if (elAfr) elAfr.setAttribute("aria-pressed", state.africa);
+  var elCS = document.getElementById("c-stage"); if (elCS) elCS.setAttribute("aria-pressed", state.col === "stage");
+  var elCM = document.getElementById("c-mineral"); if (elCM) elCM.setAttribute("aria-pressed", state.col === "mineral");
   drawRibbon(); drawMap(); drawLegend(); drawPane(); writeHash();
   if (lastAfrica !== state.africa){ if (state.africa) focusAfrica(lastAfrica !== null); else if (lastAfrica !== null) svg.transition().duration(600).call(zoom.transform, d3.zoomIdentity); lastAfrica = state.africa; }
 }
@@ -1000,8 +1009,7 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
 <footer class="site-tail">
   <div class="st-wrap">
     <div class="st-brand">
-      <span class="st-mark" aria-hidden="true"></span>
-      <span class="st-name">Transitions Lab</span>
+      <a href="/" class="st-logo" aria-label="Transitions Lab, home"><img src="/assets/logo.png?v=2" alt="Transitions Lab" class="st-logo-img"></a>
       <p class="st-mission">An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.</p>
     </div>
     <div class="st-col">

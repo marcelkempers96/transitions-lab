@@ -10,7 +10,7 @@
 
 ## The sixty-second tour
 
-**1. Pick a mineral.** The chip row at the top runs *All minerals* and nine individual chains (lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals, and phosphate — the last covering the LFP battery chain). *All minerals* draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.
+**1. Pick a mineral.** The chip row at the top runs *All minerals* and nine individual chains (lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals, and phosphate, the last covering the LFP battery chain). *All minerals* draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.
 
 **2. Move through the chain.** The stage ribbon below the chips is both the summary and the selector. Each stage shows its largest producer, a strata bar with the full country breakdown, and toggles the map's choropleth when you click it. Rare earths goes Mining → Separation and refining → NdFeB magnets; lithium goes Mining → Refining → Cathode. Watching the strata bar narrow across stages is the whole story: mining is diffuse, refining is not.
 
@@ -22,7 +22,7 @@
 
 - **Trade flows** toggles the arcs on and off. Off gives you a plain choropleth.
 - **Africa focus** zooms to the continent and filters to corridors with an African endpoint.
-- **Policy measures** adds a small diamond beside each country that has an export ban, quota, licensing rule, ownership rule or industrial-policy commitment. Click one for the detail.
+- **Policy detail** lives in the side panel: pick a country in the Country tab to see its export bans, quotas, licensing rules, ownership rules and industrial-policy commitments listed, per mineral, with dates. The main map stays clean.
 - **By stage** colours arcs by processing state (orange for ore / concentrate / intermediate, white for refined metal / chemical / component). **By mineral** colours arcs by which mineral they carry. The default is *by mineral* in the all-minerals view and *by stage* on a single mineral.
 - **Zoom in and out** with the buttons on the right of the map or with pinch and scroll. As you zoom, more country labels appear, and the labels shrink with the zoom so they don't cover the geography.
 - **Stress test** is the most useful feature for scenario reading. Pick a country, hit *stress test*, and the map hatches the country out and dims every corridor that touches it; the panel then reports how many percent of each stage is offline and how concentration among the remaining suppliers shifts.
@@ -63,7 +63,7 @@ The dataset ships with `status: indicative`. That is why the map opens with a wo
 
 Shares are rounded 2024/2025 figures from USGS, IEA and industry association reports. Corridor widths are relative weights on a 1-to-5 scale, not tonnes of contained metal. The BACI trade pipeline (see [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research)) converts these to tonnes once the CEPII release is downloaded manually. Until then, the map is a shape, not a measurement.
 
-For the 48-country African coverage question — the paper cites 48 African countries as holding at least one transition mineral in reserve, while the map surfaces around a dozen African source hubs today because the other thirty-plus are pre-export. That gap is documented in the Sources tab.
+For the 48-country African coverage question, the paper cites 48 African countries as holding at least one transition mineral in reserve, while the map surfaces around a dozen African source hubs today because the other thirty-plus are pre-export. That gap is documented in the Sources tab.
 
 ---
 
@@ -122,7 +122,7 @@ The [Data attribution page](/mineral-flows-attribution) groups the same informat
 
 ## Where to go next
 
-- [Seven Findings on the Transition-Mineral Chain](/insight-where-transition-minerals-go) — the article that draws conclusions from the map.
-- [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research) — the research paper listing every source behind every figure.
-- [Green Industrialisation & Local Manufacturing](/expertise-manufacturing) — the Lab's programme this tool sits inside.
-- [BReW framework](/brw) — the strategic lens the Lab reads these chains through.
+- [Seven Findings on the Transition-Mineral Chain](/insight-where-transition-minerals-go), the article that draws conclusions from the map.
+- [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research), the research paper listing every source behind every figure.
+- [Green Industrialisation & Local Manufacturing](/expertise-manufacturing), the Lab's programme this tool sits inside.
+- [BReW framework](/brw), the strategic lens the Lab reads these chains through.

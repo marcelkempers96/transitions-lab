@@ -123,7 +123,7 @@
       <p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
 <hr>
 <h2>The sixty-second tour</h2>
-<p><strong>1. Pick a mineral.</strong> The chip row at the top runs <em>All minerals</em> and nine individual chains (lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals, and phosphate — the last covering the LFP battery chain). <em>All minerals</em> draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.</p>
+<p><strong>1. Pick a mineral.</strong> The chip row at the top runs <em>All minerals</em> and nine individual chains (lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals, and phosphate, the last covering the LFP battery chain). <em>All minerals</em> draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.</p>
 <p><strong>2. Move through the chain.</strong> The stage ribbon below the chips is both the summary and the selector. Each stage shows its largest producer, a strata bar with the full country breakdown, and toggles the map's choropleth when you click it. Rare earths goes Mining → Separation and refining → NdFeB magnets; lithium goes Mining → Refining → Cathode. Watching the strata bar narrow across stages is the whole story: mining is diffuse, refining is not.</p>
 <p><strong>3. Read the panel on the right.</strong> Four tabs. <strong>Overview</strong> is the mineral's headline and a per-stage HHI. <strong>Country</strong> picks one country and shows its role across every stage plus its import and export corridors. <strong>Stress test</strong> removes a country and reports what fraction of each stage goes offline. <strong>Sources</strong> lists every figure with its year, confidence and the studies behind it.</p>
 <hr>
@@ -131,7 +131,7 @@
 <ul>
 <li><strong>Trade flows</strong> toggles the arcs on and off. Off gives you a plain choropleth.</li>
 <li><strong>Africa focus</strong> zooms to the continent and filters to corridors with an African endpoint.</li>
-<li><strong>Policy measures</strong> adds a small diamond beside each country that has an export ban, quota, licensing rule, ownership rule or industrial-policy commitment. Click one for the detail.</li>
+<li><strong>Policy detail</strong> lives in the side panel: pick a country in the Country tab to see its export bans, quotas, licensing rules, ownership rules and industrial-policy commitments listed, per mineral, with dates. The main map stays clean.</li>
 <li><strong>By stage</strong> colours arcs by processing state (orange for ore / concentrate / intermediate, white for refined metal / chemical / component). <strong>By mineral</strong> colours arcs by which mineral they carry. The default is <em>by mineral</em> in the all-minerals view and <em>by stage</em> on a single mineral.</li>
 <li><strong>Zoom in and out</strong> with the buttons on the right of the map or with pinch and scroll. As you zoom, more country labels appear, and the labels shrink with the zoom so they don't cover the geography.</li>
 <li><strong>Stress test</strong> is the most useful feature for scenario reading. Pick a country, hit <em>stress test</em>, and the map hatches the country out and dims every corridor that touches it; the panel then reports how many percent of each stage is offline and how concentration among the remaining suppliers shifts.</li>
@@ -161,7 +161,7 @@
 <h2>Data caveats before citing</h2>
 <p>The dataset ships with <code>status: indicative</code>. That is why the map opens with a working-data notice and why every figure in the Sources tab carries a confidence marker.</p>
 <p>Shares are rounded 2024/2025 figures from USGS, IEA and industry association reports. Corridor widths are relative weights on a 1-to-5 scale, not tonnes of contained metal. The BACI trade pipeline (see <a href="/mineral-flows-research">Where Transition Minerals Go: The Evidence Base</a>) converts these to tonnes once the CEPII release is downloaded manually. Until then, the map is a shape, not a measurement.</p>
-<p>For the 48-country African coverage question — the paper cites 48 African countries as holding at least one transition mineral in reserve, while the map surfaces around a dozen African source hubs today because the other thirty-plus are pre-export. That gap is documented in the Sources tab.</p>
+<p>For the 48-country African coverage question, the paper cites 48 African countries as holding at least one transition mineral in reserve, while the map surfaces around a dozen African source hubs today because the other thirty-plus are pre-export. That gap is documented in the Sources tab.</p>
 <hr>
 <h2>Data provenance table</h2>
 <p>Every figure the map draws is loaded from a single file, <code>/assets/data/mineral-flows.json</code>, and rendered in the browser by the standalone script at <code>/mineral-flows/index.html</code> (which uses d3 v7 for the projection and flow bands, d3-sankey v0.12 for the chain diagram, and html2canvas for the PNG export). The rows below name the primary source per (mineral, stage) pair, its underlying data year, and when the Lab last touched the value. The <code>basis</code>, <code>year</code>, <code>confidence</code> and <code>last_updated</code> fields shown here live on each stage node in the JSON and can be inspected in the browser's dev tools.</p>
@@ -213,10 +213,10 @@
 <hr>
 <h2>Where to go next</h2>
 <ul>
-<li><a href="/insight-where-transition-minerals-go">Seven Findings on the Transition-Mineral Chain</a> — the article that draws conclusions from the map.</li>
-<li><a href="/mineral-flows-research">Where Transition Minerals Go: The Evidence Base</a> — the research paper listing every source behind every figure.</li>
-<li><a href="/expertise-manufacturing">Green Industrialisation &amp; Local Manufacturing</a> — the Lab's programme this tool sits inside.</li>
-<li><a href="/brw">BReW framework</a> — the strategic lens the Lab reads these chains through.</li>
+<li><a href="/insight-where-transition-minerals-go">Seven Findings on the Transition-Mineral Chain</a>, the article that draws conclusions from the map.</li>
+<li><a href="/mineral-flows-research">Where Transition Minerals Go: The Evidence Base</a>, the research paper listing every source behind every figure.</li>
+<li><a href="/expertise-manufacturing">Green Industrialisation &amp; Local Manufacturing</a>, the Lab's programme this tool sits inside.</li>
+<li><a href="/brw">BReW framework</a>, the strategic lens the Lab reads these chains through.</li>
 </ul>
       
     </div>
