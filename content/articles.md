@@ -6,7 +6,7 @@
 
 <div class="tool-feature-card">
   <a class="tool-feature-photo" href="/mineral-flows" aria-label="Open the Mineral Flows Map">
-    <img src="/assets/img/mineral-flows-map-card.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view: dense coloured arcs converging on China with labelled hubs at Chile, Brazil, Peru, DR Congo, South Africa, Australia, Indonesia, Malaysia, Morocco, USA, Canada, Mexico and Russia.">
+    <img src="/assets/img/mineral-flows-map-card.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view on the dark theme: dense multi-coloured arcs weaving between labelled hubs at Mexico, United States, Canada, Cuba, Peru, Chile, Argentina, Brazil, Ghana, Gabon, DR Congo, Zimbabwe, South Africa, Madagascar, Morocco, Germany, Norway, Finland, Poland, United Kingdom, Turkey, Jordan, Egypt, Kazakhstan, Russia, Mongolia, India, Myanmar, China, South Korea, Japan, Philippines, Malaysia, Indonesia, Australia and New Caledonia, with the strongest convergence around China.">
   </a>
   <div class="tool-feature-body">
     <span class="tool-feature-kicker">Interactive tool · New</span>
