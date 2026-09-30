@@ -692,7 +692,7 @@ function paneStress(){
   return h;
 }
 function paneSources(){
-  let h = `<h2>Sources</h2><p>${esc(DATA.minerals.meta.warning)}</p>`;
+  let h = `<h2>Sources</h2><p>${esc(DATA.minerals.meta.warning)}</p><div style="border:1px solid var(--orange);padding:10px 12px;margin:12px 0 10px;font-size:13.5px;line-height:1.5"><strong style="color:var(--orange)">A note on the African coverage.</strong> Ndubuisi et al. (2026) report that 48 African countries hold reserves of at least one transition mineral. The map draws current top exporters, so only around a dozen African countries appear here as source hubs. The other 30-plus hold deposits that have not yet reached international trade at meaningful volumes. A reserve is not the same as an export.</div>`;
   const ids = isAll() ? MIN.map(m => m.id) : [state.mineral];
   h += `<h3>Figures</h3><ul class="plain">` + ids.flatMap(id => stagesOf(id).map(s => `<li><b>${esc(M(id).name)}, ${esc(labelOf(id, s).toLowerCase())}</b>, ${M(id).stages[s].year}, ${esc(M(id).stages[s].confidence)} confidence<br>${esc(M(id).stages[s].basis)}</li>`)).join("") + `</ul>`;
   const rel = DATA.bibliography.studies.filter(b => isAll() || b.minerals.includes(state.mineral));
