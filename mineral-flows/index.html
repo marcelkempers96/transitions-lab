@@ -261,7 +261,7 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 @media(max-width:640px){.site-navstrip .ns-tag{display:none}}
 
 /* Share row */
-.tool-share{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px;padding:0}
+.tool-share{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:22px 0 18px;padding:0}
 .tool-share .ts-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--white);opacity:.55;margin-right:2px}
 .tool-share .ts-btn{position:relative;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:transparent;color:var(--white);border:1px solid var(--white);border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;transition:background .12s ease,color .12s ease,border-color .12s ease}
 .tool-share .ts-btn:hover{background:var(--white);color:var(--black)}
@@ -397,6 +397,8 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
 @media print{
   html,body{background:#fff !important;color:#000 !important}
   .site-navstrip,.mf-breadcrumb,.tool-share,.mapctl,.zoomctl,.tip,.tabs,.panel,.minerals,footer,.site-tail{display:none !important}
+  /* Sankey empty-state placeholder should not print either. */
+  .sankey-empty, foreignObject{display:none !important}
   .stagearea{display:block !important;border:0 !important}
   .mapwrap{border:0 !important}
   #map,#sankey{background:#fff !important}
@@ -1155,29 +1157,35 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
   }
 
   function shareOrDownloadPng(btn){
-    // Only snap the map layer and the flow information beside it -
-    // ribbon (strata bars = per-stage shares), map, and panel.
-    // The mineral chip row, top header, share row, site nav, and
-    // site footer are skipped by html2canvas via ignoreElements.
-    var target = document.querySelector('.wrap');
+    // Snap only the ribbon + map (or Sankey) column. Skip the
+    // side-panel, mineral chip row, toolbar chrome, nav, footer,
+    // tooltip, share row, and the "Chain diagram works on a single
+    // mineral" placeholder. Theme-aware background so light mode
+    // exports on cream instead of dropping onto black.
+    var target = document.querySelector('.stagearea');
+    if(!target) target = document.querySelector('.wrap');
     if(!target) return;
+    var isLight = document.documentElement.getAttribute('data-map-theme') === 'light';
+    var bg = isLight ? '#F5EDDD' : '#0A0A0A';
     var ignore = function(el){
-      if (!el || !el.classList) return false;
+      if (!el || !el.matches) return false;
       if (el.matches('.site-navstrip, .tool-share, .site-tail')) return true;
-      if (el.matches('header.top, .wrap > footer')) return true;
-      // Also skip the map's own control panel, zoom control, and
-      // tooltip - they clutter the capture and can be off-screen.
+      if (el.matches('header.top, .wrap > footer, .mf-breadcrumb')) return true;
+      // Skip the map's own control panel, zoom control, and tooltip.
       if (el.matches('.mapctl, .zoomctl, .tip')) return true;
-      // The mineral chip strip is skipped too because the panel
-      // already shows the selected mineral name.
+      // Skip the side-panel entirely (tabs + pane).
+      if (el.matches('.panel, .tabs, .pane')) return true;
+      // Skip the mineral chip strip (ribbon above already names the mineral).
       if (el.matches('.minerals')) return true;
+      // Skip the Sankey empty-state placeholder text.
+      if (el.matches('.sankey-empty') || el.matches('foreignObject')) return true;
       return false;
     };
     var originalLabel = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = 'Capturing…';
     ensureH2C().then(function(h2c){
-      return h2c(target, {backgroundColor: '#000000', scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true, allowTaint: true, logging: false, windowWidth: document.documentElement.clientWidth, ignoreElements: ignore});
+      return h2c(target, {backgroundColor: bg, scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true, allowTaint: true, logging: false, windowWidth: document.documentElement.clientWidth, ignoreElements: ignore});
     }).then(function(canvas){
       var mint = (window.state && window.state.mineral) || 'all';
       var stg  = (window.state && window.state.stage)   || 'mining';
