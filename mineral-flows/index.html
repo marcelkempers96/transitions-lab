@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <style>
 :root{
@@ -315,6 +316,36 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 :root[data-map-theme="light"] .map-theme .mt-group{border-color:rgba(10,10,10,.34)}
 :root[data-map-theme="light"] .map-theme .mt-group button{color:#0A0A0A;border-right-color:rgba(10,10,10,.14)}
 :root[data-map-theme="light"] .map-theme .mt-group button[aria-pressed="true"]{background:#0A0A0A;color:#F5EDDD}
+
+/* View mode: Map vs Sankey */
+#sankey{display:block;width:100%;height:100%;min-height:520px;background:var(--black)}
+#sankey:not([hidden]){background:var(--black)}
+.sankey-empty{padding:24px;font-size:14px;color:var(--white);opacity:.75;text-align:center}
+.sk-node rect{cursor:pointer}
+.sk-node text{font-family:var(--f-body);font-size:12px;fill:var(--white);pointer-events:none}
+.sk-node .sk-pct{fill:var(--orange);font-weight:700}
+.sk-node.stage-title text{font-family:var(--f-head);font-size:16px;fill:var(--white);opacity:.9}
+.sk-link{fill:none;stroke-opacity:.35;transition:stroke-opacity .12s ease}
+.sk-link:hover{stroke-opacity:.75}
+.sk-link.cut{stroke-opacity:.08}
+@media print{
+  html,body{background:#fff !important;color:#000 !important}
+  .site-navstrip,.mf-breadcrumb,.tool-share,.mapctl,.zoomctl,.tip,.tabs,.panel,.minerals,footer,.site-tail{display:none !important}
+  .stagearea{display:block !important;border:0 !important}
+  .mapwrap{border:0 !important}
+  #map,#sankey{background:#fff !important}
+  .country{fill:#EFEDE6 !important;stroke:#B8B0A0 !important}
+  .lbl{fill:#000 !important;stroke:#fff !important}
+  .ribbon{border-color:#000 !important}
+  .stage-btn{background:#f5f5f5 !important;color:#000 !important;border-right-color:#ddd !important}
+  .stage-btn .s-name,.stage-btn .s-top{color:#000 !important}
+  .stage-btn .s-top b{color:#c65a00 !important}
+  .strata{background:#f0e6cf !important}
+  .stage-btn[aria-pressed="true"]{background:#fff2d9 !important}
+  .stage-btn[aria-pressed="true"]::after{background:#c65a00 !important}
+  .sk-node text{fill:#000 !important;stroke:#fff !important;paint-order:stroke;stroke-width:2px}
+  .sk-node .sk-pct{fill:#c65a00 !important}
+}
 </style>
 </head>
 <body>
@@ -351,7 +382,12 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
             <line x1="0" y1="0" x2="0" y2="6" stroke="var(--orange)" stroke-width="1" opacity=".6"/>
           </pattern>
         </defs>
-      </svg><div class="mapctl" role="group" aria-label="Map layers">
+      </svg><svg id="sankey" role="img" aria-label="Chain diagram of mineral flows across stages" hidden></svg><div class="mapctl" role="group" aria-label="Map layers">
+        <span class="seg" role="group" aria-label="View mode">
+          <button class="tog" id="v-map" aria-pressed="true">Map</button>
+          <button class="tog" id="v-sankey" aria-pressed="false">Chain diagram</button>
+        </span>
+        <button class="tog" id="btn-print" aria-label="Print">Print</button>
         <button class="tog" id="t-flows" aria-pressed="true">Trade flows</button>
         <button class="tog" id="t-africa" aria-pressed="false">Africa focus</button>
         <button class="tog" id="t-pol" aria-pressed="true">Policy measures</button>
@@ -1075,6 +1111,228 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     try { localStorage.setItem(KEY, mode); } catch(_){}
     apply(mode);
   });
+})();
+</script>
+
+<script>
+(function(){
+  var mapSvg = document.getElementById('map');
+  var skSvg  = document.getElementById('sankey');
+  var vMap   = document.getElementById('v-map');
+  var vSk    = document.getElementById('v-sankey');
+  var pBtn   = document.getElementById('btn-print');
+  if (!mapSvg || !skSvg || !vMap || !vSk) return;
+
+  function stateNow(){ return window.state || {mineral:'all', stage:'mining'}; }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function nameOf(iso){
+    var d = window.MF_DATA; if (!d) return iso;
+    var c = d.countries.countries.find(function(x){ return x.iso3 === iso; });
+    return c ? c.name : iso;
+  }
+  function mineralById(id){ return (window.MF_DATA.minerals.minerals || []).find(function(m){ return m.id === id; }); }
+
+  function drawSankey(){
+    var d = window.MF_DATA;
+    if (!d){ skSvg.innerHTML = '<foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" class="sankey-empty">Loading data\u2026</div></foreignObject>'; return; }
+    var st = stateNow();
+    if (st.mineral === 'all'){
+      skSvg.innerHTML = '<foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" class="sankey-empty">Chain diagram works on a single mineral. Pick a chip above (lithium, cobalt, ...) to see its stages side by side.</div></foreignObject>';
+      return;
+    }
+    var m = mineralById(st.mineral);
+    if (!m){ skSvg.innerHTML = ''; return; }
+
+    var stageIds = Object.keys(m.stages);
+    // Build nodes: (country, stage) pairs. Include OTHER as a bucket.
+    var nodes = [];
+    var nodeIndex = {}; // key: stage|iso -> index
+    stageIds.forEach(function(sid){
+      var sh = m.stages[sid].shares || {};
+      Object.keys(sh).forEach(function(iso){
+        var v = sh[iso];
+        if (!(v > 0)) return;
+        var key = sid + '|' + iso;
+        nodeIndex[key] = nodes.length;
+        nodes.push({
+          name: iso === 'OTHER' ? 'Rest of world' : nameOf(iso),
+          iso: iso,
+          stage: sid,
+          share: v,
+          stageLabel: m.stages[sid].label || sid,
+        });
+      });
+    });
+
+    // Links: for each adjacent stage pair, connect each upstream node to
+    // each downstream node by an even-split of the smaller share, so the
+    // Sankey mass is proportional to the smaller side of the chain. If a
+    // corridor exists for that pair, weight it higher.
+    var links = [];
+    function corridorWeight(srcIso, dstIso){
+      var w = 0;
+      (d.flows.flows || []).forEach(function(f){
+        if (f.mineral !== m.id) return;
+        if (f.source === srcIso && f.target === dstIso) w += (f.weight || 1);
+      });
+      return w;
+    }
+    for (var i = 0; i < stageIds.length - 1; i++){
+      var sA = stageIds[i], sB = stageIds[i+1];
+      var A = Object.keys(m.stages[sA].shares || {}).filter(function(k){ return m.stages[sA].shares[k] > 0; });
+      var B = Object.keys(m.stages[sB].shares || {}).filter(function(k){ return m.stages[sB].shares[k] > 0; });
+      A.forEach(function(a){
+        var sa = m.stages[sA].shares[a];
+        // First: any direct corridor from a to any of B carries most of a's outflow.
+        var corrTotal = 0;
+        var pairs = B.map(function(b){ var w = corridorWeight(a, b); corrTotal += w; return {b: b, w: w}; });
+        var covered = 0;
+        pairs.forEach(function(p){
+          if (p.w <= 0) return;
+          var v = sa * (p.w / corrTotal) * 0.7;  // 70% follows the corridor
+          covered += v;
+          var lk = {source: nodeIndex[sA + '|' + a], target: nodeIndex[sB + '|' + p.b], value: v};
+          if (lk.source != null && lk.target != null) links.push(lk);
+        });
+        // Remaining 30% (or 100% if no corridors) spreads by downstream share.
+        var rem = sa - covered;
+        var totB = B.reduce(function(n, b){ return n + m.stages[sB].shares[b]; }, 0);
+        B.forEach(function(b){
+          var v = rem * (m.stages[sB].shares[b] / totB);
+          if (v <= 0) return;
+          var lk = {source: nodeIndex[sA + '|' + a], target: nodeIndex[sB + '|' + b], value: v};
+          if (lk.source != null && lk.target != null) links.push(lk);
+        });
+      });
+    }
+
+    var W = skSvg.clientWidth || 800;
+    var H = skSvg.clientHeight || 560;
+    if (H < 420) H = 520;
+    var margin = {top: 30, right: 120, bottom: 20, left: 20};
+
+    var sankey = d3.sankey()
+      .nodeWidth(14)
+      .nodePadding(6)
+      .extent([[margin.left, margin.top], [W - margin.right, H - margin.bottom]])
+      .nodeAlign(d3.sankeyLeft)
+      .nodeSort(function(a, b){ return b.share - a.share; });
+
+    var graph = { nodes: nodes.map(function(n){ return Object.assign({}, n); }), links: links.map(function(l){ return Object.assign({}, l); }) };
+    try { sankey(graph); } catch(e){ console.warn('sankey layout failed:', e); return; }
+
+    // Colour scheme: match the mineral colour (from MCOL) with lighter/darker.
+    var mcol = (typeof MCOL !== 'undefined' && MCOL[m.id]) ? MCOL[m.id] : '#FF9A1F';
+
+    // Build SVG.
+    var ns = 'http://www.w3.org/2000/svg';
+    skSvg.innerHTML = '';
+    skSvg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    skSvg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    // Stage-column titles across the top
+    var byStage = {};
+    graph.nodes.forEach(function(n){ (byStage[n.stage] = byStage[n.stage] || []).push(n); });
+    stageIds.forEach(function(sid){
+      var col = byStage[sid]; if (!col || !col.length) return;
+      var x = col[0].x0;
+      var t = document.createElementNS(ns, 'text');
+      t.setAttribute('class', 'sk-title');
+      t.setAttribute('x', String(x));
+      t.setAttribute('y', String(18));
+      t.setAttribute('font-family', 'var(--f-head)');
+      t.setAttribute('font-size', '13');
+      t.setAttribute('fill', 'var(--white)');
+      t.textContent = m.stages[sid].label || sid;
+      skSvg.appendChild(t);
+    });
+
+    // Links
+    var gL = document.createElementNS(ns, 'g'); gL.setAttribute('class', 'sk-links'); skSvg.appendChild(gL);
+    graph.links.forEach(function(lk){
+      var p = document.createElementNS(ns, 'path');
+      p.setAttribute('class', 'sk-link');
+      p.setAttribute('d', d3.sankeyLinkHorizontal()(lk));
+      p.setAttribute('stroke', mcol);
+      p.setAttribute('stroke-width', String(Math.max(1, lk.width)));
+      var t = document.createElementNS(ns, 'title');
+      t.textContent = (lk.source.name) + ' \u2192 ' + (lk.target.name) + '  \u00b7 ' + lk.value.toFixed(1) + '%';
+      p.appendChild(t);
+      gL.appendChild(p);
+    });
+
+    // Nodes
+    var gN = document.createElementNS(ns, 'g'); gN.setAttribute('class', 'sk-nodes'); skSvg.appendChild(gN);
+    graph.nodes.forEach(function(n){
+      var g = document.createElementNS(ns, 'g'); g.setAttribute('class', 'sk-node');
+      var r = document.createElementNS(ns, 'rect');
+      r.setAttribute('x', String(n.x0));
+      r.setAttribute('y', String(n.y0));
+      r.setAttribute('width', String(n.x1 - n.x0));
+      r.setAttribute('height', String(Math.max(1, n.y1 - n.y0)));
+      r.setAttribute('fill', mcol);
+      r.setAttribute('fill-opacity', '0.85');
+      var t = document.createElementNS(ns, 'title');
+      t.textContent = n.name + '  \u00b7 ' + n.stageLabel + '  \u00b7 ' + n.share.toFixed(1) + '%';
+      r.appendChild(t);
+      g.appendChild(r);
+      // Label at the outside edge of the node (right of last column, left of others).
+      var isLast = (n.stage === stageIds[stageIds.length - 1]);
+      var txt = document.createElementNS(ns, 'text');
+      txt.setAttribute('x', String(isLast ? (n.x1 + 6) : (n.x0 - 6)));
+      txt.setAttribute('y', String((n.y0 + n.y1) / 2 + 4));
+      txt.setAttribute('text-anchor', isLast ? 'start' : 'end');
+      txt.setAttribute('font-family', 'var(--f-body)');
+      txt.setAttribute('font-size', '12');
+      txt.setAttribute('fill', 'var(--white)');
+      // paint-order stroke for legibility
+      txt.setAttribute('paint-order', 'stroke');
+      txt.setAttribute('stroke', 'var(--black)');
+      txt.setAttribute('stroke-width', '3');
+      txt.setAttribute('stroke-linejoin', 'round');
+      var nm = document.createElementNS(ns, 'tspan');
+      nm.textContent = n.name + ' ';
+      txt.appendChild(nm);
+      var pct = document.createElementNS(ns, 'tspan');
+      pct.setAttribute('class', 'sk-pct');
+      pct.setAttribute('fill', 'var(--orange)');
+      pct.setAttribute('font-weight', '700');
+      pct.textContent = n.share.toFixed(1) + '%';
+      txt.appendChild(pct);
+      g.appendChild(txt);
+      gN.appendChild(g);
+    });
+  }
+
+  function setView(mode){
+    var isSankey = (mode === 'sankey');
+    vMap.setAttribute('aria-pressed', String(!isSankey));
+    vSk.setAttribute('aria-pressed', String(isSankey));
+    if (isSankey){
+      mapSvg.setAttribute('hidden', '');
+      skSvg.removeAttribute('hidden');
+      drawSankey();
+    } else {
+      skSvg.setAttribute('hidden', '');
+      mapSvg.removeAttribute('hidden');
+      // The map has its own update path via window state; a mineral/stage
+      // change while in Sankey mode already updated the underlying state.
+    }
+  }
+  vMap.addEventListener('click', function(){ setView('map'); });
+  vSk.addEventListener('click', function(){ setView('sankey'); });
+
+  // Redraw the Sankey whenever the reader touches a mineral chip or stage.
+  document.addEventListener('click', function(e){
+    if (skSvg.hasAttribute('hidden')) return;
+    if (e.target.closest('#minerals') || e.target.closest('#ribbon')){
+      setTimeout(drawSankey, 30);
+    }
+  });
+  window.addEventListener('resize', function(){ if (!skSvg.hasAttribute('hidden')) drawSankey(); });
+
+  // Print handler
+  if (pBtn) pBtn.addEventListener('click', function(){ window.print(); });
 })();
 </script>
 </body>
