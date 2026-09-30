@@ -82,6 +82,15 @@ button,select{font:inherit;color:inherit}
 .core{fill:none;stroke-width:.9px;vector-effect:non-scaling-stroke;stroke-linecap:round;opacity:.9;pointer-events:none}
 .band.cut{opacity:.06}
 .core.cut{opacity:.2;stroke-dasharray:2 4}
+/* Highlight-on-hover: when the reader mouses or taps a flow, other
+   flows fade way back so the selected corridor stands out. Cleared
+   by mouseleave / tap-away. */
+.g-flows.has-hover .band{transition:opacity .12s ease, fill-opacity .12s ease}
+.g-flows.has-hover .core{transition:opacity .12s ease, stroke-opacity .12s ease}
+.g-flows.has-hover .band:not(.hovered){fill-opacity:.05 !important}
+.g-flows.has-hover .core:not(.hovered){stroke-opacity:.08 !important}
+.g-flows.has-hover .band.hovered{fill-opacity:.85 !important}
+.g-flows.has-hover .core.hovered{stroke-opacity:1 !important}
 .band:hover{opacity:.6}
 .g-flows.intro{animation:fadein .9s ease-out}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
@@ -766,9 +775,30 @@ function drawMap(){
   buildFlowGeo(state.flows ? flowsFor() : []);
   drawFlowGeometry();
   if (introFlows){ gFlows.classed("intro", false); void gFlows.node().getBoundingClientRect(); gFlows.classed("intro", true); introFlows = false; }
+  // Cross-highlight: when the reader mouses or taps a flow band, the
+  // corresponding core path and only those two get .hovered; the whole
+  // .g-flows group gets .has-hover so the CSS can dim everything else.
+  function setFocus(id){
+    const flowsG = gFlows.node();
+    if (!flowsG) return;
+    if (!id){
+      flowsG.classList.remove("has-hover");
+      gBand.selectAll("path.band").classed("hovered", false);
+      gCore.selectAll("path.core").classed("hovered", false);
+      return;
+    }
+    flowsG.classList.add("has-hover");
+    gBand.selectAll("path.band").classed("hovered", d => d.f.id === id);
+    gCore.selectAll("path.core").classed("hovered", d => d.f.id === id);
+  }
   gBand.selectAll("path.band")
-    .on("mousemove", (e,d) => { const f = d.f; showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}`, e); })
-    .on("mouseleave", hideTip);
+    .on("mousemove", (e,d) => { const f = d.f; setFocus(f.id); showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}`, e); })
+    .on("mouseleave", () => { setFocus(null); hideTip(); })
+    .on("touchstart", (e,d) => { const f = d.f; setFocus(f.id); showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}`, e); }, {passive: true});
+  // Tap outside a band clears the focus (mobile).
+  d3.select("#map").on("touchstart.focusClear", (e) => {
+    if (!e.target || e.target.tagName !== "path" || !e.target.classList.contains("band")) setFocus(null);
+  }, {passive: true, capture: true});
 
   const pol = state.pol ? policiesFor().filter(p => !p.region_label) : [];
   const polData = pol.map(p => { const a = pt(p.country); return a ? Object.assign({}, p, {x:a[0] + 9, y:a[1] - 9}) : null; }).filter(Boolean);
