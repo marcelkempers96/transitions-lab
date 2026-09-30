@@ -2210,7 +2210,7 @@ def build_home() -> str:
       </a>
       <div class="tool-feature-body">
         <span class="tool-feature-kicker">Open the tool</span>
-        <h3><a href="/mineral-flows">15+ chains. 95+ corridors.</a></h3>
+        <h3><a href="/mineral-flows">15 chains. 95 corridors. 250 sourced country shares.</a></h3>
         <p>Toggle a chain-diagram view, stress-test any country, and export any state.</p>
         <a class="tool-feature-cta" href="/mineral-flows">Explore the map &rarr;</a>
         <div class="tool-feature-subs">

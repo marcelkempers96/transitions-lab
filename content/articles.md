@@ -11,7 +11,7 @@
   <div class="tool-feature-body">
     <span class="tool-feature-kicker">Interactive tool · New</span>
     <h3><a href="/mineral-flows">Mineral Flows Map</a></h3>
-    <p>15+ critical-material chains, 95+ bilateral corridors. Per-stage concentration, country stress-tests and a chain-diagram view.</p>
+    <p>15 critical-material chains, 95 bilateral corridors, 250 sourced country shares. Per-stage concentration, country stress-tests and a chain-diagram view.</p>
     <a class="tool-feature-cta" href="/mineral-flows">Open the map &rarr;</a>
     <div class="tool-feature-subs">
       <a href="/mineral-flows-guide">Sixty-second guide &rarr;</a>
