@@ -1880,10 +1880,19 @@ body[data-page^="insight-"] .prose h4{
 }
 .prose .finding-stats > div{
   display:flex;flex-direction:column;gap:8px;align-items:center;
+}
+/* Only hide the stat columns off-viewport when JS is running to
+   bring them back — otherwise a stalled observer (iOS Low Power
+   Mode has done this) leaves a blank grid stripe. Guard mirrors
+   the one used on .reveal. */
+html.js-anim .prose .finding-stats > div{
   opacity:0;transform:translateY(18px);
   transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
 }
-.prose .finding-stats > div.is-in{opacity:1;transform:none;}
+.prose .finding-stats > div.is-in{opacity:1 !important;transform:none !important;}
+@media (prefers-reduced-motion: reduce){
+  html.js-anim .prose .finding-stats > div{transform:none;transition:opacity .3s ease;}
+}
 .prose .finding-stats .n{
   font-family:'Hanken Grotesk',sans-serif;
   font-size:56px;font-weight:800;letter-spacing:-.02em;

@@ -545,8 +545,23 @@ document.addEventListener('DOMContentLoaded', function () {
       requestAnimationFrame(step);
       io.unobserve(el);
     });
-  }, { threshold: 0.5, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.35, rootMargin: '0px 0px -4% 0px' });
   els.forEach(function (el) { if (el.dataset.target) io.observe(el); });
+  // Safety net: if the observer never fires for a numeral that is
+  // actually in view (Low Power Mode stalls, backgrounded tab), snap
+  // to the target value after 900ms. Better a printed number than a
+  // permanent "0".
+  setTimeout(function(){
+    els.forEach(function (el) {
+      if (el.classList.contains('is-counted')) return;
+      if (!el.dataset.target) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0){
+        el.classList.add('is-counted');
+        el.textContent = el.dataset.target;
+      }
+    });
+  }, 900);
 })();
 
 /* Reveal-in-view for the finding-stats numerals: fade + upward
@@ -555,8 +570,7 @@ document.addEventListener('DOMContentLoaded', function () {
 (function () {
   var items = document.querySelectorAll('.prose .finding-stats > div');
   if (!items.length) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || !('IntersectionObserver' in window)) {
+  if (!('IntersectionObserver' in window)) {
     items.forEach(function (el) { el.classList.add('is-in'); });
     return;
   }
@@ -569,8 +583,18 @@ document.addEventListener('DOMContentLoaded', function () {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.35, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0.22, rootMargin: '0px 0px -4% 0px' });
   items.forEach(function (el) { io.observe(el); });
+  // Safety net: any stat column that's actually in the viewport 900ms
+  // after we wired the observer, but hasn't received .is-in (Low Power
+  // Mode has been observed to stall the callback), gets forced in.
+  setTimeout(function(){
+    items.forEach(function (el) {
+      if (el.classList.contains('is-in')) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-in');
+    });
+  }, 900);
 })();
 
 /* ── Footer language selector, driven by Google Translate ─────
