@@ -536,6 +536,15 @@ def render_nav(current_slug: str) -> str:
 # `<p class="article-meta">` block (index, expertise pages, resources)
 # never see a byline - the injector is a no-op there.
 DEFAULT_AUTHOR = "Marcel Kempers"
+# Slugs where the article-meta paragraph exists but no byline should be
+# rendered. Used for house-authored data pieces (research papers, data
+# attributions, tool guides) where the Lab is the collective author.
+NO_BYLINE_SLUGS: set[str] = {
+    "insight-where-transition-minerals-go",
+    "mineral-flows-research",
+    "mineral-flows-guide",
+    "mineral-flows-attribution",
+}
 AUTHORS: dict[str, str] = {
     # Example override:
     # "insight-some-piece": "Ada Nwosu",
@@ -1828,13 +1837,14 @@ def build_content_page(slug: str, md: str) -> str:
     # time, then the author. No-op on pages that never render that meta
     # paragraph (expertise pages, resources, indexes).
     author = author_for(slug)
-    body_html = re.sub(
-        r'(<p class="article-meta">.*?</p>)',
-        rf'\1\n<p class="article-byline">By <span class="article-author">{author}</span></p>',
-        body_html,
-        count=1,
-        flags=re.S,
-    )
+    if slug not in NO_BYLINE_SLUGS:
+        body_html = re.sub(
+            r'(<p class="article-meta">.*?</p>)',
+            rf'\1\n<p class="article-byline">By <span class="article-author">{author}</span></p>',
+            body_html,
+            count=1,
+            flags=re.S,
+        )
 
     # Byline on the /articles listing: inject a small line inside each
     # article-item body, right after the date meta div, using the same

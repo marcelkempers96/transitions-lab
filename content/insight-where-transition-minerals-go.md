@@ -14,7 +14,7 @@ An electric vehicle is a bill of materials pretending to be a machine. Eight min
 
 A ninth chain matters increasingly and is now on the map: **phosphate**. Lithium iron phosphate (LFP) cells have overtaken NMC in Chinese EV sales and are expanding globally. The phosphate chain is even more China-concentrated than the battery-metals chains — roughly two-thirds of purified LFP-grade phosphoric acid and about 95% of LFP cathode manufacturing sit in China. Morocco holds the world's largest phosphate rock reserves and is expanding downstream through state-owned OCP; that is the single most watchable state-versus-market move in the transition-mineral chain today.
 
-This piece states seven things the recent literature makes defensible about that chain. Each is a claim, not a topic. Precise figures live in the body; headlines carry the shape. Every numeric reference [<a href="/mineral-flows-research#fact-1">1</a>] links back to the source in the [research paper](/mineral-flows-research).
+The paper's conclusion, distilled: the transition-mineral chain is defined by one asymmetry — mining is diffuse, refining is not, and value collects where refining sits. Every headline concentration figure across lithium, cobalt, nickel, rare earths and phosphate moves the same way at the refining stage; no country holds enough of any single mineral to bargain alone; and ownership at the mine is not the same as control at the refinery. The seven findings that follow are what the recent literature makes defensible about that shape. Every numeric reference [<a href="/mineral-flows-research#fact-1">1</a>] links back to the source in the [research paper](/mineral-flows-research).
 
 ---
 

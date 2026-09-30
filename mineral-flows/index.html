@@ -516,8 +516,19 @@ const tip = document.getElementById("tip");
 
 const zoom = d3.zoom().scaleExtent([1, 9]).on("zoom", (e) => {
   k = e.transform.k; gRoot.attr("transform", e.transform);
-  // Font-size is now set per-datum inside drawMap based on share magnitude; only stroke needs the zoom tick.
-  gLbl.selectAll("text").attr("stroke-width", 3 / Math.sqrt(k));
+  // Google-Maps-style: labels keep near-constant visual pixel size as
+  // you zoom; a gentle grow to sqrt(min(k,4))/1.4, then hard-capped.
+  var isMob = window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
+  var MAX_LP = isMob ? 14 : 16, MIN_LP = isMob ? 9 : 10;
+  gLbl.selectAll("text").each(function(){
+    var el = d3.select(this);
+    var base = parseFloat(el.attr("data-base")) || (isMob ? 10.5 : 11.5);
+    var visualPx = Math.min(MAX_LP, Math.max(MIN_LP, base * Math.sqrt(Math.min(k, 4)) / 1.4));
+    el.attr("font-size", visualPx / k)
+      .attr("stroke-width", 2.4 / k)
+      .attr("x", function(d){ return d.x + 8 / k; })
+      .attr("y", function(d){ return d.y + (13 + d.dy) / k; });
+  });
   gPol.selectAll("rect").attr("width", 9/k).attr("height", 9/k).attr("x", d => d.x - 4.5/k).attr("y", d => d.y - 4.5/k);
   gCorr.selectAll("circle").attr("r", 4 / k);
   gCorr.selectAll("text").attr("font-size", 11 / k).attr("stroke-width", 3 / k);
@@ -708,22 +719,35 @@ function drawMap(){
   });
   lead = kept;
   const sh0 = isAll() ? null : shares(state.stage);
+  // Google-Maps-style label sizing: visual pixel size stays roughly
+  // constant across zoom. Because gLbl is inside a scale(k) transform,
+  // divide the SVG font-size and offsets by k so what the eye sees is
+  // (target px). A gentle 1.15x grow-with-zoom is allowed by mixing
+  // k with sqrt(k), and we hard-clamp the visual maximum so no label
+  // ever exceeds a readable size (like Mongolia was doing).
+  const MAX_LABEL_PX = isMobileViewport ? 14 : 16;
+  const MIN_LABEL_PX = isMobileViewport ? 9 : 10;
   gLbl.selectAll("text").data(lead, d => d.iso).join("text").attr("class","lbl")
-    .attr("x", d => d.x + 8 / Math.sqrt(k))
-    .attr("y", d => d.y + (13 + d.dy) / Math.sqrt(k))
-    .attr("font-size", d => {
-      var base = isMobileViewport ? 9.5 : 10.5;
+    .attr("data-base", d => {
+      var base = isMobileViewport ? 10.5 : 11.5;
       if (!isAll() && sh0){
         var v = sh0[d.iso] || 0;
         if (isMobileViewport){
-          base = v >= 40 ? 11.5 : v >= 20 ? 10.5 : v >= 5 ? 9.5 : 9;
+          base = v >= 40 ? 12.5 : v >= 20 ? 11.5 : v >= 5 ? 10.5 : 10;
         } else {
-          base = v >= 40 ? 13.5 : v >= 20 ? 12 : v >= 5 ? 11 : 10;
+          base = v >= 40 ? 14 : v >= 20 ? 12.5 : v >= 5 ? 11.5 : 10.5;
         }
       }
-      return base / Math.sqrt(k);
+      return base;
     })
-    .attr("stroke-width", 3 / Math.sqrt(k))
+    .attr("x", d => d.x + 8 / k)
+    .attr("y", d => d.y + (13 + d.dy) / k)
+    .attr("font-size", function(d){
+      var base = parseFloat(d3.select(this).attr("data-base")) || (isMobileViewport ? 10.5 : 11.5);
+      var visualPx = Math.min(MAX_LABEL_PX, Math.max(MIN_LABEL_PX, base * Math.sqrt(Math.min(k, 4)) / 1.4));
+      return visualPx / k;
+    })
+    .attr("stroke-width", 2.4 / k)
     .html(d => d.txt);
 
   svg.attr("aria-label", isAll() ? `All minerals: ${flowGeo.length} trade corridors` :
@@ -772,9 +796,7 @@ function drawLegend(){
 
 /* Panes */
 function paneOverviewAll(){
-  let h = `<h2>All eight minerals</h2><p class="headline">Every corridor in the dataset at once. The bright convergence points are where processing concentrates, and most lines end in the same place.</p>`;
-  h += `<p class="note">Click a mineral row to see the full country breakdown at each stage. Every stage adds to 100%.</p>`;
-  h += `<table class="min-table"><thead><tr><th></th><th>Mineral</th><th>Largest miner</th><th>Largest refiner</th><th class="num">Africa mines</th><th class="num">Africa refines</th></tr></thead><tbody>`;
+  let h = `<table class="min-table"><thead><tr><th></th><th>Mineral</th><th>Largest miner</th><th>Largest refiner</th><th class="num">Africa mines</th><th class="num">Africa refines</th></tr></thead><tbody>`;
   h += MIN.map(m => {
     const a = rankedOf(m.id,"mining")[0], b = rankedOf(m.id,"refining")[0];
     const stagesM = stagesOf(m.id);
