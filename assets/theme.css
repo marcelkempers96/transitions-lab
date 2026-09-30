@@ -3957,3 +3957,20 @@ footer.site .legal > span{white-space:nowrap;}
 .prose .tool-cta-btn:active{
   transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink);
 }
+
+/* Small, quiet photo-credit line for stock-photo figures (used
+   on the mineral-flows article and research pages). The photo
+   itself sits as a normal .prose figure with class="photo";
+   the credit is a small right-aligned paragraph under it. */
+.prose figure.photo{margin:1.8em 0 1.4em;}
+.prose figure.photo .photo-credit{
+  margin:.5em 0 0;text-align:right;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;letter-spacing:.02em;
+  color:var(--ink);opacity:.6;font-weight:500;
+}
+.prose figure.photo .photo-credit a{
+  color:inherit;text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:2px;
+}
+.prose figure.photo .photo-credit a:hover{opacity:1;color:var(--ink);}

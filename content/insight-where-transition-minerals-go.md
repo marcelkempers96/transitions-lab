@@ -17,6 +17,11 @@ This piece states seven things the recent literature makes defensible about that
 
 ---
 
+<figure class="photo">
+  <img src="/assets/img/mineral-flows-ev-charging.jpg" alt="Close-up photograph of the charging port of a white electric passenger car, with a yellow charging cable connected and the port cover open, showing the blue charging inlet." class="diagram">
+  <p class="photo-credit">Photo by <a href="https://www.pexels.com/@rathaphon-nanthapreecha-1058775/" target="_blank" rel="noopener">Rathaphon Nanthapreecha</a> on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+</figure>
+
 ## 1. Africa mines the ore and someone else earns the metal.
 
 Africa mines roughly [17% of the world's copper](/mineral-flows-research#fact-11) and refines about 9%. Ndubuisi and co-authors find deposits of at least one transition mineral in [forty-eight African countries](/mineral-flows-research#fact-1) and report that Asia, and China in particular, take over [40% of Africa's ore exports](/mineral-flows-research#fact-2). Congolese cobalt [nearly triples in value](/mineral-flows-research#fact-3) between the mine gate and local refining, meaning the difference between exporting ore and exporting metal is not a rounding error, it is the price of the smelter. The Ndubuisi conclusion is bleaker than any single number: individual countries supply too little to bargain alone, so the value at stake needs pooled supply, shared processing and common rules, which is a political programme, not a policy line.
@@ -36,6 +41,11 @@ Kowalski and Legendre (2023) used the OECD Inventory of Export Restrictions on I
 ## 5. "Productive" versus "non-productive" processing tells us nothing useful.
 
 The IEA's *Global Critical Minerals Outlook 2026* reports that the average share of the top refining country reached a record in 2025, that the dominant supplier accounted for nearly all supply growth in manganese, nickel and graphite, and that rare earths were the one chain where refining concentration fell, owing to new capacity in the United States and Malaysia. Read against the four-stage MFA in *Resources, Conservation and Recycling*, which shows [over half of transition-mineral refining occurring in China](/mineral-flows-research#fact-6), the takeaway for a lending or grant-making desk is that "processing" as a category is the wrong resolution. Bauxite (<strong>5</strong>) refining, manganese (<strong>7</strong>) refining and battery-metal (<strong>4</strong>) refining behave nothing like each other; putting them on the same slide hides the only variables that decide who captures value.
+
+<figure class="photo">
+  <img src="/assets/img/mineral-flows-mine-aerial.jpg" alt="Aerial photograph of an open-pit mining operation: dark grey aggregate stockpiles arranged in a circular pattern around a yellow wheel loader, with two red steel conveyor gantries running from the pit edges towards the centre." class="diagram">
+  <p class="photo-credit">Photo by <a href="https://www.pexels.com/@tomfisk/" target="_blank" rel="noopener">Tom Fisk</a> on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+</figure>
 
 ## 6. The mining stage is diffuse. The failures cluster elsewhere.
 

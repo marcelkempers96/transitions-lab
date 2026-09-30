@@ -39,6 +39,11 @@ The Lab's [Mineral Flows Map](/mineral-flows) adopts their four steps as its str
 
 The passenger EV in the diagram carries at least eight mineral groups, each with its own supply chain, its own concentration pattern, and its own policy layer. The rest of this paper works through the six methodological strands of the literature that measure how those flows behave.
 
+<figure class="photo">
+  <img src="/assets/img/mineral-flows-ev-charging.jpg" alt="Close-up photograph of the charging port of a white electric passenger car, with a yellow charging cable connected and the port cover open, showing the blue charging inlet." class="diagram">
+  <p class="photo-credit">Photo by <a href="https://www.pexels.com/@rathaphon-nanthapreecha-1058775/" target="_blank" rel="noopener">Rathaphon Nanthapreecha</a> on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+</figure>
+
 ---
 
 ## Six methodological strands
@@ -86,6 +91,11 @@ The policy layer of the map therefore needs to attach each measure to a product 
 Sun et al. (2024) built a company-level database of lithium, cobalt, nickel and platinum mining across 240 economies and found that in 2019, foreign direct investment controlled <a href="#fact-10" id="ref-10" class="fact-ref">47% of lithium, 71% of cobalt, 41% of nickel and 34% of platinum output</a>.
 
 Supply-risk indices change materially once production is allocated to the investor's home country rather than the mine's location. This is the strongest case for a second version of the map with an ownership toggle: a map coloured by mine location overstates the control that producing countries actually exercise, which is precisely the gap the Ndubuisi et al. study and the Nordic Africa Institute's 2026 Copperbelt policy note identify.
+
+<figure class="photo">
+  <img src="/assets/img/mineral-flows-mine-aerial.jpg" alt="Aerial photograph of an open-pit mining operation: dark grey aggregate stockpiles arranged in a circular pattern around a yellow wheel loader, with two red steel conveyor gantries running from the pit edges towards the centre." class="diagram">
+  <p class="photo-credit">Photo by <a href="https://www.pexels.com/@tomfisk/" target="_blank" rel="noopener">Tom Fisk</a> on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+</figure>
 
 ### 6. Resilience, social and environmental risk, and regional value chains
 
