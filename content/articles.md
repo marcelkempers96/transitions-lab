@@ -4,21 +4,9 @@
 
 *Independent analysis, opinion, and thought pieces from Transitions Lab. Evidence-first reading of the transitions and relationships we study, applied to the big picture.*
 
-<div class="tool-feature-card">
-  <a class="tool-feature-photo" href="/mineral-flows" aria-label="Open the Mineral Flows Map">
-    <img src="/assets/img/mineral-flows-map-card.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view on the dark theme: dense multi-coloured arcs weaving between labelled hubs at Mexico, United States, Canada, Cuba, Peru, Chile, Argentina, Brazil, Ghana, Gabon, DR Congo, Zimbabwe, South Africa, Madagascar, Morocco, Germany, Norway, Finland, Poland, United Kingdom, Turkey, Jordan, Egypt, Kazakhstan, Russia, Mongolia, India, Myanmar, China, South Korea, Japan, Philippines, Malaysia, Indonesia, Australia and New Caledonia, with the strongest convergence around China.">
-  </a>
-  <div class="tool-feature-body">
-    <span class="tool-feature-kicker">Interactive tool · New</span>
-    <h3><a href="/mineral-flows">Mineral Flows Map</a></h3>
-    <p>15 critical-material chains, 95 bilateral corridors, 250 sourced country shares. Per-stage concentration, country stress-tests and a chain-diagram view.</p>
-    <a class="tool-feature-cta" href="/mineral-flows">Open the map &rarr;</a>
-    <div class="tool-feature-subs">
-      <a href="/mineral-flows-guide">Sixty-second guide &rarr;</a>
-      <a href="/mineral-flows-research">Research paper &rarr;</a>
-    </div>
-  </div>
-</div>
+<!-- Interactive tool card hidden while the Mineral Flows Map goes
+     through Gideon's review. Restore this block (and the article
+     entry lower in the list) when he signs off. -->
 
 ---
 
@@ -64,15 +52,8 @@
  <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="industrial-policy" data-geography="global" data-month="2026-09">
- <a class="article-thumb-link" href="/insight-where-transition-minerals-go"><img class="article-thumb" src="/assets/img/insight-where-transition-minerals-go-hero.jpg" alt="Illustrated painting: an open-pit mining operation with conveyor belts pouring aggregate onto pale grey stockpiles at the base of a red steel gantry; in the foreground, half of a white electric passenger car with its charging cable running out of the frame across the crushed rock and into the mine."></a>
- <div class="article-body">
- <a class="article-title" href="/insight-where-transition-minerals-go">Where transition minerals actually go</a>
- <div class="article-meta">30 September 2026</div>
- <div class="article-chips"><span class="article-chip chip-cat chip-cat-industrial-policy">Industrial Policy</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
- <p class="article-desc">Where the minerals in an electric vehicle come from, who processes them, and who captures the value. A headline reading of 36 studies, with an interactive map behind it.</p>
- </div>
- </div><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
+<div class="article-list"><!-- "Where transition minerals actually go" article hidden while
+     the Mineral Flows Map bundle goes through Gideon's review. --><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
  <a class="article-thumb-link" href="/insight-the-saving-is-agreed"><img class="article-thumb" src="/assets/img/insight-the-saving-is-agreed-hero.jpg" alt="Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving."></a>
  <div class="article-body">
  <a class="article-title" href="/insight-the-saving-is-agreed">The Saving Is Agreed: Seven Findings from Nairobi's Electric Transition</a>

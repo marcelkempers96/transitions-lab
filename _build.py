@@ -1566,7 +1566,6 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="/articles">Articles</a>
       <a href="/resources">Resources</a>
       <a href="/sdgs">Research by SDG</a>
-      <a href="/mineral-flows">Mineral Flows Map</a>
       <a href="/brw">BReW framework</a>
       <a href="/readiness-levels">TRL &amp; SRL</a>
     </div>
@@ -1901,7 +1900,24 @@ def build_content_page(slug: str, md: str) -> str:
     body = page_hero + "\n\n" + prose_section
     if _wants_final_cta(slug):
         body += "\n\n" + ARTICLE_CTA_HTML
-    return page_shell(slug=slug, title=title, description=description, body=body)
+    # Pages hidden from public discovery while under private review.
+    # They still render at their URL, but carry <meta name="robots"
+    # content="noindex, follow"> and are skipped from the sitemap
+    # (see build_all()). Restore this set when the review clears.
+    is_hidden = slug in HIDDEN_SLUGS
+    return page_shell(slug=slug, title=title, description=description,
+                      body=body, noindex=is_hidden)
+
+
+# Pages hidden from public discovery — noindex on the page, skipped
+# from sitemap.xml and from the /articles list. Keep in one place so
+# it's easy to lift all four (or five) when the review clears.
+HIDDEN_SLUGS: set = {
+    "mineral-flows-research",
+    "mineral-flows-guide",
+    "mineral-flows-attribution",
+    "insight-where-transition-minerals-go",
+}
 
 
 def build_stub_page(slug: str, title: str) -> str:
@@ -2154,17 +2170,6 @@ def build_home() -> str:
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
     <div class="insight-row">
-      <a class="insight-card has-photo" href="/insight-where-transition-minerals-go">
-        <div class="card-photo">
-          <img src="/assets/img/insight-where-transition-minerals-go-hero.jpg" alt="Illustrated painting: an open-pit mining operation with conveyor belts pouring aggregate onto pale grey stockpiles at the base of a red steel gantry; in the foreground, half of a white electric passenger car with its charging cable running out of the frame across the crushed rock and into the mine.">
-          <span class="kicker">Insight &middot; Industrial Policy &middot; Global</span>
-        </div>
-        <div class="body">
-          <h3>Where the minerals in your car actually come from</h3>
-          <p>Fifteen critical-material chains, mine to refinery to cathode, drawn as one interactive map. Africa mines a fifth of the world's copper and refines a tenth. Read the seven findings from 36 studies.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
       <a class="insight-card has-photo" href="/insight-permit-is-not-the-project">
         <div class="card-photo">
           <img src="/assets/img/insight-permit-is-not-the-project-hero.jpg" alt="Line-art scene: a stopwatch in the foreground stopped at a short reading, sitting on a stamped permit document; behind it and much larger, an unbuilt processing plant drawn in outline with scaffolding, a group of small figures holding placards at its gate, and a courthouse in the far distance.">
@@ -2190,31 +2195,13 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- INTERACTIVE TOOL - Mineral Flows Map feature card -->
-<section class="section-white tool-feature-section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Interactive tool</p>
-      <h2>The Mineral Flows Map.</h2>
-      <p>A single interactive map of the critical-material chains, from mine to refinery to cathode. Real trade flows, sourced and dated.</p>
-    </div>
-    <div class="tool-feature-card">
-      <a class="tool-feature-photo" href="/mineral-flows" aria-label="Open the Mineral Flows Map">
-        <img src="/assets/img/mineral-flows-map-card.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view on the dark theme: dense multi-coloured arcs weaving between labelled hubs at Mexico, United States, Canada, Cuba, Peru, Chile, Argentina, Brazil, Ghana, Gabon, DR Congo, Zimbabwe, South Africa, Madagascar, Morocco, Germany, Norway, Finland, Poland, United Kingdom, Turkey, Jordan, Egypt, Kazakhstan, Russia, Mongolia, India, Myanmar, China, South Korea, Japan, Philippines, Malaysia, Indonesia, Australia and New Caledonia, with the strongest convergence around China.">
-      </a>
-      <div class="tool-feature-body">
-        <span class="tool-feature-kicker">Open the tool</span>
-        <h3><a href="/mineral-flows">15 chains. 95 corridors. 250 sourced country shares.</a></h3>
-        <p>Toggle a chain-diagram view, stress-test any country, and export any state.</p>
-        <a class="tool-feature-cta" href="/mineral-flows">Explore the map &rarr;</a>
-        <div class="tool-feature-subs">
-          <a href="/mineral-flows-guide">Sixty-second guide &rarr;</a>
-          <a href="/mineral-flows-research">Research paper &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- INTERACTIVE TOOL section (Mineral Flows Map) is hidden from the
+     home page while the tool + article + guide + paper + attribution
+     go through Gideon's review. The pages remain reachable by direct
+     URL and carry a noindex robots meta so search engines don't
+     surface them either. Restore this section (and the mineral-flows
+     article card in the Latest insights row, the footer link, and
+     the articles.md top card) when Gideon signs off. -->
 
 <!-- THEORY MAPS - four compact reference-page cards -->
 <section class="section-paper theory-maps-section">
@@ -2452,8 +2439,9 @@ def main() -> None:
             continue
         (ROOT / f"{slug}.html").write_text(_cache_bust_images(_add_reading_card_heroes(page)), encoding="utf-8")
         real_slugs.add(slug)
-        written.append(f"/{slug}")
-        print(f"[page]  {slug}.html")
+        if slug not in HIDDEN_SLUGS:
+            written.append(f"/{slug}")
+        print(f"[page]  {slug}.html" + ("  [hidden]" if slug in HIDDEN_SLUGS else ""))
 
     # 3. Stubs - for pages the site links to but haven't been written yet
     for slug, title in STUB_TITLES.items():
@@ -2472,7 +2460,11 @@ def main() -> None:
     # the build. Register them for the sitemap and (below) the search
     # index. The Mineral Flows Map lives at /mineral-flows/index.html
     # with its data fetched from /assets/data/mineral-flows.json.
-    if (ROOT / "mineral-flows" / "index.html").exists():
+    # The Mineral Flows Map is currently hidden from public discovery
+    # (see HIDDEN_SLUGS above). The static /mineral-flows tool still
+    # ships at its URL for direct-link review, but it isn't listed
+    # in the sitemap. Restore this line when the review clears.
+    if False and (ROOT / "mineral-flows" / "index.html").exists():
         written.append("/mineral-flows")
 
     # 6. Sitemap

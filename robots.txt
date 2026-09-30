@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# Pages currently under private review — not yet indexed. The pages
+# still resolve at their URL for direct-link review, but crawlers
+# should not index them or follow into them from external sources.
+# Restore by deleting these lines when the review clears.
+Disallow: /mineral-flows
+Disallow: /mineral-flows/
+Disallow: /mineral-flows-guide
+Disallow: /mineral-flows-research
+Disallow: /mineral-flows-attribution
+Disallow: /insight-where-transition-minerals-go
+
 Sitemap: https://transitionslab.org/sitemap.xml
