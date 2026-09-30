@@ -4087,6 +4087,124 @@ footer.site .legal > span{white-space:nowrap;}
 }
 .prose .guide-hero-btn-ghost:hover{background:var(--paper);color:var(--ink) !important;}
 
+/* Tool-feature card: used on the home page and the articles index
+   to give the Mineral Flows Map its own prominent slot. Full-bleed
+   photo on the left, cobalt body on the right on desktop; stacked
+   on mobile. Whole card is a single link. */
+.tool-feature-section{padding:56px 0;}
+.tool-feature-card{
+  display:grid;grid-template-columns:1.15fr 1fr;gap:0;
+  background:var(--paper);
+  border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);
+  color:var(--ink);text-decoration:none;
+  transition:transform .16s ease, box-shadow .16s ease;
+  overflow:hidden;margin:24px 0 20px;
+}
+.tool-feature-card:hover{
+  transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink);
+}
+.tool-feature-photo{
+  overflow:hidden;background:#000;
+  border-right:2px solid var(--ink);
+}
+.tool-feature-photo img{
+  display:block;width:100%;height:100%;
+  min-height:300px;max-height:520px;
+  object-fit:cover;object-position:center;
+}
+.tool-feature-body{
+  padding:34px 32px 32px;background:var(--cobalt);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;gap:12px;
+}
+.tool-feature-kicker{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:800;opacity:.92;
+}
+.tool-feature-body h3{
+  margin:0;font-family:'Playfair Display',serif;
+  font-size:32px;line-height:1.1;font-weight:500;color:var(--paper);
+}
+.tool-feature-body p{
+  margin:0;font-size:16px;line-height:1.55;color:var(--paper);opacity:.95;
+}
+.tool-feature-cta{
+  margin-top:10px;font-family:'Hanken Grotesk',sans-serif;font-weight:800;
+  font-size:14.5px;letter-spacing:.02em;color:var(--paper);
+  border-bottom:1.5px solid rgba(245,239,225,.6);align-self:flex-start;
+  padding-bottom:2px;
+}
+.tool-feature-card:hover .tool-feature-cta{border-bottom-color:var(--paper);}
+.prose .tool-feature-card, .prose .tool-feature-card:visited{
+  color:var(--ink) !important;text-decoration:none !important;
+}
+.prose .tool-feature-body h3,
+.prose .tool-feature-body p,
+.prose .tool-feature-kicker,
+.prose .tool-feature-cta{color:var(--paper) !important;}
+.tool-feature-links{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;
+  margin:6px 0 0;font-size:14px;color:var(--ink);opacity:.72;
+}
+.tool-feature-links a{color:var(--cobalt);font-weight:700;
+  text-decoration:underline;text-decoration-color:rgba(31,78,170,.4);
+  text-underline-offset:3px;}
+.tool-feature-links a:hover{text-decoration-color:var(--cobalt);}
+.prose .tool-feature-links a, .prose .tool-feature-links a:visited{
+  color:var(--cobalt) !important;
+}
+@media (max-width:800px){
+  .tool-feature-card{grid-template-columns:1fr;box-shadow:6px 6px 0 var(--ink);}
+  .tool-feature-photo{border-right:0;border-bottom:2px solid var(--ink);}
+  .tool-feature-photo img{min-height:220px;max-height:340px;}
+  .tool-feature-body{padding:26px 22px 24px;}
+  .tool-feature-body h3{font-size:26px;}
+  .tool-feature-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);}
+}
+
+/* Guide steps: big cobalt-outline numerals sit beside each step so
+   the walkthrough reads as an actual sequence rather than a wall of
+   bold sentences. Vertical rail on desktop, stacked on mobile. */
+.prose ol.guide-steps{
+  list-style:none;padding:0;margin:24px 0 32px;
+  display:flex;flex-direction:column;gap:34px;
+  counter-reset:none;
+}
+.prose .guide-step{
+  display:grid;grid-template-columns:96px 1fr;gap:22px;
+  align-items:start;padding:6px 0;
+  border-left:0;
+}
+.prose .guide-step .step-n{
+  display:flex;align-items:flex-start;justify-content:center;
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:96px;line-height:.85;color:var(--cobalt);
+  letter-spacing:-0.02em;
+  border-right:2px solid var(--ink);
+  padding-right:20px;min-height:72px;
+}
+.prose .guide-step .step-body{min-width:0;}
+.prose .guide-step .step-h{
+  margin:6px 0 8px;font-family:'Playfair Display',serif;
+  font-size:26px;line-height:1.15;font-weight:500;color:var(--ink);
+}
+.prose .guide-step p{margin:0 0 10px;font-size:17px;line-height:1.6;}
+.prose .guide-step .step-figure{margin:14px 0 0;}
+.prose .guide-step .step-figure img{
+  display:block;width:100%;height:auto;
+  border:1.5px solid var(--ink);
+}
+.prose .guide-step .step-figure figcaption{
+  font-size:13.5px;line-height:1.4;color:var(--ink);opacity:.72;
+  margin:6px 0 0;font-style:italic;
+}
+@media (max-width:640px){
+  .prose .guide-step{grid-template-columns:64px 1fr;gap:14px;}
+  .prose .guide-step .step-n{font-size:64px;padding-right:12px;min-height:52px;}
+  .prose .guide-step .step-h{font-size:22px;}
+  .prose .guide-step p{font-size:16px;}
+}
+
 /* Wide provenance table on the guide page — horizontally scrolls
    inside a bounded region without breaking the page layout. */
 .prose .table-scroll{

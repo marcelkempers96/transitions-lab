@@ -14,11 +14,37 @@
 
 ## The sixty-second tour
 
-**1. Pick a mineral.** The chip row at the top runs *All minerals* and nine individual chains (lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals, and phosphate, the last covering the LFP battery chain). *All minerals* draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.
+<ol class="guide-steps">
 
-**2. Move through the chain.** The stage ribbon below the chips is both the summary and the selector. Each stage shows its largest producer, a strata bar with the full country breakdown, and toggles the map's choropleth when you click it. Rare earths goes Mining → Separation and refining → NdFeB magnets; lithium goes Mining → Refining → Cathode. Watching the strata bar narrow across stages is the whole story: mining is diffuse, refining is not.
+<li class="guide-step">
+  <span class="step-n" aria-hidden="true">1</span>
+  <div class="step-body">
+    <h3 class="step-h">Pick a mineral.</h3>
+    <p>The chip row at the top runs *All minerals* and fifteen individual chains, lithium, cobalt, nickel, copper, graphite, rare earths, manganese, platinum group metals, phosphate (the LFP battery chain), boron, gallium, germanium, silver, silicon and fluorspar. *All minerals* draws every corridor at once, coloured by mineral. Picking one recolours the map by that mineral's stage shares.</p>
+  </div>
+</li>
 
-**3. Read the panel on the right.** Four tabs. **Overview** is the mineral's headline and a per-stage HHI. **Country** picks one country and shows its role across every stage plus its import and export corridors. **Stress test** removes a country and reports what fraction of each stage goes offline. **Sources** lists every figure with its year, confidence and the studies behind it.
+<li class="guide-step">
+  <span class="step-n" aria-hidden="true">2</span>
+  <div class="step-body">
+    <h3 class="step-h">Move through the chain.</h3>
+    <p>The stage ribbon below the chips is both the summary and the selector. Each stage shows its largest producer, a strata bar with the full country breakdown, and toggles the map's choropleth when you click it. Rare earths goes Mining → Separation and refining → NdFeB magnets; lithium goes Mining → Refining → Cathode. Watching the strata bar narrow across stages is the whole story: mining is diffuse, refining is not.</p>
+    <figure class="step-figure">
+      <img src="/assets/img/mineral-flows-guide-shares.jpg" alt="Zoom on the cobalt mining stage in the map's Country tab: DR Congo 76%, Indonesia 10%, Russia 3%, Philippines 1.3%, Australia 1.2%, Cuba 1.2%, Canada 1.2%, Madagascar 1%, Rest of world 4.9%. Total 99.8%.">
+      <figcaption>Cobalt mining. One country takes three-quarters, eight others take the rest.</figcaption>
+    </figure>
+  </div>
+</li>
+
+<li class="guide-step">
+  <span class="step-n" aria-hidden="true">3</span>
+  <div class="step-body">
+    <h3 class="step-h">Read the panel on the right.</h3>
+    <p>Four tabs. **Overview** is the mineral's headline and a per-stage HHI. **Country** picks one country and shows its role across every stage plus its import and export corridors. **Stress test** removes a country and reports what fraction of each stage goes offline. **Sources** lists every figure with its year, confidence and the studies behind it.</p>
+  </div>
+</li>
+
+</ol>
 
 ---
 

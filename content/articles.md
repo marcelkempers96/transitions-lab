@@ -4,6 +4,26 @@
 
 *Independent analysis, opinion, and thought pieces from Transitions Lab. Evidence-first reading of the transitions and relationships we study, applied to the big picture.*
 
+<a class="tool-feature-card" href="/mineral-flows">
+  <div class="tool-feature-photo">
+    <img src="/assets/img/mineral-flows-map-card.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view: dense coloured arcs converging on China with labelled hubs at Chile, Brazil, Peru, DR Congo, South Africa, Australia, Indonesia, Malaysia, Morocco, USA, Canada, Mexico and Russia.">
+  </div>
+  <div class="tool-feature-body">
+    <span class="tool-feature-kicker">Interactive tool · New</span>
+    <h3>Mineral Flows Map</h3>
+    <p>Fifteen critical-material chains from mine to refinery to cathode. Ninety-five bilateral corridors, per-stage HHI, country stress-tests and a chain-diagram view. Every figure carries a source and a last-updated date.</p>
+    <span class="tool-feature-cta">Open the map &rarr;</span>
+  </div>
+</a>
+
+<p class="tool-feature-links">
+  <a href="/mineral-flows-guide">Sixty-second guide</a>
+  <span aria-hidden="true">·</span>
+  <a href="/mineral-flows-research">Research paper (36 studies)</a>
+  <span aria-hidden="true">·</span>
+  <a href="/mineral-flows-attribution">Data attribution</a>
+</p>
+
 ---
 
 ## Latest, newest first

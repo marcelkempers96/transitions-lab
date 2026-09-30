@@ -2073,6 +2073,35 @@ def build_home() -> str:
   </div>
 </section>
 
+<!-- INTERACTIVE TOOL - Mineral Flows Map feature card -->
+<section class="section-white tool-feature-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Interactive tool</p>
+      <h2>The Mineral Flows Map.</h2>
+      <p>Fifteen critical-material chains, from mine to refinery to cathode, drawn as a single interactive world map. Every corridor is a real bilateral trade flow; every choropleth is a real share; every figure carries a source and a last-updated date. Use it to see who mines, who refines, and who captures the value.</p>
+    </div>
+    <a class="tool-feature-card" href="/mineral-flows">
+      <div class="tool-feature-photo">
+        <img src="/assets/img/mineral-flows-map-card.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view: dense coloured arcs converging on China with labelled hubs at Chile, Brazil, Peru, DR Congo, South Africa, Australia, Indonesia, Malaysia, Morocco, USA, Canada, Mexico and Russia.">
+      </div>
+      <div class="tool-feature-body">
+        <span class="tool-feature-kicker">Open the tool</span>
+        <h3>Fifteen chains. Ninety-five corridors. One map.</h3>
+        <p>All the minerals in an electric vehicle, plus the wide-bandgap semiconductor set and the LFP battery chain. Toggle a Chain-diagram view, stress-test any country, and print or save any view.</p>
+        <span class="tool-feature-cta">Explore the map &rarr;</span>
+      </div>
+    </a>
+    <p class="tool-feature-links">
+      <a href="/mineral-flows-guide">Sixty-second guide</a>
+      <span aria-hidden="true">·</span>
+      <a href="/mineral-flows-research">Research paper (36 studies)</a>
+      <span aria-hidden="true">·</span>
+      <a href="/mineral-flows-attribution">Data attribution</a>
+    </p>
+  </div>
+</section>
+
 <!-- STATEMENT - forest block with big text on a video background -->
 <section class="statement has-video">
   <video class="statement-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
