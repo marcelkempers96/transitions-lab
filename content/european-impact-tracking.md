@@ -97,7 +97,7 @@ Much of the problem is solved before any data is collected, in the design. The L
 
 **A shared indicator set** that lets results be compared across sites, work packages, and partners instead of fragmenting into incomparable pieces.
 
-**Impact-pathway mapping** that makes the logic explicit - from activity to outcome to impact - so everyone can see what is being claimed and what would count as evidence for it. For niche technologies engaging incumbent regimes, this mapping benefits from the [BRW framework](/brw), which names the mechanism the project is deploying against a specific barrier.
+**Impact-pathway mapping** that makes the logic explicit - from activity to outcome to impact - so everyone can see what is being claimed and what would count as evidence for it. For niche technologies engaging incumbent regimes, this mapping benefits from the [BReW framework](/brw), which names the mechanism the project is deploying against a specific barrier.
 
 Templates can be handed over for a partner to run with the Lab's support, or operated by the Lab as the independent measurement function within the project.
 

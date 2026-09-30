@@ -18,7 +18,7 @@ The Lab is engaged where a decision cannot be settled from a desk. Where the evi
 
 **Reporting to funders.** Monitoring, evaluation and dissemination as one connected system. Independent, set up at the start, closed with proof, including for European Grant Agreements. See [Reporting to funders](/reporting-to-funders).
 
-Cross-cutting all three: a defensible reading of the socio-technical system, using the frameworks the Lab publishes and maintains - the [BRW framework](/brw), the [TRL and SRL scales](/readiness-levels), the [Evidence Strength Pyramid](/impact-measurement).
+Cross-cutting all three: a defensible reading of the socio-technical system, using the frameworks the Lab publishes and maintains - the [BReW framework](/brw), the [TRL and SRL scales](/readiness-levels), the [Evidence Strength Pyramid](/impact-measurement).
 
 ## Methods on the ground
 

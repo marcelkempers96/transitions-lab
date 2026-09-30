@@ -22,7 +22,7 @@ Free to download, use, and cite with attribution.
 
 Social science and human behaviour: why people adopt, resist, trust, and abandon technologies, and why none of it shows up in the specification. Anchored to Simon, Kahneman-Tversky, Davis, Ajzen, Rogers, Slovic, Pinch-Bijker, Hughes, Shove, Thaler-Sunstein and others. Six clusters, from how people decide to who gets left out. The lens the Lab leads with.
 
-[**The BRW Framework →**](/assets/resource-brw-framework.pdf)
+[**The BReW Framework →**](/assets/resource-brw-framework.pdf)
 
 [<span class="format-badge fmt-pdf">PDF · 16 pages</span>](/assets/resource-brw-framework.pdf)
 

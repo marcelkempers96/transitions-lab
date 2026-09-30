@@ -121,7 +121,7 @@ There are excellent impact-measurement firms. The Lab's difference is a specific
 
 - The [in-depth interview guide](/interview-guide) - the depth the Lab reaches in qualitative work.
 - The [European impact-tracking template](/impact-tracking-template) - a full baseline-to-endline framework, ready to fill in.
-- The [BRW framework](/brw) - the Lab's strategic lens for reading how a niche technology engages an incumbent regime.
+- The [BReW framework](/brw) - the Lab's strategic lens for reading how a niche technology engages an incumbent regime.
 - [TRL and SRL explained](/readiness-levels) - technology and societal readiness, and why both axes matter.
 - [European Impact Tracking](/european-impact-tracking) - the specific service for European projects with Grant Agreement obligations.
 - [Monitoring, Evaluation & Dissemination](/monitoring-evaluation-dissemination) - the full evidence loop, from theory of change to uptake.

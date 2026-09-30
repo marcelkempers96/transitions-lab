@@ -85,7 +85,7 @@ None of the following is a final finding. The engagement is live, and the honest
 
 We read MajiMap not as a data product to be assessed for accuracy, but as a socio-technical intervention to be evaluated for effect. It pairs Delft-rooted water understanding with primary fieldwork in the settlements, asking who reaches the information, who trusts it, and what changes when the price of not knowing finally has a number attached.
 
-Through the [BRW framework](/brw), MajiMap reads as a **weaken** strategy against a soft but powerful barrier: the information asymmetry that lets an opaque water market persist. It does not build a parallel water system (bypass) or redirect the utility (repurpose); it erodes the informational foundation on which the inequity rests. That reading tells the Lab exactly where to look for success or failure, which is in whether the transparency actually reaches and is trusted by those on the wrong side of the asymmetry - which is the reading we are running.
+Through the [BReW framework](/brw), MajiMap reads as a **weaken** strategy against a soft but powerful barrier: the information asymmetry that lets an opaque water market persist. It does not build a parallel water system (bypass) or redirect the utility (repurpose); it erodes the informational foundation on which the inequity rests. That reading tells the Lab exactly where to look for success or failure, which is in whether the transparency actually reaches and is trusted by those on the wrong side of the asymmetry - which is the reading we are running.
 
 ## What comes next
 

@@ -149,7 +149,7 @@ The Lab works on this at the boundary of [AI and digital systems](/expertise-ai-
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the methodological spine, see the [BRW framework](/brw); for the four-quadrant reading of state capacity and niche success, see [Four Ways a Transition Lands](/insight-transitions-outcomes). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the methodological spine, see the [BReW framework](/brw); for the four-quadrant reading of state capacity and niche success, see [Four Ways a Transition Lands](/insight-transitions-outcomes). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

@@ -48,9 +48,9 @@ Read alongside the [human side of technology](/human-side-of-technology), the [t
 <img src="/assets/img/economics-of-transitions-arc.jpg" alt="Line-art timeline reading left to right across four blocks: a small niche greenhouse with a seedling on the left, a coral trough labelled transition trough, a yellow rising staircase labelled acceleration, and a green plateau labelled new regime with wind turbines, solar panels and buildings. Above the trough, a small lightning bolt labelled window with a dashed arrow leading up onto the acceleration steps." class="diagram">
 </figure>
 
-### Bypass, Repurpose, Weaken (the BRW framework)
+### Bypass, Repurpose, Weaken (the BReW framework)
 
-<span class="highlight">A new technology can get past an incumbent system in one of three ways: by building a parallel route around it, by redirecting part of the existing system to a new use, or by eroding the foundations that hold the incumbent in place.</span> Which mechanism fits depends on the barrier. This is the Lab's signature typology, set out in [The BRW Framework](/brw).
+<span class="highlight">A new technology can get past an incumbent system in one of three ways: by building a parallel route around it, by redirecting part of the existing system to a new use, or by eroding the foundations that hold the incumbent in place.</span> Which mechanism fits depends on the barrier. This is the Lab's signature typology, set out in [The BReW Framework](/brw).
 
 ### The four ways a transition lands
 
@@ -424,7 +424,7 @@ For the transitions-studies frameworks that sit alongside these (the multi-level
 
 Each concept is a lens the Lab uses when reading a real deployment: before a company enters a market, before a funder renews a grant, before a consortium claims an impact. Naming the concept is the first step to asking whether it applies to the case in front of you.
 
-For the full arguments, follow the links. For the frameworks behind them, see the [BRW framework](/brw), the [readiness levels](/readiness-levels), and the [resources library](/resources). To discuss a study, [Contact](/contact).
+For the full arguments, follow the links. For the frameworks behind them, see the [BReW framework](/brw), the [readiness levels](/readiness-levels), and the [resources library](/resources). To discuss a study, [Contact](/contact).
 
 <div class="article-nav">
   <a class="article-nav-card" href="/resources">

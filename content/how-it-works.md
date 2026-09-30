@@ -14,10 +14,10 @@
  <span class="stage-eyebrow">Scope</span>
  <h2>Start from the decision</h2>
  <p>One design conversation nails the real question, the population that holds the answer, and the evidence that would change your mind. Most research is wasted here. We would rather get the question right.</p>
- <p>Where the question is about a niche technology inside an entrenched regime, the <a href="/brw">BRW framework</a> enters at this stage.</p>
+ <p>Where the question is about a niche technology inside an entrenched regime, the <a href="/brw">BReW framework</a> enters at this stage.</p>
  <div class="links">
  <span class="label">Related</span>
- <a href="/brw">BRW framework</a>
+ <a href="/brw">BReW framework</a>
  <a href="/what-we-do">What we do</a>
  <a href="/who-we-serve">Who we serve</a>
  </div>

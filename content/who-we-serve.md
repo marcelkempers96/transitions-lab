@@ -16,7 +16,7 @@
       <li>Is the payment stack the one your ops team assumed?</li>
       <li>Where does the fit break, and why?</li>
     </ul>
-    <p>Strategy read through the <a href="/brw">BRW framework</a>. Entry engagements usually roll into measurement once you are live - see the <a href="/case-roam">mobility case study</a>.</p>
+    <p>Strategy read through the <a href="/brw">BReW framework</a>. Entry engagements usually roll into measurement once you are live - see the <a href="/case-roam">mobility case study</a>.</p>
     <div class="target-ctas">
       <a class="target-cta" href="/entering-a-new-context">Entering a New Context &rarr;</a>
       <a class="target-cta" href="/measuring-change">Measuring Change &rarr;</a>

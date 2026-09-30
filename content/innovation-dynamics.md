@@ -241,7 +241,7 @@ Read alongside the [economics of transitions](/economics-of-transitions) and the
 The transitions literature scales the same questions up to whole systems, energy, mobility, food, where the "technology" is a regime of infrastructure, institutions, and behaviour, and the "firm" is a society.
 
 <figure>
-<img src="/assets/img/innovation-dynamics-mlp-brw.jpg" alt="Three stacked coloured bands. Top yellow band labelled 'landscape, pressures the system' with icons for prices, policy and a storm. Middle coral band labelled 'regime, the established system' with factory, government building and clipboard. Bottom sky band labelled 'niche, novelty develops here' with a small greenhouse containing solar panel and battery. A red arrow from landscape presses down on regime; a blue arrow from niche pushes up into regime. Beneath, a forest-green panel labelled 'BRW: how the niche engages the barrier' splits into three cells: Bypass (a solid square dashed to a hollow one), Repurpose (factory arrows to solar and battery), Weaken (a full column reduced to a partial one). Caption beneath: levels describe the system; BRW identifies the field strategy." class="diagram">
+<img src="/assets/img/innovation-dynamics-mlp-brw.jpg" alt="Three stacked coloured bands. Top yellow band labelled 'landscape, pressures the system' with icons for prices, policy and a storm. Middle coral band labelled 'regime, the established system' with factory, government building and clipboard. Bottom sky band labelled 'niche, novelty develops here' with a small greenhouse containing solar panel and battery. A red arrow from landscape presses down on regime; a blue arrow from niche pushes up into regime. Beneath, a forest-green panel labelled 'BReW: how the niche engages the barrier' splits into three cells: Bypass (a solid square dashed to a hollow one), Repurpose (factory arrows to solar and battery), Weaken (a full column reduced to a partial one). Caption beneath: levels describe the system; BReW identifies the field strategy." class="diagram">
 </figure>
 
 ### The multi-level perspective
@@ -256,9 +256,9 @@ The transitions literature scales the same questions up to whole systems, energy
 
 <span class="highlight">A transition can unfold in several shapes depending on the timing of landscape pressure and the readiness of the niche: substitution, transformation, reconfiguration, or de-alignment and re-alignment.</span> [Geels and Schot (2007)](https://doi.org/10.1016/j.respol.2007.01.003) set out these pathways. Reading which pathway a transition is on changes what a niche should do, and the Lab's own [four-ways-a-transition-lands](/insight-transitions-outcomes) diagnostic is a field-oriented cousin of this map.
 
-### The BRW framework, in this lineage
+### The BReW framework, in this lineage
 
-<span class="highlight">The Lab's own [Bypass, Repurpose, Weaken framework](/brw) sits in this tradition.</span> Where the multi-level perspective describes the levels and the pathways describe the shapes, BRW classifies the mechanism by which a specific niche strategy engages a specific regime barrier, the operational, field-testable layer beneath the broader theory. It is innovation dynamics made diagnostic.
+<span class="highlight">The Lab's own [Bypass, Repurpose, Weaken framework](/brw) sits in this tradition.</span> Where the multi-level perspective describes the levels and the pathways describe the shapes, BReW classifies the mechanism by which a specific niche strategy engages a specific regime barrier, the operational, field-testable layer beneath the broader theory. It is innovation dynamics made diagnostic.
 
 ---
 

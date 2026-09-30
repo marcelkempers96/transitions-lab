@@ -1,6 +1,6 @@
 § / Research
 
-# The BRW Framework
+# The BReW Framework
 
 *Bypass, Repurpose, Weaken: a mechanism-based typology of the strategies a niche actor uses to engage an entrenched regime, classified by how each strategy acts on a specific lock-in barrier.*
 
@@ -13,14 +13,14 @@
 
 <div class="callout c-butter">
   <span class="kicker">Download &middot; PDF, 10 pages</span>
-  <h3 style="margin:.2em 0 .4em;">Get the BRW Framework as a PDF</h3>
+  <h3 style="margin:.2em 0 .4em;">Get the BReW Framework as a PDF</h3>
   <p>The full framework, with its academic grounding and a worked case study, in one document. Free to download, use, and cite.</p>
   <p style="margin-top:16px;"><a href="/assets/resource-brw-framework.pdf" class="btn btn-ink" download>Download the PDF &rarr;</a></p>
 </div>
 
 Every niche technology arrives into a world already run by an incumbent regime: an aligned configuration of technologies, infrastructures, institutions, habits, and expectations that resists change. How a niche actor engages that regime, barrier by barrier, largely determines whether it succeeds and for whom.
 
-The BRW framework is the Lab's way of reading that engagement. Unlike typologies that classify a strategy by its ambition relative to the regime as a whole, BRW classifies each strategy by its **functional mechanism**: what it actually does to a particular lock-in barrier. This shift in the unit of analysis, from the niche-regime relationship to the strategy-barrier relationship, is what makes the framework precise, because a single niche actor routinely deploys different mechanisms against different barriers within the same regime.
+The BReW framework is the Lab's way of reading that engagement. Unlike typologies that classify a strategy by its ambition relative to the regime as a whole, BReW classifies each strategy by its **functional mechanism**: what it actually does to a particular lock-in barrier. This shift in the unit of analysis, from the niche-regime relationship to the strategy-barrier relationship, is what makes the framework precise, because a single niche actor routinely deploys different mechanisms against different barriers within the same regime.
 
 ---
 
@@ -56,8 +56,8 @@ A typology of strategies is only useful alongside a typology of the barriers the
 The framework's central proposition is a strategy-barrier alignment: **bypass** matches hard, high-materiality, high-coordination barriers; **weaken** matches soft, low-materiality barriers; and **repurpose** occupies the intermediate ground where existing regime structure can be redirected. Misalignment predicts observable failure modes.
 
 <figure>
-  <img src="/assets/img/brw-framework.jpg" alt="BRW schematic: three panels showing Bypass (a rider routing around a petrol station to a battery-swap point), Repurpose (a shuttered petrol station converted into a service node offering air, water, and digital services), and Weaken (arrows circling a petrol station whose pumps are being crossed out)." class="diagram">
-  <figcaption>The three BRW mechanisms - <strong>bypass</strong>, <strong>repurpose</strong>, and <strong>weaken</strong> - sit along a barrier-characteristics spectrum. Bypass matches hard, material, high-coordination barriers; weaken matches soft, discursive ones; repurpose occupies the intermediate ground where existing regime structure can be redirected.</figcaption>
+  <img src="/assets/img/brw-framework.jpg" alt="BReW schematic: three panels showing Bypass (a rider routing around a petrol station to a battery-swap point), Repurpose (a shuttered petrol station converted into a service node offering air, water, and digital services), and Weaken (arrows circling a petrol station whose pumps are being crossed out)." class="diagram">
+  <figcaption>The three BReW mechanisms - <strong>bypass</strong>, <strong>repurpose</strong>, and <strong>weaken</strong> - sit along a barrier-characteristics spectrum. Bypass matches hard, material, high-coordination barriers; weaken matches soft, discursive ones; repurpose occupies the intermediate ground where existing regime structure can be redirected.</figcaption>
 </figure>
 
 ---
@@ -66,13 +66,13 @@ The framework's central proposition is a strategy-barrier alignment: **bypass** 
 
 ## A diagnostic a client cannot generate alone
 
-BRW turns a vague question, will this transition succeed?, into a precise, testable one: is each strategy in the portfolio aligned with the barrier it targets, and where is it misaligned? Because the framework is comparative and mechanism-based, it lets the Lab tell an innovator or funder which barriers they are actually engaging, whether their strategic mix fits, and where they are most likely to stall.
+BReW turns a vague question, will this transition succeed?, into a precise, testable one: is each strategy in the portfolio aligned with the barrier it targets, and where is it misaligned? Because the framework is comparative and mechanism-based, it lets the Lab tell an innovator or funder which barriers they are actually engaging, whether their strategic mix fits, and where they are most likely to stall.
 
 That cross-sector, mechanism-level reading is what a consortium cannot produce from inside a single deployment.
 
 ---
 
-*The BRW framework is developed in full, with its academic grounding and a worked case study, in the downloadable [BRW Framework resource](/assets/resource-brw-framework.pdf). It runs through the Lab's [articles](/articles) and [case studies](/case-studies). To discuss how it applies to your work, see [Contact](/contact).*
+*The BReW framework is developed in full, with its academic grounding and a worked case study, in the downloadable [BReW Framework resource](/assets/resource-brw-framework.pdf). It runs through the Lab's [articles](/articles) and [case studies](/case-studies). To discuss how it applies to your work, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

@@ -468,7 +468,7 @@ LIBRARY = [
     ("articles", "Articles &amp; insights"),
     ("case-studies", "Case studies"),
     ("resources", "Resources"),
-    ("brw", "The BRW framework"),
+    ("brw", "The BReW framework"),
     ("readiness-levels", "TRL &amp; SRL"),
 ]
 
@@ -962,7 +962,7 @@ META: dict[str, dict[str, str]] = {
     },
     "resources": {
         "title": "Resources | Frameworks, Methods & Guides | Transitions Lab",
-        "description": "Frameworks, methods, and tools from the Lab's research, published openly: the BRW framework, measurement method, TRL and SRL guides, and more.",
+        "description": "Frameworks, methods, and tools from the Lab's research, published openly: the BReW framework, measurement method, TRL and SRL guides, and more.",
     },
     "interview-guide": {
         "title": "In-Depth Interview Guide | Field Research Method | Transitions Lab",
@@ -973,7 +973,7 @@ META: dict[str, dict[str, str]] = {
         "description": "A fill-in framework for measuring the before-and-after impact of a European project or demonstration: baseline, midline, endline.",
     },
     "brw": {
-        "title": "The BRW Framework: Bypass, Repurpose, Weaken | Transitions Lab",
+        "title": "The BReW Framework: Bypass, Repurpose, Weaken | Transitions Lab",
         "description": "A mechanism-based typology of how niche technologies engage entrenched regimes: bypass, repurpose, or weaken, matched to the barriers they face.",
     },
 }
@@ -990,7 +990,7 @@ STUB_TITLES: dict[str, str] = {
     "resources": "Resources",
     "interview-guide": "Interview Guide",
     "impact-tracking-template": "Impact Tracking Template",
-    "brw": "The BRW Framework",
+    "brw": "The BReW Framework",
     "case-roam": "Electric Transport in Nairobi",
     "case-pyropower": "Pyropower - Biochar in Lombok",
     "case-reef-support": "Reef Support - Community Marine Rangers",
@@ -1523,7 +1523,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="/articles">Articles</a>
       <a href="/resources">Resources</a>
       <a href="/sdgs">Research by SDG</a>
-      <a href="/brw">BRW framework</a>
+      <a href="/brw">BReW framework</a>
       <a href="/readiness-levels">TRL &amp; SRL</a>
     </div>
     <div>
@@ -2076,7 +2076,7 @@ def build_home() -> str:
     <div class="resource-grid">
       <a class="resource-card" href="/brw">
         <span class="resource-tag">Framework</span>
-        <h3>The BRW Framework</h3>
+        <h3>The BReW Framework</h3>
         <p>Bypass, Repurpose, Weaken. Three mechanisms matched to the three barriers a niche technology actually meets, and why the choice decides what a transition reaches.</p>
         <span class="resource-cta">Read &rarr;</span>
       </a>

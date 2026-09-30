@@ -95,7 +95,7 @@ The Lab's published research and its applied engagements share one root: direct 
 
 ## The programmes these cases grow from
 
-The Lab's applied cases sit alongside its open [articles](/articles), electric mobility, regenerative agriculture, environmental monitoring, water access and transparency, and finance, each grounded in one of these field engagements, and its signature [BRW framework](/brw) for how a niche technology bypasses, repurposes, or weakens the barriers an entrenched regime presents. The fieldwork feeds the research; the research sharpens the fieldwork.
+The Lab's applied cases sit alongside its open [articles](/articles), electric mobility, regenerative agriculture, environmental monitoring, water access and transparency, and finance, each grounded in one of these field engagements, and its signature [BReW framework](/brw) for how a niche technology bypasses, repurposes, or weakens the barriers an entrenched regime presents. The fieldwork feeds the research; the research sharpens the fieldwork.
 
 ---
 

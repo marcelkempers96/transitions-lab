@@ -74,7 +74,7 @@ Turnaround is measured in weeks. Where the answer is "not yet, and here's why," 
 
 The best-documented public example is the [mobility case study](/case-roam) in Nairobi, where the question was exactly this shape: will the daily economics of an electric two-wheeler hold once the subsidy ends, and for which rider segments? The [Before the Capital](/case-context-entry) reading generalises the pattern across sectors where a European venture is weighing a new-market commitment.
 
-For the wider frame, see the [Four Ways a Transition Lands](/insight-transitions-outcomes) matrix on why market entry into a low-state-capacity context succeeds or plateaus, and the [BRW framework](/brw) for reading which incumbent barriers your entry actually engages.
+For the wider frame, see the [Four Ways a Transition Lands](/insight-transitions-outcomes) matrix on why market entry into a low-state-capacity context succeeds or plateaus, and the [BReW framework](/brw) for reading which incumbent barriers your entry actually engages.
 
 ---
 

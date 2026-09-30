@@ -72,7 +72,7 @@ Turnaround in weeks. Where the answer is "not yet, and here's why," we say so - 
 ## Public examples
 
 - [Before the Capital](/case-context-entry). Generalises the pattern for a European venture weighing a new-market commitment.
-- [BRW framework](/brw), [Four Ways a Transition Lands](/insight-transitions-outcomes), [Who Absorbs the Gap](/insight-absorbing-the-gap) - the wider reading behind entry decisions.
+- [BReW framework](/brw), [Four Ways a Transition Lands](/insight-transitions-outcomes), [Who Absorbs the Gap](/insight-absorbing-the-gap) - the wider reading behind entry decisions.
 
 ---
 

@@ -55,7 +55,7 @@ An expansion that reaches only the top of a market may still fail its own busine
 
 Trained local field researchers put into the actual market, reaching real prospective users in their own language and context, over four to six weeks. Interviews with 40–80 prospective users across the segments the venture intends to serve, structured around observed behaviour rather than stated preference. Agent- and distributor-network mapping in two or three focal locations. A short repeatable survey, in the local language, that captures walk-away price and stated intent alongside the behavioural read from the interviews. Regulatory and payments-stack review, done from the user's side.
 
-The venture's own strategy is read through the [BRW framework](/brw) to locate the real barriers the entry will engage: which incumbent barriers it bypasses, which it repurposes, which it tries to weaken. That reading tells the study team where to look for the strongest and weakest points, before the field work begins.
+The venture's own strategy is read through the [BReW framework](/brw) to locate the real barriers the entry will engage: which incumbent barriers it bypasses, which it repurposes, which it tries to weaken. That reading tells the study team where to look for the strongest and weakest points, before the field work begins.
 
 ## What the deliverable looks like
 

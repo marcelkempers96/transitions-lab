@@ -161,7 +161,7 @@ Twenty interviews with the wrong people tell you less than eight with the right 
   </ul>
 </div>
 
-The [BRW framework](/brw) enters at sampling too: if the study is measuring a "bypass" of an incumbent system, the respondents most worth interviewing are the ones who tried the incumbent first and switched, and the ones who never tried the niche at all.
+The [BReW framework](/brw) enters at sampling too: if the study is measuring a "bypass" of an incumbent system, the respondents most worth interviewing are the ones who tried the incumbent first and switched, and the ones who never tried the niche at all.
 
 ---
 

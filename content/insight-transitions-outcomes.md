@@ -54,7 +54,7 @@ The failure mode of a stalled regime is the least dramatic and the most conseque
 
 ## Bounded Leapfrogging (low state, high niche)
 
-The partial-breakthrough pattern of most emerging-market technology transitions, and the [BRW framework](/brw)'s home ground. State capacity is limited; a niche innovation succeeds anyway, but the shape of its adoption is bounded by the parts of the incumbent system the state cannot help it around.
+The partial-breakthrough pattern of most emerging-market technology transitions, and the [BReW framework](/brw)'s home ground. State capacity is limited; a niche innovation succeeds anyway, but the shape of its adoption is bounded by the parts of the incumbent system the state cannot help it around.
 
 - **M-Pesa** ([Safaricom](https://www.safaricom.co.ke/personal/m-pesa)): mobile money leapfrogged bank branches without waiting for the state to build a formal payments infrastructure, then hit its ceiling at the payment-rail interoperability the state was slow to require.
 - **Pay-as-you-go solar** (see [GOGLA](https://www.gogla.org/) for the market data): pico-solar and solar-home systems reached tens of millions of off-grid households through a purely commercial niche, then plateaued at the grid boundary that only public planning can move.
@@ -101,7 +101,7 @@ This piece draws on the broad literature on socio-technical transitions and on s
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the methodological spine behind the reading, see the [BRW framework](/brw). For the field work behind the case placements, see [Case Studies](/case-studies). To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the methodological spine behind the reading, see the [BReW framework](/brw). For the field work behind the case placements, see [Case Studies](/case-studies). To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

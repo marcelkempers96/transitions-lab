@@ -507,7 +507,7 @@
  </div><div class="article-item has-thumb" data-category="transitions" data-geography="global" data-month="2026-03">
  <a class="article-thumb-link" href="/brw"><img class="article-thumb" src="/assets/img/brw-diagram.jpg" alt="Plain brick wall on the left with a dashed detour path curving past it and finishing as an arrow on the right."></a>
  <div class="article-body">
- <a class="article-title" href="/brw">The BRW Framework: Bypass, Repurpose, Weaken</a>
+ <a class="article-title" href="/brw">The BReW Framework: Bypass, Repurpose, Weaken</a>
  <div class="article-meta">24 March 2026</div>
  <div class="article-chips"><span class="article-chip chip-cat chip-cat-transitions">Transitions</span> <span class="article-chip chip-geo chip-geo-global">Global</span></div>
  <p class="article-desc">The Lab's signature typology of how new infrastructure engages the systems it arrives into. Three mechanisms, matched to the three barriers a niche technology actually meets.</p>
