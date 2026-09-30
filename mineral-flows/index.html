@@ -851,13 +851,29 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
   }
 
   function shareOrDownloadPng(btn){
+    // Only snap the map layer and the flow information beside it -
+    // ribbon (strata bars = per-stage shares), map, and panel.
+    // The mineral chip row, top header, share row, site nav, and
+    // site footer are skipped by html2canvas via ignoreElements.
     var target = document.querySelector('.wrap');
     if(!target) return;
+    var ignore = function(el){
+      if (!el || !el.classList) return false;
+      if (el.matches('.site-navstrip, .tool-share, .site-tail')) return true;
+      if (el.matches('header.top, .wrap > footer')) return true;
+      // Also skip the map's own control panel, zoom control, and
+      // tooltip - they clutter the capture and can be off-screen.
+      if (el.matches('.mapctl, .zoomctl, .tip')) return true;
+      // The mineral chip strip is skipped too because the panel
+      // already shows the selected mineral name.
+      if (el.matches('.minerals')) return true;
+      return false;
+    };
     var originalLabel = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = 'Capturing…';
     ensureH2C().then(function(h2c){
-      return h2c(target, {backgroundColor: '#000000', scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true, allowTaint: true, logging: false, windowWidth: document.documentElement.clientWidth});
+      return h2c(target, {backgroundColor: '#000000', scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true, allowTaint: true, logging: false, windowWidth: document.documentElement.clientWidth, ignoreElements: ignore});
     }).then(function(canvas){
       var mint = (window.state && window.state.mineral) || 'all';
       var stg  = (window.state && window.state.stage)   || 'mining';
