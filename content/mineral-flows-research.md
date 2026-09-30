@@ -12,6 +12,11 @@
 
 <p class="tool-cta-sub">New to the map? <a href="/mineral-flows-guide">Read the sixty-second guide</a>. For every source behind every figure, see the <a href="/mineral-flows-attribution">data attribution page</a>.</p>
 
+<figure>
+  <img src="/assets/img/mineral-flows-guide-overview.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view: a dark globe with a dense weave of coloured arcs converging on East Asia, plus bright endpoints at Chile, Brazil, Peru, DR Congo, South Africa, Zimbabwe, Zambia, Australia, Indonesia, Malaysia, Morocco, Russia, Germany, United States, Canada, Mexico and other hubs." class="diagram">
+  <figcaption>The Mineral Flows Map at the All-minerals view, with the full corridor set drawn at once. Every figure and figure-share cited in this paper renders on the map as either a country choropleth (share of a stage) or a corridor (bilateral flow). Interactive: <a href="/mineral-flows">transitionslab.org/mineral-flows</a>.</figcaption>
+</figure>
+
 ---
 
 ## Starting point

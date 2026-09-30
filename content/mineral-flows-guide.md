@@ -6,6 +6,10 @@
 
 <p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
 
+<figure>
+  <img src="/assets/img/mineral-flows-guide-overview.jpg" alt="Screenshot of the Mineral Flows Map in All-minerals view: a dark globe with a dense weave of coloured arcs converging on East Asia, plus bright endpoints at Chile, Brazil, Peru, DR Congo, South Africa, Zimbabwe, Zambia, Australia, Indonesia, Malaysia, Morocco, Russia, Germany, United States, Canada, Mexico and other hubs. Top toolbar shows the Map / Chain diagram toggle, Trade flows, Africa focus, By stage / By mineral colour switch and a Print button." class="diagram">
+</figure>
+
 ---
 
 ## The sixty-second tour
