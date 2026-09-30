@@ -51,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Scroll reveal (big text drifts up + fades in) ───────────
   if (!reduce && 'IntersectionObserver' in window) {
+    // Only now do we tell the stylesheet that we're going to animate
+    // reveals. Before this, CSS keeps .reveal fully visible so that a
+    // JS block or a stalled boot doesn't leave every section title
+    // behind opacity:0.
+    document.documentElement.classList.add('js-anim');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -60,6 +65,16 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.reveal:not(.in)').forEach(function (el) { io.observe(el); });
+    // Safety net: if the observer never fires for something visible
+    // above the fold (Low Power Mode, background tab, etc.), fall
+    // back to showing everything after a short delay. Better a title
+    // that appears without an animation than one that never appears.
+    setTimeout(function(){
+      document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+      });
+    }, 900);
 
     // Serve-grid cards: on mobile the CSS starts them off-screen right
     // and translates them into place when this observer flags them
@@ -99,13 +114,18 @@ document.addEventListener('DOMContentLoaded', function () {
   var subhead = document.getElementById('hero-subhead');
   var cursor = document.getElementById('hero-cursor');
   if (headline) {
-    var hText = headline.getAttribute('data-text') || '';
-    var sText = subhead ? (subhead.getAttribute('data-text') || '') : '';
+    var hText = headline.getAttribute('data-text') || headline.textContent || '';
+    var sText = subhead ? (subhead.getAttribute('data-text') || subhead.textContent || '') : '';
     if (reduce) {
       headline.textContent = hText;
       if (subhead) subhead.textContent = sText;
       if (cursor) cursor.style.display = 'none';
     } else {
+      // Now that we're about to type, clear the pre-filled fallback
+      // text (the fallback exists so a slow / blocked JS boot doesn't
+      // leave the hero blank).
+      headline.textContent = '';
+      if (subhead) subhead.textContent = '';
       var hi = 0, si = 0;
       var typeSub = function () {
         if (si <= sText.length) {

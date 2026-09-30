@@ -3297,15 +3297,18 @@ body[data-page^="expertise-"] .prose .sdg-row .sdg-goal-title{display:none;}
      into place when the IntersectionObserver in site.js flags it
      in view. Stagger delay is injected inline in JS so a row of
      five cards does not enter as a single block. */
-  .serve-grid a{
+  /* Only hide the cards off-screen when JS is running to bring them
+     back — otherwise a JS block or an IO stall (Low Power Mode etc.)
+     leaves the whole serve grid invisible. */
+  html.js-anim .serve-grid a{
     opacity:0;transform:translateX(40px);
     transition:opacity .55s ease, transform .55s cubic-bezier(.22,.61,.36,1),
                transform .12s ease, background .15s ease;
     will-change:opacity, transform;
   }
-  .serve-grid a.is-in-view{opacity:1;transform:translateX(0);}
+  .serve-grid a.is-in-view{opacity:1 !important;transform:translateX(0) !important;}
   /* Preserve the existing translate-on-hover motion after arrival. */
-  .serve-grid a.is-in-view:hover{transform:translate(-2px,-2px);}
+  .serve-grid a.is-in-view:hover{transform:translate(-2px,-2px) !important;}
 }
 @media (prefers-reduced-motion: reduce){
   .serve-grid a{opacity:1 !important;transform:none !important;transition:none;}
@@ -3570,8 +3573,13 @@ footer.site .legal > span{white-space:nowrap;}
 }
 
 /* ── Scroll reveal (subtle) ───────────────────────────────── */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
-.reveal.in{opacity:1;transform:none;}
+/* Scroll-reveal: only hide the elements when we're SURE JS is present
+   and will animate them. If a script is blocked, delayed, or the page
+   is opened in a mode that pauses IntersectionObserver (iOS Low Power
+   Mode has done this), titles and lede text stay visible instead of
+   living behind opacity:0 for the whole session. */
+html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+.reveal.in{opacity:1 !important;transform:none !important;}
 .reveal.d1{transition-delay:.08s;}
 .reveal.d2{transition-delay:.16s;}
 .reveal.d3{transition-delay:.24s;}
