@@ -10,12 +10,6 @@
 
 <p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
 
-<div class="research-meta">
-  <span class="rm-item"><strong>Version</strong> 1.0, indicative</span>
-  <span class="rm-item"><strong>Sources tracked</strong> 36 studies</span>
-  <span class="rm-item"><strong>Prepared for</strong> the Transitions Lab mineral flows tool</span>
-</div>
-
 ---
 
 ## Starting point
