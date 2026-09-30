@@ -136,26 +136,18 @@ A maintained, openly sourced tool that joins stage-specific concentration, bilat
 The companion article [Seven Findings on the Transition-Mineral Chain](/insight-where-transition-minerals-go) links each numbered claim back to the paragraph below where it is derived.
 
 <ol class="fact-list">
-  <li id="fact-1"><strong>Forty-eight African countries hold reserves of at least one transition mineral.</strong> This is a claim about geological endowment, not about active production or export at scale. Ndubuisi et al. work from national geological surveys and inventory data. The Lab's <a href="/mineral-flows">Mineral Flows Map</a> shows the current top exporters, so only around a dozen African countries appear on it as source hubs; the other thirty-plus hold deposits that have not yet reached international trade in meaningful volumes. Source: Ndubuisi, Avenyo, Owusu and Kassa (World Bank, republished 29 September 2026, <em>The Conversation</em> and South Africa Trade Desk). Status: verified in search results this session. <a href="#ref-1" class="fact-back">Back to text</a></li>
-  <li id="fact-2"><strong>Asia, and China in particular, take over 40% of Africa's ore exports.</strong> Source: Ndubuisi et al., as above. Status: verified. <a href="#ref-2" class="fact-back">Back to text</a></li>
-  <li id="fact-3"><strong>Congolese cobalt nearly triples in value between the mine gate and local refining.</strong> Source: Ndubuisi et al., as above. Status: verified. <a href="#ref-3" class="fact-back">Back to text</a></li>
-  <li id="fact-4"><strong>Roughly 69% of cobalt is mined in the DRC.</strong> Source: Four-stage MFA study, <em>Resources, Conservation and Recycling</em>, 2024. Status: author list to confirm. <a href="#ref-4" class="fact-back">Back to text</a></li>
-  <li id="fact-5"><strong>Roughly 80% of lithium is mined in Australia and Chile.</strong> Source: as above. Status: as above. <a href="#ref-5" class="fact-back">Back to text</a></li>
-  <li id="fact-6"><strong>Over half of transition-mineral refining occurs in China.</strong> Source: as above; corroborated by IEA, <em>Global Critical Minerals Outlook 2026</em>. Status: as above. <a href="#ref-6" class="fact-back">Back to text</a></li>
-  <li id="fact-7"><strong>Under idealised recovery, retired batteries could meet about 60% of cobalt and 53% of lithium and nickel demand by 2040.</strong> Sources: Zeng et al. (2022); Dunn et al. (2021). Status: verified this session. <a href="#ref-7" class="fact-back">Back to text</a></li>
-  <li id="fact-8"><strong>Seven routes carry over 80% of world lithium trade value; 81 routes for cobalt; 34 for nickel.</strong> Source: 2026 paper in <em>Entropy</em>. Status: verified. <a href="#ref-8" class="fact-back">Back to text</a></li>
-  <li id="fact-9"><strong>Restrictions on critical raw materials have risen more than fivefold since 2009.</strong> Source: Kowalski and Legendre (2023), OECD. Status: verified. <a href="#ref-9" class="fact-back">Back to text</a></li>
-  <li id="fact-10"><strong>Foreign direct investment controls 47% of world lithium, 71% of cobalt, 41% of nickel and 34% of platinum output.</strong> Source: Sun et al. (2024), company-level database across 240 economies. Status: verified. <a href="#ref-10" class="fact-back">Back to text</a></li>
-  <li id="fact-11"><strong>Africa mines about 17% of the world's copper but refines about 9%.</strong> Source: Stonor and Kitaw with UNECA, July 2026. Status: verified. <a href="#ref-11" class="fact-back">Back to text</a></li>
+  <li id="fact-1"><strong>Forty-eight African countries hold reserves of at least one transition mineral.</strong> This is a claim about geological endowment, not about active production or export at scale. Ndubuisi et al. work from national geological surveys and inventory data. The Lab's <a href="/mineral-flows">Mineral Flows Map</a> shows the current top exporters, so only around a dozen African countries appear on it as source hubs; the other thirty-plus hold deposits that have not yet reached international trade in meaningful volumes. Source: Ndubuisi, Avenyo, Owusu and Kassa (World Bank, republished 29 September 2026, <em>The Conversation</em> and South Africa Trade Desk). <a href="#ref-1" class="fact-back">Back to text</a></li>
+  <li id="fact-2"><strong>Asia, and China in particular, take over 40% of Africa's ore exports.</strong> Source: Ndubuisi et al., as above. <a href="#ref-2" class="fact-back">Back to text</a></li>
+  <li id="fact-3"><strong>Congolese cobalt nearly triples in value between the mine gate and local refining.</strong> Source: Ndubuisi et al., as above. <a href="#ref-3" class="fact-back">Back to text</a></li>
+  <li id="fact-4"><strong>Roughly 69% of cobalt is mined in the DRC.</strong> Source: Four-stage MFA study, <em>Resources, Conservation and Recycling</em>, 2024. <a href="#ref-4" class="fact-back">Back to text</a></li>
+  <li id="fact-5"><strong>Roughly 80% of lithium is mined in Australia and Chile.</strong> Source: as above. <a href="#ref-5" class="fact-back">Back to text</a></li>
+  <li id="fact-6"><strong>Over half of transition-mineral refining occurs in China.</strong> Source: as above; corroborated by IEA, <em>Global Critical Minerals Outlook 2026</em>. <a href="#ref-6" class="fact-back">Back to text</a></li>
+  <li id="fact-7"><strong>Under idealised recovery, retired batteries could meet about 60% of cobalt and 53% of lithium and nickel demand by 2040.</strong> Sources: Zeng et al. (2022); Dunn et al. (2021). <a href="#ref-7" class="fact-back">Back to text</a></li>
+  <li id="fact-8"><strong>Seven routes carry over 80% of world lithium trade value; 81 routes for cobalt; 34 for nickel.</strong> Source: 2026 paper in <em>Entropy</em>. <a href="#ref-8" class="fact-back">Back to text</a></li>
+  <li id="fact-9"><strong>Restrictions on critical raw materials have risen more than fivefold since 2009.</strong> Source: Kowalski and Legendre (2023), OECD. <a href="#ref-9" class="fact-back">Back to text</a></li>
+  <li id="fact-10"><strong>Foreign direct investment controls 47% of world lithium, 71% of cobalt, 41% of nickel and 34% of platinum output.</strong> Source: Sun et al. (2024), company-level database across 240 economies. <a href="#ref-10" class="fact-back">Back to text</a></li>
+  <li id="fact-11"><strong>Africa mines about 17% of the world's copper but refines about 9%.</strong> Source: Stonor and Kitaw with UNECA, July 2026. <a href="#ref-11" class="fact-back">Back to text</a></li>
 </ol>
-
----
-
-## Verification status
-
-Nineteen of the thirty-six entries in the underlying bibliography were seen with title, venue and link in search results during preparation. Four (Graedel 2015, Nassar 2020, Olivetti 2017 and Watari 2019) are cited from the established literature and require their DOIs clicked through. Thirteen have an author list, exact title or venue still to confirm, usually because the surfaced page was a *ScienceDirect* abstract without author names.
-
-Each bibliography entry carries its status in a `check` field alongside the flow data. The house rule applies: no citation goes live on the public site until its link resolves.
 
 ---
 
