@@ -105,49 +105,49 @@ For the 48-country African coverage question, the paper cites 48 African countri
 
 Every figure the map draws is loaded from a single file, `/assets/data/mineral-flows.json`, and rendered in the browser by the standalone script at `/mineral-flows/index.html` (which uses d3 v7 for the projection and flow bands, d3-sankey v0.12 for the chain diagram, and html2canvas for the PNG export). The rows below name the primary source per (mineral, stage) pair, its underlying data year, and when the Lab last touched the value. The `basis`, `year`, `confidence` and `last_updated` fields shown here live on each stage node in the JSON and can be inspected in the browser's dev tools.
 
-<div class="table-scroll" role="region" aria-label="Data provenance by mineral and stage" tabindex="0">
-
-| Mineral | Stage | Unit | Data year | Source | Confidence | Last updated |
-|---|---|---|---|---|---|---|
-| Lithium | Mining | t Li content | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates) | High | 2026-09-30 |
-| Lithium | Refining (carbonate and hydroxide) |  | 2024 | IEA Global Critical Minerals Outlook | Medium | 2026-09-30 |
-| Lithium | Cathode active material |  | 2024 | IEA Global Critical Minerals Outlook 2025/2026 chapter figures; replace with IEA dataset values | Medium | 2026-09-30 |
-| Cobalt | Mining | t Co content | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates) | High | 2026-09-30 |
-| Cobalt | Refining |  | 2024 | IEA Global Critical Minerals Outlook; Cobalt Institute market reports | Medium | 2026-09-30 |
-| Cobalt | Cathode active material |  | 2024 | IEA Global Critical Minerals Outlook 2025/2026 chapter figures; replace with IEA dataset values | Medium | 2026-09-30 |
-| Nickel | Mining | t Ni content | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates) | High | 2026-09-30 |
-| Nickel | Refining (all classes) |  | 2024 | IEA Global Critical Minerals Outlook | Medium | 2026-09-30 |
-| Nickel | Cathode active material |  | 2024 | IEA Global Critical Minerals Outlook 2025/2026 chapter figures; replace with IEA dataset values | Medium | 2026-09-30 |
-| Copper | Mining | kt Cu content | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates) | High | 2026-09-30 |
-| Copper | Refining |  | 2024 | USGS; ICSG World Copper Factbook | Medium | 2026-09-30 |
-| Graphite | Mining (natural flake) | kt | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates) | High | 2026-09-30 |
-| Graphite | Refining (anode-grade) |  | 2024 | IEA Global Critical Minerals Outlook | Medium | 2026-09-30 |
-| Graphite | Anode material |  | 2024 | IEA Global Critical Minerals Outlook | Medium | 2026-09-30 |
-| Rare earths | Mining | t REO | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates) | High | 2026-09-30 |
-| Rare earths | Separation and refining |  | 2025 | IEA Global Critical Minerals Outlook 2026 notes a modest decline in concentration | Medium | 2026-09-30 |
-| Rare earths | NdFeB magnets |  | 2024 | IEA; industry estimates | Medium | 2026-09-30 |
-| Manganese | Mining | kt Mn content | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates) | High | 2026-09-30 |
-| Manganese | Battery-grade sulphate |  | 2024 | IEA Global Critical Minerals Outlook | Medium | 2026-09-30 |
-| Manganese | Cathode active material |  | 2024 | IEA Global Critical Minerals Outlook 2025/2026 chapter figures; replace with IEA dataset values | Medium | 2026-09-30 |
-| Platinum group metals | Mining (Pt and Pd) | t | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates), platinum and palladium combined | Medium | 2026-09-30 |
-| Platinum group metals | Refining (primary and secondary) |  | 2024 | Indicative; replace with Johnson Matthey PGM market report values | Low | 2026-09-30 |
-| Phosphate | Mining (phosphate rock) | kt P2O5 content | 2024 | USGS Mineral Commodity Summaries 2025 (2024 estimates); indicative until BACI HS 2510 refresh. | High | 2026-09-30 |
-| Phosphate | Purified phosphoric acid (LFP-grade) |  | 2024 | IEA Global Critical Minerals Outlook 2026 LFP chapter; industry association estimates. Indicative. | Medium | 2026-09-30 |
-| Phosphate | LFP cathode material |  | 2024 | IEA GCMO 2026; Benchmark Mineral Intelligence LFP tracker. Indicative until verified. | Medium | 2026-09-30 |
-| Boron | Mining (borates) | kt B2O3 content | 2024 | USGS Mineral Commodity Summaries 2025 - Boron (2024 est.). | High | 2026-09-30 |
-| Boron | Boric acid and refined borates |  | 2024 | USGS + industry association estimates. Indicative. | Medium | 2026-09-30 |
-| Gallium | Primary production (bauxite/zinc co-product) | t Ga content | 2024 | USGS MCS 2025 - Gallium; virtually all primary from bauxite refining. Indicative. | Medium | 2026-09-30 |
-| Gallium | Refined gallium (>99.99%) |  | 2024 | USGS MCS 2025 + industry association estimates. China dominates high-purity refining. | Medium | 2026-09-30 |
-| Germanium | Primary production (zinc/coal co-product) | t Ge content | 2024 | USGS MCS 2025 - Germanium; recovered mainly as a zinc-refining by-product. Indicative. | Medium | 2026-09-30 |
-| Germanium | Refined germanium |  | 2024 | USGS + industry association estimates. Indicative. | Medium | 2026-09-30 |
-| Silver | Mining | t Ag content | 2024 | USGS MCS 2025 - Silver (2024 est.). | High | 2026-09-30 |
-| Silver | Refined silver bullion |  | 2024 | World Silver Survey (Metals Focus) 2024 - indicative. | Medium | 2026-09-30 |
-| Silicon (metal) | Silicon metal (from quartzite) | kt Si metal | 2024 | USGS MCS 2025 - Silicon; smelted from high-purity quartz. Indicative. | High | 2026-09-30 |
-| Silicon (metal) | Polysilicon (solar and semiconductor grade) |  | 2024 | IEA Renewables 2024; polysilicon global capacity distribution. Indicative. | Medium | 2026-09-30 |
-| Silicon (metal) | Silicon carbide power devices (traction inverters) |  | 2024 | Yole Development SiC market tracker 2024. Indicative and volatile; check before citing. | Low | 2026-09-30 |
-| Fluorspar (fluorine) | Mining (acid-grade CaF2) | kt CaF2 content | 2024 | USGS MCS 2025 - Fluorspar (2024 est.). Indicative. | High | 2026-09-30 |
-| Fluorspar (fluorine) | Hydrofluoric acid (HF) production |  | 2024 | USGS + industry estimates. Indicative. | Medium | 2026-09-30 |
-
+<div class="table-scroll provenance-scroll" role="region" aria-label="Data provenance by mineral and stage" tabindex="0">
+<table class="tbl provenance">
+<thead><tr><th>Mineral</th><th>Stage</th><th>Unit</th><th>Year</th><th>Source</th><th>Conf.</th><th>Updated</th></tr></thead>
+<tbody>
+<tr><td>Lithium</td><td>Mining</td><td>t Li content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Lithium</td><td>Refining (carbonate and hydroxide)</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Lithium</td><td>Cathode active material</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook 2025/2026 chapter figures</a>; replace with IEA dataset values</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Cobalt</td><td>Mining</td><td>t Co content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-cobalt.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Cobalt</td><td>Refining</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook</a>; <a href="https://www.cobaltinstitute.org/resource-centre/" target="_blank" rel="noopener">Cobalt Institute market reports</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Cobalt</td><td>Cathode active material</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook 2025/2026 chapter figures</a>; replace with IEA dataset values</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Nickel</td><td>Mining</td><td>t Ni content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-nickel.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Nickel</td><td>Refining (all classes)</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Nickel</td><td>Cathode active material</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook 2025/2026 chapter figures</a>; replace with IEA dataset values</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Copper</td><td>Mining</td><td>kt Cu content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-copper.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Copper</td><td>Refining</td><td></td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-copper.pdf" target="_blank" rel="noopener">USGS</a>; <a href="https://icsg.org/copper-factbook/" target="_blank" rel="noopener">ICSG World Copper Factbook</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Graphite</td><td>Mining (natural flake)</td><td>kt</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-graphite.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Graphite</td><td>Refining (anode-grade)</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Graphite</td><td>Anode material</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Rare earths</td><td>Mining</td><td>t REO</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Rare earths</td><td>Separation and refining</td><td></td><td>2025</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook 2026 notes a modest decline in concentration</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Rare earths</td><td>NdFeB magnets</td><td></td><td>2024</td><td>IEA; industry estimates</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Manganese</td><td>Mining</td><td>kt Mn content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-manganese.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Manganese</td><td>Battery-grade sulphate</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Manganese</td><td>Cathode active material</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook 2025/2026 chapter figures</a>; replace with IEA dataset values</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Platinum group metals</td><td>Mining (Pt and Pd)</td><td>t</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-platinum.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates), platinum and palladium combined</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Platinum group metals</td><td>Refining (primary and secondary)</td><td></td><td>2024</td><td>Indicative; <a href="https://matthey.com/pgm-market-report" target="_blank" rel="noopener">replace with Johnson Matthey PGM market report values</a></td><td>Low</td><td>2026-09-30</td></tr>
+<tr><td>Phosphate</td><td>Mining (phosphate rock)</td><td>kt P2O5 content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-phosphate.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 (2024 estimates)</a>; indicative until BACI HS 2510 refresh.</td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Phosphate</td><td>Purified phosphoric acid (LFP-grade)</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA Global Critical Minerals Outlook 2026 LFP chapter</a>; industry association estimates. Indicative.</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Phosphate</td><td>LFP cathode material</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA GCMO 2026</a>; <a href="https://source.benchmarkminerals.com/" target="_blank" rel="noopener">Benchmark Mineral Intelligence LFP tracker. Indicative until verified.</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Boron</td><td>Mining (borates)</td><td>kt B2O3 content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-boron.pdf" target="_blank" rel="noopener">USGS Mineral Commodity Summaries 2025 - Boron (2024 est.).</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Boron</td><td>Boric acid and refined borates</td><td></td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-boron.pdf" target="_blank" rel="noopener">USGS + industry association estimates. Indicative.</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Gallium</td><td>Primary production (bauxite/zinc co-product)</td><td>t Ga content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-gallium.pdf" target="_blank" rel="noopener">USGS MCS 2025 - Gallium</a>; virtually all primary from bauxite refining. Indicative.</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Gallium</td><td>Refined gallium (&gt;99.99%)</td><td></td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-gallium.pdf" target="_blank" rel="noopener">USGS MCS 2025 + industry association estimates. China dominates high-purity refining.</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Germanium</td><td>Primary production (zinc/coal co-product)</td><td>t Ge content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-germanium.pdf" target="_blank" rel="noopener">USGS MCS 2025 - Germanium</a>; recovered mainly as a zinc-refining by-product. Indicative.</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Germanium</td><td>Refined germanium</td><td></td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-germanium.pdf" target="_blank" rel="noopener">USGS + industry association estimates. Indicative.</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Silver</td><td>Mining</td><td>t Ag content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf" target="_blank" rel="noopener">USGS MCS 2025 - Silver (2024 est.).</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Silver</td><td>Refined silver bullion</td><td></td><td>2024</td><td><a href="https://www.silverinstitute.org/all-world-silver-surveys/" target="_blank" rel="noopener">World Silver Survey (Metals Focus) 2024 - indicative.</a></td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Silicon (metal)</td><td>Silicon metal (from quartzite)</td><td>kt Si metal</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silicon.pdf" target="_blank" rel="noopener">USGS MCS 2025 - Silicon</a>; smelted from high-purity quartz. Indicative.</td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Silicon (metal)</td><td>Polysilicon (solar and semiconductor grade)</td><td></td><td>2024</td><td><a href="https://www.iea.org/reports/renewables-2024" target="_blank" rel="noopener">IEA Renewables 2024</a>; polysilicon global capacity distribution. Indicative.</td><td>Medium</td><td>2026-09-30</td></tr>
+<tr><td>Silicon (metal)</td><td>Silicon carbide power devices (traction inverters)</td><td></td><td>2024</td><td><a href="https://www.yolegroup.com/reports/" target="_blank" rel="noopener">Yole Development SiC market tracker 2024. Indicative and volatile</a>; check before citing.</td><td>Low</td><td>2026-09-30</td></tr>
+<tr><td>Fluorspar (fluorine)</td><td>Mining (acid-grade CaF2)</td><td>kt CaF2 content</td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-fluorspar.pdf" target="_blank" rel="noopener">USGS MCS 2025 - Fluorspar (2024 est.). Indicative.</a></td><td>High</td><td>2026-09-30</td></tr>
+<tr><td>Fluorspar (fluorine)</td><td>Hydrofluoric acid (HF) production</td><td></td><td>2024</td><td><a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-fluorspar.pdf" target="_blank" rel="noopener">USGS + industry estimates. Indicative.</a></td><td>Medium</td><td>2026-09-30</td></tr>
+</tbody></table>
 </div>
 
 The [Data attribution page](/mineral-flows-attribution) groups the same information by mineral chain rather than by table row, and names the version and refresh cadence for the dataset.

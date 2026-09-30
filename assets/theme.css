@@ -4257,3 +4257,30 @@ a.tool-feature-cta:hover{border-bottom-color:var(--paper);}
 .prose .table-scroll .tbl th, .prose .table-scroll .tbl td{padding:8px 10px;vertical-align:top;}
 .prose .table-scroll .tbl thead th{position:sticky;top:0;background:var(--cobalt);color:var(--paper);}
 .prose .table-scroll:focus{outline:2px solid var(--cobalt);outline-offset:2px;}
+/* Data provenance table: compact enough to see many rows at once,
+   with source cells constrained so long chapter names don't stretch
+   the row. Rendered as inline <table> in the markdown so pipe
+   parsing is bypassed. */
+.prose .table-scroll.provenance-scroll{margin:12px 0 22px;}
+.prose .tbl.provenance{font-size:11.5px;line-height:1.35;min-width:920px;border-collapse:collapse;width:100%;}
+.prose .tbl.provenance thead th{
+  position:sticky;top:0;background:var(--cobalt);color:var(--paper);
+  font-family:'Hanken Grotesk',sans-serif;font-weight:800;
+  font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+  padding:8px 8px;text-align:left;
+}
+.prose .tbl.provenance td{padding:6px 8px;vertical-align:top;border-bottom:1px solid rgba(10,10,10,.08);}
+.prose .tbl.provenance tr:hover td{background:rgba(31,78,170,.05);}
+.prose .tbl.provenance td:nth-child(1){font-weight:700;white-space:nowrap;}
+.prose .tbl.provenance td:nth-child(2){min-width:180px;}
+.prose .tbl.provenance td:nth-child(3){font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;white-space:nowrap;opacity:.78;}
+.prose .tbl.provenance td:nth-child(4){text-align:right;white-space:nowrap;opacity:.78;}
+.prose .tbl.provenance td:nth-child(5){min-width:280px;}
+.prose .tbl.provenance td:nth-child(5) a{color:var(--cobalt);text-decoration:underline;text-decoration-color:rgba(31,78,170,.35);text-underline-offset:2px;}
+.prose .tbl.provenance td:nth-child(5) a:hover{text-decoration-color:var(--cobalt);}
+.prose .tbl.provenance td:nth-child(6){white-space:nowrap;opacity:.72;}
+.prose .tbl.provenance td:nth-child(7){white-space:nowrap;opacity:.6;font-variant-numeric:tabular-nums;}
+@media (max-width:640px){
+  .prose .tbl.provenance{font-size:11px;}
+  .prose .tbl.provenance td, .prose .tbl.provenance th{padding:5px 6px;}
+}
