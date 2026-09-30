@@ -282,8 +282,15 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 :root[data-map-theme="light"] .country{fill:#E5DBC2;stroke:#CFC5A8}
 :root[data-map-theme="light"] .graticule{stroke:#D9CFB1}
 :root[data-map-theme="light"] .sphere{fill:#F5EDDD}
-:root[data-map-theme="light"] .core{stroke-opacity:.85}
-:root[data-map-theme="light"] .band{opacity:.42}
+/* Light-mode flow rendering: `screen` blend brightens dark backgrounds
+   but disappears on cream. Switch to `multiply` (colours darken the
+   cream) and lift opacity so hubs stay visible. */
+:root[data-map-theme="light"] .g-flows{mix-blend-mode:multiply}
+:root[data-map-theme="light"] .core{stroke-opacity:.9;stroke-width:1.2px}
+:root[data-map-theme="light"] .band{opacity:.72}
+:root[data-map-theme="light"] .node-halo{opacity:.35;fill:#0A0A0A}
+:root[data-map-theme="light"] .node{fill:#0A0A0A}
+:root[data-map-theme="light"] #flow-arrow path{fill:#0A0A0A}
 :root[data-map-theme="light"] .lbl{fill:#0A0A0A;stroke:#F5EDDD}
 :root[data-map-theme="light"] .tog{background:#F5EDDD;color:#0A0A0A;border-color:#0A0A0A}
 :root[data-map-theme="light"] .tog[aria-pressed="true"]{color:#B95E00;border-color:#B95E00}
@@ -320,6 +327,10 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 /* View mode: Map vs Sankey */
 #sankey{display:block;width:100%;height:100%;min-height:520px;background:var(--black)}
 #sankey:not([hidden]){background:var(--black)}
+/* SVGs ignore the `hidden` attribute in some contexts if a display
+   rule (e.g. .mapwrap svg{display:block}) beats the UA default.
+   Enforce it explicitly so setView() actually swaps the two views. */
+svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
 .sankey-empty{padding:24px;font-size:14px;color:var(--white);opacity:.75;text-align:center}
 .sk-node rect{cursor:pointer}
 .sk-node text{font-family:var(--f-body);font-size:12px;fill:var(--white);pointer-events:none}
@@ -375,7 +386,7 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
     <div class="mapwrap" id="mapwrap">
       <svg id="map" role="img" aria-label="World map of mineral production and trade flows">
         <defs>
-          <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+          <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
             <path d="M0,1 L10,5 L0,9 z" fill="#FFFFFF" opacity="0.85"/>
           </marker>
           <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -532,6 +543,14 @@ const zoom = d3.zoom().scaleExtent([1, 9]).on("zoom", (e) => {
   gPol.selectAll("rect").attr("width", 9/k).attr("height", 9/k).attr("x", d => d.x - 4.5/k).attr("y", d => d.y - 4.5/k);
   gCorr.selectAll("circle").attr("r", 4 / k);
   gCorr.selectAll("text").attr("font-size", 11 / k).attr("stroke-width", 3 / k);
+  // Google-Maps-style arrowheads: cap at ~9-11 visual px so they can't
+  // balloon when zoomed in. Since the marker sits inside the scaled
+  // group with markerUnits="userSpaceOnUse", size in user coords must
+  // be divided by k to keep visual size roughly constant.
+  var arrowVisualPx = Math.min(11, Math.max(6, 9 * Math.sqrt(Math.min(k, 4)) / 1.4));
+  d3.select("#flow-arrow")
+    .attr("markerWidth",  arrowVisualPx / k)
+    .attr("markerHeight", arrowVisualPx / k);
   drawFlowGeometry();
 });
 svg.call(zoom);
@@ -595,6 +614,10 @@ function buildFlowGeo(fl){
 }
 function drawFlowGeometry(){
   const cutting = (f) => state.stress && (f.source === state.stress || f.target === state.stress);
+  // Keep arrowheads a constant visual size across zoom (mirrors the
+  // label sizing logic; markerUnits is userSpaceOnUse so we divide by k).
+  var _arrowPx = Math.min(11, Math.max(6, 9 * Math.sqrt(Math.min(k, 4)) / 1.4));
+  d3.select("#flow-arrow").attr("markerWidth", _arrowPx / k).attr("markerHeight", _arrowPx / k);
   // Weight-driven band: heavier flows get more width and more opacity,
   // lighter flows fade into the background. Exponent 1.55 on weight
   // makes the difference visible at a glance without shouting.
