@@ -243,15 +243,6 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .mf-breadcrumb a:hover{opacity:1;color:var(--orange)}
 .mf-breadcrumb .mf-sep{color:var(--white);opacity:.34;font-size:14px}
 .mf-breadcrumb [aria-current="page"]{color:var(--white);opacity:.95;font-weight:600}
-
-/* Map caption: names the mineral + stage currently coloured
-   and any filters (Africa focus) so switching stages carries a
-   clear signal even when one country dominates every stage. */
-#mapcaption{position:absolute;left:12px;bottom:52px;z-index:3;pointer-events:none;
-  background:rgba(0,0,0,.82);border:1px solid var(--rule);
-  padding:8px 12px;font-size:12.5px;line-height:1.35;color:var(--white);
-  max-width:calc(100% - 24px);letter-spacing:.005em;
-}
 #mapcaption b{color:var(--orange);font-weight:700}
 #mapcaption .mc-sub{opacity:.7;font-size:11px;display:block;margin-top:2px}
 @media(max-width:900px){#mapcaption{bottom:auto;top:60px;left:12px}}
@@ -260,6 +251,9 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .core{color: inherit}
 .g-flows path.core{color: inherit}
 /* The marker path is filled with currentColor of the referring element. */
+
+.stage-btn .s-top.s-top-2{display:block;font-size:12.5px;line-height:1.35}
+.stage-btn .s-top.s-top-2 .s-lab{display:inline-block;min-width:56px;color:var(--white);opacity:.62;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-right:6px}
 </style>
 </head>
 <body>
@@ -296,9 +290,7 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
             <line x1="0" y1="0" x2="0" y2="6" stroke="var(--orange)" stroke-width="1" opacity=".6"/>
           </pattern>
         </defs>
-      </svg>
-      <div class="mapcaption" id="mapcaption" aria-live="polite"></div>
-      <div class="mapctl" role="group" aria-label="Map layers">
+      </svg><div class="mapctl" role="group" aria-label="Map layers">
         <button class="tog" id="t-flows" aria-pressed="true">Trade flows</button>
         <button class="tog" id="t-africa" aria-pressed="false">Africa focus</button>
         <button class="tog" id="t-pol" aria-pressed="true">Policy measures</button>
@@ -614,16 +606,6 @@ function drawMap(){
     .attr("stroke-width", 3 / Math.sqrt(k))
     .html(d => d.txt);
 
-  // Visible view caption: mineral + stage + any filter.
-  var mc = document.getElementById("mapcaption");
-  if (mc){
-    if (isAll()){
-      mc.innerHTML = "Viewing <b>All eight minerals</b>. " + flowGeo.length + " corridors on the map." + (state.africa ? " <span class=\"mc-sub\">Africa focus on: corridors with an African end only.</span>" : "");
-    } else {
-      var top3 = ranked(state.stage).slice(0,3).map(function(r){return name(r[0]) + " " + fmt(r[1]);}).join(", ");
-      mc.innerHTML = "Viewing <b>" + esc(mineral().name) + "</b> \u00b7 " + esc(stageLabel(state.stage).toLowerCase()) + " shares." + "<span class=\"mc-sub\">Top: " + esc(top3) + "</span>";
-    }
-  }
   svg.attr("aria-label", isAll() ? `All minerals: ${flowGeo.length} trade corridors` :
     `${mineral().name}, ${stageLabel(state.stage).toLowerCase()}: ` + ranked(state.stage).slice(0,3).map(([i,v]) => `${name(i)} ${fmt(v)}`).join(", "));
 }
@@ -638,9 +620,15 @@ function drawRibbon(){
   const rib = document.getElementById("ribbon");
   if (isAll()){
     rib.style.setProperty("--stages", MIN.length);
-    rib.innerHTML = MIN.map(m => { const r = rankedOf(m.id, "refining")[0]; return `<button class="stage-btn" data-m="${m.id}" aria-pressed="false">
+    rib.innerHTML = MIN.map(m => {
+      const rMine = rankedOf(m.id, "mining")[0];
+      const rRef  = rankedOf(m.id, "refining")[0];
+      return `<button class="stage-btn" data-m="${m.id}" aria-pressed="false">
       <span class="s-name"><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</span>
-      <span class="s-top">Refining: ${esc(name(r[0]))} <b>${fmt(r[1])}</b></span>${strata(sharesOf(m.id, "refining"))}</button>`; }).join("");
+      <span class="s-top s-top-2"><span class="s-lab">Mining</span> ${esc(name(rMine[0]))} <b>${fmt(rMine[1])}</b></span>
+      <span class="s-top s-top-2"><span class="s-lab">Refining</span> ${esc(name(rRef[0]))} <b>${fmt(rRef[1])}</b></span>
+      ${strata(sharesOf(m.id, "refining"))}</button>`;
+    }).join("");
     rib.querySelectorAll(".stage-btn").forEach(b => b.addEventListener("click", () => { state.mineral = b.dataset.m; state.stage = "refining"; state.col = "stage"; introFlows = true; update(); }));
     return;
   }
