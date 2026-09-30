@@ -97,7 +97,12 @@ button,select{font:inherit;color:inherit}
 .mapctl .seg-view{border-color:var(--orange);order:-1}
 .mapctl .seg-view .tog{background:var(--black);color:var(--orange);font-weight:700}
 .mapctl .seg-view .tog[aria-pressed="true"]{background:var(--orange);color:var(--black);border-color:var(--orange)}
-.legend{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.85);border:1px solid var(--rule);padding:10px 12px;font-size:13px;display:grid;grid-template-columns:auto;gap:6px 14px;max-width:300px}
+/* Legend was previously absolutely positioned at the bottom-left of
+   the map, which could cover the Stress-test / Country content
+   rendered beneath it (particularly on tall panels and on the
+   Sankey view). Flow it in-document instead: it sits under the map
+   in the same column and can no longer overlap anything. */
+.legend{position:static;margin:10px 12px 12px;background:rgba(0,0,0,.85);border:1px solid var(--rule);padding:10px 12px;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;max-width:none}
 .legend.cols{grid-template-columns:1fr 1fr}
 .legend .row{display:flex;align-items:center;gap:8px}
 .sw{display:inline-block;width:26px;height:0;border-top:3px solid}
