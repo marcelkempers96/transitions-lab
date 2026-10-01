@@ -137,9 +137,11 @@ button,select{font:inherit;color:inherit}
 /* Main */
 .stagearea{display:grid;grid-template-columns:minmax(0,1fr) var(--panel-w);gap:0;margin-top:0;border-bottom:1px solid var(--white)}
 /* Fixed map/Sankey container size so switching views never resizes
-   the chrome around the chart. Desktop 560px, mobile 520px. */
-.mapwrap{position:relative;height:560px;min-height:560px;border-right:1px solid var(--white)}
-#map{display:block;width:100%;height:100%;min-height:0;touch-action:none}
+   the chrome around the chart. Desktop 560px, mobile 520px. Flex
+   column so the colour legend can sit at the bottom without
+   overflowing when the map fills the top. */
+.mapwrap{position:relative;height:560px;min-height:560px;border-right:1px solid var(--white);display:flex;flex-direction:column}
+#map{display:block;width:100%;flex:1 1 auto;min-height:0;touch-action:none}
 .country{fill:var(--land);stroke:var(--land-edge);stroke-width:.6px;vector-effect:non-scaling-stroke;cursor:pointer}
 .country.has{cursor:pointer}
 .country.sel{stroke:var(--white);stroke-width:1.6px}
@@ -197,31 +199,9 @@ button,select{font:inherit;color:inherit}
    rendered beneath it (particularly on tall panels and on the
    Sankey view). Flow it in-document instead: it sits under the map
    in the same column and can no longer overlap anything. */
-.legend{position:static;margin:10px 12px 12px;background:rgba(0,0,0,.85);border:1px solid var(--rule);padding:10px 12px;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;max-width:none}
-/* Size legend: three nested hub circles at round values, labels on
-   the right. Same typography as .legend; sits directly above it. */
-.size-legend{
-  position:static;margin:10px 12px 0;padding:10px 12px;
-  background:rgba(0,0,0,.85);border:1px solid var(--rule);
-  color:var(--white);font-size:13px;line-height:1.35;
-}
-.size-legend .sl-head{font-size:12.5px;line-height:1.35;margin:0 0 6px;opacity:.9}
-.size-legend .sl-arrow{margin:8px 0 0;display:flex;align-items:center;gap:6px}
-.size-legend .sl-arrow .sl-arrow-glyph{fill:var(--white);opacity:.85}
-.size-legend .sl-body{display:flex;align-items:flex-end;gap:12px}
-.size-legend .sl-rings{display:block;flex:0 0 auto}
-.size-legend .sl-rings .sl-ring{fill:var(--white);fill-opacity:.18;stroke:var(--white);stroke-opacity:.35;stroke-width:.5}
-.size-legend .sl-vals{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;font-variant-numeric:tabular-nums}
-.size-legend .sl-vals li{display:flex;align-items:center;gap:6px;font-size:12.5px}
-.size-legend .sl-vals .sl-key{
-  display:inline-block;border-radius:50%;
-  width:calc(var(--r) * 2);height:calc(var(--r) * 2);
-  background:var(--white);opacity:.22;flex:0 0 auto;
-}
-:root[data-map-theme="light"] .size-legend{background:rgba(245,237,221,.92);border-color:rgba(10,10,10,.18);color:#0A0A0A}
-:root[data-map-theme="light"] .size-legend .sl-rings .sl-ring{fill:#0A0A0A;fill-opacity:.3;stroke:#0A0A0A;stroke-opacity:.4}
-:root[data-map-theme="light"] .size-legend .sl-vals .sl-key{background:#0A0A0A;opacity:.3}
-:root[data-map-theme="light"] .size-legend .sl-arrow .sl-arrow-glyph{fill:#0A0A0A;opacity:1}
+/* Colour legend sits at the bottom of the mapwrap column, naturally
+   sized by its content so it never overlaps the panel below. */
+.legend{position:static;flex:0 0 auto;margin:0;background:rgba(0,0,0,.85);border-top:1px solid var(--rule);padding:10px 12px;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;max-width:none;max-height:40%;overflow-y:auto}
 .legend.cols{grid-template-columns:1fr 1fr}
 .legend .row{display:flex;align-items:center;gap:8px}
 .sw{display:inline-block;width:26px;height:0;border-top:3px solid}
@@ -490,10 +470,10 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 :root[data-map-theme="light"] .map-theme .mt-group button[aria-pressed="true"]{background:#0A0A0A;color:#F5EDDD}
 
 /* View mode: Map vs Sankey */
-/* Chain diagram SVG fills the fixed-size mapwrap exactly, same as
-   the map SVG does. drawSankey() reads the current clientWidth and
-   clientHeight to lay out, so the two always match. */
-#sankey{display:block;width:100%;height:100%;min-height:0;background:var(--black)}
+/* Chain diagram SVG fills the available flex space in mapwrap, same
+   as the map SVG does. drawSankey() reads the current clientWidth
+   and clientHeight to lay out, so the two always match. */
+#sankey{display:block;width:100%;flex:1 1 auto;min-height:0;background:var(--black)}
 #sankey:not([hidden]){background:var(--black)}
 /* SVGs ignore the `hidden` attribute in some contexts if a display
    rule (e.g. .mapwrap svg{display:block}) beats the UA default.
@@ -602,7 +582,6 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
         <button id="z-out" aria-label="Zoom out">&#8722;</button>
         <button id="z-reset" aria-label="Reset view">&#8634;</button>
       </div>
-      <div class="size-legend" id="size-legend" aria-live="polite"></div>
       <div class="legend" id="legend"></div>
       <div class="tip" id="tip" role="status" aria-live="polite"></div>
     </div>
@@ -918,18 +897,12 @@ function drawFlowGeometry(){
     .attr("cx", d => d.x).attr("cy", d => d.y).attr("r", d => hubRadius(d.w) / Math.sqrt(k));
   gNode.selectAll("circle.node").data(hubs, d => d.iso).join("circle").attr("class","node")
     .attr("cx", d => d.x).attr("cy", d => d.y).attr("r", d => 1.8 / Math.sqrt(k));
-  // Save for the size-legend builder below.
-  lastHubs = hubs;
-  drawSizeLegend();
 }
 
-// Hub radius formula. Kept as a single function so the size legend
-// in drawSizeLegend() can draw circles that are pixel-identical to
-// the live map circles at any value of w. Pure sqrt: area is
-// proportional to w (the summed corridor weight touching a country).
+// Hub radius formula. Pure sqrt: area is proportional to w (the
+// summed corridor weight touching a country).
 const HUB_K = 2.6;
 function hubRadius(w){ return HUB_K * Math.sqrt(Math.max(0, w)); }
-var lastHubs = [];
 
 function focusAfrica(animate){
   const p1 = projection([-19, 36]), p2 = projection([55, -36]);
@@ -1153,52 +1126,6 @@ function drawRibbon(){
     <span class="s-name">${esc(stageLabel(s))}</span>
     <span class="s-top">${r ? esc(name(r[0])) + " <b>" + fmt(r[1]) + "</b>" : ""}</span>${strata(shares(s))}</button>`; }).join("");
   rib.querySelectorAll(".stage-btn").forEach(b => b.addEventListener("click", () => { state.stage = b.dataset.s; update(); }));
-}
-
-// Size legend: three nested circles that use hubRadius() so they are
-// pixel-identical to the live map circles at the same w value. Rendered
-// at the un-zoomed scale (k=1) so the legend matches the no-zoom hub
-// state the reader lands on. Values are picked from the current hubs:
-// smallest, median, largest.
-function drawSizeLegend(){
-  var el = document.getElementById("size-legend"); if (!el) return;
-  if (!lastHubs || !lastHubs.length){ el.innerHTML = ""; return; }
-  var ws = lastHubs.map(h => h.w).filter(w => w > 0).sort((a,b) => a - b);
-  if (!ws.length){ el.innerHTML = ""; return; }
-  var wMax = ws[ws.length - 1];
-  var wMed = ws[Math.floor(ws.length / 2)];
-  var wMin = ws[0];
-  // Round the three to clean integers for a sensible legend scale.
-  function round(w){ return w >= 20 ? Math.round(w/5)*5 : Math.round(w); }
-  var vals = [round(wMin), round(wMed), round(wMax)];
-  // De-duplicate preserving order; if we end up with 1 or 2 unique
-  // values (small corridor sets), skip the legend to avoid noise.
-  var uniq = [];
-  vals.forEach(v => { if (uniq.indexOf(v) === -1) uniq.push(v); });
-  if (uniq.length < 2){ el.innerHTML = ""; return; }
-  var maxR = hubRadius(uniq[uniq.length - 1]);
-  var svgW = Math.ceil(maxR * 2) + 2;
-  var svgH = Math.ceil(maxR * 2) + 2;
-  var cx = svgW / 2;
-  var cyBase = svgH - 1; // circles bottom-aligned
-  var ns = "http://www.w3.org/2000/svg";
-  var circles = uniq.map(function(w){
-    var r = hubRadius(w);
-    return '<circle cx="' + cx + '" cy="' + (cyBase - r) + '" r="' + r + '" class="sl-ring"/>';
-  }).join("");
-  var labels = uniq.map(function(w){
-    var r = hubRadius(w);
-    return '<g class="sl-label-row"><span class="sl-dot" style="width:' + (r*2) + 'px;height:' + (r*2) + 'px"></span><span class="sl-val">' + w + '</span></g>';
-  }).join("");
-  el.innerHTML =
-    '<div class="sl-head">Circle size: country\'s share of global supply, across all stages</div>' +
-    '<div class="sl-body">' +
-      '<svg class="sl-rings" width="' + svgW + '" height="' + svgH + '" viewBox="0 0 ' + svgW + ' ' + svgH + '" aria-hidden="true">' + circles + '</svg>' +
-      '<ul class="sl-vals">' +
-        uniq.map(function(w){ return '<li><span class="sl-key" style="--r:' + hubRadius(w) + 'px"></span><span class="sl-val">' + w + ' corridor-weight</span></li>'; }).join("") +
-      '</ul>' +
-    '</div>' +
-    '<div class="sl-head sl-arrow"><svg width="14" height="10" viewBox="0 0 10 7" aria-hidden="true"><path d="M0,0.7 L10,3.5 L0,6.3 z" class="sl-arrow-glyph"/></svg> Direction of a flow (points at the importer)</div>';
 }
 
 function drawLegend(){
