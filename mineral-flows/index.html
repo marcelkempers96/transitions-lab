@@ -256,6 +256,14 @@ ul.plain li:first-child{border-top:0}
 .corr-conf-high{background:rgba(255,154,31,.14);color:var(--orange);border:1px solid rgba(255,154,31,.4)}
 .corr-conf-medium{background:rgba(255,154,31,.08);color:var(--orange);border:1px solid rgba(255,154,31,.25);opacity:.85}
 .corr-conf-low{background:transparent;color:var(--white);border:1px solid var(--rule);opacity:.65}
+/* Reserves-vs-mining gap colouring in the Reserves pane. Green =
+   the country holds more than it mines (latent potential). Red =
+   it mines more than its known reserves share (depleting faster
+   than it is replenishing). Neutral = within 5 percentage points. */
+.gap-pos{color:#4ad66d;font-weight:700}
+.gap-neg{color:#ff6a6a;font-weight:700}
+.gap-neu{color:var(--white);opacity:.72}
+.africa-tag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle;margin-left:6px;background:rgba(74,214,109,.12);color:#4ad66d;border:1px solid rgba(74,214,109,.4)}
 .tag{display:inline-block;border:1px solid var(--orange);color:var(--orange);font-size:12px;padding:1px 7px;border-radius:999px;margin-right:6px}
 details{margin-top:18px;border-top:1px solid var(--rule);padding-top:10px}
 summary{cursor:pointer;font-weight:500}
@@ -623,6 +631,7 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
         <button class="tab" role="tab" id="tab-overview" aria-selected="true" aria-controls="pane">Overview</button>
         <button class="tab" role="tab" id="tab-country" aria-selected="false" aria-controls="pane">Country</button>
         <button class="tab" role="tab" id="tab-stress" aria-selected="false" aria-controls="pane">Stress test</button>
+        <button class="tab" role="tab" id="tab-reserves" aria-selected="false" aria-controls="pane">Reserves</button>
         <button class="tab" role="tab" id="tab-sources" aria-selected="false" aria-controls="pane">Sources</button>
       </div>
       <div class="pane" id="pane" role="tabpanel"></div>
@@ -671,7 +680,7 @@ function readHash(){
   // Plain anchors (#sources, #stress, #country, #overview) open that
   // panel tab on load. Shareable: /mineral-flows#sources takes a
   // reader straight to the Sources panel.
-  const PLAIN_TABS = {sources: "sources", stress: "stress", country: "country", overview: "overview"};
+  const PLAIN_TABS = {sources: "sources", stress: "stress", country: "country", overview: "overview", reserves: "reserves"};
   if (PLAIN_TABS[raw]){
     state.tab = PLAIN_TABS[raw];
     // Scroll the panel into view once the DOM has rendered it.
@@ -687,7 +696,7 @@ function readHash(){
   if (h.get("c") && C.has(h.get("c"))) state.country = h.get("c");
   if (h.get("a") === "1") state.africa = true;
   state.col = h.get("col") || (state.mineral === "all" ? "mineral" : "stage");
-  if (h.get("tab") && ["overview","country","stress","sources"].indexOf(h.get("tab")) >= 0) state.tab = h.get("tab");
+  if (h.get("tab") && ["overview","country","stress","reserves","sources"].indexOf(h.get("tab")) >= 0) state.tab = h.get("tab");
   // Group filter (shareable). "all" or absent → no filter.
   var g = h.get("g");
   if (g && g !== "all"){
@@ -1316,6 +1325,67 @@ function paneStress(){
   h += `<p><button class="btn ghost" id="clear-stress">Put ${esc(name(iso))} back</button></p>`;
   return h;
 }
+// Reserves pane: compares a country's reserves share (what it holds
+// in the ground, per USGS Mineral Commodity Summaries) with its
+// mining share (what it currently exports). The gap is the "untapped
+// potential" the reader can act on.
+function paneReserves(){
+  if (isAll()){
+    let h = `<h2>Reserves and the mining gap</h2>`;
+    h += `<p class="headline">For each mineral, the gap between a country's share of world reserves (what it has) and its share of world mining (what it actually produces today). A positive gap means the ground holds more than the smelters currently move.</p>`;
+    const rows = MIN.map(m => {
+      if (!m.reserves || !m.reserves.shares || !Object.keys(m.reserves.shares).length){
+        return `<tr><td><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</td><td colspan="3" class="num" style="opacity:.65">Not reported by USGS</td></tr>`;
+      }
+      // Pick the biggest reserve-holder for this mineral and show its gap
+      const topRes = Object.entries(m.reserves.shares).filter(([k]) => k !== "OTHER").sort((a,b) => b[1]-a[1])[0];
+      if (!topRes) return "";
+      const minShare = (m.stages.mining && m.stages.mining.shares && m.stages.mining.shares[topRes[0]]) || 0;
+      const gap = topRes[1] - minShare;
+      const gapClass = gap >= 5 ? "pos" : gap <= -5 ? "neg" : "neu";
+      return `<tr><td><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</td><td>${esc(name(topRes[0]))}</td><td class="num">${topRes[1]}% / ${fmt(minShare)}</td><td class="num gap-${gapClass}">${gap > 0 ? "+" : ""}${gap.toFixed(0)} pts</td></tr>`;
+    }).join("");
+    h += `<p class="note" style="margin-top:14px">Click a mineral chip above to see the full reserves-vs-mining breakdown for every listed country.</p>`;
+    h += `<table class="min-table"><thead><tr><th>Mineral</th><th>Top reserve holder</th><th class="num">Reserves / mining</th><th class="num">Gap</th></tr></thead><tbody>${rows}</tbody></table>`;
+    h += `<p class="note">Source: USGS Mineral Commodity Summaries 2025, Reserves column. Shares normalised to the listed-reserves total, so OTHER captures the fragmented tail.</p>`;
+    return h;
+  }
+  const m = mineral();
+  const r = m.reserves || {};
+  let h = `<h2>${esc(m.name)}: reserves vs mining</h2>`;
+  if (!r.shares || !Object.keys(r.shares).length){
+    h += `<p class="note">${esc(r.not_reported_reason || "USGS does not publish standalone reserves for this mineral.")}</p>`;
+    return h;
+  }
+  if (r.world_total && r.world_total.display){
+    h += `<p class="used-in"><b>World reserves (USGS MCS 2025):</b> ${esc(r.world_total.display)}</p>`;
+  }
+  const minSh = (m.stages.mining || {}).shares || {};
+  // Union of countries with any reserves share OR any mining share
+  const allIsos = Array.from(new Set(Object.keys(r.shares).concat(Object.keys(minSh)))).filter(i => i !== "OTHER");
+  // Sort by reserves share desc, then mining share desc
+  allIsos.sort((a,b) => ((r.shares[b]||0) - (r.shares[a]||0)) || ((minSh[b]||0) - (minSh[a]||0)));
+  const rows = allIsos.map(iso => {
+    const res = r.shares[iso] || 0;
+    const min = minSh[iso] || 0;
+    const gap = res - min;
+    const gapCls = gap >= 5 ? "pos" : gap <= -5 ? "neg" : "neu";
+    const afr = (C.get(iso) || {}).africa ? ' <span class="africa-tag">Africa</span>' : "";
+    return `<tr><td>${esc(name(iso))}${afr}</td><td class="num">${res}%</td><td class="num">${fmt(min)}</td><td class="num gap-${gapCls}">${gap > 0 ? "+" : ""}${gap.toFixed(0)} pts</td></tr>`;
+  }).join("");
+  h += `<p class="headline">Gap = reserves share &minus; mining share. Positive gap means the country holds more of the world's known deposits than it currently produces.</p>`;
+  h += `<table class="min-table"><thead><tr><th>Country</th><th class="num">Reserves share</th><th class="num">Mining share</th><th class="num">Gap</th></tr></thead><tbody>${rows}</tbody></table>`;
+  // Potential African producers that hold reserves but mine little or none
+  const africanLatent = allIsos.filter(iso => (C.get(iso)||{}).africa && (r.shares[iso]||0) > 0 && (minSh[iso]||0) < (r.shares[iso]||0) - 2);
+  if (africanLatent.length){
+    h += `<h3>African countries with latent potential</h3><ul class="plain">` + africanLatent.map(iso => `<li><b>${esc(name(iso))}</b>: holds ${r.shares[iso]}% of world reserves, currently mines ${fmt(minSh[iso]||0)}.</li>`).join("") + `</ul>`;
+  }
+  if (r.world_total && r.world_total.source){
+    h += `<p class="note">Source: ${esc(r.world_total.source)}</p>`;
+  }
+  return h;
+}
+
 function paneSources(){
   let h = `<h2>Sources</h2><p>${esc(DATA.minerals.meta.warning)}</p><div style="border:1px solid var(--orange);padding:10px 12px;margin:12px 0 10px;font-size:13.5px;line-height:1.5"><strong style="color:var(--orange)">A note on the African coverage.</strong> Ndubuisi et al. (2026) report that 48 African countries hold reserves of at least one transition mineral. The map draws current top exporters, so only around a dozen African countries appear here as source hubs. The other 30-plus hold deposits that have not yet reached international trade at meaningful volumes. A reserve is not the same as an export.</div>`;
   const ids = isAll() ? MIN.map(m => m.id) : [state.mineral];
@@ -1331,9 +1401,9 @@ function paneSources(){
   return h;
 }
 function drawPane(){
-  ["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).setAttribute("aria-selected", t === state.tab));
+  ["overview","country","stress","reserves","sources"].forEach(t => document.getElementById("tab-"+t).setAttribute("aria-selected", t === state.tab));
   const pane = document.getElementById("pane");
-  pane.innerHTML = state.tab === "overview" ? paneOverview() : state.tab === "country" ? paneCountry() : state.tab === "stress" ? paneStress() : paneSources();
+  pane.innerHTML = state.tab === "overview" ? paneOverview() : state.tab === "country" ? paneCountry() : state.tab === "stress" ? paneStress() : state.tab === "reserves" ? paneReserves() : paneSources();
   const cs = document.getElementById("csel"); if (cs) cs.addEventListener("change", e => { state.country = e.target.value || null; update(); });
   const ss = document.getElementById("ssel"); if (ss) ss.addEventListener("change", e => { state.stress = e.target.value || null; update(); });
   const ts = document.getElementById("to-stress"); if (ts) ts.addEventListener("click", () => { state.stress = state.country; state.tab = "stress"; update(); });
@@ -1355,7 +1425,7 @@ function drawPane(){
     btn.addEventListener("click", e => { e.stopPropagation(); state.mineral = btn.dataset.openMineral; state.stage = "refining"; state.col = "stage"; introFlows = true; update(); });
   });
 }
-["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).addEventListener("click", () => { state.tab = t; drawPane(); writeHash(); }));
+["overview","country","stress","reserves","sources"].forEach(t => document.getElementById("tab-"+t).addEventListener("click", () => { state.tab = t; drawPane(); writeHash(); }));
 
 // Footer link that opens the Sources tab and scrolls the panel into
 // view. Keeps the shareable /mineral-flows#sources URL (writeHash

@@ -125,6 +125,18 @@ The **Chain diagram** button turns the map into a stage-by-stage flow view for t
 
 ---
 
+## Reserves vs mining: the gap
+
+The map carries a **Reserves** tab in the side panel. For every mineral where USGS publishes reserves (twelve of the fifteen), the tab lists each country's **share of world reserves** against its **share of world mining today**, and highlights the gap. A positive gap says the country holds more of the known deposits than it currently produces; a negative gap says it mines faster than its share of reserves can sustain.
+
+The feature is most diagnostic for Africa. If a country holds 7% of the world's copper reserves but mines 2%, the Reserves tab labels it as having **latent potential**: the ground has it, the smelters have not followed yet. Clicking any mineral chip opens the full breakdown for every listed country.
+
+Three minerals (silicon metal, gallium, germanium) have no reserves line because USGS does not publish standalone reserves for them: silicon is sand-grade quartz, and gallium and germanium are co-products of bauxite and zinc refining respectively. The tab labels these honestly rather than imputing a share.
+
+For the method behind the reserves data, including the economic-vs-geological distinction and the year-on-year volatility, see the research paper's [Method: reserves and the mining gap](/mineral-flows-research#method-reserves) section.
+
+---
+
 ## What to look for
 
 **Asymmetry.** Africa mines about a fifth of the world's copper but refines about a tenth. Cobalt is more extreme: 76% mined in DRC, 78% refined in China, 3% refined in DRC. The map shows those two numbers next to each other on the ribbon so the gap is impossible to miss.
