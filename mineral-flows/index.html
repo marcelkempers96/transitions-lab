@@ -124,8 +124,10 @@ button,select{font:inherit;color:inherit}
 
 /* Main */
 .stagearea{display:grid;grid-template-columns:minmax(0,1fr) var(--panel-w);gap:0;margin-top:0;border-bottom:1px solid var(--white)}
-.mapwrap{position:relative;min-height:520px;border-right:1px solid var(--white)}
-#map{display:block;width:100%;height:100%;min-height:520px;touch-action:none}
+/* Fixed map/Sankey container size so switching views never resizes
+   the chrome around the chart. Desktop 560px, mobile 520px. */
+.mapwrap{position:relative;height:560px;min-height:560px;border-right:1px solid var(--white)}
+#map{display:block;width:100%;height:100%;min-height:0;touch-action:none}
 .country{fill:var(--land);stroke:var(--land-edge);stroke-width:.6px;vector-effect:non-scaling-stroke;cursor:pointer}
 .country.has{cursor:pointer}
 .country.sel{stroke:var(--white);stroke-width:1.6px}
@@ -273,8 +275,8 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
   .stage-btn .s-top{font-size:12px;margin:2px 0 4px}
   .stage-btn .s-top.s-top-2 .s-lab{min-width:44px;font-size:10px;margin-right:4px}
   .stagearea{grid-template-columns:1fr}
-  .mapwrap{border-right:0;border-bottom:1px solid var(--white);min-height:0}
-  #map{min-height:0;height:62vh;max-height:560px}
+  .mapwrap{border-right:0;border-bottom:1px solid var(--white);height:520px;min-height:520px}
+  #map{min-height:0;height:100%;max-height:none}
   .legend{position:static;border:0;border-top:1px solid var(--rule);max-width:none;grid-template-columns:1fr 1fr}
   .zoomctl{bottom:auto;top:12px;right:12px}
   .mapctl{max-width:calc(100% - 70px);gap:4px}
@@ -469,14 +471,11 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 :root[data-map-theme="light"] .map-theme .mt-group button[aria-pressed="true"]{background:#0A0A0A;color:#F5EDDD}
 
 /* View mode: Map vs Sankey */
-#sankey{display:block;width:100%;height:100%;min-height:520px;background:var(--black)}
+/* Chain diagram SVG fills the fixed-size mapwrap exactly, same as
+   the map SVG does. drawSankey() reads the current clientWidth and
+   clientHeight to lay out, so the two always match. */
+#sankey{display:block;width:100%;height:100%;min-height:0;background:var(--black)}
 #sankey:not([hidden]){background:var(--black)}
-@media (max-width:640px){
-  /* Phone: keep the chain diagram at a readable, fixed height instead
-     of stretching to fill the mapwrap. Actual height is also written
-     inline by drawSankey so the two match. */
-  #sankey{min-height:0;height:auto;max-height:460px}
-}
 /* SVGs ignore the `hidden` attribute in some contexts if a display
    rule (e.g. .mapwrap svg{display:block}) beats the UA default.
    Enforce it explicitly so setView() actually swaps the two views. */
@@ -486,9 +485,30 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
 .sk-node text{font-family:var(--f-body);font-size:12px;fill:var(--white);pointer-events:none}
 .sk-node .sk-pct{fill:var(--orange);font-weight:700}
 .sk-node.stage-title text{font-family:var(--f-head);font-size:16px;fill:var(--white);opacity:.9}
-.sk-link{fill:none;stroke-opacity:.35;transition:stroke-opacity .12s ease}
-.sk-link:hover{stroke-opacity:.75}
+.sk-link{fill:none;stroke-opacity:.42;transition:stroke-opacity .14s ease, filter .14s ease;pointer-events:stroke}
+.sk-link:hover{stroke-opacity:.9}
 .sk-link.cut{stroke-opacity:.08}
+/* Hover cross-highlight: when the reader points at a node or link,
+   everything else fades to the background so the selected path
+   stands out. Mirrors the main map's hover behaviour. */
+.sankey-focus .sk-link{stroke-opacity:.06}
+.sankey-focus .sk-link.sk-hot{stroke-opacity:.92}
+.sankey-focus .sk-node rect{fill-opacity:.22}
+.sankey-focus .sk-node.sk-hot rect{fill-opacity:1;stroke-width:1.5}
+.sankey-focus .sk-node text{opacity:.3}
+.sankey-focus .sk-node.sk-hot text{opacity:1}
+/* Sankey hover tooltip. Positioned inside .mapwrap by drawSankey. */
+.sk-tip{
+  position:absolute;pointer-events:none;z-index:5;
+  background:var(--black);color:var(--white);
+  border:1px solid var(--orange);padding:8px 10px;
+  font-family:var(--f-body);font-size:13px;line-height:1.4;
+  max-width:220px;border-radius:3px;
+  opacity:0;transition:opacity .12s ease;
+}
+.sk-tip b{color:var(--orange)}
+:root[data-map-theme="light"] .sk-tip{background:#F5EDDD;color:#0A0A0A;border-color:#B95E00}
+:root[data-map-theme="light"] .sk-tip b{color:#B95E00}
 @media print{
   html,body{background:#fff !important;color:#000 !important}
   .site-navstrip,.mf-breadcrumb,.tool-share,.mapctl,.zoomctl,.tip,.tabs,.panel,.minerals,footer,.site-tail{display:none !important}
@@ -1557,41 +1577,31 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       });
     });
 
-    // Links: for each adjacent stage pair, connect each upstream node to
-    // each downstream node by an even-split of the smaller share, so the
-    // Sankey mass is proportional to the smaller side of the chain. If a
-    // corridor exists for that pair, weight it higher.
+    // Mass-balanced link allocation (biproportional):
+    //   value(A -> B) = sA * sB / totB
+    // where sA, sB are the shipped country shares at adjacent stages
+    // and totB is the sum of listed shares (close to 100 for every
+    // mineral in the dataset). Properties:
+    //   - For every upstream country A: sum_B value(A,B) = sA
+    //   - For every downstream country B: sum_A value(A,B)
+    //     = sB * totA / totB  (= sB when both marginals equal 100)
+    // So the drawn node heights match the shipped share percentages,
+    // and the Sankey is mass-conserving. The previous 70%-corridor
+    // hybrid was more editorial than quantitative and the node
+    // heights no longer matched the shipped shares; the corridor-
+    // follow info has moved to the main map's bilateral arcs where
+    // it belongs.
     var links = [];
-    function corridorWeight(srcIso, dstIso){
-      var w = 0;
-      (d.flows.flows || []).forEach(function(f){
-        if (f.mineral !== m.id) return;
-        if (f.source === srcIso && f.target === dstIso) w += (f.weight || 1);
-      });
-      return w;
-    }
     for (var i = 0; i < stageIds.length - 1; i++){
       var sA = stageIds[i], sB = stageIds[i+1];
       var A = Object.keys(m.stages[sA].shares || {}).filter(function(k){ return m.stages[sA].shares[k] > 0; });
       var B = Object.keys(m.stages[sB].shares || {}).filter(function(k){ return m.stages[sB].shares[k] > 0; });
+      var totB = B.reduce(function(n, b){ return n + m.stages[sB].shares[b]; }, 0) || 1;
       A.forEach(function(a){
         var sa = m.stages[sA].shares[a];
-        // First: any direct corridor from a to any of B carries most of a's outflow.
-        var corrTotal = 0;
-        var pairs = B.map(function(b){ var w = corridorWeight(a, b); corrTotal += w; return {b: b, w: w}; });
-        var covered = 0;
-        pairs.forEach(function(p){
-          if (p.w <= 0) return;
-          var v = sa * (p.w / corrTotal) * 0.7;  // 70% follows the corridor
-          covered += v;
-          var lk = {source: nodeIndex[sA + '|' + a], target: nodeIndex[sB + '|' + p.b], value: v};
-          if (lk.source != null && lk.target != null) links.push(lk);
-        });
-        // Remaining 30% (or 100% if no corridors) spreads by downstream share.
-        var rem = sa - covered;
-        var totB = B.reduce(function(n, b){ return n + m.stages[sB].shares[b]; }, 0);
         B.forEach(function(b){
-          var v = rem * (m.stages[sB].shares[b] / totB);
+          var sb = m.stages[sB].shares[b];
+          var v = sa * (sb / totB);
           if (v <= 0) return;
           var lk = {source: nodeIndex[sA + '|' + a], target: nodeIndex[sB + '|' + b], value: v};
           if (lk.source != null && lk.target != null) links.push(lk);
@@ -1600,34 +1610,21 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     }
 
     var W = skSvg.clientWidth || 800;
-    var H;
-    // Mobile: cap the Sankey height so it fits the phone viewport
-    // instead of stretching into a two-columns-of-orange wall. On
-    // desktop, keep the taller layout.
+    // Mapwrap sets a fixed height (560 desktop / 520 mobile); the
+    // Sankey SVG inherits that height exactly so the chart doesn't
+    // reflow when the view toggles.
+    var H = skSvg.clientHeight || 520;
     var isMobSk = (W < 640);
-    if (isMobSk){
-      // Match the shipped map's mobile height (~62vh capped at 560).
-      var vh = window.innerHeight || 700;
-      H = Math.min(460, Math.max(320, Math.round(vh * 0.55)));
-      skSvg.setAttribute('height', String(H));
-      skSvg.style.height = H + 'px';
-    } else {
-      H = skSvg.clientHeight || 560;
-      if (H < 420) H = 520;
-    }
-    // Labels always sit OUTSIDE the outer columns (see the label
-    // block below): first column labels to the LEFT of the node,
-    // last column labels to the RIGHT. That means the side margins
-    // need to hold the longest country name plus a share, ~104-120px.
-    // The middle gap between two columns is then the whole
-    // remaining width — no more labels crashing into each other.
+    // Labels sit OUTSIDE the outer columns. Side margins must hold
+    // the longest country name plus the share percentage. On mobile
+    // we also give the layout a bit more vertical breathing room.
     var margin = isMobSk
-      ? {top: 32, right: 112, bottom: 18, left: 104}
+      ? {top: 24, right: 108, bottom: 18, left: 100}
       : {top: 40, right: 156, bottom: 24, left: 130};
 
     var sankey = d3.sankey()
-      .nodeWidth(isMobSk ? 12 : 14)
-      .nodePadding(isMobSk ? 10 : 10)
+      .nodeWidth(isMobSk ? 10 : 14)
+      .nodePadding(isMobSk ? 14 : 10)
       .extent([[margin.left, margin.top], [W - margin.right, H - margin.bottom]])
       .nodeAlign(d3.sankeyJustify)   // spread columns evenly across the extent
       .nodeSort(function(a, b){ return b.share - a.share; });
@@ -1685,24 +1682,31 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     // read as a single tinted band, and different countries in the
     // same stage don't collapse into one orange blob.
     var gL = document.createElementNS(ns, 'g'); gL.setAttribute('class', 'sk-links'); skSvg.appendChild(gL);
-    graph.links.forEach(function(lk){
+    var linkPaths = [];
+    graph.links.forEach(function(lk, idx){
       var p = document.createElementNS(ns, 'path');
       p.setAttribute('class', 'sk-link');
       p.setAttribute('d', d3.sankeyLinkHorizontal()(lk));
       p.setAttribute('stroke', isoColour(lk.source.iso));
       p.setAttribute('stroke-width', String(Math.max(1, lk.width)));
+      p.__lk = lk;
+      // Native fallback title; the custom tooltip below handles the
+      // rich interactive version.
       var t = document.createElementNS(ns, 'title');
       t.textContent = (lk.source.name) + ' \u2192 ' + (lk.target.name) + '  \u00b7 ' + lk.value.toFixed(1) + '%';
       p.appendChild(t);
       gL.appendChild(p);
+      linkPaths.push(p);
     });
 
     // Nodes
     var gN = document.createElementNS(ns, 'g'); gN.setAttribute('class', 'sk-nodes'); skSvg.appendChild(gN);
     var stageCount = stageIds.length;
     var fontSize = isMobSk ? 11 : 12.5;
+    var nodeGroups = [];
     graph.nodes.forEach(function(n){
       var g = document.createElementNS(ns, 'g'); g.setAttribute('class', 'sk-node');
+      g.__n = n;
       var r = document.createElementNS(ns, 'rect');
       r.setAttribute('x', String(n.x0));
       r.setAttribute('y', String(n.y0));
@@ -1715,6 +1719,7 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       var t = document.createElementNS(ns, 'title');
       t.textContent = n.name + '  \u00b7 ' + n.stageLabel + '  \u00b7 ' + n.share.toFixed(1) + '%';
       r.appendChild(t);
+      nodeGroups.push(g);
       g.appendChild(r);
       // Label positioning: ALL labels sit OUTSIDE their column so the
       // middle gap between stages is entirely for flow.
@@ -1752,7 +1757,73 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       g.appendChild(txt);
       gN.appendChild(g);
     });
+
+    // Hover interactivity (desktop and tablet): point at a node to
+    // highlight every link touching it (both the inflows and the
+    // outflows); point at a link to highlight the link plus its two
+    // endpoint nodes. A floating tooltip near the cursor names the
+    // thing being inspected.
+    if (!skHoverTip){
+      skHoverTip = document.createElement('div');
+      skHoverTip.className = 'sk-tip';
+      skHoverTip.setAttribute('role', 'status');
+      skSvg.parentNode.appendChild(skHoverTip);
+    }
+    var tipEl = skHoverTip;
+    function clearFocus(){
+      skSvg.classList.remove('sankey-focus');
+      linkPaths.forEach(function(p){ p.classList.remove('sk-hot'); });
+      nodeGroups.forEach(function(g){ g.classList.remove('sk-hot'); });
+      tipEl.style.opacity = 0;
+    }
+    function placeTip(ev, html){
+      tipEl.innerHTML = html;
+      var r = skSvg.getBoundingClientRect();
+      var x = ev.clientX - r.left + 12;
+      var y = ev.clientY - r.top + 12;
+      // Keep inside the mapwrap.
+      tipEl.style.left = Math.max(6, Math.min(r.width - 220, x)) + 'px';
+      tipEl.style.top  = Math.max(6, Math.min(r.height - 60, y)) + 'px';
+      tipEl.style.opacity = 1;
+    }
+    function focusLink(p, ev){
+      skSvg.classList.add('sankey-focus');
+      linkPaths.forEach(function(q){ q.classList.toggle('sk-hot', q === p); });
+      nodeGroups.forEach(function(g){
+        g.classList.toggle('sk-hot', g.__n === p.__lk.source || g.__n === p.__lk.target);
+      });
+      placeTip(ev,
+        '<b>' + p.__lk.source.name + '</b> → <b>' + p.__lk.target.name + '</b>'
+        + '<br>' + p.__lk.source.stageLabel + ' → ' + p.__lk.target.stageLabel
+        + '<br>Flow value: <b>' + p.__lk.value.toFixed(1) + '%</b> of the chain'
+      );
+    }
+    function focusNode(g, ev){
+      skSvg.classList.add('sankey-focus');
+      var n = g.__n;
+      linkPaths.forEach(function(q){
+        q.classList.toggle('sk-hot', q.__lk.source === n || q.__lk.target === n);
+      });
+      nodeGroups.forEach(function(gg){ gg.classList.toggle('sk-hot', gg === g); });
+      placeTip(ev,
+        '<b>' + n.name + '</b>'
+        + '<br>' + n.stageLabel
+        + '<br>Share: <b>' + n.share.toFixed(1) + '%</b>'
+      );
+    }
+    linkPaths.forEach(function(p){
+      p.addEventListener('mousemove', function(ev){ focusLink(p, ev); });
+      p.addEventListener('mouseleave', clearFocus);
+    });
+    nodeGroups.forEach(function(g){
+      g.addEventListener('mousemove', function(ev){ focusNode(g, ev); });
+      g.addEventListener('mouseleave', clearFocus);
+    });
+    // Tap-outside / scroll clears the focus (safety for touch).
+    skSvg.addEventListener('mouseleave', clearFocus);
   }
+
+  var skHoverTip = null;
 
   function setView(mode){
     var isSankey = (mode === 'sankey');
