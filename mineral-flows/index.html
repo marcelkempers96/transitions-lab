@@ -207,7 +207,14 @@ button,select{font:inherit;color:inherit}
 .legend.cols{grid-template-columns:1fr 1fr}
 .legend .row{display:flex;align-items:center;gap:8px}
 .sw{display:inline-block;width:26px;height:0;border-top:3px solid}
-.ramp{height:8px;width:120px;background:linear-gradient(90deg,var(--orange-deep),var(--orange))}
+.ramp{height:8px;width:120px;background:linear-gradient(90deg,var(--orange-deep),var(--orange));flex:0 0 auto}
+/* Choropleth-ramp legend row: a short title plus a muted
+   explanatory sub-line, so a reader seeing the brown-to-orange
+   bar knows what the shading encodes. */
+.legend .ramp-row{display:flex;align-items:flex-start;gap:10px;padding:4px 0 6px}
+.legend .ramp-label{display:flex;flex-direction:column;gap:2px;line-height:1.3}
+.legend .ramp-title{font-weight:600;font-size:12.5px}
+.legend .ramp-sub{font-size:11.5px;opacity:.72}
 .zoomctl{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:6px}
 .zoomctl button{width:36px;height:36px;background:var(--black);border:1px solid var(--white);cursor:pointer;font-size:18px;border-radius:4px}
 .tip{position:absolute;pointer-events:none;background:var(--black);border:1px solid var(--orange);padding:8px 10px;font-size:13px;max-width:260px;opacity:0;transition:opacity .12s;z-index:5}
@@ -1135,7 +1142,7 @@ function drawRibbon(){
 
 function drawLegend(){
   const lg = document.getElementById("legend");
-  let h = isAll() ? "" : `<div class="row" style="grid-column:1/-1"><span class="ramp" style="background:linear-gradient(90deg,#2a1b08,#8a520f)"></span><span>Share of ${esc(stageLabel(state.stage).toLowerCase())}</span></div>`;
+  let h = isAll() ? "" : `<div class="row ramp-row" style="grid-column:1/-1"><span class="ramp" style="background:linear-gradient(90deg,#2a1b08,#8a520f)"></span><span class="ramp-label"><span class="ramp-title">Country shading: share of ${esc(stageLabel(state.stage).toLowerCase())}</span><span class="ramp-sub">Darker = larger share. Grey = below 1% or not listed.</span></span></div>`;
   if (state.flows){
     if (state.col === "mineral"){
       // Group the swatches under the four group headings. Each
@@ -1643,11 +1650,12 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     var H = skSvg.clientHeight || 520;
     var isMobSk = (W < 640);
     // Labels sit OUTSIDE the outer columns. Side margins must hold
-    // the longest country name plus the share percentage. On mobile
-    // we also give the layout a bit more vertical breathing room.
+    // the longest country name plus the share percentage. Top margin
+    // is deep enough to carry the stage-column titles (Mining /
+    // Refining / Cathode) above every node column.
     var margin = isMobSk
-      ? {top: 24, right: 108, bottom: 18, left: 100}
-      : {top: 40, right: 156, bottom: 24, left: 130};
+      ? {top: 32, right: 108, bottom: 18, left: 100}
+      : {top: 44, right: 156, bottom: 24, left: 130};
 
     var sankey = d3.sankey()
       .nodeWidth(isMobSk ? 10 : 14)
@@ -1684,26 +1692,39 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     skSvg.innerHTML = '';
     skSvg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
     skSvg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-    // Stage-column titles: on desktop only. On mobile the ribbon
-    // above already names each stage of the current mineral, and
-    // stage titles at y=18 collide with the mapctl toolbar strip.
-    if (!isMobSk){
-      var byStage = {};
-      graph.nodes.forEach(function(n){ (byStage[n.stage] = byStage[n.stage] || []).push(n); });
-      stageIds.forEach(function(sid){
-        var col = byStage[sid]; if (!col || !col.length) return;
-        var x = col[0].x0;
-        var t = document.createElementNS(ns, 'text');
-        t.setAttribute('class', 'sk-title');
-        t.setAttribute('x', String(x));
-        t.setAttribute('y', String(18));
-        t.setAttribute('font-family', 'var(--f-head)');
-        t.setAttribute('font-size', '13');
-        t.setAttribute('fill', 'var(--white)');
-        t.textContent = m.stages[sid].label || sid;
-        skSvg.appendChild(t);
-      });
-    }
+    // Stage-column titles. The reader needs to know which column is
+    // which stage; without the labels a Sankey is just coloured bars.
+    // We render them above each column, with text-anchor matching
+    // the column edge so the label hugs its own node.
+    var byStage = {};
+    graph.nodes.forEach(function(n){ (byStage[n.stage] = byStage[n.stage] || []).push(n); });
+    var titleY = isMobSk ? 14 : 18;
+    var titleSize = isMobSk ? 11 : 13;
+    stageIds.forEach(function(sid, sIdx){
+      var col = byStage[sid]; if (!col || !col.length) return;
+      var isLastCol = (sIdx === stageIds.length - 1);
+      // Position: first column left-anchored at x0; last column
+      // right-anchored at x1; middle columns centered on the node.
+      var anchor = (sIdx === 0) ? 'start' : (isLastCol ? 'end' : 'middle');
+      var xPos = (sIdx === 0) ? col[0].x0
+               : (isLastCol ? col[0].x1
+               : (col[0].x0 + col[0].x1) / 2);
+      var t = document.createElementNS(ns, 'text');
+      t.setAttribute('class', 'sk-title');
+      t.setAttribute('x', String(xPos));
+      t.setAttribute('y', String(titleY));
+      t.setAttribute('text-anchor', anchor);
+      t.setAttribute('font-family', 'var(--f-body)');
+      t.setAttribute('font-weight', '700');
+      t.setAttribute('font-size', String(titleSize));
+      t.setAttribute('fill', 'var(--white)');
+      t.setAttribute('paint-order', 'stroke');
+      t.setAttribute('stroke', 'var(--black)');
+      t.setAttribute('stroke-width', '3');
+      t.setAttribute('stroke-linejoin', 'round');
+      t.textContent = m.stages[sid].label || sid;
+      skSvg.appendChild(t);
+    });
 
     // Links: colour by their SOURCE country so each origin's flows
     // read as a single tinted band, and different countries in the
