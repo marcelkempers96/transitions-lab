@@ -373,6 +373,37 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .tool-share .ts-btn.is-copied .ts-copied{opacity:1}
 .tool-share .ts-comment{margin-left:auto;color:var(--orange);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-size:13px;font-weight:600}
 .tool-share .ts-comment:hover{color:#fff}
+/* Share row moved to below the stage area so the top strip is less
+   crowded. Lift it visually with a top rule. */
+.tool-share--bottom{margin:16px 0 12px;padding:14px 0 0;border-top:1px solid var(--rule)}
+@media (max-width:640px){
+  .tool-share--bottom{margin:14px 0 8px;padding:12px 0 0}
+}
+/* Sankey showcase banner above the chip row. Cobalt pill with a
+   call-to-action; dismissable, remembered via localStorage. */
+.sankey-promo{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin:12px 16px 0;padding:10px 14px;
+  background:var(--orange);color:var(--black);
+  border:1px solid var(--orange);border-radius:6px;
+  font-size:13.5px;line-height:1.35;
+}
+.sankey-promo .sp-dot{font-size:11px;opacity:.85}
+.sankey-promo .sp-text{flex:1 1 240px;min-width:0}
+.sankey-promo .sp-text strong{font-weight:800}
+.sankey-promo .sp-cta{
+  background:var(--black);color:var(--orange);border:0;
+  padding:7px 14px;font-size:12.5px;font-weight:700;
+  border-radius:999px;cursor:pointer;font-family:var(--f-body);
+}
+.sankey-promo .sp-cta:hover{background:#1f1f1f}
+.sankey-promo .sp-x{
+  background:transparent;border:0;color:var(--black);
+  font-size:20px;line-height:1;padding:0 6px;cursor:pointer;
+  opacity:.6;
+}
+.sankey-promo .sp-x:hover{opacity:1}
+:root[data-map-theme="light"] .sankey-promo{color:#0A0A0A}
 /* Inline link style matching .ts-comment (orange underline). Used in
    the footer notes under the map. */
 .inline-link{color:var(--orange);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
@@ -521,16 +552,17 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
 :root[data-map-theme="light"] .sk-tip{background:#F5EDDD;color:#0A0A0A;border-color:#B95E00}
 :root[data-map-theme="light"] .sk-tip b{color:#B95E00}
 @media print{
+  @page { size: A4 landscape; margin: 14mm }
   html,body{background:#fff !important;color:#000 !important}
-  .site-navstrip,.mf-breadcrumb,.tool-share,.mapctl,.zoomctl,.tip,.tabs,.panel,.minerals,footer,.site-tail{display:none !important}
+  .site-navstrip,.mf-breadcrumb,.tool-share,.mapctl,.zoomctl,.tip,.tabs,.panel,.minerals,.sankey-promo,footer,.site-tail,.top{display:none !important}
   /* Sankey empty-state placeholder should not print either. */
   .sankey-empty, foreignObject{display:none !important}
   .stagearea{display:block !important;border:0 !important}
-  .mapwrap{border:0 !important}
+  .mapwrap{border:0 !important;height:auto !important;max-height:none !important;overflow:visible !important}
   #map,#sankey{background:#fff !important}
   .country{fill:#EFEDE6 !important;stroke:#B8B0A0 !important}
   .lbl{fill:#000 !important;stroke:#fff !important}
-  .ribbon{border-color:#000 !important}
+  .ribbon{border-color:#000 !important;break-inside:avoid}
   .stage-btn{background:#f5f5f5 !important;color:#000 !important;border-right-color:#ddd !important}
   .stage-btn .s-name,.stage-btn .s-top{color:#000 !important}
   .stage-btn .s-top b{color:#c65a00 !important}
@@ -539,6 +571,23 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
   .stage-btn[aria-pressed="true"]::after{background:#c65a00 !important}
   .sk-node text{fill:#000 !important;stroke:#fff !important;paint-order:stroke;stroke-width:2px}
   .sk-node .sk-pct{fill:#c65a00 !important}
+  /* Add print-only header and footer so a printed sheet reads as a
+     stand-alone deliverable. runPrint() sets body.is-printing which
+     triggers the ::before/::after bands. */
+  body.is-printing::before{
+    content:'Mineral Flows Map \2014 ' attr(data-print-title);
+    display:block;padding:0 0 10px;margin:0 0 12px;
+    border-bottom:2px solid #000;
+    font:700 20px -apple-system,BlinkMacSystemFont,"Hanken Grotesk",system-ui,sans-serif;
+    color:#000;
+  }
+  body.is-printing::after{
+    content:'Source: USGS, IEA, OECD and peer-reviewed studies. Indicative. transitionslab.org/mineral-flows';
+    display:block;padding:10px 0 0;margin:14px 0 0;
+    border-top:1px solid #999;
+    font:500 11px -apple-system,BlinkMacSystemFont,"Hanken Grotesk",system-ui,sans-serif;
+    color:#333;
+  }
 }
 </style>
 </head>
@@ -554,14 +603,19 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
 </nav>
 
 <div class="wrap">
-  <div class="tool-share" role="group" aria-label="Share this view">
-    <span class="ts-label">Share</span>
-    <button type="button" class="ts-btn" data-share="linkedin" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18.34H5.67V9.67h2.67v8.67zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 10H15.67V14c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.4H10V9.67h2.56v1.18h.04a2.8 2.8 0 0 1 2.53-1.39c2.71 0 3.21 1.78 3.21 4.1v4.88z"/></svg> LinkedIn</button>
-    <button type="button" class="ts-btn" data-share="copy" aria-label="Copy link">Copy link<span class="ts-copied">Copied</span></button>
-    <button type="button" class="ts-btn" data-share="png" aria-label="Save the current view as a PNG">Save PNG</button>
-    <a class="ts-comment" href="/mineral-flows-guide" style="margin-left:auto">How to read this map &rarr;</a>
-    <a class="ts-comment" href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener" style="margin-left:0">Discuss on LinkedIn &rarr;</a>
-  </div>
+  <!-- Sankey showcase: a one-line banner that points readers at the
+       Chain diagram view. Dismissed and remembered via localStorage;
+       re-appears after an interaction long enough to suggest the
+       reader forgot about it. -->
+  <aside class="sankey-promo" id="sankey-promo" hidden>
+    <span class="sp-dot" aria-hidden="true">◆</span>
+    <span class="sp-text">
+      <strong>Chain diagram view.</strong>
+      Follow one mineral through every stage, country by country.
+    </span>
+    <button type="button" class="sp-cta" id="sankey-promo-cta">Open the Chain diagram &rarr;</button>
+    <button type="button" class="sp-x" id="sankey-promo-x" aria-label="Dismiss">&times;</button>
+  </aside>
   <nav class="minerals" id="minerals" aria-label="Choose a mineral"></nav>
   <section class="ribbon" id="ribbon" aria-label="Value chain stage"></section>
 
@@ -608,6 +662,16 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
       <div class="pane" id="pane" role="tabpanel"></div>
     </aside>
   </main>
+
+  <div class="tool-share tool-share--bottom" role="group" aria-label="Share this view">
+    <span class="ts-label">Share</span>
+    <button type="button" class="ts-btn" data-share="linkedin" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18.34H5.67V9.67h2.67v8.67zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 10H15.67V14c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.4H10V9.67h2.56v1.18h.04a2.8 2.8 0 0 1 2.53-1.39c2.71 0 3.21 1.78 3.21 4.1v4.88z"/></svg> LinkedIn</button>
+    <button type="button" class="ts-btn" data-share="copy" aria-label="Copy link">Copy link<span class="ts-copied">Copied</span></button>
+    <button type="button" class="ts-btn" data-share="png" aria-label="Save the current view as a PNG">Save PNG</button>
+    <button type="button" class="ts-btn" data-share="print" aria-label="Print this view">Print</button>
+    <a class="ts-comment" href="/mineral-flows-guide" style="margin-left:auto">How to read this map &rarr;</a>
+    <a class="ts-comment" href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener" style="margin-left:0">Discuss on LinkedIn &rarr;</a>
+  </div>
 
   <footer>
     <p>Lines are schematic corridors between production and processing hubs, not shipping routes. Band width shows relative volume and tapers towards the importer. By stage, orange marks ore, concentrate and intermediates and white marks refined metal, chemicals and components.</p>
@@ -1450,8 +1514,26 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
       }
     } else if (kind === 'png'){
       shareOrDownloadPng(btn);
+    } else if (kind === 'print'){
+      runPrint();
     }
   });
+
+  function runPrint(){
+    // Set a document title so the print dialog's default filename
+    // reads as "Mineral Flows Map — <Mineral>", then restore.
+    var oldTitle = document.title;
+    var st = (window.state || {}); var mId = st.mineral || 'all';
+    var mName = (window.MF_DATA && window.MF_DATA.minerals && window.MF_DATA.minerals.minerals.find(function(m){ return m.id === mId; }) || {}).name || 'All transition minerals';
+    document.title = 'Mineral Flows Map — ' + mName;
+    document.body.setAttribute('data-print-title', mName);
+    document.body.classList.add('is-printing');
+    window.print();
+    setTimeout(function(){
+      document.title = oldTitle;
+      document.body.classList.remove('is-printing');
+    }, 500);
+  }
 
   function ensureH2C(){
     if (window.html2canvas) return Promise.resolve(window.html2canvas);
@@ -1464,12 +1546,66 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     });
   }
 
+  function stampExport(sourceCanvas, mineralName, stageName, isSankey){
+    // Build a composite canvas: header (title + state), the captured
+    // map/sankey, footer (source + URL). So the PNG is a stand-alone
+    // deliverable, not a raw screenshot.
+    var isLight = document.documentElement.getAttribute('data-map-theme') === 'light';
+    var bg = isLight ? '#F5EDDD' : '#0A0A0A';
+    var fg = isLight ? '#0A0A0A' : '#F5EDDD';
+    var accent = isLight ? '#B95E00' : '#FF9A1F';
+    var pad = 28;
+    var headerH = 68;
+    var footerH = 46;
+    var W = sourceCanvas.width + pad * 2;
+    var H = headerH + sourceCanvas.height + footerH + pad;
+    var out = document.createElement('canvas');
+    out.width = W; out.height = H;
+    var ctx = out.getContext('2d');
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+    // Title
+    ctx.fillStyle = fg;
+    ctx.font = '700 22px -apple-system, BlinkMacSystemFont, "Hanken Grotesk", system-ui, sans-serif';
+    ctx.textBaseline = 'top';
+    ctx.fillText('Mineral Flows Map', pad, 18);
+    // Subtitle: Mineral · Stage · View
+    ctx.font = '500 14px -apple-system, BlinkMacSystemFont, "Hanken Grotesk", system-ui, sans-serif';
+    ctx.fillStyle = accent;
+    var sub = (mineralName || 'All transition minerals') + '  ·  ' + (stageName || '') + '  ·  ' + (isSankey ? 'Chain diagram' : 'Trade flows');
+    ctx.fillText(sub, pad, 44);
+    // Thin divider under header
+    ctx.strokeStyle = fg; ctx.globalAlpha = 0.2;
+    ctx.beginPath(); ctx.moveTo(pad, headerH); ctx.lineTo(W - pad, headerH); ctx.stroke();
+    ctx.globalAlpha = 1;
+    // Map / Sankey image
+    ctx.drawImage(sourceCanvas, pad, headerH + 10);
+    // Footer divider
+    var footerY = headerH + sourceCanvas.height + 20;
+    ctx.strokeStyle = fg; ctx.globalAlpha = 0.2;
+    ctx.beginPath(); ctx.moveTo(pad, footerY); ctx.lineTo(W - pad, footerY); ctx.stroke();
+    ctx.globalAlpha = 1;
+    // Footer source + URL
+    ctx.font = '500 12px -apple-system, BlinkMacSystemFont, "Hanken Grotesk", system-ui, sans-serif';
+    ctx.fillStyle = fg; ctx.globalAlpha = 0.72;
+    ctx.fillText('Source: USGS, IEA, OECD and peer-reviewed studies. Indicative.', pad, footerY + 10);
+    ctx.fillText('transitionslab.org/mineral-flows', pad, footerY + 26);
+    // Right-aligned Lab name
+    ctx.globalAlpha = 0.9;
+    ctx.font = '700 12px -apple-system, BlinkMacSystemFont, "Hanken Grotesk", system-ui, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('Transitions Lab', W - pad, footerY + 18);
+    ctx.textAlign = 'left';
+    ctx.globalAlpha = 1;
+    return out;
+  }
+
   function shareOrDownloadPng(btn){
     // Snap only the ribbon + map (or Sankey) column. Skip the
     // side-panel, mineral chip row, toolbar chrome, nav, footer,
     // tooltip, share row, and the "Chain diagram works on a single
     // mineral" placeholder. Theme-aware background so light mode
-    // exports on cream instead of dropping onto black.
+    // exports on cream instead of dropping onto black. The captured
+    // canvas is then wrapped by stampExport() with title + source.
     var target = document.querySelector('.stagearea');
     if(!target) target = document.querySelector('.wrap');
     if(!target) return;
@@ -1494,10 +1630,16 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     btn.innerHTML = 'Capturing…';
     ensureH2C().then(function(h2c){
       return h2c(target, {backgroundColor: bg, scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true, allowTaint: true, logging: false, windowWidth: document.documentElement.clientWidth, ignoreElements: ignore});
-    }).then(function(canvas){
+    }).then(function(rawCanvas){
       var mint = (window.state && window.state.mineral) || 'all';
       var stg  = (window.state && window.state.stage)   || 'mining';
-      var name = 'mineral-flows-' + mint + '-' + stg + '.png';
+      // Human-readable mineral name + stage label for the stamp.
+      var mObj = (window.MF_DATA && window.MF_DATA.minerals && window.MF_DATA.minerals.minerals.find(function(m){ return m.id === mint; })) || null;
+      var mineralName = mObj ? mObj.name : (mint === 'all' ? 'All transition minerals' : mint);
+      var stageName = mObj && mObj.stages && mObj.stages[stg] && mObj.stages[stg].label ? mObj.stages[stg].label : stg;
+      var isSankey = document.getElementById('mapwrap').classList.contains('is-sankey');
+      var canvas = stampExport(rawCanvas, mineralName, stageName, isSankey);
+      var name = 'mineral-flows-' + mint + '-' + (isSankey ? 'chain' : stg) + '.png';
       return new Promise(function(resolve){
         canvas.toBlob(function(blob){
           if (!blob){ resolve({blob: null}); return; }
@@ -1895,7 +2037,41 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     }
   }
   vMap.addEventListener('click', function(){ setView('map'); });
-  vSk.addEventListener('click', function(){ setView('sankey'); });
+  vSk.addEventListener('click', function(){ setView('sankey'); dismissSankeyPromo(true); });
+
+  // Sankey promo banner: show on load unless the reader has already
+  // dismissed it, or has already opened the Chain diagram at least
+  // once in a prior session. Dismiss on CTA tap, on close button,
+  // or when the reader opens the chain diagram themselves.
+  var promoEl = document.getElementById('sankey-promo');
+  var promoCta = document.getElementById('sankey-promo-cta');
+  var promoX   = document.getElementById('sankey-promo-x');
+  function dismissSankeyPromo(persist){
+    if (!promoEl) return;
+    promoEl.setAttribute('hidden', '');
+    if (persist){ try { localStorage.setItem('tl_mf_sankey_promo_seen', '1'); } catch(_){} }
+  }
+  (function initPromo(){
+    if (!promoEl) return;
+    var seen = false;
+    try { seen = localStorage.getItem('tl_mf_sankey_promo_seen') === '1'; } catch(_){}
+    if (!seen) promoEl.removeAttribute('hidden');
+  })();
+  if (promoCta) promoCta.addEventListener('click', function(){
+    // Only switch to the Sankey if a single mineral is selected;
+    // otherwise focus the Chain diagram button so the reader sees
+    // where it lives.
+    var st = (window.state || {});
+    if (st.mineral && st.mineral !== 'all'){
+      setView('sankey');
+    } else {
+      vSk.focus();
+      vSk.style.boxShadow = '0 0 0 3px rgba(255,154,31,.5)';
+      setTimeout(function(){ vSk.style.boxShadow = ''; }, 1400);
+    }
+    dismissSankeyPromo(true);
+  });
+  if (promoX) promoX.addEventListener('click', function(){ dismissSankeyPromo(true); });
 
   // Redraw the Sankey whenever the reader touches a mineral chip or stage.
   document.addEventListener('click', function(e){
