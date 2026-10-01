@@ -53,6 +53,62 @@ button,select{font:inherit;color:inherit}
 
 /* Stage ribbon: the signature element */
 .ribbon{display:grid;grid-template-columns:repeat(var(--stages,3),minmax(0,1fr));gap:0;border-top:1px solid var(--white);border-bottom:1px solid var(--white)}
+/* All-minerals summary cards: horizontal scroll on mobile, equal
+   grid columns on desktop. No card background; a 1px right rule
+   separates adjacent cards. Mobile-first (16px body, 1.35 line
+   height, 14px padding). */
+.ribbon.min-cards{
+  display:flex;grid-template-columns:none;gap:0;
+  overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+}
+.ribbon.min-cards::-webkit-scrollbar{height:4px}
+.ribbon.min-cards::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:999px}
+.min-card{
+  flex:0 0 72vw;scroll-snap-align:start;
+  background:transparent;border:0;border-right:1px solid var(--rule);
+  padding:14px;cursor:pointer;color:inherit;
+  text-align:left;
+  display:flex;flex-direction:column;gap:8px;
+  font-family:var(--f-body);font-size:16px;line-height:1.35;
+}
+.min-card:last-child{border-right:0}
+.min-card:focus-visible{outline:2px solid var(--orange);outline-offset:-4px}
+.min-card .mc-head{
+  display:flex;align-items:center;gap:8px;
+  font-weight:700;font-size:17px;
+}
+.min-card .mc-dot{
+  flex:0 0 auto;width:10px;height:10px;border-radius:50%;
+  display:inline-block;
+}
+.min-card .mc-name{color:var(--white);line-height:1.2}
+.min-card .mc-row{
+  display:grid;grid-template-columns:auto 1fr auto;
+  align-items:baseline;gap:10px;
+  font-size:16px;
+}
+.min-card .mc-lab{
+  font-size:13px;font-weight:500;
+  color:var(--white);opacity:.62;
+  letter-spacing:0;text-transform:none;
+}
+.min-card .mc-country{color:var(--white);min-width:0;word-break:normal;overflow-wrap:anywhere}
+.min-card .mc-share{
+  color:var(--orange);font-weight:700;
+  font-variant-numeric:tabular-nums;
+  font-size:16px;text-align:right;
+}
+@media (min-width: 901px){
+  .ribbon.min-cards{
+    display:grid;
+    grid-template-columns:repeat(var(--stages,15),minmax(0,1fr));
+    overflow:visible;scroll-snap-type:none;
+  }
+  .min-card{flex:initial;scroll-snap-align:none}
+}
 .stage-btn{background:transparent;border:0;border-right:1px solid var(--rule);text-align:left;padding:10px 12px 12px;cursor:pointer;position:relative}
 .stage-btn:last-child{border-right:0}
 /* Ribbon title. Moved off the serif head-font so it reads as a
@@ -892,19 +948,32 @@ function strata(sh){
 function drawRibbon(){
   const rib = document.getElementById("ribbon");
   if (isAll()){
+    // Clean mineral summary cards (no stacked bar, no card background).
+    rib.classList.add("min-cards");
     rib.style.setProperty("--stages", MIN.length);
     rib.innerHTML = MIN.map(m => {
       const rMine = rankedOf(m.id, "mining")[0];
       const rRef  = rankedOf(m.id, "refining")[0];
-      return `<button class="stage-btn" data-m="${m.id}" aria-pressed="false">
-      <span class="s-name"><span class="dot" style="background:${MCOL[m.id]}"></span> ${esc(m.name)}</span>
-      <span class="s-top s-top-2"><span class="s-lab">Mining</span> ${esc(name(rMine[0]))} <b>${fmt(rMine[1])}</b></span>
-      <span class="s-top s-top-2"><span class="s-lab">Refining</span> ${esc(name(rRef[0]))} <b>${fmt(rRef[1])}</b></span>
-      ${strata(sharesOf(m.id, "refining"))}</button>`;
+      return `<button class="min-card" data-m="${m.id}" aria-pressed="false">
+      <span class="mc-head">
+        <span class="mc-dot" style="background:${MCOL[m.id]}" aria-hidden="true"></span>
+        <span class="mc-name">${esc(m.name)}</span>
+      </span>
+      <span class="mc-row">
+        <span class="mc-lab">Mined</span>
+        <span class="mc-country">${esc(name(rMine[0]))}</span>
+        <span class="mc-share">${fmt(rMine[1])}</span>
+      </span>
+      <span class="mc-row">
+        <span class="mc-lab">Refined</span>
+        <span class="mc-country">${esc(name(rRef[0]))}</span>
+        <span class="mc-share">${fmt(rRef[1])}</span>
+      </span></button>`;
     }).join("");
-    rib.querySelectorAll(".stage-btn").forEach(b => b.addEventListener("click", () => { state.mineral = b.dataset.m; state.stage = "refining"; state.col = "stage"; introFlows = true; update(); }));
+    rib.querySelectorAll(".min-card").forEach(b => b.addEventListener("click", () => { state.mineral = b.dataset.m; state.stage = "refining"; state.col = "stage"; introFlows = true; update(); }));
     return;
   }
+  rib.classList.remove("min-cards");
   const st = stages(); rib.style.setProperty("--stages", st.length);
   rib.innerHTML = st.map(s => { const r = ranked(s)[0]; return `<button class="stage-btn" data-s="${s}" aria-pressed="${s===state.stage}">
     <span class="s-name">${esc(stageLabel(s))}</span>
