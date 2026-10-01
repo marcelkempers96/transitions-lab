@@ -211,6 +211,24 @@ The [Data attribution page](/mineral-flows-attribution) groups the same informat
 
 ---
 
+## Bibliography
+
+The guide quotes conventions and conclusions rather than individual studies. For the full reference list behind the map and its findings, see the [research paper's bibliography](/mineral-flows-research#bibliography), which includes:
+
+- Material-flow analysis method: [Nansai et al. (2014)](/mineral-flows-research#bib-nansai-2014)
+- Four-stage MFA for battery metals: [Sun et al. (2024)](/mineral-flows-research#bib-sun-2024)
+- Supply resilience framework: [Sprecher et al. (2015, 2017)](/mineral-flows-research#bib-sprecher-2017), [Mancheri et al. (2019)](/mineral-flows-research#bib-mancheri-2019)
+- Export restrictions: [Kowalski and Legendre (2023)](/mineral-flows-research#bib-kowalski-legendre-2023), [Andrenelli et al. (2025)](/mineral-flows-research#bib-andrenelli-2025)
+- ESG and land dimensions: [Lèbre et al. (2020)](/mineral-flows-research#bib-lebre-2020), [Owen et al. (2023)](/mineral-flows-research#bib-owen-2023)
+- Africa / Lobito focus: [Ndubuisi, Avenyo, Owusu and Kassa](https://documents1.worldbank.org/curated/en/099620011192519026/pdf/IDU-959b6025-1de2-4caf-98be-9c8aa42577da.pdf), [Stonor and Kitaw with UNECA (2026)](/mineral-flows-research#bib-stonor-kitaw-2026)
+- Recycling ceiling: [Zeng et al. (2022)](/mineral-flows-research#bib-zeng-2022), [Dunn et al. (2021)](/mineral-flows-research#bib-dunn-2021)
+- Criticality indices: [Graedel et al. (2015)](/mineral-flows-research#bib-graedel-2015), [Nassar et al. (2020)](/mineral-flows-research#bib-nassar-2020)
+- Battery supply-chain architecture: [Olivetti et al. (2017)](/mineral-flows-research#bib-olivetti-2017), [Hao et al. (2022)](/mineral-flows-research#bib-hao-2022)
+
+Every entry on the research-paper bibliography links out to a Google Scholar search for the primary paper.
+
+---
+
 ## Where to go next
 
 - [Where transition minerals actually go](/insight-where-transition-minerals-go), the article that draws conclusions from the map.
