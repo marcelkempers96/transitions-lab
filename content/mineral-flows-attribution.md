@@ -12,7 +12,7 @@
 
 > No figure goes live on the public site until its link resolves. The map ships with `minerals.meta.status: indicative` until a BACI-driven refresh replaces the working shares with tonnes of contained metal. Every share is a rounded USGS or IEA headline value; every corridor width is a relative 1-5 weight rather than a tonne. The [research paper](/mineral-flows-research) explains the method; the [guide](/mineral-flows-guide) explains how to read it.
 
-Dataset version: **1.2 (indicative)** · Last dataset touch: **1 October 2026** · Studies tracked: **38** · Countries: **53** · Corridors: **202**.
+Dataset version: **1.3 (indicative)** · Last dataset touch: **1 October 2026** · Studies tracked: **38** · Countries: **60** · Corridors: **298**.
 
 ---
 

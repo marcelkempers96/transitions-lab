@@ -252,6 +252,10 @@ button,select{font:inherit;color:inherit}
 ul.plain{list-style:none;margin:0;padding:0}
 ul.plain li{padding:10px 0;border-top:1px solid var(--rule);font-size:14px}
 ul.plain li:first-child{border-top:0}
+.corr-conf{display:inline-block;padding:1px 7px;border-radius:999px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle;margin-left:4px}
+.corr-conf-high{background:rgba(255,154,31,.14);color:var(--orange);border:1px solid rgba(255,154,31,.4)}
+.corr-conf-medium{background:rgba(255,154,31,.08);color:var(--orange);border:1px solid rgba(255,154,31,.25);opacity:.85}
+.corr-conf-low{background:transparent;color:var(--white);border:1px solid var(--rule);opacity:.65}
 .tag{display:inline-block;border:1px solid var(--orange);color:var(--orange);font-size:12px;padding:1px 7px;border-radius:999px;margin-right:6px}
 details{margin-top:18px;border-top:1px solid var(--rule);padding-top:10px}
 summary{cursor:pointer;font-weight:500}
@@ -1339,8 +1343,13 @@ function paneStress(){
   } else {
     h += `<div class="offline">` + stages().map(s => stressRow(esc(stageLabel(s)), shares(s), iso)).join("") + `</div>`;
   }
-  const cut = flowsFor().filter(f => f.source === iso || f.target === iso);
-  h += `<h3>Corridors cut (${cut.length})</h3>` + (cut.length ? `<ul class="plain">${cut.map(f => `<li>${isAll() ? esc(M(f.mineral).name) + ": " : ""}${esc(name(f.source))} to ${esc(name(f.target))}, ${esc(f.form)}</li>`).join("")}</ul>` : `<p>None recorded.</p>`);
+  // Stress test counts every corridor the shipped dataset carries
+  // for the current mineral (or all minerals in the all view),
+  // regardless of the Africa-focus and group filters. Those filters
+  // are a visual aid for the map, not a scope for the scenario.
+  const cut = DATA.flows.flows.filter(f => (isAll() || f.mineral === state.mineral) && (f.source === iso || f.target === iso));
+  const confBadge = (c) => c ? ` <span class="corr-conf corr-conf-${esc(c)}">${esc(c)}</span>` : "";
+  h += `<h3>Corridors cut (${cut.length})</h3>` + (cut.length ? `<ul class="plain">${cut.map(f => `<li>${isAll() ? esc(M(f.mineral).name) + ": " : ""}${esc(name(f.source))} to ${esc(name(f.target))}, ${esc(f.form)}${confBadge(f.confidence)}${f.note ? `<br><span style="opacity:.72;font-size:12.5px">${esc(f.note)}</span>` : ""}</li>`).join("")}</ul>` : `<p>None recorded.</p>`);
   h += `<p class="note">This is a static share calculation. Real disruptions play out through stockpiles, diversified supply, material efficiency and substitution, the resilience mechanisms documented after the 2010 rare earth crisis (Sprecher et al. 2015, 2017).</p>`;
   h += `<p><button class="btn ghost" id="clear-stress">Put ${esc(name(iso))} back</button></p>`;
   return h;
