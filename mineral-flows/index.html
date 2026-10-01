@@ -360,6 +360,12 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 .tool-share .ts-btn.is-copied .ts-copied{opacity:1}
 .tool-share .ts-comment{margin-left:auto;color:var(--orange);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-size:13px;font-weight:600}
 .tool-share .ts-comment:hover{color:#fff}
+/* Inline link style matching .ts-comment (orange underline). Used in
+   the footer notes under the map. */
+.inline-link{color:var(--orange);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
+.inline-link:hover{color:#fff}
+:root[data-map-theme="light"] .inline-link{color:#B95E00}
+:root[data-map-theme="light"] .inline-link:hover{color:#0A0A0A}
 
 /* Site-style footer at the bottom of the tool page (dark ink strip) */
 .site-tail{background:#0a0a0a;color:var(--white);border-top:1px solid var(--rule);margin-top:24px;padding:32px 0 28px}
@@ -575,7 +581,7 @@ svg[hidden], svg[hidden="hidden"], svg[hidden=""]{display:none !important}
 
   <footer>
     <p>Lines are schematic corridors between production and processing hubs, not shipping routes. Band width shows relative volume and tapers towards the importer. By stage, orange marks ore, concentrate and intermediates and white marks refined metal, chemicals and components.</p>
-    <p>Built by Transitions Lab from USGS, IEA, OECD and peer-reviewed trade and material flow studies. See Sources for the evidence base and data status of each figure.</p>
+    <p>Built by Transitions Lab from USGS, IEA, OECD and <a href="/mineral-flows-research" class="inline-link">peer-reviewed trade and material flow studies</a>. See <a href="/mineral-flows#sources" class="inline-link" id="footer-sources-link">Sources for the evidence base and data status of each figure</a>.</p>
   </footer>
 </div>
 
@@ -601,12 +607,27 @@ const MOBILE = window.matchMedia("(max-width: 900px)").matches;
 const state = window.state = { mineral:"all", stage:"mining", flows:true, africa:false, corr:false, pol:true, col:"mineral", country:null, stress:null, tab:"overview" };
 
 function readHash(){
-  const h = new URLSearchParams(location.hash.slice(1));
+  const raw = location.hash.slice(1);
+  // Plain anchors (#sources, #stress, #country, #overview) open that
+  // panel tab on load. Shareable: /mineral-flows#sources takes a
+  // reader straight to the Sources panel.
+  const PLAIN_TABS = {sources: "sources", stress: "stress", country: "country", overview: "overview"};
+  if (PLAIN_TABS[raw]){
+    state.tab = PLAIN_TABS[raw];
+    // Scroll the panel into view once the DOM has rendered it.
+    setTimeout(function(){
+      var pane = document.getElementById("pane");
+      if (pane && pane.scrollIntoView) pane.scrollIntoView({behavior: "smooth", block: "start"});
+    }, 60);
+    return;
+  }
+  const h = new URLSearchParams(raw);
   const m = h.get("m"); if (m && (m === "all" || MIN.find(x => x.id === m))) state.mineral = m;
   if (h.get("s")) state.stage = h.get("s");
   if (h.get("c") && C.has(h.get("c"))) state.country = h.get("c");
   if (h.get("a") === "1") state.africa = true;
   state.col = h.get("col") || (state.mineral === "all" ? "mineral" : "stage");
+  if (h.get("tab") && ["overview","country","stress","sources"].indexOf(h.get("tab")) >= 0) state.tab = h.get("tab");
 }
 function writeHash(){
   const h = new URLSearchParams({m:state.mineral});
@@ -614,6 +635,7 @@ function writeHash(){
   if (state.country) h.set("c", state.country);
   if (state.africa) h.set("a","1");
   h.set("col", state.col);
+  if (state.tab && state.tab !== "overview") h.set("tab", state.tab);
   history.replaceState(null, "", "#" + h.toString());
 }
 
@@ -1254,7 +1276,30 @@ function drawPane(){
     btn.addEventListener("click", e => { e.stopPropagation(); state.mineral = btn.dataset.openMineral; state.stage = "refining"; state.col = "stage"; introFlows = true; update(); });
   });
 }
-["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).addEventListener("click", () => { state.tab = t; drawPane(); }));
+["overview","country","stress","sources"].forEach(t => document.getElementById("tab-"+t).addEventListener("click", () => { state.tab = t; drawPane(); writeHash(); }));
+
+// Footer link that opens the Sources tab and scrolls the panel into
+// view. Keeps the shareable /mineral-flows#sources URL (writeHash
+// turns it into tab=sources after any interaction).
+(function(){
+  var el = document.getElementById("footer-sources-link");
+  if (!el) return;
+  el.addEventListener("click", function(e){
+    e.preventDefault();
+    state.tab = "sources";
+    drawPane();
+    writeHash();
+    var pane = document.getElementById("pane");
+    if (pane && pane.scrollIntoView) pane.scrollIntoView({behavior: "smooth", block: "start"});
+  });
+})();
+
+// Keep the panel in sync with the hash if the reader navigates
+// (back/forward or an in-page anchor like #sources).
+window.addEventListener("hashchange", function(){
+  readHash();
+  update();
+});
 
 function bindTog(id, key, after){ var el = document.getElementById(id); if (!el) return; el.addEventListener("click", () => { state[key] = !state[key]; if (after) after(); update(); }); }
 bindTog("t-flows","flows", () => { introFlows = true; });
