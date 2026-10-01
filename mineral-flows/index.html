@@ -139,8 +139,10 @@ button,select{font:inherit;color:inherit}
 /* Fixed map/Sankey container size so switching views never resizes
    the chrome around the chart. Desktop 560px, mobile 520px. Flex
    column so the colour legend can sit at the bottom without
-   overflowing when the map fills the top. */
-.mapwrap{position:relative;height:560px;min-height:560px;border-right:1px solid var(--white);display:flex;flex-direction:column}
+   overflowing when the map fills the top. overflow:hidden is a
+   belt-and-braces guard so no inner child can bleed into the
+   panel below. */
+.mapwrap{position:relative;height:560px;min-height:560px;max-height:560px;border-right:1px solid var(--white);display:flex;flex-direction:column;overflow:hidden}
 #map{display:block;width:100%;flex:1 1 auto;min-height:0;touch-action:none}
 .country{fill:var(--land);stroke:var(--land-edge);stroke-width:.6px;vector-effect:non-scaling-stroke;cursor:pointer}
 .country.has{cursor:pointer}
@@ -274,8 +276,11 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
   .stage-btn .s-top{font-size:12px;margin:2px 0 4px}
   .stage-btn .s-top.s-top-2 .s-lab{min-width:44px;font-size:10px;margin-right:4px}
   .stagearea{grid-template-columns:1fr}
-  .mapwrap{border-right:0;border-bottom:1px solid var(--white);height:520px;min-height:520px}
-  #map{min-height:0;height:100%;max-height:none}
+  .mapwrap{border-right:0;border-bottom:1px solid var(--white);height:520px;min-height:520px;max-height:520px}
+  #map{min-height:0;height:auto;max-height:none}
+  /* Mobile legend: still part of the fixed-height mapwrap flex
+     column. Keep it short so the map above stays usable. */
+  .legend{flex:0 0 auto;margin:0;max-height:34%;overflow-y:auto;border-top:1px solid var(--white)}
   .legend{position:static;border:0;border-top:1px solid var(--rule);max-width:none;grid-template-columns:1fr 1fr}
   .zoomctl{bottom:auto;top:12px;right:12px}
   .mapctl{max-width:calc(100% - 70px);gap:4px}
