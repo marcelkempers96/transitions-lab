@@ -507,7 +507,9 @@
           "rcr2025lcn",
           "hao2022",
           "rcr2024map"
-        ]
+        ],
+        "group": "battery",
+        "used_in": "Cathode and electrolyte of every lithium-ion battery."
       },
       {
         "id": "cobalt",
@@ -601,7 +603,9 @@
           "zeng2022",
           "lebre2020",
           "hao2022"
-        ]
+        ],
+        "group": "battery",
+        "used_in": "Cathode stabiliser in NMC and NCA battery cells."
       },
       {
         "id": "nickel",
@@ -692,7 +696,9 @@
           "iea2026",
           "rcr2025lcn",
           "kowalski2023"
-        ]
+        ],
+        "group": "battery",
+        "used_in": "High-energy cathodes in NMC and NCA battery cells."
       },
       {
         "id": "copper",
@@ -768,7 +774,9 @@
           "nai2026",
           "ecdpm2023",
           "gulley2018"
-        ]
+        ],
+        "group": "motor_wiring",
+        "used_in": "Motor windings, cabling and battery current-collector foil."
       },
       {
         "id": "graphite",
@@ -849,7 +857,9 @@
           "upstream2026",
           "kowalski2023",
           "ecdpm2023"
-        ]
+        ],
+        "group": "battery",
+        "used_in": "Anode in every lithium-ion battery, natural or synthetic."
       },
       {
         "id": "rare_earths",
@@ -934,7 +944,9 @@
           "mancheri2019",
           "iea2026",
           "nansai2014"
-        ]
+        ],
+        "group": "motor_wiring",
+        "used_in": "Permanent magnets in EV drive motors."
       },
       {
         "id": "manganese",
@@ -1016,7 +1028,9 @@
           "ndubuisi2025",
           "iea2026",
           "rp2021lib"
-        ]
+        ],
+        "group": "battery",
+        "used_in": "Cathode in NMC, LMFP and LMO battery cells."
       },
       {
         "id": "pgm",
@@ -1079,7 +1093,9 @@
           "nansai2014",
           "ndubuisi2025",
           "lebre2020"
-        ]
+        ],
+        "group": "beyond_ev",
+        "used_in": "Catalytic converters and fuel cells. Demand falls as EVs replace combustion."
       },
       {
         "id": "phosphate",
@@ -1169,7 +1185,9 @@
         "bib": [
           "iea2026",
           "ndubuisi2025"
-        ]
+        ],
+        "group": "battery",
+        "used_in": "Iron phosphate cathodes in LFP battery cells."
       },
       {
         "id": "boron",
@@ -1232,7 +1250,9 @@
         "headline": "Turkey (Eti Maden) and one US producer (Rio Tinto Boron) hold most of the world's borate supply.",
         "bib": [
           "usgs-phos-2025"
-        ]
+        ],
+        "group": "motor_wiring",
+        "used_in": "The B in NdFeB motor magnets."
       },
       {
         "id": "gallium",
@@ -1291,7 +1311,9 @@
         "headline": "China holds around 80% of primary production and tighter still of high-purity refining. Subject to Chinese export licensing since 2023.",
         "bib": [
           "iea2026"
-        ]
+        ],
+        "group": "electronics",
+        "used_in": "Gallium-nitride chips in fast chargers and inverters."
       },
       {
         "id": "germanium",
@@ -1350,7 +1372,9 @@
         "headline": "Like gallium, a zinc co-product concentrated in China. Subject to Chinese export licensing since 2023.",
         "bib": [
           "iea2026"
-        ]
+        ],
+        "group": "beyond_ev",
+        "used_in": "Fibre optics and infrared sensors used in driver-assist cameras."
       },
       {
         "id": "silver",
@@ -1419,7 +1443,9 @@
         "headline": "Diffuse mining, refining concentrates around China, Mexico and Peru; Poland is the largest European refiner.",
         "bib": [
           "usgs-phos-2025"
-        ]
+        ],
+        "group": "electronics",
+        "used_in": "Electrical contacts, busbars and solar-cell paste."
       },
       {
         "id": "silicon",
@@ -1506,7 +1532,9 @@
         "headline": "Silicon smelting is Chinese-dominated but SiC power-device manufacturing is still Western; that is the interesting split.",
         "bib": [
           "iea2026"
-        ]
+        ],
+        "group": "electronics",
+        "used_in": "Power chips, inverter devices and solar cells."
       },
       {
         "id": "fluorspar",
@@ -1568,6 +1596,53 @@
         "headline": "The one battery-chain feedstock nobody talks about; over 60% of both mining and HF refining sits in China.",
         "bib": [
           "iea2026"
+        ],
+        "group": "battery",
+        "used_in": "Electrolyte salt and PVDF binder in battery cells."
+      }
+    ],
+    "groups": [
+      {
+        "id": "battery",
+        "name": "Battery",
+        "order": 1,
+        "members": [
+          "lithium",
+          "nickel",
+          "cobalt",
+          "manganese",
+          "graphite",
+          "phosphate",
+          "fluorspar"
+        ]
+      },
+      {
+        "id": "motor_wiring",
+        "name": "Motor and wiring",
+        "order": 2,
+        "members": [
+          "rare_earths",
+          "boron",
+          "copper"
+        ]
+      },
+      {
+        "id": "electronics",
+        "name": "Electronics and charging",
+        "order": 3,
+        "members": [
+          "silicon",
+          "gallium",
+          "silver"
+        ]
+      },
+      {
+        "id": "beyond_ev",
+        "name": "Beyond the EV",
+        "order": 4,
+        "members": [
+          "pgm",
+          "germanium"
         ]
       }
     ]

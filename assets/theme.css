@@ -4283,6 +4283,26 @@ a.tool-feature-cta:hover{border-bottom-color:var(--paper);}
    the row. Rendered as inline <table> in the markdown so pipe
    parsing is bypassed. */
 .prose .table-scroll.provenance-scroll{margin:12px 0 22px;}
+/* EV groups table on the guide page's "What's in an electric vehicle"
+   section. Same scrollable region, more generous row padding since
+   there are only four rows. */
+.prose .tbl.ev-groups{font-size:14px;line-height:1.45;min-width:0;border-collapse:collapse;width:100%;}
+.prose .tbl.ev-groups thead th{
+  background:var(--cobalt);color:var(--paper);
+  font-family:'Hanken Grotesk',sans-serif;font-weight:800;
+  font-size:12px;letter-spacing:.04em;text-transform:none;
+  padding:9px 10px;text-align:left;
+}
+.prose .tbl.ev-groups td{padding:10px;vertical-align:top;border-bottom:1px solid rgba(10,10,10,.08);}
+.prose .tbl.ev-groups tr:last-child td{border-bottom:0;}
+.prose .tbl.ev-groups td:nth-child(1){min-width:120px;white-space:nowrap;}
+.prose .tbl.ev-groups td:nth-child(2){min-width:200px;}
+.prose .tbl.ev-groups td:nth-child(3){min-width:220px;opacity:.86;}
+@media (max-width:640px){
+  .prose .tbl.ev-groups{font-size:13.5px;}
+  .prose .tbl.ev-groups td, .prose .tbl.ev-groups th{padding:8px 8px;}
+  .prose .tbl.ev-groups td:nth-child(1){min-width:0;}
+}
 .prose .tbl.provenance{font-size:11.5px;line-height:1.35;min-width:920px;border-collapse:collapse;width:100%;}
 .prose .tbl.provenance thead th{
   position:sticky;top:0;background:var(--cobalt);color:var(--paper);

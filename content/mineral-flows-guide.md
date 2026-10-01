@@ -13,6 +13,26 @@
 
 ---
 
+## What's in an electric vehicle
+
+The fifteen chains on the map are not fifteen separate stories. They cluster into four jobs the EV asks of its bill of materials. The map's group filter above the mineral chips lets you look at one job at a time.
+
+<div class="table-scroll" role="region" aria-label="How the fifteen minerals map onto an EV" tabindex="0">
+<table class="tbl ev-groups">
+<thead><tr><th>Group</th><th>Minerals</th><th>What they do</th></tr></thead>
+<tbody>
+<tr><td><strong>Battery</strong></td><td>Lithium, nickel, cobalt, manganese, graphite, phosphate, fluorspar</td><td>Cathode, anode, electrolyte and binder of a lithium-ion pack. Seven chains, one component.</td></tr>
+<tr><td><strong>Motor and wiring</strong></td><td>Rare earths, boron, copper</td><td>Permanent magnets in the drive motor and the copper that moves current to and from them.</td></tr>
+<tr><td><strong>Electronics and charging</strong></td><td>Silicon metal, gallium, silver</td><td>Power chips, charger electronics, solar cells and contact paste.</td></tr>
+<tr><td><strong>Beyond the EV</strong></td><td>Platinum group metals, germanium</td><td>Catalytic converters and fuel cells for one, fibre optics and sensors for the other. Included because the transition moves their demand too.</td></tr>
+</tbody>
+</table>
+</div>
+
+The battery chain dominates the map because seven of the fifteen minerals go into one component, and because battery capacity has grown faster than any other end use for critical minerals in the last five years. Platinum group metals run the other way: they are a transition mineral by subtraction, as EV adoption replaces the catalytic converters that used them.
+
+---
+
 ## The sixty-second tour
 
 <ol class="guide-steps">

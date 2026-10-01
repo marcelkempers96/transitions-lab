@@ -19,6 +19,14 @@
 
 ---
 
+## Scope: what counts as a transition mineral here
+
+The paper covers the fifteen chains on the companion [Mineral Flows Map](/mineral-flows), grouped by the job they do in an electric vehicle. **Battery** chains are lithium, nickel, cobalt, manganese, graphite, phosphate and fluorspar; they feed the cathode, anode, electrolyte and binder of a lithium-ion pack. **Motor and wiring** chains are rare earths, boron and copper; they feed the permanent magnets in the drive motor and the current path to and from them. **Electronics and charging** chains are silicon metal, gallium and silver; they feed the power chips, inverter devices, charger electronics and solar cell interconnect. A fourth group, **beyond the EV**, covers platinum group metals and germanium: catalytic converters and fuel cells for one, fibre optics and infrared sensors for the other. The scope is "transition minerals," not "EV minerals only," because the transition changes demand for both ends of that pair; the EV is where new demand concentrates fastest, and the catalyst chains are where legacy demand falls.
+
+Grouping is also how the map's chip row is organised: the four group chips above the mineral chips let a reader see one job's chains at a time without renaming the tool. The findings below are the same across the four groups, which is itself a finding.
+
+---
+
 ## Starting point
 
 This paper takes its cue from [Ndubuisi, Avenyo, Owusu and Kassa's World Bank study](https://documents1.worldbank.org/curated/en/099620011192519026/pdf/IDU-959b6025-1de2-4caf-98be-9c8aa42577da.pdf), republished on 29 September 2026 by [*The Conversation*](https://theconversation.com/africa) and the [South Africa Trade Desk](https://www.tradedesk.co.za/). Their method runs in four steps.
