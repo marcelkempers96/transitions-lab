@@ -4,10 +4,6 @@
 
 *Independent analysis, opinion, and thought pieces from Transitions Lab. Evidence-first reading of the transitions and relationships we study, applied to the big picture.*
 
-<!-- Interactive tool card hidden while the Mineral Flows Map goes
-     through Gideon's review. Restore this block (and the article
-     entry lower in the list) when he signs off. -->
-
 ---
 
 ## Latest, newest first
@@ -52,8 +48,7 @@
  <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><!-- "Where transition minerals actually go" article hidden while
-     the Mineral Flows Map bundle goes through Gideon's review. --><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
+<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
  <a class="article-thumb-link" href="/insight-the-saving-is-agreed"><img class="article-thumb" src="/assets/img/insight-the-saving-is-agreed-hero.jpg" alt="Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving."></a>
  <div class="article-body">
  <a class="article-title" href="/insight-the-saving-is-agreed">The Saving Is Agreed: Seven Findings from Nairobi's Electric Transition</a>

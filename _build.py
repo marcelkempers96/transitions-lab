@@ -2197,14 +2197,6 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- INTERACTIVE TOOL section (Mineral Flows Map) is hidden from the
-     home page while the tool + article + guide + paper + attribution
-     go through Gideon's review. The pages remain reachable by direct
-     URL and carry a noindex robots meta so search engines don't
-     surface them either. Restore this section (and the mineral-flows
-     article card in the Latest insights row, the footer link, and
-     the articles.md top card) when Gideon signs off. -->
-
 <!-- THEORY MAPS - four compact reference-page cards -->
 <section class="section-paper theory-maps-section">
   <div class="wrap">
