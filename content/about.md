@@ -52,4 +52,22 @@ Informed, recorded, revocable consent. Anonymisation by default. We interview to
 
 ---
 
+## The team
+
+<div class="team-grid">
+  <article class="team-card">
+    <div class="team-photo" aria-hidden="false">
+      <img src="/assets/img/team-celine-1.jpg" alt="Portrait of Céline, Legal Consultant and China Expert" class="team-photo-primary">
+      <img src="/assets/img/team-celine-2.jpg" alt="" class="team-photo-secondary" aria-hidden="true">
+    </div>
+    <div class="team-body">
+      <h3 class="team-name">Céline</h3>
+      <p class="team-role">Legal Consultant and China Expert</p>
+      <p class="team-bio">Céline specialises in corporate, M&amp;A and commercial matters. With legal experience in both the Netherlands and China, she advises on cross-border corporate issues between Europe and Asia. Her Chinese-Dutch background gives her a deep understanding of both business cultures, making her a trusted bridge between East and West. She helps brands, companies and institutions enter new markets, build local partnerships and grow their presence abroad. Precise, driven and committed, Céline goes the extra mile to get the deal done.</p>
+    </div>
+  </article>
+</div>
+
+---
+
 *For services, see [What We Do](/what-we-do). For our published thinking, [Articles](/articles). To start a conversation, [Contact](/contact).*

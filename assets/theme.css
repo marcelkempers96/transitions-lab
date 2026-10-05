@@ -4080,6 +4080,56 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
 .prose .tool-cta-sub a{color:var(--cobalt);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600;}
 .prose .tool-cta-sub a:hover{color:var(--ink);}
 
+/* Team cards on the About page. One photo visible at rest; on hover
+   / focus / tap, cross-fades to a second portrait with a small
+   scale lift, so the card feels alive without a second image slot. */
+.prose .team-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;margin:18px 0 10px;
+}
+.prose .team-card{
+  display:flex;flex-direction:column;
+  background:var(--paper);border:2px solid var(--ink);
+  box-shadow:6px 6px 0 var(--ink);
+  overflow:hidden;transition:transform .18s ease, box-shadow .18s ease;
+}
+.prose .team-card:hover,
+.prose .team-card:focus-within{
+  transform:translate(-3px,-3px);
+  box-shadow:9px 9px 0 var(--ink);
+}
+.prose .team-photo{
+  position:relative;aspect-ratio:4/5;background:var(--butter);
+  overflow:hidden;border-bottom:2px solid var(--ink);
+}
+.prose .team-photo img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;
+  display:block;transition:opacity .4s ease, transform .6s ease;
+}
+.prose .team-photo .team-photo-primary{opacity:1;transform:scale(1);z-index:1;}
+.prose .team-photo .team-photo-secondary{opacity:0;transform:scale(1.04);z-index:2;}
+.prose .team-card:hover .team-photo-primary,
+.prose .team-card:focus-within .team-photo-primary{opacity:0;transform:scale(1.02);}
+.prose .team-card:hover .team-photo-secondary,
+.prose .team-card:focus-within .team-photo-secondary{opacity:1;transform:scale(1);}
+.prose .team-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;}
+.prose .team-name{
+  margin:0;font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-size:26px;font-weight:500;letter-spacing:-.01em;line-height:1.1;color:var(--ink);
+}
+.prose .team-role{
+  margin:0;font-family:'Hanken Grotesk',sans-serif;
+  font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--ink);opacity:.66;
+}
+.prose .team-bio{
+  margin:6px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink);
+}
+@media (prefers-reduced-motion: reduce){
+  .prose .team-card,
+  .prose .team-photo img{transition:none;}
+}
+
 /* Guide-hero card: shown near the top of the article to point readers
    at the sixty-second guide and the map itself. Every colour is
    pinned to !important because the base .prose p and .prose a rules
