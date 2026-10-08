@@ -35,6 +35,7 @@
  <div class="filter-group" data-group="month">
  <span class="filter-label">When</span>
  <button type="button" class="filter-chip is-all is-active" data-value="">All</button>
+ <button type="button" class="filter-chip" data-value="2026-10">Oct 2026</button>
  <button type="button" class="filter-chip" data-value="2026-09">Sep 2026</button>
  <button type="button" class="filter-chip" data-value="2026-08">Aug 2026</button>
  <button type="button" class="filter-chip" data-value="2026-07">Jul 2026</button>
@@ -48,7 +49,14 @@
  <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
+<div class="article-list"><div class="article-item" data-category="industrial-policy" data-geography="global" data-month="2026-10">
+ <div class="article-body">
+ <a class="article-title" href="/insight-china-ships-the-factory">China Ships the Factory, Not Just the Car</a>
+ <div class="article-meta">8 October 2026</div>
+ <div class="article-chips"><span class="article-chip chip-cat chip-cat-industrial-policy">Industrial Policy</span> <span class="article-chip chip-geo chip-geo-global">Global</span> <span class="article-chip chip-cat chip-cat-e-mobility">E-Mobility</span></div>
+ <p class="article-desc">Ten overseas Chinese EV plants already running, five more under build. The map matters more than the tariff headlines, and the mineral chain behind every plant still runs back to China.</p>
+ </div>
+ </div><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-09">
  <a class="article-thumb-link" href="/insight-the-saving-is-agreed"><img class="article-thumb" src="/assets/img/insight-the-saving-is-agreed-hero.jpg" alt="Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving."></a>
  <div class="article-body">
  <a class="article-title" href="/insight-the-saving-is-agreed">The Saving Is Agreed: Seven Findings from Nairobi's Electric Transition</a>

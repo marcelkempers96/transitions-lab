@@ -423,6 +423,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-first-customer": "butter",
     "insight-local-content-local-benefit": "butter",
     "insight-permit-is-not-the-project": "butter",
+    "insight-china-ships-the-factory": "butter",
     "insight-the-saving-is-agreed": "butter",
     "for-funders": "cobalt",
     "capability-statement": "cobalt",
@@ -971,6 +972,10 @@ META: dict[str, dict[str, str]] = {
     "insight-permit-is-not-the-project": {
         "title": "The Permit Is Not the Project | Transitions Lab",
         "description": "Europe is reopening its water law to speed mineral permits. The statistic being measured is application-to-decision. The one that decides whether the plant is built is decision-to-operation.",
+    },
+    "insight-china-ships-the-factory": {
+        "title": "China Ships the Factory, Not Just the Car | Transitions Lab",
+        "description": "Where Chinese EV makers are actually building now, which Western plants they are buying, and how fast their share of the car market is moving outside their own. A map of ten operating overseas plants and five more on the way.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
