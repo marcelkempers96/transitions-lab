@@ -3454,7 +3454,7 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
   .tbl{font-size:13.5px;min-width:0;table-layout:fixed;width:100%;}
   .tbl th,.tbl td{
     padding:8px 10px;
-    word-break:break-word;overflow-wrap:break-word;
+    word-break:break-word;overflow-wrap:anywhere;
     hyphens:auto;
   }
   .table-wrap{
@@ -3463,6 +3463,22 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
        would suggest hidden content that is no longer there. */
     background:none;
   }
+  /* "What's in an electric vehicle" three-column table. The default
+     fixed layout gave column 1 too much space, so "Electronics and
+     charging" collided with the column-2 start. Force explicit
+     proportions: narrow group / medium minerals / wider description.
+     Hard-wrap long compound words so they stay inside their cell. */
+  .tbl.ev-groups th,
+  .tbl.ev-groups td{
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  .tbl.ev-groups th:nth-child(1),
+  .tbl.ev-groups td:nth-child(1){width:28%;}
+  .tbl.ev-groups th:nth-child(2),
+  .tbl.ev-groups td:nth-child(2){width:30%;}
+  .tbl.ev-groups th:nth-child(3),
+  .tbl.ev-groups td:nth-child(3){width:42%;}
 }
 
 /* ── Legacy grids used on interior pages ──────────────────── */
