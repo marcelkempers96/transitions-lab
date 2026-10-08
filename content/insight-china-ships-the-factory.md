@@ -90,6 +90,27 @@ Third, no projection. Manisa in Turkey is listed as on hold; Lembah Beringin in 
 
 Plant capacity, site history and start dates are drawn from company announcements and 2024-2026 trade press. The regional market-share figures come from the three industry associations most reliable at this cadence: the European Automobile Manufacturers' Association (ACEA) for Europe, ANFAVEA for Brazil, and the ASEAN Automotive Federation (AAF) for Southeast Asia. The LFP and cathode-concentration figures are the Lab's own [Mineral Flows Map](/mineral-flows), drawn from the IEA *Global Critical Minerals Outlook 2026* and Benchmark Mineral Intelligence tracker series. Every claim with a number is anchored to a bibliography entry below. Entries 1–13 are plant-level sources; 14–16 are the share statistics; 17–18 are the mineral-chain references.
 
+<div class="source-downloads">
+  <p class="source-downloads-head"><span class="kicker">Source document</span> The raw research notes behind this piece, shared verbatim.</p>
+  <div class="source-downloads-row">
+    <a class="source-dl" href="/assets/docs/china-overseas-plants-source.pdf" download>
+      <span class="source-dl-ext">PDF</span>
+      <span class="source-dl-meta">
+        <span class="source-dl-title">Chinese OEM overseas plants — source notes</span>
+        <span class="source-dl-sub">A4, 1 page · typeset from the original Word file</span>
+      </span>
+    </a>
+    <a class="source-dl" href="/assets/docs/china-overseas-plants-source.docx" download>
+      <span class="source-dl-ext">DOCX</span>
+      <span class="source-dl-meta">
+        <span class="source-dl-title">Chinese OEM overseas plants — source notes</span>
+        <span class="source-dl-sub">Original Word document, unchanged</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+
 <ol class="bibliography">
   <li id="bib-byd-rayong"><strong>Electric Vehicles (2026)</strong>. "BYD production in Thailand slows a third as plant passes 100,000 vehicles." Nameplate capacity 150,000 vehicles per year; utilisation reported around 30% as the plant passes its first 100,000 units. <a href="https://eletric-vehicles.com/byd/byd-production-in-thailand-slows-a-third-as-plant-passes-100000-vehicles/" target="_blank" rel="noopener">eletric-vehicles.com &rarr;</a></li>
   <li id="bib-byd-camacari"><strong>BYD and SCMP (2025)</strong>. "First BYD electric vehicle rolls off the line in Brazil" (BYD press release) and "BYD opens massive Brazil plant, its biggest investment outside Asia" (<em>South China Morning Post</em>). Camaçari, Bahia; former Ford site; nameplate 150,000 EV and hybrid vehicles, scalable to 300,000. <a href="https://www.byd.com/us/news-list/First-BYD-Electric-Vehicle-Rolls-off-the-Line-in-Brazil" target="_blank" rel="noopener">BYD press &rarr;</a> · <a href="https://www.scmp.com/news/china/article/3328433/byd-opens-massive-brazil-plant-its-biggest-investment-outside-asia" target="_blank" rel="noopener">SCMP coverage &rarr;</a></li>

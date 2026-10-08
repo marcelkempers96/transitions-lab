@@ -3872,6 +3872,55 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
   .prose .plant-explorer .pe-grid{grid-template-columns:1fr;}
 }
 
+/* Source-document download block. A pair of download cards (PDF + DOCX)
+   under the "Where the numbers come from" paragraph. Lets a reader grab
+   the raw research notes behind a piece. */
+.prose .source-downloads{
+  border:2px solid var(--ink);background:var(--paper);
+  padding:16px 18px 14px;margin:22px 0 24px;
+  box-shadow:4px 4px 0 var(--ink);
+}
+.prose .source-downloads-head{
+  font-size:14.5px;line-height:1.5;color:var(--ink);margin:0 0 12px;
+}
+.prose .source-downloads-head .kicker{
+  display:inline-block;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);background:var(--butter);padding:2px 8px;border:1.5px solid var(--ink);
+  border-radius:2px;margin-right:8px;line-height:1.4;
+}
+.prose .source-downloads-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;
+}
+.prose .source-dl{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;
+  border:1.5px solid var(--ink);background:var(--paper);
+  text-decoration:none;color:var(--ink);
+  box-shadow:3px 3px 0 var(--ink);
+  transition:transform .14s ease,box-shadow .14s ease,background .14s ease;
+}
+.prose .source-dl:hover{
+  transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);
+  background:#FFF7E6;
+}
+.prose .source-dl-ext{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12px;font-weight:800;letter-spacing:.12em;
+  padding:6px 10px;border:1.5px solid var(--ink);background:var(--paper-2);
+  min-width:52px;text-align:center;line-height:1.2;
+}
+.prose .source-dl-meta{display:flex;flex-direction:column;gap:2px;}
+.prose .source-dl-title{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:14.5px;line-height:1.25;color:var(--ink);
+}
+.prose .source-dl-sub{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12px;color:var(--ink);opacity:.7;
+}
+
 /* Small chip labels inside each .article-item card body. */
 .prose .article-chips{
   display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;
