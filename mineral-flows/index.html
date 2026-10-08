@@ -215,6 +215,12 @@ button,select{font:inherit;color:inherit}
 .legend .ramp-label{display:flex;flex-direction:column;gap:2px;line-height:1.3}
 .legend .ramp-title{font-weight:600;font-size:12.5px}
 .legend .ramp-sub{font-size:11.5px;opacity:.72}
+/* Hub-size legend row: one sample circle plus a title/sub,
+   matching the ramp-row layout so both sit on the same baseline. */
+.legend .hub-size-row{display:flex;align-items:flex-start;gap:10px;padding:4px 0 6px}
+.legend .hub-size-swatch{flex:0 0 34px;display:inline-flex;align-items:center;justify-content:center;margin-top:-2px}
+.legend .hub-size-swatch svg{display:block}
+:root[data-map-theme="light"] .legend .hub-size-swatch circle{fill:#0A0A0A;fill-opacity:.6;stroke:#0A0A0A;stroke-opacity:.85}
 .zoomctl{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:6px}
 .zoomctl button{width:36px;height:36px;background:var(--black);border:1px solid var(--white);cursor:pointer;font-size:18px;border-radius:4px}
 .tip{position:absolute;pointer-events:none;background:var(--black);border:1px solid var(--orange);padding:8px 10px;font-size:13px;max-width:260px;opacity:0;transition:opacity .12s;z-index:5}
@@ -1182,6 +1188,10 @@ function drawRibbon(){
 function drawLegend(){
   const lg = document.getElementById("legend");
   let h = isAll() ? "" : `<div class="row ramp-row" style="grid-column:1/-1"><span class="ramp" style="background:linear-gradient(90deg,#2a1b08,#8a520f)"></span><span class="ramp-label"><span class="ramp-title">Country shading: share of ${esc(stageLabel(state.stage).toLowerCase())}</span><span class="ramp-sub">Darker = larger share. Grey = below 1% or not listed.</span></span></div>`;
+  // Hub-circle size legend. One sample circle, with a short note
+  // explaining that circle area scales with the total weight of
+  // trade passing through that country across all shown corridors.
+  h += `<div class="row hub-size-row" style="grid-column:1/-1"><span class="hub-size-swatch" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="11" fill="#000" fill-opacity=".55" stroke="#000" stroke-opacity=".9" stroke-width="1"/></svg></span><span class="ramp-label"><span class="ramp-title">Hub circle: total trade weight through a country</span><span class="ramp-sub">Area scales with the sum of all shown corridors in and out. Hover a hub for its weight.</span></span></div>`;
   if (state.flows){
     if (state.col === "mineral"){
       // Group the swatches under the four group headings. Each
