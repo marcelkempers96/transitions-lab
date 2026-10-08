@@ -3921,6 +3921,30 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
   font-size:12px;color:var(--ink);opacity:.7;
 }
 
+/* Verbatim source-text block pinned to the bottom of a piece. Visually
+   quieter than the main prose, with a dashed border and a note that
+   the block is temporary. */
+.prose .source-text{
+  border:1.5px dashed rgba(0,0,0,.35);
+  background:var(--paper-2);
+  padding:22px 24px 18px;margin:28px 0 24px;
+  display:block;
+}
+.prose .source-text-note{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:13px;line-height:1.5;color:var(--ink);opacity:.78;
+  margin:0 0 14px;padding:0 0 12px;
+  border-bottom:1px dashed rgba(0,0,0,.22);
+}
+.prose .source-text-note strong{color:var(--ink);opacity:1;}
+.prose .source-text-body{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:14.5px;line-height:1.55;color:var(--ink);opacity:.88;
+}
+.prose .source-text-body p{margin:0 0 10px;}
+.prose .source-text-body p:last-child{margin-bottom:0;}
+.prose .source-text-body strong{color:var(--ink);opacity:1;font-weight:700;}
+
 /* Small chip labels inside each .article-item card body. */
 .prose .article-chips{
   display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;

@@ -143,3 +143,73 @@ For the full bibliography across every study behind the chain, see the companion
 - [The Permit Is Not the Project](/insight-permit-is-not-the-project) frames the European side of the industrial-policy argument the Hungarian and Spanish plants reopen.
 - [The Factory Cannot Transition Without the Town](/insight-factory-and-the-town) is the Lab's standing argument about why factory openings are read correctly only against the labour and institutional context they land in.
 - For the frameworks the Lab uses to read these transitions, see the [BReW framework](/brw) and the [Economics of Transitions](/economics-of-transitions). To discuss a commissioned study of a specific chain, see [Contact](/contact).
+
+---
+
+<section class="source-text" aria-label="Source research notes, verbatim">
+
+<p class="source-text-note"><strong>Editor's note.</strong> The exact text of the research notes behind this piece, pasted verbatim and unedited for transparency. Downloadable as <a href="/assets/docs/china-overseas-plants-source.pdf" download>PDF</a> or <a href="/assets/docs/china-overseas-plants-source.docx" download>DOCX</a>. This block is temporary and will be removed once the article has settled.</p>
+
+<div class="source-text-body">
+
+**Existing Factories of Chinese automotive companies abroad:**
+
+**BYD:**
+
+Rayong, Thailand: production began in July 2024, with a designated annual capacity of 150,000 vehicles. Actual use is 30 per cent of designated capacity.
+
+Camaçari, Brazil (a former Ford site): the Camaçari complex began assembling vehicles in July 2025. The annual capacity of operations is 150,000 electric and hybrid cars a year, which can be scaled up to double the amount. It is BYD's largest investment outside of Asia.
+
+Szeged, Hungary: trial for passenger vehicle production started in January 2026, with full series production scheduled for Q2 2026 and an eventual capacity of about 200,000 vehicles a year. The company's first "Made in Europe" production.
+
+Subang, Indonesia: BYD opened a second regional plant on September 3 with a capacity of 150,000 vehicles a year.
+
+**Great Wall Motor (GWM):**
+
+Tula, Russia: 500 million dollar investment with an annual capacity of 150,000 vehicles, producing since 2019.
+
+Rayong, Thailand: annual capacity of 80,000 vehicles opened in June 2021 on a former GM site.
+
+Iracemápolis, Brazil: converted from a Daimler plant acquired in 2021, with an annual capacity of 50,000 vehicles. Production started in August 2025.
+
+**Chery:**
+
+Barcelona, Spain (Ebro joint venture, former Nissan plant): Ebro holds 60% and Chery 40%. The partners have invested more than 150 million Euro and the plant could produce up to 200,000 vehicles annually.
+
+**Geely (through Volvo Cars):**
+
+Volvo is 78.7% owned by Geely Holding and runs plants in Torslanda, Sweden and Ghent, Belgium. The plant in Ridgeville, South Carolina (US) has installed capacity of 150,000 vehicles a year.
+
+**Planned investments of Chinese automotive companies abroad:**
+
+**BYD:**
+
+Manisa, Turkey: construction of a plant with an investment of 1 billion dollar and annual capacity of 150,000 vehicles is on hold.
+
+**SAIC (MG):**
+
+Galicia, Spain: first factory in Europe, with a 200 million Euro investment, annual capacity of 120,000 vehicles. Start of operation in 2028.
+
+**Chery:**
+
+Lembah Beringin, Malaysia: industrial park to finish in 2027.
+
+Barcelona, Spain: Chery wants to add capacity at its Barcelona joint venture.
+
+**Geely:**
+
+São José dos Pinhais, Brazil (Renault plant): Geely bought a 26,4% stake in Renault Brasil. The partners announced a joint investment of 3.8 billion R (real) at the Ayrton Senna complex to produce new car models.
+
+**Market shares of Chinese automotive companies across continents:**
+
+Europe: as of March 2026, Chinese automotive companies are set to cross the 4% market share barrier in Europe.
+
+US: no percentages found in reports. Chinese manufacturers are largely shut out by high tariffs on Chinese imports.
+
+South America (Brazil): the market share for electrified vehicles climbed to 25.2%.
+
+Southeast Asia: Chinese OEMs reached about 15.7% of the ASEAN-6 market in H1 2026.
+
+</div>
+
+</section>
