@@ -138,12 +138,12 @@ button,select{font:inherit;color:inherit}
 /* Main */
 .stagearea{display:grid;grid-template-columns:minmax(0,1fr) var(--panel-w);gap:0;margin-top:0;border-bottom:1px solid var(--white)}
 /* Fixed map/Sankey container size so switching views never resizes
-   the chrome around the chart. Desktop 560px, mobile 520px. Flex
+   the chrome around the chart. Desktop 840px, mobile 520px. Flex
    column so the colour legend can sit at the bottom without
    overflowing when the map fills the top. overflow:hidden is a
    belt-and-braces guard so no inner child can bleed into the
    panel below. */
-.mapwrap{position:relative;height:560px;min-height:560px;max-height:560px;border-right:1px solid var(--white);display:flex;flex-direction:column;overflow:hidden}
+.mapwrap{position:relative;height:840px;min-height:840px;max-height:840px;border-right:1px solid var(--white);display:flex;flex-direction:column;overflow:hidden}
 #map{display:block;width:100%;flex:1 1 auto;min-height:0;touch-action:none}
 .country{fill:var(--land);stroke:var(--land-edge);stroke-width:.6px;vector-effect:non-scaling-stroke;cursor:pointer}
 .country.has{cursor:pointer}
@@ -1822,7 +1822,7 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     }
 
     var W = skSvg.clientWidth || 800;
-    // Mapwrap sets a fixed height (560 desktop / 520 mobile); the
+    // Mapwrap sets a fixed height (840 desktop / 520 mobile); the
     // Sankey SVG inherits that height exactly so the chart doesn't
     // reflow when the view toggles.
     var H = skSvg.clientHeight || 520;
