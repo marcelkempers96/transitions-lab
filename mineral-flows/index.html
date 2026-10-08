@@ -61,6 +61,7 @@ button,select{font:inherit;color:inherit}
 
 /* Stage ribbon: the signature element */
 .ribbon{display:grid;grid-template-columns:repeat(var(--stages,3),minmax(0,1fr));gap:0;border-top:1px solid var(--white);border-bottom:1px solid var(--white)}
+.ribbon[hidden]{display:none !important}
 /* All-minerals summary cards: horizontal scroll on mobile, equal
    grid columns on desktop. No card background; a 1px right rule
    separates adjacent cards. Mobile-first (16px body, 1.35 line
