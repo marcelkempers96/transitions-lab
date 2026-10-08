@@ -229,6 +229,35 @@ button,select{font:inherit;color:inherit}
 .legend .ramp-label{display:flex;flex-direction:column;gap:2px;line-height:1.3}
 .legend .ramp-title{font-weight:600;font-size:12.5px}
 .legend .ramp-sub{font-size:11.5px;opacity:.72}
+/* Selected-flow card: prepended to the right-side pane when the
+   reader clicks a flow on the map or a link on the Sankey. Carries
+   source, target, mineral, form, confidence, approximate tonnes
+   (where a world total is known), the note and a jump to Sources. */
+.pane .selected-flow{
+  border:2px solid var(--orange);background:rgba(255,154,31,.08);
+  padding:12px 14px 10px;margin:0 0 14px;position:relative;
+}
+.pane .selected-flow .sf-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 6px}
+.pane .selected-flow .sf-kicker{font-family:var(--f-body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--orange);opacity:.95}
+.pane .selected-flow .sf-close{background:transparent;border:0;color:var(--white);font-size:22px;line-height:1;cursor:pointer;padding:0 4px;opacity:.72}
+.pane .selected-flow .sf-close:hover{opacity:1;color:var(--orange)}
+.pane .selected-flow .sf-title{font-family:var(--f-head);font-size:18px;line-height:1.2;margin:0 0 2px;color:var(--white)}
+.pane .selected-flow .sf-arrow{color:var(--orange);font-weight:700;margin:0 4px}
+.pane .selected-flow .sf-sub{font-size:12.5px;opacity:.78;margin:0 0 8px}
+.pane .selected-flow p{font-size:13px;line-height:1.45;margin:4px 0}
+.pane .selected-flow .sf-tonnes{color:var(--orange);font-weight:700}
+.pane .selected-flow .src-attrib{display:block;font-size:11.5px;opacity:.68;margin-top:2px}
+.pane .selected-flow .sf-note{border-top:1px dashed rgba(245,239,225,.22);padding-top:6px;margin-top:6px;font-style:italic;opacity:.86}
+.pane .selected-flow .sf-cta{margin:8px 0 0}
+.pane .selected-flow .btn.ghost{border:1px solid var(--orange);background:transparent;color:var(--orange);padding:4px 10px;font-size:12px;cursor:pointer}
+.pane .selected-flow .btn.ghost:hover{background:var(--orange);color:var(--black)}
+:root[data-map-theme="light"] .pane .selected-flow{border-color:#B95E00;background:rgba(185,94,0,.07)}
+:root[data-map-theme="light"] .pane .selected-flow .sf-title{color:#0A0A0A}
+:root[data-map-theme="light"] .pane .selected-flow .sf-close{color:#0A0A0A}
+:root[data-map-theme="light"] .pane .selected-flow .sf-note{border-top-color:rgba(10,10,10,.22)}
+:root[data-map-theme="light"] .pane .selected-flow .btn.ghost{border-color:#B95E00;color:#B95E00}
+:root[data-map-theme="light"] .pane .selected-flow .btn.ghost:hover{background:#B95E00;color:#F5EDDD}
+
 /* Hub-size legend row: one sample circle plus a title/sub,
    matching the ramp-row layout so both sit on the same baseline. */
 .legend .hub-size-row{display:flex;align-items:flex-start;gap:10px;padding:4px 0 6px}
@@ -467,16 +496,25 @@ footer{padding:20px 0 40px;font-size:13px;display:grid;grid-template-columns:1fr
 :root[data-map-theme="light"]{
   --black:#F5EDDD;
   --white:#0A0A0A;
-  --land:#E5DBC2;
-  --land-edge:#CFC5A8;
+  --land:#ECECEC;
+  --land-edge:#D7D7D7;
   --rule:#B2A783;
   --orange-deep:#F1CFA0;
 }
+/* Light theme: the Lab's pale-beige backdrop frames the map; the
+   map canvas itself (sphere, land, graticule) is white and pale
+   grey so the flow lines read cleanly. */
 :root[data-map-theme="light"] html,
 :root[data-map-theme="light"] body{background:#F5EDDD;color:#0A0A0A}
-:root[data-map-theme="light"] .country{fill:#E5DBC2;stroke:#CFC5A8}
-:root[data-map-theme="light"] .graticule{stroke:#D9CFB1}
-:root[data-map-theme="light"] .sphere{fill:#F5EDDD}
+:root[data-map-theme="light"] .country{fill:#ECECEC;stroke:#D7D7D7}
+:root[data-map-theme="light"] .graticule{stroke:#E8E8E8}
+:root[data-map-theme="light"] .sphere{fill:#FFFFFF}
+:root[data-map-theme="light"] #map{background:#FFFFFF}
+:root[data-map-theme="light"] #sankey{background:#FFFFFF}
+:root[data-map-theme="light"] .sankey-empty{color:#0A0A0A}
+:root[data-map-theme="light"] .sk-node text{fill:#0A0A0A;stroke:#FFFFFF;paint-order:stroke;stroke-width:2.5}
+:root[data-map-theme="light"] .sk-node.stage-title text{fill:#0A0A0A}
+:root[data-map-theme="light"] .sk-node .sk-pct{fill:#B95E00}
 /* Light-mode flow rendering: `screen` blend brightens dark backgrounds
    but disappears on cream. Switch to `multiply` (colours darken the
    cream) and lift opacity so hubs stay visible. */
@@ -693,7 +731,7 @@ const MCOL = {lithium:"#C9D4FF", cobalt:"#4F8BFF", nickel:"#7FE08A", copper:"#FF
 const ORANGE = "#FF9A1F", WHITE = "#FFFFFF";
 const MOBILE = window.matchMedia("(max-width: 900px)").matches;
 
-const state = window.state = { mineral:"all", stage:"mining", flows:true, africa:false, corr:false, pol:true, col:"mineral", country:null, stress:null, tab:"overview", group:null };
+const state = window.state = { mineral:"all", stage:"mining", flows:true, africa:false, corr:false, pol:true, col:"mineral", country:null, stress:null, tab:"overview", group:null, selectedFlow:null };
 
 function readHash(){
   const raw = location.hash.slice(1);
@@ -1085,9 +1123,10 @@ function drawMap(){
     gCore.selectAll("path.core").classed("hovered", d => d.f.id === id);
   }
   gBand.selectAll("path.band")
-    .on("mousemove", (e,d) => { const f = d.f; setFocus(f.id); showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}`, e); })
+    .on("mousemove", (e,d) => { const f = d.f; setFocus(f.id); showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}<br><em style="opacity:.7">Click for full detail</em>`, e); })
     .on("mouseleave", () => { setFocus(null); hideTip(); })
-    .on("touchstart", (e,d) => { const f = d.f; setFocus(f.id); showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}`, e); }, {passive: true});
+    .on("touchstart", (e,d) => { const f = d.f; setFocus(f.id); showTip(`<b>${esc(name(f.source))} to ${esc(name(f.target))}</b><br>${isAll() ? esc(M(f.mineral).name) + ", " : ""}${esc(f.form)}<br>Relative volume ${f.weight} of 5, ${esc(f.confidence)} confidence${f.note ? "<br>" + esc(f.note) : ""}`, e); }, {passive: true})
+    .on("click", (e,d) => { e.stopPropagation(); state.selectedFlow = {kind:"map", flow: d.f}; drawPane(); });
   // Tap outside a band clears the focus (mobile).
   d3.select("#map").on("touchstart.focusClear", (e) => {
     if (!e.target || e.target.tagName !== "path" || !e.target.classList.contains("band")) setFocus(null);
@@ -1429,10 +1468,75 @@ function paneSources(){
   h += `<p class="note">Flow rendering follows the convention of geoFluxus material flow maps: translucent bands blended so that overlapping corridors brighten into hubs.</p>`;
   return h;
 }
+// Build the "Selected flow" card prepended to whatever pane the user
+// has open when they click a flow on the map or a link on the Sankey.
+// Carries source → target, mineral, form, weight, confidence, note,
+// an approximate tonnes read (where a world-total is known for the
+// relevant stage), and a shortcut into Sources.
+function selectedFlowCard(){
+  const sel = state.selectedFlow;
+  if (!sel) return "";
+  if (sel.kind === "map"){
+    const f = sel.flow; if (!f) return "";
+    const m = M(f.mineral) || {};
+    const stageGuess = /ore|concentrate|intermediate|rock|flake/i.test(f.form || "")
+      ? "mining"
+      : (/magnet|cathode|anode|device|module|cell|battery|assembly/i.test(f.form || "")
+          ? "downstream" : "refining");
+    const wt = worldTotalOf(f.mineral, stageGuess);
+    const stageLbl = labelOf(f.mineral, stageGuess) || stageGuess;
+    const sourceLine = wt
+      ? `<p><b>Stage reference:</b> ${esc(stageLbl)}, world ${esc(wt.year || "")}: ${esc(wt.display)}. <span class="src-attrib">${esc(wt.source || "")}</span></p>`
+      : "";
+    const usedIn = m.used_in ? `<p><b>Used in:</b> ${esc(m.used_in)}</p>` : "";
+    const confLine = `<p><b>Volume:</b> relative ${f.weight} of 5. <b>Confidence:</b> ${esc(f.confidence || "medium")}.</p>`;
+    const noteLine = f.note ? `<p class="sf-note"><b>Note:</b> ${esc(f.note)}</p>` : "";
+    return `<div class="selected-flow" role="region" aria-label="Selected flow details">
+      <div class="sf-head"><span class="sf-kicker">Selected flow</span><button class="sf-close" type="button" aria-label="Clear selection">&times;</button></div>
+      <h3 class="sf-title">${esc(name(f.source))} <span class="sf-arrow">&rarr;</span> ${esc(name(f.target))}</h3>
+      <p class="sf-sub">${esc(m.name || f.mineral)}${f.form ? ` &middot; ${esc(f.form)}` : ""}</p>
+      ${confLine}
+      ${usedIn}
+      ${sourceLine}
+      ${noteLine}
+      <p class="sf-cta"><button class="btn ghost" type="button" data-open-sources>Open Sources for ${esc(m.name || f.mineral)}</button></p>
+    </div>`;
+  }
+  if (sel.kind === "sankey"){
+    const lk = sel.link; if (!lk) return "";
+    const srcIso = lk.sourceIso, tgtIso = lk.targetIso;
+    const srcStage = lk.sourceStage, tgtStage = lk.targetStage;
+    const mid = lk.mineral || state.mineral;
+    const share = (typeof lk.value === "number") ? lk.value : null;
+    const wt = worldTotalOf(mid, srcStage);
+    const tonnes = share != null ? shareTonnes(mid, srcStage, share) : null;
+    const wtLine = wt
+      ? `<p><b>World ${esc(labelOf(mid, srcStage).toLowerCase())} (${esc(wt.year || "")}):</b> ${esc(wt.display)}. <span class="src-attrib">${esc(wt.source || "")}</span></p>`
+      : "";
+    const shareLine = share != null
+      ? `<p><b>Share of this stage:</b> ${fmt(share)}${tonnes ? ` <span class="sf-tonnes">(&asymp; ${esc(tonnes)})</span>` : ""}</p>`
+      : "";
+    const m = M(mid) || {};
+    return `<div class="selected-flow" role="region" aria-label="Selected chain flow details">
+      <div class="sf-head"><span class="sf-kicker">Selected chain flow</span><button class="sf-close" type="button" aria-label="Clear selection">&times;</button></div>
+      <h3 class="sf-title">${esc(name(srcIso))} <span class="sf-arrow">&rarr;</span> ${esc(name(tgtIso))}</h3>
+      <p class="sf-sub">${esc(m.name || mid)} &middot; ${esc(labelOf(mid, srcStage))} <span class="sf-arrow">&rarr;</span> ${esc(labelOf(mid, tgtStage))}</p>
+      ${shareLine}
+      ${wtLine}
+      <p class="sf-cta"><button class="btn ghost" type="button" data-open-sources>Open Sources for ${esc(m.name || mid)}</button></p>
+    </div>`;
+  }
+  return "";
+}
+
 function drawPane(){
   ["overview","country","stress","reserves","sources"].forEach(t => document.getElementById("tab-"+t).setAttribute("aria-selected", t === state.tab));
   const pane = document.getElementById("pane");
-  pane.innerHTML = state.tab === "overview" ? paneOverview() : state.tab === "country" ? paneCountry() : state.tab === "stress" ? paneStress() : state.tab === "reserves" ? paneReserves() : paneSources();
+  const flowHtml = selectedFlowCard();
+  const bodyHtml = state.tab === "overview" ? paneOverview() : state.tab === "country" ? paneCountry() : state.tab === "stress" ? paneStress() : state.tab === "reserves" ? paneReserves() : paneSources();
+  pane.innerHTML = flowHtml + bodyHtml;
+  const sfClose = pane.querySelector(".sf-close"); if (sfClose) sfClose.addEventListener("click", () => { state.selectedFlow = null; update(); });
+  const sfOpen = pane.querySelector("[data-open-sources]"); if (sfOpen) sfOpen.addEventListener("click", () => { state.tab = "sources"; drawPane(); writeHash(); });
   const cs = document.getElementById("csel"); if (cs) cs.addEventListener("change", e => { state.country = e.target.value || null; update(); });
   const ss = document.getElementById("ssel"); if (ss) ss.addEventListener("change", e => { state.stress = e.target.value || null; update(); });
   const ts = document.getElementById("to-stress"); if (ts) ts.addEventListener("click", () => { state.stress = state.country; state.tab = "stress"; update(); });
@@ -2074,6 +2178,24 @@ let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTime
     linkPaths.forEach(function(p){
       p.addEventListener('mousemove', function(ev){ focusLink(p, ev); });
       p.addEventListener('mouseleave', clearFocus);
+      p.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        var lk = p.__lk;
+        if (!lk) return;
+        var sn = window.state || {};
+        sn.selectedFlow = {
+          kind: 'sankey',
+          link: {
+            sourceIso: lk.source.iso,
+            targetIso: lk.target.iso,
+            sourceStage: lk.source.stage,
+            targetStage: lk.target.stage,
+            value: lk.value,
+            mineral: sn.mineral
+          }
+        };
+        if (typeof drawPane === 'function') drawPane();
+      });
     });
     nodeGroups.forEach(function(g){
       g.addEventListener('mousemove', function(ev){ focusNode(g, ev); });
