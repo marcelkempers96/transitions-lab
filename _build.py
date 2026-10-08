@@ -545,6 +545,7 @@ NO_BYLINE_SLUGS: set[str] = {
     "mineral-flows-research",
     "mineral-flows-guide",
     "mineral-flows-attribution",
+    "insight-china-ships-the-factory",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -1861,10 +1862,14 @@ def build_content_page(slug: str, md: str) -> str:
             title_html = m.group(2)
             date_html = m.group(3)
             au = author_for(item_slug)
+            byline_html = (
+                f'\n      <div class="article-item-byline">By {au}</div>'
+                if item_slug not in NO_BYLINE_SLUGS else ""
+            )
             return (
                 f'<a class="article-title" href="/{item_slug}">{title_html}</a>\n'
-                f'      <div class="article-meta">{date_html}</div>\n'
-                f'      <div class="article-item-byline">By {au}</div>'
+                f'      <div class="article-meta">{date_html}</div>'
+                f'{byline_html}'
             )
         body_html = re.sub(
             r'<a class="article-title" href="/([a-z0-9\-]+)">([^<]+)</a>\s*<div class="article-meta">([^<]+)</div>',
