@@ -16,6 +16,56 @@ Dataset version: **1.4 (indicative)** · Last dataset touch: **1 October 2026** 
 
 ---
 
+## Equations behind the figures
+
+*The five expressions below do all the arithmetic on the public site. Each is a one-liner the reader can audit against the source dataset. The lower line names the paper or convention the Lab adopts.*
+
+<div class="equations-block">
+
+<figure class="equation">
+<div class="eq-formula">HHI<sub>s</sub> = &Sigma;<sub>i</sub> s<sub>i,s</sub><sup>2</sup></div>
+<figcaption class="eq-caption">
+<p><b>Herfindahl-Hirschman Index for stage s.</b> Sum the squares of every country's percentage share s<sub>i,s</sub>. Above 2,500 is conventionally "highly concentrated"; above 10,000 is a monopoly. The map excludes the unlisted "rest of world" tail, so the HHI returned is a lower bound.</p>
+<p class="eq-source">Hirschman (1945); Herfindahl (1950). <a href="https://scholar.google.com/scholar?q=Hirschman+1945+national+power+structure+foreign+trade" target="_blank" rel="noopener">Hirschman &rarr;</a> &middot; <a href="https://scholar.google.com/scholar?q=Herfindahl+1950+concentration+steel+industry" target="_blank" rel="noopener">Herfindahl &rarr;</a></p>
+</figcaption>
+</figure>
+
+<figure class="equation">
+<div class="eq-formula">T<sub>i,s</sub> &approx; s<sub>i,s</sub> &times; W<sub>s</sub></div>
+<figcaption class="eq-caption">
+<p><b>Approximate tonnes-per-annum.</b> Country i's annual tonnes at stage s equals that country's percentage share multiplied by the world total W<sub>s</sub> for the stage. The result is an indicative headline figure, never a transaction-level claim.</p>
+<p class="eq-source">Lab convention; W<sub>s</sub> values from USGS <em>Mineral Commodity Summaries 2025</em> and IEA <em>Global Critical Minerals Outlook 2026</em>. <a href="https://pubs.usgs.gov/periodicals/mcs2025/" target="_blank" rel="noopener">USGS MCS 2025 &rarr;</a> &middot; <a href="https://www.iea.org/reports/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA GCMO 2026 &rarr;</a></p>
+</figcaption>
+</figure>
+
+<figure class="equation">
+<div class="eq-formula">v<sub>A&rarr;B</sub> = (s<sub>A</sub> &times; s<sub>B</sub>) &divide; &Sigma;<sub>B'</sub> s<sub>B'</sub></div>
+<figcaption class="eq-caption">
+<p><b>Mass-balanced bi-proportional link allocation.</b> The flow volume from upstream country A to downstream country B is proportional to the product of A's upstream share and B's downstream share, normalised by the sum of downstream shares. Totals in and out balance by construction.</p>
+<p class="eq-source">Lab adaptation of the Fratar / RAS matrix-balancing procedure. <a href="https://scholar.google.com/scholar?q=Fratar+1954+trip+distribution+method" target="_blank" rel="noopener">Fratar (1954) &rarr;</a> &middot; <a href="https://scholar.google.com/scholar?q=Stone+1961+input+output+matrix+RAS" target="_blank" rel="noopener">Stone (1961) &rarr;</a></p>
+</figcaption>
+</figure>
+
+<figure class="equation">
+<div class="eq-formula">g<sub>i</sub> = R<sub>i</sub> &minus; M<sub>i</sub></div>
+<figcaption class="eq-caption">
+<p><b>Reserves-vs-mining gap.</b> The untapped-reserves share for country i equals its share of global reserves R<sub>i</sub> minus its share of current mining output M<sub>i</sub>. A positive g<sub>i</sub> says the country holds more of the resource than it currently produces; a negative g<sub>i</sub> says the opposite. Rendered on the Reserves tab for 12 of 15 minerals.</p>
+<p class="eq-source">Lab; R<sub>i</sub> from USGS <em>Mineral Commodity Summaries 2025</em>. See the <a href="/mineral-flows-research#method-reserves">reserves method section</a>.</p>
+</figcaption>
+</figure>
+
+<figure class="equation">
+<div class="eq-formula">V' = V &setminus; {f : src(f) = c &or; tgt(f) = c};&nbsp;&nbsp; residual = &Sigma;<sub>f &isin; V'</sub> w<sub>f</sub></div>
+<figcaption class="eq-caption">
+<p><b>Stress-test counterfactual.</b> Remove country c from the corridor set V, sum the weight of the surviving flows w<sub>f</sub>, and compare to the pre-removal total. Measures how much corridor volume survives the loss of a single country, which the Stress-test tab reports.</p>
+<p class="eq-source">Related to the firm-level network-robustness treatment in Sun et al. (2024). <a href="https://scholar.google.com/scholar?q=Sun+Hao+2024+firm-level+ownership+critical+minerals+Resources+Conservation+Recycling" target="_blank" rel="noopener">Find on Google Scholar &rarr;</a></p>
+</figcaption>
+</figure>
+
+</div>
+
+---
+
 ## By mineral chain
 
 The table names the *primary* source per stage. Where more than one publication was drawn on, the additional sources are named alongside. Confidence markers are the Lab's read of how well the underlying data supports the figure at the stage's resolution: **High** for headline shares in mainstream USGS commodity summaries; **Medium** for IEA outlook chapters or industry-association estimates; **Low** for the frontier chains where public data is patchy (LFP downstream, SiC power devices).

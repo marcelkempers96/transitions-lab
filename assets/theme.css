@@ -3921,6 +3921,46 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
   font-size:12px;color:var(--ink);opacity:.7;
 }
 
+/* Equations block for method/attribution pages. Each equation sits in
+   its own card: a serif-italic formula line typeset in Fraunces for a
+   mathematical feel, then a short caption explaining the symbols and
+   a source link to the paper or convention it comes from. */
+.prose .equations-block{
+  display:flex;flex-direction:column;gap:14px;
+  margin:18px 0 24px;
+}
+.prose .equation{
+  border:1.5px solid var(--ink);background:var(--paper);
+  padding:16px 18px 14px;margin:0;
+  box-shadow:4px 4px 0 var(--ink);
+  display:flex;flex-direction:column;gap:10px;
+}
+.prose .equation .eq-formula{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(18px,2.4vw,24px);line-height:1.3;letter-spacing:.005em;
+  color:var(--ink);
+  padding:10px 12px;background:var(--paper-2);
+  border-left:3px solid var(--butter);
+  overflow-x:auto;white-space:nowrap;
+}
+.prose .equation .eq-formula sub,
+.prose .equation .eq-formula sup{font-style:normal;font-size:.65em;letter-spacing:0}
+.prose .equation .eq-caption{margin:0;}
+.prose .equation .eq-caption p{font-size:14.5px;line-height:1.5;margin:0 0 6px;color:var(--ink);}
+.prose .equation .eq-caption p:last-child{margin-bottom:0;}
+.prose .equation .eq-caption b{color:var(--ink);font-weight:700;}
+.prose .equation .eq-source{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12.5px;line-height:1.5;color:var(--ink);opacity:.78;
+  border-top:1px dashed rgba(0,0,0,.18);padding-top:6px;margin-top:8px !important;
+}
+.prose .equation .eq-source a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;font-weight:700;}
+.prose .equation .eq-source a:hover{background:var(--butter);}
+@media(max-width:640px){
+  .prose .equation{padding:12px 14px 12px;box-shadow:3px 3px 0 var(--ink);}
+  .prose .equation .eq-formula{font-size:16px;padding:8px 10px;}
+}
+
 /* Verbatim source-text block pinned to the bottom of a piece. Visually
    quieter than the main prose, with a dashed border and a note that
    the block is temporary. */
