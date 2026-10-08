@@ -20,23 +20,23 @@ Five lines, each substantiated. One source per claim.
 
 ### 1. The Finance Bill 2026 would put 16% VAT on EVs, batteries, electric motorcycles, electric buses and charging infrastructure.
 
-The proposal strips the zero-rated status those lines had enjoyed under earlier Finance Acts. If passed, every imported EV, every replacement lithium-ion pack and every charging hub installation goes up 16% at the till. Stakeholders argue it would reverse the gains of the duty-free directive signed the same quarter. The bill is before Parliament; it has not yet been enacted. [[1]](#bib-big3africa)
+The proposal strips the zero-rated status those lines had enjoyed under earlier Finance Acts. If passed, every imported EV, every replacement lithium-ion pack and every charging hub installation goes up 16% at the till. Stakeholders argue it would reverse the gains of the duty-free directive signed the same quarter. The bill is before Parliament; it has not yet been enacted.<sup class="cite"><a href="#bib-big3africa">1</a></sup>
 
 ### 2. The same government directed duty-free import for the first 100,000 EVs.
 
-Ruto's May 2026 directive waived import duty on the first 100,000 electric vehicles entering the country, framed as a market-seeding instrument for the National Electric Mobility Policy launched in February 2026. The duty waiver and the VAT line in the Finance Bill operate on the same unit at the same border post, in opposite directions. [[2]](#bib-msacarmarket) [[3]](#bib-big3africa)
+Ruto's May 2026 directive waived import duty on the first 100,000 electric vehicles entering the country, framed as a market-seeding instrument for the National Electric Mobility Policy launched in February 2026. The duty waiver and the VAT line in the Finance Bill operate on the same unit at the same border post, in opposite directions.<sup class="cite"><a href="#bib-msacarmarket">2</a>,<a href="#bib-big3africa">3</a></sup>
 
 ### 3. A US$3 billion MOU landed on 6 October 2026 for 1,000 solar-powered charging hubs and a platform for 100,000 green vehicles.
 
-Kenya signed with Endelevu Enterprise Corporation (named by one outlet as Geely-linked) for an EV manufacturing and green-mobility project including 1,000 solar-charging hubs and a digital platform designed to manage 100,000 vehicles. It is an MOU, not a plant. The investment is a proposal; execution is the next test. [[4]](#bib-citizen) [[5]](#bib-nairobiwire) [[6]](#bib-kenyatoday)
+Kenya signed with Endelevu Enterprise Corporation (named by one outlet as Geely-linked) for an EV manufacturing and green-mobility project including 1,000 solar-charging hubs and a digital platform designed to manage 100,000 vehicles. It is an MOU, not a plant. The investment is a proposal; execution is the next test.<sup class="cite"><a href="#bib-citizen">4</a>,<a href="#bib-nairobiwire">5</a>,<a href="#bib-kenyatoday">6</a></sup>
 
 ### 4. Kenya Power's state-owned rollout is 45 chargers across six counties by mid-2026.
 
-Announced May 2025 and now partly delivered: 45 charging stations across six counties within 12 months. BasiGo has opened its third Shell-hosted charging station, each capable of charging up to four buses at once. The private build and the public build are moving at different cadences and against different spec sheets. [[7]](#bib-kenyapower) [[8]](#bib-basigo)
+Announced May 2025 and now partly delivered: 45 charging stations across six counties within 12 months. BasiGo has opened its third Shell-hosted charging station, each capable of charging up to four buses at once. The private build and the public build are moving at different cadences and against different spec sheets.<sup class="cite"><a href="#bib-kenyapower">7</a>,<a href="#bib-basigo">8</a></sup>
 
 ### 5. The National Electric Mobility Policy and the National Automotive Bill are the frames the government cites.
 
-Both were tabled in 2026. The policy sets investment incentives and infrastructure expansion as objectives; the bill is before Parliament and its charging-infrastructure provisions have not been published in detail. The contradiction with the Finance Bill 2026 is unresolved as of this writing. [[9]](#bib-policy)
+Both were tabled in 2026. The policy sets investment incentives and infrastructure expansion as objectives; the bill is before Parliament and its charging-infrastructure provisions have not been published in detail. The contradiction with the Finance Bill 2026 is unresolved as of this writing.<sup class="cite"><a href="#bib-policy">9</a></sup>
 
 ---
 

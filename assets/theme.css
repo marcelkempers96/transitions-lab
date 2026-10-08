@@ -3937,6 +3937,22 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
   font-size:12px;color:var(--ink);opacity:.7;
 }
 
+/* Inline superscript citation markers used in short news-summary
+   articles (e.g. The Charger and the Tax). Renders a tight,
+   paper-style "1,2" link cluster so the body stays clean. */
+.prose sup.cite{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:.72em;font-weight:700;letter-spacing:.02em;
+  margin-left:2px;line-height:0;
+  color:var(--ink);
+}
+.prose sup.cite a{
+  color:var(--ink);text-decoration:none;
+  padding:0 2px;
+}
+.prose sup.cite a:hover{background:var(--butter);text-decoration:underline;}
+.prose sup.cite a + a::before{content:",";margin:0 1px;color:var(--ink);opacity:.5;}
+
 /* Equations block for method/attribution pages. Each equation sits in
    its own card: a serif-italic formula line typeset in Fraunces for a
    mathematical feel, then a short caption explaining the symbols and
