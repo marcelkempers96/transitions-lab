@@ -29,7 +29,7 @@ The fifteen chains on the map are not fifteen separate stories. They cluster int
 </table>
 </div>
 
-The battery chain dominates the map because seven of the fifteen minerals go into one component, and because battery capacity has grown faster than any other end use for critical minerals in the last five years. Platinum group metals run the other way: they are a transition mineral by subtraction, as EV adoption replaces the catalytic converters that used them.
+The battery chain dominates the map because seven of the fifteen minerals go into one component. Platinum group metals run the other way: they are a transition mineral by subtraction, as EV adoption replaces the catalytic converters that used them.
 
 ---
 
@@ -120,7 +120,7 @@ The **Chain diagram** button turns the map into a stage-by-stage flow view for t
 ### Limits
 
 - Chain diagram works one mineral at a time. Pick a chip other than *All minerals* to see it; the diagram falls back to a placeholder message otherwise.
-- The 70% corridor-following / 30% share-spreading rule is a design choice; the BACI trade refresh (see the [research paper](/mineral-flows-research#method-tonnes)) will replace it with actual contained-metal tonnages per corridor.
+- Ribbons are allocated mass-balanced bi-proportionally: a flow A→B is proportional to A's upstream share times B's downstream share, so totals balance by construction. See the [equation on the attribution page](/mineral-flows-attribution#equations-behind-the-figures). The BACI trade refresh (see the [research paper](/mineral-flows-research#method-tonnes)) will replace these with actual contained-metal tonnages per corridor.
 - Cathode / magnet / anode columns without a source-anchored share show only the world's largest producer name; the block sizes there are indicative, not audited.
 
 ---
@@ -166,7 +166,7 @@ The dataset ships with `status: indicative`. That is why the map opens with a wo
 
 Shares are rounded 2024/2025 figures from USGS, IEA and industry association reports. Corridor widths are relative weights on a 1-to-5 scale, not tonnes of contained metal. The BACI trade pipeline (see [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research)) converts these to tonnes once the CEPII release is downloaded manually. Until then, the map is a shape, not a measurement.
 
-For the 48-country African coverage question, the paper cites 48 African countries as holding at least one transition mineral in reserve, while the map surfaces around a dozen African source hubs today because the other thirty-plus are pre-export. That gap is documented in the Sources tab.
+For the 48-country African coverage question, the paper cites 48 African countries as holding at least one transition mineral in reserve. The map now lists 42 of them, including the ring of reserve-holder-but-not-yet-exporter states beyond the current top dozen; the remaining six sit below the USGS 1% rounding floor and so appear in the OTHER tail. The gap is documented in the Sources tab.
 
 ---
 
