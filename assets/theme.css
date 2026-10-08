@@ -4080,6 +4080,41 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
 .prose .tool-cta-sub a{color:var(--cobalt);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600;}
 .prose .tool-cta-sub a:hover{color:var(--ink);}
 
+/* Research-paper TL;DR block: a LinkedIn-style summary of the paper
+   that sits at the top. Square bullets, left rule, muted paper
+   background so it reads as a scannable abstract separate from the
+   body text below. */
+.prose .paper-tldr{
+  margin:18px 0 24px;padding:18px 20px 14px;
+  background:#f3ecd8;border-left:4px solid var(--cobalt);
+  border-radius:2px;font-size:15px;line-height:1.55;color:var(--ink);
+}
+.prose .paper-tldr-link{
+  margin:0 0 10px;font-size:13.5px;font-weight:600;
+  color:var(--ink);opacity:.9;
+}
+.prose .paper-tldr-link a{color:var(--cobalt);text-decoration:underline;text-decoration-color:rgba(31,78,170,.4);text-underline-offset:3px;font-weight:700;}
+.prose .paper-tldr-link a:hover{text-decoration-color:var(--cobalt);}
+.prose .paper-tldr-list{
+  list-style:none;padding:0;margin:0;
+  display:flex;flex-direction:column;gap:10px;
+}
+.prose .paper-tldr-list > li{
+  padding-left:22px;position:relative;
+}
+.prose .paper-tldr-list > li::before{
+  content:"";position:absolute;left:0;top:7px;
+  width:10px;height:10px;background:var(--ink);
+}
+.prose .paper-tldr-list > li strong{font-weight:700;color:var(--ink);}
+.prose .paper-tldr-list a{color:var(--cobalt);text-decoration:underline;text-decoration-color:rgba(31,78,170,.4);text-underline-offset:2px;font-weight:600;}
+.prose .paper-tldr-list a:hover{text-decoration-color:var(--cobalt);}
+.prose .paper-tldr-foot{
+  margin:14px 0 0;padding-top:10px;border-top:1px solid rgba(10,10,10,.12);
+  font-size:12.5px;color:var(--ink);opacity:.7;
+}
+.prose .paper-tldr-foot a{color:var(--cobalt);font-weight:600;}
+
 /* Team cards on the About page. One photo visible at rest; on hover
    / focus / tap, cross-fades to a second portrait with a small
    scale lift, so the card feels alive without a second image slot. */
