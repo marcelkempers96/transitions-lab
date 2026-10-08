@@ -166,6 +166,19 @@ button,select{font:inherit;color:inherit}
 .g-flows.has-hover .core:not(.hovered){stroke-opacity:.08 !important}
 .g-flows.has-hover .band.hovered{fill-opacity:.85 !important}
 .g-flows.has-hover .core.hovered{stroke-opacity:1 !important}
+/* Country / stress-test focus: when a country is selected on the
+   Country tab or the Stress-test tab, only the flows touching that
+   country stay visible. Everything else fades back. */
+.g-flows.has-focus .band{transition:opacity .14s ease, fill-opacity .14s ease}
+.g-flows.has-focus .core{transition:opacity .14s ease, stroke-opacity .14s ease}
+.g-flows.has-focus .band:not(.focused){fill-opacity:.04 !important}
+.g-flows.has-focus .core:not(.focused){stroke-opacity:.06 !important}
+.g-flows.has-focus .band.focused{fill-opacity:.78 !important}
+.g-flows.has-focus .core.focused{stroke-opacity:.98 !important}
+.g-flows.has-focus .node:not(.node-focused){opacity:.18}
+.g-flows.has-focus .node-halo:not(.node-focused){opacity:.14}
+.g-flows.has-focus .node.node-focused{opacity:1}
+.g-flows.has-focus .node-halo.node-focused{opacity:.55}
 .band:hover{opacity:.6}
 .g-flows.intro{animation:fadein .9s ease-out}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
@@ -955,6 +968,27 @@ function drawFlowGeometry(){
     .attr("cx", d => d.x).attr("cy", d => d.y).attr("r", d => hubRadius(d.w) / Math.sqrt(k));
   gNode.selectAll("circle.node").data(hubs, d => d.iso).join("circle").attr("class","node")
     .attr("cx", d => d.x).attr("cy", d => d.y).attr("r", d => 1.8 / Math.sqrt(k));
+  // Country / stress-test focus: when a country is selected on the
+  // Country tab, or marked as the stress-test target, every flow that
+  // does not touch it fades back. The hubs behave the same way.
+  const focusIso = state.country || state.stress || null;
+  const flowsG = gFlows.node();
+  if (flowsG){
+    flowsG.classList.toggle("has-focus", !!focusIso);
+  }
+  const touches = f => focusIso && (f.source === focusIso || f.target === focusIso);
+  gBand.selectAll("path.band").classed("focused", d => touches(d.f));
+  gCore.selectAll("path.core").classed("focused", d => touches(d.f));
+  const focusHubs = new Set();
+  if (focusIso){
+    focusHubs.add(focusIso);
+    flowGeo.forEach(({f}) => {
+      if (f.source === focusIso) focusHubs.add(f.target);
+      else if (f.target === focusIso) focusHubs.add(f.source);
+    });
+  }
+  gNode.selectAll("circle.node").classed("node-focused", d => focusHubs.has(d.iso));
+  gNode.selectAll("circle.node-halo").classed("node-focused", d => focusHubs.has(d.iso));
 }
 
 // Hub radius formula. Pure sqrt: area is proportional to w (the
@@ -1172,7 +1206,7 @@ function drawRibbon(){
 
 function drawLegend(){
   const lg = document.getElementById("legend");
-  let h = isAll() ? "" : `<div class="row ramp-row" style="grid-column:1/-1"><span class="ramp" style="background:linear-gradient(90deg,#2a1b08,#8a520f)"></span><span class="ramp-label"><span class="ramp-title">Country shading: share of ${esc(stageLabel(state.stage).toLowerCase())}</span><span class="ramp-sub">Darker = larger share. Grey = below 1% or not listed.</span></span></div>`;
+  let h = "";
   // Hub-circle size legend. One sample circle, with a short note
   // explaining that circle area scales with the total weight of
   // trade passing through that country across all shown corridors.
