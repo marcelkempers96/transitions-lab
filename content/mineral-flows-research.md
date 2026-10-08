@@ -31,6 +31,12 @@
   <figcaption>The Mineral Flows Map at the All-minerals view, with the full corridor set drawn at once. Every figure and figure-share cited in this paper renders on the map as either a country choropleth (share of a stage) or a corridor (bilateral flow). Interactive: <a href="/mineral-flows">transitionslab.org/mineral-flows</a>.</figcaption>
 </figure>
 
+<aside class="callout c-cobalt callout--serif">
+  <span class="kicker">Sources behind every figure</span>
+  <h3>See the <a href="/mineral-flows-attribution">data attribution page</a></h3>
+  <p>Every share, every world total, every corridor weight on the map traces to one of the primary sources listed on the <a href="/mineral-flows-attribution">attribution page</a>: USGS <em>Mineral Commodity Summaries 2025</em>, IEA <em>Global Critical Minerals Outlook 2026</em>, Benchmark Mineral Intelligence, the Cobalt Institute, ICSG, Johnson Matthey, Metals Focus, Yole Development and CEPII BACI. The page carries the primary link for each source, the confidence marker, the year of the underlying data, and the five <a href="/mineral-flows-attribution#equations-behind-the-figures">equations</a> used to derive the figures from them.</p>
+</aside>
+
 ---
 
 ## Scope: what counts as a transition mineral here

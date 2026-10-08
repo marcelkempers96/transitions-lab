@@ -70,6 +70,19 @@ Dataset version: **1.4 (indicative)** · Last dataset touch: **1 October 2026** 
 
 The table names the *primary* source per stage. Where more than one publication was drawn on, the additional sources are named alongside. Confidence markers are the Lab's read of how well the underlying data supports the figure at the stage's resolution: **High** for headline shares in mainstream USGS commodity summaries; **Medium** for IEA outlook chapters or industry-association estimates; **Low** for the frontier chains where public data is patchy (LFP downstream, SiC power devices).
 
+**Primary sources used across the map** (each named short-form in the per-chain list below):
+
+- [USGS *Mineral Commodity Summaries 2025*](https://pubs.usgs.gov/periodicals/mcs2025/) — mining shares for every chain.
+- [IEA *Global Critical Minerals Outlook 2026* (GCMO)](https://www.iea.org/reports/global-critical-minerals-outlook-2026) — refining and cathode-active-material shares.
+- [Benchmark Mineral Intelligence](https://source.benchmarkminerals.com/) — LFP and lithium-ion battery database.
+- [Cobalt Institute market reports](https://www.cobaltinstitute.org/resource/) — refined cobalt data.
+- [ICSG *World Copper Factbook*](https://icsg.org/copper-factbook/) — refined copper shares.
+- [Johnson Matthey PGM market reports](https://matthey.com/products-and-markets/pgms-and-circularity/pgm-management/pgm-market-report) — platinum group metal flows.
+- [Metals Focus / The Silver Institute, *World Silver Survey*](https://www.silverinstitute.org/all-world-silver-surveys/) — refined silver bullion.
+- [IEA *Renewables 2024*](https://www.iea.org/reports/renewables-2024) — polysilicon production.
+- [Yole Development SiC market tracker](https://www.yolegroup.com/strategy-insights/all-reports/) — silicon-carbide power devices.
+- [BACI international-trade database (CEPII)](http://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37) — pending tonnes-of-contained-metal refresh.
+
 ### Lithium
 - **Mining**, USGS *Mineral Commodity Summaries 2025* (2024 estimates). High. Last updated 30 Sep 2026.
 - **Refining (carbonate + hydroxide)**, IEA *Global Critical Minerals Outlook 2026*. Medium.
