@@ -12,7 +12,7 @@
 
 > No figure goes live on the public site until its link resolves. The map ships with `minerals.meta.status: indicative` until a BACI-driven refresh replaces the working shares with tonnes of contained metal. Every share is a rounded USGS or IEA headline value; every corridor width is a relative 1-5 weight rather than a tonne. The [research paper](/mineral-flows-research) explains the method; the [guide](/mineral-flows-guide) explains how to read it.
 
-Dataset version: **1.4 (indicative)** · Last dataset touch: **1 October 2026** · Studies tracked: **38** · Countries: **60** · Corridors: **298** · Reserves series: **12 of 15 minerals**.
+Dataset version: **1.5 (indicative)** · Last dataset touch: **8 October 2026** · Studies tracked: **38** · Countries: **85** (of which **42 African**) · Corridors: **298** · Reserves series: **12 of 15 minerals**.
 
 ---
 
@@ -170,7 +170,11 @@ The following are named in the EV bill of materials but not yet on the map. Addi
 
 ## Country coverage note
 
-The map draws current top exporters, not deposit holders. Around a dozen African countries appear as source hubs today; the other thirty-plus hold reserves that have not yet reached international trade at meaningful volumes. See the [research paper](/mineral-flows-research#fact-1) for the reserves-versus-exports distinction and the [guide](/mineral-flows-guide) for how it plays out in the map's coverage.
+The map now lists **42 African countries** across the continent, from Senegal and Guinea in the west to Ethiopia and Kenya in the east, Botswana and Lesotho in the south, Algeria and Libya in the north, and the Central African Republic, Chad and Cameroon through the middle. The 2026 expansion added 25 African countries that were previously folded into the "rest of world" tail, including Mali (lithium at Goulamina), Namibia (lithium and copper), Botswana (copper and nickel at Khoemacau and Selebi-Phikwe), Malawi and Burundi (rare earths at Kangankunde and Gakara), Tanzania (graphite at Lindi and Mahenge, rare earths at Ngualla), Madagascar (cobalt and graphite at Ambatovy), Algeria (phosphate at Djebel Onk), Togo and Senegal (phosphate at Hahotoe and Taiba), and Burkina Faso (manganese at Tambao).
+
+Reserves shares for the newly listed countries draw from the same primary source as the rest of the map: USGS *Mineral Commodity Summaries 2025*. Where USGS lists the country but at less than 1% of world reserves (the standard rounding floor), the share is tucked into the OTHER bucket; a country name appearing on the map without an explicit percentage carries defensible exposure to the chain but not a defensible share figure.
+
+The map still draws current top **exporters** on the Mining stage — the choropleth and the hub circles respond to active trade, not deposit holding alone. Several of the newly listed countries have reserves but no live export flow, which the Reserves tab shows as a positive gap (R > M). See the [research paper](/mineral-flows-research#fact-1) for the reserves-versus-exports distinction and the [guide](/mineral-flows-guide) for how it plays out in the map's coverage.
 
 ---
 

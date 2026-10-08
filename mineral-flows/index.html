@@ -1203,11 +1203,19 @@ function drawMap(){
   lead.forEach(d => {
     d.dy = 0;
     var tries = 0;
-    while (tries < 5 && placed.some(p => Math.abs(p.x - d.x) < 60 && Math.abs(p.y + p.dy - (d.y + d.dy)) < 12)){
-      d.dy += 12;
+    // Collision tolerance in SCREEN pixels divided by the zoom factor,
+    // so the threshold stays constant on screen regardless of zoom. At
+    // high zoom (Africa focus, k~3) a fixed 60-SVG-unit threshold meant
+    // 180 screen pixels, which dropped neighbours like Zambia next to
+    // DRC and Mozambique next to Zimbabwe. 36 screen px is enough to
+    // avoid overlap but keeps dense neighbours visible.
+    const colX = 36 / Math.max(1, k);
+    const colY = 11 / Math.max(1, k);
+    while (tries < 8 && placed.some(p => Math.abs(p.x - d.x) < colX && Math.abs(p.y + p.dy - (d.y + d.dy)) < colY)){
+      d.dy += colY + 1;
       tries += 1;
     }
-    if (tries < 5){
+    if (tries < 8){
       placed.push(d);
       kept.push(d);
     }

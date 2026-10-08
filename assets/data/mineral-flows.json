@@ -481,6 +481,206 @@
         "lon": 10.0,
         "lat": 50.0,
         "africa": false
+      },
+      {
+        "iso3": "GIN",
+        "iso_num": "324",
+        "name": "Guinea",
+        "lon": -10.0,
+        "lat": 10.5,
+        "africa": true
+      },
+      {
+        "iso3": "MLI",
+        "iso_num": "466",
+        "name": "Mali",
+        "lon": -4.0,
+        "lat": 17.0,
+        "africa": true
+      },
+      {
+        "iso3": "BFA",
+        "iso_num": "854",
+        "name": "Burkina Faso",
+        "lon": -1.5,
+        "lat": 12.5,
+        "africa": true
+      },
+      {
+        "iso3": "NER",
+        "iso_num": "562",
+        "name": "Niger",
+        "lon": 8.0,
+        "lat": 17.0,
+        "africa": true
+      },
+      {
+        "iso3": "MRT",
+        "iso_num": "478",
+        "name": "Mauritania",
+        "lon": -10.0,
+        "lat": 20.0,
+        "africa": true
+      },
+      {
+        "iso3": "LBR",
+        "iso_num": "430",
+        "name": "Liberia",
+        "lon": -9.5,
+        "lat": 6.5,
+        "africa": true
+      },
+      {
+        "iso3": "SLE",
+        "iso_num": "694",
+        "name": "Sierra Leone",
+        "lon": -11.5,
+        "lat": 8.5,
+        "africa": true
+      },
+      {
+        "iso3": "TGO",
+        "iso_num": "768",
+        "name": "Togo",
+        "lon": 1.0,
+        "lat": 8.5,
+        "africa": true
+      },
+      {
+        "iso3": "BEN",
+        "iso_num": "204",
+        "name": "Benin",
+        "lon": 2.0,
+        "lat": 10.0,
+        "africa": true
+      },
+      {
+        "iso3": "CAF",
+        "iso_num": "140",
+        "name": "Central African Republic",
+        "lon": 20.0,
+        "lat": 7.0,
+        "africa": true
+      },
+      {
+        "iso3": "CMR",
+        "iso_num": "120",
+        "name": "Cameroon",
+        "lon": 12.5,
+        "lat": 6.0,
+        "africa": true
+      },
+      {
+        "iso3": "COG",
+        "iso_num": "178",
+        "name": "Congo",
+        "lon": 15.0,
+        "lat": -1.0,
+        "africa": true
+      },
+      {
+        "iso3": "TCD",
+        "iso_num": "148",
+        "name": "Chad",
+        "lon": 19.0,
+        "lat": 15.5,
+        "africa": true
+      },
+      {
+        "iso3": "ETH",
+        "iso_num": "231",
+        "name": "Ethiopia",
+        "lon": 40.0,
+        "lat": 9.0,
+        "africa": true
+      },
+      {
+        "iso3": "KEN",
+        "iso_num": "404",
+        "name": "Kenya",
+        "lon": 37.8,
+        "lat": 1.0,
+        "africa": true
+      },
+      {
+        "iso3": "UGA",
+        "iso_num": "800",
+        "name": "Uganda",
+        "lon": 32.3,
+        "lat": 1.5,
+        "africa": true
+      },
+      {
+        "iso3": "RWA",
+        "iso_num": "646",
+        "name": "Rwanda",
+        "lon": 30.0,
+        "lat": -2.0,
+        "africa": true
+      },
+      {
+        "iso3": "BDI",
+        "iso_num": "108",
+        "name": "Burundi",
+        "lon": 30.0,
+        "lat": -3.5,
+        "africa": true
+      },
+      {
+        "iso3": "MWI",
+        "iso_num": "454",
+        "name": "Malawi",
+        "lon": 34.0,
+        "lat": -13.5,
+        "africa": true
+      },
+      {
+        "iso3": "SDN",
+        "iso_num": "729",
+        "name": "Sudan",
+        "lon": 30.0,
+        "lat": 15.5,
+        "africa": true
+      },
+      {
+        "iso3": "BWA",
+        "iso_num": "072",
+        "name": "Botswana",
+        "lon": 23.5,
+        "lat": -22.5,
+        "africa": true
+      },
+      {
+        "iso3": "LSO",
+        "iso_num": "426",
+        "name": "Lesotho",
+        "lon": 28.0,
+        "lat": -29.5,
+        "africa": true
+      },
+      {
+        "iso3": "SWZ",
+        "iso_num": "748",
+        "name": "Eswatini",
+        "lon": 31.5,
+        "lat": -26.5,
+        "africa": true
+      },
+      {
+        "iso3": "DZA",
+        "iso_num": "012",
+        "name": "Algeria",
+        "lon": 2.0,
+        "lat": 28.0,
+        "africa": true
+      },
+      {
+        "iso3": "LBY",
+        "iso_num": "434",
+        "name": "Libya",
+        "lon": 17.0,
+        "lat": 27.0,
+        "africa": true
       }
     ]
   },
@@ -593,7 +793,9 @@
             "BRA": 2,
             "CAN": 2,
             "MEX": 2,
-            "OTHER": 11
+            "MLI": 1,
+            "NAM": 1,
+            "OTHER": 9
           },
           "world_total": {
             "value": 22000,
@@ -708,7 +910,9 @@
             "RUS": 2,
             "CAN": 2,
             "ZMB": 2,
-            "OTHER": 10
+            "MDG": 1,
+            "CMR": 1,
+            "OTHER": 8
           },
           "world_total": {
             "value": 11000,
@@ -821,7 +1025,10 @@
             "CAN": 2,
             "CHN": 2,
             "NCL": 3,
-            "OTHER": 9
+            "BDI": 1,
+            "CMR": 1,
+            "BWA": 1,
+            "OTHER": 6
           },
           "world_total": {
             "value": 130000,
@@ -920,7 +1127,9 @@
             "POL": 3,
             "ZMB": 2,
             "IDN": 2,
-            "OTHER": 33
+            "NAM": 1,
+            "BWA": 1,
+            "OTHER": 31
           },
           "world_total": {
             "value": 1100000,
@@ -1126,7 +1335,12 @@
             "IND": 6,
             "AUS": 3,
             "USA": 2,
-            "OTHER": 1
+            "BDI": 1,
+            "MWI": 1,
+            "TZA": 1,
+            "KEN": 1,
+            "AGO": 1,
+            "OTHER": 0
           },
           "world_total": {
             "value": 110000,
@@ -1226,7 +1440,9 @@
             "BRA": 9,
             "GAB": 5,
             "CHN": 4,
-            "OTHER": 16
+            "GHA": 1,
+            "BFA": 1,
+            "OTHER": 14
           },
           "world_total": {
             "value": 1500000,
@@ -1419,7 +1635,10 @@
             "JOR": 1,
             "BRA": 1,
             "ZAF": 1,
-            "OTHER": 14
+            "DZA": 2,
+            "SEN": 1,
+            "TGO": 1,
+            "OTHER": 10
           },
           "world_total": {
             "value": 71000000,
