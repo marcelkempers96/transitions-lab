@@ -3751,6 +3751,127 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
   .prose .article-filter .filter-label{min-width:100%;margin-bottom:2px;}
 }
 
+/* Plant Explorer: interactive filterable grid of Chinese OEM plants
+   abroad. Lives inline inside .prose on the China-ships article. */
+.prose .plant-explorer{
+  border:2px solid var(--ink);background:var(--paper);
+  padding:22px 22px 20px;margin:36px 0 32px;
+  box-shadow:6px 6px 0 var(--ink);
+  display:flex;flex-direction:column;gap:16px;
+}
+.prose .plant-explorer .pe-head{display:flex;flex-direction:column;gap:4px;}
+.prose .plant-explorer .pe-eyebrow{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
+  color:var(--ink);opacity:.6;margin:0;
+}
+.prose .plant-explorer .pe-title{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(22px,2.4vw,28px);letter-spacing:-.015em;line-height:1.15;
+  margin:0;color:var(--ink);
+}
+.prose .plant-explorer .pe-sub{
+  font-size:14.5px;line-height:1.5;color:var(--ink);opacity:.78;margin:4px 0 0;
+}
+.prose .plant-explorer .pe-filters{
+  display:flex;flex-direction:column;gap:8px;
+  padding:12px 14px;background:var(--paper-2);
+  border:1.5px solid var(--ink);
+}
+.prose .plant-explorer .pe-filter-row{
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;
+}
+.prose .plant-explorer .pe-filter-label{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
+  color:var(--ink);opacity:.6;min-width:80px;
+}
+.prose .plant-explorer .pe-chip{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12.5px;font-weight:700;letter-spacing:.02em;
+  padding:5px 12px;border:1.5px solid var(--ink);background:var(--paper);
+  color:var(--ink);cursor:pointer;border-radius:2px;
+  transition:background .12s ease,color .12s ease;
+}
+.prose .plant-explorer .pe-chip:hover{background:var(--butter);}
+.prose .plant-explorer .pe-chip.is-active{background:var(--ink);color:var(--paper);}
+.prose .plant-explorer .pe-count{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12.5px;font-weight:600;letter-spacing:.02em;
+  color:var(--ink);opacity:.72;margin:0;
+}
+.prose .plant-explorer .pe-empty{
+  font-size:14px;color:var(--ink);opacity:.72;margin:0;
+}
+.prose .plant-explorer .pe-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:14px;margin:0;
+}
+.prose .plant-explorer .pe-card{
+  display:flex;flex-direction:column;gap:6px;
+  padding:14px 14px 12px;
+  border:1.5px solid var(--ink);background:var(--paper);
+  text-decoration:none;color:var(--ink);
+  transition:transform .14s ease,box-shadow .14s ease,background .14s ease;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.prose .plant-explorer .pe-card:hover{
+  transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);
+  background:#FFF7E6;
+}
+.prose .plant-explorer .pe-card-head{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+.prose .plant-explorer .pe-co{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+}
+.prose .plant-explorer .pe-status{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 8px;border:1.5px solid var(--ink);border-radius:2px;
+  line-height:1.4;
+}
+.prose .plant-explorer .pe-status-operating{background:#D9E8CD;}
+.prose .plant-explorer .pe-status-planned{background:#F0E4CC;}
+.prose .plant-explorer .pe-status-hold{background:#EAD5D1;}
+.prose .plant-explorer .pe-city{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:17px;line-height:1.2;margin-top:2px;
+}
+.prose .plant-explorer .pe-country{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12.5px;letter-spacing:.02em;color:var(--ink);opacity:.7;
+}
+.prose .plant-explorer .pe-dl{
+  display:grid;grid-template-columns:1fr;gap:4px 10px;margin:8px 0 0;
+  font-family:'Hanken Grotesk',sans-serif;
+}
+.prose .plant-explorer .pe-dl > div{
+  display:grid;grid-template-columns:70px 1fr;gap:6px;
+  font-size:12.5px;line-height:1.35;
+}
+.prose .plant-explorer .pe-dl dt{
+  font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  font-size:10.5px;color:var(--ink);opacity:.6;align-self:start;padding-top:1px;
+}
+.prose .plant-explorer .pe-dl dd{margin:0;color:var(--ink);}
+.prose .plant-explorer .pe-note{
+  font-size:13px;line-height:1.45;margin:8px 0 0;color:var(--ink);opacity:.84;
+  border-top:1px dashed rgba(0,0,0,.18);padding-top:8px;
+}
+.prose .plant-explorer .pe-src{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  margin-top:8px;color:var(--ink);
+}
+.prose .plant-explorer .pe-card:hover .pe-src{text-decoration:underline;}
+@media(max-width:640px){
+  .prose .plant-explorer{padding:16px 14px 14px;}
+  .prose .plant-explorer .pe-filter-label{min-width:100%;margin-bottom:2px;}
+  .prose .plant-explorer .pe-grid{grid-template-columns:1fr;}
+}
+
 /* Small chip labels inside each .article-item card body. */
 .prose .article-chips{
   display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;

@@ -916,3 +916,91 @@ document.addEventListener('DOMContentLoaded', function () {
     } catch(_){}
   }
 })();
+
+// Plant Explorer: interactive filterable grid of Chinese OEM plants
+// abroad, used on /insight-china-ships-the-factory. Only runs when
+// a .plant-explorer root is present on the page.
+(function(){
+  var root = document.querySelector('.plant-explorer');
+  if (!root) return;
+  var grid = root.querySelector('.pe-grid');
+  var countEl = root.querySelector('.pe-count');
+  var empty = root.querySelector('.pe-empty');
+  if (!grid || !countEl || !empty) return;
+
+  var PLANTS = [
+    {co:"BYD", city:"Rayong", country:"Thailand", region:"Asia", status:"operating", year:"Jul 2024", cap:"150,000/yr", site:"New build", note:"Reported utilisation around 30% as the plant passes its first 100,000 units.", bib:"bib-byd-rayong"},
+    {co:"BYD", city:"Camaçari (Bahia)", country:"Brazil", region:"Americas", status:"operating", year:"Jul 2025", cap:"150,000/yr, scalable to 300,000", site:"Former Ford Camaçari", note:"BYD's largest investment outside Asia.", bib:"bib-byd-camacari"},
+    {co:"BYD", city:"Szeged", country:"Hungary", region:"Europe", status:"operating", year:"Trial Jan 2026, series Q2 2026", cap:"~200,000/yr", site:"New build", note:'BYD&rsquo;s first "Made in Europe" line.', bib:"bib-byd-szeged"},
+    {co:"BYD", city:"Subang", country:"Indonesia", region:"Asia", status:"operating", year:"Sep 2026", cap:"150,000/yr", site:"New build", note:"Second BYD regional plant in Southeast Asia.", bib:"bib-byd-subang"},
+    {co:"Great Wall", city:"Tula", country:"Russia", region:"Europe", status:"operating", year:"2019", cap:"150,000/yr", site:"New build (US$500m)", note:"Longest-running overseas plant in this list.", bib:"bib-gwm-tula"},
+    {co:"Great Wall", city:"Rayong", country:"Thailand", region:"Asia", status:"operating", year:"Jun 2021", cap:"80,000/yr", site:"Former GM Rayong", note:"Converted from a General Motors line.", bib:"bib-gwm-rayong"},
+    {co:"Great Wall", city:"Iracemápolis", country:"Brazil", region:"Americas", status:"operating", year:"Aug 2025", cap:"50,000/yr", site:"Former Daimler (acquired 2021)", note:"Site idle before conversion.", bib:"bib-gwm-iracemapolis"},
+    {co:"Chery", city:"Barcelona (Zona Franca)", country:"Spain", region:"Europe", status:"operating", year:"2024", cap:"up to 200,000/yr", site:"Former Nissan Barcelona", note:"Ebro–Chery JV: Ebro 60%, Chery 40%; around €150 million.", bib:"bib-ebro-chery"},
+    {co:"Geely", city:"São José dos Pinhais (Ayrton Senna)", country:"Brazil", region:"Americas", status:"operating", year:"2025", cap:"Retool at existing complex", site:"Renault Brasil (Geely 26.4%)", note:"R$3.8 billion joint investment for new models.", bib:"bib-geely-renault"},
+    {co:"Geely", city:"Torslanda / Ghent / Ridgeville", country:"Sweden, Belgium, USA", region:"Europe", status:"operating", year:"Existing", cap:"Ridgeville 150,000/yr", site:"Volvo Cars (Geely 78.7%)", note:"Geely-owned assembly via Volvo Cars.", bib:"bib-volvo-footprint"},
+    {co:"BYD", city:"Manisa", country:"Turkey", region:"Europe", status:"hold", year:"Planned, on hold", cap:"150,000/yr planned", site:"New build (US$1bn)", note:"Agreement signed 2024; construction paused.", bib:"bib-byd-manisa"},
+    {co:"SAIC", city:"Galicia", country:"Spain", region:"Europe", status:"planned", year:"2028", cap:"120,000/yr", site:"New build (€200m)", note:"SAIC's first European plant.", bib:"bib-saic-galicia"},
+    {co:"Chery", city:"Lembah Beringin (Perak)", country:"Malaysia", region:"Asia", status:"planned", year:"2027", cap:"Industrial park under build", site:"New build (RM 2.2bn)", note:"Chery City; multi-model complex.", bib:"bib-chery-malaysia"},
+    {co:"Chery", city:"Barcelona (expansion)", country:"Spain", region:"Europe", status:"planned", year:"Under negotiation", cap:"Additional capacity at Ebro JV", site:"Ebro–Chery JV", note:"Chery seeks to add capacity at Zona Franca.", bib:"bib-ebro-chery"},
+    {co:"Geely", city:"São José dos Pinhais (new models)", country:"Brazil", region:"Americas", status:"planned", year:"Joint plan announced", cap:"R$3.8bn investment", site:"Renault Brasil complex", note:"Model-launch pipeline on the shared site.", bib:"bib-geely-renault"}
+  ];
+
+  var state = {company:"", region:"", status:""};
+
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function cardHTML(p){
+    var statusLabel = p.status === 'operating' ? 'Operating' : (p.status === 'hold' ? 'On hold' : 'Planned');
+    var statusClass = 'pe-status pe-status-' + p.status;
+    return '<a class="pe-card" href="#' + esc(p.bib) + '" data-company="' + esc(p.co) + '" data-region="' + esc(p.region) + '" data-status="' + esc(p.status) + '">' +
+      '<div class="pe-card-head"><span class="pe-co">' + esc(p.co) + '</span><span class="' + statusClass + '">' + statusLabel + '</span></div>' +
+      '<div class="pe-city">' + esc(p.city) + '</div>' +
+      '<div class="pe-country">' + esc(p.country) + '</div>' +
+      '<dl class="pe-dl">' +
+        '<div><dt>Start</dt><dd>' + esc(p.year) + '</dd></div>' +
+        '<div><dt>Capacity</dt><dd>' + esc(p.cap) + '</dd></div>' +
+        '<div><dt>Site</dt><dd>' + esc(p.site) + '</dd></div>' +
+      '</dl>' +
+      '<p class="pe-note">' + p.note + '</p>' +
+      '<span class="pe-src">Source &rarr;</span>' +
+    '</a>';
+  }
+
+  function render(){
+    var filtered = PLANTS.filter(function(p){
+      if (state.company && p.co !== state.company) return false;
+      if (state.region && p.region !== state.region) return false;
+      if (state.status && p.status !== state.status) return false;
+      return true;
+    });
+    grid.innerHTML = filtered.map(cardHTML).join('');
+    empty.hidden = filtered.length > 0;
+    var op = 0, pl = 0, ho = 0;
+    filtered.forEach(function(p){
+      if (p.status === 'operating') op++;
+      else if (p.status === 'planned') pl++;
+      else if (p.status === 'hold') ho++;
+    });
+    countEl.textContent = 'Showing ' + filtered.length + ' plant' + (filtered.length === 1 ? '' : 's') +
+      ' — ' + op + ' operating, ' + pl + ' planned, ' + ho + ' on hold.';
+  }
+
+  root.querySelectorAll('.pe-filter-row').forEach(function(row){
+    var group = row.getAttribute('data-group');
+    row.addEventListener('click', function(e){
+      var btn = e.target.closest('.pe-chip');
+      if (!btn) return;
+      row.querySelectorAll('.pe-chip').forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      state[group] = btn.getAttribute('data-value') || '';
+      render();
+    });
+  });
+
+  render();
+})();
