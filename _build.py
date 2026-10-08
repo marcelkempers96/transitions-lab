@@ -424,6 +424,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-local-content-local-benefit": "butter",
     "insight-permit-is-not-the-project": "butter",
     "insight-china-ships-the-factory": "butter",
+    "insight-the-charger-and-the-tax": "butter",
     "insight-the-saving-is-agreed": "butter",
     "for-funders": "cobalt",
     "capability-statement": "cobalt",
@@ -546,6 +547,7 @@ NO_BYLINE_SLUGS: set[str] = {
     "mineral-flows-guide",
     "mineral-flows-attribution",
     "insight-china-ships-the-factory",
+    "insight-the-charger-and-the-tax",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -977,6 +979,10 @@ META: dict[str, dict[str, str]] = {
     "insight-china-ships-the-factory": {
         "title": "China Ships the Factory, Not Just the Car | Transitions Lab",
         "description": "Where Chinese EV makers are actually building now, which Western plants they are buying, and how fast their share of the car market is moving outside their own. A map of ten operating overseas plants and five more on the way.",
+    },
+    "insight-the-charger-and-the-tax": {
+        "title": "The Charger and the Tax: Kenya's Electric Signal | Transitions Lab",
+        "description": "Kenya's electric-mobility signal is pulling both ways. Ruto directed duty-free import for 100,000 EVs and signed a US$3bn charging-hub MOU; the Finance Bill 2026 proposes 16% VAT on the same vehicles, batteries and chargers. Five findings, three alert signals, one source per line.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
