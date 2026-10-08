@@ -414,46 +414,72 @@
       {
         "iso3": "HUN",
         "name": "Hungary",
-        "africa": false
+        "africa": false,
+        "lon": 19.5,
+        "lat": 47.0,
+        "iso_num": "348"
       },
       {
         "iso3": "TWN",
         "name": "Taiwan",
-        "africa": false
+        "africa": false,
+        "lon": 121.0,
+        "lat": 23.7,
+        "iso_num": "158"
       },
       {
         "iso3": "PRT",
         "name": "Portugal",
-        "africa": false
+        "africa": false,
+        "lon": -8.2,
+        "lat": 39.5,
+        "iso_num": "620"
       },
       {
         "iso3": "ESP",
         "name": "Spain",
-        "africa": false
+        "africa": false,
+        "lon": -3.75,
+        "lat": 40.42,
+        "iso_num": "724"
       },
       {
         "iso3": "CHE",
         "name": "Switzerland",
-        "africa": false
+        "africa": false,
+        "lon": 8.23,
+        "lat": 46.82,
+        "iso_num": "756"
       },
       {
         "iso3": "CIV",
+        "iso_num": "384",
         "name": "Cote d'Ivoire",
+        "lon": -5.55,
+        "lat": 7.54,
         "africa": true
       },
       {
         "iso3": "ITA",
+        "iso_num": "380",
         "name": "Italy",
+        "lon": 12.57,
+        "lat": 42.5,
         "africa": false
       },
       {
         "iso3": "SEN",
+        "iso_num": "686",
         "name": "Senegal",
+        "lon": -14.45,
+        "lat": 14.5,
         "africa": true
       },
       {
         "iso3": "EUR",
         "name": "European Union",
+        "lon": 10.0,
+        "lat": 50.0,
         "africa": false
       }
     ]
@@ -494,7 +520,7 @@
               "value_short": "180 kt",
               "value": 180,
               "unit": "kt",
-              "source": "USGS Mineral Commodity Summaries 2025 \u2014 Lithium; 2024 mine output \u2248 180 kt Li content",
+              "source": "USGS Mineral Commodity Summaries 2025 — Lithium; 2024 mine output ≈ 180 kt Li content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -605,7 +631,7 @@
               "value_short": "230 kt",
               "value": 230,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Cobalt; 2024 mine output \u2248 230 kt Co content",
+              "source": "USGS MCS 2025 — Cobalt; 2024 mine output ≈ 230 kt Co content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -631,7 +657,7 @@
               "value_short": "215 kt",
               "value": 215,
               "unit": "kt",
-              "source": "Cobalt Institute State of the Cobalt Market 2024; refined \u2248 215 kt",
+              "source": "Cobalt Institute State of the Cobalt Market 2024; refined ≈ 215 kt",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -719,7 +745,7 @@
               "value_short": "3600 kt",
               "value": 3600,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Nickel; 2024 mine output \u2248 3.6 Mt Ni content",
+              "source": "USGS MCS 2025 — Nickel; 2024 mine output ≈ 3.6 Mt Ni content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -746,7 +772,7 @@
               "value_short": "3400 kt",
               "value": 3400,
               "unit": "kt",
-              "source": "IEA GCMO 2026 Nickel chapter; class I + class II refined \u2248 3.4 Mt",
+              "source": "IEA GCMO 2026 Nickel chapter; class I + class II refined ≈ 3.4 Mt",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -836,7 +862,7 @@
               "value_short": "22000 kt",
               "value": 22000,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Copper; 2024 mine output \u2248 22 Mt Cu content",
+              "source": "USGS MCS 2025 — Copper; 2024 mine output ≈ 22 Mt Cu content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -866,7 +892,7 @@
               "value_short": "27000 kt",
               "value": 27000,
               "unit": "kt",
-              "source": "International Copper Study Group, World Copper Factbook 2024; refined (primary + secondary) \u2248 27 Mt",
+              "source": "International Copper Study Group, World Copper Factbook 2024; refined (primary + secondary) ≈ 27 Mt",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -929,7 +955,7 @@
               "value_short": "1600 kt",
               "value": 1600,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Graphite; 2024 natural flake + amorphous mine output \u2248 1.6 Mt",
+              "source": "USGS MCS 2025 — Graphite; 2024 natural flake + amorphous mine output ≈ 1.6 Mt",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -949,7 +975,7 @@
               "value_short": "500 kt",
               "value": 500,
               "unit": "kt",
-              "source": "IEA GCMO 2026 Graphite chapter; battery-anode-grade spherical + coated \u2248 500 kt/y",
+              "source": "IEA GCMO 2026 Graphite chapter; battery-anode-grade spherical + coated ≈ 500 kt/y",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1031,7 +1057,7 @@
               "value_short": "350 kt",
               "value": 350,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Rare Earths; 2024 mine output \u2248 350 kt REO",
+              "source": "USGS MCS 2025 — Rare Earths; 2024 mine output ≈ 350 kt REO",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1054,7 +1080,7 @@
               "value_short": "320 kt",
               "value": 320,
               "unit": "kt",
-              "source": "IEA GCMO 2026 Rare Earths chapter, separation + refining output 2025 \u2248 320 kt REO",
+              "source": "IEA GCMO 2026 Rare Earths chapter, separation + refining output 2025 ≈ 320 kt REO",
               "year": 2025,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1137,7 +1163,7 @@
               "value_short": "20000 kt",
               "value": 20000,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Manganese; 2024 mine output \u2248 20 Mt Mn content",
+              "source": "USGS MCS 2025 — Manganese; 2024 mine output ≈ 20 Mt Mn content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1157,7 +1183,7 @@
               "value_short": "140 kt",
               "value": 140,
               "unit": "kt",
-              "source": "IEA GCMO 2026, Manganese chapter; battery-grade MnSO4 \u2248 140 kt/y",
+              "source": "IEA GCMO 2026, Manganese chapter; battery-grade MnSO4 ≈ 140 kt/y",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1235,7 +1261,7 @@
               "value_short": "380 t",
               "value": 380,
               "unit": "t",
-              "source": "USGS MCS 2025 \u2014 Platinum + Palladium; 2024 mine output \u2248 380 t combined",
+              "source": "USGS MCS 2025 — Platinum + Palladium; 2024 mine output ≈ 380 t combined",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1260,7 +1286,7 @@
               "value_short": "360 t",
               "value": 360,
               "unit": "t",
-              "source": "Johnson Matthey PGM Market Report 2024; primary + secondary refined \u2248 360 t",
+              "source": "Johnson Matthey PGM Market Report 2024; primary + secondary refined ≈ 360 t",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1319,11 +1345,11 @@
             "basis": "USGS Mineral Commodity Summaries 2025 (2024 estimates); indicative until BACI HS 2510 refresh.",
             "last_updated": "2026-09-30",
             "world_total": {
-              "display": "220 Mt phosphate rock (\u224865 Mt P2O5)",
+              "display": "220 Mt phosphate rock (≈65 Mt P2O5)",
               "value_short": "65000 kt",
               "value": 65000,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Phosphate rock; 2024 mine output \u2248 220 Mt rock, \u224865 Mt P2O5 content",
+              "source": "USGS MCS 2025 — Phosphate rock; 2024 mine output ≈ 220 Mt rock, ≈65 Mt P2O5 content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1348,7 +1374,7 @@
               "value_short": "250 kt",
               "value": 250,
               "unit": "kt",
-              "source": "IEA GCMO 2026 LFP chapter + industry-association estimates; purified LFP-grade H3PO4 \u2248 250 kt/y",
+              "source": "IEA GCMO 2026 LFP chapter + industry-association estimates; purified LFP-grade H3PO4 ≈ 250 kt/y",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1431,7 +1457,7 @@
               "value_short": "1700 kt",
               "value": 1700,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Boron; 2024 mine output \u2248 4.5 Mt borate ore, \u22481.7 Mt B2O3 content",
+              "source": "USGS MCS 2025 — Boron; 2024 mine output ≈ 4.5 Mt borate ore, ≈1.7 Mt B2O3 content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1509,7 +1535,7 @@
               "value_short": "600 t",
               "value": 600,
               "unit": "t",
-              "source": "USGS MCS 2025 \u2014 Gallium; 2024 primary production \u2248 600 t Ga (bauxite/zinc co-product)",
+              "source": "USGS MCS 2025 — Gallium; 2024 primary production ≈ 600 t Ga (bauxite/zinc co-product)",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1575,7 +1601,7 @@
               "value_short": "140 t",
               "value": 140,
               "unit": "t",
-              "source": "USGS MCS 2025 \u2014 Germanium; 2024 primary production \u2248 140 t Ge (zinc/coal co-product)",
+              "source": "USGS MCS 2025 — Germanium; 2024 primary production ≈ 140 t Ge (zinc/coal co-product)",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1646,7 +1672,7 @@
               "value_short": "26 kt",
               "value": 26,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Silver; 2024 mine output \u2248 26 kt Ag content",
+              "source": "USGS MCS 2025 — Silver; 2024 mine output ≈ 26 kt Ag content",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1674,7 +1700,7 @@
               "value_short": "31 kt",
               "value": 31,
               "unit": "kt",
-              "source": "World Silver Survey 2024 (Metals Focus / The Silver Institute); refined incl. scrap \u2248 31 kt",
+              "source": "World Silver Survey 2024 (Metals Focus / The Silver Institute); refined incl. scrap ≈ 31 kt",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1734,7 +1760,7 @@
               "value_short": "9000 kt",
               "value": 9000,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Silicon; 2024 silicon metal production \u2248 9 Mt (from quartzite)",
+              "source": "USGS MCS 2025 — Silicon; 2024 silicon metal production ≈ 9 Mt (from quartzite)",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1758,7 +1784,7 @@
               "value_short": "1600 kt",
               "value": 1600,
               "unit": "kt",
-              "source": "IEA Renewables 2024; polysilicon capacity 2024 \u2248 1.6 Mt (solar + semiconductor)",
+              "source": "IEA Renewables 2024; polysilicon capacity 2024 ≈ 1.6 Mt (solar + semiconductor)",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1782,7 +1808,7 @@
               "value_short": null,
               "value": null,
               "unit": "",
-              "source": "Yole Development SiC market tracker 2024; indicative \u2014 volatile",
+              "source": "Yole Development SiC market tracker 2024; indicative — volatile",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -1826,7 +1852,7 @@
               "value_short": "8500 kt",
               "value": 8500,
               "unit": "kt",
-              "source": "USGS MCS 2025 \u2014 Fluorspar; 2024 mine output \u2248 8.5 Mt CaF2 (acid + met grade)",
+              "source": "USGS MCS 2025 — Fluorspar; 2024 mine output ≈ 8.5 Mt CaF2 (acid + met grade)",
               "year": 2024,
               "note": "Indicative headline figure. Multiply by each country share to derive its output."
             }
@@ -3970,7 +3996,7 @@
         "processed": true,
         "weight": 2,
         "confidence": "high",
-        "note": "Fresnillo, Pe\u00f1oles exports; largest global miner."
+        "note": "Fresnillo, Peñoles exports; largest global miner."
       },
       {
         "id": "silver-PER-USA-0",
