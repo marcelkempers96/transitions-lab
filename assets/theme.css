@@ -3943,7 +3943,33 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
 }
 .prose .source-text-body p{margin:0 0 10px;}
 .prose .source-text-body p:last-child{margin-bottom:0;}
-.prose .source-text-body strong{color:var(--ink);opacity:1;font-weight:700;}
+.prose .source-text-body strong,
+.prose .source-text-body .st-head,
+.prose .source-text-body .st-sub{color:var(--ink);opacity:1;font-weight:700;}
+.prose .source-text-body .st-head{
+  font-size:15.5px;margin-top:16px;margin-bottom:8px;
+  letter-spacing:-.005em;
+}
+.prose .source-text-body .st-head:first-child{margin-top:0;}
+.prose .source-text-body .st-sub{
+  font-size:14.5px;margin-top:12px;margin-bottom:6px;
+}
+.prose .source-text-body .st-ref-intro{
+  font-size:13.5px;color:var(--ink);opacity:.75;
+  margin:4px 0 10px;font-style:italic;
+}
+.prose .source-text-body .st-refs{
+  margin:4px 0 0;padding:0 0 0 24px;
+  font-size:13.5px;line-height:1.5;
+}
+.prose .source-text-body .st-refs li{
+  margin-bottom:8px;padding-left:4px;
+}
+.prose .source-text-body .st-refs a{
+  color:var(--ink);text-decoration:underline;text-underline-offset:2px;
+  font-weight:700;white-space:nowrap;
+}
+.prose .source-text-body .st-refs a:hover{background:var(--butter);}
 
 /* Small chip labels inside each .article-item card body. */
 .prose .article-chips{
