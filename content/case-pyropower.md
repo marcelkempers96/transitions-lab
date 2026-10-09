@@ -76,6 +76,12 @@ These are not criticisms of the model; they are the questions that determine whe
 
 Pyropower's arc, from smallholder fields in Lombok to processing spent coffee grounds in the Netherlands, where hundreds of millions of kilos are produced annually, shows a technology and a circular-economy logic travelling between a developing-country context and a European one. The same core idea, organic waste into energy and biochar, lands very differently in a Lombok smallholding and a Dutch coffee-waste stream. Understanding why is exactly the comparative, context-sensitive work the Lab is built for.
 
+<!-- TODO: confirm event name + year against CV before publishing more widely. -->
+<figure>
+ <img src="/assets/img/photo-marcel-kuala-lumpur.jpg" alt="Marcel Kempers at a podium on a large stage in Kuala Lumpur, with a Pyropower slide projected on the LED wall behind him and a Tenaga Nasional banner alongside." class="diagram">
+ <figcaption>Speaking at Asian Utility Week in Kuala Lumpur, 2020.</figcaption>
+</figure>
+
 ---
 
 ## What the Lab brings to a case like this
