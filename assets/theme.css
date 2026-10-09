@@ -2869,8 +2869,21 @@ section.article-cta-band .prose{padding-top:0;}
   margin:0 0 24px;
 }
 .prose .contact-cta-programme .contact-options{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px;margin:0 0 28px;
+}
+@media(max-width:860px){
+  .prose .contact-cta-programme .contact-options{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  /* Third card spans the full row so it never sits half-width alone. */
+  .prose .contact-cta-programme .contact-options a:nth-child(3){
+    grid-column:1 / -1;
+  }
+}
+@media(max-width:540px){
+  .prose .contact-cta-programme .contact-options{grid-template-columns:1fr;}
+  .prose .contact-cta-programme .contact-options a:nth-child(3){grid-column:auto;}
 }
 .prose .contact-cta-programme .contact-options a{
   display:block;padding:16px 18px;
