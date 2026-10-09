@@ -860,6 +860,14 @@ section + section{border-top:2px solid var(--ink);}
 .prose .callout.c-forest{background:var(--forest);color:var(--paper);}
 .prose .callout.c-coral{background:var(--coral);color:var(--ink);}
 .prose .callout.c-white{background:var(--white);color:var(--ink);}
+/* Quiet paper variant for sections where a stack of callouts was
+   reading as too vibrant. Matches the Lab's "who-we-serve" style
+   button grey: light paper-2 background, ink text, ink border. */
+.prose .callout.c-paper{background:var(--paper-2);color:var(--ink);}
+/* When four c-paper callouts stack directly, tighten the spacing
+   so they read as one grouped answer-list rather than four separate
+   panels; drop one shadow per pair for a quieter edge. */
+.prose .callout.c-paper + .callout.c-paper{margin-top:14px;}
 /* Callout kicker labels ('THE MOMENTS RESEARCH EARNS ITS COST',
    'THE LAB'S STANCE', etc.) are hidden site-wide. The small-caps
    eyebrow above the callout body added editorial weight without

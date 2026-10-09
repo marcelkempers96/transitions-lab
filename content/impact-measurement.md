@@ -12,22 +12,19 @@ Impact measurement puts honest questions to the people the work is meant to serv
 
 Every study sits inside the same measurement frame, so a result in one context can be read against another and a one-off study becomes a trajectory over time.
 
-<div class="callout c-coral">
-  <span class="kicker">Dimension 01</span>
-  <h3>Reach - who is actually being reached, and who is being missed</h3>
-  <p>The most flattering-looking programme can be reaching the wrong people, or the same people repeatedly, or leaving the hardest-to-reach unmoved. We measure coverage, inclusion, and, critically, the gap between the population an intervention was designed for and the one it is landing with. Distribution is central, not a footnote.</p>
+<div class="callout c-paper">
+  <h3>01 · Reach</h3>
+  <p>Who is actually being reached, and who is being missed. Coverage, inclusion, and the gap between the designed-for population and the landing-with population. Distribution is central, not a footnote.</p>
 </div>
 
-<div class="callout c-cobalt">
-  <span class="kicker">Dimension 02</span>
-  <h3>Depth - how much things actually change</h3>
-  <p>Beyond headline satisfaction: the magnitude of change in income, time, health, opportunity, or whatever the intervention is aiming at. And how meaningful the change is in the respondent's own terms, not in the language of the funder's logframe.</p>
+<div class="callout c-paper">
+  <h3>02 · Depth</h3>
+  <p>How much things actually change. Magnitude in income, time, health or whatever the intervention aims at, measured in the respondent's terms rather than the funder's logframe.</p>
 </div>
 
-<div class="callout c-butter">
-  <span class="kicker">Dimension 03</span>
-  <h3>Experience - what it is like to be on the receiving end</h3>
-  <p>Satisfaction, friction, unintended effects, and the qualitative texture that numbers alone cannot carry. What would the user change first? What would they never give up? The answers to those questions are usually where the useful insight lives.</p>
+<div class="callout c-paper">
+  <h3>03 · Experience</h3>
+  <p>What it is like to be on the receiving end. Satisfaction, friction, unintended effects, and the qualitative texture numbers can't carry. What would the user change first? What would they never give up?</p>
 </div>
 
 Reach, depth, and experience read together give a project a picture of impact that a self-report or an output count cannot: whether the intervention landed with the right people, whether it made a material difference, and whether the people on the receiving end would recommend or repeat it. See the [in-depth interview guide](/interview-guide) for how the Lab reaches depth in the qualitative work, and the [European impact-tracking template](/impact-tracking-template) for the shape of a full baseline-to-endline design.

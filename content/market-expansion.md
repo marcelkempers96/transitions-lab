@@ -29,24 +29,24 @@ The Lab runs this work through the same [field method](/field-research) we use f
 
 Four questions recur.
 
-<div class="callout c-coral">
- <span class="kicker">Question 01 · Demand, real vs stated</span>
- <p>Who says they want it, who has already tried to pay for it, and what the walk-away price actually is. Stated preference is unreliable in a new market; observed behaviour and revealed prices are the readable signal.</p>
+<div class="callout c-paper">
+ <h3>01 · Demand, real vs stated</h3>
+ <p>Who says they want it, who has tried to pay for it, and what the walk-away price actually is. Observed behaviour, not stated preference.</p>
 </div>
 
-<div class="callout c-cobalt">
- <span class="kicker">Question 02 · Segments the local reality uses</span>
- <p>The customer segmentation from your home market usually breaks. New segments emerge along axes (income timing, informal-sector membership, mobile-money reach) that your existing personas don't see. We build the segmentation from the interviews, not from the deck.</p>
+<div class="callout c-paper">
+ <h3>02 · Segments the local reality uses</h3>
+ <p>The home-market segmentation usually breaks. New segments emerge along axes your personas can't see (income timing, informal-sector membership, mobile-money reach). We build them from the interviews.</p>
 </div>
 
-<div class="callout c-forest">
- <span class="kicker">Question 03 · The stack that carries adoption</span>
- <p>Payment rails, distribution, after-sales, regulatory conditions, competing informal alternatives, trust intermediaries. Any one of them missing is enough to stall the launch. We map the stack in the field, from the user's side, so gaps show up before capital is committed.</p>
+<div class="callout c-paper">
+ <h3>03 · The stack that carries adoption</h3>
+ <p>Payment, distribution, after-sales, regulation, informal alternatives, trust intermediaries. Any one missing stalls the launch. We map the stack from the user's side before capital is committed.</p>
 </div>
 
-<div class="callout c-plum">
- <span class="kicker">Question 04 · Failure modes, named early</span>
- <p>The specific ways this expansion is most likely to fail, ranked. A pre-mortem grounded in field evidence beats a launch that has to discover its failure modes in production.</p>
+<div class="callout c-paper">
+ <h3>04 · Failure modes, named early</h3>
+ <p>The ways this expansion is most likely to fail, ranked. A pre-mortem grounded in field evidence beats discovering failure modes in production.</p>
 </div>
 
 ---

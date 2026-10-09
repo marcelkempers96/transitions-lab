@@ -31,24 +31,24 @@ Entering a new context is not one decision; it is a chain of them. The best-know
 
 Four questions recur.
 
-<div class="callout c-coral">
- <span class="kicker">Question 01 · Whom is this really for</span>
- <p>The user in the pitch deck is rarely the user in the field. R&D teams routinely inherit personas from the home market, from the funding call, or from the consortium's early stakeholder list. We rebuild the target user from primary contact: who will actually adopt this, whose life does it change, and who is being spoken for without being heard.</p>
+<div class="callout c-paper">
+ <h3>01 · Whom is this really for?</h3>
+ <p>The user in the pitch deck is rarely the user in the field. We rebuild the target user from primary contact: who adopts, whose life changes, and who is being spoken for without being heard.</p>
 </div>
 
-<div class="callout c-cobalt">
- <span class="kicker">Question 02 · Does the prototype fit the real environment</span>
- <p>A device that works on grid power in the lab meets a village with three hours of grid a day. A digital service designed for smartphone users meets a population that shares a handset across a family. R&D-stage field research surfaces the environmental assumptions the prototype quietly makes, before the next build cycle bakes them in.</p>
+<div class="callout c-paper">
+ <h3>02 · Does the prototype fit the real environment?</h3>
+ <p>A lab-grid device meets a village with three hours of grid a day. A smartphone service meets a shared family handset. Field work surfaces the assumptions the prototype quietly makes before the next build bakes them in.</p>
 </div>
 
-<div class="callout c-forest">
- <span class="kicker">Question 03 · Where the SRL actually sits</span>
- <p><a href="/readiness-levels">Societal Readiness Levels</a> name the axis TRL cannot see. Claiming SRL 5 (validated in the relevant context in co-operation with stakeholders) requires evidence from the stakeholders, gathered by someone with no stake in the answer. We turn an asserted SRL into a substantiated one, and we do it in a form a reviewer or evaluator can read.</p>
+<div class="callout c-paper">
+ <h3>03 · Where does the SRL actually sit?</h3>
+ <p><a href="/readiness-levels">Societal Readiness Levels</a> name the axis TRL cannot see. Claiming SRL 5 needs evidence from stakeholders, gathered by someone with no stake in the answer, in a form a reviewer can read.</p>
 </div>
 
-<div class="callout c-plum">
- <span class="kicker">Question 04 · What to change before the next build</span>
- <p>The output of R&D research is decisions, not a report. Ranked recommendations: what to keep, what to redesign, what to drop, and which parts of the design space are still open. Fed back into the team's own sprint or work-package cadence, in time for the next iteration.</p>
+<div class="callout c-paper">
+ <h3>04 · What to change before the next build?</h3>
+ <p>The output is decisions, not a report. Ranked recommendations &mdash; keep, redesign, drop &mdash; fed into the team's own sprint cadence in time for the next iteration.</p>
 </div>
 
 ---

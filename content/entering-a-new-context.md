@@ -32,20 +32,24 @@ The cost of being wrong is a scaling budget. The cost of being right is a scopin
 
 Four questions recur across every entry study.
 
-<div class="callout c-coral">
-  <p><strong>01 · Demand, real vs stated.</strong> Who says they want it, who has already tried to pay for it, and what the walk-away price actually is.</p>
+<div class="callout c-paper">
+  <h3>01 · Demand, real vs stated</h3>
+  <p>Who says they want it, who has tried to pay for it, and what the walk-away price actually is.</p>
 </div>
 
-<div class="callout c-cobalt">
-  <p><strong>02 · Local segments.</strong> The segmentation from your home market usually breaks. We build the new one from the interviews, not the deck.</p>
+<div class="callout c-paper">
+  <h3>02 · Local segments</h3>
+  <p>The segmentation from your home market usually breaks. We build the new one from the interviews, not the deck.</p>
 </div>
 
-<div class="callout c-forest">
-  <p><strong>03 · The stack that carries adoption.</strong> Payment, distribution, after-sales, regulation, informal alternatives, trust intermediaries. Any one missing is enough to stall the launch.</p>
+<div class="callout c-paper">
+  <h3>03 · The stack that carries adoption</h3>
+  <p>Payment, distribution, after-sales, regulation, informal alternatives, trust intermediaries. Any one missing is enough to stall the launch.</p>
 </div>
 
-<div class="callout c-plum">
-  <p><strong>04 · Failure modes, named early.</strong> The specific ways this expansion is most likely to fail, ranked. A pre-mortem grounded in field evidence beats discovering the failure modes in production.</p>
+<div class="callout c-paper">
+  <h3>04 · Failure modes, named early</h3>
+  <p>The ways this expansion is most likely to fail, ranked. A pre-mortem grounded in field evidence beats discovering failure modes in production.</p>
 </div>
 
 ---
