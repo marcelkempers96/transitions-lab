@@ -4,9 +4,7 @@
 
 *Independent research on how technologies meet real people, turned into evidence innovators and institutions can act on.*
 
-The Lab does one thing: it builds honest understanding of how a technology behaves once real people live with it, so the people steering a transition can steer it toward human values, not away from them. **People first, technology second, place always.**
-
-Below, three questions clients bring us. Each links to the primary service page, and lists the method pages behind it.
+Three questions clients bring us. Each links to its service page and the methods behind it.
 
 <div class="whatwedo-card c-butter">
   <div class="whatwedo-head">

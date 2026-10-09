@@ -2,9 +2,9 @@
 
 # For Funders
 
-*Know what your portfolio is actually achieving. Independent, field-verified evidence of what each grant is producing, how the money is being used, and what social return it is generating, read from the ground rather than from the grantee's own report.*
+*Know what your portfolio is actually achieving. Independent, field-verified evidence of what each grant is producing, how the money is being used, and what social return it generates, read from the ground rather than from the grantee's own report.*
 
-You have moved money out of the door. The harder question is what came back, not to you, but to the people your grantees were meant to serve. Transitions Lab gives funders an independent, field-verified view of the whole portfolio, built for grantmakers, foundations, and public funders who need to see, honestly, whether the projects they back work.
+The money has moved. The harder question is what came back, not to you, but to the people your grantees were meant to serve.
 
 <p><a class="btn btn-ink" href="/contact">Talk to us about your portfolio →</a></p>
 

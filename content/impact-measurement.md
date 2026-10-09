@@ -2,15 +2,13 @@
 
 # Impact Measurement
 
-*What a technology, service, or programme actually changes, for whom, and through what pathway - measured directly with the people it is meant to serve, and reported honestly.*
-
-Impact measurement puts honest questions to the people the work is meant to serve, from the human side first, independently of the intervention, and reports what the evidence actually says, including when that is inconvenient.
+*What a technology, service, or programme actually changes, for whom, and through what pathway. Measured directly with the people it is meant to serve.*
 
 ---
 
-## What we measure - three dimensions of impact
+## What we measure &mdash; three dimensions of impact
 
-Every study sits inside the same measurement frame, so a result in one context can be read against another and a one-off study becomes a trajectory over time.
+Every study sits inside the same measurement frame, so a one-off study becomes a trajectory over time and a result in one context reads against another.
 
 <div class="callout c-paper">
   <h3>01 · Reach</h3>

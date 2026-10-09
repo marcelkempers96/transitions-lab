@@ -4,9 +4,7 @@
 
 *Turning a project's evidence into a defensible account of what changed, for whom, and through what pathway. Set up at the start, run throughout, closed with proof.*
 
-Most projects can tell a funder what they did. Fewer can show what changed because of it, for whom, and whether it will last. This is the discipline the Lab runs as an independent partner, on privately commissioned work and on European projects with a Grant Agreement to satisfy.
-
-Reporting is one connected system, not three afterthoughts.
+Most projects can tell a funder what they did. Fewer can show what changed because of it, for whom, and whether it will last. The Lab runs the discipline as an independent partner, on commissioned work and on European projects with a Grant Agreement to satisfy.
 
 ---
 

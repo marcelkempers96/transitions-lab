@@ -4,7 +4,7 @@
 
 *Field evidence for the decision to enter a new market, launch a new product line, or extend a working model into a new geography.*
 
-The cost of being wrong is a scaling budget. The cost of being right is a scoping conversation. A product that works in one market can land differently in another, and stated demand is a poor guide before capital is committed. This service reaches the people whose behaviour will decide the outcome and reports what they actually do, want and can afford.
+The cost of being wrong is a scaling budget. The cost of being right is a scoping conversation. Stated demand is a poor guide before capital is committed, so this service reaches the people whose behaviour will decide the outcome and reports what they actually do, want and can afford.
 
 <div class="method-pointer">
   <span class="mp-label">Read the underlying methods</span>

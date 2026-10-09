@@ -22,8 +22,6 @@ We **publish our own research** openly: [articles](/articles) on finance, electr
 
 We **work under contract** for organisations that need evidence they cannot generate themselves: [field research](/field-research), [impact measurement](/impact-measurement), and the [European projects](/european-impact-tracking) that need an independent measurement partner.
 
-Because we are independent of what we measure, we report what the evidence says. Including when it is inconvenient.
-
 ---
 
 ## What makes us different
@@ -38,7 +36,7 @@ Because we are independent of what we measure, we report what the evidence says.
 
 ## Where we work
 
-Based in **Delft, The Netherlands**. We do fieldwork in the contexts that defeat conventional research: low-connectivity, multilingual, informal, dispersed. We do not parachute in. We work through researchers and partners who already speak the language and know the place.
+Based in **Delft, The Netherlands**. Low-connectivity, multilingual, informal, dispersed settings. Through researchers and partners who already speak the language and know the place.
 
 <figure>
   <img src="/assets/img/about-delft-station.jpg" alt="Delft station and Gemeente Delft building on a bright day: a modern glass structure with vertical fritted panels reflecting the sky, low canopies over the entrances and a paved plaza in front." class="diagram">
@@ -48,7 +46,7 @@ Based in **Delft, The Netherlands**. We do fieldwork in the contexts that defeat
 
 ## How we hold the work
 
-Informed, recorded, revocable consent. Anonymisation by default. We interview to understand, not to confirm, and we report the findings that contradict a client's hopes as carefully as the ones that support them. See [Field Research](/field-research) for the full ethics practice.
+Informed, recorded, revocable consent. Anonymisation by default. Findings that contradict a client's hopes are reported as carefully as those that support them. See [Field Research](/field-research) for the full ethics practice.
 
 ---
 

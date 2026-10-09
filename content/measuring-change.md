@@ -4,7 +4,7 @@
 
 *What a technology, service or programme actually changes, for whom, and through what pathway. Measured with the people it is meant to serve, and reported honestly.*
 
-Measuring Change is two linked disciplines: **field research** (primary contact with the people a transition affects) and **impact measurement** (the frame that turns those conversations into a defensible reading of what changed).
+Two linked disciplines: **field research** (primary contact) and **impact measurement** (the frame that turns the contact into a defensible reading of what changed).
 
 <div class="method-pointer">
   <span class="mp-label">Read either method</span>
