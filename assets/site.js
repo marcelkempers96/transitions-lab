@@ -1048,3 +1048,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
   render();
 })();
+
+// Footer subscribe form. Posts { email, source } to /api/subscribe,
+// which appends to data/subscribers.json via the GitHub Contents API.
+(function(){
+  var forms = document.querySelectorAll('form.footer-subscribe');
+  if (!forms.length) return;
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  forms.forEach(function(form){
+    var input = form.querySelector('input[type="email"]');
+    var btn   = form.querySelector('.fs-btn');
+    var note  = form.querySelector('.fs-note');
+    if (!input || !btn || !note) return;
+    var busy = false;
+    var say = function(msg, kind){
+      note.textContent = msg || '';
+      note.classList.remove('is-error','is-ok');
+      if (kind) note.classList.add('is-' + kind);
+    };
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if (busy) return;
+      var email = (input.value || '').trim();
+      if (!EMAIL_RE.test(email)) { say('That does not look like an email address.', 'error'); return; }
+      busy = true;
+      btn.setAttribute('disabled','disabled');
+      say('Signing you up…');
+      fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: form.getAttribute('data-source') || location.pathname })
+      })
+        .then(function(r){ return r.json().then(function(j){ return { status: r.status, body: j }; }); })
+        .then(function(res){
+          if (res.status === 200 && res.body && res.body.ok){
+            if (res.body.already){
+              say('You are already on the list — thanks.', 'ok');
+            } else {
+              say('Thanks. You are on the list.', 'ok');
+              form.reset();
+            }
+          } else {
+            var msg = (res.body && res.body.error) ? res.body.error : 'Something went wrong. Please try again.';
+            say(msg, 'error');
+          }
+        })
+        .catch(function(){ say('Network error. Please try again.', 'error'); })
+        .finally(function(){ busy = false; btn.removeAttribute('disabled'); });
+    });
+  });
+})();

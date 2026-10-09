@@ -1556,6 +1556,14 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
     <div>
       <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo.png" alt="Transitions Lab" class="brand-logo brand-logo--footer"></a>
       <p class="mission">An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.</p>
+      <form class="footer-subscribe" data-source="footer" novalidate>
+        <label for="footer-subscribe-email" class="fs-label">New essays and findings, straight to your inbox.</label>
+        <div class="fs-row">
+          <input id="footer-subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+          <button type="submit" class="fs-btn">Subscribe</button>
+        </div>
+        <p class="fs-note" aria-live="polite"></p>
+      </form>
     </div>
     <div>
       <h4>What we do</h4>
