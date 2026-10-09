@@ -134,6 +134,25 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.serve-grid a').forEach(function (el) { el.classList.add('is-in-view'); });
   }
 
+  // ── Hero slideshow — ten real field photos, autoplay crossfade ──
+  //     Cycles .hero-slide elements inside .hero-slideshow; CSS
+  //     handles the 1.6s opacity transition. Respects reduced-motion.
+  (function(){
+    var shows = document.querySelectorAll('.hero-slideshow');
+    shows.forEach(function(show){
+      var slides = show.querySelectorAll('.hero-slide');
+      if (slides.length < 2) return;
+      var i = 0;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+      setInterval(function(){
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+      }, 5000);
+    });
+  })();
+
   // ── Typewriter — hero headline then subhead ────────────────
   //     Reads target text from data-text on each element, types it
   //     one character at a time, hides the cursor when done. On

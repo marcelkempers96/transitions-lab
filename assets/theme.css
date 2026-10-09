@@ -430,6 +430,69 @@ section + section{border-top:2px solid var(--ink);}
   font-weight:500;min-height:3em;opacity:.88;
 }
 .hero .cta-row{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap;}
+
+/* Photo-slideshow hero (homepage). Full-bleed stack of ten real
+   field photos that crossfade on autoplay. The wrap sits above a
+   dark veil so the typewriter headline and lede stay legible. */
+.hero.hero-photo{
+  background:#0A0A0A;color:var(--paper);
+  min-height:clamp(560px,88vh,860px);
+  padding:140px 0 120px;
+  display:flex;align-items:center;
+  border-bottom:0;
+}
+.hero.hero-photo .wrap{position:relative;z-index:2;color:#FFFFFF;}
+.hero.hero-photo h1,
+.hero.hero-photo .lede{color:#FFFFFF;}
+.hero.hero-photo h1 .cursor{background:#FFFFFF;}
+.hero.hero-photo .lede{opacity:.95;text-shadow:0 1px 2px rgba(0,0,0,.4);}
+.hero.hero-photo h1{text-shadow:0 2px 10px rgba(0,0,0,.35);}
+.hero.hero-photo .hero-tagline-link{color:#FFFFFF;}
+.hero.hero-photo .hero-tagline-link:hover,
+.hero.hero-photo .hero-tagline-link:focus-visible{opacity:1;}
+.hero.hero-photo .btn.btn-ink{
+  background:#FFFFFF;color:#0A0A0A;border-color:#FFFFFF;
+}
+.hero.hero-photo .btn.btn-ink:hover{background:var(--butter);color:#0A0A0A;border-color:var(--butter);}
+.hero.hero-photo .btn.btn-ghost{
+  background:transparent;color:#FFFFFF;border-color:#FFFFFF;
+}
+.hero.hero-photo .btn.btn-ghost:hover{background:#FFFFFF;color:#0A0A0A;}
+
+.hero-slideshow{
+  position:absolute;inset:0;z-index:0;
+  overflow:hidden;background:#0A0A0A;
+}
+.hero-slide{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition:opacity 1.6s ease-in-out;
+  will-change:opacity;
+}
+.hero-slide.is-active{opacity:1;}
+/* Dark gradient veil over the slideshow: holds the type legible on
+   any photo. Heavier on the left where the copy sits. */
+.hero.hero-photo .hero-veil{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(10,10,10,.42) 0%,rgba(10,10,10,.52) 55%,rgba(10,10,10,.68) 100%),
+    radial-gradient(1400px 1000px at 10% 50%, rgba(10,10,10,.55), transparent 60%);
+}
+@media(max-width:720px){
+  .hero.hero-photo{
+    min-height:clamp(520px,92vh,760px);
+    padding:120px 0 100px;
+  }
+  .hero.hero-photo .hero-veil{
+    background:
+      linear-gradient(180deg,rgba(10,10,10,.42) 0%,rgba(10,10,10,.58) 55%,rgba(10,10,10,.78) 100%);
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-slide{transition:none;}
+}
 /* Hero tagline link ("turning macro insights into micro decisions").
    Light-weight, same opacity as the body copy, no underline until
    hover. Keeps the sentence reading as one line rather than
