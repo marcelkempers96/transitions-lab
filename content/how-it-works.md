@@ -96,47 +96,67 @@ Based in Delft, The Netherlands. Fieldwork through researchers and partners who 
 
 ## The five stages in practice
 
-Four worked examples from the Lab's field engagements, each stepping through the same five stages.
+Four worked examples from the Lab's field engagements. Each steps through the same scope → design → collect → analyse → deliver sequence. Click a card for the full case.
 
-### Electric transport, Nairobi
+<div class="stage-case-grid">
 
-A manufacturer weighing whether to expand electric two-wheelers.
+<a class="stage-case" href="/case-roam">
+  <p class="sc-eyebrow">E-mobility &middot; Nairobi</p>
+  <h3 class="sc-title">Electric transport, Nairobi</h3>
+  <p class="sc-sub">A manufacturer weighing whether to expand electric two-wheelers.</p>
+  <ol class="sc-steps">
+    <li><span class="sc-n">01 Scope</span><span class="sc-t">The real question is "does the daily economics work well enough for adoption to hold once the subsidy ends," not "are riders satisfied."</span></li>
+    <li><span class="sc-n">02 Design</span><span class="sc-t">A short survey on running costs and switching intent, paired with in-depth interviews.</span></li>
+    <li><span class="sc-n">03 Collect</span><span class="sc-t">Local researchers who ride the same routes reach riders directly, in their own language.</span></li>
+    <li><span class="sc-n">04 Analyse</span><span class="sc-t">Running costs read against the Nairobi field engagement; qualitative interviews explain the numbers.</span></li>
+    <li><span class="sc-n">05 Deliver</span><span class="sc-t">A segmented read on where adoption is real, where it is fragile, and what would have to change &mdash; plus the instrument to re-run next quarter.</span></li>
+  </ol>
+  <span class="sc-cta">Open the Nairobi case &rarr;</span>
+</a>
 
-- **01 Scope.** The real question is "does the daily economics work well enough for adoption to hold once the subsidy ends," not "are riders satisfied."
-- **02 Design.** A short survey on running costs and switching intent, paired with in-depth [interviews](/interview-guide).
-- **03 Collect.** Local researchers who ride the same routes reach riders directly, in their own language.
-- **04 Analyse.** Running costs read against the [Nairobi field engagement](/case-roam). Qualitative interviews explain the numbers.
-- **05 Deliver.** In weeks: a segmented read on where adoption is real, where it is fragile, and what would have to change. Plus the instrument to re-run next quarter.
+<a class="stage-case" href="/case-mimaji">
+  <p class="sc-eyebrow">Water transparency &middot; Nairobi</p>
+  <h3 class="sc-title">MiMaji &middot; Open water pricing</h3>
+  <p class="sc-sub">A civic-tech venture asking whether open pricing data actually reaches the households paying most.</p>
+  <ol class="sc-steps">
+    <li><span class="sc-n">01 Scope</span><span class="sc-t">Not "is the map accurate," but "does a household on the wrong side of the price gap ever see it, and does seeing it change what they do."</span></li>
+    <li><span class="sc-n">02 Design</span><span class="sc-t">In-depth interviews with kiosk operators and residents, paired with price observations at the tap.</span></li>
+    <li><span class="sc-n">03 Collect</span><span class="sc-t">Enumerators from the settlement, working in-language, reach households the platform's own analytics never sees.</span></li>
+    <li><span class="sc-n">04 Analyse</span><span class="sc-t">Awareness, trust and behaviour change coded across the sample; the price data read against what residents said they paid.</span></li>
+    <li><span class="sc-n">05 Deliver</span><span class="sc-t">A reading of who the tool reaches, who it does not, and where the transparency claim holds.</span></li>
+  </ol>
+  <span class="sc-cta">Open the MiMaji case &rarr;</span>
+</a>
 
-### Water transparency, Nairobi &middot; [MiMaji](/case-mimaji)
+<a class="stage-case" href="/case-pyropower">
+  <p class="sc-eyebrow">Agriculture &middot; Lombok</p>
+  <h3 class="sc-title">Pyropower &middot; Smallholder biochar</h3>
+  <p class="sc-sub">An open-source clean-energy venture asking which of three values &mdash; heat, soil or carbon income &mdash; actually pulls adoption on a small farm.</p>
+  <ol class="sc-steps">
+    <li><span class="sc-n">01 Scope</span><span class="sc-t">Which household economics carry adoption once the demo team has left, and who in the community can build and run the kiln themselves.</span></li>
+    <li><span class="sc-n">02 Design</span><span class="sc-t">In-depth farmer interviews, kiln-operator observation, and a household-level tracking sheet across seasons.</span></li>
+    <li><span class="sc-n">03 Collect</span><span class="sc-t">Bahasa-speaking researchers with agronomy training reach farmers on their own smallholdings, at their own pace.</span></li>
+    <li><span class="sc-n">04 Analyse</span><span class="sc-t">Adoption traced through household economics, labour hours and yield rather than tonnes of biochar produced.</span></li>
+    <li><span class="sc-n">05 Deliver</span><span class="sc-t">A reading of what earns <em>Tumbuh</em> its local name, and what would have to be true for the carbon-market promise to reach the farmer.</span></li>
+  </ol>
+  <span class="sc-cta">Open the Pyropower case &rarr;</span>
+</a>
 
-A civic-tech venture asking whether open pricing data actually reaches the households paying most.
+<a class="stage-case" href="/case-reef-support">
+  <p class="sc-eyebrow">Ecosystems &middot; Lombok</p>
+  <h3 class="sc-title">Reef Support &middot; Community reef monitoring</h3>
+  <p class="sc-sub">A marine-tech partner asking whether community rangers, sensors and satellite data can be braided into a single trustworthy picture of reef health.</p>
+  <ol class="sc-steps">
+    <li><span class="sc-n">01 Scope</span><span class="sc-t">Whether the rangers own the data, whether the community trusts the numbers, and whether the reef ends up better protected because of it.</span></li>
+    <li><span class="sc-n">02 Design</span><span class="sc-t">Ranger interviews, community-meeting observation, and a shared indicator framework that survives cross-checking between three data sources.</span></li>
+    <li><span class="sc-n">03 Collect</span><span class="sc-t">Indonesian researchers work alongside the community rangers and the Niru Foundation, in-language and on-water.</span></li>
+    <li><span class="sc-n">04 Analyse</span><span class="sc-t">Data ownership, trust and management response read across ranger, satellite and sensor sources.</span></li>
+    <li><span class="sc-n">05 Deliver</span><span class="sc-t">A reading of when the three-source picture holds up and when it does not, and what changes on the reef when the rangers own the record.</span></li>
+  </ol>
+  <span class="sc-cta">Open the Reef Support case &rarr;</span>
+</a>
 
-- **01 Scope.** Not "is the map accurate," but "does a household on the wrong side of the price gap ever see it, and does seeing it change what they do."
-- **02 Design.** In-depth interviews with kiosk operators and residents, paired with price observations at the tap.
-- **03 Collect.** Enumerators from the settlement, working in-language, reach households the platform's own analytics never sees.
-- **04 Analyse.** Awareness, trust and behaviour change coded across the sample; the price data read against what residents said they paid.
-- **05 Deliver.** A reading of who the tool reaches, who it does not, and where the transparency claim holds. See the full [MiMaji case study](/case-mimaji).
-
-### Smallholder biochar, Lombok &middot; [Pyropower](/case-pyropower)
-
-An open-source clean-energy venture asking which of three values, heat, soil or carbon income, actually pulls adoption on a small farm.
-
-- **01 Scope.** Which household economics carry adoption once the demo team has left, and who among the community can build and run the kiln themselves.
-- **02 Design.** In-depth farmer interviews, kiln-operator observation, and a household-level tracking sheet across seasons.
-- **03 Collect.** Bahasa-speaking researchers with agronomy training reach farmers on their own smallholdings, at their own pace.
-- **04 Analyse.** Adoption traced through household economics, labour hours and yield rather than tonnes of biochar produced.
-- **05 Deliver.** A reading of what earns *Tumbuh* its local name, and what would have to be true for the carbon-market promise to reach the farmer. See the full [Pyropower case study](/case-pyropower).
-
-### Community reef monitoring, Lombok &middot; [Reef Support](/case-reef-support)
-
-A marine-tech partner asking whether community rangers, sensors and satellite data can be braided into a single trustworthy picture of reef health.
-
-- **01 Scope.** Whether the rangers own the data, whether the community trusts the numbers, and whether the reef ends up better protected because of it.
-- **02 Design.** Ranger interviews, community-meeting observation, and a shared indicator framework that survives cross-checking between three data sources.
-- **03 Collect.** Indonesian researchers work alongside the community rangers and the Niru Foundation, in-language and on-water.
-- **04 Analyse.** Data ownership, trust and management response read across ranger, satellite and sensor sources.
-- **05 Deliver.** A reading of when the three-source picture holds up and when it does not, and what changes on the reef when the rangers own the record. See the full [Reef Support case study](/case-reef-support).
+</div>
 
 For a public-sector reading using the same method, see [St. Eustatius](/case-statia) in the Dutch Caribbean. The full case library is at [Case Studies](/case-studies).
 
