@@ -96,22 +96,6 @@ The Lab is most useful at a few specific moments:
 
 ---
 
-## How we differ from what already exists
-
-There are excellent impact-measurement firms. The Lab's difference is a specific combination three organisations rarely hold together.
-
-<div class="callout c-forest">
-  <span class="kicker">Peers we respect</span>
-  <p><span class="pill c-butter">3ie</span> <span class="pill c-butter">IDinsight</span> <span class="pill c-butter">IPA</span> <span class="pill c-butter">J-PAL</span></p>
-  <p>Each is excellent at what it does. See <a href="https://www.3ieimpact.org/">3ie</a> on rigorous impact evidence, <a href="https://www.idinsight.org/">IDinsight</a> on decision-focused evaluation, <a href="https://poverty-action.org/">Innovations for Poverty Action</a> and <a href="https://www.povertyactionlab.org/">J-PAL</a> on the RCT standard. The Lab does not try to be any of them.</p>
-</div>
-
-- **Social-science fieldcraft and technical literacy in the same team.** Policy evaluators understand programmes but not the technologies inside them. Technical evaluators understand systems but not the people around them. The Lab refuses the split. See [About](/about).
-- **Rooted in Delft, working through partners on the ground.** Not a survey firm parachuted in; researchers who already speak the language and know the place. See [About](/about).
-- **Both a publisher and a measurement partner.** The [articles](/articles) the Lab runs openly on its own account are the proof of the method; the contracted measurement uses the same method, made available.
-
----
-
 ## Related reading
 
 - The [in-depth interview guide](/interview-guide) - the depth the Lab reaches in qualitative work.
