@@ -922,6 +922,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })();
 
+// Latest-insights random pair on the home page. The page ships the
+// full pool of insight cards that have hero images; CSS hides every
+// card beyond the first two by default, this picker shuffles the
+// DOM order on each load so a different pair surfaces across visits.
+(function(){
+  var pool = document.querySelector('.insight-pool');
+  if (!pool) return;
+  var cards = Array.prototype.slice.call(pool.children);
+  if (cards.length <= 2) return;
+  // Fisher-Yates shuffle so the ordering is uniform.
+  for (var i = cards.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = cards[i]; cards[i] = cards[j]; cards[j] = tmp;
+  }
+  // Rewrite DOM in shuffled order; CSS keeps only the first two visible.
+  var frag = document.createDocumentFragment();
+  cards.forEach(function(c){ frag.appendChild(c); });
+  pool.appendChild(frag);
+})();
+
 // Plant Explorer: interactive filterable grid of Chinese OEM plants
 // abroad, used on /insight-china-ships-the-factory. Only runs when
 // a .plant-explorer root is present on the page.

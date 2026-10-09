@@ -1970,6 +1970,97 @@ def build_stub_page(slug: str, title: str) -> str:
 # Home page (custom template, uses the animated hero + sections)
 # ────────────────────────────────────────────────────────────────────────────
 
+def _build_home_insight_pool() -> str:
+    """Emit the full pool of insight cards with hero images for the
+    home-page "Latest insights" section. JS in site.js picks 2 at
+    random on load and hides the rest, so the home page always shows
+    two but shuffles which two across reloads."""
+    pool = [
+        ("insight-permit-is-not-the-project", "EU Policy &middot; Europe",
+         "Europe is measuring application-to-decision time. The number that decides whether a plant gets built is decision-to-operation, and nobody publishes it.",
+         "Line-art scene: a stopwatch in the foreground stopped at a short reading, sitting on a stamped permit document; behind it and much larger, an unbuilt processing plant drawn in outline with scaffolding, a group of small figures holding placards at its gate, and a courthouse in the far distance."),
+        ("insight-factory-and-the-town", "Industrial Policy &middot; Europe",
+         "Taranto's blast furnaces are being closed by court order. The displaced-worker evidence says most of the loss is not unemployment. It is lower wages, permanently.",
+         "Line-art scene: a large steelworks with cooling towers and a blast furnace drawn in outline at the top of the frame, and beneath it, connected by fine radiating lines, a dense town of small buildings so that the works and the town read as one structure."),
+        ("insight-the-saving-is-agreed", "E-Mobility &middot; Africa",
+         "Twenty-three interviews with riders, mechanics, a lender's agent, a manufacturer and a policy advocate in Nairobi. Nobody disputes that an electric motorcycle is cheaper to run - and very little else about the transition is settled.",
+         "Line-art scene: a Nairobi battery swap station with a row of parked electric motorcycles and riders sitting on their seats waiting, a wall clock above the counter, and across the road a petrol station with a single rider filling up and leaving."),
+        ("insight-when-is-a-mine-green", "Finance &middot; Global",
+         "Europe is deciding how sustainable finance frameworks should treat critical minerals mining. It sounds like a classification question. It is really a distributional one.",
+         "Line-art scene: a set of old balance scales, with a wind turbine, a battery and a power line stacked on one pan, and on the other pan a river, a small settlement and a hillside, the two pans hanging almost level, with a label plate on the central column that has been left blank."),
+        ("insight-extent-of-the-market", "Industrial Policy &middot; Africa",
+         "The AfCFTA Secretariat wants two or three cross-border anchor projects rather than fifty-four national strategies. Adam Smith explained why in 1776, and the obstacles are not tariffs.",
+         "Line-art scene: fifty-four small identical workshops each containing a complete miniature production line, drawn in a crowded grid; beside them, one large open-sided factory whose production line runs continuously across three separate ground sections divided by dotted border lines."),
+        ("insight-who-buys-the-outcome", "Agriculture &middot; Europe",
+         "The Commission's carbon farming buyers club identifies the right problem. A farmer produces six outputs, one has a price, and the other five beneficiaries are not on the invoice.",
+         "Line-art scene: a single farmer standing in a field holding one invoice, with five separate arrows running from the field outward to a water utility building, a town hall, an insurance office, a food company warehouse and a distant row of houses; only one thin line returns to the farmer's hand."),
+        ("insight-local-content-local-benefit", "Industrial Policy &middot; Africa",
+         "Ghana is transferring mining work to Ghanaian contractors and workers warn wages will fall. Competition among sellers to one buyer transmits the pressure to labour by design.",
+         "Line-art scene: a mine gate with a single tender box mounted beside it, and three contractor vans queued at the gate each with a bid envelope, while behind the vans a group of workers stands holding wage slips; an arrow runs from the workers' slips toward the bid envelopes."),
+        ("insight-no-going-back", "EU Policy &middot; Europe",
+         "A &euro;40 million European research programme has opened on novel ecosystems. Once a historical baseline is off the table, restoration becomes a choice about which future counts.",
+         "Line-art scene: a wetland drawn in three overlapping states, a faint historical version with reeds and wading birds, a present version with lower water and different vegetation, and a solid future version containing unfamiliar species, with three small groups of figures standing at the edge pointing at different versions."),
+        ("insight-scheduled-not-summoned", "E-Mobility &middot; Africa",
+         "A Lagos operator is halving mobility fares by scheduling passengers rather than summoning them. It removed the most expensive feature in urban mobility, which is spontaneity.",
+         "Line-art comparison: on the left a saloon car with one passenger and three empty seats, drawn with a smartphone icon above it showing an instant summons; on the right the same car with four passengers seated, drawn with a clock and a route line above it showing a planned departure."),
+        ("insight-first-customer", "Industrial Policy &middot; Europe",
+         "Europe is reforming procurement to weight quality, resilience and supply chains against price. The first buyer pays for everybody else, and lowest-price tendering makes it worse.",
+         "Line-art scene: a small factory with a finished prototype product on a pallet at its gate, and a queue of municipal and corporate buyers standing some distance away, each looking at the next person rather than at the product, with an empty space directly in front of the pallet where the first buyer would stand."),
+        ("insight-survey-first-act-of-the-mine", "Industrial Policy &middot; Africa",
+         "Congo is spending $180 million to map what is under its own ground and intends to keep the result in a state databank with tiered access. Owning the survey is the negotiation, conducted in advance.",
+         "Line-art: a small satellite in orbit emitting straight optical rays and concentric radar arcs through a band of cloud onto a landscape of contour lines, with a locked archive cabinet standing at the edge between the landscape and small figures."),
+        ("insight-adoption-is-the-research", "Agriculture &middot; Europe",
+         "Europe has identified the gap between research and uptake. Filling it means treating uptake as science rather than outreach, with a method, a budget line and an independent evaluator.",
+         "Line-art kitchen scene: a clean improved cookstove standing unlit and dusty with a pot stacked on top as storage, while beside it a traditional three-stone fire is in use with a cooking pot over it and a figure tending it."),
+        ("insight-strategic-not-financeable", "Finance &middot; Europe",
+         "Twenty-three of sixty EU strategic critical mineral projects may not reach a final investment decision. Instruments that raise the mean and instruments that narrow the distribution are not the same thing.",
+         "Line-art scene: a processing plant drawn in outline as an unbuilt proposal on a drawing board, with a large ornate stamp reading STRATEGIC pressed across it, while beside the board a banker's desk holds a closed ledger and a calendar with no date circled."),
+        ("insight-the-mandate-is-the-mine", "Industrial Policy &middot; Africa",
+         "A R47 billion synthetic aviation fuel project in the Northern Cape is being built against demand that exists only because of an EU quota. The resource underneath this asset is legislative.",
+         "Line-art scene: a mandate scroll acting as the floor of a mine shaft, with a drill rig standing on top of it and a conveyor belt carrying symbolic fuel barrels upward out of the pit."),
+        ("insight-trough-before-the-dividend", "Agriculture &middot; Europe",
+         "European farm-resilience evidence shows the practice is profitable across ten years and unaffordable in year two. Adaptive capacity is a balance-sheet variable, not a knowledge variable.",
+         "Line-art scene: a farm balance sheet drawn as a long line that dips sharply in year two before rising; a farmer stands at the bottom of the trough looking up, with a bank's loan folder closed beside them."),
+        ("insight-who-pays-decides", "Energy &middot; Global",
+         "Firm clean power has a buyer willing to pay a premium. That solves the hardest problem in energy innovation and hands the direction of technical change to one class of customer.",
+         "Line-art scene: a hyperscale data centre on one side and a cluster of smaller demand points on the other, with a single power line running to the data centre and a thinner shared line to the rest."),
+        ("insight-when-the-agent-pays", "AI &amp; Digital &middot; Asia",
+         "India is extending a family delegation framework to software agents on UPI. The mechanism transfers and the thing that made it safe does not.",
+         "Line-art scene: an elder handing a payment card to a younger relative on one side, and on the other a human handing the same card to a stylised robot agent standing at a payment terminal; both are drawn under the same arching legal rubric at the top."),
+        ("insight-whose-field-becomes-a-wetland", "EU Policy &middot; Europe",
+         "Europe's restoration law's hard part is allocation. Costs are concentrated and benefits are diffuse, which predicts who organises and where the sites end up.",
+         "Line-art scene: a plot of farmland being converted into a wetland, with the farmer standing at the gate holding a notice, and in the distance a city skyline whose residents are depicted holding small symbolic benefits."),
+        ("insight-a-thousand-cars-one-risk", "E-Mobility &middot; Americas",
+         "Tesla put around a thousand driverless Cybercabs on Austin streets. A taxi fleet with drivers is a thousand independent risks. A robotaxi fleet is one risk repeated a thousand times.",
+         "Line-art scene: a thousand identical driverless taxis drawn in a dense city grid, with every single car bearing the same stylised circuit motif across its roof, and one shared cloud icon above the whole fleet."),
+        ("insight-load-that-grows-when-hot", "Energy &middot; Global",
+         "Data centres are planned as flat demand. Cooling load rises with temperature, which is the same day the rest of the system peaks. That is not baseload, and grid planning treats it as the opposite.",
+         "Line-art scene: a horizontal flat line labelled plan on the left, next to an irregular rising curve labelled actual on the right that spikes on a hot afternoon alongside residential cooling peaks, drawn against a shared sun motif."),
+        ("insight-evidence-arrives-too-early", "Finance &middot; Europe",
+         "Hungary's central bank is considering climate scenarios in monetary policy. Climate models run to 2100. Monetary policy runs to two years. Carney called it the tragedy of the horizon.",
+         "Line-art scene: a very long horizontal chart of a climate projection stretching far beyond the edges of a desk, being read by an official whose own desk calendar shows only eighteen months, with the far end of the chart hanging off the table and curling onto the floor."),
+    ]
+    cards = []
+    for slug, kicker, pitch, alt in pool:
+        cards.append(
+            f'      <a class="insight-card has-photo" href="/{slug}">\n'
+            f'        <div class="card-photo">\n'
+            f'          <img src="/assets/img/{slug}-hero.jpg" alt="{alt}" loading="lazy">\n'
+            f'          <span class="kicker">Insight &middot; {kicker}</span>\n'
+            f'        </div>\n'
+            f'        <div class="body">\n'
+            f'          <p>{pitch}</p>\n'
+            f'          <span class="read">Read &rarr;</span>\n'
+            f'        </div>\n'
+            f'      </a>'
+        )
+    return (
+        '<div class="insight-row insight-pool" data-pick="2">\n'
+        + "\n".join(cards)
+        + '\n    </div>'
+    )
+
+
 def build_home() -> str:
     """The home page is hand-built to use the animated hero and section flow.
 
@@ -2187,28 +2278,7 @@ def build_home() -> str:
       <h2>Independent reading of the transitions we study.</h2>
       <p>Published openly, alongside our commissioned work. The same evidence-first posture, applied to the big picture.</p>
     </div>
-    <div class="insight-row">
-      <a class="insight-card has-photo" href="/insight-permit-is-not-the-project">
-        <div class="card-photo">
-          <img src="/assets/img/insight-permit-is-not-the-project-hero.jpg" alt="Line-art scene: a stopwatch in the foreground stopped at a short reading, sitting on a stamped permit document; behind it and much larger, an unbuilt processing plant drawn in outline with scaffolding, a group of small figures holding placards at its gate, and a courthouse in the far distance.">
-          <span class="kicker">Insight &middot; EU Policy &middot; Europe</span>
-        </div>
-        <div class="body">
-          <p>Europe is measuring application-to-decision time. The number that decides whether a plant gets built is decision-to-operation, and nobody publishes it.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-      <a class="insight-card has-photo" href="/insight-factory-and-the-town">
-        <div class="card-photo">
-          <img src="/assets/img/insight-factory-and-the-town-hero.jpg" alt="Line-art scene: a large steelworks with cooling towers and a blast furnace drawn in outline at the top of the frame, and beneath it, connected by fine radiating lines, a dense town of small buildings so that the works and the town read as one structure.">
-          <span class="kicker">Insight &middot; Industrial Policy &middot; Europe</span>
-        </div>
-        <div class="body">
-          <p>Taranto's blast furnaces are being closed by court order. The displaced-worker evidence says most of the loss is not unemployment. It is lower wages, permanently.</p>
-          <span class="read">Read &rarr;</span>
-        </div>
-      </a>
-    </div>
+    """ + _build_home_insight_pool() + """
     <p style="text-align:center;margin-top:48px;"><a href="/articles" class="btn btn-ghost">See all articles →</a></p>
   </div>
 </section>

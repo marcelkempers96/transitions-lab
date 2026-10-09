@@ -549,6 +549,19 @@ section + section{border-top:2px solid var(--ink);}
 @media(max-width:640px){
   .insight-row--4{grid-template-columns:1fr;}
 }
+/* Latest-insights pool on the home page. The DOM ships the full set
+   of insight cards with hero images; JS picks two at random on load
+   and hides the rest. The grid is sized for the two visible cards:
+   two columns on desktop, one stacked column on phone. */
+.insight-row.insight-pool{grid-template-columns:repeat(2,1fr);}
+/* Default: hide every card beyond the first two so the first paint
+   (before JS runs) still shows exactly two. JS then shuffles the
+   DOM order and the CSS continues to show whichever two end up
+   first. */
+.insight-row.insight-pool > .insight-card:nth-child(n+3){display:none;}
+@media(max-width:720px){
+  .insight-row.insight-pool{grid-template-columns:1fr;}
+}
 /* Marine kicker: deep-sea navy so it distinguishes from the light-
    sky freshwater kicker used on MiMaji. */
 .insight-card.has-photo .card-photo .kicker.kicker--marine{
