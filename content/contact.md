@@ -53,17 +53,6 @@ The best engagements start from a real question, not a request for a quote. A cl
 
 ---
 
-## Company details
-
-- **Legal entity** · Transitions Lab B.V. (Besloten Vennootschap, Dutch limited company)
-- **KVK-nummer** · 42170233
-- **Vestigingsnummer** · 000066760275
-- **Statutaire naam** · Transitions Lab B.V.
-- **Activity** · Holdings- en financieringsactiviteiten
-- **Registered office** · Stieltjesweg 302 A, 2628 CK Delft, The Netherlands
-
----
-
 ## Who gets in touch
 
 <div class="pill-row">
