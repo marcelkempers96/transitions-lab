@@ -5195,3 +5195,33 @@ section.section-white + section.section-paper{border-top:1px solid rgba(10,10,10
 /* Butter chip + outline buttons: slimmer border. */
 .btn.btn-ghost{border-width:1.5px;}
 /* WIP-PASS END */
+
+/* ============================================================
+   BODY-WEIGHT PASS - 2026-10-09
+   Lighten body/prose text by one weight step and shave half a
+   point off the size. Headings, strong and buttons untouched.
+   Bounded for easy revert.
+   ========================================================= */
+/* BODY-WEIGHT PASS BEGIN */
+body,
+.prose,
+.prose p,
+.prose li,
+.prose dd,
+.prose dt,
+.prose blockquote,
+.hero .lede,
+.article-item,
+.article-desc,
+.insight-card p,
+.callout p,
+.callout li{
+  font-weight:300;
+  font-size:17.5px;
+}
+.prose{line-height:1.7;}
+.prose strong,
+.prose b,
+.article-item strong,
+.callout strong{font-weight:600;}
+/* BODY-WEIGHT PASS END */
