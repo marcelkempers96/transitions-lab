@@ -2903,13 +2903,20 @@ section.article-cta-band .prose{padding-top:0;}
   display:block;font-size:13px;line-height:1.35;
   color:var(--ink);opacity:.7;
 }
-.prose .contact-cta-programme .cta-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.prose .contact-cta-programme .cta-actions{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
 .prose .contact-cta-programme .cta-actions a{
-  display:inline-block;padding:12px 22px;
+  display:flex;align-items:center;justify-content:center;
+  padding:12px 22px;text-align:center;
   font-family:'Hanken Grotesk',sans-serif;
   font-size:14px;font-weight:800;letter-spacing:.01em;
   text-decoration:none;border:2px solid var(--ink);
   transition:background .12s ease, color .12s ease;
+}
+@media(max-width:640px){
+  .prose .contact-cta-programme .cta-actions{grid-template-columns:1fr;}
 }
 .prose .contact-cta-programme .cta-actions .cta-primary{
   background:var(--ink);color:var(--paper);
