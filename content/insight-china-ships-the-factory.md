@@ -76,8 +76,6 @@ That is the point industrial-policy conversations in Brussels, Brasília and Jak
 
 ## What this piece does not say
 
-Three things that would need a separate study.
-
 First, no claim about profitability, and no claim that every plant is running flat out. BYD Rayong is reported to be [running at around a third of nameplate](#bib-byd-rayong) as it passes its first 100,000 units, which is a story about demand ramp and local-content rules, not a story about Chinese OEMs being unable to make money in Thailand. The newer Brazilian, Hungarian and Indonesian lines are in their first year of production and should not be read against mature-plant utilisation. We report capacity; we do not infer utilisation from it.
 
 Second, no claim about job creation net of displacement. The Camaçari and Iracemápolis sites were idle or closing before the Chinese acquisitions, so a job gained at a reopened plant is not a like-for-like replacement of a job lost at the same site. Independent impact tracking of the kind the Lab builds for [European funders](/european-impact-tracking) would be the right instrument here.

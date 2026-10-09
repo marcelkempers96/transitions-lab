@@ -18,8 +18,6 @@ Dataset version: **1.5 (indicative)** · Last dataset touch: **8 October 2026** 
 
 ## Equations behind the figures
 
-*The five expressions below do all the arithmetic on the public site. Each is a one-liner the reader can audit against the source dataset. The lower line names the paper or convention the Lab adopts.*
-
 <div class="equations-block">
 
 <figure class="equation">

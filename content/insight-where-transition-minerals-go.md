@@ -83,8 +83,6 @@ The four-stage MFA reports about [69% of cobalt mined in the DRC](/mineral-flows
 
 ## What this piece deliberately does not say
 
-Three claims that a reader might expect are not made here, because the evidence is not there yet.
-
 First, no headline number for "African refining capacity is on track to close the gap by year X". The literature that supports such a projection does not exist in a form that survives review; the number that does exist is the one already in the piece, which is the mine-to-refine share ratio today.
 
 Second, no attribution of a specific price shock to a specific chokepoint. Network robustness studies model plausibly what a lost route would do, but the identified counterfactuals are simulations, not observed events.

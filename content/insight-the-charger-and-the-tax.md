@@ -16,8 +16,6 @@
 
 ## Top findings
 
-Five lines, each substantiated. One source per claim.
-
 ### 1. The Finance Bill 2026 would put 16% VAT on EVs, batteries, electric motorcycles, electric buses and charging infrastructure.
 
 The proposal strips the zero-rated status those lines had enjoyed under earlier Finance Acts. If passed, every imported EV, every replacement lithium-ion pack and every charging hub installation goes up 16% at the till. Stakeholders argue it would reverse the gains of the duty-free directive signed the same quarter. The bill is before Parliament; it has not yet been enacted.<sup class="cite"><a href="#bib-big3africa">1</a></sup>
@@ -42,8 +40,6 @@ Both were tabled in 2026. The policy sets investment incentives and infrastructu
 
 ## Alert signals
 
-Three signals a reader pricing a Kenyan unit should watch.
-
 **One: the net landed cost of an electric motorcycle could rise despite the duty waiver.** A duty-free, VAT-charged import is cheaper than a duty-paid, VAT-charged import; it is not cheaper than the pre-2026 zero-rated regime that financed Nairobi's existing e-moto growth. Riders quoted in [the Lab's Nairobi field work](/insight-the-saving-is-agreed) are already pricing the saving on the margin.
 
 **Two: the public and private charging networks are not interoperable by default.** Kenya Power's county-anchored rollout, BasiGo's Shell-hosted hubs and the Endelevu solar hubs each ship on their own technical standard unless a national interoperability spec is attached to the Automotive Bill. The e-moto fleet in Nairobi has already crossed that bridge once, through the Lab's reported [open battery-swapping standard](/insight-who-holds-the-pen); the chassis-charging side has not.
@@ -53,8 +49,6 @@ Three signals a reader pricing a Kenyan unit should watch.
 ---
 
 ## What this piece does not say
-
-Three things that would need a separate study.
 
 First, no estimate of the price elasticity of EV demand in Kenya at a 16% VAT. Rider interviews and dealer price lists exist but the counterfactual (what would adoption have been without VAT) is a modelling exercise.
 

@@ -156,8 +156,6 @@ The literature converges on five requirements that the [Mineral Flows Map](/mine
 
 <h2 id="method-tonnes">Method: tonnes-per-annum figures on the map</h2>
 
-*The Overview panel of the map surfaces an absolute tonnes-per-year figure alongside each country share ("China 68% ≈ 122 kt Li/y"). This section names exactly how each figure is derived, the world total it rests on, and the epistemic status the reader should give it.*
-
 **Derivation.** For every (mineral, stage) pair, the map stores a `world_total` field on the underlying JSON node. A country's absolute output is then computed at render time as `country_share_percent × world_total / 100`. Nothing more sophisticated is layered on top: the tonnes are a linear projection of the shipped share against the shipped world headline. Where a stage does not have a defensible world total (all `downstream` cathode-active-material stages, most `refined` semi-finished stages that are usually reported by capacity rather than output), the map shows the share only.
 
 **World totals: sources and confidence.** Every world total on the map is a rounded headline value drawn from one of three public series. **USGS Mineral Commodity Summaries 2025** is the primary source for every mining stage and for refined copper, refined silver, silicon metal, boron oxide equivalent, fluorspar, gallium and germanium. **IEA Global Critical Minerals Outlook 2026** is the primary source for battery-relevant refining stages (lithium chemicals, refined nickel by class, refined cobalt, rare-earth separation, battery-grade manganese sulphate, LFP-grade purified phosphoric acid, spherical anode-grade graphite). **Industry-association market reports** cover four stages the two above do not (Cobalt Institute 2024 for refined cobalt cross-check; Johnson Matthey PGM Market Report 2024 for refined platinum + palladium; World Silver Survey 2024 for refined silver; International Copper Study Group World Copper Factbook 2024 for refined copper). Two frontier stages (silicon carbide power devices; NdFeB magnets) draw on a proprietary tracker (Yole Development; Adamas Intelligence) and are marked Low confidence — verify before citing.
@@ -255,8 +253,6 @@ The companion article [Where transition minerals actually go](/insight-where-tra
 ---
 
 ## Bibliography
-
-*Every entry links out to a Google Scholar search for the paper. Where the author or publisher hosts the primary text on an open URL, follow the Scholar result to the PDF.*
 
 <ol class="bibliography">
   <li id="bib-sprecher-2017"><strong>Sprecher et al. (2015, 2017)</strong>. Sprecher, B., Kleijn, R., & Kramer, G. J. (2015). Resource demand for the production of different steam methane reforming technologies. <em>Journal of Cleaner Production</em>. Sprecher, B. et al. (2017). Framework for resilience in material supply chains. <em>Environmental Science & Technology</em>, 51(3), 1610-1617. <a href="https://scholar.google.com/scholar?q=Sprecher+framework+resilience+material+supply+chains+2017+Environmental+Science+Technology" target="_blank" rel="noopener">Find on Google Scholar &rarr;</a></li>
