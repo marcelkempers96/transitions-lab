@@ -2739,15 +2739,12 @@ section.page-hero[data-hero-bg] .eyebrow{
    content page that carries the final section. Reads as a signed-off
    statement in a light-ink outline, not another CTA. */
 .prose .lab-posture-note{
-  margin:28px auto 8px;padding:0 18px;
+  margin:28px 0 8px;padding:0;
   background:transparent;border:0;
   font-size:12.5px;line-height:1.55;color:var(--ink);
   font-family:'Hanken Grotesk',sans-serif;font-weight:500;
   opacity:.62;
-  max-width:52ch;
-}
-@media(min-width:720px){
-  .prose .lab-posture-note{padding:0 32px;max-width:56ch;}
+  max-width:none;
 }
 :root[data-theme="dark"] .prose .lab-posture-note{
   color:rgba(232,228,218,.72);
