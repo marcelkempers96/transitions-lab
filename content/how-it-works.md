@@ -92,6 +92,7 @@
  <h2>Evidence you can act on</h2>
  <p>Clean data, clear analysis, a decision-maker briefing benchmarked where possible and honest about the limits. Turnaround in weeks.</p>
  <p>The instrument is left in a form that can be re-run, so month twelve is more valuable than month one.</p>
+ <img src="/assets/img/how-it-works-deliver-radar.png" alt="" class="deliver-radar" loading="lazy">
  <div class="links">
  <span class="label">Related</span>
  <a href="/monitoring-evaluation-dissemination">Monitoring &amp; evaluation</a>
