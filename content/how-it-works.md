@@ -43,6 +43,24 @@
  <h2>Reach the people, properly</h2>
  <p>Trained researchers who already speak the language and know the place. Informed, recorded, revocable consent. Anonymised by default. This is the stage where most studies quietly fail.</p>
  <p>Every study is held to <a href="/ethics">international ethics standards</a>.</p>
+ <figure class="collect-mosaic" aria-label="Four Lab field researchers at work on different studies">
+   <a class="cm-tile cm-big" href="/case-pyropower" aria-label="Pyropower: village meeting with farmers in Lombok">
+     <img src="/assets/img/case-pyropower-fieldwork.jpg" alt="Pyropower researcher in a Lombok village, sitting with smallholder farmers under a timber shelter, kiln drawings and household tracking sheets on the table." loading="lazy">
+     <figcaption class="cm-cap"><span class="cm-k">Pyropower &middot; Lombok</span>Smallholder farmer visits, in-language and on the farm.</figcaption>
+   </a>
+   <a class="cm-tile" href="/case-mimaji" aria-label="MiMaji: household research in Nairobi">
+     <img src="/assets/img/case-mimaji-household.jpg" alt="MiMaji enumerator from a Nairobi settlement interviewing a household at their water storage drum, with a mobile tablet." loading="lazy">
+     <figcaption class="cm-cap"><span class="cm-k">MiMaji &middot; Nairobi</span>Enumerators from the settlement, at the tap.</figcaption>
+   </a>
+   <a class="cm-tile" href="/case-roam" aria-label="Nairobi electric transport: rider workshops">
+     <img src="/assets/img/case-roam-mechanics.jpg" alt="Nairobi mechanics and riders talking in a workshop around an electric motorcycle, tools in use." loading="lazy">
+     <figcaption class="cm-cap"><span class="cm-k">Roam &middot; Nairobi</span>Riders and mechanics on their own routes.</figcaption>
+   </a>
+   <a class="cm-tile" href="/case-reef-support" aria-label="Reef Support: community rangers at sea">
+     <img src="/assets/img/case-reef-support-coral-work.jpg" alt="Community rangers in a small boat with sensing equipment above a reef, Lombok seascape." loading="lazy">
+     <figcaption class="cm-cap"><span class="cm-k">Reef Support &middot; Lombok</span>Community rangers, in-language and on the water.</figcaption>
+   </a>
+ </figure>
  <div class="links">
  <span class="label">Related</span>
  <a href="/ethics">Research ethics</a>
