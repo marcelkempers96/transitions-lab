@@ -3463,22 +3463,49 @@ body[data-page="european-impact-tracking"] .brand{color:var(--euro-blue);}
        would suggest hidden content that is no longer there. */
     background:none;
   }
-  /* "What's in an electric vehicle" three-column table. The default
-     fixed layout gave column 1 too much space, so "Electronics and
-     charging" collided with the column-2 start. Force explicit
-     proportions: narrow group / medium minerals / wider description.
-     Hard-wrap long compound words so they stay inside their cell. */
-  .tbl.ev-groups th,
-  .tbl.ev-groups td{
-    overflow-wrap:anywhere;
-    word-break:normal;
+  /* "What's in an electric vehicle" three-column table.
+     On phones, three narrow columns of long bold labels overflowed
+     into one another (e.g. "Motor and wiring" painting on top of
+     "Rare earths"). Collapse the table into stacked single-column
+     cards on mobile instead: Group as a kicker header per row,
+     Minerals and What-they-do as rows beneath. */
+  .prose .tbl.ev-groups,
+  .prose .tbl.ev-groups thead,
+  .prose .tbl.ev-groups tbody,
+  .prose .tbl.ev-groups tr,
+  .prose .tbl.ev-groups th,
+  .prose .tbl.ev-groups td{
+    display:block;width:100%;box-sizing:border-box;
   }
-  .tbl.ev-groups th:nth-child(1),
-  .tbl.ev-groups td:nth-child(1){width:28%;}
-  .tbl.ev-groups th:nth-child(2),
-  .tbl.ev-groups td:nth-child(2){width:30%;}
-  .tbl.ev-groups th:nth-child(3),
-  .tbl.ev-groups td:nth-child(3){width:42%;}
+  .prose .tbl.ev-groups{border:2px solid var(--ink);min-width:0;}
+  .prose .tbl.ev-groups thead{display:none;}
+  .prose .tbl.ev-groups tr{
+    border-bottom:2px solid var(--ink);
+    padding:0;
+  }
+  .prose .tbl.ev-groups tr:last-child{border-bottom:0;}
+  .prose .tbl.ev-groups td{
+    border:0;border-bottom:1px dashed rgba(0,0,0,.2);
+    padding:10px 14px;
+    overflow-wrap:break-word;word-break:break-word;hyphens:auto;
+  }
+  .prose .tbl.ev-groups td:last-child{border-bottom:0;}
+  .prose .tbl.ev-groups td:first-child{
+    background:var(--butter);
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    padding:8px 14px;
+  }
+  .prose .tbl.ev-groups td:first-child strong{font-weight:800;}
+  .prose .tbl.ev-groups td:nth-child(2)::before{
+    content:"Minerals · ";
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:800;opacity:.6;
+  }
+  .prose .tbl.ev-groups td:nth-child(3)::before{
+    content:"What they do · ";
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:800;opacity:.6;
+  }
 }
 
 /* ── Legacy grids used on interior pages ──────────────────── */
