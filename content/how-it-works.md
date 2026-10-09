@@ -142,6 +142,42 @@ For a public-sector reading using the same method, see [St. Eustatius](/case-sta
 
 ---
 
+<section class="macro-micro" id="macro-to-micro">
+  <p class="macro-micro-kicker">What the Lab does, in one line</p>
+  <h2 class="macro-micro-h">Turning macro insights into micro decisions.</h2>
+  <p class="macro-micro-lede">Headline figures travel; decisions sit on specific desks. The job is to translate the first into the second. A share of world refining becomes a plant siting choice. An adoption curve becomes a loan term. A permit statistic becomes a sequencing decision. Four examples from the Lab's own work.</p>
+  <div class="macro-micro-grid">
+
+    <article class="macro-micro-card">
+      <p class="mm-eyebrow">Industrial policy &middot; E-mobility</p>
+      <p class="mm-macro"><strong>Macro.</strong> About 95% of LFP cathode manufacturing sits in China, as the <a href="/mineral-flows">Mineral Flows Map</a> shows. Every new European or Brazilian EV plant with LFP cells still routes its chemistry through East Asia.</p>
+      <p class="mm-micro"><strong>Micro.</strong> A European OEM pricing a Hungarian line knows the chain geometry before it commits capex and secures its LFP offtake on a three-year horizon rather than at spot. See <a href="/insight-china-ships-the-factory">China ships the factory, not just the car</a>.</p>
+    </article>
+
+    <article class="macro-micro-card">
+      <p class="mm-eyebrow">E-mobility &middot; Field evidence</p>
+      <p class="mm-macro"><strong>Macro.</strong> Nairobi riders, mechanics, lenders and advocates all agree an electric motorcycle is cheaper to run than petrol; nothing else about the transition is settled, as <a href="/insight-the-saving-is-agreed">The Saving Is Agreed</a> reports from twenty-three interviews.</p>
+      <p class="mm-micro"><strong>Micro.</strong> A lender sizing its two-wheeler credit book writes the loan around the agreed saving and prices the real contested variables (uptime, swap availability, resale) as the risk line, not the central case.</p>
+    </article>
+
+    <article class="macro-micro-card">
+      <p class="mm-eyebrow">Industrial policy &middot; Europe</p>
+      <p class="mm-macro"><strong>Macro.</strong> Europe measures mineral-project permits application-to-decision. <a href="/insight-permit-is-not-the-project">The Permit Is Not the Project</a> shows the number that decides whether the plant gets built is decision-to-operation, and nobody publishes it.</p>
+      <p class="mm-micro"><strong>Micro.</strong> A project team in Portugal sequences community engagement, hydrology work and offtake negotiation <em>before</em> the permit application rather than after, so decision-to-operation does not become the new chokepoint.</p>
+    </article>
+
+    <article class="macro-micro-card">
+      <p class="mm-eyebrow">Agriculture &middot; Market design</p>
+      <p class="mm-macro"><strong>Macro.</strong> A farmer produces six outputs; one has a price. The other five beneficiaries are not on the invoice. See <a href="/insight-who-buys-the-outcome">Who Buys the Outcome?</a> for the Commission's buyers-club framing.</p>
+      <p class="mm-micro"><strong>Micro.</strong> A buyers-club platform designs its contract around the four unpriced outputs, not the one priced one, and commissions the field measurement that shows the farmer is paid for all five.</p>
+    </article>
+
+  </div>
+  <p class="macro-micro-foot">If a decision you are weighing has a macro figure attached to it, <a href="/contact">tell us what the decision is</a>. The scope conversation is where the translation starts.</p>
+</section>
+
+---
+
 ## The wider frame
 
 The Lab's approach draws on socio-technical transitions ([multi-level perspective](https://www.sciencedirect.com/science/article/abs/pii/S0048733302000628), Geels), state capacity and industrial policy ([Mazzucato](https://marianamazzucato.com/), [Rodrik](https://drodrik.scholar.harvard.edu/)), and applied social measurement in the [OECD DAC](https://www.oecd.org/dac/evaluation/daccriteriaforevaluatingdevelopmentassistance.htm) tradition. What we add is fieldwork at the depth those frameworks call for, in the settings where it is hardest to gather.

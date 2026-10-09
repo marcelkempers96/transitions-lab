@@ -162,8 +162,13 @@ document.addEventListener('DOMContentLoaded', function () {
         subhead.textContent = sText.slice(0, si);
         si++;
         setTimeout(typeSub, stepS);
-      } else if (cursor) {
-        cursor.style.display = 'none';
+      } else {
+        // Restore the HTML version (with inline links such as the
+        // tagline hyperlink) once typing has finished — textContent
+        // during typing would otherwise strip them.
+        var html = subhead.getAttribute('data-html');
+        if (html) subhead.innerHTML = html;
+        if (cursor) cursor.style.display = 'none';
       }
     };
     var typeHead = function () {
