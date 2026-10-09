@@ -81,6 +81,10 @@ header.site{
   position:sticky;top:0;z-index:40;
   background:var(--paper);border-bottom:2px solid var(--ink);
 }
+/* Homepage nav sits on the hero's own paper surface and reads cleaner
+   as a pure-white bar, same as the "white light theme" treatment the
+   Lab uses on the Mineral Flows tool. */
+body[data-page="index"] header.site{background:#FFFFFF;}
 .nav{display:flex;align-items:center;height:76px;position:relative;gap:0;}
 /* Brand hard-pinned left; margin-right:auto shoves every other flex
    child of .nav (nav links, header-tools, nav-toggle) all the way to
