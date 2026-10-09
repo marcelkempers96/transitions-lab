@@ -712,7 +712,14 @@ section + section{border-top:2px solid var(--ink);}
   .insight-card .stripe .kicker{font-size:10px;letter-spacing:.16em;}
   .insight-card.has-photo .card-photo .kicker{font-size:12px;letter-spacing:.18em;padding:10px 16px;}
 }
-.insight-card .body{padding:26px 24px 24px;flex:1;display:flex;flex-direction:column;gap:12px;}
+.insight-card .body{padding:16px 22px 18px;flex:1;display:flex;flex-direction:column;gap:8px;}
+/* Kill any underline that bleeds in from .prose a onto the full-card
+   <a class="insight-card">; the title and description are a link
+   already because the whole card is clickable. */
+.prose .insight-card,
+.prose .insight-card *,
+.prose .insight-card:hover,
+.prose .insight-card:hover *{text-decoration:none !important;}
 .insight-card h3{font-family:'Newsreader',Georgia,'Times New Roman',serif !important;font-size:26px;font-weight:500;letter-spacing:-.01em;line-height:1.15;color:var(--ink);}
 /* Subtext line under each case-study / insight-card title: location,
    programme, partner. Small, muted, all-caps letterspacing so it

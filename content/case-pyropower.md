@@ -26,11 +26,6 @@ What makes the case unusually rich is a deliberate design choice: in 2020 Pyropo
 
 That crossing is the thing worth studying.
 
-<figure>
- <img src="/assets/img/case-pyropower-soil.jpg" alt="Two weathered hands work black biochar granules into rich brown soil beside a metal basin holding more biochar. Green shoots and dry stalks in the background of the working field." class="diagram">
- <figcaption>Biochar worked into a Lombok field. This is where "Tumbuh" (to grow) becomes visible: the black grains hold water and nutrients that the soil on its own would let past.</figcaption>
-</figure>
-
 ---
 
 ## What the evidence on the ground shows
