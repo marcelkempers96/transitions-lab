@@ -49,14 +49,16 @@
  <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item" data-category="e-mobility" data-geography="africa" data-month="2026-10">
+<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-10">
+ <a class="article-thumb-link" href="/insight-the-charger-and-the-tax"><img class="article-thumb" src="/assets/img/insight-the-charger-and-the-tax-hero.jpg" alt="A boda-boda rider on an electric motorcycle at a solar-canopied charging station on the edge of Nairobi, Mount Longonot and the city skyline on the horizon, a yellow fast-charger cable in the foreground."></a>
  <div class="article-body">
  <a class="article-title" href="/insight-the-charger-and-the-tax">The Charger and the Tax: Kenya's Electric Signal</a>
  <div class="article-meta">9 October 2026</div>
  <div class="article-chips"><span class="article-chip chip-cat chip-cat-e-mobility">E-Mobility</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span> <span class="article-chip chip-cat chip-cat-industrial-policy">Industrial Policy</span></div>
  <p class="article-desc">Ruto directed duty-free import for 100,000 EVs and signed a US$3bn charging-hub MOU. The Finance Bill 2026 proposes 16% VAT on the same vehicles, batteries and chargers. Five findings, three alert signals.</p>
  </div>
- </div><div class="article-item" data-category="industrial-policy" data-geography="global" data-month="2026-10">
+ </div><div class="article-item has-thumb" data-category="industrial-policy" data-geography="global" data-month="2026-10">
+ <a class="article-thumb-link" href="/insight-china-ships-the-factory"><img class="article-thumb" src="/assets/img/insight-china-ships-the-factory-hero.jpg" alt="A shipping container at a tropical port with a Chinese industrial robot arm packed inside, two workers inspecting it, with the assembly line of a new EV plant visible through the open shutter beyond."></a>
  <div class="article-body">
  <a class="article-title" href="/insight-china-ships-the-factory">China Ships the Factory, Not Just the Car</a>
  <div class="article-meta">8 October 2026</div>

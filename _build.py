@@ -1976,6 +1976,12 @@ def _build_home_insight_pool() -> str:
     random on load and hides the rest, so the home page always shows
     two but shuffles which two across reloads."""
     pool = [
+        ("insight-the-charger-and-the-tax", "E-Mobility &middot; Africa",
+         "Ruto directed duty-free import for 100,000 EVs and signed a US$3bn charging-hub MOU. The Finance Bill 2026 proposes 16% VAT on the same vehicles, batteries and chargers.",
+         "A boda-boda rider on an electric motorcycle at a solar-canopied charging station on the edge of Nairobi, Mount Longonot and the city skyline on the horizon, a yellow fast-charger cable in the foreground."),
+        ("insight-china-ships-the-factory", "Industrial Policy &middot; Global",
+         "Ten overseas Chinese EV plants running, five more under build. The map matters more than the tariff headlines, and the mineral chain behind every plant still runs back to China.",
+         "A shipping container at a tropical port with a Chinese industrial robot arm packed inside, two workers inspecting it, with the assembly line of a new EV plant visible through the open shutter beyond."),
         ("insight-permit-is-not-the-project", "EU Policy &middot; Europe",
          "Europe is measuring application-to-decision time. The number that decides whether a plant gets built is decision-to-operation, and nobody publishes it.",
          "Line-art scene: a stopwatch in the foreground stopped at a short reading, sitting on a stamped permit document; behind it and much larger, an unbuilt processing plant drawn in outline with scaffolding, a group of small figures holding placards at its gate, and a courthouse in the far distance."),
