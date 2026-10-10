@@ -941,24 +941,28 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })();
 
-// Latest-insights random pair on the home page. The page ships the
-// full pool of insight cards that have hero images; CSS hides every
-// card beyond the first two by default, this picker shuffles the
-// DOM order on each load so a different pair surfaces across visits.
+// Latest-insights random mix on the home page. The pool ships the
+// full set of insight cards with hero images; CSS decides which
+// slots are shown (2 big + 2 mini on desktop, 3 big on phone). The
+// "Read all articles" tail link stays last.
+// This picker shuffles only the .insight-card children so a different
+// selection surfaces each visit.
 (function(){
   var pool = document.querySelector('.insight-pool');
   if (!pool) return;
-  var cards = Array.prototype.slice.call(pool.children);
+  var cards = Array.prototype.slice.call(pool.querySelectorAll(':scope > .insight-card'));
   if (cards.length <= 2) return;
   // Fisher-Yates shuffle so the ordering is uniform.
   for (var i = cards.length - 1; i > 0; i--){
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = cards[i]; cards[i] = cards[j]; cards[j] = tmp;
   }
-  // Rewrite DOM in shuffled order; CSS keeps only the first two visible.
+  // Rewrite the card order; the tail link gets re-appended last.
+  var tail = pool.querySelector(':scope > .insight-tail-link');
   var frag = document.createDocumentFragment();
   cards.forEach(function(c){ frag.appendChild(c); });
   pool.appendChild(frag);
+  if (tail) pool.appendChild(tail);
 })();
 
 // Plant Explorer: interactive filterable grid of Chinese OEM plants

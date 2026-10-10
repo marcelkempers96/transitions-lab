@@ -2112,8 +2112,9 @@ def _build_home_insight_pool() -> str:
             f'      </a>'
         )
     return (
-        '<div class="insight-row insight-pool" data-pick="2">\n'
+        '<div class="insight-row insight-pool">\n'
         + "\n".join(cards)
+        + '\n      <a class="insight-tail-link" href="/articles">Read all articles &rarr;</a>'
         + '\n    </div>'
     )
 

@@ -617,17 +617,93 @@ section + section{border-top:2px solid var(--ink);}
   .insight-row--4{grid-template-columns:1fr;}
 }
 /* Latest-insights pool on the home page. The DOM ships the full set
-   of insight cards with hero images; JS picks two at random on load
-   and hides the rest. The grid is sized for the two visible cards:
-   two columns on desktop, one stacked column on phone. */
-.insight-row.insight-pool{grid-template-columns:repeat(2,1fr);}
-/* Default: hide every card beyond the first two so the first paint
-   (before JS runs) still shows exactly two. JS then shuffles the
-   DOM order and the CSS continues to show whichever two end up
-   first. */
-.insight-row.insight-pool > .insight-card:nth-child(n+3){display:none;}
-@media(max-width:720px){
-  .insight-row.insight-pool{grid-template-columns:1fr;}
+   of insight cards with hero images; JS shuffles their order on load
+   and CSS decides which ones are shown.
+
+   Desktop (>=900px): 3 columns. Column 1 and 2 each hold one big
+   card. Column 3 holds two smaller cards stacked, with a "Read all
+   articles" link at the foot. Four articles total.
+
+   Mobile (<900px): single column with three big cards stacked.
+*/
+.insight-row.insight-pool{
+  display:grid;grid-template-columns:1fr 1fr 0.9fr;
+  grid-template-rows:1fr 1fr auto;
+  grid-template-areas:
+    "big1 big2 mini1"
+    "big1 big2 mini2"
+    "big1 big2 tail";
+  gap:18px;border:0;
+}
+.insight-row.insight-pool > .insight-card:nth-child(1){grid-area:big1;}
+.insight-row.insight-pool > .insight-card:nth-child(2){grid-area:big2;}
+.insight-row.insight-pool > .insight-card:nth-child(3){grid-area:mini1;}
+.insight-row.insight-pool > .insight-card:nth-child(4){grid-area:mini2;}
+.insight-row.insight-pool > .insight-card:nth-child(n+5){display:none;}
+.insight-row.insight-pool > .insight-card{
+  border:1px solid rgba(10,10,10,.22);background:var(--paper);
+}
+/* Mini-card compaction: smaller photo, tighter body, smaller type. */
+.insight-row.insight-pool > .insight-card:nth-child(3) .card-photo,
+.insight-row.insight-pool > .insight-card:nth-child(4) .card-photo{
+  aspect-ratio:16/9;height:auto;max-height:140px;overflow:hidden;
+}
+.insight-row.insight-pool > .insight-card:nth-child(3) .card-photo img,
+.insight-row.insight-pool > .insight-card:nth-child(4) .card-photo img{
+  width:100%;height:100%;object-fit:cover;
+}
+.insight-row.insight-pool > .insight-card:nth-child(3) .body,
+.insight-row.insight-pool > .insight-card:nth-child(4) .body{
+  padding:12px 16px 14px;gap:6px;
+}
+.insight-row.insight-pool > .insight-card:nth-child(3) h3,
+.insight-row.insight-pool > .insight-card:nth-child(4) h3{
+  font-size:17px;line-height:1.2;
+}
+.insight-row.insight-pool > .insight-card:nth-child(3) p,
+.insight-row.insight-pool > .insight-card:nth-child(4) p{
+  font-size:13px;line-height:1.45;display:-webkit-box;
+  -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.insight-row.insight-pool > .insight-card:nth-child(3) .read,
+.insight-row.insight-pool > .insight-card:nth-child(4) .read{font-size:12.5px;}
+/* "Read all articles" tail link - no border, just a text link. */
+.insight-row.insight-pool > .insight-tail-link{
+  grid-area:tail;align-self:center;justify-self:start;
+  padding:10px 2px;margin:4px 0 0;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:14px;font-weight:800;letter-spacing:.02em;
+  text-decoration:none;color:var(--ink);
+  border:0;background:transparent;
+}
+.insight-row.insight-pool > .insight-tail-link:hover{
+  text-decoration:underline;text-underline-offset:4px;
+}
+@media(max-width:899px){
+  .insight-row.insight-pool{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    grid-template-areas:none;
+    gap:14px;
+  }
+  .insight-row.insight-pool > .insight-card{grid-area:auto !important;}
+  /* Three stacked big cards on phone - undo mini compaction. */
+  .insight-row.insight-pool > .insight-card:nth-child(3) .card-photo,
+  .insight-row.insight-pool > .insight-card:nth-child(4) .card-photo{
+    aspect-ratio:auto;height:auto;max-height:none;
+  }
+  .insight-row.insight-pool > .insight-card:nth-child(3) .body,
+  .insight-row.insight-pool > .insight-card:nth-child(4) .body{padding:16px 22px 18px;gap:8px;}
+  .insight-row.insight-pool > .insight-card:nth-child(3) h3,
+  .insight-row.insight-pool > .insight-card:nth-child(4) h3{font-size:26px;line-height:1.15;}
+  .insight-row.insight-pool > .insight-card:nth-child(3) p,
+  .insight-row.insight-pool > .insight-card:nth-child(4) p{font-size:15px;line-height:1.5;-webkit-line-clamp:none;}
+  /* Show first 3 cards, hide the 4th and beyond. */
+  .insight-row.insight-pool > .insight-card:nth-child(n+4){display:none;}
+  .insight-row.insight-pool > .insight-tail-link{
+    grid-area:auto !important;align-self:auto;justify-self:center;
+    padding:16px 2px 4px;
+  }
 }
 /* Marine kicker: deep-sea navy so it distinguishes from the light-
    sky freshwater kicker used on MiMaji. */
