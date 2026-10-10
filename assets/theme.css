@@ -139,7 +139,7 @@ body[data-page="index"] header.site{background:#FFFFFF;}
 .footer-lang .lang-btn{
   display:inline-flex;align-items:center;gap:8px;
   padding:8px 14px;background:transparent;color:var(--paper);
-  border:1.5px solid rgba(245,239,225,.34);border-radius:999px;
+  border:1.5px solid rgba(245,239,225,.34);border-radius:0;
   font-family:'Hanken Grotesk',sans-serif;
   font-size:12.5px;letter-spacing:.10em;font-weight:800;text-transform:uppercase;
   cursor:pointer;transition:background .12s ease, border-color .12s ease;
