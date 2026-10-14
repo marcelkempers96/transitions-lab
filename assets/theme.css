@@ -700,10 +700,10 @@ section + section{border-top:2px solid var(--ink);}
   .insight-row.insight-pool > .insight-card:nth-child(4) p{font-size:15px;line-height:1.5;-webkit-line-clamp:none;}
   /* Show first 3 cards, hide the 4th and beyond. */
   .insight-row.insight-pool > .insight-card:nth-child(n+4){display:none;}
-  .insight-row.insight-pool > .insight-tail-link{
-    grid-area:auto !important;align-self:auto;justify-self:center;
-    padding:16px 2px 4px;
-  }
+  /* The boxed "See all articles" ghost button sits just below this
+     pool on the home page; the inline tail link would duplicate it
+     on phones, so hide it here. */
+  .insight-row.insight-pool > .insight-tail-link{display:none;}
 }
 /* Marine kicker: deep-sea navy so it distinguishes from the light-
    sky freshwater kicker used on MiMaji. */
