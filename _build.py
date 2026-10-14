@@ -425,6 +425,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-permit-is-not-the-project": "butter",
     "insight-china-ships-the-factory": "butter",
     "insight-the-charger-and-the-tax": "butter",
+    "insight-fuel-price-not-theirs": "butter",
+    "insight-twenty-million-to-move": "butter",
+    "insight-why-a-policy-travels": "butter",
     "insight-the-saving-is-agreed": "butter",
     "for-funders": "cobalt",
     "capability-statement": "cobalt",
@@ -548,6 +551,9 @@ NO_BYLINE_SLUGS: set[str] = {
     "mineral-flows-attribution",
     "insight-china-ships-the-factory",
     "insight-the-charger-and-the-tax",
+    "insight-fuel-price-not-theirs",
+    "insight-twenty-million-to-move",
+    "insight-why-a-policy-travels",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -983,6 +989,18 @@ META: dict[str, dict[str, str]] = {
     "insight-the-charger-and-the-tax": {
         "title": "The Charger and the Tax: Kenya's Electric Signal | Transitions Lab",
         "description": "Kenya's electric-mobility signal is pulling both ways. Ruto directed duty-free import for 100,000 EVs and signed a US$3bn charging-hub MOU; the Finance Bill 2026 proposes 16% VAT on the same vehicles, batteries and chargers. Five findings, three alert signals, one source per line.",
+    },
+    "insight-fuel-price-not-theirs": {
+        "title": "The Fuel Price Was Never Theirs to Set | Transitions Lab",
+        "description": "Coal overtook gas in Bangladeshi generation in July, despite years of investment in LNG import infrastructure. The terminals work. The plants work. The one variable the country did not control turned out to be the one that decided whether any of it would run.",
+    },
+    "insight-twenty-million-to-move": {
+        "title": "Twenty Million to Move Twenty-Three Billion | Transitions Lab",
+        "description": "The African Development Bank is putting $20 million of project preparation support behind four green hydrogen projects representing $23 billion of prospective investment. The ratio is the story, and so is one word in the instrument: reimbursable.",
+    },
+    "insight-why-a-policy-travels": {
+        "title": "Why a Policy Travels | Transitions Lab",
+        "description": "New comparative work across forty European contexts finds five governance configurations for just transitions and no universally superior one. That is not a disappointing result. It is the finding, and it changes what a successful pilot is evidence of.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
@@ -2030,6 +2048,15 @@ def _build_home_insight_pool() -> str:
         ("insight-the-charger-and-the-tax", "E-Mobility &middot; Africa",
          "Ruto directed duty-free import for 100,000 EVs and signed a US$3bn charging-hub MOU. The Finance Bill 2026 proposes 16% VAT on the same vehicles, batteries and chargers.",
          "A boda-boda rider on an electric motorcycle at a solar-canopied charging station on the edge of Nairobi, Mount Longonot and the city skyline on the horizon, a yellow fast-charger cable in the foreground."),
+        ("insight-why-a-policy-travels", "Method &middot; Europe",
+         "Forty European contexts, five governance configurations, and no best one. A null result that is really an instruction: characterise the context with the same care as the instrument.",
+         "An identical mechanical component drawn being fitted into four different machines with differently shaped housings, in a workshop with Dutch rooftops visible through tall windows."),
+        ("insight-fuel-price-not-theirs", "Energy &middot; Asia",
+         "Coal overtook gas in Bangladeshi generation in July. The terminals work, the plants work; the one variable the country did not control turned out to be the one that decided whether any of it would run.",
+         "An LNG tanker moored at a regasification terminal with pipelines running to a gas power station, and a coal plant with a full plume on the far bank of the estuary."),
+        ("insight-twenty-million-to-move", "Finance &middot; Africa",
+         "AfDB puts $20m of reimbursable preparation support behind four African green hydrogen projects worth $23bn. The ratio is the story, and so is one word in the instrument: reimbursable.",
+         "Two surveyors in high-vis vests with a blueprint on a trestle table, looking out across a desert site towards an outlined green hydrogen facility and the sea."),
         ("insight-china-ships-the-factory", "Industrial Policy &middot; Global",
          "Ten overseas Chinese EV plants running, five more under build. The map matters more than the tariff headlines, and the mineral chain behind every plant still runs back to China.",
          "A shipping container at a tropical port with a Chinese industrial robot arm packed inside, two workers inspecting it, with the assembly line of a new EV plant visible through the open shutter beyond."),
