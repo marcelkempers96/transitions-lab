@@ -428,6 +428,9 @@ HERO_COLOR: dict[str, str] = {
     "insight-fuel-price-not-theirs": "butter",
     "insight-twenty-million-to-move": "butter",
     "insight-why-a-policy-travels": "butter",
+    "insight-ten-winners-slowest": "butter",
+    "insight-salad-lying-about-its-age": "butter",
+    "insight-nothing-to-fix": "butter",
     "insight-the-saving-is-agreed": "butter",
     "for-funders": "cobalt",
     "capability-statement": "cobalt",
@@ -554,6 +557,9 @@ NO_BYLINE_SLUGS: set[str] = {
     "insight-fuel-price-not-theirs",
     "insight-twenty-million-to-move",
     "insight-why-a-policy-travels",
+    "insight-ten-winners-slowest",
+    "insight-salad-lying-about-its-age",
+    "insight-nothing-to-fix",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -1001,6 +1007,18 @@ META: dict[str, dict[str, str]] = {
     "insight-why-a-policy-travels": {
         "title": "Why a Policy Travels | Transitions Lab",
         "description": "New comparative work across forty European contexts finds five governance configurations for just transitions and no universally superior one. That is not a disappointing result. It is the finding, and it changes what a successful pilot is evidence of.",
+    },
+    "insight-ten-winners-slowest": {
+        "title": "Europe Picked Ten Strategic Sectors for AI. They're Adopting It Slowest. | Transitions Lab",
+        "description": "New Commission figures show AI use in the EU's ten strategic sectors rising from 7 to 18 per cent. In the economy those sectors were carved out of, it went from 8 to 20. The gap did not close. It widened.",
+    },
+    "insight-salad-lying-about-its-age": {
+        "title": "Your Salad Is Lying About Its Age: Smart Expiry Dates | Transitions Lab",
+        "description": "A Horizon project can now predict spoilage from sensors instead of a printed date. Buried in its own reporting is the finding that should slow everyone down: the treatment that keeps salad fresh longer does nothing to the pathogens.",
+    },
+    "insight-nothing-to-fix": {
+        "title": "You Can't Train a Technician Who Has Nothing to Fix | Transitions Lab",
+        "description": "Africa Skills Week is in Harare this week with a roadmap for turning training into industrial value. The plants that would do the teaching are still being negotiated, and the skill that matters has never been transferable by certificate.",
     },
     "economics-of-transitions": {
         "title": "The Economics of Transitions | Transitions Lab",
@@ -2048,6 +2066,15 @@ def _build_home_insight_pool() -> str:
         ("insight-the-charger-and-the-tax", "E-Mobility &middot; Africa",
          "Ruto directed duty-free import for 100,000 EVs and signed a US$3bn charging-hub MOU. The Finance Bill 2026 proposes 16% VAT on the same vehicles, batteries and chargers.",
          "A boda-boda rider on an electric motorcycle at a solar-canopied charging station on the edge of Nairobi, Mount Longonot and the city skyline on the horizon, a yellow fast-charger cable in the foreground."),
+        ("insight-ten-winners-slowest", "AI &amp; Digital &middot; Europe",
+         "AI use in the EU's ten strategic sectors rose from 7 to 18 per cent. In the economy those sectors were carved out of, it went from 8 to 20. The gap widened.",
+         "A European factory floor with a newly installed AI dashboard mounted on a stanchion beside an older control panel, two workers walking past without looking up."),
+        ("insight-salad-lying-about-its-age", "Agriculture &middot; Europe",
+         "A Horizon project can predict spoilage from sensors instead of a printed date. In its own files is the finding that should slow everyone down: the treatment that keeps salad fresh longer does nothing to the pathogens.",
+         "A bagged ready-to-eat salad on a chilled supermarket shelf with a printed USE BY date, and a small sensor module beside it with an indicator light."),
+        ("insight-nothing-to-fix", "Industrial Policy &middot; Africa",
+         "Africa Skills Week is in Harare with a roadmap for turning training into industrial value. The plants that would do the teaching are still being negotiated, and the skill that matters has never been transferable by certificate.",
+         "Three apprentices around a cutaway electric motor in a training workshop, the instructor pointing at the stator; through the windows behind them an empty industrial plot with surveying markers."),
         ("insight-why-a-policy-travels", "Method &middot; Europe",
          "Forty European contexts, five governance configurations, and no best one. A null result that is really an instruction: characterise the context with the same care as the instrument.",
          "An identical mechanical component drawn being fitted into four different machines with differently shaped housings, in a workshop with Dutch rooftops visible through tall windows."),
