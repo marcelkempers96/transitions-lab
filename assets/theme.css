@@ -3838,7 +3838,7 @@ footer.site .wrap{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1fr 1fr;gap
 footer.site .brand{color:var(--paper);}
 footer.site .brand-logo{filter:brightness(0) invert(1);}
 footer.site h4{color:var(--butter);font-family:'Hanken Grotesk';font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:16px;}
-footer.site a{color:var(--paper);text-decoration:none;font-size:15px;display:block;margin-bottom:10px;font-weight:500;transition:opacity .2s;}
+footer.site a{color:var(--paper);text-decoration:none;font-size:15px;display:block;margin-bottom:10px;font-weight:400;transition:opacity .2s;}
 footer.site a:hover{opacity:.75;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
 footer.site .brand:hover{opacity:1;text-decoration:none;}
 footer.site .mission{font-size:12.5px;line-height:1.55;color:var(--paper);max-width:38ch;margin:12px 0 0;font-weight:500;opacity:.82;}
