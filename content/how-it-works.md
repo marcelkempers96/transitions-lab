@@ -165,8 +165,6 @@ Where the Lab has worked on the ground, each engagement running the same scope â
 
 <p style="text-align:center;margin:28px 0 0;"><a href="/case-studies" class="btn btn-ghost">See all case studies &rarr;</a></p>
 
-For a public-sector reading using the same method, see [St. Eustatius](/case-statia) in the Dutch Caribbean. The full case library is at [Case Studies](/case-studies).
-
 ---
 
 <section class="macro-micro" id="macro-to-micro">
