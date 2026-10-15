@@ -4204,11 +4204,10 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
    tiles stack on the right. Stacks to a single column on phones. */
 .prose .collect-mosaic{
   display:grid;
-  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-columns:1.4fr 1fr;
   grid-template-rows:repeat(2,160px);
   gap:10px;margin:18px 0 20px;padding:0;
-  border:2px solid var(--ink);background:var(--ink);
-  box-shadow:5px 5px 0 var(--ink);
+  border:0;background:transparent;box-shadow:none;
 }
 .prose .collect-mosaic .cm-tile{
   position:relative;overflow:hidden;display:block;
@@ -4239,11 +4238,11 @@ html.js-anim .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s
 }
 @media(max-width:720px){
   .prose .collect-mosaic{
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:180px 140px 140px;
-    gap:6px;box-shadow:4px 4px 0 var(--ink);
+    grid-template-columns:1fr;
+    grid-template-rows:220px 160px 160px;
+    gap:8px;box-shadow:none;border:0;background:transparent;
   }
-  .prose .collect-mosaic .cm-big{grid-row:1;grid-column:1 / -1;}
+  .prose .collect-mosaic .cm-big{grid-row:1;grid-column:1;}
   .prose .collect-mosaic .cm-cap{font-size:11.5px;padding:8px 10px;}
 }
 
