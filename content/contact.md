@@ -69,9 +69,7 @@ See [Who We Serve](/who-we-serve) for how the fit works in each case.
 
 ## What happens next
 
-We read what you sent and reply with an honest first view: whether research can help, roughly what it would involve, and whether the Lab is the right partner. If it is, a short scoping conversation turns your question into a design with a timeline and a figure. If it is not, we say so.
-
-No cost, no obligation, in finding out.
+We read what you sent and reply with an honest first view: whether research can help, roughly what it would involve, and whether the Lab is the right partner. If it is, a short scoping conversation turns your question into a design with a timeline and a figure.
 
 ---
 
