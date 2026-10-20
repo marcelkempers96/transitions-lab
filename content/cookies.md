@@ -84,7 +84,7 @@ If we ever add a category of cookie beyond what is listed above, we will update 
 
 ---
 
-*See also our [privacy policy](/privacy) and [terms of use](/terms). To reach us about anything on this page, [contact us](/contact) or write to [hello@transitionslab.org](mailto:hello@transitionslab.org).*
+*See also our [privacy policy](/privacy) and [terms of use](/terms). To reach us about anything on this page, [contact us](/contact) or write to [marcel@transitionslab.org](mailto:marcel@transitionslab.org).*
 
 ---
 

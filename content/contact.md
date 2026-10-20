@@ -6,7 +6,7 @@
 
 The best engagements start from a real question, not a request for a quote. A clear question is enough to start; shaping the rest is part of what we do.
 
-<form class="contact-form" action="https://formsubmit.co/hello@transitionslab.org" method="POST">
+<form class="contact-form" action="https://formsubmit.co/marcel@transitionslab.org" method="POST">
   <input type="hidden" name="_captcha" value="true">
   <input type="hidden" name="_subject" value="New enquiry from transitionslab.org">
   <input type="hidden" name="_next" value="/contact?sent=1">
@@ -40,14 +40,14 @@ The best engagements start from a real question, not a request for a quote. A cl
     <textarea id="cf-decision" name="decision" required placeholder="What do you need to know, and who does the answer need to come from?"></textarea>
   </div>
   <button type="submit" class="contact-submit">Send message →</button>
-  <p class="form-note">Confidential from the first message. We reply to serious enquiries within a few working days. Prefer email? Write to <a href="mailto:hello@transitionslab.org">hello@transitionslab.org</a>.</p>
+  <p class="form-note">Confidential from the first message. We reply to serious enquiries within a few working days. Prefer email? Write to <a href="mailto:marcel@transitionslab.org">marcel@transitionslab.org</a>.</p>
 </form>
 
 ---
 
 ## Direct contact
 
-- **Email** · [hello@transitionslab.org](mailto:hello@transitionslab.org)
+- **Email** · [marcel@transitionslab.org](mailto:marcel@transitionslab.org)
 - **Registered office** · Stieltjesweg 302 A, 2628 CK Delft, The Netherlands
 - **Response** · a few working days for serious enquiries.
 

@@ -10,7 +10,7 @@
 
 Transitions Lab is an independent research team based in Delft, the Netherlands, operated by **Transitions Lab B.V.** (a Dutch besloten vennootschap, KVK 42170233, registered office Stieltjesweg 302 A, 2628 CK Delft). This page describes what happens to your data when you use the website at [transitionslab.org](/) or send us a message through it. If a study we run for a client involves your data separately, that engagement will have its own terms.
 
-For any question about this policy, or to exercise any of the rights below, write to us via the [contact page](/contact) or directly to [hello@transitionslab.org](mailto:hello@transitionslab.org). Postal address as above.
+For any question about this policy, or to exercise any of the rights below, write to us via the [contact page](/contact) or directly to [marcel@transitionslab.org](mailto:marcel@transitionslab.org). Postal address as above.
 
 ---
 

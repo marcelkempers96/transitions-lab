@@ -198,7 +198,7 @@ export default async function handler(req, res){
       message: `track: ${day} ${path} (${source}) [skip ci]`,
       content,
       branch: BRANCH,
-      committer: { name: 'Transitions Lab tracker', email: 'hello@transitionslab.org' },
+      committer: { name: 'Transitions Lab tracker', email: 'marcel@transitionslab.org' },
       ...(sha ? { sha } : {}),
     };
 

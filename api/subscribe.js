@@ -93,7 +93,7 @@ export default async function handler(req, res){
     message: `signup: ${email}`,
     content,
     branch: BRANCH,
-    committer: { name: 'Transitions Lab signup', email: 'hello@transitionslab.org' },
+    committer: { name: 'Transitions Lab signup', email: 'marcel@transitionslab.org' },
     ...(sha ? { sha } : {}),
   };
 

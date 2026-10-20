@@ -297,13 +297,13 @@ _TRAILING_ITALIC_RE = re.compile(
 )
 
 # The compact contact block. Same form as /contact but abbreviated fields.
-# Submissions go to hello@transitionslab.org via FormSubmit.
+# Submissions go to marcel@transitionslab.org via FormSubmit.
 CONTACT_CTA_HTML = """<section class="section-paper contact-cta-block" style="border-top:2px solid var(--ink);">
   <div class="wrap" style="max-width:900px;">
     <p class="eyebrow">Start a study</p>
     <h2 style="font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.1;margin:0 0 14px;">Tell us the decision. We will design the study.</h2>
     <p style="font-size:17px;line-height:1.55;margin:0 0 28px;max-width:56ch;">Send a short note about what you need to know and who it concerns. We will come back with an approach, a timeline, and an honest view of what evidence can and cannot settle.</p>
-    <form class="contact-form" action="https://formsubmit.co/hello@transitionslab.org" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/marcel@transitionslab.org" method="POST">
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_subject" value="New enquiry from transitionslab.org">
       <input type="hidden" name="_next" value="/contact?sent=1">
@@ -321,7 +321,7 @@ CONTACT_CTA_HTML = """<section class="section-paper contact-cta-block" style="bo
         <textarea id="cfx-decision" name="decision" required placeholder="What do you need to know, and who does the answer need to come from?"></textarea>
       </div>
       <button type="submit" class="contact-submit">Send message &rarr;</button>
-      <p class="form-note">Confidential from the first message. Or write to <a href="mailto:hello@transitionslab.org">hello@transitionslab.org</a> directly.</p>
+      <p class="form-note">Confidential from the first message. Or write to <a href="mailto:marcel@transitionslab.org">marcel@transitionslab.org</a> directly.</p>
     </form>
   </div>
 </section>"""

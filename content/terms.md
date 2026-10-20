@@ -89,7 +89,7 @@ This website is operated by **Transitions Lab B.V.**, a Dutch besloten vennootsc
 - **KVK-nummer** · 42170233
 - **Vestigingsnummer** · 000066760275
 - **Registered office** · Stieltjesweg 302 A, 2628 CK Delft, The Netherlands
-- **Contact** · [hello@transitionslab.org](mailto:hello@transitionslab.org)
+- **Contact** · [marcel@transitionslab.org](mailto:marcel@transitionslab.org)
 
 ---
 
