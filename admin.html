@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lab · console</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400&family=Inter:wght@300;400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#F3EDE1;
+    --ink:#1A1A1A;
+    --mute:#6B6457;
+    --rule:#D9D1BE;
+    --butter:#F3C98B;
+    --butter-ink:#8A5A1A;
+    --ok:#2E7A3C;
+    --warn:#B65A1A;
+    --err:#9A2A2A;
+    --card:#FBF7EC;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:400;
+    font-size:14.5px;
+    line-height:1.55;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Newsreader',serif;font-weight:500;letter-spacing:-0.01em;margin:0 0 .4em}
+  h1{font-size:28px}
+  h2{font-size:20px;margin-top:0}
+  h3{font-size:16px}
+  a{color:var(--ink)}
+  main{max-width:1120px;margin:0 auto;padding:28px 24px 80px}
+  header.console-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;margin-bottom:22px;
+  }
+  header .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  header .right{display:flex;align-items:center;gap:14px;color:var(--mute);font-size:12.5px}
+  button.btn{
+    font:inherit;cursor:pointer;background:var(--ink);color:var(--paper);
+    border:0;border-radius:0;padding:9px 14px;
+  }
+  button.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
+  button.btn:disabled{opacity:.5;cursor:not-allowed}
+  input.inp{
+    font:inherit;background:#fff;border:1px solid var(--rule);border-radius:0;
+    padding:10px 12px;min-width:260px;
+  }
+  .hint{color:var(--mute);font-size:12.5px;margin-top:8px}
+  .gate{max-width:460px;margin:60px auto;padding:28px;background:var(--card);border:1px solid var(--rule)}
+  .gate h1{margin-bottom:.2em}
+  .gate p{color:var(--mute);margin:0 0 18px}
+  .gate .row{display:flex;gap:10px;flex-wrap:wrap}
+  .err{color:var(--err);font-size:13px;margin-top:10px}
+
+  .periods{display:flex;gap:6px;flex-wrap:wrap}
+  .periods button{
+    font:inherit;cursor:pointer;background:transparent;border:1px solid var(--rule);
+    color:var(--ink);padding:7px 12px;border-radius:0;
+  }
+  .periods button.is-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
+  .kpi{background:var(--card);border:1px solid var(--rule);padding:16px 18px}
+  .kpi .n{font-family:'Newsreader',serif;font-weight:500;font-size:30px;line-height:1}
+  .kpi .k{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:8px}
+  @media (max-width:860px){ .kpis{grid-template-columns:repeat(2,1fr)} }
+
+  .grid-2{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  @media (max-width:960px){ .grid-2,.grid-3{grid-template-columns:1fr} }
+
+  .card{background:var(--card);border:1px solid var(--rule);padding:16px 18px;margin-bottom:14px}
+  .card h2{font-size:16px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .card h2 .sub{font-family:'Inter',sans-serif;font-weight:400;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  table th{text-align:left;font-weight:500;color:var(--mute);
+    font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+    padding:8px 10px 8px 0;border-bottom:1px solid var(--rule)}
+  table td{padding:7px 10px 7px 0;border-bottom:1px solid rgba(217,209,190,.5);vertical-align:top}
+  table td.n{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+  table td.n .pct{color:var(--mute);font-size:11.5px;margin-left:6px}
+  tr:last-child td{border-bottom:0}
+  td.path{word-break:break-all;max-width:420px}
+
+  .bar{display:block;position:relative;height:6px;background:rgba(217,209,190,.5);margin-top:4px}
+  .bar>span{display:block;height:100%;background:var(--butter)}
+
+  svg.chart{width:100%;height:160px;display:block}
+  svg.chart rect{fill:var(--butter)}
+  svg.chart text{font-family:'Inter',sans-serif;font-size:10px;fill:var(--mute)}
+
+  .heatmap{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;margin-top:4px}
+  .heatmap .cell{aspect-ratio:1/1;background:rgba(217,209,190,.5)}
+  .heatmap .cell[data-v]{position:relative}
+  .heatmap .labels{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;margin-top:4px;font-size:10px;color:var(--mute)}
+
+  .foot{color:var(--mute);font-size:12px;margin-top:28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  details{margin-top:8px}
+  details summary{cursor:pointer;color:var(--mute);font-size:12.5px}
+
+  .copy-btn{font:inherit;background:transparent;border:1px solid var(--rule);padding:5px 9px;cursor:pointer;color:var(--ink);border-radius:0;font-size:11.5px}
+  .right-tools{display:flex;gap:6px;flex-wrap:wrap}
+  .empty{color:var(--mute);font-style:italic;padding:12px 0}
+  code.inline{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:rgba(217,209,190,.4);padding:1px 5px}
+</style>
+</head>
+<body>
+
+<div id="gate" class="gate" hidden>
+  <h1>Lab console</h1>
+  <p>Paste the admin key to see analytics and subscribers.</p>
+  <form id="gate-form" class="row">
+    <input id="gate-key" class="inp" type="password" autocomplete="off" placeholder="admin key" aria-label="admin key">
+    <button class="btn" type="submit">Unlock</button>
+  </form>
+  <div id="gate-err" class="err" hidden></div>
+  <p class="hint">The key is the <code class="inline">ADMIN_KEY</code> env var set in Vercel.
+    If you don't have it yet, create one in Vercel → Project → Settings → Environment Variables, then redeploy.</p>
+</div>
+
+<main id="app" hidden>
+  <header class="console-head">
+    <div>
+      <div class="label">Transitions Lab</div>
+      <h1>Console</h1>
+    </div>
+    <div class="right">
+      <span id="updated-at"></span>
+      <button id="refresh" class="btn ghost" type="button">Refresh</button>
+      <button id="lock" class="btn ghost" type="button">Lock</button>
+    </div>
+  </header>
+
+  <div class="card" style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span class="label" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)">Period</span>
+      <div class="periods" id="periods">
+        <button data-p="today">Today</button>
+        <button data-p="7d" class="is-on">Last 7 days</button>
+        <button data-p="30d">Last 30 days</button>
+        <button data-p="all">All</button>
+      </div>
+    </div>
+    <div class="right-tools">
+      <button class="copy-btn" id="copy-emails" type="button">Copy emails</button>
+      <button class="copy-btn" id="download-emails" type="button">Download CSV</button>
+    </div>
+  </div>
+
+  <section class="kpis">
+    <div class="kpi"><div class="n" id="k-total">—</div><div class="k">Visits (period)</div></div>
+    <div class="kpi"><div class="n" id="k-today">—</div><div class="k">Visits today</div></div>
+    <div class="kpi"><div class="n" id="k-avg">—</div><div class="k">Avg / day (all)</div></div>
+    <div class="kpi"><div class="n" id="k-subs">—</div><div class="k">Subscribers</div></div>
+  </section>
+
+  <div class="card">
+    <h2>Daily visits <span class="sub" id="daily-sub">Last 30 days</span></h2>
+    <svg class="chart" id="chart-daily" viewBox="0 0 600 160" preserveAspectRatio="none"></svg>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2>Top pages <span class="sub" id="pages-sub">All time</span></h2>
+      <div id="t-pages"></div>
+    </div>
+    <div class="card">
+      <h2>Traffic sources <span class="sub" id="sources-sub">Where visitors came from</span></h2>
+      <div id="t-sources"></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2>Countries <span class="sub">By visit count</span></h2>
+      <div id="t-countries"></div>
+    </div>
+    <div class="card">
+      <h2>Hour of day (UTC) <span class="sub">When they arrive</span></h2>
+      <div class="heatmap" id="heatmap"></div>
+      <div class="heatmap labels" id="heatmap-labels"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Subscribers <span class="sub" id="subs-sub">Newest first</span></h2>
+    <div id="t-subs"></div>
+  </div>
+
+  <div class="foot">
+    <div>Data is stored in <code class="inline">data/visits.json</code> and <code class="inline">data/subscribers.json</code> in this repo.</div>
+    <div>Tracker fires once per unique page view per visitor session.</div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var KEY_STORAGE = 'tl-admin-key';
+  var LAST_PERIOD = 'tl-admin-period';
+
+  var el = {
+    gate:        document.getElementById('gate'),
+    gateForm:    document.getElementById('gate-form'),
+    gateKey:     document.getElementById('gate-key'),
+    gateErr:     document.getElementById('gate-err'),
+    app:         document.getElementById('app'),
+    updatedAt:   document.getElementById('updated-at'),
+    refresh:     document.getElementById('refresh'),
+    lock:        document.getElementById('lock'),
+    periods:     document.getElementById('periods'),
+    kTotal:      document.getElementById('k-total'),
+    kToday:      document.getElementById('k-today'),
+    kAvg:        document.getElementById('k-avg'),
+    kSubs:       document.getElementById('k-subs'),
+    dailySub:    document.getElementById('daily-sub'),
+    chartDaily:  document.getElementById('chart-daily'),
+    pagesSub:    document.getElementById('pages-sub'),
+    sourcesSub:  document.getElementById('sources-sub'),
+    tPages:      document.getElementById('t-pages'),
+    tSources:    document.getElementById('t-sources'),
+    tCountries:  document.getElementById('t-countries'),
+    heatmap:     document.getElementById('heatmap'),
+    heatmapLabs: document.getElementById('heatmap-labels'),
+    tSubs:       document.getElementById('t-subs'),
+    subsSub:     document.getElementById('subs-sub'),
+    copyEmails:  document.getElementById('copy-emails'),
+    dlEmails:    document.getElementById('download-emails'),
+  };
+
+  var state = {
+    key: '',
+    data: null,
+    period: 'last7',
+  };
+  try { state.period = sessionStorage.getItem(LAST_PERIOD) || 'last7'; } catch(_){}
+  // Reflect saved period in buttons.
+  function pButtonCode(p){
+    return p === 'today' ? 'today' : p === 'last30' ? '30d' : p === 'all' ? 'all' : '7d';
+  }
+
+  function keyFromUrlOrStore(){
+    try {
+      var qs = new URLSearchParams(location.search);
+      var k = qs.get('key');
+      if (k){
+        try { sessionStorage.setItem(KEY_STORAGE, k); } catch(_){}
+        // Clean the URL so the key doesn't sit in the address bar.
+        try { history.replaceState(null, '', location.pathname); } catch(_){}
+        return k;
+      }
+    } catch(_){}
+    try { return sessionStorage.getItem(KEY_STORAGE) || ''; } catch(_){ return ''; }
+  }
+
+  function fmt(n){ return (n|0).toLocaleString('en-US'); }
+  function pct(n, total){ if (!total) return '0%'; return (Math.round((n / total) * 1000) / 10) + '%'; }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
+
+  function askKey(err){
+    el.gate.hidden = false;
+    el.app.hidden  = true;
+    if (err){ el.gateErr.hidden = false; el.gateErr.textContent = err; }
+    else   { el.gateErr.hidden = true;  el.gateErr.textContent = ''; }
+    setTimeout(function(){ el.gateKey.focus(); }, 10);
+  }
+
+  function showApp(){
+    el.gate.hidden = true;
+    el.app.hidden  = false;
+    // Reflect active period button.
+    Array.prototype.forEach.call(el.periods.querySelectorAll('button'), function(b){
+      b.classList.toggle('is-on', b.getAttribute('data-p') === pButtonCode(state.period));
+    });
+  }
+
+  function fetchData(){
+    return fetch('/api/admin-data?key=' + encodeURIComponent(state.key), {
+      headers: { 'Accept': 'application/json' },
+      cache: 'no-store',
+    }).then(function(r){
+      if (r.status === 401){
+        var e = new Error('Wrong key.'); e.status = 401; throw e;
+      }
+      if (!r.ok) throw new Error('Server returned ' + r.status);
+      return r.json();
+    });
+  }
+
+  function render(){
+    if (!state.data) return;
+    var d = state.data;
+    var v = d.visits || {};
+    var subs = Array.isArray(d.subscribers) ? d.subscribers.slice() : [];
+
+    var periodCount = v.total|0;
+    var periodLabel = 'all time';
+    if (state.period === 'today'){ periodCount = v.today|0; periodLabel = 'today'; }
+    else if (state.period === 'last7'){ periodCount = v.last7|0; periodLabel = 'last 7 days'; }
+    else if (state.period === 'last30'){ periodCount = v.last30|0; periodLabel = 'last 30 days'; }
+
+    el.kTotal.textContent = fmt(periodCount);
+    el.kToday.textContent = fmt(v.today);
+    el.kAvg.textContent   = fmt(v.avgPerDay);
+    el.kSubs.textContent  = fmt(subs.length);
+    el.updatedAt.textContent = d.updatedAt ? ('Updated ' + new Date(d.updatedAt).toLocaleString()) : '';
+    el.dailySub.textContent = 'Last 30 days · ' + fmt(v.last30 || 0) + ' visits';
+    el.pagesSub.textContent = 'All time';
+    el.sourcesSub.textContent = 'All time · ' + (v.sources ? v.sources.length : 0) + ' sources';
+    el.subsSub.textContent  = fmt(subs.length) + ' total';
+
+    renderDaily(v.daily || []);
+    renderTable(el.tPages,     v.pages     || [], 'Page',    'Visits', { linkify: true });
+    renderTable(el.tSources,   v.sources   || [], 'Source',  'Visits', { withBar: true });
+    renderTable(el.tCountries, v.countries || [], 'Country', 'Visits', { withBar: true, countryLabel: true });
+    renderHeatmap(v.hours || new Array(24).fill(0));
+    renderSubs(subs);
+  }
+
+  function renderDaily(daily){
+    var w = 600, h = 160, pad = 10;
+    var max = 0;
+    for (var i = 0; i < daily.length; i++) if ((daily[i][1]|0) > max) max = daily[i][1]|0;
+    if (max === 0) max = 1;
+    var bw = (w - pad * 2) / Math.max(daily.length, 1);
+    var bars = '';
+    for (var j = 0; j < daily.length; j++){
+      var val = daily[j][1]|0;
+      var bh  = Math.round(((h - pad * 2 - 18) * val) / max);
+      var x   = Math.round(pad + j * bw) + 1;
+      var y   = h - pad - 18 - bh;
+      bars += '<rect x="'+x+'" y="'+y+'" width="'+Math.max(1, Math.floor(bw)-2)+'" height="'+bh+'"><title>'+esc(daily[j][0])+': '+val+'</title></rect>';
+    }
+    // light axis labels: first, mid, last date
+    var labs = '';
+    if (daily.length){
+      labs += '<text x="'+pad+'" y="'+(h - 2)+'">'+esc(daily[0][0])+'</text>';
+      var midI = Math.floor(daily.length / 2);
+      var midX = Math.round(pad + midI * bw);
+      labs += '<text x="'+midX+'" y="'+(h - 2)+'" text-anchor="middle">'+esc(daily[midI][0])+'</text>';
+      labs += '<text x="'+(w - pad)+'" y="'+(h - 2)+'" text-anchor="end">'+esc(daily[daily.length - 1][0])+'</text>';
+    }
+    el.chartDaily.innerHTML = bars + labs;
+  }
+
+  function renderTable(host, rows, headL, headR, opts){
+    opts = opts || {};
+    if (!rows.length){ host.innerHTML = '<div class="empty">No data yet.</div>'; return; }
+    var total = 0;
+    for (var i = 0; i < rows.length; i++) total += (rows[i][1]|0);
+    var html = '<table><thead><tr><th>'+esc(headL)+'</th><th class="n">'+esc(headR)+'</th></tr></thead><tbody>';
+    var maxVal = rows[0][1]|0 || 1;
+    for (var j = 0; j < rows.length; j++){
+      var k = rows[j][0], c = rows[j][1]|0;
+      var label = k;
+      if (opts.linkify && k && k[0] === '/') label = '<a href="'+esc(k)+'" target="_blank" rel="noopener">'+esc(k)+'</a>';
+      else if (opts.countryLabel) label = countryName(k);
+      else label = esc(k);
+      var barHtml = opts.withBar ? '<span class="bar"><span style="width:'+Math.round((c/maxVal)*100)+'%"></span></span>' : '';
+      html += '<tr><td class="path">'+label+barHtml+'</td><td class="n">'+fmt(c)+' <span class="pct">'+pct(c, total)+'</span></td></tr>';
+    }
+    html += '</tbody></table>';
+    host.innerHTML = html;
+  }
+
+  function renderHeatmap(hours){
+    var max = 0;
+    for (var i = 0; i < hours.length; i++) if ((hours[i]|0) > max) max = hours[i]|0;
+    if (max === 0) max = 1;
+    var cells = '';
+    for (var h = 0; h < 24; h++){
+      var v = hours[h]|0;
+      var alpha = v ? (0.18 + 0.82 * (v / max)) : 0.08;
+      cells += '<div class="cell" data-v="'+v+'" title="'+h+':00 UTC — '+v+' visits" style="background:rgba(243,201,139,'+alpha.toFixed(2)+')"></div>';
+    }
+    el.heatmap.innerHTML = cells;
+    var labs = '';
+    for (var h2 = 0; h2 < 24; h2++){
+      labs += '<div style="text-align:center">'+(h2 % 3 === 0 ? h2 : '')+'</div>';
+    }
+    el.heatmapLabs.innerHTML = labs;
+  }
+
+  function renderSubs(subs){
+    // newest first by `at` timestamp
+    subs.sort(function(a, b){ return (b && b.at || '').localeCompare(a && a.at || ''); });
+    if (!subs.length){ el.tSubs.innerHTML = '<div class="empty">No subscribers yet.</div>'; return; }
+    var html = '<table><thead><tr><th>Email</th><th>Signed up</th><th>Source</th></tr></thead><tbody>';
+    for (var i = 0; i < subs.length; i++){
+      var s = subs[i] || {};
+      var when = s.at ? new Date(s.at).toLocaleString() : '';
+      html += '<tr><td>'+esc(s.email || '')+'</td><td>'+esc(when)+'</td><td>'+esc(s.source || '')+'</td></tr>';
+    }
+    html += '</tbody></table>';
+    el.tSubs.innerHTML = html;
+  }
+
+  function countryName(cc){
+    if (!cc) return '—';
+    if (cc === 'XX') return 'Unknown';
+    try {
+      if (typeof Intl !== 'undefined' && Intl.DisplayNames){
+        var n = new Intl.DisplayNames(['en'], { type: 'region' }).of(cc);
+        if (n) return esc(n + ' (' + cc + ')');
+      }
+    } catch(_){}
+    return esc(cc);
+  }
+
+  function toCSV(rows){
+    var header = 'email,signed_up,source\n';
+    return header + rows.map(function(s){
+      return [s.email || '', s.at || '', s.source || ''].map(function(v){
+        v = String(v == null ? '' : v);
+        return /[,\"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+      }).join(',');
+    }).join('\n') + '\n';
+  }
+
+  function load(){
+    el.updatedAt.textContent = 'Loading…';
+    fetchData().then(function(d){
+      state.data = d;
+      showApp();
+      render();
+    }).catch(function(err){
+      if (err && err.status === 401){
+        try { sessionStorage.removeItem(KEY_STORAGE); } catch(_){}
+        state.key = '';
+        askKey('That key did not work.');
+      } else {
+        askKey((err && err.message) || 'Could not load.');
+      }
+    });
+  }
+
+  // --- wire up ------------------------------------------------------
+  el.gateForm.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var k = (el.gateKey.value || '').trim();
+    if (!k) return;
+    state.key = k;
+    try { sessionStorage.setItem(KEY_STORAGE, k); } catch(_){}
+    load();
+  });
+
+  el.refresh.addEventListener('click', load);
+  el.lock.addEventListener('click', function(){
+    state.key = ''; state.data = null;
+    try { sessionStorage.removeItem(KEY_STORAGE); } catch(_){}
+    askKey();
+  });
+
+  el.periods.addEventListener('click', function(ev){
+    var b = ev.target.closest && ev.target.closest('button[data-p]');
+    if (!b) return;
+    var code = b.getAttribute('data-p');
+    state.period = code === 'today' ? 'today' : code === '30d' ? 'last30' : code === 'all' ? 'all' : 'last7';
+    try { sessionStorage.setItem(LAST_PERIOD, state.period); } catch(_){}
+    Array.prototype.forEach.call(el.periods.querySelectorAll('button'), function(bb){
+      bb.classList.toggle('is-on', bb === b);
+    });
+    render();
+  });
+
+  el.copyEmails.addEventListener('click', function(){
+    if (!state.data || !Array.isArray(state.data.subscribers)) return;
+    var text = state.data.subscribers.map(function(s){ return s.email; }).filter(Boolean).join('\n');
+    if (!text) return;
+    try { navigator.clipboard.writeText(text); el.copyEmails.textContent = 'Copied ✓'; setTimeout(function(){ el.copyEmails.textContent = 'Copy emails'; }, 1600); } catch(_){}
+  });
+
+  el.dlEmails.addEventListener('click', function(){
+    if (!state.data || !Array.isArray(state.data.subscribers)) return;
+    var blob = new Blob([toCSV(state.data.subscribers)], { type: 'text/csv' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'subscribers.csv';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  });
+
+  // --- boot ---------------------------------------------------------
+  state.key = keyFromUrlOrStore();
+  if (state.key){ load(); } else { askKey(); }
+})();
+</script>
+</body>
+</html>

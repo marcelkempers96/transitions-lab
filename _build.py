@@ -2622,7 +2622,12 @@ def main() -> None:
     # Delete old .html files at repo root that aren't going to be rebuilt.
     # We regenerate everything, so wipe any stale HTML first - but keep .git,
     # assets, content, config files.
+    # admin.html is hand-authored, hidden, and not part of the content build,
+    # so leave it alone so a build doesn't delete it.
+    PRESERVE_HTML = {"admin.html"}
     for old in ROOT.glob("*.html"):
+        if old.name in PRESERVE_HTML:
+            continue
         old.unlink()
 
     written: list[str] = []

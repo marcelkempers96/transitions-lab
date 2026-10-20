@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+# Hidden admin console and API endpoints — not for crawlers.
+Disallow: /admin
+Disallow: /admin.html
+Disallow: /api/
+
 # Pages currently under private review — not yet indexed. The pages
 # still resolve at their URL for direct-link review, but crawlers
 # should not index them or follow into them from external sources.

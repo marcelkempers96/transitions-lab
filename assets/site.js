@@ -1102,3 +1102,69 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 })();
+
+// Visit tracker. Fires one /api/track POST per unique (page, session) so
+// the admin console can show real visit counts and traffic sources.
+// Lives behind sessionStorage so a reload doesn't double-count, and never
+// runs on the admin page itself.
+(function(){
+  try {
+    var p = location.pathname || '/';
+    if (/^\/admin(\.html)?$/i.test(p)) return;
+
+    var key = 'tl-pv:' + p;
+    try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch(_){}
+
+    var ref = document.referrer || '';
+    var source = (function(){
+      if (!ref) return 'direct';
+      try {
+        var h = new URL(ref).hostname.toLowerCase();
+        var same = (h === location.hostname) || (h === 'www.' + location.hostname) ||
+                   (location.hostname === 'www.' + h);
+        if (same) return 'internal';
+        if (/(^|\.)google\./.test(h))                           return 'google';
+        if (/(^|\.)bing\.com$/.test(h))                         return 'bing';
+        if (/(^|\.)duckduckgo\.com$/.test(h))                   return 'duckduckgo';
+        if (/(^|\.)yahoo\.com$/.test(h))                        return 'yahoo';
+        if (/(^|\.)ecosia\.org$/.test(h))                       return 'ecosia';
+        if (/(^|\.)brave\.com$/.test(h) || h === 'search.brave.com') return 'brave';
+        if (h === 't.co' || /(^|\.)twitter\.com$/.test(h) || /(^|\.)x\.com$/.test(h)) return 'twitter';
+        if (/(^|\.)linkedin\.com$/.test(h) || h === 'lnkd.in')  return 'linkedin';
+        if (/(^|\.)facebook\.com$/.test(h) || h === 'fb.me')    return 'facebook';
+        if (/(^|\.)reddit\.com$/.test(h))                       return 'reddit';
+        if (/(^|\.)substack\.com$/.test(h))                     return 'substack';
+        if (/(^|\.)youtube\.com$/.test(h) || h === 'youtu.be')  return 'youtube';
+        if (/(^|\.)github\.com$/.test(h))                       return 'github';
+        if (/(^|\.)ycombinator\.com$/.test(h))                  return 'hackernews';
+        if (/(^|\.)medium\.com$/.test(h))                       return 'medium';
+        if (/(^|\.)mastodon\./.test(h))                         return 'mastodon';
+        if (/(^|\.)bsky\.app$/.test(h))                         return 'bluesky';
+        if (/(^|\.)threads\.net$/.test(h))                      return 'threads';
+        if (/(^|\.)instagram\.com$/.test(h))                    return 'instagram';
+        if (/(^|\.)whatsapp\.com$/.test(h))                     return 'whatsapp';
+        if (/(^|\.)telegram\.org$/.test(h) || h === 't.me')     return 'telegram';
+        return h.replace(/^www\./, '');
+      } catch(_){ return 'direct'; }
+    })();
+
+    var payload = JSON.stringify({ path: p, source: source });
+    var sent = false;
+    try {
+      if (navigator.sendBeacon){
+        sent = navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
+      }
+    } catch(_){}
+    if (!sent){
+      try {
+        fetch('/api/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+          keepalive: true,
+          mode: 'same-origin',
+        }).catch(function(){});
+      } catch(_){}
+    }
+  } catch(_){}
+})();
