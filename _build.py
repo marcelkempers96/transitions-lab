@@ -467,7 +467,7 @@ SERVICES = [
 
 EXPERTISE = [
     ("expertise", "All programmes"),
-    ("expertise-manufacturing", "Green Industrialisation & Local Manufacturing"),
+    ("expertise-manufacturing", "Industry & Materials"),
     ("expertise-e-mobility", "E-Mobility & Transport"),
     ("expertise-energy", "Energy & Water Systems"),
     ("expertise-agriculture", "Agriculture & Ecosystems"),
@@ -701,7 +701,7 @@ META: dict[str, dict[str, str]] = {
         "description": "How farmers and fishers adopt and benefit from new technology, and what the monitoring behind a payment actually costs them. Waste-to-value, verification, coastal work.",
     },
     "expertise-manufacturing": {
-        "title": "Green Industrialisation & Local Manufacturing Research | Transitions Lab",
+        "title": "Industry & Materials Research | Transitions Lab",
         "description": "How productive capacity is built where things are used, who captures the value, and whether the workforce capability a plant assumes actually arrives with it.",
     },
     "expertise-ai-digital": {
@@ -1084,7 +1084,7 @@ STUB_TITLES: dict[str, str] = {
     "insight-the-reporting-loop": "The Reporting Loop",
     "expertise-energy": "Energy & Water Systems",
     "expertise-agriculture": "Agriculture & Ecosystems",
-    "expertise-manufacturing": "Green Industrialisation & Local Manufacturing",
+    "expertise-manufacturing": "Industry & Materials",
     "expertise-ai-digital": "AI & Digital Systems",
     "expertise-finance": "Financial Inclusion",
 }
@@ -2274,7 +2274,7 @@ def build_home() -> str:
 
     <p class="net-expertise-label">Current programmes</p>
     <div class="net-expertise-row">
-      <a href="/expertise-manufacturing">Green Industrialisation</a>
+      <a href="/expertise-manufacturing">Industry &amp; Materials</a>
       <a href="/expertise-e-mobility">E-Mobility &amp; Transport</a>
       <a href="/expertise-energy">Energy &amp; Water Systems</a>
       <a href="/expertise-agriculture">Agriculture &amp; Ecosystems</a>

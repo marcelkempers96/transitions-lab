@@ -97,7 +97,7 @@ If you are assessing a regional industrial project whose viability depends on a 
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [Behind the Border](/insight-behind-the-border) on why variance rather than distance forecloses specialisation, [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on the qualification barrier and the chemistry risk in battery materials, and [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on access terms deciding who benefits. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Industry & Materials](/expertise-manufacturing). See also [Behind the Border](/insight-behind-the-border) on why variance rather than distance forecloses specialisation, [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on the qualification barrier and the chemistry risk in battery materials, and [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on access terms deciding who benefits. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

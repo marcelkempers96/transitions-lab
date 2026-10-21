@@ -97,7 +97,7 @@ The [Mineral Flows Map](/mineral-flows) is the Lab's interactive companion to th
 
 <p class="tool-cta"><a href="/mineral-flows" class="tool-cta-btn">Open the interactive Mineral Flows Map &rarr;</a></p>
 
-For the frameworks the Lab uses to read these transitions, see the [BReW framework](/brw) and the [Economics of Transitions](/economics-of-transitions). For the fieldwork behind the Industrial Transition programme, see [Green Industrialisation & Local Manufacturing](/expertise-manufacturing). To discuss a commissioned study of a specific chain, see [Contact](/contact).
+For the frameworks the Lab uses to read these transitions, see the [BReW framework](/brw) and the [Economics of Transitions](/economics-of-transitions). For the fieldwork behind the Industrial Transition programme, see [Industry & Materials](/expertise-manufacturing). To discuss a commissioned study of a specific chain, see [Contact](/contact).
 
 ---
 

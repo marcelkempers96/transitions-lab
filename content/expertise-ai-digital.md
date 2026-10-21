@@ -106,7 +106,7 @@ For the full series across the transitions we study, see [Articles](/articles).
     <a href="/case-reef-support">Reef Support case</a>
     <a href="/field-research">Field Research method</a>
     <a href="/expertise-energy">Energy &amp; Water Systems</a>
-    <a href="/expertise-manufacturing">Green Industrialisation &amp; Local Manufacturing</a>
+    <a href="/expertise-manufacturing">Industry &amp; Materials</a>
     <a href="/innovation-dynamics">Technology &amp; Innovation Dynamics</a>
     <a href="/sdgs">Research by SDG</a>
     <a href="/articles">All articles</a>

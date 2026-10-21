@@ -1,6 +1,6 @@
 § / Programmes
 
-# Green Industrialisation & Local Manufacturing
+# Industry & Materials
 
 *How productive capacity is built where things are used, who captures the value, and whether the workforce capability a plant assumes actually arrives with it.*
 

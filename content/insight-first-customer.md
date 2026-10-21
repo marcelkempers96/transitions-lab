@@ -96,7 +96,7 @@ If you are designing an innovation procurement programme and want the first-buye
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Municipality Is the Instrument](/insight-municipality-is-the-instrument) on why discretion is only available to organisations with capacity to exercise it, and [Strategic Is Not the Same as Financeable](/insight-strategic-not-financeable) on the decision bar that a subsidy does not move. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Industry & Materials](/expertise-manufacturing). See also [The Municipality Is the Instrument](/insight-municipality-is-the-instrument) on why discretion is only available to organisations with capacity to exercise it, and [Strategic Is Not the Same as Financeable](/insight-strategic-not-financeable) on the decision bar that a subsidy does not move. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

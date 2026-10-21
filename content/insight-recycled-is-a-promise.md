@@ -132,7 +132,7 @@ If you are working on circular material markets and want the buyer side and the 
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing) and [Climate & Ecosystems](/expertise-climate). See also [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on the same qualification barrier in battery precursor, and [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on the pattern of demonstration versus adoption running through this whole field. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Industry & Materials](/expertise-manufacturing) and [Climate & Ecosystems](/expertise-climate). See also [The Lock-In Runs Both Ways](/insight-lock-in-both-ways) on the same qualification barrier in battery precursor, and [Europe Has Enough Demonstrations](/insight-enough-demonstrations) on the pattern of demonstration versus adoption running through this whole field. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

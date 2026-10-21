@@ -112,7 +112,7 @@ For the full series across the transitions we study, see [Articles](/articles).
   <div class="footer-links">
     <a href="/case-roam">Mobility case</a>
     <a href="/field-research">Field Research method</a>
-    <a href="/expertise-manufacturing">Green Industrialisation &amp; Local Manufacturing</a>
+    <a href="/expertise-manufacturing">Industry &amp; Materials</a>
     <a href="/expertise-finance">Financial Inclusion</a>
     <a href="/innovation-dynamics">Technology &amp; Innovation Dynamics</a>
     <a href="/sdgs">Research by SDG</a>

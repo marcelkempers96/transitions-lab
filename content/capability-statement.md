@@ -43,7 +43,7 @@ See how the mix plays out in practice on [Field Research](/field-research) and o
 
 Six live programmes, each anchored to specific evidence questions rather than a sector logo:
 
-- [Green Industrialisation & Local Manufacturing](/expertise-manufacturing)
+- [Industry & Materials](/expertise-manufacturing)
 - [E-Mobility & Transport](/expertise-e-mobility)
 - [Energy & Water Systems](/expertise-energy)
 - [Agriculture & Ecosystems](/expertise-agriculture)

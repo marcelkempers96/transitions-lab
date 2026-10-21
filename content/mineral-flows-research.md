@@ -220,7 +220,7 @@ Limits. First, reserves are an economic category, not a geological one: a rise i
 
 Most network studies stop at country-level topology and publish static figures; few are interactive, and almost none put the African value-capture question at the centre. The trade-linked MFA literature is methodologically strong but rarely updated after publication.
 
-A maintained, openly sourced tool that joins stage-specific concentration, bilateral flows, dated policy measures and the African processing gap is not something the incumbents offer. It connects directly to the Lab's [Green Industrialisation & Local Manufacturing](/expertise-manufacturing) programme.
+A maintained, openly sourced tool that joins stage-specific concentration, bilateral flows, dated policy measures and the African processing gap is not something the incumbents offer. It connects directly to the Lab's [Industry & Materials](/expertise-manufacturing) programme.
 
 ---
 

@@ -52,7 +52,7 @@ For the six programmes themselves, see [Programmes](/expertise).
   <li class="sdg-08"><a href="/sdgs#g8"><img class="sdg-icon" src="/assets/img/sdg/sdg-08.png" alt="SDG 8"><span class="sdg-name">Decent Work and Economic Growth</span></a></li>
 </ul>
 
-<p id="g8">Contributed to by <a href="/expertise-manufacturing">Green Industrialisation & Local Manufacturing</a>, <a href="/expertise-e-mobility">E-Mobility & Transport</a>, and <a href="/expertise-finance">Financial Inclusion</a>. Decent work is the thread through workforce capability, rider economics and asset finance, and it is the substance of pieces such as <a href="/insight-factory-and-the-town">The Factory Cannot Transition Without the Town</a> and <a href="/insight-local-content-local-benefit">Local Content Is Not the Same as Local Benefit</a>.</p>
+<p id="g8">Contributed to by <a href="/expertise-manufacturing">Industry & Materials</a>, <a href="/expertise-e-mobility">E-Mobility & Transport</a>, and <a href="/expertise-finance">Financial Inclusion</a>. Decent work is the thread through workforce capability, rider economics and asset finance, and it is the substance of pieces such as <a href="/insight-factory-and-the-town">The Factory Cannot Transition Without the Town</a> and <a href="/insight-local-content-local-benefit">Local Content Is Not the Same as Local Benefit</a>.</p>
 
 <p><strong>SDG 9 · Industry, Innovation and Infrastructure</strong></p>
 
@@ -60,7 +60,7 @@ For the six programmes themselves, see [Programmes](/expertise).
   <li class="sdg-09"><a href="/sdgs#g9"><img class="sdg-icon" src="/assets/img/sdg/sdg-09.png" alt="SDG 9"><span class="sdg-name">Industry, Innovation and Infrastructure</span></a></li>
 </ul>
 
-<p id="g9">Contributed to by <a href="/expertise-manufacturing">Green Industrialisation & Local Manufacturing</a> and <a href="/expertise-ai-digital">AI & Digital Systems</a>. Critical raw materials and processing, circular economy, data centre infrastructure and automation.</p>
+<p id="g9">Contributed to by <a href="/expertise-manufacturing">Industry & Materials</a> and <a href="/expertise-ai-digital">AI & Digital Systems</a>. Critical raw materials and processing, circular economy, data centre infrastructure and automation.</p>
 
 <p><strong>SDG 10 · Reduced Inequalities</strong></p>
 
@@ -84,7 +84,7 @@ For the six programmes themselves, see [Programmes](/expertise).
   <li class="sdg-12"><a href="/sdgs#g12"><img class="sdg-icon" src="/assets/img/sdg/sdg-12.png" alt="SDG 12"><span class="sdg-name">Responsible Consumption and Production</span></a></li>
 </ul>
 
-<p id="g12">Contributed to by <a href="/expertise-manufacturing">Green Industrialisation & Local Manufacturing</a>. Circular economy and e-waste, secondary materials, and end-of-life claims that hold up.</p>
+<p id="g12">Contributed to by <a href="/expertise-manufacturing">Industry & Materials</a>. Circular economy and e-waste, secondary materials, and end-of-life claims that hold up.</p>
 
 <p><strong>SDG 13 · Climate Action</strong></p>
 

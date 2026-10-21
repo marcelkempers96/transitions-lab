@@ -96,7 +96,7 @@ If you are designing or assessing a local content regime and want the worker and
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [Capability Is the Slow Part](/insight-capability-slow-part) on why capability accumulates over years and cannot be mandated, [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on third party access as the difference between industrial policy and a transfer, and [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on what happens when one counterparty holds every side of a relationship. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Industry & Materials](/expertise-manufacturing). See also [Capability Is the Slow Part](/insight-capability-slow-part) on why capability accumulates over years and cannot be mandated, [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on third party access as the difference between industrial policy and a transfer, and [Resilience Is Downstream of the Buyer](/insight-downstream-of-the-buyer) on what happens when one counterparty holds every side of a relationship. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

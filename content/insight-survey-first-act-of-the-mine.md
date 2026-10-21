@@ -115,7 +115,7 @@ If you are advising a government on how to use geological information as an inst
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on why an export restriction only works when processing capacity exists, [The Value Is in the Second Step](/insight-second-step) on where the value in a mineral chain actually sits, and [Capability Is the Slow Part](/insight-capability-slow-part) on why interpretive capability takes a decade to build. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Industry & Materials](/expertise-manufacturing). See also [The Ban Is Not the Policy](/insight-ban-is-not-the-policy) on why an export restriction only works when processing capacity exists, [The Value Is in the Second Step](/insight-second-step) on where the value in a mineral chain actually sits, and [Capability Is the Slow Part](/insight-capability-slow-part) on why interpretive capability takes a decade to build. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

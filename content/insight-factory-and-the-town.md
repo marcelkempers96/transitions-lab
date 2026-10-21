@@ -109,7 +109,7 @@ If you are designing a just transition package and want the harm measured as the
 
 ---
 
-*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Local Manufacturing & Supply Chains](/expertise-manufacturing). See also [Capability Is the Slow Part](/insight-capability-slow-part) on capability that takes decades and can be lost in years, and [Strategic Is Not the Same as Financeable](/insight-strategic-not-financeable) on the investment decision that determines whether a replacement ever gets built. To discuss a study, see [Contact](/contact).*
+*This is an independent insight piece by Transitions Lab. For the Lab's applied work, see [Industry & Materials](/expertise-manufacturing). See also [Capability Is the Slow Part](/insight-capability-slow-part) on capability that takes decades and can be lost in years, and [Strategic Is Not the Same as Financeable](/insight-strategic-not-financeable) on the investment decision that determines whether a replacement ever gets built. To discuss a study, see [Contact](/contact).*
 
 <div class="article-nav">
   <a class="article-nav-card" href="/articles">

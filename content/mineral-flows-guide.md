@@ -245,5 +245,5 @@ Every entry on the research-paper bibliography links out to a Google Scholar sea
 
 - [Where transition minerals actually go](/insight-where-transition-minerals-go), the article that draws conclusions from the map.
 - [Where Transition Minerals Go: The Evidence Base](/mineral-flows-research), the research paper listing every source behind every figure.
-- [Green Industrialisation & Local Manufacturing](/expertise-manufacturing), the Lab's programme this tool sits inside.
+- [Industry & Materials](/expertise-manufacturing), the Lab's programme this tool sits inside.
 - [BReW framework](/brw), the strategic lens the Lab reads these chains through.
