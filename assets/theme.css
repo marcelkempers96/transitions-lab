@@ -5382,3 +5382,49 @@ body,
 }
 .footer-subscribe .fs-note.is-error{color:#F26C4F;opacity:1;}
 .footer-subscribe .fs-note.is-ok{color:var(--butter);opacity:1;}
+
+/* ───────────────────────────────────────────────────────────────────
+   EIT download strip — PDF + Excel downloads under the standfirst
+   on /european-impact-tracking. Butter paper panel, two buttons
+   that stack on phones.
+   ─────────────────────────────────────────────────────────────── */
+.prose .eit-download-strip{
+  background:var(--butter);
+  border:2px solid var(--ink);
+  box-shadow:6px 6px 0 var(--ink);
+  padding:22px 24px 20px;
+  margin:1.6em 0 2em;
+}
+.prose .eit-download-strip .eit-download-head{margin-bottom:14px;}
+.prose .eit-download-strip .eit-kicker{
+  display:block;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:800;color:var(--ink);opacity:.72;margin-bottom:4px;
+}
+.prose .eit-download-strip strong{
+  display:block;font-weight:700;
+  font-size:19px;line-height:1.35;color:var(--ink);
+}
+.prose .eit-download-strip .eit-download-buttons{
+  display:flex;flex-wrap:wrap;gap:12px;margin:4px 0 10px;
+}
+.prose .eit-download-strip a.btn-ink{
+  text-decoration:none;background:var(--ink);color:var(--paper);
+}
+.prose .eit-download-strip a.btn-ink:hover{background:var(--ink);color:var(--butter);}
+.prose .eit-download-strip a.btn-ink--outline{
+  background:transparent;color:var(--ink);
+  border:2px solid var(--ink);
+  box-shadow:4px 4px 0 var(--ink);
+}
+.prose .eit-download-strip a.btn-ink--outline:hover{
+  background:var(--ink);color:var(--butter);
+}
+.prose .eit-download-strip .eit-download-note{
+  margin:12px 0 0;font-size:14.5px;line-height:1.55;color:var(--ink);opacity:.78;
+}
+@media (max-width:520px){
+  .prose .eit-download-strip{padding:18px 18px 16px;}
+  .prose .eit-download-strip .eit-download-buttons a{width:100%;text-align:center;}
+}

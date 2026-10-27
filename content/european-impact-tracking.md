@@ -4,6 +4,18 @@
 
 *Independent before-and-after impact measurement for European projects, demonstrations, and socially innovative actions - designed with the people they affect, not reconstructed from memory at the end.*
 
+<div class="eit-download-strip">
+  <div class="eit-download-head">
+    <span class="eit-kicker">Download this template</span>
+    <strong>The full method as a document, or the fillable workbook as a spreadsheet.</strong>
+  </div>
+  <div class="eit-download-buttons">
+    <a class="btn btn-ink" href="/assets/resource-eit-tracking-template.pdf" download>Download as PDF &rarr;</a>
+    <a class="btn btn-ink btn-ink--outline" href="/assets/resource-eit-tracking-template.xlsx" download>Download as Excel &rarr;</a>
+  </div>
+  <p class="eit-download-note">The Excel workbook carries every table on this page as a fillable sheet, with long-form rationale next to each instrument, a worked example from a satellite-monitoring project, a rollup across the three dimensions (reach, depth, experience), and an end-result Societal Readiness Level claim grounded in the sheets you fill in.</p>
+</div>
+
 <div class="eu-flag-card">
   <a class="eu-flag-link" href="/reporting-to-funders">
     <img src="/assets/img/eu-flag.jpg" alt="Flag of the European Union - twelve gold stars in a circle on a blue field.">
@@ -62,6 +74,13 @@ At close we deliver the endline measurement and the before-and-after comparison:
   <img src="/assets/img/photo-street-interview.jpg" alt="A person being interviewed on a public street; another operates a camera in the foreground. Findings reaching an audience, not sitting in a final report." class="diagram">
   <figcaption>Dissemination is the last stage of European impact tracking, not an afterthought. Findings that never leave the final report have failed at the last step.</figcaption>
 </figure>
+
+---
+
+<blockquote class="pull-quote">
+  <p>"This workbook was the thing that let us track our satellite monitoring project in Indonesia end-to-end for an international funder. It carried the KPIs the funder wanted, the use of funds, and the bill of materials, all in one place, with the before and after measured by the same instrument. The reviewer saw the evidence by the sheet it was on, and the parts we were less sure about were on the page as well."</p>
+  <footer>Marcel Kempers, Director, Transitions Lab</footer>
+</blockquote>
 
 ---
 
