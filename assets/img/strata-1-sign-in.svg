@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'Hanken Grotesk',system-ui,sans-serif">
+  <defs>
+    <style>
+      .ink{fill:#121212;}
+      .paper{fill:#F3EDE1;}
+      .cream{fill:#FBF7EC;}
+      .mute{fill:#6B6457;}
+      .forest{fill:#2E7A3C;}
+      .butter{fill:#F3C98B;}
+      .rule{stroke:#D9D1BE;stroke-width:1;fill:none;}
+      .kick{font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;fill:#6B6457;}
+      .h{font-size:52px;font-weight:800;letter-spacing:-.02em;fill:#F3EDE1;}
+      .hink{font-size:42px;font-weight:800;letter-spacing:-.02em;fill:#121212;}
+      .l{font-size:14px;fill:#F3EDE1;opacity:.86;}
+      .lb{font-size:14px;fill:#121212;}
+      .mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;}
+    </style>
+  </defs>
+  <!-- Nav bar -->
+  <rect x="0" y="0" width="1600" height="66" fill="#FFFFFF"/>
+  <g transform="translate(28,20)">
+    <rect x="0" y="4" width="22" height="22" class="forest"/>
+    <text x="34" y="22" font-size="20" font-weight="800" class="ink">Strata</text>
+    <text x="124" y="22" class="mono" style="font-size:11px;letter-spacing:.14em;" class="mute">TRANSITIONS LAB</text>
+  </g>
+  <g transform="translate(380,24)" font-size="14">
+    <text x="0" y="18" fill="#121212" font-weight="700">Map</text>
+    <text x="90" y="18" fill="#6B6457">Functions</text>
+    <text x="220" y="18" fill="#6B6457" font-weight="700">Sign in</text>
+    <line x1="215" y1="38" x2="275" y2="38" stroke="#121212" stroke-width="2"/>
+  </g>
+  <!-- Demo strip -->
+  <rect x="0" y="66" width="1600" height="40" fill="#F0E6CF"/>
+  <text x="28" y="92" class="mono" style="font-size:11px;letter-spacing:.14em;" fill="#6B6457">DEMO VERSION  ·  SITE CODES AND INDICATOR VALUES ARE ILLUSTRATIVE AND DO NOT DESCRIBE REAL PROJECTS</text>
+
+  <!-- Left dark pane -->
+  <rect x="0" y="106" width="800" height="794" class="ink"/>
+  <g transform="translate(60,180)">
+    <rect x="0" y="0" width="18" height="18" class="butter"/>
+    <text x="30" y="14" class="mono kick" fill="#F3C98B">STRATA · CRITICAL RAW MATERIALS SITE MONITOR</text>
+  </g>
+  <text x="60" y="320" class="h">Know what</text>
+  <text x="60" y="380" class="h">changed on</text>
+  <text x="60" y="440" class="h">the ground.</text>
+  <g transform="translate(60,490)" class="l">
+    <text y="22">Independent satellite baselines for Europe's critical raw materials</text>
+    <text y="44">Strategic Projects, measured before construction and again every year,</text>
+    <text y="66">with one open method for every site.</text>
+  </g>
+  <g font-size="14" fill="#F3EDE1" transform="translate(60,590)">
+    <text class="mono" fill="#F3C98B" y="0">01</text><text x="36" y="0" font-weight="700">Site map</text>
+    <text x="36" y="22" fill="#F3EDE1" opacity=".66" font-size="13">Every Strategic Project by stage, material and status</text>
+    <line x1="0" y1="48" x2="320" y2="48" stroke="#2a2a2a"/>
+    <text class="mono" fill="#F3C98B" y="80">03</text><text x="36" y="80" font-weight="700">Annual indicators</text>
+    <text x="36" y="102" fill="#F3EDE1" opacity=".66" font-size="13">Footprint, vegetation, water, tailings, ground motion</text>
+    <line x1="0" y1="128" x2="320" y2="128" stroke="#2a2a2a"/>
+    <text class="mono" fill="#F3C98B" y="160">05</text><text x="36" y="160" font-weight="700">Data export and citation</text>
+    <text x="36" y="182" fill="#F3EDE1" opacity=".66" font-size="13">CSV and GeoJSON with attribution built in</text>
+  </g>
+  <g font-size="14" fill="#F3EDE1" transform="translate(410,590)">
+    <text class="mono" fill="#F3C98B" y="0">02</text><text x="36" y="0" font-weight="700">Pre-construction baselines</text>
+    <text x="36" y="22" fill="#F3EDE1" opacity=".66" font-size="13">The undisturbed landscape, fixed before work starts</text>
+    <line x1="0" y1="48" x2="320" y2="48" stroke="#2a2a2a"/>
+    <text class="mono" fill="#F3C98B" y="80">04</text><text x="36" y="80" font-weight="700">Change charts</text>
+    <text x="36" y="102" fill="#F3EDE1" opacity=".66" font-size="13">Year-on-year series with construction start marked</text>
+    <line x1="0" y1="128" x2="320" y2="128" stroke="#2a2a2a"/>
+    <text class="mono" fill="#F3C98B" y="160">07</text><text x="36" y="160" font-weight="700">Alerts</text>
+    <rect x="100" y="146" width="34" height="18" fill="#F3C98B"/>
+    <text x="104" y="160" class="mono" fill="#121212" font-size="11" font-weight="800">PRO</text>
+    <text x="36" y="182" fill="#F3EDE1" opacity=".66" font-size="13">Footprint growth, buffer loss, ground motion thresholds</text>
+  </g>
+
+  <!-- Right cream pane -->
+  <rect x="800" y="106" width="800" height="794" class="paper"/>
+  <g transform="translate(860,180)">
+    <text class="mono kick">SIGN IN</text>
+  </g>
+  <text x="860" y="260" class="hink" fill="#121212">Start free. Most of Strata</text>
+  <text x="860" y="304" class="hink" fill="#121212">needs no payment.</text>
+  <g transform="translate(860,350)" class="lb">
+    <text y="22">Public sites, annual indicators, the map and every download are free with an</text>
+    <text y="44">email address. No password; we send a sign-in link.</text>
+  </g>
+  <text x="860" y="450" class="mono kick">WORK OR PERSONAL EMAIL</text>
+  <rect x="860" y="466" width="640" height="56" fill="#FFFFFF" stroke="#121212" stroke-width="1"/>
+  <text x="880" y="500" class="lb" fill="#6B6457">name@organisation.eu</text>
+  <rect x="860" y="536" width="640" height="56" fill="#121212"/>
+  <text x="1180" y="572" fill="#F3EDE1" font-size="16" font-weight="700" text-anchor="middle">Continue with email</text>
+  <line x1="860" y1="628" x2="1070" y2="628" class="rule"/>
+  <text x="1180" y="634" class="mono kick" text-anchor="middle">OR</text>
+  <line x1="1290" y1="628" x2="1500" y2="628" class="rule"/>
+  <rect x="860" y="650" width="640" height="56" fill="#FBF7EC" stroke="#121212" stroke-width="1"/>
+  <text x="1180" y="686" class="lb" text-anchor="middle" font-weight="700">Explore the demo without an account</text>
+
+  <g transform="translate(860,740)" class="lb">
+    <rect x="0" y="0" width="310" height="130" class="cream" stroke="#D9D1BE"/>
+    <text x="18" y="24" font-weight="700" font-size="14">Free</text>
+    <text x="18" y="44" class="mono" font-size="11" fill="#6B6457">€0 · for everyone</text>
+    <g font-size="11.5" fill="#121212">
+      <circle cx="24" cy="64" r="3" fill="#2E7A3C"/><text x="36" y="68">All public CRMA sites</text>
+      <circle cx="24" cy="82" r="3" fill="#2E7A3C"/><text x="36" y="86">Annual indicators and charts</text>
+      <circle cx="24" cy="100" r="3" fill="#2E7A3C"/><text x="36" y="104">CSV and GeoJSON downloads</text>
+      <circle cx="24" cy="118" r="3" fill="#2E7A3C"/><text x="36" y="122">Method and citations</text>
+    </g>
+    <rect x="330" y="0" width="310" height="130" class="cream" stroke="#D9D1BE"/>
+    <text x="348" y="24" font-weight="700" font-size="14">Pro</text>
+    <text x="348" y="44" class="mono" font-size="11" fill="#6B6457">On request · teams</text>
+    <g font-size="11.5" fill="#121212">
+      <rect x="340" y="60" width="8" height="8" fill="#F3C98B"/><text x="354" y="68">Alerts by email</text>
+      <rect x="340" y="78" width="8" height="8" fill="#F3C98B"/><text x="354" y="86">Custom sites and quarterly runs</text>
+      <rect x="340" y="96" width="8" height="8" fill="#F3C98B"/><text x="354" y="104">Natura 2000 and EGMS layers</text>
+      <rect x="340" y="114" width="8" height="8" fill="#F3C98B"/><text x="354" y="122">API and audit-ready data packs</text>
+    </g>
+  </g>
+</svg>

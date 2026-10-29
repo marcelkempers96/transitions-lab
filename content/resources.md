@@ -108,6 +108,12 @@ A demonstration of the depth the Lab reaches in qualitative fieldwork: the "five
 
 A fill-in framework for measuring the before-and-after impact of a European project, demonstration, or socially innovative action: set up at the start, run while the work is live, closed out with proof.
 
+[**Strata — satellite baselines for critical raw materials sites →**](/strata)
+
+[<span class="format-badge fmt-web">Web tool &middot; in development</span>](/strata-app)
+
+An independent, open record of what happens on the ground at Europe's critical raw materials Strategic Projects, from a pre-construction baseline through every year of operation. Six annual indicators (disturbed footprint, buffer vegetation loss, water and tailings extent, ground motion, land converted, downstream water colour), one method for every site, built entirely on Copernicus data. [Method](/strata-method) and [data sources](/strata-data-sources) published openly.
+
 <!-- § 5 / Interactive tools — Mineral Flows Map + guide are currently
      hidden from public discovery while the review runs. Restore the
      block below when the review clears. -->

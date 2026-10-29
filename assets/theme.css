@@ -5428,3 +5428,13 @@ body,
   .prose .eit-download-strip{padding:18px 18px 16px;}
   .prose .eit-download-strip .eit-download-buttons a{width:100%;text-align:center;}
 }
+
+/* ───────────────────────────────────────────────────────────────────
+   Strata wordmark header — the Strata lockup logo sits at the top
+   of /strata, below the article-meta line, as a visible brand mark.
+   ─────────────────────────────────────────────────────────────── */
+.prose .strata-wordmark{margin:1.4em 0 2em;}
+.prose .strata-wordmark img{max-width:360px;width:100%;height:auto;display:block;}
+@media (max-width:520px){
+  .prose .strata-wordmark img{max-width:260px;}
+}

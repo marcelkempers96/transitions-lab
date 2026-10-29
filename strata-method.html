@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strata method: same pixels, same rules, every site | Transitions Lab</title>
+<meta name="description" content="The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.">
+<meta name="author" content="Transitions Lab">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F5EDDD">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<script>(function(){try{var d=document.documentElement,isArticle=/^\/(case|insight)-/.test(location.pathname),g=function(k,f){try{return localStorage.getItem(k)||f;}catch(_){return f;}},t=g('tl_r_theme_v1','warm'),f=g('tl_r_font_v1','sans'),s=g('tl_r_size_v1','0');window.__tlR={theme:t,font:f,size:s,isArticle:isArticle};if(isArticle){d.setAttribute('data-theme',t);d.setAttribute('data-font',f);d.setAttribute('data-size',s);}}catch(_){}})();</script>
+<link rel="canonical" href="https://transitionslab.org/strata-method">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Transitions Lab">
+<meta property="og:title" content="Strata method: same pixels, same rules, every site | Transitions Lab">
+<meta property="og:description" content="The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.">
+<meta property="og:url" content="https://transitionslab.org/strata-method">
+<meta property="og:image" content="https://transitionslab.org/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Strata method: same pixels, same rules, every site | Transitions Lab">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Strata method: same pixels, same rules, every site | Transitions Lab">
+<meta name="twitter:description" content="The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.">
+<meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
+<meta name="twitter:image:alt" content="Strata method: same pixels, same rules, every site | Transitions Lab">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css?v=dcaace00">
+
+</head>
+<body data-page="strata-method">
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo-dark.png" alt="Transitions Lab" class="brand-logo"></a>
+    <nav id="menu">
+  <details class="nav-group">
+    <summary class="nav-label">About</summary>
+    <div class="nav-dropdown">
+      <a href="/about">About the Lab</a>
+      <a href="/who-we-serve">Who we serve</a>
+      <a href="/for-funders">For Funders</a>
+      <a href="/how-it-works">How It Works</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Work with us</summary>
+    <div class="nav-dropdown">
+      <a href="/what-we-do">Overview</a>
+      <a href="/entering-a-new-context">Entering a New Context</a>
+      <a href="/measuring-change">Measuring Change</a>
+      <a href="/reporting-to-funders">Reporting to Funders</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Programmes</summary>
+    <div class="nav-dropdown">
+      <a href="/expertise">All programmes</a>
+      <a href="/expertise-manufacturing">Industry & Materials</a>
+      <a href="/expertise-e-mobility">E-Mobility & Transport</a>
+      <a href="/expertise-energy">Energy & Water Systems</a>
+      <a href="/expertise-agriculture">Agriculture & Ecosystems</a>
+      <a href="/expertise-ai-digital">AI & Digital</a>
+      <a href="/expertise-finance">Financial Inclusion</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Reading</summary>
+    <div class="nav-dropdown">
+      <a href="/articles">Articles &amp; insights</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/resources">Resources</a>
+      <a href="/brw">The BReW framework</a>
+      <a href="/readiness-levels">TRL &amp; SRL</a>
+    </div>
+  </details>
+  <a href="/contact">Contact</a>
+</nav>
+    <div class="header-tools" role="group" aria-label="Search">
+      <button class="search-btn" type="button" aria-label="Search this site" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="search-overlay" hidden role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg class="search-input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-input" placeholder="Search articles, cases, methods…" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" aria-label="Close search">&#215;</button>
+    </div>
+    <div class="search-results" role="listbox" aria-label="Search results"></div>
+    <p class="search-hint"><span class="search-hint-empty">Start typing to search.</span></p>
+  </div>
+</div>
+
+<section class="page-hero hero-forest">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><a href="/resources">Resources</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><span aria-current="page">Strata method: same pixels, same rules, every site</span></nav>
+    
+    <h1>Same pixels, same rules, every site: how Strata measures change at critical raw materials projects</h1>
+    <p class="lede">Site selection, polygons, buffers, imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method, version 0.1, to be revised after the 2027 pilot.</p>
+    
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap-prose">
+    <div class="prose">
+      
+      
+      <p class="article-meta"><span class="article-date">29 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
+<p>Strata's value depends on one property above all: that a number reported for a lithium project in Portugal means exactly what the same number means for a nickel project in Finland. This page sets out the rules that make that true, in the order the pipeline applies them, and it will be revised in public after the 2027 pilot.</p>
+<h2>1. Site register</h2>
+<p>The register starts from the Commission's published list of Strategic Projects under the Critical Raw Materials Act, which after the October 2026 selection holds 93 projects in the European Union and 13 in third countries and overseas countries and territories (<a href="https://europa.eu/newsroom/ecpc-failover/pdf/ip-26-2113_en.pdf" target="_blank" rel="noopener">European Commission, IP/26/2113</a>). For each project the register records the public project name, value chain stage (extraction, processing, recycling, substitution or integrated), strategic raw materials, country, the selection round and the date the record was last checked. The register is versioned, because each new call adds projects and a planned third call is expected before the end of 2026.</p>
+<p>Strata uses only information the Commission or the promoter has published. Where published coordinates are too coarse to locate a site, it is placed from imagery and from the two open global mining footprint datasets described below, and every manual placement is logged.</p>
+<h2>2. Monitoring polygon and buffers</h2>
+<p>Each site receives a monitoring polygon drawn around the permitted or visibly active area, plus three buffers at 500 metres, 2 kilometres and 5 kilometres. For sites that are already operating, the polygon is checked against the global mining polygons of <a href="https://pure.iiasa.ac.at/18124" target="_blank" rel="noopener">Maus et al. (2022)</a>, which map 44,929 features from 2019 Sentinel-2 imagery, and against the finer <a href="https://doaj.org/article/c9aab72539dd46e5867d0d0c13b84701" target="_blank" rel="noopener">Tang and Werner (2023)</a> footprints, which trace 74,548 features such as pits, waste rock dumps, tailings dams, heap leach pads and processing plants. For sites not yet built, the polygon follows the project boundary in public permitting documents where available, and is otherwise a declared approximation.</p>
+<h2>3. Imagery and composites</h2>
+<p>Strata uses Copernicus Sentinel-2 Level-2A surface reflectance at 10 to 20 metre resolution as its main optical source and Sentinel-1 radar backscatter where cloud cover is persistent. For each year the pipeline builds a growing-season median composite after masking clouds and shadows, so a single cloudy or snowy acquisition cannot drive a result. The baseline year is the last full year before construction began, or, for sites operating before monitoring started, the earliest year with sufficient clear imagery from 2017 onwards.</p>
+<h2>4. Indicators</h2>
+<p><strong>Disturbed footprint.</strong> Pixels inside the polygon classified as bare, excavated or deposited material, using thresholds on vegetation and bare soil indices calibrated against the reference polygons. Reported in hectares, with year-on-year change.</p>
+<p><strong>Buffer vegetation loss.</strong> Pixels in each buffer that move from a vegetated class in the baseline (from <a href="https://worldcover2021.esa.int/download" target="_blank" rel="noopener">ESA WorldCover 2021</a>, refined by Sentinel-2 vegetation indices) to a non-vegetated state, reported in hectares and as a share of each buffer. The share falling inside <a href="https://sdi.eea.europa.eu/catalogue/srv/api/records/be2142b0-7dc4-42e3-afac-f7cc5f1a9ac6" target="_blank" rel="noopener">Natura 2000</a> sites is reported separately.</p>
+<p><strong>Water and tailings extent.</strong> Open water and wet tailings surfaces from a water index on Sentinel-2, gap-filled with Sentinel-1 backscatter, reported as maximum and minimum seasonal area. The <a href="https://data.jrc.ec.europa.eu/dataset/jrc-gswe-global-surface-water-explorer-v1" target="_blank" rel="noopener">JRC Global Surface Water</a> record, built from Landsat imagery since 1984, shows whether a water body pre-dates the project.</p>
+<p><strong>Ground motion.</strong> For sites in Copernicus Participating States, line-of-sight and vertical velocity statistics from the <a href="https://land.copernicus.eu/en/products/european-ground-motion-service/egms-basic" target="_blank" rel="noopener">European Ground Motion Service</a> within the polygon and the 500 metre buffer, with points above a stated velocity threshold flagged for attention. The service is derived from Sentinel-1 interferometry and updated annually.</p>
+<p><strong>Land converted.</strong> The ESA WorldCover 2021 class of every pixel that is now inside the disturbed footprint, reported as hectares by former class (for example tree cover, cropland, grassland, wetland).</p>
+<p><strong>Downstream water colour (experimental).</strong> A turbidity proxy from Sentinel-2 red and near-infrared reflectance in water bodies downstream of the site. It is tested for feasibility in the pilot and will not be published as an indicator unless it validates.</p>
+<h2>5. Validation</h2>
+<p>On operating pilot sites, the disturbed footprint is compared with the reference polygons, with a target of at least 85% overall agreement. The Maus et al. dataset reports 88.3% overall accuracy against its own control points (<a href="https://pure.iiasa.ac.at/18508" target="_blank" rel="noopener">IIASA</a>), which sets a realistic bar. Each indicator is published with its estimated error, the minimum mappable unit and any known confounders, such as agricultural ploughing or seasonal flooding that can mimic disturbance.</p>
+<h2>6. Publication rules</h2>
+<p>Every site page shows the imagery dates, method version, error margins and the full attribution required by each data licence. Promoters are contacted before a site page is first published and may submit a factual response, which is linked from the page. Indicator changes are described, not characterised: Strata reports that a footprint grew by a number of hectares, not that a project breached anything. Derived data are released under open licences compatible with their inputs, as set out on the <a href="/strata-data-sources">data sources page</a>.</p>
+<h2>7. What the method does not do</h2>
+<p>Strata does not measure emissions, water chemistry, dust, noise, labour conditions or community outcomes, and it cannot establish permit compliance. It is designed to sit beside field research, which is where the Lab's other work on how communities experience a new technology begins.</p>
+
+      
+    </div>
+  </div>
+</section>
+
+<section class="light article-cta-band">
+  <div class="wrap-prose">
+    <div class="prose">
+      <div class="contact-cta-programme">
+        <h3>Connect with the Lab</h3>
+        <p class="lede">If this reads close to a decision you are weighing, we would like to hear about it. A short note is enough to start.</p>
+        <div class="contact-options">
+          <a href="/entering-a-new-context"><strong>Entering a new context</strong><span>A first read of a market, technology or region.</span></a>
+          <a href="/measuring-change"><strong>Measuring change</strong><span>Field measurement that connects action to outcome.</span></a>
+          <a href="/reporting-to-funders"><strong>Reporting to funders</strong><span>Evidence packaged for the reader who will act on it.</span></a>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>
+          <a href="/case-studies" class="cta-secondary">See case studies</a>
+          <a href="/articles" class="cta-secondary">Read the articles</a>
+        </div>
+      </div>
+      <p class="lab-posture-note">The Lab is an independent research team, not an advocacy organisation. We do not campaign, endorse products, or accept commissions where a finding is expected in advance. Where a partner&#39;s own theory of change is what needs testing, that is a legitimate engagement, and the Lab tests it honestly.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo.png" alt="Transitions Lab" class="brand-logo brand-logo--footer"></a>
+      <p class="mission">An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.</p>
+      <form class="footer-subscribe" data-source="footer" novalidate>
+        <label for="footer-subscribe-email" class="fs-label">New essays and findings, straight to your inbox.</label>
+        <div class="fs-row">
+          <input id="footer-subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+          <button type="submit" class="fs-btn">Subscribe</button>
+        </div>
+        <p class="fs-note" aria-live="polite"></p>
+      </form>
+    </div>
+    <div>
+      <h4>What we do</h4>
+      <a href="/what-we-do">Overview</a>
+      <a href="/entering-a-new-context">Entering a new context</a>
+      <a href="/measuring-change">Measuring change</a>
+      <a href="/reporting-to-funders">Reporting to funders</a>
+      <a href="/how-it-works">How it works</a>
+    </div>
+    <div>
+      <h4>Methods</h4>
+      <a href="/field-research">Field research</a>
+      <a href="/impact-measurement">Impact measurement</a>
+      <a href="/interview-guide">Interview guide</a>
+      <a href="/qualitative-vs-quantitative">Qualitative vs quantitative</a>
+      <a href="/impact-tracking-template">Impact-tracking template</a>
+    </div>
+    <div>
+      <h4>Research</h4>
+      <a href="/expertise">Programmes</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/resources">Resources</a>
+      <a href="/sdgs">Research by SDG</a>
+      <a href="/brw">BReW framework</a>
+      <a href="/readiness-levels">TRL &amp; SRL</a>
+    </div>
+    <div>
+      <h4>The Lab</h4>
+      <a href="/about">About</a>
+      <a href="/who-we-serve">Who we serve</a>
+      <a href="/for-funders">For Funders</a>
+      <a href="/capability-statement">Capability statement</a>
+      <a href="/contact">Contact</a>
+      <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-lang">
+      <span class="footer-lang-label">Language</span>
+      <div class="lang lang--footer">
+        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="lang-code">EN</span><svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-menu" hidden role="menu">
+          <a class="lang-option is-active" href="#" data-lang="en" role="menuitem" aria-current="true">English</a>
+          <a class="lang-option" href="#" data-lang="nl" role="menuitem">Nederlands</a>
+          <a class="lang-option" href="#" data-lang="de" role="menuitem">Deutsch</a>
+          <a class="lang-option" href="#" data-lang="fr" role="menuitem">Français</a>
+          <a class="lang-option" href="#" data-lang="es" role="menuitem">Español</a>
+          <a class="lang-option" href="#" data-lang="it" role="menuitem">Italiano</a>
+          <a class="lang-option" href="#" data-lang="pt" role="menuitem">Português</a>
+          <a class="lang-option" href="#" data-lang="pl" role="menuitem">Polski</a>
+          <a class="lang-option" href="#" data-lang="sv" role="menuitem">Svenska</a>
+          <a class="lang-option" href="#" data-lang="da" role="menuitem">Dansk</a>
+          <a class="lang-option" href="#" data-lang="no" role="menuitem">Norsk</a>
+          <a class="lang-option" href="#" data-lang="fi" role="menuitem">Suomi</a>
+          <a class="lang-option" href="#" data-lang="is" role="menuitem">Íslenska</a>
+          <a class="lang-option" href="#" data-lang="cs" role="menuitem">Čeština</a>
+          <a class="lang-option" href="#" data-lang="sk" role="menuitem">Slovenčina</a>
+          <a class="lang-option" href="#" data-lang="sl" role="menuitem">Slovenščina</a>
+          <a class="lang-option" href="#" data-lang="hu" role="menuitem">Magyar</a>
+          <a class="lang-option" href="#" data-lang="ro" role="menuitem">Română</a>
+          <a class="lang-option" href="#" data-lang="bg" role="menuitem">Български</a>
+          <a class="lang-option" href="#" data-lang="hr" role="menuitem">Hrvatski</a>
+          <a class="lang-option" href="#" data-lang="sr" role="menuitem">Srpski</a>
+          <a class="lang-option" href="#" data-lang="el" role="menuitem">Ελληνικά</a>
+          <a class="lang-option" href="#" data-lang="lt" role="menuitem">Lietuvių</a>
+          <a class="lang-option" href="#" data-lang="lv" role="menuitem">Latviešu</a>
+          <a class="lang-option" href="#" data-lang="et" role="menuitem">Eesti</a>
+          <a class="lang-option" href="#" data-lang="ca" role="menuitem">Català</a>
+          <a class="lang-option" href="#" data-lang="uk" role="menuitem">Українська</a>
+          <a class="lang-option" href="#" data-lang="ru" role="menuitem">Русский</a>
+          <a class="lang-option" href="#" data-lang="tr" role="menuitem">Türkçe</a>
+          <a class="lang-option" href="#" data-lang="ar" role="menuitem">العربية</a>
+          <a class="lang-option" href="#" data-lang="he" role="menuitem">עברית</a>
+          <a class="lang-option" href="#" data-lang="fa" role="menuitem">فارسی</a>
+          <a class="lang-option" href="#" data-lang="ur" role="menuitem">اردو</a>
+          <a class="lang-option" href="#" data-lang="hi" role="menuitem">हिन्दी</a>
+          <a class="lang-option" href="#" data-lang="bn" role="menuitem">বাংলা</a>
+          <a class="lang-option" href="#" data-lang="ta" role="menuitem">தமிழ்</a>
+          <a class="lang-option" href="#" data-lang="te" role="menuitem">తెలుగు</a>
+          <a class="lang-option" href="#" data-lang="mr" role="menuitem">मराठी</a>
+          <a class="lang-option" href="#" data-lang="pa" role="menuitem">ਪੰਜਾਬੀ</a>
+          <a class="lang-option" href="#" data-lang="gu" role="menuitem">ગુજરાતી</a>
+          <a class="lang-option" href="#" data-lang="zh-CN" role="menuitem">简体中文</a>
+          <a class="lang-option" href="#" data-lang="zh-TW" role="menuitem">繁體中文</a>
+          <a class="lang-option" href="#" data-lang="ja" role="menuitem">日本語</a>
+          <a class="lang-option" href="#" data-lang="ko" role="menuitem">한국어</a>
+          <a class="lang-option" href="#" data-lang="vi" role="menuitem">Tiếng Việt</a>
+          <a class="lang-option" href="#" data-lang="th" role="menuitem">ภาษาไทย</a>
+          <a class="lang-option" href="#" data-lang="id" role="menuitem">Bahasa Indonesia</a>
+          <a class="lang-option" href="#" data-lang="ms" role="menuitem">Bahasa Melayu</a>
+          <a class="lang-option" href="#" data-lang="tl" role="menuitem">Filipino</a>
+          <a class="lang-option" href="#" data-lang="sw" role="menuitem">Kiswahili</a>
+          <a class="lang-option" href="#" data-lang="am" role="menuitem">አማርኛ</a>
+          <a class="lang-option" href="#" data-lang="ha" role="menuitem">Hausa</a>
+          <a class="lang-option" href="#" data-lang="yo" role="menuitem">Yorùbá</a>
+          <a class="lang-option" href="#" data-lang="ig" role="menuitem">Igbo</a>
+          <a class="lang-option" href="#" data-lang="zu" role="menuitem">isiZulu</a>
+          <a class="lang-option" href="#" data-lang="xh" role="menuitem">isiXhosa</a>
+          <a class="lang-option" href="#" data-lang="af" role="menuitem">Afrikaans</a>
+          <a class="lang-option" href="#" data-lang="rw" role="menuitem">Kinyarwanda</a>
+          <a class="lang-option" href="#" data-lang="so" role="menuitem">Soomaali</a>
+        </div>
+      </div>
+      <a href="#" class="footer-lang-reset" data-lang-reset hidden>Show original</a>
+    </div>
+    <div class="legal">
+      <span>© Transitions Lab B.V. 2026 · Delft, The Netherlands · KVK 42170233</span>
+      <span><a href="/ethics">Research ethics</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Translate widget: renders a hidden gadget the JS in
+     site.js drives. Free, no API key required. Live languages
+     translate automatically; ones marked "Soon" are held back so
+     the layout isn't broken by RTL / CJK edge cases yet. -->
+<div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  function googleTranslateElementInit(){
+    if (!window.google || !google.translate) return;
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,nl,de,fr,es,it,pt,pl,sv,da',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+
+<div id="cookie-banner" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>A note on cookies.</strong>
+      <p>The Lab uses privacy-respecting analytics (page views, no personal identifiers). They load only if you accept. See our <a href="/cookies">cookie policy</a> for details, and change your mind any time via <em>Cookie preferences</em> in the footer.</p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-reject" class="cookie-btn cookie-btn-ghost" type="button">Reject</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn-primary" type="button">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/consent.js?v=ef374375" defer></script>
+<script src="/assets/reader.js?v=1f800e75" defer></script>
+<script src="/assets/site.js?v=71388242" defer></script>
+</body>
+</html>

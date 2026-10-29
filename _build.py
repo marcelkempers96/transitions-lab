@@ -408,6 +408,10 @@ HERO_COLOR: dict[str, str] = {
     "mineral-flows-research": "cobalt",
     "mineral-flows-guide": "cobalt",
     "mineral-flows-attribution": "cobalt",
+    "strata":                 "forest",
+    "strata-method":          "forest",
+    "strata-data-sources":    "forest",
+    "strata-app":             "forest",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -560,6 +564,10 @@ NO_BYLINE_SLUGS: set[str] = {
     "insight-ten-winners-slowest",
     "insight-salad-lying-about-its-age",
     "insight-nothing-to-fix",
+    "strata",
+    "strata-method",
+    "strata-data-sources",
+    "strata-app",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -683,6 +691,22 @@ META: dict[str, dict[str, str]] = {
     "mineral-flows-attribution": {
         "title": "Mineral Flows Map: data attribution | Transitions Lab",
         "description": "Every figure on the Mineral Flows Map, its primary public source, the year of the underlying data, the confidence marker, and when the Lab last refreshed it. Refresh cadence and a version-2 backlog included.",
+    },
+    "strata": {
+        "title": "Strata — satellite baselines for Europe's critical raw materials sites | Transitions Lab",
+        "description": "Strata records what happens on the ground at Europe's critical raw materials Strategic Projects, from a pre-construction satellite baseline through every year of operation, using open Copernicus data and one method for every site.",
+    },
+    "strata-method": {
+        "title": "Strata method: same pixels, same rules, every site | Transitions Lab",
+        "description": "The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.",
+    },
+    "strata-data-sources": {
+        "title": "Strata data sources, licences and attribution | Transitions Lab",
+        "description": "Every dataset Strata uses — Copernicus Sentinel-1/2, European Ground Motion Service, ESA WorldCover, JRC Global Surface Water, Maus et al., Tang & Werner, Natura 2000 — with licence and attribution line.",
+    },
+    "strata-app": {
+        "title": "The Strata web tool: open it, click a dot, see what changed | Transitions Lab",
+        "description": "A short tour of the Strata web tool: free sign-in, the site map, the site page, what is free and what is Pro, and the partners building it with us. Demo release 0.1.",
     },
     "insight-where-transition-minerals-go": {
         "title": "Where transition minerals actually go | Transitions Lab",
@@ -1804,6 +1828,12 @@ CRUMB_PARENT: dict[str, str | None] = {
     "mineral-flows-guide":                 "articles",
     "mineral-flows-attribution":           "articles",
     "insight-where-transition-minerals-go": "articles",
+
+    # Strata pages sit under Resources.
+    "strata":                "resources",
+    "strata-method":         "resources",
+    "strata-data-sources":   "resources",
+    "strata-app":            "resources",
 }
 
 CRUMB_LABELS: dict[str, str] = {
