@@ -69,9 +69,13 @@ body.strata-standalone {
 }
 
 /* ─── App shell ───────────────────────────────────────────────── */
+/* Flex (not grid) because the number of in-flow header children
+   varies: on phones the pilot banner is display:none and the
+   onboarding dialog is position:fixed, so a 3-row grid would push
+   .sr-page into an auto-sized row and collapse the map to 0.      */
 #strata-root {
-  display: grid;
-  grid-template-rows: auto auto 1fr;      /* topbar | banner | content */
+  display: flex;
+  flex-direction: column;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -86,6 +90,8 @@ body.strata-standalone #strata-root {
   min-height: 0;
   overflow: hidden;
 }
+.sr-topbar, .sr-pilot-banner { flex: 0 0 auto; }
+.sr-page { flex: 1 1 auto; min-height: 0; }
 #strata-root *, #strata-root *::before, #strata-root *::after { box-sizing: border-box; }
 #strata-root p { margin: 0; }
 #strata-root h1, #strata-root h2, #strata-root h3, #strata-root h4 {
