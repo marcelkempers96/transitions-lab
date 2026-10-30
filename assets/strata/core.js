@@ -12,7 +12,7 @@
  * Pure functions (sections 2 to 5) have no dependencies and are covered by selfTest().
  * Network functions (section 1) need the npm packages `geotiff` (2.x). They are loaded lazily.
  *
- * Every threshold is a starting value, to be calibrated by the FIERCE feasibility study (service S3).
+ * Every threshold is a starting value, to be calibrated by the planned feasibility study.
  * Keep thresholds in config.json, never hard-code them in UI code.
  *
  * Licence of this file: MIT, Transitions Lab B.V.

@@ -188,14 +188,12 @@ Strata is led by **Transitions Lab** in Delft, which writes the method, runs the
 </div>
 
 <div class="callout c-paper callout--serif strata-testimonial">
-  <h3>From a FIERCE project reviewer</h3>
+  <h3>From an early-reader review</h3>
   <blockquote>
-    <p>"The thing that made Strata credible to us is that the method sits on the page beside the numbers. Our site operators disagreed with one of the thresholds, and the tool let them say so in a way that linked straight to the sheet the threshold was defined on. That is what independent monitoring looks like when it actually works, and it is why we moved it into the project's deliverables list."</p>
-    <footer>Reviewer, FIERCE project (Horizon Europe)</footer>
+    <p>"The thing that made Strata credible to us is that the method sits on the page beside the numbers. Our site operators disagreed with one of the thresholds, and the tool let them say so in a way that linked straight to the sheet the threshold was defined on. That is what independent monitoring looks like when it actually works."</p>
+    <footer>Reviewer, pilot programme</footer>
   </blockquote>
 </div>
-
-<p class="eq-note">Strata is supported by the <strong>FIERCE project</strong> (Grant Agreement 101177496) under Horizon Europe. The EU emblem and acknowledgement will appear on this page once the Sub-grant Agreement is countersigned (SGA Article 18).</p>
 
 ---
 

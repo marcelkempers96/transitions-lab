@@ -46,16 +46,16 @@ Each card has eight sections, in order:
 2. **Key facts.** Waste area, DEM volume proxy, bare ground now, vegetation now, people within 1 km, red water share.
 3. **Now from space.** The live Sentinel-2 panel — true colour, classes, NDVI — and the stats inside the polygon and the 500 m ring.
 4. **Ten years of change.** A line chart from the 2017 baseline forward, plus the natural recovery clock sentence (the Theil-Sen trend of vegetation % over valid years, capped at a 100-year horizon).
-5. **Pathways.** Three columns: leave and monitor, rehabilitate, reprocess and rehabilitate. Each shows the satellite facts that matter for it; the life-cycle assessment numbers from FIERCE service S1 sit under it when they are published.
+5. **Pathways.** Three columns: leave and monitor, rehabilitate, reprocess and rehabilitate. Each shows the satellite facts that matter for it; the life-cycle assessment numbers from a planned follow-up study sit under it when they are published.
 6. **Around the site.** People within 1 and 5 km, Natura 2000 overlap and distance, nearest watercourse, land cover in the ring, ground motion, long-term water.
-7. **What people here told us.** The themes and quotations from FIERCE service S2 anonymised fieldwork.
+7. **What people here told us.** The anonymised themes and quotations from the pilot social-needs fieldwork.
 8. **Export and cite.** A single-row CSV keyed to the CRMA Article 27 database fields, the site's GeoJSON polygon, a copy-citation button.
 
 ## What the demo does not do yet
 
 The pipeline that reads Sentinel-2 from Earth Search STAC and classifies pixels is specified in `CLAUDE.md` and tested in `strata-core.js` (26 of 26 tests pass), but is not wired into the demo so the pages work without an on-demand STAC fetch. The "Now from space" panel on each card shows an explanation of what will fill it, and points at the method page. The timeseries chart, lifecycle stage, flags and CSV export are all driven by the pure functions in the core module, from offline annual composites.
 
-The lifecycle view and the community section both stay empty until their JSON files have `status: "published"`. Marcel will populate them from the FIERCE outputs in 2027.
+The lifecycle view and the community section both stay empty until their JSON files have `status: "published"`. Marcel will populate them from the pilot study outputs in 2027.
 
 ## For partners
 

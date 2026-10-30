@@ -157,14 +157,14 @@
 <li><strong>Key facts.</strong> Waste area, DEM volume proxy, bare ground now, vegetation now, people within 1 km, red water share.</li>
 <li><strong>Now from space.</strong> The live Sentinel-2 panel — true colour, classes, NDVI — and the stats inside the polygon and the 500 m ring.</li>
 <li><strong>Ten years of change.</strong> A line chart from the 2017 baseline forward, plus the natural recovery clock sentence (the Theil-Sen trend of vegetation % over valid years, capped at a 100-year horizon).</li>
-<li><strong>Pathways.</strong> Three columns: leave and monitor, rehabilitate, reprocess and rehabilitate. Each shows the satellite facts that matter for it; the life-cycle assessment numbers from FIERCE service S1 sit under it when they are published.</li>
+<li><strong>Pathways.</strong> Three columns: leave and monitor, rehabilitate, reprocess and rehabilitate. Each shows the satellite facts that matter for it; the life-cycle assessment numbers from a planned follow-up study sit under it when they are published.</li>
 <li><strong>Around the site.</strong> People within 1 and 5 km, Natura 2000 overlap and distance, nearest watercourse, land cover in the ring, ground motion, long-term water.</li>
-<li><strong>What people here told us.</strong> The themes and quotations from FIERCE service S2 anonymised fieldwork.</li>
+<li><strong>What people here told us.</strong> The anonymised themes and quotations from the pilot social-needs fieldwork.</li>
 <li><strong>Export and cite.</strong> A single-row CSV keyed to the CRMA Article 27 database fields, the site's GeoJSON polygon, a copy-citation button.</li>
 </ol>
 <h2>What the demo does not do yet</h2>
 <p>The pipeline that reads Sentinel-2 from Earth Search STAC and classifies pixels is specified in <code>CLAUDE.md</code> and tested in <code>strata-core.js</code> (26 of 26 tests pass), but is not wired into the demo so the pages work without an on-demand STAC fetch. The "Now from space" panel on each card shows an explanation of what will fill it, and points at the method page. The timeseries chart, lifecycle stage, flags and CSV export are all driven by the pure functions in the core module, from offline annual composites.</p>
-<p>The lifecycle view and the community section both stay empty until their JSON files have <code>status: "published"</code>. Marcel will populate them from the FIERCE outputs in 2027.</p>
+<p>The lifecycle view and the community section both stay empty until their JSON files have <code>status: "published"</code>. Marcel will populate them from the pilot study outputs in 2027.</p>
 <h2>For partners</h2>
 <p>Strata is led by <a href="/about">Transitions Lab</a>. Pyropower (energy and processing-stage experience) and Social Innovation Europe (community reach) are partners. If you work on a site, run a programme that touches one, or live beside one, <a href="/contact">talk to Marcel</a>.</p>
 

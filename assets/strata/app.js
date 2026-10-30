@@ -158,9 +158,9 @@ function render() {
 }
 
 function shellHTML() {
-  // The sand strip is now an informational FIERCE project tag, not
-  // a "not calibrated" apology.
-  const banner = `<div class="sr-pilot-banner"><strong>Iberian Pyrite Belt pilot</strong> · 10 sites across 3 Member States · 4 Horizon Europe FIERCE Ideation services under way: lifecycle (S1), social needs research (S2), hyperspectral validation (S3), market study (S4).</div>`;
+  // Sand strip under the topbar: a plain pilot-scope reminder, no
+  // funder branding.
+  const banner = `<div class="sr-pilot-banner"><strong>Iberian Pyrite Belt pilot</strong> · 10 sites across 3 Member States · four planned follow-up studies: lifecycle, social-needs fieldwork, hyperspectral validation, market study.</div>`;
   return `
     <header class="sr-topbar">
       <a class="sr-brand" href="/strata" aria-label="Strata on transitionslab.org">
@@ -1248,7 +1248,7 @@ function comparePageHTML() {
 function methodPageHTML() {
   return `<article class="sr-content">
     <h1>Method</h1>
-    <p>Strata reads Sentinel-2 Level-2A surface reflectance (10 m, 20 m bands resampled bilinear, SCL resampled nearest) and classifies every valid pixel inside each site polygon and a 500 m outer ring. Thresholds below are the pilot starting values; the FIERCE service S3 feasibility study will calibrate them against hyperspectral imagery (PRISMA, EnMAP) and field data.</p>
+    <p>Strata reads Sentinel-2 Level-2A surface reflectance (10 m, 20 m bands resampled bilinear, SCL resampled nearest) and classifies every valid pixel inside each site polygon and a 500 m outer ring. Thresholds below are the pilot starting values; a planned feasibility study will calibrate them against hyperspectral imagery (PRISMA, EnMAP) and field data.</p>
     <h2>Pixel indices</h2>
     <table>
       <thead><tr><th>Indicator</th><th>Formula</th><th>Starting threshold</th><th>Meaning</th></tr></thead>
@@ -1349,7 +1349,7 @@ function aboutPageHTML() {
     </div>
 
     <h2>The three pathways</h2>
-    <p>Every closed extractive waste facility faces a choice between three pathways. Strata gives the satellite facts that matter for each of them side by side, and the FIERCE S1 lifecycle study will add a formal LCA-style comparison on three impact axes.</p>
+    <p>Every closed extractive waste facility faces a choice between three pathways. Strata gives the satellite facts that matter for each of them side by side, and a planned lifecycle study will add a formal LCA-style comparison on three impact axes.</p>
     <div class="sr-path-grid">
       <div class="sr-path">
         <h4>Leave and monitor</h4>
@@ -1377,12 +1377,12 @@ function aboutPageHTML() {
       </div>
       <div class="sr-partner">
         <h3>Social Innovation Europe <span class="sr-partner-role">Community partner</span></h3>
-        <p>Network of social-innovation organisations across EU Member States and the Western Balkans. Reaches the civil society organisations, municipalities and residents' groups beside legacy mine waste; co-designs the social-needs research protocol with the S2 provider; disseminates the published site cards across the network.</p>
+        <p>Network of social-innovation organisations across EU Member States and the Western Balkans. Reaches the civil society organisations, municipalities and residents' groups beside legacy mine waste; co-designs the social-needs research protocol with the fieldwork provider; disseminates the published site cards across the network.</p>
       </div>
     </div>
 
     <h2>Funding</h2>
-    <p>Strata is submitted to the <strong>FIERCE 2nd Open Call</strong> (Horizon Europe, Financial Support Programme, Ideation voucher) with a €25,000 request for four External Service Provider services over six months: lifecycle thinking (S1), social needs research (S2), hyperspectral validation (S3), market and business model (S4). The current demo deployment is on the Lab's own cash; the FIERCE award, if granted, funds the work that moves the tool from a working prototype to a validated public service.</p>
+    <p>The current demo deployment is on the Lab's own cash. Four planned follow-up services — lifecycle thinking, social-needs fieldwork, hyperspectral validation, and a market and business-model study — would move the tool from a working prototype to a validated public service. The Lab is pursuing funding for them openly; current status sits with Marcel.</p>
 
     <h2>Contact</h2>
     <p>Email <a href="mailto:marcel@transitionslab.org">marcel@transitionslab.org</a> about adding a site, hosting a community session, running Strata inside a lender's or buyer's due diligence process, or using the tool to pre-fill a national Article 27 database.</p>
@@ -1426,12 +1426,12 @@ function communitiesPageHTML() {
 
   return `<article class="sr-content sr-content-wide">
     <h1>Communities</h1>
-    <p class="sr-lede">Communities beside legacy mine waste live with its dust, water and landscape, and often with its heritage and the jobs a reopening might bring. The FIERCE Ideation service <strong>S2 social needs research</strong> runs 18 semi-structured interviews and one community session per community between February and May 2027. The content below is what Strata already carries about them, and what the fieldwork will replace with anonymised themes, quotes and pathway preferences.</p>
+    <p class="sr-lede">Communities beside legacy mine waste live with its dust, water and landscape, and often with its heritage and the jobs a reopening might bring. The pilot's <strong>social-needs fieldwork</strong> runs 18 semi-structured interviews and one community session per community between February and May 2027. The content below is what Strata already carries about them, and what the fieldwork will replace with anonymised themes, quotes and pathway preferences.</p>
     ${list}
     <section class="sr-s2-plan">
       <h2>S2 fieldwork plan</h2>
       <ul>
-        <li><strong>Timing:</strong> February to May 2027, in parallel with the FIERCE project period.</li>
+        <li><strong>Timing:</strong> February to May 2027.</li>
         <li><strong>Sample:</strong> 18 interviews (residents, municipal staff, heritage and tourism, former mine workers, local business, environmental groups).</li>
         <li><strong>Sessions:</strong> one per community, 30+ participants in total; separate sessions for groups on request.</li>
         <li><strong>Languages:</strong> Portuguese and Spanish, led by a neutral facilitator independent of Transitions Lab.</li>
@@ -1501,7 +1501,7 @@ function pipelinePageHTML() {
     <p>The classifier runs in the user's browser. No scene, no coordinate, no indicator leaves the device for a Transitions Lab server; the only outbound calls are to the public open-data archives listed above and to the OpenStreetMap / ESRI tile servers for the base map. There is no account, no password and no payment to use any of the free-tier functions.</p>
 
     <h2>What AI is actually doing here</h2>
-    <p>The pixel classifier is a deterministic decision tree built from the Sentinel-2 spectral literature (van der Werff &amp; van der Meer 2016; Pereira et al. 2025; Aranda Quirós 2022). It is calibrated against hyperspectral reference imagery (PRISMA, EnMAP) in <strong>FIERCE service S3</strong>. The thresholds live in <code>config.json</code>, not in the UI code, so a calibration pass changes the output without rewriting the tool. This is intentional: generative models and black-box classifiers would make Strata harder to audit, which is the opposite of what a regulator or a local council needs from a satellite record.</p>
+    <p>The pixel classifier is a deterministic decision tree built from the Sentinel-2 spectral literature (van der Werff &amp; van der Meer 2016; Pereira et al. 2025; Aranda Quirós 2022). It is calibrated against hyperspectral reference imagery (PRISMA, EnMAP) in a planned feasibility study. The thresholds live in <code>config.json</code>, not in the UI code, so a calibration pass changes the output without rewriting the tool. This is intentional: generative models and black-box classifiers would make Strata harder to audit, which is the opposite of what a regulator or a local council needs from a satellite record.</p>
 
     <h2>How it scales</h2>
     <p>Adding a new site to Strata requires only its outline. The <a href="https://metadata.europe-geology.eu/record/full/6a391dd6-444c-42c5-a052-4df60a010e58">MIN4EU Mining Waste database</a> (EuroGeoSurveys, CC BY 4.0) already lists closed extractive waste facilities across more than 20 European countries. The pilot runs ten sites; the roadmap to the full register is a configuration exercise, not a redevelopment, which is why the method was built this way from day one.</p>

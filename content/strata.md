@@ -265,11 +265,11 @@ Each site opens on a single scrollable page.
 
 **Ten years of change.** A line chart of vegetation %, bare %, iron signal % and red water %, from a 2017 baseline summer composite onwards. A natural recovery clock reads whether the site is recovering, stable or declining, based on the Theil-Sen trend of vegetation cover, and gives the number of years to reach 50% vegetation at the current trend.
 
-**Three pathways.** Leave and monitor, rehabilitate, reprocess and rehabilitate. Each column shows the satellite facts that matter for that pathway. The lifecycle view (life-cycle assessment numbers from the FIERCE service S1) sits beside them, labelled as under way until the comparison is published in June 2027.
+**Three pathways.** Leave and monitor, rehabilitate, reprocess and rehabilitate. Each column shows the satellite facts that matter for that pathway. The lifecycle view (life-cycle assessment numbers from a planned follow-up study) sits beside them, labelled as under way until the comparison is published in June 2027.
 
 **Around the site.** People within 1 and 5 km, Natura 2000 overlap and distance, nearest watercourse, land cover in the 500 m ring, ground motion from the European Ground Motion Service, and the long-term water history from the JRC Global Surface Water record.
 
-**What people here told us.** A section that stays empty until the FIERCE service S2 fieldwork lands in 2027.
+**What people here told us.** A section that stays empty until the pilot social-needs fieldwork lands in 2027.
 
 **Export and cite.** One click produces a CSV row keyed to the CRMA Article 27 database fields; another produces the site's GeoJSON polygon. Fields Strata cannot measure from space (operator, measured metal content) are left empty by design, never estimated.
 
@@ -319,7 +319,7 @@ Six features that cover ninety per cent of what a geological survey, a municipal
       <img src="/assets/img/strata-feat-communities.jpg" alt="Communities view showing Mina de São Domingos with mining landscape, livelihoods, resident concerns and three pathway preference cards" loading="lazy">
     </div>
     <h3>5 · Communities</h3>
-    <p>The three pilot communities (Mina de São Domingos / Mértola, Minas de Riotinto and Nerva, Aznalcóllar) with the mining landscape, livelihoods today, residents' preliminary concerns, pathway preferences, and the sites each is beside. Replaced by anonymised themes from the FIERCE S2 fieldwork between February and May 2027.</p>
+    <p>The three pilot communities (Mina de São Domingos / Mértola, Minas de Riotinto and Nerva, Aznalcóllar) with the mining landscape, livelihoods today, residents' preliminary concerns, pathway preferences, and the sites each is beside. Replaced by anonymised themes from the pilot social-needs fieldwork between February and May 2027.</p>
     <span class="strata-feature-cta">Open the Communities view &rarr;</span>
   </a>
 
@@ -350,11 +350,7 @@ Strata does not estimate metal grades or tonnages. It does not judge permit comp
 Strata is led by Transitions Lab in Delft. Partners: Pyropower (materials-and-energy side, processing-stage experience); Social Innovation Europe (community reach across Member States and the Western Balkans).
 
 <!--
-EU FUNDING ACKNOWLEDGEMENT: activate ONLY after the FIERCE Sub-grant Agreement is signed (SGA Article 18).
-
-Funded by the European Union. Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them.
-
-Strata is supported by the FIERCE project (Grant Agreement 101177496) under Horizon Europe.
+EU FUNDING ACKNOWLEDGEMENT: activate ONLY if and when a sub-grant agreement is signed. Keep this block commented until then.
 -->
 
 ---

@@ -36,7 +36,7 @@ The app opens on the map. The topbar carries seven tabs:
 - **Pipeline** — what runs where, from Sentinel-2 scene to CSV row.
 - **Method** — a short in-app restatement of the thresholds. The full method lives on the [Method page](/strata-method).
 - **Data** — the data register with every source, licence and update cadence.
-- **About** — scope, partners, the FIERCE grant status, how to cite.
+- **About** — scope, partners, and how to cite.
 
 A help icon (the "?" top right) reopens the welcome card at any time. The moon icon toggles the light / dark theme; the choice is remembered per browser.
 
@@ -66,13 +66,13 @@ Left column at the top: four facts for whatever subset of sites is in view (site
 Click a pin or a row in the list and the right column opens the site's card. Eight sections, always in the same order:
 
 1. **Header.** Site name, municipality and country, geological context (e.g. Iberian Pyrite Belt), the lifecycle stage pill and any flag pills.
-2. **Register status.** A one-sentence human summary of what the register says about this site today ("Mining ended in 1966 (verify)", "Reopening planned 2027", etc.). The word "verify" marks numbers the FIERCE S3 feasibility study is scheduled to cross-check against hyperspectral data.
+2. **Register status.** A one-sentence human summary of what the register says about this site today ("Mining ended in 1966 (verify)", "Reopening planned 2027", etc.). The word "verify" marks numbers a planned feasibility study is scheduled to cross-check against hyperspectral data.
 3. **Key facts strip.** Six numbers that fit on a thumb: waste area (ha, satellite), volume proxy (Mm³, DEM), bare % now, vegetation % now, people within 1 km, red-water share of water on site.
 4. **Now from space (live).** The live Sentinel-2 panel — covered on its own below.
 5. **Ten years of change.** Time-series lines for vegetation, bare ground, iron signal and red water, with the natural recovery clock verdict ("about 52 years to reach 50% vegetation at the current trend") printed under the chart.
 6. **Pathways.** Three side-by-side cards — Leave and monitor, Rehabilitate, Reprocess — with what each one would entail, cost indication, and the question each one leaves open.
 7. **Around the site.** Natura 2000 overlap, EGMS motion share subsiding faster than 5 mm/yr, nearest watercourse distance, protected-area name if any.
-8. **Community voices.** Pointer to the Communities tab if a pilot community sits beside this site. From 2027 onwards this section carries anonymised themes from the FIERCE S2 field interviews; today it is empty by design.
+8. **Community voices.** Pointer to the Communities tab if a pilot community sits beside this site. From 2027 onwards this section carries anonymised themes from the pilot social-needs field interviews; today it is empty by design.
 9. **Export buttons.** CSV (one row, CRMA Article 27 schema) and GeoJSON (the site polygon with properties).
 
 The close button at the top of the card returns you to the map with your filters intact.
@@ -107,7 +107,7 @@ The two buttons at the top of the view produce the full-register exports:
 
 Three communities, each on its own card: the mining landscape, livelihoods today, preliminary resident concerns, three pathway-preference cards (leave / rehabilitate / reprocess), the sites each community sits beside, and the municipal contact point.
 
-Everything on this tab is preliminary by design. The headline reminder on the tab says so: the FIERCE service S2 runs 18 semi-structured interviews and one community session per community between February and May 2027, and those anonymised themes replace what you see today.
+Everything on this tab is preliminary by design. The headline reminder on the tab says so: the pilot social-needs fieldwork runs 18 semi-structured interviews and one community session per community between February and May 2027, and those anonymised themes replace what you see today.
 
 ### Function 6 — Pipeline + CRMA Article 27 export
 
@@ -188,7 +188,7 @@ A fair guide includes the stop signs.
 - **Ten-metre imagery misses small features.** Early earthworks, test pits, a single truck convoy — Strata will not catch them.
 - **EGMS coverage is Copernicus Participating States only.** For sites outside that footprint the ground motion column reads *N/L* (not listed).
 - **Operator and measured content are empty.** By design. Where a Member State register already carries these, that register remains authoritative.
-- **The pilot register is 10 sites.** The method travels; the current register is small. The FIERCE service S4 market study expands the operating register progressively.
+- **The pilot register is 10 sites.** The method travels; the current register is small. A planned market study expands the operating register progressively.
 
 If the question needs a measured grade, a legal determination, or a sub-10 m feature, Strata is not the tool. For the question "what is actually on these heaps today, how are they changing, and what would three different plans mean?", it is.
 

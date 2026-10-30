@@ -148,7 +148,7 @@
 <li><strong>Pipeline</strong> — what runs where, from Sentinel-2 scene to CSV row.</li>
 <li><strong>Method</strong> — a short in-app restatement of the thresholds. The full method lives on the <a href="/strata-method">Method page</a>.</li>
 <li><strong>Data</strong> — the data register with every source, licence and update cadence.</li>
-<li><strong>About</strong> — scope, partners, the FIERCE grant status, how to cite.</li>
+<li><strong>About</strong> — scope, partners, and how to cite.</li>
 </ul>
 <p>A help icon (the "?" top right) reopens the welcome card at any time. The moon icon toggles the light / dark theme; the choice is remembered per browser.</p>
 <h3>Function 1 — The satellite map</h3>
@@ -170,13 +170,13 @@
 <p>Click a pin or a row in the list and the right column opens the site's card. Eight sections, always in the same order:</p>
 <ol>
 <li><strong>Header.</strong> Site name, municipality and country, geological context (e.g. Iberian Pyrite Belt), the lifecycle stage pill and any flag pills.</li>
-<li><strong>Register status.</strong> A one-sentence human summary of what the register says about this site today ("Mining ended in 1966 (verify)", "Reopening planned 2027", etc.). The word "verify" marks numbers the FIERCE S3 feasibility study is scheduled to cross-check against hyperspectral data.</li>
+<li><strong>Register status.</strong> A one-sentence human summary of what the register says about this site today ("Mining ended in 1966 (verify)", "Reopening planned 2027", etc.). The word "verify" marks numbers a planned feasibility study is scheduled to cross-check against hyperspectral data.</li>
 <li><strong>Key facts strip.</strong> Six numbers that fit on a thumb: waste area (ha, satellite), volume proxy (Mm³, DEM), bare % now, vegetation % now, people within 1 km, red-water share of water on site.</li>
 <li><strong>Now from space (live).</strong> The live Sentinel-2 panel — covered on its own below.</li>
 <li><strong>Ten years of change.</strong> Time-series lines for vegetation, bare ground, iron signal and red water, with the natural recovery clock verdict ("about 52 years to reach 50% vegetation at the current trend") printed under the chart.</li>
 <li><strong>Pathways.</strong> Three side-by-side cards — Leave and monitor, Rehabilitate, Reprocess — with what each one would entail, cost indication, and the question each one leaves open.</li>
 <li><strong>Around the site.</strong> Natura 2000 overlap, EGMS motion share subsiding faster than 5 mm/yr, nearest watercourse distance, protected-area name if any.</li>
-<li><strong>Community voices.</strong> Pointer to the Communities tab if a pilot community sits beside this site. From 2027 onwards this section carries anonymised themes from the FIERCE S2 field interviews; today it is empty by design.</li>
+<li><strong>Community voices.</strong> Pointer to the Communities tab if a pilot community sits beside this site. From 2027 onwards this section carries anonymised themes from the pilot social-needs field interviews; today it is empty by design.</li>
 <li><strong>Export buttons.</strong> CSV (one row, CRMA Article 27 schema) and GeoJSON (the site polygon with properties).</li>
 </ol>
 <p>The close button at the top of the card returns you to the map with your filters intact.</p>
@@ -201,7 +201,7 @@
 <h3>Function 5 — Communities</h3>
 <p class="strata-guide-figure"><img src="/assets/img/strata-feat-communities.jpg?v=335290b4" alt="Communities view, Mina de São Domingos: landscape, livelihoods, preliminary resident concerns, three pathway-preference cards"></p>
 <p>Three communities, each on its own card: the mining landscape, livelihoods today, preliminary resident concerns, three pathway-preference cards (leave / rehabilitate / reprocess), the sites each community sits beside, and the municipal contact point.</p>
-<p>Everything on this tab is preliminary by design. The headline reminder on the tab says so: the FIERCE service S2 runs 18 semi-structured interviews and one community session per community between February and May 2027, and those anonymised themes replace what you see today.</p>
+<p>Everything on this tab is preliminary by design. The headline reminder on the tab says so: the pilot social-needs fieldwork runs 18 semi-structured interviews and one community session per community between February and May 2027, and those anonymised themes replace what you see today.</p>
 <h3>Function 6 — Pipeline + CRMA Article 27 export</h3>
 <p class="strata-guide-figure"><img src="/assets/img/strata-feat-pipeline.jpg?v=8f393d2e" alt="Pipeline diagram: Sentinel-2, DEM, EGMS, WorldCover, Surface Water, GHSL and OpenStreetMap flow into strata-core.js (26 of 26 unit tests pass), out as lifecycle card, CRMA CSV, GeoJSON polygon and attribution"></p>
 <p>The Pipeline view is the data map of the tool. The left column lists every input and its licence. The centre names the in-browser classifier — <code>strata-core.js</code>, where the self-tests report <strong>26 of 26 unit tests pass</strong> on load — and lists the steps it runs. The right column lists what comes out: the lifecycle card you see, the CSV row keyed to the CRMA Article 27 fields, the GeoJSON polygon, and the methodology attribution that ships with every export.</p>
@@ -252,7 +252,7 @@
 <li><strong>Ten-metre imagery misses small features.</strong> Early earthworks, test pits, a single truck convoy — Strata will not catch them.</li>
 <li><strong>EGMS coverage is Copernicus Participating States only.</strong> For sites outside that footprint the ground motion column reads <em>N/L</em> (not listed).</li>
 <li><strong>Operator and measured content are empty.</strong> By design. Where a Member State register already carries these, that register remains authoritative.</li>
-<li><strong>The pilot register is 10 sites.</strong> The method travels; the current register is small. The FIERCE service S4 market study expands the operating register progressively.</li>
+<li><strong>The pilot register is 10 sites.</strong> The method travels; the current register is small. A planned market study expands the operating register progressively.</li>
 </ul>
 <p>If the question needs a measured grade, a legal determination, or a sub-10 m feature, Strata is not the tool. For the question "what is actually on these heaps today, how are they changing, and what would three different plans mean?", it is.</p>
 <hr>

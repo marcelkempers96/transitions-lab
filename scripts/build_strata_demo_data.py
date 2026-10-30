@@ -280,7 +280,7 @@ def main():
 
     (DATA / 'lifecycle' / 'pathways.json').write_text(json.dumps({
         'status': 'not_started',
-        'source': 'FIERCE service S1, provider to be named',
+        'source': 'Planned pilot lifecycle study, provider to be named',
         'updated': '',
         'pathways': {
             'leave': {'summary': '', 'impacts': []},
@@ -294,7 +294,7 @@ def main():
         sid = feat['properties']['id']
         (DATA / 'community' / f'{sid}.json').write_text(json.dumps({
             'status': 'not_started',
-            'source': 'FIERCE service S2, anonymised',
+            'source': 'Pilot social-needs fieldwork, anonymised',
             'updated': '',
             'themes': [],
             'preferredPathway': {'leave': 0, 'rehabilitate': 0, 'reprocess': 0, 'unsure': 0},
