@@ -206,7 +206,17 @@ Strata does not measure emissions, water chemistry, dust, noise or community out
 
 ---
 
-## 7. Open questions the pilot will answer
+## 7. Tracking the minerals from the source
+
+Strata closes one half of a loop the Lab has been building for two years. The other half is the [Mineral Flows Map](/mineral-flows), the Lab's interactive atlas of where lithium, cobalt, nickel, copper, graphite and rare earths are mined, refined and shipped across the world. The Mineral Flows Map traces the materials across borders; Strata records what extracting and processing them does on the ground at the specific sites they come from.
+
+A reader who wants to understand how a battery-grade cobalt stream ends up in a European cell plant can start on the Mineral Flows Map, see that cobalt refining in Belgium traces back to the Democratic Republic of the Congo and to Morocco's Bou-Azzer, open the Bou-Azzer site in Strata, and read the ten-year satellite record of what has happened there. The two tools share the same open-data posture (Copernicus, EuroGeoSurveys, OpenStreetMap), the same reproducibility rule (every number cites a source), and the same copy rule on named sites (observable change, not findings). Together they give a reader the material at the source and the chain to the user, on one evidence base, which is what Article 27 of the Critical Raw Materials Act was meant to make possible.
+
+The Mineral Flows Map lives at [transitionslab.org/mineral-flows](/mineral-flows) with its own [research paper](/mineral-flows-research), [reading guide](/mineral-flows-guide) and [data attribution](/mineral-flows-attribution).
+
+---
+
+## 8. Open questions the pilot will answer
 
 - At what threshold does the vegetation-loss indicator produce a materially false flag in agricultural seasons, and what is the appropriate per-climate-zone calibration?
 - Does the experimental downstream water-colour indicator validate well enough against ground truth to publish operationally?

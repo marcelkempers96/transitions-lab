@@ -465,6 +465,7 @@ ABOUT = [
     ("who-we-serve", "Who we serve"),
     ("for-funders", "For Funders"),
     ("how-it-works", "How It Works"),
+    ("strata", "STRATA"),
 ]
 
 SERVICES = [
@@ -490,7 +491,6 @@ LIBRARY = [
     ("resources", "Resources"),
     ("brw", "The BReW framework"),
     ("readiness-levels", "TRL &amp; SRL"),
-    ("strata", "Strata &middot; site monitor"),
 ]
 
 NAV = [
@@ -1668,6 +1668,7 @@ def page_shell(*, slug: str, title: str, description: str, body: str,
       <a href="/who-we-serve">Who we serve</a>
       <a href="/for-funders">For Funders</a>
       <a href="/capability-statement">Capability statement</a>
+      <a href="/strata"><strong>STRATA</strong> &middot; satellite monitor</a>
       <a href="/contact">Contact</a>
       <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
@@ -2208,10 +2209,14 @@ def _build_home_insight_pool() -> str:
             f'        </div>\n'
             f'      </a>'
         )
+    # The desktop "See all articles" boxed button lives below the row,
+    # so this inline tail link only shows on mobile where the boxed
+    # button is less obvious. Hidden on desktop via CSS so only one
+    # entry point is visible per breakpoint.
     return (
         '<div class="insight-row insight-pool">\n'
         + "\n".join(cards)
-        + '\n      <a class="insight-tail-link" href="/articles">Read all articles &rarr;</a>'
+        + '\n      <a class="insight-tail-link insight-tail-link--mobile-only" href="/articles">Read all articles &rarr;</a>'
         + '\n    </div>'
     )
 
@@ -2483,6 +2488,32 @@ def build_home() -> str:
   </div>
 </section>
 
+<!-- STRATA SPOTLIGHT - the Lab's live satellite tool -->
+<section class="section-paper strata-spotlight">
+  <div class="wrap">
+    <div class="strata-spot-grid">
+      <div class="strata-spot-body">
+        <p class="eyebrow">Live tool · Horizon Europe FIERCE</p>
+        <h2>STRATA</h2>
+        <p class="strata-spot-pitch">A satellite lifecycle card for every closed mine waste site in Europe. One method, every site, in the browser. Built from open Copernicus data: Sentinel-2 pixel classes, DEM volume proxy, EGMS ground motion, Natura 2000 overlap, people within 1 and 5 km. Exports a single row keyed to the Critical Raw Materials Act Article 27 database.</p>
+        <ul class="strata-spot-list">
+          <li><strong>Users:</strong> geological surveys compiling Article 27 databases, municipalities and residents beside legacy mine waste, reprocessing firms screening for secondary CRMs.</li>
+          <li><strong>Pilot:</strong> 10 sites in the Iberian Pyrite Belt (Portugal + Spain) plus two transfer sites in Germany and Sweden.</li>
+          <li><strong>Partners:</strong> Transitions Lab (lead), Pyropower (industry), Social Innovation Europe (community).</li>
+        </ul>
+        <p class="strata-spot-actions">
+          <a href="/strata-demo" class="btn btn-ink">Launch Strata &rarr;</a>
+          <a href="/strata" class="btn btn-ghost">Overview and partners</a>
+        </p>
+      </div>
+      <a class="strata-spot-visual" href="/strata-demo" aria-label="Launch Strata">
+        <img src="/assets/logos/strata-lockup-black.svg" alt="Strata logo lockup">
+        <span class="strata-spot-badge">Pulls a live Sentinel-2 scene for each site</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FREE RESOURCES - grid of downloadable frameworks and method pages -->
 <section class="section-paper">
   <div class="wrap">
@@ -2526,12 +2557,6 @@ def build_home() -> str:
         <span class="resource-tag">Template</span>
         <h3>Impact-Tracking Template</h3>
         <p>A fill-in baseline-midline-endline framework for any programme that needs to prove what a transition actually changed.</p>
-        <span class="resource-cta">Open &rarr;</span>
-      </a>
-      <a class="resource-card" href="/strata">
-        <span class="resource-tag">Tool &middot; in development</span>
-        <h3>Strata &middot; critical raw materials monitor</h3>
-        <p>Satellite baselines for Europe's critical raw materials Strategic Projects, measured before construction and again every year, with one open method for every site.</p>
         <span class="resource-cta">Open &rarr;</span>
       </a>
     </div>

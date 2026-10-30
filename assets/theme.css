@@ -667,18 +667,10 @@ section + section{border-top:2px solid var(--ink);}
 }
 .insight-row.insight-pool > .insight-card:nth-child(3) .read,
 .insight-row.insight-pool > .insight-card:nth-child(4) .read{font-size:12.5px;}
-/* "Read all articles" tail link - no border, just a text link. */
-.insight-row.insight-pool > .insight-tail-link{
-  grid-area:tail;align-self:center;justify-self:start;
-  padding:10px 2px;margin:4px 0 0;
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:14px;font-weight:800;letter-spacing:.02em;
-  text-decoration:none;color:var(--ink);
-  border:0;background:transparent;
-}
-.insight-row.insight-pool > .insight-tail-link:hover{
-  text-decoration:underline;text-underline-offset:4px;
-}
+/* "Read all articles" tail link is now hidden everywhere; the
+   boxed "See all articles" ghost button below the pool is the
+   single entry point to /articles from the home page. */
+.insight-row.insight-pool > .insight-tail-link{display:none;}
 @media(max-width:899px){
   .insight-row.insight-pool{
     grid-template-columns:1fr;
@@ -5632,3 +5624,94 @@ body,
   .prose .strata-hero-pitch{font-size:22px;}
   .prose .strata-globe{max-width:380px;}
 }
+
+/* ───────────────────────────────────────────────────────────────────
+   STRATA spotlight on the home page. A single wide panel between
+   Theory maps and Free resources, with the Strata lockup and the
+   Launch button.
+   ─────────────────────────────────────────────────────────────── */
+.strata-spotlight{background:var(--paper-2);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:72px 0;}
+.strata-spotlight .strata-spot-grid{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;
+}
+.strata-spot-body h2{
+  margin:.1em 0 .35em;
+  font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:.08em;
+  font-size:46px;color:var(--ink);
+}
+.strata-spot-body .eyebrow{
+  display:block;margin:0 0 .35em;
+  font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;font-weight:800;color:var(--orange);
+}
+.strata-spot-pitch{
+  font-family:'Newsreader',serif;font-weight:400;font-size:21px;line-height:1.45;
+  color:var(--ink);margin:0 0 20px;max-width:60ch;
+}
+.strata-spot-list{margin:0 0 24px;padding:0;list-style:none;max-width:62ch;}
+.strata-spot-list li{
+  margin:8px 0;font-size:15px;line-height:1.55;color:var(--ink);
+}
+.strata-spot-list strong{font-weight:800;}
+.strata-spot-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.strata-spot-visual{
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  padding:28px 32px;background:var(--paper);border:1px solid var(--rule);
+  text-decoration:none;color:var(--ink);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.strata-spot-visual:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);}
+.strata-spot-visual img{max-width:260px;width:100%;height:auto;display:block;}
+.strata-spot-badge{
+  font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;color:var(--mute);
+  text-align:center;max-width:28ch;
+}
+@media (max-width:900px){
+  .strata-spotlight{padding:48px 0;}
+  .strata-spotlight .strata-spot-grid{grid-template-columns:1fr;gap:28px;}
+  .strata-spot-body h2{font-size:36px;}
+  .strata-spot-visual{padding:24px;}
+}
+
+/* ───────────────────────────────────────────────────────────────────
+   STRATA feature tour on /strata — six functional cards with
+   icon + title + description + CTA that links straight to the
+   feature in the app.
+   ─────────────────────────────────────────────────────────────── */
+.prose .strata-features{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:1.6em 0 2em;
+}
+.prose .strata-feature{
+  display:flex;flex-direction:column;gap:10px;
+  padding:20px 22px;
+  background:var(--paper-2);border:1px solid var(--rule);
+  text-decoration:none;color:var(--ink);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.prose .strata-feature:hover{
+  transform:translate(-3px,-3px);
+  box-shadow:6px 6px 0 var(--ink);
+  background:var(--white,#fff);
+}
+.prose .strata-feature-icon{
+  width:48px;height:48px;color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--paper);border:1px solid var(--rule);
+}
+.prose .strata-feature-icon svg{width:30px;height:30px;}
+.prose .strata-feature h3{
+  margin:4px 0 2px;
+  font-family:'Hanken Grotesk',sans-serif;font-weight:700;letter-spacing:-.005em;
+  font-size:17px;line-height:1.25;color:var(--ink);
+}
+.prose .strata-feature p{
+  margin:0;font-size:14px;line-height:1.55;color:var(--ink);
+}
+.prose .strata-feature-cta{
+  margin-top:auto;padding-top:8px;
+  font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
+}
+@media (max-width:960px){.prose .strata-features{grid-template-columns:1fr 1fr;}}
+@media (max-width:640px){.prose .strata-features{grid-template-columns:1fr;}}

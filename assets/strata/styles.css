@@ -160,8 +160,9 @@ body.strata-standalone #strata-root {
 .sr-page {
   display: flex; flex-direction: column;
   min-height: 0;
-  overflow: hidden;
+  overflow-y: auto;    /* content pages scroll; map page overrides below */
 }
+.sr-page.is-map { overflow: hidden; }
 
 /* ─── Map view ────────────────────────────────────────────────── */
 .sr-map-page {

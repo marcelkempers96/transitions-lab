@@ -163,7 +163,7 @@ function shellHTML() {
   const banner = `<div class="sr-pilot-banner"><strong>Iberian Pyrite Belt pilot</strong> · 10 sites across 3 Member States · 4 Horizon Europe FIERCE Ideation services under way: lifecycle (S1), social needs research (S2), hyperspectral validation (S3), market study (S4).</div>`;
   return `
     <header class="sr-topbar">
-      <a class="sr-brand" href="#map" aria-label="Strata home">
+      <a class="sr-brand" href="/strata" aria-label="Strata on transitionslab.org">
         ${brandMark(22)}
         <span class="sr-brand-name">Strata</span>
         <span class="sr-brand-sub">Transitions Lab</span>
@@ -256,13 +256,15 @@ function onboardingHTML() {
 }
 
 function currentViewHTML() {
-  if (S.view === 'compare')     return comparePageHTML();
-  if (S.view === 'communities') return communitiesPageHTML();
-  if (S.view === 'pipeline')    return pipelinePageHTML();
-  if (S.view === 'method')      return methodPageHTML();
-  if (S.view === 'data')        return dataPageHTML();
-  if (S.view === 'about')       return aboutPageHTML();
-  return mapPageHTML();
+  const wrap = (html, isMap) =>
+    `<div class="sr-page${isMap ? ' is-map' : ''}">${html}</div>`;
+  if (S.view === 'compare')     return wrap(comparePageHTML(),     false);
+  if (S.view === 'communities') return wrap(communitiesPageHTML(), false);
+  if (S.view === 'pipeline')    return wrap(pipelinePageHTML(),    false);
+  if (S.view === 'method')      return wrap(methodPageHTML(),      false);
+  if (S.view === 'data')        return wrap(dataPageHTML(),        false);
+  if (S.view === 'about')       return wrap(aboutPageHTML(),       false);
+  return wrap(mapPageInnerHTML(), true);
 }
 
 // ───────────────────────── Chrome wiring ────────────────────────
@@ -291,7 +293,7 @@ function toggleTheme() {
 }
 
 // ───────────────────────── Map page ─────────────────────────────
-function mapPageHTML() {
+function mapPageInnerHTML() {
   const visible = filteredSites();
   const haTotal = visible.reduce((a, f) => a + (S.context[f.properties.id]?.areaHa || 0), 0);
   const volTotal = visible.reduce((a, f) => a + ((S.context[f.properties.id]?.dem?.volumeAboveBaseM3 || 0) / 1_000_000), 0);
@@ -300,7 +302,7 @@ function mapPageHTML() {
   const detailHTML = S.selected ? siteDetailHTML(S.selected) : emptyDetailHTML();
   const bodyClass = S.selected ? '' : ' no-detail';
   return `
-    <div class="sr-page sr-map-page${bodyClass}">
+    <div class="sr-map-page${bodyClass}">
       <aside class="sr-col sr-col-left">
         <div class="sr-facts">
           <div class="sr-fact"><span class="sr-label">Sites shown</span><span class="sr-n">${visible.length}<span class="sr-unit">/ ${S.sites.length}</span></span></div>
@@ -362,8 +364,7 @@ function mapPageHTML() {
         </div>
       </div>
       ${S.selected ? `<aside class="sr-col sr-col-detail">${detailHTML}</aside>` : ''}
-    </div>
-  `;
+    </div>`;
 }
 
 function emptyDetailHTML() {
