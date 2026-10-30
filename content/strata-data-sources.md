@@ -10,6 +10,7 @@
   <a href="/strata">Overview</a>
   <a href="/strata-app">Web tool</a>
   <a href="/strata-demo">Launch app &rarr;</a>
+  <a href="/strata-guide">Guide</a>
   <a href="/strata-method">Method</a>
   <strong class="is-current">Data sources</strong>
   <a href="/strata-paper">Companion paper</a>

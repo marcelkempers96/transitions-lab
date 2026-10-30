@@ -10,6 +10,7 @@
   <strong class="is-current">Overview</strong>
   <a href="/strata-app">Web tool</a>
   <a href="/strata-demo">Launch app &rarr;</a>
+  <a href="/strata-guide">Guide</a>
   <a href="/strata-method">Method</a>
   <a href="/strata-data-sources">Data sources</a>
   <a href="/strata-paper">Companion paper</a>
@@ -276,10 +277,10 @@ Each site opens on a single scrollable page.
 
 Six features that cover ninety per cent of what a geological survey, a municipality or a reprocessing firm will do with the tool. Each one links straight to the feature in the live app.
 
-<div class="strata-features">
+<div class="strata-features strata-features--shots">
   <a class="strata-feature" href="/strata-demo#map">
-    <div class="strata-feature-icon">
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6 12l12-4 12 4 12-4v28l-12 4-12-4-12 4z"/><path d="M18 8v28"/><path d="M30 12v28"/><circle cx="18" cy="22" r="2.5" fill="currentColor"/><circle cx="30" cy="18" r="3.5" fill="currentColor"/></svg>
+    <div class="strata-feature-shot">
+      <img src="/assets/img/strata-feat-map.jpg" alt="Strata overview map with the ten pilot pins across Iberia, Germany and Sweden" loading="lazy">
     </div>
     <h3>1 · Satellite map with lifecycle pins</h3>
     <p>Real ESRI World Imagery under every pin. Switch between satellite, street and terrain base maps. Pins coloured by lifecycle stage (operating, legacy largely bare, legacy mixed, recovering naturally, vegetated, reopening planned) and sized by waste footprint. Site polygons overlaid so the heap shape reads against the ground.</p>
@@ -287,8 +288,8 @@ Six features that cover ninety per cent of what a geological survey, a municipal
   </a>
 
   <a class="strata-feature" href="/strata-demo#site-pt-sdo">
-    <div class="strata-feature-icon">
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="8" y="8" width="32" height="32"/><path d="M14 16h20M14 22h10M14 28h20M14 34h14"/><circle cx="36" cy="22" r="3" fill="currentColor"/></svg>
+    <div class="strata-feature-shot">
+      <img src="/assets/img/strata-feat-sitecard.jpg" alt="São Domingos site card: stage pill, red-water flag, waste area 110 ha, DEM volume 17.2 Mm³, bare 51 per cent, vegetation 19 per cent" loading="lazy">
     </div>
     <h3>2 · Lifecycle site card</h3>
     <p>Eight sections per site: header with stage pill and flag pills, key facts strip (area, DEM volume, bare %, vegetation %, people within 1 km, red-water share), Now-from-space live panel, ten-year change chart with the natural recovery clock, three-pathway comparison (leave / rehabilitate / reprocess), around-the-site stats, community voices, export buttons.</p>
@@ -296,8 +297,8 @@ Six features that cover ninety per cent of what a geological survey, a municipal
   </a>
 
   <a class="strata-feature" href="/strata-demo#site-es-rto">
-    <div class="strata-feature-icon">
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M12 24h24M24 12v24M15 15l18 18M33 15L15 33"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
+    <div class="strata-feature-shot">
+      <img src="/assets/img/strata-feat-live.jpg" alt="Now from space live panel beside the ten-year change chart and the natural recovery clock" loading="lazy">
     </div>
     <h3>3 · Live Sentinel-2 scene classifier</h3>
     <p>Press <em>Load latest Sentinel-2 scene</em> and the browser pulls the clearest Sentinel-2 L2A over the site from Earth Search, reads six bands as Cloud-Optimised GeoTIFF windows, and classifies every 10 m pixel. Three canvases side by side — true colour, pixel classes (vegetation / bare / bare+iron / water / red water), NDVI — plus a stats table for the polygon and the 500 m ring. No account, no server, 8–20 seconds.</p>
@@ -305,8 +306,8 @@ Six features that cover ninety per cent of what a geological survey, a municipal
   </a>
 
   <a class="strata-feature" href="/strata-demo#compare">
-    <div class="strata-feature-icon">
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="6" y="10" width="36" height="28"/><path d="M6 18h36M18 18v20M30 18v20"/></svg>
+    <div class="strata-feature-shot">
+      <img src="/assets/img/strata-feat-compare.jpg" alt="Compare table: all ten pilot sites side by side with lifecycle stage, flags, area, volume, bare and iron percentages, recovery clock, people within 1 km and EGMS motion share" loading="lazy">
     </div>
     <h3>4 · Compare table across every site</h3>
     <p>All ten pilot sites side by side with lifecycle stage, flags, area, DEM volume proxy, bare %, iron signal %, red-water %, recovery clock status, people within 1 km, Natura 2000 overlap, EGMS share subsiding faster than 5 mm/yr. Export the whole table as CSV or every polygon as GeoJSON in one click.</p>
@@ -314,8 +315,8 @@ Six features that cover ninety per cent of what a geological survey, a municipal
   </a>
 
   <a class="strata-feature" href="/strata-demo#communities">
-    <div class="strata-feature-icon">
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="18" r="5"/><circle cx="32" cy="18" r="5"/><circle cx="24" cy="30" r="5"/><path d="M8 40c0-5 4-8 8-8M40 40c0-5-4-8-8-8M14 42c0-5 4-8 10-8s10 3 10 8"/></svg>
+    <div class="strata-feature-shot">
+      <img src="/assets/img/strata-feat-communities.jpg" alt="Communities view showing Mina de São Domingos with mining landscape, livelihoods, resident concerns and three pathway preference cards" loading="lazy">
     </div>
     <h3>5 · Communities</h3>
     <p>The three pilot communities (Mina de São Domingos / Mértola, Minas de Riotinto and Nerva, Aznalcóllar) with the mining landscape, livelihoods today, residents' preliminary concerns, pathway preferences, and the sites each is beside. Replaced by anonymised themes from the FIERCE S2 fieldwork between February and May 2027.</p>
@@ -323,14 +324,16 @@ Six features that cover ninety per cent of what a geological survey, a municipal
   </a>
 
   <a class="strata-feature" href="/strata-demo#pipeline">
-    <div class="strata-feature-icon">
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="6" y="12" width="12" height="10"/><rect x="6" y="26" width="12" height="10"/><rect x="30" y="19" width="12" height="10"/><path d="M18 17h6l6 6M18 31h6l6-7"/></svg>
+    <div class="strata-feature-shot">
+      <img src="/assets/img/strata-feat-pipeline.jpg" alt="Pipeline diagram: open Copernicus data in, strata-core.js classifier with 26 of 26 unit tests passing, CRMA Article 27 CSV and GeoJSON out" loading="lazy">
     </div>
     <h3>6 · Pipeline + CRMA Article 27 export</h3>
     <p>Flow from open data in (Sentinel-2, DEM, EGMS, WorldCover, GSW, GHSL, OSM) through the in-browser classifier (<em>strata-core.js</em>, 26 of 26 unit tests pass) to open data out (lifecycle card, CSV row keyed to the CRMA Article 27 fields, GeoJSON polygon, attribution). Operator and measured metal content are left empty by design, never estimated.</p>
     <span class="strata-feature-cta">Open the Pipeline view &rarr;</span>
   </a>
 </div>
+
+<p class="strata-features-guide">New to Strata? The <a href="/strata-guide"><strong>functions &amp; use-cases guide</strong></a> walks through every feature step by step and shows how a geological survey, a municipality and a reprocessing firm each use the tool end to end.</p>
 
 ## Pilot
 

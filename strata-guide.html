@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strata guide: every function, every use case | Transitions Lab</title>
+<meta name="description" content="A walkthrough of every function in the Strata app (map, lifecycle site card, live Sentinel-2 scene, Compare, Communities, Pipeline, exports) and three use cases end to end: a geological survey, a municipality, a reprocessing firm.">
+<meta name="author" content="Transitions Lab">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F5EDDD">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<script>(function(){try{var d=document.documentElement,isArticle=/^\/(case|insight)-/.test(location.pathname),g=function(k,f){try{return localStorage.getItem(k)||f;}catch(_){return f;}},t=g('tl_r_theme_v1','warm'),f=g('tl_r_font_v1','sans'),s=g('tl_r_size_v1','0');window.__tlR={theme:t,font:f,size:s,isArticle:isArticle};if(isArticle){d.setAttribute('data-theme',t);d.setAttribute('data-font',f);d.setAttribute('data-size',s);}}catch(_){}})();</script>
+<link rel="canonical" href="https://transitionslab.org/strata-guide">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Transitions Lab">
+<meta property="og:title" content="Strata guide: every function, every use case | Transitions Lab">
+<meta property="og:description" content="A walkthrough of every function in the Strata app (map, lifecycle site card, live Sentinel-2 scene, Compare, Communities, Pipeline, exports) and three use cases end to end: a geological survey, a municipality, a reprocessing firm.">
+<meta property="og:url" content="https://transitionslab.org/strata-guide">
+<meta property="og:image" content="https://transitionslab.org/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Strata guide: every function, every use case | Transitions Lab">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Strata guide: every function, every use case | Transitions Lab">
+<meta name="twitter:description" content="A walkthrough of every function in the Strata app (map, lifecycle site card, live Sentinel-2 scene, Compare, Communities, Pipeline, exports) and three use cases end to end: a geological survey, a municipality, a reprocessing firm.">
+<meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
+<meta name="twitter:image:alt" content="Strata guide: every function, every use case | Transitions Lab">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css?v=2823058f">
+
+</head>
+<body data-page="strata-guide">
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo-dark.png" alt="Transitions Lab" class="brand-logo"></a>
+    <nav id="menu">
+  <details class="nav-group current">
+    <summary class="nav-label">About</summary>
+    <div class="nav-dropdown">
+      <a href="/about">About the Lab</a>
+      <a href="/who-we-serve">Who we serve</a>
+      <a href="/for-funders">For Funders</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/strata">STRATA</a>
+      <a href="/strata-guide" class="current">STRATA guide</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Work with us</summary>
+    <div class="nav-dropdown">
+      <a href="/what-we-do">Overview</a>
+      <a href="/entering-a-new-context">Entering a New Context</a>
+      <a href="/measuring-change">Measuring Change</a>
+      <a href="/reporting-to-funders">Reporting to Funders</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Programmes</summary>
+    <div class="nav-dropdown">
+      <a href="/expertise">All programmes</a>
+      <a href="/expertise-manufacturing">Industry & Materials</a>
+      <a href="/expertise-e-mobility">E-Mobility & Transport</a>
+      <a href="/expertise-energy">Energy & Water Systems</a>
+      <a href="/expertise-agriculture">Agriculture & Ecosystems</a>
+      <a href="/expertise-ai-digital">AI & Digital</a>
+      <a href="/expertise-finance">Financial Inclusion</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Reading</summary>
+    <div class="nav-dropdown">
+      <a href="/articles">Articles &amp; insights</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/resources">Resources</a>
+      <a href="/brw">The BReW framework</a>
+      <a href="/readiness-levels">TRL &amp; SRL</a>
+    </div>
+  </details>
+  <a href="/contact">Contact</a>
+</nav>
+    <div class="header-tools" role="group" aria-label="Search">
+      <button class="search-btn" type="button" aria-label="Search this site" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="search-overlay" hidden role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg class="search-input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-input" placeholder="Search articles, cases, methods…" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" aria-label="Close search">&#215;</button>
+    </div>
+    <div class="search-results" role="listbox" aria-label="Search results"></div>
+    <p class="search-hint"><span class="search-hint-empty">Start typing to search.</span></p>
+  </div>
+</div>
+
+<section class="page-hero hero-forest">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><a href="/resources">Resources</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><span aria-current="page">Strata guide: every function, every use case</span></nav>
+    
+    <h1>Strata guide: every function, every use case</h1>
+    <p class="lede">A walk through every function in the tool and three end-to-end use cases — a geological survey compiling an Article 27 database, a municipality beside a legacy site, a reprocessing firm screening for secondary critical raw materials.</p>
+    
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap-prose">
+    <div class="prose">
+      
+      
+      <p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">10 min read</span></p>
+<nav class="strata-pages" aria-label="Strata pages">
+  <a href="/strata">Overview</a>
+  <a href="/strata-app">Web tool</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
+  <strong class="is-current">Guide</strong>
+  <a href="/strata-method">Method</a>
+  <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-paper">Companion paper</a>
+</nav>
+<p>Strata is a browser tool. There is no account, no install, no server call that leaves the pilot and goes anywhere except the public Copernicus data archives. If you can open <a href="/strata-demo">the app</a>, you have the full tool.</p>
+<p>This guide is in three parts. Part 1 walks through every function. Part 2 takes three real users through the tool end to end. Part 3 is the honest list of what Strata does not do.</p>
+<hr>
+<h2>Part 1 · The functions, one by one</h2>
+<h3>Getting around</h3>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-map.jpg?v=1aee3be2" alt="Strata map with the ten pilot pins over Iberia, Germany and Sweden"></p>
+<p>The app opens on the map. The topbar carries seven tabs:</p>
+<ul>
+<li><strong>Map</strong> — the overview, with every pilot site shown as a coloured pin on real satellite imagery.</li>
+<li><strong>Compare</strong> — one row per site in a sortable table.</li>
+<li><strong>Communities</strong> — the three pilot communities beside Mina de São Domingos, Minas de Riotinto and Nerva, and Aznalcóllar.</li>
+<li><strong>Pipeline</strong> — what runs where, from Sentinel-2 scene to CSV row.</li>
+<li><strong>Method</strong> — a short in-app restatement of the thresholds. The full method lives on the <a href="/strata-method">Method page</a>.</li>
+<li><strong>Data</strong> — the data register with every source, licence and update cadence.</li>
+<li><strong>About</strong> — scope, partners, the FIERCE grant status, how to cite.</li>
+</ul>
+<p>A help icon (the "?" top right) reopens the welcome card at any time. The moon icon toggles the light / dark theme; the choice is remembered per browser.</p>
+<h3>Function 1 — The satellite map</h3>
+<p>The map uses real ESRI World Imagery as its satellite base. Three basemaps are available at the top-right of the map (Satellite / Street / Terrain). Every pin is a lifecycle stage:</p>
+<ul>
+<li><strong>Operating</strong> — black.</li>
+<li><strong>Reopening planned</strong> — sun.</li>
+<li><strong>Legacy, largely bare</strong> — laterite red.</li>
+<li><strong>Legacy, mixed cover</strong> — sand.</li>
+<li><strong>Recovering naturally</strong> — malachite at reduced opacity.</li>
+<li><strong>Vegetated</strong> — malachite.</li>
+</ul>
+<p>Pins are sized by waste footprint, so a 420 ha site reads larger than a 35 ha one at the same zoom. A small orange dot inside a pin means the site has at least one flag.</p>
+<p>Site polygons overlay the satellite imagery under each pin, so the heap shape reads against the ground even without clicking in.</p>
+<p>Left column at the top: four facts for whatever subset of sites is in view (sites shown, total area, DEM volume proxy, sites with flags). Below that, the filters: search by site name, municipality or country; country chips (PT, ES, DE, SE); lifecycle stage chips; flag chips; role (pilot vs. transfer). Below the filters, the full site list, where clicking a row opens the same card you get from clicking a pin.</p>
+<p><strong>Phones.</strong> The map takes the full screen. The left column collapses to a bottom sheet with three states — a peek strip, a half-screen filter + list, and a full-screen take-over. The handle at the top of the sheet cycles between them; the sheet never covers the whole map at the peek state.</p>
+<h3>Function 2 — The lifecycle site card</h3>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-sitecard.jpg?v=ae50c53d" alt="São Domingos site card: Recovering naturally pill, red water flag, waste area 110 ha, DEM volume 17.2 Mm³, bare 51 per cent, vegetation 19 per cent"></p>
+<p>Click a pin or a row in the list and the right column opens the site's card. Eight sections, always in the same order:</p>
+<ol>
+<li><strong>Header.</strong> Site name, municipality and country, geological context (e.g. Iberian Pyrite Belt), the lifecycle stage pill and any flag pills.</li>
+<li><strong>Register status.</strong> A one-sentence human summary of what the register says about this site today ("Mining ended in 1966 (verify)", "Reopening planned 2027", etc.). The word "verify" marks numbers the FIERCE S3 feasibility study is scheduled to cross-check against hyperspectral data.</li>
+<li><strong>Key facts strip.</strong> Six numbers that fit on a thumb: waste area (ha, satellite), volume proxy (Mm³, DEM), bare % now, vegetation % now, people within 1 km, red-water share of water on site.</li>
+<li><strong>Now from space (live).</strong> The live Sentinel-2 panel — covered on its own below.</li>
+<li><strong>Ten years of change.</strong> Time-series lines for vegetation, bare ground, iron signal and red water, with the natural recovery clock verdict ("about 52 years to reach 50% vegetation at the current trend") printed under the chart.</li>
+<li><strong>Pathways.</strong> Three side-by-side cards — Leave and monitor, Rehabilitate, Reprocess — with what each one would entail, cost indication, and the question each one leaves open.</li>
+<li><strong>Around the site.</strong> Natura 2000 overlap, EGMS motion share subsiding faster than 5 mm/yr, nearest watercourse distance, protected-area name if any.</li>
+<li><strong>Community voices.</strong> Pointer to the Communities tab if a pilot community sits beside this site. From 2027 onwards this section carries anonymised themes from the FIERCE S2 field interviews; today it is empty by design.</li>
+<li><strong>Export buttons.</strong> CSV (one row, CRMA Article 27 schema) and GeoJSON (the site polygon with properties).</li>
+</ol>
+<p>The close button at the top of the card returns you to the map with your filters intact.</p>
+<h3>Function 3 — The live Sentinel-2 panel</h3>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-live.jpg?v=e8a0de42" alt="Now from space live panel beside the ten-year change chart and the natural recovery clock"></p>
+<p>The Now-from-space panel is the one place where Strata actually goes out to Copernicus at the moment you click. The sequence it runs, in your browser:</p>
+<ol>
+<li><strong>STAC search.</strong> Earth Search is queried for Sentinel-2 Level-2A scenes over the site in the last 180 days with less than 40% cloud cover. The clearest acquisition wins.</li>
+<li><strong>Window reads.</strong> The six bands (B02, B03, B04, B08, B11, B12) and the Scene Classification Layer are read as Cloud-Optimised GeoTIFF windows (only the bounding box, not the whole scene). Typical window: a few hundred kilobytes per band.</li>
+<li><strong>Pixel classification.</strong> Every 10 m pixel inside the window is classified as vegetation, bare ground, bare + iron signal, water, or red/orange water. Red water is detected on water pixels only; iron signal is detected on bare pixels only.</li>
+<li><strong>Render.</strong> Three canvases side by side — true colour, pixel classes, NDVI — plus a stats table (polygon vs. 500 m ring) and the scene date, platform and cloud cover.</li>
+</ol>
+<p>Nothing leaves your browser, no account is needed, 8 to 20 seconds on a home connection. If the request fails (cloudy fortnight, Earth Search outage) the panel says so and offers the archive date it last found.</p>
+<h3>Function 4 — The Compare view</h3>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-compare.jpg?v=670789d9" alt="Compare table: all ten pilot sites side by side, every lifecycle number in one view, sortable, exportable as CSV or GeoJSON"></p>
+<p>The Compare tab lays every site in one sortable table. Columns, in order: ID, name, country, lifecycle stage, flags, area (ha), DEM volume (m³), bare %, iron %, red water %, recovery clock status, people within 1 km, Natura 2000 overlap (ha within 1 km), EGMS subsidence share faster than −5 mm/yr. Click a site ID to open its card without leaving the view.</p>
+<p>The two buttons at the top of the view produce the full-register exports:</p>
+<ul>
+<li><strong>Export all as CSV.</strong> All ten sites, every column, keyed to the CRMA Article 27 database fields.</li>
+<li><strong>Export all as GeoJSON.</strong> Every polygon with properties, released under CC BY 4.0 (CC BY-SA 4.0 where share-alike inputs were used, flagged per feature).</li>
+</ul>
+<h3>Function 5 — Communities</h3>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-communities.jpg?v=335290b4" alt="Communities view, Mina de São Domingos: landscape, livelihoods, preliminary resident concerns, three pathway-preference cards"></p>
+<p>Three communities, each on its own card: the mining landscape, livelihoods today, preliminary resident concerns, three pathway-preference cards (leave / rehabilitate / reprocess), the sites each community sits beside, and the municipal contact point.</p>
+<p>Everything on this tab is preliminary by design. The headline reminder on the tab says so: the FIERCE service S2 runs 18 semi-structured interviews and one community session per community between February and May 2027, and those anonymised themes replace what you see today.</p>
+<h3>Function 6 — Pipeline + CRMA Article 27 export</h3>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-pipeline.jpg?v=8f393d2e" alt="Pipeline diagram: Sentinel-2, DEM, EGMS, WorldCover, Surface Water, GHSL and OpenStreetMap flow into strata-core.js (26 of 26 unit tests pass), out as lifecycle card, CRMA CSV, GeoJSON polygon and attribution"></p>
+<p>The Pipeline view is the data map of the tool. The left column lists every input and its licence. The centre names the in-browser classifier — <code>strata-core.js</code>, where the self-tests report <strong>26 of 26 unit tests pass</strong> on load — and lists the steps it runs. The right column lists what comes out: the lifecycle card you see, the CSV row keyed to the CRMA Article 27 fields, the GeoJSON polygon, and the methodology attribution that ships with every export.</p>
+<p>Three rules worth repeating:</p>
+<ul>
+<li><strong>Open in, open out.</strong> Nothing proprietary; every output is CC BY or CC BY-SA with the share-alike flag set on affected features.</li>
+<li><strong>Operator and measured metal content are always empty.</strong> Strata cannot measure them, so it does not estimate them.</li>
+<li><strong>In-browser.</strong> No scene, no coordinate, no indicator ever leaves your device for a Transitions Lab server.</li>
+</ul>
+<hr>
+<h2>Part 2 · Three users, start to finish</h2>
+<h3>Use case A — A geological survey compiling the Article 27 database</h3>
+<p>Every Member State has to register its closed mine waste sites under Article 27 of the Critical Raw Materials Act. A survey analyst sitting with that register has a problem Strata is built for: for most historic sites there is no modern measurement at all.</p>
+<p><strong>Step 1.</strong> Open <a href="/strata-demo">the app</a>. Jump straight to the Compare view. Scan the register as it stands: ten pilot sites, lifecycle stages at a glance, flag pattern per column.</p>
+<p><strong>Step 2.</strong> For each site that lacks a current measurement, open the card. Confirm the waste area reads sensibly against the ground. Press <strong>Load latest Sentinel-2 scene</strong>. The three canvases will tell you within seconds whether the site is bare, re-vegetating, or already covered.</p>
+<p><strong>Step 3.</strong> For a site with a <em>reopening planned</em> register status, the Pathways card lays out what Leave, Rehabilitate and Reprocess would entail, so the register entry can carry the CRM-candidate rationale alongside the measured properties.</p>
+<p><strong>Step 4.</strong> Click <strong>Export CSV</strong>. One row keyed to the Article 27 schema, with operator and measured content left empty, DEM volume labelled as a 2011–15 Copernicus proxy, CRM candidates coming from deposit type (never from measured content).</p>
+<p><strong>Step 5.</strong> Repeat for the next site. Export all as CSV at the end if you want the whole register in one file. Attribution ships inside the exports.</p>
+<p><strong>What Strata will not do.</strong> It will not sign the register. The analyst does. Strata provides the evidence base and the trail from pixel to row.</p>
+<h3>Use case B — A municipality beside a legacy site</h3>
+<p>A mayor or a municipal technician wants to understand what sits beside their town: how much of it, in what state, with how many people how close, and whether anything is happening on it.</p>
+<p><strong>Step 1.</strong> Open <a href="/strata-demo">the app</a>. Search for the municipality name in the top-left search box (e.g. <em>Mértola</em>). The site list filters to the ones in that municipality; the matching pins pulse on the map.</p>
+<p><strong>Step 2.</strong> Open the site card. The six key facts at the top are the ones a council agenda needs: how big (ha), how massive (Mm³), how exposed (bare %), how vegetated (veg %), how close to residents (people within 1 km), how coloured the water is (red water %).</p>
+<p><strong>Step 3.</strong> Open the <strong>Communities</strong> tab. If your community is one of the three pilots, the preliminary concerns and the pathway preferences read directly against what the satellite shows. If not, use it as a template for the questions the technician can ask residents.</p>
+<p><strong>Step 4.</strong> Open the Ten-year change panel. The natural recovery clock tells the council whether the site is recovering on its own, has stalled, or is going backwards — in years, not percentages. This is often the first time any such figure has existed for the site.</p>
+<p><strong>Step 5.</strong> Export CSV or GeoJSON to bring the facts into a council agenda, a planning submission, or a conversation with the regional authority.</p>
+<p><strong>What Strata will not do.</strong> It will not tell the council whether a planned reopening is in the public interest. That is a political and legal judgement. Strata is the honest baseline it rests on.</p>
+<h3>Use case C — A reprocessing firm screening for secondary CRMs</h3>
+<p>A pyro- or hydro-metallurgical operator with spare capacity wants to know which legacy heaps in a region are plausible feedstocks: large enough, iron-signal-bearing (as a crude proxy for oxidised sulphide waste), with ground stability history, and not sitting on top of a Natura 2000 habitat.</p>
+<p><strong>Step 1.</strong> Open the <strong>Compare</strong> view. Sort by area descending. Shortlist by minimum area.</p>
+<p><strong>Step 2.</strong> Filter the map by the <code>iron_signal</code> flag. The pins that drop out are the ones that do not show the iron-oxide signal on the satellite; the ones that stay are the ones worth a closer look.</p>
+<p><strong>Step 3.</strong> Open each shortlisted site. Check:</p>
+<ul>
+<li><strong>EGMS motion share</strong> (around the site section): a stable or slowly settling site is cheaper to work than one actively subsiding.</li>
+<li><strong>Natura 2000 overlap</strong> (around the site section): any share &gt; 0 is a planning red flag that belongs in the earliest conversation.</li>
+<li><strong>People within 1 km</strong> (key facts): the social cost of dust and traffic is roughly proportional to this.</li>
+<li><strong>Register status</strong> (header): a site with an operating or reopening-planned status is not a free screening target.</li>
+</ul>
+<p><strong>Step 4.</strong> Click <strong>Load latest Sentinel-2 scene</strong>. The pixel classes confirm whether the iron signal is a thin crust or a dominant surface — the former is a few years' feedstock, the latter is a decade.</p>
+<p><strong>Step 5.</strong> Export each shortlisted site's row and polygon. Hand the file to a hydro-/pyro- processing engineer with the honest caveat that measured metal content is empty by design.</p>
+<p><strong>What Strata will not do.</strong> It will not tell you grade. It will not quote a reprocessing cost. It will tell you which sites are large enough and surface-chemistry-plausible enough to spend the first field day on, which is the question that costs most to answer without a tool.</p>
+<hr>
+<h2>Part 3 · Limits, and when not to use Strata</h2>
+<p>A fair guide includes the stop signs.</p>
+<ul>
+<li><strong>Strata does not measure metal grades or tonnages.</strong> The DEM volume is a 2011–15 proxy. The CRM candidates are deposit-type priors, never measurements.</li>
+<li><strong>Strata does not judge permit compliance.</strong> It flags what the satellite shows; whether that is lawful or in breach is for the competent authority to decide. The copy rule is explicit: every flag ends with "This is a signal for follow-up, not a finding."</li>
+<li><strong>Ten-metre imagery misses small features.</strong> Early earthworks, test pits, a single truck convoy — Strata will not catch them.</li>
+<li><strong>EGMS coverage is Copernicus Participating States only.</strong> For sites outside that footprint the ground motion column reads <em>N/L</em> (not listed).</li>
+<li><strong>Operator and measured content are empty.</strong> By design. Where a Member State register already carries these, that register remains authoritative.</li>
+<li><strong>The pilot register is 10 sites.</strong> The method travels; the current register is small. The FIERCE service S4 market study expands the operating register progressively.</li>
+</ul>
+<p>If the question needs a measured grade, a legal determination, or a sub-10 m feature, Strata is not the tool. For the question "what is actually on these heaps today, how are they changing, and what would three different plans mean?", it is.</p>
+<hr>
+<h2>Keyboard, URL, and sharing shortcuts</h2>
+<ul>
+<li><strong>Deep-link a site.</strong> <code>/strata-demo#site-pt-sdo</code> opens São Domingos directly. Replace the ID with any of PT-SDO, PT-LOU, PT-ALJ, ES-THA, ES-RTO, ES-PDH, ES-ZAR, ES-AZN, DE-BOL, SE-FAL.</li>
+<li><strong>Deep-link a view.</strong> <code>/strata-demo#compare</code>, <code>#communities</code>, <code>#pipeline</code>, <code>#method</code>, <code>#data</code>, <code>#about</code>.</li>
+<li><strong>Close a card.</strong> Press <em>Esc</em> or the X at the top of the card.</li>
+<li><strong>Theme.</strong> The moon icon toggles light / dark and is remembered per browser.</li>
+<li><strong>Help.</strong> The "?" icon reopens the welcome card at any time.</li>
+<li><strong>Share a site.</strong> Copy the URL after the hash and paste. It opens the card for anyone with the link, no login required.</li>
+</ul>
+
+      
+    </div>
+  </div>
+</section>
+
+<section class="light article-cta-band">
+  <div class="wrap-prose">
+    <div class="prose">
+      <div class="contact-cta-programme">
+        <h3>Connect with the Lab</h3>
+        <p class="lede">If this reads close to a decision you are weighing, we would like to hear about it. A short note is enough to start.</p>
+        <div class="contact-options">
+          <a href="/entering-a-new-context"><strong>Entering a new context</strong><span>A first read of a market, technology or region.</span></a>
+          <a href="/measuring-change"><strong>Measuring change</strong><span>Field measurement that connects action to outcome.</span></a>
+          <a href="/reporting-to-funders"><strong>Reporting to funders</strong><span>Evidence packaged for the reader who will act on it.</span></a>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>
+          <a href="/case-studies" class="cta-secondary">See case studies</a>
+          <a href="/articles" class="cta-secondary">Read the articles</a>
+        </div>
+      </div>
+      <p class="lab-posture-note">The Lab is an independent research team, not an advocacy organisation. We do not campaign, endorse products, or accept commissions where a finding is expected in advance. Where a partner&#39;s own theory of change is what needs testing, that is a legitimate engagement, and the Lab tests it honestly.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo.png" alt="Transitions Lab" class="brand-logo brand-logo--footer"></a>
+      <p class="mission">An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.</p>
+      <form class="footer-subscribe" data-source="footer" novalidate>
+        <label for="footer-subscribe-email" class="fs-label">New essays and findings, straight to your inbox.</label>
+        <div class="fs-row">
+          <input id="footer-subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+          <button type="submit" class="fs-btn">Subscribe</button>
+        </div>
+        <p class="fs-note" aria-live="polite"></p>
+      </form>
+    </div>
+    <div>
+      <h4>What we do</h4>
+      <a href="/what-we-do">Overview</a>
+      <a href="/entering-a-new-context">Entering a new context</a>
+      <a href="/measuring-change">Measuring change</a>
+      <a href="/reporting-to-funders">Reporting to funders</a>
+      <a href="/how-it-works">How it works</a>
+    </div>
+    <div>
+      <h4>Methods</h4>
+      <a href="/field-research">Field research</a>
+      <a href="/impact-measurement">Impact measurement</a>
+      <a href="/interview-guide">Interview guide</a>
+      <a href="/qualitative-vs-quantitative">Qualitative vs quantitative</a>
+      <a href="/impact-tracking-template">Impact-tracking template</a>
+    </div>
+    <div>
+      <h4>Research</h4>
+      <a href="/expertise">Programmes</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/resources">Resources</a>
+      <a href="/sdgs">Research by SDG</a>
+      <a href="/brw">BReW framework</a>
+      <a href="/readiness-levels">TRL &amp; SRL</a>
+    </div>
+    <div>
+      <h4>The Lab</h4>
+      <a href="/about">About</a>
+      <a href="/who-we-serve">Who we serve</a>
+      <a href="/for-funders">For Funders</a>
+      <a href="/capability-statement">Capability statement</a>
+      <a href="/strata"><strong>STRATA</strong> &middot; satellite monitor</a>
+      <a href="/contact">Contact</a>
+      <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-lang">
+      <span class="footer-lang-label">Language</span>
+      <div class="lang lang--footer">
+        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="lang-code">EN</span><svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-menu" hidden role="menu">
+          <a class="lang-option is-active" href="#" data-lang="en" role="menuitem" aria-current="true">English</a>
+          <a class="lang-option" href="#" data-lang="nl" role="menuitem">Nederlands</a>
+          <a class="lang-option" href="#" data-lang="de" role="menuitem">Deutsch</a>
+          <a class="lang-option" href="#" data-lang="fr" role="menuitem">Français</a>
+          <a class="lang-option" href="#" data-lang="es" role="menuitem">Español</a>
+          <a class="lang-option" href="#" data-lang="it" role="menuitem">Italiano</a>
+          <a class="lang-option" href="#" data-lang="pt" role="menuitem">Português</a>
+          <a class="lang-option" href="#" data-lang="pl" role="menuitem">Polski</a>
+          <a class="lang-option" href="#" data-lang="sv" role="menuitem">Svenska</a>
+          <a class="lang-option" href="#" data-lang="da" role="menuitem">Dansk</a>
+          <a class="lang-option" href="#" data-lang="no" role="menuitem">Norsk</a>
+          <a class="lang-option" href="#" data-lang="fi" role="menuitem">Suomi</a>
+          <a class="lang-option" href="#" data-lang="is" role="menuitem">Íslenska</a>
+          <a class="lang-option" href="#" data-lang="cs" role="menuitem">Čeština</a>
+          <a class="lang-option" href="#" data-lang="sk" role="menuitem">Slovenčina</a>
+          <a class="lang-option" href="#" data-lang="sl" role="menuitem">Slovenščina</a>
+          <a class="lang-option" href="#" data-lang="hu" role="menuitem">Magyar</a>
+          <a class="lang-option" href="#" data-lang="ro" role="menuitem">Română</a>
+          <a class="lang-option" href="#" data-lang="bg" role="menuitem">Български</a>
+          <a class="lang-option" href="#" data-lang="hr" role="menuitem">Hrvatski</a>
+          <a class="lang-option" href="#" data-lang="sr" role="menuitem">Srpski</a>
+          <a class="lang-option" href="#" data-lang="el" role="menuitem">Ελληνικά</a>
+          <a class="lang-option" href="#" data-lang="lt" role="menuitem">Lietuvių</a>
+          <a class="lang-option" href="#" data-lang="lv" role="menuitem">Latviešu</a>
+          <a class="lang-option" href="#" data-lang="et" role="menuitem">Eesti</a>
+          <a class="lang-option" href="#" data-lang="ca" role="menuitem">Català</a>
+          <a class="lang-option" href="#" data-lang="uk" role="menuitem">Українська</a>
+          <a class="lang-option" href="#" data-lang="ru" role="menuitem">Русский</a>
+          <a class="lang-option" href="#" data-lang="tr" role="menuitem">Türkçe</a>
+          <a class="lang-option" href="#" data-lang="ar" role="menuitem">العربية</a>
+          <a class="lang-option" href="#" data-lang="he" role="menuitem">עברית</a>
+          <a class="lang-option" href="#" data-lang="fa" role="menuitem">فارسی</a>
+          <a class="lang-option" href="#" data-lang="ur" role="menuitem">اردو</a>
+          <a class="lang-option" href="#" data-lang="hi" role="menuitem">हिन्दी</a>
+          <a class="lang-option" href="#" data-lang="bn" role="menuitem">বাংলা</a>
+          <a class="lang-option" href="#" data-lang="ta" role="menuitem">தமிழ்</a>
+          <a class="lang-option" href="#" data-lang="te" role="menuitem">తెలుగు</a>
+          <a class="lang-option" href="#" data-lang="mr" role="menuitem">मराठी</a>
+          <a class="lang-option" href="#" data-lang="pa" role="menuitem">ਪੰਜਾਬੀ</a>
+          <a class="lang-option" href="#" data-lang="gu" role="menuitem">ગુજરાતી</a>
+          <a class="lang-option" href="#" data-lang="zh-CN" role="menuitem">简体中文</a>
+          <a class="lang-option" href="#" data-lang="zh-TW" role="menuitem">繁體中文</a>
+          <a class="lang-option" href="#" data-lang="ja" role="menuitem">日本語</a>
+          <a class="lang-option" href="#" data-lang="ko" role="menuitem">한국어</a>
+          <a class="lang-option" href="#" data-lang="vi" role="menuitem">Tiếng Việt</a>
+          <a class="lang-option" href="#" data-lang="th" role="menuitem">ภาษาไทย</a>
+          <a class="lang-option" href="#" data-lang="id" role="menuitem">Bahasa Indonesia</a>
+          <a class="lang-option" href="#" data-lang="ms" role="menuitem">Bahasa Melayu</a>
+          <a class="lang-option" href="#" data-lang="tl" role="menuitem">Filipino</a>
+          <a class="lang-option" href="#" data-lang="sw" role="menuitem">Kiswahili</a>
+          <a class="lang-option" href="#" data-lang="am" role="menuitem">አማርኛ</a>
+          <a class="lang-option" href="#" data-lang="ha" role="menuitem">Hausa</a>
+          <a class="lang-option" href="#" data-lang="yo" role="menuitem">Yorùbá</a>
+          <a class="lang-option" href="#" data-lang="ig" role="menuitem">Igbo</a>
+          <a class="lang-option" href="#" data-lang="zu" role="menuitem">isiZulu</a>
+          <a class="lang-option" href="#" data-lang="xh" role="menuitem">isiXhosa</a>
+          <a class="lang-option" href="#" data-lang="af" role="menuitem">Afrikaans</a>
+          <a class="lang-option" href="#" data-lang="rw" role="menuitem">Kinyarwanda</a>
+          <a class="lang-option" href="#" data-lang="so" role="menuitem">Soomaali</a>
+        </div>
+      </div>
+      <a href="#" class="footer-lang-reset" data-lang-reset hidden>Show original</a>
+    </div>
+    <div class="legal">
+      <span>© Transitions Lab B.V. 2026 · Delft, The Netherlands · KVK 42170233</span>
+      <span><a href="/ethics">Research ethics</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Translate widget: renders a hidden gadget the JS in
+     site.js drives. Free, no API key required. Live languages
+     translate automatically; ones marked "Soon" are held back so
+     the layout isn't broken by RTL / CJK edge cases yet. -->
+<div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  function googleTranslateElementInit(){
+    if (!window.google || !google.translate) return;
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,nl,de,fr,es,it,pt,pl,sv,da',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+
+<div id="cookie-banner" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>A note on cookies.</strong>
+      <p>The Lab uses privacy-respecting analytics (page views, no personal identifiers). They load only if you accept. See our <a href="/cookies">cookie policy</a> for details, and change your mind any time via <em>Cookie preferences</em> in the footer.</p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-reject" class="cookie-btn cookie-btn-ghost" type="button">Reject</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn-primary" type="button">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/consent.js?v=ef374375" defer></script>
+<script src="/assets/reader.js?v=1f800e75" defer></script>
+<script src="/assets/site.js?v=71388242" defer></script>
+</body>
+</html>

@@ -5756,6 +5756,42 @@ body,
   box-shadow:6px 6px 0 var(--ink);
   background:var(--white,#fff);
 }
+/* Thumbnail-style feature cards: real screenshot occupies the top of
+   the card at a 16:10 aspect ratio with a thin inner border so it
+   doesn't bleed into the card ground. */
+.prose .strata-features--shots .strata-feature{padding:0;}
+.prose .strata-feature-shot{
+  position:relative;overflow:hidden;
+  aspect-ratio:16 / 10;
+  background:#1a1a19;
+  border-bottom:1px solid var(--rule);
+}
+.prose .strata-feature-shot img{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:top left;
+}
+.prose .strata-features--shots .strata-feature h3,
+.prose .strata-features--shots .strata-feature p,
+.prose .strata-features--shots .strata-feature .strata-feature-cta{
+  padding-left:20px;padding-right:20px;
+}
+.prose .strata-features--shots .strata-feature h3{margin-top:16px;}
+.prose .strata-features--shots .strata-feature .strata-feature-cta{padding-bottom:16px;}
+.prose .strata-features-guide{
+  margin:1.6em 0 .4em;padding:14px 18px;
+  background:var(--paper-2);border:1px solid var(--rule);
+  font-size:15px;line-height:1.5;color:var(--ink);
+}
+.prose .strata-features-guide a{color:var(--ink);text-decoration:underline;}
+
+/* Full-width screenshot figures inside the guide page: real-pixel
+   screenshots of the live app, framed with a thin ink border. */
+.prose .strata-guide-figure{margin:1.6em 0 1em;}
+.prose .strata-guide-figure img{
+  display:block;width:100%;height:auto;
+  border:1px solid var(--rule);
+  background:#1a1a19;
+}
+
 .prose .strata-feature-icon{
   width:48px;height:48px;color:var(--ink);
   display:flex;align-items:center;justify-content:center;

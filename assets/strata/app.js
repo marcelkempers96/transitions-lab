@@ -247,7 +247,8 @@ function onboardingHTML() {
 
         <div class="sr-onboard-actions">
           <button class="sr-abtn sr-abtn-primary" type="button" data-sr-onboard-close>Got it, show me the map &rarr;</button>
-          <a class="sr-abtn" href="/strata-method">Read the method</a>
+          <a class="sr-abtn" href="/strata-guide">Full guide: functions &amp; use cases</a>
+          <a class="sr-abtn" href="/strata-method">Method</a>
           <a class="sr-abtn" href="/strata-paper">Companion paper</a>
         </div>
       </div>

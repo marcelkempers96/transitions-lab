@@ -417,6 +417,7 @@ HERO_COLOR: dict[str, str] = {
     "strata-data-sources":    "forest",
     "strata-app":             "forest",
     "strata-paper":           "forest",
+    "strata-guide":           "forest",
     "insight-closed-mine-waste":                "butter",
     "insight-doesnt-wait-for-you-to-rebuild":   "butter",
     "insight-right-where-it-can-be-counted":    "butter",
@@ -473,6 +474,7 @@ ABOUT = [
     ("for-funders", "For Funders"),
     ("how-it-works", "How It Works"),
     ("strata", "STRATA"),
+    ("strata-guide", "STRATA guide"),
 ]
 
 SERVICES = [
@@ -589,6 +591,7 @@ NO_BYLINE_SLUGS: set[str] = {
     "strata-data-sources",
     "strata-app",
     "strata-paper",
+    "strata-guide",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -732,6 +735,10 @@ META: dict[str, dict[str, str]] = {
     "strata-paper": {
         "title": "Strata companion paper: method, equations, use cases, partners | Transitions Lab",
         "description": "A reading-length companion to Strata: the problem it is built for, the equations that define each indicator, four use cases with named audiences, and the partners who stand behind the tool.",
+    },
+    "strata-guide": {
+        "title": "Strata guide: every function, every use case | Transitions Lab",
+        "description": "A walkthrough of every function in the Strata app (map, lifecycle site card, live Sentinel-2 scene, Compare, Communities, Pipeline, exports) and three use cases end to end: a geological survey, a municipality, a reprocessing firm.",
     },
     "insight-closed-mine-waste": {
         "title": "You cannot decide what to do with a closed mine site if nobody has looked at it since it closed | Transitions Lab",
@@ -1889,6 +1896,7 @@ CRUMB_PARENT: dict[str, str | None] = {
     "strata-data-sources":   "resources",
     "strata-app":            "resources",
     "strata-paper":          "resources",
+    "strata-guide":          "resources",
 }
 
 CRUMB_LABELS: dict[str, str] = {
