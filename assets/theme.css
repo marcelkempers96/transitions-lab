@@ -5628,8 +5628,14 @@ body,
   .prose .strata-hero-globe-wrap{gap:6px;}
   .prose .strata-globe{max-width:300px;}
   .prose .strata-hero-caption{font-size:10.5px;letter-spacing:.1em;}
-  .prose .strata-hero-actions{gap:8px;margin:2px 0 0;}
-  .prose .strata-hero-actions .btn{flex:1;min-width:0;text-align:center;padding-left:14px;padding-right:14px;}
+  /* Stack hero CTAs on phones: full-width, each on its own row, so
+     the long labels never overlap and never spill past the button. */
+  .prose .strata-hero-actions{flex-direction:column;align-items:stretch;gap:10px;margin:4px 0 0;}
+  .prose .strata-hero-actions .btn{
+    flex:0 0 auto;width:100%;min-width:0;
+    text-align:center;white-space:normal;
+    padding:12px 16px;
+  }
   .prose .strata-signup{margin-top:12px;padding-top:14px;}
   .prose .strata-signup-label{margin-bottom:6px;font-size:11px;}
   .prose .strata-signup-row button{padding-left:14px;padding-right:14px;font-size:12px;}

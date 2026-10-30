@@ -24,8 +24,8 @@
     <p class="strata-wordmark"><img src="/assets/logos/strata-lockup-black.svg" alt="Strata — a satellite lifecycle card for every closed mine waste site"></p>
     <p class="strata-hero-pitch">A satellite lifecycle card for every closed mine waste site, built on open Copernicus data. One method, every site, in every browser.</p>
     <p class="strata-hero-actions">
-      <a href="/strata-demo" class="btn btn-ink">Launch the Strata app &rarr;</a>
-      <a href="/strata-paper" class="btn btn-ghost">Read the companion paper</a>
+      <a href="/strata-demo" class="btn btn-ink">Launch Strata &rarr;</a>
+      <a href="/strata-paper" class="btn btn-ghost">Companion paper</a>
     </p>
     <form class="strata-signup" data-strata-signup>
       <label for="strata-signup-email" class="strata-signup-label">Get the pilot update when it lands.</label>
