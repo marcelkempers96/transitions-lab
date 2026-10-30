@@ -62,15 +62,29 @@
     var ctx = canvas.getContext('2d');
     var W = canvas.width, H = canvas.height;
     var dpr = window.devicePixelRatio || 1;
+    // Size the BITMAP from the CSS-rendered box. Never set inline
+    // style.width/height — CSS (max-width + aspect-ratio:1/1) owns
+    // the display box, so iOS Safari can't end up with a 300×520
+    // canvas when a defer-script race measures clientWidth = 0.
     function resize(){
-      var sz = Math.min(canvas.clientWidth || 520, 520);
-      W = canvas.width = Math.round(sz * dpr);
-      H = canvas.height = Math.round(sz * dpr);
-      canvas.style.width = sz + 'px';
-      canvas.style.height = sz + 'px';
+      var r = canvas.getBoundingClientRect();
+      var sz = Math.round(r.width);
+      if (sz < 1) sz = 300;      // pre-layout defensive default
+      W = Math.round(sz * dpr);
+      H = W;                     // aspect-ratio:1/1 in CSS
+      if (canvas.width !== W)  canvas.width  = W;
+      if (canvas.height !== H) canvas.height = H;
     }
     resize();
+    // Re-measure on every repaint until the box is laid out. iOS
+    // Safari sometimes gives width 0 to a canvas whose CSS has not
+    // been applied yet; a ResizeObserver + a one-shot rAF chain
+    // catches the real size as soon as it is known.
     window.addEventListener('resize', resize);
+    if (typeof ResizeObserver !== 'undefined') {
+      try { new ResizeObserver(resize).observe(canvas); } catch (_) {}
+    }
+    requestAnimationFrame(resize);
 
     var cx = function(){ return W / 2; };
     var cy = function(){ return H / 2; };
@@ -97,20 +111,22 @@
 
     function draw(){
       ctx.clearRect(0, 0, W, H);
-      // Ocean sphere
+      // Ocean sphere — visibly darker than the cream body so the
+      // globe reads on bright phone screens too.
       var r = R();
       var grad = ctx.createRadialGradient(cx() - r * 0.3, cy() - r * 0.35, r * 0.1, cx(), cy(), r);
-      grad.addColorStop(0, '#F6F5F2');
-      grad.addColorStop(1, '#DCD7C7');
+      grad.addColorStop(0, '#E8E3D4');
+      grad.addColorStop(1, '#B9B0A0');
       ctx.fillStyle = grad;
       ctx.beginPath(); ctx.arc(cx(), cy(), r, 0, Math.PI * 2); ctx.fill();
-      // Thin rim
-      ctx.strokeStyle = '#B9B3A4';
-      ctx.lineWidth = 1 * dpr;
+      // Rim: a visible dark stroke so the sphere never disappears
+      // against the body background.
+      ctx.strokeStyle = '#4A4842';
+      ctx.lineWidth = 1.5 * dpr;
       ctx.stroke();
 
-      // Graticule, 15° lon lines
-      ctx.strokeStyle = 'rgba(107, 105, 99, 0.18)';
+      // Graticule, 15° lon lines, stronger contrast than before
+      ctx.strokeStyle = 'rgba(74, 72, 66, 0.35)';
       ctx.lineWidth = 1 * dpr;
       for (var g = -180; g < 180; g += 15) {
         drawPolyline(latLineAtLon(g), false);
@@ -119,19 +135,19 @@
         drawPolyline(parallelAtLat(h), false);
       }
 
-      // Land
+      // Land — malachite outline, slightly stronger fill
       ctx.strokeStyle = '#1D6B55';
-      ctx.lineWidth = 1 * dpr;
-      ctx.fillStyle = 'rgba(29, 107, 85, 0.14)';
+      ctx.lineWidth = 1.25 * dpr;
+      ctx.fillStyle = 'rgba(29, 107, 85, 0.22)';
       for (var i = 0; i < rings.length; i++) drawRing(rings[i]);
 
-      // Pilot site pins
+      // Pilot site pins — slightly larger on retina
       for (var k = 0; k < SITES.length; k++) {
         var s = SITES[k];
         var p = project(s.lon, s.lat);
         if (!p) continue;
         ctx.fillStyle = '#C2502A';
-        ctx.beginPath(); ctx.arc(p[0], p[1], 4 * dpr, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(p[0], p[1], 5 * dpr, 0, Math.PI * 2); ctx.fill();
         ctx.strokeStyle = '#FFFFFF';
         ctx.lineWidth = 1.5 * dpr;
         ctx.stroke();
@@ -200,10 +216,11 @@
     }
     requestAnimationFrame(tick);
 
-    // Drag to rotate
+    // Drag to rotate — wrap setPointerCapture: some mobile Safari
+    // versions throw if the pointer is already captured elsewhere.
     canvas.addEventListener('pointerdown', function(ev){
       drag = { x: ev.clientX, y: ev.clientY, lon0: centreLon, lat0: centreLat };
-      canvas.setPointerCapture(ev.pointerId);
+      try { canvas.setPointerCapture(ev.pointerId); } catch (_) {}
     });
     canvas.addEventListener('pointermove', function(ev){
       if (!drag) return;
