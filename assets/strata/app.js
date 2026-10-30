@@ -22,12 +22,48 @@
 
 import {
   DEFAULTS,
+  CLASS,
   recoveryClock,
   lifecycleStage,
   crmaExportRow,
   STAGE_LABEL,
   round,
+  searchScenes,
+  itemEpsg,
+  readBands,
+  computeIndexRasters,
+  classifyPixels,
+  validMask,
+  fractionValid,
+  summarise,
+  geometryBbox,
+  expandLonLatBbox,
+  lonLatBboxToUtm,
+  geometryToPixelRings,
+  rasterisePolygon,
+  ringMask,
+  trueColourRGBA,
+  classRGBA,
 } from './core.js';
+
+// Palette for the class map (follows CLAUDE.md).
+const CLASS_COLOURS = {
+  [CLASS.INVALID]:    [0, 0, 0],
+  [CLASS.VEGETATION]: [29, 107, 85],
+  [CLASS.BARE]:       [207, 198, 180],
+  [CLASS.BARE_IRON]:  [194, 80, 42],
+  [CLASS.WATER]:      [47, 111, 159],
+  [CLASS.RED_WATER]:  [226, 169, 59],
+  [CLASS.OTHER]:      [142, 138, 128],
+};
+const CLASS_LABELS = {
+  [CLASS.VEGETATION]: 'Vegetation',
+  [CLASS.BARE]:       'Bare ground',
+  [CLASS.BARE_IRON]:  'Bare ground, iron signal',
+  [CLASS.WATER]:      'Water',
+  [CLASS.RED_WATER]:  'Red or orange water',
+  [CLASS.OTHER]:      'Other surface',
+};
 
 const ROOT = document.getElementById('strata-root');
 if (ROOT) boot();
@@ -405,6 +441,22 @@ function wireListAndMap() {
       const dl = ev.target.closest('[data-sr-csv]'); if (dl) { downloadSiteCsv(S.selected); return; }
       const dg = ev.target.closest('[data-sr-geojson]'); if (dg) { downloadSiteGeoJson(S.selected); return; }
       const copy = ev.target.closest('[data-sr-cite]'); if (copy) { copyCitation(copy); return; }
+      // Live scene load
+      const liveBtn = ev.target.closest('[data-sr-live]');
+      if (liveBtn) {
+        const sid = liveBtn.getAttribute('data-sr-live');
+        const site = S.sites.find((f) => f.properties.id === sid);
+        const mount = ev.target.closest('.sr-live-sect')?.querySelector('.sr-live-mount');
+        if (site && mount) loadLiveScene(site, mount);
+        return;
+      }
+      const retry = ev.target.closest('[data-sr-live-retry]');
+      if (retry) {
+        const site = S.sites.find((f) => f.properties.id === S.selected);
+        const mount = ev.target.closest('.sr-live-sect')?.querySelector('.sr-live-mount');
+        if (site && mount) loadLiveScene(site, mount);
+        return;
+      }
     });
   }
 }
@@ -532,12 +584,9 @@ function siteDetailHTML(id) {
         </div>
       </div>
 
-      <div class="sr-sect">
+      <div class="sr-sect sr-live-sect" data-site-id="${esc(p.id)}">
         <span class="sr-label sr-sect-head">Now from space (live)</span>
-        <div class="sr-live-panel">
-          <p>In the pilot, this panel will fetch the latest clear Sentinel-2 Level-2A scene within 500 m of the site via a free Earth Search STAC search, read the six bands plus SCL from the Cloud-Optimised GeoTIFFs, and classify every 10 m pixel into vegetation, bare ground, bare with an iron signal, water and red or orange water. The method is in <a href="#method">Method</a>; the reference implementation is in <code>strata-core.js</code> (<strong>26 of 26 unit tests pass</strong>).</p>
-          <p style="margin-top:8px;">The demo you are reading now runs on offline annual composites so pages work without a cold STAC fetch. Enable live scenes by setting <code>config.provider = "earthsearch"</code> and deploying the pipeline from <code>CLAUDE.md</code> milestones M0 to M3.</p>
-        </div>
+        <div class="sr-live-mount">${renderLiveIdle(p.id)}</div>
       </div>
 
       <div class="sr-sect">
@@ -667,6 +716,252 @@ function chartSVG(series) {
     line('redWaterOfWaterPct', '#B23A47', 0.8),
   ].join('');
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${lines}</svg>`;
+}
+
+// ───────────────────────── Live Sentinel-2 scene ────────────────
+// All of the work below runs in the browser against the Earth Search
+// STAC endpoint and Cloud-Optimised GeoTIFFs on AWS. No account, no
+// server, no API key. The 'geotiff' import is resolved by the
+// import-map in strata-demo.html.
+
+function renderLiveIdle(siteId) {
+  return `
+    <div class="sr-live-panel">
+      <p><strong>Live Sentinel-2 scene.</strong> Fetches the most recent clear Sentinel-2 Level-2A acquisition over this site via the free Earth Search STAC, reads the six bands and the Scene Classification Layer from the Cloud-Optimised GeoTIFFs, and classifies every 10 m pixel into vegetation, bare ground, bare with an iron oxide signal, water and red/orange water. The classes use the formulas in the <a href="#method">method page</a>.</p>
+      <button class="sr-live-btn" type="button" data-sr-live="${esc(siteId)}">Load latest Sentinel-2 scene &rarr;</button>
+      <p class="sr-live-note">First load pulls the geotiff library (~400 KB) and 7 band windows (~2–5 MB). Typical total: 8 to 20 seconds on a home connection.</p>
+    </div>`;
+}
+
+function renderLiveLoading(step) {
+  return `
+    <div class="sr-live-panel sr-live-loading">
+      <div class="sr-live-spinner" aria-hidden="true"></div>
+      <p class="sr-live-step"><strong>${esc(step)}</strong></p>
+      <p class="sr-live-note">Reading Cloud-Optimised GeoTIFFs over HTTP range requests. The browser never downloads a whole scene; just a window around the site.</p>
+    </div>`;
+}
+
+function renderLiveError(msg) {
+  return `
+    <div class="sr-live-panel sr-live-err">
+      <p><strong>Live scene did not load.</strong> ${esc(msg)}</p>
+      <p class="sr-live-note">Earth Search sometimes rate-limits browser clients. Try again in a minute. Everything else on this page runs from offline annual composites.</p>
+      <button class="sr-live-btn" type="button" data-sr-live-retry>Try again</button>
+    </div>`;
+}
+
+function renderLiveScene(ctx) {
+  // ctx: { item, bands, idx, classes, poly, ring, polyStats, ringStats, width, height }
+  const d = new Date(ctx.item.properties.datetime);
+  const dateStr = d.toISOString().slice(0, 10);
+  const cloud = Math.round(ctx.item.properties['eo:cloud_cover'] || 0);
+  const prov = 'Earth Search (Element 84 / AWS)';
+  const vf = Math.round((ctx.polyStats.validPct || 0));
+
+  const polyPct = ctx.polyStats;
+  const ringPct = ctx.ringStats;
+
+  const legendHTML = Object.keys(CLASS_LABELS).map((k) => {
+    const col = CLASS_COLOURS[k]; const label = CLASS_LABELS[k];
+    const pct = polyPct && polyPct[classStatKey(+k)];
+    return `<span class="sr-cls-sw"><span class="d" style="background:rgb(${col[0]},${col[1]},${col[2]})"></span>${esc(label)}${pct != null ? ' · ' + round(pct, 0) + '%' : ''}</span>`;
+  }).join('');
+
+  return `
+    <div class="sr-live-result">
+      <div class="sr-live-head">
+        <span class="sr-label">Scene</span>
+        <strong>${esc(ctx.item.id)}</strong>
+        <span class="sr-live-meta">${esc(dateStr)} · ${cloud}% cloud · ${prov}</span>
+      </div>
+      <div class="sr-live-canvases">
+        <figure>
+          <canvas id="live-rgb"></canvas>
+          <figcaption>True colour (B04/B03/B02, linear stretch)</figcaption>
+        </figure>
+        <figure>
+          <canvas id="live-cls"></canvas>
+          <figcaption>Pixel classes</figcaption>
+        </figure>
+        <figure>
+          <canvas id="live-ndvi"></canvas>
+          <figcaption>NDVI (brown ↔ green)</figcaption>
+        </figure>
+      </div>
+      <div class="sr-live-legend">${legendHTML}</div>
+      <div class="sr-live-stats">
+        <div class="sr-live-stats-col">
+          <span class="sr-label">Inside the polygon</span>
+          <dl>
+            <dt>Valid pixels</dt><dd>${round(vf, 0)}%</dd>
+            <dt>Vegetation</dt><dd>${round(polyPct.vegetationPct, 1)}%</dd>
+            <dt>Bare ground</dt><dd>${round(polyPct.barePct, 1)}%</dd>
+            <dt>Of which iron signal</dt><dd>${round(polyPct.ironPct, 1)}%</dd>
+            <dt>Water</dt><dd>${round(polyPct.waterPct, 1)}%</dd>
+            <dt>Red of water</dt><dd>${round(polyPct.redWaterOfWaterPct, 1)}%</dd>
+            <dt>Area (region)</dt><dd>${round(polyPct.regionHa, 1)} ha</dd>
+          </dl>
+        </div>
+        <div class="sr-live-stats-col">
+          <span class="sr-label">500 m ring</span>
+          <dl>
+            <dt>Vegetation</dt><dd>${round(ringPct.vegetationPct, 1)}%</dd>
+            <dt>Bare ground</dt><dd>${round(ringPct.barePct, 1)}%</dd>
+            <dt>Iron signal</dt><dd>${round(ringPct.ironPct, 1)}%</dd>
+            <dt>Water</dt><dd>${round(ringPct.waterPct, 1)}%</dd>
+            <dt>Area (region)</dt><dd>${round(ringPct.regionHa, 1)} ha</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="sr-live-note">Contains modified Copernicus Sentinel data ${esc(dateStr.slice(0,4))}. Processed in-browser by strata-core.js. <button class="sr-live-mini" type="button" data-sr-live-retry>Reload</button></p>
+    </div>`;
+}
+
+function classStatKey(k) {
+  // Map CLASS constant to the summary field it corresponds to.
+  if (k === CLASS.VEGETATION) return 'vegetationPct';
+  if (k === CLASS.BARE)       return 'barePct';
+  if (k === CLASS.BARE_IRON)  return 'ironPct';
+  if (k === CLASS.WATER)      return 'waterPct';
+  // Red water is reported as % of water, not % of region, so skip.
+  return null;
+}
+
+async function loadLiveScene(site, mountEl) {
+  const show = (html) => { mountEl.innerHTML = html; };
+  const step = (msg) => { show(renderLiveLoading(msg)); };
+
+  try {
+    step('Searching Sentinel-2 scenes…');
+    const siteBbox = geometryBbox(site.geometry);
+    const bbox = expandLonLatBbox(siteBbox, DEFAULTS.ringMetres + 200);
+    const end = new Date();
+    const start = new Date(end.getTime() - 180 * 86_400_000);
+    const toISO = (d) => d.toISOString().slice(0, 10);
+    const scenes = await searchScenes({
+      bbox, start: toISO(start), end: toISO(end),
+      maxCloud: 40, limit: 10, provider: 'earthsearch',
+    });
+    if (!scenes.length) {
+      show(renderLiveError('No Sentinel-2 scene under 40% cloud in the last 180 days over this site.'));
+      return;
+    }
+
+    for (let i = 0; i < Math.min(scenes.length, 4); i++) {
+      const item = scenes[i];
+      const cloud = Math.round(item.properties['eo:cloud_cover'] || 0);
+      try {
+        step(`Reading bands from ${item.id.split('_').slice(-2).join(' ')} (${cloud}% cloud, scene ${i + 1}/${Math.min(scenes.length, 4)})…`);
+        const epsg = itemEpsg(item);
+        const zone = epsg % 100;
+        const bboxUtm = lonLatBboxToUtm(bbox, zone);
+        const bands = await readBands(item, bboxUtm, { provider: 'earthsearch', pixelSizeM: 10 });
+        step('Computing indices and classes…');
+        const { width, height } = bands;
+        const ringsPx = geometryToPixelRings(site.geometry, zone, bboxUtm, 10);
+        const poly = rasterisePolygon(ringsPx, width, height);
+        const ring = ringMask(poly, width, height, 50); // 500 m / 10 m = 50 px
+        const valid = validMask(bands);
+        const vf = fractionValid(valid, poly);
+        if (vf < 0.6) {
+          step(`Scene is ${(vf * 100).toFixed(0)}% valid inside the site. Trying the next clearest scene…`);
+          continue;
+        }
+        const idx = computeIndexRasters(bands, width * height);
+        const classes = classifyPixels(idx, valid);
+        const polyStats = summarise(classes, poly, 10);
+        const ringStats = summarise(classes, ring, 10);
+        show(renderLiveScene({ item, bands, idx, classes, poly, ring, polyStats, ringStats, width, height }));
+        drawCanvases(bands, idx, classes, poly, ring);
+        return;
+      } catch (e) {
+        console.warn('Live scene attempt failed:', e);
+        step(`Scene ${i + 1} could not be read (${e.message}). Trying the next…`);
+      }
+    }
+    show(renderLiveError('All candidate scenes could not be read. The archive may be rate-limiting the browser. Try again in a minute.'));
+  } catch (e) {
+    console.error('loadLiveScene failed:', e);
+    show(renderLiveError(e.message || String(e)));
+  }
+}
+
+function drawCanvases(bands, idx, classes, poly, ring) {
+  const W = bands.width, H = bands.height;
+  const sizes = { max: 320 };
+  const scale = Math.min(1, sizes.max / Math.max(W, H));
+  const cw = Math.max(1, Math.round(W * scale));
+  const ch = Math.max(1, Math.round(H * scale));
+
+  // True colour
+  const rgb = trueColourRGBA(bands, 0.30);
+  blit('live-rgb', rgb, W, H, cw, ch, { outlinePoly: poly, outlineRing: ring });
+
+  // Classes
+  const cls = classRGBA(classes, CLASS_COLOURS);
+  blit('live-cls', cls, W, H, cw, ch, { outlinePoly: poly });
+
+  // NDVI (brown -> tan -> green ramp)
+  const ndvi = new Uint8ClampedArray(W * H * 4);
+  const ramp = (t) => {
+    if (t <= 0.1) { // bare: tan
+      const u = Math.max(0, Math.min(1, (t + 0.2) / 0.3));
+      return [205 - 60 * u, 180 - 40 * u, 140 - 30 * u];
+    }
+    const u = Math.max(0, Math.min(1, (t - 0.1) / 0.6));
+    return [205 - 170 * u, 180 - 60 * u, 140 - 90 * u];
+  };
+  for (let i = 0; i < W * H; i++) {
+    const v = idx.ndvi[i];
+    if (!Number.isFinite(v)) { ndvi[i * 4 + 3] = 0; continue; }
+    const [r, g, b] = ramp(v);
+    ndvi[i * 4]     = r;
+    ndvi[i * 4 + 1] = g;
+    ndvi[i * 4 + 2] = b;
+    ndvi[i * 4 + 3] = 255;
+  }
+  blit('live-ndvi', ndvi, W, H, cw, ch, { outlinePoly: poly });
+}
+
+function blit(canvasId, rgba, W, H, cw, ch, opts) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = cw * dpr; canvas.height = ch * dpr;
+  canvas.style.width = cw + 'px'; canvas.style.height = ch + 'px';
+  const off = document.createElement('canvas');
+  off.width = W; off.height = H;
+  const octx = off.getContext('2d');
+  octx.putImageData(new ImageData(rgba, W, H), 0, 0);
+  const ctx = canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = false;
+  ctx.scale(dpr, dpr);
+  ctx.drawImage(off, 0, 0, W, H, 0, 0, cw, ch);
+  // Draw polygon outline + optional ring outline on top
+  if (opts && opts.outlinePoly) drawMaskOutline(ctx, opts.outlinePoly, W, H, cw, ch, 'rgba(255,255,255,0.95)', 1.5);
+  if (opts && opts.outlineRing) drawMaskOutline(ctx, opts.outlineRing, W, H, cw, ch, 'rgba(226,169,59,0.9)', 1);
+}
+
+function drawMaskOutline(ctx, mask, W, H, cw, ch, colour, lw) {
+  // Draw thin outlines of a boolean raster by walking the mask edges.
+  const sx = cw / W, sy = ch / H;
+  ctx.strokeStyle = colour; ctx.lineWidth = lw;
+  ctx.beginPath();
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      if (!mask[y * W + x]) continue;
+      // top edge
+      if (y === 0 || !mask[(y - 1) * W + x]) { ctx.moveTo(x * sx, y * sy); ctx.lineTo((x + 1) * sx, y * sy); }
+      // bottom edge
+      if (y === H - 1 || !mask[(y + 1) * W + x]) { ctx.moveTo(x * sx, (y + 1) * sy); ctx.lineTo((x + 1) * sx, (y + 1) * sy); }
+      // left edge
+      if (x === 0 || !mask[y * W + x - 1]) { ctx.moveTo(x * sx, y * sy); ctx.lineTo(x * sx, (y + 1) * sy); }
+      // right edge
+      if (x === W - 1 || !mask[y * W + x + 1]) { ctx.moveTo((x + 1) * sx, y * sy); ctx.lineTo((x + 1) * sx, (y + 1) * sy); }
+    }
+  }
+  ctx.stroke();
 }
 
 function worldcoverBar(ring) {

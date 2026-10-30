@@ -1150,7 +1150,7 @@ ITALIC_RE = re.compile(r"(?<![*A-Za-z0-9])\*([^*\n]+?)\*(?![*A-Za-z0-9])")
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
 IMAGE_COMMENT_RE = re.compile(r"^<!--\s*IMAGE\s+.*?-->\s*$", re.DOTALL)
-HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture|form|ul|ol|blockquote|nav|article|main|header|footer)\b", re.IGNORECASE)
+HTML_BLOCK_OPEN_RE = re.compile(r"^<(figure|div|section|video|iframe|table|aside|picture|form|ul|ol|blockquote|nav|article|main|header|footer|script|canvas|style)\b", re.IGNORECASE)
 HTML_ENTITY_RE = re.compile(r"&(?:#\d+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]{1,31});")
 SECTION_EYEBROW_RE = re.compile(r"^\*\*(§[^*]+)\*\*\s*$")
 TOPLINE_SECTION_RE = re.compile(r"^§\s+/\s*(.+)$")
@@ -2701,6 +2701,16 @@ def build_strata_demo_shell() -> str:
     }})();
   </script>
   <link rel="stylesheet" href="/assets/strata/styles.css?v={ASSET_STRATA_CSS_V}">
+  <!-- Import map so the bare 'geotiff' specifier in strata/core.js
+       resolves to a browser-ready ES build on jsdelivr. Must come
+       before any <script type="module">. -->
+  <script type="importmap">
+  {{
+    "imports": {{
+      "geotiff": "https://cdn.jsdelivr.net/npm/geotiff@2.1.3/+esm"
+    }}
+  }}
+  </script>
 </head>
 <body class="strata-standalone">
   <div id="strata-root"></div>

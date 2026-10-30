@@ -23,11 +23,21 @@
       } catch(_) {}
     })();
   </script>
-  <link rel="stylesheet" href="/assets/strata/styles.css?v=db043cdc">
+  <link rel="stylesheet" href="/assets/strata/styles.css?v=cb8fb4c7">
+  <!-- Import map so the bare 'geotiff' specifier in strata/core.js
+       resolves to a browser-ready ES build on jsdelivr. Must come
+       before any <script type="module">. -->
+  <script type="importmap">
+  {
+    "imports": {
+      "geotiff": "https://cdn.jsdelivr.net/npm/geotiff@2.1.3/+esm"
+    }
+  }
+  </script>
 </head>
 <body class="strata-standalone">
   <div id="strata-root"></div>
   <script src="/assets/strata-europe-geo.js?v=fd9af6ce" defer></script>
-  <script type="module" src="/assets/strata/app.js?v=89b2f4d8"></script>
+  <script type="module" src="/assets/strata/app.js?v=d2d69680"></script>
 </body>
 </html>

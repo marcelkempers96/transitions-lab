@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
 <meta name="twitter:image:alt" content="Strata — satellite baselines for Europe&#x27;s critical raw materials sites | Transitions Lab">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/theme.css?v=31768625">
+<link rel="stylesheet" href="/assets/theme.css?v=d6ff3130">
 
 </head>
 <body data-page="strata">
@@ -132,7 +132,237 @@
   <a href="/strata-data-sources">Data sources</a>
   <a href="/strata-paper">Companion paper</a>
 </nav>
-<p class="strata-wordmark"><img src="/assets/logos/strata-lockup-black.svg" alt="Strata — a satellite lifecycle card for every closed mine waste site"></p>
+<div class="strata-hero">
+  <div class="strata-hero-globe-wrap">
+    <canvas id="strata-globe" class="strata-globe" width="520" height="520" aria-hidden="true"></canvas>
+    <p class="strata-hero-caption">The ten pilot sites, on an orthographic projection. Drag to rotate.</p>
+  </div>
+  <div class="strata-hero-body">
+    <p class="strata-wordmark"><img src="/assets/logos/strata-lockup-black.svg" alt="Strata — a satellite lifecycle card for every closed mine waste site"></p>
+    <p class="strata-hero-pitch">A satellite lifecycle card for every closed mine waste site, built on open Copernicus data. One method, every site, in every browser.</p>
+    <p class="strata-hero-actions">
+      <a href="/strata-demo" class="btn btn-ink">Launch the Strata app &rarr;</a>
+      <a href="/strata-paper" class="btn btn-ghost">Read the companion paper</a>
+    </p>
+    <form class="strata-signup" data-strata-signup>
+      <label for="strata-signup-email" class="strata-signup-label">Get the pilot update when it lands.</label>
+      <div class="strata-signup-row">
+        <input id="strata-signup-email" type="email" required placeholder="you@organisation.eu" autocomplete="email">
+        <button type="submit">Sign up</button>
+      </div>
+      <p class="strata-signup-note" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+<script src="/assets/strata-world.js" defer></script>
+<script>
+(function(){
+  'use strict';
+  function boot(){
+    var canvas = document.getElementById('strata-globe');
+    if (!canvas) return;
+    var rings = window.STRATA_WORLD_RINGS || [];
+    // Ten pilot sites (lon, lat) matching sites.seed.geojson
+    var SITES = [
+      {id:'PT-SDO', lon:-7.502, lat:37.665},
+      {id:'PT-LOU', lon:-8.426, lat:38.035},
+      {id:'PT-ALJ', lon:-8.165, lat:37.877},
+      {id:'ES-THA', lon:-7.125, lat:37.590},
+      {id:'ES-RTO', lon:-6.590, lat:37.700},
+      {id:'ES-PDH', lon:-6.553, lat:37.738},
+      {id:'ES-ZAR', lon:-6.860, lat:37.705},
+      {id:'ES-AZN', lon:-6.270, lat:37.520},
+      {id:'DE-BOL', lon:10.455, lat:51.912},
+      {id:'SE-FAL', lon:15.610, lat:60.600}
+    ];
+
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var dpr = window.devicePixelRatio || 1;
+    function resize(){
+      var sz = Math.min(canvas.clientWidth || 520, 520);
+      W = canvas.width = Math.round(sz * dpr);
+      H = canvas.height = Math.round(sz * dpr);
+      canvas.style.width = sz + 'px';
+      canvas.style.height = sz + 'px';
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var cx = function(){ return W / 2; };
+    var cy = function(){ return H / 2; };
+    var R  = function(){ return Math.min(W, H) / 2 - 10 * dpr; };
+
+    // State
+    var centreLon = 2;  // centre of EU
+    var centreLat = 45;
+    var autoSpin = true;
+    var drag = null;
+
+    function project(lon, lat){
+      // Orthographic
+      var phi0 = centreLat * Math.PI / 180;
+      var lam0 = centreLon * Math.PI / 180;
+      var phi  = lat * Math.PI / 180;
+      var lam  = lon * Math.PI / 180;
+      var cosC = Math.sin(phi0) * Math.sin(phi) + Math.cos(phi0) * Math.cos(phi) * Math.cos(lam - lam0);
+      if (cosC < 0) return null;
+      var x = Math.cos(phi) * Math.sin(lam - lam0);
+      var y = Math.cos(phi0) * Math.sin(phi) - Math.sin(phi0) * Math.cos(phi) * Math.cos(lam - lam0);
+      return [cx() + x * R(), cy() - y * R()];
+    }
+
+    function draw(){
+      ctx.clearRect(0, 0, W, H);
+      // Ocean sphere
+      var r = R();
+      var grad = ctx.createRadialGradient(cx() - r * 0.3, cy() - r * 0.35, r * 0.1, cx(), cy(), r);
+      grad.addColorStop(0, '#F6F5F2');
+      grad.addColorStop(1, '#DCD7C7');
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(cx(), cy(), r, 0, Math.PI * 2); ctx.fill();
+      // Thin rim
+      ctx.strokeStyle = '#B9B3A4';
+      ctx.lineWidth = 1 * dpr;
+      ctx.stroke();
+
+      // Graticule, 15° lon lines
+      ctx.strokeStyle = 'rgba(107, 105, 99, 0.18)';
+      ctx.lineWidth = 1 * dpr;
+      for (var g = -180; g < 180; g += 15) {
+        drawPolyline(latLineAtLon(g), false);
+      }
+      for (var h = -75; h <= 75; h += 15) {
+        drawPolyline(parallelAtLat(h), false);
+      }
+
+      // Land
+      ctx.strokeStyle = '#1D6B55';
+      ctx.lineWidth = 1 * dpr;
+      ctx.fillStyle = 'rgba(29, 107, 85, 0.14)';
+      for (var i = 0; i < rings.length; i++) drawRing(rings[i]);
+
+      // Pilot site pins
+      for (var k = 0; k < SITES.length; k++) {
+        var s = SITES[k];
+        var p = project(s.lon, s.lat);
+        if (!p) continue;
+        ctx.fillStyle = '#C2502A';
+        ctx.beginPath(); ctx.arc(p[0], p[1], 4 * dpr, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.lineWidth = 1.5 * dpr;
+        ctx.stroke();
+      }
+
+      // Shadow for depth
+      var shadow = ctx.createRadialGradient(cx() + r * 0.4, cy() + r * 0.4, r * 0.8, cx(), cy(), r);
+      shadow.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      shadow.addColorStop(1, 'rgba(0, 0, 0, 0.25)');
+      ctx.fillStyle = shadow;
+      ctx.beginPath(); ctx.arc(cx(), cy(), r, 0, Math.PI * 2); ctx.fill();
+    }
+
+    function drawRing(flat){
+      // Flat = [lon, lat, lon, lat, ...]
+      // Visible segments only; break the path when we cross the terminator.
+      ctx.beginPath();
+      var inPath = false;
+      for (var i = 0; i < flat.length; i += 2) {
+        var p = project(flat[i], flat[i + 1]);
+        if (p) {
+          if (!inPath) { ctx.moveTo(p[0], p[1]); inPath = true; }
+          else ctx.lineTo(p[0], p[1]);
+        } else {
+          inPath = false;
+        }
+      }
+      ctx.stroke();
+    }
+
+    function drawPolyline(points, close){
+      ctx.beginPath();
+      var inPath = false;
+      for (var i = 0; i < points.length; i++) {
+        var p = project(points[i][0], points[i][1]);
+        if (p) {
+          if (!inPath) { ctx.moveTo(p[0], p[1]); inPath = true; }
+          else ctx.lineTo(p[0], p[1]);
+        } else { inPath = false; }
+      }
+      ctx.stroke();
+    }
+
+    function latLineAtLon(lon){
+      var out = [];
+      for (var lat = -85; lat <= 85; lat += 5) out.push([lon, lat]);
+      return out;
+    }
+    function parallelAtLat(lat){
+      var out = [];
+      for (var lon = -180; lon <= 180; lon += 5) out.push([lon, lat]);
+      return out;
+    }
+
+    // Animate rotation
+    var last = performance.now();
+    function tick(now){
+      var dt = Math.min(100, now - last) / 1000;
+      last = now;
+      if (autoSpin && !drag) {
+        centreLon = (centreLon + dt * 6) % 360; // 6 degrees per second
+        if (centreLon > 180) centreLon -= 360;
+      }
+      draw();
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    // Drag to rotate
+    canvas.addEventListener('pointerdown', function(ev){
+      drag = { x: ev.clientX, y: ev.clientY, lon0: centreLon, lat0: centreLat };
+      canvas.setPointerCapture(ev.pointerId);
+    });
+    canvas.addEventListener('pointermove', function(ev){
+      if (!drag) return;
+      var dx = ev.clientX - drag.x;
+      var dy = ev.clientY - drag.y;
+      centreLon = drag.lon0 - dx * 0.4;
+      centreLat = Math.max(-80, Math.min(80, drag.lat0 + dy * 0.4));
+    });
+    canvas.addEventListener('pointerup',    function(){ drag = null; });
+    canvas.addEventListener('pointercancel',function(){ drag = null; });
+    canvas.addEventListener('pointerleave', function(){ drag = null; });
+
+    // Sign-up form reuses the newsletter endpoint, source 'strata'.
+    var form = document.querySelector('[data-strata-signup]');
+    if (form) form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var email = form.querySelector('input[type="email"]').value.trim();
+      var note = form.querySelector('.strata-signup-note');
+      note.textContent = 'Sending…';
+      note.classList.remove('is-ok','is-err');
+      fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: 'strata' })
+      }).then(function(r){ return r.json().then(function(j){ return {s:r.status,b:j}; }); })
+        .then(function(res){
+          if (res.s === 200 && res.b.ok) {
+            note.textContent = res.b.already ? 'You are already on the list — thank you.' : 'Thank you. You are on the list.';
+            note.classList.add('is-ok');
+            if (!res.b.already) form.reset();
+          } else {
+            note.textContent = (res.b && res.b.error) || 'Could not sign up. Please try again.';
+            note.classList.add('is-err');
+          }
+        })
+        .catch(function(){ note.textContent = 'Network error. Please try again.'; note.classList.add('is-err'); });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
 <p>Mining and quarrying produced 22.7% of the roughly 2.2 billion tonnes of waste generated in the EU in 2022 (<a href="https://www.europarl.europa.eu/topics/en/article/20180328STO00751/sustainable-waste-management-what-the-eu-is-doing" target="_blank" rel="noopener">European Parliament</a>). Most of that sits in heaps and tailings ponds across the continent, around sites that stopped operating decades ago. <a href="https://meetingorganizer.copernicus.org/EGU26/EGU26-9857.html" target="_blank" rel="noopener">Article 27 of the Critical Raw Materials Act</a> now requires Member States to build a database of these facilities, with location, area, waste volume, operator and raw material content, to judge whether critical raw materials can be recovered. Finland is assigning the task to its geological survey from <a href="https://www.gtk.fi/en/current/geological-survey-of-finland-assigned-tasks-under-the-eu-critical-raw-materials-act/" target="_blank" rel="noopener">1 November 2026</a>.</p>
 <p>Three people are now making the same call for each site, with different evidence of different quality. A geological survey needs to decide which closed facility deserves field sampling first. A municipality next to a heap needs to understand what each pathway would mean for the landscape and the people living beside it. A reprocessing company needs to shortlist the sites worth investigating for secondary critical raw materials. Each currently reasons from a different map.</p>
 <p>Strata is the shared evidence base. One open method per site, satellite indicators that are the same thing in Portugal and in Sweden, and a lifecycle card that reads the same way across audiences.</p>
