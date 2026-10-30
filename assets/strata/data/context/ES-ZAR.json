@@ -1,0 +1,43 @@
+{
+  "areaHa": 95,
+  "dem": {
+    "baseElevationM": 106.8,
+    "maxHeightM": 46.4,
+    "volumeAboveBaseM3": 15151509,
+    "volumeBelowBaseM3": 3416315,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Shrubland": 44,
+    "Grassland": 24,
+    "Tree cover": 20,
+    "Cropland": 8,
+    "Built-up": 4
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 4300,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 140,
+    "within5km": 2900,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 2000,
+    "name": "Odiel"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 2.85
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -1.0,
+    "shareBelowThresholdPct": 3.0,
+    "points": 142,
+    "period": "2019-01 to 2024-12"
+  }
+}

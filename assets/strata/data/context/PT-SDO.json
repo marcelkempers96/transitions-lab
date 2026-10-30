@@ -1,0 +1,43 @@
+{
+  "areaHa": 110,
+  "dem": {
+    "baseElevationM": 331.9,
+    "maxHeightM": 45.5,
+    "volumeAboveBaseM3": 17197732,
+    "volumeBelowBaseM3": 2869506,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Shrubland": 48,
+    "Grassland": 24,
+    "Tree cover": 14,
+    "Cropland": 10,
+    "Built-up": 4
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 4600,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 320,
+    "within5km": 2800,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 1600,
+    "name": "Chan\u00e7a"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 3.3
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -1.8,
+    "shareBelowThresholdPct": 6.0,
+    "points": 184,
+    "period": "2019-01 to 2024-12"
+  }
+}

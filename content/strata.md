@@ -1,12 +1,10 @@
 § / Tool
 
-# Before the first blast: Strata, satellite baselines for Europe's critical raw materials sites
+# A satellite lifecycle card for every closed mine waste site
 
-*Strata records what happens on the ground at Europe's critical raw materials Strategic Projects, from a pre-construction satellite baseline through every year of operation, using open Copernicus data and one method for every site.*
+*Strata gives each closed mine waste site a satellite lifecycle card: what it looks like now, how it has changed over ten years, how big the heap is, who lives nearby, and what each of the three pathways (leave and monitor, rehabilitate, reprocess) would involve. Pilot in the Iberian Pyrite Belt.*
 
-<p class="article-meta"><span class="article-date">29 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
-
-<p class="strata-wordmark"><img src="/assets/logos/strata-lockup-black.svg" alt="Strata — a wordmark alongside a stacked block mark where the bottom stripe is picked out in green"></p>
+<p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
 <nav class="strata-pages" aria-label="Strata pages">
   <strong class="is-current">Overview</strong>
@@ -17,54 +15,54 @@
   <a href="/strata-paper">Companion paper</a>
 </nav>
 
-Europe has designated 93 Strategic Projects inside the Union and 13 in third countries under the [Critical Raw Materials Act](https://commission.europa.eu/topics/competitiveness/green-deal-industrial-plan/european-critical-raw-materials-act_en), and the Commission reported on 9 October 2026 that 25 first-round projects had completed environmental impact assessments and 17 held construction permits ([European Commission, IP/26/2113](https://europa.eu/newsroom/ecpc-failover/pdf/ip-26-2113_en.pdf)). Once excavation starts, the undisturbed landscape can no longer be measured, and the only record of it usually sits in an impact assessment commissioned by the promoter, written to a site-specific method and rarely repeated after permitting. Strata builds a public, comparable record instead: one satellite baseline per site before construction, and the same indicators recomputed every year afterwards.
+<p class="strata-wordmark"><img src="/assets/logos/strata-lockup-black.svg" alt="Strata — a satellite lifecycle card for every closed mine waste site"></p>
 
-The question Strata answers is a social one before it is a technical one. Permitting authorities, lenders, battery makers facing due diligence obligations from [18 August 2027](https://sustainablefutures.linklaters.com/post/102kymo/eu-regulation-delaying-due-diligence-rules-for-batteries-published-in-the-ojeu), environmental groups and the residents who live beside a new pit all ask what changed on the ground, and each currently answers it with different evidence of different quality. A shared, independent record lets them disagree about interpretation rather than about the facts.
+Mining and quarrying produced 22.7% of the roughly 2.2 billion tonnes of waste generated in the EU in 2022 ([European Parliament](https://www.europarl.europa.eu/topics/en/article/20180328STO00751/sustainable-waste-management-what-the-eu-is-doing)). Most of that sits in heaps and tailings ponds across the continent, around sites that stopped operating decades ago. [Article 27 of the Critical Raw Materials Act](https://meetingorganizer.copernicus.org/EGU26/EGU26-9857.html) now requires Member States to build a database of these facilities, with location, area, waste volume, operator and raw material content, to judge whether critical raw materials can be recovered. Finland is assigning the task to its geological survey from [1 November 2026](https://www.gtk.fi/en/current/geological-survey-of-finland-assigned-tasks-under-the-eu-critical-raw-materials-act/).
 
-## What Strata measures
+Three people are now making the same call for each site, with different evidence of different quality. A geological survey needs to decide which closed facility deserves field sampling first. A municipality next to a heap needs to understand what each pathway would mean for the landscape and the people living beside it. A reprocessing company needs to shortlist the sites worth investigating for secondary critical raw materials. Each currently reasons from a different map.
 
-Every site is monitored inside its own footprint and in three buffers at 500 metres, 2 kilometres and 5 kilometres, using annual composites from the European Union's Copernicus programme.
+Strata is the shared evidence base. One open method per site, satellite indicators that are the same thing in Portugal and in Sweden, and a lifecycle card that reads the same way across audiences.
 
-| Indicator | What it tells you | Main data |
-| --- | --- | --- |
-| Disturbed footprint | Hectares of excavated or bare ground and how fast it grows | Copernicus Sentinel-2 |
-| Buffer vegetation loss | Vegetation lost around the site, including inside Natura 2000 areas | Sentinel-2, ESA WorldCover, Natura 2000 |
-| Water and tailings extent | Area of ponds, pit lakes and tailings surfaces through the seasons | Sentinel-2, Sentinel-1, JRC Global Surface Water |
-| Ground motion | Subsidence or uplift around pits, waste dumps and tailings dams | European Ground Motion Service |
-| Land converted | Which land cover the footprint replaced | ESA WorldCover 2021 |
-| Downstream water colour | A turbidity signal in rivers and lakes below the site (experimental) | Sentinel-2 |
+## What a lifecycle card holds
 
-Each indicator is published with its error margin, the minimum mappable feature size and the dates of the imagery behind it. The full approach is set out on the [method page](/strata-method), and every input, licence and attribution line is listed on the [data sources page](/strata-data-sources).
+Each site opens on a single scrollable page.
 
-## Who it is for
+**Key facts.** Waste area in hectares (from the polygon). Volume proxy in cubic metres (from the Copernicus DEM). Bare ground now and vegetation now (from the latest Sentinel-2 composite). People within 1 km (from GHSL). Red water as a share of water on site (from the acid-drainage colour index).
 
-Permitting authorities and Single Points of Contact can compare a project's footprint against its permit without commissioning new survey work. Lenders and development finance institutions get a consistent annual check across a portfolio of projects in different countries. Battery makers, cathode producers and recyclers can screen the extraction and processing sites behind their supply contracts ahead of due diligence obligations. Civil society organisations, journalists and local councils can follow change at a specific site with the same evidence investors see.
+**Now from space.** A live Sentinel-2 Level-2A scene for the site, classified pixel-by-pixel into vegetation, bare ground, bare with an iron oxide signal, water and red or orange water. The classes use the formulas in the [method page](/strata-method); the implementation is in [`strata-core.js`](https://github.com/marcelkempers96/transitions-lab/blob/main/assets/strata/core.js) and ships with twenty-six unit tests.
 
-## How it connects to our other work
+**Ten years of change.** A line chart of vegetation %, bare %, iron signal % and red water %, from a 2017 baseline summer composite onwards. A natural recovery clock reads whether the site is recovering, stable or declining, based on the Theil-Sen trend of vegetation cover, and gives the number of years to reach 50% vegetation at the current trend.
 
-Strata is the ground-level companion to the [critical minerals flow map](/mineral-flows-research): the flow map traces where lithium, nickel, cobalt, graphite and rare earths travel between countries, while Strata shows what extracting and processing them does to land and water at the point of origin. Both follow the Lab's core practice of measuring a technology transition before it happens and again after, rather than relying on the account of those who deliver it.
+**Three pathways.** Leave and monitor, rehabilitate, reprocess and rehabilitate. Each column shows the satellite facts that matter for that pathway. The lifecycle view (life-cycle assessment numbers from the FIERCE service S1) sits beside them, labelled as under way until the comparison is published in June 2027.
 
-## Status and pilot
+**Around the site.** People within 1 and 5 km, Natura 2000 overlap and distance, nearest watercourse, land cover in the 500 m ring, ground motion from the European Ground Motion Service, and the long-term water history from the JRC Global Surface Water record.
 
-Strata is in development. The first phase will test the indicator pipeline on six Strategic Project sites selected to cover an extraction site before construction, operating extraction with tailings, a processing or recycling plant and one site outside the European Union, validate the results against published global mining footprint datasets, and refine what is published with the people who would use it. Pilot site pages will appear here as they are completed. Each promoter will be contacted before its site page is first published.
+**What people here told us.** A section that stays empty until the FIERCE service S2 fieldwork lands in 2027.
 
-## Limits we state up front
+**Export and cite.** One click produces a CSV row keyed to the CRMA Article 27 database fields; another produces the site's GeoJSON polygon. Fields Strata cannot measure from space (operator, measured metal content) are left empty by design, never estimated.
 
-Satellite indicators describe surface change; they do not measure water chemistry, air quality, noise or the social effects of a project, and they cannot establish whether a project complies with its permit. Ten-metre imagery misses small features and early earthworks. Ground motion data from the European Ground Motion Service covers Copernicus Participating States only, so third-country sites carry no ground motion indicator in the first phase. Strata is a starting point for questions, not a verdict.
+## Pilot
 
-## Work with us
+Eight sites in the Iberian Pyrite Belt (Portugal and Spain, pyrite-rich volcanogenic massive sulphide deposits with public acid-drainage legacy) plus two transfer sites in Germany (the Bollrich tailings pond at Rammelsberg) and Sweden (the Falun UNESCO mining landscape). The seed register is in `sites.seed.geojson`.
 
-If you hold a permit file, finance a project, buy from one, or live near one and want a site added or a custom indicator set, [get in touch](/contact).
+The transfer sites are intentional: Bollrich is cloudier and the surface flatter than most Portuguese sites; Falun carries snow in winter and heritage constraints. Any method whose numbers do not travel to both would not travel to the next region either.
+
+## Not what Strata does
+
+Strata does not estimate metal grades or tonnages. It does not judge permit compliance. It takes no position on any project. The language rule is explicit: flags describe what the satellite shows, never what it means. The copy ends each flag, on first appearance, with "This is a signal for follow-up, not a finding."
+
+## Supported by
+
+Strata is led by Transitions Lab in Delft. Partners: Pyropower (materials-and-energy side, processing-stage experience); Social Innovation Europe (community reach across Member States and the Western Balkans).
 
 <!--
 EU FUNDING ACKNOWLEDGEMENT: activate ONLY after the FIERCE Sub-grant Agreement is signed (SGA Article 18).
-Place the EU emblem at least as prominently as the Transitions Lab and FIERCE logos, unmodified, plus the FIERCE logo, and this text:
 
-Funded by the European Union. Views and opinions expressed are, however, those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them.
+Funded by the European Union. Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or European Commission. Neither the European Union nor the granting authority can be held responsible for them.
 
 Strata is supported by the FIERCE project (Grant Agreement 101177496) under Horizon Europe.
 -->
 
 ---
 
-*Strata sits alongside the [critical minerals flow map](/mineral-flows-research), which follows strategic materials across borders, and draws on the Lab's reference pages on [Industry & Materials](/expertise-manufacturing) and [The Human Side of Technology](/human-side-of-technology) for how communities experience a new extractive site. See the [Strata method](/strata-method), the [data sources](/strata-data-sources), and the [web tool](/strata-app) for the demo interface.*
+*See the [web tool](/strata-app) for a tour, [launch the app](/strata-demo), read the [method](/strata-method) for the equations, the [data sources](/strata-data-sources) for every licence, or the [companion paper](/strata-paper) for the longer argument.*

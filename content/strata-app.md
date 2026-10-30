@@ -1,10 +1,10 @@
 § / Tool interface
 
-# Open it, click a dot, see what changed: the Strata web tool
+# Open it, click a site, read the lifecycle card
 
-*A short tour of the Strata web tool: free sign-in, the site map, the site page, what is free and what is Pro, and who is building it with us. Demo release 0.1 — screens below are illustrative mock-ups of the pilot interface, built on illustrative sites and values while the 2027 pilot produces real ones.*
+*A short tour of the Strata web tool: what the three views do (Map, Compare, Method/Data/About), what sits on a lifecycle card, and how to export a CRMA Article 27 row. Demo release v0.2 with ten pilot sites.*
 
-<p class="article-meta"><span class="article-date">29 October 2026</span> · <span class="article-reading-time">4 min read</span></p>
+<p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
@@ -15,13 +15,13 @@
   <a href="/strata-paper">Companion paper</a>
 </nav>
 
-Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map and puts every number a reader needs on a single site page. The demo carries sixteen illustrative sites across the European Union and one in a third country, with values generated for the pilot and marked as such on screen.
+Strata is built for the person who has five minutes and one question about one site: a geological survey compiling the CRMA Article 27 database, a municipality next to a heap, a company looking for secondary critical raw materials. The demo opens on a map of the pilot and lands you on a lifecycle card in two clicks.
 
 <div class="strata-launch">
   <div class="strata-launch-head">
     <span class="eyebrow">Interactive demo</span>
     <h3>Open the full-screen app</h3>
-    <p>Sixteen illustrative sites across the EU and one in Morocco. Filter by stage, status, material and alerts; click a dot to see the baseline, the latest footprint, the chart, the outline and the indicator read. Light and dark theme, map zoom, CSV export per site, shareable site links.</p>
+    <p>Ten illustrative pilot sites, satellite-derived indicators, lifecycle stage, flags, recovery clock, pathways view, CRMA Article 27 CSV export. Light / dark toggle. All values are demo values until the pipeline runs on real Sentinel-2 scenes.</p>
   </div>
   <div class="strata-launch-actions">
     <a href="/strata-demo" class="btn btn-ink">Launch Strata app &rarr;</a>
@@ -29,46 +29,37 @@ Strata is built for the person who has five minutes and one question about one s
   </div>
 </div>
 
-## How to read what you are looking at
+## Three views
 
-Each dot on the map is a Strata site, sized by its disturbed footprint and coloured by status: an open ring for pre-construction, yellow for under construction, green for operating and red for any site with an open alert. The left column sums up what is on screen (sites shown, sites not yet built, hectares disturbed, open alerts), lets you filter by value chain stage and status, and lists the sites with alerts at the top. Search works across site codes, materials and countries. Clicking a dot or a row opens the site page on the right.
+**Map (home).** The pilot sites on a simplified Europe basemap, pins coloured by lifecycle stage (operating, reopening planned, legacy largely bare, legacy mixed cover, recovering naturally, vegetated, not enough data) and marked with a laterite dot if any flag is active. The left panel sums up what is on screen (sites shown, total area, volume proxy, number with flags) and carries the filters: country, lifecycle stage, flags, pilot or transfer. Zoom with the buttons, the scroll wheel, or a trackpad pinch. Pan by drag.
 
-The site page gives the baseline year, the 2026 footprint, the change since the baseline and the year works started. The chart below plots the disturbed footprint every year since the baseline, with the baseline drawn as a dashed line and the start of works marked in yellow, so the moment a landscape began to change is visible without reading a table. The footprint outline sets the baseline shape against the latest one inside a 500 metre buffer, and the indicator list covers vegetation loss within 5 kilometres, the share inside Natura 2000, water and tailings surface, ground motion and the land the footprint replaced.
+**Compare.** A sortable table of every site with lifecycle stage, flags, area, volume proxy, bare %, iron %, red water %, recovery clock status, people within 1 km, Natura 2000 within 1 km, EGMS share subsiding faster than 5 mm per year. One click exports the whole table as CSV; another exports every polygon as GeoJSON.
 
-Alerts are written to inform rather than accuse: each one names the threshold that was crossed and says plainly that it is flagged for review, not a finding of non-compliance. The last line of every page shows whether the promoter has sent a response, and the attribution for every dataset behind the numbers.
+**Method, Data, About.** The pages that let a reader hold the numbers to account: every equation, every data source with its licence, and the pilot context.
 
-Sites outside Copernicus Participating States, such as the Morocco entry in the demo, show a dash for ground motion because the European Ground Motion Service does not cover them. That absence is reported, not hidden.
+## Anatomy of a lifecycle card
 
-## What Strata does
+Each card has eight sections, in order:
 
-| Function | What it does | Plan |
-| --- | --- | --- |
-| Site map | Browse every Strategic Project site by stage, material, status and alerts, with zoom and search | Free |
-| Pre-construction baseline | Fixes the undisturbed landscape in the last full year before works start | Free |
-| Annual indicators | Disturbed footprint, buffer vegetation loss, water and tailings extent, ground motion and land converted | Free |
-| Change charts | Year-on-year series with the baseline and works start marked | Free |
-| Footprint outline | Baseline shape against the latest footprint, with buffer and scale bar | Free |
-| Data export and citation | CSV and GeoJSON per site, with licence and attribution lines included | Free |
-| Right of reply | Promoter responses linked from each site page | Free |
-| Alerts | Email when footprint growth, Natura 2000 buffer loss or ground motion passes a threshold | Pro |
-| Extra layers | Natura 2000 boundaries and EGMS point data on the map | Pro |
-| Custom sites | Your own polygons, with indicators run every quarter | Pro |
-| API and data packs | Programmatic access and audit-ready packs for due diligence files | Pro |
+1. **Header.** Site name, municipality, country, lifecycle stage pill, flag pills, the register status note, and the date of the last scene.
+2. **Key facts.** Waste area, DEM volume proxy, bare ground now, vegetation now, people within 1 km, red water share.
+3. **Now from space.** The live Sentinel-2 panel — true colour, classes, NDVI — and the stats inside the polygon and the 500 m ring.
+4. **Ten years of change.** A line chart from the 2017 baseline forward, plus the natural recovery clock sentence (the Theil-Sen trend of vegetation % over valid years, capped at a 100-year horizon).
+5. **Pathways.** Three columns: leave and monitor, rehabilitate, reprocess and rehabilitate. Each shows the satellite facts that matter for it; the life-cycle assessment numbers from FIERCE service S1 sit under it when they are published.
+6. **Around the site.** People within 1 and 5 km, Natura 2000 overlap and distance, nearest watercourse, land cover in the ring, ground motion, long-term water.
+7. **What people here told us.** The themes and quotations from FIERCE service S2 anonymised fieldwork.
+8. **Export and cite.** A single-row CSV keyed to the CRMA Article 27 database fields, the site's GeoJSON polygon, a copy-citation button.
 
-The free plan covers everything a resident, journalist, student or permitting officer is likely to need. Pro is for teams that track many sites at once, such as lenders, battery makers and consultancies, and is priced on request while the pilot runs.
+## What the demo does not do yet
 
-## Who is building it
+The pipeline that reads Sentinel-2 from Earth Search STAC and classifies pixels is specified in `CLAUDE.md` and tested in `strata-core.js` (26 of 26 tests pass), but is not wired into the demo so the pages work without an on-demand STAC fetch. The "Now from space" panel on each card shows an explanation of what will fill it, and points at the method page. The timeseries chart, lifecycle stage, flags and CSV export are all driven by the pure functions in the core module, from offline annual composites.
 
-Strata is led by **Transitions Lab** in Delft, which writes the method, runs the field research that sits beside the satellite record and publishes the results. **Pyropower** and **Social Innovation Europe** are partners on the project, bringing industry experience of the energy and materials transition and reach into the communities and civil society organisations that live with new extractive sites.
+The lifecycle view and the community section both stay empty until their JSON files have `status: "published"`. Marcel will populate them from the FIERCE outputs in 2027.
 
-## How it looks and why
+## For partners
 
-The interface follows the same quiet design language as our research pages: a paper-white background, square corners, one green for things that are working, yellow for things in progress and red only where something needs a second look. Labels sit in a monospaced type so codes, years and hectares line up, and headings stay in plain sentence case. The goal is a screen you can read on a phone at a council meeting as easily as on a desk monitor.
-
-## Try it
-
-The demo is open now with illustrative data, and pilot sites with real indicators will replace it during 2027. If you want early access, a site added to the pilot or a walkthrough for your team, [get in touch](/contact).
+Strata is led by [Transitions Lab](/about). Pyropower (energy and processing-stage experience) and Social Innovation Europe (community reach) are partners. If you work on a site, run a programme that touches one, or live beside one, [talk to Marcel](/contact).
 
 ---
 
-*Read the [Strata overview](/strata) for why the tool exists, the [method](/strata-method) for how each number is made, and the [data sources](/strata-data-sources) for every licence and credit line.*
+*See the [overview](/strata), [launch the app](/strata-demo), read the [method](/strata-method), the [data sources](/strata-data-sources), or the [companion paper](/strata-paper).*

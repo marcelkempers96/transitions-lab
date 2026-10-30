@@ -1,0 +1,43 @@
+{
+  "areaHa": 180,
+  "dem": {
+    "baseElevationM": 208.9,
+    "maxHeightM": 55.6,
+    "volumeAboveBaseM3": 34409787,
+    "volumeBelowBaseM3": 2016803,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Cropland": 38,
+    "Grassland": 30,
+    "Shrubland": 18,
+    "Built-up": 10,
+    "Tree cover": 4
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 8200,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 620,
+    "within5km": 12400,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 1200,
+    "name": "Roxo"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 5.4
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -3.1,
+    "shareBelowThresholdPct": 11.0,
+    "points": 268,
+    "period": "2019-01 to 2024-12"
+  }
+}

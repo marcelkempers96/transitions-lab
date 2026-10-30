@@ -1,0 +1,43 @@
+{
+  "areaHa": 420,
+  "dem": {
+    "baseElevationM": 301.1,
+    "maxHeightM": 55.0,
+    "volumeAboveBaseM3": 79416520,
+    "volumeBelowBaseM3": 10817198,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Shrubland": 34,
+    "Tree cover": 28,
+    "Built-up": 16,
+    "Grassland": 14,
+    "Bare / sparse vegetation": 8
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 6100,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 1240,
+    "within5km": 14800,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 250,
+    "name": "Tinto"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 12.6
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -4.2,
+    "shareBelowThresholdPct": 14.0,
+    "points": 312,
+    "period": "2019-01 to 2024-12"
+  }
+}

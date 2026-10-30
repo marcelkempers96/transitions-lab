@@ -1,0 +1,43 @@
+{
+  "areaHa": 65,
+  "dem": {
+    "baseElevationM": 414.4,
+    "maxHeightM": 44.0,
+    "volumeAboveBaseM3": 9834935,
+    "volumeBelowBaseM3": 2025380,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Grassland": 34,
+    "Tree cover": 26,
+    "Shrubland": 22,
+    "Cropland": 14,
+    "Built-up": 4
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 5400,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 180,
+    "within5km": 4100,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 2800,
+    "name": "Sado"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 1.95
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -0.6,
+    "shareBelowThresholdPct": 1.5,
+    "points": 96,
+    "period": "2019-01 to 2024-12"
+  }
+}

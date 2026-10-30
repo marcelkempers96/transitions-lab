@@ -1,0 +1,977 @@
+{
+  "type": "FeatureCollection",
+  "name": "strata_sites",
+  "generated": "2026-10-30",
+  "description": "Approximate monitoring polygons synthesised around the seed centroids. The real pipeline (M1) will replace them with OSM and Tang-Werner polygons verified by Marcel.",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -7.496383,
+              37.665
+            ],
+            [
+              -7.495128,
+              37.66762
+            ],
+            [
+              -7.497391,
+              37.669575
+            ],
+            [
+              -7.500674,
+              37.669597
+            ],
+            [
+              -7.503476,
+              37.670121
+            ],
+            [
+              -7.506056,
+              37.669026
+            ],
+            [
+              -7.508375,
+              37.66743
+            ],
+            [
+              -7.509462,
+              37.665
+            ],
+            [
+              -7.506957,
+              37.66311
+            ],
+            [
+              -7.505315,
+              37.661709
+            ],
+            [
+              -7.50369,
+              37.659139
+            ],
+            [
+              -7.500563,
+              37.660016
+            ],
+            [
+              -7.497394,
+              37.660428
+            ],
+            [
+              -7.497276,
+              37.663199
+            ],
+            [
+              -7.496383,
+              37.665
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "PT-SDO",
+        "name": "S\u00e3o Domingos mine",
+        "municipality": "M\u00e9rtola",
+        "region": "Iberian Pyrite Belt",
+        "country": "PT",
+        "role": "pilot",
+        "facility_type": "waste heaps, leaching areas, flooded open pit",
+        "status": "closed",
+        "status_note": "Mining ended in 1966 (verify). Village and mining landscape are a heritage and tourism asset.",
+        "deposit_type": "volcanogenic massive sulphide (pyrite-rich)",
+        "crm_candidates": [
+          "Copper",
+          "Cobalt",
+          "Antimony",
+          "Bismuth",
+          "Arsenic"
+        ],
+        "community_pilot": true,
+        "community_name": "Mina de S\u00e3o Domingos, M\u00e9rtola",
+        "coords_confidence": "approximate",
+        "sources": [
+          "https://en.wikipedia.org/wiki/S%C3%A3o_Domingos_Mine"
+        ],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 110
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.42146,
+              38.035
+            ],
+            [
+              -8.420465,
+              38.037099
+            ],
+            [
+              -8.423305,
+              38.037661
+            ],
+            [
+              -8.424758,
+              38.039286
+            ],
+            [
+              -8.426942,
+              38.03825
+            ],
+            [
+              -8.428859,
+              38.037824
+            ],
+            [
+              -8.431607,
+              38.037127
+            ],
+            [
+              -8.430503,
+              38.035
+            ],
+            [
+              -8.430906,
+              38.033139
+            ],
+            [
+              -8.429147,
+              38.031892
+            ],
+            [
+              -8.42712,
+              38.031135
+            ],
+            [
+              -8.42486,
+              38.031065
+            ],
+            [
+              -8.423216,
+              38.03225
+            ],
+            [
+              -8.420724,
+              38.032999
+            ],
+            [
+              -8.42146,
+              38.035
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "PT-LOU",
+        "name": "Lousal mine",
+        "municipality": "Gr\u00e2ndola",
+        "region": "Iberian Pyrite Belt",
+        "country": "PT",
+        "role": "pilot",
+        "facility_type": "waste heaps, tailings, pit lakes",
+        "status": "rehabilitated",
+        "status_note": "Closed in 1988 (verify); partly remediated; site hosts a science centre (Centro Ci\u00eancia Viva do Lousal). Useful contrast case for the rehabilitation pathway.",
+        "deposit_type": "volcanogenic massive sulphide (pyrite-rich)",
+        "crm_candidates": [
+          "Copper",
+          "Antimony",
+          "Bismuth",
+          "Arsenic"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.154788,
+              37.877
+            ],
+            [
+              -8.158908,
+              37.879316
+            ],
+            [
+              -8.15915,
+              37.88279
+            ],
+            [
+              -8.163378,
+              37.882611
+            ],
+            [
+              -8.167289,
+              37.884917
+            ],
+            [
+              -8.169227,
+              37.881184
+            ],
+            [
+              -8.173921,
+              37.880391
+            ],
+            [
+              -8.174184,
+              37.877
+            ],
+            [
+              -8.173849,
+              37.873636
+            ],
+            [
+              -8.171445,
+              37.870621
+            ],
+            [
+              -8.166688,
+              37.871162
+            ],
+            [
+              -8.163233,
+              37.870888
+            ],
+            [
+              -8.159213,
+              37.871272
+            ],
+            [
+              -8.158031,
+              37.874351
+            ],
+            [
+              -8.154788,
+              37.877
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "PT-ALJ",
+        "name": "Aljustrel legacy waste areas",
+        "municipality": "Aljustrel",
+        "region": "Iberian Pyrite Belt",
+        "country": "PT",
+        "role": "pilot",
+        "facility_type": "historic waste heaps and tailings next to an operating mine",
+        "status": "operating",
+        "status_note": "Operating underground mine (Almina) with historic waste areas around it (verify extents). Tests how Strata separates legacy waste from active works.",
+        "deposit_type": "volcanogenic massive sulphide",
+        "crm_candidates": [
+          "Copper",
+          "Antimony",
+          "Bismuth",
+          "Arsenic"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 180
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -7.113782,
+              37.59
+            ],
+            [
+              -7.117829,
+              37.592736
+            ],
+            [
+              -7.120328,
+              37.594643
+            ],
+            [
+              -7.122468,
+              37.59879
+            ],
+            [
+              -7.12681,
+              37.596284
+            ],
+            [
+              -7.129913,
+              37.594882
+            ],
+            [
+              -7.134005,
+              37.593436
+            ],
+            [
+              -7.133777,
+              37.59
+            ],
+            [
+              -7.13486,
+              37.586237
+            ],
+            [
+              -7.130189,
+              37.584844
+            ],
+            [
+              -7.127497,
+              37.58133
+            ],
+            [
+              -7.12307,
+              37.5833
+            ],
+            [
+              -7.118893,
+              37.583932
+            ],
+            [
+              -7.114987,
+              37.586179
+            ],
+            [
+              -7.113782,
+              37.59
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ES-THA",
+        "name": "Tharsis mines",
+        "municipality": "Alosno, Huelva",
+        "region": "Iberian Pyrite Belt",
+        "country": "ES",
+        "role": "pilot",
+        "facility_type": "open pits, waste heaps, acid streams",
+        "status": "closed",
+        "status_note": "Closed (year to verify).",
+        "deposit_type": "volcanogenic massive sulphide (pyrite-rich)",
+        "crm_candidates": [
+          "Copper",
+          "Cobalt",
+          "Antimony",
+          "Arsenic"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 220
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.576739,
+              37.7
+            ],
+            [
+              -6.579057,
+              37.70417
+            ],
+            [
+              -6.580712,
+              37.709216
+            ],
+            [
+              -6.587367,
+              37.709126
+            ],
+            [
+              -6.592905,
+              37.710069
+            ],
+            [
+              -6.597566,
+              37.707507
+            ],
+            [
+              -6.601289,
+              37.704302
+            ],
+            [
+              -6.605609,
+              37.7
+            ],
+            [
+              -6.599741,
+              37.696289
+            ],
+            [
+              -6.597913,
+              37.692149
+            ],
+            [
+              -6.592554,
+              37.691145
+            ],
+            [
+              -6.587293,
+              37.690615
+            ],
+            [
+              -6.580183,
+              37.69026
+            ],
+            [
+              -6.579139,
+              37.695862
+            ],
+            [
+              -6.576739,
+              37.7
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ES-RTO",
+        "name": "Riotinto mining district",
+        "municipality": "Minas de Riotinto, Huelva",
+        "region": "Iberian Pyrite Belt",
+        "country": "ES",
+        "role": "pilot",
+        "facility_type": "open pits, waste heaps, tailings; headwaters of the R\u00edo Tinto",
+        "status": "operating",
+        "status_note": "Operating copper mine (Atalaya Mining) within a large historic district; the R\u00edo Tinto is a known acid water reference.",
+        "deposit_type": "volcanogenic massive sulphide",
+        "crm_candidates": [
+          "Copper",
+          "Cobalt",
+          "Antimony",
+          "Bismuth",
+          "Arsenic"
+        ],
+        "community_pilot": true,
+        "community_name": "Minas de Riotinto and Nerva",
+        "coords_confidence": "approximate",
+        "sources": [
+          "https://dspace.unia.es/bitstream/handle/10334/7135/1351_Aranda.pdf?sequence=6"
+        ],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 420
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.549053,
+              37.738
+            ],
+            [
+              -6.548379,
+              37.73976
+            ],
+            [
+              -6.549829,
+              37.741144
+            ],
+            [
+              -6.551885,
+              37.741864
+            ],
+            [
+              -6.554064,
+              37.741685
+            ],
+            [
+              -6.556076,
+              37.74105
+            ],
+            [
+              -6.556022,
+              37.739151
+            ],
+            [
+              -6.557485,
+              37.738
+            ],
+            [
+              -6.556424,
+              37.736696
+            ],
+            [
+              -6.555913,
+              37.735111
+            ],
+            [
+              -6.55392,
+              37.734813
+            ],
+            [
+              -6.552029,
+              37.734635
+            ],
+            [
+              -6.550298,
+              37.735321
+            ],
+            [
+              -6.549041,
+              37.736492
+            ],
+            [
+              -6.549053,
+              37.738
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ES-PDH",
+        "name": "Pe\u00f1a del Hierro",
+        "municipality": "Nerva, Huelva",
+        "region": "Iberian Pyrite Belt",
+        "country": "ES",
+        "role": "pilot",
+        "facility_type": "flooded open pit, waste heaps",
+        "status": "closed",
+        "status_note": "Historic mine near the source of the R\u00edo Tinto (year to verify).",
+        "deposit_type": "volcanogenic massive sulphide",
+        "crm_candidates": [
+          "Copper",
+          "Arsenic"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.855029,
+              37.705
+            ],
+            [
+              -6.853967,
+              37.707299
+            ],
+            [
+              -6.856728,
+              37.708246
+            ],
+            [
+              -6.858646,
+              37.709692
+            ],
+            [
+              -6.861476,
+              37.710115
+            ],
+            [
+              -6.864333,
+              37.709299
+            ],
+            [
+              -6.865459,
+              37.70708
+            ],
+            [
+              -6.866177,
+              37.705
+            ],
+            [
+              -6.864433,
+              37.703311
+            ],
+            [
+              -6.863743,
+              37.701286
+            ],
+            [
+              -6.861301,
+              37.70049
+            ],
+            [
+              -6.858419,
+              37.69952
+            ],
+            [
+              -6.856069,
+              37.7011
+            ],
+            [
+              -6.853828,
+              37.702648
+            ],
+            [
+              -6.855029,
+              37.705
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ES-ZAR",
+        "name": "La Zarza mine",
+        "municipality": "Cala\u00f1as, Huelva",
+        "region": "Iberian Pyrite Belt",
+        "country": "ES",
+        "role": "pilot",
+        "facility_type": "open pit, waste heaps",
+        "status": "closed",
+        "status_note": "Closed (year to verify). Odiel catchment.",
+        "deposit_type": "volcanogenic massive sulphide (pyrite-rich)",
+        "crm_candidates": [
+          "Copper",
+          "Cobalt",
+          "Arsenic"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.25981,
+              37.52
+            ],
+            [
+              -6.261721,
+              37.523162
+            ],
+            [
+              -6.263269,
+              37.526694
+            ],
+            [
+              -6.267978,
+              37.527026
+            ],
+            [
+              -6.272244,
+              37.527798
+            ],
+            [
+              -6.277629,
+              37.527588
+            ],
+            [
+              -6.277573,
+              37.522893
+            ],
+            [
+              -6.27941,
+              37.52
+            ],
+            [
+              -6.279878,
+              37.516227
+            ],
+            [
+              -6.275241,
+              37.514788
+            ],
+            [
+              -6.271936,
+              37.513272
+            ],
+            [
+              -6.267417,
+              37.511024
+            ],
+            [
+              -6.262346,
+              37.512387
+            ],
+            [
+              -6.261514,
+              37.516759
+            ],
+            [
+              -6.25981,
+              37.52
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ES-AZN",
+        "name": "Aznalc\u00f3llar and Los Frailes",
+        "municipality": "Aznalc\u00f3llar, Seville",
+        "region": "Iberian Pyrite Belt",
+        "country": "ES",
+        "role": "pilot",
+        "facility_type": "open pits, former tailings area",
+        "status": "reopening_planned",
+        "status_note": "Site of the 1998 tailings dam failure. Final regional approval to reopen under Minera Los Frailes (Grupo M\u00e9xico) in 2025, production planned from 2028; the planned discharge to the Guadalquivir estuary is contested. Strata takes no position and reports change only.",
+        "deposit_type": "volcanogenic massive sulphide",
+        "crm_candidates": [
+          "Copper",
+          "Antimony",
+          "Bismuth",
+          "Arsenic"
+        ],
+        "community_pilot": true,
+        "community_name": "Aznalc\u00f3llar",
+        "coords_confidence": "approximate",
+        "sources": [
+          "https://www.elsaltodiario.com/sevilla/mina-aznalcollar-se-volvera-abrir-2028-viejas-heridas-nuevos-vertidos",
+          "https://en.wikipedia.org/wiki/Do%C3%B1ana_disaster"
+        ],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 260
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.458878,
+              51.912
+            ],
+            [
+              10.4595,
+              51.913337
+            ],
+            [
+              10.457388,
+              51.913848
+            ],
+            [
+              10.456077,
+              51.914911
+            ],
+            [
+              10.453713,
+              51.915479
+            ],
+            [
+              10.452267,
+              51.914114
+            ],
+            [
+              10.449792,
+              51.913547
+            ],
+            [
+              10.44991,
+              51.912
+            ],
+            [
+              10.449958,
+              51.910502
+            ],
+            [
+              10.452611,
+              51.910152
+            ],
+            [
+              10.453822,
+              51.908817
+            ],
+            [
+              10.456078,
+              51.909086
+            ],
+            [
+              10.458133,
+              51.909576
+            ],
+            [
+              10.459111,
+              51.910779
+            ],
+            [
+              10.458878,
+              51.912
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "DE-BOL",
+        "name": "Bollrich tailings pond",
+        "municipality": "Goslar",
+        "region": "Harz",
+        "country": "DE",
+        "role": "transfer",
+        "facility_type": "tailings pond from Rammelsberg ore processing",
+        "status": "closed",
+        "status_note": "Rammelsberg mine closed in 1988 (verify). Studied for reprocessing in the BMBF project REMINTA (2021 to 2024, TU Clausthal). Transfer test: cloudier climate, flat tailings surface.",
+        "deposit_type": "sedimentary-exhalative massive sulphide",
+        "crm_candidates": [
+          "Copper",
+          "Cobalt",
+          "Gallium",
+          "Germanium",
+          "Antimony"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [
+          "https://oa.tib.eu/renate/items/db76066f-3726-49b3-b6b4-74ae197d21e5/full"
+        ],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.618465,
+              60.6
+            ],
+            [
+              15.61813,
+              60.601922
+            ],
+            [
+              15.615115,
+              60.603148
+            ],
+            [
+              15.612242,
+              60.604822
+            ],
+            [
+              15.608487,
+              60.603254
+            ],
+            [
+              15.603565,
+              60.603961
+            ],
+            [
+              15.601628,
+              60.601979
+            ],
+            [
+              15.600346,
+              60.6
+            ],
+            [
+              15.601305,
+              60.597944
+            ],
+            [
+              15.605344,
+              60.597134
+            ],
+            [
+              15.607839,
+              60.595353
+            ],
+            [
+              15.612026,
+              60.595642
+            ],
+            [
+              15.614534,
+              60.597209
+            ],
+            [
+              15.618886,
+              60.597899
+            ],
+            [
+              15.618465,
+              60.6
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SE-FAL",
+        "name": "Falun mine waste",
+        "municipality": "Falun",
+        "region": "Bergslagen",
+        "country": "SE",
+        "role": "transfer",
+        "facility_type": "historic waste heaps and slag around the Great Pit",
+        "status": "closed",
+        "status_note": "Mining ended in 1992 (verify); UNESCO World Heritage mining landscape. Transfer test: northern light conditions, snow, heritage constraints.",
+        "deposit_type": "volcanogenic massive sulphide",
+        "crm_candidates": [
+          "Copper"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 70
+      }
+    }
+  ]
+}

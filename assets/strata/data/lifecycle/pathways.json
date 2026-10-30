@@ -1,0 +1,31 @@
+{
+  "status": "not_started",
+  "source": "FIERCE service S1, provider to be named",
+  "updated": "",
+  "pathways": {
+    "leave": {
+      "summary": "",
+      "impacts": []
+    },
+    "rehabilitate": {
+      "summary": "",
+      "impacts": []
+    },
+    "reprocess": {
+      "summary": "",
+      "impacts": []
+    }
+  },
+  "siteNotes": {
+    "PT-SDO": "",
+    "PT-LOU": "",
+    "PT-ALJ": "",
+    "ES-THA": "",
+    "ES-RTO": "",
+    "ES-PDH": "",
+    "ES-ZAR": "",
+    "ES-AZN": "",
+    "DE-BOL": "",
+    "SE-FAL": ""
+  }
+}

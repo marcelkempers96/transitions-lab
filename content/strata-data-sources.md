@@ -1,10 +1,10 @@
 § / Attribution
 
-# Credit where the pixels come from: Strata data sources, licences and attribution
+# Credit where the pixels come from
 
-*Every dataset Strata uses, who produces it, its licence and the exact attribution line we display. Living register, checked 29 October 2026.*
+*Every dataset Strata uses, how the build gets it, its licence, and the exact credit line the interface must show. If a source cannot be reached, Strata shows "Not available" or "Not loaded"; it never substitutes an estimate.*
 
-<p class="article-meta"><span class="article-date">29 October 2026</span> · <span class="article-reading-time">4 min read</span></p>
+<p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
@@ -15,37 +15,56 @@
   <a href="/strata-paper">Companion paper</a>
 </nav>
 
-Strata is built entirely on open data produced by public bodies and researchers, and each source carries its own terms. The table below lists every input, its licence and the attribution line displayed wherever its data appears; the notes that follow cover the terms that shape what we can publish.
+## 1. Satellite and Earth observation
 
-## Source register
+| # | Dataset | Used for | Access | Licence | Credit line to display |
+|---|---|---|---|---|---|
+| 1 | Copernicus Sentinel-2 Level-2A (10 to 20 m, 2017 onwards) | Live scene, annual composites, vegetation, bare ground, iron signal, clay ratio, water, red water | Earth Search STAC `https://earth-search.aws.element84.com/v1`, public COGs, no account. Fallback: Microsoft Planetary Computer STAC, anonymous SAS token | Free, full and open under the [Copernicus Sentinel Data Legal Notice](https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice) | Contains modified Copernicus Sentinel data [year] |
+| 2 | European Ground Motion Service, Ortho vertical (Sentinel-1 InSAR) | Subsidence or uplift on heaps, pits and tailings dams | Manual CSV download from the EGMS Explorer | Copernicus free and open | Generated using European Union's Copernicus Land Monitoring Service information |
+| 3 | Copernicus DEM GLO-30 | Heap height and waste volume proxy | AWS bucket `copernicus-dem-30m` (eu-central-1), public COGs | Copernicus DEM licence | © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA |
+| 4 | ESA WorldCover 10 m 2021 v200 | Land cover around each site; land converted under the footprint | AWS bucket `esa-worldcover` (eu-central-1), public COGs | CC BY 4.0 | © ESA WorldCover project / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium |
+| 5 | JRC Global Surface Water (Landsat, 1984 onwards) | Whether ponds and pit lakes pre-date the latest decade; long-term water occurrence | [JRC dataset page](https://data.jrc.ec.europa.eu/dataset/jrc-gswe-global-surface-water-explorer-v1) | Produced under the Copernicus programme, free without restriction of use | Source: EC JRC/Google |
+| 6 | GHSL population grid GHS-POP R2023A, 3 arc-second, epoch 2025 | People living within 1 km and 5 km of each site | JRC Global Human Settlement Layer | Free reuse with acknowledgement (CC BY 4.0) | GHS-POP R2023A, European Commission, Joint Research Centre |
 
-| Dataset | Producer | Used for | Licence | Attribution displayed |
-| --- | --- | --- | --- | --- |
-| Copernicus Sentinel-2 Level-2A | European Union, Copernicus programme, via ESA | Footprint, vegetation, water, land conversion | Free, full and open access under Regulation (EU) 377/2014 and Delegated Regulation (EU) 1159/2013 ([Sentinel Data Legal Notice](https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice)) | Contains modified Copernicus Sentinel data [year] |
-| Copernicus Sentinel-1 GRD | European Union, Copernicus programme, via ESA | Water and tailings surfaces under cloud | As above | Contains modified Copernicus Sentinel data [year] |
-| European Ground Motion Service (Basic and Ortho) | Copernicus Land Monitoring Service, European Environment Agency ([product page](https://land.copernicus.eu/en/products/european-ground-motion-service/egms-basic), DOI 10.2909/cc459e76-a40f-4b8e-9a66-6da4acbbf239) | Ground motion | Copernicus data policy, free and open | Generated using European Union's Copernicus Land Monitoring Service information |
-| ESA WorldCover 10 m 2021 v200 | ESA WorldCover consortium ([download](https://worldcover2021.esa.int/download), DOI 10.5281/zenodo.7254221) | Baseline land cover | CC BY 4.0 | © ESA WorldCover project / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium |
-| JRC Global Surface Water | European Commission Joint Research Centre with Google ([dataset](https://data.jrc.ec.europa.eu/dataset/jrc-gswe-global-surface-water-explorer-v1)); Pekel et al. (2016), Nature 540, 418-422, DOI 10.1038/nature20584 | Historical water presence since 1984 | Produced under the Copernicus programme, free of charge without restriction of use | Source: EC JRC/Google |
-| Global-scale mining polygons, version 2 | Maus et al., IIASA and WU Vienna ([record](https://pure.iiasa.ac.at/18508), DOI 10.1594/PANGAEA.942325; paper [Scientific Data 9:433](https://pure.iiasa.ac.at/18124)) | Validation and site placement | CC BY-SA 4.0 | Maus, V. et al. (2022). Global-scale mining polygons (Version 2). PANGAEA |
-| Global mining footprint | Tang and Werner, University of Melbourne ([data](https://gee-community-catalog.org/projects/global-mining/), DOI 10.5281/zenodo.7894216; paper [Communications Earth and Environment 4:134](https://doaj.org/article/c9aab72539dd46e5867d0d0c13b84701)) | Validation and site placement | CC BY 4.0 | Tang, L. and Werner, T. T. (2023). Global mining footprint mapped from high-resolution satellite imagery |
-| Natura 2000 sites (vector) | European Environment Agency, copyright holder DG Environment ([catalogue](https://sdi.eea.europa.eu/catalogue/srv/api/records/be2142b0-7dc4-42e3-afac-f7cc5f1a9ac6)) | Protected area overlap in the EU | CC BY 4.0 | Natura 2000 data © European Union, DG Environment, distributed by the EEA |
-| CRMA Strategic Projects list | European Commission ([IP/26/2113](https://europa.eu/newsroom/ecpc-failover/pdf/ip-26-2113_en.pdf) and linked project list) | Site register | Commission reuse policy (Decision 2011/833/EU) | Source: European Commission |
-| Basemap | OpenStreetMap contributors | Map display | ODbL 1.0 | © OpenStreetMap contributors |
+## 2. Register and context
 
-## Terms that shape what we publish
+| # | Dataset | Used for | Access | Licence | Credit line |
+|---|---|---|---|---|---|
+| 7 | OpenStreetMap | Site polygons (`man_made=spoil_heap`, `man_made=tailings_pond`, `landuse=quarry`, `historic=mine`), nearest watercourse, road access | Overpass API | ODbL 1.0 (derived polygons must stay ODbL if redistributed) | © OpenStreetMap contributors |
+| 8 | Global mining footprint, Tang and Werner (2023) | Site polygons where OSM is missing; cross-check | Zenodo [10.5281/zenodo.7894216](https://doi.org/10.5281/zenodo.7894216); paper [Communications Earth and Environment 4:134](https://doaj.org/article/c9aab72539dd46e5867d0d0c13b84701) | CC BY 4.0 | Tang, L. and Werner, T. T. (2023). Global mining footprint mapped from high-resolution satellite imagery |
+| 9 | MIN4EU DB Mining Waste (EuroGeoSurveys, via EGDI) | Cross-check of site list; official volume, tonnage or grade where published | [EGDI metadata record](https://metadata.europe-geology.eu/record/full/6a391dd6-444c-42c5-a052-4df60a010e58) | CC BY 4.0 | MIN4EU DB Mining Waste, EuroGeoSurveys / EGDI |
+| 10 | Natura 2000 sites (vector, end 2023 or later) | Protected area overlap and distance | EEA download, [catalogue record](https://sdi.eea.europa.eu/catalogue/srv/api/records/be2142b0-7dc4-42e3-afac-f7cc5f1a9ac6) | CC BY 4.0, copyright holder DG Environment | Natura 2000 data © European Union, DG Environment, distributed by the EEA |
+| 11 | Basemap | Map display | [OpenFreeMap](https://openfreemap.org) vector tiles, style positron | OSM data ODbL; OpenMapTiles schema | OpenFreeMap © OpenMapTiles Data from OpenStreetMap |
 
-**Copernicus.** Sentinel data and Copernicus service information may be reproduced, distributed, adapted and combined free of charge, provided the source is stated, adaptations are declared, and the use does not suggest endorsement by the European Union. Strata states the source on every map and chart and never presents its indicators as official EU figures.
+The EOX Sentinel-2 cloudless mosaics from 2018 onwards are licensed CC BY-NC-SA and would block any paid tier; Strata does not use them. The 2016 mosaic is CC BY 4.0 and may be used.
 
-**Share-alike.** The Maus et al. polygons are licensed CC BY-SA 4.0, so any polygon set derived from them must be released under the same licence. Strata uses them for validation and placement checks; where a published site outline is derived from them, that outline is released under CC BY-SA 4.0 and labelled as such.
+## 3. Validation references (not loaded by the app)
 
-**Sources we reference but do not redistribute.** The [Global Tailings Portal](https://grida.no/publications/472) by GRID-Arendal holds company-disclosed data on more than 1,800 tailings dams, and is currently available on request rather than as an open download, so Strata links to it and does not republish its records. Protected area data outside the EU from the World Database on Protected Areas carries non-commercial terms and is not used in paid products without a licence.
+| Dataset | Role | Access |
+|---|---|---|
+| PRISMA hyperspectral (ASI) | Cross-check Sentinel-2 iron and clay signals at pilot sites | ASI portal, free registration |
+| EnMAP hyperspectral (DLR) | Same role; archive at EOWEB GeoPortal | [EnMAP data access](https://enmap.org/data_access) |
+| CHIME (Copernicus, planned 2028) | Future operational hyperspectral source, 400 to 2500 nm at 30 m | [SentiWiki](https://sentiwiki.copernicus.eu/web/chime) |
+| Published field data, Iberian Pyrite Belt | Acid drainage and waste mapping references | Pérez Ostalé (2014), Universidad de Huelva thesis; Aranda Quirós (2022), Río Tinto AMWI study |
 
-**Comparable open work.** [Amazon Mining Watch](https://www.earthgenome.org/blog/amazon-mining-watch-august-2026-update) by Earth Genome, the Pulitzer Center and Amazon Conservation publishes Sentinel-2 detections of artisanal gold mining under CC BY 4.0 and shows that open, repeated satellite monitoring of mining can be sustained and used by journalists and authorities.
+## 4. Method references
+
+- Iron oxide ratio and hyperspectral cross-check: Pereira, I. et al. (2025). Multi-temporal mineral mapping in two torrential basins using PRISMA hyperspectral imagery. *Remote Sensing* 17, 2582. [doi:10.3390/rs17152582](https://doi.org/10.3390/rs17152582)
+- Sentinel-2 continuity for geological mapping: van der Werff, H. and van der Meer, F. (2016). Sentinel-2A MSI and Landsat 8 OLI provide data continuity for geological remote sensing. *Remote Sensing* 8(11), 883. [doi:10.3390/rs8110883](https://doi.org/10.3390/rs8110883)
+- Acid mine water index on the Río Tinto with Sentinel-2: Aranda Quirós (2022), as above.
+- Scale of legacy waste in the Spanish Iberian Pyrite Belt: Pérez Ostalé (2014), as above.
+- Article 27 databases of closed extractive waste facilities: [EGU26-9857](https://meetingorganizer.copernicus.org/EGU26/EGU26-9857.html). Finland example of national implementation: [GTK](https://www.gtk.fi/en/current/geological-survey-of-finland-assigned-tasks-under-the-eu-critical-raw-materials-act/).
+
+## 5. Attribution block for the interface footer
+
+Show this on every page that displays data, with the year filled from the scenes shown:
+
+> Contains modified Copernicus Sentinel data [years]. Generated using European Union's Copernicus Land Monitoring Service information (EGMS). Copernicus DEM GLO-30. © ESA WorldCover project 2021. Source: EC JRC/Google (Global Surface Water). GHS-POP R2023A, European Commission JRC. Natura 2000 © European Union, DG Environment, distributed by the EEA. Tang and Werner (2023), CC BY 4.0. © OpenStreetMap contributors. Use of Copernicus data does not imply endorsement by the European Union.
 
 ## Strata's own outputs
 
-Indicator tables and site pages are published under CC BY 4.0 unless they include share-alike material, in which case CC BY-SA 4.0 applies to that layer. Please cite as: Transitions Lab (2027). Strata: satellite baselines for critical raw materials sites, method version [x], accessed [date], transitionslab.org/strata.
+Site pages and indicator tables are published under CC BY 4.0 unless they include share-alike material, in which case CC BY-SA 4.0 applies to that layer. Please cite as: Transitions Lab (2026). Strata v0.2: satellite lifecycle cards for closed mine waste sites, pilot register. transitionslab.org/strata-demo.
 
 ---
 
-*Return to the [Strata overview](/strata), the [method](/strata-method), or the [web tool](/strata-app). Follow the materials onward on the [critical minerals flow map](/mineral-flows-research).*
+*Return to the [overview](/strata), [launch the app](/strata-demo), read the [method](/strata-method), or the [companion paper](/strata-paper).*

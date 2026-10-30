@@ -1,32 +1,33 @@
 <!doctype html>
-<html lang="en-GB" data-sd-theme="light">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <title>Strata — site monitor for Europe's critical raw materials projects (demo)</title>
+  <title>Strata — satellite lifecycle cards for closed mine waste sites (demo)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="A standalone demo of Strata, the Transitions Lab site monitor for Europe's critical raw materials Strategic Projects. Illustrative data; the 2027 pilot will produce real indicators.">
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Strata gives each closed mine waste site a satellite lifecycle card: what it looks like now, how it has changed over ten years, how big the heap is, who lives nearby, and what the three pathways (leave and monitor, rehabilitate, reprocess) would involve.">
+  <meta name="theme-color" content="#F6F5F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/assets/logos/strata-mark-black.svg">
   <link rel="apple-touch-icon" href="/assets/logos/strata-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
   <script>
     (function(){
       try {
-        var saved = localStorage.getItem('sd-theme');
-        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-sd-theme', theme);
+        var saved = localStorage.getItem('strata-theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
       } catch(_) {}
     })();
   </script>
-  <link rel="stylesheet" href="/assets/strata-demo.css?v=ddb198a5">
+  <link rel="stylesheet" href="/assets/strata/styles.css?v=9ab83a82">
 </head>
-<body class="sd-standalone">
-  <div id="strata-demo"></div>
+<body class="strata-standalone">
+  <div id="strata-root"></div>
   <script src="/assets/strata-europe-geo.js?v=fd9af6ce" defer></script>
-  <script src="/assets/strata-demo.js?v=35785f55" defer></script>
+  <script type="module" src="/assets/strata/app.js?v=18e62d9c"></script>
 </body>
 </html>

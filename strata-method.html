@@ -112,8 +112,8 @@
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><a href="/resources">Resources</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><span aria-current="page">Strata method: same pixels, same rules, every site</span></nav>
     
-    <h1>Same pixels, same rules, every site: how Strata measures change at critical raw materials projects</h1>
-    <p class="lede">Site selection, polygons, buffers, imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method, version 0.1, to be revised after the 2027 pilot.</p>
+    <h1>One method, every site: the Strata v0.2 method</h1>
+    <p class="lede">Pixel indices, pixel classes, time series, recovery clock, lifecycle stage, flags, and CRMA Article 27 export. All formulas live in <code>strata-core.js</code> and ship with twenty-six unit tests that all pass.</p>
     
   </div>
 </section>
@@ -123,7 +123,7 @@
     <div class="prose">
       
       
-      <p class="article-meta"><span class="article-date">29 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
+      <p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">6 min read</span></p>
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
   <a href="/strata-app">Web tool</a>
@@ -132,27 +132,56 @@
   <a href="/strata-data-sources">Data sources</a>
   <a href="/strata-paper">Companion paper</a>
 </nav>
-<p>Strata's value depends on one property above all: that a number reported for a lithium project in Portugal means exactly what the same number means for a nickel project in Finland. This page sets out the rules that make that true, in the order the pipeline applies them, and it will be revised in public after the 2027 pilot.</p>
-<h2>1. Site register</h2>
-<p>The register starts from the Commission's published list of Strategic Projects under the Critical Raw Materials Act, which after the October 2026 selection holds 93 projects in the European Union and 13 in third countries and overseas countries and territories (<a href="https://europa.eu/newsroom/ecpc-failover/pdf/ip-26-2113_en.pdf" target="_blank" rel="noopener">European Commission, IP/26/2113</a>). For each project the register records the public project name, value chain stage (extraction, processing, recycling, substitution or integrated), strategic raw materials, country, the selection round and the date the record was last checked. The register is versioned, because each new call adds projects and a planned third call is expected before the end of 2026.</p>
-<p>Strata uses only information the Commission or the promoter has published. Where published coordinates are too coarse to locate a site, it is placed from imagery and from the two open global mining footprint datasets described below, and every manual placement is logged.</p>
-<h2>2. Monitoring polygon and buffers</h2>
-<p>Each site receives a monitoring polygon drawn around the permitted or visibly active area, plus three buffers at 500 metres, 2 kilometres and 5 kilometres. For sites that are already operating, the polygon is checked against the global mining polygons of <a href="https://pure.iiasa.ac.at/18124" target="_blank" rel="noopener">Maus et al. (2022)</a>, which map 44,929 features from 2019 Sentinel-2 imagery, and against the finer <a href="https://doaj.org/article/c9aab72539dd46e5867d0d0c13b84701" target="_blank" rel="noopener">Tang and Werner (2023)</a> footprints, which trace 74,548 features such as pits, waste rock dumps, tailings dams, heap leach pads and processing plants. For sites not yet built, the polygon follows the project boundary in public permitting documents where available, and is otherwise a declared approximation.</p>
-<h2>3. Imagery and composites</h2>
-<p>Strata uses Copernicus Sentinel-2 Level-2A surface reflectance at 10 to 20 metre resolution as its main optical source and Sentinel-1 radar backscatter where cloud cover is persistent. For each year the pipeline builds a growing-season median composite after masking clouds and shadows, so a single cloudy or snowy acquisition cannot drive a result. The baseline year is the last full year before construction began, or, for sites operating before monitoring started, the earliest year with sufficient clear imagery from 2017 onwards.</p>
-<h2>4. Indicators</h2>
-<p><strong>Disturbed footprint.</strong> Pixels inside the polygon classified as bare, excavated or deposited material, using thresholds on vegetation and bare soil indices calibrated against the reference polygons. Reported in hectares, with year-on-year change.</p>
-<p><strong>Buffer vegetation loss.</strong> Pixels in each buffer that move from a vegetated class in the baseline (from <a href="https://worldcover2021.esa.int/download" target="_blank" rel="noopener">ESA WorldCover 2021</a>, refined by Sentinel-2 vegetation indices) to a non-vegetated state, reported in hectares and as a share of each buffer. The share falling inside <a href="https://sdi.eea.europa.eu/catalogue/srv/api/records/be2142b0-7dc4-42e3-afac-f7cc5f1a9ac6" target="_blank" rel="noopener">Natura 2000</a> sites is reported separately.</p>
-<p><strong>Water and tailings extent.</strong> Open water and wet tailings surfaces from a water index on Sentinel-2, gap-filled with Sentinel-1 backscatter, reported as maximum and minimum seasonal area. The <a href="https://data.jrc.ec.europa.eu/dataset/jrc-gswe-global-surface-water-explorer-v1" target="_blank" rel="noopener">JRC Global Surface Water</a> record, built from Landsat imagery since 1984, shows whether a water body pre-dates the project.</p>
-<p><strong>Ground motion.</strong> For sites in Copernicus Participating States, line-of-sight and vertical velocity statistics from the <a href="https://land.copernicus.eu/en/products/european-ground-motion-service/egms-basic" target="_blank" rel="noopener">European Ground Motion Service</a> within the polygon and the 500 metre buffer, with points above a stated velocity threshold flagged for attention. The service is derived from Sentinel-1 interferometry and updated annually.</p>
-<p><strong>Land converted.</strong> The ESA WorldCover 2021 class of every pixel that is now inside the disturbed footprint, reported as hectares by former class (for example tree cover, cropland, grassland, wetland).</p>
-<p><strong>Downstream water colour (experimental).</strong> A turbidity proxy from Sentinel-2 red and near-infrared reflectance in water bodies downstream of the site. It is tested for feasibility in the pilot and will not be published as an indicator unless it validates.</p>
-<h2>5. Validation</h2>
-<p>On operating pilot sites, the disturbed footprint is compared with the reference polygons, with a target of at least 85% overall agreement. The Maus et al. dataset reports 88.3% overall accuracy against its own control points (<a href="https://pure.iiasa.ac.at/18508" target="_blank" rel="noopener">IIASA</a>), which sets a realistic bar. Each indicator is published with its estimated error, the minimum mappable unit and any known confounders, such as agricultural ploughing or seasonal flooding that can mimic disturbance.</p>
-<h2>6. Publication rules</h2>
-<p>Every site page shows the imagery dates, method version, error margins and the full attribution required by each data licence. Promoters are contacted before a site page is first published and may submit a factual response, which is linked from the page. Indicator changes are described, not characterised: Strata reports that a footprint grew by a number of hectares, not that a project breached anything. Derived data are released under open licences compatible with their inputs, as set out on the <a href="/strata-data-sources">data sources page</a>.</p>
-<h2>7. What the method does not do</h2>
-<p>Strata does not measure emissions, water chemistry, dust, noise, labour conditions or community outcomes, and it cannot establish permit compliance. It is designed to sit beside field research, which is where the Lab's other work on how communities experience a new technology begins.</p>
+<p>Strata's value depends on one property: that a number reported for a legacy pyrite waste heap in Portugal means exactly the same thing as the number reported for a tailings pond in the Harz. This page sets out the rules that make that true, in the order the pipeline applies them. Thresholds marked <strong>starting</strong> are the pilot values; the FIERCE service S3 feasibility study will calibrate them against hyperspectral imagery (PRISMA, EnMAP) and field data from the pilot sites.</p>
+<h2>1. Satellite inputs</h2>
+<p>Sentinel-2 Level-2A surface reflectance (10 m, 20 m bands resampled bilinear, SCL resampled nearest). Pixels with SCL in {0, 1, 3, 8, 9, 10, 11} are discarded as invalid. Annual composites are the summer median (1 June to 30 September) of valid pixels per site, inside the polygon and in a 500 m outer ring.</p>
+<h2>2. Pixel indices and starting thresholds</h2>
+<div class="table-wrap"><table class="tbl"><thead><tr><th>Indicator</th><th>Formula (Sentinel-2 bands)</th><th>Starting threshold</th><th>Meaning on screen</th></tr></thead><tbody><tr><td>NDVI</td><td>(B08 − B04) / (B08 + B04)</td><td>≥ 0.30 → vegetation</td><td>Vegetation</td></tr><tr><td>Bare soil index (BSI)</td><td>((B11 + B04) − (B08 + B02)) / ((B11 + B04) + (B08 + B02))</td><td>NDVI &lt; 0.15 and BSI &gt; 0 → bare</td><td>Bare ground</td></tr><tr><td>Iron oxide ratio</td><td>B04 / B03</td><td>on bare pixels, &gt; 1.35 → iron signal</td><td>Bare ground with iron signal (oxidising sulphide waste, gossan)</td></tr><tr><td>Clay / hydroxyl ratio</td><td>B11 / B12</td><td>map layer only in v0.2</td><td>Clay-rich or altered material</td></tr><tr><td>MNDWI</td><td>(B03 − B11) / (B03 + B11)</td><td>&gt; 0 and NDVI &lt; 0.30 → water</td><td>Water</td></tr><tr><td>Red water index</td><td>(B04 − B02) / (B04 + B02), on water pixels</td><td>&gt; 0.15 → red/orange water</td><td>Red or orange water (acid drainage colour)</td></tr></tbody></table></div>
+<p>Classification order inside the pipeline is water first, then vegetation, then bare. Iron is assessed only on bare pixels. Red water is assessed only on water pixels. Percentages are of valid pixels in the region; red water % is of water pixels.</p>
+<h2>3. Natural recovery clock</h2>
+<p>Theil-Sen trend of vegetation % in the polygon over valid years (validPct ≥ 60):</p>
+<ul>
+<li><strong>reached</strong>: current vegetation already ≥ 50% of the polygon.</li>
+<li><strong>recovering</strong>: slope ≥ +0.5 points/year; the number of years to the 50% target is shown, capped at 100.</li>
+<li><strong>slow</strong>: more than 100 years to the 50% target at the current trend.</li>
+<li><strong>stable</strong>: slope between −0.5 and +0.5 points/year.</li>
+<li><strong>declining</strong>: slope &lt; −0.5 points/year.</li>
+<li><strong>insufficient</strong>: fewer than five valid years.</li>
+</ul>
+<p>Theil-Sen is used because it is robust to a single bad year without discarding points by hand.</p>
+<h2>4. Lifecycle stage</h2>
+<p>Rules in order (implemented in <code>lifecycleStage()</code>):</p>
+<ol>
+<li>Fewer than 5 valid years → <strong>Not enough data</strong>.</li>
+<li>Register status operating → <strong>Operating</strong>.</li>
+<li>Register status reopening planned → <strong>Reopening planned</strong>.</li>
+<li>Latest vegetation ≥ 60% → <strong>Vegetated</strong>.</li>
+<li>Recovery clock recovering → <strong>Recovering naturally</strong>.</li>
+<li>Latest bare ≥ 40% → <strong>Legacy, largely bare</strong>.</li>
+<li>Otherwise → <strong>Legacy, mixed cover</strong>.</li>
+</ol>
+<p>The stage carries a visual language: operating ink, reopening planned sun, legacy largely bare laterite, legacy mixed cover sand-dark, recovering naturally malachite at 60% opacity, vegetated malachite, not enough data line grey.</p>
+<h2>5. Flags</h2>
+<p>Independent of stage.</p>
+<ul>
+<li><strong>new_disturbance</strong> — latest bare ha ≥ 110% of the earlier median and at least 2 ha more.</li>
+<li><strong>red_water</strong> — ≥ 5% of open water on site shows a red or orange colour.</li>
+<li><strong>iron_signal</strong> — ≥ 20% of the site surface shows the iron oxide signal.</li>
+<li><strong>ground_motion</strong> — ≥ 10% of EGMS points subside faster than 5 mm per year.</li>
+</ul>
+<p>Copy rule for every flag: on first appearance in a card the text ends "This is a signal for follow-up, not a finding." No generated text uses "illegal", "breach", "pollution" or "contamination". Permit compliance is a legal determination that only the competent authority can make.</p>
+<h2>6. CRMA Article 27 export</h2>
+<p>Every site exports as one CSV row keyed to the fields that Member State databases of closed extractive waste facilities need to carry (location, area, waste volume, operator, raw material content). The function <code>crmaExportRow()</code> builds the row. Three design rules:</p>
+<ul>
+<li>Fields that cannot be observed from space (<code>operator</code>, <code>crm_content_measured</code>) are <strong>always empty</strong>, never estimated.</li>
+<li>Volume is labelled as a Copernicus DEM proxy, with the DEM epoch (2011 to 2015) written into the row.</li>
+<li>CRM candidates come from the deposit type and are labelled as such; they are not measured content.</li>
+</ul>
+<h2>7. Reference implementation and tests</h2>
+<p>The pure functions above live in <a href="https://github.com/marcelkempers96/transitions-lab/blob/main/assets/strata/core.js" target="_blank" rel="noopener"><code>assets/strata/core.js</code></a>. The same file ships with twenty-six self-tests covering: UTM projection accuracy, index values on reference spectra, pixel classification, raster masks (polygon + ring), Theil-Sen robustness to a single outlier, the recovery clock state machine, the lifecycle stage rules, flag detection, and the Article 27 export row shape. Run <code>node core.js --test</code>; all twenty-six pass. The same functions are ported to Python for the pipeline; the parity test checks that identical synthetic arrays produce identical classes and summaries in JavaScript and Python.</p>
+<h2>8. What the method does not do</h2>
+<p>Strata does not measure metal grades, air quality, dust, noise or community outcomes. It cannot establish permit compliance. Ten-metre imagery misses small features and early earthworks. Ground motion data from EGMS covers Copernicus Participating States only.</p>
+<p>Those limits are stated on every page where the numbers appear, not only here.</p>
 
       
     </div>

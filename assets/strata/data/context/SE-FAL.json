@@ -1,0 +1,43 @@
+{
+  "areaHa": 70,
+  "dem": {
+    "baseElevationM": 271.0,
+    "maxHeightM": 57.8,
+    "volumeAboveBaseM3": 13909623,
+    "volumeBelowBaseM3": 1368075,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Tree cover": 64,
+    "Grassland": 14,
+    "Built-up": 12,
+    "Permanent water bodies": 6,
+    "Shrubland": 4
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 5100,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 2200,
+    "within5km": 22400,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 250,
+    "name": "Falu\u00e5n"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 2.1
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -0.4,
+    "shareBelowThresholdPct": 1.0,
+    "points": 84,
+    "period": "2019-01 to 2024-12"
+  }
+}

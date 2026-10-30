@@ -1,0 +1,23 @@
+{
+  "methodVersion": "0.2",
+  "provider": "earthsearch",
+  "fallbackProvider": "planetary",
+  "thresholds": {
+    "vegNdvi": 0.3,
+    "bareNdvi": 0.15,
+    "bareBsi": 0.0,
+    "ironRatio": 1.35,
+    "waterMndwi": 0.0,
+    "redWater": 0.15
+  },
+  "bulkDensityTPerM3": 1.8,
+  "surveyUrl": null,
+  "contactEmail": "marcel@transitionslab.org",
+  "fierceFunded": false,
+  "demoBanner": true,
+  "auth": {
+    "enabled": false,
+    "supabaseUrl": "",
+    "supabaseAnonKey": ""
+  }
+}

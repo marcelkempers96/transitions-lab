@@ -1,0 +1,43 @@
+{
+  "areaHa": 35,
+  "dem": {
+    "baseElevationM": 418.8,
+    "maxHeightM": 6.4,
+    "volumeAboveBaseM3": 773240,
+    "volumeBelowBaseM3": 534271,
+    "confidence": "low",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Tree cover": 56,
+    "Grassland": 20,
+    "Cropland": 12,
+    "Built-up": 10,
+    "Shrubland": 2
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 24,
+    "distanceM": 1900,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 1100,
+    "within5km": 28000,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 600,
+    "name": "Oker"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 1.05
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -0.9,
+    "shareBelowThresholdPct": 2.4,
+    "points": 118,
+    "period": "2019-01 to 2024-12"
+  }
+}
