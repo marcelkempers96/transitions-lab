@@ -22,7 +22,7 @@
   <g transform="translate(28,20)">
     <rect x="0" y="4" width="22" height="22" class="forest"/>
     <text x="34" y="22" font-size="20" font-weight="800" class="ink">Strata</text>
-    <text x="124" y="22" class="mono" style="font-size:11px;letter-spacing:.14em;" class="mute">TRANSITIONS LAB</text>
+    <text x="124" y="22" class="mono mute" style="font-size:11px;letter-spacing:.14em;">TRANSITIONS LAB</text>
   </g>
   <g transform="translate(380,24)" font-size="14">
     <text x="0" y="18" fill="#121212" font-weight="700">Map</text>
