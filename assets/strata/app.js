@@ -78,8 +78,39 @@ const S = {
   // Interaction
   view: 'map',            // 'map' | 'compare' | 'method' | 'data' | 'about'
   selected: null,         // site id
-  filters: { q: '', country: new Set(), stage: new Set(), flag: new Set(), pilot: new Set() },
+  filters: { q: '', country: new Set(), stage: new Set(), flag: new Set(), pilot: new Set(), watchlist: false },
+  // Map overlay toggles — all off by default except the site polygon,
+  // which was the pre-existing behaviour.
+  layers: readLayerPrefs(),
+  // User's saved sites, kept in localStorage so a share link survives
+  // a reload but no data leaves the browser.
+  watchlist: readWatchlist(),
 };
+
+function readLayerPrefs() {
+  const defaults = { pop1km: true, pop5km: false, natura: true, motion: true, polygon: true };
+  try {
+    const s = JSON.parse(localStorage.getItem('strata-layers') || 'null');
+    if (s && typeof s === 'object') return Object.assign({}, defaults, s);
+  } catch (_) {}
+  return defaults;
+}
+function writeLayerPrefs() {
+  try { localStorage.setItem('strata-layers', JSON.stringify(S.layers)); } catch (_) {}
+}
+function readWatchlist() {
+  try {
+    const s = JSON.parse(localStorage.getItem('strata-watchlist') || '[]');
+    return new Set(Array.isArray(s) ? s.map(String) : []);
+  } catch (_) { return new Set(); }
+}
+function writeWatchlist() {
+  try { localStorage.setItem('strata-watchlist', JSON.stringify([...S.watchlist])); } catch (_) {}
+}
+function layerSummary() {
+  const on = Object.entries(S.layers).filter(([,v])=>v).length;
+  return on === 0 ? 'None on' : (on === 5 ? 'All on' : (on + ' on'));
+}
 
 // ───────────────────────── Boot ─────────────────────────────────
 async function boot() {
@@ -87,6 +118,7 @@ async function boot() {
   render();
   wireRoute();
   wireChrome();
+  wireGlobalKeys();
 }
 
 async function loadAll() {
@@ -178,7 +210,13 @@ function shellHTML() {
         <a href="#about"       class="${S.view === 'about' ? 'is-current' : ''}">About</a>
       </nav>
       <div class="sr-tools">
-        <button class="sr-tbtn sr-help" type="button" aria-label="How to use Strata" title="How to use Strata">
+        <button class="sr-tbtn sr-share" type="button" aria-label="Copy a share link to this view" title="Share this view (press S)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 11l8-4M8 13l8 4"/></svg>
+        </button>
+        <button class="sr-tbtn sr-print" type="button" aria-label="Print this view" title="Print (press P)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg>
+        </button>
+        <button class="sr-tbtn sr-help" type="button" aria-label="How to use Strata" title="Help (press ?)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
         </button>
         <button class="sr-tbtn sr-theme" type="button" aria-label="Toggle theme" title="Toggle light/dark">
@@ -276,6 +314,10 @@ function wireChrome() {
   if (h) h.addEventListener('click', () => {
     const ob = ROOT.querySelector('#sr-onboard'); if (ob) ob.hidden = false;
   });
+  const sh = ROOT.querySelector('.sr-share');
+  if (sh) sh.addEventListener('click', () => copyText(location.href, 'Link copied'));
+  const pr = ROOT.querySelector('.sr-print');
+  if (pr) pr.addEventListener('click', () => window.print());
   // Delegated close for the onboarding overlay
   ROOT.addEventListener('click', (ev) => {
     if (ev.target.closest('[data-sr-onboard-close]')) {
@@ -340,6 +382,12 @@ function mapPageInnerHTML() {
             <span class="sr-label sr-filter-label">Role</span>
             <div class="sr-chipset" id="f-pilot">${chipRow(['pilot','transfer'], S.filters.pilot, (v)=>v)}</div>
           </div>
+          <div class="sr-filter-group">
+            <span class="sr-label sr-filter-label">Watchlist (${S.watchlist.size})</span>
+            <div class="sr-chipset" id="f-watch">
+              <button class="sr-chip${S.filters.watchlist ? ' is-on' : ''}" data-val="only" aria-pressed="${S.filters.watchlist}"><span class="sr-pill-dot"></span>Only saved sites</button>
+            </div>
+          </div>
         </div>
         <div class="sr-list-head">
           <span class="sr-label">Sites <span class="sr-list-count">(${visible.length})</span></span>
@@ -351,11 +399,29 @@ function mapPageInnerHTML() {
       </aside>
       <div class="sr-col sr-col-map">
         <div id="sr-leaflet" class="sr-leaflet"></div>
-        <div class="sr-basemap-switch" role="group" aria-label="Base map">
-          <button type="button" data-basemap="satellite" class="is-on">Satellite</button>
-          <button type="button" data-basemap="street">Street</button>
-          <button type="button" data-basemap="terrain">Terrain</button>
+
+        <!-- Compact map-tools stack, top-right of the map. -->
+        <div class="sr-map-tools" aria-label="Map tools">
+          <details class="sr-mt-group" data-sr-mt="basemap">
+            <summary><span class="sr-mt-label">Base</span><span class="sr-mt-value" data-sr-basemap-value>Satellite</span></summary>
+            <div class="sr-mt-menu">
+              <button type="button" data-basemap="satellite" class="is-on">Satellite</button>
+              <button type="button" data-basemap="street">Street</button>
+              <button type="button" data-basemap="terrain">Terrain</button>
+            </div>
+          </details>
+          <details class="sr-mt-group" data-sr-mt="layers">
+            <summary><span class="sr-mt-label">Layers</span><span class="sr-mt-value">${layerSummary()}</span></summary>
+            <div class="sr-mt-menu sr-mt-menu--layers">
+              <label class="sr-mt-check"><input type="checkbox" data-sr-layer="pop1km"  ${S.layers.pop1km  ? 'checked' : ''}><span><strong>Population within 1 km</strong><em>Orange ring around each site. People = GHSL 2025.</em></span></label>
+              <label class="sr-mt-check"><input type="checkbox" data-sr-layer="pop5km"  ${S.layers.pop5km  ? 'checked' : ''}><span><strong>Population within 5 km</strong><em>Lighter outer ring, GHSL 2025.</em></span></label>
+              <label class="sr-mt-check"><input type="checkbox" data-sr-layer="natura"  ${S.layers.natura  ? 'checked' : ''}><span><strong>Natura 2000 overlap</strong><em>Green halo on sites with overlap within 1 km.</em></span></label>
+              <label class="sr-mt-check"><input type="checkbox" data-sr-layer="motion"  ${S.layers.motion  ? 'checked' : ''}><span><strong>Ground motion flag</strong><em>Dashed halo where EGMS subsidence > threshold.</em></span></label>
+              <label class="sr-mt-check"><input type="checkbox" data-sr-layer="polygon" ${S.layers.polygon ? 'checked' : ''}><span><strong>Site polygon outline</strong><em>Shape of the waste footprint on the ground.</em></span></label>
+            </div>
+          </details>
         </div>
+
         <div class="sr-map-legend">
           <span class="sr-label">Lifecycle stage</span>
           <div class="sr-swatches">
@@ -368,6 +434,9 @@ function mapPageInnerHTML() {
             <span class="sr-sw sr-sw--flag"><span class="d"></span>Has a flag</span>
           </div>
         </div>
+
+        <!-- Lon/lat readout bottom-right -->
+        <div class="sr-coord-readout" id="sr-coord" aria-live="polite" aria-atomic="true"></div>
       </div>
       ${S.selected ? `<aside class="sr-col sr-col-detail sr-sheet sr-sheet--full">
         <div class="sr-sheet-handle" role="button" tabindex="0" aria-label="Resize site card" data-sr-sheet>
@@ -437,6 +506,10 @@ function listRowsHTML(sites) {
 let L_MAP = null;
 let L_MARKERS = new Map();      // site id -> marker
 let L_POLYGONS = new Map();     // site id -> polygon layer
+let L_BUFFERS_1K = new Map();   // site id -> leaflet circle
+let L_BUFFERS_5K = new Map();   // site id -> leaflet circle
+let L_HALOS = new Map();        // site id -> array of layers (natura, motion halos)
+let L_SITE_LAYERS = { pop1km: null, pop5km: null, natura: null, motion: null, polygon: null };
 let L_BASE_LAYERS = {};
 let L_CURRENT_BASE = 'satellite';
 
@@ -446,7 +519,17 @@ function afterMapRender() {
   wireFilters();
   wireListAndMap();
   wireBasemapSwitch();
+  wireLayerToggles();
   wireMobileSheets();
+  wireMapHotkeys();
+}
+
+// Close any open map-tools dropdown when the user interacts with the
+// map itself, so a stray panel doesn't block pins.
+function wireMapHotkeys() {
+  if (!L_MAP) return;
+  const close = () => ROOT.querySelectorAll('details.sr-mt-group[open]').forEach((d) => { d.open = false; });
+  L_MAP.on('click dragstart zoomstart', close);
 }
 
 // ─── Mobile bottom-sheet (phone layout) ─────────────────────────
@@ -520,6 +603,27 @@ function initLeafletMap() {
   L_BASE_LAYERS.terrain   = L.layerGroup([terrain, esriLabels]);
   L_BASE_LAYERS[L_CURRENT_BASE].addTo(L_MAP);
 
+  // Group containers for the overlay layers. Each is addTo'd when the
+  // corresponding toggle is on; paintMarkers populates each on every
+  // repaint. Pane order sets the stack: polygons under pins, halos
+  // between.
+  L_SITE_LAYERS.pop5km  = L.layerGroup();
+  L_SITE_LAYERS.pop1km  = L.layerGroup();
+  L_SITE_LAYERS.polygon = L.layerGroup();
+  L_SITE_LAYERS.natura  = L.layerGroup();
+  L_SITE_LAYERS.motion  = L.layerGroup();
+  applyLayerToggles();
+
+  // Scale bar (metric only) + persistent coord readout.
+  try { L.control.scale({ imperial: false, metric: true, position: 'bottomleft' }).addTo(L_MAP); } catch (_) {}
+  const coord = ROOT.querySelector('#sr-coord');
+  if (coord) {
+    L_MAP.on('mousemove', (e) => {
+      coord.textContent = fmtLat(e.latlng.lat) + ' · ' + fmtLon(e.latlng.lng);
+    });
+    L_MAP.on('mouseout', () => { coord.textContent = ''; });
+  }
+
   // Fit to the pilot bbox (or the selected site).
   if (S.selected) {
     const sel = S.sites.find((f) => f.properties.id === S.selected);
@@ -534,6 +638,21 @@ function initLeafletMap() {
   }
 }
 
+function applyLayerToggles() {
+  if (!L_MAP) return;
+  for (const key of Object.keys(L_SITE_LAYERS)) {
+    const group = L_SITE_LAYERS[key];
+    if (!group) continue;
+    const want = !!S.layers[key];
+    const have = L_MAP.hasLayer(group);
+    if (want && !have) group.addTo(L_MAP);
+    else if (!want && have) L_MAP.removeLayer(group);
+  }
+}
+
+function fmtLat(l) { const abs = Math.abs(l).toFixed(3); return abs + '° ' + (l >= 0 ? 'N' : 'S'); }
+function fmtLon(l) { const abs = Math.abs(l).toFixed(3); return abs + '° ' + (l >= 0 ? 'E' : 'W'); }
+
 function fitPilotBounds() {
   if (!S.sites.length) { L_MAP.setView([42, 2], 4); return; }
   const bounds = L.latLngBounds(S.sites.map((f) => {
@@ -545,35 +664,87 @@ function fitPilotBounds() {
 
 function paintMarkers() {
   if (!L_MAP) return;
-  // Clear existing
+  // Clear existing marker + polygon layers; clear every overlay group.
   for (const m of L_MARKERS.values()) L_MAP.removeLayer(m);
-  for (const g of L_POLYGONS.values()) L_MAP.removeLayer(g);
-  L_MARKERS.clear(); L_POLYGONS.clear();
+  L_MARKERS.clear(); L_POLYGONS.clear(); L_BUFFERS_1K.clear(); L_BUFFERS_5K.clear(); L_HALOS.clear();
+  for (const key of Object.keys(L_SITE_LAYERS)) {
+    if (L_SITE_LAYERS[key]) L_SITE_LAYERS[key].clearLayers();
+  }
 
   const visible = new Set(filteredSites().map((f) => f.properties.id));
 
   for (const f of S.sites) {
     const p = f.properties;
     const [cx, cy] = centroid(f.geometry);
-    const area = S.context[p.id]?.areaHa || 0;
+    const ctx = S.context[p.id] || {};
+    const area = ctx.areaHa || 0;
     const r = Math.max(8, Math.min(22, 6 + Math.log(1 + area) * 2.5));
     const card = deriveCard(f);
     const stage = card.lifecycle.stage;
     const isActive = S.selected === p.id;
     const dim = !visible.has(p.id);
     const hasFlag = (card.lifecycle.flags || []).length > 0;
+    const latlng = [cy, cx];
 
-    // Site polygon (ghost outline) — only when zoomed closer
+    // Site polygon (ghost outline)
     const poly = L.polygon(flipLatLng(f.geometry.coordinates[0]), {
       color: stageHex(stage),
       weight: isActive ? 2.5 : 1.5,
-      opacity: dim ? 0.3 : 0.95,
-      fillOpacity: isActive ? 0.18 : 0.08,
+      opacity: dim ? 0.25 : 0.95,
+      fillOpacity: isActive ? 0.22 : 0.1,
       interactive: false,
       className: 'sr-poly',
     });
-    poly.addTo(L_MAP);
+    L_SITE_LAYERS.polygon.addLayer(poly);
     L_POLYGONS.set(p.id, poly);
+
+    // Population buffers (1 km orange, 5 km lighter). The circles use
+    // real metric radii, so at every zoom the ring is to scale with
+    // the ground. Click opens the site card.
+    const buf1 = L.circle(latlng, {
+      radius: 1000,
+      color: '#C2502A', weight: 1.2, dashArray: '4 3',
+      fillOpacity: dim ? 0.02 : 0.06, fillColor: '#C2502A',
+      className: 'sr-buf sr-buf--1km',
+    }).bindTooltip(`<strong>${esc(p.name)}</strong><br>People within 1 km: <strong>${fmtInt(ctx.population?.within1km)}</strong>`, { sticky: true, direction: 'top', className: 'sr-tt' });
+    buf1.on('click', () => go(p.id === S.selected ? 'map' : 'site-' + p.id.toLowerCase()));
+    L_SITE_LAYERS.pop1km.addLayer(buf1);
+    L_BUFFERS_1K.set(p.id, buf1);
+
+    const buf5 = L.circle(latlng, {
+      radius: 5000,
+      color: '#C2502A', weight: 0.8, opacity: dim ? 0.15 : 0.5,
+      fillOpacity: dim ? 0.01 : 0.03, fillColor: '#C2502A',
+      className: 'sr-buf sr-buf--5km',
+    }).bindTooltip(`<strong>${esc(p.name)}</strong><br>People within 5 km: <strong>${fmtInt(ctx.population?.within5km)}</strong>`, { sticky: true, direction: 'top', className: 'sr-tt' });
+    buf5.on('click', () => go(p.id === S.selected ? 'map' : 'site-' + p.id.toLowerCase()));
+    L_SITE_LAYERS.pop5km.addLayer(buf5);
+    L_BUFFERS_5K.set(p.id, buf5);
+
+    // Natura 2000 halo — ring at ~1.5 km for sites with any overlap
+    // within 1 km. Communicates "habitat sensitive" at a glance.
+    const naturaHa = (ctx.natura2000?.within1kmHa || 0) + (ctx.natura2000?.withinPolygonHa || 0);
+    if (naturaHa > 0) {
+      const halo = L.circle(latlng, {
+        radius: 1500,
+        color: '#1D6B55', weight: 2, opacity: dim ? 0.3 : 0.85,
+        fillOpacity: dim ? 0.02 : 0.05, fillColor: '#1D6B55',
+        className: 'sr-halo sr-halo--natura',
+      }).bindTooltip(`<strong>${esc(p.name)}</strong><br>Natura 2000 within 1 km: <strong>${fmtHa(naturaHa)} ha</strong>${ctx.natura2000?.distanceM != null ? '<br>Distance to protected area: <strong>' + fmtInt(ctx.natura2000.distanceM) + ' m</strong>' : ''}`, { sticky: true, direction: 'top', className: 'sr-tt' });
+      L_SITE_LAYERS.natura.addLayer(halo);
+    }
+
+    // Ground-motion halo for sites that trip the EGMS flag.
+    const motionShare = ctx.egms?.shareBelowThresholdPct || 0;
+    const motionFlag = motionShare >= (S.config?.lifecycle?.groundMotionSharePct || 10);
+    if (motionFlag) {
+      const halo = L.circle(latlng, {
+        radius: 2000,
+        color: '#E2A93B', weight: 2, opacity: dim ? 0.3 : 0.9, dashArray: '6 4',
+        fillOpacity: 0, className: 'sr-halo sr-halo--motion',
+      }).bindTooltip(`<strong>${esc(p.name)}</strong><br>Ground motion: <strong>${round(motionShare, 1)}%</strong> of points subside faster than 5 mm/yr<br><em>Signal for follow-up, not a finding.</em>`, { sticky: true, direction: 'top', className: 'sr-tt' });
+      L_SITE_LAYERS.motion.addLayer(halo);
+    }
 
     // Custom DivIcon for the stage-coloured dot
     const html = buildPinHTML(p.id, stage, r, isActive, hasFlag);
@@ -583,13 +754,46 @@ function paintMarkers() {
       iconSize: [r * 2 + 60, r * 2 + 10],
       iconAnchor: [r + 30, r + 5],
     });
-    const marker = L.marker([cy, cx], { icon, keyboard: true, title: p.name });
+    const marker = L.marker(latlng, { icon, keyboard: true, title: p.name });
     marker.on('click', () => {
       go(p.id === S.selected ? 'map' : 'site-' + p.id.toLowerCase());
     });
+    marker.bindPopup(markerPopupHTML(f, card, ctx), {
+      maxWidth: 260, minWidth: 220, closeButton: false,
+      className: 'sr-pop',
+    });
+    marker.on('mouseover', (e) => { e.target.openPopup(); });
     marker.addTo(L_MAP);
     L_MARKERS.set(p.id, marker);
   }
+  // Make sure the overlay groups are on/off per the current prefs
+  applyLayerToggles();
+}
+
+// Compact pin popup — reads at a glance, offers two actions.
+function markerPopupHTML(f, card, ctx) {
+  const p = f.properties;
+  const lc = card.lifecycle;
+  const latest = card.latest || {};
+  const flagList = (lc.flags || []).map((x) => esc(x.id.replace(/_/g,' '))).join(' · ') || '—';
+  const stageLabel = lc.label || STAGE_LABEL[lc.stage] || '—';
+  return `
+    <div class="sr-pop-head">
+      <strong>${esc(p.name)}</strong>
+      <span class="sr-pop-sub">${esc(p.id)} · ${esc(p.municipality || '')}${p.municipality ? ', ' : ''}${esc(p.country)}</span>
+    </div>
+    <div class="sr-pop-stage" data-stage="${esc(lc.stage)}">${esc(stageLabel)}</div>
+    <dl class="sr-pop-facts">
+      <dt>Waste area</dt><dd>${fmtHa(ctx.areaHa)} ha</dd>
+      <dt>Bare now</dt><dd>${fmtPct(latest.barePct)}</dd>
+      <dt>Vegetation</dt><dd>${fmtPct(latest.vegetationPct)}</dd>
+      <dt>People 1 km</dt><dd>${fmtInt(ctx.population?.within1km)}</dd>
+      <dt>Flags</dt><dd>${flagList}</dd>
+    </dl>
+    <div class="sr-pop-actions">
+      <a href="#site-${esc(p.id.toLowerCase())}" class="sr-pop-cta">Open full card &rarr;</a>
+    </div>
+  `;
 }
 
 function flipLatLng(ring) { return ring.map(([lon, lat]) => [lat, lon]); }
@@ -621,17 +825,36 @@ function stageHex(stage) {
 }
 
 function wireBasemapSwitch() {
-  const row = ROOT.querySelector('.sr-basemap-switch');
-  if (!row) return;
-  row.addEventListener('click', (ev) => {
+  const details = ROOT.querySelector('details.sr-mt-group[data-sr-mt="basemap"]');
+  if (!details) return;
+  details.addEventListener('click', (ev) => {
     const btn = ev.target.closest('button[data-basemap]');
     if (!btn || !L_MAP) return;
+    ev.preventDefault();
     const which = btn.getAttribute('data-basemap');
-    if (which === L_CURRENT_BASE) return;
-    row.querySelectorAll('button').forEach((b) => b.classList.toggle('is-on', b === btn));
+    if (which === L_CURRENT_BASE) { details.open = false; return; }
+    details.querySelectorAll('button[data-basemap]').forEach((b) => b.classList.toggle('is-on', b === btn));
     if (L_BASE_LAYERS[L_CURRENT_BASE]) L_MAP.removeLayer(L_BASE_LAYERS[L_CURRENT_BASE]);
     L_CURRENT_BASE = which;
     if (L_BASE_LAYERS[which]) L_BASE_LAYERS[which].addTo(L_MAP);
+    const label = ROOT.querySelector('[data-sr-basemap-value]');
+    if (label) label.textContent = btn.textContent;
+    details.open = false;
+  });
+}
+
+function wireLayerToggles() {
+  const details = ROOT.querySelector('details.sr-mt-group[data-sr-mt="layers"]');
+  if (!details) return;
+  details.addEventListener('change', (ev) => {
+    const cb = ev.target.closest('input[data-sr-layer]');
+    if (!cb) return;
+    const key = cb.getAttribute('data-sr-layer');
+    S.layers[key] = cb.checked;
+    writeLayerPrefs();
+    applyLayerToggles();
+    const sum = details.querySelector('.sr-mt-value');
+    if (sum) sum.textContent = layerSummary();
   });
 }
 
@@ -651,6 +874,15 @@ function wireFilters() {
       refreshMapOnly();
     });
   }
+  // Watchlist chip: a plain boolean toggle rather than a Set.
+  const wrow = ROOT.querySelector('#f-watch');
+  if (wrow) wrow.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('.sr-chip'); if (!btn) return;
+    S.filters.watchlist = !S.filters.watchlist;
+    btn.classList.toggle('is-on', S.filters.watchlist);
+    btn.setAttribute('aria-pressed', String(S.filters.watchlist));
+    refreshMapOnly();
+  });
 }
 
 function refreshMapOnly() {
@@ -692,6 +924,28 @@ function wireListAndMap() {
       const dl = ev.target.closest('[data-sr-csv]'); if (dl) { downloadSiteCsv(S.selected); return; }
       const dg = ev.target.closest('[data-sr-geojson]'); if (dg) { downloadSiteGeoJson(S.selected); return; }
       const copy = ev.target.closest('[data-sr-cite]'); if (copy) { copyCitation(copy); return; }
+      // R3 — detail tools: star (watchlist), share, print
+      const star = ev.target.closest('[data-sr-star]');
+      if (star) {
+        if (S.watchlist.has(S.selected)) S.watchlist.delete(S.selected);
+        else S.watchlist.add(S.selected);
+        writeWatchlist();
+        const pressed = S.watchlist.has(S.selected);
+        star.setAttribute('aria-pressed', String(pressed));
+        const svg = star.querySelector('svg');
+        if (svg) svg.setAttribute('fill', pressed ? 'currentColor' : 'none');
+        toastMsg(pressed ? 'Added to watchlist' : 'Removed from watchlist');
+        refreshMapOnly();
+        return;
+      }
+      const share = ev.target.closest('[data-sr-share]');
+      if (share) {
+        const url = share.getAttribute('data-url') || location.href;
+        copyText(url, 'Link copied');
+        return;
+      }
+      const prt = ev.target.closest('[data-sr-print]');
+      if (prt) { window.print(); return; }
       // Live scene load
       const liveBtn = ev.target.closest('[data-sr-live]');
       if (liveBtn) {
@@ -719,6 +973,7 @@ function filteredSites() {
   const q = (S.filters.q || '').trim().toLowerCase();
   return S.sites.filter((f) => {
     const p = f.properties;
+    if (S.filters.watchlist && !S.watchlist.has(p.id)) return false;
     if (S.filters.country.size && !S.filters.country.has(p.country)) return false;
     if (S.filters.pilot.size   && !S.filters.pilot.has(p.role))     return false;
     const card = deriveCard(f);
@@ -780,12 +1035,25 @@ function siteDetailHTML(id) {
   const stageLabel = lc.label || STAGE_LABEL[lc.stage] || 'Unknown';
 
   const stagePill = `<span class="sr-pill sr-pill-stage" data-stage="${lc.stage}">${esc(stageLabel)}</span>`;
-  const flagPills = (lc.flags || []).map((fl) => `<span class="sr-pill sr-pill-flag">${esc(fl.id.replace(/_/g,' '))}</span>`).join('');
+  const flagPills = (lc.flags || []).map((fl) => renderFlagChip(fl)).join('');
+  const starred = S.watchlist.has(p.id);
+  const siteUrl = location.origin + location.pathname + '#site-' + p.id.toLowerCase();
 
   return `
     <section class="sr-detail">
       <div class="sr-detail-head">
-        <button class="sr-detail-close" data-sr-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6l-12 12"/></svg></button>
+        <div class="sr-detail-tools">
+          <button class="sr-detail-tool" type="button" data-sr-star aria-pressed="${starred}" aria-label="Save to watchlist" title="Save to watchlist">
+            <svg viewBox="0 0 24 24" fill="${starred ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 21l1.1-6.5L2.6 9.8l6.5-.9z"/></svg>
+          </button>
+          <button class="sr-detail-tool" type="button" data-sr-share data-url="${esc(siteUrl)}" aria-label="Copy share link" title="Copy share link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 11l8-4M8 13l8 4"/></svg>
+          </button>
+          <button class="sr-detail-tool" type="button" data-sr-print aria-label="Print this site card" title="Print this site card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg>
+          </button>
+          <button class="sr-detail-close" data-sr-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6l-12 12"/></svg></button>
+        </div>
         <div class="sr-detail-code">${esc(p.id)} · ${esc((p.crm_candidates||[]).join(' · ').toUpperCase() || p.deposit_type || '')}</div>
         <h2>${esc(p.name)}</h2>
         <p class="sr-detail-sub">${esc(p.municipality || '')}${p.municipality ? ', ' : ''}${esc(p.country)} · ${esc(p.region || '')}</p>
@@ -796,13 +1064,19 @@ function siteDetailHTML(id) {
       <div class="sr-sect">
         <span class="sr-label sr-sect-head">Key facts</span>
         <div class="sr-kf">
-          <div class="sr-kf-cell"><span class="sr-label">Waste area (satellite)</span><span class="sr-n">${fmtHa(area)}<span class="sr-unit">ha</span></span></div>
-          <div class="sr-kf-cell"><span class="sr-label">Volume proxy</span><span class="sr-n">${fmtVol(vol)}<span class="sr-unit">m³ · DEM 2011–15</span></span></div>
-          <div class="sr-kf-cell"><span class="sr-label">Bare ground now</span><span class="sr-n">${fmtPct(latest.barePct)}</span></div>
-          <div class="sr-kf-cell"><span class="sr-label">Vegetation now</span><span class="sr-n">${fmtPct(latest.vegetationPct)}</span></div>
-          <div class="sr-kf-cell"><span class="sr-label">People within 1 km</span><span class="sr-n">${fmtInt(ctx.population?.within1km)}</span></div>
-          <div class="sr-kf-cell"${(lc.flags || []).some((x)=>x.id==='red_water') ? ' data-alert="1"' : ''}><span class="sr-label">Red water, share of water</span><span class="sr-n">${fmtPct(latest.redWaterOfWaterPct)}</span></div>
+          <div class="sr-kf-cell"><span class="sr-label">Waste area (satellite)${methodMark('area')}</span><span class="sr-n">${fmtHa(area)}<span class="sr-unit">ha</span></span></div>
+          <div class="sr-kf-cell"><span class="sr-label">Volume proxy${methodMark('volume')}</span><span class="sr-n">${fmtVol(vol)}<span class="sr-unit">m³ · DEM 2011–15</span></span></div>
+          <div class="sr-kf-cell"><span class="sr-label">Bare ground now${methodMark('bare')}</span><span class="sr-n">${fmtPct(latest.barePct)}</span></div>
+          <div class="sr-kf-cell"><span class="sr-label">Vegetation now${methodMark('veg')}</span><span class="sr-n">${fmtPct(latest.vegetationPct)}</span></div>
+          <div class="sr-kf-cell"><span class="sr-label">People within 1 km${methodMark('pop1')}</span><span class="sr-n">${fmtInt(ctx.population?.within1km)}</span></div>
+          <div class="sr-kf-cell"${(lc.flags || []).some((x)=>x.id==='red_water') ? ' data-alert="1"' : ''}><span class="sr-label">Red water, share of water${methodMark('redwater')}</span><span class="sr-n">${fmtPct(latest.redWaterOfWaterPct)}</span></div>
         </div>
+      </div>
+
+      <div class="sr-sect">
+        <span class="sr-label sr-sect-head">Who lives nearby</span>
+        ${buffersSVG(ctx.population || {})}
+        <p class="sr-sect-note">Rings are to scale (not the map scale). Population from GHSL R2023A, epoch 2025.</p>
       </div>
 
       <div class="sr-sect sr-live-sect" data-site-id="${esc(p.id)}">
@@ -820,44 +1094,18 @@ function siteDetailHTML(id) {
           <span class="sr-sw sr-sw--red"><span class="d"></span>Red water (of water)</span>
         </div>
         <div class="sr-recovery">
-          <span class="sr-label">Natural recovery clock</span>
-          <p>${esc(lc.clock?.label || 'Not enough valid years for a trend yet.')}</p>
+          ${recoveryDial(latest.vegetationPct, lc.clock)}
+          <div class="sr-recovery-body">
+            <span class="sr-label">Natural recovery clock</span>
+            <p>${esc(lc.clock?.label || 'Not enough valid years for a trend yet.')}</p>
+            <p class="sr-sect-note">Theil-Sen trend of vegetation %; 50 % is the "recovered" target. See <a href="/strata-method#3-natural-recovery-clock">the method</a>.</p>
+          </div>
         </div>
       </div>
 
       <div class="sr-sect">
         <span class="sr-label sr-sect-head">Pathways</span>
-        <div class="sr-pathways">
-          <div class="sr-pathway">
-            <h4>Leave and monitor</h4>
-            <ul>
-              <li>Recovery clock: ${esc((lc.clock?.label || '—').toLowerCase())}</li>
-              <li>Flags today: ${(lc.flags||[]).length ? esc((lc.flags||[]).map(x=>x.id.replace(/_/g,' ')).join(', ')) : 'none'}</li>
-              <li>What Strata will keep tracking: vegetation, bare, iron, water, red water</li>
-            </ul>
-            <div class="sr-pathway-footer">Lifecycle study under way, results expected June 2027.</div>
-          </div>
-          <div class="sr-pathway">
-            <h4>Rehabilitate</h4>
-            <ul>
-              <li>Bare area to treat: ${fmtHa((latest.bareHa))} ha</li>
-              <li>Water and tailings surface: ${fmtHa(latest.waterHa)} ha</li>
-              <li>Heap volume to reshape (proxy): ${fmtVol(vol)} m³</li>
-              <li>Natura 2000 within 1 km: ${fmtHa(ctx.natura2000?.within1kmHa)} ha</li>
-            </ul>
-            <div class="sr-pathway-footer">Lifecycle study under way, results expected June 2027.</div>
-          </div>
-          <div class="sr-pathway">
-            <h4>Reprocess and rehabilitate</h4>
-            <ul>
-              <li>Volume proxy: ${fmtVol(vol)} m³ (${round(vol * (S.config.bulkDensityTPerM3 || 1.8) / 1_000_000, 1)} Mt, bulk density assumed)</li>
-              <li>CRM candidates (deposit type): ${esc((p.crm_candidates || []).join(', ') || '—')} <br><em>not measured</em></li>
-              <li>People within 1 km: ${fmtInt(ctx.population?.within1km)}</li>
-              <li>Distance to watercourse: ${esc(ctx.river?.name || '—')}, ${fmtInt(ctx.river?.distanceM)} m</li>
-            </ul>
-            <div class="sr-pathway-footer">Lifecycle study under way, results expected June 2027.</div>
-          </div>
-        </div>
+        ${pathwaysBlock(p, lc, latest, ctx, vol)}
       </div>
 
       <div class="sr-sect sr-around">
@@ -897,6 +1145,154 @@ function siteDetailHTML(id) {
       </div>
     </section>
   `;
+}
+
+// ─── Site-card helpers (R2) ──────────────────────────────────────
+
+// A small (?) icon that opens the method panel for a given stat key.
+// Hover shows the one-sentence explanation; click opens the method
+// page on the right anchor. Cheap, uses the title attribute as a
+// tooltip; a real popover is overkill for a signal.
+const METHOD_BLURBS = {
+  area:     { tip: 'Hectares inside the site polygon from OSM / Tang & Werner 2023.', href: '/strata-method#1-satellite-inputs' },
+  volume:   { tip: 'Volume above the DEM baseline, a proxy for waste tonnage. Copernicus DEM GLO-30, epoch 2011–15.', href: '/strata-method#9-data-sources' },
+  bare:     { tip: 'Share of valid pixels classified as bare ground. NDVI < 0.15 and BSI > 0, summer composite.', href: '/strata-method#2-pixel-indices-and-starting-thresholds' },
+  veg:      { tip: 'Share of valid pixels classified as vegetation (NDVI ≥ 0.30).', href: '/strata-method#2-pixel-indices-and-starting-thresholds' },
+  iron:     { tip: 'Share of bare pixels with B04 / B03 > 1.35 (oxidising sulphide waste signal).', href: '/strata-method#2-pixel-indices-and-starting-thresholds' },
+  redwater: { tip: 'Red water share of water pixels. (B04 − B02) / (B04 + B02) > 0.15.', href: '/strata-method#2-pixel-indices-and-starting-thresholds' },
+  pop1:     { tip: 'Residents inside a 1 km buffer, from GHS-POP R2023A epoch 2025.', href: '/strata-method#9-data-sources' },
+  pop5:     { tip: 'Residents inside a 5 km buffer, from GHS-POP R2023A epoch 2025.', href: '/strata-method#9-data-sources' },
+};
+function methodMark(key) {
+  const b = METHOD_BLURBS[key];
+  if (!b) return '';
+  return `<a class="sr-method-mark" href="${esc(b.href)}" title="${esc(b.tip)}" aria-label="Method: ${esc(b.tip)}">?</a>`;
+}
+
+// Flag chip with a "Why?" expander on click. Shows the trigger value
+// and the threshold so the reader can see the rule that fired.
+function renderFlagChip(fl) {
+  const thresholds = S.config?.lifecycle || {};
+  const label = fl.id.replace(/_/g, ' ');
+  let why = '';
+  switch (fl.id) {
+    case 'red_water':
+      why = `${round(fl.value, 1)} % of water pixels, threshold ${thresholds.redWaterFlagPct ?? 5} %.`; break;
+    case 'iron_signal':
+      why = `${round(fl.value, 1)} % of site surface, threshold ${thresholds.ironFlagPct ?? 20} %.`; break;
+    case 'ground_motion':
+      why = `${round(fl.value, 1)} % of EGMS points, threshold ${thresholds.groundMotionSharePct ?? 10} %.`; break;
+    case 'new_disturbance':
+      why = `Bare area now ${round(fl.value, 1)} × earlier median, +${round(fl.extraHa || 0, 1)} ha above baseline.`; break;
+    default:
+      why = 'See the method page.';
+  }
+  return `<details class="sr-pill sr-pill-flag sr-flag-why"><summary>${esc(label)}</summary><em>${esc(why)}</em><br>Signal for follow-up, not a finding.</details>`;
+}
+
+// Concentric buffer rings. People inside 1 km orange, between 1 and
+// 5 km in a softer orange. Sized relative, labelled with counts.
+function buffersSVG(pop) {
+  const inner = Number(pop.within1km) || 0;
+  const outer = Number(pop.within5km) || 0;
+  const ring  = Math.max(0, outer - inner);
+  const w = 320, h = 160, cx = w / 2, cy = h - 10, r5 = 110, r1 = 22;
+  const bar = (val, max) => Math.round(100 * (max ? val / max : 0));
+  const totalBar = outer || 1;
+  return `
+    <div class="sr-buf-viz">
+      <svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Population within 1 km and 5 km of the site">
+        <circle cx="${cx}" cy="${cy}" r="${r5}" fill="#C2502A" fill-opacity="0.08" stroke="#C2502A" stroke-opacity="0.5" stroke-dasharray="4 3"/>
+        <circle cx="${cx}" cy="${cy}" r="${r1}" fill="#C2502A" fill-opacity="0.22" stroke="#C2502A"/>
+        <circle cx="${cx}" cy="${cy}" r="1.5" fill="#111110"/>
+        <text x="${cx + r1 + 6}" y="${cy - 2}" font-family="IBM Plex Mono,monospace" font-size="10" fill="#111110">1 km</text>
+        <text x="${cx + r5 + 6}" y="${cy - 2}" font-family="IBM Plex Mono,monospace" font-size="10" fill="#111110">5 km</text>
+      </svg>
+      <dl class="sr-buf-stats">
+        <div><dt>People within 1 km</dt><dd><strong>${fmtInt(inner)}</strong><span class="sr-bufbar"><span class="sr-bufbar-fill" style="width:${bar(inner, totalBar)}%;"></span></span></dd></div>
+        <div><dt>People within 5 km (ring)</dt><dd><strong>${fmtInt(ring)}</strong><span class="sr-bufbar"><span class="sr-bufbar-fill sr-bufbar-fill--outer" style="width:${bar(ring, totalBar)}%;"></span></span></dd></div>
+        <div><dt>People within 5 km (total)</dt><dd><strong>${fmtInt(outer)}</strong></dd></div>
+      </dl>
+    </div>`;
+}
+
+// Visual recovery dial. Needle at current vegetation %. 50 % target
+// marked. If the clock is "recovering", years-to-target is printed.
+function recoveryDial(vegPct, clock) {
+  const pct = Math.max(0, Math.min(100, Number(vegPct) || 0));
+  const label = clock?.state || 'insufficient';
+  const colour = (pct >= 50) ? '#1D6B55' : (pct >= 25 ? '#B9A98C' : '#C2502A');
+  // SVG arc: 180° from (-90°) to (+90°), bottom-up gauge
+  const w = 150, h = 90, cx = w/2, cy = h - 6, r = 68;
+  const toXY = (p) => {
+    const a = Math.PI * (1 - p/100);
+    return [cx + r * Math.cos(a), cy - r * Math.sin(a)];
+  };
+  const [tx, ty] = toXY(pct);
+  const [t50x, t50y] = toXY(50);
+  return `
+    <div class="sr-reco-dial">
+      <svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Vegetation ${round(pct,1)} % of a 50 % target">
+        <path d="M ${cx - r} ${cy} A ${r} ${r} 0 0 1 ${cx + r} ${cy}" fill="none" stroke="#DCD7C7" stroke-width="10"/>
+        <path d="M ${cx - r} ${cy} A ${r} ${r} 0 0 1 ${tx} ${ty}" fill="none" stroke="${colour}" stroke-width="10" stroke-linecap="butt"/>
+        <line x1="${t50x}" y1="${t50y - 4}" x2="${t50x}" y2="${t50y + 4}" stroke="#111110" stroke-width="2"/>
+        <text x="${cx}" y="${cy - 20}" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-weight="600" font-size="18" fill="#111110">${round(pct, 0)}%</text>
+        <text x="${cx}" y="${cy - 6}" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6963" letter-spacing="0.08em">OF 50% TARGET</text>
+      </svg>
+      <span class="sr-reco-state sr-reco-state--${esc(label)}">${esc(label.toUpperCase())}</span>
+    </div>`;
+}
+
+// Pathway block: three columns with evidence + an effort/outcome row.
+function pathwaysBlock(p, lc, latest, ctx, vol) {
+  const bulk = S.config?.bulkDensityTPerM3 || 1.8;
+  const Mt = round(vol * bulk / 1_000_000, 1);
+  const pop1 = Number(ctx.population?.within1km) || 0;
+  const naturaFlag = (ctx.natura2000?.within1kmHa || 0) > 0 || (ctx.natura2000?.withinPolygonHa || 0) > 0;
+  // Rough signal of how heavy each pathway would be. Index on 0–5.
+  const leaveEffort = (lc.flags || []).length ? 2 : 1;
+  const rehab = Math.min(5, 1 + Math.round(((latest.bareHa||0) + (latest.waterHa||0))/20) + (naturaFlag?1:0));
+  const repro = Math.min(5, Math.round(Mt/5) + 1 + (pop1 > 500 ? 1 : 0));
+  return `
+    <div class="sr-pathways">
+      <article class="sr-pathway" data-path="leave">
+        <h4>Leave &amp; monitor</h4>
+        <ul>
+          <li><span class="sr-pw-k">Recovery clock</span><span class="sr-pw-v">${esc((lc.clock?.label || '—').toLowerCase())}</span></li>
+          <li><span class="sr-pw-k">Flags today</span><span class="sr-pw-v">${(lc.flags||[]).length ? esc((lc.flags||[]).map(x=>x.id.replace(/_/g,' ')).join(', ')) : 'none'}</span></li>
+          <li><span class="sr-pw-k">What Strata tracks</span><span class="sr-pw-v">vegetation, bare, iron, water, red water</span></li>
+        </ul>
+        ${effortRow('Effort', leaveEffort)}
+        <div class="sr-pathway-footer">Lifecycle study under way, results expected June 2027.</div>
+      </article>
+      <article class="sr-pathway" data-path="rehab">
+        <h4>Rehabilitate</h4>
+        <ul>
+          <li><span class="sr-pw-k">Bare area to treat</span><span class="sr-pw-v">${fmtHa(latest.bareHa)} ha</span></li>
+          <li><span class="sr-pw-k">Water &amp; tailings</span><span class="sr-pw-v">${fmtHa(latest.waterHa)} ha</span></li>
+          <li><span class="sr-pw-k">Volume to reshape</span><span class="sr-pw-v">${fmtVol(vol)} m³</span></li>
+          <li><span class="sr-pw-k">Natura 2000 &lt; 1 km</span><span class="sr-pw-v">${fmtHa(ctx.natura2000?.within1kmHa)} ha</span></li>
+        </ul>
+        ${effortRow('Effort', rehab)}
+        <div class="sr-pathway-footer">Lifecycle study under way, results expected June 2027.</div>
+      </article>
+      <article class="sr-pathway" data-path="repro">
+        <h4>Reprocess &amp; rehabilitate</h4>
+        <ul>
+          <li><span class="sr-pw-k">Volume proxy</span><span class="sr-pw-v">${fmtVol(vol)} m³ (${Mt} Mt)</span></li>
+          <li><span class="sr-pw-k">CRM candidates</span><span class="sr-pw-v">${esc((p.crm_candidates || []).join(', ') || '—')}<br><em>not measured</em></span></li>
+          <li><span class="sr-pw-k">People within 1 km</span><span class="sr-pw-v">${fmtInt(ctx.population?.within1km)}</span></li>
+          <li><span class="sr-pw-k">Nearest watercourse</span><span class="sr-pw-v">${esc(ctx.river?.name || '—')}, ${fmtInt(ctx.river?.distanceM)} m</span></li>
+        </ul>
+        ${effortRow('Effort', repro)}
+        <div class="sr-pathway-footer">Lifecycle study under way, results expected June 2027.</div>
+      </article>
+    </div>`;
+}
+
+function effortRow(label, score) {
+  const bars = [0,1,2,3,4].map((i) => `<span class="sr-effort-dot${i < score ? ' is-on' : ''}"></span>`).join('');
+  return `<div class="sr-effort"><span class="sr-label">${esc(label)} (relative, 1–5)</span><span class="sr-effort-bars" aria-label="${score} of 5">${bars}</span></div>`;
 }
 
 // ─── Chart (vegetation % + bare % + iron % + red water %) ────
@@ -1539,6 +1935,98 @@ function download(name, text, type) {
   a.href = URL.createObjectURL(blob); a.download = name;
   document.body.appendChild(a); a.click();
   setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
+
+// R3 — share, toast, keyboard
+function copyText(text, okMsg) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => toastMsg(okMsg || 'Copied'))
+      .catch(() => toastMsg('Copy failed — long-press to copy'));
+  } else {
+    try {
+      const ta = document.createElement('textarea'); ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+      toastMsg(okMsg || 'Copied');
+    } catch (_) { toastMsg('Copy failed'); }
+  }
+}
+let TOAST_TIMER = null;
+function toastMsg(msg) {
+  let el = document.getElementById('sr-toast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'sr-toast'; el.className = 'sr-toast'; el.setAttribute('role', 'status');
+    document.body.appendChild(el);
+  }
+  el.textContent = msg; el.classList.add('is-on');
+  clearTimeout(TOAST_TIMER);
+  TOAST_TIMER = setTimeout(() => el.classList.remove('is-on'), 1800);
+}
+
+function openShortcutHelp() {
+  let el = document.getElementById('sr-keys');
+  if (el) { el.hidden = false; return; }
+  el = document.createElement('div');
+  el.id = 'sr-keys'; el.className = 'sr-onboard sr-keys';
+  el.innerHTML = `
+    <div class="sr-onboard-card">
+      <button class="sr-onboard-close" type="button" aria-label="Close" data-sr-keys-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+      </button>
+      <span class="sr-onboard-kick">Keyboard &amp; URL shortcuts</span>
+      <h2>Move around Strata fast</h2>
+      <table class="sr-keys-table">
+        <tbody>
+          <tr><th>?</th><td>Open this help</td></tr>
+          <tr><th>Esc</th><td>Close the open site card or dialog</td></tr>
+          <tr><th>M</th><td>Jump to the map</td></tr>
+          <tr><th>C</th><td>Compare view</td></tr>
+          <tr><th>G</th><td>Guide (external page)</td></tr>
+          <tr><th>W</th><td>Toggle "Watchlist only" filter</td></tr>
+          <tr><th>S</th><td>Share the current view URL</td></tr>
+          <tr><th>P</th><td>Print the current page (optimised for site cards)</td></tr>
+          <tr><th>#site-pt-sdo</th><td>Deep-link any site: <em>#site-&lt;id&gt;</em>, lower-case</td></tr>
+          <tr><th>#compare, #communities, #pipeline, #method, #data, #about</th><td>Deep-link any view</td></tr>
+        </tbody>
+      </table>
+      <div class="sr-onboard-actions">
+        <button class="sr-abtn sr-abtn-primary" type="button" data-sr-keys-close>Got it</button>
+        <a class="sr-abtn" href="/strata-guide">Full guide</a>
+      </div>
+    </div>`;
+  el.addEventListener('click', (ev) => { if (ev.target.closest('[data-sr-keys-close]') || ev.target === el) el.hidden = true; });
+  document.body.appendChild(el);
+}
+
+function wireGlobalKeys() {
+  // Attach once per page lifetime; the function is idempotent via the
+  // __srKeysWired flag so render() calling it over again is safe.
+  if (document.__srKeysWired) return;
+  document.__srKeysWired = true;
+  document.addEventListener('keydown', (ev) => {
+    const tag = (ev.target && ev.target.tagName) || '';
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(tag) || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    if (ev.key === '?' || ev.key === '/') { openShortcutHelp(); ev.preventDefault(); return; }
+    if (ev.key === 'Escape') {
+      const kb = document.getElementById('sr-keys'); if (kb && !kb.hidden) { kb.hidden = true; return; }
+      const ob = ROOT && ROOT.querySelector('#sr-onboard'); if (ob && !ob.hidden) { ob.hidden = true; return; }
+      if (S.selected) { go('map'); return; }
+    }
+    if (ev.key === 'm' || ev.key === 'M') { go('map'); return; }
+    if (ev.key === 'c' || ev.key === 'C') { go('compare'); return; }
+    if (ev.key === 'g' || ev.key === 'G') { location.href = '/strata-guide'; return; }
+    if (ev.key === 'p' || ev.key === 'P') { window.print(); return; }
+    if (ev.key === 's' || ev.key === 'S') { copyText(location.href, 'Link copied'); return; }
+    if (ev.key === 'w' || ev.key === 'W') {
+      S.filters.watchlist = !S.filters.watchlist;
+      toastMsg(S.filters.watchlist ? 'Showing watchlist only' : 'All sites');
+      refreshMapOnly();
+      return;
+    }
+  });
 }
 
 // ───────────────────────── Helpers ─────────────────────────────

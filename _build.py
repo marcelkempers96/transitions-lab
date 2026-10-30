@@ -2763,7 +2763,7 @@ def build_strata_demo_shell() -> str:
 <head>
   <meta charset="utf-8">
   <title>Strata — satellite lifecycle cards for closed mine waste sites (demo)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Strata gives each closed mine waste site a satellite lifecycle card: what it looks like now, how it has changed over ten years, how big the heap is, who lives nearby, and what the three pathways (leave and monitor, rehabilitate, reprocess) would involve.">
   <meta name="theme-color" content="#F6F5F2" media="(prefers-color-scheme: light)">

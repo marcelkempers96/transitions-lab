@@ -892,20 +892,288 @@ body.strata-standalone #strata-root {
 .sr-leaflet .sr-poly { }
 
 /* Basemap switch (top-right of the map, left of Leaflet's zoom) */
-.sr-basemap-switch {
+/* Legacy basemap switch kept for pages that still reference it; the
+   current map chrome uses .sr-map-tools below. */
+.sr-basemap-switch { display: none; }
+
+/* ─── Map tools (top-right stack of compact dropdowns) ─────────── */
+.sr-map-tools {
   position: absolute; z-index: 1000;
   top: 10px; right: 50px;
-  display: inline-flex; background: var(--surface); border: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 6px; align-items: flex-end;
+  pointer-events: none;
 }
-.sr-basemap-switch button {
-  padding: 6px 10px; font: inherit;
+.sr-map-tools > * { pointer-events: auto; }
+.sr-mt-group {
+  background: var(--surface); border: 1px solid var(--line);
+  min-width: 180px;
+}
+.sr-mt-group[open] { box-shadow: 0 10px 24px rgba(17,17,16,0.14); }
+.sr-mt-group > summary {
+  list-style: none; cursor: pointer;
+  padding: 6px 10px;
+  display: flex; align-items: center; gap: 10px; justify-content: space-between;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
+  color: var(--ink);
+}
+.sr-mt-group > summary::-webkit-details-marker { display: none; }
+.sr-mt-group > summary::after {
+  content: '▾'; color: var(--mute); font-size: 11px; margin-left: 4px;
+}
+.sr-mt-label { text-transform: uppercase; color: var(--mute); }
+.sr-mt-value { text-transform: uppercase; font-weight: 600; color: var(--ink); }
+.sr-mt-menu {
+  border-top: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  background: var(--surface);
+}
+.sr-mt-menu button {
+  padding: 8px 12px; font: inherit;
   font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--ink); background: var(--surface);
-  border: 0; border-right: 1px solid var(--line); cursor: pointer;
+  border: 0; border-bottom: 1px solid var(--line-soft); cursor: pointer;
+  text-align: left;
 }
-.sr-basemap-switch button:last-child { border-right: 0; }
-.sr-basemap-switch button:hover { background: var(--sand); }
-.sr-basemap-switch button.is-on { background: var(--ink); color: var(--surface); }
+.sr-mt-menu button:last-child { border-bottom: 0; }
+.sr-mt-menu button:hover { background: var(--sand); }
+.sr-mt-menu button.is-on { background: var(--ink); color: var(--surface); }
+
+.sr-mt-menu--layers { padding: 4px 2px; min-width: 240px; }
+.sr-mt-check {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 10px; cursor: pointer;
+  border-bottom: 1px solid var(--line-soft);
+}
+.sr-mt-check:last-child { border-bottom: 0; }
+.sr-mt-check:hover { background: var(--sand); }
+.sr-mt-check input {
+  margin-top: 3px; accent-color: var(--accent);
+  width: 14px; height: 14px; cursor: pointer;
+}
+.sr-mt-check span { display: flex; flex-direction: column; gap: 2px; }
+.sr-mt-check strong { font-size: 12px; font-weight: 600; color: var(--ink); }
+.sr-mt-check em {
+  font-style: normal; font-size: 11px; line-height: 1.4; color: var(--mute);
+}
+
+/* ─── Pin popup ────────────────────────────────────────────────── */
+.sr-pop .leaflet-popup-content-wrapper {
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 0;
+  box-shadow: 0 10px 24px rgba(17,17,16,0.18);
+}
+.sr-pop .leaflet-popup-tip { background: var(--surface); border: 1px solid var(--line); }
+.sr-pop .leaflet-popup-content { margin: 10px 12px; font-family: var(--sans); }
+.sr-pop-head strong { font-family: var(--sans); font-size: 13px; display: block; color: var(--ink); }
+.sr-pop-sub { font-family: var(--mono); font-size: 10.5px; color: var(--mute); display: block; margin-top: 2px; letter-spacing: 0.04em; }
+.sr-pop-stage {
+  display: inline-block; margin: 8px 0;
+  padding: 3px 8px; font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--sand); color: var(--ink); border: 1px solid var(--line);
+}
+.sr-pop-stage[data-stage="operating"]         { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.sr-pop-stage[data-stage="reopening_planned"] { background: var(--sun); color: var(--ink); }
+.sr-pop-stage[data-stage="legacy_bare"]       { background: var(--warn); color: var(--surface); border-color: var(--warn); }
+.sr-pop-stage[data-stage="legacy_mixed"]      { background: var(--legacy-mixed); color: var(--ink); border-color: var(--legacy-mixed); }
+.sr-pop-stage[data-stage="recovering"]        { background: rgba(29,107,85,0.65); color: var(--surface); border-color: var(--accent); }
+.sr-pop-stage[data-stage="vegetated"]         { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.sr-pop-facts {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 2px;
+  margin: 4px 0 8px; font-size: 12px;
+}
+.sr-pop-facts dt { color: var(--mute); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; }
+.sr-pop-facts dd { margin: 0; color: var(--ink); font-weight: 500; }
+.sr-pop-actions { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 8px; }
+.sr-pop-cta {
+  font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+  text-decoration: underline; text-underline-offset: 2px;
+}
+
+/* ─── Map tooltips (hover) ─────────────────────────────────────── */
+.leaflet-tooltip.sr-tt {
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 0;
+  box-shadow: 0 4px 10px rgba(17,17,16,0.12);
+  font-family: var(--sans); font-size: 12px; line-height: 1.4;
+  padding: 6px 8px;
+}
+.leaflet-tooltip.sr-tt::before { border-top-color: var(--line); }
+
+/* ─── Scale bar + coord readout ────────────────────────────────── */
+.leaflet-control-scale-line {
+  background: rgba(246,245,242,0.9); color: var(--ink);
+  border: 1px solid var(--line); border-top: 0;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em;
+  padding: 1px 6px;
+}
+:root[data-theme="dark"] .leaflet-control-scale-line {
+  background: rgba(26,26,24,0.9); color: var(--paper);
+}
+.sr-coord-readout {
+  position: absolute; bottom: 10px; right: 10px; z-index: 900;
+  background: rgba(246,245,242,0.85);
+  color: var(--ink);
+  padding: 2px 8px; min-height: 18px; min-width: 120px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.03em;
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+:root[data-theme="dark"] .sr-coord-readout { background: rgba(26,26,24,0.85); color: var(--paper); }
+
+/* ─── Detail tools (watchlist / share / print / close) ─────────── */
+.sr-detail-tools {
+  position: absolute; top: 12px; right: 14px;
+  display: flex; align-items: center; gap: 2px;
+  background: var(--surface);                /* so long code lines underneath don't bleed through */
+  padding-left: 6px;
+  z-index: 3;
+}
+.sr-detail-head { padding-right: 136px; }    /* reserve room for the tool strip */
+@media (max-width: 540px) {
+  .sr-detail-head { padding-right: 120px; }
+  .sr-detail-code { max-width: calc(100% - 20px); }
+}
+.sr-detail-tool {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px;
+  color: var(--mute); background: transparent; border: 1px solid transparent;
+  cursor: pointer; border-radius: 0;
+}
+.sr-detail-tool:hover { color: var(--ink); background: var(--sand); }
+.sr-detail-tool[aria-pressed="true"] { color: var(--sun); }
+.sr-detail-tool svg { width: 16px; height: 16px; }
+
+/* ─── Method mark (?) ──────────────────────────────────────────── */
+.sr-method-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; margin-left: 6px;
+  border: 1px solid var(--line); border-radius: 50%;
+  font-family: var(--mono); font-size: 9px; font-weight: 600;
+  color: var(--mute); background: var(--surface);
+  text-decoration: none; cursor: help;
+  vertical-align: baseline;
+}
+.sr-method-mark:hover { color: var(--ink); border-color: var(--ink); background: var(--sand); }
+
+/* ─── Flag chip with "why" expander ─────────────────────────────── */
+.sr-flag-why {
+  display: inline-block; padding: 0; margin: 0 6px 4px 0;
+  background: #FBE8E0; border: 1px solid #F5B9A3; color: #7A2E12;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.sr-flag-why > summary {
+  list-style: none; cursor: pointer; padding: 2px 8px;
+}
+.sr-flag-why > summary::-webkit-details-marker { display: none; }
+.sr-flag-why > summary::after { content: ' ▸'; color: #7A2E12; opacity: 0.6; }
+.sr-flag-why[open] > summary::after { content: ' ▾'; }
+.sr-flag-why[open] {
+  display: block; max-width: 100%;
+  padding: 6px 10px; letter-spacing: 0;
+  text-transform: none; font-family: var(--sans); font-size: 12px;
+  line-height: 1.5;
+}
+.sr-flag-why[open] em { color: #4E1D0C; font-style: italic; }
+:root[data-theme="dark"] .sr-flag-why { background: #3A1E15; border-color: #6B2E1E; color: #F8C4B2; }
+:root[data-theme="dark"] .sr-flag-why[open] em { color: #FFC4A8; }
+
+/* ─── Buffer rings viz (Who lives nearby) ───────────────────────── */
+.sr-buf-viz {
+  display: grid; grid-template-columns: 320px 1fr; gap: 18px; align-items: center;
+}
+.sr-buf-viz svg { width: 100%; max-width: 320px; height: auto; }
+.sr-buf-stats { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.sr-buf-stats > div { display: grid; grid-template-columns: 1fr auto; gap: 6px; align-items: baseline; }
+.sr-buf-stats dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute); }
+.sr-buf-stats dd { margin: 0; }
+.sr-buf-stats strong { font-family: var(--sans); font-size: 16px; color: var(--ink); display: inline-block; min-width: 72px; text-align: right; }
+.sr-bufbar { display: block; width: 100%; height: 4px; background: var(--line); margin-top: 4px; grid-column: 1 / -1; }
+.sr-bufbar-fill { display: block; height: 100%; background: #C2502A; }
+.sr-bufbar-fill--outer { background: #E6A58A; }
+@media (max-width: 640px) {
+  .sr-buf-viz { grid-template-columns: 1fr; }
+}
+
+/* ─── Recovery clock dial ──────────────────────────────────────── */
+.sr-recovery { display: grid; grid-template-columns: 160px 1fr; gap: 16px; align-items: start; margin-top: 12px; }
+.sr-reco-dial { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.sr-reco-dial svg { width: 150px; max-width: 100%; height: auto; }
+.sr-reco-state {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; font-weight: 600;
+  padding: 2px 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.sr-reco-state--reached, .sr-reco-state--recovering { color: var(--accent); border-color: var(--accent); }
+.sr-reco-state--slow, .sr-reco-state--declining { color: var(--warn); border-color: var(--warn); }
+.sr-reco-body { font-size: 13px; line-height: 1.55; color: var(--ink); }
+.sr-reco-body p { margin: 0 0 6px; }
+@media (max-width: 640px) {
+  .sr-recovery { grid-template-columns: 1fr; }
+  .sr-reco-dial { align-items: flex-start; }
+}
+
+/* ─── Pathway cards with k/v + effort row ──────────────────────── */
+.sr-pathways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 980px) { .sr-pathways { grid-template-columns: 1fr; } }
+.sr-pathway {
+  background: var(--surface); border: 1px solid var(--line);
+  padding: 14px 14px 12px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.sr-pathway h4 { margin: 0; font-size: 14px; font-weight: 600; color: var(--ink); }
+.sr-pathway ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 12.5px; }
+.sr-pathway li { display: grid; grid-template-columns: 110px 1fr; gap: 8px; align-items: baseline; }
+.sr-pw-k { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute); }
+.sr-pw-v { color: var(--ink); font-weight: 500; }
+.sr-pw-v em { font-style: italic; color: var(--mute); font-weight: 400; font-size: 11px; }
+.sr-pathway-footer { margin-top: auto; padding-top: 8px; border-top: 1px dashed var(--line-soft); font-size: 11px; color: var(--mute); font-style: italic; }
+.sr-effort { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-top: 6px; border-top: 1px solid var(--line-soft); }
+.sr-effort-bars { display: inline-flex; gap: 3px; }
+.sr-effort-dot {
+  display: inline-block; width: 10px; height: 10px;
+  border: 1px solid var(--line); background: var(--surface);
+}
+.sr-effort-dot.is-on { background: var(--ink); border-color: var(--ink); }
+
+/* ─── Toast ────────────────────────────────────────────────────── */
+.sr-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(12px);
+  z-index: 2200;
+  padding: 10px 16px;
+  background: var(--ink); color: var(--surface);
+  font-family: var(--sans); font-size: 13px; letter-spacing: 0;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+  opacity: 0; pointer-events: none;
+  transition: opacity .14s ease, transform .14s ease;
+}
+.sr-toast.is-on { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ─── Keyboard shortcut help ───────────────────────────────────── */
+.sr-keys-table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; }
+.sr-keys-table th {
+  text-align: left; vertical-align: top; padding: 6px 10px 6px 0;
+  font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--ink);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--line-soft);
+}
+.sr-keys-table td { padding: 6px 0; font-size: 12.5px; color: var(--ink); border-bottom: 1px solid var(--line-soft); }
+.sr-keys-table em { font-family: var(--mono); font-size: 11px; color: var(--mute); font-style: normal; }
+
+/* ─── Print: a clean site card at Cmd/Ctrl + P ─────────────────── */
+@media print {
+  body.strata-standalone, body.strata-standalone #strata-root {
+    height: auto; min-height: 0; overflow: visible; background: #FFFFFF;
+  }
+  .sr-topbar, .sr-pilot-banner, .sr-tabs, .sr-tools,
+  .sr-map-tools, .sr-map-legend, .sr-basemap-switch, .sr-coord-readout,
+  .sr-col-left, .sr-col-map, .sr-sheet-handle, .sr-detail-tools { display: none !important; }
+  .sr-col-detail, .sr-sheet-body { position: static !important; overflow: visible !important; width: 100%; height: auto !important; max-width: none !important; box-shadow: none !important; border: 0 !important; }
+  .sr-detail { padding: 0; }
+  .sr-detail-head h2 { font-size: 24pt; }
+  .sr-sect { break-inside: avoid; page-break-inside: avoid; }
+  a[href^="/"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #666; }
+}
 
 /* Map legend is a floating card on top of the Leaflet layers */
 .sr-map-legend { z-index: 1000; }
