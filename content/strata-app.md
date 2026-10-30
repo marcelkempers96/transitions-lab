@@ -13,38 +13,21 @@
   <a href="/strata-data-sources">Data sources</a>
 </nav>
 
-Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map, asks for nothing more than an email address, and puts every number a reader needs on a single site page. The demo release below runs on illustrative sites and values while the 2027 pilot produces real ones, which is why every screen carries a sand-coloured strip saying so.
+Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map and puts every number a reader needs on a single site page. The demo below carries sixteen illustrative sites across the European Union and one in a third country, with values generated for the pilot and marked as such on screen.
 
-## Signing in takes one field
+## Try the demo
 
-<figure>
-  <img src="/assets/img/strata-1-sign-in.svg" alt="Mock-up of the Strata sign-in screen: a dark left panel with the Know-what-changed-on-the-ground pitch and eight numbered functions, and a cream right panel with a single email field, a Continue-with-email button, and a secondary Explore-the-demo button, plus Free and Pro plan comparison cards." class="diagram">
-  <figcaption>Mock-up of the sign-in screen. Illustrative only, pending the pilot release.</figcaption>
-</figure>
+<div id="strata-demo" data-sd-mount="1"><noscript>The Strata demo needs JavaScript. The <a href="/strata">overview</a>, <a href="/strata-method">method</a> and <a href="/strata-data-sources">data sources</a> pages read without it.</noscript></div>
 
-You type an email address and Strata sends a sign-in link, with no password to remember and no card to enter. If you would rather look around first, the second button opens the full demo without an account. The sign-in screen also lists what the tool does and what each plan includes, so nobody has to click through a pricing page to find out that the map, the indicators and the downloads cost nothing.
+## How to read what you are looking at
 
-## The map shows every site at a glance
+Each dot on the map is a Strata site, sized by its disturbed footprint and coloured by status: an open ring for pre-construction, yellow for under construction, green for operating and red for any site with an open alert. The left column sums up what is on screen (sites shown, sites not yet built, hectares disturbed, open alerts), lets you filter by value chain stage and status, and lists the sites with alerts at the top. Search works across site codes, materials and countries. Clicking a dot or a row opens the site page on the right.
 
-<figure>
-  <img src="/assets/img/strata-2-map.svg" alt="Mock-up of the Strata map dashboard: a left-column panel of totals, filters and site list, a map of Europe with dots sized by disturbed footprint and coloured by status (pre-construction, under construction, operating, open alert), and a selected French lithium site opening on the right with baseline year, 2026 footprint, change since baseline, a year-on-year footprint chart and the footprint outline." class="diagram">
-  <figcaption>Mock-up of the map dashboard. Illustrative only, pending the pilot release.</figcaption>
-</figure>
-
-Each dot is a Strata site, sized by its disturbed footprint and coloured by status: an open ring for pre-construction, yellow for under construction, green for operating and red for any site with an open alert. The left column sums up what is on screen (sites shown, sites not yet built, hectares disturbed, open alerts), lets you filter by value chain stage and status, and lists the sites with alerts at the top. Search works across site codes, materials and countries, and the map pans and zooms with a mouse, a trackpad or a finger.
-
-The layers panel switches on the European Ground Motion Service coverage, which shows at a glance which sites can carry a ground motion indicator and which, such as sites in Greenland, cannot.
-
-## A site page answers "what changed?" in one scroll
-
-<figure>
-  <img src="/assets/img/strata-3-site-detail.svg" alt="Mock-up of a Strata site page for the eastern Finland nickel and cobalt mine with an open alert: baseline year 2019, 2026 footprint 1,389 ha, +179 ha since baseline, an inline alert explaining ground motion above 8 mm/yr at the tailings dam flagged for review not non-compliance, a year-on-year footprint chart and a baseline-against-latest footprint outline with a 1 km scale bar." class="diagram">
-  <figcaption>Mock-up of a site page, showing an operating site with an open alert. Illustrative only, pending the pilot release.</figcaption>
-</figure>
-
-Selecting a site opens its page on the right. The top block gives the baseline year, the 2026 footprint, the change since the baseline and the year works started. The chart below plots the disturbed footprint every year since 2019, with the baseline drawn as a dashed line and the start of works in yellow, so the moment a landscape began to change is visible without reading a table. The footprint outline sets the baseline shape against the latest one inside a 500 metre buffer with a scale bar, and the indicator list covers vegetation loss within 5 kilometres, the share inside Natura 2000, water and tailings surface, ground motion and the land the footprint replaced.
+The site page gives the baseline year, the 2026 footprint, the change since the baseline and the year works started. The chart below plots the disturbed footprint every year since the baseline, with the baseline drawn as a dashed line and the start of works marked in yellow, so the moment a landscape began to change is visible without reading a table. The footprint outline sets the baseline shape against the latest one inside a 500 metre buffer, and the indicator list covers vegetation loss within 5 kilometres, the share inside Natura 2000, water and tailings surface, ground motion and the land the footprint replaced.
 
 Alerts are written to inform rather than accuse: each one names the threshold that was crossed and says plainly that it is flagged for review, not a finding of non-compliance. The last line of every page shows whether the promoter has sent a response, and the attribution for every dataset behind the numbers.
+
+Sites outside Copernicus Participating States, such as the Morocco entry in the demo, show a dash for ground motion because the European Ground Motion Service does not cover them. That absence is reported, not hidden.
 
 ## What Strata does
 

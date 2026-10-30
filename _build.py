@@ -39,6 +39,8 @@ def _asset_hash(rel_path: str) -> str:
 
 ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
+ASSET_STRATA_CSS_V = _asset_hash("assets/strata-demo.css")
+ASSET_STRATA_JS_V  = _asset_hash("assets/strata-demo.js")
 ASSET_CONSENT_V = _asset_hash("assets/consent.js")
 ASSET_READER_V = _asset_hash("assets/reader.js")
 
@@ -2041,8 +2043,19 @@ def build_content_page(slug: str, md: str) -> str:
     # content="noindex, follow"> and are skipped from the sitemap
     # (see build_all()). Restore this set when the review clears.
     is_hidden = slug in HIDDEN_SLUGS
+
+    # Per-page assets. The Strata interactive demo on /strata-app
+    # loads its own CSS + JS, scoped to the #strata-demo mount in
+    # the page markup.
+    extra_head = ""
+    if slug == "strata-app":
+        extra_head = (
+            f'<link rel="stylesheet" href="/assets/strata-demo.css?v={ASSET_STRATA_CSS_V}">\n'
+            f'<script src="/assets/strata-demo.js?v={ASSET_STRATA_JS_V}" defer></script>'
+        )
+
     return page_shell(slug=slug, title=title, description=description,
-                      body=body, noindex=is_hidden)
+                      body=body, noindex=is_hidden, extra_head=extra_head)
 
 
 # Pages hidden from public discovery — noindex on the page, skipped
