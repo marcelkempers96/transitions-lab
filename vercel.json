@@ -8,7 +8,11 @@
     { "source": "/expertise-water", "destination": "/expertise-energy", "permanent": true },
     { "source": "/expertise-water.html", "destination": "/expertise-energy", "permanent": true },
     { "source": "/expertise-climate", "destination": "/expertise-agriculture", "permanent": true },
-    { "source": "/expertise-climate.html", "destination": "/expertise-agriculture", "permanent": true }
+    { "source": "/expertise-climate.html", "destination": "/expertise-agriculture", "permanent": true },
+    { "source": "/strata-app", "destination": "/strata-guide", "permanent": true },
+    { "source": "/strata-app.html", "destination": "/strata-guide", "permanent": true },
+    { "source": "/strata-data-sources", "destination": "/strata-method", "permanent": true },
+    { "source": "/strata-data-sources.html", "destination": "/strata-method", "permanent": true }
   ],
   "headers": [
     {

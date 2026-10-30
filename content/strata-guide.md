@@ -8,15 +8,25 @@
 
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
-  <a href="/strata-app">Web tool</a>
-  <a href="/strata-demo">Launch app &rarr;</a>
   <strong class="is-current">Guide</strong>
-  <a href="/strata-method">Method</a>
-  <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
+  <a href="/strata-method">Method &amp; data</a>
   <a href="/strata-paper">Companion paper</a>
 </nav>
 
 Strata is a browser tool. There is no account, no install, no server call that leaves the pilot and goes anywhere except the public Copernicus data archives. If you can open [the app](/strata-demo), you have the full tool.
+
+<div class="strata-launch">
+  <div class="strata-launch-head">
+    <span class="eyebrow">Interactive demo</span>
+    <h3>Open the full-screen app</h3>
+    <p>Ten illustrative pilot sites, satellite-derived indicators, lifecycle stage, flags, recovery clock, pathways view, CRMA Article 27 CSV export. Light / dark toggle. All values are illustrative until the pipeline runs on real Sentinel-2 scenes.</p>
+  </div>
+  <div class="strata-launch-actions">
+    <a href="/strata-demo" class="btn btn-ink">Launch Strata &rarr;</a>
+    <a href="/strata-method" class="btn btn-ghost">Read the method</a>
+  </div>
+</div>
 
 This guide is in three parts. Part 1 walks through every function. Part 2 takes three real users through the tool end to end. Part 3 is the honest list of what Strata does not do.
 
@@ -205,4 +215,4 @@ If the question needs a measured grade, a legal determination, or a sub-10 m fea
 
 ---
 
-*See the [Strata overview](/strata), [launch the app](/strata-demo), read the [method](/strata-method) for the equations, the [data sources](/strata-data-sources) for every licence, or the [companion paper](/strata-paper) for the longer argument.*
+*See the [Strata overview](/strata), [launch the app](/strata-demo), read the [method and data sources](/strata-method), or the [companion paper](/strata-paper) for the longer argument.*

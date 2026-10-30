@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Strata method: same pixels, same rules, every site | Transitions Lab</title>
-<meta name="description" content="The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.">
+<title>Strata method and data sources | Transitions Lab</title>
+<meta name="description" content="Every equation, threshold and dataset behind Strata: Sentinel-2 pixel indices, pixel classes, recovery clock, lifecycle stage, flags, CRMA Article 27 export, plus every Copernicus / OSM / Natura 2000 source with its licence and attribution line.">
 <meta name="author" content="Transitions Lab">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#F5EDDD">
@@ -22,20 +22,20 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Transitions Lab">
-<meta property="og:title" content="Strata method: same pixels, same rules, every site | Transitions Lab">
-<meta property="og:description" content="The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.">
+<meta property="og:title" content="Strata method and data sources | Transitions Lab">
+<meta property="og:description" content="Every equation, threshold and dataset behind Strata: Sentinel-2 pixel indices, pixel classes, recovery clock, lifecycle stage, flags, CRMA Article 27 export, plus every Copernicus / OSM / Natura 2000 source with its licence and attribution line.">
 <meta property="og:url" content="https://transitionslab.org/strata-method">
 <meta property="og:image" content="https://transitionslab.org/assets/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
-<meta property="og:image:alt" content="Strata method: same pixels, same rules, every site | Transitions Lab">
+<meta property="og:image:alt" content="Strata method and data sources | Transitions Lab">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Strata method: same pixels, same rules, every site | Transitions Lab">
-<meta name="twitter:description" content="The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.">
+<meta name="twitter:title" content="Strata method and data sources | Transitions Lab">
+<meta name="twitter:description" content="Every equation, threshold and dataset behind Strata: Sentinel-2 pixel indices, pixel classes, recovery clock, lifecycle stage, flags, CRMA Article 27 export, plus every Copernicus / OSM / Natura 2000 source with its licence and attribution line.">
 <meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
-<meta name="twitter:image:alt" content="Strata method: same pixels, same rules, every site | Transitions Lab">
+<meta name="twitter:image:alt" content="Strata method and data sources | Transitions Lab">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/theme.css?v=f6a4a05b">
 
@@ -53,8 +53,6 @@
       <a href="/who-we-serve">Who we serve</a>
       <a href="/for-funders">For Funders</a>
       <a href="/how-it-works">How It Works</a>
-      <a href="/strata">STRATA</a>
-      <a href="/strata-guide">STRATA guide</a>
     </div>
   </details>
   <details class="nav-group">
@@ -88,6 +86,16 @@
       <a href="/readiness-levels">TRL &amp; SRL</a>
     </div>
   </details>
+  <details class="nav-group current">
+    <summary class="nav-label">STRATA</summary>
+    <div class="nav-dropdown">
+      <a href="/strata">Overview</a>
+      <a href="/strata-guide">Guide</a>
+      <a href="/strata-method" class="current">Method &amp; data</a>
+      <a href="/strata-paper">Companion paper</a>
+      <a href="/strata-demo">Launch app →</a>
+    </div>
+  </details>
   <a href="/contact">Contact</a>
 </nav>
     <div class="header-tools" role="group" aria-label="Search">
@@ -111,10 +119,10 @@
 
 <section class="page-hero hero-forest">
   <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><a href="/resources">Resources</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><span aria-current="page">Strata method: same pixels, same rules, every site</span></nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><a href="/resources">Resources</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><span aria-current="page">Strata method and data sources</span></nav>
     
-    <h1>One method, every site: the Strata v0.2 method</h1>
-    <p class="lede">Pixel indices, pixel classes, time series, recovery clock, lifecycle stage, flags, and CRMA Article 27 export. All formulas live in <code>strata-core.js</code> and ship with twenty-six unit tests that all pass.</p>
+    <h1>Method and data sources</h1>
+    <p class="lede">Pixel indices, pixel classes, time series, recovery clock, lifecycle stage, flags, CRMA Article 27 export — and every dataset, licence and credit line behind them. All formulas live in <code>strata-core.js</code> and ship with twenty-six unit tests that all pass.</p>
     
   </div>
 </section>
@@ -124,17 +132,15 @@
     <div class="prose">
       
       
-      <p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">6 min read</span></p>
+      <p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">8 min read</span></p>
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
-  <a href="/strata-app">Web tool</a>
-  <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-guide">Guide</a>
-  <strong class="is-current">Method</strong>
-  <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
+  <strong class="is-current">Method &amp; data</strong>
   <a href="/strata-paper">Companion paper</a>
 </nav>
-<p>Strata's value depends on one property: that a number reported for a legacy pyrite waste heap in Portugal means exactly the same thing as the number reported for a tailings pond in the Harz. This page sets out the rules that make that true, in the order the pipeline applies them. Thresholds marked <strong>starting</strong> are the pilot values; a planned feasibility study will calibrate them against hyperspectral imagery (PRISMA, EnMAP) and field data from the pilot sites.</p>
+<p>Strata's value depends on one property: that a number reported for a legacy pyrite waste heap in Portugal means exactly the same thing as the number reported for a tailings pond in the Harz. This page sets out the rules that make that true, in the order the pipeline applies them, and then names every dataset the rules consume. Thresholds marked <strong>starting</strong> are the pilot values; a planned feasibility study will calibrate them against hyperspectral imagery (PRISMA, EnMAP) and field data from the pilot sites.</p>
 <h2>1. Satellite inputs</h2>
 <p>Sentinel-2 Level-2A surface reflectance (10 m, 20 m bands resampled bilinear, SCL resampled nearest). Pixels with SCL in {0, 1, 3, 8, 9, 10, 11} are discarded as invalid. Annual composites are the summer median (1 June to 30 September) of valid pixels per site, inside the polygon and in a 500 m outer ring.</p>
 <h2>2. Pixel indices and starting thresholds</h2>
@@ -184,6 +190,29 @@
 <h2>8. What the method does not do</h2>
 <p>Strata does not measure metal grades, air quality, dust, noise or community outcomes. It cannot establish permit compliance. Ten-metre imagery misses small features and early earthworks. Ground motion data from EGMS covers Copernicus Participating States only.</p>
 <p>Those limits are stated on every page where the numbers appear, not only here.</p>
+<hr>
+<h2>9. Data sources: credit where the pixels come from</h2>
+<p>Every dataset Strata uses, how the build gets it, its licence, and the exact credit line the interface must show. If a source cannot be reached, Strata shows "Not available" or "Not loaded"; it never substitutes an estimate.</p>
+<h3>9.1 Satellite and Earth observation</h3>
+<div class="table-wrap"><table class="tbl"><thead><tr><th>#</th><th>Dataset</th><th>Used for</th><th>Access</th><th>Licence</th><th>Credit line to display</th></tr></thead><tbody><tr><td>1</td><td>Copernicus Sentinel-2 Level-2A (10 to 20 m, 2017 onwards)</td><td>Live scene, annual composites, vegetation, bare ground, iron signal, clay ratio, water, red water</td><td>Earth Search STAC <code>https://earth-search.aws.element84.com/v1</code>, public COGs, no account. Fallback: Microsoft Planetary Computer STAC, anonymous SAS token</td><td>Free, full and open under the <a href="https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice" target="_blank" rel="noopener">Copernicus Sentinel Data Legal Notice</a></td><td>Contains modified Copernicus Sentinel data [year]</td></tr><tr><td>2</td><td>European Ground Motion Service, Ortho vertical (Sentinel-1 InSAR)</td><td>Subsidence or uplift on heaps, pits and tailings dams</td><td>Manual CSV download from the EGMS Explorer</td><td>Copernicus free and open</td><td>Generated using European Union's Copernicus Land Monitoring Service information</td></tr><tr><td>3</td><td>Copernicus DEM GLO-30</td><td>Heap height and waste volume proxy</td><td>AWS bucket <code>copernicus-dem-30m</code> (eu-central-1), public COGs</td><td>Copernicus DEM licence</td><td>© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA</td></tr><tr><td>4</td><td>ESA WorldCover 10 m 2021 v200</td><td>Land cover around each site; land converted under the footprint</td><td>AWS bucket <code>esa-worldcover</code> (eu-central-1), public COGs</td><td>CC BY 4.0</td><td>© ESA WorldCover project / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium</td></tr><tr><td>5</td><td>JRC Global Surface Water (Landsat, 1984 onwards)</td><td>Whether ponds and pit lakes pre-date the latest decade; long-term water occurrence</td><td><a href="https://data.jrc.ec.europa.eu/dataset/jrc-gswe-global-surface-water-explorer-v1" target="_blank" rel="noopener">JRC dataset page</a></td><td>Produced under the Copernicus programme, free without restriction of use</td><td>Source: EC JRC/Google</td></tr><tr><td>6</td><td>GHSL population grid GHS-POP R2023A, 3 arc-second, epoch 2025</td><td>People living within 1 km and 5 km of each site</td><td>JRC Global Human Settlement Layer</td><td>Free reuse with acknowledgement (CC BY 4.0)</td><td>GHS-POP R2023A, European Commission, Joint Research Centre</td></tr></tbody></table></div>
+<h3>9.2 Register and context</h3>
+<div class="table-wrap"><table class="tbl"><thead><tr><th>#</th><th>Dataset</th><th>Used for</th><th>Access</th><th>Licence</th><th>Credit line</th></tr></thead><tbody><tr><td>7</td><td>OpenStreetMap</td><td>Site polygons (<code>man_made=spoil_heap</code>, <code>man_made=tailings_pond</code>, <code>landuse=quarry</code>, <code>historic=mine</code>), nearest watercourse, road access</td><td>Overpass API</td><td>ODbL 1.0 (derived polygons must stay ODbL if redistributed)</td><td>© OpenStreetMap contributors</td></tr><tr><td>8</td><td>Global mining footprint, Tang and Werner (2023)</td><td>Site polygons where OSM is missing; cross-check</td><td>Zenodo <a href="https://doi.org/10.5281/zenodo.7894216" target="_blank" rel="noopener">10.5281/zenodo.7894216</a>; paper <a href="https://doaj.org/article/c9aab72539dd46e5867d0d0c13b84701" target="_blank" rel="noopener">Communications Earth and Environment 4:134</a></td><td>CC BY 4.0</td><td>Tang, L. and Werner, T. T. (2023). Global mining footprint mapped from high-resolution satellite imagery</td></tr><tr><td>9</td><td>MIN4EU DB Mining Waste (EuroGeoSurveys, via EGDI)</td><td>Cross-check of site list; official volume, tonnage or grade where published</td><td><a href="https://metadata.europe-geology.eu/record/full/6a391dd6-444c-42c5-a052-4df60a010e58" target="_blank" rel="noopener">EGDI metadata record</a></td><td>CC BY 4.0</td><td>MIN4EU DB Mining Waste, EuroGeoSurveys / EGDI</td></tr><tr><td>10</td><td>Natura 2000 sites (vector, end 2023 or later)</td><td>Protected area overlap and distance</td><td>EEA download, <a href="https://sdi.eea.europa.eu/catalogue/srv/api/records/be2142b0-7dc4-42e3-afac-f7cc5f1a9ac6" target="_blank" rel="noopener">catalogue record</a></td><td>CC BY 4.0, copyright holder DG Environment</td><td>Natura 2000 data © European Union, DG Environment, distributed by the EEA</td></tr><tr><td>11</td><td>Basemap</td><td>Map display</td><td><a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> vector tiles, style positron</td><td>OSM data ODbL; OpenMapTiles schema</td><td>OpenFreeMap © OpenMapTiles Data from OpenStreetMap</td></tr></tbody></table></div>
+<p>The EOX Sentinel-2 cloudless mosaics from 2018 onwards are licensed CC BY-NC-SA and would block any paid tier; Strata does not use them. The 2016 mosaic is CC BY 4.0 and may be used.</p>
+<h3>9.3 Validation references (not loaded by the app)</h3>
+<div class="table-wrap"><table class="tbl"><thead><tr><th>Dataset</th><th>Role</th><th>Access</th></tr></thead><tbody><tr><td>PRISMA hyperspectral (ASI)</td><td>Cross-check Sentinel-2 iron and clay signals at pilot sites</td><td>ASI portal, free registration</td></tr><tr><td>EnMAP hyperspectral (DLR)</td><td>Same role; archive at EOWEB GeoPortal</td><td><a href="https://enmap.org/data_access" target="_blank" rel="noopener">EnMAP data access</a></td></tr><tr><td>CHIME (Copernicus, planned 2028)</td><td>Future operational hyperspectral source, 400 to 2500 nm at 30 m</td><td><a href="https://sentiwiki.copernicus.eu/web/chime" target="_blank" rel="noopener">SentiWiki</a></td></tr><tr><td>Published field data, Iberian Pyrite Belt</td><td>Acid drainage and waste mapping references</td><td>Pérez Ostalé (2014), Universidad de Huelva thesis; Aranda Quirós (2022), Río Tinto AMWI study</td></tr></tbody></table></div>
+<h3>9.4 Method references</h3>
+<ul>
+<li>Iron oxide ratio and hyperspectral cross-check: Pereira, I. et al. (2025). Multi-temporal mineral mapping in two torrential basins using PRISMA hyperspectral imagery. <em>Remote Sensing</em> 17, 2582. <a href="https://doi.org/10.3390/rs17152582" target="_blank" rel="noopener">doi:10.3390/rs17152582</a></li>
+<li>Sentinel-2 continuity for geological mapping: van der Werff, H. and van der Meer, F. (2016). Sentinel-2A MSI and Landsat 8 OLI provide data continuity for geological remote sensing. <em>Remote Sensing</em> 8(11), 883. <a href="https://doi.org/10.3390/rs8110883" target="_blank" rel="noopener">doi:10.3390/rs8110883</a></li>
+<li>Acid mine water index on the Río Tinto with Sentinel-2: Aranda Quirós (2022), as above.</li>
+<li>Scale of legacy waste in the Spanish Iberian Pyrite Belt: Pérez Ostalé (2014), as above.</li>
+<li>Article 27 databases of closed extractive waste facilities: <a href="https://meetingorganizer.copernicus.org/EGU26/EGU26-9857.html" target="_blank" rel="noopener">EGU26-9857</a>. Finland example of national implementation: <a href="https://www.gtk.fi/en/current/geological-survey-of-finland-assigned-tasks-under-the-eu-critical-raw-materials-act/" target="_blank" rel="noopener">GTK</a>.</li>
+</ul>
+<h3>9.5 Attribution block for the interface footer</h3>
+<p>Show this on every page that displays data, with the year filled from the scenes shown:</p>
+<blockquote>Contains modified Copernicus Sentinel data [years]. Generated using European Union's Copernicus Land Monitoring Service information (EGMS). Copernicus DEM GLO-30. © ESA WorldCover project 2021. Source: EC JRC/Google (Global Surface Water). GHS-POP R2023A, European Commission JRC. Natura 2000 © European Union, DG Environment, distributed by the EEA. Tang and Werner (2023), CC BY 4.0. © OpenStreetMap contributors. Use of Copernicus data does not imply endorsement by the European Union.</blockquote>
+<h3>9.6 Strata's own outputs</h3>
+<p>Site pages and indicator tables are published under CC BY 4.0 unless they include share-alike material, in which case CC BY-SA 4.0 applies to that layer. Please cite as: Transitions Lab (2026). Strata v0.2: satellite lifecycle cards for closed mine waste sites, pilot register. transitionslab.org/strata-demo.</p>
 
       
     </div>

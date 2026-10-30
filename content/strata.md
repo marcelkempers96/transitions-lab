@@ -8,11 +8,9 @@
 
 <nav class="strata-pages" aria-label="Strata pages">
   <strong class="is-current">Overview</strong>
-  <a href="/strata-app">Web tool</a>
-  <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-guide">Guide</a>
-  <a href="/strata-method">Method</a>
-  <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
+  <a href="/strata-method">Method &amp; data</a>
   <a href="/strata-paper">Companion paper</a>
 </nav>
 
@@ -355,4 +353,4 @@ EU FUNDING ACKNOWLEDGEMENT: activate ONLY if and when a sub-grant agreement is s
 
 ---
 
-*See the [web tool](/strata-app) for a tour, [launch the app](/strata-demo), read the [method](/strata-method) for the equations, the [data sources](/strata-data-sources) for every licence, or the [companion paper](/strata-paper) for the longer argument.*
+*Read the [guide](/strata-guide) for a tour, [launch the app](/strata-demo), read the [method and data sources](/strata-method) for the equations and every licence, or the [companion paper](/strata-paper) for the longer argument.*

@@ -8,11 +8,9 @@
 
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
-  <a href="/strata-app">Web tool</a>
-  <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-guide">Guide</a>
-  <a href="/strata-method">Method</a>
-  <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
+  <a href="/strata-method">Method &amp; data</a>
   <strong class="is-current">Companion paper</strong>
 </nav>
 
@@ -26,7 +24,7 @@ Strata builds a public, independent, comparable record instead. One satellite ba
 
 <div class="callout c-paper callout--serif">
   <h3>What this paper is</h3>
-  <p>This is a reading-length companion to the <a href="/strata-method">method</a> and the <a href="/strata-data-sources">data sources</a>. It defines each indicator with the equation that computes it, works through four use cases with named audiences, shows the demo interface, and names the partners the project is run with. If something below is not clear, the <a href="/contact">Lab welcomes a question</a>.</p>
+  <p>This is a reading-length companion to the <a href="/strata-method">method and data sources</a>. It defines each indicator with the equation that computes it, works through four use cases with named audiences, shows the demo interface, and names the partners the project is run with. If something below is not clear, the <a href="/contact">Lab welcomes a question</a>.</p>
 </div>
 
 ---
@@ -226,4 +224,4 @@ The 2027 pilot is designed to answer each of these in public, and the method pag
 
 ---
 
-*Return to the [Strata overview](/strata), [the web tool explainer](/strata-app) or the [full-screen app](/strata-demo). See the [method](/strata-method) for the complete specification and the [data sources](/strata-data-sources) for every licence and credit line. For a conversation about adding a site, running a custom indicator set or sitting Strata inside a lender's or buyer's due diligence process, see [Contact](/contact).*
+*Return to the [Strata overview](/strata), read the [guide](/strata-guide) or [launch the app](/strata-demo). See the [method and data sources](/strata-method) for every equation, licence and credit line. For a conversation about adding a site, running a custom indicator set or sitting Strata inside a lender's or buyer's due diligence process, see [Contact](/contact).*

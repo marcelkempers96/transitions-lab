@@ -414,8 +414,6 @@ HERO_COLOR: dict[str, str] = {
     "mineral-flows-attribution": "cobalt",
     "strata":                 "forest",
     "strata-method":          "forest",
-    "strata-data-sources":    "forest",
-    "strata-app":             "forest",
     "strata-paper":           "forest",
     "strata-guide":           "forest",
     "insight-closed-mine-waste":                "butter",
@@ -473,8 +471,16 @@ ABOUT = [
     ("who-we-serve", "Who we serve"),
     ("for-funders", "For Funders"),
     ("how-it-works", "How It Works"),
-    ("strata", "STRATA"),
-    ("strata-guide", "STRATA guide"),
+]
+
+# STRATA has its own top-level nav slot so the tool, its guide and
+# its method are one click away from any page.
+STRATA_NAV = [
+    ("strata", "Overview"),
+    ("strata-guide", "Guide"),
+    ("strata-method", "Method &amp; data"),
+    ("strata-paper", "Companion paper"),
+    ("strata-demo", "Launch app →"),
 ]
 
 SERVICES = [
@@ -507,6 +513,7 @@ NAV = [
     {"slug": "__services", "label": "Work with us", "dropdown": SERVICES},
     {"slug": "__expertise", "label": "Programmes", "dropdown": EXPERTISE},
     {"slug": "__library", "label": "Reading", "dropdown": LIBRARY},
+    {"slug": "__strata", "label": "STRATA", "dropdown": STRATA_NAV},
     {"slug": "contact", "href": "/contact", "label": "Contact"},
 ]
 
@@ -588,8 +595,6 @@ NO_BYLINE_SLUGS: set[str] = {
     "insight-sized-to-the-rules",
     "strata",
     "strata-method",
-    "strata-data-sources",
-    "strata-app",
     "strata-paper",
     "strata-guide",
 }
@@ -721,16 +726,8 @@ META: dict[str, dict[str, str]] = {
         "description": "Strata records what happens on the ground at Europe's critical raw materials Strategic Projects, from a pre-construction satellite baseline through every year of operation, using open Copernicus data and one method for every site.",
     },
     "strata-method": {
-        "title": "Strata method: same pixels, same rules, every site | Transitions Lab",
-        "description": "The site register, polygons, buffers, Copernicus imagery composites, indicator formulas, validation and publication rules behind Strata. Draft method 0.1, revised in public after the 2027 pilot.",
-    },
-    "strata-data-sources": {
-        "title": "Strata data sources, licences and attribution | Transitions Lab",
-        "description": "Every dataset Strata uses — Copernicus Sentinel-1/2, European Ground Motion Service, ESA WorldCover, JRC Global Surface Water, Maus et al., Tang & Werner, Natura 2000 — with licence and attribution line.",
-    },
-    "strata-app": {
-        "title": "The Strata web tool: open it, click a dot, see what changed | Transitions Lab",
-        "description": "A short tour of the Strata web tool: free sign-in, the site map, the site page, what is free and what is Pro, and the partners building it with us. Demo release 0.1.",
+        "title": "Strata method and data sources | Transitions Lab",
+        "description": "Every equation, threshold and dataset behind Strata: Sentinel-2 pixel indices, pixel classes, recovery clock, lifecycle stage, flags, CRMA Article 27 export, plus every Copernicus / OSM / Natura 2000 source with its licence and attribution line.",
     },
     "strata-paper": {
         "title": "Strata companion paper: method, equations, use cases, partners | Transitions Lab",
@@ -1893,8 +1890,6 @@ CRUMB_PARENT: dict[str, str | None] = {
     # Strata pages sit under Resources.
     "strata":                "resources",
     "strata-method":         "resources",
-    "strata-data-sources":   "resources",
-    "strata-app":            "resources",
     "strata-paper":          "resources",
     "strata-guide":          "resources",
 }
@@ -2879,7 +2874,8 @@ def main() -> None:
     (ROOT / "strata-demo.html").write_text(build_strata_demo_shell(), encoding="utf-8")
     print("[app]   strata-demo.html")
     # Not added to the sitemap — the search-engine entry point is
-    # /strata-app, which carries the SEO copy and links through.
+    # /strata (overview) and /strata-guide, which carry the SEO copy
+    # and link through.
 
     # 6. Sitemap
     (ROOT / "sitemap.xml").write_text(build_sitemap(written), encoding="utf-8")

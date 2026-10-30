@@ -80,4 +80,4 @@ That is the point of catalogue work under Article 27 at the European scale: not 
 
 ---
 
-*Related: the Lab's [Strata tool](/strata) runs the method set out here on ten pilot sites in the Iberian Pyrite Belt; its [companion paper](/strata-paper) covers equations and use cases; its [method page](/strata-method) specifies every threshold; its [data sources page](/strata-data-sources) lists every licence. For material-chain context, see the [Mineral Flows Map](/mineral-flows-research). To discuss a specific site or a national Article 27 mandate, see [Contact](/contact).*
+*Related: the Lab's [Strata tool](/strata) runs the method set out here on ten pilot sites in the Iberian Pyrite Belt; its [guide](/strata-guide) walks through every function; its [method and data sources page](/strata-method) specifies every threshold and licence; its [companion paper](/strata-paper) covers equations and use cases. For material-chain context, see the [Mineral Flows Map](/mineral-flows-research). To discuss a specific site or a national Article 27 mandate, see [Contact](/contact).*
