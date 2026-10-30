@@ -2,7 +2,7 @@
 
 # A satellite lifecycle card for every closed mine waste site
 
-*Strata gives each closed mine waste site a satellite lifecycle card: what it looks like now, how it has changed over ten years, how big the heap is, who lives nearby, and what each of the three pathways (leave and monitor, rehabilitate, reprocess) would involve. Pilot in the Iberian Pyrite Belt.*
+*Strata gives each [closed mine waste site](/insight-closed-mine-waste) a satellite lifecycle card: what it looks like now, how it has changed over ten years, how big the heap is, who lives nearby, and what each of the three pathways (leave and monitor, rehabilitate, reprocess) would involve. Pilot in the Iberian Pyrite Belt.*
 
 <p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
 

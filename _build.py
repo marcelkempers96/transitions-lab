@@ -417,6 +417,7 @@ HERO_COLOR: dict[str, str] = {
     "strata-data-sources":    "forest",
     "strata-app":             "forest",
     "strata-paper":           "forest",
+    "insight-closed-mine-waste": "butter",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -570,6 +571,7 @@ NO_BYLINE_SLUGS: set[str] = {
     "insight-ten-winners-slowest",
     "insight-salad-lying-about-its-age",
     "insight-nothing-to-fix",
+    "insight-closed-mine-waste",
     "strata",
     "strata-method",
     "strata-data-sources",
@@ -718,6 +720,10 @@ META: dict[str, dict[str, str]] = {
     "strata-paper": {
         "title": "Strata companion paper: method, equations, use cases, partners | Transitions Lab",
         "description": "A reading-length companion to Strata: the problem it is built for, the equations that define each indicator, four use cases with named audiences, and the partners who stand behind the tool.",
+    },
+    "insight-closed-mine-waste": {
+        "title": "You cannot decide what to do with a closed mine site if nobody has looked at it since it closed | Transitions Lab",
+        "description": "Mining and quarrying produced 22.7% of EU waste in 2022, most of it around sites nobody has surveyed in decades. Article 27 of the CRMA now requires a database. The three pathways (leave / rehabilitate / reprocess) need a current picture of the ground.",
     },
     "insight-where-transition-minerals-go": {
         "title": "Where transition minerals actually go | Transitions Lab",
