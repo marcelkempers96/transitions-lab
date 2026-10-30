@@ -5654,48 +5654,80 @@ body,
    Theory maps and Free resources, with the Strata lockup and the
    Launch button.
    ─────────────────────────────────────────────────────────────── */
-.strata-spotlight{background:var(--paper-2);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:72px 0;}
-.strata-spotlight .strata-spot-grid{
-  display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;
+/* STRATA spotlight — dark variant.
+   Logo sits above the headline at display size, pitch below is short,
+   two CTAs. Malachite green reads well on near-black.                   */
+.strata-spotlight--dark{
+  background:#0C0C0B;
+  color:var(--paper);
+  border-top:2px solid #0C0C0B;
+  border-bottom:1px solid #0C0C0B;
+  padding:84px 0 76px;
+  position:relative;overflow:hidden;
 }
-.strata-spot-body h2{
-  margin:.1em 0 .35em;
-  font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:.08em;
-  font-size:46px;color:var(--ink);
+.strata-spotlight--dark::before{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:#1D6B55;
 }
-.strata-spot-body .eyebrow{
-  display:block;margin:0 0 .35em;
-  font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;
-  text-transform:uppercase;font-weight:800;color:var(--orange);
+.strata-spotlight--dark .wrap{position:relative;z-index:1;}
+.strata-spot-lockup{
+  display:block;margin:0 auto 40px;text-align:center;
+  text-decoration:none;max-width:420px;
+  transition:transform .18s ease;
 }
-.strata-spot-pitch{
-  font-family:'Newsreader',serif;font-weight:400;font-size:21px;line-height:1.45;
-  color:var(--ink);margin:0 0 20px;max-width:60ch;
+.strata-spot-lockup:hover{transform:translateY(-2px);}
+.strata-spot-lockup img{
+  width:100%;height:auto;display:block;
 }
-.strata-spot-list{margin:0 0 24px;padding:0;list-style:none;max-width:62ch;}
-.strata-spot-list li{
-  margin:8px 0;font-size:15px;line-height:1.55;color:var(--ink);
+.strata-spotlight--dark .strata-spot-grid{
+  display:block;max-width:62ch;margin:0 auto;text-align:center;
 }
-.strata-spot-list strong{font-weight:800;}
-.strata-spot-actions{display:flex;gap:12px;flex-wrap:wrap;}
-.strata-spot-visual{
-  display:flex;flex-direction:column;align-items:center;gap:14px;
-  padding:28px 32px;background:var(--paper);border:1px solid var(--rule);
-  text-decoration:none;color:var(--ink);
-  transition:transform .18s ease,box-shadow .18s ease;
+.strata-spotlight--dark .strata-spot-body .eyebrow{
+  display:block;margin:0 0 14px;
+  font-family:'Hanken Grotesk','IBM Plex Sans',sans-serif;
+  font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;
+  font-weight:800;color:#5EC2A3;
 }
-.strata-spot-visual:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);}
-.strata-spot-visual img{max-width:260px;width:100%;height:auto;display:block;}
-.strata-spot-badge{
-  font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.14em;
-  text-transform:uppercase;font-weight:800;color:var(--mute);
-  text-align:center;max-width:28ch;
+.strata-spotlight--dark .strata-spot-body h2{
+  margin:0 0 .55em;
+  font-family:'Newsreader','IBM Plex Serif',serif;font-weight:400;
+  letter-spacing:-.005em;line-height:1.1;
+  font-size:38px;color:var(--paper);
+}
+.strata-spotlight--dark .strata-spot-pitch{
+  font-family:'Newsreader',serif;font-weight:400;
+  font-size:18px;line-height:1.55;
+  color:rgba(245,237,221,.82);
+  margin:0 auto 28px;max-width:58ch;
+}
+.strata-spotlight--dark .strata-spot-actions{
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:0 0 22px;
+}
+.strata-spotlight--dark .strata-spot-foot{
+  margin:18px 0 0;padding-top:18px;
+  border-top:1px solid rgba(245,237,221,.12);
+  font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:600;
+  color:rgba(245,237,221,.55);
+}
+.btn-paper,.prose a.btn-paper{
+  background:var(--paper);color:#0C0C0B;text-decoration:none;
+  border:1px solid var(--paper);
+}
+.btn-paper:hover,.prose a.btn-paper:hover{background:#1D6B55;color:var(--paper);border-color:#1D6B55;}
+.btn-ghost-paper,.prose a.btn-ghost-paper{
+  background:transparent;color:var(--paper);text-decoration:none;
+  border:1px solid rgba(245,237,221,.4);
+}
+.btn-ghost-paper:hover,.prose a.btn-ghost-paper:hover{
+  border-color:var(--paper);background:rgba(245,237,221,.08);
 }
 @media (max-width:900px){
-  .strata-spotlight{padding:48px 0;}
-  .strata-spotlight .strata-spot-grid{grid-template-columns:1fr;gap:28px;}
-  .strata-spot-body h2{font-size:36px;}
-  .strata-spot-visual{padding:24px;}
+  .strata-spotlight--dark{padding:56px 0 52px;}
+  .strata-spot-lockup{max-width:260px;margin-bottom:28px;}
+  .strata-spotlight--dark .strata-spot-body h2{font-size:28px;}
+  .strata-spotlight--dark .strata-spot-pitch{font-size:16px;}
+  .strata-spotlight--dark .strata-spot-foot{font-size:11px;letter-spacing:.12em;}
 }
 
 /* ───────────────────────────────────────────────────────────────────

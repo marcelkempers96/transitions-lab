@@ -2548,28 +2548,23 @@ def build_home() -> str:
   </div>
 </section>
 
-<!-- STRATA SPOTLIGHT - the Lab's live satellite tool -->
-<section class="section-paper strata-spotlight">
+<!-- STRATA SPOTLIGHT - the Lab's live satellite tool (dark theme) -->
+<section class="strata-spotlight strata-spotlight--dark">
   <div class="wrap">
+    <a class="strata-spot-lockup" href="/strata-demo" aria-label="Launch Strata">
+      <img src="/assets/logos/strata-lockup-white.svg" alt="Strata">
+    </a>
     <div class="strata-spot-grid">
       <div class="strata-spot-body">
-        <p class="eyebrow">Live tool · Horizon Europe FIERCE</p>
-        <h2>STRATA</h2>
-        <p class="strata-spot-pitch">A satellite lifecycle card for every closed mine waste site in Europe. One method, every site, in the browser. Built from open Copernicus data: Sentinel-2 pixel classes, DEM volume proxy, EGMS ground motion, Natura 2000 overlap, people within 1 and 5 km. Exports a single row keyed to the Critical Raw Materials Act Article 27 database.</p>
-        <ul class="strata-spot-list">
-          <li><strong>Users:</strong> geological surveys compiling Article 27 databases, municipalities and residents beside legacy mine waste, reprocessing firms screening for secondary CRMs.</li>
-          <li><strong>Pilot:</strong> 10 sites in the Iberian Pyrite Belt (Portugal + Spain) plus two transfer sites in Germany and Sweden.</li>
-          <li><strong>Partners:</strong> Transitions Lab (lead), Pyropower (industry), Social Innovation Europe (community).</li>
-        </ul>
+        <p class="eyebrow">Live satellite tool</p>
+        <h2>A lifecycle card for every closed mine waste site in Europe.</h2>
+        <p class="strata-spot-pitch">Open Copernicus data read in the browser: Sentinel-2 pixel classes, DEM volume proxy, EGMS ground motion, Natura 2000 overlap, population within 1 and 5 km. Exports a single row keyed to the Critical Raw Materials Act Article 27 database.</p>
         <p class="strata-spot-actions">
-          <a href="/strata-demo" class="btn btn-ink">Launch Strata &rarr;</a>
-          <a href="/strata" class="btn btn-ghost">Overview and partners</a>
+          <a href="/strata-demo" class="btn btn-paper">Launch Strata &rarr;</a>
+          <a href="/strata" class="btn btn-ghost-paper">Method and partners</a>
         </p>
+        <p class="strata-spot-foot">Pilot: 10 sites in the Iberian Pyrite Belt, with transfer sites in Germany and Sweden.</p>
       </div>
-      <a class="strata-spot-visual" href="/strata-demo" aria-label="Launch Strata">
-        <img src="/assets/logos/strata-lockup-black.svg" alt="Strata logo lockup">
-        <span class="strata-spot-badge">Pulls a live Sentinel-2 scene for each site</span>
-      </a>
     </div>
   </div>
 </section>
