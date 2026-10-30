@@ -303,7 +303,11 @@ function mapPageInnerHTML() {
   const bodyClass = S.selected ? '' : ' no-detail';
   return `
     <div class="sr-map-page${bodyClass}">
-      <aside class="sr-col sr-col-left">
+      <aside class="sr-col sr-col-left sr-sheet sr-sheet--peek">
+        <div class="sr-sheet-handle" role="button" tabindex="0" aria-label="Expand filters and site list" data-sr-sheet>
+          <span class="sr-sheet-caption" id="sr-sheet-caption">${visible.length} sites · tap to filter</span>
+        </div>
+        <div class="sr-sheet-body">
         <div class="sr-facts">
           <div class="sr-fact"><span class="sr-label">Sites shown</span><span class="sr-n">${visible.length}<span class="sr-unit">/ ${S.sites.length}</span></span></div>
           <div class="sr-fact"><span class="sr-label">Total area</span><span class="sr-n">${fmtHa(haTotal)}<span class="sr-unit">ha</span></span></div>
@@ -342,6 +346,7 @@ function mapPageInnerHTML() {
         <div class="sr-list-wrap">
           <ul class="sr-list">${listRowsHTML(visible)}</ul>
         </div>
+        </div>
       </aside>
       <div class="sr-col sr-col-map">
         <div id="sr-leaflet" class="sr-leaflet"></div>
@@ -363,7 +368,15 @@ function mapPageInnerHTML() {
           </div>
         </div>
       </div>
-      ${S.selected ? `<aside class="sr-col sr-col-detail">${detailHTML}</aside>` : ''}
+      ${S.selected ? `<aside class="sr-col sr-col-detail sr-sheet sr-sheet--full">
+        <div class="sr-sheet-handle" role="button" tabindex="0" aria-label="Resize site card" data-sr-sheet>
+          <span class="sr-sheet-caption">Site card · tap to resize</span>
+          <button class="sr-sheet-close" type="button" data-sr-close aria-label="Close site card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+          </button>
+        </div>
+        <div class="sr-sheet-body">${detailHTML}</div>
+      </aside>` : ''}
     </div>`;
 }
 
@@ -432,6 +445,39 @@ function afterMapRender() {
   wireFilters();
   wireListAndMap();
   wireBasemapSwitch();
+  wireMobileSheets();
+}
+
+// ─── Mobile bottom-sheet (phone layout) ─────────────────────────
+const SHEET_STATES = ['peek', 'half', 'full'];
+function cycleSheet(el) {
+  const current = SHEET_STATES.find((s) => el.classList.contains('sr-sheet--' + s)) || 'peek';
+  const next = SHEET_STATES[(SHEET_STATES.indexOf(current) + 1) % SHEET_STATES.length];
+  setSheetState(el, next);
+}
+function setSheetState(el, state) {
+  SHEET_STATES.forEach((s) => el.classList.toggle('sr-sheet--' + s, s === state));
+  // Allow Leaflet to re-measure after the animation.
+  if (L_MAP && typeof L_MAP.invalidateSize === 'function') {
+    setTimeout(() => { try { L_MAP.invalidateSize(false); } catch (_) {} }, 320);
+  }
+}
+function wireMobileSheets() {
+  ROOT.querySelectorAll('[data-sr-sheet]').forEach((handle) => {
+    handle.addEventListener('click', (ev) => {
+      // The X button inside the handle has its own close logic;
+      // don't let its click bubble up to toggle the sheet.
+      if (ev.target.closest('[data-sr-close]')) return;
+      const sheet = handle.closest('.sr-sheet');
+      if (sheet) cycleSheet(sheet);
+    });
+  });
+  // When a site opens on narrow screens, start the detail sheet at half
+  // so the map stays visible above it.
+  if (window.matchMedia && window.matchMedia('(max-width: 720px)').matches) {
+    const detail = ROOT.querySelector('.sr-col-detail');
+    if (detail) setSheetState(detail, 'half');
+  }
 }
 
 function initLeafletMap() {
@@ -625,6 +671,8 @@ function refreshMapOnly() {
   if (listHead) listHead.textContent = `(${visible.length})`;
   const list = left.querySelector('.sr-list');
   if (list) list.innerHTML = listRowsHTML(visible);
+  const sheetCap = ROOT.querySelector('#sr-sheet-caption');
+  if (sheetCap) sheetCap.textContent = `${visible.length} sites · tap to filter`;
   paintMarkers();
 }
 

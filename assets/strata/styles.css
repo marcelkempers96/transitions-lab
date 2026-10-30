@@ -553,6 +553,13 @@ body.strata-standalone #strata-root {
 .sr-content code { font-family: var(--mono); font-size: 12.5px; background: var(--sand); padding: 1px 5px; }
 .sr-content hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
 
+/* Sheet handle and body shim: present in the DOM at every width so
+   the mobile sheet rules can turn them on; hidden on desktop so they
+   are a no-op. */
+.sr-sheet-handle { display: none; }
+.sr-col-left .sr-sheet-body,
+.sr-col-detail .sr-sheet-body { display: contents; }
+
 /* ─── Breakpoints ─────────────────────────────────────────────── */
 @media (max-width: 1180px) {
   .sr-map-page { grid-template-columns: 280px 1fr 380px; }
@@ -582,23 +589,147 @@ body.strata-standalone #strata-root {
   .sr-col-left, .sr-col-map { overflow: hidden; }  /* keep map crop + list scroll */
 }
 @media (max-width: 720px) {
-  .sr-topbar { padding: 10px 14px; }
+  /* On phones, pin the whole app to the viewport again (no page
+     scroll), hide the pilot banner, compress the topbar, and turn
+     the left column into a bottom sheet that overlays the map. The
+     map keeps the full remaining viewport under it. */
+  body.strata-standalone,
+  body.strata-standalone #strata-root {
+    height: 100vh; height: 100dvh; min-height: 0;
+    overflow: hidden;
+  }
+  .sr-topbar { padding: 10px 12px; }
   .sr-tabs { display: none; }
   .sr-brand-sub { display: none; }
-  .sr-pilot-banner { padding: 10px 14px; font-size: 12px; }
-  .sr-map-page { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
-  .sr-col-left {
-    border-right: 0; border-bottom: 1px solid var(--line);
-    max-height: none;
+  .sr-pilot-banner { display: none; }
+  .sr-page { overflow: hidden; }
+
+  .sr-map-page {
+    display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
   }
+  .sr-map-page.no-detail { }
+
   .sr-col-map {
-    border-right: 0; border-bottom: 1px solid var(--line);
-    min-height: 60vh;
+    position: absolute; inset: 0;
+    border-right: 0; border-bottom: 0;
+    min-height: 0;
+    z-index: 1;
   }
-  .sr-list-wrap { max-height: 50vh; }
-  .sr-detail-head, .sr-sect, .sr-detail-foot { padding-left: 14px; padding-right: 14px; }
-  .sr-map-legend { max-width: calc(100% - 24px); left: 12px; bottom: 12px; }
-  .sr-map-zoom { right: 12px; top: 12px; }
+  .sr-leaflet { position: absolute; inset: 0; }
+
+  /* Floating sheet, overlays the bottom edge of the map. */
+  .sr-col-left,
+  .sr-col-detail {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-right: 0; border-bottom: 0; border-left: 0;
+    box-shadow: 0 -6px 24px rgba(17, 17, 16, 0.14);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    transition: height .28s cubic-bezier(.3,.7,.3,1);
+    will-change: height;
+  }
+  :root[data-theme="dark"] .sr-col-left,
+  :root[data-theme="dark"] .sr-col-detail {
+    box-shadow: 0 -6px 24px rgba(0,0,0,0.55);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .sr-col-left,
+    :root:not([data-theme="light"]) .sr-col-detail {
+      box-shadow: 0 -6px 24px rgba(0,0,0,0.55);
+    }
+  }
+
+  /* Three states */
+  .sr-col-left.sr-sheet--peek,
+  .sr-col-detail.sr-sheet--peek { height: 136px; }
+  .sr-col-left.sr-sheet--half,
+  .sr-col-detail.sr-sheet--half { height: 52vh; height: 52dvh; }
+  .sr-col-left.sr-sheet--full,
+  .sr-col-detail.sr-sheet--full { height: 92vh; height: 92dvh; }
+
+  /* Grab handle at the top of the sheet */
+  .sr-sheet-handle {
+    position: relative;
+    display: flex !important;      /* override desktop display:none */
+    align-items: center; justify-content: center;
+    padding: 10px 14px 6px;
+    cursor: pointer;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line-soft);
+    user-select: none;
+    touch-action: none;
+  }
+  .sr-sheet-handle::before {
+    content: ""; width: 44px; height: 4px; border-radius: 2px;
+    background: var(--line); display: block;
+  }
+  .sr-sheet-caption {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--mute); pointer-events: none;
+  }
+  .sr-sheet-close {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    width: 28px; height: 28px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 0;
+  }
+  .sr-sheet-close svg { width: 14px; height: 14px; }
+  .sr-sheet-close:hover { background: var(--sand); }
+
+  /* Scrollable body under the handle */
+  .sr-col-left .sr-sheet-body,
+  .sr-col-detail .sr-sheet-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0;
+  }
+  .sr-col-left.sr-sheet--peek .sr-sheet-body,
+  .sr-col-detail.sr-sheet--peek .sr-sheet-body {
+    overflow: hidden;
+  }
+
+  /* Compress totals + filters inside the sheet */
+  .sr-col-left .sr-facts { grid-template-columns: 1fr 1fr; }
+  .sr-col-left .sr-fact { padding: 10px 14px; }
+  .sr-col-left .sr-fact .sr-n { font-size: 18px; }
+  .sr-col-left .sr-filters { padding: 12px 14px 10px; }
+  .sr-col-left .sr-list-head { padding: 10px 14px; }
+  .sr-col-left .sr-list { }
+  .sr-col-left .sr-site-row { padding: 10px 14px; }
+
+  /* Detail card inside the sheet */
+  .sr-col-detail .sr-detail-head,
+  .sr-col-detail .sr-sect,
+  .sr-col-detail .sr-detail-foot {
+    padding-left: 14px; padding-right: 14px;
+  }
+  .sr-col-detail .sr-detail-close { display: none; }   /* use the sheet handle's X */
+
+  /* Map legend becomes a small corner badge on phones */
+  .sr-map-legend {
+    max-width: 48%; left: 10px; bottom: 160px;
+    padding: 7px 10px; font-size: 10.5px;
+    z-index: 5;
+  }
+  .sr-map-legend .sr-swatches { gap: 4px; }
+  .sr-basemap-switch {
+    top: 10px; right: 50px; left: auto;
+    padding: 0;
+  }
+  .sr-basemap-switch button { padding: 5px 8px; font-size: 10px; }
+  .sr-leaflet .leaflet-control-zoom { margin-top: 54px !important; }
 }
 
 /* ─── Live Sentinel-2 panel ───────────────────────────────────── */
