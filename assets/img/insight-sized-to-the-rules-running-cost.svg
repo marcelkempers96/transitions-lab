@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="'Hanken Grotesk',system-ui,-apple-system,sans-serif">
+  <rect width="760" height="300" fill="#FBF8EF"/>
+  <text x="40" y="46" font-size="18" font-weight="700" fill="#101010">Unilever Nairobi factory electricity bill, before and after the 800 kW array</text>
+  <text x="40" y="68" font-size="12" fill="#5A5A5A">Monthly bill, KSh million. The array supplies roughly 30% of load and removes roughly a third of the bill.</text>
+  <!-- Scale: x from 200 to 720 maps 0..12 M -->
+  <g stroke="#D0CFCA" stroke-width="1">
+    <line x1="200" y1="100" x2="200" y2="260"/>
+    <line x1="200" y1="260" x2="720" y2="260"/>
+    <line x1="330" y1="100" x2="330" y2="260" stroke-dasharray="2 3"/>
+    <line x1="460" y1="100" x2="460" y2="260" stroke-dasharray="2 3"/>
+    <line x1="590" y1="100" x2="590" y2="260" stroke-dasharray="2 3"/>
+    <line x1="720" y1="100" x2="720" y2="260" stroke-dasharray="2 3"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" fill="#5A5A5A">
+    <text x="200" y="278" text-anchor="middle">0</text>
+    <text x="330" y="278" text-anchor="middle">3</text>
+    <text x="460" y="278" text-anchor="middle">6</text>
+    <text x="590" y="278" text-anchor="middle">9</text>
+    <text x="720" y="278" text-anchor="middle">12 KSh m</text>
+  </g>
+  <g>
+    <text x="194" y="140" text-anchor="end" font-size="13" fill="#101010">Before</text>
+    <text x="194" y="156" text-anchor="end" font-size="10.5" fill="#5A5A5A">(diesel + grid)</text>
+    <rect x="200" y="124" width="520" height="30" fill="#3159C4"/>
+    <text x="728" y="144" font-size="13" font-weight="700" fill="#3159C4">KSh 12 m</text>
+  </g>
+  <g>
+    <text x="194" y="196" text-anchor="end" font-size="13" fill="#101010">After</text>
+    <text x="194" y="212" text-anchor="end" font-size="10.5" fill="#5A5A5A">(800 kW solar + grid)</text>
+    <rect x="200" y="180" width="325" height="30" fill="#E0624A"/>
+    <text x="533" y="200" font-size="13" font-weight="700" fill="#E0624A">KSh 7.5 m</text>
+  </g>
+  <text x="40" y="296" font-size="11" font-style="italic" fill="#5A5A5A">Source: The Star, 7 October 2026; Aptantech, 6 October 2026.</text>
+</svg>
