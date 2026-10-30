@@ -2044,18 +2044,8 @@ def build_content_page(slug: str, md: str) -> str:
     # (see build_all()). Restore this set when the review clears.
     is_hidden = slug in HIDDEN_SLUGS
 
-    # Per-page assets. The Strata interactive demo on /strata-app
-    # loads its own CSS + JS, scoped to the #strata-demo mount in
-    # the page markup.
-    extra_head = ""
-    if slug == "strata-app":
-        extra_head = (
-            f'<link rel="stylesheet" href="/assets/strata-demo.css?v={ASSET_STRATA_CSS_V}">\n'
-            f'<script src="/assets/strata-demo.js?v={ASSET_STRATA_JS_V}" defer></script>'
-        )
-
     return page_shell(slug=slug, title=title, description=description,
-                      body=body, noindex=is_hidden, extra_head=extra_head)
+                      body=body, noindex=is_hidden)
 
 
 # Pages hidden from public discovery — noindex on the page, skipped
@@ -2668,13 +2658,55 @@ def build_sitemap(paths: list[str]) -> str:
 # Main
 # ────────────────────────────────────────────────────────────────────────────
 
+def build_strata_demo_shell() -> str:
+    """The standalone /strata-demo app page.
+
+    Hand-authored full-screen HTML (no site chrome). Loads
+    /assets/strata-demo.css and /assets/strata-demo.js with cache
+    busters so updates to either are picked up without stale
+    caches on repeat visits.
+    """
+    return f"""<!doctype html>
+<html lang="en-GB" data-sd-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>Strata — site monitor for Europe's critical raw materials projects (demo)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="A standalone demo of Strata, the Transitions Lab site monitor for Europe's critical raw materials Strategic Projects. Illustrative data; the 2027 pilot will produce real indicators.">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/logos/strata-mark-black.svg">
+  <link rel="apple-touch-icon" href="/assets/logos/strata-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <script>
+    (function(){{
+      try {{
+        var saved = localStorage.getItem('sd-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-sd-theme', theme);
+      }} catch(_) {{}}
+    }})();
+  </script>
+  <link rel="stylesheet" href="/assets/strata-demo.css?v={ASSET_STRATA_CSS_V}">
+</head>
+<body class="sd-standalone">
+  <div id="strata-demo"></div>
+  <script src="/assets/strata-demo.js?v={ASSET_STRATA_JS_V}" defer></script>
+</body>
+</html>
+"""
+
+
 def main() -> None:
     # Delete old .html files at repo root that aren't going to be rebuilt.
     # We regenerate everything, so wipe any stale HTML first - but keep .git,
     # assets, content, config files.
     # admin.html is hand-authored, hidden, and not part of the content build,
     # so leave it alone so a build doesn't delete it.
-    PRESERVE_HTML = {"admin.html"}
+    PRESERVE_HTML = {"admin.html", "strata-demo.html"}
     for old in ROOT.glob("*.html"):
         if old.name in PRESERVE_HTML:
             continue
@@ -2728,6 +2760,14 @@ def main() -> None:
     # in the sitemap. Restore this line when the review clears.
     if False and (ROOT / "mineral-flows" / "index.html").exists():
         written.append("/mineral-flows")
+
+    # Strata demo app: standalone, full-screen interactive. Rebuilt
+    # from the string below on every build so its <link>/<script>
+    # tags carry fresh asset-hash cache busters.
+    (ROOT / "strata-demo.html").write_text(build_strata_demo_shell(), encoding="utf-8")
+    print("[app]   strata-demo.html")
+    # Not added to the sitemap — the search-engine entry point is
+    # /strata-app, which carries the SEO copy and links through.
 
     # 6. Sitemap
     (ROOT / "sitemap.xml").write_text(build_sitemap(written), encoding="utf-8")

@@ -9,6 +9,7 @@
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
   <a href="/strata-app">Web tool</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
   <strong class="is-current">Method</strong>
   <a href="/strata-data-sources">Data sources</a>
 </nav>

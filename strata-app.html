@@ -37,9 +37,8 @@
 <meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
 <meta name="twitter:image:alt" content="The Strata web tool: open it, click a dot, see what changed | Transitions Lab">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/theme.css?v=860b838b">
-<link rel="stylesheet" href="/assets/strata-demo.css?v=ad5fe7af">
-<script src="/assets/strata-demo.js?v=d0825149" defer></script>
+<link rel="stylesheet" href="/assets/theme.css?v=7a8a417d">
+
 </head>
 <body data-page="strata-app">
 
@@ -128,12 +127,22 @@
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
   <strong class="is-current">Web tool</strong>
+  <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-method">Method</a>
   <a href="/strata-data-sources">Data sources</a>
 </nav>
-<p>Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map and puts every number a reader needs on a single site page. The demo below carries sixteen illustrative sites across the European Union and one in a third country, with values generated for the pilot and marked as such on screen.</p>
-<h2>Try the demo</h2>
-<div id="strata-demo" data-sd-mount="1"><noscript>The Strata demo needs JavaScript. The <a href="/strata">overview</a>, <a href="/strata-method">method</a> and <a href="/strata-data-sources">data sources</a> pages read without it.</noscript></div>
+<p>Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map and puts every number a reader needs on a single site page. The demo carries sixteen illustrative sites across the European Union and one in a third country, with values generated for the pilot and marked as such on screen.</p>
+<div class="strata-launch">
+  <div class="strata-launch-head">
+    <span class="eyebrow">Interactive demo</span>
+    <h3>Open the full-screen app</h3>
+    <p>Sixteen illustrative sites across the EU and one in Morocco. Filter by stage, status, material and alerts; click a dot to see the baseline, the latest footprint, the chart, the outline and the indicator read. Light and dark theme, map zoom, CSV export per site, shareable site links.</p>
+  </div>
+  <div class="strata-launch-actions">
+    <a href="/strata-demo" class="btn btn-ink">Launch Strata app &rarr;</a>
+    <a href="/strata-method" class="btn btn-ghost">Read the method</a>
+  </div>
+</div>
 <h2>How to read what you are looking at</h2>
 <p>Each dot on the map is a Strata site, sized by its disturbed footprint and coloured by status: an open ring for pre-construction, yellow for under construction, green for operating and red for any site with an open alert. The left column sums up what is on screen (sites shown, sites not yet built, hectares disturbed, open alerts), lets you filter by value chain stage and status, and lists the sites with alerts at the top. Search works across site codes, materials and countries. Clicking a dot or a row opens the site page on the right.</p>
 <p>The site page gives the baseline year, the 2026 footprint, the change since the baseline and the year works started. The chart below plots the disturbed footprint every year since the baseline, with the baseline drawn as a dashed line and the start of works marked in yellow, so the moment a landscape began to change is visible without reading a table. The footprint outline sets the baseline shape against the latest one inside a 500 metre buffer, and the indicator list covers vegetation loss within 5 kilometres, the share inside Natura 2000, water and tailings surface, ground motion and the land the footprint replaced.</p>

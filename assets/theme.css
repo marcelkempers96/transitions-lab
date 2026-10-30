@@ -5464,3 +5464,40 @@ body,
 .prose .strata-pages strong.is-current{
   background:var(--ink);color:var(--paper);
 }
+
+/* ───────────────────────────────────────────────────────────────────
+   Strata launch card — on /strata-app, big obvious CTA to open the
+   full-screen /strata-demo app. Lives inside .prose.
+   ─────────────────────────────────────────────────────────────── */
+.prose .strata-launch{
+  margin:1.6em 0 2.2em;
+  padding:28px 30px 26px;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-left:4px solid var(--ink);
+  display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
+}
+.prose .strata-launch .strata-launch-head{min-width:0;}
+.prose .strata-launch .eyebrow{
+  display:block;margin:0 0 6px;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+  color:var(--mute);
+}
+.prose .strata-launch h3{
+  margin:0 0 8px;
+  font-family:'Newsreader',serif;font-weight:500;letter-spacing:-.01em;
+  font-size:26px;line-height:1.2;color:var(--ink);
+}
+.prose .strata-launch p{
+  margin:0;color:var(--ink);
+  font-size:15px;line-height:1.55;max-width:60ch;
+}
+.prose .strata-launch .strata-launch-actions{
+  display:flex;flex-direction:column;gap:10px;align-items:stretch;flex-shrink:0;
+}
+.prose .strata-launch .btn{white-space:nowrap;}
+@media (max-width:820px){
+  .prose .strata-launch{grid-template-columns:1fr;gap:18px;padding:22px 20px 20px;}
+  .prose .strata-launch .strata-launch-actions{flex-direction:row;flex-wrap:wrap;}
+}

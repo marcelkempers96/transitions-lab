@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-GB" data-sd-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>Strata — site monitor for Europe's critical raw materials projects (demo)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="A standalone demo of Strata, the Transitions Lab site monitor for Europe's critical raw materials Strategic Projects. Illustrative data; the 2027 pilot will produce real indicators.">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/logos/strata-mark-black.svg">
+  <link rel="apple-touch-icon" href="/assets/logos/strata-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <script>
+    (function(){
+      try {
+        var saved = localStorage.getItem('sd-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-sd-theme', theme);
+      } catch(_) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/strata-demo.css?v=d329fca5">
+</head>
+<body class="sd-standalone">
+  <div id="strata-demo"></div>
+  <script src="/assets/strata-demo.js?v=55acee83" defer></script>
+</body>
+</html>

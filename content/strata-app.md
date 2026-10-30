@@ -9,15 +9,24 @@
 <nav class="strata-pages" aria-label="Strata pages">
   <a href="/strata">Overview</a>
   <strong class="is-current">Web tool</strong>
+  <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-method">Method</a>
   <a href="/strata-data-sources">Data sources</a>
 </nav>
 
-Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map and puts every number a reader needs on a single site page. The demo below carries sixteen illustrative sites across the European Union and one in a third country, with values generated for the pilot and marked as such on screen.
+Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map and puts every number a reader needs on a single site page. The demo carries sixteen illustrative sites across the European Union and one in a third country, with values generated for the pilot and marked as such on screen.
 
-## Try the demo
-
-<div id="strata-demo" data-sd-mount="1"><noscript>The Strata demo needs JavaScript. The <a href="/strata">overview</a>, <a href="/strata-method">method</a> and <a href="/strata-data-sources">data sources</a> pages read without it.</noscript></div>
+<div class="strata-launch">
+  <div class="strata-launch-head">
+    <span class="eyebrow">Interactive demo</span>
+    <h3>Open the full-screen app</h3>
+    <p>Sixteen illustrative sites across the EU and one in Morocco. Filter by stage, status, material and alerts; click a dot to see the baseline, the latest footprint, the chart, the outline and the indicator read. Light and dark theme, map zoom, CSV export per site, shareable site links.</p>
+  </div>
+  <div class="strata-launch-actions">
+    <a href="/strata-demo" class="btn btn-ink">Launch Strata app &rarr;</a>
+    <a href="/strata-method" class="btn btn-ghost">Read the method</a>
+  </div>
+</div>
 
 ## How to read what you are looking at
 

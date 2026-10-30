@@ -11,6 +11,7 @@
 <nav class="strata-pages" aria-label="Strata pages">
   <strong class="is-current">Overview</strong>
   <a href="/strata-app">Web tool</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-method">Method</a>
   <a href="/strata-data-sources">Data sources</a>
 </nav>
