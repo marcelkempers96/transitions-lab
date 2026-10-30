@@ -5594,7 +5594,10 @@ body,
   font-size:26px;line-height:1.3;color:var(--ink);margin:0;
 }
 .prose .strata-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 0;}
-.prose .strata-hero-actions .btn{white-space:nowrap;}
+/* Belt-and-suspenders: let the button wrap and cap its width so the
+   label can never overflow its background, no matter which label
+   version the browser has cached. */
+.prose .strata-hero-actions .btn{white-space:normal;max-width:100%;min-width:0;}
 .prose .strata-signup{margin-top:8px;padding-top:16px;border-top:1px solid var(--rule);}
 .prose .strata-signup-label{
   display:block;margin-bottom:8px;
