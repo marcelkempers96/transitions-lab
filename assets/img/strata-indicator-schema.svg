@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="'Hanken Grotesk',system-ui,sans-serif">
+  <defs>
+    <style>
+      .ink{fill:#121212;}
+      .mute{fill:#6B6457;}
+      .kick{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;fill:#6B6457;}
+      .lbl{font-size:14px;fill:#121212;}
+      .lblsmall{font-size:12px;fill:#6B6457;}
+      .ring-dash{fill:none;stroke:#B6AC94;stroke-dasharray:4 3;stroke-width:1.5;}
+      .arrow{fill:none;stroke:#121212;stroke-width:1.2;marker-end:url(#arrow);}
+      .site-fill{fill:#2E7A3C;fill-opacity:0.55;stroke:#1A5527;stroke-width:1.5;}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#121212"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="600" fill="#FBF7EC"/>
+
+  <!-- Centre of composition -->
+  <g transform="translate(500,300)">
+    <!-- 5 km buffer -->
+    <circle class="ring-dash" r="260"/>
+    <text class="kick" x="0" y="-268" text-anchor="middle">5 km buffer</text>
+    <!-- 2 km buffer -->
+    <circle class="ring-dash" r="170"/>
+    <text class="kick" x="0" y="-178" text-anchor="middle">2 km buffer</text>
+    <!-- 500 m buffer -->
+    <circle class="ring-dash" r="90"/>
+    <text class="kick" x="0" y="-98" text-anchor="middle">500 m buffer</text>
+    <!-- Site polygon -->
+    <path class="site-fill" d="M -34 -22 Q 6 -40 36 -16 Q 44 10 24 32 Q -6 42 -32 24 Q -46 -2 -34 -22 Z"/>
+    <text class="kick" x="0" y="5" text-anchor="middle" fill="#F6F2E6">POLYGON</text>
+  </g>
+
+  <!-- Annotations with arrows pointing in -->
+  <g font-family="'Hanken Grotesk',system-ui,sans-serif">
+    <!-- Disturbed footprint -->
+    <text class="kick" x="900" y="88">01</text>
+    <text class="lbl" x="930" y="90" font-weight="700">Disturbed footprint</text>
+    <text class="lblsmall" x="930" y="110">Pixels inside the polygon classified as bare,</text>
+    <text class="lblsmall" x="930" y="126">excavated or deposited material. Hectares.</text>
+    <path class="arrow" d="M 900 100 Q 700 150 530 290"/>
+
+    <!-- Water and tailings -->
+    <text class="kick" x="900" y="198">02</text>
+    <text class="lbl" x="930" y="200" font-weight="700">Water and tailings surface</text>
+    <text class="lblsmall" x="930" y="220">Open water + wet tailings in the polygon and the</text>
+    <text class="lblsmall" x="930" y="236">500 m ring. Seasonal min and max.</text>
+    <path class="arrow" d="M 900 220 Q 740 240 580 300"/>
+
+    <!-- Ground motion -->
+    <text class="kick" x="900" y="310">03</text>
+    <text class="lbl" x="930" y="312" font-weight="700">Ground motion (EGMS)</text>
+    <text class="lblsmall" x="930" y="332">Max |v<tspan baseline-shift="sub" font-size="9">LOS</tspan>| inside the polygon and the 500 m ring.</text>
+    <text class="lblsmall" x="930" y="348">Points above threshold flagged for review.</text>
+    <path class="arrow" d="M 900 330 Q 740 320 580 310"/>
+
+    <!-- Buffer vegetation loss -->
+    <text class="kick" x="900" y="420">04</text>
+    <text class="lbl" x="930" y="422" font-weight="700">Buffer vegetation loss</text>
+    <text class="lblsmall" x="930" y="442">Share of vegetated pixels that went non-vegetated,</text>
+    <text class="lblsmall" x="930" y="458">computed inside each buffer separately.</text>
+    <path class="arrow" d="M 900 440 Q 720 420 540 420"/>
+
+    <!-- Natura 2000 overlap -->
+    <text class="kick" x="900" y="520">05</text>
+    <text class="lbl" x="930" y="522" font-weight="700">Natura 2000 overlap</text>
+    <text class="lblsmall" x="930" y="542">A subset of the 5 km reading: how much of the loss</text>
+    <text class="lblsmall" x="930" y="558">falls inside a designated protected area.</text>
+    <path class="arrow" d="M 900 540 Q 720 500 540 490"/>
+
+    <!-- Left side: Downstream water colour -->
+    <text class="kick" x="40" y="420">06</text>
+    <text class="lbl" x="70" y="422" font-weight="700">Downstream water colour</text>
+    <text class="lblsmall" x="70" y="442">Experimental. Turbidity proxy in water bodies</text>
+    <text class="lblsmall" x="70" y="458">that lie downstream of the site.</text>
+    <path class="arrow" d="M 320 480 Q 400 500 470 340"/>
+
+    <!-- Left side: Land converted -->
+    <text class="kick" x="40" y="200">07</text>
+    <text class="lbl" x="70" y="202" font-weight="700">Land converted</text>
+    <text class="lblsmall" x="70" y="222">For every hectare in the footprint, the class</text>
+    <text class="lblsmall" x="70" y="238">(tree, cropland, wetland …) it had before.</text>
+    <path class="arrow" d="M 320 230 Q 400 260 480 290"/>
+  </g>
+
+  <!-- Caption bar -->
+  <g transform="translate(0,560)">
+    <line x1="40" y1="0" x2="1160" y2="0" stroke="#D9D1BE"/>
+    <text class="lblsmall" x="40" y="26" fill="#6B6457">Indicators and buffers · Strata method, version 0.1 · one method, every site</text>
+  </g>
+</svg>

@@ -12,6 +12,7 @@
   <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-method">Method</a>
   <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-paper">Companion paper</a>
 </nav>
 
 Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map and puts every number a reader needs on a single site page. The demo carries sixteen illustrative sites across the European Union and one in a third country, with values generated for the pilot and marked as such on screen.

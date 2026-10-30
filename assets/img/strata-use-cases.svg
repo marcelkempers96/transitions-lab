@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="'Hanken Grotesk',system-ui,sans-serif">
+  <defs>
+    <style>
+      .ink{fill:#121212;}
+      .mute{fill:#6B6457;}
+      .kick{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;fill:#8A5A1A;}
+      .lbl{font-size:16px;font-weight:700;fill:#121212;}
+      .body{font-size:13.5px;fill:#3A3A3A;}
+      .q{font-size:13px;font-style:italic;fill:#6B6457;}
+      .panel{fill:#FBF7EC;stroke:#D9D1BE;stroke-width:1;}
+      .accent{fill:#F3C98B;}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F3EDE1"/>
+
+  <!-- Four panels in a 2x2 grid -->
+  <!-- Panel 1: Permitting -->
+  <g transform="translate(40,40)">
+    <rect class="panel" width="550" height="300" rx="4"/>
+    <rect class="accent" x="0" y="0" width="8" height="300"/>
+    <text class="kick" x="32" y="38">01 · Permitting authority / Single Point of Contact</text>
+    <text class="lbl" x="32" y="68">"Is the actual disturbance consistent</text>
+    <text class="lbl" x="32" y="90">with the environmental impact assessment?"</text>
+    <text class="body" x="32" y="128">An officer compares the project's reported</text>
+    <text class="body" x="32" y="146">footprint against a satellite reading from a</text>
+    <text class="body" x="32" y="164">method they did not have to commission.</text>
+    <text class="body" x="32" y="200" fill="#6B6457">Reads: disturbed footprint, buffer vegetation loss,</text>
+    <text class="body" x="32" y="218" fill="#6B6457">Natura 2000 overlap.</text>
+    <!-- small icon on right -->
+    <g transform="translate(440,120)" fill="none" stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 0 10 L 20 30 L 60 -10"/>
+    </g>
+  </g>
+
+  <!-- Panel 2: Lender -->
+  <g transform="translate(610,40)">
+    <rect class="panel" width="550" height="300" rx="4"/>
+    <rect class="accent" x="0" y="0" width="8" height="300"/>
+    <text class="kick" x="32" y="38">02 · Lender / development finance institution</text>
+    <text class="lbl" x="32" y="68">"Across my portfolio, which sites moved most</text>
+    <text class="lbl" x="32" y="90">this year, and did any cross a threshold?"</text>
+    <text class="body" x="32" y="128">A consistent annual check across a portfolio of</text>
+    <text class="body" x="32" y="146">projects in different countries, with the method</text>
+    <text class="body" x="32" y="164">version and imagery dates cited for every number.</text>
+    <text class="body" x="32" y="200" fill="#6B6457">Reads: alerts, year-on-year change, CSV + API</text>
+    <text class="body" x="32" y="218" fill="#6B6457">packs for the due diligence file.</text>
+    <!-- small icon: grid of squares -->
+    <g transform="translate(440,110)" fill="#121212">
+      <rect width="12" height="12"/>
+      <rect x="18" width="12" height="12"/>
+      <rect x="36" width="12" height="12" fill="#C64A2E"/>
+      <rect y="18" width="12" height="12"/>
+      <rect x="18" y="18" width="12" height="12" fill="#D7A54B"/>
+      <rect x="36" y="18" width="12" height="12"/>
+      <rect y="36" width="12" height="12"/>
+      <rect x="18" y="36" width="12" height="12"/>
+      <rect x="36" y="36" width="12" height="12"/>
+    </g>
+  </g>
+
+  <!-- Panel 3: Battery / cathode / recycler -->
+  <g transform="translate(40,380)">
+    <rect class="panel" width="550" height="300" rx="4"/>
+    <rect class="accent" x="0" y="0" width="8" height="300"/>
+    <text class="kick" x="32" y="38">03 · Battery / cathode / recycler</text>
+    <text class="lbl" x="32" y="68">"The sites behind my supply contracts are now</text>
+    <text class="lbl" x="32" y="90">in scope for due diligence. Which first?"</text>
+    <text class="body" x="32" y="128">A screen on extraction and processing sites behind</text>
+    <text class="body" x="32" y="146">a bill of materials, against a baseline the buyer did</text>
+    <text class="body" x="32" y="164">not commission themselves. In force 18 August 2027.</text>
+    <text class="body" x="32" y="200" fill="#6B6457">Reads: site codes referenced from BoMs, Pro-tier</text>
+    <text class="body" x="32" y="218" fill="#6B6457">alerts, audit-ready data packs.</text>
+    <!-- arrow icon: supply chain -->
+    <g transform="translate(430,120)" fill="none" stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="12" r="6" fill="#121212"/>
+      <circle cx="40" cy="12" r="6" fill="#121212"/>
+      <circle cx="80" cy="12" r="6" fill="#F3C98B"/>
+      <path d="M 6 12 L 34 12"/>
+      <path d="M 46 12 L 74 12"/>
+    </g>
+  </g>
+
+  <!-- Panel 4: Civil society -->
+  <g transform="translate(610,380)">
+    <rect class="panel" width="550" height="300" rx="4"/>
+    <rect class="accent" x="0" y="0" width="8" height="300"/>
+    <text class="kick" x="32" y="38">04 · Civil society, journalism, local council</text>
+    <text class="lbl" x="32" y="68">"What has actually happened on the ground</text>
+    <text class="lbl" x="32" y="90">beside me since the permit was granted?"</text>
+    <text class="body" x="32" y="128">The same read a lender gets, under the same</text>
+    <text class="body" x="32" y="146">method, free. Routes to the method page and the</text>
+    <text class="body" x="32" y="164">data sources so the number can be challenged.</text>
+    <text class="body" x="32" y="200" fill="#6B6457">Reads: everything in the free tier; CSV export;</text>
+    <text class="body" x="32" y="218" fill="#6B6457">right-of-reply from the promoter linked on page.</text>
+    <!-- small icon: three figures -->
+    <g transform="translate(440,110)" fill="#121212">
+      <circle cx="10" cy="10" r="6"/>
+      <path d="M 0 32 Q 10 18 20 32 L 20 44 L 0 44 Z"/>
+      <circle cx="30" cy="10" r="6"/>
+      <path d="M 20 32 Q 30 18 40 32 L 40 44 L 20 44 Z"/>
+      <circle cx="50" cy="10" r="6"/>
+      <path d="M 40 32 Q 50 18 60 32 L 60 44 L 40 44 Z"/>
+    </g>
+  </g>
+
+  <!-- Caption -->
+  <text class="body" x="40" y="708" fill="#6B6457" font-size="12">Four use cases, one shared source of facts. Each audience reads a different part of the same evidence base.</text>
+</svg>

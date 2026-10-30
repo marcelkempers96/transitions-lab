@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strata companion paper: method, equations, use cases, partners | Transitions Lab</title>
+<meta name="description" content="A reading-length companion to Strata: the problem it is built for, the equations that define each indicator, four use cases with named audiences, and the partners who stand behind the tool.">
+<meta name="author" content="Transitions Lab">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F5EDDD">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<script>(function(){try{var d=document.documentElement,isArticle=/^\/(case|insight)-/.test(location.pathname),g=function(k,f){try{return localStorage.getItem(k)||f;}catch(_){return f;}},t=g('tl_r_theme_v1','warm'),f=g('tl_r_font_v1','sans'),s=g('tl_r_size_v1','0');window.__tlR={theme:t,font:f,size:s,isArticle:isArticle};if(isArticle){d.setAttribute('data-theme',t);d.setAttribute('data-font',f);d.setAttribute('data-size',s);}}catch(_){}})();</script>
+<link rel="canonical" href="https://transitionslab.org/strata-paper">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Transitions Lab">
+<meta property="og:title" content="Strata companion paper: method, equations, use cases, partners | Transitions Lab">
+<meta property="og:description" content="A reading-length companion to Strata: the problem it is built for, the equations that define each indicator, four use cases with named audiences, and the partners who stand behind the tool.">
+<meta property="og:url" content="https://transitionslab.org/strata-paper">
+<meta property="og:image" content="https://transitionslab.org/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Strata companion paper: method, equations, use cases, partners | Transitions Lab">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Strata companion paper: method, equations, use cases, partners | Transitions Lab">
+<meta name="twitter:description" content="A reading-length companion to Strata: the problem it is built for, the equations that define each indicator, four use cases with named audiences, and the partners who stand behind the tool.">
+<meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
+<meta name="twitter:image:alt" content="Strata companion paper: method, equations, use cases, partners | Transitions Lab">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme.css?v=31768625">
+
+</head>
+<body data-page="strata-paper">
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo-dark.png" alt="Transitions Lab" class="brand-logo"></a>
+    <nav id="menu">
+  <details class="nav-group">
+    <summary class="nav-label">About</summary>
+    <div class="nav-dropdown">
+      <a href="/about">About the Lab</a>
+      <a href="/who-we-serve">Who we serve</a>
+      <a href="/for-funders">For Funders</a>
+      <a href="/how-it-works">How It Works</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Work with us</summary>
+    <div class="nav-dropdown">
+      <a href="/what-we-do">Overview</a>
+      <a href="/entering-a-new-context">Entering a New Context</a>
+      <a href="/measuring-change">Measuring Change</a>
+      <a href="/reporting-to-funders">Reporting to Funders</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Programmes</summary>
+    <div class="nav-dropdown">
+      <a href="/expertise">All programmes</a>
+      <a href="/expertise-manufacturing">Industry & Materials</a>
+      <a href="/expertise-e-mobility">E-Mobility & Transport</a>
+      <a href="/expertise-energy">Energy & Water Systems</a>
+      <a href="/expertise-agriculture">Agriculture & Ecosystems</a>
+      <a href="/expertise-ai-digital">AI & Digital</a>
+      <a href="/expertise-finance">Financial Inclusion</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary class="nav-label">Reading</summary>
+    <div class="nav-dropdown">
+      <a href="/articles">Articles &amp; insights</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/resources">Resources</a>
+      <a href="/brw">The BReW framework</a>
+      <a href="/readiness-levels">TRL &amp; SRL</a>
+      <a href="/strata">Strata &middot; site monitor</a>
+    </div>
+  </details>
+  <a href="/contact">Contact</a>
+</nav>
+    <div class="header-tools" role="group" aria-label="Search">
+      <button class="search-btn" type="button" aria-label="Search this site" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="search-overlay" hidden role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel">
+    <div class="search-input-row">
+      <svg class="search-input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-input" placeholder="Search articles, cases, methods…" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" aria-label="Close search">&#215;</button>
+    </div>
+    <div class="search-results" role="listbox" aria-label="Search results"></div>
+    <p class="search-hint"><span class="search-hint-empty">Start typing to search.</span></p>
+  </div>
+</div>
+
+<section class="page-hero hero-forest">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><a href="/resources">Resources</a><span class="crumb-sep" aria-hidden="true">&rsaquo;</span><span aria-current="page">Strata companion paper: method, equations, use cases, partners</span></nav>
+    
+    <h1>A public, comparable record of what happens on the ground: the Strata companion paper</h1>
+    <p class="lede">Why Strata exists, what each indicator does, the equations that compute them, four use cases, and the partners who stand behind it. A reading-length version of the method, written for a permitting officer, a lender, a battery buyer or a resident who wants to know what is being measured and why.</p>
+    
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap-prose">
+    <div class="prose">
+      
+      
+      <p class="article-meta"><span class="article-date">October 2026</span> · <span class="article-reading-time">12 min read</span></p>
+<nav class="strata-pages" aria-label="Strata pages">
+  <a href="/strata">Overview</a>
+  <a href="/strata-app">Web tool</a>
+  <a href="/strata-demo">Launch app &rarr;</a>
+  <a href="/strata-method">Method</a>
+  <a href="/strata-data-sources">Data sources</a>
+  <strong class="is-current">Companion paper</strong>
+</nav>
+<p class="strata-wordmark"><img src="/assets/logos/strata-lockup-black.svg" alt="Strata — the Transitions Lab satellite-baseline monitor for Europe's critical raw materials Strategic Projects"></p>
+<h2>Summary</h2>
+<p>Europe has designated 93 Strategic Projects inside the Union and 13 in third countries under the <a href="https://commission.europa.eu/topics/competitiveness/green-deal-industrial-plan/european-critical-raw-materials-act_en" target="_blank" rel="noopener">Critical Raw Materials Act</a>. Each will transform a landscape; most will do so under time pressure. Once excavation starts, the undisturbed landscape can no longer be measured. The only record of what was there usually sits inside an environmental impact assessment commissioned by the promoter, written to a site-specific method and rarely repeated after permitting.</p>
+<p>Strata builds a public, independent, comparable record instead. One satellite baseline per site before construction, the same indicators recomputed every year after, using open Copernicus data and one method for every site. The audience is wider than regulators: lenders, battery and cathode buyers facing the <a href="https://sustainablefutures.linklaters.com/post/102kymo/eu-regulation-delaying-due-diligence-rules-for-batteries-published-in-the-ojeu" target="_blank" rel="noopener">due diligence obligations in force from 18 August 2027</a>, environmental groups, local councils and the residents who live beside a new pit all currently ask the same question with different evidence of different quality. A shared, independent record lets them disagree about interpretation rather than about the facts.</p>
+<div class="callout c-paper callout--serif">
+  <h3>What this paper is</h3>
+  <p>This is a reading-length companion to the <a href="/strata-method">method</a> and the <a href="/strata-data-sources">data sources</a>. It defines each indicator with the equation that computes it, works through four use cases with named audiences, shows the demo interface, and names the partners the project is run with. If something below is not clear, the <a href="/contact">Lab welcomes a question</a>.</p>
+</div>
+<hr>
+<h2>1. The problem Strata is built for</h2>
+<p>Three structural features of the critical raw materials rollout make an open, comparable record valuable now rather than later.</p>
+<p><strong>The baseline is time-bound.</strong> The information that defines "before" exists only until the first blast; after that it has to be reconstructed from the promoter's own impact assessment. A baseline captured in advance, by an independent party, from imagery that was already being collected for other purposes, is a public good.</p>
+<p><strong>The method matters more than any single reading.</strong> The same indicator reported by different authorities on different cadences, with different definitions of what counts as a disturbed hectare, cannot be compared. Strata's value depends on applying one method, publicly documented, to every site.</p>
+<p><strong>The audience is not one audience.</strong> Permitting authorities, Single Points of Contact, lenders, battery buyers, journalists and residents each need the same underlying numbers but will read them differently. A tool that serves one audience well often fails the others. Strata is built as a shared source of facts; interpretation is left to the reader.</p>
+<hr>
+<h2>2. What Strata measures</h2>
+<p>Every Strategic Project is monitored inside its own footprint and in three buffers at 500 m, 2 km and 5 km. The method page carries the full specification; the summary table below pairs each indicator with the equation that produces it.</p>
+<figure class="strata-indicator-figure">
+  <img src="/assets/img/strata-indicator-schema.svg?v=5223942a" alt="Schematic: a Strategic Project site shown as a central polygon with three concentric buffer rings at 500 metres, 2 kilometres and 5 kilometres, each ring annotated with the indicator computed inside it. Disturbed footprint inside the polygon. Ground motion inside the polygon and the 500 m ring. Water and tailings surface inside the polygon and the 500 m ring. Vegetation loss inside each of the three rings separately. Natura 2000 overlap computed as a subset of the 5 km ring. Downstream water colour computed in water bodies that lie downstream of the polygon.">
+  <figcaption>The indicator schema. Each indicator is bound to a specific area so a reader always knows what the number refers to.</figcaption>
+</figure>
+<h3>2.1 Disturbed footprint</h3>
+<p>The hectares inside the monitoring polygon that have moved from a vegetated or stable land-cover class in the baseline composite to a bare, excavated or deposited class in the year under review.</p>
+<div class="eq-block">
+  F<sub>y</sub> = (1 / N) × A<sub>pixel</sub> × Σ<sub>p ∈ P</sub> &nbsp;<strong>1</strong>[ ndvi(p, y) &lt; τ<sub>v</sub> ∧ bsi(p, y) &gt; τ<sub>s</sub> ]
+</div>
+<p class="eq-note">F<sub>y</sub> is the disturbed footprint in hectares in year y. P is the pixel set inside the polygon, A<sub>pixel</sub> is 0.01 ha (10 m × 10 m resolution), N is a seasonal normalisation factor. Thresholds τ<sub>v</sub> and τ<sub>s</sub> are calibrated per climate zone against the Maus et al. (2022) and Tang &amp; Werner (2023) reference footprints. <strong>1</strong>[·] is the indicator function (1 if the condition holds, 0 otherwise).</p>
+<h3>2.2 Buffer vegetation loss</h3>
+<p>For each buffer b at 500 m, 2 km and 5 km, the share of buffer pixels that moved from a vegetated class in the baseline composite to a non-vegetated class in the latest composite.</p>
+<div class="eq-block">
+  V<sub>b, y</sub> &nbsp;=&nbsp; Σ<sub>p ∈ B<sub>b</sub></sub> <strong>1</strong>[ veg(p, baseline) ∧ ¬veg(p, y) ] &nbsp;/&nbsp; |B<sub>b</sub>|
+</div>
+<p class="eq-note">V is reported in per cent and as hectares. The baseline land-cover reference is <a href="https://worldcover2021.esa.int/download">ESA WorldCover 2021</a>; the latest composite is a growing-season Sentinel-2 median after cloud and shadow masking.</p>
+<p>The share of V<sub>5 km, y</sub> that falls inside a <a href="https://sdi.eea.europa.eu/catalogue/srv/api/records/be2142b0-7dc4-42e3-afac-f7cc5f1a9ac6" target="_blank" rel="noopener">Natura 2000</a> site is reported separately so that any vegetation lost inside a designated protected area is visible immediately, rather than averaged into the buffer figure.</p>
+<h3>2.3 Water and tailings surface</h3>
+<p>The maximum and minimum seasonal surface area of standing water and wet tailings inside the polygon and the 500 m buffer, derived from a water index on Sentinel-2 and gap-filled with Sentinel-1 radar backscatter where cloud cover is persistent. The <a href="https://data.jrc.ec.europa.eu/dataset/jrc-gswe-global-surface-water-explorer-v1" target="_blank" rel="noopener">JRC Global Surface Water</a> record, built from Landsat imagery since 1984, establishes whether a water body on-site pre-dates the project.</p>
+<div class="eq-block">
+  W<sub>y</sub><sup>max</sup> = max<sub>t ∈ year y</sub> &nbsp;Σ<sub>p ∈ P ∪ B<sub>500</sub></sub> <strong>1</strong>[ ndwi(p, t) &gt; τ<sub>w</sub> ∨ s1_backscatter(p, t) &lt; τ<sub>r</sub> ]
+</div>
+<h3>2.4 Ground motion</h3>
+<p>For sites in Copernicus Participating States, the maximum absolute line-of-sight velocity recorded inside the polygon and the 500 m buffer by the <a href="https://land.copernicus.eu/en/products/european-ground-motion-service/egms-basic" target="_blank" rel="noopener">European Ground Motion Service</a>, expressed in millimetres per year.</p>
+<div class="eq-block">
+  G<sub>y</sub> = max<sub>p ∈ P ∪ B<sub>500</sub></sub> &nbsp;|v<sub>LOS</sub>(p, y)|
+</div>
+<p class="eq-note">Points with |v| above a stated threshold (8 mm/yr by default for tailings-dam contexts) are flagged for review. Sites in third countries carry a dash rather than a number because EGMS does not cover them.</p>
+<h3>2.5 Land converted</h3>
+<p>For every hectare that is now inside the disturbed footprint, the land-cover class it had in the baseline year. Reported as a breakdown by ESA WorldCover 2021 class (tree cover, grassland, cropland, wetland, shrubland, built-up, barren).</p>
+<div class="eq-block">
+  L<sub>c, y</sub> = A<sub>pixel</sub> × Σ<sub>p ∈ F<sub>y</sub></sub> &nbsp;<strong>1</strong>[ worldcover(p, 2021) = c ]
+</div>
+<h3>2.6 Downstream water colour, experimental</h3>
+<p>A turbidity proxy on Sentinel-2 red and near-infrared reflectance in water bodies that lie downstream of the site, tested for feasibility in the 2027 pilot. It is reported with an explicit experimental tag or not reported at all; it is not published as an operational indicator unless it validates against ground truth.</p>
+<div class="callout c-paper">
+  <p><strong>Alert thresholds.</strong> An alert is a disclosure, not a verdict. Each indicator carries a published threshold &theta;<sub>i</sub>; when the latest reading crosses it, Strata flags the site and names the indicator and the value. The language is "flagged for review, not a finding of non-compliance" everywhere, because surface change describes an observable; compliance is a legal determination that only the competent authority can make.</p>
+</div>
+<hr>
+<h2>3. Four use cases</h2>
+<p>Who the tool is for is as important as what it measures. Four audiences are the Lab's working design cases; each one has shaped a specific part of the interface and the methodology.</p>
+<figure>
+  <img src="/assets/img/strata-use-cases.svg?v=3d906aef" alt="Four stacked panels, each with an icon and a one-line summary: Permitting authority (map plus a tick), Lender or DFI (map plus a portfolio grid), Battery buyer or recycler (supply chain arrow), Civil society or local council (community figures). Each panel points into the Strata interface with an arrow at a specific part of the screen it concerns.">
+  <figcaption>Four audiences, each with a different starting question but the same underlying evidence.</figcaption>
+</figure>
+<h3>3.1 Permitting authorities and Single Points of Contact</h3>
+<p><strong>Starting question.</strong> Is this site's actual disturbance consistent with what the environmental impact assessment set out?</p>
+<p>Permitting staff and the national Single Points of Contact that the CRMA designates can compare a project's reported footprint against its latest surface measurement without commissioning new survey work. The three buffers mean an officer can see both the on-site expansion and whether it is bleeding into the surrounding landscape, including Natura 2000 overlap. The method and threshold values are published, so a defence or an objection to a Strata flag can be made in common language.</p>
+<h3>3.2 Lenders and development finance institutions</h3>
+<p><strong>Starting question.</strong> Across my portfolio, which sites moved most this year, and did any of them cross a threshold I care about?</p>
+<p>A lender holding exposure to a portfolio of projects across six or seven European countries cannot build its own satellite monitoring at a sensible cost. Strata gives it a consistent annual check across the full portfolio, under one method, with a short list of sites that moved materially since the last read. The CSV export per site plus the API in the Pro tier are built for this: due diligence files that cite the method version and the underlying imagery dates.</p>
+<h3>3.3 Battery makers, cathode producers and recyclers</h3>
+<p><strong>Starting question.</strong> The sites behind my supply contracts are now in scope for due diligence. Which of them is the one that will be asked about first?</p>
+<p>The due diligence obligations in the EU Battery Regulation apply from <a href="https://sustainablefutures.linklaters.com/post/102kymo/eu-regulation-delaying-due-diligence-rules-for-batteries-published-in-the-ojeu" target="_blank" rel="noopener">18 August 2027</a>. A buyer who ships cells or packs into the EU has to be able to describe the extraction and processing sites in its supply chain, with evidence. Strata screens those sites against a public baseline the buyer did not commission, which is what independent assurance means in practice. The site code system is designed to be referenced from a bill of materials.</p>
+<h3>3.4 Civil society, journalists and local councils</h3>
+<p><strong>Starting question.</strong> What has actually happened on the ground beside me since the project was granted a permit?</p>
+<p>Residents of a village beside a new pit, a journalist following a specific project, a local council assessing the cumulative pressure on a protected landscape all currently ask this with uneven access to evidence. Strata gives them the same read a lender gets, under the same method, and routes them to the method page and the data sources so the number can be challenged on its own terms. The free tier covers every function needed to do this.</p>
+<hr>
+<h2>4. The interface, annotated</h2>
+<p>The screens below are mock-ups of the demo release; the live version is at <a href="/strata-demo">/strata-demo</a>.</p>
+<h3>4.1 The map</h3>
+<figure>
+  <img src="/assets/img/strata-1-sign-in.svg?v=a445c9db" alt="Strata sign-in mock-up on a dark panel: 'Know what changed on the ground', with eight numbered functions and a Free / Pro plan comparison." class="diagram">
+  <figcaption>The free tier covers every indicator, every chart, data export and the right of reply.</figcaption>
+</figure>
+<figure>
+  <img src="/assets/img/strata-2-map.svg?v=9db707dc" alt="Strata map screen: left column with totals, filters and the site list; central map of Europe with status-coloured dots sized by footprint; right-hand panel showing the French lithium site in detail." class="diagram">
+  <figcaption>Pins carry status in colour and footprint in size. Filters dim non-matching pins; the active site takes a ring.</figcaption>
+</figure>
+<h3>4.2 A site page</h3>
+<figure>
+  <img src="/assets/img/strata-3-site-detail.svg?v=9a9d1c81" alt="Strata site page: an operating site with an open alert, four stat tiles, a disturbed-footprint chart with baseline dashed and works-start marked, and a baseline-against-latest footprint outline with a 1 km scale bar." class="diagram">
+  <figcaption>Alerts name the threshold and are plainly tagged "flagged for review, not a finding of non-compliance." Promoter responses are linked from the page where they have been received.</figcaption>
+</figure>
+<hr>
+<h2>5. Partners</h2>
+<p>Strata is led by <strong>Transitions Lab</strong> in Delft, which writes the method, runs the field research that sits beside the satellite record and publishes the results. Two partners work on the project with us.</p>
+<div class="strata-partners">
+  <div class="strata-partner">
+    <div class="strata-partner-logo"><img src="/assets/logos/logo-pyropower.png" alt="Pyropower"></div>
+    <h3>Pyropower</h3>
+    <p>Pyropower contributes operating experience from the materials-and-energy side of the critical raw materials transition. The company's work on open-source thermochemical conversion gave the project team a working view of what a processing site actually looks like inside the fence, which has shaped the indicator thresholds for processing-stage sites and the land-cover classes the "built-up" category needs to split into when a smelter is involved.</p>
+  </div>
+  <div class="strata-partner">
+    <div class="strata-partner-logo"><img src="/assets/logos/logo-social-innovation-europe.png" alt="Social Innovation Europe"></div>
+    <h3>Social Innovation Europe</h3>
+    <p>Social Innovation Europe anchors Strata's reach into the communities and civil society organisations who live with new extractive sites. Their network across EU Member States and the Western Balkans is how the Lab tests whether a reader at a local council or a journalist in a Natura 2000 municipality can actually use the tool for the question in front of them, and how the right-of-reply mechanism is being specified in cooperation with promoters.</p>
+  </div>
+</div>
+<div class="callout c-paper callout--serif strata-testimonial">
+  <h3>From a FIERCE project reviewer</h3>
+  <blockquote>
+    <p>"The thing that made Strata credible to us is that the method sits on the page beside the numbers. Our site operators disagreed with one of the thresholds, and the tool let them say so in a way that linked straight to the sheet the threshold was defined on. That is what independent monitoring looks like when it actually works, and it is why we moved it into the project's deliverables list."</p>
+    <footer>Reviewer, FIERCE project (Horizon Europe)</footer>
+  </blockquote>
+</div>
+<p class="eq-note">Strata is supported by the <strong>FIERCE project</strong> (Grant Agreement 101177496) under Horizon Europe. The EU emblem and acknowledgement will appear on this page once the Sub-grant Agreement is countersigned (SGA Article 18).</p>
+<hr>
+<h2>6. Governance and limits</h2>
+<p>The method is version-controlled and published in full. The pilot runs on six sites selected to cover an extraction site before construction, operating extraction with tailings, a processing or recycling plant and one site outside the European Union. Each promoter is contacted before a site page is first published and may submit a factual response, which is linked from the page.</p>
+<p>Strata does not measure emissions, water chemistry, dust, noise or community outcomes, and it cannot establish permit compliance. Ten-metre imagery misses small features and early earthworks. Ground motion data from EGMS covers Copernicus Participating States only, so third-country sites carry no ground motion indicator. These limits are stated on every page where the numbers appear, not only here.</p>
+<hr>
+<h2>7. Open questions the pilot will answer</h2>
+<ul>
+<li>At what threshold does the vegetation-loss indicator produce a materially false flag in agricultural seasons, and what is the appropriate per-climate-zone calibration?</li>
+<li>Does the experimental downstream water-colour indicator validate well enough against ground truth to publish operationally?</li>
+<li>What is the right routing between a Strata flag and the Single Point of Contact in each Member State, and does the right-of-reply mechanism scale beyond a handful of sites?</li>
+<li>What is the smallest set of indicators that satisfies the EU Battery Regulation due diligence obligations without producing a false sense of comprehensiveness?</li>
+</ul>
+<p>The 2027 pilot is designed to answer each of these in public, and the method page will be revised accordingly after.</p>
+
+      
+    </div>
+  </div>
+</section>
+
+<section class="light article-cta-band">
+  <div class="wrap-prose">
+    <div class="prose">
+      <div class="contact-cta-programme">
+        <h3>Connect with the Lab</h3>
+        <p class="lede">If this reads close to a decision you are weighing, we would like to hear about it. A short note is enough to start.</p>
+        <div class="contact-options">
+          <a href="/entering-a-new-context"><strong>Entering a new context</strong><span>A first read of a market, technology or region.</span></a>
+          <a href="/measuring-change"><strong>Measuring change</strong><span>Field measurement that connects action to outcome.</span></a>
+          <a href="/reporting-to-funders"><strong>Reporting to funders</strong><span>Evidence packaged for the reader who will act on it.</span></a>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="cta-primary">Start a conversation &rarr;</a>
+          <a href="/case-studies" class="cta-secondary">See case studies</a>
+          <a href="/articles" class="cta-secondary">Read the articles</a>
+        </div>
+      </div>
+      <p class="lab-posture-note">The Lab is an independent research team, not an advocacy organisation. We do not campaign, endorse products, or accept commissions where a finding is expected in advance. Where a partner&#39;s own theory of change is what needs testing, that is a legitimate engagement, and the Lab tests it honestly.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <a href="/" class="brand" aria-label="Transitions Lab, home"><img src="/assets/logo.png" alt="Transitions Lab" class="brand-logo brand-logo--footer"></a>
+      <p class="mission">An independent research team that studies how technologies meet real people, and turns what it finds into evidence institutions and innovators can act on.</p>
+      <form class="footer-subscribe" data-source="footer" novalidate>
+        <label for="footer-subscribe-email" class="fs-label">New essays and findings, straight to your inbox.</label>
+        <div class="fs-row">
+          <input id="footer-subscribe-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+          <button type="submit" class="fs-btn">Subscribe</button>
+        </div>
+        <p class="fs-note" aria-live="polite"></p>
+      </form>
+    </div>
+    <div>
+      <h4>What we do</h4>
+      <a href="/what-we-do">Overview</a>
+      <a href="/entering-a-new-context">Entering a new context</a>
+      <a href="/measuring-change">Measuring change</a>
+      <a href="/reporting-to-funders">Reporting to funders</a>
+      <a href="/how-it-works">How it works</a>
+    </div>
+    <div>
+      <h4>Methods</h4>
+      <a href="/field-research">Field research</a>
+      <a href="/impact-measurement">Impact measurement</a>
+      <a href="/interview-guide">Interview guide</a>
+      <a href="/qualitative-vs-quantitative">Qualitative vs quantitative</a>
+      <a href="/impact-tracking-template">Impact-tracking template</a>
+    </div>
+    <div>
+      <h4>Research</h4>
+      <a href="/expertise">Programmes</a>
+      <a href="/case-studies">Case studies</a>
+      <a href="/articles">Articles</a>
+      <a href="/resources">Resources</a>
+      <a href="/sdgs">Research by SDG</a>
+      <a href="/brw">BReW framework</a>
+      <a href="/readiness-levels">TRL &amp; SRL</a>
+    </div>
+    <div>
+      <h4>The Lab</h4>
+      <a href="/about">About</a>
+      <a href="/who-we-serve">Who we serve</a>
+      <a href="/for-funders">For Funders</a>
+      <a href="/capability-statement">Capability statement</a>
+      <a href="/contact">Contact</a>
+      <a href="https://www.linkedin.com/company/transitions-lab-org/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-lang">
+      <span class="footer-lang-label">Language</span>
+      <div class="lang lang--footer">
+        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="lang-code">EN</span><svg class="lang-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-menu" hidden role="menu">
+          <a class="lang-option is-active" href="#" data-lang="en" role="menuitem" aria-current="true">English</a>
+          <a class="lang-option" href="#" data-lang="nl" role="menuitem">Nederlands</a>
+          <a class="lang-option" href="#" data-lang="de" role="menuitem">Deutsch</a>
+          <a class="lang-option" href="#" data-lang="fr" role="menuitem">Français</a>
+          <a class="lang-option" href="#" data-lang="es" role="menuitem">Español</a>
+          <a class="lang-option" href="#" data-lang="it" role="menuitem">Italiano</a>
+          <a class="lang-option" href="#" data-lang="pt" role="menuitem">Português</a>
+          <a class="lang-option" href="#" data-lang="pl" role="menuitem">Polski</a>
+          <a class="lang-option" href="#" data-lang="sv" role="menuitem">Svenska</a>
+          <a class="lang-option" href="#" data-lang="da" role="menuitem">Dansk</a>
+          <a class="lang-option" href="#" data-lang="no" role="menuitem">Norsk</a>
+          <a class="lang-option" href="#" data-lang="fi" role="menuitem">Suomi</a>
+          <a class="lang-option" href="#" data-lang="is" role="menuitem">Íslenska</a>
+          <a class="lang-option" href="#" data-lang="cs" role="menuitem">Čeština</a>
+          <a class="lang-option" href="#" data-lang="sk" role="menuitem">Slovenčina</a>
+          <a class="lang-option" href="#" data-lang="sl" role="menuitem">Slovenščina</a>
+          <a class="lang-option" href="#" data-lang="hu" role="menuitem">Magyar</a>
+          <a class="lang-option" href="#" data-lang="ro" role="menuitem">Română</a>
+          <a class="lang-option" href="#" data-lang="bg" role="menuitem">Български</a>
+          <a class="lang-option" href="#" data-lang="hr" role="menuitem">Hrvatski</a>
+          <a class="lang-option" href="#" data-lang="sr" role="menuitem">Srpski</a>
+          <a class="lang-option" href="#" data-lang="el" role="menuitem">Ελληνικά</a>
+          <a class="lang-option" href="#" data-lang="lt" role="menuitem">Lietuvių</a>
+          <a class="lang-option" href="#" data-lang="lv" role="menuitem">Latviešu</a>
+          <a class="lang-option" href="#" data-lang="et" role="menuitem">Eesti</a>
+          <a class="lang-option" href="#" data-lang="ca" role="menuitem">Català</a>
+          <a class="lang-option" href="#" data-lang="uk" role="menuitem">Українська</a>
+          <a class="lang-option" href="#" data-lang="ru" role="menuitem">Русский</a>
+          <a class="lang-option" href="#" data-lang="tr" role="menuitem">Türkçe</a>
+          <a class="lang-option" href="#" data-lang="ar" role="menuitem">العربية</a>
+          <a class="lang-option" href="#" data-lang="he" role="menuitem">עברית</a>
+          <a class="lang-option" href="#" data-lang="fa" role="menuitem">فارسی</a>
+          <a class="lang-option" href="#" data-lang="ur" role="menuitem">اردو</a>
+          <a class="lang-option" href="#" data-lang="hi" role="menuitem">हिन्दी</a>
+          <a class="lang-option" href="#" data-lang="bn" role="menuitem">বাংলা</a>
+          <a class="lang-option" href="#" data-lang="ta" role="menuitem">தமிழ்</a>
+          <a class="lang-option" href="#" data-lang="te" role="menuitem">తెలుగు</a>
+          <a class="lang-option" href="#" data-lang="mr" role="menuitem">मराठी</a>
+          <a class="lang-option" href="#" data-lang="pa" role="menuitem">ਪੰਜਾਬੀ</a>
+          <a class="lang-option" href="#" data-lang="gu" role="menuitem">ગુજરાતી</a>
+          <a class="lang-option" href="#" data-lang="zh-CN" role="menuitem">简体中文</a>
+          <a class="lang-option" href="#" data-lang="zh-TW" role="menuitem">繁體中文</a>
+          <a class="lang-option" href="#" data-lang="ja" role="menuitem">日本語</a>
+          <a class="lang-option" href="#" data-lang="ko" role="menuitem">한국어</a>
+          <a class="lang-option" href="#" data-lang="vi" role="menuitem">Tiếng Việt</a>
+          <a class="lang-option" href="#" data-lang="th" role="menuitem">ภาษาไทย</a>
+          <a class="lang-option" href="#" data-lang="id" role="menuitem">Bahasa Indonesia</a>
+          <a class="lang-option" href="#" data-lang="ms" role="menuitem">Bahasa Melayu</a>
+          <a class="lang-option" href="#" data-lang="tl" role="menuitem">Filipino</a>
+          <a class="lang-option" href="#" data-lang="sw" role="menuitem">Kiswahili</a>
+          <a class="lang-option" href="#" data-lang="am" role="menuitem">አማርኛ</a>
+          <a class="lang-option" href="#" data-lang="ha" role="menuitem">Hausa</a>
+          <a class="lang-option" href="#" data-lang="yo" role="menuitem">Yorùbá</a>
+          <a class="lang-option" href="#" data-lang="ig" role="menuitem">Igbo</a>
+          <a class="lang-option" href="#" data-lang="zu" role="menuitem">isiZulu</a>
+          <a class="lang-option" href="#" data-lang="xh" role="menuitem">isiXhosa</a>
+          <a class="lang-option" href="#" data-lang="af" role="menuitem">Afrikaans</a>
+          <a class="lang-option" href="#" data-lang="rw" role="menuitem">Kinyarwanda</a>
+          <a class="lang-option" href="#" data-lang="so" role="menuitem">Soomaali</a>
+        </div>
+      </div>
+      <a href="#" class="footer-lang-reset" data-lang-reset hidden>Show original</a>
+    </div>
+    <div class="legal">
+      <span>© Transitions Lab B.V. 2026 · Delft, The Netherlands · KVK 42170233</span>
+      <span><a href="/ethics">Research ethics</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/cookies">Cookies</a> · <a href="#" data-consent-manage>Cookie preferences</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Translate widget: renders a hidden gadget the JS in
+     site.js drives. Free, no API key required. Live languages
+     translate automatically; ones marked "Soon" are held back so
+     the layout isn't broken by RTL / CJK edge cases yet. -->
+<div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  function googleTranslateElementInit(){
+    if (!window.google || !google.translate) return;
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,nl,de,fr,es,it,pt,pl,sv,da',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+
+<div id="cookie-banner" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>A note on cookies.</strong>
+      <p>The Lab uses privacy-respecting analytics (page views, no personal identifiers). They load only if you accept. See our <a href="/cookies">cookie policy</a> for details, and change your mind any time via <em>Cookie preferences</em> in the footer.</p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-reject" class="cookie-btn cookie-btn-ghost" type="button">Reject</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn-primary" type="button">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/consent.js?v=ef374375" defer></script>
+<script src="/assets/reader.js?v=1f800e75" defer></script>
+<script src="/assets/site.js?v=71388242" defer></script>
+</body>
+</html>

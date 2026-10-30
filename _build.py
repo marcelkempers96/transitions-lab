@@ -41,6 +41,7 @@ ASSET_JS_V = _asset_hash("assets/site.js")
 ASSET_CSS_V = _asset_hash("assets/theme.css")
 ASSET_STRATA_CSS_V = _asset_hash("assets/strata-demo.css")
 ASSET_STRATA_JS_V  = _asset_hash("assets/strata-demo.js")
+ASSET_STRATA_GEO_V = _asset_hash("assets/strata-europe-geo.js")
 ASSET_CONSENT_V = _asset_hash("assets/consent.js")
 ASSET_READER_V = _asset_hash("assets/reader.js")
 
@@ -414,6 +415,7 @@ HERO_COLOR: dict[str, str] = {
     "strata-method":          "forest",
     "strata-data-sources":    "forest",
     "strata-app":             "forest",
+    "strata-paper":           "forest",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -571,6 +573,7 @@ NO_BYLINE_SLUGS: set[str] = {
     "strata-method",
     "strata-data-sources",
     "strata-app",
+    "strata-paper",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -710,6 +713,10 @@ META: dict[str, dict[str, str]] = {
     "strata-app": {
         "title": "The Strata web tool: open it, click a dot, see what changed | Transitions Lab",
         "description": "A short tour of the Strata web tool: free sign-in, the site map, the site page, what is free and what is Pro, and the partners building it with us. Demo release 0.1.",
+    },
+    "strata-paper": {
+        "title": "Strata companion paper: method, equations, use cases, partners | Transitions Lab",
+        "description": "A reading-length companion to Strata: the problem it is built for, the equations that define each indicator, four use cases with named audiences, and the partners who stand behind the tool.",
     },
     "insight-where-transition-minerals-go": {
         "title": "Where transition minerals actually go | Transitions Lab",
@@ -1837,6 +1844,7 @@ CRUMB_PARENT: dict[str, str | None] = {
     "strata-method":         "resources",
     "strata-data-sources":   "resources",
     "strata-app":            "resources",
+    "strata-paper":          "resources",
 }
 
 CRUMB_LABELS: dict[str, str] = {
@@ -2694,6 +2702,7 @@ def build_strata_demo_shell() -> str:
 </head>
 <body class="sd-standalone">
   <div id="strata-demo"></div>
+  <script src="/assets/strata-europe-geo.js?v={ASSET_STRATA_GEO_V}" defer></script>
   <script src="/assets/strata-demo.js?v={ASSET_STRATA_JS_V}" defer></script>
 </body>
 </html>

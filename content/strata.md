@@ -14,6 +14,7 @@
   <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-method">Method</a>
   <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-paper">Companion paper</a>
 </nav>
 
 Europe has designated 93 Strategic Projects inside the Union and 13 in third countries under the [Critical Raw Materials Act](https://commission.europa.eu/topics/competitiveness/green-deal-industrial-plan/european-critical-raw-materials-act_en), and the Commission reported on 9 October 2026 that 25 first-round projects had completed environmental impact assessments and 17 held construction permits ([European Commission, IP/26/2113](https://europa.eu/newsroom/ecpc-failover/pdf/ip-26-2113_en.pdf)). Once excavation starts, the undisturbed landscape can no longer be measured, and the only record of it usually sits in an impact assessment commissioned by the promoter, written to a site-specific method and rarely repeated after permitting. Strata builds a public, comparable record instead: one satellite baseline per site before construction, and the same indicators recomputed every year afterwards.

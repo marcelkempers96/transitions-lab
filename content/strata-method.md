@@ -12,6 +12,7 @@
   <a href="/strata-demo">Launch app &rarr;</a>
   <strong class="is-current">Method</strong>
   <a href="/strata-data-sources">Data sources</a>
+  <a href="/strata-paper">Companion paper</a>
 </nav>
 
 Strata's value depends on one property above all: that a number reported for a lithium project in Portugal means exactly what the same number means for a nickel project in Finland. This page sets out the rules that make that true, in the order the pipeline applies them, and it will be revised in public after the 2027 pilot.

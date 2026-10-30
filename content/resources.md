@@ -110,9 +110,9 @@ A fill-in framework for measuring the before-and-after impact of a European proj
 
 [**Strata — satellite baselines for critical raw materials sites →**](/strata)
 
-[<span class="format-badge fmt-web">Web tool &middot; in development</span>](/strata-app)
+[<span class="format-badge fmt-web">Full-screen app · 65 demo sites</span>](/strata-demo)
 
-An independent, open record of what happens on the ground at Europe's critical raw materials Strategic Projects, from a pre-construction baseline through every year of operation. Six annual indicators (disturbed footprint, buffer vegetation loss, water and tailings extent, ground motion, land converted, downstream water colour), one method for every site, built entirely on Copernicus data. [Method](/strata-method) and [data sources](/strata-data-sources) published openly.
+An independent, open record of what happens on the ground at Europe's critical raw materials Strategic Projects, from a pre-construction baseline through every year of operation. Six annual indicators (disturbed footprint, buffer vegetation loss, water and tailings extent, ground motion, land converted, downstream water colour), one method for every site, built entirely on Copernicus data. [Launch the app](/strata-demo), read the [companion paper with equations and use cases](/strata-paper), the [method](/strata-method) or the [data sources](/strata-data-sources).
 
 <!-- § 5 / Interactive tools — Mineral Flows Map + guide are currently
      hidden from public discovery while the review runs. Restore the

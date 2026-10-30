@@ -37,204 +37,74 @@
   // ─────────────────────────────────────────────────────────────
   // Data
   // ─────────────────────────────────────────────────────────────
-  var SITES = [
-    {
-      code:'FI-N1', country:'FI',
-      name:'Nickel and cobalt mine, eastern Finland',
-      materials:['nickel','cobalt'],
-      stage:'integrated', status:'operating',
-      coord:{lon:28.0, lat:63.6},
-      baselineYear:2019, worksStarted:2008,
-      series:[['2019',1210],['2020',1245],['2021',1278],['2022',1310],['2023',1335],['2024',1358],['2025',1375],['2026',1389]],
-      indicators:{vegLoss5kmPct:4.1, natura2000Pct:0.9, waterTailingsHa:182, groundMotionMmYr:8.3,
-        landConverted:{'Tree cover':112,'Grassland':44,'Wetland':23}},
-      alert:{title:'Ground motion above 8 mm/yr at tailings dam', body:'Flagged for review, not a finding of non-compliance.'},
-      egmsCovered:true,
-      promoterResponse:'Received, linked from site page.',
-    },
-    {
-      code:'SE-G1', country:'SE',
-      name:'Graphite mine, northern Sweden',
-      materials:['graphite'],
-      stage:'extraction', status:'under-construction',
-      coord:{lon:20.3, lat:67.1},
-      baselineYear:2023, worksStarted:2025,
-      series:[['2023',1],['2024',2],['2025',12],['2026',33]],
-      indicators:{vegLoss5kmPct:2.8, natura2000Pct:0.0, waterTailingsHa:1.2, groundMotionMmYr:2.1,
-        landConverted:{'Tree cover':8,'Shrubland':21,'Cropland':4}},
-      alert:{title:'Buffer vegetation loss above threshold', body:'Vegetation loss within 5 km exceeds the 2.5% threshold. Flagged for review, not a finding of non-compliance.'},
-      egmsCovered:true,
-    },
-    {
-      code:'SE-R1', country:'SE',
-      name:'Rare earths project, northern Sweden',
-      materials:['rare earths'],
-      stage:'extraction', status:'pre-construction',
-      coord:{lon:20.8, lat:67.9},
-      baselineYear:2024, worksStarted:null,
-      series:[['2024',0],['2025',0],['2026',0]],
-      indicators:{vegLoss5kmPct:0.0, natura2000Pct:12.4, waterTailingsHa:0, groundMotionMmYr:0.4,
-        landConverted:{}},
-      egmsCovered:true,
-    },
-    {
-      code:'NO-R1', country:'NO',
-      name:'Rare earths project, southern Norway',
-      materials:['rare earths'],
-      stage:'extraction', status:'pre-construction',
-      coord:{lon:9.3, lat:59.3},
-      baselineYear:2025, worksStarted:null,
-      series:[['2025',0],['2026',0]],
-      indicators:{vegLoss5kmPct:0.0, natura2000Pct:0.0, waterTailingsHa:0, groundMotionMmYr:0.5,
-        landConverted:{}},
-      egmsCovered:true,
-    },
-    {
-      code:'EE-R1', country:'EE',
-      name:'Rare earths processing plant, Sillamäe, Estonia',
-      materials:['rare earths'],
-      stage:'processing', status:'operating',
-      coord:{lon:27.4, lat:59.4},
-      baselineYear:2019, worksStarted:1998,
-      series:[['2019',40],['2020',40],['2021',41],['2022',41],['2023',42],['2024',42],['2025',42],['2026',42]],
-      indicators:{vegLoss5kmPct:0.3, natura2000Pct:0.0, waterTailingsHa:14, groundMotionMmYr:0.6,
-        landConverted:{'Built-up':3,'Grassland':1}},
-      egmsCovered:true,
-    },
-    {
-      code:'PL-C1', country:'PL',
-      name:'Copper smelter expansion, Lower Silesia',
-      materials:['copper'],
-      stage:'processing', status:'operating',
-      coord:{lon:16.2, lat:51.5},
-      baselineYear:2019, worksStarted:1972,
-      series:[['2019',324],['2020',328],['2021',330],['2022',334],['2023',340],['2024',368],['2025',395],['2026',412]],
-      indicators:{vegLoss5kmPct:1.2, natura2000Pct:0.0, waterTailingsHa:68, groundMotionMmYr:0.4,
-        landConverted:{'Cropland':54,'Built-up':22,'Grassland':12}},
-      alert:{title:'Water & tailings surface grew 15% year-on-year', body:'Flagged for review, not a finding of non-compliance.'},
-      egmsCovered:true,
-    },
-    {
-      code:'DE-L1', country:'DE',
-      name:'Lithium refining plant, Guben, Germany',
-      materials:['lithium'],
-      stage:'processing', status:'under-construction',
-      coord:{lon:14.7, lat:51.9},
-      baselineYear:2023, worksStarted:2025,
-      series:[['2023',2],['2024',4],['2025',12],['2026',24]],
-      indicators:{vegLoss5kmPct:0.4, natura2000Pct:0.0, waterTailingsHa:0.3, groundMotionMmYr:1.1,
-        landConverted:{'Built-up':16,'Cropland':6,'Grassland':2}},
-      egmsCovered:true,
-    },
-    {
-      code:'DE-B1', country:'DE',
-      name:'Battery cathode active materials plant, Schwarzheide',
-      materials:['battery materials'],
-      stage:'processing', status:'operating',
-      coord:{lon:13.8, lat:51.5},
-      baselineYear:2020, worksStarted:2020,
-      series:[['2020',58],['2021',62],['2022',68],['2023',71],['2024',74],['2025',76],['2026',78]],
-      indicators:{vegLoss5kmPct:0.6, natura2000Pct:0.0, waterTailingsHa:3, groundMotionMmYr:0.3,
-        landConverted:{'Built-up':14,'Cropland':6}},
-      egmsCovered:true,
-    },
-    {
-      code:'BE-C1', country:'BE',
-      name:'Cobalt refining and recycling, Olen',
-      materials:['cobalt'],
-      stage:'recycling', status:'operating',
-      coord:{lon:4.9, lat:51.2},
-      baselineYear:2019, worksStarted:1990,
-      series:[['2019',48],['2020',48],['2021',49],['2022',49],['2023',50],['2024',50],['2025',51],['2026',51]],
-      indicators:{vegLoss5kmPct:0.2, natura2000Pct:0.0, waterTailingsHa:4, groundMotionMmYr:0.9,
-        landConverted:{'Built-up':2,'Cropland':1}},
-      egmsCovered:true,
-    },
-    {
-      code:'FR-L1', country:'FR',
-      name:'Lithium extraction and refining, central France',
-      materials:['lithium'],
-      stage:'integrated', status:'under-construction',
-      coord:{lon:3.4, lat:46.2},
-      baselineYear:2023, worksStarted:2025,
-      series:[['2023',2],['2024',3],['2025',14],['2026',38]],
-      indicators:{vegLoss5kmPct:3.9, natura2000Pct:0.0, waterTailingsHa:2.1, groundMotionMmYr:1.4,
-        landConverted:{'Tree cover':18,'Cropland':12,'Grassland':6}},
-      egmsCovered:true,
-    },
-    {
-      code:'AT-L1', country:'AT',
-      name:'Lithium mine, Wolfsberg, Carinthia',
-      materials:['lithium'],
-      stage:'extraction', status:'pre-construction',
-      coord:{lon:14.9, lat:46.8},
-      baselineYear:2026, worksStarted:null,
-      series:[['2024',0],['2025',0],['2026',1]],
-      indicators:{vegLoss5kmPct:0.0, natura2000Pct:3.1, waterTailingsHa:0, groundMotionMmYr:0.5,
-        landConverted:{'Tree cover':1}},
-      egmsCovered:true,
-    },
-    {
-      code:'RO-G1', country:'RO',
-      name:'Graphite project, Baia de Fier, Romania',
-      materials:['graphite'],
-      stage:'extraction', status:'pre-construction',
-      coord:{lon:23.9, lat:45.3},
-      baselineYear:2025, worksStarted:null,
-      series:[['2025',0],['2026',0]],
-      indicators:{vegLoss5kmPct:0.0, natura2000Pct:4.2, waterTailingsHa:0, groundMotionMmYr:0.6,
-        landConverted:{}},
-      egmsCovered:true,
-    },
-    {
-      code:'PT-L1', country:'PT',
-      name:'Lithium project, northern Portugal',
-      materials:['lithium'],
-      stage:'extraction', status:'under-construction',
-      coord:{lon:-7.7, lat:41.8},
-      baselineYear:2024, worksStarted:2026,
-      series:[['2024',1],['2025',4],['2026',14]],
-      indicators:{vegLoss5kmPct:1.1, natura2000Pct:0.3, waterTailingsHa:0.7, groundMotionMmYr:0.8,
-        landConverted:{'Shrubland':7,'Cropland':4,'Grassland':3}},
-      egmsCovered:true,
-    },
-    {
-      code:'ES-W1', country:'ES',
-      name:'Tungsten mine, Barruecopardo, Spain',
-      materials:['tungsten'],
-      stage:'integrated', status:'operating',
-      coord:{lon:-6.6, lat:40.9},
-      baselineYear:2019, worksStarted:2015,
-      series:[['2019',98],['2020',102],['2021',108],['2022',113],['2023',118],['2024',122],['2025',126],['2026',128]],
-      indicators:{vegLoss5kmPct:1.6, natura2000Pct:0.0, waterTailingsHa:34, groundMotionMmYr:1.9,
-        landConverted:{'Cropland':17,'Grassland':11,'Shrubland':2}},
-      egmsCovered:true,
-    },
-    {
-      code:'GR-M1', country:'GR',
-      name:'Magnesium (magnesite) complex, central Greece',
-      materials:['magnesium'],
-      stage:'integrated', status:'operating',
-      coord:{lon:23.1, lat:40.9},
-      baselineYear:2019, worksStarted:1959,
-      series:[['2019',228],['2020',231],['2021',234],['2022',236],['2023',238],['2024',240],['2025',242],['2026',243]],
-      indicators:{vegLoss5kmPct:1.9, natura2000Pct:0.2, waterTailingsHa:19, groundMotionMmYr:1.1,
-        landConverted:{'Shrubland':10,'Tree cover':3,'Grassland':2}},
-      egmsCovered:true,
-    },
-    {
-      code:'MA-C1', country:'MA',
-      name:'Cobalt and copper mine, Bou-Azzer, Morocco',
-      materials:['cobalt','copper'],
-      stage:'integrated', status:'operating',
-      coord:{lon:-6.8, lat:30.5},
-      baselineYear:2019, worksStarted:1934,
-      series:[['2019',172],['2020',174],['2021',178],['2022',182],['2023',184],['2024',186],['2025',188],['2026',189]],
-      indicators:{vegLoss5kmPct:0.2, natura2000Pct:0.0, waterTailingsHa:21, groundMotionMmYr:null,
-        landConverted:{'Barren':10,'Shrubland':6,'Cropland':1}},
-      egmsCovered:false,
-    },
+var SITES = [
+    {"code":"FR-L1","country":"FR","name":"Lithium extraction and refining, Massif Central","materials":["lithium"],"stage":"integrated","status":"under-construction","coord":{"lon":3.42,"lat":46.21},"baselineYear":2023,"worksStarted":2025,"series":[["2023",0],["2024",0],["2025",19],["2026",38]],"indicators":{"vegLoss5kmPct":0.5,"natura2000Pct":0.0,"waterTailingsHa":4,"groundMotionMmYr":0.8,"landConverted":{"Grassland":11,"Cropland":9,"Tree cover":10,"Shrubland":6}},"egmsCovered":true},
+    {"code":"DE-L1","country":"DE","name":"Lithium refining plant, Guben","materials":["lithium"],"stage":"processing","status":"under-construction","coord":{"lon":14.72,"lat":51.95},"baselineYear":2023,"worksStarted":2025,"series":[["2023",0],["2024",0],["2025",12],["2026",24]],"indicators":{"vegLoss5kmPct":0.3,"natura2000Pct":0.0,"waterTailingsHa":0,"groundMotionMmYr":1.4,"landConverted":{"Built-up":12,"Cropland":6,"Grassland":5}},"egmsCovered":true},
+    {"code":"DE-L2","country":"DE","name":"Lithium geothermal brine extraction, Upper Rhine","materials":["lithium"],"stage":"extraction","status":"under-construction","coord":{"lon":8.14,"lat":49.14},"baselineYear":2024,"worksStarted":2026,"series":[["2024",0],["2025",0],["2026",6]],"indicators":{"vegLoss5kmPct":0.1,"natura2000Pct":0.2,"waterTailingsHa":1,"groundMotionMmYr":2.1,"landConverted":{"Grassland":3,"Shrubland":3,"Tree cover":3,"Cropland":1}},"egmsCovered":true},
+    {"code":"DE-L3","country":"DE","name":"Lithium hydroxide refinery, Bitterfeld","materials":["lithium"],"stage":"processing","status":"operating","coord":{"lon":12.33,"lat":51.63},"baselineYear":2022,"worksStarted":2022,"series":[["2022",25],["2023",31],["2024",36],["2025",41],["2026",48]],"indicators":{"vegLoss5kmPct":0.7,"natura2000Pct":0.9,"waterTailingsHa":4,"groundMotionMmYr":1.9,"landConverted":{"Built-up":26,"Cropland":13,"Grassland":8}},"egmsCovered":true},
+    {"code":"DE-L4","country":"DE","name":"Zinnwald lithium-mica mine","materials":["lithium"],"stage":"extraction","status":"pre-construction","coord":{"lon":13.75,"lat":50.74},"baselineYear":2025,"worksStarted":null,"series":[["2025",0],["2026",2]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":3.3,"waterTailingsHa":0,"groundMotionMmYr":1.3,"landConverted":{}},"egmsCovered":true},
+    {"code":"AT-L1","country":"AT","name":"Lithium mine, Wolfsberg, Carinthia","materials":["lithium"],"stage":"extraction","status":"pre-construction","coord":{"lon":14.84,"lat":46.84},"baselineYear":2026,"worksStarted":null,"series":[["2026",1]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":3.7,"waterTailingsHa":0,"groundMotionMmYr":1.3,"landConverted":{}},"egmsCovered":true},
+    {"code":"ES-L1","country":"ES","name":"Lithium mine, San José, Extremadura","materials":["lithium"],"stage":"extraction","status":"pre-construction","coord":{"lon":-6.37,"lat":39.47},"baselineYear":2024,"worksStarted":null,"series":[["2024",0],["2025",0],["2026",3]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":1.2,"waterTailingsHa":0,"groundMotionMmYr":0.8,"landConverted":{}},"egmsCovered":true},
+    {"code":"ES-L2","country":"ES","name":"Lithium refinery, Caceres","materials":["lithium"],"stage":"processing","status":"pre-construction","coord":{"lon":-6.37,"lat":39.49},"baselineYear":2025,"worksStarted":null,"series":[["2025",0],["2026",1]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":1.7,"waterTailingsHa":0,"groundMotionMmYr":1.1,"landConverted":{}},"egmsCovered":true},
+    {"code":"PT-L1","country":"PT","name":"Lithium mine, Barroso, northern Portugal","materials":["lithium"],"stage":"extraction","status":"under-construction","coord":{"lon":-7.71,"lat":41.8},"baselineYear":2024,"worksStarted":2026,"series":[["2024",0],["2025",0],["2026",7]],"indicators":{"vegLoss5kmPct":0.1,"natura2000Pct":0.5,"waterTailingsHa":1,"groundMotionMmYr":0.9,"landConverted":{"Grassland":5,"Shrubland":3,"Tree cover":3,"Cropland":1}},"egmsCovered":true},
+    {"code":"PT-L2","country":"PT","name":"Lithium project, Sepeda, north-east Portugal","materials":["lithium"],"stage":"extraction","status":"pre-construction","coord":{"lon":-7.49,"lat":41.73},"baselineYear":2025,"worksStarted":null,"series":[["2025",0],["2026",2]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":4.4,"waterTailingsHa":0,"groundMotionMmYr":0.5,"landConverted":{}},"egmsCovered":true},
+    {"code":"FI-L1","country":"FI","name":"Lithium concentrator and refinery, Keliber","materials":["lithium"],"stage":"integrated","status":"under-construction","coord":{"lon":23.4,"lat":63.7},"baselineYear":2022,"worksStarted":2024,"series":[["2022",0],["2023",0],["2024",32],["2025",64],["2026",96]],"indicators":{"vegLoss5kmPct":1.0,"natura2000Pct":4.6,"waterTailingsHa":13,"groundMotionMmYr":1.5,"landConverted":{"Tree cover":53,"Wetland":20,"Grassland":14,"Shrubland":8}},"egmsCovered":true},
+    {"code":"CZ-L1","country":"CZ","name":"Lithium mine, Cínovec","materials":["lithium"],"stage":"extraction","status":"pre-construction","coord":{"lon":13.78,"lat":50.72},"baselineYear":2025,"worksStarted":null,"series":[["2025",0],["2026",2]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":0.2,"waterTailingsHa":0,"groundMotionMmYr":0.7,"landConverted":{}},"egmsCovered":true},
+    {"code":"SE-L1","country":"SE","name":"Lithium brine project, Vilhelmina","materials":["lithium"],"stage":"extraction","status":"pre-construction","coord":{"lon":16.65,"lat":64.63},"baselineYear":2026,"worksStarted":null,"series":[["2026",0]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":1.6,"waterTailingsHa":0,"groundMotionMmYr":0.6,"landConverted":{}},"egmsCovered":true},
+    {"code":"SE-R1","country":"SE","name":"Per Geijer rare earths deposit, Kiruna","materials":["rare earths"],"stage":"extraction","status":"pre-construction","coord":{"lon":20.21,"lat":67.85},"baselineYear":2024,"worksStarted":null,"series":[["2024",0],["2025",0],["2026",0]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":5.7,"waterTailingsHa":0,"groundMotionMmYr":1.4,"landConverted":{}},"egmsCovered":true},
+    {"code":"SE-R2","country":"SE","name":"Norra Kärr rare earths project","materials":["rare earths"],"stage":"extraction","status":"pre-construction","coord":{"lon":14.56,"lat":57.72},"baselineYear":2025,"worksStarted":null,"series":[["2025",0],["2026",0]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":1.9,"waterTailingsHa":0,"groundMotionMmYr":1.1,"landConverted":{}},"egmsCovered":true},
+    {"code":"NO-R1","country":"NO","name":"Rare earths project, Fen Complex, Telemark","materials":["rare earths"],"stage":"extraction","status":"pre-construction","coord":{"lon":9.29,"lat":59.26},"baselineYear":2025,"worksStarted":null,"series":[["2025",0],["2026",0]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":2.4,"waterTailingsHa":0,"groundMotionMmYr":1.4,"landConverted":{}},"egmsCovered":true},
+    {"code":"EE-R1","country":"EE","name":"Rare earths processing plant, Sillamäe","materials":["rare earths"],"stage":"processing","status":"operating","coord":{"lon":27.76,"lat":59.4},"baselineYear":2019,"worksStarted":1998,"series":[["2019",34],["2020",35],["2021",36],["2022",38],["2023",38],["2024",40],["2025",41],["2026",42]],"indicators":{"vegLoss5kmPct":0.4,"natura2000Pct":6.0,"waterTailingsHa":2,"groundMotionMmYr":0.5,"landConverted":{"Built-up":22,"Cropland":9,"Grassland":9}},"egmsCovered":true},
+    {"code":"FR-R1","country":"FR","name":"Rare earths separation plant, La Rochelle","materials":["rare earths"],"stage":"processing","status":"operating","coord":{"lon":-1.15,"lat":46.16},"baselineYear":2019,"worksStarted":1948,"series":[["2019",20],["2020",19],["2021",20],["2022",20],["2023",22],["2024",22],["2025",23],["2026",24]],"indicators":{"vegLoss5kmPct":0.2,"natura2000Pct":1.3,"waterTailingsHa":1,"groundMotionMmYr":1.5,"landConverted":{"Built-up":13,"Cropland":6,"Grassland":4}},"egmsCovered":true},
+    {"code":"DE-R1","country":"DE","name":"Rare earths magnet alloy pilot, Hanau","materials":["rare earths"],"stage":"processing","status":"under-construction","coord":{"lon":8.92,"lat":50.13},"baselineYear":2024,"worksStarted":2025,"series":[["2024",0],["2025",2],["2026",5]],"indicators":{"vegLoss5kmPct":0.1,"natura2000Pct":0.6,"waterTailingsHa":0,"groundMotionMmYr":2.2,"landConverted":{"Built-up":3,"Cropland":1}},"egmsCovered":true},
+    {"code":"FI-N1","country":"FI","name":"Nickel and cobalt mine, Terrafame, Sotkamo","materials":["nickel","cobalt"],"stage":"integrated","status":"operating","coord":{"lon":28.0,"lat":63.95},"baselineYear":2019,"worksStarted":2008,"series":[["2019",1047],["2020",1096],["2021",1136],["2022",1192],["2023",1241],["2024",1281],["2025",1344],["2026",1389]],"indicators":{"vegLoss5kmPct":5.0,"natura2000Pct":0.8,"waterTailingsHa":111,"groundMotionMmYr":5.1,"landConverted":{"Tree cover":783,"Wetland":280,"Grassland":207,"Shrubland":117}},"egmsCovered":true,"alert":{"title":"Ground motion above 8 mm/yr at tailings dam","body":"Flagged for review, not a finding of non-compliance."}},
+    {"code":"FI-N2","country":"FI","name":"Nickel refinery, Harjavalta","materials":["nickel"],"stage":"processing","status":"operating","coord":{"lon":22.14,"lat":61.31},"baselineYear":2019,"worksStarted":1960,"series":[["2019",69],["2020",71],["2021",73],["2022",74],["2023",76],["2024",78],["2025",81],["2026",83]],"indicators":{"vegLoss5kmPct":0.7,"natura2000Pct":0.6,"waterTailingsHa":5,"groundMotionMmYr":0.9,"landConverted":{"Tree cover":49,"Wetland":15,"Grassland":10,"Shrubland":7}},"egmsCovered":true},
+    {"code":"GR-N1","country":"GR","name":"Nickel-cobalt processing, Larco, central Greece","materials":["nickel","cobalt"],"stage":"processing","status":"operating","coord":{"lon":23.17,"lat":38.8},"baselineYear":2019,"worksStarted":1963,"series":[["2019",120],["2020",122],["2021",125],["2022",130],["2023",132],["2024",134],["2025",138],["2026",142]],"indicators":{"vegLoss5kmPct":1.3,"natura2000Pct":0.4,"waterTailingsHa":9,"groundMotionMmYr":0.8,"landConverted":{"Built-up":76,"Cropland":33,"Grassland":32}},"egmsCovered":true},
+    {"code":"MK-N1","country":"MK","name":"Ferronickel smelter, Kavadarci","materials":["nickel"],"stage":"processing","status":"operating","coord":{"lon":22.0,"lat":41.44},"baselineYear":2019,"worksStarted":1980,"series":[["2019",70],["2020",72],["2021",74],["2022",75],["2023",77],["2024",80],["2025",81],["2026",84]],"indicators":{"vegLoss5kmPct":1.2,"natura2000Pct":0.8,"waterTailingsHa":4,"groundMotionMmYr":2.0,"landConverted":{"Built-up":51,"Cropland":18,"Grassland":14}},"egmsCovered":true},
+    {"code":"BE-C1","country":"BE","name":"Cobalt refining and recycling, Umicore Olen","materials":["cobalt"],"stage":"recycling","status":"operating","coord":{"lon":4.86,"lat":51.16},"baselineYear":2019,"worksStarted":1990,"series":[["2019",42],["2020",43],["2021",44],["2022",46],["2023",47],["2024",48],["2025",48],["2026",51]],"indicators":{"vegLoss5kmPct":0.5,"natura2000Pct":2.0,"waterTailingsHa":2,"groundMotionMmYr":0.7,"landConverted":{"Built-up":36,"Cropland":9,"Grassland":4}},"egmsCovered":true},
+    {"code":"FI-C1","country":"FI","name":"Cobalt sulphate refinery, BASF Harjavalta","materials":["cobalt"],"stage":"processing","status":"operating","coord":{"lon":22.15,"lat":61.32},"baselineYear":2020,"worksStarted":2021,"series":[["2020",17],["2021",20],["2022",22],["2023",26],["2024",28],["2025",30],["2026",34]],"indicators":{"vegLoss5kmPct":0.5,"natura2000Pct":3.5,"waterTailingsHa":3,"groundMotionMmYr":2.2,"landConverted":{"Tree cover":18,"Wetland":7,"Grassland":4,"Shrubland":3}},"egmsCovered":true},
+    {"code":"MA-C1","country":"MA","name":"Cobalt and copper mine, Bou-Azzer, Morocco","materials":["cobalt","copper"],"stage":"integrated","status":"operating","coord":{"lon":-6.82,"lat":30.52},"baselineYear":2019,"worksStarted":1934,"series":[["2019",158],["2020",163],["2021",169],["2022",171],["2023",176],["2024",179],["2025",183],["2026",189]],"indicators":{"vegLoss5kmPct":2.9,"natura2000Pct":0.8,"waterTailingsHa":28,"groundMotionMmYr":null,"landConverted":{"Barren":108,"Shrubland":57,"Cropland":22}},"egmsCovered":false},
+    {"code":"PL-C1","country":"PL","name":"Copper smelter expansion, Lower Silesia","materials":["copper"],"stage":"processing","status":"operating","coord":{"lon":16.2,"lat":51.5},"baselineYear":2019,"worksStarted":1972,"series":[["2019",350],["2020",358],["2021",368],["2022",373],["2023",385],["2024",394],["2025",405],["2026",412]],"indicators":{"vegLoss5kmPct":5.0,"natura2000Pct":0.1,"waterTailingsHa":90,"groundMotionMmYr":1.6,"landConverted":{"Built-up":243,"Cropland":95,"Grassland":72}},"egmsCovered":true,"alert":{"title":"Water and tailings surface grew 15% year-on-year","body":"Flagged for review, not a finding of non-compliance."}},
+    {"code":"SE-C1","country":"SE","name":"Copper smelter, Boliden Rönnskär","materials":["copper"],"stage":"processing","status":"operating","coord":{"lon":21.19,"lat":64.68},"baselineYear":2019,"worksStarted":1930,"series":[["2019",199],["2020",202],["2021",208],["2022",213],["2023",217],["2024",223],["2025",228],["2026",234]],"indicators":{"vegLoss5kmPct":2.2,"natura2000Pct":1.3,"waterTailingsHa":9,"groundMotionMmYr":1.2,"landConverted":{"Tree cover":134,"Wetland":43,"Grassland":32,"Shrubland":24}},"egmsCovered":true},
+    {"code":"FI-C2","country":"FI","name":"Copper smelter, Boliden Harjavalta","materials":["copper"],"stage":"processing","status":"operating","coord":{"lon":22.14,"lat":61.31},"baselineYear":2019,"worksStarted":1945,"series":[["2019",140],["2020",143],["2021",149],["2022",153],["2023",153],["2024",158],["2025",162],["2026",167]],"indicators":{"vegLoss5kmPct":2.4,"natura2000Pct":2.1,"waterTailingsHa":8,"groundMotionMmYr":0.6,"landConverted":{"Tree cover":93,"Wetland":32,"Grassland":23,"Shrubland":17}},"egmsCovered":true},
+    {"code":"DE-C1","country":"DE","name":"Copper refinery, Aurubis Hamburg","materials":["copper"],"stage":"processing","status":"operating","coord":{"lon":10.01,"lat":53.52},"baselineYear":2019,"worksStarted":1866,"series":[["2019",265],["2020",268],["2021",279],["2022",284],["2023",291],["2024",300],["2025",303],["2026",312]],"indicators":{"vegLoss5kmPct":2.6,"natura2000Pct":0.8,"waterTailingsHa":13,"groundMotionMmYr":1.6,"landConverted":{"Built-up":179,"Cropland":69,"Grassland":63}},"egmsCovered":true},
+    {"code":"ES-C1","country":"ES","name":"Copper smelter, Atlantic Copper Huelva","materials":["copper"],"stage":"processing","status":"operating","coord":{"lon":-6.95,"lat":37.26},"baselineYear":2019,"worksStarted":1970,"series":[["2019",235],["2020",241],["2021",249],["2022",255],["2023",258],["2024",265],["2025",271],["2026",278]],"indicators":{"vegLoss5kmPct":3.8,"natura2000Pct":1.0,"waterTailingsHa":11,"groundMotionMmYr":1.9,"landConverted":{"Built-up":160,"Cropland":69,"Grassland":47}},"egmsCovered":true},
+    {"code":"ES-C2","country":"ES","name":"Copper mine expansion, Cobre Las Cruces","materials":["copper"],"stage":"extraction","status":"operating","coord":{"lon":-6.19,"lat":37.57},"baselineYear":2019,"worksStarted":2009,"series":[["2019",309],["2020",327],["2021",343],["2022",356],["2023",372],["2024",386],["2025",398],["2026",416]],"indicators":{"vegLoss5kmPct":4.2,"natura2000Pct":2.3,"waterTailingsHa":66,"groundMotionMmYr":2.2,"landConverted":{"Grassland":167,"Shrubland":96,"Tree cover":97,"Cropland":55}},"egmsCovered":true},
+    {"code":"BG-C1","country":"BG","name":"Copper mine, Elatsite","materials":["copper"],"stage":"extraction","status":"operating","coord":{"lon":24.0,"lat":42.8},"baselineYear":2019,"worksStarted":1986,"series":[["2019",497],["2020",510],["2021",519],["2022",533],["2023",541],["2024",560],["2025",573],["2026",583]],"indicators":{"vegLoss5kmPct":5.0,"natura2000Pct":2.1,"waterTailingsHa":48,"groundMotionMmYr":1.9,"landConverted":{"Grassland":183,"Shrubland":157,"Tree cover":151,"Cropland":92}},"egmsCovered":true},
+    {"code":"PT-C1","country":"PT","name":"Copper and zinc mine, Neves-Corvo","materials":["copper","zinc"],"stage":"integrated","status":"operating","coord":{"lon":-7.95,"lat":37.6},"baselineYear":2019,"worksStarted":1988,"series":[["2019",274],["2020",278],["2021",288],["2022",292],["2023",302],["2024",309],["2025",313],["2026",322]],"indicators":{"vegLoss5kmPct":3.6,"natura2000Pct":0.4,"waterTailingsHa":51,"groundMotionMmYr":0.8,"landConverted":{"Grassland":86,"Cropland":77,"Tree cover":81,"Shrubland":76}},"egmsCovered":true},
+    {"code":"SE-G1","country":"SE","name":"Graphite mine, Talga Vittangi","materials":["graphite"],"stage":"extraction","status":"under-construction","coord":{"lon":21.6,"lat":67.69},"baselineYear":2023,"worksStarted":2025,"series":[["2023",0],["2024",0],["2025",16],["2026",33]],"indicators":{"vegLoss5kmPct":3.1,"natura2000Pct":1.0,"waterTailingsHa":3,"groundMotionMmYr":2.5,"landConverted":{"Tree cover":18,"Wetland":7,"Grassland":4,"Shrubland":3}},"egmsCovered":true,"alert":{"title":"Buffer vegetation loss above threshold","body":"Vegetation loss within 5 km exceeds the 2.5% threshold. Flagged for review, not a finding of non-compliance."}},
+    {"code":"SE-G2","country":"SE","name":"Graphite concentrator, Woxna","materials":["graphite"],"stage":"processing","status":"operating","coord":{"lon":15.47,"lat":61.65},"baselineYear":2019,"worksStarted":2015,"series":[["2019",11],["2020",13],["2021",13],["2022",15],["2023",16],["2024",19],["2025",19],["2026",22]],"indicators":{"vegLoss5kmPct":0.3,"natura2000Pct":0.5,"waterTailingsHa":1,"groundMotionMmYr":0.9,"landConverted":{"Tree cover":13,"Wetland":3,"Grassland":3,"Shrubland":2}},"egmsCovered":true},
+    {"code":"RO-G1","country":"RO","name":"Graphite project, Baia de Fier","materials":["graphite"],"stage":"extraction","status":"pre-construction","coord":{"lon":23.9,"lat":45.3},"baselineYear":2025,"worksStarted":null,"series":[["2025",0],["2026",0]],"indicators":{"vegLoss5kmPct":0.0,"natura2000Pct":4.3,"waterTailingsHa":0,"groundMotionMmYr":1.2,"landConverted":{}},"egmsCovered":true},
+    {"code":"UA-G1","country":"UA","name":"Graphite project, Zavalievsky","materials":["graphite"],"stage":"extraction","status":"operating","coord":{"lon":30.47,"lat":48.23},"baselineYear":2019,"worksStarted":1934,"series":[["2019",166],["2020",169],["2021",172],["2022",178],["2023",182],["2024",186],["2025",192],["2026",196]],"indicators":{"vegLoss5kmPct":1.9,"natura2000Pct":0.4,"waterTailingsHa":23,"groundMotionMmYr":1.2,"landConverted":{"Grassland":66,"Shrubland":45,"Tree cover":49,"Cropland":34}},"egmsCovered":true},
+    {"code":"ES-W1","country":"ES","name":"Tungsten mine, Barruecopardo","materials":["tungsten"],"stage":"integrated","status":"operating","coord":{"lon":-6.6,"lat":40.95},"baselineYear":2019,"worksStarted":2015,"series":[["2019",70],["2020",78],["2021",86],["2022",93],["2023",103],["2024",110],["2025",118],["2026",128]],"indicators":{"vegLoss5kmPct":1.5,"natura2000Pct":1.1,"waterTailingsHa":16,"groundMotionMmYr":1.3,"landConverted":{"Grassland":34,"Cropland":31,"Tree cover":35,"Shrubland":27}},"egmsCovered":true},
+    {"code":"AT-W1","country":"AT","name":"Tungsten mine, Mittersill","materials":["tungsten"],"stage":"extraction","status":"operating","coord":{"lon":12.48,"lat":47.28},"baselineYear":2019,"worksStarted":1976,"series":[["2019",61],["2020",62],["2021",65],["2022",67],["2023",67],["2024",70],["2025",72],["2026",74]],"indicators":{"vegLoss5kmPct":0.7,"natura2000Pct":0.2,"waterTailingsHa":6,"groundMotionMmYr":0.8,"landConverted":{"Grassland":26,"Shrubland":20,"Tree cover":16,"Cropland":10}},"egmsCovered":true},
+    {"code":"PT-W1","country":"PT","name":"Tungsten mine, Panasqueira","materials":["tungsten"],"stage":"extraction","status":"operating","coord":{"lon":-7.76,"lat":40.17},"baselineYear":2019,"worksStarted":1898,"series":[["2019",185],["2020",188],["2021",194],["2022",198],["2023",202],["2024",208],["2025",211],["2026",218]],"indicators":{"vegLoss5kmPct":2.9,"natura2000Pct":0.1,"waterTailingsHa":26,"groundMotionMmYr":0.7,"landConverted":{"Grassland":86,"Shrubland":55,"Tree cover":46,"Cropland":29}},"egmsCovered":true},
+    {"code":"GR-M1","country":"GR","name":"Magnesium (magnesite) complex, Grecian Magnesite","materials":["magnesium"],"stage":"integrated","status":"operating","coord":{"lon":23.33,"lat":40.75},"baselineYear":2019,"worksStarted":1959,"series":[["2019",207],["2020",210],["2021",217],["2022",221],["2023",228],["2024",232],["2025",238],["2026",243]],"indicators":{"vegLoss5kmPct":3.0,"natura2000Pct":1.3,"waterTailingsHa":31,"groundMotionMmYr":2.1,"landConverted":{"Grassland":70,"Cropland":64,"Tree cover":62,"Shrubland":45}},"egmsCovered":true},
+    {"code":"SK-M1","country":"SK","name":"Magnesite complex, Jelšava","materials":["magnesium"],"stage":"integrated","status":"operating","coord":{"lon":20.23,"lat":48.63},"baselineYear":2019,"worksStarted":1902,"series":[["2019",263],["2020",269],["2021",278],["2022",286],["2023",291],["2024",298],["2025",303],["2026",312]],"indicators":{"vegLoss5kmPct":3.1,"natura2000Pct":0.3,"waterTailingsHa":34,"groundMotionMmYr":1.5,"landConverted":{"Grassland":85,"Cropland":73,"Tree cover":85,"Shrubland":68}},"egmsCovered":true},
+    {"code":"TR-M1","country":"TR","name":"Magnesite mine, Eskişehir","materials":["magnesium"],"stage":"extraction","status":"operating","coord":{"lon":31.14,"lat":39.49},"baselineYear":2019,"worksStarted":1950,"series":[["2019",138],["2020",141],["2021",146],["2022",148],["2023",152],["2024",155],["2025",161],["2026",164]],"indicators":{"vegLoss5kmPct":2.1,"natura2000Pct":1.9,"waterTailingsHa":25,"groundMotionMmYr":1.1,"landConverted":{"Grassland":50,"Shrubland":40,"Tree cover":45,"Cropland":27}},"egmsCovered":true},
+    {"code":"NO-S1","country":"NO","name":"Silicon metal plant, Elkem Thamshavn","materials":["silicon"],"stage":"processing","status":"operating","coord":{"lon":9.9,"lat":63.33},"baselineYear":2019,"worksStarted":1964,"series":[["2019",35],["2020",35],["2021",37],["2022",38],["2023",39],["2024",39],["2025",40],["2026",42]],"indicators":{"vegLoss5kmPct":0.3,"natura2000Pct":0.4,"waterTailingsHa":3,"groundMotionMmYr":1.2,"landConverted":{"Tree cover":22,"Wetland":8,"Grassland":6,"Shrubland":4}},"egmsCovered":true},
+    {"code":"ES-S1","country":"ES","name":"Ferro-silicon plant, Puertollano","materials":["silicon"],"stage":"processing","status":"operating","coord":{"lon":-4.12,"lat":38.68},"baselineYear":2019,"worksStarted":1973,"series":[["2019",46],["2020",47],["2021",49],["2022",49],["2023",52],["2024",52],["2025",53],["2026",56]],"indicators":{"vegLoss5kmPct":0.6,"natura2000Pct":0.2,"waterTailingsHa":2,"groundMotionMmYr":2.0,"landConverted":{"Built-up":29,"Cropland":14,"Grassland":11}},"egmsCovered":true},
+    {"code":"FR-S1","country":"FR","name":"Metallurgical-grade silicon plant, Pyrénées","materials":["silicon"],"stage":"processing","status":"operating","coord":{"lon":2.17,"lat":42.97},"baselineYear":2019,"worksStarted":1949,"series":[["2019",31],["2020",31],["2021",32],["2022",34],["2023",35],["2024",35],["2025",37],["2026",38]],"indicators":{"vegLoss5kmPct":0.5,"natura2000Pct":1.4,"waterTailingsHa":3,"groundMotionMmYr":0.7,"landConverted":{"Built-up":20,"Cropland":10,"Grassland":7}},"egmsCovered":true},
+    {"code":"CZ-N1","country":"CZ","name":"Manganese extraction, Chvaletice tailings","materials":["manganese"],"stage":"recycling","status":"under-construction","coord":{"lon":15.42,"lat":50.02},"baselineYear":2023,"worksStarted":2025,"series":[["2023",0],["2024",0],["2025",11],["2026",22]],"indicators":{"vegLoss5kmPct":0.3,"natura2000Pct":0.8,"waterTailingsHa":0,"groundMotionMmYr":1.8,"landConverted":{"Built-up":16,"Cropland":3,"Grassland":2}},"egmsCovered":true},
+    {"code":"BG-N1","country":"BG","name":"Manganese processing, Obrochishte","materials":["manganese"],"stage":"processing","status":"operating","coord":{"lon":28.03,"lat":43.63},"baselineYear":2019,"worksStarted":1950,"series":[["2019",28],["2020",27],["2021",29],["2022",30],["2023",30],["2024",31],["2025",32],["2026",34]],"indicators":{"vegLoss5kmPct":0.5,"natura2000Pct":0.5,"waterTailingsHa":2,"groundMotionMmYr":0.5,"landConverted":{"Built-up":19,"Cropland":8,"Grassland":5}},"egmsCovered":true},
+    {"code":"ES-A1","country":"ES","name":"Aluminium smelter, San Ciprián","materials":["aluminium"],"stage":"processing","status":"operating","coord":{"lon":-7.43,"lat":43.7},"baselineYear":2019,"worksStarted":1980,"series":[["2019",227],["2020",233],["2021",238],["2022",242],["2023",251],["2024",257],["2025",261],["2026",268]],"indicators":{"vegLoss5kmPct":2.8,"natura2000Pct":0.7,"waterTailingsHa":12,"groundMotionMmYr":2.2,"landConverted":{"Built-up":154,"Cropland":55,"Grassland":58}},"egmsCovered":true},
+    {"code":"IS-A1","country":"IS","name":"Aluminium smelter, Grundartangi","materials":["aluminium"],"stage":"processing","status":"operating","coord":{"lon":-21.72,"lat":64.33},"baselineYear":2019,"worksStarted":1998,"series":[["2019",181],["2020",185],["2021",190],["2022",194],["2023",199],["2024",205],["2025",208],["2026",214]],"indicators":{"vegLoss5kmPct":2.5,"natura2000Pct":0.7,"waterTailingsHa":11,"groundMotionMmYr":1.9,"landConverted":{"Tree cover":111,"Wetland":48,"Grassland":35,"Shrubland":18}},"egmsCovered":true},
+    {"code":"NL-Z1","country":"NL","name":"Zinc refinery, Nyrstar Budel","materials":["zinc"],"stage":"processing","status":"operating","coord":{"lon":5.59,"lat":51.26},"baselineYear":2019,"worksStarted":1892,"series":[["2019",100],["2020",101],["2021",104],["2022",107],["2023",109],["2024",111],["2025",115],["2026",118]],"indicators":{"vegLoss5kmPct":1.1,"natura2000Pct":1.6,"waterTailingsHa":5,"groundMotionMmYr":2.2,"landConverted":{"Built-up":70,"Cropland":28,"Grassland":19}},"egmsCovered":true},
+    {"code":"DE-B1","country":"DE","name":"Battery cathode plant, BASF Schwarzheide","materials":["battery materials"],"stage":"processing","status":"operating","coord":{"lon":13.87,"lat":51.47},"baselineYear":2020,"worksStarted":2020,"series":[["2020",42],["2021",47],["2022",54],["2023",59],["2024",66],["2025",72],["2026",78]],"indicators":{"vegLoss5kmPct":0.9,"natura2000Pct":1.6,"waterTailingsHa":2,"groundMotionMmYr":0.8,"landConverted":{"Built-up":44,"Cropland":17,"Grassland":15}},"egmsCovered":true},
+    {"code":"SE-B1","country":"SE","name":"Northvolt Ett gigafactory, Skellefteå","materials":["battery materials"],"stage":"integrated","status":"operating","coord":{"lon":20.95,"lat":64.73},"baselineYear":2020,"worksStarted":2021,"series":[["2020",118],["2021",135],["2022",151],["2023",168],["2024",184],["2025",201],["2026",218]],"indicators":{"vegLoss5kmPct":2.1,"natura2000Pct":0.1,"waterTailingsHa":21,"groundMotionMmYr":0.6,"landConverted":{"Tree cover":122,"Wetland":47,"Grassland":28,"Shrubland":19}},"egmsCovered":true},
+    {"code":"DE-B2","country":"DE","name":"Northvolt Drei gigafactory, Heide","materials":["battery materials"],"stage":"integrated","status":"under-construction","coord":{"lon":9.08,"lat":54.21},"baselineYear":2023,"worksStarted":2025,"series":[["2023",0],["2024",0],["2025",71],["2026",142]],"indicators":{"vegLoss5kmPct":1.6,"natura2000Pct":1.3,"waterTailingsHa":25,"groundMotionMmYr":1.5,"landConverted":{"Grassland":43,"Cropland":34,"Tree cover":35,"Shrubland":28}},"egmsCovered":true},
+    {"code":"DE-B3","country":"DE","name":"CATL battery cell plant, Erfurt","materials":["battery materials"],"stage":"processing","status":"operating","coord":{"lon":11.03,"lat":50.98},"baselineYear":2020,"worksStarted":2022,"series":[["2020",51],["2021",58],["2022",66],["2023",73],["2024",81],["2025",88],["2026",96]],"indicators":{"vegLoss5kmPct":0.8,"natura2000Pct":2.0,"waterTailingsHa":5,"groundMotionMmYr":2.2,"landConverted":{"Built-up":54,"Cropland":23,"Grassland":18}},"egmsCovered":true},
+    {"code":"FR-B1","country":"FR","name":"ACC battery cell plant, Billy-Berclau","materials":["battery materials"],"stage":"processing","status":"operating","coord":{"lon":2.79,"lat":50.52},"baselineYear":2022,"worksStarted":2023,"series":[["2022",47],["2023",57],["2024",68],["2025",77],["2026",88]],"indicators":{"vegLoss5kmPct":0.9,"natura2000Pct":0.1,"waterTailingsHa":6,"groundMotionMmYr":0.4,"landConverted":{"Built-up":46,"Cropland":24,"Grassland":17}},"egmsCovered":true},
+    {"code":"FR-B2","country":"FR","name":"Verkor battery cell plant, Dunkirk","materials":["battery materials"],"stage":"processing","status":"under-construction","coord":{"lon":2.37,"lat":51.03},"baselineYear":2023,"worksStarted":2024,"series":[["2023",0],["2024",41],["2025",82],["2026",124]],"indicators":{"vegLoss5kmPct":1.9,"natura2000Pct":0.1,"waterTailingsHa":10,"groundMotionMmYr":1.6,"landConverted":{"Built-up":72,"Cropland":27,"Grassland":23}},"egmsCovered":true},
+    {"code":"BE-R1","country":"BE","name":"Metals recycling, Umicore Hoboken","materials":["cobalt","copper","nickel"],"stage":"recycling","status":"operating","coord":{"lon":4.33,"lat":51.17},"baselineYear":2019,"worksStarted":1888,"series":[["2019",157],["2020",161],["2021",166],["2022",171],["2023",173],["2024",178],["2025",182],["2026",186]],"indicators":{"vegLoss5kmPct":2.8,"natura2000Pct":0.2,"waterTailingsHa":6,"groundMotionMmYr":1.8,"landConverted":{"Built-up":131,"Cropland":36,"Grassland":17}},"egmsCovered":true},
+    {"code":"NO-R2","country":"NO","name":"Battery recycling, Hydrovolt Fredrikstad","materials":["battery materials","cobalt","nickel"],"stage":"recycling","status":"operating","coord":{"lon":10.95,"lat":59.21},"baselineYear":2021,"worksStarted":2022,"series":[["2021",3],["2022",3],["2023",5],["2024",5],["2025",6],["2026",8]],"indicators":{"vegLoss5kmPct":0.1,"natura2000Pct":0.6,"waterTailingsHa":0,"groundMotionMmYr":2.3,"landConverted":{"Built-up":6,"Cropland":1}},"egmsCovered":true},
+    {"code":"DE-R2","country":"DE","name":"EV battery recycling, Librec Tübingen","materials":["battery materials"],"stage":"recycling","status":"under-construction","coord":{"lon":9.05,"lat":48.52},"baselineYear":2024,"worksStarted":2025,"series":[["2024",0],["2025",3],["2026",6]],"indicators":{"vegLoss5kmPct":0.1,"natura2000Pct":0.6,"waterTailingsHa":0,"groundMotionMmYr":1.7,"landConverted":{"Built-up":4,"Cropland":1}},"egmsCovered":true},
+    {"code":"TN-P1","country":"TN","name":"Phosphate rock mine, Gafsa basin, Tunisia","materials":["phosphate"],"stage":"extraction","status":"operating","coord":{"lon":9.0,"lat":34.42},"baselineYear":2019,"worksStarted":1897,"series":[["2019",623],["2020",640],["2021",660],["2022",674],["2023",687],["2024",701],["2025",724],["2026",738]],"indicators":{"vegLoss5kmPct":5.0,"natura2000Pct":0.7,"waterTailingsHa":95,"groundMotionMmYr":null,"landConverted":{"Barren":439,"Shrubland":216,"Cropland":82}},"egmsCovered":false},
+    {"code":"DZ-C1","country":"DZ","name":"Phosphate processing, Djebel Onk, Algeria","materials":["phosphate"],"stage":"processing","status":"operating","coord":{"lon":7.9,"lat":34.8},"baselineYear":2019,"worksStarted":1965,"series":[["2019",206],["2020",211],["2021",215],["2022",223],["2023",229],["2024",233],["2025",239],["2026",244]],"indicators":{"vegLoss5kmPct":3.1,"natura2000Pct":0.3,"waterTailingsHa":5,"groundMotionMmYr":null,"landConverted":{"Barren":151,"Shrubland":68,"Cropland":24}},"egmsCovered":false},
+    {"code":"TR-B1","country":"TR","name":"Boron processing, Eti Maden Kirka","materials":["boron"],"stage":"processing","status":"operating","coord":{"lon":30.37,"lat":39.33},"baselineYear":2019,"worksStarted":1970,"series":[["2019",266],["2020",269],["2021",278],["2022",285],["2023",290],["2024",296],["2025",304],["2026",312]],"indicators":{"vegLoss5kmPct":4.0,"natura2000Pct":2.0,"waterTailingsHa":14,"groundMotionMmYr":1.8,"landConverted":{"Built-up":157,"Cropland":87,"Grassland":67}},"egmsCovered":true},
+    {"code":"UA-M1","country":"UA","name":"Manganese and iron, Nikopol basin, Ukraine","materials":["manganese"],"stage":"extraction","status":"operating","coord":{"lon":34.42,"lat":47.63},"baselineYear":2019,"worksStarted":1950,"series":[["2019",401],["2020",410],["2021",419],["2022",429],["2023",444],["2024",450],["2025",461],["2026",472]],"indicators":{"vegLoss5kmPct":5.0,"natura2000Pct":0.8,"waterTailingsHa":57,"groundMotionMmYr":0.7,"landConverted":{"Grassland":154,"Shrubland":124,"Tree cover":119,"Cropland":74}},"egmsCovered":true},
   ];
+  // 65 sites — illustrative data for the Strata pilot
 
   // Derive the full set of materials present across the sites so
   // the material-filter chipset lists them in a stable order.
@@ -245,9 +115,11 @@
   // ─────────────────────────────────────────────────────────────
   // Map projection (equirectangular) + viewport zoom
   // ─────────────────────────────────────────────────────────────
+  // Map viewport (equirectangular). Matches the window the
+  // assets/strata-europe-geo.js file was generated against.
   var MAP_W = 900, MAP_H = 700;
-  var LON_MIN = -12, LON_MAX = 32;
-  var LAT_MIN = 28,  LAT_MAX = 72;
+  var LON_MIN = -20, LON_MAX = 42;
+  var LAT_MIN = 27,  LAT_MAX = 73;
   function lonToX(lon) { return (lon - LON_MIN) / (LON_MAX - LON_MIN) * MAP_W; }
   function latToY(lat) { return (LAT_MAX - lat) / (LAT_MAX - LAT_MIN) * MAP_H; }
   var view = { x: 0, y: 0, w: MAP_W, h: MAP_H };
@@ -319,6 +191,8 @@
     download:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>',
     link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1 1"/><path d="M14 10a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1-1"/></svg>',
     close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>',
+    help: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>',
+    arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
     empty:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 11h6"/></svg>',
     brand:'<svg viewBox="0 0 100 100" fill="none" aria-hidden="true">' +
       '<rect width="100" height="100" rx="10" fill="#0A0A0B"/>' +
@@ -351,6 +225,9 @@
           '<a href="/strata">About</a>' +
         '</nav>' +
         '<div class="sd-topbar-tools">' +
+          '<button class="sd-tbtn sd-tbtn-label sd-help-toggle" type="button" aria-label="Show help overlay" title="What is this?">' +
+            ICON.help + '<span>Help</span>' +
+          '</button>' +
           '<button class="sd-tbtn sd-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle light/dark">' +
             ICON.moon + ICON.sun +
           '</button>' +
@@ -427,10 +304,40 @@
         '<aside class="sd-col sd-col-right" id="sd-detail">' +
           renderEmptyDetail() +
         '</aside>' +
-      '</div>';
+      '</div>' +
+      renderOnboarding();
 
     paintBase();
     paintGrid();
+  }
+
+  function renderOnboarding() {
+    var seen = false;
+    try { seen = localStorage.getItem('sd-onboarded') === '1'; } catch (_) {}
+    return '<div class="sd-onboard" id="sd-onboard"' + (seen ? ' hidden' : '') + ' role="dialog" aria-labelledby="sd-onboard-title" aria-modal="false">' +
+      '<div class="sd-onboard-card">' +
+        '<button class="sd-onboard-close" type="button" aria-label="Close help" data-sd-onboard-close>' + ICON.close + '</button>' +
+        '<span class="sd-kick">What is Strata?</span>' +
+        '<h2 id="sd-onboard-title">A satellite record of what is happening on the ground at Europe\'s critical raw materials projects.</h2>' +
+        '<p>Strata records a baseline before construction and the same indicators every year after, using open Copernicus data and one method for every site. This is the <strong>demo</strong>, with ' + SITES.length + ' illustrative sites across the EU and three third-country projects; the 2027 pilot will produce real indicators.</p>' +
+        '<div class="sd-onboard-steps">' +
+          '<div class="sd-onboard-step"><span class="sd-onboard-num">1</span>' +
+            '<div><strong>Pick a site.</strong> Click a coloured dot on the map, or any row in the list on the left. Dot colour is status, size is footprint, red is an alert.</div>' +
+          '</div>' +
+          '<div class="sd-onboard-step"><span class="sd-onboard-num">2</span>' +
+            '<div><strong>Narrow the view.</strong> Chips filter by value chain stage, status, strategic material and open alerts. Zoom and pan on the map.</div>' +
+          '</div>' +
+          '<div class="sd-onboard-step"><span class="sd-onboard-num">3</span>' +
+            '<div><strong>Read the site.</strong> The panel on the right carries the baseline, the latest footprint, the chart, the footprint outline and the full indicator read. Export the site as CSV or copy a shareable link.</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="sd-onboard-actions">' +
+          '<button class="sd-dbtn" type="button" data-sd-onboard-close>Explore the demo ' + ICON.arrow + '</button>' +
+          '<a class="sd-dbtn" href="/strata-paper">Read the companion paper</a>' +
+          '<a class="sd-dbtn" href="/strata-method">Read the method</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
   }
 
   function renderEmptyDetail() {
@@ -446,28 +353,16 @@
   // ─────────────────────────────────────────────────────────────
   function paintBase() {
     var g = mount.querySelector('#sd-map-base');
-    g.innerHTML =
-      // Continental Europe + Scandinavia + Iberia + Balkans
-      '<path class="sd-map-layer-land" d="' +
-        'M 220 700 L 180 620 L 180 540 L 200 480 L 230 440 L 270 420 L 310 430 L 360 420 L 390 390 L 420 380 ' +
-        'L 460 390 L 500 400 L 540 400 L 580 380 L 610 360 L 640 350 L 680 340 L 720 320 L 750 300 L 760 260 ' +
-        'L 740 220 L 720 180 L 700 150 L 690 120 L 710 100 L 740 90 L 770 110 L 790 150 L 790 190 L 800 230 ' +
-        'L 820 270 L 830 310 L 835 350 L 830 390 L 820 430 L 820 470 L 800 500 L 780 520 L 750 530 L 720 540 ' +
-        'L 690 540 L 680 560 L 680 580 L 700 600 L 710 625 L 700 655 L 680 670 L 650 680 L 610 685 L 580 685 ' +
-        'L 540 690 L 500 695 L 460 700 L 420 710 L 380 710 L 340 710 L 300 710 L 260 710 L 220 700 Z' +
-      '"/>' +
-      // British Isles
-      '<path class="sd-map-layer-land" d="' +
-        'M 250 365 L 230 345 L 215 320 L 215 290 L 230 265 L 245 245 L 265 245 L 285 255 L 290 275 L 290 300 ' +
-        'L 290 325 L 285 350 L 285 375 L 275 395 L 260 395 L 245 390 Z' +
-      '"/>' +
-      // Iceland
-      '<path class="sd-map-layer-land" d="M 185 215 L 205 205 L 225 215 L 230 230 L 215 240 L 195 235 Z"/>' +
-      // Morocco / N Africa coast
-      '<path class="sd-map-layer-land" d="' +
-        'M 160 700 L 220 695 L 300 695 L 380 695 L 460 695 L 540 695 L 620 695 L 700 695 L 780 695 L 860 695 L 900 695 ' +
-        'L 900 710 L 820 714 L 740 712 L 660 715 L 580 725 L 500 730 L 420 725 L 340 710 L 260 702 L 180 700 L 160 700 Z' +
-      '"/>';
+    var geo = (typeof window !== 'undefined' && window.STRATA_EUROPE_GEO) || [];
+    if (!geo.length) {
+      // Fallback: an outline for the viewport if the geo bundle did
+      // not load. The map still works, just without countries.
+      g.innerHTML = '<rect x="0" y="0" width="' + MAP_W + '" height="' + MAP_H + '" fill="var(--sd-map-land)" opacity="0.4"/>';
+      return;
+    }
+    g.innerHTML = geo.map(function (c) {
+      return '<path class="sd-map-country" data-a3="' + c.a3 + '" data-a2="' + c.a2 + '" data-name="' + esc(c.name) + '" d="' + c.d + '"><title>' + esc(c.name) + '</title></path>';
+    }).join('');
   }
 
   function paintGrid() {
@@ -943,6 +838,19 @@
     mount.addEventListener('click', function (ev) {
       // theme
       if (ev.target.closest('.sd-theme-toggle')) { toggleTheme(); return; }
+
+      // help overlay
+      if (ev.target.closest('.sd-help-toggle')) {
+        var ob = mount.querySelector('#sd-onboard');
+        if (ob) ob.hidden = false;
+        return;
+      }
+      if (ev.target.closest('[data-sd-onboard-close]')) {
+        var ob2 = mount.querySelector('#sd-onboard');
+        if (ob2) ob2.hidden = true;
+        try { localStorage.setItem('sd-onboarded', '1'); } catch (_) {}
+        return;
+      }
 
       // nav Map link is a no-op (we are already on the Map view).
       if (ev.target.closest('[data-sd-noop]')) { ev.preventDefault(); return; }

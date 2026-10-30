@@ -5501,3 +5501,71 @@ body,
   .prose .strata-launch{grid-template-columns:1fr;gap:18px;padding:22px 20px 20px;}
   .prose .strata-launch .strata-launch-actions{flex-direction:row;flex-wrap:wrap;}
 }
+
+/* ───────────────────────────────────────────────────────────────────
+   Strata companion paper — equation block, partner cards,
+   testimonial callout, indicator schema figure chrome.
+   ─────────────────────────────────────────────────────────────── */
+.prose .eq-block{
+  margin:1em 0 .6em;
+  padding:16px 20px;
+  background:var(--paper-2);
+  border-left:3px solid var(--ink);
+  font-family:'Newsreader',serif;
+  font-size:17.5px;line-height:1.5;color:var(--ink);
+  overflow-x:auto;
+}
+.prose .eq-block sub,.prose .eq-block sup{font-size:.72em;}
+.prose .eq-block strong{font-weight:700;font-style:normal;}
+.prose .eq-note{
+  margin:0 0 1.8em;
+  padding:0;color:var(--mute);
+  font-size:14.5px;line-height:1.55;
+  max-width:76ch;
+}
+.prose .strata-indicator-figure img{
+  width:100%;height:auto;display:block;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+}
+
+.prose .strata-partners{
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;
+  margin:1.8em 0 1.4em;
+}
+.prose .strata-partner{
+  padding:22px 24px;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+}
+.prose .strata-partner h3{
+  margin:0 0 .5em;
+  font-family:'Newsreader',serif;font-weight:500;letter-spacing:-.01em;
+  font-size:22px;line-height:1.2;
+}
+.prose .strata-partner p{margin:0;font-size:15px;line-height:1.55;color:var(--ink);}
+.prose .strata-partner-logo{
+  margin-bottom:14px;
+  display:flex;align-items:center;height:48px;
+}
+.prose .strata-partner-logo img{
+  max-height:40px;width:auto;display:block;
+}
+@media (max-width:720px){
+  .prose .strata-partners{grid-template-columns:1fr;gap:14px;}
+}
+
+.prose .strata-testimonial{
+  margin:1.8em 0;
+}
+.prose .strata-testimonial blockquote{
+  margin:.4em 0 .4em;padding:0;border:0;
+  font-size:19px;font-style:italic;font-weight:400;color:var(--ink);line-height:1.5;
+}
+.prose .strata-testimonial blockquote p{margin:0 0 .4em;}
+.prose .strata-testimonial blockquote footer{
+  margin-top:12px;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);opacity:.65;font-style:normal;
+}

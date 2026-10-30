@@ -12,6 +12,7 @@
   <a href="/strata-demo">Launch app &rarr;</a>
   <a href="/strata-method">Method</a>
   <strong class="is-current">Data sources</strong>
+  <a href="/strata-paper">Companion paper</a>
 </nav>
 
 Strata is built entirely on open data produced by public bodies and researchers, and each source carries its own terms. The table below lists every input, its licence and the attribution line displayed wherever its data appears; the notes that follow cover the terms that shape what we can publish.
