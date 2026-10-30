@@ -485,6 +485,7 @@ LIBRARY = [
     ("resources", "Resources"),
     ("brw", "The BReW framework"),
     ("readiness-levels", "TRL &amp; SRL"),
+    ("strata", "Strata &middot; site monitor"),
 ]
 
 NAV = [
@@ -2513,6 +2514,12 @@ def build_home() -> str:
         <span class="resource-tag">Template</span>
         <h3>Impact-Tracking Template</h3>
         <p>A fill-in baseline-midline-endline framework for any programme that needs to prove what a transition actually changed.</p>
+        <span class="resource-cta">Open &rarr;</span>
+      </a>
+      <a class="resource-card" href="/strata">
+        <span class="resource-tag">Tool &middot; in development</span>
+        <h3>Strata &middot; critical raw materials monitor</h3>
+        <p>Satellite baselines for Europe's critical raw materials Strategic Projects, measured before construction and again every year, with one open method for every site.</p>
         <span class="resource-cta">Open &rarr;</span>
       </a>
     </div>

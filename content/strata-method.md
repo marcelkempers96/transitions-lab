@@ -6,6 +6,13 @@
 
 <p class="article-meta"><span class="article-date">29 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
+<nav class="strata-pages" aria-label="Strata pages">
+  <a href="/strata">Overview</a>
+  <a href="/strata-app">Web tool</a>
+  <strong class="is-current">Method</strong>
+  <a href="/strata-data-sources">Data sources</a>
+</nav>
+
 Strata's value depends on one property above all: that a number reported for a lithium project in Portugal means exactly what the same number means for a nickel project in Finland. This page sets out the rules that make that true, in the order the pipeline applies them, and it will be revised in public after the 2027 pilot.
 
 ## 1. Site register

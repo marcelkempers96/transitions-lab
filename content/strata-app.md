@@ -6,6 +6,13 @@
 
 <p class="article-meta"><span class="article-date">29 October 2026</span> · <span class="article-reading-time">4 min read</span></p>
 
+<nav class="strata-pages" aria-label="Strata pages">
+  <a href="/strata">Overview</a>
+  <strong class="is-current">Web tool</strong>
+  <a href="/strata-method">Method</a>
+  <a href="/strata-data-sources">Data sources</a>
+</nav>
+
 Strata is built for the person who has five minutes and one question about one site, so the web tool opens on a map, asks for nothing more than an email address, and puts every number a reader needs on a single site page. The demo release below runs on illustrative sites and values while the 2027 pilot produces real ones, which is why every screen carries a sand-coloured strip saying so.
 
 ## Signing in takes one field
