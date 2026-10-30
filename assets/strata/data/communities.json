@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "note": "The three Iberian Pyrite Belt communities Strata is working with through the FIERCE Ideation project. Each has a legacy mining landscape beside it and faces a live decision about what happens to it next. Resident voices below are placeholders that the FIERCE service S2 social needs research will replace with anonymised themes and preferences in 2027.",
+    "research_status": "in_progress",
+    "research_provider": "FIERCE Ideation service S2 (to be contracted)",
+    "research_window": "February to May 2027",
+    "sample_target": "18 semi-structured interviews across the three communities plus one community session per community (30+ participants in total)"
+  },
+  "communities": [
+    {
+      "id": "mertola",
+      "name": "Mina de São Domingos",
+      "municipality": "Mértola, Baixo Alentejo, Portugal",
+      "population_estimate": 350,
+      "population_within_5km": 2800,
+      "beside_sites": ["PT-SDO"],
+      "landscape_character": "Red-tinted waste heaps around a flooded open pit, a well-preserved mining village and a tourism trail along the Chança valley. Mining ended in 1966.",
+      "livelihoods_today": "Rural depopulation; tourism (mining heritage, Guadiana valley); small-scale agriculture.",
+      "main_concerns_prelim": [
+        "Dust from heaps in the dry summer, especially where any reprocessing would happen",
+        "Water quality in the Chança and the streams flowing off the heaps",
+        "Preserving the mining village as a heritage asset, including miners' housing",
+        "Whether reopening or reprocessing would bring work back, and for whom"
+      ],
+      "pathway_preferences_prelim": {
+        "leave_and_monitor":       "Preferred by heritage voices and most residents interviewed in the first scoping call",
+        "rehabilitate":            "Supported if it protects water downstream without erasing the mining landscape",
+        "reprocess_and_rehabilitate": "Mixed; interest in jobs, concern about dust and water"
+      },
+      "contact_point": "Câmara Municipal de Mértola (preliminary conversation held 2026-09)"
+    },
+    {
+      "id": "riotinto-nerva",
+      "name": "Minas de Riotinto and Nerva",
+      "municipality": "Minas de Riotinto and Nerva, Huelva, Spain",
+      "population_estimate": 7200,
+      "population_within_5km": 14800,
+      "beside_sites": ["ES-RTO", "ES-PDH"],
+      "landscape_character": "The Río Tinto district, operating mine (Atalaya Mining) inside a large historic district; the Río Tinto itself is a global reference for naturally acid water. Multiple generations of mining families; the heritage museum and tourist train on the former Riotinto railway.",
+      "livelihoods_today": "The reopened Riotinto copper mine (Atalaya) is the largest employer. Mining heritage tourism. Agricultural and service work in surrounding villages.",
+      "main_concerns_prelim": [
+        "Air quality and noise around the active pit and the processing plant",
+        "How the operating mine and the historic district should coexist, including the heritage train and museum",
+        "Water quality in the Tinto, now that extraction is active again",
+        "Whether satellite monitoring could be used to hold the operator to account, independently of regional authorities"
+      ],
+      "pathway_preferences_prelim": {
+        "leave_and_monitor":       "Not applicable at the operating site; preferred for the historic peripheral waste",
+        "rehabilitate":            "Priority for the peripheral heaps; sensitive to heritage",
+        "reprocess_and_rehabilitate": "Mixed; opinions polarise between those who work at Atalaya and those who do not"
+      },
+      "contact_point": "Fundación Río Tinto (initial contact 2026-10)"
+    },
+    {
+      "id": "aznalcollar",
+      "name": "Aznalcóllar",
+      "municipality": "Aznalcóllar, Seville, Spain",
+      "population_estimate": 5900,
+      "population_within_5km": 6400,
+      "beside_sites": ["ES-AZN"],
+      "landscape_character": "Site of the 1998 tailings dam failure, one of the worst mining environmental events in European history. Regional approval granted in 2025 to reopen as Minera Los Frailes (Grupo México); production planned from 2028; the planned discharge to the Guadalquivir estuary is contested.",
+      "livelihoods_today": "A town built on and divided by mining. Agriculture downstream; proximity to the Doñana National Park.",
+      "main_concerns_prelim": [
+        "What a second tailings management plan looks like, 30 years after the first failed",
+        "The planned discharge to the estuary and its downstream effects on Doñana",
+        "Whether local hires will match the jobs the previous operator promised",
+        "How change on the ground, from preparation through production, is monitored independently"
+      ],
+      "pathway_preferences_prelim": {
+        "leave_and_monitor":       "Not applicable; the decision to reopen has been taken at regional level",
+        "rehabilitate":            "Previous rehabilitation after 1998 is a key reference; residents want to see what remains and what is being replaced",
+        "reprocess_and_rehabilitate": "The core live question; opinions sharply divided"
+      },
+      "contact_point": "Local environmental groups (confidential; initial contact 2026-10). The FIERCE S2 provider will use neutral facilitation and separate sessions on request."
+    }
+  ]
+}

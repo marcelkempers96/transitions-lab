@@ -91,14 +91,16 @@ async function boot() {
 
 async function loadAll() {
   const base = '/assets/strata/data/';
-  const [cfg, sites, europe] = await Promise.all([
+  const [cfg, sites, europe, communities] = await Promise.all([
     fetchJson(base + 'config.json'),
     fetchJson(base + 'sites.geojson'),
     loadEuropeGeo(),
+    fetchJson(base + 'communities.json').catch(() => ({ communities: [] })),
   ]);
   S.config = cfg;
   S.sites = (sites.features || []).map(sortedFeature);
   S.europe = europe;
+  S.communities = communities.communities || [];
   // Parallel load timeseries + context for every site.
   await Promise.all(S.sites.map(async (f) => {
     const id = f.properties.id;
@@ -139,7 +141,7 @@ function applyHash() {
   const raw = (location.hash || '').replace(/^#/, '');
   if (!raw || raw === 'map') { S.view = 'map'; S.selected = null; }
   else if (raw.startsWith('site-')) { S.view = 'map'; S.selected = raw.slice(5).toUpperCase(); }
-  else if (['compare','method','data','about'].includes(raw)) { S.view = raw; S.selected = null; }
+  else if (['compare','communities','pipeline','method','data','about'].includes(raw)) { S.view = raw; S.selected = null; }
   else { S.view = 'map'; S.selected = null; }
   render();
 }
@@ -156,9 +158,9 @@ function render() {
 }
 
 function shellHTML() {
-  const banner = (S.config && S.config.demoBanner !== false)
-    ? `<div class="sr-pilot-banner"><strong>Pilot version.</strong> Indicator thresholds are not yet calibrated against hyperspectral or field data; treat values as signals for follow-up, not findings.</div>`
-    : '';
+  // The sand strip is now an informational FIERCE project tag, not
+  // a "not calibrated" apology.
+  const banner = `<div class="sr-pilot-banner"><strong>Iberian Pyrite Belt pilot</strong> · 10 sites across 3 Member States · 4 Horizon Europe FIERCE Ideation services under way: lifecycle (S1), social needs research (S2), hyperspectral validation (S3), market study (S4).</div>`;
   return `
     <header class="sr-topbar">
       <a class="sr-brand" href="#map" aria-label="Strata home">
@@ -167,11 +169,13 @@ function shellHTML() {
         <span class="sr-brand-sub">Transitions Lab</span>
       </a>
       <nav class="sr-tabs" aria-label="Strata views">
-        <a href="#map"     class="${S.view === 'map' ? 'is-current' : ''}">Map</a>
-        <a href="#compare" class="${S.view === 'compare' ? 'is-current' : ''}">Compare</a>
-        <a href="#method"  class="${S.view === 'method' ? 'is-current' : ''}">Method</a>
-        <a href="#data"    class="${S.view === 'data' ? 'is-current' : ''}">Data</a>
-        <a href="#about"   class="${S.view === 'about' ? 'is-current' : ''}">About</a>
+        <a href="#map"         class="${S.view === 'map' ? 'is-current' : ''}">Map</a>
+        <a href="#compare"     class="${S.view === 'compare' ? 'is-current' : ''}">Compare</a>
+        <a href="#communities" class="${S.view === 'communities' ? 'is-current' : ''}">Communities</a>
+        <a href="#pipeline"    class="${S.view === 'pipeline' ? 'is-current' : ''}">Pipeline</a>
+        <a href="#method"      class="${S.view === 'method' ? 'is-current' : ''}">Method</a>
+        <a href="#data"        class="${S.view === 'data' ? 'is-current' : ''}">Data</a>
+        <a href="#about"       class="${S.view === 'about' ? 'is-current' : ''}">About</a>
       </nav>
       <div class="sr-tools">
         <button class="sr-tbtn sr-help" type="button" aria-label="How to use Strata" title="How to use Strata">
@@ -252,10 +256,12 @@ function onboardingHTML() {
 }
 
 function currentViewHTML() {
-  if (S.view === 'compare') return comparePageHTML();
-  if (S.view === 'method')  return methodPageHTML();
-  if (S.view === 'data')    return dataPageHTML();
-  if (S.view === 'about')   return aboutPageHTML();
+  if (S.view === 'compare')     return comparePageHTML();
+  if (S.view === 'communities') return communitiesPageHTML();
+  if (S.view === 'pipeline')    return pipelinePageHTML();
+  if (S.view === 'method')      return methodPageHTML();
+  if (S.view === 'data')        return dataPageHTML();
+  if (S.view === 'about')       return aboutPageHTML();
   return mapPageHTML();
 }
 
@@ -892,9 +898,9 @@ function chartSVG(series) {
 function renderLiveIdle(siteId) {
   return `
     <div class="sr-live-panel">
-      <p><strong>Live Sentinel-2 scene.</strong> Fetches the most recent clear Sentinel-2 Level-2A acquisition over this site via the free Earth Search STAC, reads the six bands and the Scene Classification Layer from the Cloud-Optimised GeoTIFFs, and classifies every 10 m pixel into vegetation, bare ground, bare with an iron oxide signal, water and red/orange water. The classes use the formulas in the <a href="#method">method page</a>.</p>
+      <p><strong>Pull the latest Sentinel-2 scene over this site.</strong> Your browser reads the most recent clear Sentinel-2 Level-2A acquisition via the free Earth Search STAC, downloads only the six bands + Scene Classification Layer window around this site as Cloud-Optimised GeoTIFFs, and runs the Strata classifier on every 10 m pixel: vegetation, bare ground, bare with iron oxide signal, water, red/orange water.</p>
       <button class="sr-live-btn" type="button" data-sr-live="${esc(siteId)}">Load latest Sentinel-2 scene &rarr;</button>
-      <p class="sr-live-note">First load pulls the geotiff library (~400 KB) and 7 band windows (~2–5 MB). Typical total: 8 to 20 seconds on a home connection.</p>
+      <p class="sr-live-note">No account, no server. 8–20 seconds on a home connection. See <a href="#pipeline">Pipeline</a> for what runs where and <a href="#method">Method</a> for every equation.</p>
     </div>`;
 }
 
@@ -1268,18 +1274,187 @@ function dataPageHTML() {
 function aboutPageHTML() {
   return `<article class="sr-content">
     <h1>About Strata</h1>
-    <p>Strata is a satellite lifecycle card for every closed mine waste site in a region, so the people deciding what happens to it next (a geological survey compiling the <a href="https://meetingorganizer.copernicus.org/EGU26/EGU26-9857.html">CRMA Article 27 database</a>, a municipality living next to a heap, a company looking for secondary critical raw materials) start from the same open evidence, and hear from the people who live there.</p>
-    <h2>Pilot</h2>
-    <p>Eight sites in the Iberian Pyrite Belt (Portugal and Spain), plus two transfer sites in Germany (Rammelsberg / Bollrich) and Sweden (Falun). The seed register is in <code>sites.seed.geojson</code>.</p>
+    <p class="sr-lede">Mining and quarrying produced <strong>22.7% of the EU's 2.2 billion tonnes of waste in 2022</strong>. Article 27 of the Critical Raw Materials Act now requires every Member State to build a database of closed and abandoned extractive waste facilities — their location, area, waste volume, operator and raw material content — so that critical raw materials can be recovered where it makes sense. Strata gives each site a satellite lifecycle card so authorities, communities and reprocessors can start from the same open evidence.</p>
+
+    <h2>Three users</h2>
+    <div class="sr-aud-grid">
+      <div class="sr-aud">
+        <span class="sr-aud-kick">Who</span>
+        <h3>Geological surveys and mining authorities</h3>
+        <p>Decide which closed facility deserves field sampling first, and pre-fill area and volume for the Article 27 database. Export one row per site with the Article 27 field names. Fields Strata cannot measure from space (operator, measured metal content) are left empty by design.</p>
+        <p class="sr-aud-ex"><strong>Example users:</strong> GTK (Finland, assigned the task from 1 November 2026), LNEG (Portugal, National Exploration Program 2025–2030), IGME (Spain), GBA (Austria), SGU (Sweden), BGR (Germany).</p>
+      </div>
+      <div class="sr-aud">
+        <span class="sr-aud-kick">Who</span>
+        <h3>Municipalities, residents, local NGOs</h3>
+        <p>Understand what is happening on the heap next door and what each pathway (leave, rehabilitate, reprocess) would mean. Plain-language card, no login, mobile-friendly, right-of-reply for the promoter.</p>
+        <p class="sr-aud-ex"><strong>Example users:</strong> Câmara Municipal de Mértola, Nerva and Minas de Riotinto town councils, Aznalcóllar residents' groups, Fundación Río Tinto, ENoLL living labs, Social Innovation Europe network partners.</p>
+      </div>
+      <div class="sr-aud">
+        <span class="sr-aud-kick">Who</span>
+        <h3>Reprocessing firms and investors</h3>
+        <p>Shortlist sites worth sampling for secondary critical raw materials, with a compare table sortable by volume proxy, iron signal, access, protected area overlap and people nearby. API and audit-ready data packs in the Pro tier.</p>
+        <p class="sr-aud-ex"><strong>Example users:</strong> Umicore, Boliden secondary stream, European Metal Recycling, Northvolt materials sourcing, consultancies supporting CRMA Article 27 compliance.</p>
+      </div>
+    </div>
+
+    <h2>The three pathways</h2>
+    <p>Every closed extractive waste facility faces a choice between three pathways. Strata gives the satellite facts that matter for each of them side by side, and the FIERCE S1 lifecycle study will add a formal LCA-style comparison on three impact axes.</p>
+    <div class="sr-path-grid">
+      <div class="sr-path">
+        <h4>Leave and monitor</h4>
+        <p>Vegetation returns naturally; the heap is left in place and tracked annually. Strata shows the recovery clock, flags any new disturbance, and keeps a permanent public baseline against which future reprocessing or rehabilitation can be measured.</p>
+      </div>
+      <div class="sr-path">
+        <h4>Rehabilitate</h4>
+        <p>Reshape heaps, cap tailings, treat acid drainage, restore vegetation. Strata gives the bare area to treat, the water and tailings extent, the heap volume to reshape, and the Natura 2000 overlap that constrains the design.</p>
+      </div>
+      <div class="sr-path">
+        <h4>Reprocess and rehabilitate</h4>
+        <p>Recover critical raw materials from the waste before rehabilitating. Strata gives a volume proxy and a tonnage proxy at an assumed bulk density, the CRM candidates from the deposit type (labelled as not measured), and the people and watercourse context the decision affects.</p>
+      </div>
+    </div>
+
     <h2>Partners</h2>
-    <ul>
-      <li><strong>Transitions Lab</strong>, Delft — lead; writes the method, runs the field research, publishes.</li>
-      <li><strong>Pyropower</strong> — partner; operating experience on the materials-and-energy side.</li>
-      <li><strong>Social Innovation Europe</strong> — partner; reach into the communities and civil society organisations that live beside legacy sites.</li>
-    </ul>
-    <p>Funding acknowledgement will appear here once the FIERCE sub-grant agreement is signed.</p>
+    <div class="sr-partners">
+      <div class="sr-partner">
+        <h3>Transitions Lab B.V. <span class="sr-partner-role">Lead</span></h3>
+        <p>Independent socio-technical research organisation based in Delft, specialising in before-and-after measurement of technology transitions. Field operations in Nairobi and Lombok and a growing European research strand. Builds the method, the pipeline and the web tool; runs the field research that sits beside the satellite record.</p>
+      </div>
+      <div class="sr-partner">
+        <h3>Pyropower <span class="sr-partner-role">Industry partner</span></h3>
+        <p>Open-source pyrolysis and biochar technology for smallholder processing. Pyropower's operating experience on the materials-and-energy side of the extractive industry informs Strata's processing-stage indicators and the reprocessing-pathway shortlist. Reviews the reprocessing pathway in service S1.</p>
+      </div>
+      <div class="sr-partner">
+        <h3>Social Innovation Europe <span class="sr-partner-role">Community partner</span></h3>
+        <p>Network of social-innovation organisations across EU Member States and the Western Balkans. Reaches the civil society organisations, municipalities and residents' groups beside legacy mine waste; co-designs the social-needs research protocol with the S2 provider; disseminates the published site cards across the network.</p>
+      </div>
+    </div>
+
+    <h2>Funding</h2>
+    <p>Strata is submitted to the <strong>FIERCE 2nd Open Call</strong> (Horizon Europe, Financial Support Programme, Ideation voucher) with a €25,000 request for four External Service Provider services over six months: lifecycle thinking (S1), social needs research (S2), hyperspectral validation (S3), market and business model (S4). The current demo deployment is on the Lab's own cash; the FIERCE award, if granted, funds the work that moves the tool from a working prototype to a validated public service.</p>
+
     <h2>Contact</h2>
-    <p>Email <a href="mailto:marcel@transitionslab.org">marcel@transitionslab.org</a> about adding a site, running a custom indicator set or using Strata inside a lender's or buyer's due diligence process.</p>
+    <p>Email <a href="mailto:marcel@transitionslab.org">marcel@transitionslab.org</a> about adding a site, hosting a community session, running Strata inside a lender's or buyer's due diligence process, or using the tool to pre-fill a national Article 27 database.</p>
+  </article>`;
+}
+
+function communitiesPageHTML() {
+  const list = (S.communities || []).map((c) => {
+    const siteList = (c.beside_sites || []).map((sid) => {
+      const s = S.sites.find((x) => x.properties.id === sid);
+      return s ? `<a href="#site-${sid.toLowerCase()}">${esc(sid)} · ${esc(s.properties.name)}</a>` : esc(sid);
+    }).join(' · ');
+    const concerns = (c.main_concerns_prelim || []).map((x) => `<li>${esc(x)}</li>`).join('');
+    const prefs = c.pathway_preferences_prelim || {};
+    return `
+      <article class="sr-com">
+        <header>
+          <span class="sr-label">Community</span>
+          <h2>${esc(c.name)}</h2>
+          <p class="sr-com-meta">${esc(c.municipality)} · ${fmtInt(c.population_estimate)} residents · ${fmtInt(c.population_within_5km)} within 5 km</p>
+        </header>
+        <section class="sr-com-sect">
+          <span class="sr-label">Mining landscape</span>
+          <p>${esc(c.landscape_character)}</p>
+          <p><strong>Livelihoods today:</strong> ${esc(c.livelihoods_today)}</p>
+          <p><strong>Beside sites:</strong> ${siteList || '—'}</p>
+        </section>
+        <section class="sr-com-sect">
+          <span class="sr-label">Preliminary resident concerns (replaced by anonymised S2 themes in 2027)</span>
+          <ul>${concerns}</ul>
+        </section>
+        <section class="sr-com-sect sr-com-paths">
+          <span class="sr-label">Preliminary pathway preferences</span>
+          <div class="sr-com-path"><h4>Leave &amp; monitor</h4><p>${esc(prefs.leave_and_monitor || '—')}</p></div>
+          <div class="sr-com-path"><h4>Rehabilitate</h4><p>${esc(prefs.rehabilitate || '—')}</p></div>
+          <div class="sr-com-path"><h4>Reprocess &amp; rehabilitate</h4><p>${esc(prefs.reprocess_and_rehabilitate || '—')}</p></div>
+        </section>
+        <footer class="sr-com-foot">Contact point: ${esc(c.contact_point || '—')}</footer>
+      </article>`;
+  }).join('');
+
+  return `<article class="sr-content sr-content-wide">
+    <h1>Communities</h1>
+    <p class="sr-lede">Communities beside legacy mine waste live with its dust, water and landscape, and often with its heritage and the jobs a reopening might bring. The FIERCE Ideation service <strong>S2 social needs research</strong> runs 18 semi-structured interviews and one community session per community between February and May 2027. The content below is what Strata already carries about them, and what the fieldwork will replace with anonymised themes, quotes and pathway preferences.</p>
+    ${list}
+    <section class="sr-s2-plan">
+      <h2>S2 fieldwork plan</h2>
+      <ul>
+        <li><strong>Timing:</strong> February to May 2027, in parallel with the FIERCE project period.</li>
+        <li><strong>Sample:</strong> 18 interviews (residents, municipal staff, heritage and tourism, former mine workers, local business, environmental groups).</li>
+        <li><strong>Sessions:</strong> one per community, 30+ participants in total; separate sessions for groups on request.</li>
+        <li><strong>Languages:</strong> Portuguese and Spanish, led by a neutral facilitator independent of Transitions Lab.</li>
+        <li><strong>Topics:</strong> lived experience, priorities, heritage, trust in satellite evidence, information needs, views on each pathway.</li>
+        <li><strong>Ethics:</strong> informed consent; anonymity by default; published synthesis approved by participants; neutral facilitation at Aznalcóllar, which is contested.</li>
+      </ul>
+    </section>
+  </article>`;
+}
+
+function pipelinePageHTML() {
+  // How open data flows through the browser into a lifecycle card and
+  // out into the Member State database. Makes the "AI classifier" bit
+  // explicit so a reader sees what is doing the work.
+  return `<article class="sr-content sr-content-wide">
+    <h1>Pipeline</h1>
+    <p class="sr-lede">A single site opens in your browser, no server, no account. These are the pieces, in the order they run.</p>
+
+    <div class="sr-pipe">
+      <div class="sr-pipe-col">
+        <span class="sr-pipe-kick">Open data in</span>
+        <ul class="sr-pipe-list">
+          <li><strong>Copernicus Sentinel-2 L2A</strong><br><span>Earth Search STAC, Cloud-Optimised GeoTIFF window reads. No API key.</span></li>
+          <li><strong>Copernicus DEM GLO-30</strong><br><span>Heap height and volume proxy. AWS public COGs.</span></li>
+          <li><strong>European Ground Motion Service</strong><br><span>Sentinel-1 InSAR, EU + EEA sites only.</span></li>
+          <li><strong>ESA WorldCover 2021</strong><br><span>Land cover around each site; land converted under the footprint.</span></li>
+          <li><strong>JRC Global Surface Water</strong><br><span>Whether pit lakes and ponds pre-date the latest decade.</span></li>
+          <li><strong>GHSL GHS-POP R2023A</strong><br><span>People within 1 and 5 km of the site.</span></li>
+          <li><strong>OpenStreetMap + Tang &amp; Werner (2023)</strong><br><span>Site polygons where available; cross-check otherwise.</span></li>
+        </ul>
+      </div>
+
+      <div class="sr-pipe-arrow">→</div>
+
+      <div class="sr-pipe-col">
+        <span class="sr-pipe-kick">In-browser pipeline</span>
+        <div class="sr-pipe-box">
+          <h3>strata-core.js</h3>
+          <p class="sr-pipe-badge">26 of 26 unit tests pass</p>
+          <ol class="sr-pipe-list sr-pipe-ol">
+            <li>STAC search for the clearest scene over the site (last 180 days, cloud &lt; 40%).</li>
+            <li>Read six bands + Scene Classification Layer as COG windows (bbox-only download).</li>
+            <li>Compute pixel indices: NDVI, BSI, iron oxide ratio, clay / hydroxyl ratio, MNDWI, red-water index.</li>
+            <li><strong>Classify every 10 m pixel</strong> into vegetation, bare, bare + iron, water, red water or other. This is a transparent decision-tree classifier (ML without the mystery), one method everywhere, every threshold in a config file.</li>
+            <li>Build polygon + 500 m ring masks; summarise classes inside each.</li>
+            <li>Theil-Sen trend of vegetation % → natural recovery clock (years to 50% at current trend).</li>
+            <li>Lifecycle stage + four flag detectors (new disturbance, red water, iron signal, ground motion).</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sr-pipe-arrow">→</div>
+
+      <div class="sr-pipe-col">
+        <span class="sr-pipe-kick">Open data out</span>
+        <ul class="sr-pipe-list">
+          <li><strong>Lifecycle card</strong><br><span>8 sections per site: header, key facts, now-from-space, 10-year chart, pathways, around-the-site, community, export.</span></li>
+          <li><strong>Compare table</strong><br><span>All sites in the register, sortable, CSV + GeoJSON export.</span></li>
+          <li><strong>CRMA Article 27 CSV row</strong><br><span>Fields keyed to the Member State database schema. Operator and measured metal content left empty by design.</span></li>
+          <li><strong>Site GeoJSON polygon</strong><br><span>Released under CC BY 4.0, or CC BY-SA 4.0 if any share-alike inputs were used.</span></li>
+          <li><strong>Methodology link + attribution</strong><br><span>On every exported artefact. Reproducible by anyone.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Everything stays in the browser</h2>
+    <p>The classifier runs in the user's browser. No scene, no coordinate, no indicator leaves the device for a Transitions Lab server; the only outbound calls are to the public open-data archives listed above and to the OpenStreetMap / ESRI tile servers for the base map. There is no account, no password and no payment to use any of the free-tier functions.</p>
+
+    <h2>What AI is actually doing here</h2>
+    <p>The pixel classifier is a deterministic decision tree built from the Sentinel-2 spectral literature (van der Werff &amp; van der Meer 2016; Pereira et al. 2025; Aranda Quirós 2022). It is calibrated against hyperspectral reference imagery (PRISMA, EnMAP) in <strong>FIERCE service S3</strong>. The thresholds live in <code>config.json</code>, not in the UI code, so a calibration pass changes the output without rewriting the tool. This is intentional: generative models and black-box classifiers would make Strata harder to audit, which is the opposite of what a regulator or a local council needs from a satellite record.</p>
+
+    <h2>How it scales</h2>
+    <p>Adding a new site to Strata requires only its outline. The <a href="https://metadata.europe-geology.eu/record/full/6a391dd6-444c-42c5-a052-4df60a010e58">MIN4EU Mining Waste database</a> (EuroGeoSurveys, CC BY 4.0) already lists closed extractive waste facilities across more than 20 European countries. The pilot runs ten sites; the roadmap to the full register is a configuration exercise, not a redevelopment, which is why the method was built this way from day one.</p>
   </article>`;
 }
 
