@@ -2701,6 +2701,10 @@ def build_strata_demo_shell() -> str:
     }})();
   </script>
   <link rel="stylesheet" href="/assets/strata/styles.css?v={ASSET_STRATA_CSS_V}">
+  <!-- Leaflet: real raster-tile map behind the pins. ESRI World
+       Imagery + OSM labels are added in app.js. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
   <!-- Import map so the bare 'geotiff' specifier in strata/core.js
        resolves to a browser-ready ES build on jsdelivr. Must come
        before any <script type="module">. -->
@@ -2714,7 +2718,6 @@ def build_strata_demo_shell() -> str:
 </head>
 <body class="strata-standalone">
   <div id="strata-root"></div>
-  <script src="/assets/strata-europe-geo.js?v={ASSET_STRATA_GEO_V}" defer></script>
   <script type="module" src="/assets/strata/app.js?v={ASSET_STRATA_APP_V}"></script>
 </body>
 </html>

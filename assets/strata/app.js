@@ -174,6 +174,9 @@ function shellHTML() {
         <a href="#about"   class="${S.view === 'about' ? 'is-current' : ''}">About</a>
       </nav>
       <div class="sr-tools">
+        <button class="sr-tbtn sr-help" type="button" aria-label="How to use Strata" title="How to use Strata">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+        </button>
         <button class="sr-tbtn sr-theme" type="button" aria-label="Toggle theme" title="Toggle light/dark">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
           <svg class="icon-sun"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -181,6 +184,70 @@ function shellHTML() {
       </div>
     </header>
     ${banner}
+    ${onboardingHTML()}
+  `;
+}
+
+function onboardingHTML() {
+  let seen = false;
+  try { seen = localStorage.getItem('strata-onboarded') === '2'; } catch (_) {}
+  const hiddenAttr = seen ? ' hidden' : '';
+  return `
+    <div class="sr-onboard" id="sr-onboard"${hiddenAttr} role="dialog" aria-labelledby="sr-onboard-title" aria-modal="false">
+      <div class="sr-onboard-card">
+        <button class="sr-onboard-close" type="button" aria-label="Close help" data-sr-onboard-close>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+        </button>
+        <span class="sr-onboard-kick">Welcome to Strata (v0.2 demo)</span>
+        <h2 id="sr-onboard-title">A satellite lifecycle card for every closed mine waste site.</h2>
+        <p class="sr-onboard-lead">Each dot on the map is a legacy or operating mine waste site in the pilot. Click one to open its lifecycle card: how big the heap is, what land it covers, how it has changed over ten years, and what each of three pathways (leave, rehabilitate, reprocess) would involve. Everything runs on open Copernicus data.</p>
+
+        <div class="sr-onboard-steps">
+          <div class="sr-onboard-step">
+            <span class="sr-onboard-num">1</span>
+            <div>
+              <strong>Click a pin on the map, or any row in the list on the left.</strong><br>
+              The right-hand panel opens the site's lifecycle card.
+            </div>
+          </div>
+          <div class="sr-onboard-step">
+            <span class="sr-onboard-num">2</span>
+            <div>
+              <strong>Scroll the card to the "Now from space (live)" panel.</strong><br>
+              Hit <em>Load latest Sentinel-2 scene</em>. Your browser fetches the latest clear scene from Earth Search, reads the bands as Cloud-Optimised GeoTIFFs, and classifies every 10 m pixel into vegetation, bare ground, bare with iron signal, water, and red/orange water. Takes 8–20 s.
+            </div>
+          </div>
+          <div class="sr-onboard-step">
+            <span class="sr-onboard-num">3</span>
+            <div>
+              <strong>Export the site as a CRMA Article 27 row.</strong><br>
+              Each card has a Download CSV button. The row carries the fields the Member State database needs; the ones Strata cannot measure from space (operator, measured metal content) are left empty, never estimated.
+            </div>
+          </div>
+        </div>
+
+        <span class="sr-onboard-kick">What am I looking at?</span>
+        <div class="sr-onboard-legend">
+          <span class="sr-onboard-sw"><span class="d" style="background:#111110"></span>Operating</span>
+          <span class="sr-onboard-sw"><span class="d" style="background:#E2A93B"></span>Reopening planned</span>
+          <span class="sr-onboard-sw"><span class="d" style="background:#C2502A"></span>Legacy, largely bare</span>
+          <span class="sr-onboard-sw"><span class="d" style="background:#B9A98C"></span>Legacy, mixed cover</span>
+          <span class="sr-onboard-sw"><span class="d" style="background:#1D6B55"></span>Vegetated / recovering</span>
+          <span class="sr-onboard-sw"><span class="d" style="background:#C2502A;border-radius:50%;width:8px;height:8px;border:1.5px solid #fff;"></span>Has a flag (follow-up signal)</span>
+        </div>
+
+        <div class="sr-onboard-pilot">
+          <strong>Pilot register (10 sites).</strong>
+          Eight in the Iberian Pyrite Belt (acid-drainage legacy of pyrite-rich sulphide mining in southern Portugal and Spain) and two transfer sites in the Harz (Bollrich tailings pond) and Falun (Sweden). Values are illustrative pending the 2027 pilot run; the "Now from space" panel pulls real Sentinel-2 at any time.
+        </div>
+
+        <div class="sr-onboard-actions">
+          <button class="sr-abtn sr-abtn-primary" type="button" data-sr-onboard-close>Got it, show me the map &rarr;</button>
+          <a class="sr-abtn" href="/strata-method">Read the method</a>
+          <a class="sr-abtn" href="/strata-paper">Companion paper</a>
+        </div>
+      </div>
+    </div>
   `;
 }
 
@@ -196,6 +263,18 @@ function currentViewHTML() {
 function wireChrome() {
   const t = ROOT.querySelector('.sr-theme');
   if (t) t.addEventListener('click', toggleTheme);
+  const h = ROOT.querySelector('.sr-help');
+  if (h) h.addEventListener('click', () => {
+    const ob = ROOT.querySelector('#sr-onboard'); if (ob) ob.hidden = false;
+  });
+  // Delegated close for the onboarding overlay
+  ROOT.addEventListener('click', (ev) => {
+    if (ev.target.closest('[data-sr-onboard-close]')) {
+      const ob = ROOT.querySelector('#sr-onboard');
+      if (ob) ob.hidden = true;
+      try { localStorage.setItem('strata-onboarded', '2'); } catch (_) {}
+    }
+  });
 }
 
 function toggleTheme() {
@@ -257,14 +336,11 @@ function mapPageHTML() {
         </div>
       </aside>
       <div class="sr-col sr-col-map">
-        <svg class="sr-map-svg" id="sr-map-svg" viewBox="0 0 900 700" preserveAspectRatio="xMidYMid slice">
-          <g id="sr-map-countries"></g>
-          <g id="sr-map-pins"></g>
-        </svg>
-        <div class="sr-map-zoom">
-          <button type="button" aria-label="Zoom in"  data-zoom="in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-          <button type="button" aria-label="Zoom out" data-zoom="out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg></button>
-          <button type="button" aria-label="Reset" data-zoom="reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+        <div id="sr-leaflet" class="sr-leaflet"></div>
+        <div class="sr-basemap-switch" role="group" aria-label="Base map">
+          <button type="button" data-basemap="satellite" class="is-on">Satellite</button>
+          <button type="button" data-basemap="street">Street</button>
+          <button type="button" data-basemap="terrain">Terrain</button>
         </div>
         <div class="sr-map-legend">
           <span class="sr-label">Lifecycle stage</span>
@@ -278,7 +354,6 @@ function mapPageHTML() {
             <span class="sr-sw sr-sw--flag"><span class="d"></span>Has a flag</span>
           </div>
         </div>
-        <span class="sr-map-attrib">Basemap: Natural Earth, simplified</span>
       </div>
       ${S.selected ? `<aside class="sr-col sr-col-detail">${detailHTML}</aside>` : ''}
     </div>
@@ -286,7 +361,13 @@ function mapPageHTML() {
 }
 
 function emptyDetailHTML() {
-  return '';
+  // Rendered only when a site is explicitly closed; otherwise the
+  // detail column is omitted from the grid.
+  return `
+    <div class="sr-detail-empty">
+      <h3>Click a site to open its lifecycle card</h3>
+      <p>Each site opens on a scrollable page with the baseline year, the latest footprint, a 10-year chart, a <em>Now from space</em> panel that pulls a live Sentinel-2 scene, pathway facts and a CRMA Article 27 CSV export.</p>
+    </div>`;
 }
 
 function chipRow(values, selectedSet, label) {
@@ -308,18 +389,21 @@ function listRowsHTML(sites) {
     const card = deriveCard(f);
     const area = S.context[p.id]?.areaHa || 0;
     const isActive = S.selected === p.id;
-    const flagsText = (card.lifecycle.flags || []).map((x) => x.id.replace(/_/g, ' ')).join(' · ');
+    const flags = (card.lifecycle.flags || []).map((x) => x.id.replace(/_/g, ' '));
+    const flagsText = flags.join(' · ');
+    const metaLine = [p.id, p.municipality || '', p.country].filter(Boolean).join(' · ');
     return `
       <li>
         <button class="sr-site-row${isActive ? ' is-active' : ''}" data-stage="${card.lifecycle.stage}" data-code="${p.id}">
           <span class="sr-stage-bar"></span>
           <span class="sr-site-main">
             <span class="sr-site-name">${esc(p.name)}</span>
-            <span class="sr-site-meta">${esc(p.id)} · ${esc(p.municipality || '')} · ${esc(p.country)}</span>
+            <span class="sr-site-meta">${esc(metaLine)}</span>
+            ${flagsText ? `<span class="sr-site-flags">${esc(flagsText)}</span>` : ''}
           </span>
           <span class="sr-site-right">
             <span class="sr-site-area">${fmtHa(area)}<span class="sr-unit">ha</span></span>
-            ${flagsText ? `<span class="sr-site-flags">${esc(flagsText)}</span>` : ''}
+            ${flags.length ? `<span class="sr-site-alert">${flags.length} FLAG${flags.length>1?'S':''}</span>` : ''}
           </span>
         </button>
       </li>
@@ -327,57 +411,174 @@ function listRowsHTML(sites) {
   }).join('');
 }
 
-// Pins + base map painted after render into the DOM nodes they belong in.
+// Leaflet map + ESRI/OSM tile layers. Kept module-level so filter
+// changes repaint only the markers.
+let L_MAP = null;
+let L_MARKERS = new Map();      // site id -> marker
+let L_POLYGONS = new Map();     // site id -> polygon layer
+let L_BASE_LAYERS = {};
+let L_CURRENT_BASE = 'satellite';
+
 function afterMapRender() {
-  paintCountries();
-  paintPins();
+  initLeafletMap();
+  paintMarkers();
   wireFilters();
   wireListAndMap();
-  wireZoom();
+  wireBasemapSwitch();
 }
 
-function paintCountries() {
-  const g = ROOT.querySelector('#sr-map-countries');
-  if (!g) return;
-  const html = S.europe.map((c) =>
-    `<path class="sr-country" data-a3="${esc(c.a3)}" d="${esc(c.d)}"><title>${esc(c.name)}</title></path>`
-  ).join('');
-  g.innerHTML = html;
+function initLeafletMap() {
+  if (typeof L === 'undefined') {
+    console.warn('Leaflet not loaded yet; retrying in 200ms.');
+    setTimeout(initLeafletMap, 200);
+    return;
+  }
+  const host = ROOT.querySelector('#sr-leaflet');
+  if (!host) return;
+  // If we are re-rendering (hash change), destroy the previous map.
+  if (L_MAP) { try { L_MAP.remove(); } catch (_) {} L_MAP = null; L_MARKERS.clear(); L_POLYGONS.clear(); L_BASE_LAYERS = {}; }
+
+  L_MAP = L.map(host, {
+    worldCopyJump: true, zoomControl: true, attributionControl: true,
+    minZoom: 2, maxZoom: 18,
+  });
+
+  // Base layers.
+  const esriSat = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 18, attribution: 'Imagery: Esri, Maxar, Earthstar Geographics, and the GIS User Community' }
+  );
+  const esriLabels = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 18, pane: 'overlayPane', opacity: 0.9 }
+  );
+  const osm = L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    { maxZoom: 19, attribution: '© OpenStreetMap contributors' }
+  );
+  const terrain = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 13, attribution: 'Terrain: Esri' }
+  );
+
+  L_BASE_LAYERS.satellite = L.layerGroup([esriSat, esriLabels]);
+  L_BASE_LAYERS.street    = L.layerGroup([osm]);
+  L_BASE_LAYERS.terrain   = L.layerGroup([terrain, esriLabels]);
+  L_BASE_LAYERS[L_CURRENT_BASE].addTo(L_MAP);
+
+  // Fit to the pilot bbox (or the selected site).
+  if (S.selected) {
+    const sel = S.sites.find((f) => f.properties.id === S.selected);
+    if (sel) {
+      const [cx, cy] = centroid(sel.geometry);
+      L_MAP.setView([cy, cx], 13);
+    } else {
+      fitPilotBounds();
+    }
+  } else {
+    fitPilotBounds();
+  }
 }
 
-const MAP_W = 900, MAP_H = 700;
-const LON_MIN = -20, LON_MAX = 42, LAT_MIN = 27, LAT_MAX = 73;
-const V = { x: 0, y: 0, w: MAP_W, h: MAP_H };
-function lonToX(lon) { return (lon - LON_MIN) / (LON_MAX - LON_MIN) * MAP_W; }
-function latToY(lat) { return (LAT_MAX - lat) / (LAT_MAX - LAT_MIN) * MAP_H; }
+function fitPilotBounds() {
+  if (!S.sites.length) { L_MAP.setView([42, 2], 4); return; }
+  const bounds = L.latLngBounds(S.sites.map((f) => {
+    const [cx, cy] = centroid(f.geometry);
+    return [cy, cx];
+  }));
+  L_MAP.fitBounds(bounds.pad(0.4), { animate: false });
+}
 
-function paintPins() {
-  const g = ROOT.querySelector('#sr-map-pins');
-  if (!g) return;
+function paintMarkers() {
+  if (!L_MAP) return;
+  // Clear existing
+  for (const m of L_MARKERS.values()) L_MAP.removeLayer(m);
+  for (const g of L_POLYGONS.values()) L_MAP.removeLayer(g);
+  L_MARKERS.clear(); L_POLYGONS.clear();
+
   const visible = new Set(filteredSites().map((f) => f.properties.id));
-  g.innerHTML = S.sites.map((f) => {
+
+  for (const f of S.sites) {
     const p = f.properties;
     const [cx, cy] = centroid(f.geometry);
-    const x = lonToX(cx), y = latToY(cy);
     const area = S.context[p.id]?.areaHa || 0;
-    const r = Math.max(5, Math.min(14, 4 + Math.log(1 + area) * 1.6));
+    const r = Math.max(8, Math.min(22, 6 + Math.log(1 + area) * 2.5));
     const card = deriveCard(f);
     const stage = card.lifecycle.stage;
     const isActive = S.selected === p.id;
-    const dim = !visible.has(p.id) ? ' style="opacity:0.22"' : '';
-    const ring = isActive ? `<circle class="sr-marker-ring" cx="${x}" cy="${y}" r="${r + 6}"/>` : '';
-    const flagDot = (card.lifecycle.flags || []).length ? `<circle class="sr-marker-flag" cx="${x + r - 2}" cy="${y - r + 2}" r="3.5"/>` : '';
-    return `
-      <g class="sr-marker"${dim} data-code="${p.id}">
-        ${ring}
-        <circle class="sr-marker-dot" data-stage="${stage}" cx="${x}" cy="${y}" r="${r}"/>
-        ${flagDot}
-        <text class="sr-marker-label" x="${x + r + 6}" y="${y + 3}">${esc(p.id)}</text>
-      </g>
-    `;
-  }).join('');
-  const svg = ROOT.querySelector('#sr-map-svg');
-  if (svg) svg.setAttribute('viewBox', `${V.x} ${V.y} ${V.w} ${V.h}`);
+    const dim = !visible.has(p.id);
+    const hasFlag = (card.lifecycle.flags || []).length > 0;
+
+    // Site polygon (ghost outline) — only when zoomed closer
+    const poly = L.polygon(flipLatLng(f.geometry.coordinates[0]), {
+      color: stageHex(stage),
+      weight: isActive ? 2.5 : 1.5,
+      opacity: dim ? 0.3 : 0.95,
+      fillOpacity: isActive ? 0.18 : 0.08,
+      interactive: false,
+      className: 'sr-poly',
+    });
+    poly.addTo(L_MAP);
+    L_POLYGONS.set(p.id, poly);
+
+    // Custom DivIcon for the stage-coloured dot
+    const html = buildPinHTML(p.id, stage, r, isActive, hasFlag);
+    const icon = L.divIcon({
+      className: 'sr-pin-wrap' + (dim ? ' sr-pin-wrap--dim' : ''),
+      html,
+      iconSize: [r * 2 + 60, r * 2 + 10],
+      iconAnchor: [r + 30, r + 5],
+    });
+    const marker = L.marker([cy, cx], { icon, keyboard: true, title: p.name });
+    marker.on('click', () => {
+      go(p.id === S.selected ? 'map' : 'site-' + p.id.toLowerCase());
+    });
+    marker.addTo(L_MAP);
+    L_MARKERS.set(p.id, marker);
+  }
+}
+
+function flipLatLng(ring) { return ring.map(([lon, lat]) => [lat, lon]); }
+
+function buildPinHTML(code, stage, r, active, flag) {
+  const fill = stageHex(stage);
+  const stroke = (stage === 'insufficient_data') ? '#6B6963' : '#FFFFFF';
+  const ring = active ? `<circle cx="${r + 30}" cy="${r + 5}" r="${r + 5}" fill="none" stroke="#111110" stroke-width="2"/>` : '';
+  const flagDot = flag ? `<circle cx="${r + 30 + r - 2}" cy="${r + 5 - r + 2}" r="4" fill="#C2502A" stroke="#FFFFFF" stroke-width="1"/>` : '';
+  return `
+    <svg width="${r * 2 + 60}" height="${r * 2 + 10}" overflow="visible">
+      ${ring}
+      <circle cx="${r + 30}" cy="${r + 5}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/>
+      ${flagDot}
+      <text x="${r + 30 + r + 6}" y="${r + 5 + 4}" font-family="IBM Plex Mono,monospace" font-size="10" fill="#111110" style="paint-order:stroke;stroke:#FFFFFF;stroke-width:3px;">${code}</text>
+    </svg>`;
+}
+
+function stageHex(stage) {
+  switch (stage) {
+    case 'operating':         return '#111110';
+    case 'reopening_planned': return '#E2A93B';
+    case 'legacy_bare':       return '#C2502A';
+    case 'legacy_mixed':      return '#B9A98C';
+    case 'recovering':        return 'rgba(29,107,85,0.65)';
+    case 'vegetated':         return '#1D6B55';
+    default:                  return '#FFFFFF';
+  }
+}
+
+function wireBasemapSwitch() {
+  const row = ROOT.querySelector('.sr-basemap-switch');
+  if (!row) return;
+  row.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('button[data-basemap]');
+    if (!btn || !L_MAP) return;
+    const which = btn.getAttribute('data-basemap');
+    if (which === L_CURRENT_BASE) return;
+    row.querySelectorAll('button').forEach((b) => b.classList.toggle('is-on', b === btn));
+    if (L_BASE_LAYERS[L_CURRENT_BASE]) L_MAP.removeLayer(L_BASE_LAYERS[L_CURRENT_BASE]);
+    L_CURRENT_BASE = which;
+    if (L_BASE_LAYERS[which]) L_BASE_LAYERS[which].addTo(L_MAP);
+  });
 }
 
 // ─── Filters, list, pins events ──────────────────────────────
@@ -399,10 +600,9 @@ function wireFilters() {
 }
 
 function refreshMapOnly() {
-  // Re-render totals + list + pins without rebuilding the whole shell
+  // Re-render totals + list + markers without rebuilding the whole shell
   const left = ROOT.querySelector('.sr-col-left');
-  const map = ROOT.querySelector('.sr-col-map');
-  if (!left || !map) { render(); return; }
+  if (!left) { render(); return; }
   const visible = filteredSites();
   const haTotal = visible.reduce((a, f) => a + (S.context[f.properties.id]?.areaHa || 0), 0);
   const volTotal = visible.reduce((a, f) => a + ((S.context[f.properties.id]?.dem?.volumeAboveBaseM3 || 0) / 1_000_000), 0);
@@ -418,7 +618,7 @@ function refreshMapOnly() {
   if (listHead) listHead.textContent = `(${visible.length})`;
   const list = left.querySelector('.sr-list');
   if (list) list.innerHTML = listRowsHTML(visible);
-  paintPins();
+  paintMarkers();
 }
 
 function wireListAndMap() {
@@ -428,12 +628,7 @@ function wireListAndMap() {
     const code = row.getAttribute('data-code');
     go(code === S.selected ? 'map' : 'site-' + code.toLowerCase());
   });
-  const map = ROOT.querySelector('.sr-col-map');
-  if (map) map.addEventListener('click', (ev) => {
-    const pin = ev.target.closest('.sr-marker'); if (!pin) return;
-    const code = pin.getAttribute('data-code');
-    go(code === S.selected ? 'map' : 'site-' + code.toLowerCase());
-  });
+  // Map clicks are handled by Leaflet marker click handlers set in paintMarkers().
   const detail = ROOT.querySelector('.sr-col-detail');
   if (detail) {
     detail.addEventListener('click', (ev) => {
@@ -461,37 +656,7 @@ function wireListAndMap() {
   }
 }
 
-function wireZoom() {
-  const map = ROOT.querySelector('.sr-col-map'); if (!map) return;
-  map.addEventListener('click', (ev) => {
-    const z = ev.target.closest('.sr-map-zoom button'); if (!z) return;
-    const dir = z.getAttribute('data-zoom');
-    if (dir === 'in') zoom(1.4);
-    else if (dir === 'out') zoom(1 / 1.4);
-    else { V.x = 0; V.y = 0; V.w = MAP_W; V.h = MAP_H; }
-    ROOT.querySelector('#sr-map-svg').setAttribute('viewBox', `${V.x} ${V.y} ${V.w} ${V.h}`);
-  });
-  const svg = ROOT.querySelector('#sr-map-svg');
-  if (svg) svg.addEventListener('wheel', (ev) => {
-    ev.preventDefault();
-    const r = svg.getBoundingClientRect();
-    const cx = V.x + (ev.clientX - r.left) / r.width * V.w;
-    const cy = V.y + (ev.clientY - r.top) / r.height * V.h;
-    zoom(ev.deltaY < 0 ? 1.12 : 1 / 1.12, cx, cy);
-    svg.setAttribute('viewBox', `${V.x} ${V.y} ${V.w} ${V.h}`);
-  }, { passive: false });
-}
-
-function zoom(factor, cx, cy) {
-  if (cx == null) { cx = V.x + V.w / 2; cy = V.y + V.h / 2; }
-  const w = Math.max(200, Math.min(MAP_W * 1.3, V.w / factor));
-  const h = w * (MAP_H / MAP_W);
-  V.x = cx - (cx - V.x) / factor;
-  V.y = cy - (cy - V.y) / factor;
-  V.w = w; V.h = h;
-  V.x = Math.max(-80, Math.min(MAP_W - V.w + 80, V.x));
-  V.y = Math.max(-80, Math.min(MAP_H - V.h + 80, V.y));
-}
+// (zoom + pan are provided by Leaflet; no custom SVG zoom code needed.)
 
 // ───────────────────────── Filtering ─────────────────────────────
 function filteredSites() {
