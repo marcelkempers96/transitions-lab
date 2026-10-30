@@ -221,7 +221,7 @@ function mapPageHTML() {
         </div>
       </aside>
       <div class="sr-col sr-col-map">
-        <svg class="sr-map-svg" id="sr-map-svg" viewBox="0 0 900 700" preserveAspectRatio="xMidYMid meet">
+        <svg class="sr-map-svg" id="sr-map-svg" viewBox="0 0 900 700" preserveAspectRatio="xMidYMid slice">
           <g id="sr-map-countries"></g>
           <g id="sr-map-pins"></g>
         </svg>

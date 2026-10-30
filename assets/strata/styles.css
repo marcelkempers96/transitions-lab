@@ -56,6 +56,12 @@
 
 html, body { height: 100%; margin: 0; padding: 0; }
 body.strata-standalone {
+  /* Pin to the visible viewport so the app fills exactly the window,
+     never spills below. dvh keeps the sum right when a mobile browser
+     bar shows and hides. */
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -64,14 +70,21 @@ body.strata-standalone {
 
 /* ─── App shell ───────────────────────────────────────────────── */
 #strata-root {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto 1fr;      /* topbar | banner | content */
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.003em;
+  min-height: 100vh;
+}
+body.strata-standalone #strata-root {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
 }
 #strata-root *, #strata-root *::before, #strata-root *::after { box-sizing: border-box; }
 #strata-root p { margin: 0; }
@@ -144,25 +157,43 @@ body.strata-standalone {
 .sr-pilot-banner strong { font-weight: 600; }
 
 /* ─── Page container (per view) ───────────────────────────────── */
-.sr-page { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.sr-page {
+  display: flex; flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
 
 /* ─── Map view ────────────────────────────────────────────────── */
 .sr-map-page {
-  display: grid; grid-template-columns: 360px 1fr 440px;
-  flex: 1; min-height: 0;
+  display: grid;
+  grid-template-columns: 320px 1fr 420px;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
 }
-body.strata-standalone .sr-map-page { height: calc(100vh - 92px); }
-body.strata-standalone .sr-map-page.no-detail { grid-template-columns: 360px 1fr; }
+.sr-map-page.no-detail { grid-template-columns: 320px 1fr; }
 
 .sr-col {
   background: var(--surface);
   border-right: 1px solid var(--line);
-  display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+  display: flex; flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 .sr-col:last-child { border-right: 0; }
 .sr-col-left { }
-.sr-col-map { position: relative; background: var(--paper); border-right: 1px solid var(--line); }
-.sr-col-detail { border-left: 1px solid var(--line); overflow-y: auto; }
+.sr-col-map {
+  position: relative;
+  background: var(--paper);
+  border-right: 1px solid var(--line);
+  min-height: 0;
+}
+.sr-col-detail {
+  border-left: 1px solid var(--line);
+  overflow-y: auto;
+  min-height: 0;
+}
 
 /* Facts strip (left panel) */
 .sr-facts {
@@ -247,7 +278,12 @@ body.strata-standalone .sr-map-page.no-detail { grid-template-columns: 360px 1fr
 }
 
 /* Map legend + attribution */
-.sr-map-svg { width: 100%; height: 100%; display: block; cursor: grab; }
+.sr-map-svg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  display: block; cursor: grab;
+  background: var(--paper);
+}
 .sr-map-svg:active { cursor: grabbing; }
 .sr-country { fill: var(--sand); stroke: var(--line); stroke-width: 0.7; }
 :root[data-theme="dark"] .sr-country { fill: #22221E; stroke: #2E2D29; }
@@ -502,21 +538,48 @@ body.strata-standalone .sr-map-page.no-detail { grid-template-columns: 360px 1fr
 
 /* ─── Breakpoints ─────────────────────────────────────────────── */
 @media (max-width: 1180px) {
-  .sr-map-page { grid-template-columns: 300px 1fr 400px; }
+  .sr-map-page { grid-template-columns: 280px 1fr 380px; }
 }
 @media (max-width: 1024px) {
-  .sr-map-page { grid-template-columns: 280px 1fr; }
-  .sr-col-detail { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); max-height: none; }
-  body.strata-standalone .sr-map-page { height: auto; min-height: calc(100vh - 92px); }
+  /* Two-column with the detail panel wrapping below. Let the whole
+     page scroll on this breakpoint so the stacked panels are
+     reachable. */
+  body.strata-standalone, body.strata-standalone #strata-root {
+    height: auto; min-height: 100vh; min-height: 100dvh; overflow: visible;
+  }
+  .sr-page { overflow: visible; }
+  .sr-map-page {
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto auto;
+    height: auto; overflow: visible;
+  }
+  .sr-col-detail {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    overflow-y: visible;
+  }
+  .sr-col-map { min-height: 56vh; }
+  .sr-col-left { max-height: 70vh; }
+  .sr-col { overflow: visible; }
+  .sr-col-left, .sr-col-map { overflow: hidden; }  /* keep map crop + list scroll */
 }
 @media (max-width: 720px) {
   .sr-topbar { padding: 10px 14px; }
   .sr-tabs { display: none; }
   .sr-brand-sub { display: none; }
   .sr-pilot-banner { padding: 10px 14px; font-size: 12px; }
-  .sr-map-page { grid-template-columns: 1fr; }
-  .sr-col-left { border-right: 0; border-bottom: 1px solid var(--line); }
-  .sr-col-map { min-height: 420px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .sr-list-wrap { max-height: 360px; }
+  .sr-map-page { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+  .sr-col-left {
+    border-right: 0; border-bottom: 1px solid var(--line);
+    max-height: none;
+  }
+  .sr-col-map {
+    border-right: 0; border-bottom: 1px solid var(--line);
+    min-height: 60vh;
+  }
+  .sr-list-wrap { max-height: 50vh; }
   .sr-detail-head, .sr-sect, .sr-detail-foot { padding-left: 14px; padding-right: 14px; }
+  .sr-map-legend { max-width: calc(100% - 24px); left: 12px; bottom: 12px; }
+  .sr-map-zoom { right: 12px; top: 12px; }
 }
