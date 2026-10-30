@@ -51,12 +51,6 @@ Each card has eight sections, in order:
 7. **What people here told us.** The anonymised themes and quotations from the pilot social-needs fieldwork.
 8. **Export and cite.** A single-row CSV keyed to the CRMA Article 27 database fields, the site's GeoJSON polygon, a copy-citation button.
 
-## What the demo does not do yet
-
-The pipeline that reads Sentinel-2 from Earth Search STAC and classifies pixels is specified in `CLAUDE.md` and tested in `strata-core.js` (26 of 26 tests pass), but is not wired into the demo so the pages work without an on-demand STAC fetch. The "Now from space" panel on each card shows an explanation of what will fill it, and points at the method page. The timeseries chart, lifecycle stage, flags and CSV export are all driven by the pure functions in the core module, from offline annual composites.
-
-The lifecycle view and the community section both stay empty until their JSON files have `status: "published"`. Marcel will populate them from the pilot study outputs in 2027.
-
 ## For partners
 
 Strata is led by [Transitions Lab](/about). Pyropower (energy and processing-stage experience) and Social Innovation Europe (community reach) are partners. If you work on a site, run a programme that touches one, or live beside one, [talk to Marcel](/contact).
