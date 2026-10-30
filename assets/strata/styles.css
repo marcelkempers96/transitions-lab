@@ -171,11 +171,14 @@ body.strata-standalone #strata-root {
 .sr-page.is-map { overflow: hidden; }
 
 /* ─── Map view ────────────────────────────────────────────────── */
+/* Grow via flex rather than "height: 100%" — percentage heights on
+   a flex item are brittle on iOS Safari, which was leaving the map
+   pane and its absolutely-positioned children with zero height.    */
 .sr-map-page {
   display: grid;
   grid-template-columns: 320px 1fr 420px;
   min-height: 0;
-  height: 100%;
+  flex: 1 1 auto;
   overflow: hidden;
 }
 .sr-map-page.no-detail { grid-template-columns: 320px 1fr; }
@@ -613,7 +616,8 @@ body.strata-standalone #strata-root {
   .sr-map-page {
     display: block;
     position: relative;
-    height: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
     overflow: hidden;
   }
   .sr-map-page.no-detail { }
@@ -641,15 +645,33 @@ body.strata-standalone #strata-root {
     transition: height .28s cubic-bezier(.3,.7,.3,1);
     will-change: height;
   }
+  /* Dark mode: lift the sheet off the body with a clearly lighter
+     surface tone + malachite top rule + stronger shadow, so the
+     user can see the sheet even if the map tiles are still loading. */
   :root[data-theme="dark"] .sr-col-left,
   :root[data-theme="dark"] .sr-col-detail {
-    box-shadow: 0 -6px 24px rgba(0,0,0,0.55);
+    background: #22211D;
+    border-top: 2px solid #1D6B55;
+    box-shadow: 0 -10px 32px rgba(0,0,0,0.75);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .sr-col-left,
     :root:not([data-theme="light"]) .sr-col-detail {
-      box-shadow: 0 -6px 24px rgba(0,0,0,0.55);
+      background: #22211D;
+      border-top: 2px solid #1D6B55;
+      box-shadow: 0 -10px 32px rgba(0,0,0,0.75);
     }
+  }
+  /* Give the map pane and the Leaflet canvas themselves a visible
+     dark colour, so if the ESRI tiles are slow or blocked the user
+     still sees that the map area is there (not an empty black void). */
+  :root[data-theme="dark"] .sr-col-map,
+  :root[data-theme="dark"] .sr-leaflet,
+  :root[data-theme="dark"] .leaflet-container { background: #1E1D1A; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .sr-col-map,
+    :root:not([data-theme="light"]) .sr-leaflet,
+    :root:not([data-theme="light"]) .leaflet-container { background: #1E1D1A; }
   }
 
   /* Three states */
