@@ -88,7 +88,7 @@ const S = {
 };
 
 function readLayerPrefs() {
-  const defaults = { pop1km: true, pop5km: false, natura: true, motion: true, polygon: true };
+  const defaults = { pop1km: true, pop5km: false, natura: true, motion: true, polygon: true, discharge: true, density: false };
   try {
     const s = JSON.parse(localStorage.getItem('strata-layers') || 'null');
     if (s && typeof s === 'object') return Object.assign({}, defaults, s);
@@ -107,9 +107,22 @@ function readWatchlist() {
 function writeWatchlist() {
   try { localStorage.setItem('strata-watchlist', JSON.stringify([...S.watchlist])); } catch (_) {}
 }
+// Per-site notes, stored in localStorage so the reader's own field
+// annotations ride along with each CSV export without ever leaving
+// the browser.
+function readSiteNote(id) {
+  try { return localStorage.getItem('strata-note-' + id) || ''; } catch (_) { return ''; }
+}
+function writeSiteNote(id, text) {
+  try {
+    if (text && text.trim()) localStorage.setItem('strata-note-' + id, text);
+    else localStorage.removeItem('strata-note-' + id);
+  } catch (_) {}
+}
 function layerSummary() {
   const on = Object.entries(S.layers).filter(([,v])=>v).length;
-  return on === 0 ? 'None on' : (on === 5 ? 'All on' : (on + ' on'));
+  const total = Object.keys(S.layers).length;
+  return on === 0 ? 'None on' : (on === total ? 'All on' : (on + ' on'));
 }
 
 // ───────────────────────── Boot ─────────────────────────────────
@@ -190,9 +203,9 @@ function render() {
 }
 
 function shellHTML() {
-  // Sand strip under the topbar: a plain pilot-scope reminder, no
-  // funder branding.
-  const banner = `<div class="sr-pilot-banner"><strong>Iberian Pyrite Belt pilot</strong> · 10 sites across 3 Member States · four planned follow-up studies: lifecycle, social-needs fieldwork, hyperspectral validation, market study.</div>`;
+  // Sand strip under the topbar: a plain scope reminder, no funder
+  // branding. Ongoing project framing.
+  const banner = `<div class="sr-pilot-banner"><strong>Flagship register</strong> · ${S.sites.length} sites across 8 EU Member States · ongoing project · four follow-up studies planned: lifecycle, social-needs fieldwork, hyperspectral validation, market study.</div>`;
   return `
     <header class="sr-topbar">
       <a class="sr-brand" href="/strata" aria-label="Strata on transitionslab.org">
@@ -242,7 +255,7 @@ function onboardingHTML() {
         </button>
         <span class="sr-onboard-kick">Welcome to Strata (v0.2 demo)</span>
         <h2 id="sr-onboard-title">A satellite lifecycle card for every closed mine waste site.</h2>
-        <p class="sr-onboard-lead">Each dot on the map is a legacy or operating mine waste site in the pilot. Click one to open its lifecycle card: how big the heap is, what land it covers, how it has changed over ten years, and what each of three pathways (leave, rehabilitate, reprocess) would involve. Everything runs on open Copernicus data.</p>
+        <p class="sr-onboard-lead">Each dot on the map is a legacy or operating mine waste site in the Strata flagship register. Click one to open its lifecycle card: how big the heap is, what land it covers, how it has changed over ten years, and what each of three pathways (leave, rehabilitate, reprocess) would involve. Everything runs on open Copernicus data. Strata is an ongoing project — the register grows with each follow-up study.</p>
 
         <div class="sr-onboard-steps">
           <div class="sr-onboard-step">
@@ -279,8 +292,8 @@ function onboardingHTML() {
         </div>
 
         <div class="sr-onboard-pilot">
-          <strong>Pilot register (10 sites).</strong>
-          Eight in the Iberian Pyrite Belt (acid-drainage legacy of pyrite-rich sulphide mining in southern Portugal and Spain) and two transfer sites in the Harz (Bollrich tailings pond) and Falun (Sweden). Values are illustrative pending the 2027 pilot run; the "Now from space" panel pulls real Sentinel-2 at any time.
+          <strong>Flagship register (16 sites across 8 Member States).</strong>
+          Core cluster in the Iberian Pyrite Belt (Portugal + Spain, pyrite-rich acid-drainage legacy). Flagship sites added across Europe: Lavrion (GR), Rožňava (SK), Salsigne (FR), Bytom-Piekary (PL), Outokumpu (FI), Baia Mare (RO). Transfer sites in the Harz (Bollrich tailings pond, Germany) and Falun (Sweden). Values are illustrative pending the 2027 field validation; the "Now from space" panel pulls real Sentinel-2 at any time. Strata is an ongoing project — more sites in each release.
         </div>
 
         <div class="sr-onboard-actions">
@@ -364,7 +377,7 @@ function mapPageInnerHTML() {
           </label>
           <div class="sr-filter-group">
             <span class="sr-label sr-filter-label">Country</span>
-            <div class="sr-chipset" id="f-country">${chipRow(['PT','ES','DE','SE'], S.filters.country, (v)=>v)}</div>
+            <div class="sr-chipset" id="f-country">${chipRow(['PT','ES','DE','SE','GR','SK','FR','PL','FI','RO'], S.filters.country, (v)=>v)}</div>
           </div>
           <div class="sr-filter-group">
             <span class="sr-label sr-filter-label">Lifecycle stage</span>
@@ -380,7 +393,7 @@ function mapPageInnerHTML() {
           </div>
           <div class="sr-filter-group">
             <span class="sr-label sr-filter-label">Role</span>
-            <div class="sr-chipset" id="f-pilot">${chipRow(['pilot','transfer'], S.filters.pilot, (v)=>v)}</div>
+            <div class="sr-chipset" id="f-pilot">${chipRow(['flagship','transfer'], S.filters.pilot, (v)=>v)}</div>
           </div>
           <div class="sr-filter-group">
             <span class="sr-label sr-filter-label">Watchlist (${S.watchlist.size})</span>
@@ -415,8 +428,10 @@ function mapPageInnerHTML() {
             <div class="sr-mt-menu sr-mt-menu--layers">
               <label class="sr-mt-check"><input type="checkbox" data-sr-layer="pop1km"  ${S.layers.pop1km  ? 'checked' : ''}><span><strong>Population within 1 km</strong><em>Orange ring around each site. People = GHSL 2025.</em></span></label>
               <label class="sr-mt-check"><input type="checkbox" data-sr-layer="pop5km"  ${S.layers.pop5km  ? 'checked' : ''}><span><strong>Population within 5 km</strong><em>Lighter outer ring, GHSL 2025.</em></span></label>
+              <label class="sr-mt-check"><input type="checkbox" data-sr-layer="density" ${S.layers.density ? 'checked' : ''}><span><strong>Population density heatmap</strong><em>Dark-red disc at each site, intensity by residents within 5 km.</em></span></label>
               <label class="sr-mt-check"><input type="checkbox" data-sr-layer="natura"  ${S.layers.natura  ? 'checked' : ''}><span><strong>Natura 2000 overlap</strong><em>Green halo on sites with overlap within 1 km.</em></span></label>
               <label class="sr-mt-check"><input type="checkbox" data-sr-layer="motion"  ${S.layers.motion  ? 'checked' : ''}><span><strong>Ground motion flag</strong><em>Dashed halo where EGMS subsidence > threshold.</em></span></label>
+              <label class="sr-mt-check"><input type="checkbox" data-sr-layer="discharge" ${S.layers.discharge ? 'checked' : ''}><span><strong>Hyperspectral discharge</strong><em>Tapered polygon pointing downstream, intensity by iron + red-water signal.</em></span></label>
               <label class="sr-mt-check"><input type="checkbox" data-sr-layer="polygon" ${S.layers.polygon ? 'checked' : ''}><span><strong>Site polygon outline</strong><em>Shape of the waste footprint on the ground.</em></span></label>
             </div>
           </details>
@@ -509,7 +524,7 @@ let L_POLYGONS = new Map();     // site id -> polygon layer
 let L_BUFFERS_1K = new Map();   // site id -> leaflet circle
 let L_BUFFERS_5K = new Map();   // site id -> leaflet circle
 let L_HALOS = new Map();        // site id -> array of layers (natura, motion halos)
-let L_SITE_LAYERS = { pop1km: null, pop5km: null, natura: null, motion: null, polygon: null };
+let L_SITE_LAYERS = { pop1km: null, pop5km: null, natura: null, motion: null, polygon: null, discharge: null, density: null };
 let L_BASE_LAYERS = {};
 let L_CURRENT_BASE = 'satellite';
 
@@ -607,11 +622,14 @@ function initLeafletMap() {
   // corresponding toggle is on; paintMarkers populates each on every
   // repaint. Pane order sets the stack: polygons under pins, halos
   // between.
-  L_SITE_LAYERS.pop5km  = L.layerGroup();
-  L_SITE_LAYERS.pop1km  = L.layerGroup();
-  L_SITE_LAYERS.polygon = L.layerGroup();
-  L_SITE_LAYERS.natura  = L.layerGroup();
-  L_SITE_LAYERS.motion  = L.layerGroup();
+  // Density FIRST so it sits below everything (visual background).
+  L_SITE_LAYERS.density   = L.layerGroup();
+  L_SITE_LAYERS.pop5km    = L.layerGroup();
+  L_SITE_LAYERS.pop1km    = L.layerGroup();
+  L_SITE_LAYERS.discharge = L.layerGroup();
+  L_SITE_LAYERS.polygon   = L.layerGroup();
+  L_SITE_LAYERS.natura    = L.layerGroup();
+  L_SITE_LAYERS.motion    = L.layerGroup();
   applyLayerToggles();
 
   // Scale bar (metric only) + persistent coord readout.
@@ -746,6 +764,43 @@ function paintMarkers() {
       L_SITE_LAYERS.motion.addLayer(halo);
     }
 
+    // ─── Population density heatmap (illustrative). A dark red disc at
+    // each site; alpha and radius grow with within5km. Not a real
+    // GHSL heatmap in the browser — it is a visual intensity cue
+    // sized from the context JSON.
+    const pop5 = Number(ctx.population?.within5km) || 0;
+    if (pop5 > 0) {
+      const alpha = Math.max(0.05, Math.min(0.42, pop5 / 150000));
+      const radius = 3000 + Math.min(7000, Math.sqrt(pop5) * 20);  // 3–10 km disc
+      const density = L.circle(latlng, {
+        radius, stroke: false, fillColor: '#7A2E12', fillOpacity: dim ? alpha * 0.3 : alpha,
+        interactive: false, className: 'sr-density',
+      });
+      L_SITE_LAYERS.density.addLayer(density);
+    }
+
+    // ─── Hyperspectral discharge (illustrative). Teardrop polygon
+    // pointing from the site centre in a direction derived from
+    // deterministic site hash (stand-in until real flow accumulation
+    // + hyperspectral is wired in). Opacity scales with iron + red
+    // water %, so a flagship site with a strong signal reads as a
+    // visibly stronger plume.
+    const siteLatest = card.latest || {};
+    const dischargeAlpha = Math.max(0.08, Math.min(0.5, ((siteLatest.ironPct || 0) + (siteLatest.redWaterOfWaterPct || 0)) / 100));
+    if (dischargeAlpha > 0.1) {
+      const seedH = hashCode(p.id);
+      const bearing = (seedH % 360) * Math.PI / 180;  // 0–360°
+      const lengthM = 2500 + ((seedH >> 4) % 2500);   // 2.5–5 km
+      const widthM = Math.max(400, lengthM * 0.22);
+      const plume = teardropPolygon(cy, cx, bearing, lengthM, widthM);
+      const poly = L.polygon(plume, {
+        color: '#C2502A', weight: 1, opacity: dim ? 0.25 : 0.7,
+        fillColor: '#C2502A', fillOpacity: dim ? dischargeAlpha * 0.3 : dischargeAlpha,
+        interactive: true, className: 'sr-discharge',
+      }).bindTooltip(`<strong>${esc(p.name)}</strong><br>Discharge plume (illustrative)<br>Iron signal: <strong>${round(siteLatest.ironPct || 0, 1)} %</strong>, red water: <strong>${round(siteLatest.redWaterOfWaterPct || 0, 1)} %</strong><br><em>Real hyperspectral validation lands in 2027.</em>`, { sticky: true, direction: 'top', className: 'sr-tt' });
+      L_SITE_LAYERS.discharge.addLayer(poly);
+    }
+
     // Custom DivIcon for the stage-coloured dot
     const html = buildPinHTML(p.id, stage, r, isActive, hasFlag);
     const icon = L.divIcon({
@@ -758,11 +813,14 @@ function paintMarkers() {
     marker.on('click', () => {
       go(p.id === S.selected ? 'map' : 'site-' + p.id.toLowerCase());
     });
-    marker.bindPopup(markerPopupHTML(f, card, ctx), {
-      maxWidth: 260, minWidth: 220, closeButton: false,
-      className: 'sr-pop',
+    const isPhone = (window.matchMedia && window.matchMedia('(max-width: 720px)').matches);
+    marker.bindPopup(markerPopupHTML(f, card, ctx, isPhone), {
+      maxWidth: isPhone ? 220 : 260, minWidth: isPhone ? 200 : 220,
+      closeButton: true, autoPan: true, keepInView: true,
+      className: 'sr-pop' + (isPhone ? ' sr-pop--mobile' : ''),
     });
-    marker.on('mouseover', (e) => { e.target.openPopup(); });
+    // On desktop hover is a free preview; on touch, open on tap only.
+    if (!isPhone) marker.on('mouseover', (e) => { e.target.openPopup(); });
     marker.addTo(L_MAP);
     L_MARKERS.set(p.id, marker);
   }
@@ -770,19 +828,31 @@ function paintMarkers() {
   applyLayerToggles();
 }
 
-// Compact pin popup — reads at a glance, offers two actions.
-function markerPopupHTML(f, card, ctx) {
+// Pin popup. On phones we show a tight 3-fact card so the balloon
+// fits in the viewport; the Leaflet close X sits inside the frame.
+function markerPopupHTML(f, card, ctx, isPhone) {
   const p = f.properties;
   const lc = card.lifecycle;
   const latest = card.latest || {};
-  const flagList = (lc.flags || []).map((x) => esc(x.id.replace(/_/g,' '))).join(' · ') || '—';
+  const flagCount = (lc.flags || []).length;
   const stageLabel = lc.label || STAGE_LABEL[lc.stage] || '—';
-  return `
+  const common = `
     <div class="sr-pop-head">
       <strong>${esc(p.name)}</strong>
-      <span class="sr-pop-sub">${esc(p.id)} · ${esc(p.municipality || '')}${p.municipality ? ', ' : ''}${esc(p.country)}</span>
+      <span class="sr-pop-sub">${esc(p.id)}${p.municipality ? ' · ' + esc(p.municipality) : ''}, ${esc(p.country)}</span>
     </div>
-    <div class="sr-pop-stage" data-stage="${esc(lc.stage)}">${esc(stageLabel)}</div>
+    <div class="sr-pop-stage" data-stage="${esc(lc.stage)}">${esc(stageLabel)}${flagCount ? ' · ' + flagCount + ' flag' + (flagCount>1?'s':'') : ''}</div>`;
+  if (isPhone) {
+    return common + `
+      <dl class="sr-pop-facts">
+        <dt>Area</dt><dd>${fmtHa(ctx.areaHa)} ha</dd>
+        <dt>Bare</dt><dd>${fmtPct(latest.barePct)}</dd>
+        <dt>People 1 km</dt><dd>${fmtInt(ctx.population?.within1km)}</dd>
+      </dl>
+      <div class="sr-pop-actions"><a href="#site-${esc(p.id.toLowerCase())}" class="sr-pop-cta">Open card &rarr;</a></div>`;
+  }
+  const flagList = (lc.flags || []).map((x) => esc(x.id.replace(/_/g,' '))).join(' · ') || '—';
+  return common + `
     <dl class="sr-pop-facts">
       <dt>Waste area</dt><dd>${fmtHa(ctx.areaHa)} ha</dd>
       <dt>Bare now</dt><dd>${fmtPct(latest.barePct)}</dd>
@@ -790,13 +860,51 @@ function markerPopupHTML(f, card, ctx) {
       <dt>People 1 km</dt><dd>${fmtInt(ctx.population?.within1km)}</dd>
       <dt>Flags</dt><dd>${flagList}</dd>
     </dl>
-    <div class="sr-pop-actions">
-      <a href="#site-${esc(p.id.toLowerCase())}" class="sr-pop-cta">Open full card &rarr;</a>
-    </div>
-  `;
+    <div class="sr-pop-actions"><a href="#site-${esc(p.id.toLowerCase())}" class="sr-pop-cta">Open full card &rarr;</a></div>`;
 }
 
 function flipLatLng(ring) { return ring.map(([lon, lat]) => [lat, lon]); }
+
+// Deterministic 32-bit hash of a string, used to pick a stable
+// per-site bearing for the demo discharge plume.
+function hashCode(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) {
+    h = ((h << 5) - h) + s.charCodeAt(i);
+    h |= 0;
+  }
+  return Math.abs(h);
+}
+
+// Build a tapered teardrop polygon in [lat, lng] pairs. Origin is the
+// site centre; the plume widens from a narrow start, swells, then
+// tapers to a point `lengthM` metres along `bearing` radians.
+function teardropPolygon(lat0, lon0, bearing, lengthM, widthM) {
+  const deg = Math.PI / 180;
+  const mPerDegLat = 111_320;
+  const mPerDegLon = 111_320 * Math.cos(lat0 * deg);
+  // Shape control points along the central axis (0..1 of lengthM) and
+  // the half-width at each. Nose at 1.0, tail at 0.
+  const profile = [
+    [0.00, 0.25], [0.08, 0.70], [0.22, 1.00], [0.42, 0.95],
+    [0.62, 0.72], [0.78, 0.45], [0.90, 0.22], [1.00, 0.00],
+  ];
+  const sin = Math.sin(bearing), cos = Math.cos(bearing);
+  const left = [], right = [];
+  for (const [t, w] of profile) {
+    const alongM = t * lengthM;
+    const halfM = w * widthM / 2;
+    // right of axis (perp +90°)
+    const rx = alongM * sin + halfM * cos;
+    const ry = alongM * cos - halfM * sin;
+    right.push([lat0 + ry / mPerDegLat, lon0 + rx / mPerDegLon]);
+    // left of axis
+    const lx = alongM * sin - halfM * cos;
+    const ly = alongM * cos + halfM * sin;
+    left.push([lat0 + ly / mPerDegLat, lon0 + lx / mPerDegLon]);
+  }
+  return [...left, ...right.reverse()];
+}
 
 function buildPinHTML(code, stage, r, active, flag) {
   const fill = stageHex(stage);
@@ -919,6 +1027,20 @@ function wireListAndMap() {
   // Map clicks are handled by Leaflet marker click handlers set in paintMarkers().
   const detail = ROOT.querySelector('.sr-col-detail');
   if (detail) {
+    // Autosave the note on input (debounced), persist in localStorage.
+    let noteTimer = null;
+    detail.addEventListener('input', (ev) => {
+      const ta = ev.target.closest('[data-sr-note]');
+      if (!ta) return;
+      const sid = ta.getAttribute('data-sr-note');
+      clearTimeout(noteTimer);
+      const st = detail.querySelector('[data-sr-note-status]');
+      if (st) st.textContent = 'Saving…';
+      noteTimer = setTimeout(() => {
+        writeSiteNote(sid, ta.value);
+        if (st) { st.textContent = 'Saved locally'; setTimeout(()=>{ st.textContent=''; }, 1500); }
+      }, 400);
+    });
     detail.addEventListener('click', (ev) => {
       if (ev.target.closest('[data-sr-close]')) { go('map'); return; }
       const dl = ev.target.closest('[data-sr-csv]'); if (dl) { downloadSiteCsv(S.selected); return; }
@@ -946,6 +1068,14 @@ function wireListAndMap() {
       }
       const prt = ev.target.closest('[data-sr-print]');
       if (prt) { window.print(); return; }
+      const nclear = ev.target.closest('[data-sr-note-clear]');
+      if (nclear) {
+        const ta = detail.querySelector('[data-sr-note]');
+        if (ta) { ta.value = ''; writeSiteNote(S.selected, ''); }
+        const st = detail.querySelector('[data-sr-note-status]');
+        if (st) { st.textContent = 'Note cleared'; setTimeout(()=>{ st.textContent=''; }, 1500); }
+        return;
+      }
       // Live scene load
       const liveBtn = ev.target.closest('[data-sr-live]');
       if (liveBtn) {
@@ -1131,9 +1261,19 @@ function siteDetailHTML(id) {
       </div>
 
       <div class="sr-sect">
+        <span class="sr-label sr-sect-head">Your notes</span>
+        <p class="sr-sect-note">Your own notes on this site. Saved only in your browser; included in the CSV you download below.</p>
+        <textarea class="sr-note" data-sr-note="${esc(p.id)}" rows="3" placeholder="e.g. 2027-03 field visit — downstream water clear; local council interested in reprocessing.">${esc(readSiteNote(p.id))}</textarea>
+        <div class="sr-note-row">
+          <span class="sr-note-status" data-sr-note-status aria-live="polite"></span>
+          <button class="sr-abtn sr-note-clear" type="button" data-sr-note-clear>Clear</button>
+        </div>
+      </div>
+
+      <div class="sr-sect">
         <span class="sr-label sr-sect-head">Export and cite</span>
         <div class="sr-actions">
-          <button class="sr-abtn" type="button" data-sr-csv>Download CSV (Article 27)</button>
+          <button class="sr-abtn" type="button" data-sr-csv>Download CSV (Article 27 + note)</button>
           <button class="sr-abtn" type="button" data-sr-geojson>Download GeoJSON</button>
           <button class="sr-abtn" type="button" data-sr-cite>Copy citation</button>
         </div>
@@ -1621,7 +1761,7 @@ function comparePageHTML() {
   return `
     <div class="sr-compare-wrap">
       <h2>Compare</h2>
-      <p class="sr-sect-note">All ${S.sites.length} sites in the pilot register, side by side. Click a site ID to open its lifecycle card. Columns are sortable in the next build; export the whole table as CSV or GeoJSON below.</p>
+      <p class="sr-sect-note">All ${S.sites.length} sites in the flagship register, side by side. Click a site ID to open its lifecycle card. Columns are sortable in the next build; export the whole table as CSV or GeoJSON below.</p>
       <div class="sr-compare-actions">
         <button class="sr-abtn" type="button" data-sr-csv-all>Export all as CSV</button>
         <button class="sr-abtn" type="button" data-sr-geojson-all>Export all as GeoJSON</button>
@@ -1900,7 +2040,7 @@ function pipelinePageHTML() {
     <p>The pixel classifier is a deterministic decision tree built from the Sentinel-2 spectral literature (van der Werff &amp; van der Meer 2016; Pereira et al. 2025; Aranda Quirós 2022). It is calibrated against hyperspectral reference imagery (PRISMA, EnMAP) in a planned feasibility study. The thresholds live in <code>config.json</code>, not in the UI code, so a calibration pass changes the output without rewriting the tool. This is intentional: generative models and black-box classifiers would make Strata harder to audit, which is the opposite of what a regulator or a local council needs from a satellite record.</p>
 
     <h2>How it scales</h2>
-    <p>Adding a new site to Strata requires only its outline. The <a href="https://metadata.europe-geology.eu/record/full/6a391dd6-444c-42c5-a052-4df60a010e58">MIN4EU Mining Waste database</a> (EuroGeoSurveys, CC BY 4.0) already lists closed extractive waste facilities across more than 20 European countries. The pilot runs ten sites; the roadmap to the full register is a configuration exercise, not a redevelopment, which is why the method was built this way from day one.</p>
+    <p>Adding a new site to Strata requires only its outline. The <a href="https://metadata.europe-geology.eu/record/full/6a391dd6-444c-42c5-a052-4df60a010e58">MIN4EU Mining Waste database</a> (EuroGeoSurveys, CC BY 4.0) already lists closed extractive waste facilities across more than 20 European countries. The flagship register runs sixteen sites across eight Member States; the roadmap to the full register is a configuration exercise, not a redevelopment, which is why the method was built this way from day one. Strata is an ongoing project; the register grows with each release.</p>
   </article>`;
 }
 
@@ -1910,6 +2050,7 @@ function downloadSiteCsv(id) {
   if (!f) return;
   const card = deriveCard(f);
   const row = crmaExportRow(f, card);
+  row.user_note = readSiteNote(id);                 // the browser-local note travels in the CSV
   const header = Object.keys(row);
   const line = header.map((k) => csvCell(row[k])).join(',');
   const body = header.join(',') + '\n' + line + '\n';

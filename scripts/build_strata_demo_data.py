@@ -39,6 +39,13 @@ AREA_HA_BY_TYPE = {
     'open pits, former tailings area':                           260,
     'tailings pond from Rammelsberg ore processing':              35,
     'historic waste heaps and slag around the Great Pit':         70,
+    # New flagship sites (illustrative areas)
+    'ancient and 20th-century slag heaps, acid-stained tailings': 130,
+    'iron-sulphide waste heaps, flooded galleries':               150,
+    'arsenic-rich tailings, slag, remediated and non-remediated heaps': 190,
+    'flotation tailings, slag heaps, subsiding ground':          240,
+    'tailings pond, waste heaps, mining museum landscape':        90,
+    'tailings dams and waste heaps near a city of 100,000+':     200,
 }
 
 def polygon_around(lon, lat, area_ha, salt):
@@ -144,6 +151,13 @@ CONTEXT_PRESETS = {
     'ES-AZN': dict(within1km=580,  within5km=6400,  natura1km=380,distNat=0,    river='Agrio',  riverM=320),
     'DE-BOL': dict(within1km=1100, within5km=28000, natura1km=24, distNat=1900, river='Oker',   riverM=600),
     'SE-FAL': dict(within1km=2200, within5km=22400, natura1km=0,  distNat=5100, river='Faluån', riverM=250),
+    # New flagship sites
+    'GR-LAV': dict(within1km=3400, within5km=28000, natura1km=180,distNat=0,    river='Lavreotiki coast', riverM=400),
+    'SK-ROZ': dict(within1km=1800, within5km=16000, natura1km=60, distNat=1200, river='Slaná',  riverM=800),
+    'FR-SAL': dict(within1km=260,  within5km=4200,  natura1km=0,  distNat=2600, river='Orbiel', riverM=350),
+    'PL-BYT': dict(within1km=5600, within5km=132000,natura1km=0,  distNat=3400, river='Brynica',riverM=1200),
+    'FI-OUT': dict(within1km=320,  within5km=5600,  natura1km=0,  distNat=4800, river='Sysmäjärvi', riverM=900),
+    'RO-BAI': dict(within1km=4200, within5km=94000, natura1km=0,  distNat=2800, river='Săsar',  riverM=350),
 }
 
 LAND_RING_PRESETS = {
@@ -158,10 +172,16 @@ LAND_RING_PRESETS = {
     'ES-AZN': {'Cropland':40,'Grassland':24,'Shrubland':16,'Tree cover':12,'Built-up':8},
     'DE-BOL': {'Tree cover':56,'Grassland':20,'Cropland':12,'Built-up':10,'Shrubland':2},
     'SE-FAL': {'Tree cover':64,'Grassland':14,'Built-up':12,'Permanent water bodies':6,'Shrubland':4},
+    'GR-LAV': {'Built-up':32,'Shrubland':30,'Grassland':18,'Tree cover':12,'Permanent water bodies':8},
+    'SK-ROZ': {'Tree cover':52,'Grassland':22,'Cropland':14,'Built-up':10,'Shrubland':2},
+    'FR-SAL': {'Tree cover':42,'Shrubland':26,'Grassland':16,'Cropland':12,'Built-up':4},
+    'PL-BYT': {'Built-up':62,'Grassland':18,'Tree cover':12,'Cropland':6,'Bare / sparse vegetation':2},
+    'FI-OUT': {'Tree cover':68,'Grassland':12,'Built-up':10,'Permanent water bodies':8,'Shrubland':2},
+    'RO-BAI': {'Tree cover':38,'Built-up':24,'Grassland':18,'Cropland':14,'Shrubland':6},
 }
 
 EGMS_PRESETS = {
-    # Pilot countries all in EGMS coverage. Points invented but reasonable.
+    # EU/EFTA countries all in EGMS coverage. Values invented but reasonable.
     'PT-SDO': {'loaded': True, 'medianMmYr': -1.8, 'shareBelowThresholdPct': 6.0,  'points': 184, 'period': '2019-01 to 2024-12'},
     'PT-LOU': {'loaded': True, 'medianMmYr': -0.6, 'shareBelowThresholdPct': 1.5,  'points':  96, 'period': '2019-01 to 2024-12'},
     'PT-ALJ': {'loaded': True, 'medianMmYr': -3.1, 'shareBelowThresholdPct': 11.0, 'points': 268, 'period': '2019-01 to 2024-12'},
@@ -172,6 +192,12 @@ EGMS_PRESETS = {
     'ES-AZN': {'loaded': True, 'medianMmYr': -2.6, 'shareBelowThresholdPct': 9.5,  'points': 240, 'period': '2019-01 to 2024-12'},
     'DE-BOL': {'loaded': True, 'medianMmYr': -0.9, 'shareBelowThresholdPct': 2.4,  'points': 118, 'period': '2019-01 to 2024-12'},
     'SE-FAL': {'loaded': True, 'medianMmYr': -0.4, 'shareBelowThresholdPct': 1.0,  'points':  84, 'period': '2019-01 to 2024-12'},
+    'GR-LAV': {'loaded': True, 'medianMmYr': -1.4, 'shareBelowThresholdPct': 5.5,  'points': 198, 'period': '2019-01 to 2024-12'},
+    'SK-ROZ': {'loaded': True, 'medianMmYr': -2.2, 'shareBelowThresholdPct': 8.0,  'points': 230, 'period': '2019-01 to 2024-12'},
+    'FR-SAL': {'loaded': True, 'medianMmYr': -1.6, 'shareBelowThresholdPct': 5.0,  'points': 174, 'period': '2019-01 to 2024-12'},
+    'PL-BYT': {'loaded': True, 'medianMmYr': -5.1, 'shareBelowThresholdPct': 18.0, 'points': 420, 'period': '2019-01 to 2024-12'},
+    'FI-OUT': {'loaded': True, 'medianMmYr': -0.5, 'shareBelowThresholdPct': 1.2,  'points':  92, 'period': '2019-01 to 2024-12'},
+    'RO-BAI': {'loaded': True, 'medianMmYr': -2.9, 'shareBelowThresholdPct': 10.5, 'points': 288, 'period': '2019-01 to 2024-12'},
 }
 
 # ──────────────────────────────────────────────────────────────────

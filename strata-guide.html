@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://transitionslab.org/assets/og-image.png">
 <meta name="twitter:image:alt" content="Strata guide: every function, every use case | Transitions Lab">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/theme.css?v=f6a4a05b">
+<link rel="stylesheet" href="/assets/theme.css?v=27463cdb">
 
 </head>
 <body data-page="strata-guide">
@@ -140,12 +140,12 @@
   <a href="/strata-method">Method &amp; data</a>
   <a href="/strata-paper">Companion paper</a>
 </nav>
-<p>Strata is a browser tool. There is no account, no install, no server call that leaves the pilot and goes anywhere except the public Copernicus data archives. If you can open <a href="/strata-demo">the app</a>, you have the full tool.</p>
+<p>Strata is a browser tool. There is no account, no install, no server call that leaves the flagship register and goes anywhere except the public Copernicus data archives. If you can open <a href="/strata-demo">the app</a>, you have the full tool.</p>
 <div class="strata-launch">
   <div class="strata-launch-head">
     <span class="eyebrow">Interactive demo</span>
     <h3>Open the full-screen app</h3>
-    <p>Ten illustrative pilot sites, satellite-derived indicators, lifecycle stage, flags, recovery clock, pathways view, CRMA Article 27 CSV export. Light / dark toggle. All values are illustrative until the pipeline runs on real Sentinel-2 scenes.</p>
+    <p>Ten illustrative flagship sites, satellite-derived indicators, lifecycle stage, flags, recovery clock, pathways view, CRMA Article 27 CSV export. Light / dark toggle. All values are illustrative until the pipeline runs on real Sentinel-2 scenes.</p>
   </div>
   <div class="strata-launch-actions">
     <a href="/strata-demo" class="btn btn-ink">Launch Strata &rarr;</a>
@@ -156,12 +156,12 @@
 <hr>
 <h2>Part 1 · The functions, one by one</h2>
 <h3>Getting around</h3>
-<p class="strata-guide-figure"><img src="/assets/img/strata-feat-map.jpg?v=1aee3be2" alt="Strata map with the ten pilot pins over Iberia, Germany and Sweden"></p>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-map.jpg?v=1aee3be2" alt="Strata map with the sixteen flagship pins over Iberia, Germany and Sweden"></p>
 <p>The app opens on the map. The topbar carries seven tabs:</p>
 <ul>
-<li><strong>Map</strong> — the overview, with every pilot site shown as a coloured pin on real satellite imagery.</li>
+<li><strong>Map</strong> — the overview, with every flagship site shown as a coloured pin on real satellite imagery.</li>
 <li><strong>Compare</strong> — one row per site in a sortable table.</li>
-<li><strong>Communities</strong> — the three pilot communities beside Mina de São Domingos, Minas de Riotinto and Nerva, and Aznalcóllar.</li>
+<li><strong>Communities</strong> — the three flagship communities beside Mina de São Domingos, Minas de Riotinto and Nerva, and Aznalcóllar.</li>
 <li><strong>Pipeline</strong> — what runs where, from Sentinel-2 scene to CSV row.</li>
 <li><strong>Method</strong> — a short in-app restatement of the thresholds. The full method lives on the <a href="/strata-method">Method page</a>.</li>
 <li><strong>Data</strong> — the data register with every source, licence and update cadence.</li>
@@ -180,7 +180,7 @@
 </ul>
 <p>Pins are sized by waste footprint, so a 420 ha site reads larger than a 35 ha one at the same zoom. A small orange dot inside a pin means the site has at least one flag.</p>
 <p>Site polygons overlay the satellite imagery under each pin, so the heap shape reads against the ground even without clicking in.</p>
-<p>Left column at the top: four facts for whatever subset of sites is in view (sites shown, total area, DEM volume proxy, sites with flags). Below that, the filters: search by site name, municipality or country; country chips (PT, ES, DE, SE); lifecycle stage chips; flag chips; role (pilot vs. transfer). Below the filters, the full site list, where clicking a row opens the same card you get from clicking a pin.</p>
+<p>Left column at the top: four facts for whatever subset of sites is in view (sites shown, total area, DEM volume proxy, sites with flags). Below that, the filters: search by site name, municipality or country; country chips (PT, ES, DE, SE); lifecycle stage chips; flag chips; role (flagship vs. transfer). Below the filters, the full site list, where clicking a row opens the same card you get from clicking a pin.</p>
 <p><strong>Phones.</strong> The map takes the full screen. The left column collapses to a bottom sheet with three states — a peek strip, a half-screen filter + list, and a full-screen take-over. The handle at the top of the sheet cycles between them; the sheet never covers the whole map at the peek state.</p>
 <h3>Function 2 — The lifecycle site card</h3>
 <p class="strata-guide-figure"><img src="/assets/img/strata-feat-sitecard.jpg?v=ae50c53d" alt="São Domingos site card: Recovering naturally pill, red water flag, waste area 110 ha, DEM volume 17.2 Mm³, bare 51 per cent, vegetation 19 per cent"></p>
@@ -193,7 +193,7 @@
 <li><strong>Ten years of change.</strong> Time-series lines for vegetation, bare ground, iron signal and red water, with the natural recovery clock verdict ("about 52 years to reach 50% vegetation at the current trend") printed under the chart.</li>
 <li><strong>Pathways.</strong> Three side-by-side cards — Leave and monitor, Rehabilitate, Reprocess — with what each one would entail, cost indication, and the question each one leaves open.</li>
 <li><strong>Around the site.</strong> Natura 2000 overlap, EGMS motion share subsiding faster than 5 mm/yr, nearest watercourse distance, protected-area name if any.</li>
-<li><strong>Community voices.</strong> Pointer to the Communities tab if a pilot community sits beside this site. From 2027 onwards this section carries anonymised themes from the pilot social-needs field interviews; today it is empty by design.</li>
+<li><strong>Community voices.</strong> Pointer to the Communities tab if a flagship community sits beside this site. From 2027 onwards this section carries anonymised themes from the pilot social-needs field interviews; today it is empty by design.</li>
 <li><strong>Export buttons.</strong> CSV (one row, CRMA Article 27 schema) and GeoJSON (the site polygon with properties).</li>
 </ol>
 <p>The close button at the top of the card returns you to the map with your filters intact.</p>
@@ -208,7 +208,7 @@
 </ol>
 <p>Nothing leaves your browser, no account is needed, 8 to 20 seconds on a home connection. If the request fails (cloudy fortnight, Earth Search outage) the panel says so and offers the archive date it last found.</p>
 <h3>Function 4 — The Compare view</h3>
-<p class="strata-guide-figure"><img src="/assets/img/strata-feat-compare.jpg?v=670789d9" alt="Compare table: all ten pilot sites side by side, every lifecycle number in one view, sortable, exportable as CSV or GeoJSON"></p>
+<p class="strata-guide-figure"><img src="/assets/img/strata-feat-compare.jpg?v=670789d9" alt="Compare table: all sixteen flagship sites side by side, every lifecycle number in one view, sortable, exportable as CSV or GeoJSON"></p>
 <p>The Compare tab lays every site in one sortable table. Columns, in order: ID, name, country, lifecycle stage, flags, area (ha), DEM volume (m³), bare %, iron %, red water %, recovery clock status, people within 1 km, Natura 2000 overlap (ha within 1 km), EGMS subsidence share faster than −5 mm/yr. Click a site ID to open its card without leaving the view.</p>
 <p>The two buttons at the top of the view produce the full-register exports:</p>
 <ul>
@@ -232,7 +232,7 @@
 <h2>Part 2 · Three users, start to finish</h2>
 <h3>Use case A — A geological survey compiling the Article 27 database</h3>
 <p>Every Member State has to register its closed mine waste sites under Article 27 of the Critical Raw Materials Act. A survey analyst sitting with that register has a problem Strata is built for: for most historic sites there is no modern measurement at all.</p>
-<p><strong>Step 1.</strong> Open <a href="/strata-demo">the app</a>. Jump straight to the Compare view. Scan the register as it stands: ten pilot sites, lifecycle stages at a glance, flag pattern per column.</p>
+<p><strong>Step 1.</strong> Open <a href="/strata-demo">the app</a>. Jump straight to the Compare view. Scan the register as it stands: sixteen flagship sites, lifecycle stages at a glance, flag pattern per column.</p>
 <p><strong>Step 2.</strong> For each site that lacks a current measurement, open the card. Confirm the waste area reads sensibly against the ground. Press <strong>Load latest Sentinel-2 scene</strong>. The three canvases will tell you within seconds whether the site is bare, re-vegetating, or already covered.</p>
 <p><strong>Step 3.</strong> For a site with a <em>reopening planned</em> register status, the Pathways card lays out what Leave, Rehabilitate and Reprocess would entail, so the register entry can carry the CRM-candidate rationale alongside the measured properties.</p>
 <p><strong>Step 4.</strong> Click <strong>Export CSV</strong>. One row keyed to the Article 27 schema, with operator and measured content left empty, DEM volume labelled as a 2011–15 Copernicus proxy, CRM candidates coming from deposit type (never from measured content).</p>
@@ -242,7 +242,7 @@
 <p>A mayor or a municipal technician wants to understand what sits beside their town: how much of it, in what state, with how many people how close, and whether anything is happening on it.</p>
 <p><strong>Step 1.</strong> Open <a href="/strata-demo">the app</a>. Search for the municipality name in the top-left search box (e.g. <em>Mértola</em>). The site list filters to the ones in that municipality; the matching pins pulse on the map.</p>
 <p><strong>Step 2.</strong> Open the site card. The six key facts at the top are the ones a council agenda needs: how big (ha), how massive (Mm³), how exposed (bare %), how vegetated (veg %), how close to residents (people within 1 km), how coloured the water is (red water %).</p>
-<p><strong>Step 3.</strong> Open the <strong>Communities</strong> tab. If your community is one of the three pilots, the preliminary concerns and the pathway preferences read directly against what the satellite shows. If not, use it as a template for the questions the technician can ask residents.</p>
+<p><strong>Step 3.</strong> Open the <strong>Communities</strong> tab. If your community is one of the three flagships, the preliminary concerns and the pathway preferences read directly against what the satellite shows. If not, use it as a template for the questions the technician can ask residents.</p>
 <p><strong>Step 4.</strong> Open the Ten-year change panel. The natural recovery clock tells the council whether the site is recovering on its own, has stalled, or is going backwards — in years, not percentages. This is often the first time any such figure has existed for the site.</p>
 <p><strong>Step 5.</strong> Export CSV or GeoJSON to bring the facts into a council agenda, a planning submission, or a conversation with the regional authority.</p>
 <p><strong>What Strata will not do.</strong> It will not tell the council whether a planned reopening is in the public interest. That is a political and legal judgement. Strata is the honest baseline it rests on.</p>
@@ -269,7 +269,7 @@
 <li><strong>Ten-metre imagery misses small features.</strong> Early earthworks, test pits, a single truck convoy — Strata will not catch them.</li>
 <li><strong>EGMS coverage is Copernicus Participating States only.</strong> For sites outside that footprint the ground motion column reads <em>N/L</em> (not listed).</li>
 <li><strong>Operator and measured content are empty.</strong> By design. Where a Member State register already carries these, that register remains authoritative.</li>
-<li><strong>The pilot register is 10 sites.</strong> The method travels; the current register is small. A planned market study expands the operating register progressively.</li>
+<li><strong>The flagship register is 16 sites.</strong> The method travels; the current register is small. A planned market study expands the operating register progressively.</li>
 </ul>
 <p>If the question needs a measured grade, a legal determination, or a sub-10 m feature, Strata is not the tool. For the question "what is actually on these heaps today, how are they changing, and what would three different plans mean?", it is.</p>
 <hr>

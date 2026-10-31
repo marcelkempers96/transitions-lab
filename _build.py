@@ -2559,14 +2559,14 @@ def build_home() -> str:
     </a>
     <div class="strata-spot-grid">
       <div class="strata-spot-body">
-        <p class="eyebrow">Live satellite tool</p>
+        <p class="eyebrow">Live satellite tool · ongoing project</p>
         <h2>A lifecycle card for every closed mine waste site in Europe.</h2>
-        <p class="strata-spot-pitch">Open Copernicus data read in the browser: Sentinel-2 pixel classes, DEM volume proxy, EGMS ground motion, Natura 2000 overlap, population within 1 and 5 km. Exports a single row keyed to the Critical Raw Materials Act Article 27 database.</p>
+        <p class="strata-spot-pitch">Open Copernicus data read in the browser: Sentinel-2 pixel classes, DEM volume proxy, EGMS ground motion, Natura 2000 overlap, population within 1 and 5 km, hyperspectral discharge indicator. Exports a single row keyed to the Critical Raw Materials Act Article 27 database.</p>
         <p class="strata-spot-actions">
           <a href="/strata-demo" class="btn btn-paper">Launch Strata &rarr;</a>
-          <a href="/strata" class="btn btn-ghost-paper">Method and partners</a>
+          <a href="/strata-guide" class="btn btn-ghost-paper">Guide &amp; use cases</a>
         </p>
-        <p class="strata-spot-foot">Pilot: 10 sites in the Iberian Pyrite Belt, with transfer sites in Germany and Sweden.</p>
+        <p class="strata-spot-foot">16 flagship sites · 8 EU Member States · growing with each release.</p>
       </div>
     </div>
   </div>

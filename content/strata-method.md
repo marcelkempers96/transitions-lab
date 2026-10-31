@@ -14,7 +14,7 @@
   <a href="/strata-paper">Companion paper</a>
 </nav>
 
-Strata's value depends on one property: that a number reported for a legacy pyrite waste heap in Portugal means exactly the same thing as the number reported for a tailings pond in the Harz. This page sets out the rules that make that true, in the order the pipeline applies them, and then names every dataset the rules consume. Thresholds marked **starting** are the pilot values; a planned feasibility study will calibrate them against hyperspectral imagery (PRISMA, EnMAP) and field data from the pilot sites.
+Strata's value depends on one property: that a number reported for a legacy pyrite waste heap in Portugal means exactly the same thing as the number reported for a tailings pond in the Harz. This page sets out the rules that make that true, in the order the pipeline applies them, and then names every dataset the rules consume. Thresholds marked **starting** are the flagship register values; a planned feasibility study will calibrate them against hyperspectral imagery (PRISMA, EnMAP) and field data from the flagship sites.
 
 ## 1. Satellite inputs
 
@@ -122,7 +122,7 @@ The EOX Sentinel-2 cloudless mosaics from 2018 onwards are licensed CC BY-NC-SA 
 
 | Dataset | Role | Access |
 |---|---|---|
-| PRISMA hyperspectral (ASI) | Cross-check Sentinel-2 iron and clay signals at pilot sites | ASI portal, free registration |
+| PRISMA hyperspectral (ASI) | Cross-check Sentinel-2 iron and clay signals at flagship sites | ASI portal, free registration |
 | EnMAP hyperspectral (DLR) | Same role; archive at EOWEB GeoPortal | [EnMAP data access](https://enmap.org/data_access) |
 | CHIME (Copernicus, planned 2028) | Future operational hyperspectral source, 400 to 2500 nm at 30 m | [SentiWiki](https://sentiwiki.copernicus.eu/web/chime) |
 | Published field data, Iberian Pyrite Belt | Acid drainage and waste mapping references | Pérez Ostalé (2014), Universidad de Huelva thesis; Aranda Quirós (2022), Río Tinto AMWI study |
@@ -143,7 +143,7 @@ Show this on every page that displays data, with the year filled from the scenes
 
 ### 9.6 Strata's own outputs
 
-Site pages and indicator tables are published under CC BY 4.0 unless they include share-alike material, in which case CC BY-SA 4.0 applies to that layer. Please cite as: Transitions Lab (2026). Strata v0.2: satellite lifecycle cards for closed mine waste sites, pilot register. transitionslab.org/strata-demo.
+Site pages and indicator tables are published under CC BY 4.0 unless they include share-alike material, in which case CC BY-SA 4.0 applies to that layer. Please cite as: Transitions Lab (2026). Strata v0.2: satellite lifecycle cards for closed mine waste sites, flagship register. transitionslab.org/strata-demo.
 
 ---
 

@@ -1,0 +1,43 @@
+{
+  "areaHa": 200,
+  "dem": {
+    "baseElevationM": 160.5,
+    "maxHeightM": 50.0,
+    "volumeAboveBaseM3": 34347873,
+    "volumeBelowBaseM3": 3559658,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Tree cover": 38,
+    "Built-up": 24,
+    "Grassland": 18,
+    "Cropland": 14,
+    "Shrubland": 6
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 2800,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 4200,
+    "within5km": 94000,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 350,
+    "name": "S\u0103sar"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 6.0
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -2.9,
+    "shareBelowThresholdPct": 10.5,
+    "points": 288,
+    "period": "2019-01 to 2024-12"
+  }
+}

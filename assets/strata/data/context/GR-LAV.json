@@ -1,0 +1,43 @@
+{
+  "areaHa": 130,
+  "dem": {
+    "baseElevationM": 364.9,
+    "maxHeightM": 58.0,
+    "volumeAboveBaseM3": 25905490,
+    "volumeBelowBaseM3": 3525934,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Built-up": 32,
+    "Shrubland": 30,
+    "Grassland": 18,
+    "Tree cover": 12,
+    "Permanent water bodies": 8
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 180,
+    "distanceM": 0,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 3400,
+    "within5km": 28000,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 400,
+    "name": "Lavreotiki coast"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 3.9
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -1.4,
+    "shareBelowThresholdPct": 5.5,
+    "points": 198,
+    "period": "2019-01 to 2024-12"
+  }
+}

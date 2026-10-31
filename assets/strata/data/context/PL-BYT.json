@@ -1,0 +1,43 @@
+{
+  "areaHa": 240,
+  "dem": {
+    "baseElevationM": 397.0,
+    "maxHeightM": 31.6,
+    "volumeAboveBaseM3": 26074671,
+    "volumeBelowBaseM3": 5072521,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Built-up": 62,
+    "Grassland": 18,
+    "Tree cover": 12,
+    "Cropland": 6,
+    "Bare / sparse vegetation": 2
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 3400,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 5600,
+    "within5km": 132000,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 1200,
+    "name": "Brynica"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 7.2
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -5.1,
+    "shareBelowThresholdPct": 18.0,
+    "points": 420,
+    "period": "2019-01 to 2024-12"
+  }
+}

@@ -5786,6 +5786,22 @@ body,
 }
 .prose .strata-features-guide a{color:var(--ink);text-decoration:underline;}
 
+/* Partner logo blocks on /strata */
+.prose .strata-partners{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0 1.4em;
+}
+@media (max-width:720px){.prose .strata-partners{grid-template-columns:1fr;}}
+.prose .strata-partner{
+  display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;
+  padding:16px 18px;background:var(--paper-2);border:1px solid var(--rule);
+  text-decoration:none;color:var(--ink);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.prose .strata-partner:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);}
+.prose .strata-partner img{display:block;max-width:100%;width:120px;height:auto;}
+.prose .strata-partner-label strong{display:block;font-weight:600;font-size:15px;margin-bottom:4px;}
+.prose .strata-partner-label em{font-style:normal;color:var(--mute);font-size:13px;line-height:1.45;display:block;}
+
 /* Full-width screenshot figures inside the guide page: real-pixel
    screenshots of the live app, framed with a thin ink border. */
 .prose .strata-guide-figure{margin:1.6em 0 1em;}

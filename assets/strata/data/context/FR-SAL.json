@@ -1,0 +1,43 @@
+{
+  "areaHa": 190,
+  "dem": {
+    "baseElevationM": 187.1,
+    "maxHeightM": 61.4,
+    "volumeAboveBaseM3": 40113579,
+    "volumeBelowBaseM3": 5817289,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Tree cover": 42,
+    "Shrubland": 26,
+    "Grassland": 16,
+    "Cropland": 12,
+    "Built-up": 4
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 2600,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 260,
+    "within5km": 4200,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 350,
+    "name": "Orbiel"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 5.7
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -1.6,
+    "shareBelowThresholdPct": 5.0,
+    "points": 174,
+    "period": "2019-01 to 2024-12"
+  }
+}

@@ -75,11 +75,11 @@
       },
       "properties": {
         "id": "PT-SDO",
-        "name": "S\u00e3o Domingos mine",
-        "municipality": "M\u00e9rtola",
+        "name": "São Domingos mine",
+        "municipality": "Mértola",
         "region": "Iberian Pyrite Belt",
         "country": "PT",
-        "role": "pilot",
+        "role": "flagship",
         "facility_type": "waste heaps, leaching areas, flooded open pit",
         "status": "closed",
         "status_note": "Mining ended in 1966 (verify). Village and mining landscape are a heritage and tourism asset.",
@@ -92,7 +92,7 @@
           "Arsenic"
         ],
         "community_pilot": true,
-        "community_name": "Mina de S\u00e3o Domingos, M\u00e9rtola",
+        "community_name": "Mina de São Domingos, Mértola",
         "coords_confidence": "approximate",
         "sources": [
           "https://en.wikipedia.org/wiki/S%C3%A3o_Domingos_Mine"
@@ -176,13 +176,13 @@
       "properties": {
         "id": "PT-LOU",
         "name": "Lousal mine",
-        "municipality": "Gr\u00e2ndola",
+        "municipality": "Grândola",
         "region": "Iberian Pyrite Belt",
         "country": "PT",
-        "role": "pilot",
+        "role": "flagship",
         "facility_type": "waste heaps, tailings, pit lakes",
         "status": "rehabilitated",
-        "status_note": "Closed in 1988 (verify); partly remediated; site hosts a science centre (Centro Ci\u00eancia Viva do Lousal). Useful contrast case for the rehabilitation pathway.",
+        "status_note": "Closed in 1988 (verify); partly remediated; site hosts a science centre (Centro Ciência Viva do Lousal). Useful contrast case for the rehabilitation pathway.",
         "deposit_type": "volcanogenic massive sulphide (pyrite-rich)",
         "crm_candidates": [
           "Copper",
@@ -275,7 +275,7 @@
         "municipality": "Aljustrel",
         "region": "Iberian Pyrite Belt",
         "country": "PT",
-        "role": "pilot",
+        "role": "flagship",
         "facility_type": "historic waste heaps and tailings next to an operating mine",
         "status": "operating",
         "status_note": "Operating underground mine (Almina) with historic waste areas around it (verify extents). Tests how Strata separates legacy waste from active works.",
@@ -371,7 +371,7 @@
         "municipality": "Alosno, Huelva",
         "region": "Iberian Pyrite Belt",
         "country": "ES",
-        "role": "pilot",
+        "role": "flagship",
         "facility_type": "open pits, waste heaps, acid streams",
         "status": "closed",
         "status_note": "Closed (year to verify).",
@@ -467,10 +467,10 @@
         "municipality": "Minas de Riotinto, Huelva",
         "region": "Iberian Pyrite Belt",
         "country": "ES",
-        "role": "pilot",
-        "facility_type": "open pits, waste heaps, tailings; headwaters of the R\u00edo Tinto",
+        "role": "flagship",
+        "facility_type": "open pits, waste heaps, tailings; headwaters of the Río Tinto",
         "status": "operating",
-        "status_note": "Operating copper mine (Atalaya Mining) within a large historic district; the R\u00edo Tinto is a known acid water reference.",
+        "status_note": "Operating copper mine (Atalaya Mining) within a large historic district; the Río Tinto is a known acid water reference.",
         "deposit_type": "volcanogenic massive sulphide",
         "crm_candidates": [
           "Copper",
@@ -563,14 +563,14 @@
       },
       "properties": {
         "id": "ES-PDH",
-        "name": "Pe\u00f1a del Hierro",
+        "name": "Peña del Hierro",
         "municipality": "Nerva, Huelva",
         "region": "Iberian Pyrite Belt",
         "country": "ES",
-        "role": "pilot",
+        "role": "flagship",
         "facility_type": "flooded open pit, waste heaps",
         "status": "closed",
-        "status_note": "Historic mine near the source of the R\u00edo Tinto (year to verify).",
+        "status_note": "Historic mine near the source of the Río Tinto (year to verify).",
         "deposit_type": "volcanogenic massive sulphide",
         "crm_candidates": [
           "Copper",
@@ -658,10 +658,10 @@
       "properties": {
         "id": "ES-ZAR",
         "name": "La Zarza mine",
-        "municipality": "Cala\u00f1as, Huelva",
+        "municipality": "Calañas, Huelva",
         "region": "Iberian Pyrite Belt",
         "country": "ES",
-        "role": "pilot",
+        "role": "flagship",
         "facility_type": "open pit, waste heaps",
         "status": "closed",
         "status_note": "Closed (year to verify). Odiel catchment.",
@@ -752,14 +752,14 @@
       },
       "properties": {
         "id": "ES-AZN",
-        "name": "Aznalc\u00f3llar and Los Frailes",
-        "municipality": "Aznalc\u00f3llar, Seville",
+        "name": "Aznalcóllar and Los Frailes",
+        "municipality": "Aznalcóllar, Seville",
         "region": "Iberian Pyrite Belt",
         "country": "ES",
-        "role": "pilot",
+        "role": "flagship",
         "facility_type": "open pits, former tailings area",
         "status": "reopening_planned",
-        "status_note": "Site of the 1998 tailings dam failure. Final regional approval to reopen under Minera Los Frailes (Grupo M\u00e9xico) in 2025, production planned from 2028; the planned discharge to the Guadalquivir estuary is contested. Strata takes no position and reports change only.",
+        "status_note": "Site of the 1998 tailings dam failure. Final regional approval to reopen under Minera Los Frailes (Grupo México) in 2025, production planned from 2028; the planned discharge to the Guadalquivir estuary is contested. Strata takes no position and reports change only.",
         "deposit_type": "volcanogenic massive sulphide",
         "crm_candidates": [
           "Copper",
@@ -768,7 +768,7 @@
           "Arsenic"
         ],
         "community_pilot": true,
-        "community_name": "Aznalc\u00f3llar",
+        "community_name": "Aznalcóllar",
         "coords_confidence": "approximate",
         "sources": [
           "https://www.elsaltodiario.com/sevilla/mina-aznalcollar-se-volvera-abrir-2028-viejas-heridas-nuevos-vertidos",
@@ -971,6 +971,587 @@
         "verified_by": "",
         "verified_date": "",
         "area_ha_synth": 70
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.062693,
+              37.734
+            ],
+            [
+              24.062849,
+              37.736609
+            ],
+            [
+              24.05957,
+              37.73754
+            ],
+            [
+              24.057939,
+              37.74072
+            ],
+            [
+              24.05417,
+              37.74034
+            ],
+            [
+              24.050535,
+              37.73942
+            ],
+            [
+              24.050137,
+              37.736233
+            ],
+            [
+              24.049689,
+              37.734
+            ],
+            [
+              24.050714,
+              37.731987
+            ],
+            [
+              24.052076,
+              37.730108
+            ],
+            [
+              24.054715,
+              37.729548
+            ],
+            [
+              24.057741,
+              37.727969
+            ],
+            [
+              24.060253,
+              37.729782
+            ],
+            [
+              24.06339,
+              37.731186
+            ],
+            [
+              24.062693,
+              37.734
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "GR-LAV",
+        "name": "Lavrion ancient and modern slag fields",
+        "municipality": "Lavreotiki",
+        "region": "Attica",
+        "country": "GR",
+        "role": "flagship",
+        "facility_type": "ancient and 20th-century slag heaps, acid-stained tailings",
+        "status": "closed",
+        "status_note": "Modern mining ended in 1989; ancient Thorikos / Laurium silver-lead legacy. Coastal exposure, dust and heavy-metal concern.",
+        "deposit_type": "lead-zinc-silver carbonate replacement",
+        "crm_candidates": [
+          "Lead",
+          "Silver",
+          "Antimony",
+          "Arsenic"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 130
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.551546,
+              48.665
+            ],
+            [
+              20.547946,
+              48.667209
+            ],
+            [
+              20.547846,
+              48.67067
+            ],
+            [
+              20.543273,
+              48.671577
+            ],
+            [
+              20.539143,
+              48.670374
+            ],
+            [
+              20.535377,
+              48.669657
+            ],
+            [
+              20.534274,
+              48.667139
+            ],
+            [
+              20.533088,
+              48.665
+            ],
+            [
+              20.532078,
+              48.662162
+            ],
+            [
+              20.534529,
+              48.659641
+            ],
+            [
+              20.539203,
+              48.6598
+            ],
+            [
+              20.543243,
+              48.658509
+            ],
+            [
+              20.546503,
+              48.660443
+            ],
+            [
+              20.549546,
+              48.662282
+            ],
+            [
+              20.551546,
+              48.665
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SK-ROZ",
+        "name": "Rožňava district waste heaps",
+        "municipality": "Rožňava",
+        "region": "Slovak Ore Mountains",
+        "country": "SK",
+        "role": "flagship",
+        "facility_type": "iron-sulphide waste heaps, flooded galleries",
+        "status": "closed",
+        "status_note": "Mining ended in the 1990s; district with multiple heaps and acid drainage into the Slaná river basin (verify).",
+        "deposit_type": "siderite-sulphide vein",
+        "crm_candidates": [
+          "Antimony",
+          "Cobalt",
+          "Nickel",
+          "Arsenic"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 150
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.227301,
+              43.366
+            ],
+            [
+              2.22799,
+              43.369147
+            ],
+            [
+              2.223943,
+              43.370506
+            ],
+            [
+              2.221481,
+              43.373902
+            ],
+            [
+              2.21716,
+              43.371862
+            ],
+            [
+              2.213166,
+              43.371318
+            ],
+            [
+              2.209442,
+              43.369346
+            ],
+            [
+              2.20784,
+              43.366
+            ],
+            [
+              2.21013,
+              43.362895
+            ],
+            [
+              2.212612,
+              43.360177
+            ],
+            [
+              2.21685,
+              43.359153
+            ],
+            [
+              2.221428,
+              43.358267
+            ],
+            [
+              2.224239,
+              43.361225
+            ],
+            [
+              2.228241,
+              43.362765
+            ],
+            [
+              2.227301,
+              43.366
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "FR-SAL",
+        "name": "Salsigne gold-arsenic legacy",
+        "municipality": "Salsigne / Villanière",
+        "region": "Montagne Noire",
+        "country": "FR",
+        "role": "flagship",
+        "facility_type": "arsenic-rich tailings, slag, remediated and non-remediated heaps",
+        "status": "rehabilitated",
+        "status_note": "Mining ended in 2004; well-known arsenic legacy. Partial state-led remediation; downstream contamination in the Orbiel valley (verify).",
+        "deposit_type": "gold-arsenopyrite vein",
+        "crm_candidates": [
+          "Gold",
+          "Arsenic",
+          "Antimony",
+          "Bismuth"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Salsigne_mine"
+        ],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 190
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              18.945764,
+              50.311
+            ],
+            [
+              18.945268,
+              50.314465
+            ],
+            [
+              18.941776,
+              50.317227
+            ],
+            [
+              18.936811,
+              50.318864
+            ],
+            [
+              18.930946,
+              50.319545
+            ],
+            [
+              18.924908,
+              50.318281
+            ],
+            [
+              18.922231,
+              50.31462
+            ],
+            [
+              18.920234,
+              50.311
+            ],
+            [
+              18.922707,
+              50.307527
+            ],
+            [
+              18.926503,
+              50.304996
+            ],
+            [
+              18.930903,
+              50.302334
+            ],
+            [
+              18.937278,
+              50.301827
+            ],
+            [
+              18.941823,
+              50.304736
+            ],
+            [
+              18.945576,
+              50.30744
+            ],
+            [
+              18.945764,
+              50.311
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "PL-BYT",
+        "name": "Bytom-Piekary zinc-lead waste",
+        "municipality": "Bytom / Piekary Śląskie",
+        "region": "Upper Silesia",
+        "country": "PL",
+        "role": "flagship",
+        "facility_type": "flotation tailings, slag heaps, subsiding ground",
+        "status": "closed",
+        "status_note": "Mining ended in the 1990s; urban-industrial landscape with persistent subsidence and heavy-metal soils (verify).",
+        "deposit_type": "Mississippi Valley-type Zn-Pb",
+        "crm_candidates": [
+          "Zinc",
+          "Lead",
+          "Germanium",
+          "Gallium"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 240
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              29.024964,
+              62.724
+            ],
+            [
+              29.023167,
+              62.725803
+            ],
+            [
+              29.020594,
+              62.727214
+            ],
+            [
+              29.017065,
+              62.728145
+            ],
+            [
+              29.012434,
+              62.729152
+            ],
+            [
+              29.009208,
+              62.727329
+            ],
+            [
+              29.006106,
+              62.725963
+            ],
+            [
+              29.003801,
+              62.724
+            ],
+            [
+              29.005488,
+              62.721901
+            ],
+            [
+              29.00732,
+              62.719586
+            ],
+            [
+              29.012699,
+              62.71938
+            ],
+            [
+              29.017234,
+              62.719514
+            ],
+            [
+              29.021787,
+              62.7201
+            ],
+            [
+              29.023233,
+              62.722183
+            ],
+            [
+              29.024964,
+              62.724
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "FI-OUT",
+        "name": "Outokumpu Keretti legacy",
+        "municipality": "Outokumpu",
+        "region": "North Karelia",
+        "country": "FI",
+        "role": "flagship",
+        "facility_type": "tailings pond, waste heaps, mining museum landscape",
+        "status": "rehabilitated",
+        "status_note": "Mining ended in 1989; rehabilitated and museum-managed. Transfer test: boreal climate, snow cover for 5 months, long summer days.",
+        "deposit_type": "massive sulphide (Cu-Co-Zn)",
+        "crm_candidates": [
+          "Copper",
+          "Cobalt",
+          "Nickel",
+          "Zinc"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 90
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              23.608476,
+              47.654
+            ],
+            [
+              23.608106,
+              47.657603
+            ],
+            [
+              23.602221,
+              47.65841
+            ],
+            [
+              23.599784,
+              47.662215
+            ],
+            [
+              23.594337,
+              47.66186
+            ],
+            [
+              23.591667,
+              47.658504
+            ],
+            [
+              23.586276,
+              47.657479
+            ],
+            [
+              23.585105,
+              47.654
+            ],
+            [
+              23.588767,
+              47.651329
+            ],
+            [
+              23.589119,
+              47.647343
+            ],
+            [
+              23.594791,
+              47.647481
+            ],
+            [
+              23.599295,
+              47.647226
+            ],
+            [
+              23.603996,
+              47.64809
+            ],
+            [
+              23.607257,
+              47.650673
+            ],
+            [
+              23.608476,
+              47.654
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "RO-BAI",
+        "name": "Baia Mare tailings dam complex",
+        "municipality": "Baia Mare",
+        "region": "Maramureș",
+        "country": "RO",
+        "role": "flagship",
+        "facility_type": "tailings dams and waste heaps near a city of 100,000+",
+        "status": "reopening_planned",
+        "status_note": "District of the 2000 cyanide spill (verify). Reactivation discussions tied to CRMA Strategic Projects; densely populated downstream catchment.",
+        "deposit_type": "epithermal Au-Ag with base metals",
+        "crm_candidates": [
+          "Gold",
+          "Silver",
+          "Antimony",
+          "Arsenic",
+          "Lead"
+        ],
+        "community_pilot": false,
+        "coords_confidence": "approximate",
+        "sources": [
+          "https://en.wikipedia.org/wiki/2000_Baia_Mare_cyanide_spill"
+        ],
+        "polygon_source": "synthetic",
+        "polygon_note": "Illustrative polygon drawn around the seed point for the demo. Replace with OSM / Tang-Werner polygons during M1.",
+        "verified_by": "",
+        "verified_date": "",
+        "area_ha_synth": 200
       }
     }
   ]

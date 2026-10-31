@@ -964,6 +964,20 @@ body.strata-standalone #strata-root {
 }
 .sr-pop .leaflet-popup-tip { background: var(--surface); border: 1px solid var(--line); }
 .sr-pop .leaflet-popup-content { margin: 10px 12px; font-family: var(--sans); }
+/* Close X: sit inside the frame, large touch target */
+.sr-pop .leaflet-popup-close-button {
+  color: var(--ink); padding: 6px 8px; font-size: 18px;
+  width: auto; height: auto; background: transparent;
+}
+.sr-pop .leaflet-popup-close-button:hover { color: var(--warn); background: transparent; }
+/* Mobile: tight popup that fits two thumbs */
+.sr-pop--mobile .leaflet-popup-content-wrapper { max-width: 220px; }
+.sr-pop--mobile .leaflet-popup-content { margin: 8px 10px; font-size: 12px; }
+.sr-pop--mobile .sr-pop-head strong { font-size: 13px; }
+.sr-pop--mobile .sr-pop-sub { font-size: 10px; }
+.sr-pop--mobile .sr-pop-facts { font-size: 11.5px; column-gap: 6px; }
+.sr-pop--mobile .sr-pop-stage { padding: 2px 6px; font-size: 9.5px; margin: 6px 0; }
+.sr-pop--mobile .leaflet-popup-close-button { padding: 10px 12px; font-size: 20px; }
 .sr-pop-head strong { font-family: var(--sans); font-size: 13px; display: block; color: var(--ink); }
 .sr-pop-sub { font-family: var(--mono); font-size: 10.5px; color: var(--mute); display: block; margin-top: 2px; letter-spacing: 0.04em; }
 .sr-pop-stage {
@@ -1135,6 +1149,18 @@ body.strata-standalone #strata-root {
   border: 1px solid var(--line); background: var(--surface);
 }
 .sr-effort-dot.is-on { background: var(--ink); border-color: var(--ink); }
+
+/* ─── Per-site note (user input) ───────────────────────────────── */
+.sr-note {
+  width: 100%; min-height: 72px; resize: vertical;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 0;
+  padding: 8px 10px; font: inherit; font-size: 13px; line-height: 1.5;
+}
+.sr-note:focus { outline: 2px solid var(--ink); outline-offset: -1px; }
+.sr-note-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+.sr-note-status { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--mute); }
+.sr-note-clear { font-size: 11px; }
 
 /* ─── Toast ────────────────────────────────────────────────────── */
 .sr-toast {

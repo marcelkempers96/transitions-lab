@@ -1,0 +1,43 @@
+{
+  "areaHa": 90,
+  "dem": {
+    "baseElevationM": 410.0,
+    "maxHeightM": 4.2,
+    "volumeAboveBaseM3": 1292346,
+    "volumeBelowBaseM3": 1426245,
+    "confidence": "low",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Tree cover": 68,
+    "Grassland": 12,
+    "Built-up": 10,
+    "Permanent water bodies": 8,
+    "Shrubland": 2
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 0,
+    "distanceM": 4800,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 320,
+    "within5km": 5600,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 900,
+    "name": "Sysm\u00e4j\u00e4rvi"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 2.7
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -0.5,
+    "shareBelowThresholdPct": 1.2,
+    "points": 92,
+    "period": "2019-01 to 2024-12"
+  }
+}

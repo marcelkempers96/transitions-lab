@@ -1,0 +1,43 @@
+{
+  "areaHa": 150,
+  "dem": {
+    "baseElevationM": 400.8,
+    "maxHeightM": 54.6,
+    "volumeAboveBaseM3": 28150001,
+    "volumeBelowBaseM3": 3659899,
+    "confidence": "medium",
+    "note": "Copernicus DEM GLO-30, epoch 2011 to 2015. DEM proxy only; verify against promoter records."
+  },
+  "worldcoverRing": {
+    "Tree cover": 52,
+    "Grassland": 22,
+    "Cropland": 14,
+    "Built-up": 10,
+    "Shrubland": 2
+  },
+  "natura2000": {
+    "withinPolygonHa": 0,
+    "within1kmHa": 60,
+    "distanceM": 1200,
+    "siteCodes": []
+  },
+  "population": {
+    "within1km": 1800,
+    "within5km": 16000,
+    "epoch": 2025
+  },
+  "river": {
+    "distanceM": 800,
+    "name": "Slan\u00e1"
+  },
+  "gsw": {
+    "occurrenceOver50Ha": 4.5
+  },
+  "egms": {
+    "loaded": true,
+    "medianMmYr": -2.2,
+    "shareBelowThresholdPct": 8.0,
+    "points": 230,
+    "period": "2019-01 to 2024-12"
+  }
+}

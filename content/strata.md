@@ -2,7 +2,7 @@
 
 # A satellite lifecycle card for every closed mine waste site
 
-*Strata gives each [closed mine waste site](/insight-closed-mine-waste) a satellite lifecycle card: what it looks like now, how it has changed over ten years, how big the heap is, who lives nearby, and what each of the three pathways (leave and monitor, rehabilitate, reprocess) would involve. Pilot in the Iberian Pyrite Belt.*
+*Strata gives each [closed mine waste site](/insight-closed-mine-waste) a satellite lifecycle card: what it looks like now, how it has changed over ten years, how big the heap is, who lives nearby, and what each of the three pathways (leave and monitor, rehabilitate, reprocess) would involve. Sixteen flagship sites across Europe, with the Iberian Pyrite Belt as the core cluster.*
 
 <p class="article-meta"><span class="article-date">30 October 2026</span> · <span class="article-reading-time">5 min read</span></p>
 
@@ -17,7 +17,7 @@
 <div class="strata-hero">
   <div class="strata-hero-globe-wrap">
     <canvas id="strata-globe" class="strata-globe" width="520" height="520" aria-hidden="true"></canvas>
-    <p class="strata-hero-caption">The ten pilot sites, on an orthographic projection. Drag to rotate.</p>
+    <p class="strata-hero-caption">The sixteen flagship sites, on an orthographic projection. Drag to rotate.</p>
   </div>
   <div class="strata-hero-body">
     <p class="strata-wordmark"><img src="/assets/logos/strata-lockup-black.svg" alt="Strata — a satellite lifecycle card for every closed mine waste site"></p>
@@ -27,7 +27,7 @@
       <a href="/strata-paper" class="btn btn-ghost">Companion paper</a>
     </p>
     <form class="strata-signup" data-strata-signup>
-      <label for="strata-signup-email" class="strata-signup-label">Get the pilot update when it lands.</label>
+      <label for="strata-signup-email" class="strata-signup-label">Get the flagship update when it lands.</label>
       <div class="strata-signup-row">
         <input id="strata-signup-email" type="email" required placeholder="you@organisation.eu" autocomplete="email">
         <button type="submit">Sign up</button>
@@ -45,7 +45,7 @@
     var canvas = document.getElementById('strata-globe');
     if (!canvas) return;
     var rings = window.STRATA_WORLD_RINGS || [];
-    // Ten pilot sites (lon, lat) matching sites.seed.geojson
+    // Ten flagship sites (lon, lat) matching sites.seed.geojson
     var SITES = [
       {id:'PT-SDO', lon:-7.502, lat:37.665},
       {id:'PT-LOU', lon:-8.426, lat:38.035},
@@ -56,7 +56,13 @@
       {id:'ES-ZAR', lon:-6.860, lat:37.705},
       {id:'ES-AZN', lon:-6.270, lat:37.520},
       {id:'DE-BOL', lon:10.455, lat:51.912},
-      {id:'SE-FAL', lon:15.610, lat:60.600}
+      {id:'SE-FAL', lon:15.610, lat:60.600},
+      {id:'GR-LAV', lon:24.056, lat:37.734},
+      {id:'SK-ROZ', lon:20.541, lat:48.665},
+      {id:'FR-SAL', lon:2.219,  lat:43.366},
+      {id:'PL-BYT', lon:18.934, lat:50.311},
+      {id:'FI-OUT', lon:29.015, lat:62.724},
+      {id:'RO-BAI', lon:23.597, lat:47.654}
     ];
 
     var ctx = canvas.getContext('2d');
@@ -141,7 +147,7 @@
       ctx.fillStyle = 'rgba(29, 107, 85, 0.22)';
       for (var i = 0; i < rings.length; i++) drawRing(rings[i]);
 
-      // Pilot site pins — slightly larger on retina
+      // Flagship site pins — slightly larger on retina
       for (var k = 0; k < SITES.length; k++) {
         var s = SITES[k];
         var p = project(s.lon, s.lat);
@@ -295,7 +301,7 @@ Six features that cover ninety per cent of what a geological survey, a municipal
 <div class="strata-features strata-features--shots">
   <a class="strata-feature" href="/strata-demo#map">
     <div class="strata-feature-shot">
-      <img src="/assets/img/strata-feat-map.jpg" alt="Strata overview map with the ten pilot pins across Iberia, Germany and Sweden" loading="lazy">
+      <img src="/assets/img/strata-feat-map.jpg" alt="Strata overview map with the sixteen flagship pins across Iberia, Germany and Sweden" loading="lazy">
     </div>
     <h3>1 · Satellite map with lifecycle pins</h3>
     <p>Real ESRI World Imagery under every pin. Switch between satellite, street and terrain base maps. Pins coloured by lifecycle stage (operating, legacy largely bare, legacy mixed, recovering naturally, vegetated, reopening planned) and sized by waste footprint. Site polygons overlaid so the heap shape reads against the ground.</p>
@@ -322,10 +328,10 @@ Six features that cover ninety per cent of what a geological survey, a municipal
 
   <a class="strata-feature" href="/strata-demo#compare">
     <div class="strata-feature-shot">
-      <img src="/assets/img/strata-feat-compare.jpg" alt="Compare table: all ten pilot sites side by side with lifecycle stage, flags, area, volume, bare and iron percentages, recovery clock, people within 1 km and EGMS motion share" loading="lazy">
+      <img src="/assets/img/strata-feat-compare.jpg" alt="Compare table: all sixteen flagship sites side by side with lifecycle stage, flags, area, volume, bare and iron percentages, recovery clock, people within 1 km and EGMS motion share" loading="lazy">
     </div>
     <h3>4 · Compare table across every site</h3>
-    <p>All ten pilot sites side by side with lifecycle stage, flags, area, DEM volume proxy, bare %, iron signal %, red-water %, recovery clock status, people within 1 km, Natura 2000 overlap, EGMS share subsiding faster than 5 mm/yr. Export the whole table as CSV or every polygon as GeoJSON in one click.</p>
+    <p>All sixteen flagship sites side by side with lifecycle stage, flags, area, DEM volume proxy, bare %, iron signal %, red-water %, recovery clock status, people within 1 km, Natura 2000 overlap, EGMS share subsiding faster than 5 mm/yr. Export the whole table as CSV or every polygon as GeoJSON in one click.</p>
     <span class="strata-feature-cta">Open the Compare view &rarr;</span>
   </a>
 
@@ -334,7 +340,7 @@ Six features that cover ninety per cent of what a geological survey, a municipal
       <img src="/assets/img/strata-feat-communities.jpg" alt="Communities view showing Mina de São Domingos with mining landscape, livelihoods, resident concerns and three pathway preference cards" loading="lazy">
     </div>
     <h3>5 · Communities</h3>
-    <p>The three pilot communities (Mina de São Domingos / Mértola, Minas de Riotinto and Nerva, Aznalcóllar) with the mining landscape, livelihoods today, residents' preliminary concerns, pathway preferences, and the sites each is beside. Replaced by anonymised themes from the pilot social-needs fieldwork between February and May 2027.</p>
+    <p>The three flagship communities (Mina de São Domingos / Mértola, Minas de Riotinto and Nerva, Aznalcóllar) with the mining landscape, livelihoods today, residents' preliminary concerns, pathway preferences, and the sites each is beside. Replaced by anonymised themes from the pilot social-needs fieldwork between February and May 2027.</p>
     <span class="strata-feature-cta">Open the Communities view &rarr;</span>
   </a>
 
@@ -350,7 +356,7 @@ Six features that cover ninety per cent of what a geological survey, a municipal
 
 <p class="strata-features-guide">New to Strata? The <a href="/strata-guide"><strong>functions &amp; use-cases guide</strong></a> walks through every feature step by step and shows how a geological survey, a municipality and a reprocessing firm each use the tool end to end.</p>
 
-## Pilot
+## Flagship sites
 
 Eight sites in the Iberian Pyrite Belt (Portugal and Spain, pyrite-rich volcanogenic massive sulphide deposits with public acid-drainage legacy) plus two transfer sites in Germany (the Bollrich tailings pond at Rammelsberg) and Sweden (the Falun UNESCO mining landscape). The seed register is in `sites.seed.geojson`.
 
@@ -362,7 +368,20 @@ Strata does not estimate metal grades or tonnages. It does not judge permit comp
 
 ## Supported by
 
-Strata is led by Transitions Lab in Delft. Partners: Pyropower (materials-and-energy side, processing-stage experience); Social Innovation Europe (community reach across Member States and the Western Balkans).
+Strata is led by Transitions Lab in Delft. Strata is an ongoing project; the register, the map layers and the method all grow with each release.
+
+<div class="strata-partners">
+  <a class="strata-partner" href="https://pyropower.com" target="_blank" rel="noopener">
+    <img src="/assets/img/logo-pyropower.png" alt="Pyropower" loading="lazy">
+    <span class="strata-partner-label"><strong>Pyropower</strong><em>Materials and energy side; processing-stage experience.</em></span>
+  </a>
+  <a class="strata-partner" href="https://www.siceurope.eu" target="_blank" rel="noopener">
+    <img src="/assets/img/logo-social-innovation-europe.png" alt="Social Innovation Europe" loading="lazy">
+    <span class="strata-partner-label"><strong>Social Innovation Europe</strong><em>Community reach across EU Member States and the Western Balkans.</em></span>
+  </a>
+</div>
+
+Partners: Pyropower (materials-and-energy side, processing-stage experience); Social Innovation Europe (community reach across Member States and the Western Balkans). To join Strata as a flagship site provider or domain partner, [talk to Marcel](/contact).
 
 <!--
 EU FUNDING ACKNOWLEDGEMENT: activate ONLY if and when a sub-grant agreement is signed. Keep this block commented until then.

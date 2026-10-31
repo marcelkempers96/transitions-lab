@@ -197,7 +197,7 @@ Strata is led by **Transitions Lab** in Delft, which writes the method, runs the
 
 ## 6. Governance and limits
 
-The method is version-controlled and published in full. The pilot runs on six sites selected to cover an extraction site before construction, operating extraction with tailings, a processing or recycling plant and one site outside the European Union. Each promoter is contacted before a site page is first published and may submit a factual response, which is linked from the page.
+The method is version-controlled and published in full. The flagship register runs on sixteen sites across six Member States, selected to cover closed heaps, operating sites with historic waste, reopening-planned tailings dams, and heritage landscapes. Each promoter is contacted before a site page is first published and may submit a factual response, which is linked from the page.
 
 Strata does not measure emissions, water chemistry, dust, noise or community outcomes, and it cannot establish permit compliance. Ten-metre imagery misses small features and early earthworks. Ground motion data from EGMS covers Copernicus Participating States only, so third-country sites carry no ground motion indicator. These limits are stated on every page where the numbers appear, not only here.
 
@@ -213,7 +213,7 @@ The Mineral Flows Map lives at [transitionslab.org/mineral-flows](/mineral-flows
 
 ---
 
-## 8. Open questions the pilot will answer
+## 8. Open questions the flagship register will answer
 
 - At what threshold does the vegetation-loss indicator produce a materially false flag in agricultural seasons, and what is the appropriate per-climate-zone calibration?
 - Does the experimental downstream water-colour indicator validate well enough against ground truth to publish operationally?
