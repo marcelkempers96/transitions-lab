@@ -92,4 +92,4 @@ The research is one half of what Kenya gave me. The other half I owe to the ride
 
 ---
 
-*This is an independent op-ed by Transitions Lab. See the Lab's applied work on [E-Mobility &amp; Transport](/expertise-e-mobility) and the companion field essay [Hands Never Still: the jua kali fundis Nairobi's electric transition cannot afford to lose](/insight-hands-never-still). To discuss a study, see [Contact](/contact).*
+*This is an independent op-ed by Transitions Lab. See the companion field essays [Hands Never Still: the jua kali fundis Nairobi's electric transition cannot afford to lose](/insight-hands-never-still) and [The Hidden Energy Economy: what Nairobi's unofficial battery chargers say about the swap network](/insight-hidden-energy-economy). For the Lab's applied work, see [E-Mobility &amp; Transport](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*

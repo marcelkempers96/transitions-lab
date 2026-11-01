@@ -425,6 +425,7 @@ HERO_COLOR: dict[str, str] = {
     "insight-sized-to-the-rules":               "butter",
     "insight-four-hours-at-the-hub":            "butter",
     "insight-hands-never-still":                "butter",
+    "insight-hidden-energy-economy":            "butter",
     "insight-a-thousand-cars-one-risk": "butter",
     "insight-survey-first-act-of-the-mine": "butter",
     "insight-adoption-is-the-research": "butter",
@@ -597,6 +598,7 @@ NO_BYLINE_SLUGS: set[str] = {
     "insight-sized-to-the-rules",
     "insight-four-hours-at-the-hub",
     "insight-hands-never-still",
+    "insight-hidden-energy-economy",
     "strata",
     "strata-method",
     "strata-paper",
@@ -776,6 +778,10 @@ META: dict[str, dict[str, str]] = {
     "insight-hands-never-still": {
         "title": "Hands never still: the jua kali fundis Nairobi's electric transition cannot afford to lose | Transitions Lab",
         "description": "Field essay from Nairobi. Informal mechanics keep petrol boda bodas running on an open market of Indian originals and Chinese copies. Electric motorcycles route repair through operators' service centres instead. What that does to Kenya's largest informal trade.",
+    },
+    "insight-hidden-energy-economy": {
+        "title": "The hidden energy economy: what Nairobi's unofficial battery chargers say about the swap network | Transitions Lab",
+        "description": "Field essay from Nairobi. A hidden battery-charging cabinet in Industrial Area shows how boda boda riders route around thin swap networks. What operators and regulators can learn, and how an M-Pesa-style agent model would bring sites like it inside.",
     },
     "insight-where-transition-minerals-go": {
         "title": "Where transition minerals actually go | Transitions Lab",
@@ -2188,6 +2194,9 @@ def _build_home_insight_pool() -> str:
         ("insight-hands-never-still", "E-Mobility &middot; Africa",
          "Nairobi's informal mechanics keep petrol boda bodas running on an open market of Indian originals and Chinese copies. Electric motorcycles route repair through operators' service centres instead. A field essay from two rounds of interviews.",
          "Three jua kali fundis working on a motorcycle at a roadside workshop in Nairobi, a chain and sprocket laid out on the pavement, the wheel off and parts spread across a rag."),
+        ("insight-hidden-energy-economy", "E-Mobility &middot; Africa",
+         "A hidden battery-charging cabinet in Nairobi's Industrial Area, protected by riders who will not even tell a familiar researcher where it is, is what the shortage of charged batteries looks like when someone decides to sell a solution to it.",
+         "The unofficial charging site behind a fabrication yard in Nairobi: a solar panel bolted above a corrugated-iron door, a locker cabinet visible inside the open gate, an electric boda boda with a green 100% Electric sticker waiting outside."),
         ("insight-the-charger-and-the-tax", "E-Mobility &middot; Africa",
          "Ruto directed duty-free import for 100,000 EVs and signed a US$3bn charging-hub MOU. The Finance Bill 2026 proposes 16% VAT on the same vehicles, batteries and chargers.",
          "A boda-boda rider on an electric motorcycle at a solar-canopied charging station on the edge of Nairobi, Mount Longonot and the city skyline on the horizon, a yellow fast-charger cable in the foreground."),

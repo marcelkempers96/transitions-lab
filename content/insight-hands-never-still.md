@@ -73,4 +73,4 @@ The fundis I interviewed never stopped working long enough to complain, and they
 
 ---
 
-*This is an independent op-ed by Transitions Lab. See the companion field essay [Four Hours at the Hub: time is the real fuel of Nairobi's electric boda bodas](/insight-four-hours-at-the-hub), and the Lab's applied work on [E-Mobility &amp; Transport](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*
+*This is an independent op-ed by Transitions Lab. See the companion field essays [Four Hours at the Hub: time is the real fuel of Nairobi's electric boda bodas](/insight-four-hours-at-the-hub) and [The Hidden Energy Economy: what Nairobi's unofficial battery chargers say about the swap network](/insight-hidden-energy-economy). For the Lab's applied work, see [E-Mobility &amp; Transport](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*
