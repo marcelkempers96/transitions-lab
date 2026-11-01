@@ -146,7 +146,41 @@ body.ute-standalone {
   border: 1px solid var(--line);
   overflow: hidden;
 }
+.ute-moto-wrap.is-blueprint {
+  background:
+    linear-gradient(#C9D7EB 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, #C9D7EB 1px, transparent 1px) 0 0 / 24px 24px,
+    #F0F4FA;
+}
 .ute-moto-svg { display: block; width: 100%; height: auto; max-height: 580px; }
+
+/* Blueprint drawing primitives (line-art style) */
+.ute-moto-svg.is-blueprint { color: #1E3A5F; }
+.ute-moto-svg.is-blueprint .bp-ln       { fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linejoin: round; stroke-linecap: round; }
+.ute-moto-svg.is-blueprint .bp-ln-fine  { fill: none; stroke: currentColor; stroke-width: 0.65; stroke-linejoin: round; }
+.ute-moto-svg.is-blueprint .bp-ln-thick { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+.ute-moto-svg.is-blueprint .bp-fill-paper { fill: #F0F4FA; stroke: currentColor; stroke-width: 1.1; }
+.ute-moto-svg.is-blueprint .bp-tint       { fill: currentColor; fill-opacity: 0.06; stroke: currentColor; stroke-width: 1.1; }
+.ute-moto-svg.is-blueprint .bp-tint-strong{ fill: currentColor; fill-opacity: 0.13; stroke: currentColor; stroke-width: 1.1; }
+.ute-moto-svg.is-blueprint .bp-fill-knob  { fill: currentColor; fill-opacity: 0.5; stroke: none; }
+.ute-moto-svg.is-blueprint .ute-callout-label { fill: #1E3A5F; }
+.ute-moto-svg.is-blueprint .ute-callout-leader { stroke: #1E3A5F; }
+.ute-moto-svg.is-blueprint .ute-callout-dot { fill: #F0F4FA; stroke: #1E3A5F; }
+
+/* Overview view toggle (Diagram / Blueprint) */
+#ute-root .ute-view-toggle {
+  display: inline-flex; gap: 2px;
+  background: var(--ink); border: 1px solid var(--ink);
+}
+#ute-root .ute-view-toggle button {
+  padding: 6px 12px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); background: var(--surface);
+  border: 0; cursor: pointer;
+}
+#ute-root .ute-view-toggle button:hover { background: var(--paper-2); }
+#ute-root .ute-view-toggle button.is-on { background: var(--ink); color: var(--paper); }
 
 /* Shape highlighting on overview & component view */
 .ute-shape { cursor: pointer; transition: fill 180ms ease, stroke 180ms ease; }
