@@ -7,7 +7,7 @@
 <p class="article-meta"><span class="article-date">1 November 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-hero.jpg" alt="Electric Uber-branded motorcycles with riders in high-vis vests outside a Nairobi parking lot">
+  <img src="/assets/img/insight-four-hours-at-the-hub-hero.jpg" alt="Three yellow Uber-branded electric boda bodas lined up in a Lavington car park, a rider in a yellow high-vis jacket standing in front of his bike, two more riders in bright green vests seated on bikes checking their phones">
 </figure>
 
 ## The quiet and the wait
@@ -28,6 +28,10 @@ The arithmetic looks different once it is done per hour. Francis pays 530 shilli
 
 When a rental battery is in stock, Francis told me, "it's about 10 seconds, you exchange, and you go." When it is not, those ten seconds become an afternoon. Enos, who works more than twelve hours a day and could do thirty trips "if I'm able to swap batteries in time," waits up to four hours "because so many people are scrambling for all these batteries," and he was candid about what that does to him: "it absorbs my morale, morale goes down. I cannot work as I woke up." Emmanuel summarised the problem in words that came up in almost every interview, "for boda boda riders, time is actually money," and Alex, asked what petrol riders still have over him, did not mention price, range or reliability: "The only advantage they have from us is they don't wait for batteries."
 
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-05.jpg" alt="A formal Spiro Swap & Go station in Ruaka on a forecourt beside a KFC, two cabinets with numbered green and blue locker compartments, three riders at the terminal screen, a red Spiro-branded electric boda boda parked in front">
+</figure>
+
 ## When success creates the queue
 
 The waiting is, in part, a symptom of success. Emmanuel switched early, after doing what he called his own research, and remembered a time when rentals were easy to come by: "there were a lot of charging stations. Not a lot at that time, but they were available, and the bikes were not as much as right now on the roads. Getting access to a rental battery or a loaner battery was quite easy." He paused before adding, "That time, now it's different. Now it's quite hectic." Every new rider who joins the network makes the bike more familiar to the next one, and every new rider also draws on the same pool of charged batteries at the same hubs during the same morning hours.
@@ -41,7 +45,7 @@ What turns waiting from an inconvenience into a cost is the way these bikes are 
 That is careful lending, and it also means that a rider's day starts with a fixed sum owed before any income is counted. Francis described his target in exactly those terms: ten trips at around 50 shillings each, sometimes twelve or thirteen, "to make your target." Every hour spent at a hub is an hour in which that sum still has to be found, so the waiting falls hardest on the riders with the least slack. Repairs follow the same logic at a longer timescale. Georg told me about a friend whose Roam bike had stood idle for four months while he waited for an insurance claim on a faulty motor and controller, "really struggling on how to make money and how to feed his family." Because electric repairs remain concentrated with the manufacturer, riders have few places to turn for anything beyond brakes and tyres. James, who runs a workshop with seven mechanics, sees perhaps two to four electric bikes a day out of the ten to fifteen motorcycles that come through, and Francis was clear that he would not let "anybody" handle a mechanical fault on his Roam.
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-02.jpg" alt="Two parked petrol boda bodas on a Nairobi roadside, a rider in a yellow high-vis vest beside one of them">
+  <img src="/assets/img/insight-four-hours-at-the-hub-03.jpg" alt="Three jua kali fundis at a Nairobi roadside workshop working on a black café-racer-style motorcycle, a chain and worn sprocket laid out on the pavement, hand tools spread across a rag">
 </figure>
 
 ## The view from the petrol stage
@@ -50,11 +54,19 @@ The petrol riders I interviewed were not waiting for anything, and their reasons
 
 The friction runs both ways. Alex, riding electric through a ride-hailing app, said petrol riders in the CBD "don't like the electric motorbike" and explained the tension in commercial rather than technical terms: "For us, we don't wait for customers. They call us," and "they don't like us because we are cheaper." The irony was not lost on me, since the same rider who no longer waits at a stage for passengers now waits at a hub for batteries. In both cases the scarce resource is the rider's hour, and the technology shifts where that hour is spent rather than whether it is spent.
 
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-02.jpg" alt="A quiet Nairobi roadside, two parked petrol boda bodas and a scooter on a dusty verge beside a main road, a cold tyre fire pit and loose debris in the foreground, the author's own foot in a blue sandal at the edge of the frame">
+</figure>
+
 ## The tank that holds nothing
 
 The eWaka bike in the Citizen Digital segment has a fuel tank that holds nothing, with the charging port where the filler cap would be, because, as Tune explains, "the design is meant to mimic what people are used to from a form perspective." Hargadon and Douglas (2001) called this robust design in their account of how Edison made the electric light resemble the gas lamp it replaced, so that a new technology could enter a market organised around the old one. Kenyan e-motorcycles have done this well at the level of the object, which looks, rides and is financed much like the petrol bike riders already know. What the empty tank cannot imitate is the system behind it, and Derro, a petrol rider with no plans to switch, put his finger on it when he explained why: "petrol stations are all over." The advantage of the incumbent regime, in the multi-level perspective's terms (Geels, 2002), lies less in the engine than in a refuelling network that already moves at the pace of a working day.
 
 Roam's own team was open about where that pace breaks down. Romain explained that the first-generation home charger takes around five and a half hours for a full battery, which suits overnight charging but not a daytime top-up. "It's our fault as a company," he said. "We have been a bit slow to deploy more rental battery." He also observed that riders were "wasting, like, four hours of their prime time to wait. But they're still like, okay, they still do it," which he put down to a relaxed, *hakuna matata* outlook. I read the same scene differently, since riders who owe 530 shillings by evening have little choice but to wait, and Enos's falling morale suggests that what looks like patience from the hub manager's office is closer to a contractual obligation than a temperament.
+
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-04.jpg" alt="Close-up of two fundis working on the exposed engine of a petrol boda boda at a Nairobi roadside spot, the fuel tank off and the cylinder-head area opened up, hand tools and rags spread around the frame">
+</figure>
 
 ## Counting the hours
 
@@ -69,15 +81,15 @@ The quiet I noticed on that first ride is real, and it is one of the pleasures o
 The research is one half of what Kenya gave me. The other half I owe to the riders, mechanics and friends who put me on the back of a bike, took me out to the Safari Rally and left me grinning in a Naivasha field — but that is a story for another time.
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-safari-01.jpg" alt="Two riders with a Kenyan flag on a dirt bike, looking across a grass field at a landing helicopter during the Safari Rally">
+  <img src="/assets/img/insight-four-hours-at-the-hub-safari-01.jpg" alt="A group portrait of seven riders in matching black t-shirts standing in a grass field at the Safari Rally in Naivasha, the author smiling in the middle, phones and gear in hand">
 </figure>
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-safari-02.jpg" alt="A group of adventure riders standing with their bikes beside a landed helicopter in an open grass field">
+  <img src="/assets/img/insight-four-hours-at-the-hub-safari-02.jpg" alt="Five adventure riders standing with their bikes in a grass field, a landed blue helicopter in the background, cumulus clouds above">
 </figure>
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-safari-03.jpg" alt="A group portrait of seven riders in matching black t-shirts standing in a grass field in Naivasha">
+  <img src="/assets/img/insight-four-hours-at-the-hub-safari-03.jpg" alt="Two riders on a dirt bike seen from behind, a large Kenyan flag flying from the back of the bike, looking out across a grass plateau at a landed helicopter and parked rally vehicles">
 </figure>
 
 ## References
