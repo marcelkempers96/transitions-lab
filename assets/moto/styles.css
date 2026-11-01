@@ -14,7 +14,7 @@
   --line-soft:    #DDD9CF;
   --mute:         #6B6963;
   --accent:       #1D6B55;      /* cool / mechanical */
-  --warm:         #C2502A;      /* combustion / warning */
+  --warm:         #C2502A;      /* combustion / warning / highlight */
   --heat:         #E2A93B;      /* ignition flash */
   --intake:       #3E6FB7;      /* fresh charge, cool */
   --exhaust:      #7A6E60;      /* spent gas, warm grey */
@@ -87,20 +87,22 @@ body.ute-standalone {
   font-family: var(--mono); font-size: 10.5px; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute);
 }
-.ute-mode-switch {
-  display: inline-flex; border: 1px solid var(--ink); background: var(--surface);
+#ute-root .ute-mode-switch {
+  display: inline-flex; gap: 2px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
 }
-.ute-mode-switch button {
+#ute-root .ute-mode-switch button {
   padding: 8px 16px;
   font-family: var(--mono); font-size: 11.5px; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--ink); background: var(--surface);
-  border-right: 1px solid var(--ink);
+  color: var(--ink);
+  background: var(--surface);
+  border: 0;
   cursor: pointer;
 }
-.ute-mode-switch button:last-child { border-right: 0; }
-.ute-mode-switch button:hover { background: var(--paper-2); }
-.ute-mode-switch button.is-on { background: var(--ink); color: var(--paper); }
+#ute-root .ute-mode-switch button:hover { background: var(--paper-2); }
+#ute-root .ute-mode-switch button.is-on { background: var(--ink); color: var(--paper); }
 .ute-tools { display: inline-flex; align-items: center; gap: 6px; }
 .ute-tbtn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -111,13 +113,135 @@ body.ute-standalone {
 .ute-tbtn svg { width: 15px; height: 15px; }
 .ute-tbtn.is-on { background: var(--ink); color: var(--paper); }
 
+/* ─── Overview-first stack ───────────────────────────────────── */
+.ute-stack {
+  display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0;
+}
+
+/* ─── Overview motorcycle (hero) ─────────────────────────────── */
+.ute-overview {
+  background: var(--surface); border-bottom: 1px solid var(--ink);
+  padding: 20px 24px 10px;
+}
+.ute-overview-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 10px; gap: 20px; flex-wrap: wrap;
+}
+.ute-overview-head h2 {
+  font-size: 18px; font-weight: 600; letter-spacing: -0.015em;
+}
+.ute-overview-head p {
+  font-size: 12.5px; color: var(--mute); margin: 0; max-width: 56ch;
+}
+.ute-view-switch {
+  display: inline-flex; border: 1px solid var(--ink); background: var(--surface);
+}
+.ute-view-switch button {
+  padding: 6px 12px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); background: var(--surface);
+  border-right: 1px solid var(--ink);
+}
+.ute-view-switch button:last-child { border-right: 0; }
+.ute-view-switch button.is-on { background: var(--ink); color: var(--paper); }
+.ute-view-switch button:hover { background: var(--paper-2); }
+
+.ute-moto-wrap {
+  position: relative;
+  background:
+    linear-gradient(var(--line-soft) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--paper);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.ute-moto-svg {
+  display: block; width: 100%; height: auto; max-height: 560px;
+}
+
+/* Shape highlighting on both diagrams */
+.ute-shape { transition: fill 180ms ease, stroke 180ms ease; cursor: pointer; }
+.ute-shape:hover { stroke: var(--warm); }
+.ute-shape.is-highlight {
+  stroke: var(--warm) !important; stroke-width: 2.5 !important;
+  filter: drop-shadow(0 0 6px rgba(194, 80, 42, 0.45));
+}
+.ute-shape[data-fillable].is-highlight { fill: #F9DECB !important; }
+
+/* Callout labels: tiered placement + hover state */
+.ute-callout { cursor: pointer; }
+.ute-callout:hover .ute-callout-dot,
+.ute-callout.is-on .ute-callout-dot {
+  fill: var(--warm); stroke: var(--warm);
+}
+.ute-callout:hover .ute-callout-leader,
+.ute-callout.is-on .ute-callout-leader {
+  stroke: var(--warm);
+}
+.ute-callout:hover .ute-callout-label,
+.ute-callout.is-on .ute-callout-label {
+  fill: var(--ink); font-weight: 700;
+}
+.ute-callout-label {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; fill: var(--mute);
+}
+.ute-callout-leader { stroke: var(--mute); stroke-width: 0.75; fill: none; }
+.ute-callout-dot { fill: var(--surface); stroke: var(--mute); }
+
+/* Live-state ribbon under the motorcycle */
+.ute-live {
+  margin-top: 10px;
+  background: var(--paper-2); border: 1px solid var(--ink);
+  padding: 12px 14px;
+  display: grid; grid-template-columns: 180px 1fr auto; gap: 18px; align-items: start;
+}
+.ute-live-k {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mute);
+}
+.ute-live h3 {
+  font-size: 15px; font-weight: 600; margin: 2px 0 4px;
+}
+.ute-live-desc { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+.ute-live-stats {
+  display: flex; flex-wrap: wrap; gap: 2px; align-self: center;
+  background: var(--line-soft); border: 1px solid var(--line);
+}
+.ute-live-stats .stat {
+  background: var(--surface); padding: 6px 10px; min-width: 100px;
+}
+.ute-live-stats .stat .k {
+  display: block;
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em;
+  color: var(--mute); text-transform: uppercase;
+}
+.ute-live-stats .stat .v {
+  font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--ink);
+}
+.ute-live-close {
+  justify-self: end;
+  width: 26px; height: 26px;
+  background: var(--surface); border: 1px solid var(--ink);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 14px; color: var(--ink);
+}
+.ute-live-close:hover { background: var(--warm); color: var(--surface); border-color: var(--warm); }
+.ute-live-empty {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px dashed var(--line); color: var(--mute);
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em;
+}
+
 /* ─── Workbench layout: left · stage · right ─────────────────── */
 .ute-bench {
   display: grid;
   grid-template-columns: 300px 1fr 320px;
   min-height: 0;
   background: var(--paper);
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   border-bottom: 1px solid var(--ink);
 }
 .ute-col {
@@ -127,7 +251,7 @@ body.ute-standalone {
   min-width: 0;
 }
 .ute-col:last-child { border-right: 0; }
-.ute-col-stage { background: var(--paper); overflow: hidden; position: relative; }
+.ute-col-stage { background: var(--paper); overflow: hidden; position: relative; min-height: 560px; }
 
 /* ─── Panel (shared left + right) ─────────────────────────────── */
 .ute-panel { padding: 16px 18px; border-bottom: 1px solid var(--line-soft); }
@@ -139,6 +263,12 @@ body.ute-standalone {
 .ute-panel-h .ute-label { color: var(--ink); font-weight: 600; }
 .ute-panel p { font-size: 13px; color: var(--ink-soft); margin: 0 0 8px; }
 .ute-panel p:last-child { margin-bottom: 0; }
+.ute-panel.ute-collapsible .ute-panel-h { cursor: pointer; user-select: none; }
+.ute-panel.ute-collapsible .ute-panel-h::after {
+  content: "–"; font-family: var(--mono); margin-left: auto; color: var(--mute);
+}
+.ute-panel.ute-collapsible.is-closed .ute-panel-h::after { content: "+"; }
+.ute-panel.ute-collapsible.is-closed .ute-panel-body { display: none; }
 
 /* Parameter sliders */
 .ute-param { margin: 0 0 12px; }
@@ -177,7 +307,7 @@ body.ute-standalone {
 
 /* Running controls */
 .ute-run {
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
 }
 .ute-run button {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
@@ -191,11 +321,10 @@ body.ute-standalone {
 .ute-run button svg { width: 11px; height: 11px; }
 
 /* Parts list */
-.ute-parts { padding: 10px 0; }
-.ute-parts li { }
+.ute-parts { padding: 10px 0; max-height: 420px; overflow-y: auto; }
 .ute-parts button {
   display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
-  width: 100%; padding: 8px 18px;
+  width: 100%; padding: 7px 18px;
   border-left: 2px solid transparent;
   font: inherit; text-align: left; background: transparent; color: var(--ink);
   cursor: pointer;
@@ -258,10 +387,25 @@ body.ute-standalone {
   display: block;
   width: 100%; height: 100%;
 }
+
+/* Gas-flow arrows on the engine */
+.ute-flow {
+  stroke: var(--intake); stroke-width: 3; fill: none;
+  stroke-linecap: round; opacity: 0;
+  transition: opacity 180ms ease;
+}
+.ute-flow.is-on { opacity: 0.85; }
+.ute-flow.is-exhaust { stroke: var(--exhaust); }
+.ute-flow.is-fire    { stroke: var(--warm); }
+.ute-flow-arrow { fill: var(--intake); opacity: 0; transition: opacity 180ms ease; }
+.ute-flow-arrow.is-on { opacity: 0.85; }
+.ute-flow-arrow.is-exhaust { fill: var(--exhaust); }
+.ute-flow-arrow.is-fire { fill: var(--warm); }
+
 .ute-stage-caption {
-  position: absolute; left: 16px; bottom: 16px;
+  position: absolute; left: 16px; bottom: 86px;
   background: var(--surface); border: 1px solid var(--ink);
-  padding: 8px 12px; max-width: 60ch;
+  padding: 8px 12px; max-width: 42ch;
 }
 .ute-stage-caption .ute-label { display: block; margin-bottom: 4px; }
 .ute-stage-caption p { font-size: 13px; color: var(--ink); margin: 0; }
@@ -269,11 +413,12 @@ body.ute-standalone {
   position: absolute; right: 16px; top: 16px;
   font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--mute);
+  background: var(--surface); padding: 4px 8px; border: 1px solid var(--line);
 }
 
 /* Timing strip under the engine */
 .ute-timing {
-  position: absolute; left: 16px; right: 16px; bottom: 90px;
+  position: absolute; left: 16px; right: 16px; bottom: 20px;
   height: 48px;
   background: var(--surface); border: 1px solid var(--ink);
   display: grid; align-items: stretch;
@@ -295,60 +440,15 @@ body.ute-standalone {
   position: absolute; top: -4px; bottom: -4px; width: 2px;
   background: var(--ink); pointer-events: none;
 }
-.ute-timing-ticks {
-  display: flex; justify-content: space-between;
-  font-family: var(--mono); font-size: 9.5px; color: var(--mute);
-  padding: 2px 2px 0;
-  letter-spacing: 0.05em;
-}
-
-/* ─── Exploded motorcycle strip (full-width, below bench) ───── */
-.ute-exploded {
-  background: var(--surface); padding: 24px 20px 28px;
-  border-bottom: 1px solid var(--ink);
-}
-.ute-exploded-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 14px; gap: 20px;
-}
-.ute-exploded-head h2 {
-  font-size: 18px; font-weight: 600; letter-spacing: -0.015em;
-}
-.ute-exploded-head p { font-size: 13px; color: var(--mute); margin: 0; max-width: 54ch; }
-.ute-moto-svg { display: block; width: 100%; height: auto; max-height: 420px; }
-.ute-callout {
-  cursor: pointer;
-}
-.ute-callout:hover .ute-callout-dot, .ute-callout.is-on .ute-callout-dot {
-  fill: var(--warm); stroke: var(--warm);
-}
-.ute-callout:hover .ute-callout-label, .ute-callout.is-on .ute-callout-label {
-  fill: var(--ink); font-weight: 600;
-}
-.ute-callout-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; fill: var(--mute); }
-
-/* Part description panel below the exploded strip */
-.ute-part-detail {
-  background: var(--paper-2); border: 1px solid var(--ink);
-  padding: 14px 16px; margin-top: 16px;
-  display: grid; grid-template-columns: 160px 1fr; gap: 20px; align-items: start;
-}
-.ute-part-detail .ute-pd-k {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--mute);
-}
-.ute-part-detail h3 {
-  font-size: 15px; font-weight: 600; margin: 0 0 6px;
-}
-.ute-part-detail p { font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
 
 /* ─── Footer strip ───────────────────────────────────────────── */
 .ute-foot {
-  padding: 16px 20px;
+  padding: 14px 20px;
   background: var(--surface); border-top: 1px solid var(--ink);
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
   color: var(--mute);
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  flex-wrap: wrap;
 }
 .ute-foot a { color: var(--ink); }
 
@@ -359,16 +459,24 @@ body.ute-standalone {
 @media (max-width: 960px) {
   .ute-bench {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 60vh auto;
+    grid-template-rows: auto auto auto;
   }
   .ute-col { border-right: 0; border-bottom: 1px solid var(--ink); }
-  .ute-col-stage { min-height: 60vh; }
-  .ute-timing { bottom: 70px; }
+  .ute-col-stage { min-height: 480px; }
+  .ute-live { grid-template-columns: 1fr; }
+  .ute-live-close { justify-self: start; }
 }
 @media (max-width: 540px) {
   .ute-topbar { flex-wrap: wrap; gap: 10px; padding: 10px 14px; }
   .ute-brand-sub { display: none; }
   .ute-mode-switch button { padding: 7px 10px; font-size: 10.5px; }
-  .ute-exploded { padding: 18px 14px 22px; }
-  .ute-part-detail { grid-template-columns: 1fr; gap: 10px; }
+  .ute-overview { padding: 14px 14px 10px; }
+  .ute-overview-head { gap: 8px; }
+  .ute-overview-head h2 { font-size: 16px; }
+  .ute-stage-caption { max-width: 90%; bottom: 76px; padding: 6px 10px; font-size: 12px; }
+  .ute-stage-caption p { font-size: 12px; }
+  .ute-stage-hint { display: none; }
+  .ute-timing { bottom: 12px; height: 40px; }
+  .ute-timing-seg { font-size: 9px; }
+  .ute-foot { font-size: 10px; padding: 12px 14px; }
 }
