@@ -43,6 +43,8 @@ ASSET_STRATA_CSS_V  = _asset_hash("assets/strata/styles.css")
 ASSET_STRATA_APP_V  = _asset_hash("assets/strata/app.js")
 ASSET_STRATA_CORE_V = _asset_hash("assets/strata/core.js")
 ASSET_STRATA_GEO_V  = _asset_hash("assets/strata-europe-geo.js")
+ASSET_MOTO_CSS_V    = _asset_hash("assets/moto/styles.css")
+ASSET_MOTO_APP_V    = _asset_hash("assets/moto/app.js")
 ASSET_CONSENT_V = _asset_hash("assets/consent.js")
 ASSET_READER_V = _asset_hash("assets/reader.js")
 
@@ -416,6 +418,7 @@ HERO_COLOR: dict[str, str] = {
     "strata-method":          "forest",
     "strata-paper":           "forest",
     "strata-guide":           "forest",
+    "motorcycle":             "cobalt",
     "insight-closed-mine-waste":                "butter",
     "insight-doesnt-wait-for-you-to-rebuild":   "butter",
     "insight-right-where-it-can-be-counted":    "butter",
@@ -509,6 +512,7 @@ LIBRARY = [
     ("resources", "Resources"),
     ("brw", "The BReW framework"),
     ("readiness-levels", "TRL &amp; SRL"),
+    ("motorcycle", "Under the Engine (new)"),
 ]
 
 NAV = [
@@ -603,6 +607,7 @@ NO_BYLINE_SLUGS: set[str] = {
     "strata-method",
     "strata-paper",
     "strata-guide",
+    "motorcycle",
 }
 AUTHORS: dict[str, str] = {
     # Example override:
@@ -742,6 +747,10 @@ META: dict[str, dict[str, str]] = {
     "strata-guide": {
         "title": "Strata guide: every function, every use case | Transitions Lab",
         "description": "A walkthrough of every function in the Strata app (map, lifecycle site card, live Sentinel-2 scene, Compare, Communities, Pipeline, exports) and three use cases end to end: a geological survey, a municipality, a reprocessing firm.",
+    },
+    "motorcycle": {
+        "title": "Under the Engine: motorcycle anatomy explorer | Transitions Lab",
+        "description": "Interactive explorer for how a motorcycle actually works. Toggle four-stroke and two-stroke, change bore, stroke, compression and RPM, watch the piston and valves. Exploded motorcycle diagram with clickable parts. Light theme, engineering typography. Electric is next.",
     },
     "insight-closed-mine-waste": {
         "title": "You cannot decide what to do with a closed mine site if nobody has looked at it since it closed | Transitions Lab",
@@ -1910,6 +1919,7 @@ CRUMB_PARENT: dict[str, str | None] = {
     "strata-method":         "resources",
     "strata-paper":          "resources",
     "strata-guide":          "resources",
+    "motorcycle":            "resources",
 }
 
 CRUMB_LABELS: dict[str, str] = {
@@ -2840,7 +2850,7 @@ def main() -> None:
     # assets, content, config files.
     # admin.html is hand-authored, hidden, and not part of the content build,
     # so leave it alone so a build doesn't delete it.
-    PRESERVE_HTML = {"admin.html", "strata-demo.html"}
+    PRESERVE_HTML = {"admin.html", "strata-demo.html", "motorcycle-anatomy.html"}
     for old in ROOT.glob("*.html"):
         if old.name in PRESERVE_HTML:
             continue
@@ -2900,6 +2910,38 @@ def main() -> None:
     # tags carry fresh asset-hash cache busters.
     (ROOT / "strata-demo.html").write_text(build_strata_demo_shell(), encoding="utf-8")
     print("[app]   strata-demo.html")
+    (ROOT / "motorcycle-anatomy.html").write_text(build_moto_shell(), encoding="utf-8")
+    print("[app]   motorcycle-anatomy.html")
+
+
+def build_moto_shell() -> str:
+    """Standalone /motorcycle-anatomy app page.
+
+    Full-screen HTML with no site chrome, so the interactive owns the
+    viewport. Light theme only. IBM Plex Sans + Mono. The actual app
+    lives in /assets/moto/{app.js, styles.css}.
+    """
+    return f"""<!doctype html>
+<html lang=\"en-GB\">
+<head>
+  <meta charset=\"utf-8\">
+  <title>Under the Engine — motorcycle anatomy explorer | Transitions Lab</title>
+  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">
+  <meta name=\"description\" content=\"Interactive motorcycle anatomy: four-stroke and two-stroke engine cross-section, animated cycle, parameters (bore, stroke, compression, RPM), and an exploded motorcycle diagram with clickable parts. Light theme, engineering typography.\">
+  <meta name=\"theme-color\" content=\"#F6F5F2\">
+  <meta name=\"color-scheme\" content=\"light\">
+  <link rel=\"icon\" href=\"/assets/favicon.svg\">
+  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap\">
+  <link rel=\"stylesheet\" href=\"/assets/moto/styles.css?v={ASSET_MOTO_CSS_V}\">
+</head>
+<body class=\"ute-standalone\">
+  <div id=\"ute-root\"></div>
+  <script src=\"/assets/moto/app.js?v={ASSET_MOTO_APP_V}\" defer></script>
+</body>
+</html>
+"""
     # Not added to the sitemap — the search-engine entry point is
     # /strata (overview) and /strata-guide, which carry the SEO copy
     # and link through.

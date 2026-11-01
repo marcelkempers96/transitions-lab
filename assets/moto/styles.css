@@ -1,0 +1,374 @@
+/*
+ * Under the Engine — motorcycle anatomy explorer.
+ * Light theme only. Sharp edges, 1 px rules, technical grid.
+ * IBM Plex Sans + Plex Mono. Scoped under #ute-root.
+ */
+
+:root {
+  --paper:        #F6F5F2;
+  --paper-2:      #EFEAE0;
+  --surface:      #FFFFFF;
+  --ink:          #0A0A0A;
+  --ink-soft:     #2A2A26;
+  --line:         #B9B3A4;
+  --line-soft:    #DDD9CF;
+  --mute:         #6B6963;
+  --accent:       #1D6B55;      /* cool / mechanical */
+  --warm:         #C2502A;      /* combustion / warning */
+  --heat:         #E2A93B;      /* ignition flash */
+  --intake:       #3E6FB7;      /* fresh charge, cool */
+  --exhaust:      #7A6E60;      /* spent gas, warm grey */
+  --sans: "IBM Plex Sans", system-ui, -apple-system, Arial, sans-serif;
+  --mono: "IBM Plex Mono", "Courier New", monospace;
+}
+
+html, body { height: 100%; margin: 0; padding: 0; }
+body.ute-standalone {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ─── Shell ───────────────────────────────────────────────────── */
+#ute-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--paper);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.003em;
+}
+#ute-root *, #ute-root *::before, #ute-root *::after { box-sizing: border-box; }
+#ute-root p { margin: 0; }
+#ute-root h1, #ute-root h2, #ute-root h3, #ute-root h4 { margin: 0; color: var(--ink); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
+#ute-root a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+#ute-root a:hover { color: var(--warm); }
+#ute-root button { font: inherit; cursor: pointer; background: transparent; border: 0; padding: 0; color: inherit; }
+#ute-root :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+#ute-root ul { list-style: none; margin: 0; padding: 0; }
+
+.ute-label {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute);
+}
+
+/* ─── Top app bar ─────────────────────────────────────────────── */
+.ute-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; padding: 10px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--ink);
+  flex: 0 0 auto;
+}
+.ute-brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--ink);
+}
+.ute-brand-mark {
+  display: inline-block; width: 22px; height: 22px;
+  background: var(--ink);
+  position: relative;
+}
+.ute-brand-mark::after {
+  content: ""; position: absolute; left: 4px; right: 4px; top: 10px; height: 2px; background: var(--warm);
+}
+.ute-brand-name {
+  font-family: var(--sans); font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.ute-brand-sub {
+  margin-left: 2px; padding-left: 10px; border-left: 1px solid var(--line);
+  font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute);
+}
+.ute-mode-switch {
+  display: inline-flex; border: 1px solid var(--ink); background: var(--surface);
+}
+.ute-mode-switch button {
+  padding: 8px 16px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); background: var(--surface);
+  border-right: 1px solid var(--ink);
+  cursor: pointer;
+}
+.ute-mode-switch button:last-child { border-right: 0; }
+.ute-mode-switch button:hover { background: var(--paper-2); }
+.ute-mode-switch button.is-on { background: var(--ink); color: var(--paper); }
+.ute-tools { display: inline-flex; align-items: center; gap: 6px; }
+.ute-tbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--ink);
+}
+.ute-tbtn:hover { background: var(--paper-2); }
+.ute-tbtn svg { width: 15px; height: 15px; }
+.ute-tbtn.is-on { background: var(--ink); color: var(--paper); }
+
+/* ─── Workbench layout: left · stage · right ─────────────────── */
+.ute-bench {
+  display: grid;
+  grid-template-columns: 300px 1fr 320px;
+  min-height: 0;
+  background: var(--paper);
+  flex: 1 1 auto;
+  border-bottom: 1px solid var(--ink);
+}
+.ute-col {
+  border-right: 1px solid var(--ink);
+  background: var(--surface);
+  overflow-y: auto;
+  min-width: 0;
+}
+.ute-col:last-child { border-right: 0; }
+.ute-col-stage { background: var(--paper); overflow: hidden; position: relative; }
+
+/* ─── Panel (shared left + right) ─────────────────────────────── */
+.ute-panel { padding: 16px 18px; border-bottom: 1px solid var(--line-soft); }
+.ute-panel:last-child { border-bottom: 0; }
+.ute-panel-h {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin: 0 0 10px;
+}
+.ute-panel-h .ute-label { color: var(--ink); font-weight: 600; }
+.ute-panel p { font-size: 13px; color: var(--ink-soft); margin: 0 0 8px; }
+.ute-panel p:last-child { margin-bottom: 0; }
+
+/* Parameter sliders */
+.ute-param { margin: 0 0 12px; }
+.ute-param:last-child { margin-bottom: 0; }
+.ute-param-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 4px;
+}
+.ute-param-head .ute-label { font-size: 10.5px; letter-spacing: 0.06em; }
+.ute-param-value {
+  font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--ink);
+}
+.ute-param input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 22px; background: transparent; cursor: pointer;
+  margin: 0;
+}
+.ute-param input[type="range"]:focus { outline: none; }
+.ute-param input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px; background: var(--paper-2); border: 1px solid var(--ink);
+}
+.ute-param input[type="range"]::-moz-range-track {
+  height: 6px; background: var(--paper-2); border: 1px solid var(--ink);
+}
+.ute-param input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 16px; height: 16px; margin-top: -6px;
+  background: var(--ink); border: 1px solid var(--ink);
+  cursor: grab;
+}
+.ute-param input[type="range"]::-moz-range-thumb {
+  width: 16px; height: 16px;
+  background: var(--ink); border: 1px solid var(--ink); border-radius: 0;
+  cursor: grab;
+}
+
+/* Running controls */
+.ute-run {
+  display: flex; align-items: center; gap: 6px;
+}
+.ute-run button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 12px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  text-transform: uppercase; font-weight: 600;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--ink);
+}
+.ute-run button:hover { background: var(--paper-2); }
+.ute-run button.is-on { background: var(--warm); color: var(--surface); border-color: var(--warm); }
+.ute-run button svg { width: 11px; height: 11px; }
+
+/* Parts list */
+.ute-parts { padding: 10px 0; }
+.ute-parts li { }
+.ute-parts button {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  width: 100%; padding: 8px 18px;
+  border-left: 2px solid transparent;
+  font: inherit; text-align: left; background: transparent; color: var(--ink);
+  cursor: pointer;
+}
+.ute-parts button:hover { background: var(--paper-2); }
+.ute-parts button.is-on {
+  background: var(--paper-2);
+  border-left-color: var(--warm);
+}
+.ute-parts .ute-part-name { font-size: 13px; font-weight: 500; }
+.ute-parts .ute-part-tag {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+  color: var(--mute); text-transform: uppercase;
+}
+
+/* Readouts */
+.ute-reads {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--line-soft);
+  border: 1px solid var(--line);
+}
+.ute-reads .ute-read {
+  background: var(--surface); padding: 10px 12px;
+}
+.ute-reads .ute-label { display: block; margin-bottom: 2px; font-size: 10px; }
+.ute-reads .ute-n {
+  font-family: var(--mono); font-size: 20px; font-weight: 600; color: var(--ink);
+  letter-spacing: -0.01em; line-height: 1.1;
+}
+.ute-reads .ute-u { font-size: 10.5px; color: var(--mute); margin-left: 3px; }
+
+/* Cycle state badge */
+.ute-stroke-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; font-weight: 600;
+}
+.ute-stroke-badge::before {
+  content: ""; width: 8px; height: 8px; background: var(--heat);
+}
+.ute-stroke-badge[data-s="intake"]::before      { background: var(--intake); }
+.ute-stroke-badge[data-s="compression"]::before { background: var(--line); }
+.ute-stroke-badge[data-s="power"]::before       { background: var(--warm); animation: ute-flash 300ms ease-out; }
+.ute-stroke-badge[data-s="exhaust"]::before     { background: var(--exhaust); }
+.ute-stroke-badge[data-s="scavenge"]::before    { background: var(--intake); }
+@keyframes ute-flash { 0% { background: var(--heat); } 100% { background: var(--warm); } }
+
+/* ─── Centre stage: engine SVG ───────────────────────────────── */
+.ute-stage {
+  width: 100%; height: 100%; min-height: 0;
+  position: relative;
+  background:
+    linear-gradient(var(--line-soft) 1px, transparent 1px) 0 0 / 36px 36px,
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px) 0 0 / 36px 36px,
+    var(--paper);
+}
+.ute-engine-svg {
+  display: block;
+  width: 100%; height: 100%;
+}
+.ute-stage-caption {
+  position: absolute; left: 16px; bottom: 16px;
+  background: var(--surface); border: 1px solid var(--ink);
+  padding: 8px 12px; max-width: 60ch;
+}
+.ute-stage-caption .ute-label { display: block; margin-bottom: 4px; }
+.ute-stage-caption p { font-size: 13px; color: var(--ink); margin: 0; }
+.ute-stage-hint {
+  position: absolute; right: 16px; top: 16px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mute);
+}
+
+/* Timing strip under the engine */
+.ute-timing {
+  position: absolute; left: 16px; right: 16px; bottom: 90px;
+  height: 48px;
+  background: var(--surface); border: 1px solid var(--ink);
+  display: grid; align-items: stretch;
+}
+.ute-timing-track { position: relative; height: 100%; }
+.ute-timing-seg {
+  position: absolute; top: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink);
+  border-right: 1px solid var(--ink);
+}
+.ute-timing-seg[data-s="intake"]      { background: #D8E3F0; }
+.ute-timing-seg[data-s="compression"] { background: #EEE8D8; }
+.ute-timing-seg[data-s="power"]       { background: #F2CDB9; }
+.ute-timing-seg[data-s="exhaust"]     { background: #D7D1C4; }
+.ute-timing-seg[data-s="scavenge"]    { background: #D8E3F0; }
+.ute-timing-needle {
+  position: absolute; top: -4px; bottom: -4px; width: 2px;
+  background: var(--ink); pointer-events: none;
+}
+.ute-timing-ticks {
+  display: flex; justify-content: space-between;
+  font-family: var(--mono); font-size: 9.5px; color: var(--mute);
+  padding: 2px 2px 0;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Exploded motorcycle strip (full-width, below bench) ───── */
+.ute-exploded {
+  background: var(--surface); padding: 24px 20px 28px;
+  border-bottom: 1px solid var(--ink);
+}
+.ute-exploded-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 14px; gap: 20px;
+}
+.ute-exploded-head h2 {
+  font-size: 18px; font-weight: 600; letter-spacing: -0.015em;
+}
+.ute-exploded-head p { font-size: 13px; color: var(--mute); margin: 0; max-width: 54ch; }
+.ute-moto-svg { display: block; width: 100%; height: auto; max-height: 420px; }
+.ute-callout {
+  cursor: pointer;
+}
+.ute-callout:hover .ute-callout-dot, .ute-callout.is-on .ute-callout-dot {
+  fill: var(--warm); stroke: var(--warm);
+}
+.ute-callout:hover .ute-callout-label, .ute-callout.is-on .ute-callout-label {
+  fill: var(--ink); font-weight: 600;
+}
+.ute-callout-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; fill: var(--mute); }
+
+/* Part description panel below the exploded strip */
+.ute-part-detail {
+  background: var(--paper-2); border: 1px solid var(--ink);
+  padding: 14px 16px; margin-top: 16px;
+  display: grid; grid-template-columns: 160px 1fr; gap: 20px; align-items: start;
+}
+.ute-part-detail .ute-pd-k {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mute);
+}
+.ute-part-detail h3 {
+  font-size: 15px; font-weight: 600; margin: 0 0 6px;
+}
+.ute-part-detail p { font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+/* ─── Footer strip ───────────────────────────────────────────── */
+.ute-foot {
+  padding: 16px 20px;
+  background: var(--surface); border-top: 1px solid var(--ink);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--mute);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.ute-foot a { color: var(--ink); }
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .ute-bench { grid-template-columns: 260px 1fr 280px; }
+}
+@media (max-width: 960px) {
+  .ute-bench {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 60vh auto;
+  }
+  .ute-col { border-right: 0; border-bottom: 1px solid var(--ink); }
+  .ute-col-stage { min-height: 60vh; }
+  .ute-timing { bottom: 70px; }
+}
+@media (max-width: 540px) {
+  .ute-topbar { flex-wrap: wrap; gap: 10px; padding: 10px 14px; }
+  .ute-brand-sub { display: none; }
+  .ute-mode-switch button { padding: 7px 10px; font-size: 10.5px; }
+  .ute-exploded { padding: 18px 14px 22px; }
+  .ute-part-detail { grid-template-columns: 1fr; gap: 10px; }
+}
