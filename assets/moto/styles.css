@@ -177,12 +177,14 @@ body.ute-standalone {
   padding: 24px 24px 28px;
 }
 .ute-cview-empty {
-  background: var(--surface); border: 2px dashed var(--line);
-  padding: 28px 24px;
-  display: grid; gap: 10px; text-align: center;
+  background: var(--surface); border: 1px solid var(--line);
+  padding: 20px 20px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  font-family: var(--mono); font-size: 12px; color: var(--mute);
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
-.ute-cview-empty p {
-  font-size: 14.5px; color: var(--ink-soft); max-width: 70ch; margin: 0 auto;
+.ute-cview-empty::before {
+  content: ""; width: 10px; height: 10px; background: var(--line);
 }
 .ute-cview-head {
   display: flex; align-items: baseline; justify-content: space-between;
@@ -372,6 +374,71 @@ body.ute-standalone {
   opacity: 0; transition: opacity 180ms ease;
 }
 .ute-rider-toast.is-on { opacity: 1; }
+
+/* ─── Dyno (test track with live charts) ──────────────── */
+.ute-dyno {
+  background: var(--paper-2); border-bottom: 1px solid var(--ink);
+  padding: 20px 24px 24px;
+}
+.ute-dyno-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px; margin-bottom: 12px; flex-wrap: wrap;
+}
+.ute-dyno-head h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.015em; }
+.ute-dyno-head p { font-size: 12.5px; color: var(--mute); max-width: 60ch; margin: 2px 0 0; }
+.ute-dyno-controls { display: inline-flex; gap: 8px; }
+#ute-root .ute-dyno-btn {
+  padding: 8px 18px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--surface); color: var(--ink); border: 2px solid var(--ink);
+  cursor: pointer;
+}
+#ute-root .ute-dyno-btn:hover { background: var(--paper); }
+#ute-root .ute-dyno-btn.is-rec { background: var(--warm); color: var(--surface); border-color: var(--warm); }
+#ute-root .ute-dyno-btn.is-reset:hover { background: var(--ink); color: var(--paper); }
+
+.ute-dyno-charts {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  background: var(--line); border: 1px solid var(--line);
+}
+.ute-dyno-chart {
+  background: var(--surface); padding: 14px 16px;
+}
+.ute-dyno-chart-head {
+  display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;
+}
+.ute-dyno-chart-head .k {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mute); font-weight: 600;
+}
+.ute-dyno-chart-head .v {
+  font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--ink);
+}
+.ute-dyno-chart-head .v .u { font-size: 11px; color: var(--mute); margin-left: 3px; }
+.ute-dyno-chart svg { display: block; width: 100%; height: 110px; }
+.ute-dyno-chart .area { fill-opacity: 0.08; }
+.ute-dyno-chart .ln { fill: none; stroke-width: 2; }
+.ute-dyno-chart .grid { stroke: var(--line-soft); stroke-width: 1; }
+.ute-dyno-chart .axis { stroke: var(--line); stroke-width: 1; }
+.ute-dyno-chart .axis-label { font-family: var(--mono); font-size: 9.5px; fill: var(--mute); }
+
+.ute-dyno-findings {
+  margin-top: 10px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+}
+.ute-dyno-findings .cell { background: var(--surface); padding: 10px 12px; }
+.ute-dyno-findings .k { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--mute); text-transform: uppercase; }
+.ute-dyno-findings .v { font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--ink); }
+.ute-dyno-findings .u { font-size: 11px; color: var(--mute); margin-left: 3px; }
+
+@media (max-width: 720px) {
+  .ute-dyno-charts { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .ute-dyno { padding: 16px 14px 18px; }
+}
 
 /* ─── Footer ─────────────────────────────────────────────── */
 .ute-foot {

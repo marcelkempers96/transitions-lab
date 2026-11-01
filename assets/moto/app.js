@@ -40,7 +40,20 @@ const S = {
   rider: { throttle: 0, brake: 0, clutch: 0, horn: 0, kill: false, starter_hold: 0 },
   // interactive component view local states
   cv: { charge: 0, charge_was: false, charge_fire_t: -1, brake_pct: 0, fork_pct: 0, gear_rpm: 0, particles: [] },
+  // Dyno test track
+  dyno: {
+    recording: false,
+    start_ms: 0,
+    samples: [],       // { t, speed, rpm, throttle, brake, power }
+    maxSamples: 600,   // ~30 s at 20 Hz
+    peak_speed: 0,
+    peak_rpm: 0,
+    peak_power: 0,
+    tto100: null,      // seconds to reach 100 km/h
+    avg_throttle: 0,
+  },
   last_tick_ms: 0,
+  last_dyno_sample_ms: 0,
 };
 
 const GEAR = { primary: 2.1, final: 2.6, gear3: 1.3, wheel_r_m: 0.30 };
@@ -53,6 +66,9 @@ function render() {
   mountRiderSVG();
   wireChromeLocal();
   wireModeSwitch();
+  renderDynoCharts();
+  renderDynoFindings();
+  wireDynoButtons();
 }
 
 function shellHTML() {
@@ -84,7 +100,7 @@ function shellHTML() {
         <div class="ute-overview-head">
           <div>
             <h2>${modeTitle()}</h2>
-            <p>Click a labelled part — the piston, the carb, the chain, the brake, the battery — and a 3-D close-up opens below.</p>
+            <p>Click a part &rarr; close-up below.</p>
           </div>
           <span class="ute-overview-badge" data-m="${S.mode}">${modeShort()}</span>
         </div>
@@ -100,8 +116,8 @@ function shellHTML() {
       <section class="ute-rider">
         <div class="ute-rider-head">
           <div>
-            <h2>Ride the motorcycle</h2>
-            <p>Twist the throttle, pull the brake, honk the horn. The bike above responds, and so does any open component view.</p>
+            <h2>Ride</h2>
+            <p>Twist the throttle, pull the brake, honk the horn.</p>
           </div>
         </div>
         <div class="ute-rider-wrap">
@@ -111,9 +127,24 @@ function shellHTML() {
         <div class="ute-rider-dash" id="ute-rider-dash"></div>
       </section>
 
+      <section class="ute-dyno">
+        <div class="ute-dyno-head">
+          <div>
+            <h2>Dyno</h2>
+            <p>Record a run. Hit START, ride, HIT STOP. The charts trace what happened second by second.</p>
+          </div>
+          <div class="ute-dyno-controls">
+            <button class="ute-dyno-btn" type="button" id="ute-dyno-start">${S.dyno.recording ? 'Stop' : 'Start test'}</button>
+            <button class="ute-dyno-btn is-reset" type="button" id="ute-dyno-reset">Reset</button>
+          </div>
+        </div>
+        <div class="ute-dyno-charts" id="ute-dyno-charts"></div>
+        <div class="ute-dyno-findings" id="ute-dyno-findings"></div>
+      </section>
+
       <footer class="ute-foot">
-        <span>Under the Engine · v0.3 · ${modeShort()} · Transitions Lab</span>
-        <span>Inspired by <a href="https://www.underthehood.online" target="_blank" rel="noopener">underthehood.online</a>. Light theme only.</span>
+        <span>v0.3 · ${modeShort()} · Transitions Lab</span>
+        <span>Inspired by <a href="https://www.underthehood.online" target="_blank" rel="noopener">underthehood.online</a></span>
       </footer>
     </div>
   `;
@@ -129,12 +160,7 @@ function modeShort() {
 }
 
 function emptyCViewHTML() {
-  return `
-    <div class="ute-cview-empty">
-      <span class="ute-label">Component view</span>
-      <p>Pick any part above. The 3-D close-up lands here with its own controls — hold the big button to drive the mechanism.</p>
-    </div>
-  `;
+  return `<div class="ute-cview-empty">No part selected · click one above</div>`;
 }
 
 // ───────────────────────── Mode switching ────────────────────────
@@ -236,6 +262,18 @@ function tick(now) {
 
   // Rider view (speedo needles, brake light, etc.)
   updateRiderTick(dt);
+
+  // Dyno sampling + chart redraw while recording
+  if (S.dyno.recording) {
+    recordDynoSample(now);
+    // Light-weight re-render of chart paths every ~3 frames
+    if (!S._dynoFrame) S._dynoFrame = 0;
+    S._dynoFrame++;
+    if (S._dynoFrame % 3 === 0) {
+      renderDynoCharts();
+      renderDynoFindings();
+    }
+  }
 
   requestAnimationFrame(tick);
 }
@@ -1077,19 +1115,18 @@ function cvEngineSide() {
     <div class="ute-cview-side">
       <div class="card">
         <h4>Parameters</h4>
-        ${slider('rpm',        'Engine speed',       600, 10000, 50,  S.rpm,        'rpm')}
-        ${slider('bore_mm',    'Bore',               40,  110,   1,   S.bore_mm,    'mm')}
-        ${slider('stroke_mm',  'Stroke',             40,  110,   1,   S.stroke_mm,  'mm')}
-        ${slider('compression','Compression ratio',  6,   14,    0.1, S.compression,':1')}
+        ${slider('rpm',        'RPM',          600, 10000, 50,  S.rpm,        'rpm')}
+        ${slider('bore_mm',    'Bore',         40,  110,   1,   S.bore_mm,    'mm')}
+        ${slider('stroke_mm',  'Stroke',       40,  110,   1,   S.stroke_mm,  'mm')}
+        ${slider('compression','Compression',  6,   14,    0.1, S.compression,':1')}
       </div>
       <div class="card">
-        <h4>Computed outputs</h4>
+        <h4>Outputs</h4>
         <div class="ute-stats" id="ute-cv-reads"></div>
       </div>
       <div class="card">
-        <h4>What's happening</h4>
-        <p id="ute-cv-whats-happening">The piston cycles through intake, compression, power and exhaust. Watch the valves open and the spark fire near top-dead-centre.</p>
-        <div class="ute-run" style="margin-top:10px;">
+        <h4>Run</h4>
+        <div class="ute-run">
           <button type="button" data-run="toggle">${S.running?'Pause':'Play'}</button>
           <button type="button" data-run="step">Step +30°</button>
         </div>
@@ -1129,15 +1166,15 @@ function cvEngineMount() {
   g.appendChild(iso3DBox(230, 280, 440, 130, 60, { front: 'url(#g3-case)', top: 'url(#g3-steel)', right: '#2A2824' }));
   // Dashed crank orbit
   g.appendChild(ns('circle', { cx: 450, cy: 345, r: 55, fill: 'none', stroke: '#B9B3A4', 'stroke-dasharray': '4 4' }));
-  // Cylinder barrel (3D)
-  g.appendChild(iso3DBox(400, 90, 100, 190, 50, { front: 'url(#g3-alum)', top: 'url(#g3-steel)', right: '#8B8371' }));
+  // Cylinder barrel (3D) — base wide enough for max bore (110 mm → ~146 px piston)
+  g.appendChild(iso3DBox(370, 90, 160, 190, 50, { front: 'url(#g3-alum)', top: 'url(#g3-steel)', right: '#8B8371' }));
   // Cooling fins
   for (let i = 0; i < 7; i++) {
-    g.appendChild(ns('line', { x1: 376, y1: 110 + i*22, x2: 400, y2: 110 + i*22, stroke: '#0A0A0A' }));
-    g.appendChild(ns('line', { x1: 500, y1: 110 + i*22, x2: 525, y2: 110 + i*22, stroke: '#0A0A0A' }));
+    g.appendChild(ns('line', { x1: 346, y1: 110 + i*22, x2: 370, y2: 110 + i*22, stroke: '#0A0A0A' }));
+    g.appendChild(ns('line', { x1: 530, y1: 110 + i*22, x2: 555, y2: 110 + i*22, stroke: '#0A0A0A' }));
   }
   // Head
-  g.appendChild(ns('path', { d: 'M 395 90 L 395 40 Q 395 24 410 24 L 490 24 Q 505 24 505 40 L 505 90 Z', fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder', class: 'ute-shape' }));
+  g.appendChild(ns('path', { d: 'M 365 90 L 365 40 Q 365 24 380 24 L 520 24 Q 535 24 535 40 L 535 90 Z', fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder', class: 'ute-shape' }));
   // Spark plug
   const sparkG = ns('g', { 'data-shape': 'spark_plug', class: 'ute-shape' });
   sparkG.appendChild(ns('rect', { x: 440, y: 0, width: 20, height: 30, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'spark_plug', 'data-fillable': '' }));
@@ -1228,18 +1265,33 @@ function cvEngineUpdate(dt) {
   const cycle = (S.mode === '4t') ? 720 : 360;
   const shaftDeg = S.crank_deg % 360;
   const theta = shaftDeg * Math.PI / 180;
-  const crankR = 55, cx = 450, cy = 345, rodLen = 150;
+  // Scale geometry from parameters: bigger bore → wider piston,
+  // bigger stroke → longer crank throw, higher CR → smaller head clearance.
+  const boreScale = (S.bore_mm / 72);                 // base 72mm
+  const pistonW = Math.max(60, Math.min(130, 96 * boreScale));
+  const pistonX = 450 - pistonW / 2;
+  const crankR  = Math.max(30, Math.min(80, 55 * (S.stroke_mm / 58)));
+  const topClearance = Math.max(6, 32 - (S.compression - 6) * 2.3);  // CR 6 → 32 px, CR 14 → ~14 px
+  const headBottomY = 90;
+  const cx = 450, cy = 345, rodLen = 150;
   const pinX = cx + crankR * Math.cos(theta - Math.PI/2);
   const pinY = cy + crankR * Math.sin(theta - Math.PI/2);
-  const pistonPinY = cy - Math.sqrt(rodLen*rodLen - Math.pow(pinX - cx, 2));
-  const pistonTopY = Math.max(90, Math.min(230, pistonPinY - 55));
+  const pistonPinY = cy - Math.sqrt(Math.max(0, rodLen*rodLen - Math.pow(pinX - cx, 2)));
+  const minTopY = headBottomY + topClearance;        // CR limits how far up it goes
+  const pistonTopY = Math.max(minTopY, Math.min(230, pistonPinY - 55));
+  ENGINE_PATHS.piston.setAttribute('x', pistonX);
+  ENGINE_PATHS.piston.setAttribute('width', pistonW);
   ENGINE_PATHS.piston.setAttribute('y', pistonTopY);
+  ENGINE_PATHS.ring1.setAttribute('x1', pistonX + 2); ENGINE_PATHS.ring1.setAttribute('x2', pistonX + pistonW - 2);
   ENGINE_PATHS.ring1.setAttribute('y1', pistonTopY + 10); ENGINE_PATHS.ring1.setAttribute('y2', pistonTopY + 10);
+  ENGINE_PATHS.ring2.setAttribute('x1', pistonX + 2); ENGINE_PATHS.ring2.setAttribute('x2', pistonX + pistonW - 2);
   ENGINE_PATHS.ring2.setAttribute('y1', pistonTopY + 15); ENGINE_PATHS.ring2.setAttribute('y2', pistonTopY + 15);
   ENGINE_PATHS.rod.setAttribute('y1', pistonTopY + 55); ENGINE_PATHS.rod.setAttribute('x2', pinX); ENGINE_PATHS.rod.setAttribute('y2', pinY);
   ENGINE_PATHS.pin.setAttribute('cx', pinX); ENGINE_PATHS.pin.setAttribute('cy', pinY);
-  ENGINE_PATHS.gas.setAttribute('y', 90);
-  ENGINE_PATHS.gas.setAttribute('height', Math.max(2, pistonTopY - 90));
+  ENGINE_PATHS.gas.setAttribute('x', pistonX);
+  ENGINE_PATHS.gas.setAttribute('width', pistonW);
+  ENGINE_PATHS.gas.setAttribute('y', headBottomY);
+  ENGINE_PATHS.gas.setAttribute('height', Math.max(2, pistonTopY - headBottomY));
   const si = currentStroke(S.crank_deg, S.mode);
   ENGINE_PATHS.gas.setAttribute('fill', ({intake:'#D8E3F0',compression:'#DAD3C1',power:'#F2CDB9',exhaust:'#D7D1C4',scavenge:'#CDE1EE'})[si.s] || '#DAD3C1');
   if (S.mode === '4t') {
@@ -1298,14 +1350,14 @@ function cvMotorHTML() {
 function cvMotorSide() {
   return `
     <div class="ute-cview-side">
-      <div class="card"><h4>What it does</h4>
-        <p>An electric motor turns stored chemical energy into torque with no combustion, no air–fuel ratio and no gearbox strictly required. A 3-phase inverter in the controller alternates current through the stator windings; the magnetic field drags the permanent-magnet rotor around with it.</p>
-      </div>
       <div class="card"><h4>Live state</h4>
         <div class="ute-stats" id="ute-cv-motor-reads"></div>
       </div>
-      <div class="card"><h4>How it differs from ICE</h4>
-        <p>Peak torque at zero RPM — no clutch slip needed to pull away. No valves, no ignition timing, no exhaust. Efficiency ~90 % vs ~30 % for a petrol engine. Fewer moving parts: one rotor against hundreds in an ICE.</p>
+      <div class="card"><h4>Why it beats ICE</h4>
+        <p>Peak torque at 0 rpm. ~90 % efficient vs ~30 %. One moving part. No valves, no ignition, no exhaust.</p>
+      </div>
+      <div class="card"><h4>How it spins</h4>
+        <p>Three phases of AC alternate through the stator teeth; the magnetic field drags the permanent-magnet rotor.</p>
       </div>
     </div>
   `;
@@ -1397,17 +1449,16 @@ function cvCarbHTML() {
 function cvCarbSide() {
   return `
     <div class="ute-cview-side">
-      <div class="card"><h4>What it does</h4><p>Meters fuel into the airstream going to the engine. A carburetor uses a venturi to pull fuel from a float bowl by suction; EFI sprays it electronically. Both deliver roughly 14.7 : 1 air : fuel for petrol.</p></div>
-      <div class="card"><h4>Sub-components</h4>
-        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
-          <li><strong>Venturi</strong>: narrow section where air speeds up and pressure drops.</li>
-          <li><strong>Throttle plate</strong>: the butterfly you control with the twistgrip.</li>
-          <li><strong>Main jet</strong>: calibrated hole that meters fuel into the airstream.</li>
-          <li><strong>Pilot jet</strong>: separate circuit for idle and low throttle.</li>
-          <li><strong>Float + needle valve</strong>: keeps the bowl at the right fuel level.</li>
+      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-carb-reads"></div></div>
+      <div class="card"><h4>Parts</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13px; color:var(--ink-soft); line-height:1.5; margin:0;">
+          <li>Venturi — narrow, drops pressure</li>
+          <li>Butterfly — throttle plate</li>
+          <li>Main / pilot jet — meter fuel</li>
+          <li>Float + needle — keeps bowl level</li>
         </ul>
       </div>
-      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-carb-reads"></div></div>
+      <div class="card"><h4>Target</h4><p>14.7 : 1 air : fuel for petrol.</p></div>
     </div>
   `;
 }
@@ -1519,16 +1570,16 @@ function cvSparkHTML() {
 function cvSparkSide() {
   return `
     <div class="ute-cview-side">
-      <div class="card"><h4>What it does</h4><p>Takes 12 V from the battery, steps it up to about 25 000 V in the coil, then jumps that voltage across the plug's electrode gap at the exact moment the piston is near top-dead-centre on the compression stroke.</p></div>
-      <div class="card"><h4>Sub-components</h4>
-        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
-          <li><strong>Primary winding</strong>: thick copper wire, carries 12 V.</li>
-          <li><strong>Secondary winding</strong>: thin copper, thousands of turns — steps voltage up.</li>
-          <li><strong>Insulator</strong>: ceramic, keeps the high voltage from leaking.</li>
-          <li><strong>Centre + ground electrodes</strong>: the gap where the spark jumps.</li>
+      <div class="card"><h4>How</h4><p>12 V in &rarr; coil steps up to ~25 000 V &rarr; arc jumps the plug gap at TDC.</p></div>
+      <div class="card"><h4>Parts</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13px; color:var(--ink-soft); line-height:1.5; margin:0;">
+          <li>Primary winding (thick, 12 V)</li>
+          <li>Secondary winding (thin, HV)</li>
+          <li>Ceramic insulator</li>
+          <li>Centre + ground electrodes</li>
         </ul>
       </div>
-      <div class="card"><h4>Timing</h4><p>In a 4-stroke, the plug fires once every two crank revolutions (near TDC on compression). In a 2-stroke, once every revolution. The faster the engine, the earlier the spark relative to TDC.</p></div>
+      <div class="card"><h4>Timing</h4><p>Fires once per 2 revolutions (4T) or every revolution (2T). Advances with RPM.</p></div>
     </div>
   `;
 }
@@ -1628,16 +1679,16 @@ function cvChainHTML() {
 function cvChainSide() {
   return `
     <div class="ute-cview-side">
-      <div class="card"><h4>What it does</h4><p>A chain between the engine's output sprocket and the rear sprocket. The ratio between them (plus the gearbox) sets how many turns of the engine make one turn of the wheel. Smaller rear sprocket → faster top speed; larger rear sprocket → quicker acceleration.</p></div>
-      <div class="card"><h4>Sub-components</h4>
-        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
-          <li><strong>Front sprocket</strong>: small, on the gearbox output shaft.</li>
-          <li><strong>Rear sprocket</strong>: large, bolted to the rear wheel.</li>
-          <li><strong>Chain links</strong>: inner / outer plates + pin + bush + roller.</li>
-          <li><strong>Tensioner</strong>: an adjuster at the swingarm pulls the axle back.</li>
+      <div class="card"><h4>Live gearing</h4><div class="ute-stats" id="ute-cv-gear-reads"></div></div>
+      <div class="card"><h4>Parts</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13px; color:var(--ink-soft); line-height:1.5; margin:0;">
+          <li>Front sprocket (gearbox output)</li>
+          <li>Rear sprocket (bolted to wheel)</li>
+          <li>Chain: plate + pin + bush + roller</li>
+          <li>Tensioner on the swingarm</li>
         </ul>
       </div>
-      <div class="card"><h4>Live gearing</h4><div class="ute-stats" id="ute-cv-gear-reads"></div></div>
+      <div class="card"><h4>Rule</h4><p>Smaller rear → faster top. Larger rear → quicker acceleration.</p></div>
     </div>
   `;
 }
@@ -1752,17 +1803,16 @@ function cvBrakeHTML() {
 function cvBrakeSide() {
   return `
     <div class="ute-cview-side">
-      <div class="card"><h4>What it does</h4><p>Converts kinetic energy to heat. Pulling the lever forces brake fluid out of the master cylinder; that pressure pushes caliper pistons out, which squeeze friction pads against a spinning disc.</p></div>
-      <div class="card"><h4>Sub-components</h4>
-        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
-          <li><strong>Disc (rotor)</strong>: steel, bolted to the wheel.</li>
-          <li><strong>Caliper body</strong>: holds pistons + pads.</li>
-          <li><strong>Pistons</strong>: hydraulic — one, two, four or six per caliper.</li>
-          <li><strong>Pads</strong>: friction material bonded to a steel backing plate.</li>
-          <li><strong>Fluid</strong>: DOT 4 brake fluid, incompressible.</li>
+      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-brake-reads"></div></div>
+      <div class="card"><h4>Parts</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13px; color:var(--ink-soft); line-height:1.5; margin:0;">
+          <li>Disc (steel, bolted to wheel)</li>
+          <li>Caliper body + 2–6 pistons</li>
+          <li>Pads: friction on steel plate</li>
+          <li>DOT 4 fluid (incompressible)</li>
         </ul>
       </div>
-      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-brake-reads"></div></div>
+      <div class="card"><h4>How</h4><p>Lever → fluid pressure → pistons squeeze pads → kinetic energy becomes heat.</p></div>
     </div>
   `;
 }
@@ -1859,7 +1909,6 @@ function cvBatterySide() {
   const isElec = (S.mode === 'elec');
   return `
     <div class="ute-cview-side">
-      <div class="card"><h4>What it does</h4><p>${isElec ? 'Stores all the energy that moves the bike. Typical pack: 7–20 kWh in a sportbike, 50–100 kWh in a car. Charges in minutes on DC fast, hours on AC home.' : 'Stores enough charge to crank the starter and run lights before the alternator takes over.'}</p></div>
       <div class="card"><h4>Live state</h4>
         <div class="ute-stats">
           ${isElec ? `
@@ -1873,13 +1922,14 @@ function cvBatterySide() {
           `}
         </div>
       </div>
-      <div class="card"><h4>Sub-components</h4>
-        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
-          <li>${isElec ? 'Lithium cells in a sealed case' : 'Lead plates in sulfuric acid (or lithium cells)'}</li>
-          <li>${isElec ? 'BMS (battery management system)' : 'Vent, terminals, acid gauge'}</li>
-          <li>${isElec ? 'Cooling plates / coolant loop' : 'Case + bracket + strap'}</li>
+      <div class="card"><h4>Parts</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13px; color:var(--ink-soft); line-height:1.5; margin:0;">
+          <li>${isElec ? 'Lithium cells, sealed' : 'Lead plates in acid (or lithium)'}</li>
+          <li>${isElec ? 'BMS board' : 'Terminals + vent'}</li>
+          <li>${isElec ? 'Cooling plates / coolant' : 'Case + strap'}</li>
         </ul>
       </div>
+      <div class="card"><h4>Charge</h4><p>${isElec ? 'DC fast ~30 min. Home AC 4–8 h.' : 'Trickle charger if standing long.'}</p></div>
     </div>
   `;
 }
@@ -1929,17 +1979,17 @@ function cvControllerHTML() {
 function cvControllerSide() {
   return `
     <div class="ute-cview-side">
-      <div class="card"><h4>What it does</h4><p>Takes DC from the pack and chops it into 3-phase AC with pulse-width modulation — tens of thousands of switch events per second. The timing and width of those pulses sets rotor speed and torque.</p></div>
-      <div class="card"><h4>Sub-components</h4>
-        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
-          <li><strong>Power stage</strong>: 6 SiC MOSFETs (two per phase).</li>
-          <li><strong>Gate driver</strong>: turns the MOSFETs on and off cleanly.</li>
-          <li><strong>DC-link capacitor</strong>: smooths pack voltage.</li>
-          <li><strong>MCU</strong>: runs the control loop (field-oriented control).</li>
-          <li><strong>Cold plate</strong>: liquid-cooled aluminium heat spreader.</li>
+      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-ctl-reads"></div></div>
+      <div class="card"><h4>Parts</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13px; color:var(--ink-soft); line-height:1.5; margin:0;">
+          <li>6 SiC MOSFETs (2 per phase)</li>
+          <li>Gate driver</li>
+          <li>DC-link capacitor</li>
+          <li>MCU — field-oriented control</li>
+          <li>Liquid-cooled cold plate</li>
         </ul>
       </div>
-      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-ctl-reads"></div></div>
+      <div class="card"><h4>How</h4><p>Chops DC into 3-phase AC via pulse-width modulation — tens of thousands of switch events per second.</p></div>
     </div>
   `;
 }
@@ -2020,9 +2070,8 @@ const PARTS = {
     `,
     sideHTML: () => `
       <div class="ute-cview-side">
-        <div class="card"><h4>What it does</h4><p>${PARTS[k]?.desc || ''}</p></div>
-        <div class="card"><h4>Notes</h4><p>${PARTS[k]?.notes || ''}</p></div>
-        <div class="card"><h4>See it on the bike</h4><p>Scroll up to the overview — the part is highlighted in warm orange.</p></div>
+        <div class="card"><h4>Role</h4><p>${PARTS[k]?.desc || ''}</p></div>
+        <div class="card"><h4>Note</h4><p>${PARTS[k]?.notes || ''}</p></div>
       </div>
     `,
     mount: () => mountGenericPart(k),
@@ -2297,6 +2346,149 @@ function wireRiderControls() {
       if (toast) { toast.textContent = 'STARTED'; toast.classList.add('is-on'); setTimeout(() => toast.classList.remove('is-on'), 700); }
     });
   }
+}
+
+// ───────────────────────── Dyno (test track) ──────────────────
+const DYNO_CHARTS = [
+  { k: 'speed',    label: 'Speed',    unit: 'km/h', color: '#C2502A', max: 240 },
+  { k: 'rpm',      label: 'RPM',      unit: 'rpm',  color: '#1D6B55', max: 10000 },
+  { k: 'throttle', label: 'Throttle', unit: '%',    color: '#3E6FB7', max: 100 },
+  { k: 'brake',    label: 'Brake',    unit: '%',    color: '#E2A93B', max: 100 },
+];
+
+function wireDynoButtons() {
+  const start = ROOT.querySelector('#ute-dyno-start');
+  const reset = ROOT.querySelector('#ute-dyno-reset');
+  if (start) start.addEventListener('click', () => {
+    if (S.dyno.recording) {
+      S.dyno.recording = false;
+      start.textContent = 'Start test';
+      start.classList.remove('is-rec');
+    } else {
+      S.dyno.recording = true;
+      S.dyno.samples = [];
+      S.dyno.start_ms = performance.now();
+      S.dyno.peak_speed = 0; S.dyno.peak_rpm = 0; S.dyno.peak_power = 0;
+      S.dyno.tto100 = null; S.dyno.avg_throttle = 0;
+      start.textContent = 'Stop';
+      start.classList.add('is-rec');
+    }
+    renderDynoFindings();
+  });
+  if (reset) reset.addEventListener('click', () => {
+    S.dyno.recording = false;
+    S.dyno.samples = [];
+    S.dyno.peak_speed = 0; S.dyno.peak_rpm = 0; S.dyno.peak_power = 0;
+    S.dyno.tto100 = null; S.dyno.avg_throttle = 0;
+    if (start) { start.textContent = 'Start test'; start.classList.remove('is-rec'); }
+    renderDynoCharts();
+    renderDynoFindings();
+  });
+}
+
+function recordDynoSample(now) {
+  if (!S.dyno.recording) return;
+  if (now - S.last_dyno_sample_ms < 50) return;  // 20 Hz
+  S.last_dyno_sample_ms = now;
+  const wheelRPM = S.rpm / GEAR.primary / GEAR.gear3 / GEAR.final;
+  const kmh = (wheelRPM / 60) * (2 * Math.PI * GEAR.wheel_r_m) * 3.6 * (1 - S.rider.brake * 0.9);
+  const disp = displacementCC(S.bore_mm, S.stroke_mm);
+  const tq = approxTorqueNm(disp, S.mode === 'elec' ? '4t' : S.mode, S.compression);
+  const kw = (S.mode === 'elec')
+    ? (S.elec.torque * S.elec.rpm / 9549)
+    : (tq * S.rpm / 9549);
+  const t = (now - S.dyno.start_ms) / 1000;
+  S.dyno.samples.push({ t, speed: kmh, rpm: (S.mode === 'elec' ? S.elec.rpm : S.rpm), throttle: S.rider.throttle*100, brake: S.rider.brake*100, power: kw });
+  if (S.dyno.samples.length > S.dyno.maxSamples) S.dyno.samples.shift();
+  if (kmh > S.dyno.peak_speed) S.dyno.peak_speed = kmh;
+  const nowRPM = S.mode === 'elec' ? S.elec.rpm : S.rpm;
+  if (nowRPM > S.dyno.peak_rpm) S.dyno.peak_rpm = nowRPM;
+  if (kw > S.dyno.peak_power) S.dyno.peak_power = kw;
+  if (S.dyno.tto100 == null && kmh >= 100) S.dyno.tto100 = t;
+  const sumT = S.dyno.samples.reduce((a, s) => a + s.throttle, 0);
+  S.dyno.avg_throttle = sumT / S.dyno.samples.length;
+}
+
+function renderDynoCharts() {
+  const slot = ROOT.querySelector('#ute-dyno-charts');
+  if (!slot) return;
+  const latest = S.dyno.samples[S.dyno.samples.length - 1] || { speed: 0, rpm: 0, throttle: 0, brake: 0 };
+  slot.innerHTML = DYNO_CHARTS.map((c) => {
+    const now = latest[c.k] || 0;
+    const unit = c.unit;
+    const nowFmt = (c.k === 'rpm') ? Math.round(now).toLocaleString('en-GB') : now.toFixed(c.k === 'speed' ? 0 : 0);
+    return `
+      <div class="ute-dyno-chart">
+        <div class="ute-dyno-chart-head">
+          <span class="k">${c.label}</span>
+          <span class="v">${nowFmt}<span class="u">${unit}</span></span>
+        </div>
+        <svg viewBox="0 0 400 110" preserveAspectRatio="none" id="ute-dyno-chart-${c.k}">
+          ${chartPathSVG(c)}
+        </svg>
+      </div>
+    `;
+  }).join('');
+}
+
+function chartPathSVG(c) {
+  const samples = S.dyno.samples;
+  const n = samples.length;
+  if (n < 2) {
+    return `
+      <line class="axis" x1="0" y1="100" x2="400" y2="100"/>
+      <line class="axis" x1="0" y1="10" x2="0" y2="100"/>
+      <line class="grid" x1="0" y1="55" x2="400" y2="55"/>
+      <text class="axis-label" x="4" y="22">${c.max}</text>
+      <text class="axis-label" x="4" y="95">0</text>
+    `;
+  }
+  // Time window: last 30 s, or less if fewer samples
+  const tEnd = samples[n - 1].t;
+  const tStart = Math.max(0, tEnd - 30);
+  const w = 400, h = 100, x0 = 0, y0 = 10;
+  const xOf = (t) => x0 + ((t - tStart) / Math.max(0.001, tEnd - tStart)) * w;
+  const yOf = (v) => y0 + (1 - Math.max(0, Math.min(1, v / c.max))) * (h - y0);
+  // Build path
+  let d = '';
+  let dArea = '';
+  for (let i = 0; i < n; i++) {
+    const s = samples[i];
+    if (s.t < tStart) continue;
+    const x = xOf(s.t), y = yOf(s[c.k]);
+    if (!d) { d = `M ${x.toFixed(1)} ${y.toFixed(1)}`; dArea = `M ${x.toFixed(1)} 100`; }
+    else d += ` L ${x.toFixed(1)} ${y.toFixed(1)}`;
+    dArea += ` L ${x.toFixed(1)} ${y.toFixed(1)}`;
+  }
+  if (dArea) dArea += ` L 400 100 Z`;
+  return `
+    <line class="axis" x1="0" y1="100" x2="400" y2="100"/>
+    <line class="axis" x1="0" y1="10" x2="0" y2="100"/>
+    <line class="grid" x1="0" y1="32" x2="400" y2="32"/>
+    <line class="grid" x1="0" y1="55" x2="400" y2="55"/>
+    <line class="grid" x1="0" y1="78" x2="400" y2="78"/>
+    <path class="area" fill="${c.color}" d="${dArea}"/>
+    <path class="ln" stroke="${c.color}" d="${d}"/>
+    <text class="axis-label" x="4" y="22">${c.max}</text>
+    <text class="axis-label" x="4" y="95">0</text>
+    <text class="axis-label" x="395" y="95" text-anchor="end">${tEnd.toFixed(1)}s</text>
+  `;
+}
+
+function renderDynoFindings() {
+  const slot = ROOT.querySelector('#ute-dyno-findings');
+  if (!slot) return;
+  const run = S.dyno.samples.length > 1 ? (S.dyno.samples[S.dyno.samples.length - 1].t) : 0;
+  slot.innerHTML = `
+    <div class="cell"><span class="k">Status</span><span class="v">${S.dyno.recording ? 'Recording' : (S.dyno.samples.length ? 'Stopped' : 'Idle')}</span></div>
+    <div class="cell"><span class="k">Run time</span><span class="v">${run.toFixed(1)}<span class="u">s</span></span></div>
+    <div class="cell"><span class="k">Peak speed</span><span class="v">${S.dyno.peak_speed.toFixed(0)}<span class="u">km/h</span></span></div>
+    <div class="cell"><span class="k">Peak RPM</span><span class="v">${Math.round(S.dyno.peak_rpm).toLocaleString('en-GB')}</span></div>
+    <div class="cell"><span class="k">Peak power</span><span class="v">${S.dyno.peak_power.toFixed(1)}<span class="u">kW</span></span></div>
+    <div class="cell"><span class="k">0 → 100 km/h</span><span class="v">${S.dyno.tto100 == null ? '—' : S.dyno.tto100.toFixed(1) + 's'}</span></div>
+    <div class="cell"><span class="k">Avg throttle</span><span class="v">${S.dyno.avg_throttle.toFixed(0)}<span class="u">%</span></span></div>
+    <div class="cell"><span class="k">Samples</span><span class="v">${S.dyno.samples.length}</span></div>
+  `;
 }
 
 function updateRiderTick(dt) {
