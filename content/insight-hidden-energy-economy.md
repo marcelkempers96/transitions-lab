@@ -7,7 +7,7 @@
 <p class="article-meta"><span class="article-date">1 November 2026</span> · <span class="article-reading-time">9 min read</span></p>
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-hidden-energy-economy-hero.jpg" alt="The unofficial charging site behind a fabrication yard in Nairobi's Industrial Area, with a solar panel above the entrance, a locker cabinet visible inside the open gate, two people in conversation at the door and an electric boda boda with a green 100% Electric sticker parked outside">
+  <img src="/assets/img/insight-hidden-energy-economy-hero.jpg" alt="Close-up of the hidden charging site in Nairobi's Industrial Area: the blue gate open on the left, a tall white cabinet with fifteen numbered locker compartments, a solar panel bolted above the entrance, a CCTV camera watching from a bracket, and an orange motorbike peeking in from the bottom of the frame">
 </figure>
 
 ## A rumour on Suguta Road
@@ -27,7 +27,7 @@ I said I wanted to see it and talk to whoever ran it, and he shrugged and told m
 In the middle of this, built into a corrugated-iron structure painted blue at the base and silver above, was the thing I had come for. A solar panel was bolted to the wall above the entrance, a CCTV camera watched the yard from a bracket beside it, and a handwritten sheet taped to the frame gave a phone number to call for assistance. Below them stood a tall white cabinet divided into fifteen locker compartments, each with its own small door, which looked so similar to the battery cabinets at official hubs that for a moment I wondered whether I had misunderstood the rumour. Parked outside was an electric boda boda with a green 100% Electric sticker on its tank and its battery bay open, waiting.
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-hidden-energy-economy-02.jpg" alt="Close-up of the locker cabinet at the hidden charging site: fifteen compartments, a solar panel bolted above, a CCTV camera on a bracket, a handwritten assistance phone number taped to the frame, blue gate open on the left, orange motorbike visible in the foreground">
+  <img src="/assets/img/insight-hidden-energy-economy-02.jpg" alt="Wider establishing shot of the hidden site: a two-storey corrugated-iron building in a Nairobi Industrial Area gravel yard, blue gate open with two people standing in conversation at the door, a solar panel on the wall, a petrol motorbike and an electric boda boda with a green 100% Electric sticker parked in the foreground">
 </figure>
 
 ## The man who tried to do it officially
@@ -57,11 +57,11 @@ The contradictions are visible in the rules themselves. The 2023 guidelines requ
 The scale of the formal networks makes the gap easier to see rather than harder. Spiro, whose Swap and Go stations now stand on forecourts across the city, reported more than 400 swap stations in Kenya by early 2026 ([Kuhudzai, 2026](https://cleantechnica.com/2026/02/24/spiro-raises-50-million-as-demand-for-its-battery-swapping-infrastructure-evs-surges-across-africa)), and an estimated 90% of the country's charging infrastructure is concentrated in Nairobi ([TheCityFix, 2026](https://thecityfix.com/?p=147438)). If riders in the best-served city in the country are still seeking out a locked yard in Industrial Area, the shortage is not about the number of stations on a map but about whether a charged battery is waiting at the right place at seven in the morning.
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-hidden-energy-economy-03.jpg" alt="A formal Spiro Swap & Go station in Ruaka on a forecourt beside a KFC, two cabinets with numbered green and blue locker compartments, several riders in high-vis vests at the terminal screen">
+  <img src="/assets/img/insight-hidden-energy-economy-03.jpg" alt="The Roam hub on Lusaka Road, a solar-canopied blue container with the red ROAM sign above the door, Bolt- and Roam-branded boda bodas parked in a line, a rider in an orange high-vis vest at the service window">
 </figure>
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-hidden-energy-economy-04.jpg" alt="The Roam hub on Lusaka Road, a solar-canopied container with the ROAM sign above, Bolt and Roam branded boda bodas parked in a line, a rider in an orange vest at the service window">
+  <img src="/assets/img/insight-hidden-energy-economy-04.jpg" alt="A formal Spiro Swap & Go station in Ruaka on a forecourt beside a KFC, two cabinets with numbered green and blue locker compartments, several riders in high-vis vests at the terminal screen">
 </figure>
 
 ## From hidden cabinet to licensed agent
