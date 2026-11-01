@@ -108,11 +108,12 @@ function shellHTML() {
             <div class="ute-view-toggle" role="group" aria-label="Overview view">
               <button type="button" data-view="diagram"   class="${S.view==='diagram'?'is-on':''}">Diagram</button>
               <button type="button" data-view="blueprint" class="${S.view==='blueprint'?'is-on':''}">Blueprint</button>
+              <button type="button" data-view="3d"        class="${S.view==='3d'?'is-on':''}">3D</button>
             </div>
             <span class="ute-overview-badge" data-m="${S.mode}">${modeShort()}</span>
           </div>
         </div>
-        <div class="ute-moto-wrap ${S.view==='blueprint'?'is-blueprint':''}" id="ute-moto-wrap">
+        <div class="ute-moto-wrap ${S.view==='blueprint'?'is-blueprint':''} ${S.view==='3d'?'is-3d':''}" id="ute-moto-wrap">
           <svg class="ute-moto-svg ${S.view==='blueprint'?'is-blueprint':''}" id="ute-moto" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" aria-label="Motorcycle anatomy diagram"></svg>
         </div>
       </section>
@@ -315,11 +316,19 @@ function mountOverviewSVG() {
   if (!svg) return;
   svg.innerHTML = '';
   svg.classList.toggle('is-blueprint', S.view === 'blueprint');
-  if (wrap) wrap.classList.toggle('is-blueprint', S.view === 'blueprint');
+  svg.classList.toggle('is-3d', S.view === '3d');
+  if (wrap) {
+    wrap.classList.toggle('is-blueprint', S.view === 'blueprint');
+    wrap.classList.toggle('is-3d', S.view === '3d');
+  }
   if (S.view === 'blueprint') {
     if (S.mode === '4t')      drawClassic4TBlueprint(svg);
     else if (S.mode === '2t') drawMotocross2TBlueprint(svg);
     else                      drawElectricBikeBlueprint(svg);
+  } else if (S.view === '3d') {
+    if (S.mode === '4t')      drawClassic4T3D(svg);
+    else if (S.mode === '2t') drawMotocross2T3D(svg);
+    else                      drawElectricBike3D(svg);
   } else {
     if (S.mode === '4t')      drawClassic4T(svg);
     else if (S.mode === '2t') drawMotocross2T(svg);
@@ -1668,6 +1677,602 @@ function drawElectricBikeBlueprint(svg) {
     { key: 'rear_shock',  sx: 790, sy: 355, lx:  440, lane: 4, label: 'Rear shock' },
     { key: 'chain',       sx: 870, sy: 408, lx:  700, lane: 4, label: 'Belt drive' },
     { key: 'rear_sprocket', sx: 970, sy: 455, lx:  990, lane: 4, label: 'Belt pulley' },
+  ];
+  const gc = ns('g');
+  callouts.forEach((c) => gc.appendChild(callout(c)));
+  svg.appendChild(gc);
+}
+
+// ───────────────────────── 3D overview drawers ───────────────────
+// Pseudo-3D "render" view: 3/4 front-right angle of each motorcycle,
+// using SVG linear + radial gradients to fake metallic / paint
+// shading. Still fully clickable — every shape carries data-shape.
+
+function td_defs(svg, paintColor) {
+  const defs = ns('defs');
+  const lin = (id, c1, c2, c3, horizontal) => {
+    const g = ns('linearGradient', { id, x1: 0, y1: 0, x2: horizontal ? 1 : 0, y2: horizontal ? 0 : 1 });
+    g.appendChild(ns('stop', { offset: '0%',   'stop-color': c1 }));
+    g.appendChild(ns('stop', { offset: '50%',  'stop-color': c2 }));
+    g.appendChild(ns('stop', { offset: '100%', 'stop-color': c3 }));
+    return g;
+  };
+  const rad = (id, c1, c2) => {
+    const g = ns('radialGradient', { id, cx: '45%', cy: '35%', r: '70%' });
+    g.appendChild(ns('stop', { offset: '0%',   'stop-color': c1 }));
+    g.appendChild(ns('stop', { offset: '100%', 'stop-color': c2 }));
+    return g;
+  };
+  defs.appendChild(lin('td-chrome',  '#E8E4D8', '#FFFFFF', '#8A867A'));
+  defs.appendChild(lin('td-chrome-v','#8E867A', '#F5F2EA', '#5B574E', true));
+  defs.appendChild(lin('td-black',   '#2A2824', '#5B574E', '#0E0D0B'));
+  defs.appendChild(lin('td-tyre',    '#2A2824', '#4A4642', '#0E0D0B'));
+  defs.appendChild(lin('td-rubber',  '#1A1A17', '#3A3833', '#0A0A0A'));
+  defs.appendChild(lin('td-engine',  '#5A574E', '#B9B3A4', '#2A2824'));
+  defs.appendChild(lin('td-engine2', '#B9B3A4', '#E6E1D4', '#5A574E', true));
+  defs.appendChild(lin('td-amber',   '#C27E1E', '#F4D06F', '#8B5A1E'));
+  defs.appendChild(lin('td-red',     '#8B2415', '#C2502A', '#4A1208'));
+  defs.appendChild(lin('td-grn',     '#1A4A3A', '#2F7F65', '#0A2A1E'));
+  defs.appendChild(lin('td-cu',      '#8A4A28', '#C2502A', '#5B2415'));
+  // Paint — pass in via tagged id below
+  defs.appendChild(lin('td-paint',   paintColor.light, paintColor.mid, paintColor.dark));
+  defs.appendChild(lin('td-paint-h', paintColor.mid, paintColor.light, paintColor.mid, true));
+  // Shadow
+  const shad = ns('radialGradient', { id: 'td-shadow', cx: '50%', cy: '50%', r: '50%' });
+  shad.appendChild(ns('stop', { offset: '0%',   'stop-color': '#000000', 'stop-opacity': '0.45' }));
+  shad.appendChild(ns('stop', { offset: '100%', 'stop-color': '#000000', 'stop-opacity': '0' }));
+  defs.appendChild(shad);
+  // Glossy ellipse highlight
+  const gloss = ns('radialGradient', { id: 'td-gloss', cx: '35%', cy: '25%', r: '60%' });
+  gloss.appendChild(ns('stop', { offset: '0%',   'stop-color': '#FFFFFF', 'stop-opacity': '0.7' }));
+  gloss.appendChild(ns('stop', { offset: '100%', 'stop-color': '#FFFFFF', 'stop-opacity': '0' }));
+  defs.appendChild(gloss);
+  svg.appendChild(defs);
+}
+
+function td_wheel(cx, cy, rx, ry, key, { spoke = 20, knobby = false, rimColor = 'url(#td-chrome)' } = {}) {
+  const g = ns('g', { 'data-shape': key, class: 'ute-shape' });
+  // Tyre (ellipse, foreshortened)
+  g.appendChild(ns('ellipse', { cx, cy, rx, ry, fill: 'url(#td-rubber)', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': key }));
+  // Tread band
+  g.appendChild(ns('ellipse', { cx, cy, rx: rx * 0.9, ry: ry * 0.9, fill: 'none', stroke: '#000', 'stroke-width': 0.5, 'data-shape': key }));
+  if (knobby) {
+    for (let i = 0; i < 28; i++) {
+      const a = (i / 28) * 2 * Math.PI;
+      const x = cx + Math.cos(a) * rx * 0.95;
+      const y = cy + Math.sin(a) * ry * 0.95;
+      g.appendChild(ns('rect', { x: x - 2, y: y - 2, width: 4, height: 4, fill: '#1A1A17', 'data-shape': key }));
+    }
+  }
+  // Rim
+  g.appendChild(ns('ellipse', { cx, cy, rx: rx * 0.65, ry: ry * 0.65, fill: rimColor, stroke: '#2A2A26', 'stroke-width': 1.2, 'data-shape': key }));
+  g.appendChild(ns('ellipse', { cx, cy, rx: rx * 0.6, ry: ry * 0.6, fill: 'none', stroke: '#9A9385', 'stroke-width': 0.7, 'data-shape': key }));
+  // Hub
+  g.appendChild(ns('ellipse', { cx, cy, rx: 11, ry: 6, fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': key }));
+  g.appendChild(ns('ellipse', { cx, cy, rx: 3, ry: 2, fill: '#0A0A0A', 'data-shape': key }));
+  // Spokes (projected onto the ellipse)
+  for (let i = 0; i < spoke; i++) {
+    const a = (i / spoke) * 2 * Math.PI;
+    g.appendChild(ns('line', { x1: cx + Math.cos(a) * 10, y1: cy + Math.sin(a) * 5.5, x2: cx + Math.cos(a) * rx * 0.6, y2: cy + Math.sin(a) * ry * 0.6, stroke: '#8A867A', 'stroke-width': 0.7, 'data-shape': key }));
+  }
+  return g;
+}
+
+function td_shadow(cx, cy, rx, ry) {
+  return ns('ellipse', { cx, cy, rx, ry, fill: 'url(#td-shadow)' });
+}
+
+// ─── 4-stroke CLASSIC in 3/4 view (XS-650 inspired) ─────────────
+function drawClassic4T3D(svg) {
+  td_defs(svg, { light: '#2A6B4A', mid: '#1D5236', dark: '#0F2E1F' });  // british racing green
+  const g = ns('g');
+
+  // Ground shadow
+  g.appendChild(td_shadow(640, 540, 420, 42));
+
+  // Rear wheel (behind-left, smaller, foreshortened)
+  g.appendChild(td_wheel(230, 480, 90, 32, 'rear_wheel', { spoke: 32 }));
+  // Rear brake drum
+  g.appendChild(ns('ellipse', { cx: 230, cy: 480, rx: 24, ry: 10, fill: 'url(#td-chrome)', stroke: '#2A2A26' }));
+
+  // Front wheel (foreground-right, larger, foreshortened)
+  g.appendChild(td_wheel(970, 500, 110, 38, 'front_wheel', { spoke: 36 }));
+  // Front brake disc / caliper
+  const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
+  brake.appendChild(ns('ellipse', { cx: 970, cy: 500, rx: 46, ry: 16, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 1.5, 'data-shape': 'brake' }));
+  for (let i = 0; i < 10; i++) {
+    const a = (i / 10) * 2 * Math.PI;
+    brake.appendChild(ns('ellipse', { cx: 970 + Math.cos(a)*40, cy: 500 + Math.sin(a)*14, rx: 2, ry: 1.2, fill: '#2A2A26', 'data-shape': 'brake' }));
+  }
+  svg.appendChild(brake);
+
+  // Front forks (two tubes to triple-tree)
+  const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
+  forks.appendChild(ns('path', { d: 'M 942 500 L 905 240 L 925 230 L 962 500 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'stroke-width': 1, 'data-shape': 'forks', 'data-fillable': '' }));
+  forks.appendChild(ns('path', { d: 'M 990 500 L 956 240 L 976 230 L 1010 500 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'stroke-width': 1, 'data-shape': 'forks' }));
+  // Rubber gaiters
+  forks.appendChild(ns('rect', { x: 912, y: 330, width: 22, height: 90, fill: 'url(#td-rubber)', 'data-shape': 'forks' }));
+  forks.appendChild(ns('rect', { x: 962, y: 330, width: 22, height: 90, fill: 'url(#td-rubber)', 'data-shape': 'forks' }));
+  // Top triple-tree (chrome)
+  forks.appendChild(ns('path', { d: 'M 898 215 L 1015 215 L 1005 240 L 905 240 Z', fill: 'url(#td-chrome)', stroke: '#2A2A26', 'stroke-width': 1.5, 'data-shape': 'forks' }));
+  svg.appendChild(forks);
+
+  // Front fender (chrome, over front wheel)
+  svg.appendChild(ns('path', { d: 'M 870 470 Q 970 410 1075 475 Q 1080 490 1075 495 Q 970 430 865 495 Z', fill: 'url(#td-chrome)', stroke: '#2A2A26', 'stroke-width': 1, 'data-shape': 'front_wheel', class: 'ute-shape' }));
+
+  // Headlight (big round chrome)
+  const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
+  hl.appendChild(ns('circle', { cx: 850, cy: 240, r: 56, fill: 'url(#td-chrome)', stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'headlight', 'data-fillable': '' }));
+  hl.appendChild(ns('circle', { cx: 850, cy: 240, r: 44, fill: 'url(#td-amber)', 'data-shape': 'headlight' }));
+  hl.appendChild(ns('circle', { cx: 850, cy: 240, r: 36, fill: '#F3B64B', 'data-shape': 'headlight' }));
+  // Specular highlight
+  hl.appendChild(ns('circle', { cx: 836, cy: 226, r: 14, fill: 'url(#td-gloss)', 'data-shape': 'headlight' }));
+  svg.appendChild(hl);
+
+  // Handlebar + grips + mirrors + indicators
+  const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
+  // Cross bar (chrome)
+  bar.appendChild(ns('path', { d: 'M 650 200 Q 760 150 870 158 L 1000 170 L 1000 184 Q 870 174 760 164 Q 650 214 650 214 Z', fill: 'url(#td-chrome)', stroke: '#2A2A26', 'data-shape': 'instruments' }));
+  // Grips (left + right)
+  bar.appendChild(ns('rect', { x: 1000, y: 162, width: 42, height: 24, rx: 4, fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('rect', { x: 610, y: 196, width: 42, height: 24, rx: 4, fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
+  // Mirrors (round, chrome, on stems)
+  bar.appendChild(ns('line', { x1: 1015, y1: 162, x2: 1030, y2: 110, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'instruments' }));
+  bar.appendChild(ns('circle', { cx: 1055, cy: 95, r: 24, fill: 'url(#td-chrome)', stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'instruments' }));
+  bar.appendChild(ns('circle', { cx: 1050, cy: 90, r: 12, fill: 'url(#td-gloss)', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('line', { x1: 630, y1: 200, x2: 625, y2: 148, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'instruments' }));
+  bar.appendChild(ns('circle', { cx: 595, cy: 135, r: 22, fill: 'url(#td-chrome)', stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'instruments' }));
+  // Indicators (orange teardrops)
+  bar.appendChild(ns('ellipse', { cx: 890, cy: 185, rx: 12, ry: 10, fill: 'url(#td-amber)', stroke: '#2A2A26', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('ellipse', { cx: 810, cy: 195, rx: 12, ry: 10, fill: 'url(#td-amber)', stroke: '#2A2A26', 'data-shape': 'instruments' }));
+  // Instrument cluster (two round gauges mounted on bars)
+  bar.appendChild(ns('ellipse', { cx: 810, cy: 220, rx: 28, ry: 16, fill: 'url(#td-chrome)', stroke: '#2A2A26', 'data-shape': 'instruments', 'data-fillable': '' }));
+  bar.appendChild(ns('ellipse', { cx: 870, cy: 220, rx: 28, ry: 16, fill: 'url(#td-chrome)', stroke: '#2A2A26', 'data-shape': 'instruments' }));
+  svg.appendChild(bar);
+
+  // Fuel tank (teardrop, painted green with gloss)
+  const tank = ns('g', { 'data-shape': 'fuel_tank', class: 'ute-shape' });
+  // Right side (visible from this angle)
+  tank.appendChild(ns('path', { d: 'M 520 280 Q 580 220 700 215 Q 820 220 860 260 Q 855 310 820 322 Q 700 340 530 320 Z', fill: 'url(#td-paint)', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'fuel_tank', 'data-fillable': '' }));
+  // Specular highlight along the top ridge
+  tank.appendChild(ns('path', { d: 'M 580 232 Q 700 220 820 236 Q 790 252 700 240 Q 620 240 580 252 Z', fill: 'url(#td-gloss)', 'data-shape': 'fuel_tank' }));
+  // XS 650 style badge (silver scallop)
+  tank.appendChild(ns('path', { d: 'M 565 290 Q 700 285 830 295 L 830 310 Q 700 305 565 308 Z', fill: 'url(#td-chrome)', stroke: '#1A1A17', 'stroke-width': 0.7, 'data-shape': 'fuel_tank' }));
+  const tk = ns('text', { x: 700, y: 304, 'font-family': 'IBM Plex Mono', 'font-size': 11, 'font-weight': 800, 'text-anchor': 'middle', fill: '#0A0A0A', 'data-shape': 'fuel_tank' });
+  tk.textContent = 'XS 650';
+  tank.appendChild(tk);
+  // Fuel cap
+  tank.appendChild(ns('circle', { cx: 710, cy: 232, r: 10, fill: 'url(#td-black)', stroke: '#1A1A17', 'data-shape': 'fuel_tank' }));
+  tank.appendChild(ns('circle', { cx: 708, cy: 230, r: 3, fill: 'url(#td-chrome)', 'data-shape': 'fuel_tank' }));
+  svg.appendChild(tank);
+
+  // Seat (black bench with cushion ridge)
+  const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
+  seat.appendChild(ns('path', { d: 'M 300 300 Q 390 282 500 285 L 520 318 Q 400 322 300 332 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat', 'data-fillable': '' }));
+  // Side panel plates
+  seat.appendChild(ns('path', { d: 'M 300 300 L 320 320 L 340 330 Q 290 340 275 335 Z', fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'seat' }));
+  svg.appendChild(seat);
+
+  // Engine (parallel twin, from 3/4 — two cylinders rising)
+  const eng = ns('g', { 'data-shape': 'engine', class: 'ute-shape' });
+  // Crankcase
+  eng.appendChild(ns('path', { d: 'M 440 370 Q 470 340 720 345 Q 800 348 850 380 Q 860 440 830 450 L 480 460 Q 430 450 440 370 Z', fill: 'url(#td-engine)', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'engine', 'data-fillable': '' }));
+  // Cooling fins (ribs along engine)
+  for (let i = 0; i < 12; i++) {
+    eng.appendChild(ns('path', { d: `M ${460 + i*32} 380 Q ${500 + i*32} 340 ${540 + i*32} 342`, fill: 'none', stroke: '#2A2A26', 'stroke-width': 0.8, 'data-shape': 'engine' }));
+  }
+  // Clutch cover round plate (right side, chrome)
+  eng.appendChild(ns('ellipse', { cx: 820, cy: 420, rx: 42, ry: 30, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'engine' }));
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * 2 * Math.PI;
+    eng.appendChild(ns('circle', { cx: 820 + Math.cos(a)*32, cy: 420 + Math.sin(a)*22, r: 2, fill: '#1A1A17', 'data-shape': 'engine' }));
+  }
+  // Engine badge
+  eng.appendChild(ns('circle', { cx: 820, cy: 420, r: 10, fill: 'url(#td-paint)', stroke: '#0A0A0A', 'data-shape': 'engine' }));
+  svg.appendChild(eng);
+
+  // Cylinders (sticking up out of engine)
+  const cyl = ns('g', { 'data-shape': 'cylinder', class: 'ute-shape' });
+  cyl.appendChild(ns('path', { d: 'M 530 345 L 540 300 L 605 300 L 595 345 Z', fill: 'url(#td-engine2)', stroke: '#0A0A0A', 'stroke-width': 1.2, 'data-shape': 'cylinder', 'data-fillable': '' }));
+  cyl.appendChild(ns('path', { d: 'M 635 345 L 645 300 L 710 300 L 700 345 Z', fill: 'url(#td-engine2)', stroke: '#0A0A0A', 'stroke-width': 1.2, 'data-shape': 'cylinder' }));
+  for (let i = 0; i < 5; i++) {
+    const y = 306 + i*8;
+    cyl.appendChild(ns('line', { x1: 534 + i*0.5, y1: y, x2: 601 - i*0.5, y2: y, stroke: '#0A0A0A', 'stroke-width': 0.6, 'data-shape': 'cylinder' }));
+    cyl.appendChild(ns('line', { x1: 639 + i*0.5, y1: y, x2: 706 - i*0.5, y2: y, stroke: '#0A0A0A', 'stroke-width': 0.6, 'data-shape': 'cylinder' }));
+  }
+  // Rocker covers (chrome tops)
+  cyl.appendChild(ns('path', { d: 'M 530 300 L 605 300 L 603 290 L 532 290 Z', fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
+  cyl.appendChild(ns('path', { d: 'M 635 300 L 710 300 L 708 290 L 637 290 Z', fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
+  svg.appendChild(cyl);
+
+  // Carburetors (round polished bells)
+  const carb = ns('g', { 'data-shape': 'carb', class: 'ute-shape' });
+  carb.appendChild(ns('ellipse', { cx: 490, cy: 330, rx: 30, ry: 22, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'carb', 'data-fillable': '' }));
+  carb.appendChild(ns('ellipse', { cx: 490, cy: 330, rx: 22, ry: 16, fill: '#2A2A26', 'data-shape': 'carb' }));
+  svg.appendChild(carb);
+
+  // Air box (behind carb — side cover)
+  const air = ns('g', { 'data-shape': 'air_filter', class: 'ute-shape' });
+  air.appendChild(ns('path', { d: 'M 395 310 Q 390 350 410 380 L 450 376 L 450 322 Z', fill: 'url(#td-chrome)', stroke: '#1A1A17', 'data-shape': 'air_filter', 'data-fillable': '' }));
+  svg.appendChild(air);
+
+  // Dual exhaust pipes (chrome, exiting right from engine)
+  const ex = ns('g', { 'data-shape': 'exhaust', class: 'ute-shape' });
+  // Upper pipe
+  ex.appendChild(ns('path', { d: 'M 530 420 Q 440 460 240 490 L 70 500 L 70 512 L 240 502 Q 450 480 540 436 Z', fill: 'url(#td-chrome)', stroke: '#1A1A17', 'stroke-width': 1, 'data-shape': 'exhaust', 'data-fillable': '' }));
+  // Lower pipe
+  ex.appendChild(ns('path', { d: 'M 540 436 Q 450 476 250 504 L 85 510 L 85 522 L 250 516 Q 460 496 548 450 Z', fill: 'url(#td-chrome)', stroke: '#1A1A17', 'stroke-width': 1, 'data-shape': 'exhaust' }));
+  // Muffler end caps (slash-cut)
+  ex.appendChild(ns('ellipse', { cx: 72, cy: 507, rx: 7, ry: 10, fill: '#1A1A17', 'data-shape': 'exhaust' }));
+  ex.appendChild(ns('ellipse', { cx: 86, cy: 517, rx: 7, ry: 10, fill: '#1A1A17', 'data-shape': 'exhaust' }));
+  svg.appendChild(ex);
+
+  // Side stand
+  svg.appendChild(ns('line', { x1: 480, y1: 460, x2: 460, y2: 540, stroke: '#2A2A26', 'stroke-width': 4 }));
+
+  // Battery / electrics area under seat (visible side cover)
+  const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
+  bat.appendChild(ns('path', { d: 'M 380 332 L 380 390 L 440 388 L 440 332 Z', fill: 'url(#td-paint)', stroke: '#0A0A0A', 'data-shape': 'battery', 'data-fillable': '' }));
+  const btxt = ns('text', { x: 410, y: 367, 'font-family': 'IBM Plex Mono', 'font-size': 10, 'font-weight': 700, 'text-anchor': 'middle', fill: '#F6F5F2', 'data-shape': 'battery' });
+  btxt.textContent = '12V'; bat.appendChild(btxt);
+  svg.appendChild(bat);
+
+  // Rear shock + tail light
+  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
+  shock.appendChild(ns('line', { x1: 270, y1: 330, x2: 232, y2: 460, stroke: 'url(#td-chrome)', 'stroke-width': 10, 'data-shape': 'rear_shock' }));
+  for (let i = 0; i < 8; i++) {
+    const t = i / 7;
+    const x = 270 + (232 - 270) * t, y = 330 + (460 - 330) * t;
+    shock.appendChild(ns('line', { x1: x - 5, y1: y - 2, x2: x + 5, y2: y + 2, stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'rear_shock' }));
+  }
+  svg.appendChild(shock);
+
+  const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
+  tl.appendChild(ns('ellipse', { cx: 268, cy: 310, rx: 14, ry: 10, fill: 'url(#td-red)', stroke: '#0A0A0A', 'data-shape': 'tail_light', 'data-fillable': '' }));
+  svg.appendChild(tl);
+
+  // Frame rails (black, barely visible from this angle)
+  const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
+  frame.appendChild(ns('path', { d: 'M 900 260 Q 820 270 760 285', fill: 'none', stroke: '#1A1A17', 'stroke-width': 3, 'data-shape': 'frame' }));
+  frame.appendChild(ns('path', { d: 'M 900 260 Q 780 320 540 340', fill: 'none', stroke: '#1A1A17', 'stroke-width': 3, 'data-shape': 'frame' }));
+  frame.appendChild(ns('path', { d: 'M 500 285 Q 400 300 280 310', fill: 'none', stroke: '#1A1A17', 'stroke-width': 3, 'data-shape': 'frame' }));
+  svg.appendChild(frame);
+
+  // Swingarm
+  const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
+  sw.appendChild(ns('path', { d: 'M 460 450 Q 350 460 240 475 L 240 490 Q 350 476 465 464 Z', fill: 'url(#td-chrome-v)', stroke: '#1A1A17', 'data-shape': 'swingarm', 'data-fillable': '' }));
+  svg.appendChild(sw);
+
+  // Chain (barely visible)
+  const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
+  chain.appendChild(ns('line', { x1: 460, y1: 448, x2: 240, y2: 476, stroke: '#1A1A17', 'stroke-width': 2.5, 'data-shape': 'chain' }));
+  for (let x = 240; x < 460; x += 10) chain.appendChild(ns('line', { x1: x, y1: 475 - (x-240)*0.013, x2: x, y2: 477 - (x-240)*0.013, stroke: '#9A9385', 'stroke-width': 1.5, 'data-shape': 'chain' }));
+  svg.appendChild(chain);
+
+  // Rear sprocket (on wheel, visible edge)
+  const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
+  rsp.appendChild(ns('ellipse', { cx: 230, cy: 480, rx: 48, ry: 17, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
+  for (let i = 0; i < 24; i++) {
+    const a = (i / 24) * 2 * Math.PI;
+    rsp.appendChild(ns('line', { x1: 230 + Math.cos(a)*48, y1: 480 + Math.sin(a)*17, x2: 230 + Math.cos(a)*52, y2: 480 + Math.sin(a)*18.5, stroke: '#0A0A0A', 'stroke-width': 0.7, 'data-shape': 'rear_sprocket' }));
+  }
+  svg.appendChild(rsp);
+
+  svg.appendChild(g);
+
+  // Minimal callouts (just a few key ones to avoid cluttering the beautiful render)
+  const callouts = [
+    { key: 'headlight',   sx: 850, sy: 184, lx:  820, lane: 1, label: 'Headlight' },
+    { key: 'instruments', sx: 840, sy: 220, lx:  980, lane: 1, label: 'Instruments' },
+    { key: 'fuel_tank',   sx: 700, sy: 230, lx:  700, lane: 1, label: 'Tank · XS 650' },
+    { key: 'cylinder',    sx: 670, sy: 300, lx:  540, lane: 1, label: 'Twin cylinder' },
+    { key: 'carb',        sx: 490, sy: 330, lx:  440, lane: 1, label: 'Carb' },
+    { key: 'front_wheel', sx: 970, sy: 500, lx: 1140, lane: 3, label: 'Front wheel' },
+    { key: 'rear_wheel',  sx: 230, sy: 480, lx:   90, lane: 3, label: 'Rear wheel' },
+    { key: 'exhaust',     sx: 150, sy: 510, lx:  200, lane: 4, label: 'Dual exhaust' },
+    { key: 'engine',      sx: 640, sy: 420, lx:  620, lane: 4, label: 'Engine' },
+    { key: 'seat',        sx: 400, sy: 300, lx:  380, lane: 4, label: 'Seat' },
+  ];
+  const gc = ns('g');
+  callouts.forEach((c) => gc.appendChild(callout(c)));
+  svg.appendChild(gc);
+}
+
+// ─── 2-stroke MOTOCROSS 3D ──────────────────────────────────────
+function drawMotocross2T3D(svg) {
+  td_defs(svg, { light: '#E8542C', mid: '#C2502A', dark: '#7A2810' });  // moto orange
+  const g = ns('g');
+  g.appendChild(td_shadow(640, 540, 420, 42));
+
+  // Wheels (knobby, bigger)
+  g.appendChild(td_wheel(230, 480, 100, 36, 'rear_wheel',  { spoke: 36, knobby: true, rimColor: 'url(#td-chrome)' }));
+  g.appendChild(td_wheel(970, 500, 110, 40, 'front_wheel', { spoke: 36, knobby: true, rimColor: 'url(#td-chrome)' }));
+
+  // Brake disc
+  const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
+  brake.appendChild(ns('ellipse', { cx: 970, cy: 500, rx: 42, ry: 15, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 1.5, 'data-shape': 'brake' }));
+  svg.appendChild(brake);
+
+  // Front forks (USD gold)
+  const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
+  forks.appendChild(ns('path', { d: 'M 942 490 L 905 220 L 930 212 L 962 490 Z', fill: 'url(#td-amber)', stroke: '#5B2415', 'stroke-width': 1, 'data-shape': 'forks', 'data-fillable': '' }));
+  forks.appendChild(ns('path', { d: 'M 990 490 L 956 220 L 982 212 L 1010 490 Z', fill: 'url(#td-amber)', stroke: '#5B2415', 'stroke-width': 1, 'data-shape': 'forks' }));
+  // Lower sliders (black)
+  forks.appendChild(ns('rect', { x: 925, y: 400, width: 44, height: 100, fill: 'url(#td-black)', 'data-shape': 'forks' }));
+  forks.appendChild(ns('rect', { x: 973, y: 400, width: 44, height: 100, fill: 'url(#td-black)', 'data-shape': 'forks' }));
+  // Triple
+  forks.appendChild(ns('path', { d: 'M 895 200 L 1020 200 L 1010 230 L 905 230 Z', fill: 'url(#td-black)', stroke: '#1A1A17', 'data-shape': 'forks' }));
+  svg.appendChild(forks);
+
+  // Front mudguard (high, orange)
+  svg.appendChild(ns('path', { d: 'M 870 420 Q 970 340 1080 420 Q 1080 440 1075 450 Q 970 370 865 450 Z', fill: 'url(#td-paint)', stroke: '#5B2415', 'stroke-width': 1, 'data-shape': 'front_wheel', class: 'ute-shape' }));
+
+  // Number plate (front)
+  const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
+  hl.appendChild(ns('path', { d: 'M 820 180 Q 855 165 905 170 L 915 230 Q 860 234 815 228 Z', fill: '#F6F5F2', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'headlight', 'data-fillable': '' }));
+  const nn = ns('text', { x: 865, y: 215, 'font-family': 'IBM Plex Mono', 'font-size': 32, 'font-weight': 800, 'text-anchor': 'middle', fill: '#1A1A17', 'data-shape': 'headlight' });
+  nn.textContent = '42'; hl.appendChild(nn);
+  svg.appendChild(hl);
+
+  // Bars + hand guards
+  const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
+  bar.appendChild(ns('path', { d: 'M 650 180 Q 760 140 870 150 L 1000 160 L 1000 176 Q 870 164 760 154 Q 650 194 650 194 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
+  // Hand guards (big wrap, orange)
+  bar.appendChild(ns('path', { d: 'M 580 130 Q 600 110 660 130 L 668 206 Q 600 216 580 194 Z', fill: 'url(#td-paint)', stroke: '#5B2415', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('path', { d: 'M 990 120 Q 1010 100 1070 118 L 1078 194 Q 1010 204 990 182 Z', fill: 'url(#td-paint)', stroke: '#5B2415', 'data-shape': 'instruments' }));
+  svg.appendChild(bar);
+
+  // Shrouds / tank panels (big orange)
+  const tank = ns('g', { 'data-shape': 'fuel_tank', class: 'ute-shape' });
+  tank.appendChild(ns('path', { d: 'M 540 265 Q 600 230 720 230 Q 830 240 850 290 Q 820 332 720 342 Q 580 338 540 320 Z', fill: 'url(#td-paint)', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'fuel_tank', 'data-fillable': '' }));
+  tank.appendChild(ns('path', { d: 'M 580 245 Q 700 232 820 245 Q 780 258 700 248 Q 620 248 580 262 Z', fill: 'url(#td-gloss)', 'data-shape': 'fuel_tank' }));
+  // Radiator louvres on side
+  for (let i = 0; i < 7; i++) tank.appendChild(ns('line', { x1: 560 + i*4, y1: 290, x2: 560 + i*4, y2: 328, stroke: '#5B2415', 'stroke-width': 0.6, 'data-shape': 'fuel_tank' }));
+  svg.appendChild(tank);
+
+  // Seat (narrow, long, white/orange)
+  const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
+  seat.appendChild(ns('path', { d: 'M 300 300 Q 400 272 530 272 L 540 310 Q 400 324 300 332 Z', fill: 'url(#td-paint)', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'seat', 'data-fillable': '' }));
+  // Grip texture
+  for (let i = 0; i < 32; i++) seat.appendChild(ns('circle', { cx: 320 + i*7, cy: 294 + i*0.4, r: 0.9, fill: '#1A1A17', 'data-shape': 'seat' }));
+  svg.appendChild(seat);
+
+  // Engine (compact 2T)
+  const eng = ns('g', { 'data-shape': 'engine', class: 'ute-shape' });
+  eng.appendChild(ns('path', { d: 'M 460 370 Q 500 340 700 345 Q 800 348 820 390 Q 820 450 760 460 L 480 468 Q 440 450 460 370 Z', fill: 'url(#td-engine)', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'engine', 'data-fillable': '' }));
+  // Clutch cover
+  eng.appendChild(ns('ellipse', { cx: 790, cy: 420, rx: 42, ry: 30, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'engine' }));
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * 2 * Math.PI;
+    eng.appendChild(ns('circle', { cx: 790 + Math.cos(a)*32, cy: 420 + Math.sin(a)*22, r: 1.6, fill: '#1A1A17', 'data-shape': 'engine' }));
+  }
+  svg.appendChild(eng);
+
+  // Cylinder (single, tilted forward)
+  const cyl = ns('g', { 'data-shape': 'cylinder', class: 'ute-shape' });
+  cyl.appendChild(ns('path', { d: 'M 580 345 L 600 262 L 680 258 L 670 345 Z', fill: 'url(#td-engine2)', stroke: '#0A0A0A', 'data-shape': 'cylinder', 'data-fillable': '' }));
+  for (let i = 0; i < 11; i++) {
+    const y = 272 + i*7;
+    cyl.appendChild(ns('line', { x1: 584 + i*0.3, y1: y, x2: 676 - i*0.3, y2: y, stroke: '#0A0A0A', 'stroke-width': 0.6, 'data-shape': 'cylinder' }));
+  }
+  cyl.appendChild(ns('path', { d: 'M 600 262 L 680 258 L 678 248 L 602 252 Z', fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
+  // Spark plug
+  cyl.appendChild(ns('circle', { cx: 635, cy: 240, r: 7, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
+  svg.appendChild(cyl);
+
+  // Expansion chamber (iconic 2T, chrome, bulging)
+  const ex = ns('g', { 'data-shape': 'exhaust', class: 'ute-shape' });
+  // Stinger out of cylinder going forward and down
+  ex.appendChild(ns('path', { d: 'M 585 345 Q 560 390 500 440 Q 400 470 200 490 Q 120 495 100 475 Q 120 435 240 410 Q 400 380 500 360 Q 560 355 590 362 Z', fill: 'url(#td-chrome)', stroke: '#1A1A17', 'stroke-width': 1.2, 'data-shape': 'exhaust', 'data-fillable': '' }));
+  // Chamber highlight
+  ex.appendChild(ns('path', { d: 'M 220 420 Q 350 400 450 390', fill: 'none', stroke: '#FFFFFF', 'stroke-width': 2, opacity: 0.4, 'data-shape': 'exhaust' }));
+  // End silencer
+  ex.appendChild(ns('path', { d: 'M 100 475 L 50 486 L 48 500 L 110 490 Z', fill: 'url(#td-chrome)', stroke: '#1A1A17', 'data-shape': 'exhaust' }));
+  svg.appendChild(ex);
+
+  // Battery
+  const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
+  bat.appendChild(ns('rect', { x: 388, y: 330, width: 44, height: 32, fill: '#F6F5F2', stroke: '#0A0A0A', 'data-shape': 'battery', 'data-fillable': '' }));
+  const bt = ns('text', { x: 410, y: 350, 'font-family': 'IBM Plex Mono', 'font-size': 10, 'font-weight': 700, 'text-anchor': 'middle', fill: '#0A0A0A', 'data-shape': 'battery' });
+  bt.textContent = '12V'; bat.appendChild(bt);
+  svg.appendChild(bat);
+
+  // Swingarm (aluminium)
+  const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
+  sw.appendChild(ns('path', { d: 'M 470 460 Q 350 470 230 480 L 230 494 Q 350 484 475 472 Z', fill: 'url(#td-chrome-v)', stroke: '#1A1A17', 'data-shape': 'swingarm', 'data-fillable': '' }));
+  svg.appendChild(sw);
+
+  // Mono-shock
+  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
+  shock.appendChild(ns('rect', { x: 440, y: 300, width: 20, height: 120, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_shock', 'data-fillable': '' }));
+  for (let i = 0; i < 10; i++) shock.appendChild(ns('line', { x1: 434, y1: 310 + i*12, x2: 466, y2: 320 + i*12, stroke: '#C2502A', 'stroke-width': 2, 'data-shape': 'rear_shock' }));
+  svg.appendChild(shock);
+
+  // Chain + rear sprocket (large on rear wheel)
+  const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
+  chain.appendChild(ns('line', { x1: 465, y1: 462, x2: 240, y2: 478, stroke: '#1A1A17', 'stroke-width': 2.5, 'data-shape': 'chain' }));
+  svg.appendChild(chain);
+
+  const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
+  rsp.appendChild(ns('ellipse', { cx: 230, cy: 480, rx: 50, ry: 17, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
+  for (let i = 0; i < 30; i++) {
+    const a = (i / 30) * 2 * Math.PI;
+    rsp.appendChild(ns('line', { x1: 230 + Math.cos(a)*50, y1: 480 + Math.sin(a)*17, x2: 230 + Math.cos(a)*54, y2: 480 + Math.sin(a)*18.5, stroke: '#0A0A0A', 'stroke-width': 0.7, 'data-shape': 'rear_sprocket' }));
+  }
+  svg.appendChild(rsp);
+
+  // Rear fender + tail
+  const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
+  tl.appendChild(ns('path', { d: 'M 270 275 Q 290 255 335 258 L 340 300 Q 290 305 270 300 Z', fill: 'url(#td-paint)', stroke: '#1A1A17', 'data-shape': 'tail_light', 'data-fillable': '' }));
+  svg.appendChild(tl);
+
+  // Frame rails (visible)
+  const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
+  frame.appendChild(ns('path', { d: 'M 895 245 Q 820 260 760 285', fill: 'none', stroke: '#2A6B4A', 'stroke-width': 3, 'data-shape': 'frame' }));
+  svg.appendChild(frame);
+
+  // Air box (behind cylinder)
+  const air = ns('g', { 'data-shape': 'air_filter', class: 'ute-shape' });
+  air.appendChild(ns('path', { d: 'M 450 305 L 540 310 L 540 360 L 450 360 Z', fill: 'url(#td-black)', stroke: '#1A1A17', 'data-shape': 'air_filter', 'data-fillable': '' }));
+  svg.appendChild(air);
+
+  // Carb
+  const carb = ns('g', { 'data-shape': 'carb', class: 'ute-shape' });
+  carb.appendChild(ns('ellipse', { cx: 555, cy: 335, rx: 20, ry: 15, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'carb', 'data-fillable': '' }));
+  svg.appendChild(carb);
+
+  svg.appendChild(g);
+
+  const callouts = [
+    { key: 'headlight',   sx: 865, sy: 200, lx:  820, lane: 1, label: 'Number plate' },
+    { key: 'instruments', sx: 820, sy: 170, lx:  980, lane: 1, label: 'Bars + guards' },
+    { key: 'fuel_tank',   sx: 700, sy: 260, lx:  680, lane: 1, label: 'Shrouds + tank' },
+    { key: 'cylinder',    sx: 640, sy: 290, lx:  540, lane: 1, label: 'Cylinder' },
+    { key: 'front_wheel', sx: 970, sy: 500, lx: 1140, lane: 3, label: 'Front wheel' },
+    { key: 'rear_wheel',  sx: 230, sy: 480, lx:   90, lane: 3, label: 'Rear wheel' },
+    { key: 'exhaust',     sx: 300, sy: 430, lx:  200, lane: 4, label: 'Expansion chamber' },
+    { key: 'engine',      sx: 640, sy: 420, lx:  620, lane: 4, label: 'Engine' },
+    { key: 'seat',        sx: 400, sy: 290, lx:  380, lane: 4, label: 'Seat' },
+  ];
+  const gc = ns('g');
+  callouts.forEach((c) => gc.appendChild(callout(c)));
+  svg.appendChild(gc);
+}
+
+// ─── Electric 3D ────────────────────────────────────────────────
+function drawElectricBike3D(svg) {
+  td_defs(svg, { light: '#2A2A26', mid: '#4A4642', dark: '#0A0A0A' });  // naked black
+  const g = ns('g');
+  g.appendChild(td_shadow(640, 540, 420, 42));
+
+  g.appendChild(td_wheel(230, 480, 100, 36, 'rear_wheel',  { spoke: 20, knobby: false, rimColor: 'url(#td-chrome)' }));
+  g.appendChild(td_wheel(970, 500, 110, 40, 'front_wheel', { spoke: 20, knobby: false, rimColor: 'url(#td-chrome)' }));
+
+  const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
+  brake.appendChild(ns('ellipse', { cx: 970, cy: 500, rx: 48, ry: 17, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 1.5, 'data-shape': 'brake' }));
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * 2 * Math.PI;
+    brake.appendChild(ns('ellipse', { cx: 970 + Math.cos(a)*42, cy: 500 + Math.sin(a)*14, rx: 2, ry: 1.2, fill: '#2A2A26', 'data-shape': 'brake' }));
+  }
+  svg.appendChild(brake);
+
+  // Inverted forks (modern)
+  const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
+  forks.appendChild(ns('path', { d: 'M 942 490 L 905 220 L 930 212 L 962 490 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'data-shape': 'forks', 'data-fillable': '' }));
+  forks.appendChild(ns('path', { d: 'M 990 490 L 956 220 L 982 212 L 1010 490 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'data-shape': 'forks' }));
+  forks.appendChild(ns('rect', { x: 925, y: 380, width: 44, height: 120, fill: 'url(#td-black)', 'data-shape': 'forks' }));
+  forks.appendChild(ns('rect', { x: 973, y: 380, width: 44, height: 120, fill: 'url(#td-black)', 'data-shape': 'forks' }));
+  forks.appendChild(ns('path', { d: 'M 895 200 L 1020 200 L 1010 230 L 905 230 Z', fill: 'url(#td-black)', stroke: '#1A1A17', 'data-shape': 'forks' }));
+  svg.appendChild(forks);
+
+  // Angular LED headlight
+  const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
+  hl.appendChild(ns('path', { d: 'M 820 192 L 920 180 L 940 245 L 835 258 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'headlight', 'data-fillable': '' }));
+  hl.appendChild(ns('path', { d: 'M 835 210 L 920 198 L 926 232 L 840 244 Z', fill: 'url(#td-grn)', 'data-shape': 'headlight' }));
+  hl.appendChild(ns('line', { x1: 840, y1: 220, x2: 920, y2: 210, stroke: '#F6F5F2', 'stroke-width': 2, 'data-shape': 'headlight' }));
+  svg.appendChild(hl);
+
+  // Bars + TFT dash
+  const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
+  bar.appendChild(ns('path', { d: 'M 650 180 Q 760 140 870 150 L 1000 160 L 1000 176 Q 870 164 760 154 Q 650 194 650 194 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('rect', { x: 790, y: 148, width: 110, height: 58, rx: 6, fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments', 'data-fillable': '' }));
+  const txEV = ns('text', { x: 845, y: 180, 'font-family': 'IBM Plex Mono', 'font-size': 16, 'font-weight': 800, 'text-anchor': 'middle', fill: '#2F7F65', 'data-shape': 'instruments' });
+  txEV.textContent = 'EV'; bar.appendChild(txEV);
+  const txP = ns('text', { x: 845, y: 198, 'font-family': 'IBM Plex Mono', 'font-size': 11, 'font-weight': 700, 'text-anchor': 'middle', fill: '#E2A93B', 'data-shape': 'instruments' });
+  txP.textContent = '85%'; bar.appendChild(txP);
+  svg.appendChild(bar);
+
+  // Battery pack (large, where tank + engine would be)
+  const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
+  bat.appendChild(ns('path', { d: 'M 400 268 Q 440 258 500 258 L 720 265 Q 760 275 760 340 Q 760 395 720 410 L 450 425 Q 400 420 400 370 Z', fill: 'url(#td-engine2)', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'battery', 'data-fillable': '' }));
+  // Cell cluster visible through side vents
+  for (let i = 0; i < 7; i++) {
+    for (let j = 0; j < 3; j++) {
+      bat.appendChild(ns('circle', { cx: 440 + i*42, cy: 300 + j*32, r: 10, fill: '#5A574E', stroke: '#1A1A17', 'data-shape': 'battery' }));
+      bat.appendChild(ns('circle', { cx: 440 + i*42, cy: 300 + j*32, r: 3, fill: 'url(#td-cu)', 'data-shape': 'battery' }));
+    }
+  }
+  svg.appendChild(bat);
+
+  // Controller box on top of battery
+  const ctl = ns('g', { 'data-shape': 'controller', class: 'ute-shape' });
+  ctl.appendChild(ns('rect', { x: 460, y: 230, width: 240, height: 38, fill: 'url(#td-black)', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'controller', 'data-fillable': '' }));
+  for (let i = 0; i < 12; i++) ctl.appendChild(ns('line', { x1: 470 + i*20, y1: 236, x2: 470 + i*20, y2: 262, stroke: '#9A9385', 'stroke-width': 1, 'data-shape': 'controller' }));
+  svg.appendChild(ctl);
+
+  // Motor at swingarm pivot
+  const motor = ns('g', { 'data-shape': 'motor', class: 'ute-shape' });
+  motor.appendChild(ns('circle', { cx: 500, cy: 455, r: 54, fill: 'url(#td-engine)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'motor', 'data-fillable': '' }));
+  for (let i = 0; i < 36; i++) {
+    const a = (i / 36) * 2 * Math.PI;
+    motor.appendChild(ns('line', { x1: 500 + Math.cos(a)*36, y1: 455 + Math.sin(a)*36, x2: 500 + Math.cos(a)*52, y2: 455 + Math.sin(a)*52, stroke: '#2A2824', 'stroke-width': 1.5, 'data-shape': 'motor' }));
+  }
+  motor.appendChild(ns('circle', { cx: 500, cy: 455, r: 20, fill: '#0A0A0A', 'data-shape': 'motor' }));
+  motor.appendChild(ns('circle', { cx: 500, cy: 455, r: 7, fill: 'url(#td-cu)', 'data-shape': 'motor' }));
+  // Phase cables (3)
+  motor.appendChild(ns('path', { d: 'M 452 420 Q 420 400 410 380', fill: 'none', stroke: 'url(#td-cu)', 'stroke-width': 4, 'data-shape': 'motor' }));
+  motor.appendChild(ns('path', { d: 'M 448 455 L 410 455', fill: 'none', stroke: 'url(#td-grn)', 'stroke-width': 4, 'data-shape': 'motor' }));
+  motor.appendChild(ns('path', { d: 'M 452 490 Q 420 510 410 530', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'motor' }));
+  svg.appendChild(motor);
+
+  // Charge port
+  const cp = ns('g', { 'data-shape': 'charge_port', class: 'ute-shape' });
+  cp.appendChild(ns('rect', { x: 710, y: 380, width: 32, height: 24, fill: 'url(#td-chrome)', stroke: '#1A1A17', 'data-shape': 'charge_port', 'data-fillable': '' }));
+  cp.appendChild(ns('circle', { cx: 726, cy: 392, r: 7, fill: 'url(#td-grn)', 'data-shape': 'charge_port' }));
+  svg.appendChild(cp);
+
+  // Seat (small, angular)
+  const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
+  seat.appendChild(ns('path', { d: 'M 280 260 Q 380 240 460 248 L 470 290 Q 380 300 290 310 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'seat', 'data-fillable': '' }));
+  svg.appendChild(seat);
+
+  // Tail light
+  const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
+  tl.appendChild(ns('rect', { x: 260, y: 275, width: 24, height: 10, fill: 'url(#td-red)', 'data-shape': 'tail_light', 'data-fillable': '' }));
+  svg.appendChild(tl);
+
+  // Swingarm (massive, aluminium)
+  const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
+  sw.appendChild(ns('path', { d: 'M 500 455 Q 400 465 230 480 L 230 494 Q 400 480 500 468 Z', fill: 'url(#td-chrome-v)', stroke: '#1A1A17', 'data-shape': 'swingarm', 'data-fillable': '' }));
+  svg.appendChild(sw);
+
+  // Belt drive
+  const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
+  chain.appendChild(ns('rect', { x: 230, y: 478, width: 270, height: 6, fill: '#1A1A17', 'data-shape': 'chain' }));
+  for (let x = 240; x < 490; x += 10) chain.appendChild(ns('line', { x1: x, y1: 477, x2: x, y2: 485, stroke: '#9A9385', 'stroke-width': 0.8, 'data-shape': 'chain' }));
+  svg.appendChild(chain);
+
+  // Belt pulley
+  const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
+  rsp.appendChild(ns('ellipse', { cx: 230, cy: 480, rx: 50, ry: 17, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
+  for (let i = 0; i < 48; i++) {
+    const a = (i / 48) * 2 * Math.PI;
+    rsp.appendChild(ns('line', { x1: 230 + Math.cos(a)*50, y1: 480 + Math.sin(a)*17, x2: 230 + Math.cos(a)*53, y2: 480 + Math.sin(a)*18, stroke: '#0A0A0A', 'stroke-width': 0.6, 'data-shape': 'rear_sprocket' }));
+  }
+  svg.appendChild(rsp);
+
+  // Shock
+  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
+  shock.appendChild(ns('rect', { x: 500, y: 320, width: 20, height: 130, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_shock', 'data-fillable': '' }));
+  svg.appendChild(shock);
+
+  // Frame rails (black trellis)
+  const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
+  frame.appendChild(ns('path', { d: 'M 895 240 L 760 258 Q 700 262 500 266', fill: 'none', stroke: '#1A1A17', 'stroke-width': 3, 'data-shape': 'frame' }));
+  svg.appendChild(frame);
+
+  svg.appendChild(g);
+
+  const callouts = [
+    { key: 'headlight',   sx: 870, sy: 200, lx:  820, lane: 1, label: 'LED' },
+    { key: 'instruments', sx: 845, sy: 175, lx:  970, lane: 1, label: 'TFT dash' },
+    { key: 'controller',  sx: 580, sy: 240, lx:  580, lane: 1, label: 'Controller' },
+    { key: 'battery',     sx: 580, sy: 340, lx:  440, lane: 1, label: 'Battery pack' },
+    { key: 'motor',       sx: 500, sy: 455, lx:  600, lane: 4, label: 'Motor' },
+    { key: 'front_wheel', sx: 970, sy: 500, lx: 1140, lane: 3, label: 'Front wheel' },
+    { key: 'rear_wheel',  sx: 230, sy: 480, lx:   90, lane: 3, label: 'Rear wheel' },
+    { key: 'charge_port', sx: 726, sy: 392, lx:  740, lane: 4, label: 'Charge port' },
+    { key: 'seat',        sx: 370, sy: 275, lx:  380, lane: 4, label: 'Seat' },
   ];
   const gc = ns('g');
   callouts.forEach((c) => gc.appendChild(callout(c)));

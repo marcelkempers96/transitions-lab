@@ -152,6 +152,10 @@ body.ute-standalone {
     linear-gradient(90deg, #C9D7EB 1px, transparent 1px) 0 0 / 24px 24px,
     #F0F4FA;
 }
+.ute-moto-wrap.is-3d {
+  background:
+    radial-gradient(ellipse at center 70%, #FFFFFF 0%, #E8E4DA 60%, #BAB2A2 100%);
+}
 .ute-moto-svg { display: block; width: 100%; height: auto; max-height: 580px; }
 
 /* Blueprint drawing primitives (line-art style) */
