@@ -6,6 +6,10 @@
 
 <p class="article-meta"><span class="article-date">1 November 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
+<figure class="article-figure">
+  <img src="/assets/img/insight-hands-never-still-hero.jpg" alt="Three jua kali fundis at a Nairobi roadside workshop, an orange Bajaj Boxer motorcycle in the foreground and a motorcycle wheel laid out on the ground">
+</figure>
+
 ## Interviews over a workbench
 
 During my fieldwork in Nairobi, the people with the most time to talk were the riders lying across their seats at the charging hubs, waiting three or four hours for a battery, and the people with the least time were the mechanics. Every mechanic I interviewed, across two rounds of fieldwork in January–February and September–October 2026, kept working while I asked my questions, and I learned to hold the recorder close to a pair of hands rather than to a face. One was patching an inner tube, roughening the rubber around the hole with a rasp, brushing on rubber solution and waiting for it to turn tacky before pressing the patch home and dunking the tube in a basin of water to watch for bubbles. Another was loosening the rear axle nut to slide the wheel back on its adjusters and take the slack out of a chain that had begun to slap against the swingarm, checking the sprocket teeth for the hooked profile that tells a fundi the whole set has to go. A third had the cylinder head off a 150cc petrol engine, with the piston and rings laid out on a rag and a feeler gauge ready for the valve clearances, while customers waited on the kerb for a bike that would carry passengers again by the afternoon.
@@ -25,6 +29,10 @@ What allows someone like Austin to make a living is an open market for spare par
 China did not leave this market when its own motorcycle brands lost ground; it moved into the parts. A Nairobi spare parts shop typically stocks genuine Indian parts next to Chinese-made replicas of the same part at a lower price, and the rider, who pays for repairs out of the same daily earnings that cover the bike loan, decides which one goes into the engine. The line between a cheaper replica and a counterfeit is sometimes crossed outright. In 2022 Kenya's Anti-Counterfeit Authority raided an assembly yard in Homa Bay and [seized 54 motorcycles sold as Bajaj Boxers, worth around KSh 7 million](https://www.aca.go.ke/media-center/news-and-events/314-motorcycle-assembling-plant-raided-and-54-counterfeit-boda-bodas-seized), with the brand's agent pointing out that genuine Boxers are made in India "as opposed to China as in this case." For all its problems, this two-tier supply of Indian originals and Chinese copies is what keeps petrol repair cheap and decentralised, since any fundi can buy a chain, a set of brake shoes or a piston kit over the counter without permission from anyone.
 
 Austin described how thin that stock is in practice. He keeps only the parts "that go easily," such as inner tubes, and otherwise relies on customers to bring the part and leave the labour to him. A controller for an electric bike is another matter: "you can't buy a controller because it will be hard for us to sell." With an electric motorcycle, the parts that matter most are no longer the ones a fundi can find on an open shelf. Battery cells, motors and controllers are largely sourced from China, and Chinese manufacturers are now entering the Kenyan market directly, with [Yadea, which describes itself as the world's largest electric two-wheeler maker, launching five models aimed at boda boda riders in June 2026](https://www.mwanaspoti.co.tz/bd/corporate/shipping-logistics/china-largest-e-motorbike-maker-yadea-enters-kenya-ev-race-5486744). The supply chain still runs through China, but it now runs through operators' service centres rather than through the parts shops where fundis buy.
+
+<figure class="article-figure">
+  <img src="/assets/img/insight-hands-never-still-02.jpg" alt="A white Bajaj Boxer petrol motorcycle loaded with stacked 20-litre water bottles outside a water-refill shop in Nairobi">
+</figure>
 
 ## What an electric bike leaves on the roadside
 

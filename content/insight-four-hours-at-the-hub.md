@@ -6,6 +6,10 @@
 
 <p class="article-meta"><span class="article-date">1 November 2026</span> · <span class="article-reading-time">7 min read</span></p>
 
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-hero.jpg" alt="Electric Uber-branded motorcycles with riders in high-vis vests outside a Nairobi parking lot">
+</figure>
+
 ## The quiet and the wait
 
 The first thing I noticed on the back of an electric boda boda in Nairobi this January was that I could hear the rider. On a petrol motorcycle any conversation dies under the engine and the exhaust, whereas on an electric one you can ask a question at a junction and get an answer before the traffic moves. The second thing came later that week at a Roam hub, where riders lay across their seats in the middle of the working day, waiting for batteries to charge during hours they would normally spend carrying passengers.
@@ -36,6 +40,10 @@ What turns waiting from an inconvenience into a cost is the way these bikes are 
 
 That is careful lending, and it also means that a rider's day starts with a fixed sum owed before any income is counted. Francis described his target in exactly those terms: ten trips at around 50 shillings each, sometimes twelve or thirteen, "to make your target." Every hour spent at a hub is an hour in which that sum still has to be found, so the waiting falls hardest on the riders with the least slack. Repairs follow the same logic at a longer timescale. Georg told me about a friend whose Roam bike had stood idle for four months while he waited for an insurance claim on a faulty motor and controller, "really struggling on how to make money and how to feed his family." Because electric repairs remain concentrated with the manufacturer, riders have few places to turn for anything beyond brakes and tyres. James, who runs a workshop with seven mechanics, sees perhaps two to four electric bikes a day out of the ten to fifteen motorcycles that come through, and Francis was clear that he would not let "anybody" handle a mechanical fault on his Roam.
 
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-02.jpg" alt="Two parked petrol boda bodas on a Nairobi roadside, a rider in a yellow high-vis vest beside one of them">
+</figure>
+
 ## The view from the petrol stage
 
 The petrol riders I interviewed were not waiting for anything, and their reasons for staying put were mostly about distance and reach rather than price. Derro, who spends around 500 shillings a day on fuel, said an 80-kilometre range "is not enough" because "one day you do more than 100," and his conditions for switching were concrete: a rise in the petrol price, fuel becoming "hard to get, and hard to buy," or someone else covering the cost, since "if they give me the bike right, I'll do. If I'm the one going to buy..." Mike, who has ridden for seven years, was far more hostile and asked that whoever brought electric motorcycles to Nairobi "kindly, please take them off the road." His complaint was not about the motor but about newcomers entering the trade on financed bikes without licences or training, and about brakes he considered unsuited to Nairobi traffic, with a plea to manufacturers to "kindly consider" the brake layout riders are used to.
@@ -55,6 +63,22 @@ Kenya's incentives so far have worked on the purchase price, through the import 
 Three changes would treat time as the cost riders already know it to be. The first is to measure it, by reporting average waiting time per swap or top-up alongside registrations, so that a hub network that grows slower than the fleet shows up as a problem before it shows up as falling morale. The second is to direct the next round of support towards the things that shorten the wait, namely rental battery stock, fast chargers at existing hubs and grid connections at the sites where riders already gather, rather than only towards the price of the bike. The third is to make batteries and stations work across operators, so that a rider who is short of charge in the morning rush is not restricted to one company's hubs. None of these is new as an idea, and riders themselves suggested most of them, with Alex putting the whole agenda in a sentence: "Just improve on the rentals, add more rentals, and swap stations."
 
 The quiet I noticed on that first ride is real, and it is one of the pleasures of an electric city. The riders lying across their seats at the hub were quiet as well, for less pleasant reasons, and if the transition is to hold beyond its early adopters, their hours deserve the same attention we have given their shillings.
+
+## A postscript, from the grass outside the city
+
+The research is one half of what Kenya gave me. The other half I owe to the riders, mechanics and friends who put me on the back of a bike, took me out to the Safari Rally and left me grinning in a Naivasha field — but that is a story for another time.
+
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-safari-01.jpg" alt="Two riders with a Kenyan flag on a dirt bike, looking across a grass field at a landing helicopter during the Safari Rally">
+</figure>
+
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-safari-02.jpg" alt="A group of adventure riders standing with their bikes beside a landed helicopter in an open grass field">
+</figure>
+
+<figure class="article-figure">
+  <img src="/assets/img/insight-four-hours-at-the-hub-safari-03.jpg" alt="A group portrait of seven riders in matching black t-shirts standing in a grass field in Naivasha">
+</figure>
 
 ## References
 
