@@ -48,16 +48,62 @@ const GEAR = {
   wheel_r_m: 0.30, // tyre rolling radius, ~17" rim with sportbike tyre
 };
 
+// ───────────────────────── Component close-up demos ─────────────
+// Three focused mechanisms, each with a hold-to-act button.
+// Idiom borrowed from underthehood.online: the mechanism animates
+// while you press, a chip at the top shows live state, and the parts
+// are drawn with linear gradients to read as 3-D metal.
+const DEMO = {
+  active: 'throttle',   // 'throttle' | 'ignition' | 'gearing'
+  throttle: {
+    throttle_pct: 0,   // 0..100
+    rpm:          900, // idle
+    particles:    [],
+    phase:        0,
+    piston_y:     0,
+    holding:      false,
+  },
+  ignition: {
+    charge:   0,      // 0..100 (dwell)
+    firing:   0,      // ms since fire
+    lastFire: 0,      // ms since boot
+    sparkOk:  null,   // true=good spark, false=misfire, null=idle
+    holding:  false,
+  },
+  gearing: {
+    rpm:        0,
+    sprocketA:  0,     // engine-side sprocket angle
+    sprocketB:  0,     // wheel-side sprocket angle
+    wheelAng:   0,     // wheel angle
+    chainOff:   0,     // chain hatch offset
+    holding:    false,
+  },
+};
+
+const DEMO_META = [
+  { key: 'throttle', label: 'Throttle' },
+  { key: 'ignition', label: 'Ignition' },
+  { key: 'gearing',  label: 'Gearing'  },
+];
+
 // ───────────────────────── Render ────────────────────────────────
 function render() {
   ROOT.innerHTML = shellHTML();
   mountMotoSVG();
   mountEngineSVG();
+  mountCurrentDemo();
   wireChromeLocal();
   wireControls();
+  wireDemoTabs();
   updateReadouts();
   updateLivePanel();
   updateEngineSVG();
+}
+
+function wireDemoTabs() {
+  ROOT.querySelectorAll('.ute-demo-tab').forEach((t) => {
+    t.addEventListener('click', () => switchDemo(t.getAttribute('data-demo')));
+  });
 }
 
 function shellHTML() {
@@ -98,6 +144,22 @@ function shellHTML() {
         </div>
 
         <div id="ute-live-slot"></div>
+      </section>
+
+      <!-- COMPONENT CLOSE-UPS: throttle / ignition / gearing -->
+      <section class="ute-demos" id="ute-demos">
+        <div class="ute-demos-head">
+          <div>
+            <h2>Component close-ups</h2>
+            <p>Each tab is a self-contained mechanism. Press and hold the big button to drive it — watch the parts move, the gas flow and the numbers climb.</p>
+          </div>
+          <div class="ute-demo-tabs" role="tablist">
+            ${demoTabsHTML()}
+          </div>
+        </div>
+        <div class="ute-demo-stage" id="ute-demo-stage">
+          ${demoStageHTML()}
+        </div>
       </section>
 
       <!-- WORKBENCH: engine cross-section + sliders + parts list -->
@@ -1128,7 +1190,7 @@ function startLoop() {
   requestAnimationFrame(tick);
 }
 function tick(now) {
-  const dt = Math.min(100, now - S.last_tick_ms) / 1000;
+  const dt = Math.min(0.1, (now - S.last_tick_ms) / 1000);
   S.last_tick_ms = now;
   if (S.running) {
     const shaftDegPerSec = (360 * S.rpm / 60) / 60;  // 60× slow-mo
@@ -1136,6 +1198,8 @@ function tick(now) {
     S.crank_deg = (S.crank_deg + shaftDegPerSec * dt) % cycleDeg;
     updateEngineSVG();
   }
+  // Component close-up demos tick every frame regardless of main run state
+  updateCurrentDemo(dt);
   requestAnimationFrame(tick);
 }
 
@@ -1314,6 +1378,558 @@ const PART_ORDER = [
   // Transmission + wheels
   'chain', 'rear_sprocket', 'front_wheel', 'rear_wheel',
 ];
+
+// ───────────────────────── Demo: tabs + stage shell ─────────────
+function demoTabsHTML() {
+  return DEMO_META.map((t) =>
+    `<button type="button" class="ute-demo-tab ${DEMO.active===t.key?'is-on':''}" data-demo="${t.key}">${t.label}</button>`
+  ).join('');
+}
+
+function demoStageHTML() {
+  switch (DEMO.active) {
+    case 'throttle': return throttleStageHTML();
+    case 'ignition': return ignitionStageHTML();
+    case 'gearing':  return gearingStageHTML();
+  }
+  return '';
+}
+
+function mountDemoDefs(svgEl) {
+  // Linear gradients used across demos to simulate 3-D metal under
+  // a top-left light source.
+  const defs = ns('defs');
+  const stops = (id, c1, c2, c3) => {
+    const g = ns('linearGradient', { id, x1: 0, y1: 0, x2: 0, y2: 1 });
+    g.appendChild(ns('stop', { offset: '0%',  'stop-color': c1 }));
+    g.appendChild(ns('stop', { offset: '50%', 'stop-color': c2 }));
+    g.appendChild(ns('stop', { offset: '100%','stop-color': c3 }));
+    return g;
+  };
+  const stopsH = (id, c1, c2, c3) => {
+    const g = ns('linearGradient', { id, x1: 0, y1: 0, x2: 1, y2: 0 });
+    g.appendChild(ns('stop', { offset: '0%',  'stop-color': c1 }));
+    g.appendChild(ns('stop', { offset: '50%', 'stop-color': c2 }));
+    g.appendChild(ns('stop', { offset: '100%','stop-color': c3 }));
+    return g;
+  };
+  defs.appendChild(stops('g-tube',     '#8E867A', '#DBD4C4', '#6D675D')); // intake tube (vertical cylindrical sheen)
+  defs.appendChild(stops('g-cyl',      '#C6BFB1', '#F0ECE1', '#7F7A6E')); // engine cylinder barrel
+  defs.appendChild(stops('g-crank',    '#2F2D2A', '#5B574E', '#1A1816')); // crankcase box
+  defs.appendChild(stops('g-coil',     '#5A4F3B', '#8E7E62', '#2F2A20')); // ignition coil
+  defs.appendChild(stops('g-battery',  '#F2EFE7', '#FFFFFF', '#C8C2B4')); // battery body
+  defs.appendChild(stopsH('g-chain',   '#2A2A26', '#5A5852', '#2A2A26')); // chain band
+  defs.appendChild(stops('g-sprocket', '#DAD3C1', '#F2EEE4', '#9B9381')); // sprocket face
+  defs.appendChild(stops('g-wheel',    '#1F1D1A', '#3A3833', '#0A0A0A')); // tyre
+  defs.appendChild(stops('g-rim',      '#D8D1BE', '#F6F2E6', '#8B8371')); // rim
+
+  // Butterfly plate (gold)
+  const bgold = stops('g-gold', '#E8B04B', '#F4D06F', '#A7742A');
+  defs.appendChild(bgold);
+
+  svgEl.appendChild(defs);
+}
+
+// ───────────────────────── Throttle demo ─────────────────────────
+function throttleStageHTML() {
+  return `
+    <div class="ute-demo-chip">
+      <div class="ute-demo-chip-dot"></div>
+      <div class="ute-demo-chip-text">
+        <span class="k" id="ute-demo-state">Idle</span>
+        <span class="d" id="ute-demo-desc">The throttle plate is almost closed. Just enough air sneaks past to keep the engine idling.</span>
+      </div>
+      <div class="n" id="ute-demo-rpm">900 rpm</div>
+    </div>
+    <svg class="ute-demo-svg" id="ute-demo-svg" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid meet" aria-label="Throttle demo"></svg>
+    <div class="ute-demo-controls">
+      <button class="ute-demo-action" type="button" id="ute-demo-action" data-action="throttle">GAS</button>
+      <span class="ute-demo-hint">Press and hold</span>
+    </div>`;
+}
+
+function mountThrottleDemo() {
+  const svg = ROOT.querySelector('#ute-demo-svg');
+  if (!svg) return;
+  svg.innerHTML = '';
+  mountDemoDefs(svg);
+
+  const g = ns('g');
+
+  // Intake tube — horizontal "cylinder" drawn as a rounded rect with
+  // a vertical gradient to give it a cylindrical sheen.
+  const tubeTop = 110, tubeH = 110, tubeL = 60, tubeR = 480;
+  g.appendChild(ns('rect', { x: tubeL, y: tubeTop, width: tubeR - tubeL, height: tubeH, fill: 'url(#g-tube)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 10 }));
+  // Tube end rings
+  g.appendChild(ns('ellipse', { cx: tubeL + 4, cy: tubeTop + tubeH/2, rx: 14, ry: tubeH/2 - 2, fill: '#2F2A22', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('ellipse', { cx: tubeR - 4, cy: tubeTop + tubeH/2, rx: 14, ry: tubeH/2 - 2, fill: '#5B574E', stroke: '#0A0A0A', 'stroke-width': 2 }));
+
+  // Butterfly plate — rotates about the horizontal axis (y) passing
+  // through the tube centre. We fake 3-D with an ellipse whose rx
+  // depends on the plate angle (0 = fully open along flow → thin
+  // line; 90 = fully closed → ellipse at max width).
+  const bfx = (tubeL + tubeR) / 2;
+  const bfy = tubeTop + tubeH / 2;
+  g.appendChild(ns('line', { x1: bfx, y1: tubeTop + 6, x2: bfx, y2: tubeTop + tubeH - 6, stroke: '#2A2A26', 'stroke-width': 2 })); // spindle
+  g.appendChild(ns('ellipse', { id: 'ute-bfly', cx: bfx, cy: bfy, rx: 46, ry: tubeH/2 - 10, fill: 'url(#g-gold)', stroke: '#1E150A', 'stroke-width': 2 }));
+
+  // Engine cylinder (upright) on the right
+  const cylX = 540, cylY = 50, cylW = 110, cylH = 230;
+  g.appendChild(ns('rect', { x: cylX, y: cylY, width: cylW, height: cylH, fill: 'url(#g-cyl)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 6 }));
+  // Head cap
+  g.appendChild(ns('rect', { x: cylX - 6, y: cylY - 12, width: cylW + 12, height: 18, fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 2, rx: 4 }));
+  // Spark plug stub
+  g.appendChild(ns('rect', { x: cylX + cylW/2 - 10, y: cylY - 30, width: 20, height: 18, fill: '#B9B3A4', stroke: '#0A0A0A' }));
+  // Intake runner from tube into cylinder (angled)
+  g.appendChild(ns('path', { d: `M ${tubeR - 6} ${bfy - 10} L ${cylX + 4} ${cylY + 50} L ${cylX + 4} ${cylY + 90} L ${tubeR - 6} ${bfy + 10} Z`, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2 }));
+
+  // Piston inside the cylinder (updated per tick)
+  g.appendChild(ns('rect', { id: 'ute-demo-piston', x: cylX + 6, y: cylY + 120, width: cylW - 12, height: 46, fill: '#DDD6C7', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+  g.appendChild(ns('line', { id: 'ute-demo-ring1', x1: cylX + 6, y1: cylY + 128, x2: cylX + cylW - 6, y2: cylY + 128, stroke: '#0A0A0A' }));
+
+  // Crankcase box (bottom), with rotating offset mark
+  const cx = cylX + cylW/2, cy = 300;
+  g.appendChild(ns('rect', { x: cx - 90, y: cy - 20, width: 180, height: 60, fill: 'url(#g-crank)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 8 }));
+  g.appendChild(ns('circle', { cx, cy: cy + 10, r: 24, fill: '#5B574E', stroke: '#0A0A0A' }));
+  g.appendChild(ns('circle', { id: 'ute-demo-crankdot', cx, cy: cy + 10, r: 5, fill: '#E2A93B' }));
+  // Con-rod
+  g.appendChild(ns('line', { id: 'ute-demo-rod', x1: cx, y1: cylY + 143, x2: cx, y2: cy + 10, stroke: '#111', 'stroke-width': 5 }));
+
+  svg.appendChild(g);
+
+  // Particles layer (above gradients, below butterfly for visibility)
+  const pg = ns('g', { id: 'ute-demo-particles' });
+  svg.appendChild(pg);
+  DEMO.throttle.particles = [];
+
+  // Wire the hold-button
+  wireHoldButton('throttle');
+  updateThrottleDemo(0);
+}
+
+function updateThrottleDemo(dt) {
+  const s = DEMO.throttle;
+  // Throttle climbs when holding, decays when released
+  if (s.holding) s.throttle_pct = Math.min(100, s.throttle_pct + 180 * dt);
+  else           s.throttle_pct = Math.max(0,   s.throttle_pct -  90 * dt);
+  // RPM follows throttle with lag; idles at 900
+  const target = 900 + s.throttle_pct * 70;    // 900 → 7900
+  s.rpm += (target - s.rpm) * Math.min(1, 2.0 * dt);
+
+  // Rotate butterfly: 0 (closed=90° to flow) → 90 (open=parallel to flow)
+  // We render it as an ellipse whose rx compresses as it opens.
+  const openness = s.throttle_pct / 100;  // 0..1
+  const bfly = ROOT.querySelector('#ute-bfly');
+  if (bfly) {
+    const closedRx = 46;
+    const openRx = 4;
+    const rx = closedRx * (1 - openness) + openRx * openness;
+    bfly.setAttribute('rx', rx);
+  }
+
+  // Advance piston cycle at RPM
+  s.phase += (s.rpm / 60) * dt * 2 * Math.PI;  // crank angular velocity
+  const pistonTopY_base = 170;   // cylinder base
+  const pistonTopY_top  = 70;
+  const pos = (Math.cos(s.phase) + 1) / 2;  // 0..1
+  const pistonY = pistonTopY_base - pos * (pistonTopY_base - pistonTopY_top);
+  const pist = ROOT.querySelector('#ute-demo-piston');
+  const ring = ROOT.querySelector('#ute-demo-ring1');
+  if (pist) { pist.setAttribute('y', pistonY); if (ring) { ring.setAttribute('y1', pistonY + 8); ring.setAttribute('y2', pistonY + 8); } }
+  const rod = ROOT.querySelector('#ute-demo-rod');
+  if (rod) rod.setAttribute('y1', pistonY + 23);
+
+  // Crank dot rotates
+  const dot = ROOT.querySelector('#ute-demo-crankdot');
+  if (dot) {
+    const cx = 540 + 110/2;
+    const dotX = cx + Math.cos(s.phase) * 18;
+    const dotY = 310 + Math.sin(s.phase) * 18;
+    dot.setAttribute('cx', dotX);
+    dot.setAttribute('cy', dotY);
+    if (rod) { rod.setAttribute('x2', dotX); rod.setAttribute('y2', dotY); }
+  }
+
+  // Air particles: spawn + advance
+  const pg = ROOT.querySelector('#ute-demo-particles');
+  if (pg) {
+    // Spawn
+    const spawnRate = 3 + openness * 60;  // particles per second
+    s.spawnBudget = (s.spawnBudget || 0) + spawnRate * dt;
+    while (s.spawnBudget > 1) {
+      s.spawnBudget -= 1;
+      s.particles.push({ x: 70, y: 110 + 15 + Math.random() * 80, vx: 60 + openness * 400 + Math.random() * 60, life: 0, ttl: 3.0 });
+    }
+    // Advance
+    const bfx = (60 + 480) / 2;
+    for (const p of s.particles) {
+      // Jitter past the butterfly: if nearly closed, particles bunch up
+      p.x += p.vx * dt;
+      p.y += (Math.random() - 0.5) * 0.6;
+      // If almost closed and particle is at bfly, slow it
+      if (openness < 0.1 && Math.abs(p.x - bfx) < 20) p.x += (p.vx * dt) * -0.9;
+      p.life += dt;
+    }
+    s.particles = s.particles.filter((p) => p.life < p.ttl && p.x < 820);
+    // Re-render particles (cheap: clear + add)
+    pg.innerHTML = '';
+    for (const p of s.particles) {
+      pg.appendChild(ns('circle', { cx: p.x, cy: p.y, r: 2.4, fill: '#3E6FB7', opacity: 0.85 }));
+    }
+  }
+
+  // Chip updates
+  const state = ROOT.querySelector('#ute-demo-state');
+  const desc  = ROOT.querySelector('#ute-demo-desc');
+  const rpm   = ROOT.querySelector('#ute-demo-rpm');
+  if (rpm) rpm.textContent = `${Math.round(s.rpm).toLocaleString('en-GB')} rpm`;
+  if (state && desc) {
+    if (s.throttle_pct < 2) {
+      state.textContent = 'Idle';
+      desc.textContent  = 'The throttle plate is almost closed. Just enough air sneaks past to keep the engine idling.';
+    } else if (s.throttle_pct < 60) {
+      state.textContent = 'Accelerating';
+      desc.textContent  = 'The plate tilts open — more air rushes in and the engine spins faster.';
+    } else {
+      state.textContent = 'Wide open';
+      desc.textContent  = 'The plate is almost parallel to the flow. Air pours in; the engine screams up toward redline.';
+    }
+  }
+}
+
+// ───────────────────────── Ignition demo ─────────────────────────
+function ignitionStageHTML() {
+  return `
+    <div class="ute-demo-chip">
+      <div class="ute-demo-chip-dot"></div>
+      <div class="ute-demo-chip-text">
+        <span class="k" id="ute-demo-state">Idle</span>
+        <span class="d" id="ute-demo-desc">The coil is cold. Hold to charge it — then release to fire the spark.</span>
+      </div>
+      <div class="n" id="ute-demo-rpm">0 %</div>
+    </div>
+    <svg class="ute-demo-svg" id="ute-demo-svg" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid meet" aria-label="Ignition demo"></svg>
+    <div class="ute-demo-controls">
+      <button class="ute-demo-action" type="button" id="ute-demo-action" data-action="ignition">IGNITE</button>
+      <span class="ute-demo-hint">Hold to charge · release to fire</span>
+    </div>`;
+}
+
+function mountIgnitionDemo() {
+  const svg = ROOT.querySelector('#ute-demo-svg');
+  if (!svg) return;
+  svg.innerHTML = '';
+  mountDemoDefs(svg);
+  const g = ns('g');
+
+  // Battery (12 V) — stylised 3-D block with +/- terminals
+  const bx = 70, by = 180;
+  g.appendChild(ns('rect', { x: bx, y: by, width: 120, height: 90, fill: 'url(#g-battery)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 4 }));
+  g.appendChild(ns('rect', { x: bx + 20, y: by - 10, width: 20, height: 12, fill: '#2A2A26' }));  // + terminal
+  g.appendChild(ns('rect', { x: bx + 80, y: by - 10, width: 20, height: 12, fill: '#2A2A26' }));  // - terminal
+  g.appendChild(ns('text', { x: bx + 30, y: by - 14, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 12, 'font-weight': 700, fill: '#C2502A' })).textContent = '+';
+  g.appendChild(ns('text', { x: bx + 90, y: by - 14, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 12, 'font-weight': 700, fill: '#0A0A0A' })).textContent = '−';
+  g.appendChild(ns('text', { x: bx + 60, y: by + 50, 'font-family': 'IBM Plex Sans, sans-serif', 'font-size': 15, 'font-weight': 700, fill: '#0A0A0A', 'text-anchor': 'middle' })).textContent = '12 V';
+
+  // Low-voltage wire from battery to coil primary
+  g.appendChild(ns('path', { id: 'ute-ig-wire-lv', d: `M ${bx + 30} ${by - 10} L ${bx + 30} 110 L 290 110`, fill: 'none', stroke: '#C2502A', 'stroke-width': 3 }));
+
+  // Ignition coil (barrel) with primary + secondary winding hints
+  const cx1 = 300, cy1 = 100, cw = 160, ch = 170;
+  g.appendChild(ns('rect', { x: cx1, y: cy1, width: cw, height: ch, fill: 'url(#g-coil)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 10 }));
+  g.appendChild(ns('text', { x: cx1 + cw/2, y: cy1 + 24, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 11, fill: '#F6F5F2', 'text-anchor': 'middle', 'letter-spacing': '0.08em' })).textContent = 'IGNITION COIL';
+  // Primary winding (outer) — hatching
+  for (let i = 0; i < 11; i++) {
+    g.appendChild(ns('line', { x1: cx1 + 10 + i*14, y1: cy1 + 40, x2: cx1 + 20 + i*14, y2: cy1 + 60, stroke: '#C2502A', 'stroke-width': 2, opacity: 0.9 }));
+  }
+  // Secondary winding (inner) — tighter hatching
+  for (let i = 0; i < 18; i++) {
+    g.appendChild(ns('line', { x1: cx1 + 10 + i*8, y1: cy1 + 70, x2: cx1 + 18 + i*8, y2: cy1 + 120, stroke: '#F0ECE1', 'stroke-width': 1, opacity: 0.7 }));
+  }
+  // Charge meter inside the coil
+  g.appendChild(ns('rect', { x: cx1 + 20, y: cy1 + 134, width: cw - 40, height: 12, fill: '#1A1816', stroke: '#F6F5F2' }));
+  g.appendChild(ns('rect', { id: 'ute-ig-charge', x: cx1 + 22, y: cy1 + 136, width: 0, height: 8, fill: '#E2A93B' }));
+
+  // Combustion chamber (right side) with spark plug sitting ON TOP, within the viewBox
+  const chx = 620, chy = 100, chw = 210, chh = 170;
+  // Spark plug — fully above chamber, both inside the viewBox
+  g.appendChild(ns('rect', { x: chx + chw/2 - 16, y: chy - 64, width: 32, height: 28, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2 }));  // hex head
+  g.appendChild(ns('rect', { x: chx + chw/2 - 12, y: chy - 36, width: 24, height: 38, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5 }));  // insulator
+  // High-tension wire from coil to the top of the spark plug
+  g.appendChild(ns('path', { id: 'ute-ig-wire-ht', d: `M ${cx1 + cw} ${cy1 + 90} C ${cx1 + cw + 60} ${cy1 + 90}, ${chx + chw/2 - 40} 60, ${chx + chw/2} ${chy - 64}`, fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3 }));
+  // Cylinder/head body
+  g.appendChild(ns('rect', { x: chx, y: chy, width: chw, height: chh, fill: 'url(#g-cyl)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 6 }));
+  // Gas pocket between head top and piston (static here)
+  g.appendChild(ns('rect', { id: 'ute-ig-gas', x: chx + 4, y: chy + 4, width: chw - 8, height: 70, fill: '#DAD3C1', opacity: 0.9 }));
+  // Piston
+  g.appendChild(ns('rect', { x: chx + 4, y: chy + 78, width: chw - 8, height: 46, fill: '#DDD6C7', stroke: '#0A0A0A' }));
+  g.appendChild(ns('line', { x1: chx + 4, y1: chy + 86, x2: chx + chw - 4, y2: chy + 86, stroke: '#0A0A0A' }));
+  // Electrodes inside the chamber (center + L-shaped ground)
+  g.appendChild(ns('line', { x1: chx + chw/2, y1: chy + 2,  x2: chx + chw/2, y2: chy + 30, stroke: '#2A2A26', 'stroke-width': 3 }));  // center electrode
+  g.appendChild(ns('path', { d: `M ${chx + chw/2 - 14} ${chy + 10} L ${chx + chw/2 - 14} ${chy + 34} L ${chx + chw/2 - 2} ${chy + 34}`, fill: 'none', stroke: '#2A2A26', 'stroke-width': 3 }));  // ground electrode
+  // Spark (zigzag) + combustion flash — hidden until fire
+  g.appendChild(ns('polyline', { id: 'ute-ig-spark', points: `${chx + chw/2 - 2},${chy + 30} ${chx + chw/2 - 7},${chy + 31} ${chx + chw/2 - 2},${chy + 33} ${chx + chw/2 - 7},${chy + 34}`, fill: 'none', stroke: '#E2A93B', 'stroke-width': 2.5, opacity: 0, 'stroke-linecap': 'round' }));
+  g.appendChild(ns('circle', { id: 'ute-ig-flash', cx: chx + chw/2, cy: chy + 34, r: 0, fill: '#F3B64B', opacity: 0.85 }));
+
+  svg.appendChild(g);
+  wireHoldButton('ignition');
+  updateIgnitionDemo(0);
+}
+
+function updateIgnitionDemo(dt) {
+  const s = DEMO.ignition;
+  const now = performance.now();
+  if (s.holding) {
+    s.charge = Math.min(100, s.charge + 100 * dt);
+    s.sparkOk = null;
+  } else {
+    // On transition from holding → released, check charge threshold
+    if (s._wasHolding) {
+      if (s.charge >= 50) {
+        s.sparkOk = true;
+        s.lastFire = now;
+      } else {
+        s.sparkOk = false;
+      }
+    }
+    s.charge = Math.max(0, s.charge - 220 * dt);
+  }
+  s._wasHolding = s.holding;
+
+  // Update charge bar
+  const cbar = ROOT.querySelector('#ute-ig-charge');
+  if (cbar) {
+    const w = (s.charge / 100) * (160 - 44);
+    cbar.setAttribute('width', w);
+    cbar.setAttribute('fill', s.charge > 80 ? '#C2502A' : '#E2A93B');
+  }
+
+  // Spark + flash animation
+  const spark = ROOT.querySelector('#ute-ig-spark');
+  const flash = ROOT.querySelector('#ute-ig-flash');
+  const gas   = ROOT.querySelector('#ute-ig-gas');
+  if (s.sparkOk === true) {
+    const t = (now - s.lastFire) / 1000;  // seconds
+    if (t < 0.14) {
+      if (spark) spark.setAttribute('opacity', 1);
+      if (flash) flash.setAttribute('r', 10 + 24 * t);
+      if (gas)   gas.setAttribute('fill', '#F2CDB9');
+    } else if (t < 0.4) {
+      if (spark) spark.setAttribute('opacity', 0);
+      if (flash) flash.setAttribute('r', Math.max(0, 36 - 60 * (t - 0.14)));
+      if (gas)   gas.setAttribute('fill', '#F2CDB9');
+    } else {
+      if (flash) flash.setAttribute('r', 0);
+      if (gas)   gas.setAttribute('fill', '#DAD3C1');
+    }
+  } else {
+    if (spark) spark.setAttribute('opacity', 0);
+    if (flash) flash.setAttribute('r', 0);
+    if (gas)   gas.setAttribute('fill', '#DAD3C1');
+  }
+
+  const state = ROOT.querySelector('#ute-demo-state');
+  const desc  = ROOT.querySelector('#ute-demo-desc');
+  const rpm   = ROOT.querySelector('#ute-demo-rpm');
+  if (rpm) rpm.textContent = `${Math.round(s.charge)} %`;
+  if (state && desc) {
+    if (s.holding) {
+      state.textContent = s.charge < 50 ? 'Charging' : 'Dwell complete';
+      desc.textContent  = s.charge < 50
+        ? 'Current builds in the coil\'s primary winding. The magnetic field grows.'
+        : 'The coil is fully charged. Release the button to collapse the field and jump a spark.';
+    } else if (s.sparkOk === true && (now - s.lastFire) < 400) {
+      state.textContent = 'Spark!';
+      desc.textContent  = 'The coil\'s field collapses. ~25 000 V jumps the plug gap and ignites the gas.';
+    } else if (s.sparkOk === false) {
+      state.textContent = 'Misfire';
+      desc.textContent  = 'Released too soon. Not enough energy stored to jump the plug gap.';
+    } else {
+      state.textContent = 'Idle';
+      desc.textContent  = 'The coil is cold. Hold to charge it — then release to fire the spark.';
+    }
+  }
+}
+
+// ───────────────────────── Gearing demo ──────────────────────────
+function gearingStageHTML() {
+  return `
+    <div class="ute-demo-chip">
+      <div class="ute-demo-chip-dot"></div>
+      <div class="ute-demo-chip-text">
+        <span class="k" id="ute-demo-state">Idle</span>
+        <span class="d" id="ute-demo-desc">The engine is stopped. Hold REV to spin the output sprocket; watch the chain and rear wheel.</span>
+      </div>
+      <div class="n" id="ute-demo-rpm">0 km/h</div>
+    </div>
+    <svg class="ute-demo-svg" id="ute-demo-svg" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid meet" aria-label="Gearing demo"></svg>
+    <div class="ute-demo-controls">
+      <button class="ute-demo-action" type="button" id="ute-demo-action" data-action="gearing">REV</button>
+      <span class="ute-demo-hint">Press and hold</span>
+    </div>`;
+}
+
+function mountGearingDemo() {
+  const svg = ROOT.querySelector('#ute-demo-svg');
+  if (!svg) return;
+  svg.innerHTML = '';
+  mountDemoDefs(svg);
+  const g = ns('g');
+
+  // Engine block on the left
+  const ex = 60, ey = 130, ew = 150, eh = 150;
+  g.appendChild(ns('rect', { x: ex, y: ey, width: ew, height: eh, fill: 'url(#g-crank)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 8 }));
+  g.appendChild(ns('text', { x: ex + ew/2, y: ey + 22, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 11, fill: '#F6F5F2', 'text-anchor': 'middle', 'letter-spacing': '0.08em' })).textContent = 'ENGINE';
+
+  // Output sprocket (small): emerges from the right side of the engine
+  const spA_cx = ex + ew + 6, spA_cy = ey + eh - 36, spA_r = 36;
+  g.appendChild(ns('g', { id: 'ute-gear-spA' })); // placeholder; we'll re-draw
+  drawSprocket(svg, 'ute-gear-spA', spA_cx, spA_cy, spA_r, 20, 0, '#8E867A');
+
+  // Rear sprocket (large), to the right
+  const spB_cx = 740, spB_cy = 190, spB_r = 95;
+  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: spB_r + 50, fill: 'url(#g-wheel)', stroke: '#0A0A0A', 'stroke-width': 2 })); // tyre
+  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: spB_r + 28, fill: 'url(#g-rim)', stroke: '#0A0A0A', 'stroke-width': 2 })); // rim
+  // Wheel spokes (we re-draw per tick to rotate)
+
+  // Chain: path from top of A around to top of B (and bottom-return)
+  const chainTopY = Math.min(spA_cy - spA_r, spB_cy - spB_r);
+  const chainBotY = Math.max(spA_cy + spA_r, spB_cy + spB_r);
+  g.appendChild(ns('line', { x1: spA_cx, y1: spA_cy - spA_r, x2: spB_cx, y2: spB_cy - spB_r, stroke: 'url(#g-chain)', 'stroke-width': 10, 'data-chain-top': '' }));
+  g.appendChild(ns('line', { x1: spA_cx, y1: spA_cy + spA_r, x2: spB_cx, y2: spB_cy + spB_r, stroke: 'url(#g-chain)', 'stroke-width': 10, 'data-chain-bot': '' }));
+  // Chain link hatching (static baseline; animated via stroke-dashoffset on a thinner overlay)
+  const topHatch = ns('line', { x1: spA_cx + 8, y1: spA_cy - spA_r, x2: spB_cx - 10, y2: spB_cy - spB_r, stroke: '#F6F5F2', 'stroke-width': 1.5, id: 'ute-gear-hatch-top', 'stroke-dasharray': '6 6' });
+  g.appendChild(topHatch);
+  const botHatch = ns('line', { x1: spA_cx + 8, y1: spA_cy + spA_r, x2: spB_cx - 10, y2: spB_cy + spB_r, stroke: '#F6F5F2', 'stroke-width': 1.5, id: 'ute-gear-hatch-bot', 'stroke-dasharray': '6 6' });
+  g.appendChild(botHatch);
+
+  // Rear sprocket teeth + hub
+  drawSprocket(svg, 'ute-gear-spB', spB_cx, spB_cy, spB_r, 42, 0, '#DAD3C1');
+
+  // Wheel spokes group (rotated per tick)
+  const spokeG = ns('g', { id: 'ute-gear-spokes', transform: `rotate(0 ${spB_cx} ${spB_cy})` });
+  for (let i = 0; i < 5; i++) {
+    const a = (i / 5) * 2 * Math.PI;
+    const x2 = spB_cx + Math.cos(a) * (spB_r + 20);
+    const y2 = spB_cy + Math.sin(a) * (spB_r + 20);
+    spokeG.appendChild(ns('line', { x1: spB_cx, y1: spB_cy, x2, y2, stroke: '#2A2A26', 'stroke-width': 5 }));
+  }
+  svg.appendChild(spokeG);
+
+  // Ground reference
+  g.appendChild(ns('line', { x1: 30, y1: 320, x2: 870, y2: 320, stroke: '#B9B3A4', 'stroke-dasharray': '4 6' }));
+  // Hub centre dot
+  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: 7, fill: '#0A0A0A' }));
+
+  svg.appendChild(g);
+  wireHoldButton('gearing');
+  updateGearingDemo(0);
+}
+
+function drawSprocket(svg, id, cx, cy, r, teeth, angle, fillColour) {
+  // Remove any previous instance
+  const prev = svg.querySelector(`#${id}`);
+  if (prev) prev.remove();
+  const g = ns('g', { id, transform: `rotate(${angle} ${cx} ${cy})` });
+  g.appendChild(ns('circle', { cx, cy, r, fill: 'url(#g-sprocket)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  for (let i = 0; i < teeth; i++) {
+    const a = (i / teeth) * 2 * Math.PI;
+    const x1 = cx + Math.cos(a) * r;
+    const y1 = cy + Math.sin(a) * r;
+    const x2 = cx + Math.cos(a) * (r + 5);
+    const y2 = cy + Math.sin(a) * (r + 5);
+    g.appendChild(ns('line', { x1, y1, x2, y2, stroke: '#0A0A0A', 'stroke-width': 1.4 }));
+  }
+  if (r > 50) {
+    for (let i = 0; i < 5; i++) {
+      const a = (i / 5) * 2 * Math.PI + 0.3;
+      g.appendChild(ns('circle', { cx: cx + Math.cos(a) * (r * 0.55), cy: cy + Math.sin(a) * (r * 0.55), r: 7, fill: '#F6F5F2', stroke: '#0A0A0A' }));
+    }
+  }
+  g.appendChild(ns('circle', { cx, cy, r: 7, fill: '#2A2A26' }));
+  svg.appendChild(g);
+}
+
+function updateGearingDemo(dt) {
+  const s = DEMO.gearing;
+  if (s.holding) s.rpm = Math.min(8000, s.rpm + 2500 * dt);
+  else            s.rpm = Math.max(0,    s.rpm - 1800 * dt);
+  // Sprocket A spins at engine RPM; B at engine RPM / final_ratio
+  const degA = (s.rpm / 60) * 360 * dt;
+  s.sprocketA = (s.sprocketA + degA) % 360;
+  const degB = degA / GEAR.final;
+  s.sprocketB = (s.sprocketB + degB) % 360;
+  s.wheelAng  = s.sprocketB;
+  s.chainOff  = (s.chainOff - degA * 0.05) % 100;
+
+  const svg = ROOT.querySelector('#ute-demo-svg');
+  if (svg) {
+    // Rotate sprockets by re-drawing
+    drawSprocket(svg, 'ute-gear-spA', 60 + 150 + 6, 130 + 150 - 36, 36, 20, s.sprocketA, '#8E867A');
+    drawSprocket(svg, 'ute-gear-spB', 740, 190, 95, 42, s.sprocketB, '#DAD3C1');
+    const spokes = svg.querySelector('#ute-gear-spokes');
+    if (spokes) spokes.setAttribute('transform', `rotate(${s.wheelAng} 740 190)`);
+    // Animate chain hatch
+    const ht = svg.querySelector('#ute-gear-hatch-top');
+    const hb = svg.querySelector('#ute-gear-hatch-bot');
+    if (ht) ht.setAttribute('stroke-dashoffset', s.chainOff);
+    if (hb) hb.setAttribute('stroke-dashoffset', -s.chainOff);
+  }
+
+  const wheelRPM = s.rpm / GEAR.primary / GEAR.gear3 / GEAR.final;
+  const kmh = (wheelRPM / 60) * (2 * Math.PI * GEAR.wheel_r_m) * 3.6;
+
+  const state = ROOT.querySelector('#ute-demo-state');
+  const desc  = ROOT.querySelector('#ute-demo-desc');
+  const rpm   = ROOT.querySelector('#ute-demo-rpm');
+  if (rpm) rpm.textContent = `${kmh.toFixed(0)} km/h`;
+  if (state && desc) {
+    if (s.rpm < 20) {
+      state.textContent = 'Idle';
+      desc.textContent  = 'The engine is stopped. Hold REV to spin the output sprocket; watch the chain and rear wheel.';
+    } else {
+      state.textContent = 'Pulling';
+      desc.textContent  = `Engine ${Math.round(s.rpm).toLocaleString('en-GB')} rpm · chain ${((wheelRPM/60)*(2*Math.PI*0.11)).toFixed(1)} m/s · final drive ${GEAR.final.toFixed(2)} : 1.`;
+    }
+  }
+}
+
+// ───────────────────────── Hold-button wiring ────────────────────
+function wireHoldButton(demoKey) {
+  const btn = ROOT.querySelector('#ute-demo-action');
+  if (!btn) return;
+  const press = () => { DEMO[demoKey].holding = true; btn.classList.add('is-holding'); };
+  const release = () => { DEMO[demoKey].holding = false; btn.classList.remove('is-holding'); };
+  btn.addEventListener('pointerdown', (ev) => { ev.preventDefault(); press(); btn.setPointerCapture(ev.pointerId); });
+  btn.addEventListener('pointerup', release);
+  btn.addEventListener('pointercancel', release);
+  btn.addEventListener('pointerleave', (ev) => { if (ev.buttons === 0) return; release(); });
+}
+
+function switchDemo(key) {
+  if (!DEMO[key] || DEMO.active === key) return;
+  DEMO.active = key;
+  ROOT.querySelectorAll('.ute-demo-tab').forEach((t) => t.classList.toggle('is-on', t.getAttribute('data-demo') === key));
+  const stage = ROOT.querySelector('#ute-demo-stage');
+  if (stage) stage.innerHTML = demoStageHTML();
+  mountCurrentDemo();
+}
+
+function mountCurrentDemo() {
+  switch (DEMO.active) {
+    case 'throttle': mountThrottleDemo(); break;
+    case 'ignition': mountIgnitionDemo(); break;
+    case 'gearing':  mountGearingDemo();  break;
+  }
+}
+
+function updateCurrentDemo(dt) {
+  switch (DEMO.active) {
+    case 'throttle': updateThrottleDemo(dt); break;
+    case 'ignition': updateIgnitionDemo(dt); break;
+    case 'gearing':  updateGearingDemo(dt);  break;
+  }
+}
 
 // ───────────────────────── SVG helpers ──────────────────────────
 function ns(tag, attrs) {

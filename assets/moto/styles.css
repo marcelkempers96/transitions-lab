@@ -235,6 +235,97 @@ body.ute-standalone {
   font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em;
 }
 
+/* ─── Component close-ups (Throttle / Ignition / Gearing) ──── */
+.ute-demos {
+  background: var(--paper); border-bottom: 1px solid var(--ink);
+  padding: 24px 24px 28px;
+}
+.ute-demos-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 14px; gap: 20px; flex-wrap: wrap;
+}
+.ute-demos-head h2 { font-size: 18px; font-weight: 600; letter-spacing: -0.015em; }
+.ute-demos-head p { font-size: 12.5px; color: var(--mute); margin: 0; max-width: 56ch; }
+
+#ute-root .ute-demo-tabs {
+  display: inline-flex; gap: 2px;
+  background: var(--ink); border: 1px solid var(--ink);
+  margin-bottom: 14px;
+}
+#ute-root .ute-demo-tab {
+  padding: 8px 16px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); background: var(--surface);
+  border: 0; cursor: pointer;
+}
+#ute-root .ute-demo-tab:hover { background: var(--paper-2); }
+#ute-root .ute-demo-tab.is-on { background: var(--ink); color: var(--paper); }
+
+.ute-demo-stage {
+  position: relative;
+  background: var(--surface); border: 1px solid var(--ink);
+  min-height: 460px;
+  padding: 72px 16px 110px;
+}
+.ute-demo-chip {
+  position: absolute; top: 16px; left: 16px; right: 16px;
+  background: var(--surface); border: 2px solid var(--warm);
+  padding: 10px 14px;
+  display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 12px; align-items: center;
+}
+.ute-demo-chip-dot {
+  width: 10px; height: 10px; background: var(--warm); border-radius: 50%;
+}
+.ute-demo-chip-text { min-width: 0; }
+.ute-demo-chip .k {
+  font-family: var(--sans); font-size: 13.5px; font-weight: 700; color: var(--warm);
+  display: block; line-height: 1.2;
+}
+.ute-demo-chip .d {
+  font-family: var(--sans); font-size: 12.5px; color: var(--ink-soft);
+  display: block; line-height: 1.35;
+}
+.ute-demo-chip .n {
+  font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--ink);
+  white-space: nowrap;
+}
+.ute-demo-svg {
+  display: block; width: 100%; height: 340px;
+}
+.ute-demo-controls {
+  position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+#ute-root .ute-demo-action {
+  width: 190px; height: 58px;
+  background: #2BB76E; color: #FFFFFF;
+  font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: 0.1em;
+  border: 2px solid var(--ink);
+  cursor: pointer; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent;
+  transition: transform 60ms, background 100ms;
+  padding: 0;
+}
+#ute-root .ute-demo-action:active,
+#ute-root .ute-demo-action.is-holding {
+  transform: translateY(2px);
+  background: #1E9B59;
+}
+.ute-demo-hint {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--mute);
+}
+
+@media (max-width: 540px) {
+  .ute-demos { padding: 18px 14px 24px; }
+  .ute-demo-stage { padding: 68px 10px 110px; min-height: 420px; }
+  .ute-demo-chip { padding: 8px 10px; }
+  .ute-demo-chip .k { font-size: 12px; }
+  .ute-demo-chip .d { font-size: 11px; }
+  .ute-demo-chip .n { font-size: 13px; }
+  #ute-root .ute-demo-tab { padding: 7px 10px; font-size: 10px; }
+}
+
 /* ─── Workbench layout: left · stage · right ─────────────────── */
 .ute-bench {
   display: grid;
