@@ -7,7 +7,7 @@
 <p class="article-meta"><span class="article-date">1 November 2026</span> · <span class="article-reading-time">8 min read</span></p>
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-hands-never-still-hero.jpg" alt="Three jua kali fundis at a Nairobi roadside workshop, an orange Bajaj Boxer motorcycle in the foreground and a motorcycle wheel laid out on the ground">
+  <img src="/assets/img/insight-hands-never-still-hero.jpg" alt="A jua kali fundi crouched beside a blue and gold TVS Star HLX motorcycle, bright arc-weld sparks flying from the work piece, a second person seated on the bike while the fundi makes the repair">
 </figure>
 
 ## Interviews over a workbench
@@ -16,11 +16,19 @@ During my fieldwork in Nairobi, the people with the most time to talk were the r
 
 That contrast between idle riders and busy mechanics is, I think, one of the clearest signs of how Kenya's electric boda boda transition is reorganising work. My earlier piece on this fieldwork argued that the scarce resource for riders is time at the hub. This one is about the people whose time was never scarce enough to waste, the *jua kali* fundis who keep the city's motorcycle taxis on the road, and about what happens to them when the bikes they repair stop running on petrol.
 
+<figure class="article-figure">
+  <img src="/assets/img/insight-hands-never-still-04.jpg" alt="Three jua kali fundis working on a black café-racer-style motorcycle at a Nairobi roadside workshop, a chain and a worn sprocket laid out on the pavement, a wheel propped on the kerb, hand tools spread across a rag">
+</figure>
+
 ## Under the hot sun
 
 *Jua kali* is Swahili for "hot sun," and it became the name for Kenya's informal artisans because so many of them worked in the open air, beside roads and markets, without a workshop roof. A *fundi* is a skilled hand, the person you go to when something is broken, and in the motorcycle trade the word covers anyone from a teenager fixing punctures under a tree to a workshop owner with seven employees. King (1996) documented how this economy grew from the margins of colonial and post-independence Kenya into one of its main sources of skills and livelihoods, and the latest figures show that it has only grown since. According to the Kenya National Bureau of Statistics' 2026 Economic Survey, [716,800 of the 882,100 new jobs created in 2025 were informal, and the number of people working in the informal sector rose to 18.1 million](https://capitalfm.africa/kenya-adds-882100-jobs-in-2025/).
 
 Austin, a roadside fundi I interviewed on 28 September, is a good illustration of how people enter this economy. He started working at the same spot when he was 14, still in school, looking for pocket money, and at 23 he has nine years of experience behind him. Asked how he became a mechanic, his first answer was "it's all about hustle... it's all about us looking for money," and he learned the trade from Moses, the man who runs the spot and who "taught us how to repair bikes and motorbikes." There was no certificate at the end of that apprenticeship and no curriculum, only years of watching, handing over spanners and eventually taking the job yourself. Austin now specialises in wiring and mechanical work, which he described as harder for others "but easy for me," while the job he does most often, every single day, is the humble puncture.
+
+<figure class="article-figure">
+  <img src="/assets/img/insight-hands-never-still-02.jpg" alt="A fundi crouching beside a motorcycle wheel outside a Nairobi roadside workshop under a green corrugated-iron roof, a Youth Self Help Group door behind, three colleagues seated on the kerb watching, an orange adventure-style boda boda parked in the middle of the scene">
+</figure>
 
 ## The parts that make a fundi possible
 
@@ -31,7 +39,7 @@ China did not leave this market when its own motorcycle brands lost ground; it m
 Austin described how thin that stock is in practice. He keeps only the parts "that go easily," such as inner tubes, and otherwise relies on customers to bring the part and leave the labour to him. A controller for an electric bike is another matter: "you can't buy a controller because it will be hard for us to sell." With an electric motorcycle, the parts that matter most are no longer the ones a fundi can find on an open shelf. Battery cells, motors and controllers are largely sourced from China, and Chinese manufacturers are now entering the Kenyan market directly, with [Yadea, which describes itself as the world's largest electric two-wheeler maker, launching five models aimed at boda boda riders in June 2026](https://www.mwanaspoti.co.tz/bd/corporate/shipping-logistics/china-largest-e-motorbike-maker-yadea-enters-kenya-ev-race-5486744). The supply chain still runs through China, but it now runs through operators' service centres rather than through the parts shops where fundis buy.
 
 <figure class="article-figure">
-  <img src="/assets/img/insight-hands-never-still-02.jpg" alt="A white Bajaj Boxer petrol motorcycle loaded with stacked 20-litre water bottles outside a water-refill shop in Nairobi">
+  <img src="/assets/img/insight-hands-never-still-05.jpg" alt="Close-up of two jua kali fundis working on the exposed engine of a petrol boda boda at a Nairobi roadside spot, the fuel tank off, cylinder-head area opened up, hand tools and rags spread around">
 </figure>
 
 ## What an electric bike leaves on the roadside
@@ -39,6 +47,10 @@ Austin described how thin that stock is in practice. He keeps only the parts "th
 Electric bikes do still reach the roadside, though only for a narrow set of jobs. Austin said that electric riders "usually go to the company, so it's hard for them to come here," and when they do come it is for "brake pads, chain, bearings, something like that." On the electrical side his work on an electric bike stops at indicators and lights. James, who runs a workshop with seven mechanics and whom I interviewed in February, sees two to four electric bikes on a typical day out of the ten to fifteen motorcycles that come through, and riders themselves are wary of going further: Francis, a Roam rider, was clear that he would not let "anybody" handle a fault on his bike. When something goes wrong deeper in the drivetrain, a rider has nowhere to go but the manufacturer, and Georg told me about a friend whose bike stood idle for four months waiting on an insurance claim for a faulty motor and controller.
 
 From the operator's side, the reasons for keeping that work in-house are serious. Elizabeth, who runs operations at one of Roam's neighbourhood service centres and trains its technicians, explained that every new hire needs a background in electrical, mechanical or automotive engineering, goes through an application, an interview and a practical session, and then completes an internal course on the bike's power flow and its electrical and mechanical components before being given any customer. The curriculum is written by Roam's after-sales team from the faults they see in the field, and the controllers run on firmware that has to be updated uniformly according to company procedures, which is why, in her words, this knowledge "is only left to Roam" for now. The bikes carry passengers through Nairobi traffic and are, for most riders, their main source of income, so a badly done repair can cost a livelihood or a life.
+
+<figure class="article-figure">
+  <img src="/assets/img/insight-hands-never-still-03.jpg" alt="A roadside spot on a Nairobi main road, two parked petrol boda bodas on the pavement, a small ashy fire pit, loose debris and the author's foot in a blue sandal in the foreground, afternoon sun flaring across the frame">
+</figure>
 
 The consequence, however, is a training pipeline that runs parallel to the jua kali economy rather than through it. Roam trains its own technicians and those of its business partners, and the certificate at the end is internal, with no official standing that would let a technician take it to another workshop. Someone like Austin, with nine years of hands-on experience and no engineering diploma, does not meet the entry requirement, and Elizabeth was frank that this model will strain as the fleet grows, since "the volumes of the riders that we may need to attend to will be way higher and our current team might not be able to address that." [Electric motorcycles were roughly one in seven new motorcycle registrations in Kenya in 2025](https://cleantechnica.com/2026/02/09/electric-motorcycles-reach-15-3-market-share-of-new-registrations-in-kenya-in-2025/), and every one of them will eventually need the kind of attention that, on a petrol bike, a fundi under a tree would provide.
 
