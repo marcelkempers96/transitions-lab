@@ -1,24 +1,22 @@
 /*
- * Under the Engine — motorcycle anatomy explorer (v0.2).
+ * Under the Engine — motorcycle anatomy explorer (v0.3).
  *
  * Mounts into <div id="ute-root"></div> in /motorcycle-anatomy.html.
  *
- * v0.2 scope:
- *   • Overview motorcycle FIRST — recognisable sportbike-ish silhouette with
- *     wheels, forks, tank, seat, swingarm, chain, engine, exhaust and so on.
- *     Each shape is clickable; so is each callout label. The selected part
- *     highlights on the diagram and surfaces its live state.
- *   • Collision-aware callout placement — labels fan out above and below the
- *     bike in tiers, never piling on top of each other.
- *   • Engine stage: 4-stroke OR 2-stroke, animated piston, con-rod, crank,
- *     valves/ports, spark. Gas-flow arrows appear in intake / exhaust /
- *     scavenge strokes so you can see where the charge is going.
- *   • Parameters (RPM, bore, stroke, compression) — now a secondary panel.
- *   • Live per-part stats: valve lift, piston speed, port-open window,
- *     wheel RPM, chain speed, etc, all computed from current state.
- *   • Light theme only. Sharp edges, 1 px rules, IBM Plex Sans + Mono.
+ * v0.3 architecture:
+ *   • Mode switch: 4-stroke CLASSIC · 2-stroke MOTOCROSS · ELECTRIC.
+ *     Each mode draws its own overview motorcycle.
+ *   • Click any labelled part on the overview → a 3-D-styled Component
+ *     view opens below with the right close-up (engine cross-section,
+ *     electric motor cutaway, carb cutaway, chain + sprockets, brake
+ *     caliper, battery, etc). Interactive views have hold-to-act
+ *     buttons; the engine view carries its own sliders + timing strip.
+ *   • Ride the motorcycle — top-down handlebar with throttle (hold),
+ *     front brake, horn, kill switch. The throttle feeds the engine
+ *     RPM so the overview + any open component view respond in real
+ *     time.
  *
- * Next release: electric motor + controller for a side-by-side with ICE.
+ * Light theme only. Sharp edges, 1 px rules, IBM Plex Sans + Mono.
  */
 
 const ROOT = document.getElementById('ute-root');
@@ -28,82 +26,33 @@ const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4
 
 // ───────────────────────── State ────────────────────────────────
 const S = {
-  mode: '4t',            // '4t' | '2t'
-  view: '2d',            // '2d' | '3d' (3d is an isometric cutaway)
+  mode: '4t',            // '4t' | '2t' | 'elec'
+  selected_part: null,
   running: true,
-  rpm: 2400,             // display RPM; drives the animation speed
+  rpm: 2400,
   bore_mm: 72,
   stroke_mm: 58,
   compression: 10.5,
-  crank_deg: 0,          // 0..720 for 4T; 0..360 for 2T
-  selected_part: null,   // key into PARTS
+  crank_deg: 0,
+  // electric subsystem
+  elec: { rpm: 0, torque: 0, motor_temp: 60, controller_temp: 50, battery_soc: 85 },
+  // rider inputs (drive the overview + any open interactive component)
+  rider: { throttle: 0, brake: 0, clutch: 0, horn: 0, kill: false, starter_hold: 0 },
+  // interactive component view local states
+  cv: { charge: 0, charge_was: false, charge_fire_t: -1, brake_pct: 0, fork_pct: 0, gear_rpm: 0, particles: [] },
   last_tick_ms: 0,
 };
 
-// Running gearing assumptions used for the live wheel/chain stats.
-const GEAR = {
-  primary: 2.1,    // crank → gearbox input
-  final: 2.6,      // output sprocket → rear sprocket
-  gear3: 1.3,      // assume 3rd gear
-  wheel_r_m: 0.30, // tyre rolling radius, ~17" rim with sportbike tyre
-};
+const GEAR = { primary: 2.1, final: 2.6, gear3: 1.3, wheel_r_m: 0.30 };
 
-// ───────────────────────── Component close-up demos ─────────────
-// Three focused mechanisms, each with a hold-to-act button.
-// Idiom borrowed from underthehood.online: the mechanism animates
-// while you press, a chip at the top shows live state, and the parts
-// are drawn with linear gradients to read as 3-D metal.
-const DEMO = {
-  active: 'throttle',   // 'throttle' | 'ignition' | 'gearing'
-  throttle: {
-    throttle_pct: 0,   // 0..100
-    rpm:          900, // idle
-    particles:    [],
-    phase:        0,
-    piston_y:     0,
-    holding:      false,
-  },
-  ignition: {
-    charge:   0,      // 0..100 (dwell)
-    firing:   0,      // ms since fire
-    lastFire: 0,      // ms since boot
-    sparkOk:  null,   // true=good spark, false=misfire, null=idle
-    holding:  false,
-  },
-  gearing: {
-    rpm:        0,
-    sprocketA:  0,     // engine-side sprocket angle
-    sprocketB:  0,     // wheel-side sprocket angle
-    wheelAng:   0,     // wheel angle
-    chainOff:   0,     // chain hatch offset
-    holding:    false,
-  },
-};
-
-const DEMO_META = [
-  { key: 'throttle', label: 'Throttle' },
-  { key: 'ignition', label: 'Ignition' },
-  { key: 'gearing',  label: 'Gearing'  },
-];
-
-// ───────────────────────── Render ────────────────────────────────
+// ───────────────────────── Shell + top-level render ─────────────
 function render() {
   ROOT.innerHTML = shellHTML();
-  mountMotoSVG();
-  mountEngineSVG();
-  mountCurrentDemo();
+  mountOverviewSVG();
+  renderComponentView();
+  mountRiderSVG();
   wireChromeLocal();
-  wireControls();
-  wireDemoTabs();
-  updateReadouts();
-  updateLivePanel();
-  updateEngineSVG();
-}
-
-function wireDemoTabs() {
-  ROOT.querySelectorAll('.ute-demo-tab').forEach((t) => {
-    t.addEventListener('click', () => switchDemo(t.getAttribute('data-demo')));
-  });
+  wireModeSwitch();
 }
 
 function shellHTML() {
@@ -114,9 +63,10 @@ function shellHTML() {
         <span class="ute-brand-name">Under the Engine</span>
         <span class="ute-brand-sub">Transitions Lab</span>
       </a>
-      <div class="ute-mode-switch" role="group" aria-label="Engine mode">
-        <button type="button" data-mode="4t" class="${S.mode==='4t'?'is-on':''}">Four-stroke</button>
-        <button type="button" data-mode="2t" class="${S.mode==='2t'?'is-on':''}">Two-stroke</button>
+      <div class="ute-mode-switch" role="group" aria-label="Vehicle mode">
+        <button type="button" data-mode="4t"   class="${S.mode==='4t'?'is-on':''}">4-stroke</button>
+        <button type="button" data-mode="2t"   class="${S.mode==='2t'?'is-on':''}">2-stroke</button>
+        <button type="button" data-mode="elec" class="${S.mode==='elec'?'is-on':''}">Electric</button>
       </div>
       <div class="ute-tools">
         <button class="ute-tbtn ute-run-toggle ${S.running?'is-on':''}" type="button" aria-label="${S.running?'Pause':'Play'}" title="${S.running?'Pause':'Play'} (Space)">
@@ -130,990 +80,83 @@ function shellHTML() {
 
     <div class="ute-stack">
 
-      <!-- OVERVIEW first: the whole motorcycle, with clickable parts -->
       <section class="ute-overview">
         <div class="ute-overview-head">
           <div>
-            <h2>The whole motorcycle</h2>
-            <p>Click any part on the diagram or in the list below. The part highlights, and its current working state appears.</p>
+            <h2>${modeTitle()}</h2>
+            <p>Click a labelled part — the piston, the carb, the chain, the brake, the battery — and a 3-D close-up opens below.</p>
           </div>
+          <span class="ute-overview-badge" data-m="${S.mode}">${modeShort()}</span>
         </div>
-
         <div class="ute-moto-wrap">
-          <svg class="ute-moto-svg" id="ute-moto" viewBox="0 0 1200 590" preserveAspectRatio="xMidYMid meet" aria-label="Motorcycle anatomy diagram"></svg>
+          <svg class="ute-moto-svg" id="ute-moto" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" aria-label="Motorcycle anatomy diagram"></svg>
         </div>
-
-        <div id="ute-live-slot"></div>
       </section>
 
-      <!-- COMPONENT CLOSE-UPS: throttle / ignition / gearing -->
-      <section class="ute-demos" id="ute-demos">
-        <div class="ute-demos-head">
+      <section class="ute-cview" id="ute-cview-slot">
+        ${emptyCViewHTML()}
+      </section>
+
+      <section class="ute-rider">
+        <div class="ute-rider-head">
           <div>
-            <h2>Component close-ups</h2>
-            <p>Each tab is a self-contained mechanism. Press and hold the big button to drive it — watch the parts move, the gas flow and the numbers climb.</p>
-          </div>
-          <div class="ute-demo-tabs" role="tablist">
-            ${demoTabsHTML()}
+            <h2>Ride the motorcycle</h2>
+            <p>Twist the throttle, pull the brake, honk the horn. The bike above responds, and so does any open component view.</p>
           </div>
         </div>
-        <div class="ute-demo-stage" id="ute-demo-stage">
-          ${demoStageHTML()}
+        <div class="ute-rider-wrap">
+          <div class="ute-rider-toast" id="ute-rider-toast">BEEP!</div>
+          <svg class="ute-rider-svg" id="ute-rider" viewBox="0 0 900 480" preserveAspectRatio="xMidYMid meet" aria-label="Rider handlebar"></svg>
         </div>
+        <div class="ute-rider-dash" id="ute-rider-dash"></div>
       </section>
-
-      <!-- WORKBENCH: engine cross-section + sliders + parts list -->
-      <div class="ute-bench">
-        <aside class="ute-col ute-col-left">
-          <section class="ute-panel">
-            <div class="ute-panel-h"><span class="ute-label">Running</span></div>
-            <div class="ute-run">
-              <button type="button" data-run="toggle">${S.running?'Pause':'Play'}</button>
-              <button type="button" data-run="step">Step +30°</button>
-            </div>
-            <p style="margin-top:8px;">Space bar toggles play/pause. Animation is slowed ~60× below real-time so the stroke sequence stays legible.</p>
-          </section>
-          <section class="ute-panel ute-collapsible" id="ute-params-panel">
-            <div class="ute-panel-h"><span class="ute-label">Parameters</span></div>
-            <div class="ute-panel-body">
-              ${slider('rpm',        'Engine speed',       600, 10000, 50,  S.rpm,        'rpm')}
-              ${slider('bore_mm',    'Bore',               40,  110,   1,   S.bore_mm,    'mm')}
-              ${slider('stroke_mm',  'Stroke',             40,  110,   1,   S.stroke_mm,  'mm')}
-              ${slider('compression','Compression ratio',  6,   14,    0.1, S.compression,':1')}
-            </div>
-          </section>
-          <section class="ute-panel">
-            <div class="ute-panel-h"><span class="ute-label">Part catalogue</span></div>
-            <ul class="ute-parts" id="ute-parts-list">
-              ${partsList()}
-            </ul>
-          </section>
-        </aside>
-
-        <main class="ute-col ute-col-stage">
-          <div class="ute-stage" id="ute-stage">
-            <svg class="ute-engine-svg" id="ute-engine" viewBox="0 0 900 720" preserveAspectRatio="xMidYMid meet" aria-label="Engine cross-section"></svg>
-            <div class="ute-stage-hint">${S.mode==='4t'?'Four-stroke':'Two-stroke'} · click a component</div>
-            <div class="ute-stage-caption" id="ute-caption">
-              <span class="ute-label">Current stroke</span>
-              <p id="ute-caption-body">Press play to run the engine.</p>
-            </div>
-            <div class="ute-timing" aria-label="Cycle timing">
-              <div class="ute-timing-track" id="ute-timing-track">
-                ${timingSegmentsHTML()}
-                <div class="ute-timing-needle" id="ute-timing-needle" style="left:0%;"></div>
-              </div>
-            </div>
-          </div>
-        </main>
-
-        <aside class="ute-col ute-col-right">
-          <section class="ute-panel">
-            <div class="ute-panel-h">
-              <span class="ute-label">Cycle</span>
-              <span class="ute-stroke-badge" id="ute-stroke-badge" data-s="intake">Intake</span>
-            </div>
-            <p id="ute-stroke-body">The animation walks the piston through the ${S.mode==='4t'?'four-stroke':'two-stroke'} cycle. Watch the valves ${S.mode==='4t'?'open and close':'and ports uncovered by the piston'}, and the gas-flow arrows.</p>
-          </section>
-          <section class="ute-panel">
-            <div class="ute-panel-h"><span class="ute-label">Computed outputs</span></div>
-            <div class="ute-reads" id="ute-reads">
-              ${readoutsHTML()}
-            </div>
-            <p style="margin-top:10px;">Educational estimates for a naturally-aspirated single at a BMEP of ~10 bar (4T) or ~8 bar (2T). Not a dyno trace.</p>
-          </section>
-        </aside>
-      </div>
 
       <footer class="ute-foot">
-        <span>Under the Engine · v0.2 · ${S.mode==='4t'?'Four-stroke':'Two-stroke'} · Transitions Lab</span>
-        <span>Inspired by <a href="https://www.underthehood.online" target="_blank" rel="noopener">underthehood.online</a>. Next release: electric motor + controller.</span>
+        <span>Under the Engine · v0.3 · ${modeShort()} · Transitions Lab</span>
+        <span>Inspired by <a href="https://www.underthehood.online" target="_blank" rel="noopener">underthehood.online</a>. Light theme only.</span>
       </footer>
     </div>
   `;
 }
 
-function slider(key, label, min, max, step, value, unit) {
-  const v = Number(value);
-  const fmt = (unit === ':1') ? v.toFixed(1) : (step < 1 ? v.toFixed(1) : Math.round(v).toLocaleString('en-GB'));
+function modeTitle() {
+  return S.mode === '4t'   ? 'Classic four-stroke'
+       : S.mode === '2t'   ? 'Motocross two-stroke'
+       : 'Electric motorcycle';
+}
+function modeShort() {
+  return S.mode === '4t' ? 'Four-stroke · Classic' : S.mode === '2t' ? 'Two-stroke · Motocross' : 'Electric · Naked';
+}
+
+function emptyCViewHTML() {
   return `
-    <div class="ute-param" data-key="${key}">
-      <div class="ute-param-head">
-        <span class="ute-label">${label}</span>
-        <span class="ute-param-value"><span data-param-value="${key}">${fmt}</span> <span class="ute-u">${unit}</span></span>
-      </div>
-      <input type="range" min="${min}" max="${max}" step="${step}" value="${v}" data-param="${key}">
-    </div>`;
-}
-
-function partsList() {
-  return PART_ORDER.map((k) => {
-    const p = PARTS[k];
-    const on = (S.selected_part === k) ? ' is-on' : '';
-    return `<li><button type="button" data-part="${k}" class="${on.trim()}">
-      <span class="ute-part-name">${p.name}</span>
-      <span class="ute-part-tag">${p.tag}</span>
-    </button></li>`;
-  }).join('');
-}
-
-function timingSegmentsHTML() {
-  const segs = (S.mode === '4t')
-    ? [{s:'intake', from:0,   to:180,  label:'Intake'},
-       {s:'compression', from:180, to:360, label:'Compression'},
-       {s:'power', from:360, to:540, label:'Power'},
-       {s:'exhaust', from:540, to:720, label:'Exhaust'}]
-    : [{s:'power',   from:0,   to:110, label:'Power'},
-       {s:'exhaust', from:110, to:180, label:'Blowdown'},
-       {s:'scavenge',from:180, to:230, label:'Scavenge'},
-       {s:'compression', from:230, to:360, label:'Compression'}];
-  const total = (S.mode === '4t') ? 720 : 360;
-  return segs.map((seg) => {
-    const left = (seg.from/total)*100;
-    const w = ((seg.to - seg.from)/total)*100;
-    return `<div class="ute-timing-seg" data-s="${seg.s}" style="left:${left}%; width:${w}%;">${seg.label}</div>`;
-  }).join('');
-}
-
-function readoutsHTML() {
-  const disp = displacementCC(S.bore_mm, S.stroke_mm);
-  const tq = approxTorqueNm(disp, S.mode, S.compression);
-  const kw = tq * S.rpm / 9549;
-  const hp = kw * 1.341;
-  return `
-    <div class="ute-read"><span class="ute-label">Displacement</span><span class="ute-n">${Math.round(disp)}<span class="ute-u">cc</span></span></div>
-    <div class="ute-read"><span class="ute-label">Compression</span><span class="ute-n">${S.compression.toFixed(1)}<span class="ute-u">:1</span></span></div>
-    <div class="ute-read"><span class="ute-label">Approx. torque</span><span class="ute-n">${tq.toFixed(1)}<span class="ute-u">Nm</span></span></div>
-    <div class="ute-read"><span class="ute-label">Approx. power</span><span class="ute-n">${kw.toFixed(1)}<span class="ute-u">kW · ${hp.toFixed(0)} hp</span></span></div>
+    <div class="ute-cview-empty">
+      <span class="ute-label">Component view</span>
+      <p>Pick any part above. The 3-D close-up lands here with its own controls — hold the big button to drive the mechanism.</p>
+    </div>
   `;
 }
 
-// ───────────────────────── Motorcycle SVG ────────────────────────
-// This is the overview diagram. It aims for a readable sportbike-ish side
-// profile with the parts a rider or technician actually names:
-//   wheels, forks, triple-tree, handlebar, headlight fairing, mirror,
-//   instruments, fuel tank, air filter, carb / EFI, engine block, cylinder
-//   with cooling fins, exhaust header + muffler, seat + pillion, tail cowl,
-//   tail light, battery, swingarm, rear shock, chain, front + rear sprocket,
-//   brake disc, foot peg, side stand, frame rails.
-//
-// Each major shape carries data-shape="<part-key>" so clicking it, OR the
-// matching callout label, OR the entry in the Part catalogue, selects it
-// and highlights it.
-function mountMotoSVG() {
-  const svg = ROOT.querySelector('#ute-moto');
-  if (!svg) return;
-  svg.innerHTML = '';
-  // Ground reference
-  const gRef = ns('g');
-  gRef.appendChild(ns('line', { x1: 0, y1: 490, x2: 1200, y2: 490, stroke: '#B9B3A4', 'stroke-dasharray': '4 6' }));
-  svg.appendChild(gRef);
+// ───────────────────────── Mode switching ────────────────────────
+function switchMode(mode) {
+  if (!['4t','2t','elec'].includes(mode) || mode === S.mode) return;
+  S.mode = mode;
+  S.crank_deg = 0;
+  S.selected_part = null;
+  render();
+}
 
-  // ─ Frame rails (behind everything) ──────────────────────────────
-  // Main spar from steering head to swingarm pivot
-  const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
-  frame.appendChild(ns('path', { d: 'M 302 235 L 440 240 L 540 260 L 690 275 L 720 350', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 7, 'stroke-linecap': 'round', 'data-shape': 'frame' }));
-  // Rear subframe triangle to tail
-  frame.appendChild(ns('path', { d: 'M 690 275 L 790 270 L 905 265 L 870 325 L 720 330 Z', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'frame' }));
-  // Steering head tube
-  frame.appendChild(ns('rect', { x: 288, y: 215, width: 32, height: 60, fill: '#E6E1D4', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'frame' }));
-  svg.appendChild(frame);
-
-  // ─ Forks (front suspension) ─────────────────────────────────────
-  const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
-  // Upper fork tubes (slide inside lower sliders)
-  forks.appendChild(ns('line', { x1: 300, y1: 220, x2: 260, y2: 350, stroke: '#B9B3A4', 'stroke-width': 7, 'data-shape': 'forks' }));
-  forks.appendChild(ns('line', { x1: 318, y1: 220, x2: 278, y2: 350, stroke: '#B9B3A4', 'stroke-width': 7, 'data-shape': 'forks' }));
-  // Lower sliders (dark, wider)
-  forks.appendChild(ns('line', { x1: 265, y1: 325, x2: 245, y2: 395, stroke: '#1F1D1A', 'stroke-width': 11, 'data-shape': 'forks' }));
-  forks.appendChild(ns('line', { x1: 283, y1: 325, x2: 263, y2: 395, stroke: '#1F1D1A', 'stroke-width': 11, 'data-shape': 'forks' }));
-  // Top triple-tree yoke
-  forks.appendChild(ns('rect', { x: 282, y: 205, width: 54, height: 16, fill: '#2A2A26', stroke: '#0A0A0A', 'data-shape': 'forks' }));
-  svg.appendChild(forks);
-
-  // Handlebar + mirror
-  const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
-  bar.appendChild(ns('path', { d: 'M 310 195 L 360 170 L 420 160', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'instruments' }));
-  bar.appendChild(ns('circle', { cx: 420, cy: 160, r: 5, fill: '#2A2A26', 'data-shape': 'instruments' }));
-  // Mirror
-  bar.appendChild(ns('path', { d: 'M 345 173 L 335 140 L 320 145 L 328 170 Z', fill: '#FFFFFF', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'instruments' }));
-  // Instrument panel
-  bar.appendChild(ns('rect', { x: 390, y: 155, width: 60, height: 28, fill: '#111111', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
-  bar.appendChild(ns('line', { x1: 400, y1: 170, x2: 440, y2: 170, stroke: '#E2A93B', 'stroke-width': 1.5, 'data-shape': 'instruments' }));
-  svg.appendChild(bar);
-
-  // ─ Headlight fairing (swept sportbike nose) ─────────────────────
-  const faring = ns('g');
-  // Front fairing swept shape
-  const fair = ns('path', { d: 'M 266 258 C 290 220, 330 185, 395 195 C 410 215, 410 240, 385 260 L 300 275 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'headlight', class: 'ute-shape' });
-  faring.appendChild(fair);
-  // Headlight proper
-  const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
-  hl.appendChild(ns('ellipse', { cx: 340, cy: 225, rx: 36, ry: 22, fill: '#FFFFFF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'headlight', 'data-fillable': '' }));
-  hl.appendChild(ns('ellipse', { cx: 340, cy: 225, rx: 24, ry: 14, fill: '#E2A93B', 'data-shape': 'headlight' }));
-  hl.appendChild(ns('ellipse', { cx: 335, cy: 220, rx: 7, ry: 4, fill: '#FFFFFF', 'data-shape': 'headlight' }));
-  faring.appendChild(hl);
-  // Front fender over the tyre
-  const fender = ns('path', { d: 'M 170 345 Q 250 310 335 345 L 330 360 Q 250 328 180 360 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'front_wheel', class: 'ute-shape' });
-  faring.appendChild(fender);
-  svg.appendChild(faring);
-
-  // ─ Fuel tank (teardrop) ─────────────────────────────────────────
-  const tank = ns('g', { 'data-shape': 'fuel_tank', class: 'ute-shape' });
-  tank.appendChild(ns('path', { d: 'M 420 258 Q 460 215 560 212 Q 650 212 695 240 L 700 272 Q 580 288 440 278 Z', fill: '#F0ECE1', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'fuel_tank', 'data-fillable': '' }));
-  // Tank seam line / knee indent cue
-  tank.appendChild(ns('path', { d: 'M 460 255 Q 570 272 680 258', fill: 'none', stroke: '#B9B3A4', 'stroke-width': 1, 'data-shape': 'fuel_tank' }));
-  // Fuel cap
-  tank.appendChild(ns('circle', { cx: 575, cy: 225, r: 7, fill: '#2A2A26', stroke: '#0A0A0A', 'data-shape': 'fuel_tank' }));
-  svg.appendChild(tank);
-
-  // ─ Air filter / airbox (behind tank, visible through frame) ─────
-  const air = ns('g', { 'data-shape': 'air_filter', class: 'ute-shape' });
-  air.appendChild(ns('rect', { x: 530, y: 285, width: 62, height: 36, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'air_filter', 'data-fillable': '' }));
-  // Hatching to signal it's a filter element
-  for (let i = 0; i < 5; i++) {
-    air.appendChild(ns('line', { x1: 535 + i*12, y1: 290, x2: 535 + i*12, y2: 316, stroke: '#9A9385', 'stroke-width': 1, 'data-shape': 'air_filter' }));
-  }
-  svg.appendChild(air);
-
-  // ─ Carb / throttle body ─────────────────────────────────────────
-  const carb = ns('g', { 'data-shape': 'carb', class: 'ute-shape' });
-  carb.appendChild(ns('rect', { x: 592, y: 292, width: 46, height: 32, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'carb', 'data-fillable': '' }));
-  carb.appendChild(ns('line', { x1: 615, y1: 292, x2: 615, y2: 324, stroke: '#0A0A0A', 'data-shape': 'carb' }));
-  svg.appendChild(carb);
-
-  // ─ Engine block + cylinder + head ───────────────────────────────
-  // Engine case: lower, more compact trapezoid so it doesn't dominate
-  const engine = ns('g', { 'data-shape': 'engine', class: 'ute-shape' });
-  engine.appendChild(ns('path', { d: 'M 545 348 L 695 342 L 708 430 L 535 430 Z', fill: '#EFEAE0', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'engine', 'data-fillable': '' }));
-  // Case bolt pattern
-  for (let i = 0; i < 5; i++) {
-    engine.appendChild(ns('circle', { cx: 558 + i*33, cy: 422, r: 2, fill: '#0A0A0A', 'data-shape': 'engine' }));
-  }
-  // Side cover / clutch cover suggestion (smaller)
-  engine.appendChild(ns('circle', { cx: 620, cy: 388, r: 26, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 1.5, 'data-shape': 'engine' }));
-  engine.appendChild(ns('circle', { cx: 620, cy: 388, r: 7, fill: '#B9B3A4', 'data-shape': 'engine' }));
-  svg.appendChild(engine);
-
-  // Cylinder sticking up out of the engine (slight forward tilt)
-  const cyl = ns('g', { 'data-shape': 'cylinder', class: 'ute-shape' });
-  cyl.appendChild(ns('path', { d: 'M 600 335 L 610 268 L 672 268 L 680 335 Z', fill: '#FFFFFF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder', 'data-fillable': '' }));
-  // Cylinder fins
-  for (let i = 0; i < 5; i++) {
-    const y = 282 + i*10;
-    cyl.appendChild(ns('line', { x1: 604 + i*1.4, y1: y, x2: 678 - i*1.4, y2: y, stroke: '#0A0A0A', 'stroke-width': 1, 'data-shape': 'cylinder' }));
-  }
-  // Head on top (block)
-  cyl.appendChild(ns('rect', { x: 606, y: 258, width: 70, height: 14, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'cylinder' }));
-  // Spark plug stub
-  cyl.appendChild(ns('rect', { x: 635, y: 248, width: 14, height: 12, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
-  svg.appendChild(cyl);
-
-  // ─ Exhaust header + muffler ─────────────────────────────────────
-  const ex = ns('g', { 'data-shape': 'exhaust', class: 'ute-shape' });
-  ex.appendChild(ns('path', { d: 'M 625 338 Q 650 390 730 445 L 870 448', fill: 'none', stroke: '#2A2A26', 'stroke-width': 10, 'stroke-linecap': 'round', 'data-shape': 'exhaust' }));
-  ex.appendChild(ns('path', { d: 'M 865 430 L 1050 425 L 1055 465 L 870 470 Z', fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'exhaust', 'data-fillable': '' }));
-  // Slash-cut muffler tip
-  ex.appendChild(ns('line', { x1: 1050, y1: 425, x2: 1055, y2: 465, stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'exhaust' }));
-  // Heat shield slits
-  for (let i = 0; i < 6; i++) {
-    ex.appendChild(ns('line', { x1: 900 + i*22, y1: 440, x2: 918 + i*22, y2: 440, stroke: '#B9B3A4', 'stroke-width': 1.5, 'data-shape': 'exhaust' }));
-  }
-  svg.appendChild(ex);
-
-  // ─ Rear suspension: swingarm + shock ────────────────────────────
-  const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
-  sw.appendChild(ns('path', { d: 'M 710 383 L 955 395 L 960 418 L 715 410 Z', fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'swingarm', 'data-fillable': '' }));
-  sw.appendChild(ns('circle', { cx: 710, cy: 398, r: 10, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'swingarm' }));
-  svg.appendChild(sw);
-
-  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
-  shock.appendChild(ns('line', { x1: 760, y1: 300, x2: 760, y2: 395, stroke: '#B9B3A4', 'stroke-width': 10, 'data-shape': 'rear_shock' }));
-  for (let i = 0; i < 6; i++) {
-    shock.appendChild(ns('line', { x1: 752, y1: 318 + i*11, x2: 768, y2: 328 + i*11, stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'rear_shock' }));
-  }
-  shock.appendChild(ns('rect', { x: 753, y: 294, width: 14, height: 10, fill: '#C2502A', 'data-shape': 'rear_shock' }));
-  shock.appendChild(ns('rect', { x: 753, y: 393, width: 14, height: 10, fill: '#C2502A', 'data-shape': 'rear_shock' }));
-  svg.appendChild(shock);
-
-  // ─ Chain + sprockets ────────────────────────────────────────────
-  const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
-  // Chain upper + lower runs
-  chain.appendChild(ns('line', { x1: 696, y1: 395, x2: 955, y2: 395, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'chain' }));
-  chain.appendChild(ns('line', { x1: 696, y1: 408, x2: 955, y2: 408, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'chain' }));
-  // Chain link hatching
-  for (let x = 700; x < 955; x += 14) {
-    chain.appendChild(ns('line', { x1: x, y1: 393, x2: x, y2: 410, stroke: '#B9B3A4', 'stroke-width': 1, 'data-shape': 'chain' }));
-  }
-  svg.appendChild(chain);
-
-  // Rear sprocket (large, visible behind rear wheel hub area)
-  const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
-  rsp.appendChild(ns('circle', { cx: 955, cy: 400, r: 56, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
-  // Sprocket teeth suggestion
-  for (let i = 0; i < 32; i++) {
-    const a = (i / 32) * 2 * Math.PI;
-    const x1 = 955 + Math.cos(a) * 56;
-    const y1 = 400 + Math.sin(a) * 56;
-    const x2 = 955 + Math.cos(a) * 60;
-    const y2 = 400 + Math.sin(a) * 60;
-    rsp.appendChild(ns('line', { x1, y1, x2, y2, stroke: '#0A0A0A', 'stroke-width': 1.2, 'data-shape': 'rear_sprocket' }));
-  }
-  // Lightening holes
-  for (let i = 0; i < 6; i++) {
-    const a = (i / 6) * 2 * Math.PI + 0.1;
-    rsp.appendChild(ns('circle', { cx: 955 + Math.cos(a)*32, cy: 400 + Math.sin(a)*32, r: 8, fill: '#F6F5F2', stroke: '#0A0A0A', 'data-shape': 'rear_sprocket' }));
-  }
-  svg.appendChild(rsp);
-
-  // ─ Wheels (front + rear) ────────────────────────────────────────
-  function wheel(cx, cy, key) {
-    const g = ns('g', { 'data-shape': key, class: 'ute-shape' });
-    // Tyre
-    g.appendChild(ns('circle', { cx, cy, r: 92, fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': key }));
-    // Tread band
-    g.appendChild(ns('circle', { cx, cy, r: 80, fill: 'none', stroke: '#2A2A26', 'stroke-width': 1, 'data-shape': key }));
-    // Rim
-    g.appendChild(ns('circle', { cx, cy, r: 66, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': key, 'data-fillable': '' }));
-    // Hub
-    g.appendChild(ns('circle', { cx, cy, r: 16, fill: '#4A4642', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': key }));
-    g.appendChild(ns('circle', { cx, cy, r: 4,  fill: '#0A0A0A', 'data-shape': key }));
-    // Twin-spoke wheel (3 pairs = sportbike look)
-    for (let i = 0; i < 3; i++) {
-      const a1 = (i / 3) * 2 * Math.PI;
-      const a2 = a1 + 0.18;
-      g.appendChild(ns('line', { x1: cx + Math.cos(a1)*16, y1: cy + Math.sin(a1)*16, x2: cx + Math.cos(a1)*62, y2: cy + Math.sin(a1)*62, stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': key }));
-      g.appendChild(ns('line', { x1: cx + Math.cos(a2)*16, y1: cy + Math.sin(a2)*16, x2: cx + Math.cos(a2)*62, y2: cy + Math.sin(a2)*62, stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': key }));
-    }
-    return g;
-  }
-  svg.appendChild(wheel(254, 395, 'front_wheel'));
-  svg.appendChild(wheel(955, 400, 'rear_wheel'));
-
-  // Front brake disc + caliper
-  const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
-  brake.appendChild(ns('circle', { cx: 254, cy: 395, r: 48, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 2, 'data-shape': 'brake' }));
-  // Disc venting holes
-  for (let i = 0; i < 10; i++) {
-    const a = (i / 10) * 2 * Math.PI;
-    brake.appendChild(ns('circle', { cx: 254 + Math.cos(a)*42, cy: 395 + Math.sin(a)*42, r: 2, fill: '#0A0A0A', 'data-shape': 'brake' }));
-  }
-  // Caliper
-  brake.appendChild(ns('rect', { x: 296, y: 378, width: 20, height: 34, fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'brake', 'data-fillable': '' }));
-  svg.appendChild(brake);
-
-  // ─ Seat + tail cowl + rear light ────────────────────────────────
-  const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
-  // Rider seat
-  seat.appendChild(ns('path', { d: 'M 700 268 L 790 262 L 820 272 L 710 285 Z', fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat', 'data-fillable': '' }));
-  // Tail / pillion cowl
-  seat.appendChild(ns('path', { d: 'M 820 265 L 915 258 L 930 288 L 800 290 Z', fill: '#F0ECE1', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat' }));
-  svg.appendChild(seat);
-
-  // Rear tail light (small shape, separate part)
-  const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
-  tl.appendChild(ns('path', { d: 'M 912 272 L 940 268 L 944 285 L 915 290 Z', fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'tail_light', 'data-fillable': '' }));
-  svg.appendChild(tl);
-
-  // ─ Battery (behind the engine, under the seat) ──────────────────
-  const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
-  bat.appendChild(ns('rect', { x: 712, y: 300, width: 44, height: 30, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'battery', 'data-fillable': '' }));
-  bat.appendChild(ns('line', { x1: 720, y1: 308, x2: 726, y2: 308, stroke: '#C2502A', 'stroke-width': 2, 'data-shape': 'battery' }));
-  bat.appendChild(ns('line', { x1: 742, y1: 308, x2: 748, y2: 308, stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'battery' }));
-  const batText = ns('text', { x: 734, y: 324, fill: '#0A0A0A', 'font-family': 'IBM Plex Mono, monospace', 'font-size': 10, 'font-weight': 600, 'text-anchor': 'middle', 'data-shape': 'battery' });
-  batText.textContent = '12V';
-  bat.appendChild(batText);
-  svg.appendChild(bat);
-
-  // Side stand (visible under engine)
-  const stand = ns('g');
-  stand.appendChild(ns('line', { x1: 575, y1: 455, x2: 595, y2: 490, stroke: '#2A2A26', 'stroke-width': 4 }));
-
-  // Foot pegs
-  stand.appendChild(ns('circle', { cx: 735, cy: 440, r: 4, fill: '#2A2A26' }));
-  stand.appendChild(ns('line', { x1: 735, y1: 440, x2: 755, y2: 445, stroke: '#2A2A26', 'stroke-width': 3 }));
-  stand.appendChild(ns('circle', { cx: 850, cy: 358, r: 3, fill: '#2A2A26' }));
-  svg.appendChild(stand);
-
-  // ─ Callouts (collision-free tiered placement) ───────────────────
-  // Four lanes: 2 above, 2 below. Within each lane, label x positions are
-  // picked so labels never horizontally overlap. Leaders span from the
-  // shape point to the lane y + a small stub into the label base.
-  const callouts = [
-    // Lane 1 — upper outer (above the bike)
-    { key: 'headlight',    sx: 340, sy: 213, lx:  100, lane: 1, label: 'Headlight' },
-    { key: 'instruments',  sx: 415, sy: 158, lx:  335, lane: 1, label: 'Instruments' },
-    { key: 'fuel_tank',    sx: 575, sy: 220, lx:  560, lane: 1, label: 'Fuel tank' },
-    { key: 'seat',         sx: 755, sy: 268, lx:  785, lane: 1, label: 'Seat' },
-    { key: 'tail_light',   sx: 925, sy: 278, lx: 1000, lane: 1, label: 'Tail light' },
-    // Lane 2 — upper inner (above the bike, lower lane)
-    { key: 'forks',        sx: 270, sy: 290, lx:   90, lane: 2, label: 'Forks' },
-    { key: 'air_filter',   sx: 560, sy: 300, lx:  460, lane: 2, label: 'Air filter' },
-    { key: 'carb',         sx: 615, sy: 305, lx:  625, lane: 2, label: 'Carb / EFI' },
-    { key: 'cylinder',     sx: 640, sy: 285, lx:  775, lane: 2, label: 'Cylinder' },
-    // Lane 3 — lower outer (below the bike)
-    { key: 'front_wheel',  sx: 254, sy: 395, lx:  260, lane: 3, label: 'Front wheel' },
-    { key: 'brake',        sx: 306, sy: 405, lx:  395, lane: 3, label: 'Brake disc' },
-    { key: 'engine',       sx: 620, sy: 405, lx:  575, lane: 3, label: 'Engine' },
-    { key: 'chain',        sx: 820, sy: 400, lx:  790, lane: 3, label: 'Chain' },
-    { key: 'swingarm',     sx: 850, sy: 400, lx:  960, lane: 3, label: 'Swingarm' },
-    { key: 'rear_wheel',   sx: 955, sy: 400, lx: 1150, lane: 3, label: 'Rear wheel' },
-    // Lane 4 — lower inner (below the bike, lower lane)
-    { key: 'frame',        sx: 500, sy: 258, lx:  445, lane: 4, label: 'Frame' },
-    { key: 'battery',      sx: 734, sy: 314, lx:  695, lane: 4, label: 'Battery' },
-    { key: 'rear_shock',   sx: 760, sy: 340, lx:  870, lane: 4, label: 'Rear shock' },
-    { key: 'rear_sprocket',sx: 955, sy: 450, lx:  998, lane: 4, label: 'Rear sprocket' },
-    { key: 'exhaust',      sx: 950, sy: 450, lx: 1140, lane: 4, label: 'Exhaust' },
-  ];
-  // Lane y positions (y=0 at top of the 1200×590 viewBox)
-  const laneY = { 1: 28, 2: 70, 3: 520, 4: 560 };
-  const gc = ns('g', { id: 'ute-callouts' });
-  callouts.forEach((c) => {
-    const ly = laneY[c.lane];
-    const grp = ns('g', { class: 'ute-callout' + (S.selected_part === c.key ? ' is-on' : ''), 'data-part': c.key });
-    // Leader: from shape point → vertical stub to lane
-    const d = `M ${c.sx} ${c.sy} L ${c.lx} ${ly + (c.lane <= 2 ? 10 : -10)}`;
-    grp.appendChild(ns('path', { class: 'ute-callout-leader', d }));
-    grp.appendChild(ns('circle', { class: 'ute-callout-dot', cx: c.sx, cy: c.sy, r: 3 }));
-    const label = ns('text', { class: 'ute-callout-label', x: c.lx, y: ly, 'text-anchor': 'middle' });
-    label.textContent = c.label.toUpperCase();
-    grp.appendChild(label);
-    gc.appendChild(grp);
+function wireModeSwitch() {
+  ROOT.querySelectorAll('.ute-mode-switch button').forEach((b) => {
+    b.addEventListener('click', () => switchMode(b.getAttribute('data-mode')));
   });
-  svg.appendChild(gc);
-
-  // Wire shape + callout clicks
-  svg.querySelectorAll('[data-shape]').forEach((el) => {
-    el.addEventListener('click', (ev) => {
-      ev.stopPropagation();
-      const k = el.getAttribute('data-shape');
-      selectPart(k);
-    });
-  });
-  svg.querySelectorAll('.ute-callout').forEach((grp) => {
-    grp.addEventListener('click', (ev) => {
-      ev.stopPropagation();
-      selectPart(grp.getAttribute('data-part'));
-    });
-  });
-
-  // Apply highlight for current selection
-  applyMotoHighlight();
-}
-
-function applyMotoHighlight() {
-  const svg = ROOT.querySelector('#ute-moto');
-  if (!svg) return;
-  svg.querySelectorAll('.ute-shape').forEach((el) => el.classList.remove('is-highlight'));
-  if (!S.selected_part) return;
-  svg.querySelectorAll(`[data-shape="${S.selected_part}"]`).forEach((el) => {
-    if (el.classList && el.classList.contains('ute-shape')) {
-      el.classList.add('is-highlight');
-    }
-  });
-  svg.querySelectorAll('.ute-callout').forEach((grp) => grp.classList.toggle('is-on', grp.getAttribute('data-part') === S.selected_part));
-}
-
-// ───────────────────────── Engine SVG ────────────────────────────
-let ENGINE_PATHS = {};
-
-function mountEngineSVG() {
-  const svg = ROOT.querySelector('#ute-engine');
-  if (!svg) return;
-  svg.innerHTML = '';
-  const g = ns('g', { id: 'ute-engine-g' });
-
-  // Defs for flow arrowheads
-  const defs = ns('defs');
-  defs.appendChild(arrowMarker('ute-arr-intake', '#3E6FB7'));
-  defs.appendChild(arrowMarker('ute-arr-exhaust', '#7A6E60'));
-  defs.appendChild(arrowMarker('ute-arr-fire', '#C2502A'));
-  g.appendChild(defs);
-
-  // Crank circle (dashed guide)
-  g.appendChild(ns('circle', { cx: 450, cy: 560, r: 70, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 1, 'stroke-dasharray': '4 4' }));
-
-  // Crankcase (box) — shape with data-shape
-  g.appendChild(ns('rect', { x: 320, y: 500, width: 260, height: 190, fill: '#EFEAE0', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'engine', class: 'ute-shape', 'data-fillable': '' }));
-
-  // Cylinder barrel
-  g.appendChild(ns('rect', { x: 400, y: 180, width: 100, height: 340, fill: '#FFFFFF', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'cylinder', class: 'ute-shape', 'data-fillable': '' }));
-  // Cooling fins
-  for (let i = 0; i < 8; i++) {
-    g.appendChild(ns('line', { x1: 376, y1: 210 + i*34, x2: 400, y2: 210 + i*34, stroke: '#0A0A0A', 'stroke-width': 1, 'data-shape': 'cylinder' }));
-    g.appendChild(ns('line', { x1: 500, y1: 210 + i*34, x2: 524, y2: 210 + i*34, stroke: '#0A0A0A', 'stroke-width': 1, 'data-shape': 'cylinder' }));
-  }
-
-  // Head (cylinder head casting)
-  g.appendChild(ns('path', { d: 'M 395 180 L 395 110 Q 395 90 415 90 L 485 90 Q 505 90 505 110 L 505 180 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'cylinder', class: 'ute-shape', 'data-fillable': '' }));
-  // Spark plug (stem + body) — this is clickable as a separate part
-  const sparkGrp = ns('g', { 'data-shape': 'spark_plug', class: 'ute-shape' });
-  sparkGrp.appendChild(ns('rect', { x: 440, y: 50, width: 20, height: 50, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'spark_plug', 'data-fillable': '' }));
-  sparkGrp.appendChild(ns('rect', { x: 437, y: 40, width: 26, height: 10, fill: '#2A2A26', 'data-shape': 'spark_plug' }));
-  sparkGrp.appendChild(ns('line', { id: 'ute-spark', x1: 450, y1: 100, x2: 450, y2: 115, stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'spark_plug' }));
-  sparkGrp.appendChild(ns('circle', { id: 'ute-spark-flash', cx: 450, cy: 118, r: 0, fill: '#E2A93B', 'data-shape': 'spark_plug' }));
-  g.appendChild(sparkGrp);
-
-  // In-cylinder gas fill (updates per frame)
-  const gas = ns('rect', { id: 'ute-gas', x: 402, y: 180, width: 96, height: 300, fill: '#D8E3F0', opacity: 0.72 });
-  g.appendChild(gas);
-
-  // Gas-flow arrows (hidden/shown per stroke) — must be above gas, below piston
-  // 4T intake path: carb → intake runner → down past intake valve
-  g.appendChild(ns('path', { id: 'ute-flow-intake', class: 'ute-flow', d: 'M 240 100 L 320 100 L 350 115 L 410 135 L 418 170 L 425 220', 'marker-end': 'url(#ute-arr-intake)' }));
-  // 4T exhaust path: cylinder → exhaust port up → exhaust runner → out
-  g.appendChild(ns('path', { id: 'ute-flow-exhaust', class: 'ute-flow is-exhaust', d: 'M 475 220 L 482 170 L 490 135 L 550 115 L 580 100 L 660 100', 'marker-end': 'url(#ute-arr-exhaust)' }));
-
-  // 2T transfer flow (crankcase → up transfer port into cylinder)
-  g.appendChild(ns('path', { id: 'ute-flow-transfer', class: 'ute-flow', d: 'M 350 600 L 350 465 L 395 465 L 402 445', 'marker-end': 'url(#ute-arr-intake)' }));
-  // 2T exhaust port flow (out exhaust port)
-  g.appendChild(ns('path', { id: 'ute-flow-port-ex', class: 'ute-flow is-exhaust', d: 'M 498 450 L 540 450 L 580 440 L 640 420', 'marker-end': 'url(#ute-arr-exhaust)' }));
-  // 2T reed valve inflow (fresh charge into crankcase)
-  g.appendChild(ns('path', { id: 'ute-flow-reed', class: 'ute-flow', d: 'M 220 600 L 300 600', 'marker-end': 'url(#ute-arr-intake)' }));
-  // Combustion "fire" burst
-  g.appendChild(ns('path', { id: 'ute-flow-fire', class: 'ute-flow is-fire', d: 'M 450 170 L 440 220 M 450 170 L 460 220 M 450 170 L 430 215 M 450 170 L 470 215', 'stroke-width': 4 }));
-
-  if (S.mode === '4t') {
-    // Valve ports (intake left, exhaust right) — clickable as separate parts
-    const vIn = ns('g', { 'data-shape': 'valve_in', class: 'ute-shape' });
-    vIn.appendChild(ns('rect', { x: 410, y: 100, width: 30, height: 80, fill: 'none', stroke: '#0A0A0A', 'data-shape': 'valve_in' }));
-    vIn.appendChild(ns('path', { d: 'M 410 140 L 350 130 L 350 100 L 310 100', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'valve_in' }));
-    vIn.appendChild(ns('rect', { id: 'ute-valve-in', x: 408, y: 170, width: 34, height: 10, fill: '#2A2A26', 'data-shape': 'valve_in' }));
-    g.appendChild(vIn);
-
-    const vEx = ns('g', { 'data-shape': 'valve_ex', class: 'ute-shape' });
-    vEx.appendChild(ns('rect', { x: 460, y: 100, width: 30, height: 80, fill: 'none', stroke: '#0A0A0A', 'data-shape': 'valve_ex' }));
-    vEx.appendChild(ns('path', { d: 'M 490 140 L 550 130 L 550 100 L 590 100', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'valve_ex' }));
-    vEx.appendChild(ns('rect', { id: 'ute-valve-ex', x: 458, y: 170, width: 34, height: 10, fill: '#2A2A26', 'data-shape': 'valve_ex' }));
-    g.appendChild(vEx);
-
-    // Labels for intake/exhaust
-    g.appendChild(txt(240, 92, 'FROM CARB', 'start'));
-    g.appendChild(txt(660, 92, 'TO EXHAUST', 'start'));
-  } else {
-    // 2-stroke: ports in the cylinder wall
-    const pEx = ns('g', { 'data-shape': 'port_ex', class: 'ute-shape' });
-    pEx.appendChild(ns('rect', { id: 'ute-port-ex', x: 490, y: 430, width: 20, height: 50, fill: '#7A6E60', stroke: '#0A0A0A', 'data-shape': 'port_ex', 'data-fillable': '' }));
-    pEx.appendChild(ns('path', { d: 'M 510 455 L 580 455 L 580 420 L 640 420', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'port_ex' }));
-    g.appendChild(pEx);
-
-    const pTr = ns('g', { 'data-shape': 'port_tr', class: 'ute-shape' });
-    pTr.appendChild(ns('rect', { id: 'ute-port-tr', x: 390, y: 440, width: 20, height: 50, fill: '#3E6FB7', stroke: '#0A0A0A', 'data-shape': 'port_tr', 'data-fillable': '' }));
-    pTr.appendChild(ns('path', { d: 'M 390 465 L 340 465 L 340 580 L 320 580', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'port_tr' }));
-    g.appendChild(pTr);
-
-    // Reed valve box
-    const reed = ns('g', { 'data-shape': 'carb', class: 'ute-shape' });
-    reed.appendChild(ns('rect', { x: 220, y: 580, width: 80, height: 40, fill: '#FFFFFF', stroke: '#0A0A0A', 'data-shape': 'carb', 'data-fillable': '' }));
-    reed.appendChild(ns('path', { d: 'M 220 590 L 240 600 L 220 610', fill: 'none', stroke: '#0A0A0A', 'data-shape': 'carb' }));
-    g.appendChild(reed);
-    g.appendChild(txt(215, 572, 'REED / CARB', 'end'));
-    g.appendChild(txt(645, 415, 'EXHAUST', 'start'));
-  }
-
-  // Connecting rod (updated per frame)
-  g.appendChild(ns('line', { id: 'ute-conrod', x1: 450, y1: 440, x2: 450, y2: 560, stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'conrod', class: 'ute-shape' }));
-
-  // Piston (updated per frame)
-  g.appendChild(ns('rect', { id: 'ute-piston', x: 402, y: 380, width: 96, height: 70, fill: '#D8D4CA', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'piston', class: 'ute-shape', 'data-fillable': '' }));
-  // Piston rings
-  g.appendChild(ns('line', { id: 'ute-ring-1', x1: 402, y1: 390, x2: 498, y2: 390, stroke: '#0A0A0A', 'data-shape': 'piston' }));
-  g.appendChild(ns('line', { id: 'ute-ring-2', x1: 402, y1: 395, x2: 498, y2: 395, stroke: '#0A0A0A', 'data-shape': 'piston' }));
-
-  // Crank throw + flywheel
-  const crankGrp = ns('g', { 'data-shape': 'crankshaft', class: 'ute-shape' });
-  crankGrp.appendChild(ns('circle', { id: 'ute-crankpin', cx: 450, cy: 560, r: 8, fill: '#0A0A0A', 'data-shape': 'crankshaft' }));
-  crankGrp.appendChild(ns('circle', { cx: 450, cy: 560, r: 3, fill: '#F6F5F2', 'data-shape': 'crankshaft' }));
-  crankGrp.appendChild(ns('circle', { cx: 450, cy: 560, r: 86, fill: 'none', stroke: '#0A0A0A', 'data-shape': 'crankshaft' }));
-  crankGrp.appendChild(ns('circle', { cx: 450, cy: 560, r: 4, fill: '#0A0A0A', 'data-shape': 'crankshaft' }));
-  g.appendChild(crankGrp);
-
-  svg.appendChild(g);
-
-  ENGINE_PATHS = {
-    piston: svg.querySelector('#ute-piston'),
-    ring1: svg.querySelector('#ute-ring-1'),
-    ring2: svg.querySelector('#ute-ring-2'),
-    conrod: svg.querySelector('#ute-conrod'),
-    crankpin: svg.querySelector('#ute-crankpin'),
-    gas: svg.querySelector('#ute-gas'),
-    valveIn: svg.querySelector('#ute-valve-in'),
-    valveEx: svg.querySelector('#ute-valve-ex'),
-    portEx: svg.querySelector('#ute-port-ex'),
-    portTr: svg.querySelector('#ute-port-tr'),
-    sparkFlash: svg.querySelector('#ute-spark-flash'),
-    flowIntake: svg.querySelector('#ute-flow-intake'),
-    flowExhaust: svg.querySelector('#ute-flow-exhaust'),
-    flowTransfer: svg.querySelector('#ute-flow-transfer'),
-    flowPortEx: svg.querySelector('#ute-flow-port-ex'),
-    flowReed: svg.querySelector('#ute-flow-reed'),
-    flowFire: svg.querySelector('#ute-flow-fire'),
-  };
-
-  // Wire shape clicks on engine (piston, con-rod, crankshaft, cylinder, head, spark, valves, ports)
-  svg.querySelectorAll('[data-shape]').forEach((el) => {
-    el.addEventListener('click', (ev) => {
-      ev.stopPropagation();
-      selectPart(el.getAttribute('data-shape'));
-    });
-  });
-  applyEngineHighlight();
-}
-
-function arrowMarker(id, color) {
-  const m = ns('marker', { id, viewBox: '0 0 12 12', refX: 10, refY: 6, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' });
-  const p = ns('path', { d: 'M 0 0 L 12 6 L 0 12 Z', fill: color });
-  m.appendChild(p);
-  return m;
-}
-
-function applyEngineHighlight() {
-  const svg = ROOT.querySelector('#ute-engine');
-  if (!svg) return;
-  svg.querySelectorAll('.ute-shape').forEach((el) => el.classList.remove('is-highlight'));
-  if (!S.selected_part) return;
-  svg.querySelectorAll(`[data-shape="${S.selected_part}"]`).forEach((el) => {
-    if (el.classList && el.classList.contains('ute-shape')) {
-      el.classList.add('is-highlight');
-    }
-  });
-}
-
-function updateEngineSVG() {
-  if (!ENGINE_PATHS.piston) return;
-  const cycle = (S.mode === '4t') ? 720 : 360;
-  const shaftDeg = S.crank_deg % 360;
-  const theta = shaftDeg * Math.PI / 180;
-  const crankR = 70;
-  const centreX = 450, centreY = 560;
-  const pinX = centreX + crankR * Math.cos(theta - Math.PI/2);
-  const pinY = centreY + crankR * Math.sin(theta - Math.PI/2);
-  const rodLen = 180;
-  const pistonPinY = centreY - Math.sqrt(rodLen*rodLen - Math.pow(pinX - centreX, 2));
-  const pistonTopY = pistonPinY - 60;
-  const topBound = 180, bottomBound = 420;
-  const pistonY = Math.max(topBound, Math.min(bottomBound, pistonTopY));
-
-  ENGINE_PATHS.piston.setAttribute('y', pistonY);
-  ENGINE_PATHS.ring1.setAttribute('y1', pistonY + 10); ENGINE_PATHS.ring1.setAttribute('y2', pistonY + 10);
-  ENGINE_PATHS.ring2.setAttribute('y1', pistonY + 15); ENGINE_PATHS.ring2.setAttribute('y2', pistonY + 15);
-  ENGINE_PATHS.conrod.setAttribute('x1', 450); ENGINE_PATHS.conrod.setAttribute('y1', pistonY + 60);
-  ENGINE_PATHS.conrod.setAttribute('x2', pinX); ENGINE_PATHS.conrod.setAttribute('y2', pinY);
-  ENGINE_PATHS.crankpin.setAttribute('cx', pinX); ENGINE_PATHS.crankpin.setAttribute('cy', pinY);
-
-  ENGINE_PATHS.gas.setAttribute('y', 180);
-  ENGINE_PATHS.gas.setAttribute('height', Math.max(2, pistonY - 180));
-
-  const strokeInfo = currentStroke(S.crank_deg, S.mode);
-  const gasFill = {
-    'intake':     '#D8E3F0',
-    'compression':'#DAD3C1',
-    'power':      '#F2CDB9',
-    'exhaust':    '#D7D1C4',
-    'scavenge':   '#CDE1EE',
-  }[strokeInfo.s] || '#D8E3F0';
-  ENGINE_PATHS.gas.setAttribute('fill', gasFill);
-
-  // Gas-flow arrow visibility per stroke
-  const show = (el, on) => el && el.classList.toggle('is-on', !!on);
-  if (S.mode === '4t') {
-    show(ENGINE_PATHS.flowIntake, strokeInfo.s === 'intake');
-    show(ENGINE_PATHS.flowExhaust, strokeInfo.s === 'exhaust');
-    show(ENGINE_PATHS.flowTransfer, false);
-    show(ENGINE_PATHS.flowPortEx, false);
-    show(ENGINE_PATHS.flowReed, false);
-    // Fire bursts at start of power stroke
-    const nearPower = (S.crank_deg > 355 && S.crank_deg < 420);
-    show(ENGINE_PATHS.flowFire, nearPower);
-    // Valve lift
-    const vi = (strokeInfo.s === 'intake')  ? 10 : 0;
-    const ve = (strokeInfo.s === 'exhaust') ? 10 : 0;
-    ENGINE_PATHS.valveIn.setAttribute('y', 170 + vi);
-    ENGINE_PATHS.valveEx.setAttribute('y', 170 + ve);
-  } else {
-    show(ENGINE_PATHS.flowIntake, false);
-    show(ENGINE_PATHS.flowExhaust, false);
-    // 2T: ports uncovered when piston drops below them
-    const exUncovered = (pistonY + 60) > 430;
-    const trUncovered = (pistonY + 60) > 440;
-    if (ENGINE_PATHS.portEx) ENGINE_PATHS.portEx.setAttribute('fill-opacity', exUncovered ? 1 : 0.25);
-    if (ENGINE_PATHS.portTr) ENGINE_PATHS.portTr.setAttribute('fill-opacity', trUncovered ? 1 : 0.25);
-    show(ENGINE_PATHS.flowTransfer, trUncovered && strokeInfo.s === 'scavenge');
-    show(ENGINE_PATHS.flowPortEx, exUncovered && (strokeInfo.s === 'exhaust' || strokeInfo.s === 'scavenge'));
-    show(ENGINE_PATHS.flowReed, strokeInfo.s === 'compression' || strokeInfo.s === 'power');
-    const nearPower = (S.crank_deg > -5 && S.crank_deg < 25);
-    show(ENGINE_PATHS.flowFire, nearPower);
-  }
-
-  // Spark flash
-  const sparkDeg = (S.mode === '4t') ? 360 : 0;
-  const dSpark = Math.abs(((S.crank_deg - sparkDeg + cycle) % cycle));
-  const flash = (dSpark < 15 || dSpark > cycle - 15) ? 10 : 0;
-  ENGINE_PATHS.sparkFlash.setAttribute('r', flash);
-
-  // Timing needle
-  const needle = ROOT.querySelector('#ute-timing-needle');
-  if (needle) needle.style.left = (100 * S.crank_deg / cycle) + '%';
-
-  // Stroke badge + caption
-  const badge = ROOT.querySelector('#ute-stroke-badge');
-  if (badge) { badge.textContent = strokeInfo.label; badge.setAttribute('data-s', strokeInfo.s); }
-  const caption = ROOT.querySelector('#ute-caption-body');
-  if (caption) caption.textContent = strokeInfo.caption;
-  const strokeBody = ROOT.querySelector('#ute-stroke-body');
-  if (strokeBody) strokeBody.textContent = strokeInfo.caption;
-
-  // Live-stats panel refresh (cheap, numbers only)
-  if (S.selected_part) updateLivePanel();
-}
-
-function currentStroke(deg, mode) {
-  if (mode === '4t') {
-    if (deg < 180) return { s:'intake', label:'Intake', caption:'Intake valve open; piston descending. Fresh air–fuel charge rushes in.' };
-    if (deg < 360) return { s:'compression', label:'Compression', caption:'Both valves shut. Piston rising, charge compressing — pressure and temperature climbing fast.' };
-    if (deg < 540) return { s:'power', label:'Power', caption:'Spark at TDC. Expanding gas drives the piston down. The only stroke that does work on the crank.' };
-    return { s:'exhaust', label:'Exhaust', caption:'Exhaust valve opens. Rising piston pushes burnt gas out.' };
-  }
-  if (deg < 110) return { s:'power', label:'Power', caption:'Spark at TDC. Burning gas pushes the piston down. Below, in the crankcase, fresh charge is being compressed.' };
-  if (deg < 180) return { s:'exhaust', label:'Blowdown', caption:'Piston uncovers the exhaust port. Burnt gas blows down before the transfer port opens.' };
-  if (deg < 230) return { s:'scavenge', label:'Scavenge', caption:'Transfer port opens. Fresh charge from the crankcase sweeps up, pushing out remaining exhaust.' };
-  return { s:'compression', label:'Compression', caption:'Piston rises past the ports. Charge above the piston is compressed; a new charge is drawn into the crankcase through the reed valve.' };
-}
-
-// ───────────────────────── Live-state panel ──────────────────────
-function updateLivePanel() {
-  const slot = ROOT.querySelector('#ute-live-slot');
-  if (!slot) return;
-  if (!S.selected_part) {
-    slot.innerHTML = `<div class="ute-live-empty">Click any part — on the diagram above, on the engine below, or in the Part catalogue — to see its live state.</div>`;
-    return;
-  }
-  const p = PARTS[S.selected_part];
-  if (!p) { slot.innerHTML = ''; return; }
-  const stats = livePartStats(S.selected_part);
-  const statsHTML = stats.map((st) => `<div class="stat"><span class="k">${st.k}</span><span class="v">${st.v}</span></div>`).join('');
-  slot.innerHTML = `
-    <div class="ute-live" role="status" aria-live="polite">
-      <div>
-        <span class="ute-live-k">${p.tag}</span>
-        <h3>${p.name}</h3>
-        <p class="ute-live-desc">${p.desc}</p>
-      </div>
-      <div class="ute-live-stats">${statsHTML}</div>
-      <button class="ute-live-close" type="button" aria-label="Clear selection" data-live-close>×</button>
-    </div>`;
-  const btn = slot.querySelector('[data-live-close]');
-  if (btn) btn.addEventListener('click', () => selectPart(null));
-}
-
-function livePartStats(key) {
-  const cycle = (S.mode === '4t') ? 720 : 360;
-  const stroke = currentStroke(S.crank_deg, S.mode).s;
-  const pistonSpeedMean = (2 * S.stroke_mm/1000 * S.rpm / 60);  // m/s
-  const disp = displacementCC(S.bore_mm, S.stroke_mm);
-  const wheelRPM = (S.rpm / GEAR.primary / GEAR.gear3 / GEAR.final);
-  const wheelKmh = (wheelRPM / 60) * (2 * Math.PI * GEAR.wheel_r_m) * 3.6;
-  const chainMps = (wheelRPM / 60) * (2 * Math.PI * 0.11);  // ~110 mm sprocket pitch radius
-  // Rough gas pressure state (bar) — illustrative only
-  const pressBar = ({intake: 0.9, compression: 10, power: 50, exhaust: 1.3, scavenge: 1.1})[stroke] || 1;
-  const tempC    = ({intake: 60, compression: 350, power: 2000, exhaust: 850, scavenge: 300})[stroke] || 100;
-
-  switch (key) {
-    case 'piston':
-      return [
-        { k: 'Position', v: `${((S.crank_deg % 360) / 360 * 100).toFixed(0)}% of cycle` },
-        { k: 'Mean speed', v: `${pistonSpeedMean.toFixed(1)} m/s` },
-        { k: 'Direction', v: (stroke === 'intake' || stroke === 'power') ? 'descending' : 'ascending' },
-        { k: 'Stroke', v: `${S.stroke_mm} mm` },
-      ];
-    case 'crankshaft':
-      return [
-        { k: 'Shaft angle', v: `${(S.crank_deg % 360).toFixed(0)}°` },
-        { k: 'Shaft RPM', v: `${Math.round(S.rpm).toLocaleString('en-GB')}` },
-        { k: 'Rev / sec', v: `${(S.rpm/60).toFixed(1)}` },
-      ];
-    case 'conrod':
-      return [
-        { k: 'Length', v: `~${Math.round(S.stroke_mm * 1.75)} mm` },
-        { k: 'Big-end angle', v: `${(S.crank_deg % 360).toFixed(0)}°` },
-      ];
-    case 'cylinder':
-      return [
-        { k: 'Bore', v: `${S.bore_mm} mm` },
-        { k: 'Displacement', v: `${Math.round(disp)} cc` },
-        { k: 'Gas state', v: stroke.toUpperCase() },
-        { k: 'Est. pressure', v: `${pressBar.toFixed(1)} bar` },
-        { k: 'Est. temp', v: `${tempC} °C` },
-      ];
-    case 'spark_plug':
-      {
-        const sparkDeg = (S.mode === '4t') ? 360 : 0;
-        const toSpark = ((sparkDeg - S.crank_deg + cycle) % cycle);
-        return [
-          { k: 'State', v: toSpark < 15 ? 'FIRING' : 'dwell' },
-          { k: 'Next fire in', v: `${toSpark.toFixed(0)}° crank` },
-          { k: 'Fires per rev', v: S.mode === '4t' ? '0.5' : '1.0' },
-        ];
-      }
-    case 'valve_in':
-      return [
-        { k: 'State', v: stroke === 'intake' ? 'OPEN' : 'closed' },
-        { k: 'Lift (max)', v: '~10 mm' },
-        { k: 'Open window', v: '~235° crank' },
-      ];
-    case 'valve_ex':
-      return [
-        { k: 'State', v: stroke === 'exhaust' ? 'OPEN' : 'closed' },
-        { k: 'Lift (max)', v: '~10 mm' },
-        { k: 'Open window', v: '~235° crank' },
-      ];
-    case 'port_ex':
-      return [
-        { k: 'State', v: (stroke === 'exhaust' || stroke === 'scavenge') ? 'OPEN' : 'closed' },
-        { k: 'Open window', v: '~140° crank' },
-      ];
-    case 'port_tr':
-      return [
-        { k: 'State', v: stroke === 'scavenge' ? 'OPEN' : 'closed' },
-        { k: 'Open window', v: '~100° crank' },
-      ];
-    case 'engine':
-      return [
-        { k: 'Displacement', v: `${Math.round(disp)} cc` },
-        { k: 'Mode', v: S.mode.toUpperCase() },
-        { k: 'RPM', v: `${Math.round(S.rpm).toLocaleString('en-GB')}` },
-      ];
-    case 'carb':
-      {
-        // Rough mass flow at idle AFR, order-of-magnitude only
-        const volPerSec = disp/1e6 * (S.rpm / 60) * (S.mode === '4t' ? 0.5 : 1);
-        const airKgS = volPerSec * 1.2 * 0.85;
-        const fuelGS = airKgS / 14.7 * 1000;
-        return [
-          { k: 'Air flow', v: `${(airKgS*1000).toFixed(1)} g/s` },
-          { k: 'Fuel flow', v: `${fuelGS.toFixed(2)} g/s` },
-          { k: 'Target AFR', v: `14.7 : 1` },
-        ];
-      }
-    case 'fuel_tank':
-      return [
-        { k: 'Typical capacity', v: `12–18 L` },
-        { k: 'Energy density', v: `~32 MJ / L` },
-      ];
-    case 'air_filter':
-      return [
-        { k: 'Flow', v: 'passes air to carb/EFI' },
-        { k: 'When clogged', v: 'engine runs rich' },
-      ];
-    case 'exhaust':
-      return [
-        { k: 'Gas flow', v: (stroke === 'exhaust' || stroke === 'scavenge') ? 'ACTIVE' : 'residual' },
-        { k: 'Peak temp', v: `~850 °C` },
-      ];
-    case 'battery':
-      return [
-        { k: 'Nominal', v: '12 V' },
-        { k: 'Typical', v: '8–14 Ah' },
-      ];
-    case 'instruments':
-      return [
-        { k: 'RPM shown', v: `${Math.round(S.rpm).toLocaleString('en-GB')}` },
-        { k: 'Speed', v: `${wheelKmh.toFixed(0)} km/h` },
-      ];
-    case 'headlight':
-      return [
-        { k: 'Typical draw', v: '55 W' },
-        { k: 'Power source', v: 'battery' },
-      ];
-    case 'tail_light':
-      return [
-        { k: 'Typical draw', v: '5 W (position) / 21 W (brake)' },
-      ];
-    case 'seat':
-      return [{ k: 'Role', v: 'rider ergonomics + chassis load point' }];
-    case 'frame':
-      return [{ k: 'Role', v: 'structural backbone + engine mount' }];
-    case 'forks':
-      return [
-        { k: 'Travel', v: '~120 mm' },
-        { k: 'Damping', v: 'hydraulic' },
-      ];
-    case 'rear_shock':
-      return [
-        { k: 'Travel', v: '~130 mm' },
-        { k: 'Spring preload', v: 'adjustable' },
-      ];
-    case 'swingarm':
-      return [{ k: 'Role', v: 'holds rear wheel, pivots at frame' }];
-    case 'brake':
-      return [
-        { k: 'Role', v: 'converts KE → heat' },
-        { k: 'Pads', v: 'organic / sintered' },
-      ];
-    case 'chain':
-      return [
-        { k: 'Linear speed', v: `${chainMps.toFixed(1)} m/s` },
-        { k: 'Pitch', v: '525 (typ.)' },
-      ];
-    case 'rear_sprocket':
-      return [
-        { k: 'Rotation', v: `${wheelRPM.toFixed(0)} rpm` },
-        { k: 'Final ratio', v: `${GEAR.final.toFixed(2)}` },
-      ];
-    case 'front_wheel':
-      return [
-        { k: 'Rotation', v: `${wheelRPM.toFixed(0)} rpm` },
-        { k: 'Road speed', v: `${wheelKmh.toFixed(0)} km/h` },
-      ];
-    case 'rear_wheel':
-      return [
-        { k: 'Rotation', v: `${wheelRPM.toFixed(0)} rpm` },
-        { k: 'Road speed', v: `${wheelKmh.toFixed(0)} km/h` },
-        { k: 'Role', v: 'drives the bike' },
-      ];
-    default:
-      return [{ k: 'See description', v: '→' }];
-  }
-}
-
-// ───────────────────────── Selection + chrome ────────────────────
-function selectPart(key) {
-  S.selected_part = (S.selected_part === key || key == null) ? null : key;
-  // Update parts list highlight
-  ROOT.querySelectorAll('[data-part]').forEach((b) => {
-    b.classList.toggle('is-on', b.getAttribute('data-part') === S.selected_part);
-  });
-  // Highlight on both diagrams
-  applyMotoHighlight();
-  applyEngineHighlight();
-  updateLivePanel();
-  // Scroll the overview into view on mobile so the live panel is visible
-  const overview = ROOT.querySelector('.ute-overview');
-  if (overview && window.matchMedia('(max-width: 960px)').matches) {
-    overview.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
 }
 
 function wireChromeLocal() {
-  // Mode switch
-  ROOT.querySelectorAll('.ute-mode-switch button').forEach((b) => {
-    b.addEventListener('click', () => {
-      const m = b.getAttribute('data-mode');
-      if (m === S.mode) return;
-      S.mode = m;
-      S.crank_deg = 0;
-      render();
-    });
-  });
   const rt = ROOT.querySelector('.ute-run-toggle');
   if (rt) rt.addEventListener('click', toggleRun);
   const h = ROOT.querySelector('.ute-help');
   if (h) h.addEventListener('click', openHelp);
-  // Collapsible params panel
-  const paramsPanel = ROOT.querySelector('#ute-params-panel .ute-panel-h');
-  if (paramsPanel) paramsPanel.addEventListener('click', () => {
-    paramsPanel.closest('.ute-collapsible').classList.toggle('is-closed');
-  });
 }
 
 function wireChromeGlobal() {
@@ -1127,36 +170,6 @@ function wireChromeGlobal() {
   });
 }
 
-function wireControls() {
-  // Parameter sliders
-  ROOT.querySelectorAll('input[type="range"][data-param]').forEach((inp) => {
-    inp.addEventListener('input', () => {
-      const key = inp.getAttribute('data-param');
-      S[key] = parseFloat(inp.value);
-      const span = ROOT.querySelector(`[data-param-value="${key}"]`);
-      if (span) {
-        const v = S[key];
-        const step = parseFloat(inp.getAttribute('step')) || 1;
-        span.textContent = (step < 1) ? v.toFixed(1) : Math.round(v).toLocaleString('en-GB');
-      }
-      updateReadouts();
-      if (S.selected_part) updateLivePanel();
-    });
-  });
-  // Running controls
-  ROOT.querySelectorAll('[data-run]').forEach((b) => {
-    b.addEventListener('click', () => {
-      const act = b.getAttribute('data-run');
-      if (act === 'toggle') toggleRun();
-      else if (act === 'step') { S.crank_deg = (S.crank_deg + 30) % ((S.mode==='4t')?720:360); updateEngineSVG(); }
-    });
-  });
-  // Parts list
-  ROOT.querySelectorAll('[data-part]').forEach((b) => {
-    b.addEventListener('click', () => selectPart(b.getAttribute('data-part')));
-  });
-}
-
 function toggleRun() {
   S.running = !S.running;
   const rt = ROOT.querySelector('.ute-run-toggle');
@@ -1165,770 +178,177 @@ function toggleRun() {
     rt.classList.toggle('is-on', S.running);
     rt.setAttribute('aria-label', S.running ? 'Pause' : 'Play');
   }
-  const btn = ROOT.querySelector('[data-run="toggle"]');
-  if (btn) btn.textContent = S.running ? 'Pause' : 'Play';
   S.last_tick_ms = performance.now();
 }
 
 function openHelp() {
   alert([
-    'Under the Engine — v0.2',
+    'Under the Engine — v0.3',
     '',
-    '• Click any part on the big motorcycle (or on the engine cross-section, or in the Part catalogue). The part highlights and its live state appears below the diagram.',
-    '• Toggle 4-stroke / 2-stroke in the top bar.',
-    '• Space pauses / resumes the animation. Step +30° nudges the crank by hand.',
-    '• Sliders change RPM, bore, stroke and compression — everything downstream recomputes.',
+    '• Pick 4-stroke / 2-stroke / Electric in the top bar — the whole motorcycle changes.',
+    '• Click any labelled part on the overview to open a 3-D close-up with its own controls.',
+    '• Ride the motorcycle at the bottom — hold the throttle, pull the front brake, press the horn.',
+    '• Space pauses / resumes the engine animation.',
     '• Esc clears a selection.',
-    '',
-    'Next release: electric mode (motor + controller + BMS) for a side-by-side with the ICE drivetrain.',
   ].join('\n'));
 }
 
 // ───────────────────────── Loop ─────────────────────────────────
-function startLoop() {
-  S.last_tick_ms = performance.now();
-  requestAnimationFrame(tick);
-}
+function startLoop() { S.last_tick_ms = performance.now(); requestAnimationFrame(tick); }
 function tick(now) {
   const dt = Math.min(0.1, (now - S.last_tick_ms) / 1000);
   S.last_tick_ms = now;
-  if (S.running) {
-    const shaftDegPerSec = (360 * S.rpm / 60) / 60;  // 60× slow-mo
+
+  // Rider throttle feeds engine RPM
+  if (S.rider.throttle > 0.02) {
+    const target = 900 + S.rider.throttle * 100 * 70;
+    S.rpm += (target - S.rpm) * Math.min(1, 2.0 * dt);
+  } else if (!S.rider.kill) {
+    S.rpm += (900 - S.rpm) * Math.min(1, 1.0 * dt);
+  } else {
+    S.rpm = Math.max(0, S.rpm - 1200 * dt);
+  }
+
+  if (S.running && !S.rider.kill && S.rpm > 10) {
+    const shaftDegPerSec = (360 * S.rpm / 60) / 60;    // 60× slow-mo
     const cycleDeg = (S.mode === '4t') ? 720 : 360;
     S.crank_deg = (S.crank_deg + shaftDegPerSec * dt) % cycleDeg;
-    updateEngineSVG();
   }
-  // Component close-up demos tick every frame regardless of main run state
-  updateCurrentDemo(dt);
+
+  // Electric subsystem
+  if (S.mode === 'elec') {
+    const target = S.rider.throttle * 10000;
+    S.elec.rpm += (target - S.elec.rpm) * Math.min(1, 3.0 * dt);
+    const load = S.rider.throttle;
+    S.elec.motor_temp += (60 + load * 60 - S.elec.motor_temp) * 0.3 * dt;
+    S.elec.controller_temp += (50 + load * 40 - S.elec.controller_temp) * 0.3 * dt;
+    S.elec.battery_soc = Math.max(0, S.elec.battery_soc - load * 0.015 * dt);
+    S.elec.torque = load * 95;
+  }
+
+  // Update overview motorcycle wheels (rotation only — nothing moves otherwise)
+  updateOverviewTick(dt);
+
+  // Update any open interactive component view
+  if (S.selected_part && COMPONENT_VIEWS[S.selected_part] && COMPONENT_VIEWS[S.selected_part].update) {
+    COMPONENT_VIEWS[S.selected_part].update(dt);
+  }
+
+  // Rider view (speedo needles, brake light, etc.)
+  updateRiderTick(dt);
+
   requestAnimationFrame(tick);
 }
 
-// ───────────────────────── Outputs ──────────────────────────────
-function updateReadouts() {
-  const reads = ROOT.querySelector('#ute-reads');
-  if (reads) reads.innerHTML = readoutsHTML();
-}
-function displacementCC(bore_mm, stroke_mm) {
-  return (Math.PI / 4) * (bore_mm * bore_mm) * stroke_mm / 1000;
-}
-function approxTorqueNm(disp_cc, mode, cr) {
-  const base = (mode === '4t') ? 10 : 8;
-  const bmep_bar = base * (1 + 0.03 * (cr - 10));
-  const bmep_pa = bmep_bar * 1e5;
-  const V = disp_cc * 1e-6;
-  const nR = (mode === '4t') ? 2 : 1;
-  return bmep_pa * V / (2 * Math.PI * nR);
-}
-
-// ───────────────────────── Parts data ────────────────────────────
-const PARTS = {
-  engine: {
-    name: 'Engine block',
-    tag: 'Combustion',
-    desc: 'The casting that holds the cylinder, crankshaft and transmission. On most motorcycles the engine is a stressed member of the chassis, so the frame bolts directly to it.',
-  },
-  cylinder: {
-    name: 'Cylinder',
-    tag: 'Combustion',
-    desc: 'The sealed tube inside which the piston slides. Combustion happens between the piston crown and the cylinder head above it. Air-cooled cylinders are finned to shed heat.',
-  },
-  piston: {
-    name: 'Piston',
-    tag: 'Combustion',
-    desc: 'The moving plug that seals the combustion chamber. It converts gas pressure into linear force, which the connecting rod turns into torque at the crank. Mean piston speed is a key stress indicator.',
-  },
-  conrod: {
-    name: 'Connecting rod',
-    tag: 'Combustion',
-    desc: 'Links the piston (small end) to the crank pin (big end). It swings as the crank rotates — the geometry is what makes a reciprocating engine turn linear motion into rotation.',
-  },
-  crankshaft: {
-    name: 'Crankshaft',
-    tag: 'Combustion',
-    desc: 'The shaft that collects torque from the con-rod and sends it to the gearbox. Its offset throw sets the stroke; its mass acts as a short-term flywheel between power pulses.',
-  },
-  spark_plug: {
-    name: 'Spark plug',
-    tag: 'Ignition',
-    desc: 'Fires a short electric arc at its tip when the piston is near top-dead-centre on the compression stroke. The spark lights the compressed mixture and starts the power stroke.',
-  },
-  valve_in: {
-    name: 'Intake valve (4T)',
-    tag: 'Gas path',
-    desc: 'Opens on the intake stroke to let fresh charge into the cylinder. Closed during compression and power so the gas stays trapped.',
-  },
-  valve_ex: {
-    name: 'Exhaust valve (4T)',
-    tag: 'Gas path',
-    desc: 'Opens on the exhaust stroke to let burnt gas out as the piston rises. Closed otherwise.',
-  },
-  port_ex: {
-    name: 'Exhaust port (2T)',
-    tag: 'Gas path',
-    desc: 'A rectangular opening in the cylinder wall. The piston itself opens and closes it as it moves. Opens first on the way down for blowdown.',
-  },
-  port_tr: {
-    name: 'Transfer port (2T)',
-    tag: 'Gas path',
-    desc: 'Lets fresh charge rise from the crankcase into the cylinder once the piston uncovers it. Together with the exhaust port, it is what gives a 2-stroke a power stroke every revolution.',
-  },
-  carb: {
-    name: 'Carburetor / fuel injector',
-    tag: 'Fuel',
-    desc: 'Meters fuel into the incoming air. A carburetor uses a venturi to pull fuel in by suction; an injector sprays measured fuel electronically. Both deliver the air–fuel ratio the engine needs (~14.7 : 1 for petrol).',
-  },
-  air_filter: {
-    name: 'Air filter',
-    tag: 'Fuel',
-    desc: 'Removes dust and grit from incoming air before it reaches the cylinder. A blocked filter starves the engine and richens the mixture.',
-  },
-  fuel_tank: {
-    name: 'Fuel tank',
-    tag: 'Fuel',
-    desc: 'Reservoir of petrol between the rider and the engine. Gravity-fed on simple bikes, pump-fed on fuel-injected ones.',
-  },
-  exhaust: {
-    name: 'Exhaust',
-    tag: 'Gas path',
-    desc: 'Carries burnt gas away from the cylinder. A 2-stroke exhaust is tuned (an expansion chamber) so pressure waves help scavenge; a 4-stroke exhaust is a simpler pipe plus a muffler.',
-  },
-  battery: {
-    name: 'Battery',
-    tag: 'Electrical',
-    desc: 'Stores enough charge to turn the starter motor and run the lights before the alternator takes over. Simple kick-start bikes may run with no battery at all.',
-  },
-  instruments: {
-    name: 'Instruments',
-    tag: 'Rider',
-    desc: 'Speedometer, tachometer (RPM) and warning lights. Modern bikes bundle these into one LCD or TFT panel.',
-  },
-  headlight: {
-    name: 'Headlight',
-    tag: 'Rider',
-    desc: 'Front lighting. Drawn from the battery; on older bikes it is driven directly from the alternator and only lights when the engine is running.',
-  },
-  tail_light: {
-    name: 'Tail light',
-    tag: 'Rider',
-    desc: 'Rear position and brake light. Brightens on brake input.',
-  },
-  seat: {
-    name: 'Seat',
-    tag: 'Rider',
-    desc: 'Where the rider sits. Not just comfort — seat height sets how much of the rider\'s weight the chassis has to control under braking and acceleration.',
-  },
-  frame: {
-    name: 'Frame',
-    tag: 'Chassis',
-    desc: 'The structural backbone. Modern frames use the engine as a stressed member, with steel tubes or aluminium beams wrapping around it.',
-  },
-  forks: {
-    name: 'Forks',
-    tag: 'Chassis',
-    desc: 'Front suspension. Telescopic tubes with hydraulic damping that let the front wheel follow the road and absorb braking loads.',
-  },
-  rear_shock: {
-    name: 'Rear shock',
-    tag: 'Chassis',
-    desc: 'Rear suspension. One or two spring-and-damper units mounted between the swingarm and the frame.',
-  },
-  swingarm: {
-    name: 'Swingarm',
-    tag: 'Chassis',
-    desc: 'The hinged arm that holds the rear wheel. Pivots at the frame and moves against the rear shock.',
-  },
-  brake: {
-    name: 'Brake disc + caliper',
-    tag: 'Chassis',
-    desc: 'A steel disc clamped by a hydraulic caliper. Converts kinetic energy to heat. Most bikes have discs front and rear; some have a drum at the rear.',
-  },
-  chain: {
-    name: 'Drive chain',
-    tag: 'Transmission',
-    desc: 'Transfers torque from the gearbox output sprocket to the rear wheel. Needs lubrication and tension adjustment; shaft or belt drives are alternatives.',
-  },
-  rear_sprocket: {
-    name: 'Rear sprocket',
-    tag: 'Transmission',
-    desc: 'The large sprocket bolted to the rear wheel. The ratio between the small output sprocket at the gearbox and this one sets the final-drive gearing.',
-  },
-  front_wheel: {
-    name: 'Front wheel',
-    tag: 'Chassis',
-    desc: 'Supports the front of the bike, steers it, and carries the brake disc. Usually alloy or spoked.',
-  },
-  rear_wheel: {
-    name: 'Rear wheel',
-    tag: 'Chassis',
-    desc: 'Supports the rear of the bike, transmits engine torque to the road, and carries the rear brake disc.',
-  },
-};
-const PART_ORDER = [
-  // Engine internals first (match the stage)
-  'piston', 'conrod', 'crankshaft', 'spark_plug',
-  'valve_in', 'valve_ex', 'port_ex', 'port_tr',
-  'cylinder', 'engine',
-  // Fuel path
-  'carb', 'air_filter', 'fuel_tank',
-  'exhaust',
-  // Electrical / rider
-  'battery', 'instruments', 'headlight', 'tail_light', 'seat',
-  // Chassis
-  'frame', 'forks', 'rear_shock', 'swingarm', 'brake',
-  // Transmission + wheels
-  'chain', 'rear_sprocket', 'front_wheel', 'rear_wheel',
-];
-
-// ───────────────────────── Demo: tabs + stage shell ─────────────
-function demoTabsHTML() {
-  return DEMO_META.map((t) =>
-    `<button type="button" class="ute-demo-tab ${DEMO.active===t.key?'is-on':''}" data-demo="${t.key}">${t.label}</button>`
-  ).join('');
-}
-
-function demoStageHTML() {
-  switch (DEMO.active) {
-    case 'throttle': return throttleStageHTML();
-    case 'ignition': return ignitionStageHTML();
-    case 'gearing':  return gearingStageHTML();
+// ───────────────────────── Selection + highlight ────────────────
+function selectPart(key) {
+  S.selected_part = (S.selected_part === key || key == null) ? null : key;
+  applyMotoHighlight();
+  renderComponentView();
+  const cv = ROOT.querySelector('#ute-cview-slot');
+  if (cv && window.matchMedia('(max-width: 960px)').matches) {
+    cv.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-  return '';
 }
 
-function mountDemoDefs(svgEl) {
-  // Linear gradients used across demos to simulate 3-D metal under
-  // a top-left light source.
-  const defs = ns('defs');
-  const stops = (id, c1, c2, c3) => {
-    const g = ns('linearGradient', { id, x1: 0, y1: 0, x2: 0, y2: 1 });
-    g.appendChild(ns('stop', { offset: '0%',  'stop-color': c1 }));
-    g.appendChild(ns('stop', { offset: '50%', 'stop-color': c2 }));
-    g.appendChild(ns('stop', { offset: '100%','stop-color': c3 }));
-    return g;
-  };
-  const stopsH = (id, c1, c2, c3) => {
-    const g = ns('linearGradient', { id, x1: 0, y1: 0, x2: 1, y2: 0 });
-    g.appendChild(ns('stop', { offset: '0%',  'stop-color': c1 }));
-    g.appendChild(ns('stop', { offset: '50%', 'stop-color': c2 }));
-    g.appendChild(ns('stop', { offset: '100%','stop-color': c3 }));
-    return g;
-  };
-  defs.appendChild(stops('g-tube',     '#8E867A', '#DBD4C4', '#6D675D')); // intake tube (vertical cylindrical sheen)
-  defs.appendChild(stops('g-cyl',      '#C6BFB1', '#F0ECE1', '#7F7A6E')); // engine cylinder barrel
-  defs.appendChild(stops('g-crank',    '#2F2D2A', '#5B574E', '#1A1816')); // crankcase box
-  defs.appendChild(stops('g-coil',     '#5A4F3B', '#8E7E62', '#2F2A20')); // ignition coil
-  defs.appendChild(stops('g-battery',  '#F2EFE7', '#FFFFFF', '#C8C2B4')); // battery body
-  defs.appendChild(stopsH('g-chain',   '#2A2A26', '#5A5852', '#2A2A26')); // chain band
-  defs.appendChild(stops('g-sprocket', '#DAD3C1', '#F2EEE4', '#9B9381')); // sprocket face
-  defs.appendChild(stops('g-wheel',    '#1F1D1A', '#3A3833', '#0A0A0A')); // tyre
-  defs.appendChild(stops('g-rim',      '#D8D1BE', '#F6F2E6', '#8B8371')); // rim
-
-  // Butterfly plate (gold)
-  const bgold = stops('g-gold', '#E8B04B', '#F4D06F', '#A7742A');
-  defs.appendChild(bgold);
-
-  svgEl.appendChild(defs);
+function applyMotoHighlight() {
+  const svg = ROOT.querySelector('#ute-moto');
+  if (!svg) return;
+  svg.querySelectorAll('.ute-shape').forEach((el) => el.classList.remove('is-highlight'));
+  if (!S.selected_part) return;
+  svg.querySelectorAll(`[data-shape="${S.selected_part}"]`).forEach((el) => {
+    if (el.classList && el.classList.contains('ute-shape')) el.classList.add('is-highlight');
+  });
+  svg.querySelectorAll('.ute-callout').forEach((grp) => grp.classList.toggle('is-on', grp.getAttribute('data-part') === S.selected_part));
 }
 
-// ───────────────────────── Throttle demo ─────────────────────────
-function throttleStageHTML() {
-  return `
-    <div class="ute-demo-chip">
-      <div class="ute-demo-chip-dot"></div>
-      <div class="ute-demo-chip-text">
-        <span class="k" id="ute-demo-state">Idle</span>
-        <span class="d" id="ute-demo-desc">The throttle plate is almost closed. Just enough air sneaks past to keep the engine idling.</span>
-      </div>
-      <div class="n" id="ute-demo-rpm">900 rpm</div>
-    </div>
-    <svg class="ute-demo-svg" id="ute-demo-svg" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid meet" aria-label="Throttle demo"></svg>
-    <div class="ute-demo-controls">
-      <button class="ute-demo-action" type="button" id="ute-demo-action" data-action="throttle">GAS</button>
-      <span class="ute-demo-hint">Press and hold</span>
-    </div>`;
-}
-
-function mountThrottleDemo() {
-  const svg = ROOT.querySelector('#ute-demo-svg');
+// ───────────────────────── Overview per-mode SVG ────────────────
+function mountOverviewSVG() {
+  const svg = ROOT.querySelector('#ute-moto');
   if (!svg) return;
   svg.innerHTML = '';
-  mountDemoDefs(svg);
-
-  const g = ns('g');
-
-  // Intake tube — horizontal "cylinder" drawn as a rounded rect with
-  // a vertical gradient to give it a cylindrical sheen.
-  const tubeTop = 110, tubeH = 110, tubeL = 60, tubeR = 480;
-  g.appendChild(ns('rect', { x: tubeL, y: tubeTop, width: tubeR - tubeL, height: tubeH, fill: 'url(#g-tube)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 10 }));
-  // Tube end rings
-  g.appendChild(ns('ellipse', { cx: tubeL + 4, cy: tubeTop + tubeH/2, rx: 14, ry: tubeH/2 - 2, fill: '#2F2A22', stroke: '#0A0A0A', 'stroke-width': 2 }));
-  g.appendChild(ns('ellipse', { cx: tubeR - 4, cy: tubeTop + tubeH/2, rx: 14, ry: tubeH/2 - 2, fill: '#5B574E', stroke: '#0A0A0A', 'stroke-width': 2 }));
-
-  // Butterfly plate — rotates about the horizontal axis (y) passing
-  // through the tube centre. We fake 3-D with an ellipse whose rx
-  // depends on the plate angle (0 = fully open along flow → thin
-  // line; 90 = fully closed → ellipse at max width).
-  const bfx = (tubeL + tubeR) / 2;
-  const bfy = tubeTop + tubeH / 2;
-  g.appendChild(ns('line', { x1: bfx, y1: tubeTop + 6, x2: bfx, y2: tubeTop + tubeH - 6, stroke: '#2A2A26', 'stroke-width': 2 })); // spindle
-  g.appendChild(ns('ellipse', { id: 'ute-bfly', cx: bfx, cy: bfy, rx: 46, ry: tubeH/2 - 10, fill: 'url(#g-gold)', stroke: '#1E150A', 'stroke-width': 2 }));
-
-  // Engine cylinder (upright) on the right
-  const cylX = 540, cylY = 50, cylW = 110, cylH = 230;
-  g.appendChild(ns('rect', { x: cylX, y: cylY, width: cylW, height: cylH, fill: 'url(#g-cyl)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 6 }));
-  // Head cap
-  g.appendChild(ns('rect', { x: cylX - 6, y: cylY - 12, width: cylW + 12, height: 18, fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 2, rx: 4 }));
-  // Spark plug stub
-  g.appendChild(ns('rect', { x: cylX + cylW/2 - 10, y: cylY - 30, width: 20, height: 18, fill: '#B9B3A4', stroke: '#0A0A0A' }));
-  // Intake runner from tube into cylinder (angled)
-  g.appendChild(ns('path', { d: `M ${tubeR - 6} ${bfy - 10} L ${cylX + 4} ${cylY + 50} L ${cylX + 4} ${cylY + 90} L ${tubeR - 6} ${bfy + 10} Z`, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2 }));
-
-  // Piston inside the cylinder (updated per tick)
-  g.appendChild(ns('rect', { id: 'ute-demo-piston', x: cylX + 6, y: cylY + 120, width: cylW - 12, height: 46, fill: '#DDD6C7', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
-  g.appendChild(ns('line', { id: 'ute-demo-ring1', x1: cylX + 6, y1: cylY + 128, x2: cylX + cylW - 6, y2: cylY + 128, stroke: '#0A0A0A' }));
-
-  // Crankcase box (bottom), with rotating offset mark
-  const cx = cylX + cylW/2, cy = 300;
-  g.appendChild(ns('rect', { x: cx - 90, y: cy - 20, width: 180, height: 60, fill: 'url(#g-crank)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 8 }));
-  g.appendChild(ns('circle', { cx, cy: cy + 10, r: 24, fill: '#5B574E', stroke: '#0A0A0A' }));
-  g.appendChild(ns('circle', { id: 'ute-demo-crankdot', cx, cy: cy + 10, r: 5, fill: '#E2A93B' }));
-  // Con-rod
-  g.appendChild(ns('line', { id: 'ute-demo-rod', x1: cx, y1: cylY + 143, x2: cx, y2: cy + 10, stroke: '#111', 'stroke-width': 5 }));
-
-  svg.appendChild(g);
-
-  // Particles layer (above gradients, below butterfly for visibility)
-  const pg = ns('g', { id: 'ute-demo-particles' });
-  svg.appendChild(pg);
-  DEMO.throttle.particles = [];
-
-  // Wire the hold-button
-  wireHoldButton('throttle');
-  updateThrottleDemo(0);
+  if (S.mode === '4t')      drawClassic4T(svg);
+  else if (S.mode === '2t') drawMotocross2T(svg);
+  else                      drawElectricBike(svg);
+  wireOverviewClicks(svg);
+  applyMotoHighlight();
 }
 
-function updateThrottleDemo(dt) {
-  const s = DEMO.throttle;
-  // Throttle climbs when holding, decays when released
-  if (s.holding) s.throttle_pct = Math.min(100, s.throttle_pct + 180 * dt);
-  else           s.throttle_pct = Math.max(0,   s.throttle_pct -  90 * dt);
-  // RPM follows throttle with lag; idles at 900
-  const target = 900 + s.throttle_pct * 70;    // 900 → 7900
-  s.rpm += (target - s.rpm) * Math.min(1, 2.0 * dt);
-
-  // Rotate butterfly: 0 (closed=90° to flow) → 90 (open=parallel to flow)
-  // We render it as an ellipse whose rx compresses as it opens.
-  const openness = s.throttle_pct / 100;  // 0..1
-  const bfly = ROOT.querySelector('#ute-bfly');
-  if (bfly) {
-    const closedRx = 46;
-    const openRx = 4;
-    const rx = closedRx * (1 - openness) + openRx * openness;
-    bfly.setAttribute('rx', rx);
-  }
-
-  // Advance piston cycle at RPM
-  s.phase += (s.rpm / 60) * dt * 2 * Math.PI;  // crank angular velocity
-  const pistonTopY_base = 170;   // cylinder base
-  const pistonTopY_top  = 70;
-  const pos = (Math.cos(s.phase) + 1) / 2;  // 0..1
-  const pistonY = pistonTopY_base - pos * (pistonTopY_base - pistonTopY_top);
-  const pist = ROOT.querySelector('#ute-demo-piston');
-  const ring = ROOT.querySelector('#ute-demo-ring1');
-  if (pist) { pist.setAttribute('y', pistonY); if (ring) { ring.setAttribute('y1', pistonY + 8); ring.setAttribute('y2', pistonY + 8); } }
-  const rod = ROOT.querySelector('#ute-demo-rod');
-  if (rod) rod.setAttribute('y1', pistonY + 23);
-
-  // Crank dot rotates
-  const dot = ROOT.querySelector('#ute-demo-crankdot');
-  if (dot) {
-    const cx = 540 + 110/2;
-    const dotX = cx + Math.cos(s.phase) * 18;
-    const dotY = 310 + Math.sin(s.phase) * 18;
-    dot.setAttribute('cx', dotX);
-    dot.setAttribute('cy', dotY);
-    if (rod) { rod.setAttribute('x2', dotX); rod.setAttribute('y2', dotY); }
-  }
-
-  // Air particles: spawn + advance
-  const pg = ROOT.querySelector('#ute-demo-particles');
-  if (pg) {
-    // Spawn
-    const spawnRate = 3 + openness * 60;  // particles per second
-    s.spawnBudget = (s.spawnBudget || 0) + spawnRate * dt;
-    while (s.spawnBudget > 1) {
-      s.spawnBudget -= 1;
-      s.particles.push({ x: 70, y: 110 + 15 + Math.random() * 80, vx: 60 + openness * 400 + Math.random() * 60, life: 0, ttl: 3.0 });
-    }
-    // Advance
-    const bfx = (60 + 480) / 2;
-    for (const p of s.particles) {
-      // Jitter past the butterfly: if nearly closed, particles bunch up
-      p.x += p.vx * dt;
-      p.y += (Math.random() - 0.5) * 0.6;
-      // If almost closed and particle is at bfly, slow it
-      if (openness < 0.1 && Math.abs(p.x - bfx) < 20) p.x += (p.vx * dt) * -0.9;
-      p.life += dt;
-    }
-    s.particles = s.particles.filter((p) => p.life < p.ttl && p.x < 820);
-    // Re-render particles (cheap: clear + add)
-    pg.innerHTML = '';
-    for (const p of s.particles) {
-      pg.appendChild(ns('circle', { cx: p.x, cy: p.y, r: 2.4, fill: '#3E6FB7', opacity: 0.85 }));
-    }
-  }
-
-  // Chip updates
-  const state = ROOT.querySelector('#ute-demo-state');
-  const desc  = ROOT.querySelector('#ute-demo-desc');
-  const rpm   = ROOT.querySelector('#ute-demo-rpm');
-  if (rpm) rpm.textContent = `${Math.round(s.rpm).toLocaleString('en-GB')} rpm`;
-  if (state && desc) {
-    if (s.throttle_pct < 2) {
-      state.textContent = 'Idle';
-      desc.textContent  = 'The throttle plate is almost closed. Just enough air sneaks past to keep the engine idling.';
-    } else if (s.throttle_pct < 60) {
-      state.textContent = 'Accelerating';
-      desc.textContent  = 'The plate tilts open — more air rushes in and the engine spins faster.';
-    } else {
-      state.textContent = 'Wide open';
-      desc.textContent  = 'The plate is almost parallel to the flow. Air pours in; the engine screams up toward redline.';
-    }
-  }
+function wireOverviewClicks(svg) {
+  svg.querySelectorAll('[data-shape]').forEach((el) => {
+    el.addEventListener('click', (ev) => { ev.stopPropagation(); selectPart(el.getAttribute('data-shape')); });
+  });
+  svg.querySelectorAll('.ute-callout').forEach((grp) => {
+    grp.addEventListener('click', (ev) => { ev.stopPropagation(); selectPart(grp.getAttribute('data-part')); });
+  });
 }
 
-// ───────────────────────── Ignition demo ─────────────────────────
-function ignitionStageHTML() {
-  return `
-    <div class="ute-demo-chip">
-      <div class="ute-demo-chip-dot"></div>
-      <div class="ute-demo-chip-text">
-        <span class="k" id="ute-demo-state">Idle</span>
-        <span class="d" id="ute-demo-desc">The coil is cold. Hold to charge it — then release to fire the spark.</span>
-      </div>
-      <div class="n" id="ute-demo-rpm">0 %</div>
-    </div>
-    <svg class="ute-demo-svg" id="ute-demo-svg" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid meet" aria-label="Ignition demo"></svg>
-    <div class="ute-demo-controls">
-      <button class="ute-demo-action" type="button" id="ute-demo-action" data-action="ignition">IGNITE</button>
-      <span class="ute-demo-hint">Hold to charge · release to fire</span>
-    </div>`;
-}
-
-function mountIgnitionDemo() {
-  const svg = ROOT.querySelector('#ute-demo-svg');
+function updateOverviewTick(dt) {
+  // Rotate wheels on overview if we have them
+  const svg = ROOT.querySelector('#ute-moto');
   if (!svg) return;
-  svg.innerHTML = '';
-  mountDemoDefs(svg);
-  const g = ns('g');
-
-  // Battery (12 V) — stylised 3-D block with +/- terminals
-  const bx = 70, by = 180;
-  g.appendChild(ns('rect', { x: bx, y: by, width: 120, height: 90, fill: 'url(#g-battery)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 4 }));
-  g.appendChild(ns('rect', { x: bx + 20, y: by - 10, width: 20, height: 12, fill: '#2A2A26' }));  // + terminal
-  g.appendChild(ns('rect', { x: bx + 80, y: by - 10, width: 20, height: 12, fill: '#2A2A26' }));  // - terminal
-  g.appendChild(ns('text', { x: bx + 30, y: by - 14, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 12, 'font-weight': 700, fill: '#C2502A' })).textContent = '+';
-  g.appendChild(ns('text', { x: bx + 90, y: by - 14, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 12, 'font-weight': 700, fill: '#0A0A0A' })).textContent = '−';
-  g.appendChild(ns('text', { x: bx + 60, y: by + 50, 'font-family': 'IBM Plex Sans, sans-serif', 'font-size': 15, 'font-weight': 700, fill: '#0A0A0A', 'text-anchor': 'middle' })).textContent = '12 V';
-
-  // Low-voltage wire from battery to coil primary
-  g.appendChild(ns('path', { id: 'ute-ig-wire-lv', d: `M ${bx + 30} ${by - 10} L ${bx + 30} 110 L 290 110`, fill: 'none', stroke: '#C2502A', 'stroke-width': 3 }));
-
-  // Ignition coil (barrel) with primary + secondary winding hints
-  const cx1 = 300, cy1 = 100, cw = 160, ch = 170;
-  g.appendChild(ns('rect', { x: cx1, y: cy1, width: cw, height: ch, fill: 'url(#g-coil)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 10 }));
-  g.appendChild(ns('text', { x: cx1 + cw/2, y: cy1 + 24, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 11, fill: '#F6F5F2', 'text-anchor': 'middle', 'letter-spacing': '0.08em' })).textContent = 'IGNITION COIL';
-  // Primary winding (outer) — hatching
-  for (let i = 0; i < 11; i++) {
-    g.appendChild(ns('line', { x1: cx1 + 10 + i*14, y1: cy1 + 40, x2: cx1 + 20 + i*14, y2: cy1 + 60, stroke: '#C2502A', 'stroke-width': 2, opacity: 0.9 }));
-  }
-  // Secondary winding (inner) — tighter hatching
-  for (let i = 0; i < 18; i++) {
-    g.appendChild(ns('line', { x1: cx1 + 10 + i*8, y1: cy1 + 70, x2: cx1 + 18 + i*8, y2: cy1 + 120, stroke: '#F0ECE1', 'stroke-width': 1, opacity: 0.7 }));
-  }
-  // Charge meter inside the coil
-  g.appendChild(ns('rect', { x: cx1 + 20, y: cy1 + 134, width: cw - 40, height: 12, fill: '#1A1816', stroke: '#F6F5F2' }));
-  g.appendChild(ns('rect', { id: 'ute-ig-charge', x: cx1 + 22, y: cy1 + 136, width: 0, height: 8, fill: '#E2A93B' }));
-
-  // Combustion chamber (right side) with spark plug sitting ON TOP, within the viewBox
-  const chx = 620, chy = 100, chw = 210, chh = 170;
-  // Spark plug — fully above chamber, both inside the viewBox
-  g.appendChild(ns('rect', { x: chx + chw/2 - 16, y: chy - 64, width: 32, height: 28, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2 }));  // hex head
-  g.appendChild(ns('rect', { x: chx + chw/2 - 12, y: chy - 36, width: 24, height: 38, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5 }));  // insulator
-  // High-tension wire from coil to the top of the spark plug
-  g.appendChild(ns('path', { id: 'ute-ig-wire-ht', d: `M ${cx1 + cw} ${cy1 + 90} C ${cx1 + cw + 60} ${cy1 + 90}, ${chx + chw/2 - 40} 60, ${chx + chw/2} ${chy - 64}`, fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3 }));
-  // Cylinder/head body
-  g.appendChild(ns('rect', { x: chx, y: chy, width: chw, height: chh, fill: 'url(#g-cyl)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 6 }));
-  // Gas pocket between head top and piston (static here)
-  g.appendChild(ns('rect', { id: 'ute-ig-gas', x: chx + 4, y: chy + 4, width: chw - 8, height: 70, fill: '#DAD3C1', opacity: 0.9 }));
-  // Piston
-  g.appendChild(ns('rect', { x: chx + 4, y: chy + 78, width: chw - 8, height: 46, fill: '#DDD6C7', stroke: '#0A0A0A' }));
-  g.appendChild(ns('line', { x1: chx + 4, y1: chy + 86, x2: chx + chw - 4, y2: chy + 86, stroke: '#0A0A0A' }));
-  // Electrodes inside the chamber (center + L-shaped ground)
-  g.appendChild(ns('line', { x1: chx + chw/2, y1: chy + 2,  x2: chx + chw/2, y2: chy + 30, stroke: '#2A2A26', 'stroke-width': 3 }));  // center electrode
-  g.appendChild(ns('path', { d: `M ${chx + chw/2 - 14} ${chy + 10} L ${chx + chw/2 - 14} ${chy + 34} L ${chx + chw/2 - 2} ${chy + 34}`, fill: 'none', stroke: '#2A2A26', 'stroke-width': 3 }));  // ground electrode
-  // Spark (zigzag) + combustion flash — hidden until fire
-  g.appendChild(ns('polyline', { id: 'ute-ig-spark', points: `${chx + chw/2 - 2},${chy + 30} ${chx + chw/2 - 7},${chy + 31} ${chx + chw/2 - 2},${chy + 33} ${chx + chw/2 - 7},${chy + 34}`, fill: 'none', stroke: '#E2A93B', 'stroke-width': 2.5, opacity: 0, 'stroke-linecap': 'round' }));
-  g.appendChild(ns('circle', { id: 'ute-ig-flash', cx: chx + chw/2, cy: chy + 34, r: 0, fill: '#F3B64B', opacity: 0.85 }));
-
-  svg.appendChild(g);
-  wireHoldButton('ignition');
-  updateIgnitionDemo(0);
+  const wheelRPM = (S.rider.throttle > 0.05) ? (S.rpm / GEAR.primary / GEAR.gear3 / GEAR.final) : 0;
+  const degStep = wheelRPM / 60 * 360 * dt;
+  svg.querySelectorAll('[data-wheel]').forEach((g) => {
+    const cur = parseFloat(g.getAttribute('data-rot') || '0') + degStep;
+    g.setAttribute('data-rot', cur);
+    const cx = g.getAttribute('data-cx'), cy = g.getAttribute('data-cy');
+    g.setAttribute('transform', `rotate(${cur} ${cx} ${cy})`);
+  });
 }
 
-function updateIgnitionDemo(dt) {
-  const s = DEMO.ignition;
-  const now = performance.now();
-  if (s.holding) {
-    s.charge = Math.min(100, s.charge + 100 * dt);
-    s.sparkOk = null;
-  } else {
-    // On transition from holding → released, check charge threshold
-    if (s._wasHolding) {
-      if (s.charge >= 50) {
-        s.sparkOk = true;
-        s.lastFire = now;
-      } else {
-        s.sparkOk = false;
-      }
-    }
-    s.charge = Math.max(0, s.charge - 220 * dt);
-  }
-  s._wasHolding = s.holding;
+// ───────────────────────── Overview helpers ─────────────────────
+function callout(cfg) {
+  // cfg: { key, sx, sy, lx, lane: 1..4, label, laneY }
+  const laneY = cfg.laneY || { 1: 28, 2: 70, 3: 530, 4: 570 };
+  const ly = laneY[cfg.lane];
+  const grp = ns('g', { class: 'ute-callout' + (S.selected_part === cfg.key ? ' is-on' : ''), 'data-part': cfg.key });
+  const d = `M ${cfg.sx} ${cfg.sy} L ${cfg.lx} ${ly + (cfg.lane <= 2 ? 10 : -10)}`;
+  grp.appendChild(ns('path', { class: 'ute-callout-leader', d }));
+  grp.appendChild(ns('circle', { class: 'ute-callout-dot', cx: cfg.sx, cy: cfg.sy, r: 3 }));
+  const label = ns('text', { class: 'ute-callout-label', x: cfg.lx, y: ly, 'text-anchor': 'middle' });
+  label.textContent = cfg.label.toUpperCase();
+  grp.appendChild(label);
+  return grp;
+}
 
-  // Update charge bar
-  const cbar = ROOT.querySelector('#ute-ig-charge');
-  if (cbar) {
-    const w = (s.charge / 100) * (160 - 44);
-    cbar.setAttribute('width', w);
-    cbar.setAttribute('fill', s.charge > 80 ? '#C2502A' : '#E2A93B');
-  }
-
-  // Spark + flash animation
-  const spark = ROOT.querySelector('#ute-ig-spark');
-  const flash = ROOT.querySelector('#ute-ig-flash');
-  const gas   = ROOT.querySelector('#ute-ig-gas');
-  if (s.sparkOk === true) {
-    const t = (now - s.lastFire) / 1000;  // seconds
-    if (t < 0.14) {
-      if (spark) spark.setAttribute('opacity', 1);
-      if (flash) flash.setAttribute('r', 10 + 24 * t);
-      if (gas)   gas.setAttribute('fill', '#F2CDB9');
-    } else if (t < 0.4) {
-      if (spark) spark.setAttribute('opacity', 0);
-      if (flash) flash.setAttribute('r', Math.max(0, 36 - 60 * (t - 0.14)));
-      if (gas)   gas.setAttribute('fill', '#F2CDB9');
-    } else {
-      if (flash) flash.setAttribute('r', 0);
-      if (gas)   gas.setAttribute('fill', '#DAD3C1');
+function wheelSVG(cx, cy, r, key, knobby) {
+  const g = ns('g', { 'data-shape': key, class: 'ute-shape' });
+  g.appendChild(ns('circle', { cx, cy, r, fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': key }));
+  // Knobby tread for motocross
+  if (knobby) {
+    for (let i = 0; i < 20; i++) {
+      const a = (i / 20) * 2 * Math.PI;
+      const rr = (i % 2 === 0) ? (r - 5) : (r - 9);
+      const x1 = cx + Math.cos(a) * (r - 3), y1 = cy + Math.sin(a) * (r - 3);
+      const x2 = cx + Math.cos(a) * rr, y2 = cy + Math.sin(a) * rr;
+      g.appendChild(ns('line', { x1, y1, x2, y2, stroke: '#0A0A0A', 'stroke-width': 3, 'data-shape': key }));
     }
   } else {
-    if (spark) spark.setAttribute('opacity', 0);
-    if (flash) flash.setAttribute('r', 0);
-    if (gas)   gas.setAttribute('fill', '#DAD3C1');
+    g.appendChild(ns('circle', { cx, cy, r: r - 12, fill: 'none', stroke: '#2A2A26', 'stroke-width': 1, 'data-shape': key }));
   }
-
-  const state = ROOT.querySelector('#ute-demo-state');
-  const desc  = ROOT.querySelector('#ute-demo-desc');
-  const rpm   = ROOT.querySelector('#ute-demo-rpm');
-  if (rpm) rpm.textContent = `${Math.round(s.charge)} %`;
-  if (state && desc) {
-    if (s.holding) {
-      state.textContent = s.charge < 50 ? 'Charging' : 'Dwell complete';
-      desc.textContent  = s.charge < 50
-        ? 'Current builds in the coil\'s primary winding. The magnetic field grows.'
-        : 'The coil is fully charged. Release the button to collapse the field and jump a spark.';
-    } else if (s.sparkOk === true && (now - s.lastFire) < 400) {
-      state.textContent = 'Spark!';
-      desc.textContent  = 'The coil\'s field collapses. ~25 000 V jumps the plug gap and ignites the gas.';
-    } else if (s.sparkOk === false) {
-      state.textContent = 'Misfire';
-      desc.textContent  = 'Released too soon. Not enough energy stored to jump the plug gap.';
-    } else {
-      state.textContent = 'Idle';
-      desc.textContent  = 'The coil is cold. Hold to charge it — then release to fire the spark.';
+  // Rim
+  g.appendChild(ns('circle', { cx, cy, r: r - 25, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': key, 'data-fillable': '' }));
+  // Rotating group (hub + spokes)
+  const rot = ns('g', { 'data-wheel': key, 'data-cx': cx, 'data-cy': cy, 'data-shape': key });
+  rot.appendChild(ns('circle', { cx, cy, r: 16, fill: '#4A4642', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': key }));
+  rot.appendChild(ns('circle', { cx, cy, r: 4,  fill: '#0A0A0A', 'data-shape': key }));
+  // Spokes (3 twin-pairs for sportbike/classic, radial 20 for spoked wheels)
+  if (knobby) {
+    for (let i = 0; i < 20; i++) {
+      const a = (i / 20) * 2 * Math.PI;
+      rot.appendChild(ns('line', { x1: cx + Math.cos(a)*16, y1: cy + Math.sin(a)*16, x2: cx + Math.cos(a)*(r-26), y2: cy + Math.sin(a)*(r-26), stroke: '#B9B3A4', 'stroke-width': 1.5, 'data-shape': key }));
+    }
+  } else {
+    for (let i = 0; i < 3; i++) {
+      const a1 = (i / 3) * 2 * Math.PI;
+      const a2 = a1 + 0.18;
+      rot.appendChild(ns('line', { x1: cx + Math.cos(a1)*16, y1: cy + Math.sin(a1)*16, x2: cx + Math.cos(a1)*(r-27), y2: cy + Math.sin(a1)*(r-27), stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': key }));
+      rot.appendChild(ns('line', { x1: cx + Math.cos(a2)*16, y1: cy + Math.sin(a2)*16, x2: cx + Math.cos(a2)*(r-27), y2: cy + Math.sin(a2)*(r-27), stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': key }));
     }
   }
-}
-
-// ───────────────────────── Gearing demo ──────────────────────────
-function gearingStageHTML() {
-  return `
-    <div class="ute-demo-chip">
-      <div class="ute-demo-chip-dot"></div>
-      <div class="ute-demo-chip-text">
-        <span class="k" id="ute-demo-state">Idle</span>
-        <span class="d" id="ute-demo-desc">The engine is stopped. Hold REV to spin the output sprocket; watch the chain and rear wheel.</span>
-      </div>
-      <div class="n" id="ute-demo-rpm">0 km/h</div>
-    </div>
-    <svg class="ute-demo-svg" id="ute-demo-svg" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid meet" aria-label="Gearing demo"></svg>
-    <div class="ute-demo-controls">
-      <button class="ute-demo-action" type="button" id="ute-demo-action" data-action="gearing">REV</button>
-      <span class="ute-demo-hint">Press and hold</span>
-    </div>`;
-}
-
-function mountGearingDemo() {
-  const svg = ROOT.querySelector('#ute-demo-svg');
-  if (!svg) return;
-  svg.innerHTML = '';
-  mountDemoDefs(svg);
-  const g = ns('g');
-
-  // Engine block on the left
-  const ex = 60, ey = 130, ew = 150, eh = 150;
-  g.appendChild(ns('rect', { x: ex, y: ey, width: ew, height: eh, fill: 'url(#g-crank)', stroke: '#0A0A0A', 'stroke-width': 2, rx: 8 }));
-  g.appendChild(ns('text', { x: ex + ew/2, y: ey + 22, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 11, fill: '#F6F5F2', 'text-anchor': 'middle', 'letter-spacing': '0.08em' })).textContent = 'ENGINE';
-
-  // Output sprocket (small): emerges from the right side of the engine
-  const spA_cx = ex + ew + 6, spA_cy = ey + eh - 36, spA_r = 36;
-  g.appendChild(ns('g', { id: 'ute-gear-spA' })); // placeholder; we'll re-draw
-  drawSprocket(svg, 'ute-gear-spA', spA_cx, spA_cy, spA_r, 20, 0, '#8E867A');
-
-  // Rear sprocket (large), to the right
-  const spB_cx = 740, spB_cy = 190, spB_r = 95;
-  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: spB_r + 50, fill: 'url(#g-wheel)', stroke: '#0A0A0A', 'stroke-width': 2 })); // tyre
-  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: spB_r + 28, fill: 'url(#g-rim)', stroke: '#0A0A0A', 'stroke-width': 2 })); // rim
-  // Wheel spokes (we re-draw per tick to rotate)
-
-  // Chain: path from top of A around to top of B (and bottom-return)
-  const chainTopY = Math.min(spA_cy - spA_r, spB_cy - spB_r);
-  const chainBotY = Math.max(spA_cy + spA_r, spB_cy + spB_r);
-  g.appendChild(ns('line', { x1: spA_cx, y1: spA_cy - spA_r, x2: spB_cx, y2: spB_cy - spB_r, stroke: 'url(#g-chain)', 'stroke-width': 10, 'data-chain-top': '' }));
-  g.appendChild(ns('line', { x1: spA_cx, y1: spA_cy + spA_r, x2: spB_cx, y2: spB_cy + spB_r, stroke: 'url(#g-chain)', 'stroke-width': 10, 'data-chain-bot': '' }));
-  // Chain link hatching (static baseline; animated via stroke-dashoffset on a thinner overlay)
-  const topHatch = ns('line', { x1: spA_cx + 8, y1: spA_cy - spA_r, x2: spB_cx - 10, y2: spB_cy - spB_r, stroke: '#F6F5F2', 'stroke-width': 1.5, id: 'ute-gear-hatch-top', 'stroke-dasharray': '6 6' });
-  g.appendChild(topHatch);
-  const botHatch = ns('line', { x1: spA_cx + 8, y1: spA_cy + spA_r, x2: spB_cx - 10, y2: spB_cy + spB_r, stroke: '#F6F5F2', 'stroke-width': 1.5, id: 'ute-gear-hatch-bot', 'stroke-dasharray': '6 6' });
-  g.appendChild(botHatch);
-
-  // Rear sprocket teeth + hub
-  drawSprocket(svg, 'ute-gear-spB', spB_cx, spB_cy, spB_r, 42, 0, '#DAD3C1');
-
-  // Wheel spokes group (rotated per tick)
-  const spokeG = ns('g', { id: 'ute-gear-spokes', transform: `rotate(0 ${spB_cx} ${spB_cy})` });
-  for (let i = 0; i < 5; i++) {
-    const a = (i / 5) * 2 * Math.PI;
-    const x2 = spB_cx + Math.cos(a) * (spB_r + 20);
-    const y2 = spB_cy + Math.sin(a) * (spB_r + 20);
-    spokeG.appendChild(ns('line', { x1: spB_cx, y1: spB_cy, x2, y2, stroke: '#2A2A26', 'stroke-width': 5 }));
-  }
-  svg.appendChild(spokeG);
-
-  // Ground reference
-  g.appendChild(ns('line', { x1: 30, y1: 320, x2: 870, y2: 320, stroke: '#B9B3A4', 'stroke-dasharray': '4 6' }));
-  // Hub centre dot
-  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: 7, fill: '#0A0A0A' }));
-
-  svg.appendChild(g);
-  wireHoldButton('gearing');
-  updateGearingDemo(0);
-}
-
-function drawSprocket(svg, id, cx, cy, r, teeth, angle, fillColour) {
-  // Remove any previous instance
-  const prev = svg.querySelector(`#${id}`);
-  if (prev) prev.remove();
-  const g = ns('g', { id, transform: `rotate(${angle} ${cx} ${cy})` });
-  g.appendChild(ns('circle', { cx, cy, r, fill: 'url(#g-sprocket)', stroke: '#0A0A0A', 'stroke-width': 2 }));
-  for (let i = 0; i < teeth; i++) {
-    const a = (i / teeth) * 2 * Math.PI;
-    const x1 = cx + Math.cos(a) * r;
-    const y1 = cy + Math.sin(a) * r;
-    const x2 = cx + Math.cos(a) * (r + 5);
-    const y2 = cy + Math.sin(a) * (r + 5);
-    g.appendChild(ns('line', { x1, y1, x2, y2, stroke: '#0A0A0A', 'stroke-width': 1.4 }));
-  }
-  if (r > 50) {
-    for (let i = 0; i < 5; i++) {
-      const a = (i / 5) * 2 * Math.PI + 0.3;
-      g.appendChild(ns('circle', { cx: cx + Math.cos(a) * (r * 0.55), cy: cy + Math.sin(a) * (r * 0.55), r: 7, fill: '#F6F5F2', stroke: '#0A0A0A' }));
-    }
-  }
-  g.appendChild(ns('circle', { cx, cy, r: 7, fill: '#2A2A26' }));
-  svg.appendChild(g);
-}
-
-function updateGearingDemo(dt) {
-  const s = DEMO.gearing;
-  if (s.holding) s.rpm = Math.min(8000, s.rpm + 2500 * dt);
-  else            s.rpm = Math.max(0,    s.rpm - 1800 * dt);
-  // Sprocket A spins at engine RPM; B at engine RPM / final_ratio
-  const degA = (s.rpm / 60) * 360 * dt;
-  s.sprocketA = (s.sprocketA + degA) % 360;
-  const degB = degA / GEAR.final;
-  s.sprocketB = (s.sprocketB + degB) % 360;
-  s.wheelAng  = s.sprocketB;
-  s.chainOff  = (s.chainOff - degA * 0.05) % 100;
-
-  const svg = ROOT.querySelector('#ute-demo-svg');
-  if (svg) {
-    // Rotate sprockets by re-drawing
-    drawSprocket(svg, 'ute-gear-spA', 60 + 150 + 6, 130 + 150 - 36, 36, 20, s.sprocketA, '#8E867A');
-    drawSprocket(svg, 'ute-gear-spB', 740, 190, 95, 42, s.sprocketB, '#DAD3C1');
-    const spokes = svg.querySelector('#ute-gear-spokes');
-    if (spokes) spokes.setAttribute('transform', `rotate(${s.wheelAng} 740 190)`);
-    // Animate chain hatch
-    const ht = svg.querySelector('#ute-gear-hatch-top');
-    const hb = svg.querySelector('#ute-gear-hatch-bot');
-    if (ht) ht.setAttribute('stroke-dashoffset', s.chainOff);
-    if (hb) hb.setAttribute('stroke-dashoffset', -s.chainOff);
-  }
-
-  const wheelRPM = s.rpm / GEAR.primary / GEAR.gear3 / GEAR.final;
-  const kmh = (wheelRPM / 60) * (2 * Math.PI * GEAR.wheel_r_m) * 3.6;
-
-  const state = ROOT.querySelector('#ute-demo-state');
-  const desc  = ROOT.querySelector('#ute-demo-desc');
-  const rpm   = ROOT.querySelector('#ute-demo-rpm');
-  if (rpm) rpm.textContent = `${kmh.toFixed(0)} km/h`;
-  if (state && desc) {
-    if (s.rpm < 20) {
-      state.textContent = 'Idle';
-      desc.textContent  = 'The engine is stopped. Hold REV to spin the output sprocket; watch the chain and rear wheel.';
-    } else {
-      state.textContent = 'Pulling';
-      desc.textContent  = `Engine ${Math.round(s.rpm).toLocaleString('en-GB')} rpm · chain ${((wheelRPM/60)*(2*Math.PI*0.11)).toFixed(1)} m/s · final drive ${GEAR.final.toFixed(2)} : 1.`;
-    }
-  }
-}
-
-// ───────────────────────── Hold-button wiring ────────────────────
-function wireHoldButton(demoKey) {
-  const btn = ROOT.querySelector('#ute-demo-action');
-  if (!btn) return;
-  const press = () => { DEMO[demoKey].holding = true; btn.classList.add('is-holding'); };
-  const release = () => { DEMO[demoKey].holding = false; btn.classList.remove('is-holding'); };
-  btn.addEventListener('pointerdown', (ev) => { ev.preventDefault(); press(); btn.setPointerCapture(ev.pointerId); });
-  btn.addEventListener('pointerup', release);
-  btn.addEventListener('pointercancel', release);
-  btn.addEventListener('pointerleave', (ev) => { if (ev.buttons === 0) return; release(); });
-}
-
-function switchDemo(key) {
-  if (!DEMO[key] || DEMO.active === key) return;
-  DEMO.active = key;
-  ROOT.querySelectorAll('.ute-demo-tab').forEach((t) => t.classList.toggle('is-on', t.getAttribute('data-demo') === key));
-  const stage = ROOT.querySelector('#ute-demo-stage');
-  if (stage) stage.innerHTML = demoStageHTML();
-  mountCurrentDemo();
-}
-
-function mountCurrentDemo() {
-  switch (DEMO.active) {
-    case 'throttle': mountThrottleDemo(); break;
-    case 'ignition': mountIgnitionDemo(); break;
-    case 'gearing':  mountGearingDemo();  break;
-  }
-}
-
-function updateCurrentDemo(dt) {
-  switch (DEMO.active) {
-    case 'throttle': updateThrottleDemo(dt); break;
-    case 'ignition': updateIgnitionDemo(dt); break;
-    case 'gearing':  updateGearingDemo(dt);  break;
-  }
+  g.appendChild(rot);
+  return g;
 }
 
 // ───────────────────────── SVG helpers ──────────────────────────
@@ -1937,10 +357,1991 @@ function ns(tag, attrs) {
   if (attrs) for (const k in attrs) el.setAttribute(k, attrs[k]);
   return el;
 }
-function txt(x, y, s, anchor) {
-  const t = ns('text', { x, y, fill: '#6B6963', 'font-family': 'IBM Plex Mono, monospace', 'font-size': 11, 'letter-spacing': '0.08em', 'text-anchor': anchor || 'start' });
+function txt(x, y, s, anchor, size) {
+  const t = ns('text', { x, y, fill: '#6B6963', 'font-family': 'IBM Plex Mono, monospace', 'font-size': size || 11, 'letter-spacing': '0.08em', 'text-anchor': anchor || 'start' });
   t.textContent = s;
   return t;
+}
+
+// ───────────────────────── Three motorcycle silhouettes ─────────
+// These are drawn as blueprint-style line-art plus a few filled shapes
+// so that each major component is a clickable region. Each silhouette
+// also carries callouts labelling the parts.
+
+function drawClassic4T(svg) {
+  const g = ns('g');
+  // Ground
+  g.appendChild(ns('line', { x1: 0, y1: 490, x2: 1200, y2: 490, stroke: '#B9B3A4', 'stroke-dasharray': '4 6' }));
+
+  // ── Frame rails (steel tube) ──────────────────────────────────
+  const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
+  // Top tube
+  frame.appendChild(ns('path', { d: 'M 300 240 L 430 235 L 670 245 L 720 270', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'frame' }));
+  // Downtube
+  frame.appendChild(ns('path', { d: 'M 305 245 L 435 380 L 540 410', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'frame' }));
+  // Seat rail
+  frame.appendChild(ns('path', { d: 'M 680 255 L 820 258 L 905 262', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3, 'data-shape': 'frame' }));
+  // Rear subframe triangle
+  frame.appendChild(ns('path', { d: 'M 720 400 L 820 260 L 820 400 Z', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'frame' }));
+  // Steering head
+  frame.appendChild(ns('rect', { x: 288, y: 225, width: 28, height: 55, fill: '#E6E1D4', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'frame' }));
+  svg.appendChild(frame);
+
+  // ── Front forks ───────────────────────────────────────────────
+  const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
+  // Classic telescopic (right-side-up): rubber gaiters on upper, chrome lower
+  forks.appendChild(ns('line', { x1: 298, y1: 235, x2: 258, y2: 395, stroke: '#D4CFC2', 'stroke-width': 11, 'data-shape': 'forks' }));
+  forks.appendChild(ns('line', { x1: 316, y1: 235, x2: 276, y2: 395, stroke: '#D4CFC2', 'stroke-width': 11, 'data-shape': 'forks' }));
+  // Gaiter wrinkles
+  for (let i = 0; i < 4; i++) {
+    forks.appendChild(ns('line', { x1: 254 + i*5, y1: 290 + i*8, x2: 320 - i*5, y2: 290 + i*8, stroke: '#B9B3A4', 'stroke-width': 0.6, 'data-shape': 'forks' }));
+  }
+  // Top triple
+  forks.appendChild(ns('rect', { x: 282, y: 215, width: 54, height: 14, fill: '#2A2A26', stroke: '#0A0A0A', 'data-shape': 'forks' }));
+  svg.appendChild(forks);
+
+  // Handlebar
+  const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
+  bar.appendChild(ns('path', { d: 'M 309 210 L 365 165 L 440 158', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('path', { d: 'M 309 210 L 265 185 L 200 180', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'instruments' }));
+  // Grips
+  bar.appendChild(ns('rect', { x: 190, y: 174, width: 24, height: 12, fill: '#111', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('rect', { x: 430, y: 152, width: 24, height: 12, fill: '#111', 'data-shape': 'instruments' }));
+  // Mirror
+  bar.appendChild(ns('ellipse', { cx: 215, cy: 140, rx: 15, ry: 9, fill: '#FFFFFF', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'instruments' }));
+  bar.appendChild(ns('line', { x1: 215, y1: 148, x2: 215, y2: 175, stroke: '#111', 'stroke-width': 2, 'data-shape': 'instruments' }));
+  // Round instruments (two)
+  bar.appendChild(ns('circle', { cx: 350, cy: 185, r: 20, fill: '#FFFFFF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'instruments', 'data-fillable': '' }));
+  bar.appendChild(ns('circle', { cx: 390, cy: 185, r: 20, fill: '#FFFFFF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'instruments' }));
+  bar.appendChild(ns('line', { x1: 350, y1: 185, x2: 362, y2: 173, stroke: '#C2502A', 'stroke-width': 1.5, 'data-shape': 'instruments' }));
+  bar.appendChild(ns('line', { x1: 390, y1: 185, x2: 400, y2: 178, stroke: '#C2502A', 'stroke-width': 1.5, 'data-shape': 'instruments' }));
+  svg.appendChild(bar);
+
+  // ── Headlight (classic round, chrome bezel) ───────────────────
+  const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
+  hl.appendChild(ns('circle', { cx: 265, cy: 260, r: 44, fill: '#F2EEE2', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'headlight', 'data-fillable': '' }));
+  hl.appendChild(ns('circle', { cx: 265, cy: 260, r: 32, fill: '#E2A93B', 'data-shape': 'headlight' }));
+  hl.appendChild(ns('circle', { cx: 258, cy: 253, r: 7, fill: '#FFFFFF', opacity: 0.75, 'data-shape': 'headlight' }));
+  svg.appendChild(hl);
+
+  // Front fender (classic chrome arc)
+  const fender = ns('path', { d: 'M 170 350 Q 258 310 345 355 L 340 365 Q 258 325 180 365 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'front_wheel', class: 'ute-shape' });
+  svg.appendChild(fender);
+
+  // ── Fuel tank (classic teardrop) ──────────────────────────────
+  const tank = ns('g', { 'data-shape': 'fuel_tank', class: 'ute-shape' });
+  tank.appendChild(ns('path', { d: 'M 420 255 Q 460 220 540 215 Q 630 215 680 240 L 685 275 Q 580 290 440 282 Z', fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'fuel_tank', 'data-fillable': '' }));
+  tank.appendChild(ns('path', { d: 'M 440 268 Q 560 282 680 262', fill: 'none', stroke: '#5B2415', 'stroke-width': 1, 'data-shape': 'fuel_tank' }));
+  tank.appendChild(ns('rect', { x: 530, y: 232, width: 60, height: 6, fill: '#F6F5F2', 'data-shape': 'fuel_tank' })); // chrome stripe
+  tank.appendChild(ns('circle', { cx: 575, cy: 225, r: 7, fill: '#2A2A26', stroke: '#0A0A0A', 'data-shape': 'fuel_tank' }));
+  svg.appendChild(tank);
+
+  // ── Air filter (round, side-mounted) ──────────────────────────
+  const air = ns('g', { 'data-shape': 'air_filter', class: 'ute-shape' });
+  air.appendChild(ns('circle', { cx: 560, cy: 320, r: 28, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'air_filter', 'data-fillable': '' }));
+  air.appendChild(ns('circle', { cx: 560, cy: 320, r: 20, fill: 'none', stroke: '#9A9385', 'stroke-width': 1, 'data-shape': 'air_filter' }));
+  for (let i = 0; i < 10; i++) {
+    const a = (i / 10) * 2 * Math.PI;
+    air.appendChild(ns('line', { x1: 560 + Math.cos(a)*21, y1: 320 + Math.sin(a)*21, x2: 560 + Math.cos(a)*27, y2: 320 + Math.sin(a)*27, stroke: '#9A9385', 'data-shape': 'air_filter' }));
+  }
+  svg.appendChild(air);
+
+  // ── Carb / throttle body ──────────────────────────────────────
+  const carb = ns('g', { 'data-shape': 'carb', class: 'ute-shape' });
+  carb.appendChild(ns('rect', { x: 592, y: 300, width: 32, height: 40, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'carb', 'data-fillable': '' }));
+  carb.appendChild(ns('line', { x1: 608, y1: 300, x2: 608, y2: 340, stroke: '#0A0A0A', 'data-shape': 'carb' }));
+  // Float bowl bump
+  carb.appendChild(ns('ellipse', { cx: 608, cy: 358, rx: 18, ry: 10, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'carb' }));
+  svg.appendChild(carb);
+
+  // ── Engine (parallel twin: two cylinders) ─────────────────────
+  const eng = ns('g', { 'data-shape': 'engine', class: 'ute-shape' });
+  // Crankcase
+  eng.appendChild(ns('path', { d: 'M 530 350 L 700 350 L 710 440 L 525 440 Z', fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'engine', 'data-fillable': '' }));
+  // Bolt pattern
+  for (let i = 0; i < 5; i++) eng.appendChild(ns('circle', { cx: 540 + i*35, cy: 432, r: 2, fill: '#0A0A0A', 'data-shape': 'engine' }));
+  // Clutch cover
+  eng.appendChild(ns('circle', { cx: 620, cy: 400, r: 24, fill: 'none', stroke: '#9A9385', 'stroke-width': 1.5, 'data-shape': 'engine' }));
+  eng.appendChild(ns('circle', { cx: 620, cy: 400, r: 7, fill: '#9A9385', 'data-shape': 'engine' }));
+  svg.appendChild(eng);
+
+  // Cylinders (two, side by side)
+  const cyl = ns('g', { 'data-shape': 'cylinder', class: 'ute-shape' });
+  // Left cylinder
+  cyl.appendChild(ns('path', { d: 'M 548 350 L 552 275 L 598 275 L 594 350 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder', 'data-fillable': '' }));
+  // Right cylinder
+  cyl.appendChild(ns('path', { d: 'M 626 350 L 630 275 L 676 275 L 672 350 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder' }));
+  // Cooling fins
+  for (let i = 0; i < 6; i++) {
+    const y = 290 + i*10;
+    cyl.appendChild(ns('line', { x1: 550 + i*0.5, y1: y, x2: 596 - i*0.5, y2: y, stroke: '#0A0A0A', 'stroke-width': 1, 'data-shape': 'cylinder' }));
+    cyl.appendChild(ns('line', { x1: 628 + i*0.5, y1: y, x2: 674 - i*0.5, y2: y, stroke: '#0A0A0A', 'stroke-width': 1, 'data-shape': 'cylinder' }));
+  }
+  // Heads
+  cyl.appendChild(ns('rect', { x: 548, y: 265, width: 54, height: 12, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'cylinder' }));
+  cyl.appendChild(ns('rect', { x: 626, y: 265, width: 54, height: 12, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'cylinder' }));
+  // Spark plug stubs
+  cyl.appendChild(ns('rect', { x: 568, y: 255, width: 14, height: 12, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
+  cyl.appendChild(ns('rect', { x: 646, y: 255, width: 14, height: 12, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
+  svg.appendChild(cyl);
+
+  // ── Exhaust (dual pipes exiting right, upswept) ───────────────
+  const ex = ns('g', { 'data-shape': 'exhaust', class: 'ute-shape' });
+  ex.appendChild(ns('path', { d: 'M 596 350 C 620 400 650 430 790 440 L 970 440', fill: 'none', stroke: '#D4CFC2', 'stroke-width': 10, 'stroke-linecap': 'round', 'data-shape': 'exhaust' }));
+  ex.appendChild(ns('path', { d: 'M 674 350 C 700 390 740 420 820 435 L 990 435', fill: 'none', stroke: '#D4CFC2', 'stroke-width': 10, 'stroke-linecap': 'round', 'data-shape': 'exhaust' }));
+  // Dual mufflers (slash-cut)
+  ex.appendChild(ns('path', { d: 'M 970 420 L 1120 418 L 1125 455 L 975 455 Z', fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'exhaust', 'data-fillable': '' }));
+  ex.appendChild(ns('path', { d: 'M 990 415 L 1130 412 L 1135 450 L 995 450 Z', fill: '#E6E1D4', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'exhaust' }));
+  svg.appendChild(ex);
+
+  // ── Rear suspension: swingarm + shock ─────────────────────────
+  const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
+  sw.appendChild(ns('path', { d: 'M 710 400 L 940 400 L 945 418 L 715 414 Z', fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'swingarm', 'data-fillable': '' }));
+  sw.appendChild(ns('circle', { cx: 710, cy: 408, r: 9, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'swingarm' }));
+  svg.appendChild(sw);
+
+  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
+  // Classic dual shocks (just the near one shown)
+  shock.appendChild(ns('line', { x1: 800, y1: 275, x2: 870, y2: 395, stroke: '#C2502A', 'stroke-width': 9, 'data-shape': 'rear_shock' }));
+  // Spring coils
+  for (let i = 0; i < 7; i++) {
+    const t = i / 6;
+    const x = 800 + (870 - 800) * t, y = 275 + (395 - 275) * t;
+    shock.appendChild(ns('line', { x1: x - 7, y1: y - 2, x2: x + 7, y2: y + 2, stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'rear_shock' }));
+  }
+  svg.appendChild(shock);
+
+  // Battery (visible side cover)
+  const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
+  bat.appendChild(ns('rect', { x: 710, y: 310, width: 42, height: 32, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'battery', 'data-fillable': '' }));
+  bat.appendChild(ns('line', { x1: 718, y1: 318, x2: 724, y2: 318, stroke: '#C2502A', 'stroke-width': 2, 'data-shape': 'battery' }));
+  bat.appendChild(ns('line', { x1: 738, y1: 318, x2: 744, y2: 318, stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'battery' }));
+  const t = ns('text', { x: 731, y: 334, fill: '#0A0A0A', 'font-family': 'IBM Plex Mono', 'font-size': 10, 'font-weight': 700, 'text-anchor': 'middle', 'data-shape': 'battery' });
+  t.textContent = '12V'; bat.appendChild(t);
+  svg.appendChild(bat);
+
+  // ── Chain + sprockets ─────────────────────────────────────────
+  const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
+  chain.appendChild(ns('line', { x1: 696, y1: 400, x2: 940, y2: 410, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'chain' }));
+  chain.appendChild(ns('line', { x1: 696, y1: 414, x2: 940, y2: 424, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'chain' }));
+  for (let x = 700; x < 940; x += 14) chain.appendChild(ns('line', { x1: x, y1: 398, x2: x + 1, y2: 426, stroke: '#B9B3A4', 'stroke-width': 1, 'data-shape': 'chain' }));
+  svg.appendChild(chain);
+
+  const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
+  rsp.appendChild(ns('circle', { cx: 940, cy: 418, r: 54, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
+  for (let i = 0; i < 32; i++) {
+    const a = (i / 32) * 2 * Math.PI;
+    const x1 = 940 + Math.cos(a) * 54, y1 = 418 + Math.sin(a) * 54;
+    const x2 = 940 + Math.cos(a) * 58, y2 = 418 + Math.sin(a) * 58;
+    rsp.appendChild(ns('line', { x1, y1, x2, y2, stroke: '#0A0A0A', 'stroke-width': 1.2, 'data-shape': 'rear_sprocket' }));
+  }
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * 2 * Math.PI + 0.2;
+    rsp.appendChild(ns('circle', { cx: 940 + Math.cos(a)*28, cy: 418 + Math.sin(a)*28, r: 7, fill: '#F6F5F2', stroke: '#0A0A0A', 'data-shape': 'rear_sprocket' }));
+  }
+  svg.appendChild(rsp);
+
+  // Wheels (classic spoked)
+  svg.appendChild(wheelSVG(254, 395, 92, 'front_wheel', false));
+  svg.appendChild(wheelSVG(940, 418, 92, 'rear_wheel', false));
+
+  // Brake
+  const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
+  brake.appendChild(ns('circle', { cx: 254, cy: 395, r: 48, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 2, 'data-shape': 'brake' }));
+  for (let i = 0; i < 10; i++) {
+    const a = (i / 10) * 2 * Math.PI;
+    brake.appendChild(ns('circle', { cx: 254 + Math.cos(a)*42, cy: 395 + Math.sin(a)*42, r: 2, fill: '#0A0A0A', 'data-shape': 'brake' }));
+  }
+  brake.appendChild(ns('rect', { x: 296, y: 378, width: 20, height: 34, fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'brake', 'data-fillable': '' }));
+  svg.appendChild(brake);
+
+  // Seat (classic flat bench)
+  const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
+  seat.appendChild(ns('path', { d: 'M 695 265 L 820 258 L 860 268 L 710 282 Z', fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat', 'data-fillable': '' }));
+  seat.appendChild(ns('path', { d: 'M 710 282 L 715 275 L 850 272', fill: 'none', stroke: '#5A5852', 'data-shape': 'seat' }));
+  svg.appendChild(seat);
+
+  // Tail light
+  const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
+  tl.appendChild(ns('ellipse', { cx: 902, cy: 275, rx: 16, ry: 10, fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'tail_light', 'data-fillable': '' }));
+  svg.appendChild(tl);
+
+  // Side stand
+  svg.appendChild(ns('line', { x1: 575, y1: 440, x2: 595, y2: 490, stroke: '#2A2A26', 'stroke-width': 4 }));
+  // Foot pegs
+  svg.appendChild(ns('circle', { cx: 720, cy: 445, r: 4, fill: '#2A2A26' }));
+  svg.appendChild(ns('line', { x1: 720, y1: 445, x2: 745, y2: 450, stroke: '#2A2A26', 'stroke-width': 3 }));
+
+  svg.appendChild(g);
+
+  // Callouts
+  const callouts = [
+    { key: 'headlight',   sx: 265, sy: 220, lx:  110, lane: 1, label: 'Headlight' },
+    { key: 'instruments', sx: 370, sy: 170, lx:  350, lane: 1, label: 'Instruments' },
+    { key: 'fuel_tank',   sx: 575, sy: 225, lx:  580, lane: 1, label: 'Fuel tank' },
+    { key: 'seat',        sx: 760, sy: 270, lx:  785, lane: 1, label: 'Seat' },
+    { key: 'tail_light',  sx: 905, sy: 275, lx: 1000, lane: 1, label: 'Tail light' },
+    { key: 'forks',       sx: 275, sy: 300, lx:   90, lane: 2, label: 'Forks' },
+    { key: 'air_filter',  sx: 560, sy: 310, lx:  470, lane: 2, label: 'Air filter' },
+    { key: 'carb',        sx: 610, sy: 320, lx:  645, lane: 2, label: 'Carb / EFI' },
+    { key: 'cylinder',    sx: 615, sy: 290, lx:  790, lane: 2, label: 'Cylinder' },
+    { key: 'front_wheel', sx: 254, sy: 395, lx:  250, lane: 3, label: 'Front wheel' },
+    { key: 'brake',       sx: 306, sy: 395, lx:  395, lane: 3, label: 'Brake disc' },
+    { key: 'engine',      sx: 615, sy: 410, lx:  565, lane: 3, label: 'Engine' },
+    { key: 'chain',       sx: 810, sy: 415, lx:  790, lane: 3, label: 'Chain' },
+    { key: 'swingarm',    sx: 850, sy: 410, lx:  950, lane: 3, label: 'Swingarm' },
+    { key: 'rear_wheel',  sx: 940, sy: 418, lx: 1150, lane: 3, label: 'Rear wheel' },
+    { key: 'frame',       sx: 490, sy: 270, lx:  445, lane: 4, label: 'Frame' },
+    { key: 'battery',     sx: 732, sy: 318, lx:  690, lane: 4, label: 'Battery' },
+    { key: 'rear_shock',  sx: 835, sy: 335, lx:  870, lane: 4, label: 'Rear shock' },
+    { key: 'rear_sprocket', sx: 940, sy: 465, lx: 1000, lane: 4, label: 'Rear sprocket' },
+    { key: 'exhaust',     sx: 1040, sy: 435, lx: 1140, lane: 4, label: 'Exhaust' },
+  ];
+  const gc = ns('g');
+  callouts.forEach((c) => gc.appendChild(callout(c)));
+  svg.appendChild(gc);
+}
+
+function drawMotocross2T(svg) {
+  // Tall motocross dirt bike with knobby tyres, high mudguards, upswept
+  // expansion-chamber exhaust, long travel suspension, number plate.
+  const g = ns('g');
+  g.appendChild(ns('line', { x1: 0, y1: 500, x2: 1200, y2: 500, stroke: '#B9B3A4', 'stroke-dasharray': '4 6' }));
+
+  // Frame (perimeter trellis)
+  const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
+  frame.appendChild(ns('path', { d: 'M 320 250 L 440 220 L 650 230 L 720 260', fill: 'none', stroke: '#1D6B55', 'stroke-width': 5, 'data-shape': 'frame' }));
+  frame.appendChild(ns('path', { d: 'M 325 258 L 440 400 L 540 420', fill: 'none', stroke: '#1D6B55', 'stroke-width': 5, 'data-shape': 'frame' }));
+  frame.appendChild(ns('path', { d: 'M 650 240 L 790 260 L 870 280', fill: 'none', stroke: '#1D6B55', 'stroke-width': 4, 'data-shape': 'frame' }));
+  frame.appendChild(ns('rect', { x: 305, y: 240, width: 30, height: 55, fill: '#E6E1D4', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'frame' }));
+  svg.appendChild(frame);
+
+  // ── Front forks (inverted, long travel) ───────────────────────
+  const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
+  // Upper (gold USD look)
+  forks.appendChild(ns('line', { x1: 304, y1: 253, x2: 260, y2: 380, stroke: '#E2A93B', 'stroke-width': 13, 'data-shape': 'forks' }));
+  forks.appendChild(ns('line', { x1: 322, y1: 253, x2: 278, y2: 380, stroke: '#E2A93B', 'stroke-width': 13, 'data-shape': 'forks' }));
+  // Lower sliders (black)
+  forks.appendChild(ns('line', { x1: 268, y1: 360, x2: 240, y2: 405, stroke: '#1A1A17', 'stroke-width': 11, 'data-shape': 'forks' }));
+  forks.appendChild(ns('line', { x1: 286, y1: 360, x2: 258, y2: 405, stroke: '#1A1A17', 'stroke-width': 11, 'data-shape': 'forks' }));
+  forks.appendChild(ns('rect', { x: 282, y: 228, width: 58, height: 20, fill: '#2A2A26', stroke: '#0A0A0A', 'data-shape': 'forks' }));
+  svg.appendChild(forks);
+
+  // Hand guards + bars
+  const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
+  bar.appendChild(ns('path', { d: 'M 311 220 L 365 170 L 420 160', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('path', { d: 'M 311 220 L 265 190 L 210 185', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('rect', { x: 200, y: 178, width: 24, height: 14, fill: '#E2A93B', 'data-shape': 'instruments' })); // orange grip
+  bar.appendChild(ns('rect', { x: 410, y: 154, width: 24, height: 14, fill: '#E2A93B', 'data-shape': 'instruments' }));
+  // Hand guards
+  bar.appendChild(ns('path', { d: 'M 190 150 L 185 195 L 225 200 L 230 155 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'instruments' }));
+  bar.appendChild(ns('path', { d: 'M 408 128 L 405 170 L 445 174 L 450 132 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'instruments' }));
+  svg.appendChild(bar);
+
+  // Headlight + number plate (front)
+  const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
+  hl.appendChild(ns('path', { d: 'M 275 220 L 330 215 L 345 265 L 275 268 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'headlight', 'data-fillable': '' }));
+  hl.appendChild(ns('ellipse', { cx: 310, cy: 245, rx: 18, ry: 12, fill: '#E2A93B', 'data-shape': 'headlight' }));
+  // Number plate above
+  hl.appendChild(ns('path', { d: 'M 275 195 L 335 190 L 340 220 L 275 222 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'headlight' }));
+  const tn = ns('text', { x: 305, y: 212, 'font-family': 'IBM Plex Mono', 'font-size': 14, 'font-weight': 700, 'text-anchor': 'middle', fill: '#0A0A0A', 'data-shape': 'headlight' });
+  tn.textContent = '42';
+  hl.appendChild(tn);
+  svg.appendChild(hl);
+
+  // Front mudguard (high + wide)
+  svg.appendChild(ns('path', { d: 'M 160 320 Q 240 275 350 320 L 345 335 Q 245 290 170 335 Z', fill: '#1D6B55', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'front_wheel', class: 'ute-shape' }));
+
+  // Fuel tank (small)
+  const tank = ns('g', { 'data-shape': 'fuel_tank', class: 'ute-shape' });
+  tank.appendChild(ns('path', { d: 'M 420 275 Q 450 240 540 240 Q 620 240 650 265 L 650 300 Q 540 310 435 300 Z', fill: '#1D6B55', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'fuel_tank', 'data-fillable': '' }));
+  tank.appendChild(ns('circle', { cx: 540, cy: 254, r: 6, fill: '#2A2A26', stroke: '#0A0A0A', 'data-shape': 'fuel_tank' }));
+  svg.appendChild(tank);
+
+  // Air filter + carb (2T uses carb usually)
+  const air = ns('g', { 'data-shape': 'air_filter', class: 'ute-shape' });
+  air.appendChild(ns('rect', { x: 650, y: 275, width: 60, height: 50, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'air_filter', 'data-fillable': '' }));
+  for (let i = 0; i < 5; i++) air.appendChild(ns('line', { x1: 655 + i*12, y1: 282, x2: 655 + i*12, y2: 318, stroke: '#9A9385', 'data-shape': 'air_filter' }));
+  svg.appendChild(air);
+
+  const carb = ns('g', { 'data-shape': 'carb', class: 'ute-shape' });
+  carb.appendChild(ns('rect', { x: 616, y: 300, width: 32, height: 40, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'carb', 'data-fillable': '' }));
+  carb.appendChild(ns('ellipse', { cx: 632, cy: 358, rx: 18, ry: 10, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'carb' }));
+  svg.appendChild(carb);
+
+  // 2-stroke engine (single, compact)
+  const eng = ns('g', { 'data-shape': 'engine', class: 'ute-shape' });
+  eng.appendChild(ns('path', { d: 'M 530 360 L 680 355 L 695 445 L 525 445 Z', fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'engine', 'data-fillable': '' }));
+  for (let i = 0; i < 5; i++) eng.appendChild(ns('circle', { cx: 540 + i*32, cy: 437, r: 2, fill: '#0A0A0A', 'data-shape': 'engine' }));
+  eng.appendChild(ns('circle', { cx: 610, cy: 405, r: 22, fill: 'none', stroke: '#9A9385', 'stroke-width': 1.5, 'data-shape': 'engine' }));
+  svg.appendChild(eng);
+
+  // Single cylinder (tall, slightly forward lean)
+  const cyl = ns('g', { 'data-shape': 'cylinder', class: 'ute-shape' });
+  cyl.appendChild(ns('path', { d: 'M 575 360 L 582 265 L 648 265 L 652 360 Z', fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder', 'data-fillable': '' }));
+  for (let i = 0; i < 7; i++) {
+    const y = 275 + i*12;
+    cyl.appendChild(ns('line', { x1: 579 + i*0.5, y1: y, x2: 650 - i*0.5, y2: y, stroke: '#0A0A0A', 'stroke-width': 1, 'data-shape': 'cylinder' }));
+  }
+  cyl.appendChild(ns('rect', { x: 580, y: 255, width: 68, height: 12, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'cylinder' }));
+  cyl.appendChild(ns('rect', { x: 608, y: 244, width: 14, height: 12, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'cylinder' }));
+  svg.appendChild(cyl);
+
+  // ── Upswept expansion-chamber exhaust (iconic 2-stroke shape) ─
+  const ex = ns('g', { 'data-shape': 'exhaust', class: 'ute-shape' });
+  // Expansion chamber: cylinder exit → down → curve back right, bulging
+  ex.appendChild(ns('path', { d: 'M 615 358 Q 620 400 580 420 L 500 430 Q 420 440 400 420 Q 390 400 400 380 L 480 340 Q 530 310 580 330 Q 620 345 650 330 L 750 290 L 810 285 L 850 275', fill: 'none', stroke: '#D4CFC2', 'stroke-width': 9, 'stroke-linecap': 'round', 'data-shape': 'exhaust' }));
+  // Fat belly of the chamber
+  ex.appendChild(ns('ellipse', { cx: 540, cy: 395, rx: 95, ry: 32, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'exhaust', 'data-fillable': '' }));
+  // End can
+  ex.appendChild(ns('path', { d: 'M 840 268 L 940 258 L 945 290 L 845 300 Z', fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'exhaust' }));
+  svg.appendChild(ex);
+
+  // Swingarm (long)
+  const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
+  sw.appendChild(ns('path', { d: 'M 700 400 L 970 415 L 975 435 L 705 418 Z', fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'swingarm', 'data-fillable': '' }));
+  sw.appendChild(ns('circle', { cx: 700, cy: 408, r: 9, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'swingarm' }));
+  svg.appendChild(sw);
+
+  // Mono-shock linkage
+  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
+  shock.appendChild(ns('line', { x1: 740, y1: 300, x2: 740, y2: 405, stroke: '#C2502A', 'stroke-width': 10, 'data-shape': 'rear_shock' }));
+  for (let i = 0; i < 7; i++) shock.appendChild(ns('line', { x1: 732, y1: 320 + i*11, x2: 748, y2: 328 + i*11, stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'rear_shock' }));
+  shock.appendChild(ns('path', { d: 'M 740 405 L 760 420 L 760 440 L 720 435 L 740 420 Z', fill: '#2A2A26', 'data-shape': 'rear_shock' }));
+  svg.appendChild(shock);
+
+  // Chain + sprockets
+  const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
+  chain.appendChild(ns('line', { x1: 686, y1: 400, x2: 970, y2: 415, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'chain' }));
+  chain.appendChild(ns('line', { x1: 686, y1: 414, x2: 970, y2: 429, stroke: '#2A2A26', 'stroke-width': 3, 'data-shape': 'chain' }));
+  for (let x = 690; x < 970; x += 14) chain.appendChild(ns('line', { x1: x, y1: 398, x2: x + 1, y2: 431, stroke: '#B9B3A4', 'data-shape': 'chain' }));
+  svg.appendChild(chain);
+
+  const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
+  rsp.appendChild(ns('circle', { cx: 970, cy: 420, r: 58, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
+  for (let i = 0; i < 36; i++) {
+    const a = (i / 36) * 2 * Math.PI;
+    rsp.appendChild(ns('line', { x1: 970 + Math.cos(a)*58, y1: 420 + Math.sin(a)*58, x2: 970 + Math.cos(a)*62, y2: 420 + Math.sin(a)*62, stroke: '#0A0A0A', 'data-shape': 'rear_sprocket' }));
+  }
+  svg.appendChild(rsp);
+
+  // Wheels (knobby)
+  svg.appendChild(wheelSVG(254, 405, 96, 'front_wheel', true));
+  svg.appendChild(wheelSVG(970, 420, 96, 'rear_wheel', true));
+
+  // Front brake
+  const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
+  brake.appendChild(ns('circle', { cx: 254, cy: 405, r: 42, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 2, 'data-shape': 'brake' }));
+  brake.appendChild(ns('rect', { x: 296, y: 388, width: 20, height: 34, fill: '#1D6B55', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'brake', 'data-fillable': '' }));
+  svg.appendChild(brake);
+
+  // Narrow long seat
+  const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
+  seat.appendChild(ns('path', { d: 'M 625 240 L 870 272 L 875 290 L 630 265 Z', fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat', 'data-fillable': '' }));
+  svg.appendChild(seat);
+
+  // Rear fender/tail (small)
+  const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
+  tl.appendChild(ns('path', { d: 'M 870 275 L 920 272 L 925 300 L 875 302 Z', fill: '#1D6B55', stroke: '#0A0A0A', 'data-shape': 'tail_light', 'data-fillable': '' }));
+  tl.appendChild(ns('rect', { x: 905, y: 282, width: 12, height: 8, fill: '#C2502A', 'data-shape': 'tail_light' }));
+  svg.appendChild(tl);
+
+  // Side stand
+  svg.appendChild(ns('line', { x1: 565, y1: 445, x2: 590, y2: 495, stroke: '#2A2A26', 'stroke-width': 4 }));
+  svg.appendChild(ns('circle', { cx: 715, cy: 448, r: 4, fill: '#2A2A26' }));
+
+  // Battery (small, hidden under seat)
+  const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
+  bat.appendChild(ns('rect', { x: 700, y: 300, width: 36, height: 24, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'battery', 'data-fillable': '' }));
+  const tx = ns('text', { x: 718, y: 318, fill: '#0A0A0A', 'font-family': 'IBM Plex Mono', 'font-size': 9, 'font-weight': 700, 'text-anchor': 'middle', 'data-shape': 'battery' });
+  tx.textContent = '12V'; bat.appendChild(tx);
+  svg.appendChild(bat);
+
+  svg.appendChild(g);
+
+  const callouts = [
+    { key: 'headlight',   sx: 310, sy: 220, lx:  100, lane: 1, label: 'Number plate' },
+    { key: 'instruments', sx: 410, sy: 170, lx:  360, lane: 1, label: 'Bars / guards' },
+    { key: 'fuel_tank',   sx: 535, sy: 250, lx:  575, lane: 1, label: 'Fuel tank' },
+    { key: 'seat',        sx: 760, sy: 262, lx:  785, lane: 1, label: 'Seat' },
+    { key: 'tail_light',  sx: 895, sy: 282, lx: 1000, lane: 1, label: 'Tail' },
+    { key: 'forks',       sx: 275, sy: 320, lx:   90, lane: 2, label: 'Forks (USD)' },
+    { key: 'air_filter',  sx: 680, sy: 290, lx:  680, lane: 2, label: 'Air box' },
+    { key: 'carb',        sx: 632, sy: 330, lx:  490, lane: 2, label: 'Carb' },
+    { key: 'cylinder',    sx: 615, sy: 285, lx:  770, lane: 2, label: 'Cylinder' },
+    { key: 'front_wheel', sx: 254, sy: 405, lx:  250, lane: 3, label: 'Front wheel' },
+    { key: 'brake',       sx: 306, sy: 405, lx:  395, lane: 3, label: 'Brake disc' },
+    { key: 'engine',      sx: 610, sy: 420, lx:  570, lane: 3, label: 'Engine' },
+    { key: 'exhaust',     sx: 540, sy: 395, lx:  830, lane: 3, label: 'Expansion chamber' },
+    { key: 'swingarm',    sx: 860, sy: 414, lx:  970, lane: 3, label: 'Swingarm' },
+    { key: 'rear_wheel',  sx: 970, sy: 420, lx: 1150, lane: 3, label: 'Rear wheel' },
+    { key: 'frame',       sx: 490, sy: 265, lx:  445, lane: 4, label: 'Frame' },
+    { key: 'battery',     sx: 718, sy: 315, lx:  680, lane: 4, label: 'Battery' },
+    { key: 'rear_shock',  sx: 740, sy: 360, lx:  870, lane: 4, label: 'Monoshock' },
+    { key: 'rear_sprocket', sx: 970, sy: 470, lx: 1000, lane: 4, label: 'Rear sprocket' },
+    { key: 'chain',       sx: 820, sy: 420, lx: 1140, lane: 4, label: 'Chain' },
+  ];
+  const gc = ns('g');
+  callouts.forEach((c) => gc.appendChild(callout(c)));
+  svg.appendChild(gc);
+}
+
+function drawElectricBike(svg) {
+  const g = ns('g');
+  g.appendChild(ns('line', { x1: 0, y1: 490, x2: 1200, y2: 490, stroke: '#B9B3A4', 'stroke-dasharray': '4 6' }));
+
+  // Trellis frame + battery enclosure
+  const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
+  frame.appendChild(ns('path', { d: 'M 310 230 L 420 240 L 650 240 L 720 265', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'frame' }));
+  frame.appendChild(ns('path', { d: 'M 315 240 L 440 380 L 540 410', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'frame' }));
+  frame.appendChild(ns('path', { d: 'M 650 245 L 790 258 L 870 268', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3, 'data-shape': 'frame' }));
+  frame.appendChild(ns('rect', { x: 295, y: 220, width: 30, height: 55, fill: '#E6E1D4', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'frame' }));
+  svg.appendChild(frame);
+
+  // Inverted forks (modern streetfighter)
+  const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
+  forks.appendChild(ns('line', { x1: 302, y1: 235, x2: 260, y2: 380, stroke: '#DDD9CF', 'stroke-width': 13, 'data-shape': 'forks' }));
+  forks.appendChild(ns('line', { x1: 320, y1: 235, x2: 278, y2: 380, stroke: '#DDD9CF', 'stroke-width': 13, 'data-shape': 'forks' }));
+  forks.appendChild(ns('line', { x1: 266, y1: 360, x2: 240, y2: 405, stroke: '#1A1A17', 'stroke-width': 11, 'data-shape': 'forks' }));
+  forks.appendChild(ns('line', { x1: 284, y1: 360, x2: 258, y2: 405, stroke: '#1A1A17', 'stroke-width': 11, 'data-shape': 'forks' }));
+  forks.appendChild(ns('rect', { x: 282, y: 210, width: 56, height: 18, fill: '#2A2A26', stroke: '#0A0A0A', 'data-shape': 'forks' }));
+  svg.appendChild(forks);
+
+  // Angular LED headlight
+  const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
+  hl.appendChild(ns('path', { d: 'M 268 218 L 345 205 L 365 255 L 275 268 Z', fill: '#0A0A0A', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'headlight', 'data-fillable': '' }));
+  hl.appendChild(ns('path', { d: 'M 285 232 L 345 222 L 352 248 L 288 258 Z', fill: '#1D6B55', 'data-shape': 'headlight' }));
+  hl.appendChild(ns('line', { x1: 290, y1: 240, x2: 345, y2: 232, stroke: '#F6F5F2', 'stroke-width': 2, 'data-shape': 'headlight' }));
+  svg.appendChild(hl);
+
+  // Angular front fender
+  svg.appendChild(ns('path', { d: 'M 190 335 L 290 315 L 335 340 L 320 358 L 240 350 L 200 360 Z', fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'front_wheel', class: 'ute-shape' }));
+
+  // Handlebar
+  const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
+  bar.appendChild(ns('path', { d: 'M 311 215 L 365 170 L 440 160', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('path', { d: 'M 311 215 L 265 180 L 200 175', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('rect', { x: 190, y: 168, width: 24, height: 14, fill: '#111', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('rect', { x: 430, y: 154, width: 24, height: 14, fill: '#111', 'data-shape': 'instruments' }));
+  // TFT dash
+  bar.appendChild(ns('rect', { x: 345, y: 155, width: 70, height: 36, fill: '#0A0A0A', stroke: '#0A0A0A', 'data-shape': 'instruments', 'data-fillable': '' }));
+  bar.appendChild(ns('text', { x: 380, y: 175, 'font-family': 'IBM Plex Mono', 'font-size': 12, 'font-weight': 700, fill: '#1D6B55', 'text-anchor': 'middle', 'data-shape': 'instruments' })).textContent = 'EV';
+  bar.appendChild(ns('text', { x: 380, y: 186, 'font-family': 'IBM Plex Mono', 'font-size': 8, fill: '#E2A93B', 'text-anchor': 'middle', 'data-shape': 'instruments' })).textContent = '85%';
+  svg.appendChild(bar);
+
+  // Battery pack (big, where engine would be) — the hero shape
+  const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
+  bat.appendChild(ns('path', { d: 'M 430 255 L 710 260 L 720 405 L 435 410 Z', fill: '#F0ECE1', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'battery', 'data-fillable': '' }));
+  // Cell cluster hatching
+  for (let i = 0; i < 7; i++) {
+    for (let j = 0; j < 4; j++) {
+      bat.appendChild(ns('circle', { cx: 465 + i*38, cy: 285 + j*32, r: 10, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 1, 'data-shape': 'battery' }));
+      bat.appendChild(ns('circle', { cx: 465 + i*38, cy: 285 + j*32, r: 3, fill: '#C2502A', 'data-shape': 'battery' }));
+    }
+  }
+  // Terminals on top
+  bat.appendChild(ns('rect', { x: 460, y: 250, width: 50, height: 8, fill: '#C2502A', 'data-shape': 'battery' }));
+  bat.appendChild(ns('rect', { x: 620, y: 250, width: 50, height: 8, fill: '#0A0A0A', 'data-shape': 'battery' }));
+  svg.appendChild(bat);
+
+  // Controller (box on top of battery)
+  const ctl = ns('g', { 'data-shape': 'controller', class: 'ute-shape' });
+  ctl.appendChild(ns('rect', { x: 475, y: 220, width: 200, height: 32, fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'controller', 'data-fillable': '' }));
+  // Heat sink fins
+  for (let i = 0; i < 10; i++) ctl.appendChild(ns('line', { x1: 480 + i*20, y1: 225, x2: 480 + i*20, y2: 250, stroke: '#9A9385', 'data-shape': 'controller' }));
+  // Power/data cables
+  ctl.appendChild(ns('path', { d: 'M 475 240 L 440 260', fill: 'none', stroke: '#C2502A', 'stroke-width': 3, 'data-shape': 'controller' }));
+  ctl.appendChild(ns('path', { d: 'M 675 240 L 710 260', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3, 'data-shape': 'controller' }));
+  const txc = ns('text', { x: 575, y: 243, 'font-family': 'IBM Plex Mono', 'font-size': 10, 'font-weight': 600, 'text-anchor': 'middle', fill: '#F6F5F2', 'data-shape': 'controller' });
+  txc.textContent = 'CONTROLLER / INVERTER';
+  ctl.appendChild(txc);
+  svg.appendChild(ctl);
+
+  // Electric motor (round, at swingarm pivot)
+  const motor = ns('g', { 'data-shape': 'motor', class: 'ute-shape' });
+  motor.appendChild(ns('circle', { cx: 720, cy: 400, r: 50, fill: '#D4CFC2', stroke: '#0A0A0A', 'stroke-width': 2.5, 'data-shape': 'motor', 'data-fillable': '' }));
+  // Cooling fins (radial)
+  for (let i = 0; i < 24; i++) {
+    const a = (i / 24) * 2 * Math.PI;
+    motor.appendChild(ns('line', { x1: 720 + Math.cos(a)*34, y1: 400 + Math.sin(a)*34, x2: 720 + Math.cos(a)*48, y2: 400 + Math.sin(a)*48, stroke: '#9A9385', 'stroke-width': 1.5, 'data-shape': 'motor' }));
+  }
+  // Hub
+  motor.appendChild(ns('circle', { cx: 720, cy: 400, r: 20, fill: '#2A2A26', 'data-shape': 'motor' }));
+  motor.appendChild(ns('circle', { cx: 720, cy: 400, r: 7, fill: '#C2502A', 'data-shape': 'motor' }));
+  // Phase cables (3)
+  motor.appendChild(ns('path', { d: 'M 685 365 Q 660 350 650 320', fill: 'none', stroke: '#C2502A', 'stroke-width': 3, 'data-shape': 'motor' }));
+  motor.appendChild(ns('path', { d: 'M 680 400 Q 630 400 620 390', fill: 'none', stroke: '#1D6B55', 'stroke-width': 3, 'data-shape': 'motor' }));
+  motor.appendChild(ns('path', { d: 'M 685 435 Q 660 450 650 460', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3, 'data-shape': 'motor' }));
+  svg.appendChild(motor);
+
+  // Charge port (near the frame)
+  const cp = ns('g', { 'data-shape': 'charge_port', class: 'ute-shape' });
+  cp.appendChild(ns('rect', { x: 395, y: 335, width: 30, height: 24, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'charge_port', 'data-fillable': '' }));
+  cp.appendChild(ns('circle', { cx: 410, cy: 347, r: 6, fill: '#1D6B55', 'data-shape': 'charge_port' }));
+  svg.appendChild(cp);
+
+  // Swingarm (shorter, strong)
+  const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
+  sw.appendChild(ns('path', { d: 'M 760 395 L 970 400 L 975 420 L 765 415 Z', fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'swingarm', 'data-fillable': '' }));
+  sw.appendChild(ns('circle', { cx: 760, cy: 404, r: 9, fill: '#B9B3A4', 'data-shape': 'swingarm' }));
+  svg.appendChild(sw);
+
+  // Rear mono-shock
+  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
+  shock.appendChild(ns('line', { x1: 790, y1: 305, x2: 790, y2: 400, stroke: '#B9B3A4', 'stroke-width': 10, 'data-shape': 'rear_shock' }));
+  for (let i = 0; i < 6; i++) shock.appendChild(ns('line', { x1: 782, y1: 322 + i*11, x2: 798, y2: 330 + i*11, stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'rear_shock' }));
+  svg.appendChild(shock);
+
+  // Belt drive (electrics often use belt not chain, but we'll keep chain data-shape for the live stats)
+  const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
+  chain.appendChild(ns('rect', { x: 735, y: 395, width: 230, height: 7, fill: '#2A2A26', 'data-shape': 'chain' }));
+  chain.appendChild(ns('rect', { x: 735, y: 410, width: 230, height: 7, fill: '#2A2A26', 'data-shape': 'chain' }));
+  for (let x = 740; x < 965; x += 10) chain.appendChild(ns('line', { x1: x, y1: 395, x2: x, y2: 417, stroke: '#B9B3A4', 'data-shape': 'chain' }));
+  svg.appendChild(chain);
+
+  // Rear sprocket / pulley
+  const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
+  rsp.appendChild(ns('circle', { cx: 970, cy: 405, r: 50, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
+  for (let i = 0; i < 48; i++) {
+    const a = (i / 48) * 2 * Math.PI;
+    rsp.appendChild(ns('line', { x1: 970 + Math.cos(a)*50, y1: 405 + Math.sin(a)*50, x2: 970 + Math.cos(a)*54, y2: 405 + Math.sin(a)*54, stroke: '#0A0A0A', 'data-shape': 'rear_sprocket' }));
+  }
+  svg.appendChild(rsp);
+
+  // Wheels (modern cast alloy)
+  svg.appendChild(wheelSVG(254, 400, 92, 'front_wheel', false));
+  svg.appendChild(wheelSVG(970, 405, 92, 'rear_wheel', false));
+
+  // Brake
+  const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
+  brake.appendChild(ns('circle', { cx: 254, cy: 400, r: 48, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 2, 'data-shape': 'brake' }));
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * 2 * Math.PI;
+    brake.appendChild(ns('circle', { cx: 254 + Math.cos(a)*42, cy: 400 + Math.sin(a)*42, r: 2, fill: '#0A0A0A', 'data-shape': 'brake' }));
+  }
+  brake.appendChild(ns('rect', { x: 296, y: 383, width: 20, height: 34, fill: '#1D6B55', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'brake', 'data-fillable': '' }));
+  svg.appendChild(brake);
+
+  // Compact tail + seat
+  const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
+  seat.appendChild(ns('path', { d: 'M 710 258 L 830 258 L 865 275 L 715 280 Z', fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat', 'data-fillable': '' }));
+  seat.appendChild(ns('path', { d: 'M 865 275 L 905 260 L 920 285 L 870 290 Z', fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat' }));
+  svg.appendChild(seat);
+
+  const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
+  tl.appendChild(ns('rect', { x: 905, y: 270, width: 16, height: 6, fill: '#C2502A', 'data-shape': 'tail_light', 'data-fillable': '' }));
+  svg.appendChild(tl);
+
+  svg.appendChild(g);
+
+  const callouts = [
+    { key: 'headlight',   sx: 310, sy: 230, lx:  100, lane: 1, label: 'LED headlight' },
+    { key: 'instruments', sx: 380, sy: 170, lx:  370, lane: 1, label: 'TFT dash' },
+    { key: 'controller',  sx: 575, sy: 225, lx:  580, lane: 1, label: 'Controller' },
+    { key: 'seat',        sx: 770, sy: 268, lx:  790, lane: 1, label: 'Seat' },
+    { key: 'tail_light',  sx: 912, sy: 274, lx: 1000, lane: 1, label: 'Tail light' },
+    { key: 'forks',       sx: 275, sy: 310, lx:   90, lane: 2, label: 'Forks (USD)' },
+    { key: 'battery',     sx: 575, sy: 330, lx:  450, lane: 2, label: 'Battery pack' },
+    { key: 'charge_port', sx: 410, sy: 347, lx:  660, lane: 2, label: 'Charge port' },
+    { key: 'motor',       sx: 720, sy: 400, lx:  790, lane: 2, label: 'Motor' },
+    { key: 'front_wheel', sx: 254, sy: 400, lx:  260, lane: 3, label: 'Front wheel' },
+    { key: 'brake',       sx: 306, sy: 400, lx:  405, lane: 3, label: 'Brake disc' },
+    { key: 'frame',       sx: 490, sy: 258, lx:  570, lane: 3, label: 'Frame' },
+    { key: 'swingarm',    sx: 870, sy: 410, lx:  870, lane: 3, label: 'Swingarm' },
+    { key: 'rear_wheel',  sx: 970, sy: 405, lx: 1150, lane: 3, label: 'Rear wheel' },
+    { key: 'rear_shock',  sx: 790, sy: 355, lx:  440, lane: 4, label: 'Rear shock' },
+    { key: 'chain',       sx: 870, sy: 408, lx:  700, lane: 4, label: 'Belt drive' },
+    { key: 'rear_sprocket', sx: 970, sy: 455, lx:  990, lane: 4, label: 'Belt pulley' },
+  ];
+  const gc = ns('g');
+  callouts.forEach((c) => gc.appendChild(callout(c)));
+  svg.appendChild(gc);
+}
+
+// ───────────────────────── Component view router ────────────────
+function renderComponentView() {
+  const slot = ROOT.querySelector('#ute-cview-slot');
+  if (!slot) return;
+  if (!S.selected_part) {
+    slot.innerHTML = emptyCViewHTML();
+    return;
+  }
+  const cfg = COMPONENT_VIEWS[S.selected_part] || basicCard(S.selected_part);
+  if (!cfg) { slot.innerHTML = emptyCViewHTML(); return; }
+  slot.innerHTML = `
+    <div class="ute-cview-head">
+      <div>
+        <span class="ute-label">${cfg.kind || 'Component'}</span>
+        <h2>${cfg.title}</h2>
+      </div>
+      <button class="ute-cview-close" type="button" data-cv-close>Close ✕</button>
+    </div>
+    <div class="ute-cview-stage" id="ute-cview-stage">${cfg.html()}</div>
+    ${cfg.sideHTML ? cfg.sideHTML() : ''}
+  `;
+  if (cfg.mount) cfg.mount();
+  const close = slot.querySelector('[data-cv-close]');
+  if (close) close.addEventListener('click', () => selectPart(null));
+}
+
+// ───────────────────────── Component view configs ───────────────
+// Each config: { title, kind, html(), mount(), update(dt)?, sideHTML()? }
+// Interactive ones register an update() ticked by the main loop.
+
+const COMPONENT_VIEWS = {};
+
+function basicCard(key) {
+  const p = PARTS[key];
+  if (!p) return null;
+  return {
+    title: p.name, kind: p.tag,
+    html: () => `
+      <div class="ute-cview-chip">
+        <div class="ute-cview-chip-dot"></div>
+        <div><span class="k">${p.name}</span><span class="d">${p.desc}</span></div>
+        <div class="n">${p.tag}</div>
+      </div>
+      <svg class="ute-cview-svg" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid meet">
+        ${p.svg ? p.svg : ''}
+      </svg>
+    `,
+    sideHTML: () => `
+      <div class="ute-cview-side">
+        <div class="card"><h4>What it does</h4><p>${p.desc}</p></div>
+        <div class="card"><h4>Live state</h4>
+          <div class="ute-stats">${p.stats ? p.stats().map((s) => `<div class="stat"><span class="k">${s.k}</span><span class="v">${s.v}</span></div>`).join('') : '<div class="stat"><span class="k">—</span><span class="v">—</span></div>'}</div>
+        </div>
+        <div class="card"><h4>Notes</h4><p>${p.notes || 'Static component. See the overview to see where it fits on the whole bike.'}</p></div>
+      </div>
+    `,
+  };
+}
+
+// ─── Shared SVG primitives: fake-3D helpers ─────────────────────
+function iso3DBox(x, y, w, h, d, colors) {
+  const g = ns('g');
+  const dx = d * 0.5, dy = d * 0.4;
+  g.appendChild(ns('polygon', { points: `${x},${y+h} ${x+w},${y+h} ${x+w+dx},${y+h-dy} ${x+dx},${y+h-dy}`, fill: colors.bottom || colors.right || colors.front, opacity: 0.8 }));
+  g.appendChild(ns('rect', { x, y, width: w, height: h, fill: colors.front, stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('polygon', { points: `${x},${y} ${x+w},${y} ${x+w+dx},${y-dy} ${x+dx},${y-dy}`, fill: colors.top, stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('polygon', { points: `${x+w},${y} ${x+w+dx},${y-dy} ${x+w+dx},${y+h-dy} ${x+w},${y+h}`, fill: colors.right, stroke: '#0A0A0A', 'stroke-width': 2 }));
+  return g;
+}
+
+function iso3DCylinder(cx, cy, r, h, colors) {
+  // Vertical cylinder: ellipse top, body with gradient, ellipse bottom
+  const g = ns('g');
+  const ry = r * 0.35;
+  g.appendChild(ns('path', { d: `M ${cx-r} ${cy} L ${cx-r} ${cy+h} A ${r} ${ry} 0 0 0 ${cx+r} ${cy+h} L ${cx+r} ${cy} Z`, fill: colors.side, stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('ellipse', { cx, cy, rx: r, ry, fill: colors.top, stroke: '#0A0A0A', 'stroke-width': 2 }));
+  return g;
+}
+
+function defsPackMetals(svg) {
+  const defs = ns('defs');
+  const stops = (id, c1, c2, c3, horizontal) => {
+    const g = ns('linearGradient', { id, x1: 0, y1: 0, x2: horizontal ? 1 : 0, y2: horizontal ? 0 : 1 });
+    g.appendChild(ns('stop', { offset: '0%',   'stop-color': c1 }));
+    g.appendChild(ns('stop', { offset: '50%',  'stop-color': c2 }));
+    g.appendChild(ns('stop', { offset: '100%', 'stop-color': c3 }));
+    return g;
+  };
+  defs.appendChild(stops('g3-case',    '#4A4642', '#8E867A', '#2A2824'));
+  defs.appendChild(stops('g3-steel',   '#8E867A', '#D4CFC2', '#5B574E'));
+  defs.appendChild(stops('g3-alum',    '#B9B3A4', '#F2EEE4', '#8B8371'));
+  defs.appendChild(stops('g3-copper',  '#8A4A28', '#C2502A', '#5B2415'));
+  defs.appendChild(stops('g3-cu-dark', '#5B2415', '#8A4A28', '#3F1A0E'));
+  defs.appendChild(stops('g3-gold',    '#A7742A', '#F4D06F', '#8B5A1E'));
+  defs.appendChild(stops('g3-black',   '#2A2A26', '#5B574E', '#0A0A0A'));
+  defs.appendChild(stops('g3-green',   '#0F4A3A', '#1D6B55', '#092E22'));
+  defs.appendChild(stops('g3-amber',   '#E2A93B', '#F4D06F', '#B07F1C'));
+  defs.appendChild(stops('g3-tube',    '#8E867A', '#DBD4C4', '#6D675D', true));
+  svg.appendChild(defs);
+}
+
+// ─── ENGINE close-up (4T or 2T) ─────────────────────────────────
+let ENGINE_PATHS = {};
+function cvEngineHTML() {
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k" id="ute-cv-stroke">Compression</span><span class="d" id="ute-cv-stroke-desc">Both valves shut. Piston rising, charge compressing.</span></div>
+      <div class="n" id="ute-cv-rpm">0 rpm</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-engine-svg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet" aria-label="Engine cross-section"></svg>
+    <div class="ute-timing" id="ute-cv-timing"></div>
+  `;
+}
+function cvEngineSide() {
+  return `
+    <div class="ute-cview-side">
+      <div class="card">
+        <h4>Parameters</h4>
+        ${slider('rpm',        'Engine speed',       600, 10000, 50,  S.rpm,        'rpm')}
+        ${slider('bore_mm',    'Bore',               40,  110,   1,   S.bore_mm,    'mm')}
+        ${slider('stroke_mm',  'Stroke',             40,  110,   1,   S.stroke_mm,  'mm')}
+        ${slider('compression','Compression ratio',  6,   14,    0.1, S.compression,':1')}
+      </div>
+      <div class="card">
+        <h4>Computed outputs</h4>
+        <div class="ute-stats" id="ute-cv-reads"></div>
+      </div>
+      <div class="card">
+        <h4>What's happening</h4>
+        <p id="ute-cv-whats-happening">The piston cycles through intake, compression, power and exhaust. Watch the valves open and the spark fire near top-dead-centre.</p>
+        <div class="ute-run" style="margin-top:10px;">
+          <button type="button" data-run="toggle">${S.running?'Pause':'Play'}</button>
+          <button type="button" data-run="step">Step +30°</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+function slider(key, label, min, max, step, value, unit) {
+  const v = Number(value);
+  const fmt = (unit === ':1') ? v.toFixed(1) : (step < 1 ? v.toFixed(1) : Math.round(v).toLocaleString('en-GB'));
+  return `
+    <div class="ute-param" data-key="${key}">
+      <div class="ute-param-head">
+        <span class="ute-label">${label}</span>
+        <span class="ute-param-value"><span data-param-value="${key}">${fmt}</span> <span class="ute-u">${unit}</span></span>
+      </div>
+      <input type="range" min="${min}" max="${max}" step="${step}" value="${v}" data-param="${key}">
+    </div>`;
+}
+function readsHTML() {
+  const disp = displacementCC(S.bore_mm, S.stroke_mm);
+  const tq = approxTorqueNm(disp, S.mode, S.compression);
+  const kw = tq * S.rpm / 9549; const hp = kw * 1.341;
+  return `
+    <div class="stat"><span class="k">Displacement</span><span class="v">${Math.round(disp)}<span class="u">cc</span></span></div>
+    <div class="stat"><span class="k">Compression</span><span class="v">${S.compression.toFixed(1)}<span class="u">:1</span></span></div>
+    <div class="stat"><span class="k">Torque</span><span class="v">${tq.toFixed(1)}<span class="u">Nm</span></span></div>
+    <div class="stat"><span class="k">Power</span><span class="v">${kw.toFixed(1)}<span class="u">kW · ${hp.toFixed(0)} hp</span></span></div>
+  `;
+}
+function cvEngineMount() {
+  const svg = ROOT.querySelector('#ute-cv-engine-svg');
+  if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  // Crankcase box in 3-D
+  g.appendChild(iso3DBox(230, 280, 440, 130, 60, { front: 'url(#g3-case)', top: 'url(#g3-steel)', right: '#2A2824' }));
+  // Dashed crank orbit
+  g.appendChild(ns('circle', { cx: 450, cy: 345, r: 55, fill: 'none', stroke: '#B9B3A4', 'stroke-dasharray': '4 4' }));
+  // Cylinder barrel (3D)
+  g.appendChild(iso3DBox(400, 90, 100, 190, 50, { front: 'url(#g3-alum)', top: 'url(#g3-steel)', right: '#8B8371' }));
+  // Cooling fins
+  for (let i = 0; i < 7; i++) {
+    g.appendChild(ns('line', { x1: 376, y1: 110 + i*22, x2: 400, y2: 110 + i*22, stroke: '#0A0A0A' }));
+    g.appendChild(ns('line', { x1: 500, y1: 110 + i*22, x2: 525, y2: 110 + i*22, stroke: '#0A0A0A' }));
+  }
+  // Head
+  g.appendChild(ns('path', { d: 'M 395 90 L 395 40 Q 395 24 410 24 L 490 24 Q 505 24 505 40 L 505 90 Z', fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder', class: 'ute-shape' }));
+  // Spark plug
+  const sparkG = ns('g', { 'data-shape': 'spark_plug', class: 'ute-shape' });
+  sparkG.appendChild(ns('rect', { x: 440, y: 0, width: 20, height: 30, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'spark_plug', 'data-fillable': '' }));
+  sparkG.appendChild(ns('line', { x1: 450, y1: 30, x2: 450, y2: 42, stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'spark_plug' }));
+  sparkG.appendChild(ns('circle', { id: 'ute-cv-spark-flash', cx: 450, cy: 45, r: 0, fill: '#E2A93B', 'data-shape': 'spark_plug' }));
+  g.appendChild(sparkG);
+  // Gas (updated per tick)
+  g.appendChild(ns('rect', { id: 'ute-cv-gas', x: 402, y: 90, width: 96, height: 160, fill: '#DAD3C1', opacity: 0.78 }));
+
+  if (S.mode === '4t') {
+    // 4T valves
+    g.appendChild(ns('rect', { x: 410, y: 30, width: 30, height: 60, fill: 'none', stroke: '#0A0A0A' }));
+    g.appendChild(ns('path', { d: 'M 410 70 L 350 60 L 350 30 L 310 30', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+    g.appendChild(ns('rect', { id: 'ute-cv-valve-in', x: 408, y: 80, width: 34, height: 10, fill: '#2A2A26' }));
+    g.appendChild(ns('rect', { x: 460, y: 30, width: 30, height: 60, fill: 'none', stroke: '#0A0A0A' }));
+    g.appendChild(ns('path', { d: 'M 490 70 L 550 60 L 550 30 L 590 30', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+    g.appendChild(ns('rect', { id: 'ute-cv-valve-ex', x: 458, y: 80, width: 34, height: 10, fill: '#2A2A26' }));
+    g.appendChild(txt(240, 24, 'INTAKE', 'start', 10));
+    g.appendChild(txt(660, 24, 'EXHAUST', 'start', 10));
+  } else if (S.mode === '2t') {
+    // 2T ports
+    g.appendChild(ns('rect', { id: 'ute-cv-port-ex', x: 490, y: 225, width: 20, height: 30, fill: '#7A6E60', stroke: '#0A0A0A' }));
+    g.appendChild(ns('rect', { id: 'ute-cv-port-tr', x: 390, y: 230, width: 20, height: 30, fill: '#3E6FB7', stroke: '#0A0A0A' }));
+    g.appendChild(ns('path', { d: 'M 510 240 L 580 240 L 580 210 L 640 210', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+    g.appendChild(ns('path', { d: 'M 390 250 L 340 250 L 340 380 L 320 380', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+    g.appendChild(ns('rect', { x: 240, y: 370, width: 70, height: 32, fill: '#F6F5F2', stroke: '#0A0A0A' }));
+    g.appendChild(txt(236, 362, 'REED / CARB', 'end', 10));
+    g.appendChild(txt(645, 207, 'EXHAUST', 'start', 10));
+  }
+
+  // Con-rod + piston
+  g.appendChild(ns('line', { id: 'ute-cv-rod', x1: 450, y1: 230, x2: 450, y2: 345, stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'conrod', class: 'ute-shape' }));
+  g.appendChild(ns('rect', { id: 'ute-cv-piston', x: 402, y: 190, width: 96, height: 60, fill: '#D8D4CA', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'piston', class: 'ute-shape', 'data-fillable': '' }));
+  g.appendChild(ns('line', { id: 'ute-cv-ring1', x1: 402, y1: 200, x2: 498, y2: 200, stroke: '#0A0A0A' }));
+  g.appendChild(ns('line', { id: 'ute-cv-ring2', x1: 402, y1: 205, x2: 498, y2: 205, stroke: '#0A0A0A' }));
+  // Crank
+  const crankG = ns('g', { 'data-shape': 'crankshaft', class: 'ute-shape' });
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 70, fill: 'none', stroke: '#0A0A0A', 'data-shape': 'crankshaft' }));
+  crankG.appendChild(ns('circle', { id: 'ute-cv-crankpin', cx: 450, cy: 345, r: 8, fill: '#0A0A0A', 'data-shape': 'crankshaft' }));
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 3, fill: '#F6F5F2', 'data-shape': 'crankshaft' }));
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 5, fill: '#0A0A0A', 'data-shape': 'crankshaft' }));
+  g.appendChild(crankG);
+
+  svg.appendChild(g);
+  ENGINE_PATHS = {
+    piston: svg.querySelector('#ute-cv-piston'), ring1: svg.querySelector('#ute-cv-ring1'), ring2: svg.querySelector('#ute-cv-ring2'),
+    rod: svg.querySelector('#ute-cv-rod'), pin: svg.querySelector('#ute-cv-crankpin'),
+    gas: svg.querySelector('#ute-cv-gas'),
+    vIn: svg.querySelector('#ute-cv-valve-in'), vEx: svg.querySelector('#ute-cv-valve-ex'),
+    pEx: svg.querySelector('#ute-cv-port-ex'), pTr: svg.querySelector('#ute-cv-port-tr'),
+    spark: svg.querySelector('#ute-cv-spark-flash'),
+  };
+
+  // Timing strip
+  const timing = ROOT.querySelector('#ute-cv-timing');
+  if (timing) {
+    const segs = (S.mode === '4t')
+      ? [{s:'intake',from:0,to:180,label:'Intake'},{s:'compression',from:180,to:360,label:'Compression'},{s:'power',from:360,to:540,label:'Power'},{s:'exhaust',from:540,to:720,label:'Exhaust'}]
+      : [{s:'power',from:0,to:110,label:'Power'},{s:'exhaust',from:110,to:180,label:'Blowdown'},{s:'scavenge',from:180,to:230,label:'Scavenge'},{s:'compression',from:230,to:360,label:'Compression'}];
+    const total = (S.mode === '4t') ? 720 : 360;
+    timing.innerHTML = `<div class="ute-timing-track" id="ute-cv-timing-track">
+      ${segs.map((seg) => `<div class="ute-timing-seg" data-s="${seg.s}" style="left:${(seg.from/total)*100}%; width:${((seg.to-seg.from)/total)*100}%;">${seg.label}</div>`).join('')}
+      <div class="ute-timing-needle" id="ute-cv-timing-needle"></div>
+    </div>`;
+  }
+
+  // Wire sliders + run buttons
+  ROOT.querySelectorAll('input[type="range"][data-param]').forEach((inp) => {
+    inp.addEventListener('input', () => {
+      const key = inp.getAttribute('data-param');
+      S[key] = parseFloat(inp.value);
+      const span = ROOT.querySelector(`[data-param-value="${key}"]`);
+      if (span) { const step = parseFloat(inp.getAttribute('step'))||1; span.textContent = (step < 1) ? S[key].toFixed(1) : Math.round(S[key]).toLocaleString('en-GB'); }
+      const reads = ROOT.querySelector('#ute-cv-reads'); if (reads) reads.innerHTML = readsHTML();
+    });
+  });
+  ROOT.querySelectorAll('[data-run]').forEach((b) => {
+    b.addEventListener('click', () => {
+      if (b.getAttribute('data-run') === 'toggle') toggleRun();
+      else { S.crank_deg = (S.crank_deg + 30) % ((S.mode==='4t')?720:360); }
+      ROOT.querySelectorAll('[data-run="toggle"]').forEach((bb) => bb.textContent = S.running ? 'Pause' : 'Play');
+    });
+  });
+  const reads = ROOT.querySelector('#ute-cv-reads'); if (reads) reads.innerHTML = readsHTML();
+}
+function cvEngineUpdate(dt) {
+  if (!ENGINE_PATHS.piston) return;
+  const cycle = (S.mode === '4t') ? 720 : 360;
+  const shaftDeg = S.crank_deg % 360;
+  const theta = shaftDeg * Math.PI / 180;
+  const crankR = 55, cx = 450, cy = 345, rodLen = 150;
+  const pinX = cx + crankR * Math.cos(theta - Math.PI/2);
+  const pinY = cy + crankR * Math.sin(theta - Math.PI/2);
+  const pistonPinY = cy - Math.sqrt(rodLen*rodLen - Math.pow(pinX - cx, 2));
+  const pistonTopY = Math.max(90, Math.min(230, pistonPinY - 55));
+  ENGINE_PATHS.piston.setAttribute('y', pistonTopY);
+  ENGINE_PATHS.ring1.setAttribute('y1', pistonTopY + 10); ENGINE_PATHS.ring1.setAttribute('y2', pistonTopY + 10);
+  ENGINE_PATHS.ring2.setAttribute('y1', pistonTopY + 15); ENGINE_PATHS.ring2.setAttribute('y2', pistonTopY + 15);
+  ENGINE_PATHS.rod.setAttribute('y1', pistonTopY + 55); ENGINE_PATHS.rod.setAttribute('x2', pinX); ENGINE_PATHS.rod.setAttribute('y2', pinY);
+  ENGINE_PATHS.pin.setAttribute('cx', pinX); ENGINE_PATHS.pin.setAttribute('cy', pinY);
+  ENGINE_PATHS.gas.setAttribute('y', 90);
+  ENGINE_PATHS.gas.setAttribute('height', Math.max(2, pistonTopY - 90));
+  const si = currentStroke(S.crank_deg, S.mode);
+  ENGINE_PATHS.gas.setAttribute('fill', ({intake:'#D8E3F0',compression:'#DAD3C1',power:'#F2CDB9',exhaust:'#D7D1C4',scavenge:'#CDE1EE'})[si.s] || '#DAD3C1');
+  if (S.mode === '4t') {
+    if (ENGINE_PATHS.vIn) ENGINE_PATHS.vIn.setAttribute('y', 80 + (si.s === 'intake' ? 10 : 0));
+    if (ENGINE_PATHS.vEx) ENGINE_PATHS.vEx.setAttribute('y', 80 + (si.s === 'exhaust' ? 10 : 0));
+  } else if (S.mode === '2t') {
+    const ex = (pistonTopY + 60) > 225; const tr = (pistonTopY + 60) > 230;
+    if (ENGINE_PATHS.pEx) ENGINE_PATHS.pEx.setAttribute('fill-opacity', ex ? 1 : 0.25);
+    if (ENGINE_PATHS.pTr) ENGINE_PATHS.pTr.setAttribute('fill-opacity', tr ? 1 : 0.25);
+  }
+  const sparkDeg = (S.mode === '4t') ? 360 : 0;
+  const dSpark = Math.abs(((S.crank_deg - sparkDeg + cycle) % cycle));
+  ENGINE_PATHS.spark.setAttribute('r', (dSpark < 15 || dSpark > cycle - 15) ? 10 : 0);
+  const needle = ROOT.querySelector('#ute-cv-timing-needle');
+  if (needle) needle.style.left = (100 * S.crank_deg / cycle) + '%';
+  const strokeEl = ROOT.querySelector('#ute-cv-stroke'); if (strokeEl) strokeEl.textContent = si.label;
+  const strokeDescEl = ROOT.querySelector('#ute-cv-stroke-desc'); if (strokeDescEl) strokeDescEl.textContent = si.caption;
+  const rpmEl = ROOT.querySelector('#ute-cv-rpm'); if (rpmEl) rpmEl.textContent = `${Math.round(S.rpm).toLocaleString('en-GB')} rpm`;
+}
+COMPONENT_VIEWS.engine = { title: 'Engine (cross-section)', kind: 'Combustion · Interactive', html: cvEngineHTML, sideHTML: cvEngineSide, mount: cvEngineMount, update: cvEngineUpdate };
+
+function currentStroke(deg, mode) {
+  if (mode === '4t') {
+    if (deg < 180) return { s:'intake', label:'Intake', caption:'Intake valve open; piston descending. Fresh charge rushes in.' };
+    if (deg < 360) return { s:'compression', label:'Compression', caption:'Both valves shut. Piston rising, charge compressing — pressure and temperature climbing fast.' };
+    if (deg < 540) return { s:'power', label:'Power', caption:'Spark at TDC. Expanding gas drives the piston down.' };
+    return { s:'exhaust', label:'Exhaust', caption:'Exhaust valve opens. Rising piston pushes burnt gas out.' };
+  } else if (mode === '2t') {
+    if (deg < 110) return { s:'power', label:'Power', caption:'Spark at TDC. Burning gas pushes the piston down.' };
+    if (deg < 180) return { s:'exhaust', label:'Blowdown', caption:'Piston uncovers the exhaust port. Burnt gas blows down.' };
+    if (deg < 230) return { s:'scavenge', label:'Scavenge', caption:'Transfer port opens. Fresh charge sweeps up.' };
+    return { s:'compression', label:'Compression', caption:'Piston rises past the ports. Charge above is compressed.' };
+  } else {
+    return { s:'elec', label:'Running', caption:'Three-phase motor. Smooth torque from zero RPM.' };
+  }
+}
+function displacementCC(bore_mm, stroke_mm) { return (Math.PI / 4) * (bore_mm * bore_mm) * stroke_mm / 1000; }
+function approxTorqueNm(disp_cc, mode, cr) {
+  const base = (mode === '4t') ? 10 : (mode === '2t') ? 8 : 10;
+  const bmep_bar = base * (1 + 0.03 * (cr - 10));
+  const V = disp_cc * 1e-6; const nR = (mode === '4t') ? 2 : 1;
+  return bmep_bar * 1e5 * V / (2 * Math.PI * nR);
+}
+
+// ─── MOTOR (electric) ───────────────────────────────────────────
+function cvMotorHTML() {
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k" id="ute-cv-stroke">Running</span><span class="d" id="ute-cv-stroke-desc">A permanent-magnet BLDC rotor spun by three alternating phases.</span></div>
+      <div class="n" id="ute-cv-rpm">0 rpm</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-motor-svg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet"></svg>
+  `;
+}
+function cvMotorSide() {
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>What it does</h4>
+        <p>An electric motor turns stored chemical energy into torque with no combustion, no air–fuel ratio and no gearbox strictly required. A 3-phase inverter in the controller alternates current through the stator windings; the magnetic field drags the permanent-magnet rotor around with it.</p>
+      </div>
+      <div class="card"><h4>Live state</h4>
+        <div class="ute-stats" id="ute-cv-motor-reads"></div>
+      </div>
+      <div class="card"><h4>How it differs from ICE</h4>
+        <p>Peak torque at zero RPM — no clutch slip needed to pull away. No valves, no ignition timing, no exhaust. Efficiency ~90 % vs ~30 % for a petrol engine. Fewer moving parts: one rotor against hundreds in an ICE.</p>
+      </div>
+    </div>
+  `;
+}
+function cvMotorMount() {
+  const svg = ROOT.querySelector('#ute-cv-motor-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  // Motor casing (big circle with cooling fins)
+  g.appendChild(ns('circle', { cx: 450, cy: 220, r: 160, fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+  for (let i = 0; i < 36; i++) {
+    const a = (i / 36) * 2 * Math.PI;
+    g.appendChild(ns('line', { x1: 450 + Math.cos(a)*160, y1: 220 + Math.sin(a)*160, x2: 450 + Math.cos(a)*180, y2: 220 + Math.sin(a)*180, stroke: '#9A9385', 'stroke-width': 2 }));
+  }
+  // Cutaway window: inner stator ring + rotor
+  g.appendChild(ns('circle', { cx: 450, cy: 220, r: 140, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  // Stator slots (12 teeth)
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * 2 * Math.PI;
+    const x = 450 + Math.cos(a) * 110, y = 220 + Math.sin(a) * 110;
+    g.appendChild(ns('rect', { x: x - 16, y: y - 10, width: 32, height: 20, fill: 'url(#g3-copper)', stroke: '#0A0A0A', 'stroke-width': 1, transform: `rotate(${a * 180 / Math.PI + 90} ${x} ${y})` }));
+  }
+  // Air gap
+  g.appendChild(ns('circle', { cx: 450, cy: 220, r: 72, fill: 'none', stroke: '#B9B3A4', 'stroke-dasharray': '2 3' }));
+  // Rotor (rotates)
+  const rotor = ns('g', { id: 'ute-cv-rotor', transform: `rotate(0 450 220)` });
+  rotor.appendChild(ns('circle', { cx: 450, cy: 220, r: 65, fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  // Magnets: 8 alternating N/S
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * 2 * Math.PI;
+    const x = 450 + Math.cos(a) * 50, y = 220 + Math.sin(a) * 50;
+    rotor.appendChild(ns('rect', { x: x - 14, y: y - 8, width: 28, height: 16, fill: (i % 2 === 0 ? '#C2502A' : '#1D6B55'), stroke: '#0A0A0A', 'stroke-width': 1, transform: `rotate(${a * 180 / Math.PI + 90} ${x} ${y})` }));
+    const tt = ns('text', { x, y: y + 4, 'font-family': 'IBM Plex Mono', 'font-size': 11, 'font-weight': 700, fill: '#FFFFFF', 'text-anchor': 'middle', transform: `rotate(${a * 180 / Math.PI + 90} ${x} ${y})` });
+    tt.textContent = i % 2 === 0 ? 'N' : 'S';
+    rotor.appendChild(tt);
+  }
+  // Shaft hub
+  rotor.appendChild(ns('circle', { cx: 450, cy: 220, r: 20, fill: '#2A2A26', stroke: '#0A0A0A' }));
+  rotor.appendChild(ns('circle', { cx: 450, cy: 220, r: 4, fill: '#E2A93B' }));
+  g.appendChild(rotor);
+  // Three-phase cable set
+  g.appendChild(ns('path', { d: 'M 290 180 Q 230 160 220 100', fill: 'none', stroke: '#C2502A', 'stroke-width': 4 }));
+  g.appendChild(ns('path', { d: 'M 290 220 L 190 220', fill: 'none', stroke: '#1D6B55', 'stroke-width': 4 }));
+  g.appendChild(ns('path', { d: 'M 290 260 Q 230 290 220 350', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4 }));
+  g.appendChild(txt(210, 90, 'U', 'end', 12));
+  g.appendChild(txt(180, 225, 'V', 'end', 12));
+  g.appendChild(txt(210, 355, 'W', 'end', 12));
+
+  svg.appendChild(g);
+  const reads = ROOT.querySelector('#ute-cv-motor-reads'); if (reads) reads.innerHTML = motorReadsHTML();
+}
+function motorReadsHTML() {
+  return `
+    <div class="stat"><span class="k">Motor RPM</span><span class="v">${Math.round(S.elec.rpm).toLocaleString('en-GB')}</span></div>
+    <div class="stat"><span class="k">Torque</span><span class="v">${S.elec.torque.toFixed(0)}<span class="u">Nm</span></span></div>
+    <div class="stat"><span class="k">Motor temp</span><span class="v">${S.elec.motor_temp.toFixed(0)}<span class="u">°C</span></span></div>
+    <div class="stat"><span class="k">Pack SoC</span><span class="v">${S.elec.battery_soc.toFixed(1)}<span class="u">%</span></span></div>
+  `;
+}
+function cvMotorUpdate(dt) {
+  const rotor = ROOT.querySelector('#ute-cv-rotor');
+  if (rotor) {
+    const cur = parseFloat(rotor.getAttribute('data-rot') || '0');
+    const degStep = (S.elec.rpm / 60) * 360 * dt * 0.03;  // slow-mo
+    const next = (cur + degStep) % 360;
+    rotor.setAttribute('data-rot', next);
+    rotor.setAttribute('transform', `rotate(${next} 450 220)`);
+  }
+  const rpmEl = ROOT.querySelector('#ute-cv-rpm'); if (rpmEl) rpmEl.textContent = `${Math.round(S.elec.rpm).toLocaleString('en-GB')} rpm`;
+  const reads = ROOT.querySelector('#ute-cv-motor-reads'); if (reads) reads.innerHTML = motorReadsHTML();
+}
+COMPONENT_VIEWS.motor = { title: 'Electric motor (cutaway)', kind: 'Electric · Interactive', html: cvMotorHTML, sideHTML: cvMotorSide, mount: cvMotorMount, update: cvMotorUpdate };
+
+// ─── CARBURETOR / THROTTLE close-up (hold-to-act) ───────────────
+function cvCarbHTML() {
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k" id="ute-cv-carb-state">Idle</span><span class="d" id="ute-cv-carb-desc">Throttle plate almost closed. Just enough air sneaks past to idle.</span></div>
+      <div class="n" id="ute-cv-carb-rpm">900 rpm</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-carb-svg" viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="ute-cview-controls">
+      <button class="ute-cview-action" type="button" id="ute-cv-carb-act">GAS</button>
+      <span class="ute-cview-hint">Press and hold</span>
+    </div>
+  `;
+}
+function cvCarbSide() {
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>What it does</h4><p>Meters fuel into the airstream going to the engine. A carburetor uses a venturi to pull fuel from a float bowl by suction; EFI sprays it electronically. Both deliver roughly 14.7 : 1 air : fuel for petrol.</p></div>
+      <div class="card"><h4>Sub-components</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
+          <li><strong>Venturi</strong>: narrow section where air speeds up and pressure drops.</li>
+          <li><strong>Throttle plate</strong>: the butterfly you control with the twistgrip.</li>
+          <li><strong>Main jet</strong>: calibrated hole that meters fuel into the airstream.</li>
+          <li><strong>Pilot jet</strong>: separate circuit for idle and low throttle.</li>
+          <li><strong>Float + needle valve</strong>: keeps the bowl at the right fuel level.</li>
+        </ul>
+      </div>
+      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-carb-reads"></div></div>
+    </div>
+  `;
+}
+function cvCarbMount() {
+  const svg = ROOT.querySelector('#ute-cv-carb-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  // Intake tube with venturi (narrow in middle)
+  g.appendChild(ns('path', { d: 'M 80 110 L 80 220 L 280 220 Q 340 220 350 180 Q 350 165 350 150 Q 350 125 410 125 Q 460 125 460 150 Q 460 165 460 180 Q 470 220 530 220 L 820 220 L 820 110 Z', fill: 'url(#g3-tube)', stroke: '#0A0A0A', 'stroke-width': 2, opacity: 0.3 }));
+  g.appendChild(ns('path', { d: 'M 80 110 L 80 220 L 280 220 Q 340 220 350 180 Q 350 165 350 150 Q 350 125 410 125 Q 460 125 460 150 Q 460 165 460 180 Q 470 220 530 220 L 820 220', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+  g.appendChild(ns('path', { d: 'M 80 110 L 820 110', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+  // Float bowl under the venturi
+  g.appendChild(ns('path', { d: 'M 350 225 Q 400 310 460 225', fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('rect', { x: 395, y: 260, width: 20, height: 20, fill: '#F6F5F2', stroke: '#0A0A0A' }));  // float
+  // Fuel level
+  g.appendChild(ns('line', { x1: 362, y1: 265, x2: 448, y2: 265, stroke: '#C2502A', 'stroke-width': 1, 'stroke-dasharray': '3 3' }));
+  // Main jet (vertical pipe from bowl into venturi)
+  g.appendChild(ns('line', { x1: 405, y1: 260, x2: 405, y2: 165, stroke: '#8B5A1E', 'stroke-width': 4 }));
+  g.appendChild(txt(360, 300, 'FLOAT BOWL', 'start', 10));
+  g.appendChild(txt(360, 190, 'VENTURI', 'start', 10));
+  // Butterfly throttle plate (rotates based on cv.throttle)
+  g.appendChild(ns('line', { x1: 630, y1: 110, x2: 630, y2: 220, stroke: '#2A2A26', 'stroke-width': 2 }));  // spindle
+  g.appendChild(ns('ellipse', { id: 'ute-cv-carb-bfly', cx: 630, cy: 165, rx: 46, ry: 50, fill: 'url(#g3-gold)', stroke: '#1E150A', 'stroke-width': 2 }));
+  g.appendChild(txt(620, 100, 'THROTTLE', 'end', 10));
+  // Flow particles layer
+  const pg = ns('g', { id: 'ute-cv-carb-particles' });
+  svg.appendChild(g); svg.appendChild(pg);
+  S.cv.particles = [];
+  // Hold button
+  wireHoldButton('cv-carb', 'throttle');
+}
+function cvCarbUpdate(dt) {
+  // Reuse rider.throttle so GAS button + handlebar throttle share state
+  const target = S.cv.carb_hold ? 100 : (S.rider.throttle * 100);
+  if (!S.cv.carb_pct) S.cv.carb_pct = 0;
+  S.cv.carb_pct += ((target - S.cv.carb_pct) * Math.min(1, (S.cv.carb_hold ? 4 : 2) * dt));
+  const openness = S.cv.carb_pct / 100;
+  const bfly = ROOT.querySelector('#ute-cv-carb-bfly');
+  if (bfly) bfly.setAttribute('rx', 46 * (1 - openness) + 4 * openness);
+  const localRPM = 900 + S.cv.carb_pct * 70;
+  // Spawn + advance particles
+  if (!S.cv.particles) S.cv.particles = [];
+  const spawnRate = 2 + openness * 60;
+  S.cv.spawnBudget = (S.cv.spawnBudget || 0) + spawnRate * dt;
+  while (S.cv.spawnBudget > 1) {
+    S.cv.spawnBudget -= 1;
+    S.cv.particles.push({ x: 90, y: 120 + Math.random() * 90, vx: 70 + openness * 450, life: 0, ttl: 2.5 });
+  }
+  for (const p of S.cv.particles) {
+    p.x += p.vx * dt;
+    if (openness < 0.1 && Math.abs(p.x - 630) < 20) p.x += (p.vx * dt) * -0.9;
+    p.life += dt;
+  }
+  S.cv.particles = S.cv.particles.filter((p) => p.life < p.ttl && p.x < 830);
+  const pg = ROOT.querySelector('#ute-cv-carb-particles');
+  if (pg) {
+    pg.innerHTML = '';
+    for (const p of S.cv.particles) pg.appendChild(ns('circle', { cx: p.x, cy: p.y, r: 2.4, fill: '#3E6FB7', opacity: 0.85 }));
+  }
+  const state = ROOT.querySelector('#ute-cv-carb-state');
+  const desc  = ROOT.querySelector('#ute-cv-carb-desc');
+  const rpm   = ROOT.querySelector('#ute-cv-carb-rpm');
+  if (rpm) rpm.textContent = `${Math.round(localRPM).toLocaleString('en-GB')} rpm`;
+  if (state && desc) {
+    if (S.cv.carb_pct < 3) { state.textContent = 'Idle'; desc.textContent = 'Throttle plate almost closed. Just enough air sneaks past to idle.'; }
+    else if (S.cv.carb_pct < 60) { state.textContent = 'Accelerating'; desc.textContent = 'Plate tilts open; more air rushes in and the engine spins faster.'; }
+    else { state.textContent = 'Wide open'; desc.textContent = 'Plate parallel to the flow. Air pours in; engine screams toward redline.'; }
+  }
+  const reads = ROOT.querySelector('#ute-cv-carb-reads');
+  if (reads) {
+    const disp = displacementCC(S.bore_mm, S.stroke_mm);
+    const volPerSec = disp/1e6 * (localRPM / 60) * (S.mode === '4t' ? 0.5 : 1);
+    const airKgS = volPerSec * 1.2 * 0.85;
+    const fuelGS = airKgS / 14.7 * 1000;
+    reads.innerHTML = `
+      <div class="stat"><span class="k">Throttle</span><span class="v">${S.cv.carb_pct.toFixed(0)}<span class="u">%</span></span></div>
+      <div class="stat"><span class="k">Air</span><span class="v">${(airKgS*1000).toFixed(1)}<span class="u">g/s</span></span></div>
+      <div class="stat"><span class="k">Fuel</span><span class="v">${fuelGS.toFixed(2)}<span class="u">g/s</span></span></div>
+    `;
+  }
+}
+function wireHoldButton(idSuffix, stateKey) {
+  const btn = ROOT.querySelector('#ute-cv-' + idSuffix.replace('cv-','') + '-act');
+  if (!btn) return;
+  const stateProp = idSuffix === 'cv-carb' ? 'carb_hold' : idSuffix === 'cv-brake' ? 'brake_hold' : idSuffix === 'cv-spark' ? 'spark_hold' : idSuffix === 'cv-chain' ? 'gear_hold' : 'fork_hold';
+  const press = () => { S.cv[stateProp] = true; btn.classList.add('is-holding'); };
+  const release = () => { S.cv[stateProp] = false; btn.classList.remove('is-holding'); };
+  btn.addEventListener('pointerdown', (ev) => { ev.preventDefault(); press(); try { btn.setPointerCapture(ev.pointerId); } catch(e) {} });
+  btn.addEventListener('pointerup', release);
+  btn.addEventListener('pointercancel', release);
+}
+COMPONENT_VIEWS.carb = { title: 'Carburetor / throttle body', kind: 'Fuel · Interactive', html: cvCarbHTML, sideHTML: cvCarbSide, mount: cvCarbMount, update: cvCarbUpdate };
+
+// ─── SPARK PLUG / IGNITION (hold-to-act) ────────────────────────
+function cvSparkHTML() {
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k" id="ute-cv-spark-state">Idle</span><span class="d" id="ute-cv-spark-desc">The coil is cold. Hold to charge; release to fire.</span></div>
+      <div class="n" id="ute-cv-spark-charge">0 %</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-spark-svg" viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="ute-cview-controls">
+      <button class="ute-cview-action" type="button" id="ute-cv-spark-act">IGNITE</button>
+      <span class="ute-cview-hint">Hold to charge · release to fire</span>
+    </div>
+  `;
+}
+function cvSparkSide() {
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>What it does</h4><p>Takes 12 V from the battery, steps it up to about 25 000 V in the coil, then jumps that voltage across the plug's electrode gap at the exact moment the piston is near top-dead-centre on the compression stroke.</p></div>
+      <div class="card"><h4>Sub-components</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
+          <li><strong>Primary winding</strong>: thick copper wire, carries 12 V.</li>
+          <li><strong>Secondary winding</strong>: thin copper, thousands of turns — steps voltage up.</li>
+          <li><strong>Insulator</strong>: ceramic, keeps the high voltage from leaking.</li>
+          <li><strong>Centre + ground electrodes</strong>: the gap where the spark jumps.</li>
+        </ul>
+      </div>
+      <div class="card"><h4>Timing</h4><p>In a 4-stroke, the plug fires once every two crank revolutions (near TDC on compression). In a 2-stroke, once every revolution. The faster the engine, the earlier the spark relative to TDC.</p></div>
+    </div>
+  `;
+}
+function cvSparkMount() {
+  const svg = ROOT.querySelector('#ute-cv-spark-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  // Battery
+  g.appendChild(iso3DBox(70, 180, 120, 90, 30, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+  g.appendChild(txt(130, 232, '12 V', 'middle', 14));
+  g.appendChild(ns('rect', { x: 90, y: 170, width: 20, height: 12, fill: '#2A2A26' }));
+  g.appendChild(ns('rect', { x: 150, y: 170, width: 20, height: 12, fill: '#2A2A26' }));
+  // LV wire
+  g.appendChild(ns('path', { d: 'M 100 170 L 100 100 L 290 100', fill: 'none', stroke: '#C2502A', 'stroke-width': 3 }));
+  // Coil
+  g.appendChild(iso3DBox(290, 90, 160, 170, 40, { front: 'url(#g3-copper)', top: 'url(#g3-cu-dark)', right: '#5B2415' }));
+  g.appendChild(txt(370, 112, 'IGNITION COIL', 'middle', 11));
+  for (let i = 0; i < 11; i++) g.appendChild(ns('line', { x1: 300 + i*14, y1: 128, x2: 310 + i*14, y2: 148, stroke: '#F6F5F2', 'stroke-width': 2, opacity: 0.9 }));
+  for (let i = 0; i < 18; i++) g.appendChild(ns('line', { x1: 300 + i*8, y1: 160, x2: 308 + i*8, y2: 210, stroke: '#DAD3C1', 'stroke-width': 1 }));
+  g.appendChild(ns('rect', { x: 310, y: 224, width: 120, height: 12, fill: '#1A1816', stroke: '#F6F5F2' }));
+  g.appendChild(ns('rect', { id: 'ute-cv-spark-bar', x: 312, y: 226, width: 0, height: 8, fill: '#E2A93B' }));
+  // HT wire
+  g.appendChild(ns('path', { d: 'M 450 180 C 520 180 580 60 680 40', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3 }));
+  // Chamber + spark plug
+  g.appendChild(iso3DBox(620, 110, 220, 170, 40, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+  g.appendChild(ns('rect', { id: 'ute-cv-spark-gas', x: 624, y: 114, width: 212, height: 70, fill: '#DAD3C1', opacity: 0.85 }));
+  g.appendChild(ns('rect', { x: 624, y: 188, width: 212, height: 48, fill: '#DDD6C7', stroke: '#0A0A0A' }));
+  // Plug housing
+  g.appendChild(ns('rect', { x: 714, y: 46, width: 32, height: 24, fill: '#B9B3A4', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('rect', { x: 718, y: 70, width: 24, height: 40, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+  // Electrodes
+  g.appendChild(ns('line', { x1: 730, y1: 112, x2: 730, y2: 140, stroke: '#2A2A26', 'stroke-width': 3 }));
+  g.appendChild(ns('path', { d: 'M 716 120 L 716 144 L 728 144', fill: 'none', stroke: '#2A2A26', 'stroke-width': 3 }));
+  // Spark + flash
+  g.appendChild(ns('polyline', { id: 'ute-cv-spark-arc', points: '728,140 723,142 729,144 723,145', fill: 'none', stroke: '#E2A93B', 'stroke-width': 2.5, opacity: 0, 'stroke-linecap': 'round' }));
+  g.appendChild(ns('circle', { id: 'ute-cv-spark-flash', cx: 730, cy: 144, r: 0, fill: '#F3B64B', opacity: 0.85 }));
+  svg.appendChild(g);
+  // Hold button
+  const btn = ROOT.querySelector('#ute-cv-spark-act');
+  if (btn) {
+    const press = () => { S.cv.spark_hold = true; S.cv.spark_was = true; btn.classList.add('is-holding'); };
+    const release = () => {
+      S.cv.spark_hold = false;
+      // On release, decide if good spark
+      if (S.cv.charge >= 50) { S.cv.sparkOk = true; S.cv.charge_fire_t = performance.now(); }
+      else S.cv.sparkOk = false;
+      btn.classList.remove('is-holding');
+    };
+    btn.addEventListener('pointerdown', (ev) => { ev.preventDefault(); press(); try { btn.setPointerCapture(ev.pointerId); } catch(e) {} });
+    btn.addEventListener('pointerup', release);
+    btn.addEventListener('pointercancel', release);
+  }
+}
+function cvSparkUpdate(dt) {
+  if (S.cv.spark_hold) S.cv.charge = Math.min(100, (S.cv.charge || 0) + 100 * dt);
+  else S.cv.charge = Math.max(0, (S.cv.charge || 0) - 220 * dt);
+  const bar = ROOT.querySelector('#ute-cv-spark-bar');
+  if (bar) { bar.setAttribute('width', (S.cv.charge / 100) * 116); bar.setAttribute('fill', S.cv.charge > 80 ? '#C2502A' : '#E2A93B'); }
+  const spark = ROOT.querySelector('#ute-cv-spark-arc');
+  const flash = ROOT.querySelector('#ute-cv-spark-flash');
+  const gas   = ROOT.querySelector('#ute-cv-spark-gas');
+  const now = performance.now();
+  if (S.cv.sparkOk === true) {
+    const t = (now - S.cv.charge_fire_t) / 1000;
+    if (t < 0.14) { spark.setAttribute('opacity', 1); flash.setAttribute('r', 10 + 36 * t); if (gas) gas.setAttribute('fill', '#F2CDB9'); }
+    else if (t < 0.4) { spark.setAttribute('opacity', 0); flash.setAttribute('r', Math.max(0, 46 - 100 * (t - 0.14))); if (gas) gas.setAttribute('fill', '#F2CDB9'); }
+    else { flash.setAttribute('r', 0); if (gas) gas.setAttribute('fill', '#DAD3C1'); }
+  } else { if (spark) spark.setAttribute('opacity', 0); if (flash) flash.setAttribute('r', 0); if (gas) gas.setAttribute('fill', '#DAD3C1'); }
+  const state = ROOT.querySelector('#ute-cv-spark-state');
+  const desc = ROOT.querySelector('#ute-cv-spark-desc');
+  const n    = ROOT.querySelector('#ute-cv-spark-charge');
+  if (n) n.textContent = `${Math.round(S.cv.charge || 0)} %`;
+  if (state && desc) {
+    if (S.cv.spark_hold) { state.textContent = (S.cv.charge < 50) ? 'Charging' : 'Dwell complete'; desc.textContent = (S.cv.charge < 50) ? 'Current builds in the primary winding.' : 'Field saturated. Release to fire the plug.'; }
+    else if (S.cv.sparkOk === true && (now - S.cv.charge_fire_t) < 400) { state.textContent = 'Spark!'; desc.textContent = '~25 000 V jumps the plug gap. The gas ignites.'; }
+    else if (S.cv.sparkOk === false) { state.textContent = 'Misfire'; desc.textContent = 'Released too soon. Not enough energy stored.'; }
+    else { state.textContent = 'Idle'; desc.textContent = 'The coil is cold. Hold to charge; release to fire.'; }
+  }
+}
+COMPONENT_VIEWS.spark_plug = { title: 'Ignition system', kind: 'Ignition · Interactive', html: cvSparkHTML, sideHTML: cvSparkSide, mount: cvSparkMount, update: cvSparkUpdate };
+
+// ─── CHAIN / GEARING ────────────────────────────────────────────
+function cvChainHTML() {
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k" id="ute-cv-gear-state">Idle</span><span class="d" id="ute-cv-gear-desc">Hold REV to spin the output; watch the chain and rear wheel.</span></div>
+      <div class="n" id="ute-cv-gear-kmh">0 km/h</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-gear-svg" viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="ute-cview-controls">
+      <button class="ute-cview-action" type="button" id="ute-cv-chain-act">REV</button>
+      <span class="ute-cview-hint">Press and hold</span>
+    </div>
+  `;
+}
+function cvChainSide() {
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>What it does</h4><p>A chain between the engine's output sprocket and the rear sprocket. The ratio between them (plus the gearbox) sets how many turns of the engine make one turn of the wheel. Smaller rear sprocket → faster top speed; larger rear sprocket → quicker acceleration.</p></div>
+      <div class="card"><h4>Sub-components</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
+          <li><strong>Front sprocket</strong>: small, on the gearbox output shaft.</li>
+          <li><strong>Rear sprocket</strong>: large, bolted to the rear wheel.</li>
+          <li><strong>Chain links</strong>: inner / outer plates + pin + bush + roller.</li>
+          <li><strong>Tensioner</strong>: an adjuster at the swingarm pulls the axle back.</li>
+        </ul>
+      </div>
+      <div class="card"><h4>Live gearing</h4><div class="ute-stats" id="ute-cv-gear-reads"></div></div>
+    </div>
+  `;
+}
+function cvChainMount() {
+  const svg = ROOT.querySelector('#ute-cv-gear-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  // Engine block
+  g.appendChild(iso3DBox(60, 140, 150, 150, 40, { front: 'url(#g3-case)', top: 'url(#g3-steel)', right: '#2A2824' }));
+  g.appendChild(txt(135, 164, 'ENGINE', 'middle', 11));
+  // Output sprocket + rear sprocket + chain
+  const spA_cx = 220, spA_cy = 254, spA_r = 36;
+  const spB_cx = 740, spB_cy = 190, spB_r = 95;
+  // Rear wheel ring
+  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: spB_r + 60, fill: 'url(#g3-black)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: spB_r + 32, fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  // Chain lines
+  g.appendChild(ns('line', { x1: spA_cx, y1: spA_cy - spA_r, x2: spB_cx, y2: spB_cy - spB_r, stroke: 'url(#g3-black)', 'stroke-width': 10 }));
+  g.appendChild(ns('line', { x1: spA_cx, y1: spA_cy + spA_r, x2: spB_cx, y2: spB_cy + spB_r, stroke: 'url(#g3-black)', 'stroke-width': 10 }));
+  // Chain hatching (animated via stroke-dashoffset)
+  g.appendChild(ns('line', { x1: spA_cx + 6, y1: spA_cy - spA_r, x2: spB_cx - 8, y2: spB_cy - spB_r, stroke: '#F6F5F2', 'stroke-width': 1.5, id: 'ute-cv-gear-hatch-top', 'stroke-dasharray': '6 6' }));
+  g.appendChild(ns('line', { x1: spA_cx + 6, y1: spA_cy + spA_r, x2: spB_cx - 8, y2: spB_cy + spB_r, stroke: '#F6F5F2', 'stroke-width': 1.5, id: 'ute-cv-gear-hatch-bot', 'stroke-dasharray': '6 6' }));
+  // Sprockets (re-drawn each tick via drawSprocket)
+  svg.appendChild(g);
+  drawSprocket(svg, 'ute-cv-gear-spA', spA_cx, spA_cy, spA_r, 20, 0);
+  drawSprocket(svg, 'ute-cv-gear-spB', spB_cx, spB_cy, spB_r, 42, 0);
+  // Wheel spokes
+  const spokeG = ns('g', { id: 'ute-cv-gear-spokes', transform: `rotate(0 ${spB_cx} ${spB_cy})` });
+  for (let i = 0; i < 5; i++) {
+    const a = (i / 5) * 2 * Math.PI;
+    spokeG.appendChild(ns('line', { x1: spB_cx, y1: spB_cy, x2: spB_cx + Math.cos(a) * (spB_r + 24), y2: spB_cy + Math.sin(a) * (spB_r + 24), stroke: '#2A2A26', 'stroke-width': 5 }));
+  }
+  svg.appendChild(spokeG);
+  svg.appendChild(ns('circle', { cx: spB_cx, cy: spB_cy, r: 7, fill: '#0A0A0A' }));
+  svg.appendChild(ns('line', { x1: 30, y1: 330, x2: 870, y2: 330, stroke: '#B9B3A4', 'stroke-dasharray': '4 6' }));
+  const reads = ROOT.querySelector('#ute-cv-gear-reads'); if (reads) reads.innerHTML = gearReadsHTML(0);
+  wireHoldButton('cv-chain', 'gear');
+}
+function drawSprocket(svg, id, cx, cy, r, teeth, angle) {
+  const prev = svg.querySelector('#' + id); if (prev) prev.remove();
+  const g = ns('g', { id, transform: `rotate(${angle} ${cx} ${cy})` });
+  g.appendChild(ns('circle', { cx, cy, r, fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  for (let i = 0; i < teeth; i++) {
+    const a = (i / teeth) * 2 * Math.PI;
+    g.appendChild(ns('line', { x1: cx + Math.cos(a)*r, y1: cy + Math.sin(a)*r, x2: cx + Math.cos(a)*(r+5), y2: cy + Math.sin(a)*(r+5), stroke: '#0A0A0A', 'stroke-width': 1.4 }));
+  }
+  if (r > 50) {
+    for (let i = 0; i < 5; i++) {
+      const a = (i / 5) * 2 * Math.PI + 0.3;
+      g.appendChild(ns('circle', { cx: cx + Math.cos(a)*(r*0.55), cy: cy + Math.sin(a)*(r*0.55), r: 7, fill: '#F6F5F2', stroke: '#0A0A0A' }));
+    }
+  }
+  g.appendChild(ns('circle', { cx, cy, r: 7, fill: '#2A2A26' }));
+  svg.appendChild(g);
+}
+function gearReadsHTML(wheelRPM, kmh, chainMps) {
+  return `
+    <div class="stat"><span class="k">Engine</span><span class="v">${Math.round(S.cv.gear_rpm || 0).toLocaleString('en-GB')}<span class="u">rpm</span></span></div>
+    <div class="stat"><span class="k">Wheel</span><span class="v">${(wheelRPM||0).toFixed(0)}<span class="u">rpm</span></span></div>
+    <div class="stat"><span class="k">Chain</span><span class="v">${(chainMps||0).toFixed(1)}<span class="u">m/s</span></span></div>
+    <div class="stat"><span class="k">Speed</span><span class="v">${(kmh||0).toFixed(0)}<span class="u">km/h</span></span></div>
+    <div class="stat"><span class="k">Final</span><span class="v">${GEAR.final.toFixed(2)}<span class="u">:1</span></span></div>
+  `;
+}
+function cvChainUpdate(dt) {
+  if (!S.cv.gear_rpm) S.cv.gear_rpm = 0;
+  if (S.cv.gear_hold) S.cv.gear_rpm = Math.min(8000, S.cv.gear_rpm + 2500 * dt);
+  else                S.cv.gear_rpm = Math.max(0,    S.cv.gear_rpm - 1800 * dt);
+  const degA = (S.cv.gear_rpm / 60) * 360 * dt;
+  S.cv.spA_ang = ((S.cv.spA_ang || 0) + degA) % 360;
+  S.cv.spB_ang = ((S.cv.spB_ang || 0) + degA / GEAR.final) % 360;
+  S.cv.chain_off = ((S.cv.chain_off || 0) - degA * 0.05) % 100;
+  const svg = ROOT.querySelector('#ute-cv-gear-svg');
+  if (svg) {
+    drawSprocket(svg, 'ute-cv-gear-spA', 220, 254, 36, 20, S.cv.spA_ang);
+    drawSprocket(svg, 'ute-cv-gear-spB', 740, 190, 95, 42, S.cv.spB_ang);
+    const sp = svg.querySelector('#ute-cv-gear-spokes'); if (sp) sp.setAttribute('transform', `rotate(${S.cv.spB_ang} 740 190)`);
+    const ht = svg.querySelector('#ute-cv-gear-hatch-top'); if (ht) ht.setAttribute('stroke-dashoffset', S.cv.chain_off);
+    const hb = svg.querySelector('#ute-cv-gear-hatch-bot'); if (hb) hb.setAttribute('stroke-dashoffset', -S.cv.chain_off);
+  }
+  const wheelRPM = S.cv.gear_rpm / GEAR.primary / GEAR.gear3 / GEAR.final;
+  const kmh = (wheelRPM / 60) * (2 * Math.PI * GEAR.wheel_r_m) * 3.6;
+  const chainMps = (wheelRPM / 60) * (2 * Math.PI * 0.11);
+  const state = ROOT.querySelector('#ute-cv-gear-state');
+  const desc  = ROOT.querySelector('#ute-cv-gear-desc');
+  const kmhEl = ROOT.querySelector('#ute-cv-gear-kmh');
+  if (kmhEl) kmhEl.textContent = `${kmh.toFixed(0)} km/h`;
+  if (state && desc) {
+    if (S.cv.gear_rpm < 20) { state.textContent = 'Idle'; desc.textContent = 'Hold REV to spin the output; watch the chain and rear wheel.'; }
+    else { state.textContent = 'Pulling'; desc.textContent = `Engine ${Math.round(S.cv.gear_rpm).toLocaleString('en-GB')} rpm · chain ${chainMps.toFixed(1)} m/s · final drive ${GEAR.final.toFixed(2)} : 1.`; }
+  }
+  const reads = ROOT.querySelector('#ute-cv-gear-reads'); if (reads) reads.innerHTML = gearReadsHTML(wheelRPM, kmh, chainMps);
+}
+COMPONENT_VIEWS.chain = { title: 'Chain & gearing', kind: 'Transmission · Interactive', html: cvChainHTML, sideHTML: cvChainSide, mount: cvChainMount, update: cvChainUpdate };
+COMPONENT_VIEWS.rear_sprocket = COMPONENT_VIEWS.chain;
+
+// ─── BRAKE caliper (hold-to-act) ────────────────────────────────
+function cvBrakeHTML() {
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k" id="ute-cv-brake-state">Idle</span><span class="d" id="ute-cv-brake-desc">Hold BRAKE — hydraulic pistons squeeze the pads against the disc.</span></div>
+      <div class="n" id="ute-cv-brake-force">0 bar</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-brake-svg" viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="ute-cview-controls">
+      <button class="ute-cview-action" type="button" id="ute-cv-brake-act">BRAKE</button>
+      <span class="ute-cview-hint">Press and hold</span>
+    </div>
+  `;
+}
+function cvBrakeSide() {
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>What it does</h4><p>Converts kinetic energy to heat. Pulling the lever forces brake fluid out of the master cylinder; that pressure pushes caliper pistons out, which squeeze friction pads against a spinning disc.</p></div>
+      <div class="card"><h4>Sub-components</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
+          <li><strong>Disc (rotor)</strong>: steel, bolted to the wheel.</li>
+          <li><strong>Caliper body</strong>: holds pistons + pads.</li>
+          <li><strong>Pistons</strong>: hydraulic — one, two, four or six per caliper.</li>
+          <li><strong>Pads</strong>: friction material bonded to a steel backing plate.</li>
+          <li><strong>Fluid</strong>: DOT 4 brake fluid, incompressible.</li>
+        </ul>
+      </div>
+      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-brake-reads"></div></div>
+    </div>
+  `;
+}
+function cvBrakeMount() {
+  const svg = ROOT.querySelector('#ute-cv-brake-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  // Rotor (big disc, rotating subtly)
+  const disc = ns('g', { id: 'ute-cv-brake-disc' });
+  disc.appendChild(ns('circle', { cx: 450, cy: 200, r: 135, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+  disc.appendChild(ns('circle', { cx: 450, cy: 200, r: 110, fill: '#DDD9CF', stroke: '#B9B3A4', 'stroke-width': 1.5 }));
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * 2 * Math.PI;
+    disc.appendChild(ns('circle', { cx: 450 + Math.cos(a) * 70, cy: 200 + Math.sin(a) * 70, r: 5, fill: '#F6F5F2', stroke: '#0A0A0A' }));
+  }
+  disc.appendChild(ns('circle', { cx: 450, cy: 200, r: 30, fill: '#4A4642', stroke: '#0A0A0A' }));
+  disc.appendChild(ns('circle', { cx: 450, cy: 200, r: 5, fill: '#0A0A0A' }));
+  svg.appendChild(disc);
+  // Caliper body (right side)
+  g.appendChild(iso3DBox(585, 158, 72, 84, 32, { front: 'url(#g3-copper)', top: '#F4D06F', right: '#8A4A28' }));
+  g.appendChild(txt(620, 254, 'CALIPER', 'middle', 10));
+  // Pistons visible on inner edge (move inward when braking)
+  g.appendChild(ns('circle', { id: 'ute-cv-brake-pst1', cx: 598, cy: 180, r: 14, fill: '#4A4642', stroke: '#0A0A0A' }));
+  g.appendChild(ns('circle', { id: 'ute-cv-brake-pst2', cx: 598, cy: 220, r: 14, fill: '#4A4642', stroke: '#0A0A0A' }));
+  // Pad (black rectangle inside the caliper, pushes against disc)
+  g.appendChild(ns('rect', { id: 'ute-cv-brake-pad', x: 579, y: 170, width: 8, height: 60, fill: '#1A1A17', stroke: '#0A0A0A' }));
+  // Brake line
+  g.appendChild(ns('path', { d: 'M 657 190 Q 800 180 820 100', fill: 'none', stroke: '#2A2A26', 'stroke-width': 4 }));
+  g.appendChild(ns('circle', { cx: 820, cy: 100, r: 10, fill: '#C2502A', stroke: '#0A0A0A' }));
+  g.appendChild(txt(820, 80, 'TO LEVER', 'middle', 10));
+
+  svg.appendChild(g);
+  const btn = ROOT.querySelector('#ute-cv-brake-act');
+  if (btn) {
+    const press = () => { S.cv.brake_hold = true; btn.classList.add('is-holding'); };
+    const release = () => { S.cv.brake_hold = false; btn.classList.remove('is-holding'); };
+    btn.addEventListener('pointerdown', (ev) => { ev.preventDefault(); press(); try { btn.setPointerCapture(ev.pointerId); } catch(e) {} });
+    btn.addEventListener('pointerup', release);
+    btn.addEventListener('pointercancel', release);
+  }
+}
+function cvBrakeUpdate(dt) {
+  if (!S.cv.brake_pct) S.cv.brake_pct = 0;
+  const target = S.cv.brake_hold ? 100 : (S.rider.brake * 100);
+  S.cv.brake_pct += ((target - S.cv.brake_pct) * Math.min(1, 5 * dt));
+  // Rotate disc (slowing down proportional to brake)
+  const wheelRPM = (S.rider.throttle > 0.05 && !S.rider.kill) ? (S.rpm / GEAR.primary / GEAR.gear3 / GEAR.final) * (1 - S.cv.brake_pct / 110) : 0;
+  const degStep = wheelRPM / 60 * 360 * dt;
+  const disc = ROOT.querySelector('#ute-cv-brake-disc');
+  if (disc) {
+    const cur = parseFloat(disc.getAttribute('data-rot') || '0') + degStep;
+    disc.setAttribute('data-rot', cur);
+    disc.setAttribute('transform', `rotate(${cur} 450 200)`);
+  }
+  // Pistons squeeze inward based on brake %
+  const squeeze = (S.cv.brake_pct / 100) * 10;
+  const p1 = ROOT.querySelector('#ute-cv-brake-pst1'); if (p1) p1.setAttribute('cx', 598 - squeeze);
+  const p2 = ROOT.querySelector('#ute-cv-brake-pst2'); if (p2) p2.setAttribute('cx', 598 - squeeze);
+  const pad = ROOT.querySelector('#ute-cv-brake-pad'); if (pad) pad.setAttribute('x', 579 - squeeze);
+  // Chip
+  const state = ROOT.querySelector('#ute-cv-brake-state');
+  const desc  = ROOT.querySelector('#ute-cv-brake-desc');
+  const n     = ROOT.querySelector('#ute-cv-brake-force');
+  const bar = (S.cv.brake_pct / 100) * 25;
+  if (n) n.textContent = `${bar.toFixed(1)} bar`;
+  if (state && desc) {
+    if (S.cv.brake_pct < 3) { state.textContent = 'Released'; desc.textContent = 'Pads clear the disc. No drag.'; }
+    else if (S.cv.brake_pct < 60) { state.textContent = 'Braking'; desc.textContent = 'Pistons squeeze pads against the disc. Kinetic energy becomes heat.'; }
+    else { state.textContent = 'Hard brake'; desc.textContent = 'Maximum clamp. Disc temperature climbing fast — watch for fade on long descents.'; }
+  }
+  const reads = ROOT.querySelector('#ute-cv-brake-reads');
+  if (reads) reads.innerHTML = `
+    <div class="stat"><span class="k">Line pressure</span><span class="v">${bar.toFixed(1)}<span class="u">bar</span></span></div>
+    <div class="stat"><span class="k">Pad squeeze</span><span class="v">${squeeze.toFixed(1)}<span class="u">mm</span></span></div>
+    <div class="stat"><span class="k">Disc temp</span><span class="v">${(60 + S.cv.brake_pct * 4).toFixed(0)}<span class="u">°C</span></span></div>
+  `;
+}
+COMPONENT_VIEWS.brake = { title: 'Brake disc + caliper', kind: 'Chassis · Interactive', html: cvBrakeHTML, sideHTML: cvBrakeSide, mount: cvBrakeMount, update: cvBrakeUpdate };
+
+// ─── BATTERY (12V or electric pack) ─────────────────────────────
+function cvBatteryHTML() {
+  const isElec = (S.mode === 'elec');
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k">${isElec ? 'High-voltage pack' : '12 V service battery'}</span>
+      <span class="d">${isElec ? 'Hundreds of 21700 cells in series × parallel groups. Monitored by the BMS.' : 'Lead-acid or lithium starter battery. Turns the starter motor, feeds lights and ECU.'}</span></div>
+      <div class="n">${isElec ? `${S.elec.battery_soc.toFixed(1)} %` : '12 V'}</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-bat-svg" viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet"></svg>
+  `;
+}
+function cvBatterySide() {
+  const isElec = (S.mode === 'elec');
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>What it does</h4><p>${isElec ? 'Stores all the energy that moves the bike. Typical pack: 7–20 kWh in a sportbike, 50–100 kWh in a car. Charges in minutes on DC fast, hours on AC home.' : 'Stores enough charge to crank the starter and run lights before the alternator takes over.'}</p></div>
+      <div class="card"><h4>Live state</h4>
+        <div class="ute-stats">
+          ${isElec ? `
+            <div class="stat"><span class="k">SoC</span><span class="v">${S.elec.battery_soc.toFixed(1)}<span class="u">%</span></span></div>
+            <div class="stat"><span class="k">Nominal</span><span class="v">400<span class="u">V</span></span></div>
+            <div class="stat"><span class="k">Capacity</span><span class="v">~12<span class="u">kWh</span></span></div>
+          ` : `
+            <div class="stat"><span class="k">Voltage</span><span class="v">12<span class="u">V</span></span></div>
+            <div class="stat"><span class="k">Capacity</span><span class="v">8–14<span class="u">Ah</span></span></div>
+            <div class="stat"><span class="k">Cold crank</span><span class="v">120<span class="u">A</span></span></div>
+          `}
+        </div>
+      </div>
+      <div class="card"><h4>Sub-components</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
+          <li>${isElec ? 'Lithium cells in a sealed case' : 'Lead plates in sulfuric acid (or lithium cells)'}</li>
+          <li>${isElec ? 'BMS (battery management system)' : 'Vent, terminals, acid gauge'}</li>
+          <li>${isElec ? 'Cooling plates / coolant loop' : 'Case + bracket + strap'}</li>
+        </ul>
+      </div>
+    </div>
+  `;
+}
+function cvBatteryMount() {
+  const svg = ROOT.querySelector('#ute-cv-bat-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  const isElec = (S.mode === 'elec');
+  if (isElec) {
+    // Big pack with cell cluster
+    g.appendChild(iso3DBox(90, 90, 720, 190, 50, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+    for (let i = 0; i < 14; i++) {
+      for (let j = 0; j < 4; j++) {
+        g.appendChild(ns('circle', { cx: 120 + i*50, cy: 115 + j*42, r: 15, fill: '#DDD9CF', stroke: '#0A0A0A', 'stroke-width': 1 }));
+        g.appendChild(ns('circle', { cx: 120 + i*50, cy: 115 + j*42, r: 5, fill: '#C2502A' }));
+      }
+    }
+    g.appendChild(ns('rect', { x: 110, y: 75, width: 80, height: 10, fill: '#C2502A' }));  // + terminal
+    g.appendChild(ns('rect', { x: 720, y: 75, width: 80, height: 10, fill: '#0A0A0A' }));  // - terminal
+    g.appendChild(txt(150, 70, '+', 'middle', 20));
+    g.appendChild(txt(760, 70, '−', 'middle', 20));
+    g.appendChild(txt(450, 320, `${S.elec.battery_soc.toFixed(1)}% CHARGED`, 'middle', 14));
+  } else {
+    g.appendChild(iso3DBox(260, 90, 380, 180, 60, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+    g.appendChild(ns('rect', { x: 300, y: 70, width: 40, height: 24, fill: '#C2502A' }));
+    g.appendChild(ns('rect', { x: 560, y: 70, width: 40, height: 24, fill: '#2A2A26' }));
+    g.appendChild(txt(320, 65, '+', 'middle', 20));
+    g.appendChild(txt(580, 65, '−', 'middle', 20));
+    g.appendChild(txt(450, 190, '12 V', 'middle', 42));
+    g.appendChild(txt(450, 230, 'MOTORCYCLE BATTERY', 'middle', 12));
+  }
+  svg.appendChild(g);
+}
+COMPONENT_VIEWS.battery = { title: 'Battery', kind: 'Electrical', html: cvBatteryHTML, sideHTML: cvBatterySide, mount: cvBatteryMount };
+
+// ─── CONTROLLER (electric) ──────────────────────────────────────
+function cvControllerHTML() {
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k">Inverter / controller</span><span class="d">Switches DC pack voltage into 3-phase AC for the motor, thousands of times per second.</span></div>
+      <div class="n" id="ute-cv-ctl-t">${S.elec.controller_temp.toFixed(0)} °C</div>
+    </div>
+    <svg class="ute-cview-svg" id="ute-cv-ctl-svg" viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet"></svg>
+  `;
+}
+function cvControllerSide() {
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>What it does</h4><p>Takes DC from the pack and chops it into 3-phase AC with pulse-width modulation — tens of thousands of switch events per second. The timing and width of those pulses sets rotor speed and torque.</p></div>
+      <div class="card"><h4>Sub-components</h4>
+        <ul style="list-style:disc; padding-left:20px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;">
+          <li><strong>Power stage</strong>: 6 SiC MOSFETs (two per phase).</li>
+          <li><strong>Gate driver</strong>: turns the MOSFETs on and off cleanly.</li>
+          <li><strong>DC-link capacitor</strong>: smooths pack voltage.</li>
+          <li><strong>MCU</strong>: runs the control loop (field-oriented control).</li>
+          <li><strong>Cold plate</strong>: liquid-cooled aluminium heat spreader.</li>
+        </ul>
+      </div>
+      <div class="card"><h4>Live state</h4><div class="ute-stats" id="ute-cv-ctl-reads"></div></div>
+    </div>
+  `;
+}
+function cvControllerMount() {
+  const svg = ROOT.querySelector('#ute-cv-ctl-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  const g = ns('g');
+  // Heat sink base
+  g.appendChild(iso3DBox(80, 110, 640, 170, 50, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+  // Fins
+  for (let i = 0; i < 32; i++) g.appendChild(ns('line', { x1: 95 + i*20, y1: 80, x2: 95 + i*20, y2: 110, stroke: '#9A9385', 'stroke-width': 2 }));
+  // Power modules (6 MOSFETs, two per phase row)
+  for (let p = 0; p < 3; p++) {
+    const colors = ['#C2502A', '#1D6B55', '#0A0A0A'];
+    g.appendChild(ns('rect', { x: 140 + p*180, y: 150, width: 150, height: 100, fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    g.appendChild(ns('rect', { x: 150 + p*180, y: 162, width: 60, height: 36, fill: colors[p], stroke: '#F6F5F2' }));
+    g.appendChild(ns('rect', { x: 220 + p*180, y: 162, width: 60, height: 36, fill: colors[p], stroke: '#F6F5F2' }));
+    g.appendChild(txt(215 + p*180, 220, 'MOSFET', 'middle', 10));
+    g.appendChild(txt(215 + p*180, 236, ['PHASE U','PHASE V','PHASE W'][p], 'middle', 11));
+  }
+  // DC bus bars
+  g.appendChild(ns('rect', { x: 80, y: 290, width: 640, height: 12, fill: '#C2502A' }));
+  g.appendChild(ns('rect', { x: 80, y: 310, width: 640, height: 12, fill: '#0A0A0A' }));
+  svg.appendChild(g);
+  const reads = ROOT.querySelector('#ute-cv-ctl-reads');
+  if (reads) reads.innerHTML = `
+    <div class="stat"><span class="k">Temp</span><span class="v">${S.elec.controller_temp.toFixed(0)}<span class="u">°C</span></span></div>
+    <div class="stat"><span class="k">DC input</span><span class="v">400<span class="u">V</span></span></div>
+    <div class="stat"><span class="k">AC output</span><span class="v">3-phase</span></div>
+    <div class="stat"><span class="k">Switching</span><span class="v">16<span class="u">kHz</span></span></div>
+  `;
+}
+function cvControllerUpdate(dt) {
+  const t = ROOT.querySelector('#ute-cv-ctl-t');
+  if (t) t.textContent = `${S.elec.controller_temp.toFixed(0)} °C`;
+  const reads = ROOT.querySelector('#ute-cv-ctl-reads');
+  if (reads) reads.innerHTML = `
+    <div class="stat"><span class="k">Temp</span><span class="v">${S.elec.controller_temp.toFixed(0)}<span class="u">°C</span></span></div>
+    <div class="stat"><span class="k">DC input</span><span class="v">400<span class="u">V</span></span></div>
+    <div class="stat"><span class="k">Load</span><span class="v">${(S.rider.throttle*100).toFixed(0)}<span class="u">%</span></span></div>
+    <div class="stat"><span class="k">Switching</span><span class="v">16<span class="u">kHz</span></span></div>
+  `;
+}
+COMPONENT_VIEWS.controller = { title: 'Controller / inverter', kind: 'Electric', html: cvControllerHTML, sideHTML: cvControllerSide, mount: cvControllerMount, update: cvControllerUpdate };
+
+// ─── PARTS data (for basicCard fallback) ────────────────────────
+const PARTS = {
+  piston: { name: 'Piston', tag: 'Combustion', desc: 'The moving plug that seals the combustion chamber. Converts gas pressure into linear force, which the connecting rod turns into torque at the crank.', notes: 'Mean piston speed is a key stress indicator; above 25 m/s is motorsport territory.' },
+  conrod: { name: 'Connecting rod', tag: 'Combustion', desc: 'Links piston (small end) to crank pin (big end). Its swing is what turns reciprocating motion into rotation.', notes: 'Rod length / stroke ratio around 1.75 is a sweet spot for a street engine.' },
+  crankshaft: { name: 'Crankshaft', tag: 'Combustion', desc: 'Collects torque from the con-rod and sends it to the gearbox. Offset throw sets the stroke; its mass acts as a short-term flywheel between power pulses.', notes: 'In a parallel twin, two throws 360° apart give a smoother firing order.' },
+  valve_in: { name: 'Intake valve', tag: 'Gas path', desc: 'Opens on the intake stroke to let fresh charge in; shut otherwise.', notes: 'Diameter typically larger than the exhaust valve to maximise flow.' },
+  valve_ex: { name: 'Exhaust valve', tag: 'Gas path', desc: 'Opens on the exhaust stroke to let burnt gas out as the piston rises.', notes: 'Runs hotter than the intake valve — may be sodium-cooled on hard-used engines.' },
+  air_filter: { name: 'Air filter', tag: 'Fuel', desc: 'Removes dust and grit from the air going into the engine.', notes: 'A clogged filter runs the mixture rich and loses power.' },
+  fuel_tank: { name: 'Fuel tank', tag: 'Fuel', desc: 'Reservoir of petrol between rider and engine. Gravity-fed on simple bikes, pump-fed on injected ones.', notes: 'Typical capacity 10–18 L. ~32 MJ per litre.' },
+  exhaust: { name: 'Exhaust', tag: 'Gas path', desc: 'Carries burnt gas away from the cylinder. A 2-stroke exhaust is tuned (an expansion chamber) so pressure waves help scavenge the cylinder.', notes: 'A 4-stroke muffler is a simple pipe + absorption media. Catalytic converter reduces NOx + HC.' },
+  instruments: { name: 'Instruments', tag: 'Rider', desc: 'Speedometer, tachometer, warning lights. Modern bikes bundle these into one TFT panel.', notes: 'Electric bikes show pack SoC, power demand and estimated range instead of fuel level.' },
+  headlight: { name: 'Headlight', tag: 'Rider', desc: 'Front lighting. On classic bikes driven directly from the alternator; on modern bikes it is LED and switched by the ECU.', notes: 'Typical 55 W halogen, ~25 W LED.' },
+  tail_light: { name: 'Tail light', tag: 'Rider', desc: 'Rear position + brake light. Brighter when the brake lever is pulled.', notes: '5 W position, 21 W brake on an incandescent bulb; roughly the same effective brightness at 1/3 the power for LED.' },
+  seat: { name: 'Seat', tag: 'Rider', desc: 'Where the rider sits. Seat height sets how much of your weight the chassis has to control under braking and acceleration.', notes: 'Classic bikes: flat bench, often sprung. Motocross: narrow, long, slopes up at the back.' },
+  frame: { name: 'Frame', tag: 'Chassis', desc: 'The structural backbone. Modern frames use the engine as a stressed member, with steel tubes or aluminium beams wrapping around it.', notes: 'Steel trellis = Ducati Monster. Aluminium twin-spar = litre-class sportbike.' },
+  forks: { name: 'Forks', tag: 'Chassis', desc: 'Front suspension. Telescopic tubes with hydraulic damping that let the front wheel follow the road and absorb braking loads.', notes: 'Inverted forks ("USD") put the thicker tube at the top for more rigidity.' },
+  rear_shock: { name: 'Rear shock', tag: 'Chassis', desc: 'One or two spring-and-damper units mounted between the swingarm and the frame.', notes: 'Monoshock linkage gives a rising rate — soft at the top of the stroke, firmer at the bottom.' },
+  swingarm: { name: 'Swingarm', tag: 'Chassis', desc: 'The hinged arm that holds the rear wheel. Pivots at the frame and moves against the rear shock.', notes: 'Longer swingarm = more stability, less chain squat under acceleration.' },
+  front_wheel: { name: 'Front wheel', tag: 'Chassis', desc: 'Supports the front of the bike, steers it, and carries the brake disc.', notes: 'Classic: 36 wire spokes. Modern: cast alloy, 10 spokes or fewer.' },
+  rear_wheel: { name: 'Rear wheel', tag: 'Chassis', desc: 'Supports the rear of the bike, transmits engine torque to the road, carries the rear brake disc.', notes: 'Driven by the chain or belt. Width varies 120–240 mm.' },
+  charge_port: { name: 'Charge port', tag: 'Electric', desc: 'DC fast-charging or AC home-charging socket. Standards: CCS, J1772, Type 2 in Europe.', notes: 'Fast DC: 0–80 % in ~30 minutes. Home AC: 4–8 hours.' },
+};
+// Alias missing visuals back to basic card
+['valve_in','valve_ex','air_filter','fuel_tank','exhaust','instruments','headlight','tail_light','seat','frame','forks','rear_shock','swingarm','front_wheel','rear_wheel','charge_port','piston','conrod','crankshaft'].forEach((k) => {
+  if (!COMPONENT_VIEWS[k]) COMPONENT_VIEWS[k] = { title: PARTS[k]?.name || k, kind: PARTS[k]?.tag || 'Component',
+    html: () => `
+      <div class="ute-cview-chip">
+        <div class="ute-cview-chip-dot"></div>
+        <div><span class="k">${PARTS[k]?.name || k}</span><span class="d">${PARTS[k]?.desc || ''}</span></div>
+        <div class="n">${PARTS[k]?.tag || ''}</div>
+      </div>
+      <svg class="ute-cview-svg" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid meet" id="ute-cv-generic-svg"></svg>
+    `,
+    sideHTML: () => `
+      <div class="ute-cview-side">
+        <div class="card"><h4>What it does</h4><p>${PARTS[k]?.desc || ''}</p></div>
+        <div class="card"><h4>Notes</h4><p>${PARTS[k]?.notes || ''}</p></div>
+        <div class="card"><h4>See it on the bike</h4><p>Scroll up to the overview — the part is highlighted in warm orange.</p></div>
+      </div>
+    `,
+    mount: () => mountGenericPart(k),
+  };
+});
+
+function mountGenericPart(key) {
+  const svg = ROOT.querySelector('#ute-cv-generic-svg'); if (!svg) return;
+  defsPackMetals(svg);
+  // Simple centred 3D rendering per part
+  if (key === 'piston') {
+    svg.appendChild(iso3DBox(300, 120, 200, 140, 60, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+    svg.appendChild(ns('line', { x1: 300, y1: 150, x2: 500, y2: 150, stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('line', { x1: 300, y1: 162, x2: 500, y2: 162, stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('line', { x1: 300, y1: 175, x2: 500, y2: 175, stroke: '#0A0A0A', 'stroke-width': 1 }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 200, r: 20, fill: '#2A2A26', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(txt(400, 285, 'PISTON', 'middle', 11));
+  } else if (key === 'conrod') {
+    svg.appendChild(ns('path', { d: 'M 400 70 Q 420 70 420 90 L 420 180 Q 420 200 400 200 L 400 230 Q 350 240 350 265 Q 350 290 400 300 Q 450 290 450 265 Q 450 240 400 230 Z', fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 90, r: 18, fill: '#2A2A26', stroke: '#0A0A0A' }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 265, r: 24, fill: '#2A2A26', stroke: '#0A0A0A' }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 265, r: 8, fill: '#F6F5F2' }));
+    svg.appendChild(txt(400, 60, 'SMALL END', 'middle', 10));
+    svg.appendChild(txt(400, 305, 'BIG END', 'middle', 10));
+  } else if (key === 'crankshaft') {
+    // Shaft with 2 throws
+    svg.appendChild(ns('rect', { x: 150, y: 140, width: 500, height: 36, fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    // Throws
+    svg.appendChild(ns('circle', { cx: 300, cy: 158, r: 60, fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('circle', { cx: 500, cy: 158, r: 60, fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('circle', { cx: 300, cy: 110, r: 14, fill: '#2A2A26' }));
+    svg.appendChild(ns('circle', { cx: 500, cy: 210, r: 14, fill: '#2A2A26' }));
+    // Counterweights
+    svg.appendChild(ns('path', { d: 'M 240 158 L 300 158 L 290 90 L 250 90 Z', fill: '#8E867A', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+    svg.appendChild(ns('path', { d: 'M 560 158 L 500 158 L 510 230 L 550 230 Z', fill: '#8E867A', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+    svg.appendChild(txt(400, 300, 'CRANKSHAFT · 2 THROWS 360° APART', 'middle', 11));
+  } else if (key === 'valve_in' || key === 'valve_ex') {
+    const c = key === 'valve_in' ? '#1D6B55' : '#C2502A';
+    svg.appendChild(ns('rect', { x: 390, y: 60, width: 20, height: 200, fill: 'url(#g3-steel)', stroke: '#0A0A0A' }));
+    svg.appendChild(ns('path', { d: 'M 340 230 Q 400 290 460 230 L 460 265 Q 400 320 340 265 Z', fill: c, stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('rect', { x: 350, y: 60, width: 100, height: 10, fill: '#2A2A26' }));
+    svg.appendChild(txt(400, 50, key === 'valve_in' ? 'INTAKE VALVE' : 'EXHAUST VALVE', 'middle', 11));
+  } else if (key === 'forks') {
+    svg.appendChild(ns('rect', { x: 320, y: 40, width: 60, height: 120, fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('rect', { x: 420, y: 40, width: 60, height: 120, fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('rect', { x: 310, y: 160, width: 80, height: 140, fill: '#1A1A17', stroke: '#0A0A0A' }));
+    svg.appendChild(ns('rect', { x: 410, y: 160, width: 80, height: 140, fill: '#1A1A17', stroke: '#0A0A0A' }));
+    svg.appendChild(txt(400, 20, 'TELESCOPIC FORKS', 'middle', 11));
+    svg.appendChild(txt(350, 180, 'SLIDER', 'middle', 9));
+    svg.appendChild(txt(350, 130, 'TUBE', 'middle', 9));
+  } else if (key === 'fuel_tank') {
+    svg.appendChild(ns('path', { d: 'M 180 140 Q 240 90 400 85 Q 560 85 620 130 L 625 220 Q 400 240 175 230 Z', fill: 'url(#g3-copper)', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+    // Fuel level
+    svg.appendChild(ns('rect', { x: 190, y: 170, width: 420, height: 60, fill: '#E2A93B', opacity: 0.7 }));
+    svg.appendChild(ns('line', { x1: 190, y1: 170, x2: 610, y2: 170, stroke: '#8B5A1E', 'stroke-dasharray': '4 4' }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 110, r: 7, fill: '#2A2A26' }));
+    svg.appendChild(txt(400, 280, 'FUEL TANK · ~65% FULL', 'middle', 11));
+  } else if (key === 'air_filter') {
+    svg.appendChild(ns('rect', { x: 220, y: 100, width: 360, height: 150, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+    for (let i = 0; i < 24; i++) {
+      svg.appendChild(ns('line', { x1: 230 + i*15, y1: 108, x2: 230 + i*15, y2: 242, stroke: '#9A9385', 'stroke-width': 1 }));
+    }
+    svg.appendChild(txt(400, 285, 'PLEATED PAPER AIR FILTER', 'middle', 11));
+  } else if (key === 'exhaust') {
+    svg.appendChild(ns('path', { d: 'M 60 180 Q 150 170 250 180 L 350 185 Q 500 190 580 180', fill: 'none', stroke: '#2A2A26', 'stroke-width': 14, 'stroke-linecap': 'round' }));
+    svg.appendChild(iso3DBox(580, 140, 180, 80, 24, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+    svg.appendChild(ns('line', { x1: 760, y1: 140, x2: 764, y2: 220, stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(txt(670, 282, 'MUFFLER · ABSORPTION PACKING', 'middle', 11));
+  } else if (key === 'rear_shock') {
+    svg.appendChild(ns('rect', { x: 370, y: 40, width: 60, height: 240, fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    for (let i = 0; i < 10; i++) {
+      svg.appendChild(ns('line', { x1: 360, y1: 60 + i*22, x2: 440, y2: 72 + i*22, stroke: '#C2502A', 'stroke-width': 3 }));
+    }
+    svg.appendChild(ns('circle', { cx: 400, cy: 50, r: 10, fill: '#2A2A26' }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 290, r: 10, fill: '#2A2A26' }));
+    svg.appendChild(txt(400, 20, 'MONOSHOCK', 'middle', 11));
+  } else if (key === 'frame') {
+    svg.appendChild(ns('path', { d: 'M 100 220 L 230 100 L 500 100 L 650 180 L 700 240 L 500 260 L 230 260 Z', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 5 }));
+    svg.appendChild(ns('path', { d: 'M 230 100 L 230 260', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 5 }));
+    svg.appendChild(ns('path', { d: 'M 500 100 L 500 260', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 5 }));
+    svg.appendChild(txt(400, 290, 'FRAME · TRELLIS LAYOUT', 'middle', 11));
+  } else if (key === 'swingarm') {
+    svg.appendChild(ns('path', { d: 'M 150 140 L 650 170 L 650 210 L 150 180 Z', fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('circle', { cx: 150, cy: 160, r: 20, fill: '#2A2A26' }));
+    svg.appendChild(ns('circle', { cx: 650, cy: 190, r: 20, fill: '#2A2A26' }));
+    svg.appendChild(txt(400, 240, 'SWINGARM · PIVOT ← → AXLE', 'middle', 11));
+  } else if (key === 'front_wheel' || key === 'rear_wheel') {
+    svg.appendChild(ns('circle', { cx: 400, cy: 160, r: 130, fill: 'url(#g3-black)', stroke: '#0A0A0A', 'stroke-width': 2.5 }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 160, r: 92, fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 160, r: 24, fill: '#4A4642', stroke: '#0A0A0A' }));
+    for (let i = 0; i < 6; i++) {
+      const a = (i / 6) * 2 * Math.PI;
+      svg.appendChild(ns('line', { x1: 400 + Math.cos(a)*24, y1: 160 + Math.sin(a)*24, x2: 400 + Math.cos(a)*90, y2: 160 + Math.sin(a)*90, stroke: '#2A2A26', 'stroke-width': 6 }));
+    }
+    svg.appendChild(txt(400, 310, 'CAST ALLOY WHEEL', 'middle', 11));
+  } else if (key === 'headlight') {
+    svg.appendChild(ns('circle', { cx: 400, cy: 160, r: 100, fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 3 }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 160, r: 75, fill: '#E2A93B' }));
+    svg.appendChild(ns('circle', { cx: 400, cy: 160, r: 55, fill: '#F4D06F' }));
+    svg.appendChild(ns('circle', { cx: 385, cy: 145, r: 15, fill: '#F6F5F2', opacity: 0.7 }));
+    svg.appendChild(txt(400, 290, 'HEADLIGHT · CHROME BEZEL', 'middle', 11));
+  } else if (key === 'tail_light') {
+    svg.appendChild(ns('rect', { x: 240, y: 130, width: 320, height: 70, fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    for (let i = 0; i < 12; i++) svg.appendChild(ns('circle', { cx: 260 + i*25, cy: 165, r: 8, fill: '#F3B64B' }));
+    svg.appendChild(txt(400, 240, 'LED TAIL LIGHT', 'middle', 11));
+  } else if (key === 'seat') {
+    svg.appendChild(ns('path', { d: 'M 150 180 L 650 160 L 680 210 L 160 230 Z', fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('path', { d: 'M 200 190 L 180 170 L 630 170 L 600 190', fill: 'none', stroke: '#5A5852' }));
+    svg.appendChild(txt(400, 260, 'SEAT · FOAM OVER STEEL PAN', 'middle', 11));
+  } else if (key === 'instruments') {
+    svg.appendChild(ns('rect', { x: 180, y: 100, width: 440, height: 140, fill: '#0A0A0A', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('rect', { x: 190, y: 110, width: 210, height: 120, fill: '#111' }));
+    svg.appendChild(ns('rect', { x: 410, y: 110, width: 200, height: 120, fill: '#111' }));
+    svg.appendChild(txt(295, 170, 'SPEED', 'middle', 24));
+    svg.appendChild(txt(510, 170, 'RPM', 'middle', 24));
+    svg.appendChild(txt(295, 210, Math.round((S.rpm / GEAR.primary / GEAR.gear3 / GEAR.final) / 60 * 2 * Math.PI * GEAR.wheel_r_m * 3.6) + ' km/h', 'middle', 14));
+    svg.appendChild(txt(510, 210, Math.round(S.rpm) + ' rpm', 'middle', 14));
+  } else if (key === 'charge_port') {
+    svg.appendChild(iso3DBox(260, 110, 280, 140, 50, { front: 'url(#g3-alum)', top: '#F2EEE4', right: '#8B8371' }));
+    svg.appendChild(ns('circle', { cx: 350, cy: 180, r: 24, fill: '#1D6B55', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('circle', { cx: 450, cy: 180, r: 16, fill: '#1D6B55', stroke: '#0A0A0A', 'stroke-width': 2 }));
+    svg.appendChild(ns('circle', { cx: 350, cy: 180, r: 10, fill: '#0A0A0A' }));
+    svg.appendChild(ns('circle', { cx: 450, cy: 180, r: 7, fill: '#0A0A0A' }));
+    svg.appendChild(txt(400, 290, 'CCS CHARGE PORT · DC + AC', 'middle', 11));
+  }
+}
+
+// ─── Rider view ─────────────────────────────────────────────────
+function mountRiderSVG() {
+  const svg = ROOT.querySelector('#ute-rider'); if (!svg) return;
+  svg.innerHTML = '';
+  defsPackMetals(svg);
+  const g = ns('g');
+
+  // Big handlebar top-down (crossbar)
+  g.appendChild(ns('path', { d: 'M 160 180 L 740 180', fill: 'none', stroke: 'url(#g3-black)', 'stroke-width': 22, 'stroke-linecap': 'round' }));
+  // Grips
+  g.appendChild(ns('rect', { x: 60, y: 160, width: 110, height: 44, fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 2, rx: 6 }));  // LEFT GRIP
+  g.appendChild(ns('rect', { id: 'ute-rider-right-grip', x: 730, y: 160, width: 110, height: 44, fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 2, rx: 6 }));  // RIGHT GRIP (throttle)
+  // Throttle twist indicator — a stripe that rotates visually around the right grip
+  g.appendChild(ns('line', { id: 'ute-rider-throttle-mark', x1: 785, y1: 160, x2: 785, y2: 180, stroke: '#C2502A', 'stroke-width': 3 }));
+  // Grip ridges
+  for (let i = 0; i < 7; i++) g.appendChild(ns('line', { x1: 70 + i*14, y1: 160, x2: 70 + i*14, y2: 204, stroke: '#5B574E', 'stroke-width': 1 }));
+  for (let i = 0; i < 7; i++) g.appendChild(ns('line', { x1: 740 + i*14, y1: 160, x2: 740 + i*14, y2: 204, stroke: '#5B574E', 'stroke-width': 1 }));
+
+  // Front brake lever (right side, forward of grip)
+  const brakeLever = ns('g', { id: 'ute-rider-brake-lever' });
+  brakeLever.appendChild(ns('path', { d: 'M 718 155 L 850 110 L 870 125 L 740 170 Z', fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(brakeLever);
+
+  // Clutch lever (left side, forward of grip)
+  const clutchLever = ns('g', { id: 'ute-rider-clutch-lever' });
+  clutchLever.appendChild(ns('path', { d: 'M 180 155 L 60 110 L 40 125 L 160 170 Z', fill: 'url(#g3-steel)', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(clutchLever);
+
+  // Switchgear box left (horn, turn signals, light)
+  g.appendChild(iso3DBox(170, 220, 90, 50, 20, { front: '#2A2A26', top: '#5B574E', right: '#1A1816' }));
+  // Horn button (red)
+  g.appendChild(ns('circle', { id: 'ute-rider-horn', cx: 200, cy: 245, r: 14, fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(txt(200, 290, 'HORN', 'middle', 9));
+  // Turn signal slider
+  g.appendChild(ns('rect', { x: 230, y: 240, width: 24, height: 10, fill: '#E2A93B', stroke: '#0A0A0A' }));
+  g.appendChild(txt(242, 290, 'TURN', 'middle', 9));
+
+  // Switchgear box right (kill switch, starter)
+  g.appendChild(iso3DBox(640, 220, 90, 50, 20, { front: '#2A2A26', top: '#5B574E', right: '#1A1816' }));
+  g.appendChild(ns('rect', { id: 'ute-rider-kill', x: 652, y: 230, width: 30, height: 30, fill: '#C2502A', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(txt(667, 290, 'KILL', 'middle', 9));
+  g.appendChild(ns('circle', { id: 'ute-rider-start', cx: 710, cy: 245, r: 14, fill: '#1A1A17', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('path', { d: 'M 702 240 L 718 245 L 702 250 Z', fill: '#F6F5F2' }));
+  g.appendChild(txt(710, 290, 'START', 'middle', 9));
+
+  // Instruments (two round gauges in centre)
+  g.appendChild(ns('circle', { cx: 350, cy: 310, r: 72, fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 3 }));
+  g.appendChild(ns('circle', { cx: 350, cy: 310, r: 62, fill: '#F6F5F2', stroke: '#0A0A0A' }));
+  // Tick marks (0..240 km/h)
+  for (let i = 0; i <= 10; i++) {
+    const a = (-Math.PI * 1.25) + (i / 10) * (Math.PI * 1.5);
+    const x1 = 350 + Math.cos(a) * 55, y1 = 310 + Math.sin(a) * 55;
+    const x2 = 350 + Math.cos(a) * 62, y2 = 310 + Math.sin(a) * 62;
+    g.appendChild(ns('line', { x1, y1, x2, y2, stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+  }
+  g.appendChild(ns('line', { id: 'ute-rider-speed-needle', x1: 350, y1: 310, x2: 350, y2: 260, stroke: '#C2502A', 'stroke-width': 3 }));
+  g.appendChild(ns('circle', { cx: 350, cy: 310, r: 5, fill: '#0A0A0A' }));
+  g.appendChild(txt(350, 400, 'KM/H', 'middle', 10));
+
+  g.appendChild(ns('circle', { cx: 550, cy: 310, r: 72, fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 3 }));
+  g.appendChild(ns('circle', { cx: 550, cy: 310, r: 62, fill: '#F6F5F2', stroke: '#0A0A0A' }));
+  for (let i = 0; i <= 10; i++) {
+    const a = (-Math.PI * 1.25) + (i / 10) * (Math.PI * 1.5);
+    const x1 = 550 + Math.cos(a) * 55, y1 = 310 + Math.sin(a) * 55;
+    const x2 = 550 + Math.cos(a) * 62, y2 = 310 + Math.sin(a) * 62;
+    g.appendChild(ns('line', { x1, y1, x2, y2, stroke: '#0A0A0A', 'stroke-width': 1.5 }));
+    const lbl = ns('text', { x: 550 + Math.cos(a) * 46, y: 310 + Math.sin(a) * 46 + 4, 'font-family': 'IBM Plex Mono', 'font-size': 9, 'text-anchor': 'middle', fill: '#0A0A0A' });
+    lbl.textContent = i;
+    g.appendChild(lbl);
+  }
+  g.appendChild(ns('line', { id: 'ute-rider-rpm-needle', x1: 550, y1: 310, x2: 550, y2: 260, stroke: '#C2502A', 'stroke-width': 3 }));
+  g.appendChild(ns('circle', { cx: 550, cy: 310, r: 5, fill: '#0A0A0A' }));
+  g.appendChild(txt(550, 400, 'RPM × 1000', 'middle', 10));
+
+  // Mirror stems peeking out at top
+  g.appendChild(ns('line', { x1: 115, y1: 160, x2: 115, y2: 90, stroke: '#2A2A26', 'stroke-width': 4 }));
+  g.appendChild(ns('ellipse', { cx: 90, cy: 70, rx: 42, ry: 24, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2 }));
+  g.appendChild(ns('line', { x1: 785, y1: 160, x2: 785, y2: 90, stroke: '#2A2A26', 'stroke-width': 4 }));
+  g.appendChild(ns('ellipse', { cx: 810, cy: 70, rx: 42, ry: 24, fill: '#F6F5F2', stroke: '#0A0A0A', 'stroke-width': 2 }));
+
+  // Fuel tank hint (centred, below bars) — just for context
+  g.appendChild(ns('path', { d: 'M 320 420 Q 400 405 480 420 L 475 470 L 325 470 Z', fill: '#F0ECE1', stroke: '#B9B3A4' }));
+
+  svg.appendChild(g);
+  wireRiderControls();
+}
+
+function wireRiderControls() {
+  // Throttle: hold → ramp
+  const grip = ROOT.querySelector('#ute-rider-right-grip');
+  if (grip) {
+    const press = () => { S.rider.throttle_hold = true; };
+    const release = () => { S.rider.throttle_hold = false; };
+    grip.style.cursor = 'grab';
+    grip.addEventListener('pointerdown', (ev) => { ev.preventDefault(); press(); try { grip.setPointerCapture(ev.pointerId); } catch(e) {} });
+    grip.addEventListener('pointerup', release);
+    grip.addEventListener('pointercancel', release);
+  }
+  // Brake lever
+  const brake = ROOT.querySelector('#ute-rider-brake-lever');
+  if (brake) {
+    const press = () => { S.rider.brake_hold = true; };
+    const release = () => { S.rider.brake_hold = false; };
+    brake.style.cursor = 'pointer';
+    brake.addEventListener('pointerdown', (ev) => { ev.preventDefault(); press(); try { brake.setPointerCapture(ev.pointerId); } catch(e) {} });
+    brake.addEventListener('pointerup', release);
+    brake.addEventListener('pointercancel', release);
+  }
+  // Clutch lever
+  const cl = ROOT.querySelector('#ute-rider-clutch-lever');
+  if (cl) {
+    cl.style.cursor = 'pointer';
+    cl.addEventListener('pointerdown', (ev) => { ev.preventDefault(); S.rider.clutch_hold = true; });
+    cl.addEventListener('pointerup',   () => { S.rider.clutch_hold = false; });
+  }
+  // Horn
+  const horn = ROOT.querySelector('#ute-rider-horn');
+  if (horn) {
+    horn.style.cursor = 'pointer';
+    horn.addEventListener('pointerdown', () => {
+      S.rider.horn = 1;
+      const toast = ROOT.querySelector('#ute-rider-toast');
+      if (toast) { toast.textContent = 'BEEP!'; toast.classList.add('is-on'); setTimeout(() => toast.classList.remove('is-on'), 500); }
+    });
+  }
+  // Kill switch (toggle)
+  const kill = ROOT.querySelector('#ute-rider-kill');
+  if (kill) {
+    kill.style.cursor = 'pointer';
+    kill.addEventListener('pointerdown', () => {
+      S.rider.kill = !S.rider.kill;
+      kill.setAttribute('fill', S.rider.kill ? '#1A1A17' : '#C2502A');
+      const toast = ROOT.querySelector('#ute-rider-toast');
+      if (toast) { toast.textContent = S.rider.kill ? 'ENGINE KILLED' : 'ENGINE LIVE'; toast.classList.add('is-on'); setTimeout(() => toast.classList.remove('is-on'), 900); }
+    });
+  }
+  // Starter
+  const start = ROOT.querySelector('#ute-rider-start');
+  if (start) {
+    start.style.cursor = 'pointer';
+    start.addEventListener('pointerdown', () => {
+      S.rider.kill = false;
+      const kB = ROOT.querySelector('#ute-rider-kill'); if (kB) kB.setAttribute('fill', '#C2502A');
+      const toast = ROOT.querySelector('#ute-rider-toast');
+      if (toast) { toast.textContent = 'STARTED'; toast.classList.add('is-on'); setTimeout(() => toast.classList.remove('is-on'), 700); }
+    });
+  }
+}
+
+function updateRiderTick(dt) {
+  // Throttle: if holding, climb to 1.0; else decay to 0.0
+  if (S.rider.throttle_hold) S.rider.throttle = Math.min(1, S.rider.throttle + 1.8 * dt);
+  else                        S.rider.throttle = Math.max(0, S.rider.throttle - 1.2 * dt);
+  if (S.rider.brake_hold)     S.rider.brake = Math.min(1, S.rider.brake + 3.0 * dt);
+  else                        S.rider.brake = Math.max(0, S.rider.brake - 2.5 * dt);
+  if (S.rider.clutch_hold)    S.rider.clutch = Math.min(1, S.rider.clutch + 3.0 * dt);
+  else                        S.rider.clutch = Math.max(0, S.rider.clutch - 2.5 * dt);
+
+  // Throttle grip twist visual
+  const mark = ROOT.querySelector('#ute-rider-throttle-mark');
+  if (mark) {
+    const twist = S.rider.throttle * 30;  // deg
+    mark.setAttribute('transform', `rotate(${twist} 785 182)`);
+  }
+  const brakeEl = ROOT.querySelector('#ute-rider-brake-lever');
+  if (brakeEl) brakeEl.setAttribute('transform', `rotate(${-S.rider.brake * 20} 718 155)`);
+  const clEl = ROOT.querySelector('#ute-rider-clutch-lever');
+  if (clEl) clEl.setAttribute('transform', `rotate(${S.rider.clutch * 20} 180 155)`);
+
+  // Needles
+  const wheelRPM = S.rpm / GEAR.primary / GEAR.gear3 / GEAR.final;
+  const kmh = (wheelRPM / 60) * (2 * Math.PI * GEAR.wheel_r_m) * 3.6 * (1 - S.rider.brake * 0.9);
+  const speedPct = Math.max(0, Math.min(1, kmh / 240));
+  const rpmPct = Math.max(0, Math.min(1, S.rpm / 10000));
+  const speedA = (-Math.PI * 1.25) + speedPct * (Math.PI * 1.5);
+  const rpmA = (-Math.PI * 1.25) + rpmPct * (Math.PI * 1.5);
+  const sN = ROOT.querySelector('#ute-rider-speed-needle');
+  if (sN) { sN.setAttribute('x2', 350 + Math.cos(speedA) * 50); sN.setAttribute('y2', 310 + Math.sin(speedA) * 50); }
+  const rN = ROOT.querySelector('#ute-rider-rpm-needle');
+  if (rN) { rN.setAttribute('x2', 550 + Math.cos(rpmA) * 50); rN.setAttribute('y2', 310 + Math.sin(rpmA) * 50); }
+
+  // Dash
+  const dash = ROOT.querySelector('#ute-rider-dash');
+  if (dash) {
+    dash.innerHTML = `
+      <div class="cell"><span class="k">Throttle</span><span class="v">${(S.rider.throttle * 100).toFixed(0)}%</span></div>
+      <div class="cell"><span class="k">Brake</span><span class="v">${(S.rider.brake * 100).toFixed(0)}%</span></div>
+      <div class="cell"><span class="k">Clutch</span><span class="v">${(S.rider.clutch * 100).toFixed(0)}%</span></div>
+      <div class="cell"><span class="k">Engine</span><span class="v">${S.rider.kill ? 'OFF' : Math.round(S.rpm).toLocaleString('en-GB') + ' rpm'}</span></div>
+      <div class="cell"><span class="k">Speed</span><span class="v">${kmh.toFixed(0)} km/h</span></div>
+    `;
+  }
 }
 
 // ───────────────────────── Boot ─────────────────────────────────
