@@ -137,15 +137,13 @@ function shellHTML() {
         <div class="ute-overview-head">
           <div>
             <h2>${modeTitle()}</h2>
-            <p>Click a part &rarr; close-up below.</p>
           </div>
           <div style="display:inline-flex; gap:10px; align-items:center;">
             <div class="ute-view-toggle" role="group" aria-label="Overview view">
               <button type="button" data-view="diagram"   class="${S.view==='diagram'?'is-on':''}">Diagram</button>
-              <button type="button" data-view="blueprint" class="${S.view==='blueprint'?'is-on':''}">Blueprint</button>
               <button type="button" data-view="3d"        class="${S.view==='3d'?'is-on':''}">3D</button>
             </div>
-            <span class="ute-overview-badge" data-m="${S.mode}">${modeShort()}</span>
+            <span class="ute-ix-legend">= interactive</span>
           </div>
         </div>
         <div class="ute-cats" role="group" aria-label="Focus by system">
@@ -191,7 +189,7 @@ function shellHTML() {
       </section>
 
       <footer class="ute-foot">
-        <span>v0.3 · ${modeShort()} · Transitions Lab</span>
+        <span>Transitions Lab · Under the Engine</span>
         <span>Inspired by <a href="https://www.underthehood.online" target="_blank" rel="noopener">underthehood.online</a></span>
       </footer>
     </div>
@@ -376,6 +374,9 @@ function mountOverviewSVG() {
   wireOverviewClicks(svg);
   applyMotoHighlight();
   applyMotoCategory();
+  // Interactive-indicator dots have to wait a tick so getBBox works on
+  // every freshly-mounted shape.
+  requestAnimationFrame(() => paintInteractiveDots());
 }
 
 function wireViewSwitch() {
@@ -416,6 +417,39 @@ function applyMotoCategory() {
     if (cat === S.category && el.classList && el.classList.contains('ute-shape')) {
       el.classList.add('in-cat');
     }
+  });
+}
+
+// Parts that have a dedicated interactive close-up (not just a card).
+// Used to decorate the overview with a pulsing warm dot so the user
+// can see at a glance which parts are rich-interactive.
+const INTERACTIVE_PARTS = new Set([
+  'engine','cylinder','piston','crankshaft','spark_plug','carb',
+  'brake','chain','rear_sprocket','motor','controller','battery','wiring',
+]);
+
+function paintInteractiveDots() {
+  const svg = ROOT.querySelector('#ute-moto');
+  if (!svg) return;
+  // Clear any previous dots
+  svg.querySelectorAll('.ute-ix-dot').forEach((el) => el.remove());
+  // For each interactive part key present in the overview, place a dot
+  // at the bbox centre of the FIRST shape element with that key.
+  const seen = new Set();
+  svg.querySelectorAll('[data-shape]').forEach((el) => {
+    const k = el.getAttribute('data-shape');
+    if (!k || seen.has(k)) return;
+    if (!INTERACTIVE_PARTS.has(k)) return;
+    seen.add(k);
+    // Find the FIRST ute-shape ancestor or self
+    const shape = el.closest('.ute-shape') || el;
+    try {
+      const b = shape.getBBox();
+      const cx = b.x + b.width / 2;
+      const cy = b.y + b.height / 2;
+      const dot = ns('circle', { class: 'ute-ix-dot', cx, cy, r: 5, 'data-ix': k });
+      svg.appendChild(dot);
+    } catch (e) { /* bbox can fail if not in DOM yet */ }
   });
 }
 
@@ -2561,66 +2595,192 @@ function readsHTML() {
     <div class="stat"><span class="k">Power</span><span class="v">${kw.toFixed(1)}<span class="u">kW · ${hp.toFixed(0)} hp</span></span></div>
   `;
 }
+function hexBolt(cx, cy, size) {
+  const g = ns('g');
+  const pts = [];
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * 2 * Math.PI + Math.PI / 6;
+    pts.push(`${cx + Math.cos(a) * size},${cy + Math.sin(a) * size}`);
+  }
+  g.appendChild(ns('polygon', { points: pts.join(' '), fill: '#8E867A', stroke: '#0A0A0A', 'stroke-width': 0.7 }));
+  g.appendChild(ns('circle', { cx: cx - size*0.25, cy: cy - size*0.25, r: size * 0.4, fill: '#F2EEE4', opacity: 0.4 }));
+  g.appendChild(ns('circle', { cx, cy, r: size * 0.3, fill: '#1A1816' }));
+  return g;
+}
+
 function cvEngineMount() {
   const svg = ROOT.querySelector('#ute-cv-engine-svg');
   if (!svg) return;
   defsPackMetals(svg);
+
+  // Engine-specific metallic gradients
+  const defs = ns('defs');
+  const grad = (id, stops, horizontal) => {
+    const el = ns('linearGradient', { id, x1: 0, y1: 0, x2: horizontal ? 1 : 0, y2: horizontal ? 0 : 1 });
+    stops.forEach((s) => el.appendChild(ns('stop', { offset: s[0], 'stop-color': s[1] })));
+    return el;
+  };
+  const radial = (id, stops, cx, cy, r) => {
+    const el = ns('radialGradient', { id, cx: cx || '35%', cy: cy || '30%', r: r || '75%' });
+    stops.forEach((s) => el.appendChild(ns('stop', { offset: s[0], 'stop-color': s[1] })));
+    return el;
+  };
+  defs.appendChild(grad('eng-case',   [['0%','#2E2C28'],['30%','#4A4642'],['65%','#1A1816'],['100%','#0A0A0A']]));
+  defs.appendChild(radial('eng-cover',[['0%','#5A574E'],['35%','#2A2824'],['100%','#000']]));
+  defs.appendChild(grad('eng-barrel', [['0%','#5B574E'],['20%','#C6BFB1'],['50%','#F2EEE4'],['80%','#C6BFB1'],['100%','#5B574E']], true));
+  defs.appendChild(grad('eng-head',   [['0%','#DDD6C7'],['50%','#B9B3A4'],['100%','#5B574E']]));
+  defs.appendChild(grad('eng-piston', [['0%','#F6F2E6'],['45%','#DDD6C7'],['100%','#7A7367']]));
+  defs.appendChild(grad('eng-rod',    [['0%','#5A574E'],['45%','#DBD4C4'],['100%','#2A2824']], true));
+  defs.appendChild(radial('eng-cw',   [['0%','#5A574E'],['55%','#2A2824'],['100%','#0A0A0A']], '40%', '32%', '80%'));
+  defs.appendChild(grad('eng-chrome', [['0%','#8E867A'],['50%','#FFFFFF'],['100%','#5B574E']], true));
+  svg.appendChild(defs);
+
   const g = ns('g');
-  // Crankcase box in 3-D
-  g.appendChild(iso3DBox(230, 280, 440, 130, 60, { front: 'url(#g3-case)', top: 'url(#g3-steel)', right: '#2A2824' }));
-  // Dashed crank orbit
-  g.appendChild(ns('circle', { cx: 450, cy: 345, r: 55, fill: 'none', stroke: '#B9B3A4', 'stroke-dasharray': '4 4' }));
-  // Cylinder barrel (3D) — base wide enough for max bore (110 mm → ~146 px piston)
-  g.appendChild(iso3DBox(370, 90, 160, 190, 50, { front: 'url(#g3-alum)', top: 'url(#g3-steel)', right: '#8B8371' }));
-  // Cooling fins
-  for (let i = 0; i < 7; i++) {
-    g.appendChild(ns('line', { x1: 346, y1: 110 + i*22, x2: 370, y2: 110 + i*22, stroke: '#0A0A0A' }));
-    g.appendChild(ns('line', { x1: 530, y1: 110 + i*22, x2: 555, y2: 110 + i*22, stroke: '#0A0A0A' }));
+
+  // ─── Crankcase body — irregular shape, dark anodised ──────────
+  // Rounded top, mounting ears on the sides, bowl-shaped bottom
+  g.appendChild(ns('path', { d: 'M 220 450 L 212 310 Q 210 288 230 278 Q 250 272 275 272 L 350 268 Q 400 260 450 260 Q 500 260 550 268 L 625 272 Q 650 272 670 278 Q 690 288 688 310 L 680 450 L 660 460 L 240 460 Z', fill: 'url(#eng-case)', stroke: '#000', 'stroke-width': 2.5 }));
+  // Subtle specular highlight along the top
+  g.appendChild(ns('path', { d: 'M 250 278 Q 450 262 650 278', fill: 'none', stroke: '#9A9385', 'stroke-width': 1, opacity: 0.6 }));
+  // Front mounting ear (left tab for frame bolt)
+  g.appendChild(ns('path', { d: 'M 212 310 L 178 322 L 178 358 L 212 370 Z', fill: '#1A1816', stroke: '#000', 'stroke-width': 1.2 }));
+  g.appendChild(hexBolt(195, 340, 6));
+  // Rear mounting ear
+  g.appendChild(ns('path', { d: 'M 688 310 L 722 322 L 722 358 L 688 370 Z', fill: '#1A1816', stroke: '#000', 'stroke-width': 1.2 }));
+  g.appendChild(hexBolt(705, 340, 6));
+  // Case bolt pattern around the perimeter
+  const perimeterBolts = [
+    [240, 290], [255, 440], [305, 450], [365, 455], [435, 455], [505, 455], [565, 450], [625, 440], [660, 290],
+  ];
+  perimeterBolts.forEach(([bx, by]) => g.appendChild(hexBolt(bx, by, 5)));
+
+  // ─── Side cover (clutch cover) on the right half ─────────────
+  g.appendChild(ns('ellipse', { cx: 560, cy: 365, rx: 92, ry: 72, fill: 'url(#eng-cover)', stroke: '#000', 'stroke-width': 1.5 }));
+  // Inner ring
+  g.appendChild(ns('ellipse', { cx: 560, cy: 365, rx: 78, ry: 60, fill: 'none', stroke: '#4A4642', 'stroke-width': 0.8 }));
+  // Embossed curved-M-style brand mark (subtle)
+  g.appendChild(ns('path', { d: 'M 525 348 Q 534 326 560 332 Q 586 338 592 358 Q 594 380 575 390 Q 554 400 538 384 Q 520 368 525 348 Z', fill: 'none', stroke: '#6D675D', 'stroke-width': 2, opacity: 0.55 }));
+  g.appendChild(ns('path', { d: 'M 545 358 L 552 370 L 568 352 L 575 370', fill: 'none', stroke: '#6D675D', 'stroke-width': 1.5, opacity: 0.65 }));
+  // Cover bolt ring (10 bolts around the circumference)
+  for (let i = 0; i < 10; i++) {
+    const a = (i / 10) * 2 * Math.PI + 0.3;
+    g.appendChild(hexBolt(560 + Math.cos(a) * 82, 365 + Math.sin(a) * 64, 4));
   }
-  // Head
-  g.appendChild(ns('path', { d: 'M 365 90 L 365 40 Q 365 24 380 24 L 520 24 Q 535 24 535 40 L 535 90 Z', fill: 'url(#g3-alum)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'cylinder', class: 'ute-shape' }));
-  // Spark plug
+  // Oil fill cap on top of case
+  g.appendChild(ns('circle', { cx: 625, cy: 310, r: 11, fill: '#B9B3A4', stroke: '#000', 'stroke-width': 1 }));
+  g.appendChild(ns('circle', { cx: 625, cy: 310, r: 8, fill: 'url(#eng-cover)' }));
+  const oilT = ns('text', { x: 625, y: 313, 'font-family': 'IBM Plex Mono', 'font-size': 7, 'font-weight': 700, 'text-anchor': 'middle', fill: '#F6F5F2' });
+  oilT.textContent = 'OIL'; g.appendChild(oilT);
+  // Oil drain plug at the bottom
+  g.appendChild(ns('circle', { cx: 450, cy: 458, r: 9, fill: '#8E867A', stroke: '#000' }));
+  g.appendChild(hexBolt(450, 458, 6));
+
+  // ─── Cylinder barrel ─────────────────────────────────────────
+  g.appendChild(ns('path', { d: 'M 370 272 L 370 90 L 530 90 L 530 272 Z', fill: 'url(#eng-barrel)', stroke: '#000', 'stroke-width': 2 }));
+  // Dark edges along the vertical sides for depth
+  g.appendChild(ns('line', { x1: 370, y1: 90, x2: 370, y2: 272, stroke: '#1A1816', 'stroke-width': 1.5 }));
+  g.appendChild(ns('line', { x1: 530, y1: 90, x2: 530, y2: 272, stroke: '#1A1816', 'stroke-width': 1.5 }));
+
+  // Cooling fins — each with highlight + shadow line for 3-D depth
+  for (let i = 0; i < 11; i++) {
+    const y = 100 + i * 16;
+    // Left side fin
+    g.appendChild(ns('rect', { x: 346, y, width: 24, height: 7, fill: 'url(#eng-barrel)', stroke: '#0A0A0A', 'stroke-width': 0.6 }));
+    g.appendChild(ns('line', { x1: 346, y1: y + 0.5, x2: 370, y2: y + 0.5, stroke: '#F6F2E6', 'stroke-width': 0.6, opacity: 0.9 }));
+    g.appendChild(ns('line', { x1: 346, y1: y + 6.5, x2: 370, y2: y + 6.5, stroke: '#1A1816', 'stroke-width': 0.6, opacity: 0.7 }));
+    // Right side fin
+    g.appendChild(ns('rect', { x: 530, y, width: 24, height: 7, fill: 'url(#eng-barrel)', stroke: '#0A0A0A', 'stroke-width': 0.6 }));
+    g.appendChild(ns('line', { x1: 530, y1: y + 0.5, x2: 554, y2: y + 0.5, stroke: '#F6F2E6', 'stroke-width': 0.6, opacity: 0.9 }));
+    g.appendChild(ns('line', { x1: 530, y1: y + 6.5, x2: 554, y2: y + 6.5, stroke: '#1A1816', 'stroke-width': 0.6, opacity: 0.7 }));
+  }
+
+  // ─── Cylinder head (DOHC-ish rocker housing) ─────────────────
+  g.appendChild(ns('path', { d: 'M 360 90 Q 360 72 374 70 L 526 70 Q 540 72 540 90 Z', fill: 'url(#eng-head)', stroke: '#000', 'stroke-width': 1.5, 'data-shape': 'cylinder', class: 'ute-shape', 'data-fillable': '' }));
+  g.appendChild(ns('path', { d: 'M 360 70 L 540 70 L 530 48 L 370 48 Z', fill: 'url(#eng-head)', stroke: '#000', 'stroke-width': 1.5 }));
+  // Head bolts (4 across the top)
+  for (let i = 0; i < 4; i++) g.appendChild(hexBolt(390 + i*40, 56, 4));
+  // Cam cover rib detail
+  g.appendChild(ns('line', { x1: 380, y1: 62, x2: 520, y2: 62, stroke: '#5A574E', 'stroke-width': 0.6, opacity: 0.7 }));
+
+  // Spark plug well + plug + HT lead
   const sparkG = ns('g', { 'data-shape': 'spark_plug', class: 'ute-shape' });
-  sparkG.appendChild(ns('rect', { x: 440, y: 0, width: 20, height: 30, fill: '#B9B3A4', stroke: '#0A0A0A', 'data-shape': 'spark_plug', 'data-fillable': '' }));
-  sparkG.appendChild(ns('line', { x1: 450, y1: 30, x2: 450, y2: 42, stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'spark_plug' }));
-  sparkG.appendChild(ns('circle', { id: 'ute-cv-spark-flash', cx: 450, cy: 45, r: 0, fill: '#E2A93B', 'data-shape': 'spark_plug' }));
+  sparkG.appendChild(ns('rect', { x: 441, y: 50, width: 22, height: 42, fill: '#0F0E0C', stroke: '#000', 'data-shape': 'spark_plug' }));
+  // Plug hex head (chrome)
+  sparkG.appendChild(ns('rect', { x: 436, y: 22, width: 32, height: 18, fill: 'url(#eng-chrome)', stroke: '#000', 'stroke-width': 1.2, 'data-shape': 'spark_plug', 'data-fillable': '' }));
+  // Hex facets on the plug head
+  sparkG.appendChild(ns('line', { x1: 442, y1: 22, x2: 442, y2: 40, stroke: '#5A574E', 'stroke-width': 0.6, 'data-shape': 'spark_plug' }));
+  sparkG.appendChild(ns('line', { x1: 452, y1: 22, x2: 452, y2: 40, stroke: '#5A574E', 'stroke-width': 0.6, 'data-shape': 'spark_plug' }));
+  sparkG.appendChild(ns('line', { x1: 462, y1: 22, x2: 462, y2: 40, stroke: '#5A574E', 'stroke-width': 0.6, 'data-shape': 'spark_plug' }));
+  // HT boot (silicone)
+  sparkG.appendChild(ns('path', { d: 'M 434 12 L 470 12 L 472 24 L 432 24 Z', fill: '#2A2A26', stroke: '#000', 'data-shape': 'spark_plug' }));
+  sparkG.appendChild(ns('ellipse', { cx: 452, cy: 12, rx: 18, ry: 4, fill: '#1A1A17', 'data-shape': 'spark_plug' }));
+  // HT lead curving up-right to coil
+  sparkG.appendChild(ns('path', { d: 'M 452 12 C 480 -4, 540 -2, 620 10 L 660 20', fill: 'none', stroke: '#141412', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-shape': 'spark_plug' }));
+  sparkG.appendChild(ns('path', { d: 'M 452 12 C 480 -4, 540 -2, 620 10 L 660 20', fill: 'none', stroke: '#2A2824', 'stroke-width': 3, 'stroke-linecap': 'round', 'data-shape': 'spark_plug' }));
+  // Spark arc anchor (keeps old ID)
+  sparkG.appendChild(ns('line', { x1: 452, y1: 92, x2: 452, y2: 104, stroke: '#000', 'stroke-width': 2, 'data-shape': 'spark_plug' }));
+  sparkG.appendChild(ns('circle', { id: 'ute-cv-spark-flash', cx: 452, cy: 106, r: 0, fill: '#F3B64B', 'data-shape': 'spark_plug' }));
   g.appendChild(sparkG);
-  // Gas (updated per tick)
-  g.appendChild(ns('rect', { id: 'ute-cv-gas', x: 402, y: 90, width: 96, height: 160, fill: '#DAD3C1', opacity: 0.78 }));
+
+  // ─── Gas pocket in the combustion chamber (updated per tick) ─
+  g.appendChild(ns('rect', { id: 'ute-cv-gas', x: 372, y: 90, width: 156, height: 160, fill: '#DAD3C1', opacity: 0.72 }));
 
   if (S.mode === '4t') {
-    // 4T valves
-    g.appendChild(ns('rect', { x: 410, y: 30, width: 30, height: 60, fill: 'none', stroke: '#0A0A0A' }));
-    g.appendChild(ns('path', { d: 'M 410 70 L 350 60 L 350 30 L 310 30', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
-    g.appendChild(ns('rect', { id: 'ute-cv-valve-in', x: 408, y: 80, width: 34, height: 10, fill: '#2A2A26' }));
-    g.appendChild(ns('rect', { x: 460, y: 30, width: 30, height: 60, fill: 'none', stroke: '#0A0A0A' }));
-    g.appendChild(ns('path', { d: 'M 490 70 L 550 60 L 550 30 L 590 30', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
-    g.appendChild(ns('rect', { id: 'ute-cv-valve-ex', x: 458, y: 80, width: 34, height: 10, fill: '#2A2A26' }));
-    g.appendChild(txt(240, 24, 'INTAKE', 'start', 10));
-    g.appendChild(txt(660, 24, 'EXHAUST', 'start', 10));
+    // Intake runner + valve (left)
+    g.appendChild(ns('path', { d: 'M 360 108 Q 320 100 290 85 L 220 68 L 212 90 L 282 108 Q 320 122 360 130 Z', fill: 'url(#eng-chrome)', stroke: '#000', 'stroke-width': 1 }));
+    g.appendChild(ns('rect', { x: 395, y: 78, width: 24, height: 12, fill: 'none', stroke: '#000', 'stroke-width': 0.8 }));
+    g.appendChild(ns('rect', { id: 'ute-cv-valve-in', x: 393, y: 88, width: 28, height: 8, fill: '#1A1816' }));
+    // Valve stem into the chamber
+    g.appendChild(ns('line', { x1: 407, y1: 70, x2: 407, y2: 88, stroke: '#5A574E', 'stroke-width': 3 }));
+    // Valve spring (zigzag hint)
+    for (let i = 0; i < 5; i++) g.appendChild(ns('line', { x1: 398 + (i%2)*4, y1: 56 + i*3, x2: 416 - (i%2)*4, y2: 58 + i*3, stroke: '#8E867A', 'stroke-width': 1 }));
+    g.appendChild(txt(230, 60, 'INTAKE', 'start', 10));
+
+    // Exhaust runner + valve (right)
+    g.appendChild(ns('path', { d: 'M 540 108 Q 580 100 610 85 L 680 68 L 688 90 L 618 108 Q 580 122 540 130 Z', fill: 'url(#eng-chrome)', stroke: '#000', 'stroke-width': 1 }));
+    g.appendChild(ns('rect', { x: 481, y: 78, width: 24, height: 12, fill: 'none', stroke: '#000', 'stroke-width': 0.8 }));
+    g.appendChild(ns('rect', { id: 'ute-cv-valve-ex', x: 479, y: 88, width: 28, height: 8, fill: '#1A1816' }));
+    g.appendChild(ns('line', { x1: 493, y1: 70, x2: 493, y2: 88, stroke: '#5A574E', 'stroke-width': 3 }));
+    for (let i = 0; i < 5; i++) g.appendChild(ns('line', { x1: 484 + (i%2)*4, y1: 56 + i*3, x2: 502 - (i%2)*4, y2: 58 + i*3, stroke: '#8E867A', 'stroke-width': 1 }));
+    g.appendChild(txt(685, 60, 'EXHAUST', 'end', 10));
   } else if (S.mode === '2t') {
-    // 2T ports
-    g.appendChild(ns('rect', { id: 'ute-cv-port-ex', x: 490, y: 225, width: 20, height: 30, fill: '#7A6E60', stroke: '#0A0A0A' }));
-    g.appendChild(ns('rect', { id: 'ute-cv-port-tr', x: 390, y: 230, width: 20, height: 30, fill: '#3E6FB7', stroke: '#0A0A0A' }));
-    g.appendChild(ns('path', { d: 'M 510 240 L 580 240 L 580 210 L 640 210', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
-    g.appendChild(ns('path', { d: 'M 390 250 L 340 250 L 340 380 L 320 380', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 1.5 }));
-    g.appendChild(ns('rect', { x: 240, y: 370, width: 70, height: 32, fill: '#F6F5F2', stroke: '#0A0A0A' }));
-    g.appendChild(txt(236, 362, 'REED / CARB', 'end', 10));
-    g.appendChild(txt(645, 207, 'EXHAUST', 'start', 10));
+    g.appendChild(ns('rect', { id: 'ute-cv-port-ex', x: 525, y: 225, width: 20, height: 35, fill: '#7A6E60', stroke: '#000' }));
+    g.appendChild(ns('rect', { id: 'ute-cv-port-tr', x: 355, y: 230, width: 20, height: 35, fill: '#3E6FB7', stroke: '#000' }));
+    g.appendChild(ns('path', { d: 'M 545 240 L 600 240 L 600 210 L 660 210', fill: 'none', stroke: '#000', 'stroke-width': 1.5 }));
+    g.appendChild(ns('path', { d: 'M 355 250 L 310 250 L 310 380 L 290 380', fill: 'none', stroke: '#000', 'stroke-width': 1.5 }));
+    g.appendChild(ns('rect', { x: 220, y: 370, width: 70, height: 32, fill: 'url(#eng-chrome)', stroke: '#000' }));
+    g.appendChild(txt(216, 362, 'REED / CARB', 'end', 10));
+    g.appendChild(txt(665, 207, 'EXHAUST', 'start', 10));
   }
 
-  // Con-rod + piston
-  g.appendChild(ns('line', { id: 'ute-cv-rod', x1: 450, y1: 230, x2: 450, y2: 345, stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'conrod', class: 'ute-shape' }));
-  g.appendChild(ns('rect', { id: 'ute-cv-piston', x: 402, y: 190, width: 96, height: 60, fill: '#D8D4CA', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'piston', class: 'ute-shape', 'data-fillable': '' }));
-  g.appendChild(ns('line', { id: 'ute-cv-ring1', x1: 402, y1: 200, x2: 498, y2: 200, stroke: '#0A0A0A' }));
-  g.appendChild(ns('line', { id: 'ute-cv-ring2', x1: 402, y1: 205, x2: 498, y2: 205, stroke: '#0A0A0A' }));
-  // Crank
+  // ─── Piston (3D shaded, with pin visible) ─────────────────────
+  g.appendChild(ns('rect', { id: 'ute-cv-piston', x: 402, y: 190, width: 96, height: 60, fill: 'url(#eng-piston)', stroke: '#000', 'stroke-width': 1.5, 'data-shape': 'piston', class: 'ute-shape', 'data-fillable': '' }));
+  // Ring grooves — darker lines across the piston body
+  g.appendChild(ns('line', { id: 'ute-cv-ring1', x1: 402, y1: 200, x2: 498, y2: 200, stroke: '#1A1816', 'stroke-width': 1.5 }));
+  g.appendChild(ns('line', { id: 'ute-cv-ring2', x1: 402, y1: 206, x2: 498, y2: 206, stroke: '#1A1816', 'stroke-width': 1.2 }));
+
+  // ─── Con-rod (I-beam styling with big + small end ends) ───────
+  g.appendChild(ns('line', { id: 'ute-cv-rod', x1: 450, y1: 230, x2: 450, y2: 345, stroke: 'url(#eng-rod)', 'stroke-width': 11, 'data-shape': 'conrod', class: 'ute-shape', 'stroke-linecap': 'round' }));
+
+  // ─── Crankshaft (full counterweight disc with throw) ──────────
   const crankG = ns('g', { 'data-shape': 'crankshaft', class: 'ute-shape' });
-  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 70, fill: 'none', stroke: '#0A0A0A', 'data-shape': 'crankshaft' }));
-  crankG.appendChild(ns('circle', { id: 'ute-cv-crankpin', cx: 450, cy: 345, r: 8, fill: '#0A0A0A', 'data-shape': 'crankshaft' }));
-  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 3, fill: '#F6F5F2', 'data-shape': 'crankshaft' }));
-  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 5, fill: '#0A0A0A', 'data-shape': 'crankshaft' }));
+  // Dashed orbit guide
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 55, fill: 'none', stroke: '#5A574E', 'stroke-width': 0.8, 'stroke-dasharray': '3 4', 'data-shape': 'crankshaft' }));
+  // Full counterweight disc
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 82, fill: 'url(#eng-cw)', stroke: '#000', 'stroke-width': 1.5, 'data-shape': 'crankshaft' }));
+  // Inner machined ring
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 58, fill: 'none', stroke: '#1A1816', 'stroke-width': 1, 'data-shape': 'crankshaft' }));
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 62, fill: 'none', stroke: '#4A4642', 'stroke-width': 0.6, 'data-shape': 'crankshaft' }));
+  // Main shaft centre (steel)
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 11, fill: 'url(#g3-steel)', stroke: '#000', 'stroke-width': 1, 'data-shape': 'crankshaft' }));
+  crankG.appendChild(ns('circle', { cx: 450, cy: 345, r: 4, fill: '#000', 'data-shape': 'crankshaft' }));
+  // Crank pin (updates per tick, keeps old ID)
+  crankG.appendChild(ns('circle', { id: 'ute-cv-crankpin', cx: 450, cy: 345, r: 11, fill: '#1A1816', stroke: '#000', 'data-shape': 'crankshaft' }));
   g.appendChild(crankG);
+
+  // Oil sheen inside the case (couple of fine curves)
+  g.appendChild(ns('path', { d: 'M 240 430 Q 320 420 420 428 Q 520 436 620 428 Q 660 424 680 430', fill: 'none', stroke: '#F6F5F2', 'stroke-width': 0.6, opacity: 0.2 }));
+  g.appendChild(ns('path', { d: 'M 260 440 Q 320 433 440 440 Q 560 448 660 442', fill: 'none', stroke: '#F6F5F2', 'stroke-width': 0.5, opacity: 0.14 }));
 
   svg.appendChild(g);
   ENGINE_PATHS = {

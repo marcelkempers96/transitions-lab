@@ -222,6 +222,28 @@ body.ute-standalone {
 }
 .ute-shape[data-fillable].is-highlight { fill: #F9DECB !important; }
 
+/* Interactive dot — flags parts with a rich close-up (not just a card) */
+.ute-ix-dot {
+  pointer-events: none;
+  fill: var(--warm); stroke: var(--surface); stroke-width: 1.5;
+  animation: ute-ix-pulse 2s ease-in-out infinite;
+}
+@keyframes ute-ix-pulse {
+  0%, 100% { r: 5; opacity: 0.95; }
+  50%      { r: 7; opacity: 0.65; }
+}
+.ute-moto-svg[data-cat]:not([data-cat="all"]) .ute-ix-dot { opacity: 0.4; }
+.ute-ix-legend {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em;
+  color: var(--mute); text-transform: uppercase;
+  margin-left: 6px;
+}
+.ute-ix-legend::before {
+  content: ""; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--warm);
+}
+
 /* Callouts */
 .ute-callout { cursor: pointer; }
 .ute-callout:hover .ute-callout-dot,
