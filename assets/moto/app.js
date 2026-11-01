@@ -27,7 +27,8 @@ const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4
 // ───────────────────────── State ────────────────────────────────
 const S = {
   mode: '4t',            // '4t' | '2t' | 'elec'
-  view: 'diagram',       // 'diagram' | 'blueprint'
+  view: 'diagram',       // 'diagram' | 'blueprint' | '3d'
+  category: 'all',       // 'all' | 'powertrain' | 'electrical' | 'chassis' | 'transmission' | 'frame' | 'wheels'
   selected_part: null,
   running: true,
   rpm: 2400,
@@ -59,6 +60,38 @@ const S = {
 
 const GEAR = { primary: 2.1, final: 2.6, gear3: 1.3, wheel_r_m: 0.30 };
 
+// System categories — map every part key to one. Used by the chip
+// row to focus the overview on a given subsystem.
+const PART_CATEGORY = {
+  // Powertrain (ICE)
+  engine: 'powertrain', cylinder: 'powertrain', piston: 'powertrain', conrod: 'powertrain',
+  crankshaft: 'powertrain', spark_plug: 'powertrain',
+  valve_in: 'powertrain', valve_ex: 'powertrain', port_ex: 'powertrain', port_tr: 'powertrain',
+  carb: 'powertrain', air_filter: 'powertrain', fuel_tank: 'powertrain', exhaust: 'powertrain',
+  // Powertrain (electric)
+  motor: 'powertrain', controller: 'powertrain', charge_port: 'powertrain',
+  // Electrical + wiring
+  battery: 'electrical', wiring: 'electrical',
+  instruments: 'electrical', headlight: 'electrical', tail_light: 'electrical',
+  // Frame + body
+  frame: 'frame', seat: 'frame',
+  // Chassis (suspension + brakes)
+  forks: 'chassis', swingarm: 'chassis', rear_shock: 'chassis', brake: 'chassis',
+  // Transmission
+  chain: 'transmission', rear_sprocket: 'transmission',
+  // Wheels
+  front_wheel: 'wheels', rear_wheel: 'wheels',
+};
+const CATEGORIES = [
+  { k: 'all',          label: 'All' },
+  { k: 'powertrain',   label: 'Powertrain' },
+  { k: 'electrical',   label: 'Electrical' },
+  { k: 'chassis',      label: 'Chassis' },
+  { k: 'transmission', label: 'Transmission' },
+  { k: 'frame',        label: 'Frame + Body' },
+  { k: 'wheels',       label: 'Wheels' },
+];
+
 // ───────────────────────── Shell + top-level render ─────────────
 function render() {
   ROOT.innerHTML = shellHTML();
@@ -68,6 +101,8 @@ function render() {
   wireChromeLocal();
   wireModeSwitch();
   wireViewSwitch();
+  wireCategoryChips();
+  applyMotoCategory();
   renderDynoCharts();
   renderDynoFindings();
   wireDynoButtons();
@@ -112,6 +147,10 @@ function shellHTML() {
             </div>
             <span class="ute-overview-badge" data-m="${S.mode}">${modeShort()}</span>
           </div>
+        </div>
+        <div class="ute-cats" role="group" aria-label="Focus by system">
+          ${CATEGORIES.map((c) => `<button type="button" class="ute-cat-chip ${S.category===c.k?'is-on':''}" data-cat="${c.k}">${c.label}</button>`).join('')}
+          <button type="button" class="ute-cat-chip" data-open-cv="wiring" style="border-color: var(--warm); color: var(--warm);">Wiring &rarr;</button>
         </div>
         <div class="ute-moto-wrap ${S.view==='blueprint'?'is-blueprint':''} ${S.view==='3d'?'is-3d':''}" id="ute-moto-wrap">
           <svg class="ute-moto-svg ${S.view==='blueprint'?'is-blueprint':''}" id="ute-moto" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" aria-label="Motorcycle anatomy diagram"></svg>
@@ -336,6 +375,7 @@ function mountOverviewSVG() {
   }
   wireOverviewClicks(svg);
   applyMotoHighlight();
+  applyMotoCategory();
 }
 
 function wireViewSwitch() {
@@ -347,6 +387,35 @@ function wireViewSwitch() {
       ROOT.querySelectorAll('.ute-view-toggle button').forEach((bb) => bb.classList.toggle('is-on', bb.getAttribute('data-view') === v));
       mountOverviewSVG();
     });
+  });
+}
+
+function wireCategoryChips() {
+  ROOT.querySelectorAll('.ute-cat-chip').forEach((b) => {
+    b.addEventListener('click', () => {
+      const openKey = b.getAttribute('data-open-cv');
+      if (openKey) { selectPart(openKey); return; }
+      const k = b.getAttribute('data-cat');
+      if (!k) return;
+      S.category = k;
+      ROOT.querySelectorAll('.ute-cat-chip').forEach((bb) => bb.classList.toggle('is-on', bb.getAttribute('data-cat') === k));
+      applyMotoCategory();
+    });
+  });
+}
+
+function applyMotoCategory() {
+  const svg = ROOT.querySelector('#ute-moto');
+  if (!svg) return;
+  svg.setAttribute('data-cat', S.category);
+  svg.querySelectorAll('.ute-shape').forEach((el) => el.classList.remove('in-cat'));
+  if (S.category === 'all') return;
+  svg.querySelectorAll('[data-shape]').forEach((el) => {
+    const shape = el.getAttribute('data-shape');
+    const cat = PART_CATEGORY[shape];
+    if (cat === S.category && el.classList && el.classList.contains('ute-shape')) {
+      el.classList.add('in-cat');
+    }
   });
 }
 
@@ -2139,140 +2208,192 @@ function drawMotocross2T3D(svg) {
   svg.appendChild(gc);
 }
 
-// ─── Electric 3D ────────────────────────────────────────────────
+// ─── Electric 3D — Switch eScrambler style ──────────────────────
+// A flat-track scrambler with the big exposed black battery as the
+// hero. Matches the 2023 Switch eScrambler reference Marcel sent.
 function drawElectricBike3D(svg) {
-  td_defs(svg, { light: '#2A2A26', mid: '#4A4642', dark: '#0A0A0A' });  // naked black
+  td_defs(svg, { light: '#2A2A26', mid: '#4A4642', dark: '#0A0A0A' });
   const g = ns('g');
-  g.appendChild(td_shadow(640, 540, 420, 42));
+  // Soft ground shadow
+  g.appendChild(td_shadow(640, 545, 440, 40));
 
-  g.appendChild(td_wheel(230, 480, 100, 36, 'rear_wheel',  { spoke: 20, knobby: false, rimColor: 'url(#td-chrome)' }));
-  g.appendChild(td_wheel(970, 500, 110, 40, 'front_wheel', { spoke: 20, knobby: false, rimColor: 'url(#td-chrome)' }));
+  // Wheels — classic spoked (not knobby), equal size scrambler style
+  g.appendChild(td_wheel(220, 490, 108, 34, 'rear_wheel',  { spoke: 36, knobby: false, rimColor: 'url(#td-chrome)' }));
+  g.appendChild(td_wheel(1000, 500, 112, 36, 'front_wheel', { spoke: 36, knobby: false, rimColor: 'url(#td-chrome)' }));
 
+  // Front disc + caliper
   const brake = ns('g', { 'data-shape': 'brake', class: 'ute-shape' });
-  brake.appendChild(ns('ellipse', { cx: 970, cy: 500, rx: 48, ry: 17, fill: 'none', stroke: '#B9B3A4', 'stroke-width': 1.5, 'data-shape': 'brake' }));
-  for (let i = 0; i < 12; i++) {
-    const a = (i / 12) * 2 * Math.PI;
-    brake.appendChild(ns('ellipse', { cx: 970 + Math.cos(a)*42, cy: 500 + Math.sin(a)*14, rx: 2, ry: 1.2, fill: '#2A2A26', 'data-shape': 'brake' }));
+  brake.appendChild(ns('ellipse', { cx: 1000, cy: 500, rx: 50, ry: 16, fill: 'none', stroke: '#D4CFC2', 'stroke-width': 1.5, 'data-shape': 'brake' }));
+  for (let i = 0; i < 10; i++) {
+    const a = (i / 10) * 2 * Math.PI;
+    brake.appendChild(ns('ellipse', { cx: 1000 + Math.cos(a)*44, cy: 500 + Math.sin(a)*14, rx: 2, ry: 1.2, fill: '#2A2A26', 'data-shape': 'brake' }));
   }
   svg.appendChild(brake);
+  // Rear disc
+  svg.appendChild(ns('ellipse', { cx: 220, cy: 490, rx: 32, ry: 10, fill: 'none', stroke: '#D4CFC2', 'stroke-width': 1.5 }));
 
-  // Inverted forks (modern)
+  // Inverted USD forks — chrome upper, dark lower
   const forks = ns('g', { 'data-shape': 'forks', class: 'ute-shape' });
-  forks.appendChild(ns('path', { d: 'M 942 490 L 905 220 L 930 212 L 962 490 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'data-shape': 'forks', 'data-fillable': '' }));
-  forks.appendChild(ns('path', { d: 'M 990 490 L 956 220 L 982 212 L 1010 490 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'data-shape': 'forks' }));
-  forks.appendChild(ns('rect', { x: 925, y: 380, width: 44, height: 120, fill: 'url(#td-black)', 'data-shape': 'forks' }));
-  forks.appendChild(ns('rect', { x: 973, y: 380, width: 44, height: 120, fill: 'url(#td-black)', 'data-shape': 'forks' }));
-  forks.appendChild(ns('path', { d: 'M 895 200 L 1020 200 L 1010 230 L 905 230 Z', fill: 'url(#td-black)', stroke: '#1A1A17', 'data-shape': 'forks' }));
+  forks.appendChild(ns('path', { d: 'M 970 490 L 940 220 L 964 212 L 992 490 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'data-shape': 'forks', 'data-fillable': '' }));
+  forks.appendChild(ns('path', { d: 'M 1020 490 L 988 220 L 1012 212 L 1040 490 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'data-shape': 'forks' }));
+  // Lower sliders (dark grey)
+  forks.appendChild(ns('rect', { x: 950, y: 400, width: 48, height: 100, fill: 'url(#td-black)', 'data-shape': 'forks' }));
+  forks.appendChild(ns('rect', { x: 1000, y: 400, width: 48, height: 100, fill: 'url(#td-black)', 'data-shape': 'forks' }));
+  // Top triple tree
+  forks.appendChild(ns('path', { d: 'M 930 198 L 1050 198 L 1040 224 L 940 224 Z', fill: '#1A1A17', stroke: '#2A2A26', 'data-shape': 'forks' }));
   svg.appendChild(forks);
 
-  // Angular LED headlight
+  // Front fender (short scrambler, chrome ribbon above tyre)
+  svg.appendChild(ns('path', { d: 'M 900 450 Q 1000 395 1100 450 Q 1100 460 1095 464 Q 1000 408 905 464 Z', fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'stroke-width': 1 }));
+
+  // Small round LED headlight
   const hl = ns('g', { 'data-shape': 'headlight', class: 'ute-shape' });
-  hl.appendChild(ns('path', { d: 'M 820 192 L 920 180 L 940 245 L 835 258 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'headlight', 'data-fillable': '' }));
-  hl.appendChild(ns('path', { d: 'M 835 210 L 920 198 L 926 232 L 840 244 Z', fill: 'url(#td-grn)', 'data-shape': 'headlight' }));
-  hl.appendChild(ns('line', { x1: 840, y1: 220, x2: 920, y2: 210, stroke: '#F6F5F2', 'stroke-width': 2, 'data-shape': 'headlight' }));
+  hl.appendChild(ns('circle', { cx: 905, cy: 265, r: 32, fill: 'url(#td-black)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'headlight', 'data-fillable': '' }));
+  hl.appendChild(ns('circle', { cx: 905, cy: 265, r: 24, fill: '#F6F5F2', 'data-shape': 'headlight' }));
+  hl.appendChild(ns('circle', { cx: 905, cy: 265, r: 18, fill: 'url(#td-amber)', 'data-shape': 'headlight' }));
+  hl.appendChild(ns('circle', { cx: 898, cy: 258, r: 6, fill: 'url(#td-gloss)', 'data-shape': 'headlight' }));
   svg.appendChild(hl);
 
-  // Bars + TFT dash
+  // Wide tracker handlebars
   const bar = ns('g', { 'data-shape': 'instruments', class: 'ute-shape' });
-  bar.appendChild(ns('path', { d: 'M 650 180 Q 760 140 870 150 L 1000 160 L 1000 176 Q 870 164 760 154 Q 650 194 650 194 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
-  bar.appendChild(ns('rect', { x: 790, y: 148, width: 110, height: 58, rx: 6, fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments', 'data-fillable': '' }));
-  const txEV = ns('text', { x: 845, y: 180, 'font-family': 'IBM Plex Mono', 'font-size': 16, 'font-weight': 800, 'text-anchor': 'middle', fill: '#2F7F65', 'data-shape': 'instruments' });
+  bar.appendChild(ns('path', { d: 'M 650 180 Q 760 150 870 158 L 1010 174 L 1010 190 Q 870 174 760 170 Q 650 196 650 196 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
+  // Round grip tubes
+  bar.appendChild(ns('rect', { x: 1010, y: 176, width: 42, height: 20, rx: 4, fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
+  bar.appendChild(ns('rect', { x: 610, y: 192, width: 42, height: 20, rx: 4, fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'instruments' }));
+  // Small round TFT dash
+  bar.appendChild(ns('circle', { cx: 850, cy: 202, r: 22, fill: 'url(#td-black)', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'instruments', 'data-fillable': '' }));
+  const txEV = ns('text', { x: 850, y: 199, 'font-family': 'IBM Plex Mono', 'font-size': 11, 'font-weight': 800, 'text-anchor': 'middle', fill: '#2F7F65', 'data-shape': 'instruments' });
   txEV.textContent = 'EV'; bar.appendChild(txEV);
-  const txP = ns('text', { x: 845, y: 198, 'font-family': 'IBM Plex Mono', 'font-size': 11, 'font-weight': 700, 'text-anchor': 'middle', fill: '#E2A93B', 'data-shape': 'instruments' });
+  const txP = ns('text', { x: 850, y: 212, 'font-family': 'IBM Plex Mono', 'font-size': 9, 'font-weight': 700, 'text-anchor': 'middle', fill: '#E2A93B', 'data-shape': 'instruments' });
   txP.textContent = '85%'; bar.appendChild(txP);
   svg.appendChild(bar);
 
-  // Battery pack (large, where tank + engine would be)
+  // ─── BATTERY PACK (hero shape — big exposed black box with SWITCH logo) ──
+  // This is the defining feature of the Switch eScrambler. Vertical cooling slits + branding.
   const bat = ns('g', { 'data-shape': 'battery', class: 'ute-shape' });
-  bat.appendChild(ns('path', { d: 'M 400 268 Q 440 258 500 258 L 720 265 Q 760 275 760 340 Q 760 395 720 410 L 450 425 Q 400 420 400 370 Z', fill: 'url(#td-engine2)', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'battery', 'data-fillable': '' }));
-  // Cell cluster visible through side vents
-  for (let i = 0; i < 7; i++) {
-    for (let j = 0; j < 3; j++) {
-      bat.appendChild(ns('circle', { cx: 440 + i*42, cy: 300 + j*32, r: 10, fill: '#5A574E', stroke: '#1A1A17', 'data-shape': 'battery' }));
-      bat.appendChild(ns('circle', { cx: 440 + i*42, cy: 300 + j*32, r: 3, fill: 'url(#td-cu)', 'data-shape': 'battery' }));
-    }
+  // Main body (dark anodised with soft gradient)
+  bat.appendChild(ns('path', { d: 'M 420 258 L 760 272 L 770 440 Q 770 452 758 452 L 428 452 Q 414 452 414 440 L 414 272 Q 414 258 420 258 Z', fill: 'url(#td-engine)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'battery', 'data-fillable': '' }));
+  // Vertical cooling slit stripe pattern across the side
+  for (let i = 0; i < 24; i++) {
+    bat.appendChild(ns('rect', { x: 430 + i*14, y: 300, width: 3, height: 130, fill: '#0A0A0A', 'data-shape': 'battery' }));
   }
+  // Horizontal silver cover plate at the top of the pack
+  bat.appendChild(ns('rect', { x: 420, y: 262, width: 345, height: 36, fill: 'url(#td-chrome-v)', stroke: '#2A2A26', 'data-shape': 'battery' }));
+  // SWITCH branding
+  const brand = ns('text', { x: 592, y: 288, 'font-family': 'IBM Plex Sans', 'font-size': 20, 'font-weight': 800, 'text-anchor': 'middle', fill: '#0A0A0A', 'letter-spacing': '0.08em', 'data-shape': 'battery' });
+  brand.textContent = 'SWITCH'; bat.appendChild(brand);
+  // Trim bevel along the bottom
+  bat.appendChild(ns('rect', { x: 420, y: 436, width: 345, height: 10, fill: '#1A1A17', 'data-shape': 'battery' }));
   svg.appendChild(bat);
 
-  // Controller box on top of battery
+  // ─── CONTROLLER (small box tucked above the battery, behind the tracker tank cover) ──
   const ctl = ns('g', { 'data-shape': 'controller', class: 'ute-shape' });
-  ctl.appendChild(ns('rect', { x: 460, y: 230, width: 240, height: 38, fill: 'url(#td-black)', stroke: '#1A1A17', 'stroke-width': 1.5, 'data-shape': 'controller', 'data-fillable': '' }));
-  for (let i = 0; i < 12; i++) ctl.appendChild(ns('line', { x1: 470 + i*20, y1: 236, x2: 470 + i*20, y2: 262, stroke: '#9A9385', 'stroke-width': 1, 'data-shape': 'controller' }));
+  ctl.appendChild(ns('path', { d: 'M 450 248 L 740 258 L 740 262 L 450 258 Z', fill: '#1A1A17', 'data-shape': 'controller' }));
+  // Thin bar at top representing the controller housing
+  ctl.appendChild(ns('rect', { x: 500, y: 230, width: 220, height: 18, fill: 'url(#td-black)', stroke: '#1A1A17', 'data-shape': 'controller', 'data-fillable': '' }));
+  for (let i = 0; i < 11; i++) ctl.appendChild(ns('line', { x1: 510 + i*20, y1: 234, x2: 510 + i*20, y2: 246, stroke: '#9A9385', 'stroke-width': 1, 'data-shape': 'controller' }));
+  const txCtl = ns('text', { x: 610, y: 243, 'font-family': 'IBM Plex Mono', 'font-size': 9, 'font-weight': 700, 'text-anchor': 'middle', fill: '#F6F5F2', 'data-shape': 'controller' });
+  txCtl.textContent = 'CONTROLLER'; ctl.appendChild(txCtl);
   svg.appendChild(ctl);
 
-  // Motor at swingarm pivot
-  const motor = ns('g', { 'data-shape': 'motor', class: 'ute-shape' });
-  motor.appendChild(ns('circle', { cx: 500, cy: 455, r: 54, fill: 'url(#td-engine)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'motor', 'data-fillable': '' }));
-  for (let i = 0; i < 36; i++) {
-    const a = (i / 36) * 2 * Math.PI;
-    motor.appendChild(ns('line', { x1: 500 + Math.cos(a)*36, y1: 455 + Math.sin(a)*36, x2: 500 + Math.cos(a)*52, y2: 455 + Math.sin(a)*52, stroke: '#2A2824', 'stroke-width': 1.5, 'data-shape': 'motor' }));
-  }
-  motor.appendChild(ns('circle', { cx: 500, cy: 455, r: 20, fill: '#0A0A0A', 'data-shape': 'motor' }));
-  motor.appendChild(ns('circle', { cx: 500, cy: 455, r: 7, fill: 'url(#td-cu)', 'data-shape': 'motor' }));
-  // Phase cables (3)
-  motor.appendChild(ns('path', { d: 'M 452 420 Q 420 400 410 380', fill: 'none', stroke: 'url(#td-cu)', 'stroke-width': 4, 'data-shape': 'motor' }));
-  motor.appendChild(ns('path', { d: 'M 448 455 L 410 455', fill: 'none', stroke: 'url(#td-grn)', 'stroke-width': 4, 'data-shape': 'motor' }));
-  motor.appendChild(ns('path', { d: 'M 452 490 Q 420 510 410 530', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 4, 'data-shape': 'motor' }));
-  svg.appendChild(motor);
-
-  // Charge port
+  // Charge port (hidden on the right side of the battery)
   const cp = ns('g', { 'data-shape': 'charge_port', class: 'ute-shape' });
-  cp.appendChild(ns('rect', { x: 710, y: 380, width: 32, height: 24, fill: 'url(#td-chrome)', stroke: '#1A1A17', 'data-shape': 'charge_port', 'data-fillable': '' }));
-  cp.appendChild(ns('circle', { cx: 726, cy: 392, r: 7, fill: 'url(#td-grn)', 'data-shape': 'charge_port' }));
+  cp.appendChild(ns('rect', { x: 718, y: 380, width: 32, height: 24, fill: 'url(#td-chrome)', stroke: '#2A2A26', 'data-shape': 'charge_port', 'data-fillable': '' }));
+  cp.appendChild(ns('circle', { cx: 734, cy: 392, r: 7, fill: 'url(#td-grn)', 'data-shape': 'charge_port' }));
   svg.appendChild(cp);
 
-  // Seat (small, angular)
+  // ─── MOTOR (hub motor at swingarm pivot — just rear of battery, visible as a drum) ──
+  const motor = ns('g', { 'data-shape': 'motor', class: 'ute-shape' });
+  motor.appendChild(ns('circle', { cx: 390, cy: 455, r: 42, fill: 'url(#td-engine)', stroke: '#0A0A0A', 'stroke-width': 2, 'data-shape': 'motor', 'data-fillable': '' }));
+  for (let i = 0; i < 24; i++) {
+    const a = (i / 24) * 2 * Math.PI;
+    motor.appendChild(ns('line', { x1: 390 + Math.cos(a)*30, y1: 455 + Math.sin(a)*30, x2: 390 + Math.cos(a)*40, y2: 455 + Math.sin(a)*40, stroke: '#2A2824', 'stroke-width': 1.2, 'data-shape': 'motor' }));
+  }
+  motor.appendChild(ns('circle', { cx: 390, cy: 455, r: 15, fill: '#0A0A0A', 'data-shape': 'motor' }));
+  motor.appendChild(ns('circle', { cx: 390, cy: 455, r: 5, fill: 'url(#td-cu)', 'data-shape': 'motor' }));
+  // 3-phase cables emerging up into battery
+  motor.appendChild(ns('path', { d: 'M 365 420 Q 350 400 345 380', fill: 'none', stroke: 'url(#td-cu)', 'stroke-width': 3.5, 'data-shape': 'motor' }));
+  motor.appendChild(ns('path', { d: 'M 355 450 L 320 450', fill: 'none', stroke: 'url(#td-grn)', 'stroke-width': 3.5, 'data-shape': 'motor' }));
+  motor.appendChild(ns('path', { d: 'M 365 490 Q 350 505 345 520', fill: 'none', stroke: '#0A0A0A', 'stroke-width': 3.5, 'data-shape': 'motor' }));
+  svg.appendChild(motor);
+
+  // ─── FLAT TRACKER SEAT (long, flat, black with white edge piping) ──
   const seat = ns('g', { 'data-shape': 'seat', class: 'ute-shape' });
-  seat.appendChild(ns('path', { d: 'M 280 260 Q 380 240 460 248 L 470 290 Q 380 300 290 310 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'data-shape': 'seat', 'data-fillable': '' }));
+  seat.appendChild(ns('path', { d: 'M 280 232 Q 350 220 500 220 Q 650 220 760 240 L 758 258 Q 650 248 500 250 Q 350 252 280 262 Z', fill: 'url(#td-black)', stroke: '#0A0A0A', 'stroke-width': 1.5, 'data-shape': 'seat', 'data-fillable': '' }));
+  // White piping along the top edge
+  seat.appendChild(ns('path', { d: 'M 290 230 Q 420 222 760 240', fill: 'none', stroke: '#F6F5F2', 'stroke-width': 1.2, 'data-shape': 'seat' }));
+  // Grip pattern
+  for (let i = 0; i < 24; i++) seat.appendChild(ns('circle', { cx: 300 + i*18, cy: 240 + i*0.6, r: 0.8, fill: '#F6F5F2', 'data-shape': 'seat' }));
   svg.appendChild(seat);
 
-  // Tail light
+  // Rear tail light (small, under seat tail)
   const tl = ns('g', { 'data-shape': 'tail_light', class: 'ute-shape' });
-  tl.appendChild(ns('rect', { x: 260, y: 275, width: 24, height: 10, fill: 'url(#td-red)', 'data-shape': 'tail_light', 'data-fillable': '' }));
+  tl.appendChild(ns('rect', { x: 258, y: 258, width: 24, height: 10, fill: 'url(#td-red)', 'data-shape': 'tail_light', 'data-fillable': '' }));
   svg.appendChild(tl);
 
-  // Swingarm (massive, aluminium)
+  // Swingarm (triangulated, aluminium)
   const sw = ns('g', { 'data-shape': 'swingarm', class: 'ute-shape' });
-  sw.appendChild(ns('path', { d: 'M 500 455 Q 400 465 230 480 L 230 494 Q 400 480 500 468 Z', fill: 'url(#td-chrome-v)', stroke: '#1A1A17', 'data-shape': 'swingarm', 'data-fillable': '' }));
+  sw.appendChild(ns('path', { d: 'M 390 450 Q 310 470 220 486 L 220 500 Q 310 484 395 466 Z', fill: 'url(#td-chrome-v)', stroke: '#1A1A17', 'data-shape': 'swingarm', 'data-fillable': '' }));
   svg.appendChild(sw);
 
-  // Belt drive
+  // Rear shocks (two chrome units visible, scrambler style)
+  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
+  // Spring + shock body (chrome)
+  shock.appendChild(ns('rect', { x: 330, y: 320, width: 16, height: 150, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_shock', 'data-fillable': '' }));
+  for (let i = 0; i < 10; i++) shock.appendChild(ns('line', { x1: 326, y1: 332 + i*14, x2: 350, y2: 342 + i*14, stroke: '#2A2A26', 'stroke-width': 2, 'data-shape': 'rear_shock' }));
+  // Shock mounting eye
+  shock.appendChild(ns('circle', { cx: 338, cy: 316, r: 7, fill: '#0A0A0A', 'data-shape': 'rear_shock' }));
+  shock.appendChild(ns('circle', { cx: 338, cy: 476, r: 7, fill: '#0A0A0A', 'data-shape': 'rear_shock' }));
+  svg.appendChild(shock);
+
+  // Belt drive (chain) along the swingarm
   const chain = ns('g', { 'data-shape': 'chain', class: 'ute-shape' });
-  chain.appendChild(ns('rect', { x: 230, y: 478, width: 270, height: 6, fill: '#1A1A17', 'data-shape': 'chain' }));
-  for (let x = 240; x < 490; x += 10) chain.appendChild(ns('line', { x1: x, y1: 477, x2: x, y2: 485, stroke: '#9A9385', 'stroke-width': 0.8, 'data-shape': 'chain' }));
+  chain.appendChild(ns('rect', { x: 220, y: 476, width: 170, height: 7, fill: '#1A1A17', 'data-shape': 'chain' }));
+  for (let x = 230; x < 390; x += 10) chain.appendChild(ns('line', { x1: x, y1: 475, x2: x, y2: 484, stroke: '#9A9385', 'stroke-width': 0.8, 'data-shape': 'chain' }));
   svg.appendChild(chain);
 
-  // Belt pulley
+  // Belt pulley on rear wheel
   const rsp = ns('g', { 'data-shape': 'rear_sprocket', class: 'ute-shape' });
-  rsp.appendChild(ns('ellipse', { cx: 230, cy: 480, rx: 50, ry: 17, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
+  rsp.appendChild(ns('ellipse', { cx: 220, cy: 490, rx: 46, ry: 15, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_sprocket', 'data-fillable': '' }));
   for (let i = 0; i < 48; i++) {
     const a = (i / 48) * 2 * Math.PI;
-    rsp.appendChild(ns('line', { x1: 230 + Math.cos(a)*50, y1: 480 + Math.sin(a)*17, x2: 230 + Math.cos(a)*53, y2: 480 + Math.sin(a)*18, stroke: '#0A0A0A', 'stroke-width': 0.6, 'data-shape': 'rear_sprocket' }));
+    rsp.appendChild(ns('line', { x1: 220 + Math.cos(a)*46, y1: 490 + Math.sin(a)*15, x2: 220 + Math.cos(a)*49, y2: 490 + Math.sin(a)*16, stroke: '#0A0A0A', 'stroke-width': 0.5, 'data-shape': 'rear_sprocket' }));
   }
   svg.appendChild(rsp);
 
-  // Shock
-  const shock = ns('g', { 'data-shape': 'rear_shock', class: 'ute-shape' });
-  shock.appendChild(ns('rect', { x: 500, y: 320, width: 20, height: 130, fill: 'url(#td-chrome)', stroke: '#0A0A0A', 'data-shape': 'rear_shock', 'data-fillable': '' }));
-  svg.appendChild(shock);
-
-  // Frame rails (black trellis)
+  // Minimal tubular frame rails (silver, visible around the battery)
   const frame = ns('g', { 'data-shape': 'frame', class: 'ute-shape' });
-  frame.appendChild(ns('path', { d: 'M 895 240 L 760 258 Q 700 262 500 266', fill: 'none', stroke: '#1A1A17', 'stroke-width': 3, 'data-shape': 'frame' }));
+  // Top rail
+  frame.appendChild(ns('path', { d: 'M 290 246 Q 420 250 760 264 L 920 240', fill: 'none', stroke: 'url(#td-chrome)', 'stroke-width': 5, 'data-shape': 'frame' }));
+  // Downtube from steering head to under the pack
+  frame.appendChild(ns('path', { d: 'M 918 228 Q 850 300 790 330', fill: 'none', stroke: 'url(#td-chrome)', 'stroke-width': 4, 'data-shape': 'frame' }));
+  // Rear sub-triangle
+  frame.appendChild(ns('path', { d: 'M 290 246 L 390 450 L 420 258', fill: 'none', stroke: 'url(#td-chrome)', 'stroke-width': 3, 'data-shape': 'frame' }));
   svg.appendChild(frame);
+
+  // Mirror stems (two)
+  svg.appendChild(ns('line', { x1: 1030, y1: 176, x2: 1055, y2: 110, stroke: '#2A2A26', 'stroke-width': 3 }));
+  svg.appendChild(ns('circle', { cx: 1075, cy: 95, r: 20, fill: 'url(#td-chrome)', stroke: '#2A2A26' }));
+  svg.appendChild(ns('line', { x1: 630, y1: 192, x2: 620, y2: 130, stroke: '#2A2A26', 'stroke-width': 3 }));
+  svg.appendChild(ns('circle', { cx: 592, cy: 118, r: 18, fill: 'url(#td-chrome)', stroke: '#2A2A26' }));
+
+  // Side stand
+  svg.appendChild(ns('line', { x1: 440, y1: 460, x2: 420, y2: 540, stroke: '#2A2A26', 'stroke-width': 4 }));
 
   svg.appendChild(g);
 
   const callouts = [
-    { key: 'headlight',   sx: 870, sy: 200, lx:  820, lane: 1, label: 'LED' },
-    { key: 'instruments', sx: 845, sy: 175, lx:  970, lane: 1, label: 'TFT dash' },
-    { key: 'controller',  sx: 580, sy: 240, lx:  580, lane: 1, label: 'Controller' },
-    { key: 'battery',     sx: 580, sy: 340, lx:  440, lane: 1, label: 'Battery pack' },
-    { key: 'motor',       sx: 500, sy: 455, lx:  600, lane: 4, label: 'Motor' },
-    { key: 'front_wheel', sx: 970, sy: 500, lx: 1140, lane: 3, label: 'Front wheel' },
-    { key: 'rear_wheel',  sx: 230, sy: 480, lx:   90, lane: 3, label: 'Rear wheel' },
-    { key: 'charge_port', sx: 726, sy: 392, lx:  740, lane: 4, label: 'Charge port' },
-    { key: 'seat',        sx: 370, sy: 275, lx:  380, lane: 4, label: 'Seat' },
+    { key: 'headlight',   sx: 905, sy: 232, lx:  830, lane: 1, label: 'LED headlight' },
+    { key: 'instruments', sx: 850, sy: 180, lx:  990, lane: 1, label: 'TFT dash' },
+    { key: 'controller',  sx: 610, sy: 232, lx:  610, lane: 1, label: 'Controller' },
+    { key: 'battery',     sx: 590, sy: 350, lx:  450, lane: 1, label: 'Switch battery' },
+    { key: 'motor',       sx: 390, sy: 455, lx:  220, lane: 4, label: 'Motor' },
+    { key: 'front_wheel', sx: 1000,sy: 500, lx: 1140, lane: 3, label: 'Front wheel' },
+    { key: 'rear_wheel',  sx: 220, sy: 490, lx:   90, lane: 3, label: 'Rear wheel' },
+    { key: 'charge_port', sx: 734, sy: 392, lx:  770, lane: 4, label: 'Charge port' },
+    { key: 'seat',        sx: 480, sy: 232, lx:  470, lane: 4, label: 'Flat tracker seat' },
+    { key: 'rear_shock',  sx: 338, sy: 395, lx:  340, lane: 4, label: 'Rear shock' },
+    { key: 'frame',       sx: 540, sy: 258, lx:  620, lane: 4, label: 'Frame' },
   ];
   const gc = ns('g');
   callouts.forEach((c) => gc.appendChild(callout(c)));
@@ -3317,6 +3438,183 @@ function cvControllerUpdate(dt) {
   `;
 }
 COMPONENT_VIEWS.controller = { title: 'Controller / inverter', kind: 'Electric', html: cvControllerHTML, sideHTML: cvControllerSide, mount: cvControllerMount, update: cvControllerUpdate };
+
+// ─── WIRING / ELECTRICAL harness (interactive diagram) ──────────
+function cvWiringHTML() {
+  const isElec = (S.mode === 'elec');
+  return `
+    <div class="ute-cview-chip">
+      <div class="ute-cview-chip-dot"></div>
+      <div><span class="k">${isElec ? 'HV + LV electrical system' : '12 V electrical harness'}</span>
+        <span class="d">${isElec ? 'High-voltage pack → controller → motor. DC-DC drops to 12 V for lights, ECU, horn.' : 'Battery → fuse → ignition → everything else. Alternator tops the battery up while running.'}</span>
+      </div>
+      <div class="n">Hover a node</div>
+    </div>
+    <div style="position:relative;">
+      <svg class="ute-cview-svg ute-wire-svg" id="ute-cv-wire-svg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="ute-wire-pop" id="ute-cv-wire-pop" style="display:none;"></div>
+    </div>
+  `;
+}
+function cvWiringSide() {
+  const isElec = (S.mode === 'elec');
+  return `
+    <div class="ute-cview-side">
+      <div class="card"><h4>How to read</h4>
+        <p>Red = positive 12 V. Black = negative. Green dashed = high voltage. Blue dashed = low-current signal / sense. Amber = AC between controller and motor.</p>
+      </div>
+      <div class="card"><h4>Key laws</h4>
+        <p><strong>V = I·R</strong> (Ohm). <strong>P = V·I</strong> (Watt). A 55 W bulb on 12 V draws 55/12 ≈ 4.6 A.</p>
+      </div>
+      <div class="card"><h4>${isElec ? 'Why two bus voltages' : 'Why a battery AND an alternator'}</h4>
+        <p>${isElec ? 'Pack sits around 400 V for efficient motor drive; lights, ECU and horn still live on 12 V, so a DC-DC converter steps down.' : 'Battery cranks the starter and runs lights at idle. The alternator takes over once the engine spins, replenishing the battery.'}</p>
+      </div>
+    </div>
+  `;
+}
+
+// Wiring nodes per mode — each defines { x, y, w, h, title, specs: [{k, v}] }
+const WIRE_NODES_ICE = [
+  { id: 'bat',  x: 60,  y: 150, w: 110, h: 70, title: 'Battery (12 V)',   specs: [['Voltage','12 V'],['Capacity','9 Ah'],['Cold crank','120 A']] },
+  { id: 'fuse', x: 215, y: 160, w: 72,  h: 54, title: 'Main fuse (30 A)', specs: [['Rating','30 A'],['Role','protects harness']] },
+  { id: 'ign',  x: 325, y: 90,  w: 90,  h: 54, title: 'Ignition switch',  specs: [['Position','OFF / ON / START'],['Current','≤ 20 A']] },
+  { id: 'ecu',  x: 325, y: 180, w: 90,  h: 54, title: 'ECU',              specs: [['Supply','12 V'],['Draw','0.3 A'],['Role','ignition timing + injection']] },
+  { id: 'coil', x: 460, y: 90,  w: 90,  h: 54, title: 'Ignition coil',    specs: [['Primary','12 V · 4 A'],['Secondary','~25 000 V'],['Fires','1× per 2 rev (4T)']] },
+  { id: 'plug', x: 600, y: 90,  w: 86,  h: 54, title: 'Spark plug',       specs: [['Gap','0.7 mm'],['Spark','25 kV'],['Duration','1 ms']] },
+  { id: 'alt',  x: 600, y: 180, w: 86,  h: 54, title: 'Alternator',       specs: [['Output','14 V AC'],['Peak','18 A'],['Rectifier','→ DC']] },
+  { id: 'reg',  x: 715, y: 180, w: 90,  h: 54, title: 'Rectifier / reg.', specs: [['AC → DC','full-wave'],['Reg to','14 V']] },
+  { id: 'head', x: 460, y: 290, w: 80,  h: 54, title: 'Headlight',        specs: [['Power','55 W'],['Current','≈ 4.6 A'],['V','12 V']] },
+  { id: 'tail', x: 560, y: 290, w: 80,  h: 54, title: 'Tail / brake',     specs: [['Position','5 W'],['Brake','21 W']] },
+  { id: 'horn', x: 660, y: 290, w: 70,  h: 54, title: 'Horn',             specs: [['Power','45 W'],['Current','3.8 A']] },
+  { id: 'inst', x: 750, y: 290, w: 80,  h: 54, title: 'Instruments',      specs: [['Draw','≈ 0.2 A'],['Supply','12 V']] },
+  { id: 'strt', x: 215, y: 260, w: 90,  h: 54, title: 'Starter motor',    specs: [['Peak','120 A'],['Nominal','800 W'],['Duration','< 2 s']] },
+];
+const WIRE_LINKS_ICE = [
+  // red (+12 V) from battery to fuse to ignition switch
+  { from: 'bat',  to: 'fuse', cls: 'w-pos' },
+  { from: 'fuse', to: 'ign',  cls: 'w-pos' },
+  { from: 'ign',  to: 'ecu',  cls: 'w-pos' },
+  { from: 'ecu',  to: 'coil', cls: 'w-sig' },
+  { from: 'coil', to: 'plug', cls: 'w-hv' },
+  { from: 'ign',  to: 'head', cls: 'w-pos' },
+  { from: 'ign',  to: 'tail', cls: 'w-pos' },
+  { from: 'ign',  to: 'horn', cls: 'w-pos' },
+  { from: 'ign',  to: 'inst', cls: 'w-pos' },
+  { from: 'alt',  to: 'reg',  cls: 'w-ac' },
+  { from: 'reg',  to: 'bat',  cls: 'w-pos' },
+  { from: 'bat',  to: 'strt', cls: 'w-pos' },
+];
+const WIRE_NODES_ELEC = [
+  { id: 'hv',    x: 60,  y: 170, w: 120, h: 86, title: 'HV battery pack', specs: [['Nominal','400 V'],['Capacity','12 kWh'],['Pack','~96 cells in series']] },
+  { id: 'bms',   x: 220, y: 170, w: 90,  h: 54, title: 'BMS',             specs: [['Watches','cell V, temp'],['Balances','across cells']] },
+  { id: 'ctl',   x: 345, y: 170, w: 100, h: 54, title: 'Controller',      specs: [['DC in','400 V'],['3-phase AC out','~340 V peak'],['Switching','16 kHz']] },
+  { id: 'mot',   x: 480, y: 170, w: 90,  h: 54, title: 'Motor',           specs: [['Type','PMAC'],['Peak','40 kW · 95 Nm'],['Efficiency','~ 92 %']] },
+  { id: 'dcdc',  x: 345, y: 260, w: 100, h: 54, title: 'DC-DC',           specs: [['400 V → 12 V','400 W'],['Role','feeds 12 V bus']] },
+  { id: 'lv',    x: 220, y: 260, w: 90,  h: 54, title: '12 V aux battery',specs: [['Capacity','4 Ah'],['Role','ECU + lights pre-wake']] },
+  { id: 'head',  x: 480, y: 260, w: 80,  h: 54, title: 'Headlight (LED)', specs: [['Power','25 W'],['Current','2.1 A']] },
+  { id: 'inst',  x: 580, y: 260, w: 80,  h: 54, title: 'Instruments',     specs: [['Draw','0.3 A'],['Supply','12 V']] },
+  { id: 'tail',  x: 680, y: 260, w: 80,  h: 54, title: 'Tail / brake',    specs: [['Power','5 / 10 W'],['Supply','12 V']] },
+  { id: 'chg',   x: 60,  y: 90,  w: 120, h: 54, title: 'Charge port',     specs: [['AC home','3.3 kW'],['DC fast','up to 50 kW']] },
+];
+const WIRE_LINKS_ELEC = [
+  { from: 'chg', to: 'hv',  cls: 'w-hv' },
+  { from: 'hv',  to: 'bms', cls: 'w-hv' },
+  { from: 'bms', to: 'ctl', cls: 'w-hv' },
+  { from: 'ctl', to: 'mot', cls: 'w-ac' },
+  { from: 'bms', to: 'dcdc',cls: 'w-sig' },
+  { from: 'hv',  to: 'dcdc',cls: 'w-hv' },
+  { from: 'dcdc',to: 'lv',  cls: 'w-pos' },
+  { from: 'lv',  to: 'head',cls: 'w-pos' },
+  { from: 'lv',  to: 'inst',cls: 'w-pos' },
+  { from: 'lv',  to: 'tail',cls: 'w-pos' },
+];
+
+function cvWiringMount() {
+  const svg = ROOT.querySelector('#ute-cv-wire-svg');
+  if (!svg) return;
+  const nodes = (S.mode === 'elec') ? WIRE_NODES_ELEC : WIRE_NODES_ICE;
+  const links = (S.mode === 'elec') ? WIRE_LINKS_ELEC : WIRE_LINKS_ICE;
+  const byId = {};
+  nodes.forEach((n) => byId[n.id] = n);
+
+  // Draw links first (behind nodes)
+  const gl = ns('g');
+  links.forEach((lk) => {
+    const a = byId[lk.from], b = byId[lk.to];
+    if (!a || !b) return;
+    const ax = a.x + a.w / 2, ay = a.y + a.h / 2;
+    const bx = b.x + b.w / 2, by = b.y + b.h / 2;
+    // Right-angle elbow routing: horizontal then vertical, with slight midpoint offset
+    const midX = (ax + bx) / 2;
+    const d = `M ${ax} ${ay} L ${midX} ${ay} L ${midX} ${by} L ${bx} ${by}`;
+    gl.appendChild(ns('path', { d, fill: 'none', class: lk.cls, 'stroke-width': 2 }));
+  });
+  svg.appendChild(gl);
+
+  // Draw nodes
+  const gn = ns('g');
+  nodes.forEach((n) => {
+    const g = ns('g', { 'data-wire-id': n.id });
+    g.appendChild(ns('rect', { x: n.x, y: n.y, width: n.w, height: n.h, rx: 3, class: 'wn' }));
+    const t1 = ns('text', { class: 'wire-lbl', x: n.x + n.w/2, y: n.y + 22, 'text-anchor': 'middle' });
+    t1.textContent = n.title.length > 18 ? n.title.slice(0, 17) + '…' : n.title;
+    g.appendChild(t1);
+    // First spec as subtitle
+    if (n.specs && n.specs.length) {
+      const sub = ns('text', { class: 'wire-sub', x: n.x + n.w/2, y: n.y + 38, 'text-anchor': 'middle' });
+      sub.textContent = n.specs[0][1];
+      g.appendChild(sub);
+    }
+    gn.appendChild(g);
+  });
+  svg.appendChild(gn);
+
+  // Legend
+  const leg = ns('g');
+  const items = [
+    ['+12 V',      '#C2502A', 'solid'],
+    ['Ground',     '#0A0A0A', 'solid'],
+    ['HV DC',      '#1D6B55', 'dash'],
+    ['AC phase',   '#E2A93B', 'solid'],
+    ['Signal',     '#3E6FB7', 'dash-fine'],
+  ];
+  const ly = 390;
+  items.forEach((it, i) => {
+    const x = 60 + i * 160;
+    const l = ns('line', { x1: x, y1: ly, x2: x + 30, y2: ly, stroke: it[1], 'stroke-width': 2.5 });
+    if (it[2] === 'dash') l.setAttribute('stroke-dasharray', '4 3');
+    if (it[2] === 'dash-fine') l.setAttribute('stroke-dasharray', '2 2');
+    leg.appendChild(l);
+    const t = ns('text', { x: x + 36, y: ly + 4, 'font-family': 'IBM Plex Mono', 'font-size': 10.5, fill: '#0A0A0A' });
+    t.textContent = it[0];
+    leg.appendChild(t);
+  });
+  svg.appendChild(leg);
+
+  // Hover handler for pop-up
+  const pop = ROOT.querySelector('#ute-cv-wire-pop');
+  svg.querySelectorAll('[data-wire-id]').forEach((grp) => {
+    const id = grp.getAttribute('data-wire-id');
+    const node = byId[id];
+    const show = () => {
+      svg.querySelectorAll('.wn').forEach((el) => el.classList.remove('is-focus'));
+      grp.querySelector('.wn').classList.add('is-focus');
+      if (pop && node) {
+        const rows = node.specs.map((s) => `<div class="row"><span class="k">${s[0]}</span><span class="v">${s[1]}</span></div>`).join('');
+        pop.innerHTML = `<span class="ttl">${node.title}</span>${rows}`;
+        pop.style.display = 'block';
+      }
+    };
+    const hide = () => {
+      grp.querySelector('.wn').classList.remove('is-focus');
+    };
+    grp.addEventListener('pointerenter', show);
+    grp.addEventListener('pointerdown', show);
+    grp.addEventListener('pointerleave', hide);
+  });
+}
+
+COMPONENT_VIEWS.wiring = { title: 'Wiring + electrical', kind: 'Electrical · Interactive', html: cvWiringHTML, sideHTML: cvWiringSide, mount: cvWiringMount };
 
 // ─── PARTS data (for basicCard fallback) ────────────────────────
 const PARTS = {

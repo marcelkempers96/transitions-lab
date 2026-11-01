@@ -171,6 +171,33 @@ body.ute-standalone {
 .ute-moto-svg.is-blueprint .ute-callout-leader { stroke: #1E3A5F; }
 .ute-moto-svg.is-blueprint .ute-callout-dot { fill: #F0F4FA; stroke: #1E3A5F; }
 
+/* System-category chip row */
+.ute-cats {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 10px; margin-bottom: 10px;
+}
+#ute-root .ute-cat-chip {
+  padding: 5px 11px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+#ute-root .ute-cat-chip:hover { background: var(--paper-2); border-color: var(--ink); }
+#ute-root .ute-cat-chip.is-on {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+
+/* Category filter — fade non-matching shapes */
+.ute-moto-svg[data-cat]:not([data-cat="all"]) .ute-shape:not(.in-cat) { opacity: 0.22; transition: opacity 200ms ease; }
+.ute-moto-svg[data-cat]:not([data-cat="all"]) .ute-shape.in-cat        { opacity: 1; transition: opacity 200ms ease; }
+
+/* Desktop hover: focus one shape */
+@media (hover: hover) {
+  .ute-moto-svg .ute-shape:hover { opacity: 1 !important; }
+}
+
 /* Overview view toggle (Diagram / Blueprint) */
 #ute-root .ute-view-toggle {
   display: inline-flex; gap: 2px;
@@ -412,6 +439,32 @@ body.ute-standalone {
   opacity: 0; transition: opacity 180ms ease;
 }
 .ute-rider-toast.is-on { opacity: 1; }
+
+/* Wiring component view (electrical schematic + hover tooltip) */
+.ute-wire-svg .wn { fill: #FFFFFF; stroke: #0A0A0A; stroke-width: 1.5; cursor: pointer; transition: fill 150ms ease; }
+.ute-wire-svg .wn:hover { fill: #FDE9D9; }
+.ute-wire-svg .wn.is-focus { fill: #F9DECB; stroke: var(--warm); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(194, 80, 42, 0.45)); }
+.ute-wire-svg .wire-lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; fill: #0A0A0A; pointer-events: none; }
+.ute-wire-svg .wire-sub { font-family: var(--mono); font-size: 9.5px; fill: var(--mute); pointer-events: none; }
+.ute-wire-svg .w-pos { stroke: #C2502A; }
+.ute-wire-svg .w-neg { stroke: #0A0A0A; }
+.ute-wire-svg .w-hv  { stroke: #1D6B55; stroke-dasharray: 4 3; }
+.ute-wire-svg .w-sig { stroke: #3E6FB7; stroke-dasharray: 2 2; }
+.ute-wire-svg .w-ac  { stroke: #E2A93B; }
+
+.ute-wire-pop {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--surface); border: 2px solid var(--warm);
+  padding: 10px 12px; min-width: 220px;
+  font-family: var(--mono); font-size: 11.5px;
+  pointer-events: none;
+}
+.ute-wire-pop .ttl {
+  display: block; font-weight: 800; font-size: 13px; margin-bottom: 6px; color: var(--warm);
+}
+.ute-wire-pop .row { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 2px; }
+.ute-wire-pop .row .k { color: var(--mute); text-transform: uppercase; letter-spacing: 0.04em; }
+.ute-wire-pop .row .v { color: var(--ink); font-weight: 700; }
 
 /* ─── Dyno (test track with live charts) ──────────────── */
 .ute-dyno {
