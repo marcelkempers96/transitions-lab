@@ -56,13 +56,10 @@ The contradictions are visible in the rules themselves. The 2023 guidelines requ
 
 The scale of the formal networks makes the gap easier to see rather than harder. Spiro, whose Swap and Go stations now stand on forecourts across the city, reported more than 400 swap stations in Kenya by early 2026 ([Kuhudzai, 2026](https://cleantechnica.com/2026/02/24/spiro-raises-50-million-as-demand-for-its-battery-swapping-infrastructure-evs-surges-across-africa)), and an estimated 90% of the country's charging infrastructure is concentrated in Nairobi ([TheCityFix, 2026](https://thecityfix.com/?p=147438)). If riders in the best-served city in the country are still seeking out a locked yard in Industrial Area, the shortage is not about the number of stations on a map but about whether a charged battery is waiting at the right place at seven in the morning.
 
-<figure class="article-figure">
-  <img src="/assets/img/insight-hidden-energy-economy-03.jpg" alt="The Roam hub on Lusaka Road, a solar-canopied blue container with the red ROAM sign above the door, Bolt- and Roam-branded boda bodas parked in a line, a rider in an orange high-vis vest at the service window">
-</figure>
-
-<figure class="article-figure">
-  <img src="/assets/img/insight-hidden-energy-economy-04.jpg" alt="A formal Spiro Swap & Go station in Ruaka on a forecourt beside a KFC, two cabinets with numbered green and blue locker compartments, several riders in high-vis vests at the terminal screen">
-</figure>
+<div class="photo-row photo-row-2">
+  <figure class="article-figure"><img src="/assets/img/insight-hidden-energy-economy-03.jpg" alt="The Roam hub on Lusaka Road: a solar-canopied blue container with the red ROAM sign above the door, Bolt- and Roam-branded boda bodas parked in a line, a rider in an orange high-vis vest at the service window"></figure>
+  <figure class="article-figure"><img src="/assets/img/insight-hidden-energy-economy-04.jpg" alt="A Spiro Swap & Go station in Ruaka on a forecourt beside a KFC, numbered green and blue locker compartments, riders in high-vis vests at the terminal screen"></figure>
+</div>
 
 ## From hidden cabinet to licensed agent
 

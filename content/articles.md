@@ -35,6 +35,7 @@
  <div class="filter-group" data-group="month">
  <span class="filter-label">When</span>
  <button type="button" class="filter-chip is-all is-active" data-value="">All</button>
+ <button type="button" class="filter-chip" data-value="2026-11">Nov 2026</button>
  <button type="button" class="filter-chip" data-value="2026-10">Oct 2026</button>
  <button type="button" class="filter-chip" data-value="2026-09">Sep 2026</button>
  <button type="button" class="filter-chip" data-value="2026-08">Aug 2026</button>
@@ -49,7 +50,31 @@
  <p class="filter-empty" hidden>No articles match that combination. <button type="button" class="filter-reset">Reset filters</button></p>
 </div>
 
-<div class="article-list"><div class="article-item has-thumb" data-category="measurement" data-geography="asia" data-month="2026-10">
+<div class="article-list"><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-11">
+ <a class="article-thumb-link" href="/insight-four-hours-at-the-hub"><img class="article-thumb" src="/assets/img/insight-four-hours-at-the-hub-hero.jpg" alt="Three yellow Uber-branded electric boda bodas in a Nairobi car park, riders in high-vis vests."></a>
+ <div class="article-body">
+ <a class="article-title" href="/insight-four-hours-at-the-hub">Four Hours at the Hub: Time Is the Real Fuel of Nairobi's Electric Boda Bodas</a>
+ <div class="article-meta">1 November 2026</div>
+ <div class="article-chips"><span class="article-chip chip-cat chip-cat-e-mobility">E-Mobility</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
+ <p class="article-desc">Kenya's electric motorcycle story is told per kilometre and in registration counts. From the seat of a parked bike at a charging hub, it reads very differently. A rider owing 530 shillings a day cannot spend four of them waiting for a battery to charge.</p>
+ </div>
+ </div><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-11">
+ <a class="article-thumb-link" href="/insight-hands-never-still"><img class="article-thumb" src="/assets/img/insight-hands-never-still-hero.jpg" alt="A jua kali fundi welding under a motorcycle at a Nairobi roadside workshop, bright arc-weld sparks visible."></a>
+ <div class="article-body">
+ <a class="article-title" href="/insight-hands-never-still">Hands Never Still: The Jua Kali Fundis Nairobi's Electric Transition Cannot Afford to Lose</a>
+ <div class="article-meta">1 November 2026</div>
+ <div class="article-chips"><span class="article-chip chip-cat chip-cat-e-mobility">E-Mobility</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
+ <p class="article-desc">Nairobi's informal mechanics keep petrol boda bodas running on an open market of Indian originals and Chinese copies. Electric motorcycles route repair through operators' service centres instead. A field essay from two rounds of interviews.</p>
+ </div>
+ </div><div class="article-item has-thumb" data-category="e-mobility" data-geography="africa" data-month="2026-11">
+ <a class="article-thumb-link" href="/insight-hidden-energy-economy"><img class="article-thumb" src="/assets/img/insight-hidden-energy-economy-hero.jpg" alt="Close-up of the hidden battery-charging cabinet in Nairobi's Industrial Area, blue gate open, 15 locker compartments, solar panel bolted above."></a>
+ <div class="article-body">
+ <a class="article-title" href="/insight-hidden-energy-economy">The Hidden Energy Economy: What Nairobi's Unofficial Battery Chargers Say About the Swap Network</a>
+ <div class="article-meta">1 November 2026</div>
+ <div class="article-chips"><span class="article-chip chip-cat chip-cat-e-mobility">E-Mobility</span> <span class="article-chip chip-geo chip-geo-africa">Africa</span></div>
+ <p class="article-desc">A hidden battery-charging cabinet in Nairobi's Industrial Area, protected by riders who will not even tell a familiar researcher where it is, is what the shortage of charged batteries looks like when someone decides to sell a solution to it.</p>
+ </div>
+ </div><div class="article-item has-thumb" data-category="measurement" data-geography="asia" data-month="2026-10">
  <a class="article-thumb-link" href="/insight-doesnt-wait-for-you-to-rebuild"><img class="article-thumb" src="/assets/img/insight-doesnt-wait-for-you-to-rebuild-hero.jpg" alt="A coastal street partway through reconstruction, half the roofs new and the other half under tarpaulins, scaffolding standing, a dark bank of cloud building offshore."></a>
  <div class="article-body">
  <a class="article-title" href="/insight-doesnt-wait-for-you-to-rebuild">The Next Storm Doesn't Wait for You to Rebuild</a>

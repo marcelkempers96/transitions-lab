@@ -80,17 +80,11 @@ The quiet I noticed on that first ride is real, and it is one of the pleasures o
 
 The research is one half of what Kenya gave me. The other half I owe to the riders, mechanics and friends who put me on the back of a bike, took me out to the Safari Rally and left me grinning in a Naivasha field — but that is a story for another time.
 
-<figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-safari-01.jpg" alt="A group portrait of seven riders in matching black t-shirts standing in a grass field at the Safari Rally in Naivasha, the author smiling in the middle, phones and gear in hand">
-</figure>
-
-<figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-safari-02.jpg" alt="Five adventure riders standing with their bikes in a grass field, a landed blue helicopter in the background, cumulus clouds above">
-</figure>
-
-<figure class="article-figure">
-  <img src="/assets/img/insight-four-hours-at-the-hub-safari-03.jpg" alt="Two riders on a dirt bike seen from behind, a large Kenyan flag flying from the back of the bike, looking out across a grass plateau at a landed helicopter and parked rally vehicles">
-</figure>
+<div class="photo-row photo-row-3">
+  <figure class="article-figure"><img src="/assets/img/insight-four-hours-at-the-hub-safari-01.jpg" alt="Group portrait of seven riders in black t-shirts in the Safari Rally grass at Naivasha, the author in the middle"></figure>
+  <figure class="article-figure"><img src="/assets/img/insight-four-hours-at-the-hub-safari-02.jpg" alt="Adventure riders standing with their bikes beside a landed blue helicopter in an open grass field"></figure>
+  <figure class="article-figure"><img src="/assets/img/insight-four-hours-at-the-hub-safari-03.jpg" alt="Two riders on a dirt bike from behind, a large Kenyan flag flying from the back, looking out across the plateau at the helicopter and rally vehicles"></figure>
+</div>
 
 ## References
 

@@ -68,6 +68,24 @@ img{max-width:100%;height:auto;display:block;}
 
 /* Figures / diagrams */
 .prose figure,.figure{margin:2.4em auto;max-width:100%;text-align:center;}
+
+/* Grouped photo rows inside the prose: equal-width columns, small
+   gap, each figure keeps its own border/background. Scales down to
+   one column on narrow phones so a 3-up triptych does not become
+   three postage stamps. */
+.prose .photo-row{display:grid;gap:10px;margin:1.6em 0 1.8em;}
+.prose .photo-row-2{grid-template-columns:repeat(2,1fr);}
+.prose .photo-row-3{grid-template-columns:repeat(3,1fr);}
+.prose .photo-row figure{margin:0;}
+.prose .photo-row figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;display:block;}
+@media (max-width:640px){
+  .prose .photo-row-3{grid-template-columns:repeat(2,1fr);}
+  .prose .photo-row-2{grid-template-columns:1fr;}
+  .prose .photo-row figure img{aspect-ratio:auto;height:auto;}
+}
+@media (max-width:420px){
+  .prose .photo-row-3{grid-template-columns:1fr;}
+}
 .prose figure img,.figure img,.diagram{
   width:100%;height:auto;max-width:100%;display:block;margin:0 auto;
   border:2px solid var(--ink);background:var(--paper);
