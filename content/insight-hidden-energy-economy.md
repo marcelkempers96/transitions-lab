@@ -96,4 +96,4 @@ None of this requires anyone to pretend that unlicensed charging is safe or that
 
 ---
 
-*This is the third op-ed in Marcel's autumn 2026 Nairobi fieldwork series. See [Four Hours at the Hub](/insight-four-hours-at-the-hub) on why time, not price, is the real constraint for electric boda boda riders, and [Hands Never Still](/insight-hands-never-still) on the jua kali fundis the electric transition is routing around. For the Lab's applied work, see [E-Mobility &amp; Transport](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*
+*This is the third op-ed in the Lab's autumn 2026 Nairobi fieldwork series. See [Four Hours at the Hub](/insight-four-hours-at-the-hub) on why time, not price, is the real constraint for electric boda boda riders, and [Hands Never Still](/insight-hands-never-still) on the jua kali fundis the electric transition is routing around. For the Lab's applied work, see [E-Mobility &amp; Transport](/expertise-e-mobility). To discuss a study, see [Contact](/contact).*
