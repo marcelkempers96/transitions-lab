@@ -356,6 +356,7 @@ HERO_COLOR: dict[str, str] = {
     "case-pyropower": "butter",
     "case-reef-support": "butter",
     "case-mimaji": "butter",
+    "case-motopedia": "butter",
     "case-statia": "butter",
     "case-context-entry": "butter",
     "articles": "butter",
@@ -831,6 +832,14 @@ META: dict[str, dict[str, str]] = {
         "title": "Water Transparency in Nairobi: MiMaji | Transitions Lab",
         "description": "How open data on water price and quality becomes an intervention in its own right, changing who can hold a water market to account. A field case study.",
     },
+    "case-motopedia": {
+        "title": "Motopedia: The Open Motorcycle Encyclopedia | Transitions Lab",
+        "description": "A field engagement with Motopedia on the Nairobi Boda Boda electric transition, pairing the Lab's field evidence with Motopedia's open, visual mechanical encyclopedia. Project publishes February 2027.",
+    },
+    "insight-encyclopedia-for-the-two-wheeler": {
+        "title": "An Encyclopedia for the Two-Wheeler | Transitions Lab",
+        "description": "Why an open, visual motorcycle encyclopedia matters for the electric transition in the places where a mechanic learns on the street, and why the Lab is now publishing jointly with Motopedia.",
+    },
     "case-statia": {
         "title": "Mobility on a Small Island: St. Eustatius | Transitions Lab",
         "description": "Planning transport for a Dutch Caribbean community of a few thousand, where mainland tools fail. A public-sector field case study, in Dutch and English.",
@@ -1170,6 +1179,7 @@ STUB_TITLES: dict[str, str] = {
     "case-pyropower": "Pyropower - Biochar in Lombok",
     "case-reef-support": "Reef Support - Community Marine Rangers",
     "case-mimaji": "MiMaji - Water Transparency in Nairobi",
+    "case-motopedia": "Motopedia - The Open Motorcycle Encyclopedia",
     "case-statia": "St. Eustatius - Small-Island Mobility",
     "case-context-entry": "Market-Entry Study, East Africa",
     "insight-eu-us": "Europe Invents, America Scales",
@@ -2170,6 +2180,9 @@ def _build_home_insight_pool() -> str:
     random on load and hides the rest, so the home page always shows
     two but shuffles which two across reloads."""
     pool = [
+        ("insight-encyclopedia-for-the-two-wheeler", "E-Mobility &middot; Africa",
+         "A free, open, visual encyclopedia of the motorcycle, 500 bikes, 369 3D models, 208 parts, 300+ diagnosed problems, is one of the quiet pieces of infrastructure that lets year four of the electric transition hold. Why the Lab is now publishing jointly with Motopedia.",
+         "The Motopedia home page: dark photograph of a classic motorcycle engine, with headline 'Learn how motorcycles work, and how to work on them.' and tiles for 3D Overview, Cockpit, Bike builder, Wiring Lab, Course and Under the Engine."),
         ("insight-doesnt-wait-for-you-to-rebuild", "Measurement &middot; Asia",
          "Adaptation is assessed one event at a time. New JRC work on the Philippines and Vietnam points at the variable that decides outcomes: whether recovery finishes before the next storm starts.",
          "A coastal street partway through reconstruction, half the roofs new and the other half under tarpaulins, scaffolding standing, a dark bank of cloud building offshore."),
@@ -2657,6 +2670,7 @@ def build_home() -> str:
       <a href="/case-mimaji" title="MiMaji Foundation - water transparency in Nairobi"><img src="/assets/logos/logo-mimaji.png" alt="MiMaji Foundation"></a>
       <a href="/case-reef-support" title="Reef Support - community reef monitoring"><img src="/assets/logos/logo-reef-support.png" alt="Reef Support"></a>
       <a href="/case-pyropower" title="Pyropower - open-source biochar in Lombok"><img src="/assets/logos/logo-pyropower.png" alt="Pyropower"></a>
+      <a href="/case-motopedia" title="Motopedia - the open motorcycle encyclopedia"><img src="/assets/logos/logo-motopedia.png" alt="Motopedia"></a>
       <a href="/esf-social-innovation" title="Social Innovation Europe - ESF+ social-innovation measurement partner"><img src="/assets/logos/logo-social-innovation-europe.png" alt="Social Innovation Europe"></a>
     </div>
   </div>
