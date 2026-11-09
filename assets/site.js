@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.serve-grid a').forEach(function (el) { el.classList.add('is-in-view'); });
   }
 
-  // ── Hero slideshow — ten real field photos, autoplay crossfade ──
+  // ── Hero slideshow — nine real field photos, autoplay crossfade ──
   //     Cycles .hero-slide elements inside .hero-slideshow; CSS
   //     handles the 1.6s opacity transition. Respects reduced-motion.
   (function(){

@@ -2326,11 +2326,10 @@ def build_home() -> str:
     og_image = f"{SITE_URL}/assets/og-image.png"
 
     body = """
-<!-- HERO - full-bleed crossfade slideshow of 10 real field photos -->
+<!-- HERO - full-bleed crossfade slideshow of 9 real field photos -->
 <section class="hero hero-photo">
   <div class="hero-slideshow" aria-hidden="true">
     <div class="hero-slide is-active" style="background-image:url(/assets/img/hero-slide-01.jpg)"></div>
-    <div class="hero-slide" style="background-image:url(/assets/img/hero-slide-02.jpg)"></div>
     <div class="hero-slide" style="background-image:url(/assets/img/hero-slide-03.jpg)"></div>
     <div class="hero-slide" style="background-image:url(/assets/img/hero-slide-04.jpg)"></div>
     <div class="hero-slide" style="background-image:url(/assets/img/hero-slide-05.jpg)"></div>

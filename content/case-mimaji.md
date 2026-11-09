@@ -17,11 +17,6 @@
 
 MiMaji publishes water-price and water-quality data as an open public map; the Lab is measuring whether that map reaches, is trusted by, and changes the behaviour of the households on the wrong side of Nairobi's water-market asymmetry.
 
-<figure>
- <img src="/assets/img/case-mimaji-hero.jpg" alt="A woman and a boy at a Nairobi settlement standpipe fill yellow jerry cans; a public tap runs into the container in the foreground; other residents wait behind." class="diagram">
- <figcaption>A settlement standpipe in Nairobi.</figcaption>
-</figure>
-
 ## Why this engagement matters
 
 Nairobi's water story is not primarily a story about pipes. It is a story about information. In the low-income settlements, households can pay several times more per litre than households in wealthier neighbourhoods, often for water of unknown and variable quality, bought from vendors in a market with almost no visible pricing. The technical means to test water and to map a network exist. What has been missing is transparency: a shared, public picture of who charges what, and whose water is safe.
