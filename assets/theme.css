@@ -6196,4 +6196,86 @@ section.section-paper > .section-paper-inner,
   border-radius:4px !important;
 }
 
+/* ──────────────────────────────────────────────────────────── */
+/* Card-title typography refresh — larger, lighter, serif         */
+/*                                                                */
+/* The previous rule rendered case-card titles in Hanken Grotesk   */
+/* at 22 px / weight 800 (ultra-bold). Replaced with Newsreader    */
+/* at a larger size and a lighter weight so the titles read        */
+/* editorial rather than announce-y, matching the insight-card     */
+/* titles on the home page. Line-height eased for legibility.      */
+/* ──────────────────────────────────────────────────────────── */
+
+.prose .case-grid .case-card h3,
+.prose .case-feature h3{
+  font-family:'Newsreader', Georgia, 'Times New Roman', serif !important;
+  font-size:30px !important;
+  font-weight:450 !important;
+  letter-spacing:-.012em !important;
+  line-height:1.18 !important;
+  color:var(--ink) !important;
+}
+.insight-card h3{
+  font-family:'Newsreader', Georgia, 'Times New Roman', serif !important;
+  font-size:28px !important;
+  font-weight:450 !important;
+  letter-spacing:-.012em !important;
+  line-height:1.18 !important;
+}
+.insight-row.insight-pool > .insight-card:nth-child(3) h3,
+.insight-row.insight-pool > .insight-card:nth-child(4) h3{
+  font-size:26px !important;
+}
+
+@media (max-width:720px){
+  .prose .case-grid .case-card h3{
+    font-size:26px !important;
+    line-height:1.2 !important;
+  }
+  .insight-card h3{
+    font-size:25px !important;
+    line-height:1.2 !important;
+  }
+}
+@media (max-width:420px){
+  .prose .case-grid .case-card h3{font-size:24px !important;}
+  .insight-card h3{font-size:23px !important;}
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* Safety-net: belt-and-braces soft shadow on every card that     */
+/* might still be rendering an offset-ink box-shadow. Any selector */
+/* carrying case-card / insight-card / case-feature / callout /    */
+/* whatwedo / target-card / theory-map-card / finding-card now has */
+/* its shadow forced to the soft multi-layer one.                  */
+/* ──────────────────────────────────────────────────────────── */
+
+[class*="case-card"],
+[class*="insight-card"],
+[class*="case-feature"],
+[class*="callout"],
+[class*="whatwedo-card"],
+[class*="target-card"],
+[class*="theory-map-card"],
+[class*="finding-card"],
+[class*="strata-feature"],
+[class*="strata-launch"],
+[class*="strata-partner"],
+[class*="resource-card"],
+[class*="flash-banner"]{
+  box-shadow:var(--card-shadow) !important;
+}
+[class*="case-card"]:hover,
+[class*="insight-card"]:hover,
+[class*="case-feature"]:hover,
+[class*="whatwedo-card"]:hover,
+[class*="target-card"]:hover,
+[class*="theory-map-card"]:hover,
+[class*="strata-feature"]:hover,
+[class*="strata-partner"]:hover,
+[class*="resource-card"]:hover{
+  box-shadow:var(--card-shadow-hover) !important;
+}
+
+
 
