@@ -6279,3 +6279,144 @@ section.section-paper > .section-paper-inner,
 
 
 
+
+/* ──────────────────────────────────────────────────────────── */
+/* Soft-card refresh — regression fixes v2.1                      */
+/*                                                                */
+/* My earlier wildcard refresh flattened ALL cards to the light   */
+/* gray gradient and forced btn-ghost to ink-on-anything. That     */
+/* broke the three dark colour tokens (c-cobalt, c-forest,         */
+/* c-plum) and the ghost button on dark sections. This block       */
+/* restores the dark-background variants, legibilises the ghost    */
+/* buttons on dark sections and on the hero photo, reopens the     */
+/* SDG title column so titles no longer clip, puts a visible gap   */
+/* between the three "what we do" cards and the statement-video    */
+/* text back to paper on prose pages.                              */
+/* ──────────────────────────────────────────────────────────── */
+
+/* 1. Statement blockquote on prose pages (About): force paper text */
+section.statement blockquote,
+.prose section.statement blockquote,
+section.statement blockquote *,
+.prose section.statement blockquote *{
+  color:var(--paper) !important;
+}
+section.statement blockquote .highlight,
+.prose section.statement blockquote .highlight{
+  color:var(--ink) !important;
+  background:var(--butter) !important;
+}
+
+/* 2. What-we-do cards — restore coloured backgrounds + add gap   */
+.what-grid{
+  gap:12px !important;
+  border:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.what-grid .what-card{
+  border:1px solid var(--card-border) !important;
+  border-right:1px solid var(--card-border) !important;
+  box-shadow:var(--card-shadow) !important;
+  border-radius:var(--card-radius) !important;
+}
+.what-grid .what-card.c-butter{
+  background:#EEE4CE !important;color:var(--ink) !important;
+}
+.what-grid .what-card.c-coral{
+  background:#F2C5B5 !important;color:var(--ink) !important;
+}
+.what-grid .what-card.c-cobalt{
+  background:#2A3D5C !important;color:var(--paper) !important;
+}
+.what-grid .what-card.c-cobalt h3,
+.what-grid .what-card.c-cobalt p,
+.what-grid .what-card.c-cobalt .what-more,
+.what-grid .what-card.c-cobalt .what-tag{
+  color:var(--paper) !important;
+}
+.what-grid .what-card.c-cobalt .what-tag{
+  color:rgba(245,239,225,.78) !important;
+}
+.what-grid .what-card:hover{
+  box-shadow:var(--card-shadow-hover) !important;
+  transform:translateY(-2px) !important;
+}
+
+/* 3. Ghost buttons on dark sections — never force ink on dark.    */
+/*    Let the contextual section-forest / section-cobalt / etc.    */
+/*    rules keep btn-ghost at paper colour. These override my      */
+/*    earlier `.btn-ghost {color:var(--ink) !important}` rule.     */
+.section-forest .btn-ghost,
+.section-cobalt .btn-ghost,
+.section-plum .btn-ghost,
+.statement .btn-ghost,
+.on-dark .btn-ghost,
+.hero.hero-photo .btn.btn-ghost{
+  background:transparent !important;
+  color:var(--paper) !important;
+  border-color:var(--paper) !important;
+}
+.section-forest .btn-ghost:hover,
+.section-cobalt .btn-ghost:hover,
+.section-plum .btn-ghost:hover,
+.statement .btn-ghost:hover,
+.on-dark .btn-ghost:hover,
+.hero.hero-photo .btn.btn-ghost:hover{
+  background:var(--paper) !important;
+  color:var(--ink) !important;
+  border-color:var(--paper) !important;
+}
+/* Solid-fill buttons on dark sections keep their butter fill. */
+.section-forest .btn,
+.section-cobalt .btn,
+.section-plum .btn,
+.statement .btn,
+.on-dark .btn{
+  background:var(--butter) !important;color:var(--ink) !important;
+  border-color:var(--ink) !important;
+}
+.section-forest .btn-ghost,
+.section-cobalt .btn-ghost,
+.section-plum .btn-ghost,
+.statement .btn-ghost,
+.on-dark .btn-ghost,
+.hero.hero-photo .btn.btn-ghost{
+  background:transparent !important;
+}
+
+/* 4. SDG row — titles must fit. Remove the 260 / 320 px cap. */
+.prose .sdg-row a{
+  flex:1 1 320px !important;
+  min-width:0 !important;
+}
+.prose .sdg-row .sdg-name{
+  max-width:none !important;
+  flex:1 1 auto !important;
+  min-width:0 !important;
+}
+.prose .sdg-index .sdg-row a{
+  flex:1 1 360px !important;
+}
+.prose .sdg-index .sdg-row .sdg-name{
+  max-width:none !important;
+}
+
+/* 5. Home-page insight-card subtext removed — kill any remaining  */
+/*    `.case-sub` rendering so stray markup doesn't show.          */
+.insight-card .case-sub{display:none !important;}
+
+/* 6. Latest-insights pool cards: make sure card title stays dark  */
+/*    on the light gradient background (safety net).               */
+.insight-card h3,
+.prose .case-grid .case-card h3{
+  color:var(--ink) !important;
+}
+
+/* 7. Make the statement section the Lab's forest ground even when */
+/*    the video asset fails or is still loading, so the text block */
+/*    always has a dark backdrop for the paper text.               */
+section.statement{
+  background:var(--forest) !important;
+  color:var(--paper) !important;
+}

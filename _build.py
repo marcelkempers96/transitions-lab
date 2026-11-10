@@ -2499,7 +2499,6 @@ def build_home() -> str:
         </div>
         <div class="body">
           <h3>How Nairobi's boda-bodas go electric</h3>
-          <p class="case-sub">Nairobi, Kenya &middot; E-Mobility &amp; Transport</p>
           <p>Twenty-three interviews with riders, mechanics, a lender and a manufacturer on what actually decides whether the switch to electric holds after the first month.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
@@ -2513,7 +2512,6 @@ def build_home() -> str:
         </div>
         <div class="body">
           <h3>Turning crop waste into fuel in Lombok</h3>
-          <p class="case-sub">Lombok, Indonesia &middot; Agriculture &amp; Ecosystems &middot; with Pyropower</p>
           <p>An open-source kiln that turns rice husks and coconut shells into cooking fuel and soil, tested household by household with the farmers who would run it.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
@@ -2524,7 +2522,6 @@ def build_home() -> str:
         </div>
         <div class="body">
           <h3>Who watches Nairobi's water?</h3>
-          <p class="case-sub">Nairobi, Kenya &middot; Energy &amp; Water Systems &middot; with MiMaji Foundation</p>
           <p>An open data layer for informal-settlement water kiosks, co-designed with the residents who had never been on any water utility's map.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
@@ -2535,7 +2532,6 @@ def build_home() -> str:
         </div>
         <div class="body">
           <h3>Guarding Lombok's reef with rangers and satellites</h3>
-          <p class="case-sub">Lombok, Indonesia &middot; Marine conservation &middot; with Reef Support</p>
           <p>Village rangers, in-water sensors and satellite imagery braided into one trustworthy picture of reef health, and a governance model to defend it.</p>
           <span class="read">Read the case &rarr;</span>
         </div>
