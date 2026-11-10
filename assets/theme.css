@@ -5850,3 +5850,350 @@ body,
 }
 @media (max-width:960px){.prose .strata-features{grid-template-columns:1fr 1fr;}}
 @media (max-width:640px){.prose .strata-features{grid-template-columns:1fr;}}
+
+/* ──────────────────────────────────────────────────────────── */
+/* Card refresh v2 — softer, light-gray, gradient-like containers */
+/*                                                                */
+/* Site-wide replacement of the neo-brutalist 2px-ink border +    */
+/* offset-ink solid shadow on container cards with:               */
+/*   · a 1px hairline border in rgba ink                          */
+/*   · a subtle vertical gradient background in a very light      */
+/*     warm gray that sits one shade lighter than the cream page  */
+/*   · a soft multi-layer drop shadow for depth                   */
+/*   · a 6px border-radius so edges read as nuanced rather than   */
+/*     hard-cut                                                   */
+/*                                                                */
+/* Applies to case-cards, insight-cards, callouts, resource and   */
+/* feature cards, Strata and Mineral Flows cards, and every       */
+/* bordered "container" box across the content pages. Buttons and */
+/* nav chrome keep their existing style — they are interactive    */
+/* affordances, not containers.                                   */
+/* ──────────────────────────────────────────────────────────── */
+
+:root{
+  --card-bg:#F7F3E9;
+  --card-bg-grad:linear-gradient(180deg,#FBF8EF 0%,#F2EEDF 100%);
+  --card-border:rgba(10,10,10,0.09);
+  --card-border-strong:rgba(10,10,10,0.14);
+  --card-shadow:0 1px 2px rgba(10,10,10,0.04), 0 10px 26px rgba(10,10,10,0.07);
+  --card-shadow-hover:0 2px 4px rgba(10,10,10,0.05), 0 18px 40px rgba(10,10,10,0.11);
+  --card-radius:6px;
+}
+
+/* ── Primary cards ──────────────────────────────────────────── */
+
+.insight-row,
+.steps,
+.expertise-grid,
+.what-grid,
+.resource-grid{
+  border:1px solid var(--card-border-strong) !important;
+  border-radius:var(--card-radius) !important;
+  overflow:hidden;
+  box-shadow:var(--card-shadow) !important;
+}
+
+.insight-card,
+.step-card,
+.exp-card{
+  border-right:1px solid var(--card-border) !important;
+  background:var(--card-bg-grad) !important;
+  transition:background .2s ease, transform .18s ease !important;
+}
+.insight-card:last-child,
+.step-card:last-child,
+.exp-card:last-child{border-right:0 !important;}
+
+.insight-row:has(> .insight-card:nth-child(6)) .insight-card:nth-child(-n+3){
+  border-bottom:1px solid var(--card-border) !important;
+}
+.insight-card.has-photo .card-photo,
+.insight-card.has-photo .card-photo .kicker{
+  border-bottom-color:var(--card-border) !important;
+  border-bottom-width:1px !important;
+}
+
+/* The home-page case / insight cards keep their coloured stripe, but
+   the rest of the card is on the light-gray ground. */
+.insight-card:hover{
+  background:var(--white) !important;
+  transform:translateY(-1px);
+}
+
+/* ── Case-studies grid ──────────────────────────────────────── */
+
+.prose .case-grid .case-card{
+  border:1px solid var(--card-border) !important;
+  background:var(--card-bg-grad) !important;
+  box-shadow:var(--card-shadow) !important;
+  border-radius:var(--card-radius) !important;
+  overflow:hidden;
+  transition:transform .18s ease, box-shadow .2s ease, background .2s ease !important;
+}
+.prose .case-grid .case-card:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:var(--card-shadow-hover) !important;
+  background:var(--white) !important;
+}
+.prose .case-grid .case-card.has-photo .case-photo,
+.prose .case-grid .case-card .stripe,
+.prose .case-grid .case-card.has-photo .case-photo .tag{
+  border-bottom-color:var(--card-border) !important;
+  border-bottom-width:1px !important;
+}
+
+/* ── Callouts and quote blocks ──────────────────────────────── */
+
+.callout,
+.prose .callout,
+.prose .callout.c-paper,
+.prose .callout.c-butter,
+.prose .callout.c-coral,
+.prose .callout.c-cobalt,
+.prose .callout.c-forest,
+.prose .callout.c-plum{
+  border:1px solid var(--card-border) !important;
+  box-shadow:var(--card-shadow) !important;
+  border-radius:var(--card-radius) !important;
+}
+/* Default (paper / neutral) callouts get the new light-gray ground;
+   the strongly-coloured accent callouts keep their accent background
+   so the kicker still carries meaning. */
+.prose .callout.c-paper,
+.prose .callout:not(.c-butter):not(.c-coral):not(.c-cobalt):not(.c-forest):not(.c-plum){
+  background:var(--card-bg-grad) !important;
+}
+
+/* ── Whatwedo, target, theory-map, flash-banner, article-nav ─── */
+
+.prose .whatwedo-card,
+.prose .target-card,
+.theory-map-card,
+.what-card,
+.article-nav,
+.finding-card,
+.contact-cta-block,
+.flash-banner,
+.flash-banner--ink{
+  border:1px solid var(--card-border) !important;
+  background:var(--card-bg-grad) !important;
+  box-shadow:var(--card-shadow) !important;
+  border-radius:var(--card-radius) !important;
+  transition:transform .18s ease, box-shadow .2s ease, background .2s ease !important;
+}
+.prose .whatwedo-card:hover,
+.prose .target-card:hover,
+.theory-map-card:hover,
+.what-card:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:var(--card-shadow-hover) !important;
+  background:var(--white) !important;
+}
+
+/* ── Resources + Strata + partner cards ─────────────────────── */
+
+.resource-card,
+.prose .strata-feature,
+.prose .strata-partner,
+.prose .strata-launch,
+.prose .strata-features-guide,
+.prose .strata-partners .strata-partner{
+  border:1px solid var(--card-border) !important;
+  background:var(--card-bg-grad) !important;
+  box-shadow:var(--card-shadow) !important;
+  border-radius:var(--card-radius) !important;
+  transition:transform .18s ease, box-shadow .2s ease, background .2s ease !important;
+}
+.resource-card:hover,
+.prose .strata-feature:hover,
+.prose .strata-partner:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:var(--card-shadow-hover) !important;
+  background:var(--white) !important;
+}
+/* Strata feature screenshots keep a thin inner divider. */
+.prose .strata-feature-shot{border-bottom:1px solid var(--card-border) !important;}
+
+/* ── Section containers that used the brutalist shell ───────── */
+
+.contact-form,
+.ctx-form,
+.form-card,
+.page-form,
+.finding-stats,
+.quote-carousel,
+.article-item{
+  border:1px solid var(--card-border) !important;
+  border-radius:var(--card-radius) !important;
+}
+.contact-form,
+.form-card,
+.page-form,
+.quote-carousel{
+  background:var(--card-bg-grad) !important;
+  box-shadow:var(--card-shadow) !important;
+}
+/* Article listing items read as hairline dividers, not bordered
+   boxes. */
+.article-item{
+  border:0 !important;
+  border-bottom:1px solid var(--card-border) !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+
+/* ── Figure images inside content ──────────────────────────── */
+
+.prose figure img.diagram,
+.prose figure img{
+  border:1px solid var(--card-border) !important;
+  border-radius:4px !important;
+}
+
+/* ── Format badge, pills ───────────────────────────────────── */
+
+.format-badge,
+a.pill,
+.article-chip{
+  border:1px solid var(--card-border-strong) !important;
+  box-shadow:0 1px 2px rgba(10,10,10,0.05) !important;
+  border-radius:999px !important;
+}
+.format-badge:hover,
+a.pill:hover{
+  transform:translateY(-1px) !important;
+  box-shadow:0 2px 6px rgba(10,10,10,0.08) !important;
+}
+
+/* ── Case-meta table block (on case pages) ─────────────────── */
+
+.prose .case-meta{
+  border:1px solid var(--card-border) !important;
+  border-radius:var(--card-radius) !important;
+  box-shadow:var(--card-shadow) !important;
+  background:var(--card-bg-grad) !important;
+  overflow:hidden;
+}
+.prose .case-meta > div{
+  border-bottom:1px solid var(--card-border) !important;
+}
+.prose .case-meta > div:last-child{border-bottom:0 !important;}
+
+/* ── Strata hero + launch blocks ───────────────────────────── */
+
+.prose .strata-hero,
+.prose .strata-launch{
+  border:1px solid var(--card-border) !important;
+  background:var(--card-bg-grad) !important;
+  box-shadow:var(--card-shadow) !important;
+  border-radius:var(--card-radius) !important;
+}
+/* Strata signup row + search panel inside the hero: keep internal
+   inputs on white so the ground reads clean. */
+.strata-signup input,
+.strata-signup button{border-radius:4px !important;}
+
+/* ── Final polish: kill the solid offset-ink shadow wherever it   */
+/*    survives on container-like elements, as a safety net. */
+section.section-paper > .section-paper-inner,
+.prose section.section-paper,
+.prose aside,
+.prose blockquote.c-butter,
+.prose blockquote.c-coral,
+.prose blockquote.c-cobalt,
+.prose blockquote.c-forest{
+  box-shadow:none !important;
+}
+
+/* ── Buttons: keep their brand colour, swap the hard offset shadow */
+/*    for a soft one so they sit in the same material language as    */
+/*    the cards. Translate on hover stays, because that is the       */
+/*    affordance; the shadow just stops being a stamped-black block. */
+
+.btn{
+  border:1px solid var(--card-border-strong) !important;
+  box-shadow:0 1px 2px rgba(10,10,10,0.08), 0 6px 16px rgba(10,10,10,0.09) !important;
+  border-radius:4px !important;
+  transition:transform .14s ease, box-shadow .18s ease, background .15s ease, color .15s ease !important;
+}
+.btn:hover{
+  transform:translateY(-1px) !important;
+  box-shadow:0 2px 4px rgba(10,10,10,0.10), 0 10px 22px rgba(10,10,10,0.13) !important;
+}
+.btn:active{
+  transform:translateY(1px) !important;
+  box-shadow:0 1px 2px rgba(10,10,10,0.08) !important;
+}
+.btn-ink{
+  background:var(--ink) !important;color:var(--paper) !important;
+  border-color:var(--ink) !important;
+}
+.btn-ghost{
+  background:transparent !important;color:var(--ink) !important;
+  border:1px solid var(--card-border-strong) !important;
+}
+
+/* ── Programme-contact band on the resources page and elsewhere ── */
+
+.prose .contact-cta-programme{
+  border:1px solid var(--card-border) !important;
+  background:linear-gradient(180deg, #DDEEF7 0%, #CFE1EE 100%) !important;
+  box-shadow:var(--card-shadow) !important;
+  border-radius:var(--card-radius) !important;
+}
+.prose .contact-cta-programme .contact-options a{
+  border:1px solid var(--card-border) !important;
+  background:rgba(255,255,255,0.78) !important;
+  box-shadow:0 1px 2px rgba(10,10,10,0.04), 0 6px 14px rgba(10,10,10,0.05) !important;
+  border-radius:4px !important;
+  transition:transform .15s ease, box-shadow .18s ease, background .15s ease !important;
+}
+.prose .contact-cta-programme .contact-options a:hover{
+  background:var(--butter) !important;
+  transform:translateY(-2px) !important;
+  box-shadow:0 2px 4px rgba(10,10,10,0.08), 0 10px 22px rgba(10,10,10,0.12) !important;
+}
+.prose .contact-cta-programme .cta-actions a{
+  border:1px solid var(--card-border-strong) !important;
+  border-radius:4px !important;
+  box-shadow:0 1px 2px rgba(10,10,10,0.06), 0 4px 12px rgba(10,10,10,0.08) !important;
+  transition:transform .14s ease, box-shadow .18s ease, background .15s ease, color .15s ease !important;
+}
+.prose .contact-cta-programme .cta-actions a:hover{
+  transform:translateY(-1px) !important;
+  box-shadow:0 2px 4px rgba(10,10,10,0.08), 0 8px 20px rgba(10,10,10,0.12) !important;
+}
+.prose .contact-cta-programme .cta-actions .cta-primary{border-color:var(--ink) !important;}
+
+/* ── Nav current-page indicator: hairline underline instead of slab */
+
+.nav nav > a.current{border-bottom-width:1px !important;border-bottom-color:var(--ink) !important;}
+
+/* ── Partner logo strip on the home page: soft tint ────────── */
+
+#partners .logo-strip img{
+  transition:transform .18s ease, filter .18s ease !important;
+}
+#partners .logo-strip a:hover img{transform:translateY(-1px) scale(1.02);}
+
+/* ── Format badges and pills get rounded corners too ────────── */
+
+.pill{border-radius:999px !important;}
+
+/* ── Keep the search panel soft ─────────────────────────────── */
+
+.search-overlay .search-panel{
+  border:1px solid var(--card-border-strong) !important;
+  box-shadow:0 10px 40px rgba(10,10,10,0.18) !important;
+  border-radius:var(--card-radius) !important;
+}
+
+/* ── Footer language popover ────────────────────────────────── */
+
+.footer-lang .lang-menu{
+  border:1px solid var(--card-border-strong) !important;
+  box-shadow:0 10px 30px rgba(10,10,10,0.18) !important;
+  border-radius:4px !important;
+}
+
+
