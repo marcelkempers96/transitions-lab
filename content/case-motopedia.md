@@ -8,7 +8,7 @@
 
 <div class="case-meta">
  <div><span class="k">Partner</span><span class="v"><a href="https://www.motopedia.org" target="_blank" rel="noopener">Motopedia</a></span></div>
- <div><span class="k">Location</span><span class="v">Nairobi, Kenya · Boda Boda fleet across the greater metropolitan area</span></div>
+ <div><span class="k">Scope</span><span class="v">Global open motorcycle encyclopedia (500 bikes, 369 3D models, 208 parts, 300+ diagnosed problems); Lab field anchor in Nairobi, Kenya, on the Boda Boda fleet</span></div>
  <div><span class="k">Sector</span><span class="v">Electric mobility · informal transport · open educational infrastructure</span></div>
  <div><span class="k">Timeline</span><span class="v">In field. Project results published February 2027.</span></div>
  <div><span class="k">Lab programme</span><span class="v"><a href="/expertise-e-mobility">Electrification &amp; E-Mobility Transitions</a></span></div>

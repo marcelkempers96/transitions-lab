@@ -69,7 +69,7 @@ The Lab's published research and its applied engagements share one root: direct 
   <a class="case-card c-coral has-photo" href="/case-motopedia">
     <div class="case-photo">
       <img src="/assets/img/nairobi-electric-boda-workshop.jpg" alt="Field photograph outside a Nairobi roadside workshop: an orange electric boda boda with twin detachable battery packs under the seat parked in front of a corrugated-iron kiosk with painted Toyota Genuine Parts signage, three mechanics seated beside the bike, one changing a wheel, a jerrycan at their feet.">
-      <span class="tag">Kenya &middot; E-mobility &amp; open infrastructure</span>
+      <span class="tag">Global &middot; E-mobility &amp; open infrastructure</span>
     </div>
     <div class="body">
       <h3>Learning the Machine: Motopedia and the Open Motorcycle Encyclopedia</h3>
