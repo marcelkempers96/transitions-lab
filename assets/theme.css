@@ -6420,3 +6420,43 @@ section.statement{
   background:var(--forest) !important;
   color:var(--paper) !important;
 }
+
+/* ── Final tightening on dark-section ghost buttons ─────────── */
+/*                                                                */
+/* The earlier `.section-forest .btn { color: ink !important }` rule   */
+/* for solid buttons (butter fill) was also matching .btn-ghost        */
+/* because the ghost button carries both classes. Source order let     */
+/* that ink-colour rule win over the paper-colour ghost rule, so       */
+/* "See all programmes →" on the forest section and any other ghost    */
+/* button on a dark section rendered ink-on-dark. Fix: make the ghost  */
+/* rule more specific with .btn.btn-ghost so it always beats .btn.     */
+
+.section-forest .btn.btn-ghost,
+.section-cobalt .btn.btn-ghost,
+.section-plum .btn.btn-ghost,
+.statement .btn.btn-ghost,
+.on-dark .btn.btn-ghost,
+.hero.hero-photo .btn.btn-ghost{
+  background:transparent !important;
+  color:var(--paper) !important;
+  border-color:var(--paper) !important;
+}
+.section-forest .btn.btn-ghost:hover,
+.section-cobalt .btn.btn-ghost:hover,
+.section-plum .btn.btn-ghost:hover,
+.statement .btn.btn-ghost:hover,
+.on-dark .btn.btn-ghost:hover,
+.hero.hero-photo .btn.btn-ghost:hover{
+  background:var(--paper) !important;
+  color:var(--ink) !important;
+  border-color:var(--paper) !important;
+}
+/* Narrow the solid-button rule to NOT ghosts. */
+.section-forest .btn:not(.btn-ghost),
+.section-cobalt .btn:not(.btn-ghost),
+.section-plum .btn:not(.btn-ghost),
+.statement .btn:not(.btn-ghost),
+.on-dark .btn:not(.btn-ghost){
+  background:var(--butter) !important;color:var(--ink) !important;
+  border-color:var(--ink) !important;
+}
