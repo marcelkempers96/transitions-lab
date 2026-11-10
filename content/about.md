@@ -121,4 +121,21 @@ Informed, recorded, revocable consent. Anonymisation by default. Findings that c
 
 ---
 
+## Invoicing and bank details
+
+Transitions Lab B.V., registered in the Netherlands, KVK 42170233.<br>
+Registered address: Stieltjesweg, 2628 CK Delft, Zuid-Holland, Netherlands.<br>
+Bank: Revolut Bank UAB, Barbara Strozzilaan 201, 1083 HN Amsterdam, Netherlands.
+
+<div class="case-meta">
+ <div><span class="k">EUR · SEPA</span><span class="v">IBAN NL55 REVO 8648 3647 87 · BIC REVONL22</span></div>
+ <div><span class="k">GBP · UK local</span><span class="v">Account 97006484 · Sort code 23-01-63</span></div>
+ <div><span class="k">USD · SWIFT</span><span class="v">IBAN NL55 REVO 8648 3647 87 · BIC REVONL22 · Intermediary BIC CHASGB2L</span></div>
+ <div><span class="k">EUR · SWIFT</span><span class="v">IBAN NL55 REVO 8648 3647 87 · BIC REVONL22 · Intermediary BIC CHASDEFX</span></div>
+</div>
+
+For an invoice or a purchase order, write to [marcel@transitionslab.org](mailto:marcel@transitionslab.org) with your preferred currency and we will issue the matching set of details.
+
+---
+
 *For services, see [What We Do](/what-we-do). For our published thinking, [Articles](/articles). To start a conversation, [Contact](/contact).*
