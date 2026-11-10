@@ -6460,3 +6460,12 @@ section.statement{
   background:var(--butter) !important;color:var(--ink) !important;
   border-color:var(--ink) !important;
 }
+
+/* ── Card body text: trim one step for a quieter read ───────── */
+/* 15 → 14 on home-page insight cards, 15.5 → 14.5 on case-grid. */
+.insight-card p,
+.prose .case-grid .case-card p{
+  font-size:14px !important;
+  line-height:1.5 !important;
+}
+.prose .case-grid .case-card p{font-size:14.5px !important;}
