@@ -25,15 +25,15 @@ The boda boda, the commercial motorcycle taxi, is the circulatory system of urba
 This is precisely where a technical reading and a human reading have to meet. The engineering question, range, charge time, battery durability, is real. But it is downstream of a human question: does the economics of a rider's day actually work on electric? The Lab's interest is in the second question, and in how the first either serves it or gets in its way.
 
 <figure>
-  <img src="/assets/img/case-mobility-hero.jpg" alt="A boda-boda rider on an electric motorcycle at first light on a Nairobi commercial street; corrugated-iron shopfronts and dust in the air behind." class="diagram">
-  <figcaption>A boda-boda rider at first light on a Nairobi commercial street.</figcaption>
+  <img src="/assets/img/nairobi-bol-pov.jpg" alt="View from the pillion seat of a Nairobi boda-boda at midday: the rider's shoulders in a blue N.R.S high-visibility vest with the stylised motorcycle insignia, a green Bol-branded helmet ahead, a black Toyota Hilux Vigo pickup and a silver van stopped at a junction in front, an off-white apartment block in the background." class="diagram">
+  <figcaption>From the pillion seat of a Nairobi boda-boda, mid-ride. Photograph by Marcel Kempers, field research 2026.</figcaption>
 </figure>
 
 The manufacturer's own framing is unusually honest about this. Their country lead has put it plainly: every hour a rider spends off the road is income lost. That is not a marketing line; it is the constraint the whole transition turns on.
 
 <figure>
-  <img src="/assets/img/case-roam-mechanics.jpg" alt="A Nairobi roadside scene at first light: a red Boxer 100 boda-boda propped on its side stand next to a green-and-red boda-boda, a mechanic in an orange top squatting between them working on a chain, another rider in a high-vis vest and a helmet leaning over one of the bikes; a blue lorry in the background, dusty red-earth ground and a busy junction beyond." class="diagram">
-  <figcaption>Roadside repair on the Nairobi Eastern Bypass.</figcaption>
+  <img src="/assets/img/nairobi-roadside-repair.jpg" alt="Nairobi roadside workshop at a busy junction: a black petrol boda-boda propped up on wooden blocks mid-repair with a cardboard parts box beside it, a parked scooter in the middle distance, a rider in an orange hi-vis vest and two other men walking past, a city bus in the background, the tyre and sandalled foot of the photographer in the foreground." class="diagram">
+  <figcaption>Roadside repair on a busy Nairobi junction. Photograph by Marcel Kempers, field research 2026.</figcaption>
 </figure>
 
 ---
@@ -54,20 +54,30 @@ The transition, in other words, is being carried by financing architecture as mu
 ### Range anxiety is a lived experience, not a spec sheet
 
 <figure>
-  <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange NGONYA electric motorcycle parked in front of a small Nairobi hardware kiosk with a corrugated green roof and a Toyota Genuine Parts sign; twin detachable battery boxes visible under the seat, an orange helmet resting on the tank; three mechanics sitting to one side, one changing a wheel, another cradling a small child in a faded blue Youth Self Help Group doorway." class="diagram">
-  <figcaption>An electric two-wheeler at a Nairobi shopfront, twin battery packs visible under the seat.</figcaption>
+  <img src="/assets/img/nairobi-electric-boda-workshop.jpg" alt="A bright-orange electric boda boda with twin detachable battery packs under the seat and an orange helmet resting on the tank, parked in front of a corrugated-iron Nairobi roadside kiosk; a Toyota Genuine Parts banner on the left, a Brake Shoe sign on the right, three mechanics seated beside the bike, one crouched changing a wheel, a jerrycan at their feet." class="diagram">
+  <figcaption>An electric boda boda at a Nairobi roadside workshop, twin battery packs visible under the seat. Photograph by Marcel Kempers, field research 2026.</figcaption>
 </figure>
 
 The technical answer to range, a dual-battery setup, charging from any standard outlet, a portable charger, matters. But what the Lab listens for is how range *feels* in a working day. A rider who can charge at home overnight and start every day fully powered describes something a spec sheet cannot: the disappearance of the petrol-station queue from their morning, and with it a small daily anxiety. Long-distance public expeditions by the manufacturer, thousands of kilometres of solar-supported riding across the region, function as public proof that the range objection can be answered. On the ground, the proof that matters is quieter: the rider who simply stopped thinking about it.
 
 <figure>
-  <img src="/assets/img/case-roam-cheche-show.jpg" alt="A Cheche electric-motorbike trade-show booth under a red-and-white striped canopy; a young man in a black polo shirt hands a leaflet to a booth attendant in a red Cheche polo standing behind a matte-grey electric motorcycle on a raised white platform; a Head of State to Own Electric Vehicle banner behind the bike; a stack of yellow battery-swap lockers to the left; an attendee seated behind the counter." class="diagram">
-  <figcaption>A Cheche electric-motorbike stand at a Nairobi trade show.</figcaption>
+  <img src="/assets/img/nairobi-spiro-swap.jpg" alt="A Spiro Smart Energy Network battery-swap station in Nairobi: a red Spiro-branded electric motorcycle parked on the left, a bank of numbered green swap lockers under a green and blue canopy, riders in yellow and green hi-vis vests queuing at the kiosk with a county Boda Boda vest visible, a KFC storefront in the background." class="diagram">
+  <figcaption>A Spiro battery-swap station in Nairobi: swap-and-go lockers for electric boda bodas. Photograph by Marcel Kempers, field research 2026.</figcaption>
 </figure>
 
 ### After-sales is where transitions are won or lost
 
 The most underappreciated part of the story is service. A petrol motorcycle can be fixed at any roadside garage; an electric one, at first, cannot. That asymmetry is exactly the kind of interface friction the Lab tracks: the gap between a new system and the legacy world it has to function inside. The manufacturer's response, a "ride-in, ride-out" service centre in Nairobi built to handle thousands of motorcycles a month and explicitly designed for eventual cross-brand interoperability, is a recognition that the transition is not complete when a rider buys the vehicle. It is complete when the rider can keep it on the road as easily as the thing it replaced.
+
+<figure>
+  <img src="/assets/img/nairobi-fundi-welding.jpg" alt="A Nairobi fundi crouched beside a blue and gold TVS Star HLX petrol boda boda welding a frame bracket, bright arc-weld sparks flying from the join, a second person seated on the pillion seat, parts and tools strewn across the dusty ground, a cyber-cafe sign painted on the wall behind." class="diagram">
+  <figcaption>A Nairobi fundi welding a frame bracket on a petrol boda boda. The transition does not land until this skill transfers to the new drivetrain. Photograph by Marcel Kempers, field research 2026.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/nairobi-sidewalk-mechanics.jpg" alt="Three young mechanics working on a black petrol cafe-racer-style boda boda on a sidewalk in a Nairobi commercial district: one crouched over the rear wheel with a tyre iron, one squatting with a sprocket and chain in hand, one holding a phone in a red Visit Rwanda shirt, parts and tools laid out on the pavement, a Berkeley Residences construction site and traffic on a divided road in the background." class="diagram">
+  <figcaption>Three young mechanics working on a petrol boda boda on a Nairobi sidewalk. This is where the knowledge is, and where a new drivetrain has to land. Photograph by Marcel Kempers, field research 2026.</figcaption>
+</figure>
 
 ---
 

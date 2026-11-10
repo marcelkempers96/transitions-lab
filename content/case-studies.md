@@ -13,7 +13,7 @@ The Lab's published research and its applied engagements share one root: direct 
 <div class="case-grid">
   <a class="case-card c-coral has-photo" href="/case-roam">
     <div class="case-photo">
-      <img src="/assets/img/case-mobility-card.jpg" alt="A boda-boda rider in a hi-vis vest and yellow helmet on a teal electric motorcycle, threading through Nairobi traffic; a second rider on another electric bike is visible in the background.">
+      <img src="/assets/img/nairobi-spiro-swap.jpg" alt="Field photograph of a Spiro Smart Energy Network battery-swap station in Nairobi: a red Spiro-branded electric motorcycle parked beside a bank of numbered green swap lockers, riders in yellow and green hi-vis vests standing at the kiosk, a KFC storefront visible behind.">
       <span class="tag">Kenya &middot; E-mobility</span>
     </div>
     <div class="body">
@@ -68,12 +68,12 @@ The Lab's published research and its applied engagements share one root: direct 
   </a>
   <a class="case-card c-coral has-photo" href="/case-motopedia">
     <div class="case-photo">
-      <img src="/assets/img/case-motopedia-shot-12.jpg" alt="A Motopedia screen showing a vintage V-twin motorcycle rendered in 3D on a clean white canvas, with a horizontal strip of clickable parts along the bottom, captioned 'Eleven bikes in 3D'.">
+      <img src="/assets/img/nairobi-electric-boda-workshop.jpg" alt="Field photograph outside a Nairobi roadside workshop: an orange electric boda boda with twin detachable battery packs under the seat parked in front of a corrugated-iron kiosk with painted Toyota Genuine Parts signage, three mechanics seated beside the bike, one changing a wheel, a jerrycan at their feet.">
       <span class="tag">Kenya &middot; E-mobility &amp; open infrastructure</span>
     </div>
     <div class="body">
       <h3>Learning the Machine: Motopedia and the Open Motorcycle Encyclopedia</h3>
-      <p>An active engagement with <a href="https://www.motopedia.org" target="_blank" rel="noopener">Motopedia</a>, the open motorcycle encyclopedia, on a project running to February 2027 that pairs the Lab's Boda Boda field evidence with Motopedia's visual, open-source teaching platform.</p>
+      <p>An active engagement with Motopedia, the open motorcycle encyclopedia, on a project running to February 2027 that pairs the Lab's Boda Boda field evidence with Motopedia's visual, open-source teaching platform.</p>
       <span class="read">Read the case &rarr;</span>
     </div>
   </a>

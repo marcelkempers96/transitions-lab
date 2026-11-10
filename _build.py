@@ -2014,7 +2014,7 @@ def build_content_page(slug: str, md: str) -> str:
     # <slug>-hero.jpg.
     hero_bg_style = ""
     hero_bg_filename_map = {
-        "case-roam": "case-mobility-hero.jpg",
+        "case-roam": "nairobi-bol-pov.jpg",
     }
     hero_bg_filename = hero_bg_filename_map.get(slug, f"{slug}-hero.jpg")
     if (slug.startswith("case-") or slug.startswith("insight-")) and \
@@ -2495,7 +2495,7 @@ def build_home() -> str:
     <div class="insight-row insight-row--4">
       <a class="insight-card has-photo" href="/case-roam">
         <div class="card-photo">
-          <img src="/assets/img/case-roam-market-stall.jpg" alt="A bright-orange electric motorcycle parked at a small Nairobi hardware kiosk, twin battery packs visible under the seat.">
+          <img src="/assets/img/nairobi-electric-boda-workshop.jpg" alt="A bright-orange electric boda boda with twin detachable battery packs under the seat and an orange helmet on the tank, parked in front of a Nairobi roadside workshop with three mechanics seated beside it.">
         </div>
         <div class="body">
           <h3>How Nairobi's boda-bodas go electric</h3>
