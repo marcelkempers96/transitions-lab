@@ -40,19 +40,28 @@ That is a socio-technical question before it is a data question, and it is the q
 The Lab's reading is running in three overlapping streams. Together they produce evidence at reach, depth and experience level, which is the same three-part discipline we describe in [Impact Measurement](/impact-measurement).
 
 <div class="callout c-coral">
- <span class="kicker">01 · Household reach and use</span>
+ <span class="kicker">Stream 01 · Household reach and use</span>
  <p>A rolling in-depth interview cohort across the settlement clusters MiMaji is active in, sampled to include households on both sides of the price asymmetry, the young women and older women who most often carry the water, and vendors themselves. We are asking a small set of testable questions: do you know MajiMap exists; if you do, when did you last consult it; if you consulted it, did anything you did next change. Reach without behaviour change is diagnostic. Behaviour change without reach is a different story that needs its own explanation.</p>
 </div>
 
-<div class="callout c-cobalt">
- <span class="kicker">02 · Trust and the credibility of the source</span>
- <p>Open data changes behaviour only when it is believed. The Lab is mapping who residents credit as the source of a price or quality claim - MiMaji, a neighbour, a vendor, a chief, a health worker, a phone rumour - and where in that ranking MajiMap actually sits. In a market thick with rumour and vendor interest, credibility is the hinge. Documenting it is a first-order finding.</p>
-</div>
+<aside class="stream-aside" style="margin:1.8em 0;padding:28px 32px 24px;background:transparent;border-top:1px solid rgba(10,10,10,0.14);border-bottom:1px solid rgba(10,10,10,0.14);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;">
+ <span style="font-family:'Newsreader',Georgia,'Times New Roman',serif;font-size:72px;line-height:0.9;font-weight:500;color:#1F3F7A;letter-spacing:-0.03em;">02</span>
+ <div>
+  <p style="margin:0 0 10px;font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;color:#1F3F7A;">Stream 02 · Trust and the credibility of the source</p>
+  <p style="margin:0 0 14px;font-family:'Newsreader',Georgia,'Times New Roman',serif;font-size:24px;line-height:1.2;font-weight:500;letter-spacing:-0.01em;color:var(--ink);">Open data changes behaviour only when it is believed.</p>
+  <p style="margin:0;font-size:15px;line-height:1.55;color:var(--ink);">The Lab is mapping who residents credit as the source of a price or quality claim — MiMaji, a neighbour, a vendor, a chief, a health worker, a phone rumour — and where in that ranking MajiMap actually sits. In a market thick with rumour and vendor interest, credibility is the hinge. Documenting it is a first-order finding.</p>
+ </div>
+</aside>
 
-<div class="callout c-forest">
- <span class="kicker">03 · The market response</span>
- <p>Whether a vendor changes a posted price when a comparable price becomes publicly known is the observable version of the whole argument. The Lab is running repeat price and quality observations at a set of vendor points over the engagement, alongside conversations with the vendors themselves. Movement in the observed price, one way or the other, is the strongest signal that the intervention has begun to bite.</p>
-</div>
+<section class="stream-split" style="margin:1.8em 0;display:grid;grid-template-columns:1fr 1.6fr;gap:0;border:1px solid rgba(10,10,10,0.09);border-radius:6px;overflow:hidden;background:linear-gradient(180deg,#FBF9F3 0%,#F2EEDF 100%);box-shadow:0 1px 2px rgba(10,10,10,0.04),0 10px 26px rgba(10,10,10,0.07);">
+ <div style="padding:28px 26px;background:#0F3D2E;color:#F5EDDD;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;">
+  <p style="margin:0 0 14px;font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;color:#F3D765;">Stream 03 · The market response</p>
+  <p style="margin:0;font-family:'Newsreader',Georgia,'Times New Roman',serif;font-size:22px;line-height:1.2;font-weight:500;letter-spacing:-0.01em;">Does the posted price move once a comparable price is public?</p>
+ </div>
+ <div style="padding:28px 28px;">
+  <p style="margin:0;font-size:15px;line-height:1.55;color:var(--ink);">The Lab is running repeat price and quality observations at a set of vendor points over the engagement, alongside conversations with the vendors themselves. Movement in the observed price, one way or the other, is the strongest signal that the intervention has begun to bite — and the observable version of the whole argument.</p>
+ </div>
+</section>
 
 ## The Lab's early reading
 

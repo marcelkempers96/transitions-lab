@@ -6469,3 +6469,27 @@ section.statement{
   line-height:1.5 !important;
 }
 .prose .case-grid .case-card p{font-size:14.5px !important;}
+
+/* ── Stream-variant blocks on case pages (stack on mobile) ──── */
+/* Used on /case-mimaji to break up stacked coloured callouts.  */
+@media (max-width: 720px){
+  aside.stream-aside{
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 20px 22px 22px !important;
+  }
+  aside.stream-aside > span{
+    font-size: 56px !important;
+    line-height: 0.95 !important;
+  }
+  section.stream-split{
+    grid-template-columns: 1fr !important;
+  }
+  section.stream-split > div:first-child{
+    min-height: 0 !important;
+    padding: 22px 22px !important;
+  }
+  section.stream-split > div:last-child{
+    padding: 22px 22px !important;
+  }
+}
